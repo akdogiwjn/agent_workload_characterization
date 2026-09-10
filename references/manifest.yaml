@@ -1,0 +1,25 @@
+# 项目参考目录登记；2026-09-10 仅说明状态，未执行版本冻结。
+# 当前仅覆盖部分参考；完整 inventory、URL、license、commit/tag、asset
+# 版本及用途由 P0-00 核实后补齐。空 commit 表示未登记，不表示 latest。
+# 本文件不是运行数据 catalog；旧 trace 的登记规范见 docs/data_management.md。
+agentcgroup:
+  path: references/repos/agentcgroup
+  purpose:
+    - tool-call resource attribution
+    - cgroup instrumentation
+    - trace replay
+  commit: ""
+
+swebench:
+  path: references/repos/SWE-bench
+  purpose:
+    - coding workload
+    - evaluation harness
+  commit: ""
+
+docops:
+  path: references/repos/DocOps
+  purpose:
+    - office workload
+    - artifact verification
+  commit: ""

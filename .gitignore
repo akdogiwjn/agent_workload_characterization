@@ -1,0 +1,11 @@
+# 克隆的参考代码仓库（含各自 .git）
+references/repos/
+
+# 参考论文 PDF 等二进制大文件
+references/papers/*.pdf
+
+# 一般忽略项
+__pycache__/
+*.py[cod]
+*.log
+.DS_Store
