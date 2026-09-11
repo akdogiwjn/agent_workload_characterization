@@ -1,0 +1,10 @@
+{
+  "outcome_class": "parsed_tool_call_with_usage",
+  "connectivity": "CONFIRMED: gateway accepted the request and returned a parseable tool-call response",
+  "tool_protocol": "VERIFIED: mini bash tool schema sent, model returned a tool call (echo smoke-ok), parsed by mini (NOT executed per smoke rules)",
+  "usage_coverage": "complete: prompt=308 completion=69 total=377 (legal non-negative integers)",
+  "cost": "source_cost=0.0 (ignore_errors path, unpriced model); amount=null; cost_status=unknown — usage recorded, NOT a cost accounting",
+  "routing": "openai/deepseek-v4-flash verified end-to-end: prefix stripped, /v1 no duplication, Bearer auth accepted",
+  "smoke_conclusion": "SMOKE-01 retry SUCCEEDED. Routing/auth/tool-protocol/usage all functional via mini->litellm->openai SDK->approved proxy->gateway. NOT a benchmark success; CPU/Tool attribution/performance/cost all unproven.",
+  "root_cause_of_previous_failure": "config apiKey was an {env:VOLCANO_API_KEY} reference; launcher sent the literal string. Fixed: {env:VAR} now resolved from os.environ (29 launcher tests)."
+}

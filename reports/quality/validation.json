@@ -1,0 +1,28 @@
+{
+  "audit_revision": "P0-00-r2",
+  "validated_at_utc": "2026-09-10T02:44:05.930076+00:00",
+  "status": "PASS",
+  "checks": {
+    "yaml_files_parsed": 4,
+    "evidence_json_parsed": true,
+    "source_locators_checked": 46,
+    "code_locators_checked": 22,
+    "csv_rows": 198,
+    "csv_columns": 14,
+    "real_candidates_checked": 5,
+    "synthetic_designs_separate": 7,
+    "current_sidecar_source_paths": 86,
+    "source_sha256_matches": 66,
+    "unhashed_archive_stat_only_checks": 0,
+    "supplement_trial_hash_matches": 96,
+    "application_tests_executed": false,
+    "legacy_pipeline_executed": false
+  },
+  "errors": [],
+  "scope_limitations": [
+    "PASS means audit artifact consistency only, not G0/schema/adapter correctness.",
+    "SHA-256 verification covers listed files during this repair only, not prior AI changes or all source tree files.",
+    "Both ZIP archives hashed and member-index inspected; payload semantics not fully parsed.",
+    "Unreadable AgenticVBench sessions, full raw-run dedup, upstream license/version gaps and runtime compatibility remain documented limitations."
+  ]
+}

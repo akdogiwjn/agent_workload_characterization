@@ -1,0 +1,74 @@
+# P0-07/08/09 联合宏观试点 selection
+# 只引用既有 selector，不新增真实选择；gold 以 sample_candidates.yaml 与独立检查为准。
+# 主 cohort：3 个真实语义 run（AX-7, AX-SUB, VW-LONG）+ 1 个模板（AC-N2）。
+catalog_version: "1.1"
+analysis_id_prefix: "macro-pilot"
+selection_version: "0.1.0"
+purpose: "Minimal macro + coverage closed loop over audited samples; feeds G0 review; no CPU claims."
+statistical_unit:
+  runs: "run (semantic_trace) or template (macro_template); template is not a real execution run"
+  requests: "resolved bound requests in each run; unassigned requests separate"
+narrative: "bound measured requests = 7 (AX-7) + 21 (AX-SUB) + 70 (VW-LONG) = 98; AC-N2 3 template completions and 1 unassigned request are reported separately, never merged into 98."
+included:
+  -
+    sample_id: "AX-7"
+    source_id: "agentx_256k"
+    entity_level: "run"
+    profile: "semantic_trace"
+    trace_type: "production_derived"
+    locator:
+      path: "agent_benchmark_traces/agentx_256k/traces.jsonl"
+      line_1based: 39
+    purpose: "AgentX semantic sample; main vs all-agents separated"
+  -
+    sample_id: "AX-SUB"
+    source_id: "agentx_256k"
+    entity_level: "run"
+    profile: "semantic_trace"
+    trace_type: "production_derived"
+    locator:
+      path: "agent_benchmark_traces/agentx_256k/traces.jsonl"
+      line_1based: 307
+    purpose: "AgentX subagent sample; main vs all-agents separated"
+  -
+    sample_id: "AC-N2"
+    source_id: "applied_agentic_coding"
+    entity_level: "template"
+    profile: "macro_template"
+    trace_type: "production_derived"
+    locator:
+      path: "agent_benchmark_traces/applied_compute/agentic_coding_8k.jsonl"
+      line_1based: 1729
+    purpose: "Applied Compute template; N=2, 3 logical completions; not a real run"
+  -
+    sample_id: "VW-LONG"
+    source_id: "gen_videoweaver_traces"
+    entity_level: "run"
+    profile: "semantic_trace"
+    trace_type: "benchmark_real"
+    locator:
+      path: "agent_benchmark_traces/gen_videoweaver_traces/bundles/trace_videoweaver_text_long_video_VBench-Long_run-006/manifest.json"
+      bundle_telemetry: "model_telemetry/model_telemetry.jsonl"
+      bundle_react: "native_trajectory/original_ReAct.jsonl"
+      bundle_summary: "model_telemetry/model_telemetry_summary.json"
+    purpose: "VideoWeaver local run; bundle primary evidence, sidecar cross-check only"
+auxiliary:
+  -
+    sample_id: "AUX-INCOMPLETE"
+    source_id: "telemetry_video_weaver"
+    entity_level: "unassigned_request"
+    profile: "semantic_trace"
+    trace_type: "unknown"
+    locator:
+      path: "telemetry/video_weaver.jsonl"
+      call_id: "b6c324adb8dd40179883ecead5cb4262"
+    purpose: "Missing-token request with run not loaded; never added to VW-LONG run denominator"
+smoke_only:
+  -
+    sample_id: "AC-subtype-smokes"
+    purpose: "Existing check-applied-samples subtype smokes (coding/QA/office first lines); not in macro cohort"
+    includes: ["applied_agentic_coding", "applied_code_qa", "applied_office_work"]
+inclusion_exclusion:
+  include: "Samples listed under included/; templates counted separately from runs"
+  exclude: "smoke_only entries excluded from macro cohort; any sample not in sample_candidates.yaml; unassigned request never merged into a run denominator"
+versioning: "Selector version + adapter versions + schema 0.2.0 recorded per analysis; snapshot via per-file SHA-256"

@@ -1,0 +1,41 @@
+{
+  "batch": "ENV-01",
+  "created_at_utc": "2026-09-11",
+  "purpose": "isolated venv for mini-swe-agent 2.4.6 offline adaptation; not a trace data source; run authorization separate",
+  "interpreter": {
+    "path": ".venvs/mini-swe-agent-2.4.6-env01/bin/python",
+    "version": "3.11.6",
+    "platform": "aarch64 Linux",
+    "system_site_packages": false
+  },
+  "base_package": {
+    "name": "mini-swe-agent",
+    "version": "2.4.6",
+    "wheel": "data/raw/software/mini_swe_agent/2.4.6/mini_swe_agent-2.4.6-py3-none-any.whl",
+    "sha256": "a35463c553ac825c7773b03cfa69cd44958e3af20155dcc5711fdf9e4c67cd54"
+  },
+  "key_dependencies": {
+    "litellm": "1.100.1",
+    "openai": "2.54.0",
+    "pydantic": "2.13.5",
+    "tenacity": "9.1.4",
+    "datasets": "5.0.1"
+  },
+  "wheelhouse": {
+    "path": "data/raw/software/env01/wheelhouse",
+    "wheel_count": 77,
+    "total_bytes": 138995712,
+    "manifest": "data/raw/software/env01/wheelhouse_manifest.json",
+    "download_source": "https://pypi.org/simple (unauthenticated, via user-provided local proxy 127.0.0.1:22111 for transport only)",
+    "download_note": "77 wheels; per-file sha256 in manifest"
+  },
+  "install": {
+    "method": "pip install --no-index --no-cache-dir --find-links <wheelhouse> <mini wheel>",
+    "pip_check": "No broken requirements found",
+    "entry_points_verified": ["mini --help", "mini-extra --help"],
+    "network_during_install": "none (no-index offline)"
+  },
+  "no_secrets": "no credentials in this file; credentials are run-time env injections only",
+  "evidence": "reports/preparation/ENV-01/",
+  "delivery": "docs/environment_adaptation_delivery.md"
+}

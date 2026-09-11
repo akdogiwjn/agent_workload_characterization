@@ -1,0 +1,84 @@
+{
+  "python": {
+    "status": "observed",
+    "version": "3.11.6",
+    "executable": "/usr/bin/python3",
+    "implementation": "cpython",
+    "method": "sys.version/executable"
+  },
+  "packages": {
+    "status": "observed",
+    "installed": {
+      "pydantic": "2.13.4"
+    },
+    "missing": [
+      "yaml",
+      "litellm",
+      "docker"
+    ],
+    "method": "importlib.metadata.version (no import)"
+  },
+  "cpu_memory_disk": {
+    "status": "observed",
+    "method": "os/cpu_count; /proc/meminfo; statvfs",
+    "cpu_count_logical": 256,
+    "meminfo_head": {
+      "MemTotal": "526644880 kB",
+      "MemFree": "16783428 kB",
+      "MemAvailable": "506510168 kB",
+      "Buffers": "4654180 kB",
+      "Cached": "480749364 kB"
+    },
+    "project_free_gib": 2938.4
+  },
+  "cgroup": {
+    "method": "/proc/self/cgroup; /sys/fs/cgroup reads",
+    "self_cgroup_lines": [
+      "13:devices:/system.slice/sshd.service",
+      "12:perf_event:/",
+      "11:cpu,cpuacct:/system.slice/sshd.service"
+    ],
+    "cgroup_version": "v1-or-unknown",
+    "status": "observed"
+  },
+  "process_visibility": {
+    "method": "/proc/self/status; /proc/self/ns",
+    "self_status_head": {
+      "Name": "python3",
+      "Pid": "1385721",
+      "PPid": "1385719",
+      "Uid": "1000\t1000\t1000\t1000",
+      "Gid": "1000\t1000\t1000\t1000"
+    },
+    "namespaces": {
+      "pid": "present",
+      "mnt": "present",
+      "ipc": "present"
+    },
+    "environ": "not_checked (out of authorized scope)",
+    "status": "observed"
+  },
+  "perf": {
+    "method": "shutil.which; kernel.perf_event_paranoid read",
+    "binary": "/usr/bin/perf",
+    "paranoid": "-1",
+    "status": "observed",
+    "claim": "binary/permission metadata only; PMU usability NOT verified (no perf run)"
+  },
+  "docker": {
+    "method": "shutil.which; /var/run/docker.sock stat only",
+    "docker_host_present": false,
+    "client": "/usr/bin/docker",
+    "socket": {
+      "present": true,
+      "is_socket": true
+    },
+    "client_version": "25.0.5",
+    "status": "observed",
+    "claim": "client + local socket observed; daemon/container runnability NOT verified; no info dump, no image list"
+  },
+  "_meta": {
+    "scope": "read-only local probes; per-probe timeout 5s; no network; no containers",
+    "claim_limits": "degradation evidence only; nothing here asserts PMU usability, container runnability, or workload support"
+  }
+}

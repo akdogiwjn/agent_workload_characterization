@@ -1,0 +1,9 @@
+{
+  "outcome_class": "authentication_error",
+  "connectivity": "evidenced (gateway responded in ~4s with an HTTP-level auth error; routing/proxy/DNS all worked)",
+  "tool_protocol": "NOT verified (no successful model response)",
+  "usage_coverage": "none (no usage in an auth-failed response)",
+  "cost": "amount=null; cost_status=unknown; auth failures are typically not billed by gateways but this is NOT confirmed for this gateway — do not claim free",
+  "interpretation": "The gateway rejected the credentials. Possible causes: expired/rotated key, key scope, or the gateway requires a different auth scheme. Per handoff: classify by safe error type and STOP; no retry, no endpoint/model switch.",
+  "smoke_conclusion": "SMOKE-01 executed once and terminated. Routing chain (mini->litellm->openai SDK->proxy->gateway) is functional; authentication to the gateway failed. Next step requires user decision (check key validity / different credential), a NEW approval is required for any retry."
+}

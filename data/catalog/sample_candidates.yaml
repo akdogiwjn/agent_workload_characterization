@@ -1,0 +1,166 @@
+catalog_version: "1.1"
+audit_revision: "P0-00-r2"
+roots:
+  benchmark: "/home/lcq/agent_workload/benchmark"
+  project: "/home/lcq/agent_workload_characterization"
+  analysis: "/home/lcq/agent_workload/benchmark/benchmark_analysis/src/agent_trace_analysis"
+  runtime: "/home/lcq/agent_vm_bench"
+evidence_file: "reports/quality/audit_evidence.json"
+note: "P0-00 selectors and expectations; P0-04 now implements AgentX sample regression (see reports/quality/agentx_sample_validation.json), not full ingest. All line numbers 1-based, arrays 0-based. Token expectations are logical parameters or source aggregates, not inferred LLM reasoning."
+real_candidates:
+  -
+    sample_id: "AX-7"
+    source_id: "agentx_256k"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/agentx_256k/traces.jsonl"
+      line_1based: 39
+      record_id: "1493faffdc8942e99daa22277f44871a40b8"
+    source_sha256: "e39cd2ff3eba21d4a3664be51da743ac3d2149a1933898cafc7bfeac8147eeef"
+    expected:
+      main_requests: 7
+      model_requests: 7
+      subagent_groups: 0
+      input_tokens: 194368
+      output_tokens: 4097
+    limitations: "7 retained requests, not a single-request session; turn_count unspecified, run_elapsed unknown."
+  -
+    sample_id: "AX-SUB"
+    source_id: "agentx_256k"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/agentx_256k/traces.jsonl"
+      line_1based: 307
+      record_id: "bbdcb12440a7ab3496b9fac8b5f9824b1672"
+    expected:
+      main_requests: 2
+      model_requests: 21
+      subagent_groups: 1
+      input_tokens: 818752
+      output_tokens: 3949
+    relations:
+      -
+        selector: "requests[2]"
+        agent_id: "subagent_001_59efc8e7"
+        child_request_count: 19
+        tool_use_count: null
+    limitations: "One subagent; does not by itself cover nested fan-out or join. Use synthetic topology tests separately."
+  -
+    sample_id: "AC-N2"
+    source_id: "applied_agentic_coding"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/applied_compute/agentic_coding_8k.jsonl"
+      line_1based: 1729
+    source_sha256: "d2d55501e49b59f4f507b932929eea47043eed51619a632b919416e205523788"
+    record:
+      input_prompt_length: 6318
+      assistant_response_length:
+        - 101
+        - 1084
+      num_turns: 2
+      tool_call_latency:
+        - 0.431
+        - 2.339
+      tool_call_output_length:
+        - 6118
+        - 23
+      final_assistant_response_length: 801
+    expected:
+      model_requests: 3
+      input_contexts:
+        - 6318
+        - 12537
+        - 13644
+      total_input_tokens: 32499
+      max_context_tokens: 13644
+      total_output_tokens: 1986
+      total_simulated_delay: 2.770
+    limitations: "Template arithmetic ignores actual tokenizer/BOS/response variations; no measured timestamps."
+  -
+    sample_id: "VW-LONG"
+    source_id: "gen_videoweaver_traces"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/gen_videoweaver_traces/bundles/trace_videoweaver_text_long_video_VBench-Long_run-006/manifest.json"
+      record_id: "videoweaver:text_long_video:VBench-Long:run-006"
+    expected:
+      manifest_wall_time_s: 1616.424
+      manifest_tool_call_count: 88
+      selected_model_requests: 70
+      total_input_tokens: 4041546
+      total_output_tokens: 28631
+      max_context_tokens: 80378
+      max_input_context: 79937
+    limitations: "70 requests in this bundle, not all-source 233; max_input_context is based on input_tokens (79937), distinct from source context_tokens max (80378 = input+output at proxy); remote media CPU unavailable."
+  -
+    sample_id: "SHEET-ID"
+    source_id: "spreadsheetbench_v2"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/spreadsheetbench_v2/trajectory_example.zip"
+      archive_members:
+        - "trajectory_example/Debugging/claude opus 4.6/04_06/04_06.traj"
+        - "trajectory_example/Debugging/deepseek v3.2/04_06/04_06.traj"
+    expected:
+      same_legacy_key: "04_06"
+      distinct_source_members: 2
+    limitations: "Two files are distinct model trajectories; do not use filename stem as run identity."
+synthetic_designs:
+  -
+    sample_id: "SYN-SINGLE"
+    purpose: "One model request"
+    design:
+      type: "s"
+      in: 448
+      out: 21
+      t: 0
+      api_time: 1.515
+    expected:
+      model_request_count: 1
+      input_tokens: 448
+      output_tokens: 21
+      request_duration_s: 1.515
+    note: "Designed using AX-7 request[0] scalar values; not an original full session; turn_count remains unspecified."
+  -
+    sample_id: "SYN-N0"
+    purpose: "Zero tool-use turns"
+    design:
+      num_turns: 0
+      input_prompt_length: 32
+      assistant_response_length: []
+      tool_call_output_length: []
+      tool_call_latency: []
+      final_assistant_response_length: 64
+    expected:
+      model_request_count: 1
+      total_input_tokens: 32
+      total_output_tokens: 64
+      max_context_tokens: 32
+    note: "No N=0 records found in the three actual files."
+  -
+    sample_id: "SYN-MISSING-END"
+    purpose: "Missing api_time/end"
+    design: "Remove api_time from synthetic request only; keep start=0"
+    expected: "timestamp_end=null, not start; preserve censored/unknown state."
+    note: "Full AgentX scan found 0 missing api_time."
+  -
+    sample_id: "SYN-ZERO"
+    purpose: "Measured zero retained"
+    design: "tool_call_latency=0.0 with explicit evidence"
+    expected: "Value remains 0.0, not null; unknown remains null."
+  -
+    sample_id: "SYN-CONCURRENCY"
+    purpose: "Nested/parallel/join"
+    design: "Two agents with overlapping intervals plus a typed join link"
+    expected: "Valid parent tree; summed work may exceed union busy time; no self-parent."
+  -
+    sample_id: "SYN-ATTEMPTS"
+    purpose: "Repeated task"
+    design: "Same task with two attempts/model configurations"
+    expected: "Distinct run identity; ingesting same record twice does not duplicate run."
+  -
+    sample_id: "SYN-OPEN-TOOL"
+    purpose: "Started without completed"
+    design: "Tool started then collector interrupted"
+    expected: "Keep open event/end=null, do not silently drop."

@@ -1,0 +1,14 @@
+benchmarks:
+- adaptation: Not yet run locally
+  dependencies:
+  - Model API
+  executability_evidence: Reference available; no local traces generated
+  locator: references/repos/ToolSandbox
+  name: ToolSandbox
+  purpose: Tool-use agent with stateful API interactions
+  selection_rationale: Stateful tool execution covers Assistant scenario
+  unverified:
+  - Full execution
+  - Model API requirements
+  version: 165848b
+scenario: Assistant / Tool

@@ -1,0 +1,21 @@
+{
+  "run_id": "smoke-33983ebb",
+  "authorized": true,
+  "semantics": "tool_protocol_connectivity",
+  "model": "openai/deepseek-v4-flash",
+  "request_model_id": "deepseek-v4-flash",
+  "message": "Connectivity check: call the bash tool with the command 'echo smoke-ok' and nothing else. The command will NOT be executed.",
+  "max_tokens": 100,
+  "deadline_s": 30,
+  "retries": 0,
+  "ok": true,
+  "usage": {
+    "prompt_tokens": 308,
+    "completion_tokens": 69,
+    "total_tokens": 377
+  },
+  "cost": 0.0,
+  "cost_status": "unknown",
+  "error": null,
+  "duration_ms": 5446.108423
+}

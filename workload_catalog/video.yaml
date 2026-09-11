@@ -1,0 +1,24 @@
+benchmarks:
+- adaptation: Text model via local proxy (surrogate); media via DashScope/Bailian
+  agent: OpenClaw + codex
+  dependencies:
+  - Model API (text + media)
+  - local proxy
+  executability_evidence: 4 bundles generated locally; VW-LONG has complete telemetry
+  harness: VideoWeaver / OpenClaw
+  local_boundary: local proxy, media adapter CLI; remote GPU/SIMD media generation
+  locator: references/repos/VideoWeaver
+  name: VideoWeaver
+  remote_boundary: Media generation via DashScope (remote CPU unavailable)
+  selection_rationale: Video scenario; remote media CPU unavailable, text model proxy
+    only
+  task_example: text_long_video (VBench-Long, run-006)
+  tool_stack:
+  - FFmpeg
+  - python
+  - model API (text + media)
+  unverified:
+  - Media provider job ID tracking
+  - FFmpeg CPU measurement feasibility
+  version: c809392
+scenario: Video

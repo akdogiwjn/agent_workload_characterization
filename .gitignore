@@ -9,3 +9,25 @@ __pycache__/
 *.py[cod]
 *.log
 .DS_Store
+
+# 本地 Python 环境、打包和测试缓存
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 原始和派生大数据不进入代码库；保留 data/catalog/ 审计登记
+/data/raw/
+/data/normalized/
+
+# 本机凭据；可提交不含密钥的示例
+.env
+.env.*
+!.env.example
+
+.venvs/
+data/raw/software/env01/

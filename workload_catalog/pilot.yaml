@@ -1,0 +1,228 @@
+spec_version: 0.1.0
+status: PREPARED_READY_FOR_REVIEW_execution_not_authorized
+execution_authorized: false
+generated_at: '2026-09-10'
+evidence_index: reports/quality/pilot_evidence.json
+primary:
+  scenario: Coding
+  benchmark: SWE-bench Verified
+  instance_id: django__django-16485
+  task_description_summary: floatformat() crashes on '0.00' (Django template defaultfilters)
+  versions:
+    swebench_repo_commit: 02e7a74ffd0b707aab73d203fe87bdc7c76afc8e
+    task_dataset_record: data/catalog/pilot_task_record.yaml
+    task_dataset_revision: 78f471bf655a3137b2e8a75af1501690ec009ec3
+    task_dataset_reason: acquired with explicit authorization; required fields/types
+      and parser/enum statically checked; image digest and execution unverified
+    fixed_repo_base_commit: 39f83765e12b0e5d260b7939fc3fe281d879b279
+    historical_harness_commit: null
+  historical_trajectory:
+    locator: agent_benchmark_traces/swebench_experiments/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-16485.json
+    sha256: 506a50910ba71c178cd5fd473b6821985426cb3cc7b20eb438c84706d80ab11a
+    harness: OpenHands CodeAct 2.1
+    model: claude-3-5-sonnet-20241022
+    behavior_summary: 30 msgs; 14 assistant turns; execute_bash x7; str_replace_editor
+      x7
+    evidence: EV-SWE-TRAJ-001
+  harness:
+    frozen: false
+    user_decision: mini-SWE-agent chosen per benchmark selection (this round); OpenHands/OpenClaw
+      ruled out
+    local_status: wheel acquired + statically read (EV-mini246 wheel; 15 members hashed);
+      still NOT installed; no source checkout on disk beyond wheel
+    pinned_candidate:
+      version: 2.4.6
+      version_locked_by_user: true
+      download_authorized: true
+      download_executed: true
+      wheel_bytes: 115037
+      wheel_sha256: a35463c553ac825c7773b03cfa69cd44958e3af20155dcc5711fdf9e4c67cd54
+      sha256_verified: true
+      basis: swebench 02e7a74 uv.lock pin; user authorized fetch; hash matched
+      artifact_catalog: data/catalog/mini_2_4_6_artifact.yaml
+      note: installed=false; static reading complete; run NOT authorized
+    entry_static: python -m minisweagent.run.benchmarks.swebench ... -c <bundled swebench.yaml>
+      -c <custom> -m <model> (EV-HM-ARGVBUILDER-001)
+    config_schema_verifiable: true
+    config_schema_gap: null
+    fetch_request: null
+    config_findings_ref: reports/quality/mini_2_4_6_static_evidence.json
+    image_field_adaptation: mini reads instance.image_name/docker_image (derives sweb.eval.x86_64.<id>:latest
+      if absent); does NOT read evaluator image field — field-level equality + digest
+      pinning must be verified before first run (OI-DATASET-NS-001)
+    input_isolation: 'config-conditional: default agent.run(task) passes only problem_statement;
+      optional run.env_startup_command renders the ENTIRE instance dict (incl. reference
+      fields) — pilot must keep it unset; whitelist design retained'
+  model:
+    frozen: false
+    user_decision: DeepSeek-V4-Flash selected via opencode.json provider 火山AI网关
+    config_key: deepseek-v4-flash
+    display_name: DeepSeek-V4-Flash
+    protocol_class: openai_compatible (npm @ai-sdk/openai-compatible; not a full-param
+      guarantee)
+    base_url_info:
+      scheme: https
+      path_contains_v1: true
+    auth: 'inline apiKey field (path: provider.<key>.options.apiKey); secret value
+      NOT extracted, NOT output, NOT persisted; in-memory parsing extracted whitelist
+      keys only'
+    declared_limits:
+      maxInputTokens: 256000
+      maxOutputTokens: 8192
+    exact_request_mapping: 'mini side confirmed: model_name + model_kwargs forwarded
+      verbatim to litellm.completion; NO prefix added by mini. Remaining unknown is
+      litellm-side routing (provider prefix, base_url key, /v1 duplication, auth env
+      var name) — OI-LITELLM-DEEPSEEK-001'
+    pricing_availability: 'unverified price; mini 2.4.6 confirmed: completion_cost
+      raises RuntimeError by default; cost_tracking=ignore_errors SILENTLY returns
+      0.0 (no critical log in that branch) and agent/global cost limits never trigger
+      on unpriced calls; options: litellm_model_registry with real prices (limits
+      effective) OR ignore_errors + independent cost-unknown accounting; OI-PRICE-001;
+      user declined monetary ceiling; per-run confirmation agreed'
+  verifier:
+    chain: make_test_spec -> run_evaluation (docker, apply candidate patch, run eval_script)
+      -> get_eval_report (F2P=1 AND P2P=1 => resolved)
+    source_evidence:
+    - EV-SWE-GRADING-001
+    - EV-SWE-RUNEVAL-001
+    - EV-SWE-DATASET-001
+    infra_vs_task_failure: infra_failure field + classify_logs tier classification;
+      SUITE_RAN guard
+    local_reproduction: not_run (design stage)
+    per_instance_test_spec: null
+    per_instance_spec_gap: 'GAP-VERIFIERSPEC-001: make_test_spec requires image/eval_script/log_parser/eval_type/F2P/P2P/repo/version;
+      target dataset revision field-level compatibility unverified; conversion/build
+      chain may be an additional work item'
+  resource_boundary:
+    observed_static: commands run inside docker container; execute_bash issues shell
+      commands (ls/python/grep); str_replace_editor is OpenHands built-in
+    to_verify_in_p1:
+    - whether execute_bash spawns independent short-lived subprocesses or goes through
+      a resident action-executor server
+    - whether str_replace_editor is in-process (no exclusive subprocess)
+    - container cgroup boundary vs host observation
+    measurement_floor: run/service/scope level; per-tool exclusive attribution is
+      a target, not a premise
+  evidence_refs:
+  - EV-DATASETS-001
+  - EV-HM-ARGVBUILDER-001
+  - EV-HM-HISTTRAJ-001
+  - EV-HM-LOCK-001
+  - EV-HM-MINI-NOTINSTALLED-001
+  - EV-HM-OPENCODE-001
+  - EV-HM-RUNAPI-COST-001
+  - EV-HM-TASKREC-001
+  - EV-SWE-DATASET-001
+  - EV-SWE-GRADING-001
+  - EV-SWE-INFERENCE-001
+  - EV-SWE-LOGPARSER-001
+  - EV-SWE-PACKAGE-001
+  - EV-SWE-REPO-001
+  - EV-SWE-RUNEVAL-001
+  - EV-SWE-TASKREPO-001
+  - EV-SWE-TRAJ-001
+  - EV-TRACEBENCH-001
+backup:
+  scenario: Office
+  benchmark: DocOps
+  task_dir: agent_benchmark_traces/docops/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed
+  task_toml_sha256: 541e0d24a9f97aafdd312d00af1b063571836ec303cc2e7694bb72118655bca0
+  tasks_tree_commit: ccf7a751bc5c8a69c1cdd0400125d53455b33be3
+  task_declared_limits:
+    cpus: 1
+    memory_mb: 4096
+    storage_mb: 10240
+    gpus: 0
+    allow_internet: true
+    verifier_timeout_sec: 600
+    agent_timeout_sec: 1200
+    build_timeout_sec: 900
+  verifier: pytest --ctrf /logs/verifier/ctrf.json /tests/test_outputs.py (artifact-level
+    semantic-strict)
+  historical_local_run: none for word_001 (word_002 archived; batch used codex+Harbor+proxy,
+    not frozen)
+  image_digest: null
+  evidence_refs:
+  - EV-DOCOPS-REPO-001
+  - EV-DOCOPS-TASK-001
+  - EV-DOCOPS-VERIFIER-001
+  - EV-DOCOPS-VERIFIER-002
+  - EV-DOCOPS-ENV-001
+  - EV-DOCOPS-HISTORY-001
+budget:
+  tasks: 1
+  attempts_per_task: 1
+  agent_wall_limit_min: 25
+  verifier_reserved_min: 5
+  total_hard_limit_min: 30
+  total_rule: agent 25 + verifier 5 within one 30-min total; no segment may exceed
+    the total
+  build_setup_limit_min: 15
+  build_setup_note: build/setup timed separately, NOT counted in the 30-min execution
+    budget; own limit pending approval
+  cpu_limit: 4
+  memory_limit_gib: 8
+  new_artifacts_limit_gib: 5
+  auto_retries: 0
+  on_agent_timeout: stop agent at 25 min; run verifier only within remaining budget;
+    if verifier exceeds its quota, abort and record verifier_timeout (evaluation incomplete,
+    not task failure)
+  docops_note: if backup chosen, task-declared limits (1 CPU / 4096 MB / verifier
+    600s / agent 1200s / build 900s) are tighter and take precedence
+  approval: per-run explicit confirmation required by user; no monetary ceiling set;
+    no auto-retry
+  monetary_ceiling: null
+  monetary_ceiling_reason: user currently sets no monetary ceiling; not unlimited
+    execution authorization
+  per_run_confirmation_required: true
+  confirmation_scope: disclose exact tasks, harness/model, commands, resource/time
+    bounds and cost risks before each run; wait for explicit confirmation
+pending_decisions:
+- id: DEC-MODEL
+  status: choice_resolved_configuration_pending
+  decision: DeepSeek-V4-Flash using designated OpenCode config; do not copy credentials
+    into artifacts
+  remaining: exact model/provider mapping and harness compatibility verification
+- id: DEC-TASKDATA
+  question: authorize fetching SWE-bench_Verified instance record; scope must include
+    field-level verification against make_test_spec requirements and allow "conversion
+    needed" outcome (GAP-VERIFIERSPEC-001)
+  options:
+  - authorize fetch with field-level verification
+  - keep trace-only with dataset identity pending
+- id: DEC-HARNESS
+  status: direction_resolved_version_pending
+  decision: select per benchmark; prioritize verifying mini-SWE-agent for SWE-bench
+  remaining: pin harness version/config and verify task/model interface; do not automatically
+    install or run
+gaps:
+- GAP-TASKDATA-001
+- GAP-HARNESS-001
+- GAP-MODEL-001
+- GAP-DOCKER-001
+- GAP-VERIFIERSPEC-001
+- GAP-MODEL-ADAPTER-001
+- GAP-COST-001
+non_goals:
+- no benchmark/container/API/verifier execution in this task
+- this file is not execution authorization
+- four-scenario candidates are not promoted to a formal representative set
+open_items:
+- OI-LITELLM-DEEPSEEK-001
+- OI-PRICE-001
+- OI-DATASET-NS-001
+preparation:
+  batch: PREP-01
+  package: reports/preparation/PREP-01/
+  delivery: docs/first_run_preparation_delivery.md
+  approval_checklist: docs/first_run_approval.md
+  agent_view_fields:
+  - instance_id
+  - problem_statement
+  image_match_tag_level: true
+  digest_pinned: false
+  execution_authorized: false
+  approvals_pending:
+  - install mini 2.4.6 + deps
+  - model connectivity smoke
+  - real single run

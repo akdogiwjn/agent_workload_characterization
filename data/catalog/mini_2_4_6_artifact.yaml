@@ -1,0 +1,23 @@
+# mini-SWE-agent 2.4.6 wheel 软件包登记
+# 角色：软件参考包（静态阅读授权获取），不是 sources.yaml 的 trace 数据源；
+# 不是安装/运行授权。首次运行前的阻塞项见 docs/mini_2_4_6_static_delivery.md。
+catalog_version: '1'
+artifact_id: mini_swe_agent_wheel_2_4_6
+role: software_reference_static_read_only
+authorization: DEC-MINISRC (user granted download-and-read for this exact wheel only)
+install_authorized: false
+run_authorized: false
+filename: mini_swe_agent-2.4.6-py3-none-any.whl
+url: https://files.pythonhosted.org/packages/a2/00/a2f454775f69f540ab529c5f5e35d672f6491f0e6edab7cb196a0d2a0e2e/mini_swe_agent-2.4.6-py3-none-any.whl
+downloaded_at_utc: '2026-09-10'
+bytes: 115037
+sha256: a35463c553ac825c7773b03cfa69cd44958e3af20155dcc5711fdf9e4c67cd54
+sha256_source: swebench 02e7a74 uv.lock pin (references/repos/SWE-bench/uv.lock)
+locator: data/raw/software/mini_swe_agent/2.4.6/mini_swe_agent-2.4.6-py3-none-any.whl
+version: 2.4.6
+license: MIT (from dist-info METADATA + licenses/)
+license_metadata_source: wheel-embedded dist-info (not independently re-verified upstream)
+requires_python: '>=3.10'
+pinned_by: user decision (version locked; download authorized separately)
+evidence: reports/quality/mini_2_4_6_static_evidence.json
+delivery: docs/mini_2_4_6_static_delivery.md

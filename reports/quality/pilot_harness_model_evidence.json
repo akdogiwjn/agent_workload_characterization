@@ -1,0 +1,130 @@
+{
+  "task": "P0-07 pilot harness/model evidence (mini-SWE-agent + DeepSeek-V4-Flash)",
+  "generated_at_utc": "2026-09-10",
+  "verification_mode": "read-only static inspection; no installs, no imports of third-party packages, no CLI execution, no network/API requests, no containers",
+  "credential_policy": "opencode.json read via in-memory JSONC-stripping parser with strict output whitelist; no raw file content, no apiKey values, no URL userinfo/query/fragment, no env var expansion; sanitized projection digest below is NOT the original file hash",
+  "evidence": [
+    {
+      "evidence_id": "EV-HM-OPENCODE-001",
+      "kind": "sanitized_config_projection",
+      "locator": "/home/lcq/.config/opencode/opencode.json",
+      "root": "external_user_config",
+      "note": "path recorded for provenance only; original file untouched, full-file hash intentionally not computed",
+      "projection": {
+        "parse_mode": "jsonc_stripped_in_memory",
+        "top_level_keys": [
+          "$schema",
+          "disabled_providers",
+          "provider"
+        ],
+        "provider_keys": [
+          "火山AI网关"
+        ],
+        "match_count": 1,
+        "model_match": {
+          "provider_key": "火山AI网关",
+          "model_config_key": "deepseek-v4-flash",
+          "model_display_name": "DeepSeek-V4-Flash",
+          "model_id_variants_in_entry": [],
+          "provider_npm_sdk": "@ai-sdk/openai-compatible",
+          "protocol_class": "openai_compatible (per npm SDK name; not a guarantee all params match)",
+          "provider_options_keys": [
+            "apiKey",
+            "baseURL"
+          ],
+          "auth_style": "apiKey field present; type str; value NOT read, NOT expanded, NOT validated",
+          "base_url_info": {
+            "scheme": "https",
+            "has_base_url": true,
+            "path_contains_v1": true
+          },
+          "declared_limits": {
+            "maxInputTokens": 256000,
+            "maxOutputTokens": 8192
+          },
+          "modalities_field_present": true,
+          "declared_capabilities": null
+        },
+        "ambiguity": "none: exactly one matching entry (config key = display-name stem 'deepseek-v4-flash')"
+      },
+      "conclusion_type": "static_confirmed",
+      "read_date": "2026-09-10"
+    },
+    {
+      "evidence_id": "EV-HM-MINI-NOTINSTALLED-001",
+      "kind": "directed_search",
+      "locator": "checked: python3/3.11 site-packages (system), ~/.local/lib/python3.11/site-packages, benchmark venvs (telemetry_proxy, agentic-vbench), project dirs",
+      "conclusion_type": "static_confirmed",
+      "findings": "minisweagent / mini_swe_agent NOT present in any checked environment; not importable, not installed; no local source checkout found in project-related directories",
+      "read_date": "2026-09-10"
+    },
+    {
+      "evidence_id": "EV-HM-LOCK-001",
+      "kind": "source_read",
+      "locator": "references/repos/SWE-bench/uv.lock",
+      "root": "project",
+      "pointer": "mini-swe-agent entry (lines ~1679-1701); dev-dependency references (~3984, ~4044)",
+      "sha256": "5f8ef4b66cfe96bf6ac46d76d2306d3e6bb4d87dbf9f8b28ccc18c95340f1b85",
+      "conclusion_type": "static_confirmed",
+      "findings": "uv.lock pins mini-swe-agent==2.4.6 (sdist sha256 0532c819...869a; wheel sha256 a35463c5...cd54; PyPI upload 2026-07-23); declared as swebench dev-group dependency; deps: datasets, jinja2, litellm, openai, platformdirs, prompt-toolkit, pydantic, python-dotenv, pyyaml, requests, rich, tenacity, textual, typer; swebench requires-python >=3.10"
+    },
+    {
+      "evidence_id": "EV-HM-ARGVBUILDER-001",
+      "kind": "source_read",
+      "locator": "references/repos/SWE-bench/swebench/inference/mini_swe_agent.py",
+      "root": "project",
+      "sha256": "b577a13178be8748009e0b95d4e226ae7ca06dd546d8661f43ca9623bbf13bb3",
+      "pointer": "RUNNER_MODULE='minisweagent.run.benchmarks.swebench'; build_command (line ~82-106); default_config (line ~59-79); is_available (line ~50-56)",
+      "conclusion_type": "static_confirmed",
+      "findings": "Entry: python -m minisweagent.run.benchmarks.swebench --subset <dataset> --split <split> -w <workers> -o <output> -c <bundled swebench.yaml> -c <custom.yaml>... -m <model>; bundled config at minisweagent builtin_config_dir/benchmarks/swebench.yaml; model passed as -m string; config layering: bundled default + user -c overrides (mini drops its default when any -c given, hence builder includes it explicitly)"
+    },
+    {
+      "evidence_id": "EV-HM-HISTTRAJ-001",
+      "kind": "archive_member_read",
+      "locator": "agent_benchmark_traces/tracebench/bench_artifacts/full/miniswe-Anthropic__Claude-Sonnet-4-20250514-Thinking-add-benchmark-lm-eval-harness-54ac67f0.tar.zst",
+      "root": "benchmark",
+      "member": "miniswe/Anthropic__Claude-Sonnet-4-20250514-Thinking/miniswe-claude/add-benchmark-lm-eval-harness/add-benchmark-lm-eval-harness.1-of-1.claude-sonnet-4-20250514-thinking/agent-logs/mini.traj.json",
+      "tar_sha256": "d53e311283f7b646f7b212fba445381af0351a84c3a18bbe054ad1a874a7fa04",
+      "conclusion_type": "historical_run",
+      "findings": "Historical mini-SWE-agent trajectory artifact: mini_version=1.17.3 (NOT the locked 2.4.6 — version drift between historical traces and swebench lock); trajectory_format=mini-swe-agent-1; messages[] = {role, content, timestamp} with NO structured tool_calls (text bash-action protocol); info.exit_status='Submitted'; info.model_stats = {api_calls, instance_cost:0.0} (cost not tracked in that batch); info.config contains api_base/api_key (key value never read/output); sibling members: commands.txt, panes/{pre,post}-agent/test.txt, results.json, sessions/"
+    },
+    {
+      "evidence_id": "EV-HM-RUNAPI-COST-001",
+      "kind": "source_read",
+      "locator": "references/repos/SWE-bench/swebench/inference/run_api.py",
+      "root": "project",
+      "pointer": "calc_cost (line ~100-114); comment at line ~111",
+      "sha256": "1a84dda5363ae17298d7fb7803e454d4273c40714ad8c3ce026190ce906a6493",
+      "conclusion_type": "static_confirmed",
+      "findings": "swebench run_api.py calc_cost indexes MODEL_COST_PER_INPUT[model_name] directly: an unknown model raises KeyError (fails loudly). The source comment explicitly says this is to AVOID 'silently treating an unknown model as free and undercounting inference costs'. Consequence for the pilot: a custom model like deepseek-v4-flash would CRASH swebench's own cost accounting, not zero-count. NOTE: this file only covers swebench's own run_api path; it does NOT establish mini-SWE-agent 2.4.6's actual cost path (litellm-based, needs mini source to verify). Historical instance_cost=0.0 in a 1.17.3 trajectory only shows the recorded value was zero; the cause cannot be determined from that alone."
+    },
+    {
+      "evidence_id": "EV-HM-TASKREC-001",
+      "kind": "catalog_read",
+      "locator": "data/catalog/pilot_task_record.yaml",
+      "root": "project",
+      "conclusion_type": "static_confirmed",
+      "findings": "Official record present (revision 78f471bf...; base_commit 39f83765...); evaluator fields verified in prior round; contains reference patches; agent_input_authorized=false"
+    }
+  ],
+  "gaps": [
+    {
+      "gap_id": "GAP-MINI-SRC-001",
+      "description": "mini-SWE-agent not installed anywhere local; no source checkout. Only evidence: swebench uv.lock pins 2.4.6 (PyPI hashes in lock); historical trajectories were produced by 1.17.3 (different version). Config schema (swebench.yaml fields, model adapter options for litellm api_base/api_key) therefore NOT verifiable from local source at either version.",
+      "blocks": "frozen harness version+config, model adapter field-level compatibility, run entry verification",
+      "resolution": "authorized fetch needed: mini-swe-agent source/release, pinned version proposal 2.4.6 (from swebench lock) with alternative to pin 1.17.3 for historical-behavior continuity; download size ~115KB wheel / ~67KB sdist from PyPI; purpose: static config/compatibility verification only (no install/run)"
+    },
+    {
+      "gap_id": "GAP-MODEL-ADAPTER-001",
+      "description": "DeepSeek-V4-Flash → mini/litellm adapter mapping unverified: exact request model_id (opencode config key 'deepseek-v4-flash' vs gateway routing prefix), api_base duplication (/v1 present in baseURL — whether mini/litellm appends its own path), auth header style, streaming/finish-reason/usage parsing for this gateway all unknown without mini source + one authorized connectivity test",
+      "blocks": "frozen model mapping",
+      "resolution": "after mini source fetch: verify config field names against mini's model adapter source; connectivity test requires explicit user authorization (currently NOT authorized)"
+    },
+    {
+      "gap_id": "GAP-COST-001",
+      "description": "deepseek-v4-flash pricing unknown. swebench run_api.py would raise KeyError on it (fail-loudly, not silent-free). mini-SWE-agent 2.4.6's actual cost path (litellm-based) unverified without source; historical 1.17.3 instance_cost=0.0 recorded value's cause undetermined. OPEN QUESTION (not a user-ceiling request): how costs will be recorded for this model, how unknown prices are handled in the chosen cost path, and the already-agreed per-run explicit confirmation before every run. User has explicitly declined to set a monetary ceiling for now.",
+      "blocks": "cost accounting for the pilot run",
+      "resolution": "verify mini 2.4.6 cost-handling from its source (litellm cost table behavior on unknown models: error, zero, or absent); decide cost recording method at harness version freeze; per-run confirmation already required — no ceiling to request"
+    }
+  ]
+}

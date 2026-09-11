@@ -1,0 +1,206 @@
+catalog_version: "1.1"
+audit_date: "2026-09-10"
+parser:
+  -
+    module: "adapters/base.py"
+    path: "adapters/base.py"
+    decision: "reuse_after_fix"
+    reason: "inspect/iterate/normalize 三阶段接口设计合理；需增强 validate、source record ref 保留与重复 ingest 防护。"
+    root: "analysis"
+    validation_status: "static_review_only"
+  -
+    module: "adapters/agentx.py"
+    path: "adapters/agentx.py"
+    decision: "reuse_after_fix"
+    fixes:
+      - "parent_agent_id 自指（A5）"
+      - "缺失 api_time 补零（A6）"
+      - "prefix hash 截断（A4）"
+      - "main/all-agents 分别聚合（A3）"
+      - "wall_time 命名改为 observed_span（A1）"
+    required_tests:
+      - "单请求"
+      - "嵌套/并发子 Agent"
+      - "未知结束"
+    root: "analysis"
+    validation_status: "static_review_only"
+  -
+    module: "adapters/applied_compute.py"
+    path: "adapters/applied_compute.py"
+    decision: "reuse_after_fix"
+    fixes:
+      - "N turns → N+1 completions（B1）"
+      - "累计输入/最大 context（B2/B3）"
+      - "trace_type=production_derived（B7）"
+    required_tests:
+      - "N=0"
+      - "N=2 手算模板"
+      - "长度缺失"
+    root: "analysis"
+    validation_status: "static_review_only"
+  -
+    module: "adapters/osworld.py"
+    path: "adapters/osworld.py"
+    decision: "reuse_after_fix"
+    fixes:
+      - "Keep observed action span separate from E2E."
+      - "Unknown timestamp_end stays null; extract only if original source supports it."
+      - "If reading Python-literal results, use safe parsing, never eval."
+    required_tests:
+      - "单动作"
+      - "缺结束边界"
+    root: "analysis"
+    validation_status: "static_review_only"
+  -
+    module: "adapters/spreadsheetbench.py"
+    path: "adapters/spreadsheetbench.py"
+    decision: "reuse_after_fix"
+    fixes:
+      - "Source locator uses full ZIP member path; separate task/run/attempt identity."
+      - "Context/wall-time remain unavailable unless source evidence supports extraction."
+    required_tests:
+      - "同任务两个模型"
+      - "两个 attempt"
+    root: "analysis"
+    validation_status: "static_review_only"
+  -
+    module: "adapters/swebench.py"
+    path: "adapters/swebench.py"
+    decision: "reuse"
+    reason: "OpenHands/SWE-agent 双格式处理合理，时间不可得时诚实为 null。"
+    root: "analysis"
+    validation_status: "static_review_only"
+  -
+    module: "adapters/tracebench.py"
+    path: "adapters/tracebench.py"
+    decision: "reuse"
+    reason: "manifest + tar.zst 流式解析设计合理；需补充非 miniswe/sweagent 布局。"
+    root: "analysis"
+    validation_status: "static_review_only"
+  -
+    module: "adapters/mlperf.py"
+    path: "adapters/mlperf.py"
+    decision: "reuse"
+    reason: "朴素 JSONL 分组正确；延迟/文本长度可标 Observed/Estimated。"
+    root: "analysis"
+    validation_status: "static_review_only"
+schema:
+  -
+    module: "schema.py"
+    path: "schema.py"
+    decision: "reuse_after_fix"
+    reason: "Review logical semantic coverage under P0-02; neither copy seven tables unchanged nor mandate collapsing all tables. Physical storage undecided."
+    root: "analysis"
+    validation_status: "static_review_only"
+  -
+    module: "normalize/ingest.py"
+    path: "normalize/ingest.py"
+    decision: "reuse_after_fix"
+    fixes:
+      - "重复 ingest 防护（来源 record ref 去重）"
+      - "reject 清单（不静默丢行）"
+      - "main/all-agents 聚合范围"
+    root: "analysis"
+    validation_status: "static_review_only"
+provenance:
+  -
+    module: "provenance.py"
+    path: "provenance.py"
+    decision: "reuse"
+    reason: "Observed/Derived/Estimated/Unavailable 四分法合理；需补 TemplateParameter。"
+    root: "analysis"
+    validation_status: "static_review_only"
+classification:
+  -
+    module: "taxonomy.py"
+    path: "taxonomy.py"
+    decision: "reuse_after_fix"
+    reason: "Retain scenario/domain and operation category as different dimensions; existing enums already include Read/Search/etc. Phase is a separate temporal annotation, not replacement of domain."
+    root: "analysis"
+    validation_status: "static_review_only"
+  -
+    module: "tools.py"
+    path: "tools.py"
+    decision: "reuse_after_fix"
+    reason: "分类规则保留 UNKNOWN 标记方式；需扩展 command/exe/arguments 依据，不能只凭工具名分类。"
+    root: "analysis"
+    validation_status: "static_review_only"
+aggregation:
+  -
+    module: "metrics/representative.py"
+    path: "metrics/representative.py"
+    decision: "reuse_after_fix"
+    reason: "Retain reusable normalization/tool-mix routines if tests pass; revise grouping, coverage masks and ranking targets. No proof defects are unrepairable; replacement only if P0-08 design justifies it."
+    root: "analysis"
+    validation_status: "static_review_only"
+report:
+  -
+    module: "report/builder.py"
+    path: "report/builder.py"
+    decision: "reuse_after_fix"
+    reason: "Inspect data-binding changes after IR design; Plotly/Jinja templates and presentation may be reusable. Schema coupling alone does not require full rewrite."
+    root: "analysis"
+    validation_status: "static_review_only"
+sidecar:
+  -
+    module: "gen_sidecar.py"
+    path: "traces_generation/sidecar/gen_sidecar.py"
+    decision: "reuse_after_fix"
+    fixes:
+      - "wa_ts 明确标记为 log_receipt/derived 时间来源（F1）"
+      - "未闭合 codex 事件记录而不静默丢弃（F2）"
+      - "submit/poll/wait 关联（F3）"
+    notes: "整体架构、三态分离、archive_status 处理成熟，是新 sidecar 的基础。"
+    root: "benchmark"
+    validation_status: "static_review_only"
+collector:
+  -
+    module: "telemetry_proxy/proxy.py"
+    path: "telemetry_proxy/proxy.py"
+    decision: "reuse"
+    reason: "Interface candidate only; no proxy smoke test executed in this audit. Check ID propagation, privacy, measurement semantics and overhead before use."
+    root: "benchmark"
+    validation_status: "static_review_only"
+  -
+    module: "telemetry_proxy/export_trace.py"
+    path: "telemetry_proxy/export_trace.py"
+    decision: "reuse"
+    reason: "complete-only filter explains selected video export; reuse only if exclusions, failed/incomplete rows and denominators remain visible."
+    root: "benchmark"
+    validation_status: "static_review_only"
+runtime:
+  -
+    module: "bench_core"
+    path: "src/bench_core/"
+    decision: "defer"
+    reason: "需 P0-00 runtime 单独深度审计接口（bench.py/schemas.py/stats_collector.py/task_runner/）；不假定可与新监测链路无缝连接。"
+    root: "runtime"
+    validation_status: "static_review_only"
+  -
+    module: "vm_monitor"
+    path: "vm_monitor/"
+    decision: "defer"
+    reason: "提供 NUMA/process/cgroup 级监控；需验证与新项目 collector 的对接方式与版本。"
+    root: "runtime"
+    validation_status: "static_review_only"
+  -
+    module: "vm_bench"
+    path: "vm_bench/"
+    decision: "defer"
+    reason: "单体旧版与模块化新版并行；需先确定 replay 策略。"
+    root: "runtime"
+    validation_status: "static_review_only"
+  -
+    module: "llm_replay"
+    path: "llm_replay/"
+    decision: "defer"
+    reason: "LLM 回放服务，P3 replay 阶段再评估。"
+    root: "runtime"
+    validation_status: "static_review_only"
+audit_revision: "P0-00-r2"
+roots:
+  benchmark: "/home/lcq/agent_workload/benchmark"
+  project: "/home/lcq/agent_workload_characterization"
+  analysis: "/home/lcq/agent_workload/benchmark/benchmark_analysis/src/agent_trace_analysis"
+  runtime: "/home/lcq/agent_vm_bench"
+tests_executed: false

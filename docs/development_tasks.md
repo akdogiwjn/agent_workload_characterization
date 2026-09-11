@@ -1,6 +1,6 @@
 # AI Agent Workload Characterization 开发任务计划
 
-修订日期：2026-09-10。状态：**仅更新计划，未开始本项目开发或实验**。
+状态：**P0-00-r2～P0-05、P0-10、P0-08/09 已验收（IR 0.2）；PREP-01/ENV-01 已验收（260 项测试）；SMOKE-01 完成（[交付](model_smoke_delivery.md)：根因修复后重试成功，路由/auth/工具协议/usage 已验证）；G0 未验收；未执行采集/实验**。下一批：[SMOKE-01 单次工具协议连通性检查](model_smoke_handoff.md)，当前只准备执行文档，真实请求待明确批准。
 
 ## 1. 目的、范围与共同约定
 
@@ -9,7 +9,7 @@
 必读：[方法论](../methodology.md)、[参考说明](../references/README.md)、[参考清单](../references/manifest.yaml)。
 所有任务同时遵守：[数据管理](data_management.md)、[Trace 语义与测量契约](trace_contract.md)。
 
-本次修订不创建代码骨架、不安装依赖、不执行 CLI、不生成 IR、不启动 benchmark、不搬迁旧 trace、不修改第三方项目。本文的文件、命令和测试是后续交付要求，不代表已实现或获准执行。
+初版文档修订没有执行开发；后续已获授权完成 P0-00-r2、P0-01～05 和 P0-10 小样。除明确交付的代码、合成测试和两条真实 AgentX、一条 Applied Compute 及一条 VideoWeaver 内存规范化回归外，其余仍是后续要求，不代表已实现或自动获准执行。未全量转换、启动 benchmark、搬迁旧 trace 或修改第三方项目。
 
 旧工程已有 adapter、sidecar、宏观分析和真实运行产物；需审计后选择性复用。不能以“已有报表”判定 P0 已完成，也不能假定新项目必须从零重写。
 
@@ -17,7 +17,7 @@
 
 项目根为 `/home/lcq/agent_workload_characterization`，方法论保留根目录 `methodology.md`。
 
-目标结构按任务逐步建立：
+目标结构按任务逐步建立。下图按职责列出代码模块；P0-01 已选择 `src/agent_workload_characterization/` 包布局，后续 adapters、collectors、runners、analyzers、replay 等 Python 子包置于其中，不在根目录另建同名 Python 包。schemas/data/docs/reports 保持项目级目录：
 
 ```text
 agent_workload_characterization/
@@ -76,7 +76,7 @@ P0-00 资产审计
 
 ## 4. P0：资产、语义与宏观分析
 
-### P0-00：旧资产与指标语义审计（新增，下一候选任务）
+### P0-00：旧资产与指标语义审计（r2 已完成）
 
 依赖：用户明确开始开发/审计工作；首先只读，不运行旧 pipeline 或付费请求。服务 RQ1～RQ6 的证据基础。
 
@@ -109,6 +109,8 @@ P0-00 资产审计
 
 ### P0-01：最小项目骨架与自有代码复用边界
 
+状态：**DONE**，见 [交付记录](p0_01_delivery.md)。该任务交付时标准库 CLI/测试和 src 包布局已实现，10 项测试通过，无运行时第三方依赖；后续 P0-02 按需要新增 Pydantic。未安装/打包分发。此状态不代表 G0 通过。
+
 依赖 P0-00。只建立下一步需要的包、CLI、测试与配置；参考旧工程实际技术栈再决定依赖，不同时引入两套等价数据框架。
 
 输出：最小 `pyproject.toml`、`.gitignore`、包入口、测试框架及 README 使用说明。现有 README 不覆盖丢失。
@@ -116,6 +118,8 @@ P0-00 资产审计
 验收：至少一个有断言的测试通过、包可导入、CLI 帮助可用。仅“pytest 能启动”或无测试退出不算完成。不引入重型 eBPF 依赖。
 
 ### P0-02：最小 Trace IR 与指标契约
+
+状态：**DONE**，见 [交付记录](p0_02_delivery.md)及 [IR v0.1 约定](ir_v0_1.md)。四 profile、公共模型、Schema、只读验证与手算契约已实现；全套 42 项测试通过。跨批次身份幂等、真实小样 adapter 和资源测量仍待后续任务，不代表 G0 通过。
 
 依赖 P0-00，可与 P0-01 设计交错。以 [Trace 契约](trace_contract.md) 为准，不直接照搬旧七表或任一参考项目格式。
 
@@ -134,6 +138,8 @@ P0-00 资产审计
 
 ### P0-03：公共 Adapter 框架
 
+状态：**DONE（单 JSONL 文件框架）**，见 [交付记录](p0_03_delivery.md)及 [接口/限制](adapter_framework.md)。全套 68 项测试通过；来源检查、稳定身份、逐行拒绝、不可覆盖批次与同输入幂等已实现。目录/ZIP、跨来源去重与跨版本视图选择未实现；没有全量转换，也不代表 G0 通过。
+
 依赖 P0-01/02。提供 discover/inspect、normalize、validate 的等价接口，具体 Python 接口按旧模块复用方案定。
 
 要求：读取 catalog locator；流式读取；保留 source record ref；输出新批次；检查真实路径防回写旧源；同输入同配置转换可重复；异常隔离且有 reject 清单，不静默丢行。
@@ -142,15 +148,19 @@ P0-00 资产审计
 
 ### P0-04：AgentX Adapter 与回归
 
+状态：**DONE（小样范围）**，见 [交付记录](p0_04_delivery.md)。全套 87 项测试通过，真实 AX-7/AX-SUB 的请求/token/prefix/round-trip 检查通过；IR 0.2 的标签/未知精度补齐及显式迁移已测试。没有全量 ingest 或 G0 验收。
+
 依赖 P0-02/03。已有数据原地读取，不重新下载。
 
 先完成小样再批量。核对 request/subagent 语义、时间单位、完整 hash/prefix 元数据；分别声明 main/all-agents 聚合；不虚构 Tool payload、完整 Tool 总数、turn 定义或 run 边界。
 
 验收：P0-00 列出的 AgentX fixtures 逐指标匹配手算结果；模型计数/token/time 范围一致；并发总 work time 与 wall span 分开；缺失 latency 不能得到伪造零耗时。
 
-### P0-05：Applied Compute Adapter 与回归
+### P0-05：Applied Compute Adapter 与回归 ✅ DONE（2026-09-10）
 
-依赖 P0-02/03。已有三个 JSONL 分别保留 coding、code QA、office 的 source subtype。
+状态：**已完成 P0-05 小样范围验收**。实现 Applied Compute v1 normalize、严格校验、Metric IR、合成 30 项回归、真实 AC-N2 小样检查和交付文档。无全量 ingest、无 API 请求、无第三方代码执行。
+
+依赖 P0-02/03。三个 JSONL 分别以独立 source_id（applied_agentic_coding/applied_code_qa/applied_office_work）登记。
 
 按固定版本 trie 文档及 client 实现核对：N 个 tool-use turns → N+1 次模板 completion；初始、逐请求、最大上下文及总输入分别计算；模板值/展开不能标为执行实测，不能生成虚假的 wall-clock。
 
@@ -164,7 +174,9 @@ P0-00 资产审计
 
 验收：固定来源键和版本的两类格式样例及失败/缺失反例；血缘和状态检查通过。全量前可选各约 10 条作人工抽查，不用随机抽样替代确定性测试。
 
-### P0-07：Workload Catalog 与采样设计
+### P0-07：Workload Catalog 与采样设计（PARTIAL）
+
+状态：**PARTIAL**；候选已登记，首选模型/harness/verifier 证据仍待确定。按 [收尾任务书](p0_07_g0_handoff.md) 核实一个具体资源试点，不要求正式四场景代表性集合，不运行试点。
 
 初版依赖 P0-00，随宏观/试点结果更新。四类为覆盖目标，不是四类必须同时完成的开工门槛。
 
@@ -174,7 +186,9 @@ P0-00 资产审计
 
 验收：每种计划场景有候选与限制，首个试点已明确；不宣称“公开生产总体代表性”，不擅自增加 benchmark。
 
-### P0-08：Macro Analyzer
+### P0-08：Macro Analyzer（DONE，最小小样范围）
+
+状态：**DONE（最小小样范围）**；v6 功能及测试隔离收尾已验收，175 项隔离测试和显式真实小样/联合分析命令通过。当前报告为 `reports/macro/macro-pilot-v6/`；不代表全量分析或 G0 通过。
 
 依赖最小已验收 adapters + P0-09 的 coverage 规则；与 P0-09 同批推进，不先生成漂亮报表再补质量。
 
@@ -186,7 +200,9 @@ P0-00 资产审计
 
 输出：`reports/macro/` 的逐来源/场景分层摘要、图表和局限说明。
 
-### P0-09：Trace Quality 与 Coverage
+### P0-09：Trace Quality 与 Coverage（DONE，最小小样范围）
+
+状态：**DONE（最小小样范围）**；v6 sidecar 核对、macro/coverage 对齐及测试隔离已验收；完整质量体系和其他来源仍待扩展，G0 未通过。
 
 依赖 P0-02；第一版即进入 G0，后续增量覆盖。
 
@@ -203,7 +219,9 @@ P0-00 资产审计
 
 验收：字段非空与可用于研究的覆盖分开；成功/失败/未知/不可读数量可解释；新旧数量差异有筛选/去重依据。
 
-### P0-10：既有本地 Trace/Sidecar 接入（新增）
+### P0-10：既有本地 Trace/Sidecar 接入（VideoWeaver 小样已完成）
+
+当前安排：**VideoWeaver 单来源小样阶段已完成**。详见 [P0-10 交付](p0_10_delivery.md)。P0-06 可暂缓，不阻塞此任务。
 
 依赖 P0-00/02/03。先选一种已有本地来源形成小样，再扩展四套来源。
 
@@ -225,7 +243,7 @@ G0 通过即可进入 P1 小闭环；不要求全量转换、所有 SWE/OSWorld 
 
 ### P1-00：采集可行性与授权边界（新增）
 
-依赖 G0。计划检查 cgroup v2 delegation、namespace/容器布局、计数器、时钟、进程可见性、PMU/perf 权限以及 collector 自身开销。
+依赖 G0。有限准备例外：用户已同意下一批 [PREP-01](first_run_preparation_handoff.md) 在 G0 前做本机只读能力发现与自有离线准备代码，不含实际采集、第三方包执行或实验，不代表 P1-00 全项完成。完整 P1-00 计划检查 cgroup v2 delegation、namespace/容器布局、计数器、时钟、进程可见性、PMU/perf 权限以及 collector 自身开销。
 
 输出 capability report 和降级方案；只读 preflight 不得自动修改系统全局配置或清理他人 cgroup。需要提权、付费 API、新基础设施或大规模任务时另行明确授权。
 
@@ -498,11 +516,17 @@ Gate evidence / next dependency:
 
 | 里程碑 | 交付与 Gate | 当前状态 |
 | --- | --- | --- |
-| M0 资产审计 | P0-00 清单、来源/筛选、复用与缺口 | NOT_STARTED（已有静态审阅线索） |
-| M1 最小语义闭环 | 三种来源小样、指标 fixtures、coverage，G0 | NOT_STARTED |
+| M0 资产审计 | P0-00 清单、来源/筛选、复用与缺口 | **DONE（2026-09-10，r2 审计返修通过；不代表 G0 通过）** |
+| M1 最小语义闭环 | 三种来源小样、指标 fixtures、coverage，G0 | PARTIAL（三类小样与最小 macro/coverage 已验收；P0-07 配置收尾及 G0 待评审） |
 | M2 资源归因闭环 | 一个真实 Runner＋机制覆盖测试，G1 | NOT_STARTED |
 | M3 CPU 试点 | PMU/hotspot/受控实验可行性，反馈测量设计 | NOT_STARTED |
 | M4 多场景正式 Characterization | 扩展任务与重复，宏观/资源/CPU 分层报告，G2 | NOT_STARTED |
 | M5 Replay / Scale | G3-R、runtime 接入、并发报告 | NOT_STARTED |
 
-当前只完成本次计划修订。下一项候选是 **P0-00**，不是直接初始化全部目录、重写 adapters、全量 ingest 或启动 benchmark。等待用户明确开始后按本计划执行。
+P0-00-r2、P0-01～05、P0-10 小样和 P0-08/09 最小集已验收。模型=DeepSeek-V4-Flash，harness=mini-SWE-agent 2.4.6，任务=django__django-16485；任务记录获取与 wheel 静态核实已完成，不再重复询问这些选择。
+
+PREP-01 已通过集中验收（2026-09-11，231 项项目外 cwd 测试、两条泄漏反例和报告哈希复核通过）；完成安全输入/配置准备、离线测试、只读预检和审批清单，不代表真实运行兼容性或 G0/G1 通过。
+
+下一批为 [ENV-01 独立环境安装与运行前适配](environment_adaptation_handoff.md)：任务书已准备，安装尚未获批/执行。待用户明确批准限定范围后，独立安装 mini 2.4.6 与依赖并验证实际 SDK 的离线调用/序列化/重试；不拉镜像、不调用真实 API、不运行 benchmark。交付后另行申请单请求 smoke。
+
+后续按里程碑集中推进：准备包 → 用户确认后的单任务真实闭环 → 资源归因 G1 → CPU/Hotspot 试点 → 多场景扩展 → Replay/Scale。P0-06、全量转换、四场景齐备不阻塞首个小闭环。验收一次集中列出关键问题，运行前依赖与非关键待办分开，不为历史措辞或未启用路径单独开返修轮。

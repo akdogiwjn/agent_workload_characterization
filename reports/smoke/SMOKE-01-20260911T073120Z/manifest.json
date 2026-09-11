@@ -1,0 +1,21 @@
+{
+  "batch": "SMOKE-01-20260911T073120Z",
+  "generated_at_utc": "2026-09-11T07:42:54.405067+00:00",
+  "files": {
+    "smoke-694a3aa5.json": "3a77baa5908c4c1c78e4780f427de9b872380911998fc98a7a866d1d394318c8",
+    "verdict.json": "1bf6e2331dc73158a1948b1a657cbd30244963dbe95a8ac0b8f094a696132cf2",
+    "offline_auth_check.json": "73cfed5bdc52f505b4659a8f8bbaa0d49979944e30be3bcc0a6ecc5ce13ea9c1"
+  },
+  "code_evidence": {
+    "smoke.py": "9733ffb51daf470380c6a575a455c34bc056e00bfce42ba82da23aed7a8e20b8",
+    "smoke_launcher.py": "50baa47f7cf4a4d13b978c4f39e87c3fb9bf06da0021f714a4d2cc498d932a0a",
+    "model_adapter.py": "d0d63e05b283d832fceb9a74de80dc4d680c2f9a046dde352c305b6b5555caf2",
+    "smoke_01_config.yaml": "d3772c3990686a39552dfd8cdef01d07f2afb9917c0aab7a657c0b22329b02cb"
+  },
+  "approval_record": {
+    "user_reply": "执行，还是用代理访问外网吧",
+    "scope": "single tool-protocol request; 30s budget; max_tokens=100; zero retries; no tool execution",
+    "proxy": "http://127.0.0.1:22111 (user-authorized; recorded per handoff §4)"
+  },
+  "claim": "ONE request sent; gateway responded with auth error; execution terminated per one-shot rule"
+}

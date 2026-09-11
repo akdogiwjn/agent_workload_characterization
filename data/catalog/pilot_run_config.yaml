@@ -1,0 +1,22 @@
+# PREP-01 pilot run configuration (synthetic template; NO credentials).
+# Auth and api_base are run-time environment injections (names only here).
+# model_kwargs stays minimal: api_base/api_key must NEVER appear here
+# (they would be serialized into mini's trajectory — F-TRAJECTORY-PRIVACY-001).
+provider_protocol_class: openai_compatible
+model:
+  model_name: "UNVERIFIED_PREFIX/deepseek-v4-flash"  # OI-LITELLM-DEEPSEEK-001: prefix unverified
+  model_kwargs:
+    drop_params: true
+  cost_tracking: ignore_errors        # OI-PRICE-001 chosen policy: unknown -> independent accounting
+  litellm_routing: unverified
+agent:
+  step_limit: 250
+  cost_limit: 3.0                      # mini bundled default (NOT a user budget)
+  wall_time_limit_seconds: 1500        # proposed: agent segment 25 min
+environment:
+  timeout: 60
+  api_base_env: "PILOT_API_BASE"       # env var NAME only; value injected at run time
+  auth_env: "PILOT_API_KEY"            # env var NAME only
+  forward_env: ["PILOT_API_BASE", "PILOT_API_KEY"]
+run:
+  env_startup_command: null            # MUST stay unset (renders whole record incl. answers)

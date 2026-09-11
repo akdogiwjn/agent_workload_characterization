@@ -1,0 +1,318 @@
+{
+  "adapter_version": "agentx-v7/0.1.0",
+  "full_ingest": false,
+  "parsed_records": 2,
+  "results": [
+    {
+      "line_1based": 39,
+      "mismatches": [],
+      "prefix_vectors_equal": true,
+      "record_id": "1493faffdc8942e99daa22277f44871a40b8",
+      "row_sha256": "01249bbdf3f1311acf0519a36956e546ddd3e0be61251e05f5e1e4bed5b697ea",
+      "sample_id": "AX-7",
+      "status": "PASS",
+      "summary": {
+        "agents": 1,
+        "metrics": {
+          "all_agents": {
+            "input_tokens": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "token",
+              "value": 194368
+            },
+            "local_cpu_time": {
+              "evidence": "unavailable",
+              "missing_reason": "unsupported",
+              "unit": "ns",
+              "value": null
+            },
+            "max_context_tokens": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "token",
+              "value": 46528
+            },
+            "model_busy": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "ns",
+              "value": 48950000000
+            },
+            "model_overlap": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "ns",
+              "value": 1456000000
+            },
+            "model_request_count": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "count",
+              "value": 7
+            },
+            "model_work": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "ns",
+              "value": 50406000000
+            },
+            "observed_span": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "ns",
+              "value": 385681000000
+            },
+            "output_tokens": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "token",
+              "value": 4097
+            },
+            "run_elapsed": {
+              "evidence": "unavailable",
+              "missing_reason": "unsupported",
+              "unit": "ns",
+              "value": null
+            },
+            "subagent_count": {
+              "evidence": "observed",
+              "missing_reason": null,
+              "unit": "count",
+              "value": 0
+            },
+            "tool_call_count": {
+              "evidence": "unavailable",
+              "missing_reason": "unsupported",
+              "unit": "count",
+              "value": null
+            },
+            "turn_count": {
+              "evidence": "unavailable",
+              "missing_reason": "unsupported",
+              "unit": "count",
+              "value": null
+            }
+          },
+          "main_agent": {
+            "input_tokens": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "token",
+              "value": 194368
+            },
+            "max_context_tokens": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "token",
+              "value": 46528
+            },
+            "model_busy": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "ns",
+              "value": 48950000000
+            },
+            "model_overlap": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "ns",
+              "value": 1456000000
+            },
+            "model_request_count": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "count",
+              "value": 7
+            },
+            "model_work": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "ns",
+              "value": 50406000000
+            },
+            "observed_span": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "ns",
+              "value": 385681000000
+            },
+            "output_tokens": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "token",
+              "value": 4097
+            }
+          }
+        },
+        "models": [
+          "claude-opus-4-8"
+        ],
+        "profile": "semantic_trace",
+        "requests": 7,
+        "run_id": "awc:v1:d7c126756d3fb3aa3ffa04169758b8446f96bcc675571a8bcfa909d91b861705",
+        "schema_version": "0.2.0",
+        "trace_type": "production_derived"
+      }
+    },
+    {
+      "line_1based": 307,
+      "mismatches": [],
+      "prefix_vectors_equal": true,
+      "record_id": "bbdcb12440a7ab3496b9fac8b5f9824b1672",
+      "row_sha256": "2b46fc38faf30610e44560aeae37d5bb34a4bdf6bcf0bf1badbd05d809fbbfdd",
+      "sample_id": "AX-SUB",
+      "status": "PASS",
+      "summary": {
+        "agents": 2,
+        "metrics": {
+          "all_agents": {
+            "input_tokens": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "token",
+              "value": 818752
+            },
+            "local_cpu_time": {
+              "evidence": "unavailable",
+              "missing_reason": "unsupported",
+              "unit": "ns",
+              "value": null
+            },
+            "max_context_tokens": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "token",
+              "value": 54784
+            },
+            "model_busy": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "ns",
+              "value": 41004000000
+            },
+            "model_overlap": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "ns",
+              "value": 832000000
+            },
+            "model_request_count": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "count",
+              "value": 21
+            },
+            "model_work": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "ns",
+              "value": 41836000000
+            },
+            "observed_span": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "ns",
+              "value": 70593000000
+            },
+            "output_tokens": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "token",
+              "value": 3949
+            },
+            "run_elapsed": {
+              "evidence": "unavailable",
+              "missing_reason": "unsupported",
+              "unit": "ns",
+              "value": null
+            },
+            "subagent_count": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "count",
+              "value": 1
+            },
+            "tool_call_count": {
+              "evidence": "unavailable",
+              "missing_reason": "unsupported",
+              "unit": "count",
+              "value": null
+            },
+            "turn_count": {
+              "evidence": "unavailable",
+              "missing_reason": "unsupported",
+              "unit": "count",
+              "value": null
+            }
+          },
+          "main_agent": {
+            "input_tokens": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "token",
+              "value": 50624
+            },
+            "max_context_tokens": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "token",
+              "value": 50304
+            },
+            "model_busy": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "ns",
+              "value": 5911000000
+            },
+            "model_overlap": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "ns",
+              "value": 832000000
+            },
+            "model_request_count": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "count",
+              "value": 2
+            },
+            "model_work": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "ns",
+              "value": 6743000000
+            },
+            "observed_span": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "ns",
+              "value": 5911000000
+            },
+            "output_tokens": {
+              "evidence": "derived",
+              "missing_reason": null,
+              "unit": "token",
+              "value": 1200
+            }
+          }
+        },
+        "models": [
+          "claude-haiku-4-5-20251001",
+          "claude-opus-4-8"
+        ],
+        "profile": "semantic_trace",
+        "requests": 21,
+        "run_id": "awc:v1:fcee58c4f79acdfb722e5feab83c343ab797b66ed718ebac0cc77fd9e10e6639",
+        "schema_version": "0.2.0",
+        "trace_type": "production_derived"
+      }
+    }
+  ],
+  "snapshot_scope": "selected raw record hashes only; whole-file audit checksum not reverified",
+  "source_id": "agentx_256k",
+  "source_path": "/home/lcq/agent_workload/benchmark/agent_benchmark_traces/agentx_256k/traces.jsonl",
+  "status": "PASS",
+  "task": "P0-04",
+  "checked_at_utc": "2026-09-10 03:47:54 UTC"
+}

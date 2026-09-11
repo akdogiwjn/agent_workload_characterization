@@ -1,0 +1,210 @@
+{
+  "task": "P0-07 pilot evidence index",
+  "generated_at_utc": "2026-09-10",
+  "verification_mode": "read-only static inspection; no benchmarks, containers, APIs, or verifiers were executed",
+  "evidence": [
+    {
+      "evidence_id": "EV-SWE-TRAJ-001",
+      "kind": "file",
+      "locator": "agent_benchmark_traces/swebench_experiments/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-16485.json",
+      "root": "benchmark",
+      "sha256": "506a50910ba71c178cd5fd473b6821985426cb3cc7b20eb438c84706d80ab11a",
+      "conclusion_type": "static_confirmed",
+      "findings": "30 messages (1 system, 1 user, 14 assistant, 14 tool results); workspace dir django__django__5.0; PR: floatformat() crashes on '0.00'; tools used: execute_bash (7 calls: ls/python reproduce/grep) + str_replace_editor (7 calls); last tool result shows reproduce.py passing after fix",
+      "read_date": "2026-09-10"
+    },
+    {
+      "evidence_id": "EV-SWE-REPO-001",
+      "kind": "git_commit",
+      "locator": "references/repos/SWE-bench",
+      "root": "project",
+      "commit": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e",
+      "commit_date": "2026-09-02 (per P0-00-r2 catalog)",
+      "worktree_clean": true,
+      "conclusion_type": "static_confirmed"
+    },
+    {
+      "evidence_id": "EV-SWE-GRADING-001",
+      "kind": "source_read",
+      "locator": "references/repos/SWE-bench/swebench/harness/grading.py",
+      "root": "project",
+      "sha256": "a095273010175001a6779e365b3b77abb8657c7ac2e4f80b4bc360faa6f09483",
+      "pointer": "get_eval_report (line ~322-395); get_resolution_status (line ~309-328); compute_fail_to_pass (line ~288-295)",
+      "conclusion_type": "static_confirmed",
+      "findings": "Verifier chain: prediction.model_patch exists -> patch applied -> parse test log -> F2P=1 AND P2P=1 => resolved=FULL. patch_is_None / patch_exists / patch_successfully_applied / resolved / infra_failure fields; SUITE_RAN regex guards 'never ran' suites; infra_failure classified by tier (TIER_ENVIRONMENT)"
+    },
+    {
+      "evidence_id": "EV-SWE-RUNEVAL-001",
+      "kind": "source_read",
+      "locator": "references/repos/SWE-bench/swebench/harness/run_evaluation.py",
+      "root": "project",
+      "sha256": "04b5dab584fbe62ae9d1ff025edf52d714e584102d587c7e647805d1efb37d84",
+      "pointer": "run_instance (line ~79+); image pull/get logic (lines ~89-99)",
+      "conclusion_type": "static_confirmed",
+      "findings": "Evaluator creates Docker container from test_spec.image (pull if missing); applies model patch; runs eval_script; requires Docker daemon and per-instance image (image name comes from dataset instance)"
+    },
+    {
+      "evidence_id": "EV-SWE-DATASET-001",
+      "kind": "source_read",
+      "locator": "references/repos/SWE-bench/swebench/harness/utils.py",
+      "root": "project",
+      "sha256": "c22f38fdd4ffd34301da7f837b82926cf261d81ca0387d92dd2990b393517c79",
+      "pointer": "load_swebench_dataset (line ~137+); make_test_spec (line ~251+)",
+      "conclusion_type": "static_confirmed",
+      "findings": "Dataset aliases resolved at this commit: swe-bench -> SWE-bench/SWE-bench, lite -> SWE-bench_Lite. NOTE: no 'verified' alias in this function; verified instances load via task repo tree (swebench/task/repo.py) or full HF id SWE-bench/SWE-bench_Verified (confirmed in submit/package.py SPLIT_DATASETS)"
+    },
+    {
+      "evidence_id": "EV-SWE-TASKREPO-001",
+      "kind": "source_read",
+      "locator": "references/repos/SWE-bench/swebench/task/repo.py",
+      "root": "project",
+      "sha256": "3d473d52decec6e6f67f8ff0ad36347ae5626309d8f67c35574002f03a715894",
+      "pointer": "load_task_repo; asset_path; group_by_dataset (lines ~190-230)",
+      "conclusion_type": "static_confirmed",
+      "findings": "Task data (base_commit, patches, F2P/P2P, eval_script) lives in a task repo tree: tasks/<instance_id>/ directories with test_assets; NOT present in this swebench clone; would come from HF SWE-bench/SWE-bench_Verified or a task-repo checkout"
+    },
+    {
+      "evidence_id": "EV-SWE-PACKAGE-001",
+      "kind": "source_read",
+      "locator": "references/repos/SWE-bench/swebench/submit/package.py",
+      "root": "project",
+      "sha256": "83423d149c51d01a9eb526ac4bc2f9418b2428528cd24d5f6d9998f3d77dcc85",
+      "pointer": "SPLIT_DATASETS (line ~42-49)",
+      "conclusion_type": "static_confirmed",
+      "findings": "verified split -> SWE-bench/SWE-bench_Verified (HF dataset id confirmed)"
+    },
+    {
+      "evidence_id": "EV-SWE-INFERENCE-001",
+      "kind": "source_read",
+      "locator": "references/repos/SWE-bench/swebench/inference/mini_swe_agent.py",
+      "root": "project",
+      "sha256": "b577a13178be8748009e0b95d4e226ae7ca06dd546d8661f43ca9623bbf13bb3",
+      "conclusion_type": "static_confirmed",
+      "findings": "This commit's swebench/inference/ provides only mini-SWE-agent argv builder (plus llama paths). NO OpenHands runner in swebench repo; the 20241029 OpenHands submission was generated by the OpenHands framework itself (repo not present in references/). run_api.py uses litellm for API models"
+    },
+    {
+      "evidence_id": "EV-SWE-LOGPARSER-001",
+      "kind": "source_read",
+      "locator": "references/repos/SWE-bench/swebench/harness/log_parsers/__init__.py",
+      "root": "project",
+      "sha256": "2227a8696ce43a4266dccfa434374afaff43df6bd0b1769f431f5efe76500c14",
+      "conclusion_type": "static_confirmed",
+      "findings": "PARSER_REGISTRY maps log_parser field (e.g. pytest) to parser; django instances typically use pytest parser (exact per-instance log_parser value comes from dataset instance, not locally available)"
+    },
+    {
+      "evidence_id": "EV-TRACEBENCH-001",
+      "kind": "record_read",
+      "locator": "agent_benchmark_traces/tracebench/bench_manifest.full.jsonl",
+      "root": "benchmark",
+      "pointer": "single line matching django__django-16485 (openhands-OpenAI__GPT-5-django__django-16485-3e4d6956)",
+      "conclusion_type": "static_confirmed",
+      "findings": "Task exists in TraceBench manifest: solved=true by OpenHands/GPT-5, difficulty=easy, 23 steps, 5 stages; independent cross-source confirmation of task identity (does not supply base_commit)",
+      "sha256": "8f688bb147fb1840572887af10d137653b4b49523c5bbd3dc3ee9c333bbe082e",
+      "note": "sha256 of full manifest file; referenced record is one line within it"
+    },
+    {
+      "evidence_id": "EV-DOCOPS-REPO-001",
+      "kind": "git_commit",
+      "locator": "agent_benchmark_traces/docops",
+      "root": "benchmark",
+      "commit": "ccf7a751bc5c8a69c1cdd0400125d53455b33be3",
+      "conclusion_type": "static_confirmed",
+      "findings": "DocOps tasks tree local clone; 211 task directories",
+      "note": "local clone of icip-cas/DocOps tasks tree"
+    },
+    {
+      "evidence_id": "EV-DOCOPS-TASK-001",
+      "kind": "file",
+      "locator": "agent_benchmark_traces/docops/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/task.toml",
+      "root": "benchmark",
+      "sha256": "541e0d24a9f97aafdd312d00af1b063571836ec303cc2e7694bb72118655bca0",
+      "conclusion_type": "static_confirmed",
+      "findings": "task_id=word_001, doc_type=word, verifier_mode=semantic-strict; resource limits: cpus=1, memory_mb=4096, storage_mb=10240, gpus=0, allow_internet=true; timeouts: verifier 600s, agent 1200s, build 900s"
+    },
+    {
+      "evidence_id": "EV-DOCOPS-VERIFIER-001",
+      "kind": "file",
+      "locator": "agent_benchmark_traces/docops/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/test.sh",
+      "root": "benchmark",
+      "conclusion_type": "static_confirmed",
+      "findings": "Verifier: pytest --ctrf /logs/verifier/ctrf.json /tests/test_outputs.py -rA -v; exit code captured; artifact-level deterministic check on submission docx",
+      "sha256": "638074862a1f8779ca4741e76a5a254553eaaaa24340e0d5c781f34edab3e60a"
+    },
+    {
+      "evidence_id": "EV-DOCOPS-VERIFIER-002",
+      "kind": "file",
+      "locator": "agent_benchmark_traces/docops/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/test_outputs.py",
+      "root": "benchmark",
+      "sha256": "37232616c07d64d07d4a336bed6c5d3af3e31908e8b804d15302c916f7fb9a09",
+      "conclusion_type": "static_confirmed"
+    },
+    {
+      "evidence_id": "EV-DOCOPS-ENV-001",
+      "kind": "file",
+      "locator": "agent_benchmark_traces/docops/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/environment/Dockerfile",
+      "root": "benchmark",
+      "sha256": "0de1ec9114c1a21ef96e451cb221fbcd6530f6de0dd917973939acd626ffa8cd",
+      "conclusion_type": "static_confirmed",
+      "findings": "Dockerfile present; image digest not computed (would require build; not authorized this round)"
+    },
+    {
+      "evidence_id": "EV-DOCOPS-HISTORY-001",
+      "kind": "directory_census",
+      "locator": "traces_generation/DocOps/results/trace_word/2026-08-31__06-46-46/",
+      "root": "benchmark",
+      "conclusion_type": "historical_run",
+      "findings": "Historical word-task runs exist for word_003/005/006/008/010/012 but NOT word_001; word_002 run archived in trace_cleanup_archive/20260908T060905Z/removed/. Historical runs used codex agent via Harbor with proxy (surrogate model), not a frozen harness for this pilot"
+    },
+    {
+      "evidence_id": "EV-DATASETS-001",
+      "kind": "doc_read",
+      "locator": "DATASETS.md",
+      "root": "benchmark",
+      "pointer": "lines 62-84",
+      "conclusion_type": "static_confirmed",
+      "findings": "Submission 20241029_OpenHands-CodeAct-2.1-sonnet-20241022: Claude 3.5 Sonnet, OpenHands, 500 trajs; SWE-agent vs OpenHands framework comparison available with same model",
+      "sha256": "f37d368d4e8d07cfe3d56cca78180542565ab278ac5c58a98a31fb2f407c6b6e"
+    },
+    {
+      "evidence_id": "EV-MACRO-V6-001",
+      "kind": "report_manifest",
+      "locator": "reports/macro/macro-pilot-v6/manifest.json",
+      "root": "project",
+      "conclusion_type": "static_confirmed",
+      "findings": "Current accepted macro/coverage basis (analysis_id pilot-b3fd75863e80); 175 isolated tests + 3 sample commands PASS as of this round's baseline re-run",
+      "sha256": "1e5be8107a79a8d2e857d57de8c74a9ec734c13221fcaf34cdb0aa7888ff8604"
+    }
+  ],
+  "gaps": [
+    {
+      "gap_id": "GAP-TASKDATA-001",
+      "description": "SWE-bench task instance data for django__django-16485 (base_commit, test_patch, gold patch, FAIL_TO_PASS/PASS_TO_PASS lists, eval_script, image name, log_parser) not present locally; swebench clone contains no per-instance data; would come from HF SWE-bench/SWE-bench_Verified or a task-repo checkout",
+      "blocks": "exact task identity pinning, verifier input specification, image build/pull",
+      "resolution": "user decision: authorize dataset fetch (HF parquet or task repo) OR accept trace-only evidence with dataset identity recorded as pending"
+    },
+    {
+      "gap_id": "GAP-HARNESS-001",
+      "description": "OpenHands framework (agent runtime used by the historical 20241029 submission) not present in references/; its exact commit/config for the submission unknown from local evidence",
+      "blocks": "frozen agent harness choice for pilot rerun",
+      "resolution": "user decision: pick harness (OpenHands at a pinned commit, or mini-SWE-agent already integrated in swebench inference, or defer to P1-07 wrapper)"
+    },
+    {
+      "gap_id": "GAP-MODEL-001",
+      "description": "No user-selected model/provider for the pilot; historical trajectory used claude-3-5-sonnet-20241022 via OpenHands; current availability/pricing of any model unverified; no API key validation authorized",
+      "blocks": "model freeze",
+      "resolution": "user decision required (proposed options in pilot_execution_spec.md)"
+    },
+    {
+      "gap_id": "GAP-DOCKER-001",
+      "description": "Docker daemon availability, disk space, and per-instance image build not checked (P1-00 scope); DocOps image digest unknown until build",
+      "blocks": "executability confirmation",
+      "resolution": "defer to P1-00 read-only preflight"
+    },
+    {
+      "gap_id": "GAP-VERIFIERSPEC-001",
+      "description": "make_test_spec (swebench/harness/utils.py:251, commit 02e7a74) requires per-instance fields: image, eval_script, log_parser, eval_type, FAIL_TO_PASS, PASS_TO_PASS, repo, version. Whether a given SWE-bench_Verified dataset revision supplies all of them in loadable form is NOT verified; a fetch alone is not a promise of complete evaluator inputs. If fields are missing or shaped differently, a conversion/build chain (task repo tree or adapter) is an additional work item.",
+      "blocks": "per-instance verifier input specification (test names, eval script, image reference)",
+      "resolution": "when authorizing data fetch (DEC-TASKDATA), scope must include field-level verification against make_test_spec requirements, and allow an explicit 'conversion needed' outcome instead of assuming drop-in completeness"
+    }
+  ]
+}

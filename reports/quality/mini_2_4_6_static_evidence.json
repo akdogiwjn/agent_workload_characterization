@@ -1,0 +1,184 @@
+{
+  "task": "mini-SWE-agent 2.4.6 wheel acquisition + static reading",
+  "generated_at_utc": "2026-09-10",
+  "authorization": "user granted download-and-read for exactly this wheel (DEC-MINISRC); no install, no import, no CLI execution, no model calls, no dependency downloads",
+  "wheel": {
+    "filename": "mini_swe_agent-2.4.6-py3-none-any.whl",
+    "url": "https://files.pythonhosted.org/packages/a2/00/a2f454775f69f540ab529c5f5e35d672f6491f0e6edab7cb196a0d2a0e2e/mini_swe_agent-2.4.6-py3-none-any.whl",
+    "downloaded_at_utc": "2026-09-10",
+    "download_method": "unauthenticated HTTPS (urllib), 30s timeout, 1 MiB size cap, streamed to disk with exclusive create",
+    "bytes_expected": 115037,
+    "bytes_actual": 115037,
+    "sha256_expected_from_swebench_uvlock": "a35463c553ac825c7773b03cfa69cd44958e3af20155dcc5711fdf9e4c67cd54",
+    "sha256_actual": "a35463c553ac825c7773b03cfa69cd44958e3af20155dcc5711fdf9e4c67cd54",
+    "verification": "size and full SHA-256 match the swebench 02e7a74 uv.lock pin; zip read in place (no extraction to disk, no member executed)",
+    "saved_locator": "data/raw/software/mini_swe_agent/2.4.6/mini_swe_agent-2.4.6-py3-none-any.whl"
+  },
+  "package_metadata": {
+    "name": "mini-swe-agent",
+    "version": "2.4.6",
+    "license": "MIT (LICENSE file in dist-info/licenses/)",
+    "requires_python": ">=3.10",
+    "requires_dist_core": [
+      "pyyaml",
+      "requests",
+      "jinja2",
+      "pydantic>=2.0",
+      "litellm>=1.75.5,!=1.82.7,!=1.82.8",
+      "tenacity",
+      "rich",
+      "python-dotenv",
+      "typer",
+      "platformdirs",
+      "textual",
+      "prompt_toolkit",
+      "datasets",
+      "openai!=1.100.0,!=1.100.1"
+    ],
+    "entry_points_console": {
+      "mini": "minisweagent.run.mini:app",
+      "mini-e/mini-extra": "minisweagent.run.utilities.mini_extra:main",
+      "mini-swe-agent": "minisweagent.run.mini:app"
+    },
+    "note": "extra 'full' pulls swe-rex>=1.4.0, modal, contree — NOT part of base install; uv.lock dependency set matches METADATA"
+  },
+  "members_read": {
+    "mini_swe_agent-2.4.6.dist-info/METADATA": "70969b38427738414d526b3662ac2323a17feb4e2ed8f75933a43ff84db9fc74",
+    "mini_swe_agent-2.4.6.dist-info/WHEEL": "2b6eb4118ce7cd7b09601406aa623c553c4476265836f0d9c16f5c061f7efcc0",
+    "mini_swe_agent-2.4.6.dist-info/entry_points.txt": "87d8ad996eb196464977daea4a6bec2c01071c6d9fe835a8182197a07c0112b1",
+    "minisweagent/config/__init__.py": "ec19d21c65d1d720e80847e85a4d2752b6f5be30b1bfc9f0f1f97d342f20ba94",
+    "minisweagent/config/benchmarks/swebench.yaml": "9a9c86ac10428b86b932c972b15fefc2f7b6e92230bac5ebdc47e83232a8315e",
+    "minisweagent/config/mini.yaml": "b539a8965f5bf41dd0f32daafa5d2db22581923d13812fa378fd09569b9d6b0c",
+    "minisweagent/models/__init__.py": "eb141eae346d51af407b4faf868ad7e869fa4fff275415381fa8ef845616f351",
+    "minisweagent/models/litellm_model.py": "6df4483bcdc9620b2f9d7f8bb1027a7fb9729b739976cbcf1a9d18fb58c48227",
+    "minisweagent/models/utils/actions_toolcall.py": "47b666412e4f838508b50009cf34c7f63fe15e9e40affc257a17c0829896526f",
+    "minisweagent/models/utils/retry.py": "fb9dd9d9ca0253a2b2ac86907fea4c34fe75c55af6d443781e1ab02229a1ac18",
+    "minisweagent/agents/default.py": "e8ef8aa365942d739c2ec5cb0879f60f377d2dc2de8ec670aaedf3bafb45a4c2",
+    "minisweagent/environments/__init__.py": "7a02c4576d3e95ca21f243919e5bc5b94d183df35b24d778c0b35b776c3a426b",
+    "minisweagent/environments/docker.py": "21d389122b008e7b743d1e640207fda0b08d9010cf6323ddd02f0742b33b96a6",
+    "minisweagent/run/benchmarks/swebench.py": "4bc6cfc0a388ba14b8c9cd7278f15efaef654f7f79b3b252208f8fdb11a0fc99",
+    "minisweagent/run/utilities/config.py": "c9a6955ca3f6de180ddc4bc5a54d7c7d49e96d996c9b80e2d146630230aaf954"
+  },
+  "findings": [
+    {
+      "finding_id": "F-CALLCHAIN-001",
+      "topic": "invocation chain and config layering",
+      "status": "confirmed_static",
+      "source": "run/benchmarks/swebench.py (main, process_instance, get_sb_environment); config/__init__.py (get_config_from_spec, recursive_merge)",
+      "facts": [
+        "CLI: mini/mini-swe-agent (typer app) -> run.benchmarks.swebench.main; swebench argv builder in local swebench 02e7a74 assembles exactly this module invocation with -c configs and -m model",
+        "config_spec: list of yaml paths OR key=value pairs (model.model_kwargs.temperature=0); DEFAULT_CONFIG_FILE = bundled benchmarks/swebench.yaml is INCLUDED in the default -c list, and setting ANY -c replaces the default list entirely (matches argv builder passing bundled config explicitly)",
+        "layering: recursive_merge(*configs, {environment.environment_class, model.model_name, model.model_class}) — CLI -m/--model-class override merged LAST (highest priority)",
+        "subset mapping: --subset verified -> princeton-nlp/SWE-Bench_Verified (OLD princeton-nlp namespace, NOT SWE-bench/SWE-bench_Verified used by swebench evaluator; both refer to the same dataset family but the id differs from EV-SWE-PACKAGE-001)",
+        "instance input to agent: DEFAULT path agent.run(task) passes ONLY instance['problem_statement'] (rendered into instance_template as {{task}}). HOWEVER the OPTIONAL run.env_startup_command config, if set, is rendered with Template(...).render(**instance) — the ENTIRE instance dict (including patch/test_patch/F2P/P2P if present in the dataset row) enters the Jinja context. Input isolation is therefore CONFIGURATION-CONDITIONAL: safe only when env_startup_command is unset (bundled swebench.yaml does not set it); the input-whitelist design remains required and reference-answer isolation must NOT be claimed as unconditional across the chain"
+      ]
+    },
+    {
+      "finding_id": "F-BUNDLED-CONFIG-001",
+      "topic": "bundled swebench.yaml defaults",
+      "status": "confirmed_static",
+      "source": "config/benchmarks/swebench.yaml",
+      "facts": [
+        "agent: step_limit=250, cost_limit=3.0 (USD, agent-level; DefaultAgent raises LimitsExceeded when cost_limit <= cost BEFORE next query), no wall_time_limit (0=off), max_consecutive_format_errors=3 (default from AgentConfig)",
+        "system prompt: minimal 'You are a helpful assistant that can interact with a computer shell...'; instance template instructs /testbed cwd, git diff patch creation, EXACT submit command 'echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT && cat patch.txt'",
+        "environment: docker class, cwd=/testbed, per-command timeout=60s, interpreter=['bash','-c'], env BASH_ENV=/root/.bashrc, container_timeout=2h, pull_timeout=120s, run_args=['--rm'] (defaults from DockerEnvironmentConfig where not set)",
+        "model defaults: model_name=anthropic/claude-sonnet-4-5-20250929, model_kwargs={drop_params: true, parallel_tool_calls: true}",
+        "observation template: output >10000 chars -> head 5000 + tail 5000 + elided count; exception_info included when present"
+      ]
+    },
+    {
+      "finding_id": "F-MODEL-ROUTING-001",
+      "topic": "model routing for DeepSeek-V4-Flash",
+      "status": "confirmed_static (mini side) / unknown (litellm-downstream)",
+      "source": "models/__init__.py (get_model, get_model_class, GlobalModelStats); models/litellm_model.py (LitellmModel._query, LitellmModelConfig)",
+      "facts": [
+        "default model class = LitellmModel (no model_class needed); model_name passed straight to litellm.completion(model=..., tools=[BASH_TOOL], **(model_kwargs|kwargs))",
+        "model_name semantics are LITELLM's: provider-prefixed routing (docs recommend 'openai/...' etc.); NO automatic prefix added by mini; DeepSeek-V4-Flash would need the litellm-correct provider prefix + custom base URL — exact prefix/base-url key for the Volcano gateway is a LITELLM question (unknown until litellm docs/source, not fetched this round)",
+        "base URL / auth pass-through: model_kwargs dict is forwarded verbatim to litellm.completion — api_base/base_url and api_key MAY be placed in model_kwargs (mini does not strip them)",
+        "auth storage path (mini side): mini-extra config setup writes API keys to a .env file (python-dotenv set_key) loaded as env vars; litellm then reads its standard env vars (OPENAI_API_KEY etc.). Env-var route keeps keys OUT of model_kwargs and OUT of trajectories",
+        "GLOBAL limits: MSWEA_GLOBAL_COST_LIMIT / MSWEA_GLOBAL_CALL_LIMIT (batch-level, 0=off), checked in GlobalModelStats.add; RuntimeError when exceeded"
+      ]
+    },
+    {
+      "finding_id": "F-COST-001",
+      "topic": "cost handling (GAP-COST-001 resolution, mini side)",
+      "status": "confirmed_static (mini) / unknown (litellm price data)",
+      "source": "models/litellm_model.py (_calculate_cost); models/__init__.py (GlobalModelStats); agents/default.py (query limit check)",
+      "facts": [
+        "_calculate_cost: litellm.cost_calculator.completion_cost(response, model=...); if cost <= 0.0 -> ValueError -> with cost_tracking='default' (default) the run RAISES RuntimeError (crash); the critical log line is ONLY emitted in the non-ignore_errors branch before raising",
+        "COST-CORRECTION: in cost_tracking='ignore_errors' mode the exception branch sets cost=0.0 and returns SILENTLY — no critical log, no marker. Therefore ignore_errors CANNOT be relied upon to surface missing billing; an independent 'cost unknown' marker must be maintained by the pilot (e.g. post-run check that all calls priced, or side accounting from per-call usage already persisted in trajectory response dumps)",
+        "therefore: an unregistered custom model fails loudly by default; with ignore_errors the zero cost is indistinguishable from a genuinely free call in mini's own logs/trajectory (instance_cost=0.0 either way) — the historical 1.17.3 instance_cost=0.0 cannot be attributed to a cause from 2.4.6 code alone",
+        "two-tier limits: agent-level cost_limit (default 3.0 USD from bundled swebench.yaml) checked BEFORE next query; but note with ignore_errors the cost stays 0.0 so agent cost_limit NEVER triggers on unpriced calls — the limit silently does not protect; global MSWEA_GLOBAL_COST_LIMIT likewise accumulates 0.0",
+        "litellm_model_registry config field + LITELLM_MODEL_REGISTRY_PATH env: register_model() with a local JSON — the designed path for custom-model pricing; with real prices registered, cost_limit enforcement becomes effective"
+      ]
+    },
+    {
+      "finding_id": "F-ACTION-PROTOCOL-001",
+      "topic": "action protocol 2.4.6",
+      "status": "confirmed_static",
+      "source": "models/utils/actions_toolcall.py (BASH_TOOL, parse_toolcall_actions); models/litellm_model.py (_parse_actions)",
+      "facts": [
+        "2.4.6 uses STRUCTURED OpenAI-style tool calls: single tool 'bash' with {command: string}; responses without tool_calls -> FormatError (finish_reason length/tool_calls handled in template)",
+        "observation messages: role=tool with tool_call_id (structured); extra carries raw_output/returncode/timestamp/exception_info",
+        "DIFFERENT from 1.17.3 historical traces (plain text, no tool_calls; EV-HM-HISTTRAJ-001) — protocol changed between versions; 1.17.3 traces are NOT evidence of 2.4.6 behavior",
+        "max 3 consecutive FormatErrors -> exit RepeatedFormatError"
+      ]
+    },
+    {
+      "finding_id": "F-RETRY-001",
+      "topic": "retry behavior",
+      "status": "confirmed_static",
+      "source": "models/utils/retry.py; litellm_model.py abort_exceptions",
+      "facts": [
+        "tenacity: stop_after_attempt(MSWEA_MODEL_RETRY_STOP_AFTER_ATTEMPT, default 10), wait_exponential(multiplier=1, min=4s, max=60s)",
+        "abort (no retry) on: UnsupportedParamsError, NotFoundError, PermissionDeniedError, ContextWindowExceededError, AuthenticationError, KeyboardInterrupt"
+      ]
+    },
+    {
+      "finding_id": "F-TRAJECTORY-PRIVACY-001",
+      "topic": "trajectory content and credential-at-rest risk (BLOCKER for first run)",
+      "status": "confirmed_static",
+      "source": "agents/default.py (serialize, save, run->finally save); models/litellm_model.py (query extra.response, serialize); run/benchmarks/swebench.py (agent.save call, update_preds_file)",
+      "facts": [
+        "trajectory = {info: {model_stats{instance_cost, api_calls}, config{agent: AgentConfig dump, model: LitellmModelConfig dump INCLUDING model_kwargs, model_type, agent_type}, mini_version, exit_status, submission, exception traceback}, messages[], trajectory_format: mini-swe-agent-1.1}",
+        "CREDENTIAL-AT-REST RISK: LitellmModelConfig is serialized VERBATIM into info.config.model — any api_key/api_base placed in model_kwargs WILL be written to <instance>.traj.json and to minisweagent.log (logger.debug(messages) at debug level; add_file_handler writes minisweagent.log to output dir)",
+        "MITIGATION (source-backed): use env-var auth (mini-extra config .env / standard litellm env vars) and keep api_base out of model_kwargs OR accept trajectory location as sensitive (0700 dir) — env-var route leaves model_kwargs clean",
+        "every message's extra embeds the FULL litellm response dump (usage, finish_reason, tool_calls) — token/usage data IS captured per call (good for accounting); FormatError path also persists response",
+        "messages-level timestamps: model response extra.timestamp + observation extra.timestamp (float epoch) — no process/CPU timings"
+      ]
+    },
+    {
+      "finding_id": "F-ENVIRONMENT-001",
+      "topic": "execution environment",
+      "status": "confirmed_static",
+      "source": "run/benchmarks/swebench.py (get_swebench_docker_image_name, get_sb_environment); environments/docker.py (DockerEnvironmentConfig); environments/__init__.py",
+      "facts": [
+        "IMAGE FIELD ADAPTATION: mini reads instance.get('image_name') or instance.get('docker_image'); if both absent it DERIVES 'docker.io/swebench/sweb.eval.x86_64.<instance_id with __ -> _1776_>:latest'. mini does NOT read the 'image' field that the swebench evaluator's make_test_spec consumes (instance['image'], EV-SWE-DATASET-001). The two tools use DIFFERENT dataset columns",
+        "for the pilot record (data/catalog/pilot_task_record.yaml): whether the Verified dataset row carries image_name/docker_image columns at all, and whether their values equal the evaluator's image value, is UNVERIFIED — if the row lacks those columns mini will derive the name from instance_id; name equality with the evaluator image must be checked field-by-field, not assumed ('same repo family' does not guarantee identical tag/digest)",
+        "digest consistency requirement: even when names match, both default to the :latest tag — the evaluator and the agent container could pull different digests at different times; pinning/verifying digest equality is a first-run prerequisite (records :latest risk carried from prior rounds)",
+        "docker environment mechanics (confirmed): subprocess docker run, cwd /testbed (bundled), per-command timeout 60s, run_args ['--rm'], container_timeout 2h, pull_timeout 120s, BASH_ENV /root/.bashrc",
+        "env options: env dict + forward_env list (host env forwarded into container)"
+      ]
+    }
+  ],
+  "open_items": [
+    {
+      "id": "OI-LITELLM-DEEPSEEK-001",
+      "question": "exact litellm model_name + base_url key for the Volcano gateway with DeepSeek-V4-Flash (provider prefix form, /v1 duplication behavior, auth env var name)",
+      "why_open": "litellm source/docs not fetched (out of this authorization); mini forwards verbatim, so this is purely a litellm routing question",
+      "needed_before": "frozen model mapping; first-run config template"
+    },
+    {
+      "id": "OI-PRICE-001",
+      "question": "deepseek-v4-flash price registration: litellm_model_registry JSON with real prices (keeps cost_limit enforcement effective), or cost_tracking=ignore_errors (NOTE: silently returns 0.0 with no critical log in that branch; agent cost_limit never triggers on unpriced calls; requires independent 'cost unknown' accounting, e.g. from per-call usage in trajectory response dumps)",
+      "why_open": "requires deciding cost-recording approach (registry with real prices vs ignore_errors + independent accounting); user has declined a monetary ceiling but per-run confirmation is agreed",
+      "needed_before": "first run (else RuntimeError on first query)"
+    },
+    {
+      "id": "OI-DATASET-NS-001",
+      "question": "princeton-nlp/SWE-Bench_Verified (mini --subset verified) vs SWE-bench/SWE-bench_Verified (evaluator): (a) same content/revision for the pilot instance; (b) whether the dataset row carries image_name/docker_image columns that mini reads, and whether they equal the evaluator's image field value; (c) digest pinning for :latest tags",
+      "why_open": "two different dataset ids in the two tools; content equivalence assumed but not verified; revision pinning for mini's datasets.load_dataset call not configurable via CLI (no revision flag seen in main())",
+      "needed_before": "task-data identity equivalence between agent input and evaluator input"
+    }
+  ]
+}

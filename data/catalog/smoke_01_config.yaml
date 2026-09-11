@@ -1,0 +1,21 @@
+# SMOKE-01 专用无凭据配置（由 pilot_run_config.yaml 模板生成；不含真实 baseURL/apiKey）。
+# 路由依据 = ENV-01 离线请求构造证据（openai/ 前缀、/v1 无重复、Bearer auth）；
+# 网关接受性由 SMOKE-01 本次检查。不回写 pilot_run_config.yaml，不视为正式 benchmark 配置冻结。
+provider_protocol_class: openai_compatible
+model:
+  model_name: "openai/deepseek-v4-flash"
+  model_kwargs:
+    drop_params: true
+  cost_tracking: ignore_errors
+  litellm_routing: unverified
+agent:
+  step_limit: 250
+  cost_limit: 3.0                      # mini bundled default（非用户预算）
+  wall_time_limit_seconds: 1500
+environment:
+  timeout: 60
+  api_base_env: "PILOT_API_BASE"       # 运行时由启动器注入（来自指定配置的 baseURL）
+  auth_env: "PILOT_API_KEY"            # 运行时由启动器注入（来自指定配置的 apiKey）
+  forward_env: ["PILOT_API_BASE", "PILOT_API_KEY"]
+run:
+  env_startup_command: null

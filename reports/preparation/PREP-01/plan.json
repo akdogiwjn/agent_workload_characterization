@@ -1,0 +1,119 @@
+{
+  "preparation_status": "READY_FOR_REVIEW",
+  "execution_authorized": false,
+  "agent_view": {
+    "instance_id": "django__django-16485",
+    "problem_statement": "floatformat() crashes on \"0.00\".\nDescription\n\t\nfrom decimal import Decimal\nfrom django.template.defaultfilters import floatformat\nfloatformat('0.00', 0)\nfloatformat(Decimal('0.00'), 0)\nBoth throw ValueError: valid range for prec is [1, MAX_PREC]\n"
+  },
+  "environment_view": {
+    "instance_id": "django__django-16485",
+    "repo": "django/django",
+    "base_commit": "39f83765e12b0e5d260b7939fc3fe281d879b279",
+    "version": "5.0",
+    "environment_setup_commit": "4a72da71001f154ea60906a2f74898d32b7322a7",
+    "image": "swebench/sweb.eval.x86_64.django_1776_django-16485:latest"
+  },
+  "evaluator_view": {
+    "instance_id": "django__django-16485",
+    "field_checks": {
+      "instance_id": {
+        "present": true,
+        "type": "str"
+      },
+      "image": {
+        "present": true,
+        "type": "str",
+        "nonempty": true
+      },
+      "eval_script": {
+        "present": true,
+        "type": "str",
+        "nonempty": true
+      },
+      "eval_type": {
+        "present": true,
+        "type": "str",
+        "nonempty": true
+      },
+      "log_parser": {
+        "present": true,
+        "type": "str",
+        "nonempty": true
+      },
+      "FAIL_TO_PASS": {
+        "present": true,
+        "type": "list",
+        "is_list_of_str": true,
+        "count": 1
+      },
+      "PASS_TO_PASS": {
+        "present": true,
+        "type": "list",
+        "is_list_of_str": true,
+        "count": 9
+      }
+    }
+  },
+  "image": {
+    "mini_image": "docker.io/swebench/sweb.eval.x86_64.django_1776_django-16485:latest",
+    "evaluator_image": "swebench/sweb.eval.x86_64.django_1776_django-16485:latest",
+    "match": true,
+    "mini_source": "derived_from_instance_id",
+    "digest": null,
+    "status": "unverified"
+  },
+  "task_route": {
+    "route": "local_single_record_wrapper",
+    "record_locator": "data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/django__django-16485/record.json",
+    "record_sha256": "762de270d1ce06ab23104a35322098178624865c886d7b0ddadf9044d8fec46a",
+    "wrapper_status": "not_implemented_this_batch",
+    "interface": "future wrapper loads the validated record and exposes problem_statement to mini's agent; mini's dataset loading path is bypassed; no HF re-download",
+    "env_startup_command": "must_stay_unset"
+  },
+  "model_plan": {
+    "model_name": "UNVERIFIED_PREFIX/deepseek-v4-flash",
+    "provider_protocol_class": "openai_compatible",
+    "api_base_env": "PILOT_API_BASE",
+    "auth_env": "PILOT_API_KEY",
+    "model_kwargs_allowed": [
+      "drop_params"
+    ],
+    "litellm_routing": "unverified",
+    "forward_env_allowlist": [
+      "PILOT_API_BASE",
+      "PILOT_API_KEY"
+    ]
+  },
+  "limits": {
+    "agent_step_limit": 250,
+    "agent_cost_limit_source": "mini bundled default 3.0 USD (not a user budget)",
+    "agent_cost_limit_effective": "ineffective_without_pricing",
+    "wall_time_limit_seconds": 1500,
+    "per_command_timeout_s": 60,
+    "global_limits": {
+      "MSWEA_GLOBAL_COST_LIMIT": "unset (proposed None)",
+      "MSWEA_GLOBAL_CALL_LIMIT": "unset (proposed None)"
+    },
+    "user_monetary_ceiling": "explicitly_not_set_by_user",
+    "cost_status_policy": "unknown -> amount=null, status=unknown, usage recorded"
+  },
+  "retry": {
+    "attempt_limit": 1,
+    "outer_auto_retry": 0,
+    "sdk_retry_config": "MSWEA_MODEL_RETRY_STOP_AFTER_ATTEMPT=1 (proposed; unverified offline)",
+    "sdk_retry_note": "mini default is 10 attempts (tenacity, models/utils/retry.py F-RETRY-001); disabling requires the env var at run time; cannot be confirmed without installation"
+  },
+  "runtime_compatibility": [
+    "litellm routing for gateway (unverified)",
+    "image digest not pinned (both tools on :latest tags)",
+    "image names match at tag level; digest still unpinned",
+    "mini internal retry disabled only via env var at run time",
+    "credential persistence by third-party logs unverified dynamically",
+    "Docker daemon / image availability not checked here"
+  ],
+  "next_authorizations": [
+    "install mini-swe-agent 2.4.6 + deps in isolated env",
+    "model connectivity smoke (1 request, no task content)",
+    "real run django__django-16485 (single attempt)"
+  ]
+}

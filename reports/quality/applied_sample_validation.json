@@ -1,0 +1,107 @@
+{
+  "task": "P0-05",
+  "status": "PASS",
+  "checked_at_utc": "2026-09-10T04:55:28.663911+00:00",
+  "adapter_version": "applied_compute-v1/0.1.0",
+  "schema_version": "0.2.0",
+  "snapshot_scope": "selected raw record hash only; whole-file audit checksum not reverified",
+  "full_ingest": false,
+  "primary_selector": {
+    "sample_id": "AC-N2",
+    "source_id": "applied_agentic_coding",
+    "locator": "agent_benchmark_traces/applied_compute/agentic_coding_8k.jsonl",
+    "line_1based": 1729,
+    "row_sha256": "33e3c44e163754576a4779ce70bc9f3a712055a7f58d892b7136947cfd0bce32"
+  },
+  "expected": {
+    "model_requests": 3,
+    "input_contexts": [
+      6318,
+      12537,
+      13644
+    ],
+    "total_input_tokens": 32499,
+    "max_context_tokens": 13644,
+    "total_output_tokens": 1986
+  },
+  "actual": {
+    "model_request_count": 3,
+    "input_contexts": [
+      6318,
+      12537,
+      13644
+    ],
+    "total_input_tokens": 32499,
+    "max_context_tokens": 13644,
+    "total_output_tokens": 1986
+  },
+  "delay_total_s": 2.77,
+  "profile": "macro_template",
+  "trace_type": "production_derived",
+  "evidence": "template_parameter",
+  "unit": "token",
+  "length_definition_ref": "trie 6918da7915e3ae57ce3750a375ef50e41cad2b36 README+types.py: length = token; N turns = N+1 completions",
+  "mismatches": [],
+  "limitations": [
+    "Template arithmetic ignores actual tokenizer/BOS/response variations.",
+    "No measured timestamps; delay is simulated wait budget, not E2E/Tool CPU/API latency.",
+    "Total simulated delay uses Decimal-tolerant compare; not a precision measurement claim.",
+    "Three subtype smokes are structural only (N parsed and IR round-trip); no independent hand-calculation expected values were registered for them, so they are not gold regressions.",
+    "N=0 not found in the three actual files; verified via synthetic SYN-N0."
+  ],
+  "check_command": "PYTHONPATH=src python3 -B -m agent_workload_characterization check-applied-samples",
+  "results": [
+    {
+      "actual": {
+        "input_contexts": [
+          6318,
+          12537,
+          13644
+        ],
+        "max_context_tokens": 13644,
+        "model_request_count": 3,
+        "total_input_tokens": 32499,
+        "total_output_tokens": 1986
+      },
+      "length_definition_ref": "trie 6918da7 README+types.py: length = token; N turns = N+1 completions",
+      "line_1based": 1729,
+      "mismatches": [],
+      "profile": "macro_template",
+      "row_sha256": "33e3c44e163754576a4779ce70bc9f3a712055a7f58d892b7136947cfd0bce32",
+      "sample_id": "AC-N2",
+      "status": "PASS",
+      "trace_type": "production_derived",
+      "unit": "token"
+    },
+    {
+      "line_1based": 1,
+      "num_turns": 11,
+      "profile": "macro_template",
+      "row_sha256": "7900e7d66f3c44a94adc87da4a6294f559a3b7124d6787e8069afef2112730f3",
+      "source_id": "applied_agentic_coding",
+      "status": "PASS",
+      "trace_type": "production_derived",
+      "unit": "token"
+    },
+    {
+      "line_1based": 1,
+      "num_turns": 7,
+      "profile": "macro_template",
+      "row_sha256": "71dd5ea6bb7918dad2af0901228d3fcf9669445e4b7ef908908636214a6259e8",
+      "source_id": "applied_code_qa",
+      "status": "PASS",
+      "trace_type": "production_derived",
+      "unit": "token"
+    },
+    {
+      "line_1based": 1,
+      "num_turns": 24,
+      "profile": "macro_template",
+      "row_sha256": "71cc20d6ece1760e0b61c029cfbc53b8c5fd9874b686ebbf6a7b516646eddc9a",
+      "source_id": "applied_office_work",
+      "status": "PASS",
+      "trace_type": "production_derived",
+      "unit": "token"
+    }
+  ]
+}

@@ -1,0 +1,1568 @@
+{
+  "$defs": {
+    "Agent": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "provenance_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Provenance Id",
+          "type": "string"
+        },
+        "run_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Run Id"
+        },
+        "association": {
+          "$ref": "#/$defs/Association"
+        },
+        "parent_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parent Id"
+        },
+        "source_agent_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Agent Id"
+        },
+        "source_agent_type": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Agent Type"
+        },
+        "source_status": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Status"
+        }
+      },
+      "required": [
+        "id",
+        "provenance_id",
+        "run_id",
+        "association"
+      ],
+      "title": "Agent",
+      "type": "object"
+    },
+    "Association": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "resolved",
+            "unresolved"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "method": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Method",
+          "type": "string"
+        },
+        "evidence_ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Evidence Ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "method",
+        "evidence_ref"
+      ],
+      "title": "Association",
+      "type": "object"
+    },
+    "Attempt": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "provenance_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Provenance Id",
+          "type": "string"
+        },
+        "task_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Task Id",
+          "type": "string"
+        },
+        "configuration_ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Configuration Ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "provenance_id",
+        "task_id",
+        "configuration_ref"
+      ],
+      "title": "Attempt",
+      "type": "object"
+    },
+    "Clock": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "monotonic",
+            "utc",
+            "source_relative"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "source": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Source",
+          "type": "string"
+        },
+        "precision_ns": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Precision Ns"
+        },
+        "precision_missing_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_recorded",
+                "not_applicable",
+                "unreadable",
+                "unresolved",
+                "unsupported",
+                "censored"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Precision Missing Reason"
+        },
+        "utc_anchor_ns": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Utc Anchor Ns"
+        },
+        "anchor_tick_ns": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Anchor Tick Ns"
+        },
+        "alignment_method": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Alignment Method"
+        },
+        "alignment_error_ns": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Alignment Error Ns"
+        },
+        "collection_delay_ns": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Collection Delay Ns"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "source",
+        "precision_ns"
+      ],
+      "title": "Clock",
+      "type": "object"
+    },
+    "Event": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "provenance_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Provenance Id",
+          "type": "string"
+        },
+        "run_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Run Id"
+        },
+        "association": {
+          "$ref": "#/$defs/Association"
+        },
+        "kind": {
+          "enum": [
+            "tool_call",
+            "span",
+            "phase",
+            "lifecycle"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Name",
+          "type": "string"
+        },
+        "parent_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parent Id"
+        },
+        "agent_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Agent Id"
+        },
+        "interval": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Interval"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "provenance_id",
+        "run_id",
+        "association",
+        "kind",
+        "name"
+      ],
+      "title": "Event",
+      "type": "object"
+    },
+    "Interval": {
+      "additionalProperties": false,
+      "properties": {
+        "clock_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Clock Id",
+          "type": "string"
+        },
+        "start_ns": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Start Ns"
+        },
+        "end_ns": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "End Ns"
+        },
+        "source": {
+          "enum": [
+            "native_event",
+            "log_receipt",
+            "adjacent_event_estimate"
+          ],
+          "title": "Source",
+          "type": "string"
+        },
+        "missing_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_recorded",
+                "not_applicable",
+                "unreadable",
+                "unresolved",
+                "unsupported",
+                "censored"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Missing Reason"
+        }
+      },
+      "required": [
+        "clock_id",
+        "start_ns",
+        "end_ns",
+        "source"
+      ],
+      "title": "Interval",
+      "type": "object"
+    },
+    "Job": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "provenance_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Provenance Id",
+          "type": "string"
+        },
+        "run_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Run Id"
+        },
+        "association": {
+          "$ref": "#/$defs/Association"
+        },
+        "interval": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Interval"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "provenance_id",
+        "run_id",
+        "association"
+      ],
+      "title": "Job",
+      "type": "object"
+    },
+    "Link": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "target_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Target Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "depends_on",
+            "submit",
+            "poll",
+            "wait",
+            "session",
+            "scope_tool",
+            "scope_process"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "association": {
+          "$ref": "#/$defs/Association"
+        }
+      },
+      "required": [
+        "source_id",
+        "target_id",
+        "kind",
+        "association"
+      ],
+      "title": "Link",
+      "type": "object"
+    },
+    "Metric": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "provenance_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Provenance Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Name",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        },
+        "unit": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Unit",
+          "type": "string"
+        },
+        "scope_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Scope Id",
+          "type": "string"
+        },
+        "aggregation": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Aggregation",
+          "type": "string"
+        },
+        "denominator": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Denominator",
+          "type": "string"
+        },
+        "evidence": {
+          "enum": [
+            "observed",
+            "derived",
+            "template_parameter",
+            "estimated",
+            "unavailable"
+          ],
+          "title": "Evidence",
+          "type": "string"
+        },
+        "source_field_or_rule": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Source Field Or Rule",
+          "type": "string"
+        },
+        "input_metric_ids": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "title": "Input Metric Ids",
+          "type": "array"
+        },
+        "missing_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_recorded",
+                "not_applicable",
+                "unreadable",
+                "unresolved",
+                "unsupported",
+                "censored"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Missing Reason"
+        },
+        "semantics": {
+          "default": "quantity",
+          "enum": [
+            "quantity",
+            "counter",
+            "gauge",
+            "peak"
+          ],
+          "title": "Semantics",
+          "type": "string"
+        },
+        "sample_time": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Interval"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "counter_epoch": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Counter Epoch"
+        }
+      },
+      "required": [
+        "id",
+        "provenance_id",
+        "name",
+        "value",
+        "unit",
+        "scope_id",
+        "aggregation",
+        "denominator",
+        "evidence",
+        "source_field_or_rule"
+      ],
+      "title": "Metric",
+      "type": "object"
+    },
+    "Prefix": {
+      "additionalProperties": false,
+      "properties": {
+        "hashes": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "title": "Hashes",
+          "type": "array"
+        },
+        "block_size": {
+          "exclusiveMinimum": 0,
+          "title": "Block Size",
+          "type": "integer"
+        },
+        "hash_id_scope": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Hash Id Scope",
+          "type": "string"
+        }
+      },
+      "required": [
+        "hashes",
+        "block_size",
+        "hash_id_scope"
+      ],
+      "title": "Prefix",
+      "type": "object"
+    },
+    "Process": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "provenance_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Provenance Id",
+          "type": "string"
+        },
+        "run_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Run Id"
+        },
+        "association": {
+          "$ref": "#/$defs/Association"
+        },
+        "host_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Host Id",
+          "type": "string"
+        },
+        "boot_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Boot Id",
+          "type": "string"
+        },
+        "pid_namespace": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Pid Namespace",
+          "type": "string"
+        },
+        "pid": {
+          "exclusiveMinimum": 0,
+          "title": "Pid",
+          "type": "integer"
+        },
+        "start_identifier": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Start Identifier",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "provenance_id",
+        "run_id",
+        "association",
+        "host_id",
+        "boot_id",
+        "pid_namespace",
+        "pid",
+        "start_identifier"
+      ],
+      "title": "Process",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "source_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "snapshot_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Snapshot Id",
+          "type": "string"
+        },
+        "source_record_ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Source Record Ref",
+          "type": "string"
+        },
+        "adapter_version": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Adapter Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "source_id",
+        "snapshot_id",
+        "source_record_ref",
+        "adapter_version"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Replay": {
+      "additionalProperties": false,
+      "properties": {
+        "original_trace_ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Original Trace Ref",
+          "type": "string"
+        },
+        "spec_ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Spec Ref",
+          "type": "string"
+        },
+        "mode": {
+          "enum": [
+            "open_loop",
+            "dependency_driven",
+            "fast_as_possible"
+          ],
+          "title": "Mode",
+          "type": "string"
+        }
+      },
+      "required": [
+        "original_trace_ref",
+        "spec_ref",
+        "mode"
+      ],
+      "title": "Replay",
+      "type": "object"
+    },
+    "Request": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "provenance_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Provenance Id",
+          "type": "string"
+        },
+        "run_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Run Id"
+        },
+        "association": {
+          "$ref": "#/$defs/Association"
+        },
+        "agent_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Agent Id"
+        },
+        "batch_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Batch Id"
+        },
+        "interval": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Interval"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "prefix": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Prefix"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "model_name": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model Name"
+        },
+        "source_request_type": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Request Type"
+        }
+      },
+      "required": [
+        "id",
+        "provenance_id",
+        "run_id",
+        "association"
+      ],
+      "title": "Request",
+      "type": "object"
+    },
+    "ResourceScope": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "provenance_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Provenance Id",
+          "type": "string"
+        },
+        "run_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Run Id"
+        },
+        "association": {
+          "$ref": "#/$defs/Association"
+        },
+        "parent_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parent Id"
+        },
+        "kind": {
+          "enum": [
+            "run",
+            "cgroup",
+            "process",
+            "job",
+            "service"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "attribution_method": {
+          "enum": [
+            "exclusive_scope",
+            "shared_scope",
+            "window_estimate",
+            "unresolved"
+          ],
+          "title": "Attribution Method",
+          "type": "string"
+        },
+        "interval": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Interval"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "includes_children": {
+          "title": "Includes Children",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "provenance_id",
+        "run_id",
+        "association",
+        "kind",
+        "attribution_method",
+        "includes_children"
+      ],
+      "title": "ResourceScope",
+      "type": "object"
+    },
+    "Run": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "provenance_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Provenance Id",
+          "type": "string"
+        },
+        "task_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Task Id"
+        },
+        "attempt_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Attempt Id"
+        },
+        "execution_status": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "running",
+            "completed",
+            "failed",
+            "cancelled",
+            "timed_out"
+          ],
+          "title": "Execution Status",
+          "type": "string"
+        },
+        "evaluation_status": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "not_evaluated",
+            "passed",
+            "failed",
+            "error"
+          ],
+          "title": "Evaluation Status",
+          "type": "string"
+        },
+        "archive_status": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "complete",
+            "partial",
+            "missing",
+            "unreadable"
+          ],
+          "title": "Archive Status",
+          "type": "string"
+        },
+        "interval": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Interval"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "provenance_id"
+      ],
+      "title": "Run",
+      "type": "object"
+    },
+    "Session": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "provenance_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Provenance Id",
+          "type": "string"
+        },
+        "run_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Run Id"
+        },
+        "association": {
+          "$ref": "#/$defs/Association"
+        },
+        "interval": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Interval"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "provenance_id",
+        "run_id",
+        "association"
+      ],
+      "title": "Session",
+      "type": "object"
+    },
+    "Task": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "provenance_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Provenance Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "provenance_id"
+      ],
+      "title": "Task",
+      "type": "object"
+    },
+    "Template": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "provenance_id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Provenance Id",
+          "type": "string"
+        },
+        "tool_use_turns": {
+          "minimum": 0,
+          "title": "Tool Use Turns",
+          "type": "integer"
+        },
+        "initial_input": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Initial Input"
+        },
+        "assistant_outputs": {
+          "items": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Assistant Outputs",
+          "type": "array"
+        },
+        "tool_outputs": {
+          "items": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Tool Outputs",
+          "type": "array"
+        },
+        "final_output": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Final Output"
+        },
+        "unit": {
+          "enum": [
+            "token",
+            "source_length"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "length_definition_ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Length Definition Ref",
+          "type": "string"
+        },
+        "length_missing_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_recorded",
+                "not_applicable",
+                "unreadable",
+                "unresolved",
+                "unsupported",
+                "censored"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Length Missing Reason"
+        }
+      },
+      "required": [
+        "id",
+        "provenance_id",
+        "tool_use_turns",
+        "initial_input",
+        "assistant_outputs",
+        "tool_outputs",
+        "final_output",
+        "unit",
+        "length_definition_ref"
+      ],
+      "title": "Template",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "0.2.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "profile": {
+      "enum": [
+        "macro_template",
+        "semantic_trace",
+        "resource_trace",
+        "replay_trace"
+      ],
+      "title": "Profile",
+      "type": "string"
+    },
+    "trace_type": {
+      "enum": [
+        "production",
+        "production_derived",
+        "benchmark_real",
+        "oracle",
+        "replay",
+        "synthetic",
+        "unknown"
+      ],
+      "title": "Trace Type",
+      "type": "string"
+    },
+    "provenance": {
+      "items": {
+        "$ref": "#/$defs/Provenance"
+      },
+      "minItems": 1,
+      "title": "Provenance",
+      "type": "array"
+    },
+    "clocks": {
+      "items": {
+        "$ref": "#/$defs/Clock"
+      },
+      "title": "Clocks",
+      "type": "array"
+    },
+    "tasks": {
+      "items": {
+        "$ref": "#/$defs/Task"
+      },
+      "title": "Tasks",
+      "type": "array"
+    },
+    "attempts": {
+      "items": {
+        "$ref": "#/$defs/Attempt"
+      },
+      "title": "Attempts",
+      "type": "array"
+    },
+    "runs": {
+      "items": {
+        "$ref": "#/$defs/Run"
+      },
+      "title": "Runs",
+      "type": "array"
+    },
+    "agents": {
+      "items": {
+        "$ref": "#/$defs/Agent"
+      },
+      "title": "Agents",
+      "type": "array"
+    },
+    "requests": {
+      "items": {
+        "$ref": "#/$defs/Request"
+      },
+      "title": "Requests",
+      "type": "array"
+    },
+    "events": {
+      "items": {
+        "$ref": "#/$defs/Event"
+      },
+      "title": "Events",
+      "type": "array"
+    },
+    "jobs": {
+      "items": {
+        "$ref": "#/$defs/Job"
+      },
+      "title": "Jobs",
+      "type": "array"
+    },
+    "sessions": {
+      "items": {
+        "$ref": "#/$defs/Session"
+      },
+      "title": "Sessions",
+      "type": "array"
+    },
+    "processes": {
+      "items": {
+        "$ref": "#/$defs/Process"
+      },
+      "title": "Processes",
+      "type": "array"
+    },
+    "resource_scopes": {
+      "items": {
+        "$ref": "#/$defs/ResourceScope"
+      },
+      "title": "Resource Scopes",
+      "type": "array"
+    },
+    "templates": {
+      "items": {
+        "$ref": "#/$defs/Template"
+      },
+      "title": "Templates",
+      "type": "array"
+    },
+    "metrics": {
+      "items": {
+        "$ref": "#/$defs/Metric"
+      },
+      "title": "Metrics",
+      "type": "array"
+    },
+    "links": {
+      "items": {
+        "$ref": "#/$defs/Link"
+      },
+      "title": "Links",
+      "type": "array"
+    },
+    "replay": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Replay"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "schema_version",
+    "profile",
+    "trace_type",
+    "provenance"
+  ],
+  "title": "TraceDocument",
+  "type": "object"
+}

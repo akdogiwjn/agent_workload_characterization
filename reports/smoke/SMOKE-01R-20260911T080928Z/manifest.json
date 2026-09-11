@@ -1,0 +1,20 @@
+{
+  "batch": "SMOKE-01R-20260911T080928Z",
+  "generated_at_utc": "2026-09-11T08:09:55.308697+00:00",
+  "files": {
+    "smoke-33983ebb.json": "3041a21b6da9fd86b776d818545ca9ca65f099d1d7b3573a0c7a886d62bb8e9f",
+    "verdict.json": "5e96cf3fe1ffaf127ea689f5dd22a147a43267c5d03f2cba2f99c4cbd3de8c1e"
+  },
+  "code_evidence": {
+    "smoke.py": "9733ffb51daf470380c6a575a455c34bc056e00bfce42ba82da23aed7a8e20b8",
+    "smoke_launcher.py": "ca0937752bbea1905134ba17f15448072da477de2bed7c650548d50aed592852",
+    "model_adapter.py": "d0d63e05b283d832fceb9a74de80dc4d680c2f9a046dde352c305b6b5555caf2",
+    "smoke_01_config.yaml": "d3772c3990686a39552dfd8cdef01d07f2afb9917c0aab7a657c0b22329b02cb"
+  },
+  "approval_record": {
+    "user_reply": "继续",
+    "scope": "SMOKE-01 retry with {env:VAR} resolution fix; same single-request scope",
+    "proxy": "http://127.0.0.1:22111 (user-authorized)"
+  },
+  "claim": "ONE request sent; tool-call reply parsed with usage; execution terminated"
+}

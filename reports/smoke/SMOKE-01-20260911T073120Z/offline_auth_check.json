@@ -1,0 +1,61 @@
+{
+  "checked_at_utc": "2026-09-11T07:42:54.404590+00:00",
+  "checks": {
+    "config_readable": true,
+    "provider_entry_found": true,
+    "model_entry_found": true,
+    "endpoint_https": true,
+    "endpoint_no_userinfo": true,
+    "endpoint_has_v1_suffix": true,
+    "api_key_nonempty": true,
+    "api_key_no_placeholder": true,
+    "api_key_not_json_null": true,
+    "api_key_has_typical_prefix": false,
+    "env_pilot_base_equals_config": true,
+    "env_pilot_key_equals_config": true,
+    "env_litellm_cost_map_pinned": true,
+    "env_retry_pinned": true,
+    "env_no_inherited_proxies": true,
+    "env_sdk_key_set_from_pilot": true,
+    "smoke_cfg_model_matches": true,
+    "smoke_cfg_env_names_match_launcher": true,
+    "smoke_cfg_startup_command_null": true,
+    "smoke_cfg_cost_tracking_ignore": true,
+    "routing_prefix_offline_verified": true,
+    "v1_no_dup_offline_verified": true
+  },
+  "analysis": {
+    "method": "offline consistency check only (no network, no credential values output)",
+    "passed": [
+      "config_readable",
+      "provider_entry_found",
+      "model_entry_found",
+      "endpoint_https",
+      "endpoint_no_userinfo",
+      "endpoint_has_v1_suffix",
+      "api_key_nonempty",
+      "api_key_no_placeholder",
+      "api_key_not_json_null",
+      "env_pilot_base_equals_config",
+      "env_pilot_key_equals_config",
+      "env_litellm_cost_map_pinned",
+      "env_retry_pinned",
+      "env_no_inherited_proxies",
+      "env_sdk_key_set_from_pilot",
+      "smoke_cfg_model_matches",
+      "smoke_cfg_env_names_match_launcher",
+      "smoke_cfg_startup_command_null",
+      "smoke_cfg_cost_tracking_ignore",
+      "routing_prefix_offline_verified",
+      "v1_no_dup_offline_verified"
+    ],
+    "flagged": {
+      "api_key_has_typical_prefix": {
+        "value": false,
+        "meaning": "the configured key does NOT start with sk-/volc-/eyJ (JWT). This is a format observation, NOT proof of invalidity — gateway-specific prefixes vary. But combined with the observed AuthenticationError it is the one config-side datum that does not self-confirm consistency.",
+        "implication": "possible causes remain open: credential mapping to this gateway, key scope/rotation, auth scheme expected by the gateway, or the key itself. The offline check cannot discriminate further."
+      }
+    },
+    "conclusion": "All structural/config consistency checks PASS (provider/model/endpoint/env plumbing all match expectations). The only non-confirming datum is the key prefix format, which is informational. The AuthenticationError therefore cannot be attributed to config plumbing on our side; it most likely lies in the credential-gateway relationship (validity/scope/scheme), which only the user can verify."
+  }
+}

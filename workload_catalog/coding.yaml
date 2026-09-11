@@ -1,0 +1,35 @@
+scenario: Coding
+pilot:
+  status: DESIGN_READY_FOR_REVIEW
+  instance_id: django__django-16485
+  spec: docs/pilot_execution_spec.md
+  machine_readable: workload_catalog/pilot.yaml
+  evidence: reports/quality/pilot_evidence.json
+benchmarks:
+- name: SWE-bench Verified
+  task_example: django__django-16485 (floatformat crash)
+  locator: references/repos/SWE-bench
+  version: 02e7a74ffd0b707aab73d203fe87bdc7c76afc8e
+  agent: 'unfrozen (candidates: OpenHands pinned / mini-SWE-agent / P1-07 wrapper)'
+  harness: swebench evaluator (run_evaluation) static-verified; agent runner separate
+  model: 'unfrozen (historical: claude-3-5-sonnet-20241022)'
+  tool_stack:
+  - execute_bash
+  - str_replace_editor
+  adaptation: task dataset record (base_commit/F2P/P2P) not local; needs HF fetch
+    authorization
+  executability_evidence: trajectory read-only verified; Docker/daemon not checked
+    (P1-00)
+  unverified:
+  - task dataset record
+  - harness commit
+  - model availability/pricing
+  - docker image digest
+  local_boundary: docker container per instance; subprocess shape to verify in P1
+  remote_boundary: model API only
+  dependencies:
+  - Docker
+  - swebench harness deps (uv.lock at 02e7a74)
+  - model API
+  selection_rationale: container-isolated shell-tool workload; 500-traj public reference;
+    verifier chain verified

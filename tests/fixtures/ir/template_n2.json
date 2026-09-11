@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.2.0",
+  "profile": "macro_template",
+  "trace_type": "synthetic",
+  "provenance": [{
+    "id": "fixture:provenance", "source_id": "gold-contract",
+    "snapshot_id": "v1", "source_record_ref": "AC-N2 numeric example; data/catalog/sample_candidates.yaml",
+    "adapter_version": "manual-fixture/1"
+  }],
+  "templates": [{
+    "id": "fixture:n2", "provenance_id": "fixture:provenance",
+    "tool_use_turns": 2, "initial_input": 6318,
+    "assistant_outputs": [101, 1084], "tool_outputs": [6118, 23],
+    "final_output": 801, "unit": "source_length",
+    "length_definition_ref": "source length unit pending P0-05 trie client verification"
+  }]
+}

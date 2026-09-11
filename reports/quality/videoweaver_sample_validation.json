@@ -1,0 +1,148 @@
+{
+  "accounting": {
+    "empty_lines_bundle_telemetry": 0,
+    "empty_lines_raw_telemetry": 0,
+    "empty_lines_react": 0,
+    "malformed_bundle_telemetry": 0,
+    "malformed_raw_telemetry": 0,
+    "malformed_react": 0,
+    "other_trace_bundle_records": 0,
+    "physical_lines_bundle_telemetry": 70,
+    "physical_lines_raw_telemetry": 491,
+    "selected_bundle_main_requests": 70
+  },
+  "adapter_version": "videoweaver-v1/0.1.0",
+  "checked_at_utc": "2026-09-10T07:06:42.884890+00:00",
+  "files_checked": {
+    "bundle_telemetry": {
+      "path": "/home/lcq/agent_workload/benchmark/agent_benchmark_traces/gen_videoweaver_traces/bundles/trace_videoweaver_text_long_video_VBench-Long_run-006/model_telemetry/model_telemetry.jsonl",
+      "sha256": "376aa4af9936a128481584dda494465f7018f93600891671606b233904e17b3c"
+    },
+    "manifest": {
+      "path": "/home/lcq/agent_workload/benchmark/agent_benchmark_traces/gen_videoweaver_traces/bundles/trace_videoweaver_text_long_video_VBench-Long_run-006/manifest.json",
+      "sha256": "22f028163440cd58a7f53cdb9f2a3aef498ccb627ec264c35e05f6b334eb556d"
+    },
+    "react": {
+      "path": "/home/lcq/agent_workload/benchmark/agent_benchmark_traces/gen_videoweaver_traces/bundles/trace_videoweaver_text_long_video_VBench-Long_run-006/native_trajectory/original_ReAct.jsonl",
+      "sha256": "8a99ee052d673df1441054ea3b5b36e73d15d8893a5c8f3ffe1ce04b5a13bff0"
+    },
+    "sidecar_models": {
+      "path": "/home/lcq/agent_workload/benchmark/traces_generation/sidecar/videoweaver/model_calls.jsonl",
+      "sha256": "ea04507c92e57f301ead1f32d5c9bfe4dde70358857798b0282b363305e27404"
+    },
+    "sidecar_tools": {
+      "path": "/home/lcq/agent_workload/benchmark/traces_generation/sidecar/videoweaver/tool_calls.jsonl",
+      "sha256": "4d0caeaed039ea4a5a8dff770f7034755d80487b2cc19ba1f57d097371060d7b"
+    },
+    "telemetry_raw": {
+      "path": "/home/lcq/agent_workload/benchmark/telemetry/video_weaver.jsonl",
+      "sha256": "18a80b99a3ed68db7e50ccdabec3c3b0bb40028850cf6a931cae36514b21b9c8"
+    },
+    "telemetry_summary": {
+      "path": "/home/lcq/agent_workload/benchmark/agent_benchmark_traces/gen_videoweaver_traces/bundles/trace_videoweaver_text_long_video_VBench-Long_run-006/model_telemetry/model_telemetry_summary.json",
+      "sha256": "dd9857518a5be722f8a3c5f497e4b1b86023a74af730f17b8ae06d5e209587a4"
+    }
+  },
+  "full_ingest": false,
+  "parsed_records": 2,
+  "results": [
+    {
+      "manifest": {
+        "generation_status": "success",
+        "pipeline_reported_status": "failed"
+      },
+      "mismatches": [],
+      "note_max_input_vs_context": "max(input_tokens)=79937 differs from max(context_tokens)=80378; context_tokens in this proxy = input+output, not a separate input context metric",
+      "run_metrics": {
+        "local_cpu_time": {
+          "evidence": "unavailable",
+          "missing_reason": "unsupported",
+          "value": null
+        },
+        "manifest_reported_wall_time_s": {
+          "evidence": "observed",
+          "missing_reason": null,
+          "value": 1616.424
+        },
+        "max_input_context": {
+          "evidence": "derived",
+          "missing_reason": null,
+          "value": 79937
+        },
+        "max_source_context_tokens": {
+          "evidence": "derived",
+          "missing_reason": null,
+          "value": 80378
+        },
+        "model_request_count": {
+          "evidence": "observed",
+          "missing_reason": null,
+          "value": 70
+        },
+        "run_elapsed": {
+          "evidence": "unavailable",
+          "missing_reason": "unsupported",
+          "value": null
+        },
+        "tool_call_count": {
+          "evidence": "observed",
+          "missing_reason": null,
+          "value": 88
+        },
+        "tool_cpu_time": {
+          "evidence": "unavailable",
+          "missing_reason": "unsupported",
+          "value": null
+        },
+        "total_api_latency_s": {
+          "evidence": "derived",
+          "missing_reason": null,
+          "value": 401.42146900000006
+        },
+        "total_input_tokens": {
+          "evidence": "derived",
+          "missing_reason": null,
+          "value": 4041546
+        },
+        "total_output_tokens": {
+          "evidence": "derived",
+          "missing_reason": null,
+          "value": 28631
+        }
+      },
+      "sample_id": "VW-LONG",
+      "sidecar_comparison": {
+        "bundle_request_keys": 70,
+        "bundle_tool_ids": 88,
+        "extra_in_sidecar": 0,
+        "extra_tools": 0,
+        "missing_from_sidecar": 0,
+        "missing_tools": 0,
+        "sidecar_request_keys": 70,
+        "sidecar_tool_ids": 88,
+        "value_mismatch_records": 0
+      },
+      "status": "PASS",
+      "trace_id": "videoweaver:text_long_video:VBench-Long:run-006"
+    },
+    {
+      "api_latency": 5.253902,
+      "call_id": "b6c324adb8dd40179883ecead5cb4262",
+      "http_status": 200,
+      "input_tokens_raw": null,
+      "line": "line:326",
+      "mismatches": [],
+      "normalized_input": null,
+      "normalized_output": null,
+      "output_tokens_raw": null,
+      "row_hash": "98817ee59f90ee27b5f4a3e12fa6530a01c9633f781f3e6222290e3c34cf3d75",
+      "sample_id": "AUX-INCOMPLETE",
+      "status": "PASS",
+      "trace_id": "videoweaver:reference_image_video:UniVBench-R2V:run-003",
+      "ttft": 3.716896
+    }
+  ],
+  "snapshot_scope": "selected bundle + raw telemetry files; hashes per input; not a whole-source claim",
+  "status": "PASS",
+  "task": "P0-10"
+}

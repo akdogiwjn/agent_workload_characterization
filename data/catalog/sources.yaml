@@ -1,0 +1,1233 @@
+catalog_version: "1.1"
+audit_revision: "P0-00-r2"
+audited_at_utc: "2026-09-10T02:32:38.422627+00:00"
+roots:
+  benchmark: "/home/lcq/agent_workload/benchmark"
+  project: "/home/lcq/agent_workload_characterization"
+  analysis: "/home/lcq/agent_workload/benchmark/benchmark_analysis/src/agent_trace_analysis"
+  runtime: "/home/lcq/agent_vm_bench"
+conventions:
+  counts: "Current parsed records/files only when evidence_key states so; null means not measured. No total population sum across overlapping sources."
+  profile: "Capability only, not metric completeness"
+  trace_type: "Unknown/mixed records must be classified per record before real-only cohorts"
+  versioning: "snapshot evidence covers listed files only; source_version/license null are explicit metadata gaps"
+sources:
+  -
+    source_id: "agentx_256k"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/agentx_256k/traces.jsonl"
+      kind: "file"
+    role: "published_production_derived"
+    trace_type: "production_derived"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.agentx"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: "local card: cc-traces-weka-062126-256k; trace v7"
+    license: "Apache-2.0 as declared by local dataset card"
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      main_requests: 28444
+      model_requests: 68266
+      subagent_groups: 1697
+      input_tokens: 6891228864
+      output_tokens: 58728807
+      sessions: 393
+      groups_missing_tool_use_count: 1697
+      requests_missing_api_time: 0
+    notes: "Local dataset card: proxy-derived v7, filtered >=20 requests before cap, non-image, 256k cap, timeline shifts. Not complete production sessions; source main_turns is not all-agent turns."
+  -
+    source_id: "applied_agentic_coding"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/applied_compute/agentic_coding_8k.jsonl"
+      kind: "file"
+    role: "published_template"
+    trace_type: "production_derived"
+    profile: "macro_template"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.applied_compute.agentic_coding_8k.jsonl"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      records: 8192
+      min_num_turns: 1
+      n_zero_templates: 0
+    notes: "Length fields are template token parameters; tool delay in seconds is simulated, not observed local execution. No real timestamps."
+    metric_evidence:
+      token_lengths: "template_parameter"
+      tool_delay: "template_parameter"
+      request_expansion: "template_parameter"
+      local_cpu: "unavailable"
+  -
+    source_id: "applied_code_qa"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/applied_compute/code_qa_8k.jsonl"
+      kind: "file"
+    role: "published_template"
+    trace_type: "production_derived"
+    profile: "macro_template"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.applied_compute.code_qa_8k.jsonl"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      records: 8192
+      min_num_turns: 1
+      n_zero_templates: 0
+    notes: "Length fields are template token parameters; tool delay in seconds is simulated, not observed local execution. No real timestamps."
+    metric_evidence:
+      token_lengths: "template_parameter"
+      tool_delay: "template_parameter"
+      request_expansion: "template_parameter"
+      local_cpu: "unavailable"
+  -
+    source_id: "applied_office_work"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/applied_compute/office_work_8k.jsonl"
+      kind: "file"
+    role: "published_template"
+    trace_type: "production_derived"
+    profile: "macro_template"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.applied_compute.office_work_8k.jsonl"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      records: 8192
+      min_num_turns: 4
+      n_zero_templates: 0
+    notes: "Length fields are template token parameters; tool delay in seconds is simulated, not observed local execution. No real timestamps."
+    metric_evidence:
+      token_lengths: "template_parameter"
+      tool_delay: "template_parameter"
+      request_expansion: "template_parameter"
+      local_cpu: "unavailable"
+  -
+    source_id: "tracebench"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/tracebench/bench_manifest.full.jsonl"
+      kind: "file"
+    role: "public_benchmark_manifest"
+    trace_type: "benchmark_real"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.bench_manifest.full.jsonl"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      manifest_records: 3316
+    notes: "Local DATASETS.md describes benchmark task trajectories. verified is a subset, not additional independent runs; archive payload not fully decoded in this audit."
+  -
+    source_id: "tracebench_verified"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/tracebench/bench_manifest.verified.jsonl"
+      kind: "file"
+    role: "public_benchmark_manifest"
+    trace_type: "benchmark_real"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.bench_manifest.verified.jsonl"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      manifest_records: 1000
+    notes: "Local DATASETS.md describes benchmark task trajectories. verified is a subset, not additional independent runs; archive payload not fully decoded in this audit."
+  -
+    source_id: "tracebench_artifacts"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/tracebench/bench_artifacts"
+      kind: "directory"
+    role: "benchmark_artifacts"
+    trace_type: "benchmark_real"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts: null
+    notes: "Payload compatibility and per-file correspondence not revalidated; no bulk decompression."
+  -
+    source_id: "swebench_experiments"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/swebench_experiments/verified"
+      kind: "directory"
+    role: "public_benchmark_trajectories"
+    trace_type: "benchmark_real"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.swe_trajectory_files"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      trajectory_files: 1465
+      submissions:
+        20240620_sweagent_claude3.5sonnet:
+          files: 500
+          example_path: "/home/lcq/agent_workload/benchmark/agent_benchmark_traces/swebench_experiments/verified/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-12907.traj"
+        20240728_sweagent_gpt4o:
+          files: 465
+          example_path: "/home/lcq/agent_workload/benchmark/agent_benchmark_traces/swebench_experiments/verified/20240728_sweagent_gpt4o/trajs/astropy__astropy-12907.traj"
+        20241029_OpenHands-CodeAct-2.1-sonnet-20241022:
+          files: 500
+          example_path: "/home/lcq/agent_workload/benchmark/agent_benchmark_traces/swebench_experiments/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-16485.json"
+    notes: "Files counted by extension/path, not 1465 independently validated successful tasks. Source defines evaluation submissions; OpenHands and SWE-agent coverage differ."
+  -
+    source_id: "osworld_verified"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/osworld_verified/autoglm_50steps.zip"
+      kind: "file"
+    role: "public_benchmark_trajectories"
+    trace_type: "benchmark_real"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.osworld"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      member_count: 8320
+      trajectory_members: 361
+      result_members: 359
+      success: null
+    notes: "ZIP member enumeration only; trajectory/result counts are members. Outcome counts not revalidated, success=null; timestamp span not E2E."
+  -
+    source_id: "spreadsheetbench_v2"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/spreadsheetbench_v2/trajectory_example.zip"
+      kind: "file"
+    role: "public_benchmark_trajectories"
+    trace_type: "benchmark_real"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.spreadsheet"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      member_count: 944
+      trajectory_members: 160
+      result_members: 0
+      unique_legacy_task_keys: 20
+      colliding_legacy_keys: 20
+      members_in_collisions: 160
+      collision_example:
+        - "04_06"
+        -
+          - "trajectory_example/Debugging/claude opus 4.6/04_06/04_06.traj"
+          - "trajectory_example/Debugging/deepseek v3.2/04_06/04_06.traj"
+          - "trajectory_example/Debugging/gemini 3.1 pro/04_06/04_06.traj"
+          - "trajectory_example/Debugging/glm-5/04_06/04_06.traj"
+          - "trajectory_example/Debugging/gpt 5.2/04_06/04_06.traj"
+          - "trajectory_example/Debugging/kimi 2.5/04_06/04_06.traj"
+          - "trajectory_example/Debugging/minimax 2.5/04_06/04_06.traj"
+          - "trajectory_example/Debugging/qwen 3.5/04_06/04_06.traj"
+    notes: "160 members collapse to 20 legacy stem-based IDs, all 20 collide. Use archive identity + full member path as source record locator, not buggy trace_id."
+    stable_record_key: "archive content identity + full ZIP member path (candidate; run-level dedup is separate)"
+  -
+    source_id: "mlperf_edge_agentic"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/mlperf_edge_agentic/agentic_coding_2.5h.jsonl"
+      kind: "file"
+    role: "public_performance_dataset"
+    trace_type: "unknown"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.mlperf"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      rows: 2014
+      conversation_ids: 20
+      missing_conversation_id: 0
+    notes: "Local SOURCE.txt states SWE-bench-derived multi-turn performance subset, but does not establish real/oracle/synthetic generation. Not production; delay semantics pending; exclude from known-real cohort."
+  -
+    source_id: "gen_workarena_traces"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/gen_workarena_traces"
+      kind: "directory"
+    role: "local_generated_snapshot"
+    trace_type: "oracle"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "supplement.workarena"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      json_files: 32
+    notes: "Oracle cheat execution, no model requests; file keys/task+seed need ID audit before dedup."
+  -
+    source_id: "gen_docops_traces"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/gen_docops_traces"
+      kind: "directory"
+    role: "local_generated_snapshot"
+    trace_type: "benchmark_real"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "supplement.local_result_census.agent_benchmark_traces/gen_docops_traces"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      result_files_seen: 50
+      trial_name_records: 38
+      records_without_trial_name: 12
+    notes: "38 trial result hashes overlap generation results; do not use current/historical sidecar counts as this directory's run count."
+  -
+    source_id: "gen_agentic_vbench_traces"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/gen_agentic_vbench_traces"
+      kind: "directory"
+    role: "local_generated_snapshot"
+    trace_type: "unknown"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "supplement.local_result_census.agent_benchmark_traces/gen_agentic_vbench_traces"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      result_files_seen: 31
+      trial_name_records: 6
+      records_without_trial_name: 25
+    notes: "Mixed real/oracle; classify records from agent metadata, not directory. Six result-file hashes overlap current generation tree; not additive."
+  -
+    source_id: "gen_videoweaver_traces"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/gen_videoweaver_traces/bundles"
+      kind: "directory"
+    role: "local_generated_snapshot"
+    trace_type: "benchmark_real"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.video_bundles"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      bundle_manifests: 4
+    notes: "Four model telemetry exports hash-match generation bundles. Adapted remote media/text models; no full official-config reproduction claim."
+  -
+    source_id: "raw_docops"
+    locator:
+      root: "benchmark"
+      path: "traces_generation/DocOps"
+      kind: "directory"
+    role: "generation_tree"
+    trace_type: "benchmark_real"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts: null
+    notes: "Generation code and data mixed. Current sidecar is a selected derived view, not guaranteed complete raw inventory. AgenticVBench subtree has observed unreadable session directories; no permissions changed."
+  -
+    source_id: "raw_agentic_vbench"
+    locator:
+      root: "benchmark"
+      path: "traces_generation/agentic-vbench"
+      kind: "directory"
+    role: "generation_tree"
+    trace_type: "unknown"
+    profile: "semantic_trace"
+    access_status: "partial_subtree_permission"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts: null
+    notes: "Generation code and data mixed. Current sidecar is a selected derived view, not guaranteed complete raw inventory. AgenticVBench subtree has observed unreadable session directories; no permissions changed."
+  -
+    source_id: "raw_videoweaver"
+    locator:
+      root: "benchmark"
+      path: "traces_generation/VideoWeaver"
+      kind: "directory"
+    role: "generation_tree"
+    trace_type: "benchmark_real"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts: null
+    notes: "Generation code and data mixed. Current sidecar is a selected derived view, not guaranteed complete raw inventory. AgenticVBench subtree has observed unreadable session directories; no permissions changed."
+  -
+    source_id: "raw_workarena"
+    locator:
+      root: "benchmark"
+      path: "traces_generation/workarena"
+      kind: "directory"
+    role: "generation_tree"
+    trace_type: "oracle"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts: null
+    notes: "Generation code and data mixed. Current sidecar is a selected derived view, not guaranteed complete raw inventory. AgenticVBench subtree has observed unreadable session directories; no permissions changed."
+  -
+    source_id: "sidecar_docops"
+    locator:
+      root: "benchmark"
+      path: "traces_generation/sidecar/docops"
+      kind: "directory"
+    role: "current_derived_sidecar"
+    trace_type: "benchmark_real"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.sidecar.traces_generation/sidecar/docops"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      run_manifest:
+        rows: 44
+        agent:
+          codex: 44
+        execution_status:
+          completed: 39
+          failed: 5
+        evaluation_status:
+          success: 40
+          failed: 4
+        archive_status:
+          complete: 39
+          partial: 5
+      model_calls:
+        rows: 134
+        association_status:
+          unresolved: 29
+          resolved: 105
+        by_trace_id:
+          None: 29
+          atomic__word_001_engineering_rep__GfbrCbv: 20
+          atomic__pdf_001_vendor_quote_ext__pPvwXcn: 6
+          atomic__pdf_001_vendor_quote_ext__2Mg7WMo: 8
+          atomic__ppt_001_generate_risk_po__zdwB6xG: 50
+          atomic__excel_001_budget_bucket__rhfUhWj: 21
+      tool_calls:
+        rows: 655
+    notes: "Counts and states describe existing derived rows, not independent validation of execution/evaluation/archive correctness."
+  -
+    source_id: "sidecar_agentic_vbench"
+    locator:
+      root: "benchmark"
+      path: "traces_generation/sidecar/agentic_vbench"
+      kind: "directory"
+    role: "current_derived_sidecar"
+    trace_type: "unknown"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.sidecar.traces_generation/sidecar/agentic_vbench"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      run_manifest:
+        rows: 6
+        agent:
+          codex: 1
+          oracle: 5
+        execution_status:
+          completed: 6
+        evaluation_status:
+          success: 6
+        archive_status:
+          missing:sessions(unreadable): 1
+          failed:archive_permission: 4
+          missing:trajectory: 1
+      model_calls:
+        rows: 21
+        association_status:
+          unresolved: 21
+        by_trace_id:
+          None: 21
+      tool_calls:
+        rows: 0
+    notes: "Mixed oracle and model agents; source rows carry agent; do not classify entire file as real."
+  -
+    source_id: "sidecar_videoweaver"
+    locator:
+      root: "benchmark"
+      path: "traces_generation/sidecar/videoweaver"
+      kind: "directory"
+    role: "current_derived_sidecar"
+    trace_type: "benchmark_real"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.sidecar.traces_generation/sidecar/videoweaver"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      run_manifest:
+        rows: 4
+        agent:
+          None: 4
+        execution_status:
+          completed: 4
+        evaluation_status:
+          not_run: 2
+          context_overflow: 1
+          None: 1
+        archive_status:
+          complete: 4
+      model_calls:
+        rows: 233
+        association_status:
+          resolved: 233
+        by_trace_id:
+          videoweaver:reference_image_video:UniVBench-R2V:run-003: 30
+          videoweaver:reference_video_edit:UniVBench-RV2V:run-001: 95
+          videoweaver:text_long_video:VBench-Long:run-006: 70
+          videoweaver:text_video_edit:UniVBench-TV2V:run-002: 38
+      tool_calls:
+        rows: 262
+    notes: "Counts and states describe existing derived rows, not independent validation of execution/evaluation/archive correctness."
+  -
+    source_id: "sidecar_workarena"
+    locator:
+      root: "benchmark"
+      path: "traces_generation/sidecar/workarena"
+      kind: "directory"
+    role: "current_derived_sidecar"
+    trace_type: "oracle"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.sidecar.traces_generation/sidecar/workarena"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      run_manifest:
+        rows: 32
+        agent:
+          oracle-cheat: 32
+        execution_status:
+          completed: 32
+        evaluation_status:
+          success: 32
+        archive_status:
+          complete: 32
+      model_calls:
+        rows: 0
+        association_status: {}
+        by_trace_id: {}
+      tool_calls:
+        rows: 600
+    notes: "Counts and states describe existing derived rows, not independent validation of execution/evaluation/archive correctness."
+  -
+    source_id: "historical_sidecar_docops"
+    locator:
+      root: "benchmark"
+      path: "trace_cleanup_archive/20260908T060905Z/sidecar_before/docops"
+      kind: "directory"
+    role: "historical_derived_sidecar"
+    trace_type: "benchmark_real"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.sidecar.trace_cleanup_archive/20260908T060905Z/sidecar_before/docops"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      run_manifest:
+        rows: 68
+        agent:
+          codex: 68
+        execution_status:
+          completed: 54
+          failed: 14
+        evaluation_status:
+          success: 39
+          failed: 28
+          n_a: 1
+        archive_status:
+          complete: 54
+          partial: 14
+      model_calls:
+        rows: 29
+        association_status:
+          unresolved: 29
+        by_trace_id:
+          None: 29
+      tool_calls:
+        rows: 1067
+    notes: "Counts and states describe existing derived rows, not independent validation of execution/evaluation/archive correctness."
+  -
+    source_id: "historical_sidecar_agentic_vbench"
+    locator:
+      root: "benchmark"
+      path: "trace_cleanup_archive/20260908T060905Z/sidecar_before/agentic_vbench"
+      kind: "directory"
+    role: "historical_derived_sidecar"
+    trace_type: "unknown"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.sidecar.trace_cleanup_archive/20260908T060905Z/sidecar_before/agentic_vbench"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      run_manifest:
+        rows: 78
+        agent:
+          codex: 71
+          oracle: 7
+        execution_status:
+          failed: 34
+          unknown: 12
+          completed: 32
+        evaluation_status:
+          failed: 53
+          n_a: 16
+          evaluation_error: 3
+          success: 6
+        archive_status:
+          missing:sessions(unreadable): 61
+          missing:trajectory: 13
+          failed:archive_permission: 4
+      model_calls:
+        rows: 21
+        association_status:
+          unresolved: 21
+        by_trace_id:
+          None: 21
+      tool_calls:
+        rows: 0
+    notes: "Mixed oracle and model agents; source rows carry agent; do not classify entire file as real."
+  -
+    source_id: "historical_sidecar_videoweaver"
+    locator:
+      root: "benchmark"
+      path: "trace_cleanup_archive/20260908T060905Z/sidecar_before/videoweaver"
+      kind: "directory"
+    role: "historical_derived_sidecar"
+    trace_type: "benchmark_real"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.sidecar.trace_cleanup_archive/20260908T060905Z/sidecar_before/videoweaver"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      run_manifest:
+        rows: 4
+        agent:
+          None: 4
+        execution_status:
+          completed: 4
+        evaluation_status:
+          not_run: 2
+          context_overflow: 1
+          None: 1
+        archive_status:
+          complete: 4
+      model_calls:
+        rows: 233
+        association_status:
+          resolved: 233
+        by_trace_id:
+          videoweaver:reference_image_video:UniVBench-R2V:run-003: 30
+          videoweaver:reference_video_edit:UniVBench-RV2V:run-001: 95
+          videoweaver:text_long_video:VBench-Long:run-006: 70
+          videoweaver:text_video_edit:UniVBench-TV2V:run-002: 38
+      tool_calls:
+        rows: 262
+    notes: "Counts and states describe existing derived rows, not independent validation of execution/evaluation/archive correctness."
+  -
+    source_id: "historical_sidecar_workarena"
+    locator:
+      root: "benchmark"
+      path: "trace_cleanup_archive/20260908T060905Z/sidecar_before/workarena"
+      kind: "directory"
+    role: "historical_derived_sidecar"
+    trace_type: "oracle"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.sidecar.trace_cleanup_archive/20260908T060905Z/sidecar_before/workarena"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      run_manifest:
+        rows: 32
+        agent:
+          oracle-cheat: 32
+        execution_status:
+          completed: 32
+        evaluation_status:
+          success: 32
+        archive_status:
+          complete: 32
+      model_calls:
+        rows: 0
+        association_status: {}
+        by_trace_id: {}
+      tool_calls:
+        rows: 600
+    notes: "Counts and states describe existing derived rows, not independent validation of execution/evaluation/archive correctness."
+  -
+    source_id: "sidecar_coverage"
+    locator:
+      root: "benchmark"
+      path: "traces_generation/sidecar/dataset_metric_coverage.csv"
+      kind: "file"
+    role: "derived_coverage"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts: null
+    notes: "Historical calculation semantics need revalidation; nonempty is not sufficient for analysis coverage."
+  -
+    source_id: "telemetry_video_weaver"
+    locator:
+      root: "benchmark"
+      path: "telemetry/video_weaver.jsonl"
+      kind: "file"
+    role: "original_proxy_telemetry"
+    trace_type: "unknown"
+    profile: "semantic_trace"
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "supplement.video_filter"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      raw_rows: 491
+      selected_trace_ids:
+        - "videoweaver:reference_image_video:UniVBench-R2V:run-003"
+        - "videoweaver:reference_video_edit:UniVBench-RV2V:run-001"
+        - "videoweaver:text_long_video:VBench-Long:run-006"
+        - "videoweaver:text_video_edit:UniVBench-TV2V:run-002"
+      matching_trace_ids: 235
+      other_trace_ids_rows: 256
+      complete_rows_in_selected: 233
+      incomplete_rows_in_selected: 2
+      pair_set_equals_sidecar: true
+      per_trace:
+        videoweaver:reference_image_video:UniVBench-R2V:run-003:
+          selected: 30
+          tokens_input: 1356362
+          tokens_output: 14003
+          max_context: 59402
+          raw: 31
+        videoweaver:reference_video_edit:UniVBench-RV2V:run-001:
+          selected: 95
+          tokens_input: 4944610
+          tokens_output: 44438
+          max_context: 92810
+          raw: 96
+        videoweaver:text_long_video:VBench-Long:run-006:
+          selected: 70
+          tokens_input: 4041546
+          tokens_output: 28631
+          max_context: 80378
+          raw: 70
+        videoweaver:text_video_edit:UniVBench-TV2V:run-002:
+          selected: 38
+          tokens_input: 2058195
+          tokens_output: 16934
+          max_context: 86867
+          raw: 38
+    notes: "491 unique trace/call pairs; selected four trace_ids give 235 rows; complete-field filter excludes 2 -> 233, exactly matching sidecar pairs. Other trace IDs include debug/failed attempts; not all rows are successful benchmark runs."
+    trace_type_reason: "Mixed debug/benchmark attempts; retain record scope and classify selected runs separately."
+  -
+    source_id: "trace_cleanup_20260908"
+    locator:
+      root: "benchmark"
+      path: "trace_cleanup_archive/20260908T060905Z/manifest.json"
+      kind: "file"
+    role: "historical_selection_manifest"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "counts.cleanup"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts:
+      keep:
+        entries: 89
+        by_dataset:
+          docops: 77
+          agentic_vbench: 12
+      move:
+        entries: 199
+        by_dataset:
+          docops: 57
+          agentic_vbench: 142
+    notes: "keep/move are manifest lists, not directories or deduplicated task counts. removed/ contains moved material; no restore/deletion."
+  -
+    source_id: "trace_cleanup_removed"
+    locator:
+      root: "benchmark"
+      path: "trace_cleanup_archive/20260908T060905Z/removed"
+      kind: "directory"
+    role: "historical_archive"
+    trace_type: "unknown"
+    profile: null
+    access_status: "root_exists_payload_not_fully_checked"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts: null
+    notes: "Accessible root only; full payload permission/integrity audit pending."
+  -
+    source_id: "docops_tasks"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/docops"
+      kind: "directory"
+    role: "task_definitions"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts: null
+    notes: "Not an extra trace dataset; no execution/tests of old code during this repair."
+  -
+    source_id: "workarena_tasks"
+    locator:
+      root: "benchmark"
+      path: "agent_benchmark_traces/workarena"
+      kind: "directory"
+    role: "task_definitions"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts: null
+    notes: "Not an extra trace dataset; no execution/tests of old code during this repair."
+  -
+    source_id: "telemetry_proxy_code"
+    locator:
+      root: "benchmark"
+      path: "telemetry_proxy"
+      kind: "directory"
+    role: "code_and_legacy_outputs"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts: null
+    notes: "Not an extra trace dataset; no execution/tests of old code during this repair."
+  -
+    source_id: "legacy_analysis"
+    locator:
+      root: "benchmark"
+      path: "benchmark_analysis"
+      kind: "directory"
+    role: "code_and_legacy_outputs"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts: null
+    notes: "Not an extra trace dataset; no execution/tests of old code during this repair."
+  -
+    source_id: "legacy_ingest_summary"
+    locator:
+      root: "benchmark"
+      path: "benchmark_analysis/analysis_output/ingest_summary.json"
+      kind: "file"
+    role: "historical_pipeline_summary"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: "files"
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: null
+    license: null
+    metadata_status: "Upstream version/license not independently verified unless noted"
+    counts: null
+    notes: "Old output reports 30266 traces; this is not a fresh validity count or sum of AgentX/Applied/SWE alone. Parquet row counts not recomputed."
+  -
+    source_id: "reference_DocOps"
+    locator:
+      root: "project"
+      path: "references/repos/DocOps"
+      kind: "directory"
+    role: "third_party_reference"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: "ccf7a751bc5c8a69c1cdd0400125d53455b33be3"
+    license: null
+    metadata_status: "Local full HEAD recorded; not a claim of clean checkout or reproducible assets"
+    counts: null
+    notes: "Read-only local HEAD lookup; worktree/asset identity and license not fully audited; references/manifest.yaml not changed."
+  -
+    source_id: "reference_OSWorld-V2"
+    locator:
+      root: "project"
+      path: "references/repos/OSWorld-V2"
+      kind: "directory"
+    role: "third_party_reference"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: "7b97982973605ed130d8b619fda0f8c0a1d2e2cd"
+    license: null
+    metadata_status: "Local full HEAD recorded; not a claim of clean checkout or reproducible assets"
+    counts: null
+    notes: "Read-only local HEAD lookup; worktree/asset identity and license not fully audited; references/manifest.yaml not changed."
+  -
+    source_id: "reference_SWE-bench"
+    locator:
+      root: "project"
+      path: "references/repos/SWE-bench"
+      kind: "directory"
+    role: "third_party_reference"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e"
+    license: null
+    metadata_status: "Local full HEAD recorded; not a claim of clean checkout or reproducible assets"
+    counts: null
+    notes: "Read-only local HEAD lookup; worktree/asset identity and license not fully audited; references/manifest.yaml not changed."
+  -
+    source_id: "reference_SWE-rebench-V2"
+    locator:
+      root: "project"
+      path: "references/repos/SWE-rebench-V2"
+      kind: "directory"
+    role: "third_party_reference"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: "c71902a8cf8d2b725f63d51f199f4d3e56f68d2d"
+    license: null
+    metadata_status: "Local full HEAD recorded; not a claim of clean checkout or reproducible assets"
+    counts: null
+    notes: "Read-only local HEAD lookup; worktree/asset identity and license not fully audited; references/manifest.yaml not changed."
+  -
+    source_id: "reference_ToolSandbox"
+    locator:
+      root: "project"
+      path: "references/repos/ToolSandbox"
+      kind: "directory"
+    role: "third_party_reference"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: "165848b9a78cead7ca7fe7c89c688b58e6501219"
+    license: null
+    metadata_status: "Local full HEAD recorded; not a claim of clean checkout or reproducible assets"
+    counts: null
+    notes: "Read-only local HEAD lookup; worktree/asset identity and license not fully audited; references/manifest.yaml not changed."
+  -
+    source_id: "reference_VideoWeaver"
+    locator:
+      root: "project"
+      path: "references/repos/VideoWeaver"
+      kind: "directory"
+    role: "third_party_reference"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: "c809392fe6c2c8b22472049684aaefc650e31bde"
+    license: null
+    metadata_status: "Local full HEAD recorded; not a claim of clean checkout or reproducible assets"
+    counts: null
+    notes: "Read-only local HEAD lookup; worktree/asset identity and license not fully audited; references/manifest.yaml not changed."
+  -
+    source_id: "reference_WorkArena"
+    locator:
+      root: "project"
+      path: "references/repos/WorkArena"
+      kind: "directory"
+    role: "third_party_reference"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: "a772230a94cf1caf4166b8ead3983f3b3786455b"
+    license: null
+    metadata_status: "Local full HEAD recorded; not a claim of clean checkout or reproducible assets"
+    counts: null
+    notes: "Read-only local HEAD lookup; worktree/asset identity and license not fully audited; references/manifest.yaml not changed."
+  -
+    source_id: "reference_agentcgroup"
+    locator:
+      root: "project"
+      path: "references/repos/agentcgroup"
+      kind: "directory"
+    role: "third_party_reference"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: "551ca1689b7d2d30db6b8a8613414750103cc68b"
+    license: null
+    metadata_status: "Local full HEAD recorded; not a claim of clean checkout or reproducible assets"
+    counts: null
+    notes: "Read-only local HEAD lookup; worktree/asset identity and license not fully audited; references/manifest.yaml not changed."
+  -
+    source_id: "reference_harbor"
+    locator:
+      root: "project"
+      path: "references/repos/harbor"
+      kind: "directory"
+    role: "third_party_reference"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: "1f84b4c007788702d9d9b06cfada3c4840103693"
+    license: null
+    metadata_status: "Local full HEAD recorded; not a claim of clean checkout or reproducible assets"
+    counts: null
+    notes: "Read-only local HEAD lookup; worktree/asset identity and license not fully audited; references/manifest.yaml not changed."
+  -
+    source_id: "reference_trie"
+    locator:
+      root: "project"
+      path: "references/repos/trie"
+      kind: "directory"
+    role: "third_party_reference"
+    trace_type: null
+    profile: null
+    access_status: "locator_exists"
+    snapshot:
+      audit_revision: "P0-00-r2"
+      evidence_file: "reports/quality/audit_evidence.json"
+      evidence_key: null
+      scope: "Listed file hashes or directory census only; not a frozen whole-source snapshot"
+    source_version: "6918da7915e3ae57ce3750a375ef50e41cad2b36"
+    license: null
+    metadata_status: "Local full HEAD recorded; not a claim of clean checkout or reproducible assets"
+    counts: null
+    notes: "Read-only local HEAD lookup; worktree/asset identity and license not fully audited; references/manifest.yaml not changed."

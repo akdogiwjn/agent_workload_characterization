@@ -1,0 +1,30 @@
+scenario: Office
+pilot:
+  status: backup candidate; see workload_catalog/pilot.yaml
+benchmarks:
+- name: DocOps
+  task_example: atomic__word_001_engineering_report_toc_hierarchy_seed
+  locator: agent_benchmark_traces/docops (tasks tree commit ccf7a751bc5c8a69c1cdd0400125d53455b33be3)
+  version: ccf7a751bc5c8a69c1cdd0400125d53455b33be3
+  agent: unfrozen (historical local batches used codex+Harbor+proxy, surrogate)
+  harness: DocOps/Harbor task structure
+  model: unfrozen
+  tool_stack:
+  - LibreOffice
+  - python openpyxl
+  - python-pptx
+  - bash
+  adaptation: historical runs were surrogate config; not a frozen harness
+  executability_evidence: task tree + Dockerfile + verifier static-verified; no word_001
+    historical run
+  unverified:
+  - image digest (needs build)
+  - offline reproduction without model API
+  local_boundary: docker container; task declares 1 CPU / 4096 MB / 10240 MB
+  remote_boundary: model API via proxy
+  dependencies:
+  - Docker
+  - model API
+  - telemetry proxy (historical)
+  selection_rationale: backup pilot; artifact-level deterministic verifier; resource
+    limits declared in task.toml

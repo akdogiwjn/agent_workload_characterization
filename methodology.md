@@ -1,6 +1,6 @@
 # AI Agent Workload Characterization 详细实施方案
 
-修订日期：2026-09-10。本轮只修订文档，未执行开发、数据转换或实验。已有旧工程产物是待审计资产，不等于本项目验收通过。
+初版修订日期：2026-09-10；进度更新：2026-09-11。已完成 P0-00-r2～P0-05、P0-10 VideoWeaver 小样、P0-08/09 最小宏观/coverage（当前依据 reports/macro/macro-pilot-v6 与 175 项隔离测试，当前 IR 0.2）；P0-07 PARTIAL，模型/harness 已选、任务记录与 mini 2.4.6 静态核实完成；G0 READY_FOR_REVIEW 未通过，未执行采集/实验。下一批见 [首次运行准备包](docs/first_run_preparation_handoff.md)，当前只准备任务书。已有旧工程产物不等于新项目指标或采集链路验收通过。
 
 配套文档：[开发任务与 Gate](docs/development_tasks.md)、[数据管理](docs/data_management.md)、[Trace 语义与测量契约](docs/trace_contract.md)。本文给出研究方法；具体开发顺序以任务计划的依赖和 Gate 为准，第 8～19 节的阶段是研究模块而非强制串行排期。
 
@@ -1810,7 +1810,7 @@ SWE-bench、DocOps、OSWorld、VideoWeaver 等的作用是：
 
 # 27. 第一版建议实际执行顺序
 
-当前不新增 benchmark、不搬迁旧 trace、不运行开发或实验。本轮文档修订之后，下一候选任务是 P0-00，不是直接创建全部骨架或全量重新 ingest。
+当前不新增 benchmark、不搬迁旧 trace、不自动启动后续任务或实验。P0-00-r2、P0-01～05、P0-10 小样与 P0-08/09 最小分析已验收。下一批按 [首次运行准备包 PREP-01](docs/first_run_preparation_handoff.md) 合并安全配置/输入准备、离线测试、只读能力预检与审批清单；本次仅准备任务书，未实施。此批允许 G0 前有限只读预检与自有准备代码，不含实际采集或第三方执行，不自动通过任何 Gate。P0-06 暂缓，不阻塞 G0；不全量重新 ingest。各 Gate 状态仍以任务计划为准。
 
 待用户明确开始后，按 [开发任务计划](docs/development_tasks.md) 的任务依赖推进：
 
