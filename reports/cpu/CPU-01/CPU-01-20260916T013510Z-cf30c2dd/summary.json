@@ -1,0 +1,1172 @@
+{
+  "run_id": "CPU-01-20260916T013510Z-cf30c2dd",
+  "status": "complete",
+  "phases": {
+    "stat": {
+      "argv": [
+        "/usr/bin/perf",
+        "stat",
+        "-x",
+        ";",
+        "-o",
+        "/home/lcq/agent_workload_characterization/reports/cpu/CPU-01/CPU-01-20260916T013510Z-cf30c2dd/stat.csv",
+        "-e",
+        "task-clock,context-switches,cpu-migrations,page-faults,cycles,instructions,branches,branch-misses,cache-references,cache-misses",
+        "--",
+        "/usr/bin/python3.11",
+        "-B",
+        "/home/lcq/agent_workload_characterization/scripts/cpu_01_target.py",
+        "20000000"
+      ],
+      "perf_pid": 576136,
+      "returncode": 0,
+      "timed_out": false,
+      "stop_events": [],
+      "threshold_aborted": false,
+      "group_leftover": false,
+      "drain_incomplete": false,
+      "phase_wall_s": 3.8721119961701334,
+      "stdout": "{\"event\": \"target_started\", \"pid\": 576139, \"starttime_ticks\": 232837148, \"iterations\": 20000000}\n{\"event\": \"target_done\", \"pid\": 576139, \"checksum\": \"6b834e260b672fa1725d74879b0bee6f35b2b8b013a23d71e8df8237a56edcd1\", \"cpu_seconds\": 3.720832}\n",
+      "stdout_truncated": false,
+      "stdout_total_bytes": 242,
+      "stderr": "",
+      "stderr_truncated": false,
+      "stderr_total_bytes": 0,
+      "status": "parsed",
+      "target": {
+        "target_started": {
+          "event": "target_started",
+          "pid": 576139,
+          "starttime_ticks": 232837148,
+          "iterations": 20000000
+        },
+        "target_done": {
+          "event": "target_done",
+          "pid": 576139,
+          "checksum": "6b834e260b672fa1725d74879b0bee6f35b2b8b013a23d71e8df8237a56edcd1",
+          "cpu_seconds": 3.720832
+        },
+        "non_json_lines": [],
+        "identity_complete": true
+      },
+      "target_check": {
+        "status": "ok",
+        "expected_checksum": "6b834e260b672fa1725d74879b0bee6f35b2b8b013a23d71e8df8237a56edcd1"
+      },
+      "target_completed": true,
+      "stat_raw_retained": true,
+      "parsed": {
+        "events": [
+          {
+            "event": "task-clock",
+            "unit": "msec",
+            "value_raw": "3756.25",
+            "value": 3756.25,
+            "time_enabled_ns": null,
+            "time_running_ns": null,
+            "run_time_ns": 3756254400.0,
+            "percent_running": 100.0,
+            "extra_fields": [
+              "1.000",
+              "CPUs utilized"
+            ],
+            "extra_fields_semantics": "optional variance / metric value / metric unit per perf-stat(1); kept raw, not interpreted",
+            "time_fields_interpretation": "single_run_time_percent",
+            "status": "ok"
+          },
+          {
+            "event": "context-switches",
+            "unit": null,
+            "value_raw": "7",
+            "value": 7.0,
+            "time_enabled_ns": null,
+            "time_running_ns": null,
+            "run_time_ns": 3756254400.0,
+            "percent_running": 100.0,
+            "extra_fields": [
+              "1.864",
+              "/sec"
+            ],
+            "extra_fields_semantics": "optional variance / metric value / metric unit per perf-stat(1); kept raw, not interpreted",
+            "time_fields_interpretation": "single_run_time_percent",
+            "status": "ok"
+          },
+          {
+            "event": "cpu-migrations",
+            "unit": null,
+            "value_raw": "3",
+            "value": 3.0,
+            "time_enabled_ns": null,
+            "time_running_ns": null,
+            "run_time_ns": 3756254400.0,
+            "percent_running": 100.0,
+            "extra_fields": [
+              "0.799",
+              "/sec"
+            ],
+            "extra_fields_semantics": "optional variance / metric value / metric unit per perf-stat(1); kept raw, not interpreted",
+            "time_fields_interpretation": "single_run_time_percent",
+            "status": "ok"
+          },
+          {
+            "event": "page-faults",
+            "unit": null,
+            "value_raw": "1324",
+            "value": 1324.0,
+            "time_enabled_ns": null,
+            "time_running_ns": null,
+            "run_time_ns": 3756254400.0,
+            "percent_running": 100.0,
+            "extra_fields": [
+              "352.479",
+              "/sec"
+            ],
+            "extra_fields_semantics": "optional variance / metric value / metric unit per perf-stat(1); kept raw, not interpreted",
+            "time_fields_interpretation": "single_run_time_percent",
+            "status": "ok"
+          },
+          {
+            "event": "cycles",
+            "unit": null,
+            "value_raw": "10892893444",
+            "value": 10892893444.0,
+            "time_enabled_ns": null,
+            "time_running_ns": null,
+            "run_time_ns": 3756254400.0,
+            "percent_running": 100.0,
+            "extra_fields": [
+              "2.900",
+              "GHz"
+            ],
+            "extra_fields_semantics": "optional variance / metric value / metric unit per perf-stat(1); kept raw, not interpreted",
+            "time_fields_interpretation": "single_run_time_percent",
+            "status": "ok"
+          },
+          {
+            "event": "instructions",
+            "unit": null,
+            "value_raw": "46014667758",
+            "value": 46014667758.0,
+            "time_enabled_ns": null,
+            "time_running_ns": null,
+            "run_time_ns": 3756254400.0,
+            "percent_running": 100.0,
+            "extra_fields": [
+              "4.22",
+              "insn per cycle"
+            ],
+            "extra_fields_semantics": "optional variance / metric value / metric unit per perf-stat(1); kept raw, not interpreted",
+            "time_fields_interpretation": "single_run_time_percent",
+            "status": "ok"
+          },
+          {
+            "event": "branches",
+            "unit": null,
+            "value_raw": "8595470137",
+            "value": 8595470137.0,
+            "time_enabled_ns": null,
+            "time_running_ns": null,
+            "run_time_ns": 3756254400.0,
+            "percent_running": 100.0,
+            "extra_fields": [
+              "2.288",
+              "G/sec"
+            ],
+            "extra_fields_semantics": "optional variance / metric value / metric unit per perf-stat(1); kept raw, not interpreted",
+            "time_fields_interpretation": "single_run_time_percent",
+            "status": "ok"
+          },
+          {
+            "event": "branch-misses",
+            "unit": null,
+            "value_raw": "54908590",
+            "value": 54908590.0,
+            "time_enabled_ns": null,
+            "time_running_ns": null,
+            "run_time_ns": 3756254400.0,
+            "percent_running": 100.0,
+            "extra_fields": [
+              "0.64",
+              "of all branches"
+            ],
+            "extra_fields_semantics": "optional variance / metric value / metric unit per perf-stat(1); kept raw, not interpreted",
+            "time_fields_interpretation": "single_run_time_percent",
+            "status": "ok"
+          },
+          {
+            "event": "cache-references",
+            "unit": null,
+            "value_raw": "15844591803",
+            "value": 15844591803.0,
+            "time_enabled_ns": null,
+            "time_running_ns": null,
+            "run_time_ns": 3756254400.0,
+            "percent_running": 100.0,
+            "extra_fields": [
+              "4.218",
+              "G/sec"
+            ],
+            "extra_fields_semantics": "optional variance / metric value / metric unit per perf-stat(1); kept raw, not interpreted",
+            "time_fields_interpretation": "single_run_time_percent",
+            "status": "ok"
+          },
+          {
+            "event": "cache-misses",
+            "unit": null,
+            "value_raw": "1146510",
+            "value": 1146510.0,
+            "time_enabled_ns": null,
+            "time_running_ns": null,
+            "run_time_ns": 3756254400.0,
+            "percent_running": 100.0,
+            "extra_fields": [
+              "0.01",
+              "of all cache refs"
+            ],
+            "extra_fields_semantics": "optional variance / metric value / metric unit per perf-stat(1); kept raw, not interpreted",
+            "time_fields_interpretation": "single_run_time_percent",
+            "status": "ok"
+          }
+        ],
+        "n_lines": 12,
+        "n_events": 10,
+        "n_counters": 10,
+        "n_metric_only": 0,
+        "n_parse_errors": 0,
+        "value_raw_lines_retained": true
+      },
+      "ipc": {
+        "ipc": 4.224283290253399,
+        "reason": null,
+        "basis": "instructions/cycles same stat session both valid"
+      },
+      "n_supported": 10,
+      "n_not_supported": 0
+    },
+    "record": {
+      "argv": [
+        "/usr/bin/perf",
+        "record",
+        "-F",
+        "99",
+        "-o",
+        "/home/lcq/agent_workload_characterization/reports/cpu/CPU-01/CPU-01-20260916T013510Z-cf30c2dd/perf.data",
+        "-e",
+        "cycles",
+        "--",
+        "/usr/bin/python3.11",
+        "-B",
+        "/home/lcq/agent_workload_characterization/scripts/cpu_01_target.py",
+        "20000000"
+      ],
+      "perf_pid": 576203,
+      "returncode": 0,
+      "timed_out": false,
+      "stop_events": [],
+      "threshold_aborted": false,
+      "group_leftover": false,
+      "drain_incomplete": false,
+      "phase_wall_s": 5.210504123009741,
+      "stdout": "{\"event\": \"target_started\", \"pid\": 576206, \"starttime_ticks\": 232837539, \"iterations\": 20000000}\n{\"event\": \"target_done\", \"pid\": 576206, \"checksum\": \"6b834e260b672fa1725d74879b0bee6f35b2b8b013a23d71e8df8237a56edcd1\", \"cpu_seconds\": 3.714281}\n",
+      "stdout_truncated": false,
+      "stdout_total_bytes": 242,
+      "stderr": "[ perf record: Woken up 1 times to write data ]\n[ perf record: Captured and wrote 0.043 MB /home/lcq/agent_workload_characterization/reports/cpu/CPU-01/CPU-01-20260916T013510Z-cf30c2dd/perf.data (354 samples) ]\n",
+      "stderr_truncated": false,
+      "stderr_total_bytes": 211,
+      "status": "data_present",
+      "target": {
+        "target_started": {
+          "event": "target_started",
+          "pid": 576206,
+          "starttime_ticks": 232837539,
+          "iterations": 20000000
+        },
+        "target_done": {
+          "event": "target_done",
+          "pid": 576206,
+          "checksum": "6b834e260b672fa1725d74879b0bee6f35b2b8b013a23d71e8df8237a56edcd1",
+          "cpu_seconds": 3.714281
+        },
+        "non_json_lines": [],
+        "identity_complete": true
+      },
+      "target_check": {
+        "status": "ok",
+        "expected_checksum": "6b834e260b672fa1725d74879b0bee6f35b2b8b013a23d71e8df8237a56edcd1"
+      },
+      "target_completed": true,
+      "perf_data_present": true,
+      "perf_data_bytes": 258180,
+      "perf_data_sha256": "e442d0680173823cccb003804418466c5b1df6b29681a458d5f4322f3bf6b6c4"
+    },
+    "report": {
+      "argv": [
+        "/usr/bin/perf",
+        "report",
+        "--stdio",
+        "--no-children",
+        "-i",
+        "/home/lcq/agent_workload_characterization/reports/cpu/CPU-01/CPU-01-20260916T013510Z-cf30c2dd/perf.data"
+      ],
+      "status": "parsed",
+      "perf_pid": 576232,
+      "returncode": 0,
+      "timed_out": false,
+      "stop_events": [],
+      "threshold_aborted": false,
+      "group_leftover": false,
+      "drain_incomplete": false,
+      "phase_wall_s": 0.13421219401061535,
+      "stdout": "# To display the perf.data header info, please use --header/--header-only options.\n#\n#\n# Total Lost Samples: 0\n#\n# Samples: 354  of event 'cycles'\n# Event count (approx.): 10831096379\n#\n# Overhead  Command     Shared Object         Symbol                       \n# ........  ..........  ....................  .............................\n#\n    20.03%  python3.11  libpython3.11.so.1.0  [.] _PyEval_EvalFrameDefault\n     5.42%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000109cc0\n     4.88%  python3.11  libpython3.11.so.1.0  [.] _Py_NewReference\n     4.06%  python3.11  libpython3.11.so.1.0  [.] _PyLong_New\n     3.25%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4b8\n     2.97%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4cc\n     2.55%  python3.11  libpython3.11.so.1.0  [.] 0x000000000016330c\n     2.43%  python3.11  libpython3.11.so.1.0  [.] PyObject_Malloc\n     2.43%  python3.11  libpython3.11.so.1.0  [.] 0x000000000010a7d0\n     2.16%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021bf04\n     2.16%  python3.11  libpython3.11.so.1.0  [.] PyLong_FromLong@plt\n     2.16%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021ac94\n     1.89%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000109ca0\n     1.63%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001215d0\n     1.62%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001215b0\n     1.62%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163398\n     1.35%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001227f8\n     1.35%  python3.11  libpython3.11.so.1.0  [.] PyLong_FromLong\n     1.35%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000166aa4\n     1.35%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001216c8\n     1.35%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001216c0\n     1.08%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001632a8\n     1.08%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4d4\n     1.08%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000164ce4\n     0.84%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000165650\n     0.81%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4c4\n     0.81%  python3.11  libpython3.11.so.1.0  [.] _Py_NewReference@plt\n     0.81%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163690\n     0.81%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163500\n     0.81%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001215a0\n     0.56%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b480\n     0.54%  python3.11  libpython3.11.so.1.0  [.] PyNumber_And\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b470\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000164cdc\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021ae8c\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000164cb4\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000010a7d4\n     0.54%  python3.11  libpython3.11.so.1.0  [.] PyNumber_FloorDivide\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b458\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000109c98\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4bc\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021ad74\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021a7b0\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b588\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001216cc\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4e0\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000122754\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001227e8\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163180\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000166b58\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163184\n     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163380\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4dc\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000164d10\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4c8\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021bee4\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000121580\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000109c90\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021aca0\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021ab9c\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021aee8\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000166a88\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001634e8\n     0.27%  python3.11  [kernel.kallsyms]     [k] lru_gen_del_mm\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000164d2c\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021ac34\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163524\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4ac\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b490\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000016324c\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000122750\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021a910\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000113f1c\n     0.27%  python3.11  libpython3.11.so.1.0  [.] PyObject_Free@plt\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001631fc\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000166a3c\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163290\n     0.27%  python3.11  libpython3.11.so.1.0  [.] PyObject_Free\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000121584\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b460\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163350\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001632f0\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000121594\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000113ed4\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021be34\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001634f0\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b464\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021a92c\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001636ac\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000166a2c\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021a7c4\n     0.27%  python3.11  libpython3.11.so.1.0  [.] PyObject_Malloc@plt\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021bfa4\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000166a9c\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021bee8\n     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021bf1c\n     0.00%  python3.11  [kernel.kallsyms]     [k] __mmap_region\n     0.00%  perf-exec   [kernel.kallsyms]     [k] perf_event_remove_on_exec\n\n\n#\n# (Tip: Use parent filter to see specific call path: perf report -p <regex>)\n#\n",
+      "stdout_truncated": false,
+      "stdout_total_bytes": 7168,
+      "stderr": "",
+      "stderr_truncated": false,
+      "stderr_total_bytes": 0,
+      "report_raw_retained": true,
+      "parsed": {
+        "evidence_status": "header_and_rows",
+        "total_samples": 354,
+        "event_count_approx": 10831096379,
+        "denominator_note": "Self overhead is period-weighted per perf-report(1), not a ratio over total samples; sample counts are separate fields, null when absent",
+        "n_rows": 98,
+        "rows": [
+          {
+            "overhead_percent_raw": "20.03",
+            "overhead_percent": 20.03,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] _PyEval_EvalFrameDefault",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "5.42",
+            "overhead_percent": 5.42,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000109cc0",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "4.88",
+            "overhead_percent": 4.88,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] _Py_NewReference",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "4.06",
+            "overhead_percent": 4.06,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] _PyLong_New",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "3.25",
+            "overhead_percent": 3.25,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000012b4b8",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "2.97",
+            "overhead_percent": 2.97,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000012b4cc",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "2.55",
+            "overhead_percent": 2.55,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000016330c",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "2.43",
+            "overhead_percent": 2.43,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] PyObject_Malloc",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "2.43",
+            "overhead_percent": 2.43,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000010a7d0",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "2.16",
+            "overhead_percent": 2.16,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021bf04",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "2.16",
+            "overhead_percent": 2.16,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] PyLong_FromLong@plt",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "2.16",
+            "overhead_percent": 2.16,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021ac94",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "1.89",
+            "overhead_percent": 1.89,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000109ca0",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "1.63",
+            "overhead_percent": 1.63,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x00000000001215d0",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "1.62",
+            "overhead_percent": 1.62,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x00000000001215b0",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "1.62",
+            "overhead_percent": 1.62,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000163398",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "1.35",
+            "overhead_percent": 1.35,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x00000000001227f8",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "1.35",
+            "overhead_percent": 1.35,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] PyLong_FromLong",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "1.35",
+            "overhead_percent": 1.35,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000166aa4",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "1.35",
+            "overhead_percent": 1.35,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x00000000001216c8",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "1.35",
+            "overhead_percent": 1.35,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x00000000001216c0",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "1.08",
+            "overhead_percent": 1.08,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x00000000001632a8",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "1.08",
+            "overhead_percent": 1.08,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000012b4d4",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "1.08",
+            "overhead_percent": 1.08,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000164ce4",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.84",
+            "overhead_percent": 0.84,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000165650",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.81",
+            "overhead_percent": 0.81,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000012b4c4",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.81",
+            "overhead_percent": 0.81,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] _Py_NewReference@plt",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.81",
+            "overhead_percent": 0.81,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000163690",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.81",
+            "overhead_percent": 0.81,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000163500",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.81",
+            "overhead_percent": 0.81,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x00000000001215a0",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.56",
+            "overhead_percent": 0.56,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000012b480",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] PyNumber_And",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000012b470",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000164cdc",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021ae8c",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000164cb4",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000010a7d4",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] PyNumber_FloorDivide",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000012b458",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000109c98",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000012b4bc",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021ad74",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021a7b0",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000012b588",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x00000000001216cc",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000012b4e0",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000122754",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x00000000001227e8",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000163180",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000166b58",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000163184",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.54",
+            "overhead_percent": 0.54,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000163380",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000012b4dc",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000164d10",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000012b4c8",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021bee4",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000121580",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000109c90",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021aca0",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021ab9c",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021aee8",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000166a88",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x00000000001634e8",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "[kernel.kallsyms]",
+            "symbol": "[k] lru_gen_del_mm",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000164d2c",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021ac34",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000163524",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000012b4ac",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000012b490",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000016324c",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000122750",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021a910",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000113f1c",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] PyObject_Free@plt",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x00000000001631fc",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000166a3c",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000163290",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] PyObject_Free",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000121584",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000012b460",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000163350",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x00000000001632f0",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000121594",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000113ed4",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021be34",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x00000000001634f0",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000012b464",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021a92c",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x00000000001636ac",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000166a2c",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021a7c4",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] PyObject_Malloc@plt",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021bfa4",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x0000000000166a9c",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021bee8",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.27",
+            "overhead_percent": 0.27,
+            "command": "python3.11",
+            "dso": "libpython3.11.so.1.0",
+            "symbol": "[.] 0x000000000021bf1c",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.00",
+            "overhead_percent": 0.0,
+            "command": "python3.11",
+            "dso": "[kernel.kallsyms]",
+            "symbol": "[k] __mmap_region",
+            "symbol_unknown": false
+          },
+          {
+            "overhead_percent_raw": "0.00",
+            "overhead_percent": 0.0,
+            "command": "perf-exec",
+            "dso": "[kernel.kallsyms]",
+            "symbol": "[k] perf_event_remove_on_exec",
+            "symbol_unknown": false
+          }
+        ],
+        "unparsed_percent_lines": [],
+        "zero_samples": false,
+        "unknown_symbol_rows": 0
+      }
+    }
+  },
+  "cleanup": {
+    "after_stat": {
+      "target_pid": 576139,
+      "status": "exited"
+    },
+    "after_record": {
+      "target_pid": 576206,
+      "status": "exited"
+    }
+  },
+  "preflight": {
+    "status": "READY",
+    "checks": {
+      "perf_binary": true,
+      "target_script": true
+    },
+    "perf_binary": "/usr/bin/perf",
+    "perf_event_paranoid": {
+      "value": -1,
+      "read_status": "ok",
+      "note": "recorded only; actual permission is a runtime result, not pre-judged"
+    },
+    "target_script": "/home/lcq/agent_workload_characterization/scripts/cpu_01_target.py"
+  },
+  "errors": [],
+  "budget_overrun": false,
+  "archive_status": "complete",
+  "clock_anchor": {
+    "monotonic_ns": 2328371453971130,
+    "utc_ns": 1789522511082374580,
+    "domain": "same_host_CLOCK_MONOTONIC",
+    "assumption": "native perf and target share host clocks"
+  },
+  "config_limits": {
+    "batch_wall_s": 120,
+    "cleanup_reserve_s": 20,
+    "operation_s": 15,
+    "target_wall_s": 10,
+    "target_expected_cpu_s": 1.5,
+    "record_frequency_hz_max": 99,
+    "report_threshold_mib": 20,
+    "retries": 0,
+    "fallback_event": "none_failed_record_is_recorded_unavailable_no_retry"
+  },
+  "perf_binary_sha256": "4965f91b28addc7e7884f5d029613c18cb3f055a6dd921165122ba3dfe414778",
+  "collection_semantics": "owned synthetic target only; NOT an Agent workload; hotspots are NOT Agent hotspots; software events are not hardware support; sample ratios are not CPU seconds",
+  "wall_s": 9.58865474909544
+}

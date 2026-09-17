@@ -1,0 +1,49 @@
+spec_version: 0.1.0
+collection_id: G1-02
+status: A_IMPLEMENTED_B_PENDING_APPROVAL
+execution_authorized: false
+workload:
+  kind: owned_synthetic_protocol_worker
+  worker: scripts/g1_02_worker.py
+  protocol: stdin_stdout_jsonl_no_network
+  service: two_sync_requests_one_async_completed_one_async_cancelled
+  overhead: six_pairs_on_off
+  work_iterations: 20000000
+  service_iterations: 1000
+  checksum: sha256_ascii_of_3_times_n_times_n_minus_1_div_2_mod_2_pow_32
+measurement:
+  sampling_interval_s: 0.2
+  interval: worker_ready_to_work_done_bracketed_by_parent_handshakes
+  'on': ResourceSampler_and_HostProcessMonitor_periodic_sampling
+  'off': same_handshakes_and_boundary_reads_without_periodic_sampling
+  collector_scope: host_orchestrator_process_including_its_threads_not_docker_cli_children
+comparison:
+  pairs: 6
+  order: ['OFF', 'ON', 'ON', 'OFF', 'OFF', 'ON', 'ON', 'OFF', 'OFF', 'ON', 'ON', 'OFF']
+  delta_formula: median(ON_i - OFF_i) using paired same-index work metrics
+  gate: mechanism_evidence_must_pass_before_comparison_is_sufficient
+  minimum_samples_per_interval: 2
+  minimum_worker_cpu_s: 0.05
+  boundary_read_max_s: 0.25
+  sufficiency: all_6_pairs_have_two_boundaries_and_worker_work_window
+  basis: pre-registered protocol/collector resolution, not a universal performance tolerance
+  cpu_diagnostic_formula: 2/CLK_TCK + cpu_limit * max(0, cgroup_bracket_wall - worker_work_wall)
+  cpu_diagnostic_basis: two host ticks plus maximum configured cores over extra bracket time; diagnostic allowance, not a guaranteed error bound
+limits:
+  batch_wall_s: 300
+  cleanup_reserve_s: 30
+  operation_s: 15
+  work_interval_s: 8
+  report_threshold_mib: 20
+  max_containers: 2
+  per_container_cpu: 2
+  per_container_memory: 256MiB
+  network: none
+  pull: never
+  retries: 0
+authorization:
+  user_approval: pending
+  tool_execution_permission: pending
+  approval_path: reports/resource/G1-02/APPROVAL.json
+  attempt_path: reports/resource/G1-02/ATTEMPT_STARTED.json
+  report_root: reports/resource/G1-02

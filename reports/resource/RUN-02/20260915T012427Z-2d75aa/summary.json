@@ -1,0 +1,1894 @@
+{
+  "collection": "RUN-02",
+  "run_dir": "/home/lcq/agent_workload_characterization/data/raw/generated/RUN-02/20260915T012427Z-2d75aa",
+  "status": "complete",
+  "missing_required_files": [],
+  "resource_summary": {
+    "run_id": "20260915T012427Z-2d75aa",
+    "attempt_id": "20260915T012427Z-2d75aa-a1",
+    "task_id": "django__django-16485",
+    "source_type": "benchmark_real",
+    "status": {
+      "execution": "ok",
+      "evaluation": "ok",
+      "archive": "ok"
+    },
+    "resolved": true,
+    "budget": {
+      "requests": 30,
+      "steps": 26,
+      "output_tokens": 11007,
+      "artifact_bytes": 645154,
+      "artifact_exceeded": false,
+      "elapsed_s": 12.61024875,
+      "elapsed_total_s": 156.595923609,
+      "phase": "evaluation",
+      "exceeded": null
+    },
+    "llm": {
+      "requests": 30,
+      "ok": 27,
+      "failed": 3,
+      "censored": 0,
+      "usage_coverage": {
+        "n_valid": 30,
+        "n_applicable": 30,
+        "missing": 0
+      }
+    },
+    "agent": {
+      "exit_status": "LimitsExceeded",
+      "submitted": false,
+      "candidate_source": "container_working_tree_git_diff",
+      "note": "exit_status/submission come from the mini trajectory; the runner always extracts the candidate from the container working tree, so a non-submitted agent exit (e.g. LimitsExceeded) can still yield a verified candidate — execution=ok describes the PIPELINE, not an agent clean finish",
+      "trajectory_present": true
+    },
+    "tools": {
+      "calls": 28,
+      "observation_messages": 28,
+      "source": "mini_trajectory",
+      "categories": [],
+      "classification": "not_available (no tool classifier wired; P1-06)",
+      "runner_event_count": 0
+    },
+    "llm_observed_span": {
+      "observed_span_s": 137.383461225,
+      "n_events": 30,
+      "missing_reason": null
+    },
+    "scopes": [
+      {
+        "scope": "20260915T012427Z-2d75aa-agent-sandbox",
+        "scope_kind": "agent_container",
+        "cpu_core_seconds": 51.007123,
+        "cpu_core_seconds_reason": null,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 143.651636264,
+        "avg_cores": 0.3550751270682373,
+        "memory_current_end_bytes": 15831040,
+        "memory_kernel_peak_bytes": 1434140672,
+        "memory_sampled_max_bytes": 1431527424,
+        "memory_peak_basis": "v1_max_usage_in_bytes",
+        "n_samples": 288,
+        "io": {
+          "formal": null,
+          "reason": "degraded_host_v1_blkio: writeback attributed to root cgroup; reads are page-cache hits; not application bytes",
+          "diagnostic": {
+            "read_bytes": 0,
+            "write_bytes": 6905856,
+            "evidence": "io.stat_boundary_delta",
+            "reason": null,
+            "cumulative_end": {
+              "read_bytes": 0,
+              "write_bytes": 6905856,
+              "note": "cumulative counter value at final boundary (reference only; NOT the interval amount)"
+            }
+          }
+        },
+        "evidence_check": {
+          "boundary_start_present": true,
+          "boundary_end_present": true,
+          "raw_sample_count": 288,
+          "gaps_recorded": 287
+        }
+      },
+      {
+        "scope": "20260915T012427Z-2d75aa-verifier",
+        "scope_kind": "verifier_container",
+        "cpu_core_seconds": 3.64963,
+        "cpu_core_seconds_reason": null,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 12.264456124,
+        "avg_cores": 0.29757781047119836,
+        "memory_current_end_bytes": 11849728,
+        "memory_kernel_peak_bytes": 72548352,
+        "memory_sampled_max_bytes": 72548352,
+        "memory_peak_basis": "v1_max_usage_in_bytes",
+        "n_samples": 25,
+        "io": {
+          "formal": null,
+          "reason": "degraded_host_v1_blkio: writeback attributed to root cgroup; reads are page-cache hits; not application bytes",
+          "diagnostic": {
+            "read_bytes": 0,
+            "write_bytes": 1699840,
+            "evidence": "io.stat_boundary_delta",
+            "reason": null,
+            "cumulative_end": {
+              "read_bytes": 0,
+              "write_bytes": 1699840,
+              "note": "cumulative counter value at final boundary (reference only; NOT the interval amount)"
+            }
+          }
+        },
+        "evidence_check": {
+          "boundary_start_present": true,
+          "boundary_end_present": true,
+          "raw_sample_count": 25,
+          "gaps_recorded": 24
+        }
+      }
+    ],
+    "cpu_core_seconds_coverage": {
+      "n_valid": 2,
+      "n_applicable": 2,
+      "missing": 0
+    },
+    "unclosed_events": 0,
+    "archive": {
+      "reported_artifact_bytes": 645154,
+      "reported_note": "metadata snapshot taken before metadata.json/manifest.json self-accounting; the outcome-level final total is recorded in the supplement manifest",
+      "actual_run_dir_bytes": 647461,
+      "files_total": 10,
+      "original_manifest_files": [
+        "candidate.patch",
+        "events.jsonl",
+        "host_process.jsonl",
+        "metadata.json",
+        "mini_status.jsonl",
+        "mini_tool_events.jsonl",
+        "mini_trajectory.json",
+        "samples.json",
+        "verifier/test_output.txt"
+      ],
+      "files_missing_from_original_manifest": [],
+      "bytes_outside_in_run_accounting": {
+        "host_process.jsonl": 82070,
+        "mini_status.jsonl": 13188,
+        "mini_tool_events.jsonl": 14708,
+        "mini_trajectory.json": 229036,
+        "verifier/test_output.txt": 15902
+      },
+      "bytes_outside_total": 354904,
+      "accounting_scope_note": "in-run budget accounting covered the RUNNER-ARCHIVED files only (candidate.patch, events.jsonl, samples.json, metadata.json, manifest.json); harness-child outputs (mini_status.jsonl, mini_trajectory.json) and the verifier test log were written during execution/evaluation outside that scope — the supplement manifest registers the complete list; the in-flight monitor polices the full tree; the runner now accounts the full tree for future runs"
+    },
+    "collector": {
+      "scope": "collector",
+      "sampling_interval_s": 0.5,
+      "total_reads": 313,
+      "note": "collector runs outside measured scopes; its own CPU/RSS is not included in any measured scope and must be stated separately"
+    },
+    "limitations": [
+      "scope peaks are NOT additive: no run-level peak memory exists",
+      "avg cores = cpu/wall within a scope; not an efficiency metric",
+      "parent/child scope overlap means scope CPUs must not be summed into a total without an explicit mutual-exclusion proof",
+      "page cache makes block I/O differ from application bytes; io.read_bytes is the interval delta, not the cumulative value",
+      "sample count is not accuracy evidence; boundary counters carry the CPU evidence for short bursts",
+      "tool-level semantic events are emitted by the fake harness flow only; the real mini harness records tool activity in the mini trajectory, so tool counts here may be 0 for real runs",
+      "host_agent_runtime scope (the host-side mini child) has no per-process CPU/RSS instrumentation; its wall/request boundaries come from the status protocol"
+    ]
+  },
+  "observation_quality": {
+    "trajectory_tool_count": 28,
+    "observed_tool_count": 28,
+    "tool_complete": true,
+    "native_observation_ok": true,
+    "host_identity_and_samples": true
+  },
+  "tool_events": {
+    "path": "mini_tool_events.jsonl",
+    "sha256": "208a59ed6e8e821823c95562db4a85a4f51081e4c64b072680f9c013745654c3",
+    "n_events": 56,
+    "n_open": 28,
+    "n_closed": 28,
+    "n_error": 0,
+    "duplicate_open_ids": [],
+    "duplicate_closed_ids": [],
+    "duplicate_error_ids": [],
+    "closed_without_open": [],
+    "error_without_open": [],
+    "unclosed_open_ids": [],
+    "terminal_error_ids": [],
+    "safe_command_views_only": true
+  },
+  "host_process": {
+    "path": "host_process.jsonl",
+    "sha256": "ee4404a111681a2744e48ccb802330fd38b0046eecf12cc93ecda232a69b2487",
+    "identity_present": true,
+    "units_present": true,
+    "n_snapshots": 717,
+    "summary": {
+      "scope": "host_mini_child",
+      "pid": 4062146,
+      "starttime_ticks": 224132801,
+      "clk_tck": 100,
+      "page_size": 4096,
+      "n_snapshots": 717,
+      "n_readable": 716,
+      "cpu_seconds": 4.19,
+      "cpu_seconds_reason": null,
+      "cpu_basis": "utime+stime tick delta between first/last READABLE snapshots (interval, not lifetime)",
+      "rss_current_last_readable": 218214400,
+      "rss_sampled_max": 226713600,
+      "rss_note": "current/sampled-max distinct; kernel peak not read at process level; RSS never summed across processes",
+      "final_read_status": "process_exited",
+      "final_value_note": "a process_exited final read means the verified final is null; the last readable value is diagnostic only",
+      "collector": {
+        "read_count": 717,
+        "read_wall_ns_total": 38026291,
+        "read_wall_ns_mean": 53035.27336122734,
+        "note": "collector read cost measured separately from any workload metric; runner-process CPU/RSS is host_runner_process (includes collector), never double-counted as exclusive"
+      },
+      "coverage_gaps": [
+        "descendants (docker exec clients) not individually tracked; short-lived grandchildren may be missed",
+        "kernel-peak (VmHWM) not recorded at host scope this batch"
+      ]
+    }
+  },
+  "tool_timeline": {
+    "status": "complete",
+    "records": [
+      {
+        "event_id": "3de468cd1a8141668d588d24db06fac3",
+        "seq": 1,
+        "tool_call_id": "call_3gtnargxsqfg05lptwz7o4cd",
+        "command_view": {
+          "sha256": "8ad988f1cc455a501cb76c52894cbb5d3a2715e199b5ad0b8fe18bea811ac784",
+          "length": 59
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241333356406556,
+        "t_end_ns": 2241333812771625,
+        "duration_s": 0.456365069,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "6a53cd9d7f3d4e06bb3341bbb995bc05",
+        "seq": 2,
+        "tool_call_id": "call_9wc73642np24ici23x5vo1xl",
+        "command_view": {
+          "sha256": "acf335d4362390b3888a75eb4c32409e1ef8124e099c4d562ce37d544d4d4b2d",
+          "length": 125
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241333812855496,
+        "t_end_ns": 2241334090146046,
+        "duration_s": 0.27729055,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "28735ec8045b493abb9ba53cd3b8c7c1",
+        "seq": 3,
+        "tool_call_id": "call_7703c580de60472895f758ac",
+        "command_view": {
+          "sha256": "10b16fb4aad3cb257b762c8ac17df79736fff5c1539701975cb7686479bfbbb3",
+          "length": 74
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241335663901786,
+        "t_end_ns": 2241335881124503,
+        "duration_s": 0.217222717,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "c26da99548de416ab2f26ae48db131d7",
+        "seq": 4,
+        "tool_call_id": "call_gbz7nzhdj9fndzflxtmosn8e",
+        "command_view": {
+          "sha256": "a4fbfa5fc46d185c4df498d54c85509e4edcd995bb0406b7ad16909cecbd55cf",
+          "length": 65
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241337095872763,
+        "t_end_ns": 2241337302134359,
+        "duration_s": 0.206261596,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "9f5b9080da314e58a759cce5fdeb9978",
+        "seq": 5,
+        "tool_call_id": "call_rzd06v0ixitimhve4bbcfxbp",
+        "command_view": {
+          "sha256": "f4b7ed6a0dadec1157acf594f4d8f8f42431aaa498267980e430e6373b923bce",
+          "length": 66
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241338711929539,
+        "t_end_ns": 2241338901904719,
+        "duration_s": 0.18997518,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "b86ae79f37fe44099b4a21cbdba3da62",
+        "seq": 6,
+        "tool_call_id": "call_ce101f1f5b294c26b65e9276",
+        "command_view": {
+          "sha256": "2f93e57a0af69c643fd010c202f62f0ec1304f2fde6eaecbc07052378db4d3cf",
+          "length": 647
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241349443211973,
+        "t_end_ns": 2241349673226878,
+        "duration_s": 0.230014905,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "eb9f43df728040eb90cd699c75c9a898",
+        "seq": 7,
+        "tool_call_id": "call_7cd3h33zbbljzsxfk0rkj9re",
+        "command_view": {
+          "sha256": "e739305949df6361a0d96afc707f91025061c65282b2180d527db1d31ecfc32c",
+          "length": 108
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241353706246569,
+        "t_end_ns": 2241353897690110,
+        "duration_s": 0.191443541,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "d53eb49e5e2d4cb38d2209f5ec0c0d3f",
+        "seq": 8,
+        "tool_call_id": "call_ag6z5f1182wn7jdnz2tyzsv7",
+        "command_view": {
+          "sha256": "cad6682f6942c230aee2c7a5d3bc211337523e67b9f687bbba4df8a2e29cf9f6",
+          "length": 84
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241360597891161,
+        "t_end_ns": 2241360814687362,
+        "duration_s": 0.216796201,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "1c2a233077c04b80906171bde97f583e",
+        "seq": 9,
+        "tool_call_id": "call_6b6xj2zc4nwdx53ppu4otrll",
+        "command_view": {
+          "sha256": "e3ff1a87b092c874ad294b1664a5dc8c4a8eb84c24066a3cfda7084af29556db",
+          "length": 1810
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241369072367248,
+        "t_end_ns": 2241369390032476,
+        "duration_s": 0.317665228,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "48ca0007f4084c68b56cc870fea7098c",
+        "seq": 10,
+        "tool_call_id": "call_678dc8394a41418db721b617",
+        "command_view": {
+          "sha256": "3e79b443382403241fa75b65c1d7898a4ba5dee79decc57dcd2a1b34b852a0f5",
+          "length": 122
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241374278635494,
+        "t_end_ns": 2241374483768154,
+        "duration_s": 0.20513266,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "bdb417a7a29d4e1e96aa784ea88d113e",
+        "seq": 11,
+        "tool_call_id": "call_axdsqd8s29mldo2cfyxglyx9",
+        "command_view": {
+          "sha256": "523620731c2848ecb250f79841fd1fc24a04052ed36b825aa29327e015a7c779",
+          "length": 108
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241376095028593,
+        "t_end_ns": 2241376884966751,
+        "duration_s": 0.789938158,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "c9459fe35f4343358fe6540bcfc0b3b0",
+        "seq": 12,
+        "tool_call_id": "call_d2d17890703b4a8197af56ed",
+        "command_view": {
+          "sha256": "becb707d7b374a621cbb50911bac4d49f26487f80dde3fd091239e81a379354e",
+          "length": 105
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241378827873702,
+        "t_end_ns": 2241379568713430,
+        "duration_s": 0.740839728,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "1764d288e4e84b049611cf951ef71b8b",
+        "seq": 13,
+        "tool_call_id": "call_7jz2shxqrmxxz94f4zv9m1sa",
+        "command_view": {
+          "sha256": "311316a40fb546df8cc52e7232a5804b898cab6db10e139fa20c7a48544fc928",
+          "length": 338
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241381729581109,
+        "t_end_ns": 2241382027304281,
+        "duration_s": 0.297723172,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "e7b6eae12f11465fb6dbe5f38d35b597",
+        "seq": 14,
+        "tool_call_id": "call_tk64uj2nowjh2ni48ov06c2e",
+        "command_view": {
+          "sha256": "67fc8390bf755290ad29fa4b4ab55c18d2b256499da53846b5a6dd43f5770907",
+          "length": 481
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241388780662338,
+        "t_end_ns": 2241388991208483,
+        "duration_s": 0.210546145,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "50c1141b592d46ec88e329f378b850e1",
+        "seq": 15,
+        "tool_call_id": "call_9kfppfbvdo74om2r9u16u6ku",
+        "command_view": {
+          "sha256": "3389245fbcb0755f9f1c736c4494729495229721e6a807f0863f54f70e22cee7",
+          "length": 292
+        },
+        "event_kind": "closed",
+        "returncode": 1,
+        "exception_type": null,
+        "t_start_ns": 2241390924446641,
+        "t_end_ns": 2241391248861772,
+        "duration_s": 0.324415131,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "44725ddcf20e4f6ea490af32973926dc",
+        "seq": 16,
+        "tool_call_id": "call_7ce8f154275a4a7cad2fa935",
+        "command_view": {
+          "sha256": "f9153ec478e344c5a244fda968b45d210240adfb2b04e91981152360894250c4",
+          "length": 649
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241395151085903,
+        "t_end_ns": 2241395565078445,
+        "duration_s": 0.413992542,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "ee528e7afc0a4ab5bc77c8dcd6c82c74",
+        "seq": 17,
+        "tool_call_id": "call_sur3chf4f8snrnq2609zi0k2",
+        "command_view": {
+          "sha256": "0c8355834dc2b561225acc64aed1b28c82d0310321577e14a2264716e4e323af",
+          "length": 114
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241397426298465,
+        "t_end_ns": 2241397994436391,
+        "duration_s": 0.568137926,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "1482ec2fbca54ca9a1ba4841f187b329",
+        "seq": 18,
+        "tool_call_id": "call_0q9sakhyirowm0mq20lglfy6",
+        "command_view": {
+          "sha256": "a4e90d0ce6daf7c8742b582ce37e036b9aacd5b8085e8f9e75f32955791d9ddd",
+          "length": 75
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241400111638356,
+        "t_end_ns": 2241400666034922,
+        "duration_s": 0.554396566,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "85449816319f40329ac415d172054ae6",
+        "seq": 19,
+        "tool_call_id": "call_aa5386818d724e47b723072e",
+        "command_view": {
+          "sha256": "629957a6f035d2fa6ad9d915cfc7153031301e07c100a155dc2545cf249b8948",
+          "length": 2604
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241411203256070,
+        "t_end_ns": 2241411610992676,
+        "duration_s": 0.407736606,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "b526aa082708494799d1d9327fa222d7",
+        "seq": 20,
+        "tool_call_id": "call_nnyfjwr1omlhyjvhu9c0ye8j",
+        "command_view": {
+          "sha256": "e780069f0a9eaff06e2962a813e7e58b377d5fcc5c23dca2f2f33e7e54ad31f7",
+          "length": 582
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241419486678972,
+        "t_end_ns": 2241419871069804,
+        "duration_s": 0.384390832,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "7704bd5070a4420589171c5a99f47b6a",
+        "seq": 21,
+        "tool_call_id": "call_baed5eaeaca44b9085cd7165",
+        "command_view": {
+          "sha256": "1e9d5214e1b563affb3239a52514a85e1ff5e734be6dab0b3f07d4dd6c96f75d",
+          "length": 75
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241422212582805,
+        "t_end_ns": 2241436823205123,
+        "duration_s": 14.610622318,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "36f24acb49cd468bbe733d53b0e8aab8",
+        "seq": 22,
+        "tool_call_id": "call_x4tldlfoa4fucxbgr4l23o1e",
+        "command_view": {
+          "sha256": "4f4e7c66d111a53b021a924c3871e8a5cb1c9b2d23fbcdffea595f3fdf43bffd",
+          "length": 118
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241440403596997,
+        "t_end_ns": 2241441174796625,
+        "duration_s": 0.771199628,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "e1106154f7d54b35ad2b007dd31e1eb0",
+        "seq": 23,
+        "tool_call_id": "call_021033d35f2b420989802bf7",
+        "command_view": {
+          "sha256": "02593e2bf4837433692571ccaf70b4dfe2204ceb497f833c5c5846d80ff196c3",
+          "length": 23
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241443048811942,
+        "t_end_ns": 2241443251881104,
+        "duration_s": 0.203069162,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "c3e54fb7a4b147e983b4a78adac03d8a",
+        "seq": 24,
+        "tool_call_id": "call_3a087a7bd00744db80c0de97",
+        "command_view": {
+          "sha256": "fbdff9ec321d807408857cbd34734de9e7bc83f805574007f1f79f74ffc34128",
+          "length": 89
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241445162468548,
+        "t_end_ns": 2241445336799492,
+        "duration_s": 0.174330944,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "a417cec8a1674f5bbbbdf43084ea72b3",
+        "seq": 25,
+        "tool_call_id": "call_3e688172ef3243879dde3ea4",
+        "command_view": {
+          "sha256": "aa7d0720fdabc4cbb35045fde3aff2973c5d4100d6084751b5618ad3d5eacf04",
+          "length": 74
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241447389721896,
+        "t_end_ns": 2241447589563863,
+        "duration_s": 0.199841967,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "c4de904557a74825a667d0f5a670e81d",
+        "seq": 26,
+        "tool_call_id": "call_0kfw1rkpp4vylal5mwaprxrw",
+        "command_view": {
+          "sha256": "aa7d0720fdabc4cbb35045fde3aff2973c5d4100d6084751b5618ad3d5eacf04",
+          "length": 74
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241458207289496,
+        "t_end_ns": 2241458421833676,
+        "duration_s": 0.21454418,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "13b4014b1eb64e0388304aeb3c757151",
+        "seq": 27,
+        "tool_call_id": "call_d18c9b8504db4418b74685c4",
+        "command_view": {
+          "sha256": "72ae26ef4602301c676164645cccdfdd2f9e6ba17ea7104982480df4ab5e063b",
+          "length": 28
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241468286142307,
+        "t_end_ns": 2241468487921591,
+        "duration_s": 0.201779284,
+        "duration_evidence": "native_hook_boundaries"
+      },
+      {
+        "event_id": "68a7c7f893e34b06bcd27cbb2d87171c",
+        "seq": 28,
+        "tool_call_id": "call_3cdb795448574cb5a84700ff",
+        "command_view": {
+          "sha256": "2ffe37d2c7550c7e710ca4944bad6a7ed838e9ced995ba2dfe039c799415384c",
+          "length": 81
+        },
+        "event_kind": "closed",
+        "returncode": 0,
+        "exception_type": null,
+        "t_start_ns": 2241470603403772,
+        "t_end_ns": 2241470792459639,
+        "duration_s": 0.189055867,
+        "duration_evidence": "native_hook_boundaries"
+      }
+    ],
+    "coverage": {
+      "n_valid_durations": 28,
+      "n_records": 28
+    },
+    "structural_checks": {
+      "duplicate": [],
+      "orphaned": [],
+      "unclosed": [],
+      "unclosed_without_terminal_error": []
+    },
+    "event_view": {
+      "path": "mini_tool_events.jsonl",
+      "sha256": "208a59ed6e8e821823c95562db4a85a4f51081e4c64b072680f9c013745654c3",
+      "n_events": 56,
+      "n_open": 28,
+      "n_closed": 28,
+      "n_error": 0,
+      "duplicate_open_ids": [],
+      "duplicate_closed_ids": [],
+      "duplicate_error_ids": [],
+      "closed_without_open": [],
+      "error_without_open": [],
+      "unclosed_open_ids": [],
+      "terminal_error_ids": [],
+      "safe_command_views_only": true
+    }
+  },
+  "trajectory_timeline": {
+    "tool_calls_total": 28,
+    "pairing_missing_results": 0,
+    "pairing_anomalies": {
+      "n_id_mismatch": 0,
+      "n_duplicate_action_id": 0
+    },
+    "identity_basis": "tool_call_id + positional pairing with ID cross-check (mismatch/duplicate/orphan reported, never silently accepted)",
+    "calibration": {
+      "available": true,
+      "n_anchors": 27,
+      "offset_ns_median": -1.7871941396283958e+18,
+      "anchor_residual_ns_max": 24064.0,
+      "anchor_residual_semantics": "observed max spread of per-anchor offsets around the median; NOT a proven calibration error bound",
+      "method": "per-request (assistant.extra.timestamp epoch, status.t_end_ns monotonic) read within the same child-process query call"
+    },
+    "anchor_gate": {
+      "enabled": true,
+      "reason": null,
+      "n_ok_status_lines": 27,
+      "n_assistant_with_actions": 27
+    },
+    "true_duration_coverage": {
+      "n_valid": 0,
+      "n_applicable": 28,
+      "reason": "no native tool start/end in the historical run"
+    },
+    "estimated_window_coverage": {
+      "n_valid": 28,
+      "n_applicable": 28
+    },
+    "records": [
+      {
+        "seq": 0,
+        "tool_call_id": "call_3gtnargxsqfg05lptwz7o4cd",
+        "pairing": "positional",
+        "request_index": 1,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 59,
+          "sha256": "8ad988f1cc455a501cb76c52894cbb5d3a2715e199b5ad0b8fe18bea811ac784"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 2203
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435472.984591,
+          "receipt_end_epoch_s": 1789435473.7200918,
+          "window_s_estimated": 0.7355008125305176,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241333356195328.0,
+            2241334091696128.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 2,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 1,
+        "tool_call_id": "call_9wc73642np24ici23x5vo1xl",
+        "pairing": "positional",
+        "request_index": 1,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 125,
+          "sha256": "acf335d4362390b3888a75eb4c32409e1ef8124e099c4d562ce37d544d4d4b2d"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 165
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435472.984591,
+          "receipt_end_epoch_s": 1789435473.7211814,
+          "window_s_estimated": 0.7365903854370117,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241333356195328.0,
+            2241334092785664.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 2,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 2,
+        "tool_call_id": "call_7703c580de60472895f758ac",
+        "pairing": "positional",
+        "request_index": 2,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 74,
+          "sha256": "10b16fb4aad3cb257b762c8ac17df79736fff5c1539701975cb7686479bfbbb3"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 34
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435475.2915637,
+          "receipt_end_epoch_s": 1789435475.5108838,
+          "window_s_estimated": 0.21932005882263184,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241335663168000.0,
+            2241335882488064.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 0,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 3,
+        "tool_call_id": "call_gbz7nzhdj9fndzflxtmosn8e",
+        "pairing": "positional",
+        "request_index": 3,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 65,
+          "sha256": "a4fbfa5fc46d185c4df498d54c85509e4edcd995bb0406b7ad16909cecbd55cf"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 2771
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435476.7235522,
+          "receipt_end_epoch_s": 1789435476.9318128,
+          "window_s_estimated": 0.20826053619384766,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241337095156480.0,
+            2241337303417088.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 0,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 4,
+        "tool_call_id": "call_rzd06v0ixitimhve4bbcfxbp",
+        "pairing": "positional",
+        "request_index": 4,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 66,
+          "sha256": "f4b7ed6a0dadec1157acf594f4d8f8f42431aaa498267980e430e6373b923bce"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 2377
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435478.3397074,
+          "receipt_end_epoch_s": 1789435478.5316896,
+          "window_s_estimated": 0.19198226928710938,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241338711311616.0,
+            2241338903293952.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 0,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 5,
+        "tool_call_id": "call_ce101f1f5b294c26b65e9276",
+        "pairing": "positional",
+        "request_index": 5,
+        "command": {
+          "heuristic_category": "Other",
+          "length": 647,
+          "sha256": "2f93e57a0af69c643fd010c202f62f0ec1304f2fde6eaecbc07052378db4d3cf"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 180
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435489.0707536,
+          "receipt_end_epoch_s": 1789435489.3029478,
+          "window_s_estimated": 0.232194185256958,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241349442357760.0,
+            2241349674552064.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 1,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 6,
+        "tool_call_id": "call_7cd3h33zbbljzsxfk0rkj9re",
+        "pairing": "positional",
+        "request_index": 6,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 108,
+          "sha256": "e739305949df6361a0d96afc707f91025061c65282b2180d527db1d31ecfc32c"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 1875
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435493.3339562,
+          "receipt_end_epoch_s": 1789435493.5274677,
+          "window_s_estimated": 0.1935114860534668,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241353705560576.0,
+            2241353899072000.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 0,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 7,
+        "tool_call_id": "call_ag6z5f1182wn7jdnz2tyzsv7",
+        "pairing": "positional",
+        "request_index": 7,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 84,
+          "sha256": "cad6682f6942c230aee2c7a5d3bc211337523e67b9f687bbba4df8a2e29cf9f6"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 6385
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435500.22547,
+          "receipt_end_epoch_s": 1789435500.444595,
+          "window_s_estimated": 0.21912503242492676,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241360597074176.0,
+            2241360816199424.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 0,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 8,
+        "tool_call_id": "call_6b6xj2zc4nwdx53ppu4otrll",
+        "pairing": "positional",
+        "request_index": 8,
+        "command": {
+          "heuristic_category": "Other",
+          "length": 1810,
+          "sha256": "e3ff1a87b092c874ad294b1664a5dc8c4a8eb84c24066a3cfda7084af29556db"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 726
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435508.697293,
+          "receipt_end_epoch_s": 1789435509.0197763,
+          "window_s_estimated": 0.3224833011627197,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241369068897280.0,
+            2241369391380480.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 0,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 9,
+        "tool_call_id": "call_678dc8394a41418db721b617",
+        "pairing": "positional",
+        "request_index": 9,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 122,
+          "sha256": "3e79b443382403241fa75b65c1d7898a4ba5dee79decc57dcd2a1b34b852a0f5"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 64
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435513.906349,
+          "receipt_end_epoch_s": 1789435514.1136212,
+          "window_s_estimated": 0.20727229118347168,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241374277953280.0,
+            2241374485225472.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 0,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 10,
+        "tool_call_id": "call_axdsqd8s29mldo2cfyxglyx9",
+        "pairing": "positional",
+        "request_index": 10,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 108,
+          "sha256": "523620731c2848ecb250f79841fd1fc24a04052ed36b825aa29327e015a7c779"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 1719
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435515.7226765,
+          "receipt_end_epoch_s": 1789435516.5146499,
+          "window_s_estimated": 0.791973352432251,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241376094280704.0,
+            2241376886254080.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 1,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 11,
+        "tool_call_id": "call_d2d17890703b4a8197af56ed",
+        "pairing": "positional",
+        "request_index": 11,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 105,
+          "sha256": "becb707d7b374a621cbb50911bac4d49f26487f80dde3fd091239e81a379354e"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 1418
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435518.455545,
+          "receipt_end_epoch_s": 1789435519.1983497,
+          "window_s_estimated": 0.742804765701294,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241378827149056.0,
+            2241379569954048.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 2,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 12,
+        "tool_call_id": "call_7jz2shxqrmxxz94f4zv9m1sa",
+        "pairing": "positional",
+        "request_index": 12,
+        "command": {
+          "heuristic_category": "Other",
+          "length": 338,
+          "sha256": "311316a40fb546df8cc52e7232a5804b898cab6db10e139fa20c7a48544fc928"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 112
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435521.3572743,
+          "receipt_end_epoch_s": 1789435521.6571918,
+          "window_s_estimated": 0.29991745948791504,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241381728878592.0,
+            2241382028795904.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 0,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 13,
+        "tool_call_id": "call_tk64uj2nowjh2ni48ov06c2e",
+        "pairing": "positional",
+        "request_index": 13,
+        "command": {
+          "heuristic_category": "Other",
+          "length": 481,
+          "sha256": "67fc8390bf755290ad29fa4b4ab55c18d2b256499da53846b5a6dd43f5770907"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 8
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435528.4080608,
+          "receipt_end_epoch_s": 1789435528.621003,
+          "window_s_estimated": 0.21294212341308594,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241388779664896.0,
+            2241388992607232.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 0,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 14,
+        "tool_call_id": "call_9kfppfbvdo74om2r9u16u6ku",
+        "pairing": "positional",
+        "request_index": 14,
+        "command": {
+          "heuristic_category": "Other",
+          "length": 292,
+          "sha256": "3389245fbcb0755f9f1c736c4494729495229721e6a807f0863f54f70e22cee7"
+        },
+        "result": {
+          "returncode": 1,
+          "exception_present": false,
+          "output_length": 1016
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435530.5520241,
+          "receipt_end_epoch_s": 1789435530.8785,
+          "window_s_estimated": 0.3264758586883545,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241390923628288.0,
+            2241391250104320.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 1,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 15,
+        "tool_call_id": "call_7ce8f154275a4a7cad2fa935",
+        "pairing": "positional",
+        "request_index": 15,
+        "command": {
+          "heuristic_category": "Other",
+          "length": 649,
+          "sha256": "f9153ec478e344c5a244fda968b45d210240adfb2b04e91981152360894250c4"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 216
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435534.7786338,
+          "receipt_end_epoch_s": 1789435535.194807,
+          "window_s_estimated": 0.41617321968078613,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241395150237952.0,
+            2241395566411264.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 1,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 16,
+        "tool_call_id": "call_sur3chf4f8snrnq2609zi0k2",
+        "pairing": "positional",
+        "request_index": 16,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 114,
+          "sha256": "0c8355834dc2b561225acc64aed1b28c82d0310321577e14a2264716e4e323af"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 2355
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435537.0539079,
+          "receipt_end_epoch_s": 1789435537.6240754,
+          "window_s_estimated": 0.5701675415039062,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241397425512192.0,
+            2241397995679744.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 1,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 17,
+        "tool_call_id": "call_0q9sakhyirowm0mq20lglfy6",
+        "pairing": "positional",
+        "request_index": 17,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 75,
+          "sha256": "a4e90d0ce6daf7c8742b582ce37e036b9aacd5b8085e8f9e75f32955791d9ddd"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 1801
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435539.7392557,
+          "receipt_end_epoch_s": 1789435540.2957544,
+          "window_s_estimated": 0.5564987659454346,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241400110859776.0,
+            2241400667358720.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 1,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 18,
+        "tool_call_id": "call_aa5386818d724e47b723072e",
+        "pairing": "positional",
+        "request_index": 18,
+        "command": {
+          "heuristic_category": "Other",
+          "length": 2604,
+          "sha256": "629957a6f035d2fa6ad9d915cfc7153031301e07c100a155dc2545cf249b8948"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 1183
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435550.83069,
+          "receipt_end_epoch_s": 1789435551.2408311,
+          "window_s_estimated": 0.4101412296295166,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241411202294016.0,
+            2241411612435456.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 1,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 19,
+        "tool_call_id": "call_nnyfjwr1omlhyjvhu9c0ye8j",
+        "pairing": "positional",
+        "request_index": 19,
+        "command": {
+          "heuristic_category": "Other",
+          "length": 582,
+          "sha256": "e780069f0a9eaff06e2962a813e7e58b377d5fcc5c23dca2f2f33e7e54ad31f7"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 1061
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435559.1140893,
+          "receipt_end_epoch_s": 1789435559.5009665,
+          "window_s_estimated": 0.38687729835510254,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241419485693440.0,
+            2241419872570880.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 1,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 20,
+        "tool_call_id": "call_baed5eaeaca44b9085cd7165",
+        "pairing": "positional",
+        "request_index": 20,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 75,
+          "sha256": "1e9d5214e1b563affb3239a52514a85e1ff5e734be6dab0b3f07d4dd6c96f75d"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 1469
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435561.8398674,
+          "receipt_end_epoch_s": 1789435576.4530013,
+          "window_s_estimated": 14.613133907318115,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241422211471616.0,
+            2241436824605440.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 29,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 21,
+        "tool_call_id": "call_x4tldlfoa4fucxbgr4l23o1e",
+        "pairing": "positional",
+        "request_index": 21,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 118,
+          "sha256": "4f4e7c66d111a53b021a924c3871e8a5cb1c9b2d23fbcdffea595f3fdf43bffd"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 1089
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435580.0309548,
+          "receipt_end_epoch_s": 1789435580.8046076,
+          "window_s_estimated": 0.7736527919769287,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241440402558976.0,
+            2241441176211968.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 2,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 22,
+        "tool_call_id": "call_021033d35f2b420989802bf7",
+        "pairing": "positional",
+        "request_index": 22,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 23,
+          "sha256": "02593e2bf4837433692571ccaf70b4dfe2204ceb497f833c5c5846d80ff196c3"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 548
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435582.6761594,
+          "receipt_end_epoch_s": 1789435582.8816564,
+          "window_s_estimated": 0.20549702644348145,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241443047763712.0,
+            2241443253260544.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 1,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 23,
+        "tool_call_id": "call_3a087a7bd00744db80c0de97",
+        "pairing": "positional",
+        "request_index": 23,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 89,
+          "sha256": "fbdff9ec321d807408857cbd34734de9e7bc83f805574007f1f79f74ffc34128"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 548
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435584.789968,
+          "receipt_end_epoch_s": 1789435584.9665093,
+          "window_s_estimated": 0.17654132843017578,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241445161572352.0,
+            2241445338113536.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 0,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 24,
+        "tool_call_id": "call_3e688172ef3243879dde3ea4",
+        "pairing": "positional",
+        "request_index": 24,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 74,
+          "sha256": "aa7d0720fdabc4cbb35045fde3aff2973c5d4100d6084751b5618ad3d5eacf04"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 586
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435587.017107,
+          "receipt_end_epoch_s": 1789435587.219246,
+          "window_s_estimated": 0.20213890075683594,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241447388711168.0,
+            2241447590850048.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 0,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 25,
+        "tool_call_id": "call_0kfw1rkpp4vylal5mwaprxrw",
+        "pairing": "positional",
+        "request_index": 25,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 74,
+          "sha256": "aa7d0720fdabc4cbb35045fde3aff2973c5d4100d6084751b5618ad3d5eacf04"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 586
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435597.8346586,
+          "receipt_end_epoch_s": 1789435598.0515542,
+          "window_s_estimated": 0.21689558029174805,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241458206262784.0,
+            2241458423158528.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 0,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 26,
+        "tool_call_id": "call_d18c9b8504db4418b74685c4",
+        "pairing": "positional",
+        "request_index": 26,
+        "command": {
+          "heuristic_category": "Read/Search",
+          "length": 28,
+          "sha256": "72ae26ef4602301c676164645cccdfdd2f9e6ba17ea7104982480df4ab5e063b"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 548
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435607.9133506,
+          "receipt_end_epoch_s": 1789435608.1179264,
+          "window_s_estimated": 0.204575777053833,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241468284954880.0,
+            2241468489530624.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 0,
+          "anchor_residual_ns_max": 24064.0
+        }
+      },
+      {
+        "seq": 27,
+        "tool_call_id": "call_3cdb795448574cb5a84700ff",
+        "pairing": "positional",
+        "request_index": 27,
+        "command": {
+          "heuristic_category": "Other",
+          "length": 81,
+          "sha256": "2ffe37d2c7550c7e710ca4944bad6a7ed838e9ced995ba2dfe039c799415384c"
+        },
+        "result": {
+          "returncode": 0,
+          "exception_present": false,
+          "output_length": 52
+        },
+        "time": {
+          "true_start_ns": null,
+          "true_end_ns": null,
+          "true_duration_s": null,
+          "true_missing_reason": "historical run has NO native tool start/end: the G1-01-A hook did not exist; only log-receipt epoch stamps are available",
+          "receipt_start_epoch_s": 1789435610.2308223,
+          "receipt_end_epoch_s": 1789435610.4221368,
+          "window_s_estimated": 0.1913144588470459,
+          "window_semantics": "estimated/bound: receipt_start is post-query pre-execution, receipt_end is post-execution post-formatting — the window OVERSTATES tool execution by scheduling+formatting overhead",
+          "window_monotonic_ns": [
+            2241470602426624.0,
+            2241470793741056.0
+          ]
+        },
+        "scope_association": {
+          "method": "shared_scope/window (calibrated)",
+          "window_in_agent_scope": true,
+          "n_agent_scope_samples_in_window": 1,
+          "anchor_residual_ns_max": 24064.0
+        }
+      }
+    ],
+    "scope_window_audit": {
+      "20260915T012427Z-2d75aa-agent-sandbox": {
+        "boundary_start_ns": 2241328008889515,
+        "boundary_end_ns": 2241471660525779,
+        "n_samples_total": 288,
+        "n_samples_in_boundary": 288,
+        "n_samples_outside_boundary": 0,
+        "outside_sample_timestamps_ns": [],
+        "n_gaps_recorded": 287,
+        "interval_target_s": 0.5,
+        "note": "out-of-boundary samples are preserved in the sealed file and listed here in the derived view; they are NOT counted in the in-window peak/sample numbers"
+      },
+      "20260915T012427Z-2d75aa-verifier": {
+        "boundary_start_ns": 2241472004728064,
+        "boundary_end_ns": 2241484269184188,
+        "n_samples_total": 25,
+        "n_samples_in_boundary": 25,
+        "n_samples_outside_boundary": 0,
+        "outside_sample_timestamps_ns": [],
+        "n_gaps_recorded": 24,
+        "interval_target_s": 0.5,
+        "note": "out-of-boundary samples are preserved in the sealed file and listed here in the derived view; they are NOT counted in the in-window peak/sample numbers"
+      }
+    }
+  },
+  "limitations": [
+    "tool and resource windows are shared-scope associations, not exclusive Tool CPU",
+    "raw mini_tool_events.jsonl and host_process.jsonl remain authoritative",
+    "unknown and censored values remain null; no interpolation is performed"
+  ],
+  "identity": {
+    "collection": "RUN-02",
+    "task": {
+      "instance_id": "django__django-16485",
+      "record_locator": "/home/lcq/agent_workload_characterization/data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/django__django-16485/record.json",
+      "record_sha256": "762de270d1ce06ab23104a35322098178624865c886d7b0ddadf9044d8fec46a",
+      "base_commit": "39f83765e12b0e5d260b7939fc3fe281d879b279"
+    },
+    "image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+    "catalog_sha256": "fca2c6f094196d4e4a62c285ed6a3fc230c8e4deded11e0c5f5bab573ed13656",
+    "code_sha256": {
+      "runners/run_02_entry.py": "11aa5d7d74321beb58778519d386b70416ed83de85f62e417deeb15de9ac740b",
+      "runners/coding_pilot.py": "db935008a9e71a2b8421d13a5d6d9d42d0f4efe6f55d468d6eb15c7530bd7377",
+      "runners/mini_agent_adapter.py": "e84c62fc17f7ca578cd9f8f5f60bb62810747cbeacf0d930f7dfdcf76007f87b",
+      "runners/container_runtime.py": "01efadaec9e4c9980aa2474990d72378b09d6c247d85de077ead9b00ad99ffac",
+      "runners/tool_event_env.py": "0de111c16411b30255b47328912395773330c0b9e6f844f7a62b68dd293e967b",
+      "collectors/host_process.py": "2ec98884c8b0d1ea005881f72e0a5498088e40960eebc3c44d3775ec2e150055",
+      "collectors/resource_sampler.py": "8418a9d793e170d96ce75d97ddd65a978a38038f80c2e34eb4c9485286bcca72",
+      "analyzers/run_02_analysis.py": "b1091969e8a41f00eed2137327b21f6925485c5909aed36f8c27c76512a496fa"
+    },
+    "model": "openai/deepseek-v4-flash",
+    "harness": "mini-SWE-agent 2.4.6",
+    "interpreters": {
+      "mini": "/home/lcq/agent_workload_characterization/.venvs/mini-swe-agent-2.4.6-env01/bin/python",
+      "evaluator": "/home/lcq/agent_workload_characterization/.venvs/swebench-eval-02e7a74/bin/python"
+    },
+    "budget": {
+      "max_model_requests": 30,
+      "max_steps": 30,
+      "max_output_tokens_per_request": 4096,
+      "agent_wall_s": 1500.0,
+      "verifier_wall_s": 300.0,
+      "total_wall_s": 1800.0,
+      "max_new_artifact_bytes": 5368709120
+    },
+    "container_limits": {
+      "cpu": 4,
+      "memory": "8g",
+      "network": "none",
+      "pull": "never"
+    },
+    "sampling": {
+      "mini_host_process_s": 0.2,
+      "resource_s": 0.5,
+      "artifact_monitor_s": 0.25
+    },
+    "credentials_env": {
+      "base": "PILOT_API_BASE",
+      "key": "PILOT_API_KEY",
+      "child_base": "OPENAI_API_BASE",
+      "child_key": "OPENAI_API_KEY"
+    },
+    "output": {
+      "raw": "data/raw/generated/RUN-02/<run_id>",
+      "report": "reports/resource/RUN-02/<run_id>"
+    },
+    "approval": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R2/APPROVAL.txt",
+    "proxy": "not required by static plan; any proxy must be approved",
+    "attempt_label": "RUN-02-R2",
+    "parent_failure": {
+      "attempt_label": "RUN-02-R1",
+      "approval_path": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R1/APPROVAL.txt",
+      "approval_sha256": "1f9442a7196b14a292b0b3ca1bf0f296bbfc0399328a754f754cac78aeb48d74",
+      "marker_path": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R1/ATTEMPT_STARTED.json",
+      "marker_sha256": "edebe9f82a3fdf91380b1c71e7c35d9954ed4fa330bd99eac9bbdec99503102d",
+      "preflight_path": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R1/PREFLIGHT.json",
+      "preflight_sha256": "55768beef63d97f3de6abee4facb17a23e94ba83d5c2abcb88692b65bf5ec96d"
+    },
+    "readiness_evidence": {
+      "summary_path": "/home/lcq/agent_workload_characterization/reports/preparation/READY-01/20260914T111017Z-7eb3c4/summary.json",
+      "summary_sha256": "cc234ad87b9c00189c20f9ec8c1836a3f762aca36a9ac420b83533b323ac2a65",
+      "manifest_path": "/home/lcq/agent_workload_characterization/reports/preparation/READY-01/20260914T111017Z-7eb3c4/manifest.json",
+      "manifest_sha256": "af76a6e481d56488f09031eb0702780dbc928174e2998151ef2f01725a4bf942",
+      "status": "READY_FOR_APPROVAL"
+    },
+    "r2_paths": {
+      "approval": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R2/APPROVAL.txt",
+      "attempt_marker": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R2/ATTEMPT_STARTED.json",
+      "preflight_evidence": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R2/PREFLIGHT.json",
+      "raw": "data/raw/generated/RUN-02/<new_run_id>",
+      "report": "reports/resource/RUN-02/<new_run_id>"
+    },
+    "credential_route": {
+      "reference": "{env:VOLCANO_API_KEY}",
+      "source": "/home/lcq/.config/opencode/opencode.json",
+      "resolved_in_memory": true,
+      "runner_mapping": {
+        "base": "OPENAI_API_BASE",
+        "key": "OPENAI_API_KEY"
+      },
+      "proxy_policy": "clear_only_this_process_and_children"
+    },
+    "execution_permission": {
+      "tool_execution_permission": "pending",
+      "required": "single command in an approved environment with access to unix:///var/run/docker.sock",
+      "no_alternatives": [
+        "chmod",
+        "sudo",
+        "remote_docker",
+        "global_sandbox_disable"
+      ]
+    },
+    "entry_code_sha256": "c1959f3e775d0947ce68cb413547af3769646c368e6ba41eb8782b0ea9e2ca8a",
+    "support_code_sha256": {
+      "runners/smoke_launcher.py": "ca0937752bbea1905134ba17f15448072da477de2bed7c650548d50aed592852"
+    }
+  }
+}

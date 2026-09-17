@@ -1,6 +1,10 @@
 # AI Agent Workload Characterization 详细实施方案
 
-初版修订日期：2026-09-10；进度更新：2026-09-11。已完成 P0-00-r2～P0-05、P0-10 VideoWeaver 小样、P0-08/09 最小宏观/coverage（当前依据 reports/macro/macro-pilot-v6 与 175 项隔离测试，当前 IR 0.2）；P0-07 PARTIAL，模型/harness 已选、任务记录与 mini 2.4.6 静态核实完成；G0 READY_FOR_REVIEW 未通过，未执行采集/实验。下一批见 [首次运行准备包](docs/first_run_preparation_handoff.md)，当前只准备任务书。已有旧工程产物不等于新项目指标或采集链路验收通过。
+2026-09-15 当前进度：G1-02 B 补证已验收，G1 资源小闭环在登记范围内通过；依据见 [集中评审 §0](docs/g1_consolidated_review.md)。G0 有既有通过记录；G2 未通过。不改变方法、指标定义或 Gate 标准，不授权下一项实验。
+
+历史进度和阶段编号保留在下文及各交付文档；已有代码/测试或单个运行不等于整项任务完成或研究结论成立。
+
+日常当前状态与固定待办统一见 [项目总览](docs/project_status.md)：CPU-01 合成进程 perf 可测性已验收，下一步为 CPU-02 真实 Verifier 段离线准备，真实测量另批，G2未通过。本文保留长期方法，不逐轮复制返修进度。
 
 配套文档：[开发任务与 Gate](docs/development_tasks.md)、[数据管理](docs/data_management.md)、[Trace 语义与测量契约](docs/trace_contract.md)。本文给出研究方法；具体开发顺序以任务计划的依赖和 Gate 为准，第 8～19 节的阶段是研究模块而非强制串行排期。
 
@@ -1645,7 +1649,7 @@ P0～P4 是工作类别，不是全阶段严格串行的门槛。实际顺序：
 
 无需先完成所有公共 adapter，也无需先有四场景和约 50 个任务，才能做资源归因或 CPU 试点。P1 的“归因通过”允许明确的 service/run 测量与未知项，不能要求所有场景虚构 Tool 独占 CPU。
 
-所有 Gate 当前未验收；本次只修订计划，不触发开发或运行。
+Gate 当前状态以 [集中评审](docs/g1_consolidated_review.md) 与任务计划最新记录为准；方法论中的计划本身不授权运行。
 
 ---
 
@@ -1810,7 +1814,7 @@ SWE-bench、DocOps、OSWorld、VideoWeaver 等的作用是：
 
 # 27. 第一版建议实际执行顺序
 
-当前不新增 benchmark、不搬迁旧 trace、不自动启动后续任务或实验。P0-00-r2、P0-01～05、P0-10 小样与 P0-08/09 最小分析已验收。下一批按 [首次运行准备包 PREP-01](docs/first_run_preparation_handoff.md) 合并安全配置/输入准备、离线测试、只读能力预检与审批清单；本次仅准备任务书，未实施。此批允许 G0 前有限只读预检与自有准备代码，不含实际采集或第三方执行，不自动通过任何 Gate。P0-06 暂缓，不阻塞 G0；不全量重新 ingest。各 Gate 状态仍以任务计划为准。
+当前不新增 benchmark、不搬迁旧 trace、不自动启动后续任务或实验。P0-00-r2、P0-01～05、P0-10 小样与 P0-08/09 最小分析已验收；G0 有既有通过记录，G1 仍按集中评审为 PARTIAL。PREP-01 及 RUN-02 的准备链是历史交付，不能继续充当当前下一步或新的执行授权。P0-06 暂缓，不阻塞 G0；不全量重新 ingest。各 Gate 状态仍以当前集中评审和任务计划摘要为准。
 
 待用户明确开始后，按 [开发任务计划](docs/development_tasks.md) 的任务依赖推进：
 

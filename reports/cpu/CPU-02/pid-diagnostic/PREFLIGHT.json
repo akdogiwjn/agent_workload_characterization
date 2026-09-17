@@ -1,0 +1,9 @@
+{
+  "status": "READY",
+  "checks": {
+    "context": true,
+    "image": true
+  },
+  "endpoint": "unix:///var/run/docker.sock",
+  "image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2"
+}

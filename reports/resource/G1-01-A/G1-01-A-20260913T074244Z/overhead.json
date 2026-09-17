@@ -1,0 +1,59 @@
+{
+  "note": "raw measurements only; see mechanism_checks.json cases[2] for the pairs",
+  "pairs": [
+    {
+      "pair": 1,
+      "off": {
+        "wall_ns": 365288868,
+        "child_cpu_s_self": 0.3450398
+      },
+      "on": {
+        "wall_ns": 373501491,
+        "child_cpu_s_self": 0.34504591
+      },
+      "wall_diff_ns": 8212623,
+      "collector": {
+        "read_count": 37,
+        "read_wall_ns_total": 1301233,
+        "read_wall_ns_mean": 35168.45945945946,
+        "note": "collector read cost measured separately from any workload metric; runner-process CPU/RSS is host_runner_process (includes collector), never double-counted as exclusive"
+      }
+    },
+    {
+      "pair": 2,
+      "off": {
+        "wall_ns": 382490615,
+        "child_cpu_s_self": 0.36200999
+      },
+      "on": {
+        "wall_ns": 363396222,
+        "child_cpu_s_self": 0.34199291
+      },
+      "wall_diff_ns": -19094393,
+      "collector": {
+        "read_count": 36,
+        "read_wall_ns_total": 1279387,
+        "read_wall_ns_mean": 35538.52777777778,
+        "note": "collector read cost measured separately from any workload metric; runner-process CPU/RSS is host_runner_process (includes collector), never double-counted as exclusive"
+      }
+    },
+    {
+      "pair": 3,
+      "off": {
+        "wall_ns": 352962348,
+        "child_cpu_s_self": 0.33296307
+      },
+      "on": {
+        "wall_ns": 353424225,
+        "child_cpu_s_self": 0.33319538
+      },
+      "wall_diff_ns": 461877,
+      "collector": {
+        "read_count": 35,
+        "read_wall_ns_total": 1338374,
+        "read_wall_ns_mean": 38239.25714285715,
+        "note": "collector read cost measured separately from any workload metric; runner-process CPU/RSS is host_runner_process (includes collector), never double-counted as exclusive"
+      }
+    }
+  ]
+}

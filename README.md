@@ -4,27 +4,40 @@
 
 ## 当前状态与边界
 
-已完成 P0-00-r2～P0-05、P0-10、P0-08/09（IR 0.2，v6 报告）；PREP-01 离线准备包已通过集中验收（231 项测试，[交付](docs/first_run_preparation_delivery.md)、[审批清单](docs/first_run_approval.md)）。P0-07/G0 未完成，真实运行未授权。各阶段交付详见对应 delivery 文档。
+日常先看 **[项目总览与固定收尾清单](docs/project_status.md)**；材料查询用 [文档索引](docs/README.md)。历史任务书在索引中折叠，不需要逐份重读。
 
-ENV-01 独立安装与离线适配已验收（23 项 SDK 集成测试，硬超时 started→kill 证据闭合）。下一批：[SMOKE-01 单次真实工具协议连通性执行文档](docs/model_smoke_handoff.md)。当前仅准备文档，待明确批准后最多发送一次请求；不执行工具、不拉镜像、不运行 benchmark。
+当前：G1 登记小闭环与 CPU-01 宿主合成进程 perf 可测性已验收。下一步为 [CPU-02 A 离线准备](docs/cpu_02_handoff.md)，[提示词](docs/cpu_02_execution_prompt.md)供实施模型使用：只准备真实 Verifier 段的一次采样，不重跑 Agent；真实执行另批。
+G0 有既有通过记录；G1 通过不代表多任务代表性、独占 Tool CPU 或函数热点已经完成，G2 未通过。具体边界以集中评审 §0 为准。
+RUN-02-R2 已完成一次真实 Django 联合观测，原始 raw、原报告、批准/marker 与 review-v2 均保留。
+历史运行、失败记录和测试数量按各自交付解释，测试数量不等于任务数或独立实验数。
+
+最短入口：[文档索引](docs/README.md) · [当前集中评审](docs/g1_consolidated_review.md) ·
+[CLOSEOUT-01 交付](docs/repository_closeout_delivery.md) ·
+[RUN-02-R2 review-v2](reports/resource/RUN-02/20260915T012427Z-2d75aa-review-v2/)。
 
 ## 源码运行与测试
 
-要求 Python >=3.11；完整功能/测试需要 `pydantic>=2.13,<3` 与 `PyYAML>=6.0,<7`（本机已有 2.13.4 / 6.0.3）。从项目根目录运行：
+要求 Python >=3.11；依赖版本以 `pyproject.toml` 为准。从项目根目录运行，以下仅帮助、版本及合成 IR 校验：
 
 ```bash
 PYTHONPATH=src python3 -B -m agent_workload_characterization --help
 PYTHONPATH=src python3 -B -m agent_workload_characterization --version
 PYTHONPATH=src python3 -B -m agent_workload_characterization validate tests/fixtures/ir/template_n2.json
-PYTHONPATH=src python3 -B -m agent_workload_characterization inspect-source agentx_256k
-PYTHONPATH=src python3 -B -m agent_workload_characterization check-agentx-samples
-PYTHONPATH=src python3 -B -m agent_workload_characterization check-applied-samples
-PYTHONPATH=src python3 -B -m unittest discover -s tests -v
 ```
 
-无参数时显示帮助；未知选项或未实现命令返回非零。`validate` 只读 IR 0.2 JSON，`inspect-source` 检查 locator，`check-agentx-samples` 只读核对两条已登记记录并输出摘要；CLI 不写文件。ingest 仍为 Python API，没有全量转换 CLI。完整单元测试不要求旧 trace 存在，真实 sample 命令则需要 catalog 对应文件。
+无参数显示帮助。注意：旧 CLI 帮助尾部“不会写文件”的概括已经过时，应按具体命令区分：
 
-实际代码位于 `src/agent_workload_characterization/`。`pyproject.toml` 声明安装后命令 `awc`，本轮未执行安装或打包；已验证上述源码入口及 console entry point 的目标函数。
+| 命令/入口 | 副作用与前置 |
+| --- | --- |
+| `inspect-source`、`check-*-samples` | 只读登记来源，依赖本地 catalog/数据，不启动实验 |
+| `analyze-macro-pilot` | 默认只读；指定 `--output-dir` 会写派生报告 |
+| `prepare-pilot` | 默认可做宿主/Docker 探针；离线需 `--skip-preflight`；指定输出目录会写报告，不作为日常查看入口 |
+| `plan-coding-pilot` | 历史 RUN-01 离线计划，不授权运行 |
+| `runners.*_entry --execute`、smoke 等 | 可能操作 Docker/模型/文件；历史命令不可直接复用，须当前任务批准 |
+
+ingest 仍为 Python API，没有全量转换 CLI。按任务选择测试，不为文档整理默认运行全历史 discover。G1-02 已改为短 fixture，正式工作量仅在另批 B 中运行；测试层级和证据边界见总览。
+
+实际代码位于 `src/agent_workload_characterization/`。`pyproject.toml` 声明安装后命令 `awc`；本轮仅核对源码帮助入口，未安装、打包或重验全部命令。
 
 ## 阅读顺序
 
@@ -60,4 +73,4 @@ Real Agent Run → 原生埋点 ──→ 行为 / Job / Process / Resource Scop
 
 资产审计 → 最小 IR 与手算指标样例 → 少量任务资源归因闭环 → CPU 试点 → 扩展场景与样本 → Replay 保真与 Scale。
 
-保留 P0～P4 作为工作类别，不再要求完成所有 P0 adapter 才验证 P1，也不要求收集约 50 个任务才开始 P2 试点。各 Gate 的具体证据见任务计划；所有 Gate 当前均未验收。
+保留 P0～P4 作为工作类别，不再要求完成所有 P0 adapter 才验证 P1，也不要求收集约 50 个任务才开始 P2 试点。各 Gate 的具体证据见任务计划；G0 已有通过记录，G1 仍 PARTIAL，后续 Gate 未验收。

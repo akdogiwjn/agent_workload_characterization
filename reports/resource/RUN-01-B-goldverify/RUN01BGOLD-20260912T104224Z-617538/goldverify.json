@@ -1,0 +1,22 @@
+{
+  "run_id": "RUN01BGOLD-20260912T104224Z-617538",
+  "purpose": "isolated gold-patch verifier verification on the arm64 target image (eval compatibility); NO agent, NO model",
+  "isolation": "gold patch read from the fixed record (sha-verified) and passed ONLY to SwebenchVerifierRunner; no agent harness was constructed in this verification",
+  "status": "ok",
+  "resolved": true,
+  "detail": "patch_applied=True; infra_failure=False",
+  "wall_s": 12.28,
+  "verifier_wall_budget_s": 600.0,
+  "budget_usage": {
+    "requests": 0,
+    "steps": 0,
+    "output_tokens": 0,
+    "artifact_bytes": 0,
+    "artifact_exceeded": false,
+    "elapsed_s": 12.412774498,
+    "elapsed_total_s": 12.412776958,
+    "phase": "evaluation",
+    "exceeded": null
+  },
+  "image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2"
+}

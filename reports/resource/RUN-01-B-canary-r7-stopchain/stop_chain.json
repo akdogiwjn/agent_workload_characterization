@@ -1,0 +1,22 @@
+{
+  "run_id": "RUN01BSC-20260912T104057Z-c8b752",
+  "purpose": "stop-chain branch B: name-pattern-matched process -> pkill + process-tree check -> confirmed with container alive",
+  "branch_B_bash_c": {
+    "confirmed": true,
+    "method": "pkill+process_tree_check",
+    "container_alive": true,
+    "bg_start_rc": 0
+  },
+  "counter_read_after_stop": {
+    "cpu_usage_usec": 774372,
+    "read_status": {
+      "cpuacct.usage": "ok_ns_converted_to_usec",
+      "memory.usage_in_bytes": "ok",
+      "memory.max_usage_in_bytes": "ok",
+      "blkio.io_service_bytes_recursive": "not_found",
+      "blkio.io_service_bytes": "not_found",
+      "blkio.throttle.io_service_bytes_recursive": "ok",
+      "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+    }
+  }
+}

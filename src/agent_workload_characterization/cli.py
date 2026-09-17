@@ -46,6 +46,8 @@ def build_parser() -> argparse.ArgumentParser:
     prep.add_argument("--output-dir", type=Path, default=None, help="write report package under reports/preparation/ (exclusive create; no overwrite)")
     prep.add_argument("--skip-docker", action="store_true", help="skip the docker probe")
     prep.add_argument("--skip-preflight", action="store_true", help="offline checks only (no host probes)")
+    pilot = commands.add_parser("plan-coding-pilot", help="RUN-01 gate A: validate coding pilot config offline; read-only, never starts anything", allow_abbrev=False)
+    pilot.add_argument("--config", type=Path, default=Path("workload_catalog/coding_pilot.yaml"))
     return parser
 
 
@@ -145,6 +147,84 @@ def main(argv: Sequence[str] | None = None) -> int:
             return 1
         except (OSError, ValueError, KeyError, TypeError) as exc:
             print(f"INVALID: preparation failed: {exc}", file=sys.stderr)
+            return 1
+    if arguments.command == "plan-coding-pilot":
+        import json as _json
+        import yaml as _yaml
+        from .runners.preparation import PreparationError
+
+        # Exact-match credential keys for the pilot catalog: substring
+        # matching on 'token' would reject legitimate token-COUNT fields
+        # (output_tokens_per_request); exact names keep the check strict
+        # without false positives.
+        _CREDENTIAL_KEYS_EXACT = frozenset({
+            "api_key", "apikey", "authorization", "password", "secret",
+            "x-api-key", "access_token", "refresh_token", "auth_token",
+            "session_token", "private_key"})
+
+        def _check_keys(node, path=""):
+            if isinstance(node, dict):
+                for key, value in node.items():
+                    if str(key).lower() in _CREDENTIAL_KEYS_EXACT:
+                        raise PreparationError(
+                            f"credential key rejected at {path}.{key}")
+                    _check_keys(value, f"{path}.{key}")
+            elif isinstance(node, list):
+                for i, value in enumerate(node):
+                    _check_keys(value, f"{path}[{i}]")
+
+        try:
+            config = _yaml.safe_load(arguments.config.read_text())
+            if not isinstance(config, dict):
+                raise PreparationError("config must be a mapping")
+            _check_keys(config)
+            task = config.get("task") or {}
+            if task.get("instance_id") != "django__django-16485":
+                raise PreparationError("unexpected instance_id in pilot config")
+            if config.get("execution_authorized") is not False:
+                raise PreparationError(
+                    "execution_authorized must be false; gates B/C need "
+                    "explicit user approval")
+            image = config.get("image") or {}
+            digest = image.get("target_digest") or image.get("digest")
+            if digest is not None:
+                import re as _re
+                if not _re.fullmatch(r"sha256:[0-9a-f]{64}", str(digest)):
+                    raise PreparationError(
+                        "image digest must be a sha256:<64hex> reference "
+                        "or null")
+            budget = config.get("budget_proposal_gate_c") or {}
+            required_budgets = ("model_requests", "steps", "agent_wall_min",
+                                "verifier_wall_min", "total_wall_min")
+            missing = [k for k in required_budgets if k not in budget]
+            if missing:
+                raise PreparationError(f"missing budget fields: {missing}")
+            plan = {
+                "status": "GATE_A_PLAN",
+                "execution_authorized": False,
+                "instance_id": task.get("instance_id"),
+                "record_sha256": task.get("record_sha256"),
+                "harness": (config.get("harness") or {}).get("name"),
+                "model": (config.get("model") or {}).get("name"),
+                "image_candidate": image.get("target_ref")
+                                 or image.get("candidate_ref"),
+                "image_digest": digest,
+                "budget_proposal_gate_c": budget,
+                "gates": config.get("gates"),
+                "note": ("offline validation only; no model requests, no "
+                         "containers, no installs; B/C approval lists in "
+                         "docs/coding_pilot_delivery.md"),
+            }
+            print(_json.dumps(plan, ensure_ascii=False, sort_keys=True, indent=2))
+            return 0
+        except PreparationError as exc:
+            print(f"INVALID: {exc}", file=sys.stderr)
+            return 1
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            print(f"INVALID: coding pilot plan failed: {exc}", file=sys.stderr)
+            return 1
+        except _yaml.YAMLError:
+            print("INVALID: cannot parse coding pilot config", file=sys.stderr)
             return 1
     if arguments.command == "inspect-source":
         import json

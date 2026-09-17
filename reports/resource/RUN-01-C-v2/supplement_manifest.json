@@ -1,0 +1,64 @@
+{
+  "purpose": "supplementary completeness manifest for run 20260912T125202Z-840e49 (v2 report closeout); registers the COMPLETE artifact list, reconciles the in-run accounting, and records the original manifest's gap",
+  "run_id": "20260912T125202Z-840e49",
+  "generated_at_utc": "2026-09-13T07:02:29.076326+00:00",
+  "original_manifest": {
+    "path": "data/raw/generated/RUN-01-C/20260912T125202Z-840e49/manifest.json",
+    "sha256": "6d17c7c3c82796e5d0fa9416c5400a335f2eb092dbf8ce3bd622c81510e96f23",
+    "files_listed": 6,
+    "note": "the original manifest iterated TOP-LEVEL files only; verifier/test_output.txt (subdirectory) was omitted \u2014 a runner defect fixed for future runs (coding_pilot.py _archive now walks rglob); sealed data unchanged"
+  },
+  "complete_file_list": {
+    "candidate.patch": {
+      "bytes": 678,
+      "sha256": "0e10504263447a4d9734f56b1605043d61aeaa4e3d77f73d22ef8b86eca1b084"
+    },
+    "events.jsonl": {
+      "bytes": 28701,
+      "sha256": "34663ea79724bc2ac53b9718e2132e77ea35754fafdfda327320de2bb086110d"
+    },
+    "manifest.json": {
+      "bytes": 653,
+      "sha256": "6d17c7c3c82796e5d0fa9416c5400a335f2eb092dbf8ce3bd622c81510e96f23"
+    },
+    "metadata.json": {
+      "bytes": 1333,
+      "sha256": "d402970d3e8d8af6ad22b3cda5198cb4844b58f02c332a24c1d206c025315d66"
+    },
+    "mini_status.jsonl": {
+      "bytes": 13174,
+      "sha256": "2794164dcaf200207f3744788e6cd614ed8a634904c50b70344ac832d2503be0"
+    },
+    "mini_trajectory.json": {
+      "bytes": 197024,
+      "sha256": "fbb8ce4b8f7ed56ad66950bfbe0d2ca0fc0088ab9c8f947c02651ab18563d55f"
+    },
+    "samples.json": {
+      "bytes": 262494,
+      "sha256": "633860fd7e0808d75c28e397d82e678d8e0007e4d707cda5293904da07595e5b"
+    },
+    "verifier/test_output.txt": {
+      "bytes": 16033,
+      "sha256": "e3fdf24b3a42c33b67ab47867ddfa03baef10758ea8f04755fb7a107c451f0a4"
+    }
+  },
+  "reconciliation": {
+    "files_total": 8,
+    "bytes_total": 520090,
+    "in_run_accounted_bytes_final": 293859,
+    "in_run_accounted_bytes_metadata_snapshot": 291873,
+    "snapshot_note": "metadata.json recorded its budget_usage before metadata/manifest self-accounting; the final outcome-level total (printed at execution) is 293859 = 291873 + metadata(1333) + manifest(653)",
+    "in_run_accounting_scope": "RUNNER-ARCHIVED files only: candidate.patch + events.jsonl + samples.json + metadata.json + manifest.json",
+    "bytes_outside_in_run_accounting": {
+      "mini_status.jsonl": 13174,
+      "mini_trajectory.json": 197024,
+      "verifier/test_output.txt": 16033
+    },
+    "bytes_outside_total": 226231,
+    "files_missing_from_original_manifest": [
+      "verifier/test_output.txt"
+    ],
+    "consistency": "293859 (runner-archived) + 226231 (mini_status 13174 + mini_trajectory 197024 + verifier log 16033, written by the harness child and verifier outside the accounting scope) == 520090 actual"
+  },
+  "sealed_data_untouched": true
+}

@@ -1,0 +1,1148 @@
+{
+  "run_id": "RUN01BCANARY-20260912T103943Z-1259a4",
+  "executed_at_utc": "2026-09-12T10:40:07.338359+00:00",
+  "total_wall_s": 23.68,
+  "storage_opt_probe": {
+    "supported": false,
+    "detail": "docker: Error response from daemon: --storage-opt is supported only for overlay over xfs with 'pquota' mount option.\nSee 'docker run --help'."
+  },
+  "canaries": [
+    {
+      "summary": {
+        "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+        "scope_kind": "agent_container",
+        "interval_target_s": 0.5,
+        "n_samples": 15,
+        "cpu_core_seconds": 5.122157,
+        "cpu_core_seconds_reason": null,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 7.237159276,
+        "avg_cores": 0.7077579482029904,
+        "avg_cores_note": "avg cores = cpu/wall; NOT an efficiency metric",
+        "memory_current_end_bytes": 2043904,
+        "memory_kernel_peak_bytes": 138776576,
+        "memory_sampled_max_bytes": 5341184,
+        "memory_peak_basis": "v1_max_usage_in_bytes",
+        "memory_note": "current/kernel-peak/sampled-max are distinct; scope peaks are never summed into a run peak",
+        "io": {
+          "read_bytes": 0,
+          "write_bytes": 98304,
+          "evidence": "io.stat_boundary_delta",
+          "reason": null,
+          "cumulative_end": {
+            "read_bytes": 8192,
+            "write_bytes": 98304,
+            "note": "cumulative counter value at final boundary (reference only; NOT the interval amount)"
+          }
+        },
+        "notes": [
+          "baseline_cpu_unreadable:None"
+        ],
+        "workload_rc": 0,
+        "workload_ok": true,
+        "workload_output_tail": "mem_alloc_ok 134217728\na58edc369985a7de511cdea994326509  /tmp/canary.bin\n",
+        "docker_stats_crosscheck": {
+          "container": "awc-run01-RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native-001",
+          "status": "ok",
+          "raw": "awc-run01-RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native-001 0.00% 1.09MiB / 2GiB"
+        },
+        "in_container_self_read": {
+          "status": "ok",
+          "path": "/sys/fs/cgroup/cpu,cpuacct/cpuacct.usage",
+          "cpuacct_usage_ns": 5159113590
+        },
+        "cgroup_version": "v1",
+        "container_id": "2eed640fa16a3cb50adc5b4938794619969a1b9dbec1c67c53c9bb9f6c5fb7f7",
+        "image": "python:3.11-slim",
+        "platform": null,
+        "note": "native arm64; collector mechanism validation",
+        "canary_wall_s": 7.5
+      },
+      "evidence": {
+        "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+        "scope_kind": "agent_container",
+        "interval_target_s": 0.5,
+        "boundary_start": {
+          "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 2015444289348909,
+          "cpu_usage_usec": 37886,
+          "mem_current_bytes": 1253376,
+          "mem_peak_bytes": 7311360,
+          "io_read_bytes": 8192,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          }
+        },
+        "boundary_end": {
+          "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 2015451526508185,
+          "cpu_usage_usec": 5160043,
+          "mem_current_bytes": 2043904,
+          "mem_peak_bytes": 138776576,
+          "io_read_bytes": 8192,
+          "io_write_bytes": 98304,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          }
+        },
+        "samples": [
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+            "scope_kind": "agent_container",
+            "t_monotonic_ns": 2015444290294850,
+            "cpu_usage_usec": 37886,
+            "mem_current_bytes": 1253376,
+            "mem_peak_bytes": 7311360,
+            "io_read_bytes": 8192,
+            "io_write_bytes": 0,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+            "scope_kind": "agent_container",
+            "t_monotonic_ns": 2015444790804067,
+            "cpu_usage_usec": 424783,
+            "mem_current_bytes": 5341184,
+            "mem_peak_bytes": 7311360,
+            "io_read_bytes": 8192,
+            "io_write_bytes": 0,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+            "scope_kind": "agent_container",
+            "t_monotonic_ns": 2015445291164692,
+            "cpu_usage_usec": 924476,
+            "mem_current_bytes": 5091328,
+            "mem_peak_bytes": 7311360,
+            "io_read_bytes": 8192,
+            "io_write_bytes": 0,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+            "scope_kind": "agent_container",
+            "t_monotonic_ns": 2015445791577838,
+            "cpu_usage_usec": 1424204,
+            "mem_current_bytes": 5083136,
+            "mem_peak_bytes": 7311360,
+            "io_read_bytes": 8192,
+            "io_write_bytes": 0,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+            "scope_kind": "agent_container",
+            "t_monotonic_ns": 2015446291940603,
+            "cpu_usage_usec": 1927913,
+            "mem_current_bytes": 5083136,
+            "mem_peak_bytes": 7311360,
+            "io_read_bytes": 8192,
+            "io_write_bytes": 0,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+            "scope_kind": "agent_container",
+            "t_monotonic_ns": 2015446792354978,
+            "cpu_usage_usec": 2427636,
+            "mem_current_bytes": 5083136,
+            "mem_peak_bytes": 7311360,
+            "io_read_bytes": 8192,
+            "io_write_bytes": 0,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+            "scope_kind": "agent_container",
+            "t_monotonic_ns": 2015447292691733,
+            "cpu_usage_usec": 2927315,
+            "mem_current_bytes": 5083136,
+            "mem_peak_bytes": 7311360,
+            "io_read_bytes": 8192,
+            "io_write_bytes": 0,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+            "scope_kind": "agent_container",
+            "t_monotonic_ns": 2015447793037558,
+            "cpu_usage_usec": 3426967,
+            "mem_current_bytes": 5083136,
+            "mem_peak_bytes": 7311360,
+            "io_read_bytes": 8192,
+            "io_write_bytes": 0,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+            "scope_kind": "agent_container",
+            "t_monotonic_ns": 2015448293341402,
+            "cpu_usage_usec": 3926569,
+            "mem_current_bytes": 5083136,
+            "mem_peak_bytes": 7311360,
+            "io_read_bytes": 8192,
+            "io_write_bytes": 0,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+            "scope_kind": "agent_container",
+            "t_monotonic_ns": 2015448793690437,
+            "cpu_usage_usec": 4426191,
+            "mem_current_bytes": 5083136,
+            "mem_peak_bytes": 7311360,
+            "io_read_bytes": 8192,
+            "io_write_bytes": 0,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+            "scope_kind": "agent_container",
+            "t_monotonic_ns": 2015449294004331,
+            "cpu_usage_usec": 4925822,
+            "mem_current_bytes": 4825088,
+            "mem_peak_bytes": 7311360,
+            "io_read_bytes": 8192,
+            "io_write_bytes": 0,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+            "scope_kind": "agent_container",
+            "t_monotonic_ns": 2015449794363006,
+            "cpu_usage_usec": 5145274,
+            "mem_current_bytes": 1204224,
+            "mem_peak_bytes": 138776576,
+            "io_read_bytes": 8192,
+            "io_write_bytes": 98304,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+            "scope_kind": "agent_container",
+            "t_monotonic_ns": 2015450294969884,
+            "cpu_usage_usec": 5145274,
+            "mem_current_bytes": 1183744,
+            "mem_peak_bytes": 138776576,
+            "io_read_bytes": 8192,
+            "io_write_bytes": 98304,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+            "scope_kind": "agent_container",
+            "t_monotonic_ns": 2015450795505501,
+            "cpu_usage_usec": 5145274,
+            "mem_current_bytes": 1183744,
+            "mem_peak_bytes": 138776576,
+            "io_read_bytes": 8192,
+            "io_write_bytes": 98304,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-agent_scope_native",
+            "scope_kind": "agent_container",
+            "t_monotonic_ns": 2015451296027378,
+            "cpu_usage_usec": 5145274,
+            "mem_current_bytes": 1183744,
+            "mem_peak_bytes": 138776576,
+            "io_read_bytes": 8192,
+            "io_write_bytes": 98304,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          }
+        ],
+        "sample_gaps_ns": [
+          500509217,
+          500360625,
+          500413146,
+          500362765,
+          500414375,
+          500336755,
+          500345825,
+          500303844,
+          500349035,
+          500313894,
+          500358675,
+          500606878,
+          500535617,
+          500521877
+        ],
+        "notes": [
+          "baseline_cpu_unreadable:None"
+        ]
+      }
+    },
+    {
+      "summary": {
+        "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+        "scope_kind": "verifier_container",
+        "interval_target_s": 0.5,
+        "n_samples": 31,
+        "cpu_core_seconds": 12.27605,
+        "cpu_core_seconds_reason": null,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 15.031000024,
+        "avg_cores": 0.816715453422848,
+        "avg_cores_note": "avg cores = cpu/wall; NOT an efficiency metric",
+        "memory_current_end_bytes": 2375680,
+        "memory_kernel_peak_bytes": 16015360,
+        "memory_sampled_max_bytes": 6934528,
+        "memory_peak_basis": "v1_max_usage_in_bytes",
+        "memory_note": "current/kernel-peak/sampled-max are distinct; scope peaks are never summed into a run peak",
+        "io": {
+          "read_bytes": 0,
+          "write_bytes": 77824,
+          "evidence": "io.stat_boundary_delta",
+          "reason": null,
+          "cumulative_end": {
+            "read_bytes": 0,
+            "write_bytes": 77824,
+            "note": "cumulative counter value at final boundary (reference only; NOT the interval amount)"
+          }
+        },
+        "notes": [
+          "baseline_cpu_unreadable:None"
+        ],
+        "workload_rc": 0,
+        "workload_ok": true,
+        "workload_output_tail": "PRETTY_NAME=\"Ubuntu 22.04.5 LTS\"\nNAME=\"Ubuntu\"\ntarget_workload_ok\n",
+        "docker_stats_crosscheck": {
+          "container": "awc-run01-RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image-002",
+          "status": "ok",
+          "raw": "awc-run01-RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image-002 0.00% 1.023MiB / 2GiB"
+        },
+        "in_container_self_read": {
+          "status": "ok",
+          "path": "/sys/fs/cgroup/cpu,cpuacct/cpuacct.usage",
+          "cpuacct_usage_ns": 12308944870
+        },
+        "cgroup_version": "v1",
+        "container_id": "2164e2d63eb1629d51bb770b4d3bf2d953804c4ad815418c58b261569e7db0bf",
+        "image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+        "platform": null,
+        "note": "native arm64 target image (SWE-bench Multilingual build); environment preparation checks passed in gate B; eval compatibility NOT yet verified (verifier never run)",
+        "canary_wall_s": 15.2,
+        "stop_chain": {
+          "confirmed": true,
+          "method": "docker_stop",
+          "container_alive": false,
+          "rc": 0,
+          "bg_start_rc": 0
+        }
+      },
+      "evidence": {
+        "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+        "scope_kind": "verifier_container",
+        "interval_target_s": 0.5,
+        "boundary_start": {
+          "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+          "scope_kind": "verifier_container",
+          "t_monotonic_ns": 2015451691793579,
+          "cpu_usage_usec": 33616,
+          "mem_current_bytes": 806912,
+          "mem_peak_bytes": 6688768,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          }
+        },
+        "boundary_end": {
+          "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+          "scope_kind": "verifier_container",
+          "t_monotonic_ns": 2015466722793603,
+          "cpu_usage_usec": 12309666,
+          "mem_current_bytes": 2375680,
+          "mem_peak_bytes": 16015360,
+          "io_read_bytes": 0,
+          "io_write_bytes": 77824,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          }
+        },
+        "samples": [
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015451692933452,
+            "cpu_usage_usec": 33616,
+            "mem_current_bytes": 806912,
+            "mem_peak_bytes": 6688768,
+            "io_read_bytes": 0,
+            "io_write_bytes": 0,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015452194004025,
+            "cpu_usage_usec": 455950,
+            "mem_current_bytes": 6934528,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015452694827356,
+            "cpu_usage_usec": 955542,
+            "mem_current_bytes": 6934528,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015453195607526,
+            "cpu_usage_usec": 1455156,
+            "mem_current_bytes": 6819840,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015453696435396,
+            "cpu_usage_usec": 1958735,
+            "mem_current_bytes": 6819840,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015454197153325,
+            "cpu_usage_usec": 2458343,
+            "mem_current_bytes": 6819840,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015454697843784,
+            "cpu_usage_usec": 2957929,
+            "mem_current_bytes": 6688768,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015455198554603,
+            "cpu_usage_usec": 3457527,
+            "mem_current_bytes": 6430720,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015455699239092,
+            "cpu_usage_usec": 3957104,
+            "mem_current_bytes": 6430720,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015456199938961,
+            "cpu_usage_usec": 4456710,
+            "mem_current_bytes": 6430720,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015456700749761,
+            "cpu_usage_usec": 4960303,
+            "mem_current_bytes": 6430720,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015457201489190,
+            "cpu_usage_usec": 5459876,
+            "mem_current_bytes": 6430720,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015457702230680,
+            "cpu_usage_usec": 5959458,
+            "mem_current_bytes": 6254592,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015458202912728,
+            "cpu_usage_usec": 6459063,
+            "mem_current_bytes": 6254592,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015458703631508,
+            "cpu_usage_usec": 6958661,
+            "mem_current_bytes": 6254592,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015459204529039,
+            "cpu_usage_usec": 7462208,
+            "mem_current_bytes": 6254592,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015459705219048,
+            "cpu_usage_usec": 7961775,
+            "mem_current_bytes": 6254592,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015460205939107,
+            "cpu_usage_usec": 8461388,
+            "mem_current_bytes": 6254592,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015460706838428,
+            "cpu_usage_usec": 8960931,
+            "mem_current_bytes": 6246400,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015461207455026,
+            "cpu_usage_usec": 9460641,
+            "mem_current_bytes": 6246400,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015461708090214,
+            "cpu_usage_usec": 9964323,
+            "mem_current_bytes": 6246400,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015462208661102,
+            "cpu_usage_usec": 10464044,
+            "mem_current_bytes": 6246400,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015462709209269,
+            "cpu_usage_usec": 10963702,
+            "mem_current_bytes": 6246400,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015463209928408,
+            "cpu_usage_usec": 11463307,
+            "mem_current_bytes": 6148096,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015463710707408,
+            "cpu_usage_usec": 11962912,
+            "mem_current_bytes": 6148096,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 4096,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015464211615899,
+            "cpu_usage_usec": 12184927,
+            "mem_current_bytes": 1335296,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 77824,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015464712505850,
+            "cpu_usage_usec": 12184927,
+            "mem_current_bytes": 1335296,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 77824,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015465213589654,
+            "cpu_usage_usec": 12184927,
+            "mem_current_bytes": 1335296,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 77824,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015465714495785,
+            "cpu_usage_usec": 12184927,
+            "mem_current_bytes": 1335296,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 77824,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015466215307915,
+            "cpu_usage_usec": 12184927,
+            "mem_current_bytes": 1077248,
+            "mem_peak_bytes": 15228928,
+            "io_read_bytes": 0,
+            "io_write_bytes": 77824,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          },
+          {
+            "scope": "RUN01BCANARY-20260912T103943Z-1259a4-verifier_scope_target_image",
+            "scope_kind": "verifier_container",
+            "t_monotonic_ns": 2015466716278227,
+            "cpu_usage_usec": 12309666,
+            "mem_current_bytes": 2375680,
+            "mem_peak_bytes": 16015360,
+            "io_read_bytes": 0,
+            "io_write_bytes": 77824,
+            "read_status": {
+              "cpuacct.usage": "ok_ns_converted_to_usec",
+              "memory.usage_in_bytes": "ok",
+              "memory.max_usage_in_bytes": "ok",
+              "blkio.io_service_bytes_recursive": "not_found",
+              "blkio.io_service_bytes": "not_found",
+              "blkio.throttle.io_service_bytes_recursive": "ok",
+              "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+            }
+          }
+        ],
+        "sample_gaps_ns": [
+          501070573,
+          500823331,
+          500780170,
+          500827870,
+          500717929,
+          500690459,
+          500710819,
+          500684489,
+          500699869,
+          500810800,
+          500739429,
+          500741490,
+          500682048,
+          500718780,
+          500897531,
+          500690009,
+          500720059,
+          500899321,
+          500616598,
+          500635188,
+          500570888,
+          500548167,
+          500719139,
+          500779000,
+          500908491,
+          500889951,
+          501083804,
+          500906131,
+          500812130,
+          500970312
+        ],
+        "notes": [
+          "baseline_cpu_unreadable:None"
+        ]
+      }
+    }
+  ],
+  "collector": {
+    "scope": "collector",
+    "sampling_interval_s": 0.5,
+    "total_reads": 77,
+    "note": "collector runs outside measured scopes; its own CPU/RSS is not included in any measured scope and must be stated separately"
+  },
+  "no_model_api": true,
+  "no_task_execution": true
+}

@@ -1,0 +1,58 @@
+# RUN-02 A-stage configuration.  This is an independent identity from
+# RUN-01-C and is not execution authorization.
+spec_version: 0.1.0
+collection_id: RUN-02
+status: A_OFFLINE_READY_PENDING_USER_APPROVAL
+execution_authorized: false
+task:
+  benchmark: SWE-bench Verified
+  instance_id: django__django-16485
+  record_locator: data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/django__django-16485/record.json
+  record_sha256: 762de270d1ce06ab23104a35322098178624865c886d7b0ddadf9044d8fec46a
+  dataset_revision: 78f471bf655a3137b2e8a75af1501690ec009ec3
+  base_commit: 39f83765e12b0e5d260b7939fc3fe281d879b279
+  agent_input_fields: [instance_id, problem_statement]
+  startup_command: unset
+harness:
+  name: mini-SWE-agent
+  version: 2.4.6
+  venv_locator: .venvs/mini-swe-agent-2.4.6-env01
+  entry: isolated subprocess through existing MiniSweAgentHarness
+  tool_hook: existing shared ToolEventRecordingEnvironment
+model:
+  display_name: DeepSeek-V4-Flash
+  request_model_id: openai/deepseek-v4-flash
+  protocol: OpenAI-compatible through litellm
+  credentials_env: [PILOT_API_BASE, PILOT_API_KEY]
+  retries: 0
+  price: unknown
+image:
+  target_ref: swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2
+  architecture: arm64/v8
+  pull: never
+budget_proposal:
+  model_requests: 30
+  steps: 30
+  output_tokens_per_request: 4096
+  agent_wall_min: 25
+  verifier_wall_min: 5
+  total_wall_min: 30
+  preflight_wall_s: 60
+  agent_container_cpu: 4
+  agent_container_memory_gib: 8
+  verifier_container_cpu: 4
+  verifier_container_memory_gib: 8
+  run_dir_threshold_gib: 5
+  sampling_interval_s: 0.5
+  host_process_interval_s: 0.2
+  artifact_monitor_interval_s: 0.25
+  attempts: 1
+  automatic_retries: 0
+network:
+  agent_container: none
+  model_route: existing host-side gateway only, if separately approved
+  proxy: not required by current static plan; any proxy must be named in approval
+output:
+  raw_root: data/raw/generated/RUN-02
+  report_root: reports/resource/RUN-02
+  approval_record: reports/resource/RUN-02/APPROVAL.txt

@@ -1,0 +1,64 @@
+{
+  "report_kind": "RUN-02-derived-review-v2",
+  "status": "complete",
+  "supersedes": {
+    "path": "reports/resource/RUN-02/20260915T012427Z-2d75aa",
+    "manifest_sha256": "1d011702dfdf23d4dfd0e71c69ace0e9e138e42465c37d8e663af762d0b3331a",
+    "summary_sha256": "ccd65f5d0a9433d81e78ee8d14b26a612aa80118c0f0a1cbfb889dd82bc68bad"
+  },
+  "method": "read-only projection from sealed RUN-02-R2 raw files and original report; no experiment rerun",
+  "run": {
+    "run_id": "20260915T012427Z-2d75aa",
+    "attempt_id": "20260915T012427Z-2d75aa-a1",
+    "task_id": "django__django-16485",
+    "source_type": "benchmark_real",
+    "execution_status": "ok",
+    "evaluation_status": "ok",
+    "archive_status": "ok",
+    "cleanup_status": "ok",
+    "report_status": "complete",
+    "resolved": true
+  },
+  "agent_and_model": {
+    "exit_status": "LimitsExceeded",
+    "submitted": false,
+    "candidate_source": "container_working_tree_git_diff",
+    "model_requests": {"total": 30, "ok": 27, "failed": 3},
+    "steps": 26,
+    "output_tokens": 11007
+  },
+  "tool_observation": {
+    "calls": 28,
+    "hook_events": {"open": 28, "closed": 28, "error": 0},
+    "nonzero_returncodes": 1,
+    "closed_means_success": false,
+    "duration_source": "mini_tool_events.jsonl native hook t_start_ns/t_end_ns",
+    "native_duration_records": 28,
+    "historical_receipt_duration_records": 0,
+    "association": "shared_scope",
+    "command_values": "safe sha256/length projections only"
+  },
+  "host_observation": {
+    "snapshots": 717,
+    "readable_snapshots": 716,
+    "cpu_seconds": 4.19,
+    "cpu_basis": "utime+stime delta between first/last readable snapshots",
+    "rss_last_readable_bytes": 218214400,
+    "rss_sampled_max_bytes": 226713600,
+    "final_read_status": "process_exited",
+    "limitations": ["not full lifetime CPU", "no host process kernel peak", "descendant coverage incomplete"]
+  },
+  "resource_scopes": [
+    {"scope_kind": "agent_container", "cpu_core_seconds": 51.007123, "wall_s": 143.651636264, "memory_kernel_peak_bytes": 1434140672, "formal_io": null},
+    {"scope_kind": "verifier_container", "cpu_core_seconds": 3.64963, "wall_s": 12.264456124, "memory_kernel_peak_bytes": 72548352, "formal_io": null}
+  ],
+  "archive_accounting": {
+    "raw_file_count": 10,
+    "raw_tree_bytes": 647461,
+    "manifest_declared_files_excluding_manifest": 9,
+    "metadata_snapshot_artifact_bytes": 645154,
+    "reconciliation": "full-tree total is authoritative for this review; metadata snapshot and manifest are separately retained; no unobserved supplement is invented",
+    "formal_io": null
+  },
+  "g1_scope": "G1 remains PARTIAL; this report supplies one real joint observation run and does not establish representativeness, exclusive Tool CPU, formal I/O, or RUN-01/RUN-02 causal comparison"
+}

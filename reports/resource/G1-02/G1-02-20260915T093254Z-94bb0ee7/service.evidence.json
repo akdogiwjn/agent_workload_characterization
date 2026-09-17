@@ -1,0 +1,300 @@
+{
+  "status": "PASS",
+  "events": [
+    {
+      "event": "ready",
+      "pid": 7,
+      "start_monotonic_ns": 2270635564673104,
+      "run_id": "G1-02-20260915T093254Z-94bb0ee7",
+      "service_id": "G1-02-20260915T093254Z-94bb0ee7:service",
+      "starttime_ticks": 227063540,
+      "t_monotonic_ns": 2270635564675304,
+      "received_monotonic_ns": 2270635564891037
+    },
+    {
+      "event": "request_started",
+      "id": "sync-1",
+      "kind": "sync",
+      "run_id": "G1-02-20260915T093254Z-94bb0ee7",
+      "service_id": "G1-02-20260915T093254Z-94bb0ee7:service",
+      "pid": 7,
+      "starttime_ticks": 227063540,
+      "t_monotonic_ns": 2270635567038026,
+      "received_monotonic_ns": 2270635567187258
+    },
+    {
+      "event": "request_finished",
+      "id": "sync-1",
+      "kind": "sync",
+      "digest": "511c4c414ff24d3cbb027a22588466f6dc5854838e9efc24f578074171fcccc9",
+      "cpu_seconds": 8.66799999999987e-05,
+      "run_id": "G1-02-20260915T093254Z-94bb0ee7",
+      "service_id": "G1-02-20260915T093254Z-94bb0ee7:service",
+      "pid": 7,
+      "starttime_ticks": 227063540,
+      "t_monotonic_ns": 2270635567148297,
+      "received_monotonic_ns": 2270635567413061
+    },
+    {
+      "event": "request_started",
+      "id": "sync-2",
+      "kind": "sync",
+      "run_id": "G1-02-20260915T093254Z-94bb0ee7",
+      "service_id": "G1-02-20260915T093254Z-94bb0ee7:service",
+      "pid": 7,
+      "starttime_ticks": 227063540,
+      "t_monotonic_ns": 2270635567707065,
+      "received_monotonic_ns": 2270635567832966
+    },
+    {
+      "event": "request_finished",
+      "id": "sync-2",
+      "kind": "sync",
+      "digest": "511c4c414ff24d3cbb027a22588466f6dc5854838e9efc24f578074171fcccc9",
+      "cpu_seconds": 7.24899999999945e-05,
+      "run_id": "G1-02-20260915T093254Z-94bb0ee7",
+      "service_id": "G1-02-20260915T093254Z-94bb0ee7:service",
+      "pid": 7,
+      "starttime_ticks": 227063540,
+      "t_monotonic_ns": 2270635567793636,
+      "received_monotonic_ns": 2270635568104770
+    },
+    {
+      "event": "job_submitted",
+      "id": "job-1",
+      "run_id": "G1-02-20260915T093254Z-94bb0ee7",
+      "service_id": "G1-02-20260915T093254Z-94bb0ee7:service",
+      "pid": 7,
+      "starttime_ticks": 227063540,
+      "t_monotonic_ns": 2270635568359883,
+      "received_monotonic_ns": 2270635568487065
+    },
+    {
+      "event": "job_started",
+      "id": "job-1",
+      "run_id": "G1-02-20260915T093254Z-94bb0ee7",
+      "service_id": "G1-02-20260915T093254Z-94bb0ee7:service",
+      "pid": 7,
+      "starttime_ticks": 227063540,
+      "t_monotonic_ns": 2270635568694798,
+      "received_monotonic_ns": 2270635568819659
+    },
+    {
+      "event": "poll_result",
+      "id": "job-1",
+      "state": "started",
+      "run_id": "G1-02-20260915T093254Z-94bb0ee7",
+      "service_id": "G1-02-20260915T093254Z-94bb0ee7:service",
+      "pid": 7,
+      "starttime_ticks": 227063540,
+      "t_monotonic_ns": 2270635569027872,
+      "received_monotonic_ns": 2270635569158114
+    },
+    {
+      "event": "proceed_ack",
+      "id": "job-1",
+      "run_id": "G1-02-20260915T093254Z-94bb0ee7",
+      "service_id": "G1-02-20260915T093254Z-94bb0ee7:service",
+      "pid": 7,
+      "starttime_ticks": 227063540,
+      "t_monotonic_ns": 2270635569364257,
+      "received_monotonic_ns": 2270635569483948
+    },
+    {
+      "event": "job_finished",
+      "id": "job-1",
+      "state": "completed",
+      "digest": "511c4c414ff24d3cbb027a22588466f6dc5854838e9efc24f578074171fcccc9",
+      "cpu_seconds": 9.220999999999535e-05,
+      "run_id": "G1-02-20260915T093254Z-94bb0ee7",
+      "service_id": "G1-02-20260915T093254Z-94bb0ee7:service",
+      "pid": 7,
+      "starttime_ticks": 227063540,
+      "t_monotonic_ns": 2270635579088736,
+      "received_monotonic_ns": 2270635579253808
+    },
+    {
+      "event": "wait_result",
+      "id": "job-1",
+      "state": "completed",
+      "run_id": "G1-02-20260915T093254Z-94bb0ee7",
+      "service_id": "G1-02-20260915T093254Z-94bb0ee7:service",
+      "pid": 7,
+      "starttime_ticks": 227063540,
+      "t_monotonic_ns": 2270635579484681,
+      "received_monotonic_ns": 2270635579608513
+    },
+    {
+      "event": "job_submitted",
+      "id": "job-2",
+      "run_id": "G1-02-20260915T093254Z-94bb0ee7",
+      "service_id": "G1-02-20260915T093254Z-94bb0ee7:service",
+      "pid": 7,
+      "starttime_ticks": 227063540,
+      "t_monotonic_ns": 2270635579818446,
+      "received_monotonic_ns": 2270635579939047
+    },
+    {
+      "event": "job_started",
+      "id": "job-2",
+      "run_id": "G1-02-20260915T093254Z-94bb0ee7",
+      "service_id": "G1-02-20260915T093254Z-94bb0ee7:service",
+      "pid": 7,
+      "starttime_ticks": 227063540,
+      "t_monotonic_ns": 2270635580166970,
+      "received_monotonic_ns": 2270635580285752
+    },
+    {
+      "event": "job_finished",
+      "id": "job-2",
+      "state": "cancelled",
+      "run_id": "G1-02-20260915T093254Z-94bb0ee7",
+      "service_id": "G1-02-20260915T093254Z-94bb0ee7:service",
+      "pid": 7,
+      "starttime_ticks": 227063540,
+      "t_monotonic_ns": 2270635590335175,
+      "received_monotonic_ns": 2270635590475547
+    },
+    {
+      "event": "wait_result",
+      "id": "job-2",
+      "state": "cancelled",
+      "run_id": "G1-02-20260915T093254Z-94bb0ee7",
+      "service_id": "G1-02-20260915T093254Z-94bb0ee7:service",
+      "pid": 7,
+      "starttime_ticks": 227063540,
+      "t_monotonic_ns": 2270635590706720,
+      "received_monotonic_ns": 2270635590832582
+    },
+    {
+      "event": "closed",
+      "pending": [
+        "job-1",
+        "job-2"
+      ],
+      "run_id": "G1-02-20260915T093254Z-94bb0ee7",
+      "service_id": "G1-02-20260915T093254Z-94bb0ee7:service",
+      "pid": 7,
+      "starttime_ticks": 227063540,
+      "t_monotonic_ns": 2270635591475001,
+      "received_monotonic_ns": 2270635591606392
+    }
+  ],
+  "intervals": [],
+  "scopes": [
+    {
+      "scope": "service",
+      "condition": "ON",
+      "resource": {
+        "scope": "service",
+        "scope_kind": "agent_container",
+        "interval_target_s": 0.2,
+        "boundary_start": {
+          "scope": "service",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 2270635565514236,
+          "cpu_usage_usec": 194189,
+          "mem_current_bytes": 8421376,
+          "mem_peak_bytes": 16306176,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive",
+            "read_latency_s": "0.000468286"
+          }
+        },
+        "boundary_end": {
+          "scope": "service",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 2270635590912903,
+          "cpu_usage_usec": 195340,
+          "mem_current_bytes": 8675328,
+          "mem_peak_bytes": 16306176,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive",
+            "read_latency_s": "0.000249343"
+          }
+        },
+        "samples": [],
+        "sample_gaps_ns": [],
+        "notes": [
+          "baseline_cpu_unreadable:None"
+        ],
+        "formal_io": null,
+        "io_reason": "degraded_host_v1_blkio"
+      },
+      "host": {
+        "scope": "host_orchestrator_process",
+        "pid": 101282,
+        "starttime_ticks": 227063426,
+        "clk_tck": 100,
+        "page_size": 4096,
+        "n_snapshots": 2,
+        "n_readable": 2,
+        "cpu_seconds": 0.0,
+        "cpu_seconds_reason": null,
+        "cpu_basis": "utime+stime tick delta between first/last READABLE snapshots (interval, not lifetime)",
+        "rss_current_last_readable": 36036608,
+        "rss_sampled_max": 36036608,
+        "rss_note": "current/sampled-max distinct; kernel peak not read at process level; RSS never summed across processes",
+        "final_read_status": "ok",
+        "final_value_note": "a process_exited final read means the verified final is null; the last readable value is diagnostic only",
+        "collector": {
+          "read_count": 2,
+          "read_wall_ns_total": 100570,
+          "read_wall_ns_mean": 50285.0,
+          "note": "collector read cost measured separately from any workload metric; runner-process CPU/RSS is host_runner_process (includes collector), never double-counted as exclusive"
+        },
+        "coverage_gaps": [
+          "descendants (docker exec clients) not individually tracked; short-lived grandchildren may be missed",
+          "kernel-peak (VmHWM) not recorded at host scope this batch"
+        ],
+        "records": [
+          {
+            "pid": 101282,
+            "starttime_ticks": 227063426,
+            "t_monotonic_ns": 2270635565457585,
+            "cpu_ticks": 84,
+            "rss_bytes": 36032512,
+            "read_status": {
+              "stat": "ok"
+            }
+          },
+          {
+            "pid": 101282,
+            "starttime_ticks": 227063426,
+            "t_monotonic_ns": 2270635591168567,
+            "cpu_ticks": 84,
+            "rss_bytes": 36036608,
+            "read_status": {
+              "stat": "ok"
+            }
+          }
+        ],
+        "process_time_ns_delta": 5789700
+      },
+      "bracket_wall_ns": 25847153,
+      "errors": []
+    }
+  ],
+  "case": "service",
+  "errors": [],
+  "comparison": {
+    "sufficiency": "not_applicable"
+  },
+  "returncode": 0
+}

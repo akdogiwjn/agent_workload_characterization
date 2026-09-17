@@ -1,0 +1,63 @@
+{
+  "approved_by": "user",
+  "approved_at_utc": "2026-09-14T00:00:00Z",
+  "checklist_identity": {
+    "approval": "reports/resource/RUN-02/APPROVAL.txt",
+    "budget": {
+      "agent_wall_s": 1500.0,
+      "max_model_requests": 30,
+      "max_new_artifact_bytes": 5368709120,
+      "max_output_tokens_per_request": 4096,
+      "max_steps": 30,
+      "total_wall_s": 1800.0,
+      "verifier_wall_s": 300.0
+    },
+    "catalog_sha256": "fca2c6f094196d4e4a62c285ed6a3fc230c8e4deded11e0c5f5bab573ed13656",
+    "code_sha256": {
+      "analyzers/run_02_analysis.py": "b1091969e8a41f00eed2137327b21f6925485c5909aed36f8c27c76512a496fa",
+      "collectors/host_process.py": "2ec98884c8b0d1ea005881f72e0a5498088e40960eebc3c44d3775ec2e150055",
+      "collectors/resource_sampler.py": "8418a9d793e170d96ce75d97ddd65a978a38038f80c2e34eb4c9485286bcca72",
+      "runners/coding_pilot.py": "db935008a9e71a2b8421d13a5d6d9d42d0f4efe6f55d468d6eb15c7530bd7377",
+      "runners/container_runtime.py": "01efadaec9e4c9980aa2474990d72378b09d6c247d85de077ead9b00ad99ffac",
+      "runners/mini_agent_adapter.py": "ae2949cad66af14b0afb35d1e518feebc63a48548d56aafa3325fe515b6e3779",
+      "runners/run_02_entry.py": "64214bfb76fec72e762cb25873518b78f9b73a4e22172e63180e5984f471fffa",
+      "runners/tool_event_env.py": "0de111c16411b30255b47328912395773330c0b9e6f844f7a62b68dd293e967b"
+    },
+    "collection": "RUN-02",
+    "container_limits": {
+      "cpu": 4,
+      "memory": "8g",
+      "network": "none",
+      "pull": "never"
+    },
+    "credentials_env": {
+      "base": "PILOT_API_BASE",
+      "child_base": "OPENAI_API_BASE",
+      "child_key": "OPENAI_API_KEY",
+      "key": "PILOT_API_KEY"
+    },
+    "harness": "mini-SWE-agent 2.4.6",
+    "image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+    "interpreters": {
+      "evaluator": "/home/lcq/agent_workload_characterization/.venvs/swebench-eval-02e7a74/bin/python",
+      "mini": "/home/lcq/agent_workload_characterization/.venvs/mini-swe-agent-2.4.6-env01/bin/python"
+    },
+    "model": "openai/deepseek-v4-flash",
+    "output": {
+      "raw": "data/raw/generated/RUN-02/<run_id>",
+      "report": "reports/resource/RUN-02/<run_id>"
+    },
+    "proxy": "not required by static plan; any proxy must be approved",
+    "sampling": {
+      "artifact_monitor_s": 0.25,
+      "mini_host_process_s": 0.2,
+      "resource_s": 0.5
+    },
+    "task": {
+      "base_commit": "39f83765e12b0e5d260b7939fc3fe281d879b279",
+      "instance_id": "django__django-16485",
+      "record_locator": "/home/lcq/agent_workload_characterization/data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/django__django-16485/record.json",
+      "record_sha256": "762de270d1ce06ab23104a35322098178624865c886d7b0ddadf9044d8fec46a"
+    }
+  }
+}

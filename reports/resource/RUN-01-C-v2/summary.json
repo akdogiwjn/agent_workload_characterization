@@ -1,0 +1,171 @@
+{
+  "run_id": "20260912T125202Z-840e49",
+  "attempt_id": "20260912T125202Z-840e49-a1",
+  "task_id": "django__django-16485",
+  "source_type": "benchmark_real",
+  "status": {
+    "execution": "ok",
+    "evaluation": "ok",
+    "archive": "ok"
+  },
+  "resolved": true,
+  "budget": {
+    "requests": 30,
+    "steps": 26,
+    "output_tokens": 10777,
+    "artifact_bytes": 291873,
+    "artifact_exceeded": false,
+    "elapsed_s": 12.216613793,
+    "elapsed_total_s": 146.540550945,
+    "phase": "evaluation",
+    "exceeded": null
+  },
+  "llm": {
+    "requests": 30,
+    "ok": 26,
+    "failed": 4,
+    "censored": 0,
+    "usage_coverage": {
+      "n_valid": 30,
+      "n_applicable": 30,
+      "missing": 0
+    }
+  },
+  "agent": {
+    "exit_status": "LimitsExceeded",
+    "submitted": false,
+    "candidate_source": "container_working_tree_git_diff",
+    "note": "exit_status/submission come from the mini trajectory; the runner always extracts the candidate from the container working tree, so a non-submitted agent exit (e.g. LimitsExceeded) can still yield a verified candidate — execution=ok describes the PIPELINE, not an agent clean finish",
+    "trajectory_present": true
+  },
+  "tools": {
+    "calls": 26,
+    "observation_messages": 26,
+    "source": "mini_trajectory",
+    "categories": [],
+    "classification": "not_available (no tool classifier wired; P1-06)",
+    "runner_event_count": 0
+  },
+  "llm_observed_span": {
+    "observed_span_s": 126.940333983,
+    "n_events": 30,
+    "missing_reason": null
+  },
+  "scopes": [
+    {
+      "scope": "20260912T125202Z-840e49-agent-sandbox",
+      "scope_kind": "agent_container",
+      "cpu_core_seconds": 6.411718,
+      "cpu_core_seconds_reason": null,
+      "cpu_evidence": "counter_boundary",
+      "wall_s": 134.099304929,
+      "avg_cores": 0.04781320830406047,
+      "memory_current_end_bytes": 10948608,
+      "memory_kernel_peak_bytes": 68497408,
+      "memory_sampled_max_bytes": 50192384,
+      "memory_peak_basis": "v1_max_usage_in_bytes",
+      "n_samples": 293,
+      "io": {
+        "formal": null,
+        "reason": "degraded_host_v1_blkio: writeback attributed to root cgroup; reads are page-cache hits; not application bytes",
+        "diagnostic": {
+          "read_bytes": 0,
+          "write_bytes": 49152,
+          "evidence": "io.stat_boundary_delta",
+          "reason": null,
+          "cumulative_end": {
+            "read_bytes": 0,
+            "write_bytes": 49152,
+            "note": "cumulative counter value at final boundary (reference only; NOT the interval amount)"
+          }
+        }
+      },
+      "evidence_check": {
+        "boundary_start_present": true,
+        "boundary_end_present": true,
+        "raw_sample_count": 293,
+        "gaps_recorded": 292
+      }
+    },
+    {
+      "scope": "20260912T125202Z-840e49-verifier",
+      "scope_kind": "verifier_container",
+      "cpu_core_seconds": 3.423041,
+      "cpu_core_seconds_reason": null,
+      "cpu_evidence": "counter_boundary",
+      "wall_s": 11.990780406,
+      "avg_cores": 0.2854727452340936,
+      "memory_current_end_bytes": 12427264,
+      "memory_kernel_peak_bytes": 70459392,
+      "memory_sampled_max_bytes": 69976064,
+      "memory_peak_basis": "v1_max_usage_in_bytes",
+      "n_samples": 24,
+      "io": {
+        "formal": null,
+        "reason": "degraded_host_v1_blkio: writeback attributed to root cgroup; reads are page-cache hits; not application bytes",
+        "diagnostic": {
+          "read_bytes": 0,
+          "write_bytes": 1699840,
+          "evidence": "io.stat_boundary_delta",
+          "reason": null,
+          "cumulative_end": {
+            "read_bytes": 0,
+            "write_bytes": 1699840,
+            "note": "cumulative counter value at final boundary (reference only; NOT the interval amount)"
+          }
+        }
+      },
+      "evidence_check": {
+        "boundary_start_present": true,
+        "boundary_end_present": true,
+        "raw_sample_count": 24,
+        "gaps_recorded": 23
+      }
+    }
+  ],
+  "cpu_core_seconds_coverage": {
+    "n_valid": 2,
+    "n_applicable": 2,
+    "missing": 0
+  },
+  "unclosed_events": 0,
+  "archive": {
+    "reported_artifact_bytes": 291873,
+    "reported_note": "metadata snapshot taken before metadata.json/manifest.json self-accounting; the outcome-level final total is recorded in the supplement manifest",
+    "actual_run_dir_bytes": 520090,
+    "files_total": 8,
+    "original_manifest_files": [
+      "candidate.patch",
+      "events.jsonl",
+      "metadata.json",
+      "mini_status.jsonl",
+      "mini_trajectory.json",
+      "samples.json"
+    ],
+    "files_missing_from_original_manifest": [
+      "verifier/test_output.txt"
+    ],
+    "bytes_outside_in_run_accounting": {
+      "mini_status.jsonl": 13174,
+      "mini_trajectory.json": 197024,
+      "verifier/test_output.txt": 16033
+    },
+    "bytes_outside_total": 226231,
+    "accounting_scope_note": "in-run budget accounting covered the RUNNER-ARCHIVED files only (candidate.patch, events.jsonl, samples.json, metadata.json, manifest.json); harness-child outputs (mini_status.jsonl, mini_trajectory.json) and the verifier test log were written during execution/evaluation outside that scope — the supplement manifest registers the complete list; the in-flight monitor polices the full tree; the runner now accounts the full tree for future runs"
+  },
+  "collector": {
+    "scope": "collector",
+    "sampling_interval_s": 0.5,
+    "total_reads": 317,
+    "note": "collector runs outside measured scopes; its own CPU/RSS is not included in any measured scope and must be stated separately"
+  },
+  "limitations": [
+    "scope peaks are NOT additive: no run-level peak memory exists",
+    "avg cores = cpu/wall within a scope; not an efficiency metric",
+    "parent/child scope overlap means scope CPUs must not be summed into a total without an explicit mutual-exclusion proof",
+    "page cache makes block I/O differ from application bytes; io.read_bytes is the interval delta, not the cumulative value",
+    "sample count is not accuracy evidence; boundary counters carry the CPU evidence for short bursts",
+    "tool-level semantic events are emitted by the fake harness flow only; the real mini harness records tool activity in the mini trajectory, so tool counts here may be 0 for real runs",
+    "host_agent_runtime scope (the host-side mini child) has no per-process CPU/RSS instrumentation; its wall/request boundaries come from the status protocol"
+  ]
+}

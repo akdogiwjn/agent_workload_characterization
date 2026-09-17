@@ -1,0 +1,106 @@
+{
+  "approved_by": "user",
+  "approved_at_utc": "2026-09-14T12:26:13Z",
+  "checklist_identity": {
+    "collection": "RUN-02",
+    "attempt_label": "RUN-02-R2",
+    "task": {
+      "instance_id": "django__django-16485",
+      "record_locator": "/home/lcq/agent_workload_characterization/data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/django__django-16485/record.json",
+      "record_sha256": "762de270d1ce06ab23104a35322098178624865c886d7b0ddadf9044d8fec46a",
+      "base_commit": "39f83765e12b0e5d260b7939fc3fe281d879b279"
+    },
+    "image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+    "catalog_sha256": "fca2c6f094196d4e4a62c285ed6a3fc230c8e4deded11e0c5f5bab573ed13656",
+    "approval": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R2/APPROVAL.txt",
+    "code_sha256": {
+      "runners/run_02_entry.py": "11aa5d7d74321beb58778519d386b70416ed83de85f62e417deeb15de9ac740b",
+      "runners/coding_pilot.py": "db935008a9e71a2b8421d13a5d6d9d42d0f4efe6f55d468d6eb15c7530bd7377",
+      "runners/mini_agent_adapter.py": "e84c62fc17f7ca578cd9f8f5f60bb62810747cbeacf0d930f7dfdcf76007f87b",
+      "runners/container_runtime.py": "01efadaec9e4c9980aa2474990d72378b09d6c247d85de077ead9b00ad99ffac",
+      "runners/tool_event_env.py": "0de111c16411b30255b47328912395773330c0b9e6f844f7a62b68dd293e967b",
+      "collectors/host_process.py": "2ec98884c8b0d1ea005881f72e0a5498088e40960eebc3c44d3775ec2e150055",
+      "collectors/resource_sampler.py": "8418a9d793e170d96ce75d97ddd65a978a38038f80c2e34eb4c9485286bcca72",
+      "analyzers/run_02_analysis.py": "b1091969e8a41f00eed2137327b21f6925485c5909aed36f8c27c76512a496fa"
+    },
+    "entry_code_sha256": "c1959f3e775d0947ce68cb413547af3769646c368e6ba41eb8782b0ea9e2ca8a",
+    "support_code_sha256": {
+      "runners/smoke_launcher.py": "ca0937752bbea1905134ba17f15448072da477de2bed7c650548d50aed592852"
+    },
+    "model": "openai/deepseek-v4-flash",
+    "harness": "mini-SWE-agent 2.4.6",
+    "interpreters": {
+      "mini": "/home/lcq/agent_workload_characterization/.venvs/mini-swe-agent-2.4.6-env01/bin/python",
+      "evaluator": "/home/lcq/agent_workload_characterization/.venvs/swebench-eval-02e7a74/bin/python"
+    },
+    "budget": {
+      "max_model_requests": 30,
+      "max_steps": 30,
+      "max_output_tokens_per_request": 4096,
+      "agent_wall_s": 1500.0,
+      "verifier_wall_s": 300.0,
+      "total_wall_s": 1800.0,
+      "max_new_artifact_bytes": 5368709120
+    },
+    "container_limits": {
+      "cpu": 4,
+      "memory": "8g",
+      "network": "none",
+      "pull": "never"
+    },
+    "sampling": {
+      "mini_host_process_s": 0.2,
+      "resource_s": 0.5,
+      "artifact_monitor_s": 0.25
+    },
+    "credentials_env": {
+      "base": "PILOT_API_BASE",
+      "key": "PILOT_API_KEY",
+      "child_base": "OPENAI_API_BASE",
+      "child_key": "OPENAI_API_KEY"
+    },
+    "credential_route": {
+      "reference": "{env:VOLCANO_API_KEY}",
+      "source": "/home/lcq/.config/opencode/opencode.json",
+      "resolved_in_memory": true,
+      "runner_mapping": {
+        "base": "OPENAI_API_BASE",
+        "key": "OPENAI_API_KEY"
+      },
+      "proxy_policy": "clear_only_this_process_and_children"
+    },
+    "parent_failure": {
+      "attempt_label": "RUN-02-R1",
+      "approval_path": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R1/APPROVAL.txt",
+      "approval_sha256": "1f9442a7196b14a292b0b3ca1bf0f296bbfc0399328a754f754cac78aeb48d74",
+      "marker_path": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R1/ATTEMPT_STARTED.json",
+      "marker_sha256": "edebe9f82a3fdf91380b1c71e7c35d9954ed4fa330bd99eac9bbdec99503102d",
+      "preflight_path": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R1/PREFLIGHT.json",
+      "preflight_sha256": "55768beef63d97f3de6abee4facb17a23e94ba83d5c2abcb88692b65bf5ec96d"
+    },
+    "readiness_evidence": {
+      "summary_path": "/home/lcq/agent_workload_characterization/reports/preparation/READY-01/20260914T111017Z-7eb3c4/summary.json",
+      "summary_sha256": "cc234ad87b9c00189c20f9ec8c1836a3f762aca36a9ac420b83533b323ac2a65",
+      "manifest_path": "/home/lcq/agent_workload_characterization/reports/preparation/READY-01/20260914T111017Z-7eb3c4/manifest.json",
+      "manifest_sha256": "af76a6e481d56488f09031eb0702780dbc928174e2998151ef2f01725a4bf942",
+      "status": "READY_FOR_APPROVAL"
+    },
+    "r2_paths": {
+      "approval": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R2/APPROVAL.txt",
+      "attempt_marker": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R2/ATTEMPT_STARTED.json",
+      "preflight_evidence": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R2/PREFLIGHT.json",
+      "raw": "data/raw/generated/RUN-02/<new_run_id>",
+      "report": "reports/resource/RUN-02/<new_run_id>"
+    },
+    "execution_permission": {
+      "tool_execution_permission": "pending",
+      "required": "single command in an approved environment with access to unix:///var/run/docker.sock",
+      "no_alternatives": ["chmod", "sudo", "remote_docker", "global_sandbox_disable"]
+    },
+    "output": {
+      "raw": "data/raw/generated/RUN-02/<run_id>",
+      "report": "reports/resource/RUN-02/<run_id>"
+    },
+    "proxy": "not required by static plan; any proxy must be approved"
+  }
+}

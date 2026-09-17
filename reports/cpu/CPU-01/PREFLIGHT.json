@@ -1,0 +1,14 @@
+{
+  "status": "READY",
+  "checks": {
+    "perf_binary": true,
+    "target_script": true
+  },
+  "perf_binary": "/usr/bin/perf",
+  "perf_event_paranoid": {
+    "value": -1,
+    "read_status": "ok",
+    "note": "recorded only; actual permission is a runtime result, not pre-judged"
+  },
+  "target_script": "/home/lcq/agent_workload_characterization/scripts/cpu_01_target.py"
+}

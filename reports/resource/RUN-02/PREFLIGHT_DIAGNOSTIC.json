@@ -1,0 +1,37 @@
+{
+  "collection": "RUN-02",
+  "kind": "read_only_preflight_diagnostic",
+  "attempt_reexecuted": false,
+  "docker_started": false,
+  "model_called": false,
+  "network_or_pull": false,
+  "fixed_endpoint": "unix:///var/run/docker.sock",
+  "sandbox_observation": {
+    "context": "default",
+    "client_version": "25.0.5",
+    "server_version": null,
+    "version_error_class": "socket_connect_operation_not_permitted",
+    "info_error_class": "socket_connect_operation_not_permitted",
+    "inspect_error_class": "socket_connect_operation_not_permitted",
+    "interpretation": "execution sandbox denied Docker socket connection; inspect nonzero is not image absence"
+  },
+  "socket_metadata": {
+    "path": "/var/run/docker.sock",
+    "mode": "660",
+    "owner": "nobody",
+    "group": "nobody",
+    "type": "socket"
+  },
+  "sandbox_external_read_only_observation": {
+    "client_version": "25.0.5",
+    "server_version": "25.0.5",
+    "daemon_containers": 18,
+    "daemon_images": 72,
+    "image_inspect": "success",
+    "image_id": "sha256:bba60201758effbb3e4795367d470e3d0e00427f0e2e86636801b9f93df0b664",
+    "architecture": "arm64",
+    "os": "linux",
+    "classification": "docker_accessible_outside_sandbox_and_fixed_digest_present"
+  },
+  "action": "preserve_failed_attempt; no retry; await separate authorization"
+}

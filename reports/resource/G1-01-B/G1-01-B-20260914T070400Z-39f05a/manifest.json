@@ -1,0 +1,63 @@
+{
+  "batch": "G1-01-B-20260914T070400Z-39f05a",
+  "generated_at_utc": "2026-09-14T07:04:07.537309+00:00",
+  "files": {
+    "batch.json": "c753376166ff7fe972d1e166e29e350040ed27240c95935521eb45b0604d4479",
+    "c1_scope_evidence.json": "0283e2bb48e533ccf3cf8ccd962ad2e1a69176bf16461fdf9b6b311413368049",
+    "c1_tool_events.jsonl": "57ddc9e642339fd2524bcfaa99765ddebed76283b94269a79146181b42b6b655",
+    "c2_scope_evidence.json": "2589b345bc06376b1852d4d2a64aaafcf8b758d74ffb4ed963ed048e1f6b84ed",
+    "c2_tool_events.jsonl": "ded8126296f0c1dac60dbc3f60df5bc6e9b1b85d31caaf8d17a6211bbebe703c"
+  },
+  "output_bytes": 32641,
+  "archive_status": "ok",
+  "cleanup": [
+    {
+      "container_id": "5a6a9de0500b3d0c17f6c15644cea4d4b931458db10b9bf90d0709a30f16911c",
+      "removed": true,
+      "budget_overrun": false
+    }
+  ],
+  "batch_status": "OK",
+  "batch_fail_reasons": [],
+  "identity": {
+    "image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+    "budget": {
+      "batch_wall_s": 180.0,
+      "cleanup_reserve_s": 30.0,
+      "max_containers": 2,
+      "per_container": {
+        "cpu": "2",
+        "mem": "256m",
+        "network": "none"
+      },
+      "per_command_timeout_s": 20,
+      "terminate_timeout_s": 15,
+      "background_busy_max_s": 5,
+      "synthetic_file": "/tmp/g1b.bin",
+      "synthetic_write_mib": 8,
+      "synthetic_write_total_mib": 16,
+      "host_child": {
+        "max": 1,
+        "lifetime_s": 5,
+        "note": "own deterministic short program; no busy loop, no data files; not an Agent"
+      },
+      "report_threshold_mib": 20,
+      "sampling_interval_s": 0.2
+    },
+    "code_sha256": {
+      "runners/b_entry.py": "9e20c7b855f4356252a5a16b32fd678bc3422c76b8e9d94b95549bcea13a2e82",
+      "runners/tool_event_env.py": "0de111c16411b30255b47328912395773330c0b9e6f844f7a62b68dd293e967b",
+      "runners/container_runtime.py": "d4bbcc5c8432d25c719772b4ebe2cbcfd22a80fa6da1a04556c91a787f80d101",
+      "runners/mini_agent_adapter.py": "ae2949cad66af14b0afb35d1e518feebc63a48548d56aafa3325fe515b6e3779",
+      "collectors/resource_sampler.py": "8418a9d793e170d96ce75d97ddd65a978a38038f80c2e34eb4c9485286bcca72",
+      "collectors/host_process.py": "2ec98884c8b0d1ea005881f72e0a5498088e40960eebc3c44d3775ec2e150055"
+    },
+    "approval_record_sha256": "13b21514790a31a8bc5540147a5ba72e6d129ade677b9021b9d045298f612323",
+    "wall_s": 6.83,
+    "budget_deadline": 2175481.017459051,
+    "batch_started_utc": "2026-09-14T07:04:07.535923+00:00",
+    "cleanup_overrun": false,
+    "report_threshold_exceeded": false
+  },
+  "claim": "G1-01-B no-model container validation; unified final status; append-only"
+}

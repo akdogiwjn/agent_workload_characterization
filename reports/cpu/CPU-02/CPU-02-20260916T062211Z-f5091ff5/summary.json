@@ -1,0 +1,73 @@
+{
+  "run_id": "CPU-02-20260916T062211Z-f5091ff5",
+  "status": "FAIL",
+  "phases": {
+    "prepare": {
+      "status": "infra_failure",
+      "container_id": "a427dcf2726c9622127bdfb952a345e504457f01a1050e9f0144e62debed0624",
+      "detail": "eval_script_drift_vs_make_test_spec"
+    }
+  },
+  "cleanup": {
+    "workload_termination": {
+      "confirmed": true,
+      "method": "pkill+process_tree_check",
+      "container_alive": true
+    },
+    "container": "removed",
+    "pending": []
+  },
+  "preflight": {
+    "status": "READY",
+    "checks": {
+      "perf_binary": true,
+      "venv_python": true,
+      "record": true,
+      "candidate": true
+    },
+    "perf_binary": "/usr/bin/perf",
+    "perf_event_paranoid": {
+      "value": -1,
+      "read_status": "ok",
+      "note": "recorded only; actual permission is a runtime result"
+    },
+    "docker": {
+      "status": "READY",
+      "checks": {
+        "context": true,
+        "image": true
+      },
+      "endpoint": "unix:///var/run/docker.sock",
+      "image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2"
+    }
+  },
+  "errors": [
+    "CPU02Error"
+  ],
+  "budget_overrun": false,
+  "archive_status": "complete",
+  "clock_anchor": {
+    "monotonic_ns": 2345591865317685,
+    "utc_ns": 1789539731493721605,
+    "domain": "same_host_CLOCK_MONOTONIC",
+    "assumption": "native docker and perf share host clocks"
+  },
+  "config_limits": {
+    "batch_wall_s": 300,
+    "cleanup_reserve_s": 30,
+    "prepare_wall_s": 60,
+    "eval_wall_s": 120,
+    "operation_s": 15,
+    "perf_ready_window_s": 10,
+    "record_frequency_hz_max": 99,
+    "report_threshold_mib": 100,
+    "container_cpu": 4,
+    "container_memory": "8GiB",
+    "network": "none",
+    "pull": "never",
+    "retries": 0
+  },
+  "scope_semantics": "container CPU boundary is shared cgroup evidence, not per-function CPU seconds; function weights are period-weighted Self overhead; CPU-01 IPC/overhead numbers are NOT transferable",
+  "perf_binary_sha256": "4965f91b28addc7e7884f5d029613c18cb3f055a6dd921165122ba3dfe414778",
+  "wall_s": 2.253635872155428
+}

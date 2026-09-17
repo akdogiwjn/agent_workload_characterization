@@ -94,6 +94,118 @@ def guard(project_root: Path, destination: Path) -> Path:
     return destination
 
 
+def _guard_collection_root(project_root: Path, kind: str, collection: str) -> Path:
+    """Guard every parent segment of reports/<kind>/<collection>."""
+    project_root = project_root.resolve(strict=True)
+    if project_root == Path(project_root.anchor):
+        raise ValueError("filesystem root cannot be a project")
+    root = project_root / "reports" / kind / collection
+    current = project_root
+    for part in ("reports", kind, collection):
+        current = current / part
+        if current.is_symlink():
+            raise ValueError(f"report path segment is a symlink: {current}")
+    real = root.resolve()
+    if not real.is_relative_to(project_root):
+        raise ValueError("report root resolves outside project")
+    return real
+
+
+def _guard_resource_root(project_root: Path, collection: str) -> Path:
+    """Guard every parent segment of reports/resource/<collection>."""
+    return _guard_collection_root(project_root, "resource", collection)
+
+
+def guard_resource_root(project_root: Path, collection: str = "RUN-02") -> Path:
+    """Validate the collection root without requiring it to be new."""
+    return _guard_resource_root(project_root, collection)
+
+
+def guard_resource_namespace(project_root: Path, destination: Path,
+                            collection: str = "RUN-02") -> Path:
+    """Guard a fixed namespace below one resource collection.
+
+    The namespace may be new (unlike a report destination), but every
+    existing parent segment must be a real directory inside the collection.
+    """
+    project_root = project_root.resolve(strict=True)
+    collection_root = _guard_resource_root(project_root, collection)
+    destination = destination if destination.is_absolute() else project_root / destination
+    destination = destination.resolve()
+    if not destination.is_relative_to(collection_root):
+        raise ValueError("resource namespace must be inside its collection root")
+    relative = destination.relative_to(collection_root)
+    current = collection_root
+    for part in relative.parts:
+        current = current / part
+        if current.is_symlink():
+            raise ValueError(f"resource namespace segment is a symlink: {current}")
+    if not destination.is_relative_to(project_root):
+        raise ValueError("resource namespace escapes project root")
+    return destination
+
+
+def guard_resource_report(project_root: Path, destination: Path,
+                          collection: str = "RUN-02") -> Path:
+    """Exclusive guard for resource reports and their protected parents."""
+    project_root = project_root.resolve(strict=True)
+    report_root = _guard_resource_root(project_root, collection)
+    destination = destination if destination.is_absolute() else project_root / destination
+    destination = destination.resolve()
+    if destination == report_root or not destination.is_relative_to(report_root):
+        raise ValueError("resource report must be inside its collection root")
+    protected = [project_root / "references",
+                 project_root / "data" / "catalog",
+                 project_root / "data" / "raw",
+                 project_root / "data" / "normalized",
+                 project_root / "data" / "raw" / "replay",
+                 *_catalog_protected_roots(project_root)]
+    for path in protected:
+        real = path.resolve()
+        if destination == real or destination.is_relative_to(real) \
+                or real.is_relative_to(destination):
+            raise ValueError(f"resource report overlaps protected path: {real}")
+    if destination.exists():
+        raise ValueError("resource report already exists; refusing overwrite")
+    return destination
+
+
+def guard_cpu_root(project_root: Path, collection: str = "CPU-01") -> Path:
+    """Validate the CPU collection root without requiring it to be new."""
+    return _guard_collection_root(project_root, "cpu", collection)
+
+
+def guard_cpu_report(project_root: Path, destination: Path,
+                     collection: str = "CPU-01") -> Path:
+    """Exclusive guard for CPU collection reports under reports/cpu/.
+
+    Minimal addition for CPU-01: the planned reports/cpu namespace had no
+    guard; the anchor/protection/exclusive rules mirror
+    guard_resource_report exactly (same protected paths, same symlink and
+    overwrite refusal), only the reports/<kind> root differs.
+    """
+    project_root = project_root.resolve(strict=True)
+    report_root = _guard_collection_root(project_root, "cpu", collection)
+    destination = destination if destination.is_absolute() else project_root / destination
+    destination = destination.resolve()
+    if destination == report_root or not destination.is_relative_to(report_root):
+        raise ValueError("cpu report must be inside its collection root")
+    protected = [project_root / "references",
+                 project_root / "data" / "catalog",
+                 project_root / "data" / "raw",
+                 project_root / "data" / "normalized",
+                 project_root / "data" / "raw" / "replay",
+                 *_catalog_protected_roots(project_root)]
+    for path in protected:
+        real = path.resolve()
+        if destination == real or destination.is_relative_to(real) \
+                or real.is_relative_to(destination):
+            raise ValueError(f"cpu report overlaps protected path: {real}")
+    if destination.exists():
+        raise ValueError("cpu report already exists; refusing overwrite")
+    return destination
+
+
 def write_preparation_report(output_dir: Path, payload: dict,
                              *, project_root: Path | None = None) -> dict:
     root = (project_root or Path(".")).resolve()

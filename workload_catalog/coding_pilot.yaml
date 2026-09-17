@@ -1,0 +1,157 @@
+# RUN-01 coding pilot configuration: effective config for gate A (offline
+# development). Budgets below are PROPOSALS for gate C, not authorized
+# values. No credentials; secrets are injected as env vars at run time only.
+spec_version: 0.1.0
+collection_id: RUN-01
+status: GATE_A_COMPLETE_awaiting_B_approval
+execution_authorized: false
+generated_at: '2026-09-11'
+task:
+  benchmark: SWE-bench Verified
+  instance_id: django__django-16485
+  record_locator: data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/django__django-16485/record.json
+  record_sha256: 762de270d1ce06ab23104a35322098178624865c886d7b0ddadf9044d8fec46a
+  dataset_revision: 78f471bf655a3137b2e8a75af1501690ec009ec3
+  base_commit: 39f83765e12b0e5d260b7939fc3fe281d879b279
+  agent_input:
+    fields:
+    - instance_id
+    - problem_statement
+    startup_command: unset (must stay unset; renders whole record otherwise)
+harness:
+  name: mini-swe-agent
+  version: '2.4.6'
+  venv_locator: .venvs/mini-swe-agent-2.4.6-env01
+  entry: python API (get_sb_environment + get_agent + agent.run) in isolated
+    subprocess; bundled swebench_single CLI NOT used (loads full HF dataset)
+  instance_projection_fields:
+  - instance_id
+  - image_name
+model:
+  name: openai/deepseek-v4-flash
+  request_model_id: deepseek-v4-flash
+  protocol: openai-compatible via litellm
+  credentials: env PILOT_API_BASE / PILOT_API_KEY (runtime only; never persisted)
+  retry:
+    task_attempts: 1
+    outer_auto_retry: 0
+    mini_tenacity: MSWEA_MODEL_RETRY_STOP_AFTER_ATTEMPT=1
+    sdk_internal: num_retries=0
+  cost: price unknown; amount=null; usage recorded per request
+image:
+  target_ref: swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2
+  target_digest: sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2
+  target_image_id: sha256:bba60201758effbb3e4795367d470e3d0e00427f0e2e86636801b9f93df0b664
+  target_arch: arm64/v8 (native on this host)
+  target_source: official SWE-bench Multilingual build (pushed by carlosejimenez
+    2025-04-20); environment preparation checks passed on-host in gate B;
+    eval compatibility NOT yet verified (verifier never run — pending gate C
+    or an approved container recheck)
+  record_image_field: swebench/sweb.eval.x86_64.django_1776_django-16485:latest
+  mapping_note: the fixed record's image field names the x86_64 build; the
+    runner/verifier reference the arm64 digest above via configuration-level
+    mapping (record itself stays read-only and unmodified)
+  fallback_x86_64:
+    ref: swebench/sweb.eval.x86_64.django_1776_django-16485@sha256:570eb343d44b9ef6ddd5bfffbbe0c80217c926c79f164205cc328b51c5676020
+    note: amd64-only; would require qemu-x86_64 emulation on this host; raw
+      r5/r6 canary measurements for the same 12 s busy loop were 15.68
+      core-s (qemu) vs 12.25 core-s (native) — no per-unit-work overhead
+      ratio is claimed (the busy loop did not measure completed work)
+  sizes:
+    arm64_compressed_bytes: 1137007290
+    arm64_expanded_bytes: 2446341635
+    x86_64_compressed_mib: 1183.3
+    x86_64_expanded_bytes: 3072202931
+  environment_preparation_checks_gate_b:
+  - native aarch64 execution (no qemu)
+  - /testbed is the django repo with template/defaultfilters.py present
+  - base_commit 39f83765 in git object store (eval_script checkout works)
+  - conda testbed env python 3.11.11 + pip 25.0
+  - eval_script-referenced paths present (/opt/miniconda3/bin/activate,
+    tests/template_tests/filter_tests/test_floatformat.py)
+  - build chain isomorphic to the x86_64 image (same layered layout and
+    SWE-bench marker-commit pattern; HEAD marker hashes differ between
+    builds, which does not affect eval since eval_script checks out
+    base_commit at run time)
+  eval_compatibility: 'verified (2026-09-12 isolated gold-patch dry run on
+    the arm64 image — official GIT_APPLY_CMDS applied the gold patch,
+    eval_script ran 10/10 tests against /testbed code, official parser
+    resolved=true, infra_failure=false; no agent, no model; see
+    docs/coding_pilot_delivery.md §5.14)'
+scopes:
+- agent_container
+- host_agent_runtime
+- verifier_container
+- collector
+cgroup_facts_gate_b:
+  version: v1 (docker 25.0.5, cgroupfs driver; kernel 6.6 oe2403 aarch64)
+  cpu: cpuacct.usage (ns) at /sys/fs/cgroup/cpu,cpuacct/docker/<id>/
+  memory: usage_in_bytes + max_usage_in_bytes (kernel-tracked peak)
+  io: blkio.throttle.io_service_bytes_recursive only; DEGRADED - records
+    ~0.7% of actual container writes (writeback attributed to root cgroup);
+    reads all page-cache hits; scope block I/O is NOT reliable on this host
+  reader: collectors.resource_sampler.CgroupV1FileReader
+sampling:
+  interval_s: 0.5
+  cpu_unit: core-seconds (boundary counter deltas)
+  memory: current / kernel peak / sampled max kept distinct
+  io: only when scope exposes io.stat; null otherwise
+budget_proposal_gate_c:
+  model_requests: 30
+  steps: 30
+  output_tokens_per_request: 4096
+  agent_wall_min: 25
+  verifier_wall_min: 5
+  total_wall_min: 30
+  agent_container_cpu: 4
+  agent_container_memory_gib: 8
+  verifier_container_cpu: 4
+  verifier_container_memory_gib: 8
+  new_artifacts_gib: 5
+  new_artifacts_semantics: 'bounded-scope over-limit detection with stop
+    (NOT an absolute quota) — run_dir tree polled at 0.25 s with stop
+    mechanism; verifier executions interruptible via should_stop;
+    container writable layers have NO quota on this host (--storage-opt
+    unsupported, xfs without pquota, verified in canary r7), so container
+    peak disk usage relies on the stop mechanism + container removal;
+    detection latency and burst overshoot are declared; the 5 GiB figure
+    is a DETECTION THRESHOLD, not a hard ceiling'
+  stop_state_taxonomy: 'stopped_confirmed / stopped_via_docker_stop
+    (container exited, final counters may be unreadable) /
+    stop_not_confirmed'
+  monetary_ceiling: 'null (explicitly not set; not unlimited authorization)'
+gates:
+  A_offline_development: 'complete — 378 default tests, 7 offline rework
+    rounds; C-chain offline-complete incl. real-mini offline throughput
+    with fake transport/env; stop-chain semantics, artifact-limit wording
+    and execution reliability fixed through round 7'
+  B_environment_and_canary: 'executed — 2026-09-12 r7 complete, canaries
+    2/2 pass with fixed workloads; stop chain verified on both branches
+    (name-matched process -> pkill+process-tree confirmed with container
+    alive AND readable counters; name-unmatched process -> docker stop
+    fallback confirmed with container exited); --storage-opt UNSUPPORTED
+    (needs xfs pquota) so container writable layers have no quota, see
+    budget_proposal new_artifacts_semantics; isolated gold-patch
+    verifier verification resolved=true, eval compatibility verified;
+    io metric degraded v1 blkio; see docs/coding_pilot_delivery.md'
+  C_real_single_task: 'awaiting G0 decision + user approval; the minimal
+    execution entry is assembled and registered (runners/c_entry.py,
+    offline-validated; see docs/coding_pilot_handoff.md §8.2); the entry
+    pins THIS catalog by SHA-256 — any drift (tampered budget, NaN wall,
+    execution_authorized flip) refuses assembly in both plan and execute
+    modes; budget fields are type/finite/positive validated; offline
+    chain validated against real mini; container stop chain and
+    evaluator verified on-host'
+evaluator:
+  execution_copy: data/raw/software/swebench-eval-02e7a74 (git archive of
+    02e7a74ffd0b707aab73d203fe87bdc7c76afc8e, 9.3 MB)
+  venv: .venvs/swebench-eval-02e7a74 (433 MB, 79 packages)
+  offline_checks: make_test_spec constructs TestSpec from the fixed record
+    (image/eval_script/log_parser/eval_type/F2P=1/P2P=9 all present)
+approval_lists: docs/coding_pilot_delivery.md
+non_goals:
+- not a capability ranking; unresolved task with explainable pipeline is a
+  valid delivery
+- no per-tool exclusive attribution, no perf/hotspot, no extra benchmarks,
+  no full ingest in RUN-01
+- this file is not execution authorization

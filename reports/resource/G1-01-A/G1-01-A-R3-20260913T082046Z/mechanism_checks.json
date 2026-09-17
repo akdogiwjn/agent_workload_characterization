@@ -1,0 +1,111 @@
+{
+  "batch_started_utc": "2026-09-13T08:20:46Z",
+  "cases": [
+    {
+      "case": "C1_single_worker_fixed_workload",
+      "deadline_exceeded": false,
+      "child_rc": 0,
+      "comparison_semantics": "DIAGNOSTIC CROSS-CHECK of two DIFFERENT windows, NOT a same-interval verification: the child self-report spans its whole lifetime (process_time at module entry through loop end), while the parent /proc delta spans first-to-last READABLE snapshot (starts strictly AFTER spawn returns, so it can miss interpreter startup CPU and end before or at exit depending on the last poll). The diff therefore bounds window skew + scheduling noise; agreement within the poll granularity is a consistency check on UNITS and plausibility, not a proof of interval equality",
+      "wall_ns": 373685688,
+      "iterations": 3000000,
+      "child_cpu_s_self": 0.34624053,
+      "proc_cpu_s": 0.35,
+      "n_readable_snapshots": 37,
+      "final_read_status": "ok",
+      "independent_sources": "child time.process_time() vs parent /proc utime+stine tick delta",
+      "tolerance": "declared before execution: the two CPU sources are DIFFERENT windows (see comparison_semantics); the diff is expected within polling granularity (~0.02 s) + window skew + scheduler noise. A diff under that bound is a units/plausibility consistency check, NOT a same-interval verification pass",
+      "cpu_abs_diff_s": 0.003759469999999987,
+      "poll_granularity_s": 0.02
+    },
+    {
+      "case": "C2_dual_overlapping_workers",
+      "deadline_exceeded": false,
+      "iterations_per_worker": 2000000,
+      "span_s": 0.263713783,
+      "worker1_cpu_s": 0.23,
+      "worker2_cpu_s": 0.24,
+      "cpu_sum_s": 0.47,
+      "semantics": "span = wall from first spawn to last exit; cpu_sum = per-worker exclusive CPU (separate processes: summable as WORK, never as wall or as a shared-scope total)"
+    },
+    {
+      "case": "O1_O3_overhead_pairs",
+      "pairs_fixed_in_advance": 3,
+      "measurement": "fixed workload, monitor ON vs OFF; raw values reported; paired differences are data, NOT a stable percentage claim",
+      "pairs": [
+        {
+          "pair": 1,
+          "off": {
+            "wall_ns": 362097138,
+            "child_cpu_s_self": 0.33335242,
+            "deadline_exceeded": false
+          },
+          "on": {
+            "wall_ns": 393690473,
+            "child_cpu_s_self": 0.36687421,
+            "deadline_exceeded": false
+          },
+          "wall_diff_ns": 31593335,
+          "collector": {
+            "read_count": 39,
+            "read_wall_ns_total": 1361934,
+            "read_wall_ns_mean": 34921.38461538462,
+            "note": "collector read cost measured separately from any workload metric; runner-process CPU/RSS is host_runner_process (includes collector), never double-counted as exclusive"
+          }
+        },
+        {
+          "pair": 2,
+          "off": {
+            "wall_ns": 362103918,
+            "child_cpu_s_self": 0.33327041,
+            "deadline_exceeded": false
+          },
+          "on": {
+            "wall_ns": 413894592,
+            "child_cpu_s_self": 0.38782252,
+            "deadline_exceeded": false
+          },
+          "wall_diff_ns": 51790674,
+          "collector": {
+            "read_count": 41,
+            "read_wall_ns_total": 1483602,
+            "read_wall_ns_mean": 36185.41463414634,
+            "note": "collector read cost measured separately from any workload metric; runner-process CPU/RSS is host_runner_process (includes collector), never double-counted as exclusive"
+          }
+        },
+        {
+          "pair": 3,
+          "off": {
+            "wall_ns": 362080848,
+            "child_cpu_s_self": 0.33972837,
+            "deadline_exceeded": false
+          },
+          "on": {
+            "wall_ns": 383674435,
+            "child_cpu_s_self": 0.36214295999999996,
+            "deadline_exceeded": false
+          },
+          "wall_diff_ns": 21593587,
+          "collector": {
+            "read_count": 38,
+            "read_wall_ns_total": 1355530,
+            "read_wall_ns_mean": 35671.84210526316,
+            "note": "collector read cost measured separately from any workload metric; runner-process CPU/RSS is host_runner_process (includes collector), never double-counted as exclusive"
+          }
+        }
+      ]
+    }
+  ],
+  "batch_wall_s": 2.92,
+  "limits": {
+    "per_case_wall_s": 10,
+    "busy_s": 2,
+    "workers": 2,
+    "worker_mem_mib": 64,
+    "temp_files_mib": 8,
+    "batch_wall_s": 120,
+    "report_mib": 20
+  },
+  "within_limits": {
+    "batch_wall": true
+  }
+}

@@ -1,15 +1,17 @@
 # AI Agent Workload Characterization 开发任务计划
 
-状态：**P0-00-r2～P0-05、P0-10、P0-08/09 已验收（IR 0.2）；PREP-01/ENV-01 已验收（260 项测试）；SMOKE-01 完成（[交付](model_smoke_delivery.md)：根因修复后重试成功，路由/auth/工具协议/usage 已验证）；G0 未验收；未执行采集/实验**。下一批：[SMOKE-01 单次工具协议连通性检查](model_smoke_handoff.md)，当前只准备执行文档，真实请求待明确批准。
+当前摘要（2026-09-15）：G1-02 B 已验收，G1 资源小闭环在登记范围内通过；G0 有既有通过记录。P2 可以启动离线准备，实际 perf/Hotspot 测量仍另批。详见 [G1 评审 §0](g1_consolidated_review.md)。历史任务编号、目标与 Gate 保留，不代表全项实现或当前运行授权。
 
 ## 1. 目的、范围与共同约定
+
+当前工作包：[CPU-02 任务书](cpu_02_handoff.md)及[A 提示词](cpu_02_execution_prompt.md)，**A_REVIEW_FIXES_APPLIED / B_NOT_AUTHORIZED**。A 已离线交付并修复评审五组反例（control-ACK 屏障、二进制安全符号链、终态消费清理、端点固定、日志收尾；31 项定向＋4 项 venv 集成回归，见 [A 交付 §8](cpu_02_delivery.md)）；本批只准备一个真实 Verifier 段，不实现全部 P2 或宣布 G2 通过。日常状态统一维护在 [项目总览](project_status.md)。
 
 目标不是 Agent 能力排行榜，而是将公开宏观行为与本地系统观测连接到 CPU Characterization、Hotspot、Replay / Scale。
 
 必读：[方法论](../methodology.md)、[参考说明](../references/README.md)、[参考清单](../references/manifest.yaml)。
 所有任务同时遵守：[数据管理](data_management.md)、[Trace 语义与测量契约](trace_contract.md)。
 
-初版文档修订没有执行开发；后续已获授权完成 P0-00-r2、P0-01～05 和 P0-10 小样。除明确交付的代码、合成测试和两条真实 AgentX、一条 Applied Compute 及一条 VideoWeaver 内存规范化回归外，其余仍是后续要求，不代表已实现或自动获准执行。未全量转换、启动 benchmark、搬迁旧 trace 或修改第三方项目。
+历史 P0 阶段记录：初版规划未开发，后续完成 P0-00-r2、P0-01～05、P0-10 小样及 P0-08/09 最小集，当时未启动 benchmark。此句不描述现在：后来 RUN-01-C 与 RUN-02-R2 已完成真实 Coding attempt，见顶部集中评审。未全量转换或搬迁旧 trace，不因已有运行自动获准下一次执行。
 
 旧工程已有 adapter、sidecar、宏观分析和真实运行产物；需审计后选择性复用。不能以“已有报表”判定 P0 已完成，也不能假定新项目必须从零重写。
 
@@ -176,7 +178,7 @@ P0-00 资产审计
 
 ### P0-07：Workload Catalog 与采样设计（PARTIAL）
 
-状态：**PARTIAL**；候选已登记，首选模型/harness/verifier 证据仍待确定。按 [收尾任务书](p0_07_g0_handoff.md) 核实一个具体资源试点，不要求正式四场景代表性集合，不运行试点。
+历史候选阶段为 **PARTIAL**；“首选模型/harness/verifier 待确定”已由后续配置核实和 RUN-01/RUN-02 交付取代，不再是当前阻塞。首个 Coding 试点已固定并运行；正式多场景代表性集合仍未完成。[旧收尾任务书](p0_07_g0_handoff.md)仅作历史定位，当前不重复执行。
 
 初版依赖 P0-00，随宏观/试点结果更新。四类为覆盖目标，不是四类必须同时完成的开工门槛。
 
@@ -202,7 +204,7 @@ P0-00 资产审计
 
 ### P0-09：Trace Quality 与 Coverage（DONE，最小小样范围）
 
-状态：**DONE（最小小样范围）**；v6 sidecar 核对、macro/coverage 对齐及测试隔离已验收；完整质量体系和其他来源仍待扩展，G0 未通过。
+状态：**DONE（最小小样范围）**；v6 sidecar 核对、macro/coverage 对齐及测试隔离已验收；完整质量体系和其他来源仍待扩展。当时 G0 未通过，当前已有通过记录，见顶部摘要。
 
 依赖 P0-02；第一版即进入 G0，后续增量覆盖。
 
@@ -229,7 +231,7 @@ P0-00 资产审计
 
 验收：多 attempt、多状态、resolved/unresolved 请求、日志接收时间、submit/wait 和缺失 telemetry 均诚实表达。不得为了通过 Gate 发起重采或付费请求。
 
-### G0：最小语义 Gate（未验收）
+### G0：最小语义 Gate（已有通过记录；以下保留原验收清单）
 
 - [ ] P0-00 审计与复用边界清楚，旧数据只读策略可检查。
 - [ ] 最小 Schema 覆盖三种输入：AgentX 小样、Applied 模板、一种已有本地 trace。
@@ -243,7 +245,7 @@ G0 通过即可进入 P1 小闭环；不要求全量转换、所有 SWE/OSWorld 
 
 ### P1-00：采集可行性与授权边界（新增）
 
-依赖 G0。有限准备例外：用户已同意下一批 [PREP-01](first_run_preparation_handoff.md) 在 G0 前做本机只读能力发现与自有离线准备代码，不含实际采集、第三方包执行或实验，不代表 P1-00 全项完成。完整 P1-00 计划检查 cgroup v2 delegation、namespace/容器布局、计数器、时钟、进程可见性、PMU/perf 权限以及 collector 自身开销。
+依赖 G0。历史记录：PREP-01 曾获准在 G0 前做本机只读能力发现与自有离线准备代码；该准备不代表 P1-00 全项完成。完整 P1-00 计划检查 cgroup v2 delegation、namespace/容器布局、计数器、时钟、进程可见性、PMU/perf 权限以及 collector 自身开销；本段不构成当前下一步授权。
 
 输出 capability report 和降级方案；只读 preflight 不得自动修改系统全局配置或清理他人 cgroup。需要提权、付费 API、新基础设施或大规模任务时另行明确授权。
 
@@ -353,14 +355,16 @@ GEN：VideoWeaver；EDIT：AgenticVBench。分别约 2～3 条 smoke 是预算�
 
 输出 `reports/resource/` 的摘要、timeline、coverage 与限制。共享 service 和 Agent runtime 不得从 E2E 报告消失。
 
-### G1：资源归因小闭环 Gate（未验收）
+### G1：资源归因小闭环 Gate（登记范围 PASSED）
 
-- [ ] 目标 scope 的语义、process、资源可关联，独占/共享/未知明确。
-- [ ] 短进程、后台作业、常驻服务、异常退出、时钟/采集延迟有测试。
-- [ ] CPU/I/O 计数核对、memory 口径、重叠/残差和遗漏报告通过评审。
-- [ ] 至少一种真实 Runner 小样与确定性测试闭环，原始日志和三类状态保留。
-- [ ] Collector 开销已量化；正式比较前固定计量容差与降级边界。
-- [ ] 可找出 CPU/Wall/Memory 的候选 scope；精确 Tool 归因并非所有场景的必需条件。
+当前集中判定：[G1 集中评审 §0](g1_consolidated_review.md)：RUN-02-R2 与 G1-01/G1-02 共同满足下列小闭环要求。勾选只适用于登记 scope 与机制，不是全平台支持。I/O null、shared CPU、宿主非完整后代树等边界继续保留；正式 perf 比较必须重新登记其测量条件，新实验另批。
+
+- [x] 目标 scope 的语义、process、资源可关联，独占/共享/未知明确。
+- [x] 短进程、后台作业、常驻服务、异常退出、时钟/采集延迟有测试。
+- [x] CPU/I/O 计数核对、memory 口径、重叠/残差和遗漏报告通过评审。
+- [x] 至少一种真实 Runner 小样与确定性测试闭环，原始日志和三类状态保留。
+- [x] Collector 开销已量化；登记比较固定诊断容差与降级边界，不外推为稳定百分比。
+- [x] 可找出 CPU/Wall/Memory 的候选 scope；精确 Tool 归因并非所有场景的必需条件。
 
 G1 通过后立即可做 P2 试点；全场景与 50～75 task 目标属于后续覆盖扩展。
 
@@ -517,8 +521,8 @@ Gate evidence / next dependency:
 | 里程碑 | 交付与 Gate | 当前状态 |
 | --- | --- | --- |
 | M0 资产审计 | P0-00 清单、来源/筛选、复用与缺口 | **DONE（2026-09-10，r2 审计返修通过；不代表 G0 通过）** |
-| M1 最小语义闭环 | 三种来源小样、指标 fixtures、coverage，G0 | PARTIAL（三类小样与最小 macro/coverage 已验收；P0-07 配置收尾及 G0 待评审） |
-| M2 资源归因闭环 | 一个真实 Runner＋机制覆盖测试，G1 | NOT_STARTED |
+| M1 最小语义闭环 | 三种来源小样、指标 fixtures、coverage，G0 | 既有 G0 通过记录；历史小样和限制仍按原交付保存 |
+| M2 资源归因闭环 | 一个真实 Runner＋机制覆盖测试，G1 | DONE（登记小闭环范围；扩展机制与平台另验） |
 | M3 CPU 试点 | PMU/hotspot/受控实验可行性，反馈测量设计 | NOT_STARTED |
 | M4 多场景正式 Characterization | 扩展任务与重复，宏观/资源/CPU 分层报告，G2 | NOT_STARTED |
 | M5 Replay / Scale | G3-R、runtime 接入、并发报告 | NOT_STARTED |
@@ -527,6 +531,6 @@ P0-00-r2、P0-01～05、P0-10 小样和 P0-08/09 最小集已验收。模型=Dee
 
 PREP-01 已通过集中验收（2026-09-11，231 项项目外 cwd 测试、两条泄漏反例和报告哈希复核通过）；完成安全输入/配置准备、离线测试、只读预检和审批清单，不代表真实运行兼容性或 G0/G1 通过。
 
-下一批为 [ENV-01 独立环境安装与运行前适配](environment_adaptation_handoff.md)：任务书已准备，安装尚未获批/执行。待用户明确批准限定范围后，独立安装 mini 2.4.6 与依赖并验证实际 SDK 的离线调用/序列化/重试；不拉镜像、不调用真实 API、不运行 benchmark。交付后另行申请单请求 smoke。
+ENV-01、SMOKE 与 RUN-01 的后续进度以上方最新记录为准，不重复安装/连通性验证。历史下一批记录为 [RUN-02](run_02_handoff.md)；当前已由 RUN-02-R2 证据和 CLOSEOUT-01 收尾取代，不构成新的执行授权；G1-01 B1 不重复执行。
 
 后续按里程碑集中推进：准备包 → 用户确认后的单任务真实闭环 → 资源归因 G1 → CPU/Hotspot 试点 → 多场景扩展 → Replay/Scale。P0-06、全量转换、四场景齐备不阻塞首个小闭环。验收一次集中列出关键问题，运行前依赖与非关键待办分开，不为历史措辞或未启用路径单独开返修轮。

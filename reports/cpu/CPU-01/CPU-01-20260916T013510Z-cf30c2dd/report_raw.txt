@@ -1,0 +1,114 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 354  of event 'cycles'
+# Event count (approx.): 10831096379
+#
+# Overhead  Command     Shared Object         Symbol                       
+# ........  ..........  ....................  .............................
+#
+    20.03%  python3.11  libpython3.11.so.1.0  [.] _PyEval_EvalFrameDefault
+     5.42%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000109cc0
+     4.88%  python3.11  libpython3.11.so.1.0  [.] _Py_NewReference
+     4.06%  python3.11  libpython3.11.so.1.0  [.] _PyLong_New
+     3.25%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4b8
+     2.97%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4cc
+     2.55%  python3.11  libpython3.11.so.1.0  [.] 0x000000000016330c
+     2.43%  python3.11  libpython3.11.so.1.0  [.] PyObject_Malloc
+     2.43%  python3.11  libpython3.11.so.1.0  [.] 0x000000000010a7d0
+     2.16%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021bf04
+     2.16%  python3.11  libpython3.11.so.1.0  [.] PyLong_FromLong@plt
+     2.16%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021ac94
+     1.89%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000109ca0
+     1.63%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001215d0
+     1.62%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001215b0
+     1.62%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163398
+     1.35%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001227f8
+     1.35%  python3.11  libpython3.11.so.1.0  [.] PyLong_FromLong
+     1.35%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000166aa4
+     1.35%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001216c8
+     1.35%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001216c0
+     1.08%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001632a8
+     1.08%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4d4
+     1.08%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000164ce4
+     0.84%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000165650
+     0.81%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4c4
+     0.81%  python3.11  libpython3.11.so.1.0  [.] _Py_NewReference@plt
+     0.81%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163690
+     0.81%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163500
+     0.81%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001215a0
+     0.56%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b480
+     0.54%  python3.11  libpython3.11.so.1.0  [.] PyNumber_And
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b470
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000164cdc
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021ae8c
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000164cb4
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000010a7d4
+     0.54%  python3.11  libpython3.11.so.1.0  [.] PyNumber_FloorDivide
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b458
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000109c98
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4bc
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021ad74
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021a7b0
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b588
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001216cc
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4e0
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000122754
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001227e8
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163180
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000166b58
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163184
+     0.54%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163380
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4dc
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000164d10
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4c8
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021bee4
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000121580
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000109c90
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021aca0
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021ab9c
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021aee8
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000166a88
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001634e8
+     0.27%  python3.11  [kernel.kallsyms]     [k] lru_gen_del_mm
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000164d2c
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021ac34
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163524
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b4ac
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b490
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000016324c
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000122750
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021a910
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000113f1c
+     0.27%  python3.11  libpython3.11.so.1.0  [.] PyObject_Free@plt
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001631fc
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000166a3c
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163290
+     0.27%  python3.11  libpython3.11.so.1.0  [.] PyObject_Free
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000121584
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b460
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000163350
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001632f0
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000121594
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000113ed4
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021be34
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001634f0
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000012b464
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021a92c
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x00000000001636ac
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000166a2c
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021a7c4
+     0.27%  python3.11  libpython3.11.so.1.0  [.] PyObject_Malloc@plt
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021bfa4
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x0000000000166a9c
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021bee8
+     0.27%  python3.11  libpython3.11.so.1.0  [.] 0x000000000021bf1c
+     0.00%  python3.11  [kernel.kallsyms]     [k] __mmap_region
+     0.00%  perf-exec   [kernel.kallsyms]     [k] perf_event_remove_on_exec
+
+
+#
+# (Tip: Use parent filter to see specific call path: perf report -p <regex>)
+#

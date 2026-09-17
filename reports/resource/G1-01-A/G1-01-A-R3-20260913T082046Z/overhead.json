@@ -1,0 +1,65 @@
+{
+  "note": "raw measurements only; see mechanism_checks.json cases[-1] for the pairs",
+  "pairs": [
+    {
+      "pair": 1,
+      "off": {
+        "wall_ns": 362097138,
+        "child_cpu_s_self": 0.33335242,
+        "deadline_exceeded": false
+      },
+      "on": {
+        "wall_ns": 393690473,
+        "child_cpu_s_self": 0.36687421,
+        "deadline_exceeded": false
+      },
+      "wall_diff_ns": 31593335,
+      "collector": {
+        "read_count": 39,
+        "read_wall_ns_total": 1361934,
+        "read_wall_ns_mean": 34921.38461538462,
+        "note": "collector read cost measured separately from any workload metric; runner-process CPU/RSS is host_runner_process (includes collector), never double-counted as exclusive"
+      }
+    },
+    {
+      "pair": 2,
+      "off": {
+        "wall_ns": 362103918,
+        "child_cpu_s_self": 0.33327041,
+        "deadline_exceeded": false
+      },
+      "on": {
+        "wall_ns": 413894592,
+        "child_cpu_s_self": 0.38782252,
+        "deadline_exceeded": false
+      },
+      "wall_diff_ns": 51790674,
+      "collector": {
+        "read_count": 41,
+        "read_wall_ns_total": 1483602,
+        "read_wall_ns_mean": 36185.41463414634,
+        "note": "collector read cost measured separately from any workload metric; runner-process CPU/RSS is host_runner_process (includes collector), never double-counted as exclusive"
+      }
+    },
+    {
+      "pair": 3,
+      "off": {
+        "wall_ns": 362080848,
+        "child_cpu_s_self": 0.33972837,
+        "deadline_exceeded": false
+      },
+      "on": {
+        "wall_ns": 383674435,
+        "child_cpu_s_self": 0.36214295999999996,
+        "deadline_exceeded": false
+      },
+      "wall_diff_ns": 21593587,
+      "collector": {
+        "read_count": 38,
+        "read_wall_ns_total": 1355530,
+        "read_wall_ns_mean": 35671.84210526316,
+        "note": "collector read cost measured separately from any workload metric; runner-process CPU/RSS is host_runner_process (includes collector), never double-counted as exclusive"
+      }
+    }
+  ]
+}

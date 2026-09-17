@@ -1,0 +1,46 @@
+{
+  "batch": "G1-01-A-R4-20260913T085846Z",
+  "generated_at_utc": "2026-09-13T08:58:49.710073+00:00",
+  "assembly_wall_s": 2.92,
+  "files": {
+    "container_validation_approval.md": "5ceee00cefcae8554124a5b5192987b09fc44b93682bbc5e471e7f029ff3dea2",
+    "g1_evidence.md": "67f49cff5e7ab6965f70ca8c06d9a70b48ee9b45fff9151b18771430cb0c73a2",
+    "mechanism_checks.json": "56bf7e53900dfb8a35b966e7700ee337367d32f7d10f415c9256a357a7be3b89",
+    "overhead.json": "b862ee70cd8e705ec3fef1afc36c0b6fb39101670a778d2bd946e655a7b2e63e",
+    "scope_coverage.json": "fe801138b2424a7fa38d2c0909bb9044a0f6e0cbb6419cdcf0a35e2754f90f55",
+    "summary.md": "d067eaab3a17b1e169a08d157140a678fe604ce061f5334ab54e78183334b3dd",
+    "timing_semantics.md": "a73b145d769825cf70ff5007d69ffb192d3840ec04bf5f31c73a76adc87801b5",
+    "tool_timeline.jsonl": "7fb703b7c773d7683ec778523308d5a47a099d8a9f5bdd48e7db2af1e83c6e04"
+  },
+  "inputs": {
+    "sealed:candidate.patch": "0e10504263447a4d9734f56b1605043d61aeaa4e3d77f73d22ef8b86eca1b084",
+    "sealed:events.jsonl": "34663ea79724bc2ac53b9718e2132e77ea35754fafdfda327320de2bb086110d",
+    "sealed:manifest.json": "6d17c7c3c82796e5d0fa9416c5400a335f2eb092dbf8ce3bd622c81510e96f23",
+    "sealed:metadata.json": "d402970d3e8d8af6ad22b3cda5198cb4844b58f02c332a24c1d206c025315d66",
+    "sealed:mini_status.jsonl": "2794164dcaf200207f3744788e6cd614ed8a634904c50b70344ac832d2503be0",
+    "sealed:mini_trajectory.json": "fbb8ce4b8f7ed56ad66950bfbe0d2ca0fc0088ab9c8f947c02651ab18563d55f",
+    "sealed:samples.json": "633860fd7e0808d75c28e397d82e678d8e0007e4d707cda5293904da07595e5b",
+    "sealed:verifier/test_output.txt": "e3fdf24b3a42c33b67ab47867ddfa03baef10758ea8f04755fb7a107c451f0a4",
+    "v2report:manifest.json": "60d3ac3d742dca589a043b8f0355742eb567d197075b089a42d774cd743b4206",
+    "v2report:summary.json": "48c35a635d05ae7a484ebe6097fe19651b89555f6cb0b864dc5187c741fc3c07",
+    "v2report:summary.md": "b31a2585a95aa61bdca7d4a103f0894caa03b500244abd97f5426f905153b872",
+    "v2report:supplement_manifest.json": "edfc5db4528b5fae37690d40c14acb35a13fb29576ba21bb427ac6c5ac00492f"
+  },
+  "code_identity": {
+    "src/agent_workload_characterization/analyzers/tool_timeline.py": "f2badb9515a46afba9d04aece0c2ddf20ee16ebe8f433296c882140259b05632",
+    "src/agent_workload_characterization/collectors/host_process.py": "2ec98884c8b0d1ea005881f72e0a5498088e40960eebc3c44d3775ec2e150055",
+    "src/agent_workload_characterization/collectors/resource_sampler.py": "225ccb1cd94b7fbca3ee5ca5b4b13d929a4ebb942c07f776832870d0ae0bb165",
+    "src/agent_workload_characterization/runners/mini_agent_adapter.py": "af5ff573dc9932cd0b7de8e4dbaa48657fc5b7087cab29a857a41f795cd586d1",
+    "src/agent_workload_characterization/runners/coding_pilot.py": "ce227d8a09c278d43ec240e07c2c8e50219e7a924daf8955405e75e88183fccb",
+    "scripts/g1_01_mechanism.py": "b8c1d08c447dc3ccc250dad7a2fa961945342385653d9fddaf27ad62abc6573d",
+    "tests/test_g1_01.py": "f900ad02d0f00977c7c241f30838f0f6569dd41a694c6593fe93a6d24cdb2673",
+    "tests/integration_run01.py": "1369934ee532bf9615993c0eb8912587be775314b2f8875389df3d21461299b0"
+  },
+  "sealed_inputs_untouched": true,
+  "claim": "G1-01-A offline analysis only; no containers, no model, no network; historical gaps kept null",
+  "supersedes": "G1-01-A-R3-20260913T082046Z (preserved; its manifest lacked the files map entirely \u2014 see delivery R33)",
+  "correction_record": {
+    "r3_manifest_defect": "R3's manifest was written WITHOUT a files map (the summary.md hash 415bd079... the reviewer found was a stale value from an earlier structure; the actual file hashed 97e772a0...). Root cause: the manifest dict never carried the computed files dict; the post-write verification added this round now hard-fails on any mismatch/missing/unlisted file.",
+    "first_batch_file_loss": "container_validation_approval.md was MOVED out of the first batch directory by a replace() during R3 assembly (operator error). Restored verbatim from the R2 copy after verifying its SHA-256 equals the first batch's manifest entry 5ceee00cefcae855...; no content was rewritten."
+  }
+}

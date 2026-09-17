@@ -1,0 +1,128 @@
+{
+  "run_id": "20260912T125202Z-840e49",
+  "attempt_id": "20260912T125202Z-840e49-a1",
+  "task_id": "django__django-16485",
+  "source_type": "benchmark_real",
+  "status": {
+    "execution": "ok",
+    "evaluation": "ok",
+    "archive": "ok"
+  },
+  "resolved": true,
+  "budget": {
+    "requests": 30,
+    "steps": 26,
+    "output_tokens": 10777,
+    "artifact_bytes": 291873,
+    "artifact_exceeded": false,
+    "elapsed_s": 12.216613793,
+    "elapsed_total_s": 146.540550945,
+    "phase": "evaluation",
+    "exceeded": null
+  },
+  "llm": {
+    "requests": 30,
+    "ok": 26,
+    "failed": 4,
+    "censored": 0,
+    "usage_coverage": {
+      "n_valid": 30,
+      "n_applicable": 30,
+      "missing": 0
+    }
+  },
+  "tools": {
+    "calls": 0,
+    "categories": []
+  },
+  "llm_observed_span": {
+    "observed_span_s": 126.940333983,
+    "n_events": 30,
+    "missing_reason": null
+  },
+  "scopes": [
+    {
+      "scope": "20260912T125202Z-840e49-agent-sandbox",
+      "scope_kind": "agent_container",
+      "cpu_core_seconds": 6.411718,
+      "cpu_core_seconds_reason": null,
+      "cpu_evidence": "counter_boundary",
+      "wall_s": 134.099304929,
+      "avg_cores": 0.04781320830406047,
+      "memory_current_end_bytes": 10948608,
+      "memory_kernel_peak_bytes": 68497408,
+      "memory_sampled_max_bytes": 50192384,
+      "memory_peak_basis": "v1_max_usage_in_bytes",
+      "n_samples": 293,
+      "io": {
+        "read_bytes": 0,
+        "write_bytes": 49152,
+        "evidence": "io.stat_boundary_delta",
+        "reason": null,
+        "cumulative_end": {
+          "read_bytes": 0,
+          "write_bytes": 49152,
+          "note": "cumulative counter value at final boundary (reference only; NOT the interval amount)"
+        }
+      },
+      "evidence_check": {
+        "boundary_start_present": true,
+        "boundary_end_present": true,
+        "raw_sample_count": 293,
+        "gaps_recorded": 292
+      }
+    },
+    {
+      "scope": "20260912T125202Z-840e49-verifier",
+      "scope_kind": "verifier_container",
+      "cpu_core_seconds": 3.423041,
+      "cpu_core_seconds_reason": null,
+      "cpu_evidence": "counter_boundary",
+      "wall_s": 11.990780406,
+      "avg_cores": 0.2854727452340936,
+      "memory_current_end_bytes": 12427264,
+      "memory_kernel_peak_bytes": 70459392,
+      "memory_sampled_max_bytes": 69976064,
+      "memory_peak_basis": "v1_max_usage_in_bytes",
+      "n_samples": 24,
+      "io": {
+        "read_bytes": 0,
+        "write_bytes": 1699840,
+        "evidence": "io.stat_boundary_delta",
+        "reason": null,
+        "cumulative_end": {
+          "read_bytes": 0,
+          "write_bytes": 1699840,
+          "note": "cumulative counter value at final boundary (reference only; NOT the interval amount)"
+        }
+      },
+      "evidence_check": {
+        "boundary_start_present": true,
+        "boundary_end_present": true,
+        "raw_sample_count": 24,
+        "gaps_recorded": 23
+      }
+    }
+  ],
+  "cpu_core_seconds_coverage": {
+    "n_valid": 2,
+    "n_applicable": 2,
+    "missing": 0
+  },
+  "unclosed_events": 0,
+  "collector": {
+    "scope": "collector",
+    "sampling_interval_s": 0.5,
+    "total_reads": 317,
+    "note": "collector runs outside measured scopes; its own CPU/RSS is not included in any measured scope and must be stated separately"
+  },
+  "limitations": [
+    "scope peaks are NOT additive: no run-level peak memory exists",
+    "avg cores = cpu/wall within a scope; not an efficiency metric",
+    "parent/child scope overlap means scope CPUs must not be summed into a total without an explicit mutual-exclusion proof",
+    "page cache makes block I/O differ from application bytes; io.read_bytes is the interval delta, not the cumulative value",
+    "sample count is not accuracy evidence; boundary counters carry the CPU evidence for short bursts",
+    "tool-level semantic events are emitted by the fake harness flow only; the real mini harness records tool activity in the mini trajectory, so tool counts here may be 0 for real runs",
+    "host_agent_runtime scope (the host-side mini child) has no per-process CPU/RSS instrumentation; its wall/request boundaries come from the status protocol"
+  ]
+}

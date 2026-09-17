@@ -1,0 +1,57 @@
+spec_version: 0.1.0
+collection_id: CPU-01
+status: A_IMPLEMENTED_B_PENDING_APPROVAL
+execution_authorized: false
+workload:
+  kind: owned_synthetic_cpu_target
+  target: scripts/cpu_01_target.py
+  interpreter: /usr/bin/python3.11
+  work_iterations: 20000000
+  checksum: sha256_ascii_of_3_times_n_times_n_minus_1_div_2_mod_2_pow_32
+  target_protocol: jsonl_self_report_pid_starttime_then_fixed_integer_loop
+perf:
+  binary: /usr/bin/perf
+  stat:
+    # perf-stat(1) CSV FORMAT: value,unit,event,run-time-of-counter,percent-running(+optional metric tail)
+    # '<not counted>'/'<not supported>' are legal counter values (perf json linter).
+    argv_format: ['perf', 'stat', '-x', ';', '-o', '<stat_csv>', '-e', '<events>', '--', '<target_argv>']
+    events: task-clock,context-switches,cpu-migrations,page-faults,cycles,instructions,branches,branch-misses,cache-references,cache-misses
+    output: csv_semicolon_counter_file_via_-o
+  record:
+    # perf-record(1): -F frequency, -o output file; default inherit covers target and its children.
+    # No call-graph in this batch: symbol-level function table only.
+    argv_format: ['perf', 'record', '-F', '99', '-o', '<perf_data>', '-e', 'cycles', '--', '<target_argv>']
+    event: cycles
+    frequency_hz: 99
+    callgraph: disabled_this_batch
+  report:
+    # perf-report(1) --stdio; header '# Samples: N of event' used as denominator when present.
+    argv_format: ['perf', 'report', '--stdio', '--no-children', '-i', '<perf_data>']
+  semantic_notes:
+    - stat_counter_value_raw_string_and_unit_preserved
+    - time_enabled_ns_and_time_running_ns_null_when_absent_no_percent_fabrication
+    - ipc_only_when_cycles_and_instructions_both_valid_and_cycles_positive_same_session
+    - unsupported_and_permission_and_missing_and_zero_kept_distinct
+    - software_events_valid_independently_not_promoted_to_hardware_support
+    - report_unknown_symbols_and_zero_samples_distinct_from_missing_output
+measurement:
+  collector_scope: host_orchestrator_process_managing_perf_and_target_process_group
+  target_scope: perf_workload_mode_own_target_and_its_descendants_no_system_wide_no_arbitrary_attach
+  deadline_covers: preflight_stat_record_report_parse_and_cleanup
+  drain: bounded_continuous_stdout_stderr_drain_no_pipe_deadlock
+limits:
+  batch_wall_s: 120
+  cleanup_reserve_s: 20
+  operation_s: 15
+  target_wall_s: 10
+  target_expected_cpu_s: 1.5
+  record_frequency_hz_max: 99
+  report_threshold_mib: 20
+  retries: 0
+  fallback_event: none_failed_record_is_recorded_unavailable_no_retry
+authorization:
+  user_approval: pending
+  tool_execution_permission: pending
+  approval_path: reports/cpu/CPU-01/APPROVAL.json
+  attempt_path: reports/cpu/CPU-01/ATTEMPT_STARTED.json
+  report_root: reports/cpu/CPU-01

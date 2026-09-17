@@ -1,0 +1,92 @@
+{
+  "calibration": {
+    "available": true,
+    "n_anchors": 26,
+    "offset_ns_median": -1.7871941396283945e+18,
+    "anchor_residual_ns_max": 3840.0,
+    "anchor_residual_semantics": "observed max spread of per-anchor offsets around the median; NOT a proven calibration error bound",
+    "method": "per-request (assistant.extra.timestamp epoch, status.t_end_ns monotonic) read within the same child-process query call"
+  },
+  "anchor_gate": {
+    "enabled": true,
+    "reason": null,
+    "n_ok_status_lines": 26,
+    "n_assistant_with_actions": 26
+  },
+  "identity": {
+    "tool_calls_total": 26,
+    "pairing_missing_results": 0,
+    "pairing_anomalies": {
+      "n_id_mismatch": 0,
+      "n_duplicate_action_id": 0
+    },
+    "identity_basis": "tool_call_id + positional pairing with ID cross-check (mismatch/duplicate/orphan reported, never silently accepted)"
+  },
+  "true_duration_coverage": {
+    "n_valid": 0,
+    "n_applicable": 26,
+    "reason": "no native tool start/end in the historical run"
+  },
+  "estimated_window_coverage": {
+    "n_valid": 26,
+    "n_applicable": 26
+  },
+  "scope_window_audit": {
+    "20260912T125202Z-840e49-agent-sandbox": {
+      "boundary_start_ns": 2023382912827336,
+      "boundary_end_ns": 2023517012132265,
+      "n_samples_total": 293,
+      "n_samples_in_boundary": 268,
+      "n_samples_outside_boundary": 25,
+      "outside_sample_timestamps_ns": [
+        2023517019550466,
+        2023517520674599,
+        2023518043746311,
+        2023518546166832,
+        2023519047019272,
+        2023519547838962,
+        2023520048631041,
+        2023520549265488,
+        2023521049901945,
+        2023521550595273,
+        2023522051193029,
+        2023522551792316,
+        2023523052453753,
+        2023523553017509,
+        2023524053610216,
+        2023524554171462,
+        2023525054721618,
+        2023525555302694,
+        2023526056062853,
+        2023526556704800,
+        2023527057391588,
+        2023527558003354,
+        2023528058631311,
+        2023528559223698,
+        2023529059909285
+      ],
+      "n_gaps_recorded": 292,
+      "interval_target_s": 0.5,
+      "note": "out-of-boundary samples are preserved in the sealed file and listed here in the derived view; they are NOT counted in the in-window peak/sample numbers"
+    },
+    "20260912T125202Z-840e49-verifier": {
+      "boundary_start_ns": 2023517228502423,
+      "boundary_end_ns": 2023529219282829,
+      "n_samples_total": 24,
+      "n_samples_in_boundary": 24,
+      "n_samples_outside_boundary": 0,
+      "outside_sample_timestamps_ns": [],
+      "n_gaps_recorded": 23,
+      "interval_target_s": 0.5,
+      "note": "out-of-boundary samples are preserved in the sealed file and listed here in the derived view; they are NOT counted in the in-window peak/sample numbers"
+    }
+  },
+  "host_scope": {
+    "status": "missing_historical",
+    "reason": "the host-side mini child had no per-process CPU/RSS reader in RUN-01-C; G1-01-A adds HostProcessReader for FUTURE runs — the gap is not back-filled"
+  },
+  "io_formal": {
+    "status": "null_degraded",
+    "reason": "host cgroup v1 blkio (approved wording)"
+  }
+}

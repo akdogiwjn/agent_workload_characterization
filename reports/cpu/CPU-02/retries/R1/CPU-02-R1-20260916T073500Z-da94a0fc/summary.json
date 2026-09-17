@@ -1,0 +1,109 @@
+{
+  "run_id": "CPU-02-R1-20260916T073500Z-da94a0fc",
+  "status": "FAIL",
+  "phases": {
+    "prepare": {
+      "status": "ok",
+      "eval_script": {
+        "original_sha256": "17f89072e31422786c1f91ffc6b6a0ba0d5741511439209f119ed3eaaf55bca1",
+        "original_bytes": 1372,
+        "generated_sha256": "c44c7b80f030a1352063585330d30f75c9252169e8668a14b6f0d0a812ce0a1b",
+        "generated_bytes": 1453,
+        "evaluator": {
+          "venv_python": "/home/lcq/agent_workload_characterization/.venvs/swebench-eval-02e7a74/bin/python",
+          "pinned_harness": "02e7a74",
+          "call": "swebench.harness.utils.make_test_spec(record).eval_script"
+        },
+        "difference_id": "record_eval_script_plus_exit_code_v1",
+        "difference": "insert SWEBENCH_TEST_EXIT_CODE=$? immediately after the test command, then echo its value after the end marker",
+        "verified_by": "make_test_spec(record) in pinned evaluator"
+      },
+      "container_id": "201015f0055f2b782537b1ce36761697bb8e6b40722d1adbf7d7cf9b4319a94c",
+      "patch_applied": true,
+      "apply_results": [
+        {
+          "cmd": "git apply --verbose /tmp/run01_patch.diff",
+          "returncode": 0
+        }
+      ]
+    },
+    "supervisor": {
+      "status": "ready",
+      "container_pid": 45,
+      "starttime_ticks": 234996268,
+      "identity": {
+        "event": "supervisor_ready",
+        "pid": 45,
+        "starttime_ticks": 234996268,
+        "eval_file": "/eval.sh"
+      },
+      "mapping": {
+        "status": "map_failed",
+        "reason": "init_ns_unreadable"
+      }
+    }
+  },
+  "cleanup": {
+    "workload_termination": {
+      "confirmed": true,
+      "method": "pkill+process_tree_check",
+      "container_alive": true
+    },
+    "supervisor": "reaped",
+    "container": "removed",
+    "pending": []
+  },
+  "preflight": {
+    "status": "READY",
+    "checks": {
+      "perf_binary": true,
+      "venv_python": true,
+      "record": true,
+      "candidate": true
+    },
+    "perf_binary": "/usr/bin/perf",
+    "perf_event_paranoid": {
+      "value": -1,
+      "read_status": "ok",
+      "note": "recorded only; actual permission is a runtime result"
+    },
+    "docker": {
+      "status": "READY",
+      "checks": {
+        "context": true,
+        "image": true
+      },
+      "endpoint": "unix:///var/run/docker.sock",
+      "image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2"
+    }
+  },
+  "errors": [
+    "CPU02Error"
+  ],
+  "budget_overrun": false,
+  "archive_status": "complete",
+  "clock_anchor": {
+    "monotonic_ns": 2349960567152200,
+    "utc_ns": 1789544100195555710,
+    "domain": "same_host_CLOCK_MONOTONIC",
+    "assumption": "native docker and perf share host clocks"
+  },
+  "config_limits": {
+    "batch_wall_s": 300,
+    "cleanup_reserve_s": 30,
+    "prepare_wall_s": 60,
+    "eval_wall_s": 120,
+    "operation_s": 15,
+    "perf_ready_window_s": 10,
+    "record_frequency_hz_max": 99,
+    "report_threshold_mib": 100,
+    "container_cpu": 4,
+    "container_memory": "8GiB",
+    "network": "none",
+    "pull": "never",
+    "retries": 0
+  },
+  "scope_semantics": "container CPU boundary is shared cgroup evidence, not per-function CPU seconds; function weights are period-weighted Self overhead; CPU-01 IPC/overhead numbers are NOT transferable",
+  "perf_binary_sha256": "4965f91b28addc7e7884f5d029613c18cb3f055a6dd921165122ba3dfe414778",
+  "wall_s": 2.95718143414706
+}

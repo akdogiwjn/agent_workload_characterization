@@ -1,0 +1,73 @@
+spec_version: 0.1.0
+collection_id: CPU-02
+status: A_IMPLEMENTED_B_PENDING_APPROVAL
+execution_authorized: false
+workload:
+  kind: swebench_verifier_segment
+  instance_id: django__django-16485
+  record: data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/django__django-16485/record.json
+  record_sha256: 762de270d1ce06ab23104a35322098178624865c886d7b0ddadf9044d8fec46a
+  candidate: data/raw/generated/RUN-02/20260915T012427Z-2d75aa/candidate.patch
+  candidate_sha256: d919b1322322abff8ac88cebdb25800d7b57285fbcfffc3216933c232097ebd5
+  cpu01_batch_manifest: reports/cpu/CPU-01/CPU-01-20260916T013510Z-cf30c2dd/manifest.json
+  cpu01_manifest_sha256: 5ba8b20ece46edc97d88d32727ee156618149a45f2210581da5c88fa3a420924
+  supervisor: scripts/cpu_02_supervisor.py
+  eval_file_in_container: /eval.sh
+  image: swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2
+evaluator:
+  venv_python: .venvs/swebench-eval-02e7a74/bin/python
+  parser_semantics: official make_test_spec + get_eval_report at pinned harness commit 02e7a74
+  apply_chain: official GIT_APPLY_CMDS via SwebenchVerifierRunner pure command construction
+  note: venv interpreter path is registered; swebench package version is recorded at B runtime
+perf:
+  binary: /usr/bin/perf
+  record:
+    # perf-record(1): -p records an existing process id (attach); default
+    # inheritance covers the exec'd eval script and its descendants.
+    argv_format: ['perf', 'record', '-F', '99', '-e', 'cycles', '-p', '<host_target_pid>', '-o', '<perf_data>']
+    event: cycles
+    frequency_hz: 99
+    mode: host_attach_to_container_target
+    callgraph: disabled_this_batch
+  readiness:
+    # perf-record(1) documents --control=fifo:ctl-fifo[,ack-fifo]: enable/
+    # disable/stop commands on the ctl fifo, each acknowledged with "ack\n"
+    # on the ack fifo; -D -1 starts the measurement with events DISABLED.
+    # Barrier = real protocol ACK ('enable' -> 'ack'), never Popen success,
+    # a sleep, or perf.data growth (which may be metadata). Sampling window
+    # = [enable ack, disable ack]; eval window = [release, exec exit].
+    protocol: perf_record_control_fifo_ack
+    start_disabled: '-D -1'
+    ack_timeout_s: 5
+    barrier: enable_ack_before_release_and_disable_ack_after_eval
+  report:
+    argv_format: ['perf', 'report', '--stdio', '--no-children', '-i', '<perf_data>']
+    symfs_argv_format: ['perf', 'report', '--stdio', '--no-children', '--symfs', '<symbols_dir>', '-i', '<perf_data>']
+sampling:
+  interval_s: 0.2
+  boundary: release_before_eval_through_eval_exit_container_scope
+  formal_io: null_with_reason
+measurement:
+  mapping: innermost_NSpid_plus_pidns_inode_plus_starttime_unique_match_against_container_init
+  target_scope: container eval supervisor and its exec chain; host PID and container scope recorded separately
+  cpu_boundary_semantics: shared cgroup scope evidence, not per-function CPU seconds
+limits:
+  batch_wall_s: 300
+  cleanup_reserve_s: 30
+  prepare_wall_s: 60
+  eval_wall_s: 120
+  operation_s: 15
+  perf_ready_window_s: 10
+  record_frequency_hz_max: 99
+  report_threshold_mib: 100
+  container_cpu: 4
+  container_memory: 8GiB
+  network: none
+  pull: never
+  retries: 0
+authorization:
+  user_approval: pending
+  tool_execution_permission: pending
+  approval_path: reports/cpu/CPU-02/APPROVAL.json
+  attempt_path: reports/cpu/CPU-02/ATTEMPT_STARTED.json
+  report_root: reports/cpu/CPU-02

@@ -1,0 +1,137 @@
+{
+  "batch": "G1-01-B-20260913T120957Z-c1f516",
+  "executed_at_utc": "2026-09-13T12:09:58.781514+00:00",
+  "wall_s": 1.22,
+  "budget": {
+    "batch_wall_s": 180.0,
+    "cleanup_reserve_s": 30.0,
+    "max_containers": 2,
+    "per_container": {
+      "cpu": "2",
+      "mem": "256m",
+      "network": "none"
+    },
+    "per_command_timeout_s": 20,
+    "terminate_timeout_s": 15,
+    "background_busy_max_s": 5,
+    "synthetic_file": "/tmp/g1b.bin",
+    "synthetic_write_mib": 8,
+    "synthetic_write_total_mib": 16,
+    "host_child": {
+      "max": 1,
+      "lifetime_s": 5,
+      "note": "own deterministic short program; no busy loop, no data files; not an Agent"
+    },
+    "report_threshold_mib": 20,
+    "sampling_interval_s": 0.2
+  },
+  "cases": [
+    {
+      "case": 1,
+      "status": "FAIL",
+      "container_id": "fake-G1-01-B-20260913T120957Z-c1f516-0000",
+      "open_read_evidence": {
+        "read_at_ns": 2107258151926259,
+        "call_start_ns": 2107258151531104,
+        "call_end_ns": 2107259152095625,
+        "read_before_call_end": true
+      },
+      "sleep_window_s": 1.0,
+      "scope_summary": {
+        "scope": "G1-01-B-20260913T120957Z-c1f516-c1",
+        "scope_kind": "agent_container",
+        "interval_target_s": 0.2,
+        "n_samples": 5,
+        "cpu_core_seconds": null,
+        "cpu_core_seconds_reason": "cpu_usage_usec_missing:start,end",
+        "cpu_evidence": "counter_boundary",
+        "n_samples_out_of_boundary": 0,
+        "memory_current_end_bytes": null,
+        "memory_kernel_peak_bytes": null,
+        "memory_sampled_max_bytes": null,
+        "memory_peak_basis": "unavailable",
+        "memory_note": "current/kernel-peak/sampled-max are distinct; scope peaks are never summed into a run peak",
+        "io": {
+          "formal": null,
+          "reason": "degraded_host_v1_blkio: writeback attributed to root cgroup; reads are page-cache hits; not application bytes",
+          "diagnostic": {
+            "formal": null,
+            "reason": "degraded_host_v1_blkio: writeback attributed to root cgroup; reads are page-cache hits; not application bytes",
+            "diagnostic": {
+              "read_bytes": null,
+              "write_bytes": null,
+              "evidence": "io.stat_boundary_delta",
+              "reason": "io_read_missing_at_boundary;io_write_missing_at_boundary",
+              "cumulative_end": {
+                "read_bytes": null,
+                "write_bytes": null,
+                "note": "cumulative counter value at final boundary (reference only; NOT the interval amount)"
+              },
+              "note": "interval I/O unavailable (see reason); null kept, not zeroed; block I/O != application bytes"
+            }
+          }
+        },
+        "notes": [
+          "baseline_cpu_unreadable:None"
+        ]
+      },
+      "scope_evidence_present": {
+        "boundary_start": true,
+        "boundary_end": true,
+        "raw_samples": 5
+      },
+      "cpu_evidence": null,
+      "reason": "no container CPU increment evidence (baseline vs final boundary)",
+      "container_cleanup": [
+        {
+          "container_id": "fake-G1-01-B-20260913T120957Z-c1f516-0000",
+          "removed": true
+        }
+      ]
+    },
+    {
+      "case": 2,
+      "status": "SKIPPED",
+      "reason": "case 1 failed — batch stopped"
+    }
+  ],
+  "host_runner_process": {
+    "scope": "host_runner_process",
+    "pid": 3075490,
+    "starttime_ticks": 210725783,
+    "clk_tck": 100,
+    "page_size": 4096,
+    "n_snapshots": 1,
+    "n_readable": 1,
+    "cpu_seconds": null,
+    "cpu_seconds_reason": "no_two_readable_snapshots",
+    "cpu_basis": "utime+stime tick delta between first/last READABLE snapshots (interval, not lifetime)",
+    "rss_current_last_readable": 39817216,
+    "rss_sampled_max": 39817216,
+    "rss_note": "current/sampled-max distinct; kernel peak not read at process level; RSS never summed across processes",
+    "final_read_status": "ok",
+    "final_value_note": "a process_exited final read means the verified final is null; the last readable value is diagnostic only",
+    "collector": {
+      "read_count": 1,
+      "read_wall_ns_total": 71391,
+      "read_wall_ns_mean": 71391.0,
+      "note": "collector read cost measured separately from any workload metric; runner-process CPU/RSS is host_runner_process (includes collector), never double-counted as exclusive"
+    },
+    "coverage_gaps": [
+      "descendants (docker exec clients) not individually tracked; short-lived grandchildren may be missed",
+      "kernel-peak (VmHWM) not recorded at host scope this batch"
+    ]
+  },
+  "host_runner_raw_snapshots": [
+    {
+      "t_monotonic_ns": 2107259153026268,
+      "cpu_ticks": 31,
+      "rss_bytes": 39817216,
+      "stat": "ok"
+    }
+  ],
+  "stopped_scopes": [],
+  "image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+  "no_model": true,
+  "no_agent_loop": true
+}

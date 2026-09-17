@@ -1,0 +1,111 @@
+{
+  "batch_started_utc": "2026-09-13T08:01:59Z",
+  "cases": [
+    {
+      "case": "C1_single_worker_fixed_workload",
+      "deadline_exceeded": false,
+      "child_rc": 0,
+      "comparison_interval": "BOTH sources span the child's whole lifetime: self-report from spawn to exit inside the child; /proc delta from first to last READABLE snapshot in the parent",
+      "wall_ns": 373778854,
+      "iterations": 3000000,
+      "child_cpu_s_self": 0.34971658,
+      "proc_cpu_s": 0.35,
+      "n_readable_snapshots": 37,
+      "final_read_status": "ok",
+      "independent_sources": "child time.process_time() vs parent /proc utime+stine tick delta",
+      "tolerance": "declared before execution: the two CPU sources must agree within the polling granularity (interval between readable snapshots, ~0.02 s) plus scheduler noise; exact counts/hashes exact",
+      "cpu_abs_diff_s": 0.0002834199999999787,
+      "poll_granularity_s": 0.02
+    },
+    {
+      "case": "C2_dual_overlapping_workers",
+      "deadline_exceeded": false,
+      "iterations_per_worker": 2000000,
+      "span_s": 0.293748692,
+      "worker1_cpu_s": 0.24,
+      "worker2_cpu_s": 0.27,
+      "cpu_sum_s": 0.51,
+      "semantics": "span = wall from first spawn to last exit; cpu_sum = per-worker exclusive CPU (separate processes: summable as WORK, never as wall or as a shared-scope total)"
+    },
+    {
+      "case": "O1_O3_overhead_pairs",
+      "pairs_fixed_in_advance": 3,
+      "measurement": "fixed workload, monitor ON vs OFF; raw values reported; paired differences are data, NOT a stable percentage claim",
+      "pairs": [
+        {
+          "pair": 1,
+          "off": {
+            "wall_ns": 362049093,
+            "child_cpu_s_self": 0.33848793,
+            "deadline_exceeded": false
+          },
+          "on": {
+            "wall_ns": 363523113,
+            "child_cpu_s_self": 0.34278326000000003,
+            "deadline_exceeded": false
+          },
+          "wall_diff_ns": 1474020,
+          "collector": {
+            "read_count": 36,
+            "read_wall_ns_total": 1381595,
+            "read_wall_ns_mean": 38377.63888888889,
+            "note": "collector read cost measured separately from any workload metric; runner-process CPU/RSS is host_runner_process (includes collector), never double-counted as exclusive"
+          }
+        },
+        {
+          "pair": 2,
+          "off": {
+            "wall_ns": 362041162,
+            "child_cpu_s_self": 0.33311950999999995,
+            "deadline_exceeded": false
+          },
+          "on": {
+            "wall_ns": 353242021,
+            "child_cpu_s_self": 0.33343714999999996,
+            "deadline_exceeded": false
+          },
+          "wall_diff_ns": -8799141,
+          "collector": {
+            "read_count": 35,
+            "read_wall_ns_total": 1185127,
+            "read_wall_ns_mean": 33860.77142857143,
+            "note": "collector read cost measured separately from any workload metric; runner-process CPU/RSS is host_runner_process (includes collector), never double-counted as exclusive"
+          }
+        },
+        {
+          "pair": 3,
+          "off": {
+            "wall_ns": 362028652,
+            "child_cpu_s_self": 0.33316297,
+            "deadline_exceeded": false
+          },
+          "on": {
+            "wall_ns": 353241421,
+            "child_cpu_s_self": 0.33305353,
+            "deadline_exceeded": false
+          },
+          "wall_diff_ns": -8787231,
+          "collector": {
+            "read_count": 35,
+            "read_wall_ns_total": 1222725,
+            "read_wall_ns_mean": 34935.0,
+            "note": "collector read cost measured separately from any workload metric; runner-process CPU/RSS is host_runner_process (includes collector), never double-counted as exclusive"
+          }
+        }
+      ]
+    }
+  ],
+  "batch_wall_s": 2.828,
+  "limits": {
+    "per_case_wall_s": 10,
+    "busy_s": 2,
+    "workers": 2,
+    "worker_mem_mib": 64,
+    "temp_files_mib": 8,
+    "batch_wall_s": 120,
+    "report_mib": 20
+  },
+  "within_limits": {
+    "batch_wall": true
+  }
+}

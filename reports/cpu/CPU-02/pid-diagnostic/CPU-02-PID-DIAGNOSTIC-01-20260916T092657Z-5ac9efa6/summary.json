@@ -1,0 +1,293 @@
+{
+  "run_id": "CPU-02-PID-DIAGNOSTIC-01-20260916T092657Z-5ac9efa6",
+  "diagnostic_id": "CPU-02-PID-DIAGNOSTIC-01",
+  "status": "FAIL",
+  "archive_status": "complete",
+  "errors": [
+    "CPU02Error"
+  ],
+  "budget_overrun": false,
+  "wall_cutoff": "after_final_archive_write",
+  "identity": {
+    "catalog_sha256": "a730aec84fb4fc9e37f8b9025943205b8b29d5bf1fdb396e287330605238b50c",
+    "config": {
+      "spec_version": "0.1.0",
+      "collection_id": "CPU-02-PID-DIAGNOSTIC-01",
+      "status": "A_IMPLEMENTED_B_PENDING_APPROVAL",
+      "execution_authorized": false,
+      "workload": {
+        "kind": "swebench_verifier_segment",
+        "instance_id": "django__django-16485",
+        "record": "data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/django__django-16485/record.json",
+        "record_sha256": "762de270d1ce06ab23104a35322098178624865c886d7b0ddadf9044d8fec46a",
+        "candidate": "data/raw/generated/RUN-02/20260915T012427Z-2d75aa/candidate.patch",
+        "candidate_sha256": "d919b1322322abff8ac88cebdb25800d7b57285fbcfffc3216933c232097ebd5",
+        "cpu01_batch_manifest": "reports/cpu/CPU-01/CPU-01-20260916T013510Z-cf30c2dd/manifest.json",
+        "cpu01_manifest_sha256": "5ba8b20ece46edc97d88d32727ee156618149a45f2210581da5c88fa3a420924",
+        "supervisor": "scripts/cpu_02_supervisor.py",
+        "eval_file_in_container": "/eval.sh",
+        "image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2"
+      },
+      "evaluator": {
+        "venv_python": ".venvs/swebench-eval-02e7a74/bin/python",
+        "parser_semantics": "official make_test_spec + get_eval_report at pinned harness commit 02e7a74",
+        "apply_chain": "official GIT_APPLY_CMDS via SwebenchVerifierRunner pure command construction",
+        "note": "venv interpreter path is registered; swebench package version is recorded at B runtime"
+      },
+      "perf": {
+        "binary": "/usr/bin/perf",
+        "record": {
+          "argv_format": [
+            "perf",
+            "record",
+            "-F",
+            "99",
+            "-e",
+            "cycles",
+            "-p",
+            "<host_target_pid>",
+            "-o",
+            "<perf_data>"
+          ],
+          "event": "cycles",
+          "frequency_hz": 99,
+          "mode": "host_attach_to_container_target",
+          "callgraph": "disabled_this_batch"
+        },
+        "readiness": {
+          "protocol": "perf_record_control_fifo_ack",
+          "start_disabled": "-D -1",
+          "ack_timeout_s": 5,
+          "barrier": "enable_ack_before_release_and_disable_ack_after_eval"
+        },
+        "report": {
+          "argv_format": [
+            "perf",
+            "report",
+            "--stdio",
+            "--no-children",
+            "-i",
+            "<perf_data>"
+          ],
+          "symfs_argv_format": [
+            "perf",
+            "report",
+            "--stdio",
+            "--no-children",
+            "--symfs",
+            "<symbols_dir>",
+            "-i",
+            "<perf_data>"
+          ]
+        }
+      },
+      "sampling": {
+        "interval_s": 0.2,
+        "boundary": "release_before_eval_through_eval_exit_container_scope",
+        "formal_io": "null_with_reason"
+      },
+      "measurement": {
+        "mapping": "innermost_NSpid_plus_pidns_inode_plus_starttime_unique_match_against_container_init",
+        "target_scope": "container eval supervisor and its exec chain; host PID and container scope recorded separately",
+        "cpu_boundary_semantics": "shared cgroup scope evidence, not per-function CPU seconds"
+      },
+      "limits": {
+        "batch_wall_s": 60,
+        "cleanup_reserve_s": 15,
+        "container_cpu": 1,
+        "container_memory": "256m",
+        "network": "none",
+        "pull": "never",
+        "retries": 0
+      },
+      "authorization": {
+        "approval_path": "reports/cpu/CPU-02/pid-diagnostic/APPROVAL.json",
+        "attempt_path": "reports/cpu/CPU-02/pid-diagnostic/ATTEMPT_STARTED.json",
+        "report_root": "reports/cpu/CPU-02/pid-diagnostic",
+        "user_approval": "pending",
+        "tool_execution_permission": "pending"
+      }
+    },
+    "code_sha256": {
+      "src/agent_workload_characterization/__init__.py": "f8b90d73ae7ab7394c123a083e4f39fee1dbe191d32ccafc866378244286ca4a",
+      "src/agent_workload_characterization/__main__.py": "ae59c0476bd4fb91582e9298e48cd5dc6a8dcedfb5cc24486107ba63ad65bfca",
+      "src/agent_workload_characterization/adapters/__init__.py": "69f726e20531ef249357c4c9ca57ed08e10436df297917a249a57ea0458fea96",
+      "src/agent_workload_characterization/adapters/agentx.py": "80d1d271519e9cbd45d82048b20184fc507a9812f4ed11e4e1b6b16dcf13ca64",
+      "src/agent_workload_characterization/adapters/agentx_checks.py": "66a9031c3c12302dc3e35d336a58316c43274fc493d7e9dbac21a97a7fd77008",
+      "src/agent_workload_characterization/adapters/applied_checks.py": "612129d6d92a738d84e3c315e2298caabda19026f95c41c1b3ae9fa7e34be0e8",
+      "src/agent_workload_characterization/adapters/applied_compute.py": "33eaffe6399126f584f1217eb94f94c9739612b8411d1a43067631054d38c4cc",
+      "src/agent_workload_characterization/adapters/base.py": "bb1b7eb4f264fc740e893cb9637fe5951f0720323ed82f9a363b9cf19e35b190",
+      "src/agent_workload_characterization/adapters/catalog.py": "0bdc78bc096adefe21b3ce293db46e1c9a5f111d5d55e1ecd887c63f3e3dbb06",
+      "src/agent_workload_characterization/adapters/ingest.py": "5cf9e8d5fedefdbe9398d5ce9244f5498b6a1023d47297b89d82a9774b79380b",
+      "src/agent_workload_characterization/adapters/videoweaver.py": "f58a065fdcc0cdf9cb76e6cfbea011fe960492c06a5d1b462eb76c9b996f7ac0",
+      "src/agent_workload_characterization/adapters/videoweaver_checks.py": "bff9e1980a24f97779f9c582ff33217688aa1bc58a80d053d79779e912cb175f",
+      "src/agent_workload_characterization/analyzers/__init__.py": "7352f191f4572cdd6449bb21e63b0939812307d0119c74eb3c4329a766c01ff0",
+      "src/agent_workload_characterization/analyzers/analyze.py": "2ca1f1d0cf29e66585e0accf13d8697afe88a81670a237f0ead31e584523fc54",
+      "src/agent_workload_characterization/analyzers/coverage.py": "3cc4570f808b87afe598beec8fcb938e8b426f9cec16bc7b2a4cb0b7ba8e6718",
+      "src/agent_workload_characterization/analyzers/loader.py": "c8f057be55f5ab17bc64bc2ee79c1436082662d618c485afccd3a494bd5d1b25",
+      "src/agent_workload_characterization/analyzers/macro.py": "beab0e042abc6ac7c54dd8ec70f33675f18836b99af82532b6f094f5bf0735c3",
+      "src/agent_workload_characterization/analyzers/metric_registry.py": "0abcf89e2d6f8c3e5843700d14dba376750c44c27bf7c448fd28c24d1970984b",
+      "src/agent_workload_characterization/analyzers/resource_summary.py": "eb166def99012cd93eade7836948378ed9f297656b23b329d7014cc1c764d90c",
+      "src/agent_workload_characterization/analyzers/run_02_analysis.py": "b1091969e8a41f00eed2137327b21f6925485c5909aed36f8c27c76512a496fa",
+      "src/agent_workload_characterization/analyzers/tool_timeline.py": "f2badb9515a46afba9d04aece0c2ddf20ee16ebe8f433296c882140259b05632",
+      "src/agent_workload_characterization/cli.py": "ccd208f6a1fa2c5ca58133e4b74b872cf7d4581b8d38b1fbbfa35bbf9be73124",
+      "src/agent_workload_characterization/collectors/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/agent_workload_characterization/collectors/host_process.py": "2ec98884c8b0d1ea005881f72e0a5498088e40960eebc3c44d3775ec2e150055",
+      "src/agent_workload_characterization/collectors/perf_adapter.py": "a26e69eb32c60642b6507ce486326eacc1cec44cfd81bd6e8abd974f35c68815",
+      "src/agent_workload_characterization/collectors/preflight.py": "f20344dcdab23bc67818a23323ebb9e98fa5a1a84eb834d46e2aff1e72627443",
+      "src/agent_workload_characterization/collectors/resource_sampler.py": "8418a9d793e170d96ce75d97ddd65a978a38038f80c2e34eb4c9485286bcca72",
+      "src/agent_workload_characterization/collectors/semantic_recorder.py": "b2575fc4ac1e0c4595cd038fc5d4120ab68a496b4f7ce07b77eeea638f336e13",
+      "src/agent_workload_characterization/ir.py": "23e0c7092cbee2472798bb7c96f55613c0596a4b38f42f23f330612805ece7ab",
+      "src/agent_workload_characterization/metric_contracts.py": "adfc3f6556fe31b98142b510836d5e8a5f1c5016b3963e9aebb8d957ecc77d44",
+      "src/agent_workload_characterization/migrations.py": "f26caea97cf6e13efeffbf98a17318550c8a17c4f98eda75620ba9466dfc76fc",
+      "src/agent_workload_characterization/runners/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/agent_workload_characterization/runners/b_entry.py": "9e20c7b855f4356252a5a16b32fd678bc3422c76b8e9d94b95549bcea13a2e82",
+      "src/agent_workload_characterization/runners/c_entry.py": "65f4d62faa02c0db954a75bb17cc7fc2291ec82489aabfe082dddaa98554d360",
+      "src/agent_workload_characterization/runners/canary.py": "668c880beb74b41ee3ddb8a9ba09924ed3c3beae5db14a7ff41e25da95d608cf",
+      "src/agent_workload_characterization/runners/coding_pilot.py": "db935008a9e71a2b8421d13a5d6d9d42d0f4efe6f55d468d6eb15c7530bd7377",
+      "src/agent_workload_characterization/runners/container_runtime.py": "a2608e5549da73581c3a1b036080d64fa641eefe8e4bdf3cf429bc5a55ac1d83",
+      "src/agent_workload_characterization/runners/cpu_01_entry.py": "b5e9eb4124100c59b84bd0146c8223112bfe16178e6fb7c8197a4e5bf83bc08e",
+      "src/agent_workload_characterization/runners/cpu_02_entry.py": "cc7668e8444ad46f0d8876e311c9fdb6e1306524f5a0e719bdbe44f44eefcdbe",
+      "src/agent_workload_characterization/runners/cpu_02_pid_diagnostic.py": "a4b90451f87646fea86c433c696bf7924db469c8852fd637efa992bf3acfa634",
+      "src/agent_workload_characterization/runners/cpu_02_r1_entry.py": "05121425ad5cc4ce7e88c5d4407c9db3bcd3f23d10a28ebcd942a62f4b5d92bb",
+      "src/agent_workload_characterization/runners/g1_02_entry.py": "930f0477ca8944f7932d1dc02270e264edf93a4ce2a048c4174fb4cffa71a283",
+      "src/agent_workload_characterization/runners/mini_agent_adapter.py": "e84c62fc17f7ca578cd9f8f5f60bb62810747cbeacf0d930f7dfdcf76007f87b",
+      "src/agent_workload_characterization/runners/model_adapter.py": "d0d63e05b283d832fceb9a74de80dc4d680c2f9a046dde352c305b6b5555caf2",
+      "src/agent_workload_characterization/runners/preparation.py": "3ba788ba80bd86a2ef7248f91b8f335237e8b4e19b85396ca18e8a233d01012e",
+      "src/agent_workload_characterization/runners/report_writer.py": "f04cb0c8bc29089e763c9b07bba021cec36e5dce999c21133cab8f3cca63a6f7",
+      "src/agent_workload_characterization/runners/run_02_entry.py": "11aa5d7d74321beb58778519d386b70416ed83de85f62e417deeb15de9ac740b",
+      "src/agent_workload_characterization/runners/run_02_launch_readiness.py": "6b432998c12ee28af850c6c7bee973474899b8d7cd29584272adf7b965d1cba1",
+      "src/agent_workload_characterization/runners/run_02_r1_entry.py": "cefe94bacd8a8fb5d678e49a12d5da91f7bcab467a60515d96fae8739a6a754e",
+      "src/agent_workload_characterization/runners/run_02_r2_entry.py": "c1959f3e775d0947ce68cb413547af3769646c368e6ba41eb8782b0ea9e2ca8a",
+      "src/agent_workload_characterization/runners/smoke.py": "9733ffb51daf470380c6a575a455c34bc056e00bfce42ba82da23aed7a8e20b8",
+      "src/agent_workload_characterization/runners/smoke_launcher.py": "ca0937752bbea1905134ba17f15448072da477de2bed7c650548d50aed592852",
+      "src/agent_workload_characterization/runners/tool_event_env.py": "0de111c16411b30255b47328912395773330c0b9e6f844f7a62b68dd293e967b",
+      "scripts/cpu_02_supervisor.py": "859828a0261dfbefb44caf020810f061814ed88005ca152aa9249c2fff088bce"
+    },
+    "interpreter": {
+      "path": "/usr/bin/python3.11",
+      "version": "3.11.6"
+    },
+    "collection": "CPU-02-PID-DIAGNOSTIC-01",
+    "approval": "reports/cpu/CPU-02/pid-diagnostic/APPROVAL.json",
+    "record": {
+      "path": "data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/django__django-16485/record.json",
+      "sha256": "762de270d1ce06ab23104a35322098178624865c886d7b0ddadf9044d8fec46a"
+    },
+    "candidate": {
+      "path": "data/raw/generated/RUN-02/20260915T012427Z-2d75aa/candidate.patch",
+      "sha256": "d919b1322322abff8ac88cebdb25800d7b57285fbcfffc3216933c232097ebd5"
+    },
+    "image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+    "supervisor": {
+      "script": "scripts/cpu_02_supervisor.py",
+      "protocol": "ready_json_then_control_fifo_ack_release_then_exec"
+    },
+    "evaluator": {
+      "venv_python": "/home/lcq/agent_workload_characterization/.venvs/swebench-eval-02e7a74/bin/python",
+      "parser": "official make_test_spec + get_eval_report (02e7a74)",
+      "eval_script": {
+        "original_sha256": "17f89072e31422786c1f91ffc6b6a0ba0d5741511439209f119ed3eaaf55bca1",
+        "original_bytes": 1372,
+        "generated_sha256": "c44c7b80f030a1352063585330d30f75c9252169e8668a14b6f0d0a812ce0a1b",
+        "generated_bytes": 1453,
+        "evaluator": {
+          "venv_python": "/home/lcq/agent_workload_characterization/.venvs/swebench-eval-02e7a74/bin/python",
+          "pinned_harness": "02e7a74",
+          "call": "swebench.harness.utils.make_test_spec(record).eval_script"
+        },
+        "difference_id": "record_eval_script_plus_exit_code_v1",
+        "difference": "insert SWEBENCH_TEST_EXIT_CODE=$? immediately after the test command, then echo its value after the end marker"
+      }
+    },
+    "perf": {
+      "binary": "/usr/bin/perf",
+      "record_event": "cycles",
+      "record_frequency_hz": 99,
+      "attach": "-p host_pid_of_container_target",
+      "readiness": {
+        "protocol": "perf_record_control_fifo_ack",
+        "start_disabled": "-D -1",
+        "ack_timeout_s": 5,
+        "barrier": "enable_ack_before_release_and_disable_ack_after_eval"
+      }
+    },
+    "diagnostic_id": "CPU-02-PID-DIAGNOSTIC-01",
+    "retry_id": null,
+    "diagnostic": {
+      "worker": "one blocking owned Python process",
+      "mapping": "innermost_NSpid+pid_namespace+starttime",
+      "proc_projection": "whitelisted pid/NSpid/ns/pid/starttime/mount options only"
+    }
+  },
+  "cleanup": {
+    "worker": "reaped",
+    "container": "removed",
+    "pending": []
+  },
+  "proc_projection": {
+    "filesystem": "proc",
+    "mountpoint": "/proc",
+    "options": [
+      "nodev",
+      "noexec",
+      "nosuid",
+      "relatime",
+      "rw"
+    ],
+    "read_status": "ok"
+  },
+  "diagnostic_process": {
+    "pid": 843382,
+    "nspid": [
+      "843382"
+    ],
+    "nspid_read_status": "ok",
+    "pid_namespace": "pid:[4026531836]",
+    "pid_namespace_read_status": "ok",
+    "starttime_ticks": 235667717,
+    "starttime_read_status": "ok"
+  },
+  "container_id": "a9666a741bdc5dd6d25b695157d04d5645060da35e769d9544155b5590abae78",
+  "worker": {
+    "status": "ok",
+    "container_pid": 7,
+    "starttime_ticks": 235667860,
+    "raw": {
+      "event": "supervisor_ready",
+      "pid": 7,
+      "starttime_ticks": 235667860,
+      "pid_namespace": "pid:[4026558673]"
+    }
+  },
+  "container_init_pid": 843505,
+  "host_init_proc": {
+    "pid": 843505,
+    "nspid": [
+      "843505",
+      "1"
+    ],
+    "nspid_read_status": "ok",
+    "pid_namespace_read_status": {
+      "operation": "host_ns",
+      "target_pid": 843505,
+      "exception_type": "PermissionError",
+      "errno": 13,
+      "category": "permission_denied"
+    },
+    "starttime_ticks": 235667851,
+    "starttime_read_status": "ok"
+  },
+  "mapping": {
+    "status": "map_failed",
+    "reason": "init_ns_unreadable",
+    "read_error": {
+      "operation": "init_ns",
+      "target_pid": 843505,
+      "exception_type": "PermissionError",
+      "errno": 13,
+      "category": "permission_denied"
+    }
+  },
+  "wall_s": 0.5582019565626979
+}
