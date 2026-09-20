@@ -6,10 +6,14 @@
 
 日常先看 **[项目总览与固定收尾清单](docs/project_status.md)**；材料查询用 [文档索引](docs/README.md)。历史任务书在索引中折叠，不需要逐份重读。
 
-当前：G1 登记小闭环与 CPU-01 宿主合成进程 perf 可测性已验收。下一步为 [CPU-02 A 离线准备](docs/cpu_02_handoff.md)，[提示词](docs/cpu_02_execution_prompt.md)供实施模型使用：只准备真实 Verifier 段的一次采样，不重跑 Agent；真实执行另批。
-G0 有既有通过记录；G1 通过不代表多任务代表性、独占 Tool CPU 或函数热点已经完成，G2 未通过。具体边界以集中评审 §0 为准。
-RUN-02-R2 已完成一次真实 Django 联合观测，原始 raw、原报告、批准/marker 与 review-v2 均保留。
-历史运行、失败记录和测试数量按各自交付解释，测试数量不等于任务数或独立实验数。
+<!-- PROJECT_STATE:START -->
+当前状态由 [2026-09-20 状态真源](project_state.json)统一登记；这是进度记录，不是执行授权。
+
+- G1：登记小闭环通过；G2 / G3-R 未通过。
+- CPU-02：初次 B 准备失败，修复后 R1 映射失败；后续 perf 权限受限。路线暂停，无有效容器热点样本，新 retry 未授权。
+- P2-01 小样分析与 P3-01 v3 现有 trace 审计已交付；不授权 Replay。
+- 当前：P1-12 小规模独立任务 × 重复的离线选样与预算设计；不启动容器、模型或新实验。
+<!-- PROJECT_STATE:END -->
 
 最短入口：[文档索引](docs/README.md) · [当前集中评审](docs/g1_consolidated_review.md) ·
 [CLOSEOUT-01 交付](docs/repository_closeout_delivery.md) ·

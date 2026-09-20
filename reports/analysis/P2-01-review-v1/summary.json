@@ -1,0 +1,40 @@
+{
+  "schema":"p2-01-review-v1",
+  "status":"accepted_for_existing_small_sample_candidate_selection",
+  "analysis_type":"descriptive_only",
+  "execution_performed":false,
+  "task_scope":"django__django-16485",
+  "ranking_universe":{
+    "registered_attempts":["20260912T125202Z-840e49-a1","20260915T012427Z-2d75aa-a1"],
+    "eligible_scope_kinds":["agent_container","verifier_container"],
+    "eligible_scope_count":4,
+    "included_scopes":[
+      {"attempt_id":"20260912T125202Z-840e49-a1","scope_kind":"agent_container","source_field":"scopes[0]"},
+      {"attempt_id":"20260912T125202Z-840e49-a1","scope_kind":"verifier_container","source_field":"scopes[1]"},
+      {"attempt_id":"20260915T012427Z-2d75aa-a1","scope_kind":"agent_container","source_field":"resource_scopes[0]"},
+      {"attempt_id":"20260915T012427Z-2d75aa-a1","scope_kind":"verifier_container","source_field":"resource_scopes[1]"}],
+    "excluded":["CPU-01 synthetic host fixture","G1-02 mechanism/overhead evidence","host observation (not a container scope)"],
+    "representativeness":"not_global"
+  },
+  "attempts":[
+    {"attempt_id":"20260912T125202Z-840e49-a1","source_run":"20260912T125202Z-840e49","task_id":"django__django-16485","source_type":"benchmark_real",
+     "phases":{"evaluation_elapsed_s":{"value":12.216613793,"unit":"s","source_field":"budget.elapsed_s"},"elapsed_total_s":{"value":146.540550945,"unit":"s","source_field":"budget.elapsed_total_s"},"phase":{"value":"evaluation","source_field":"budget.phase"},"execution":{"value":"unavailable","source_field":"run"}},
+     "model":{"requests":{"value":30,"unit":"calls","source_field":"llm.requests"},"ok":26,"failed":4},
+     "tools":{"calls":{"value":26,"unit":"calls","source_field":"tools.calls"},"distribution":{"value":"unavailable","source_field":"tools.classification"}},
+     "containers":[
+       {"scope_kind":"agent_container","source_field":"scopes[0]","cpu_core_seconds":{"value":6.411718,"unit":"core-s","source_field":"scopes[0].cpu_core_seconds"},"wall_s":{"value":134.099304929,"unit":"s","source_field":"scopes[0].wall_s"},"memory_kernel_peak_bytes":{"value":68497408,"unit":"bytes","source_field":"scopes[0].memory_kernel_peak_bytes"},"formal_io":{"value":null,"unit":"bytes","source_field":"scopes[0].io.formal"}},
+       {"scope_kind":"verifier_container","source_field":"scopes[1]","cpu_core_seconds":{"value":3.423041,"unit":"core-s","source_field":"scopes[1].cpu_core_seconds"},"wall_s":{"value":11.990780406,"unit":"s","source_field":"scopes[1].wall_s"},"memory_kernel_peak_bytes":{"value":70459392,"unit":"bytes","source_field":"scopes[1].memory_kernel_peak_bytes"},"formal_io":{"value":null,"unit":"bytes","source_field":"scopes[1].io.formal"}}],
+     "host":{"status":"unavailable","source_field":"host_agent_runtime"}},
+    {"attempt_id":"20260915T012427Z-2d75aa-a1","source_run":"20260915T012427Z-2d75aa","task_id":"django__django-16485","source_type":"benchmark_real",
+     "phases":{"execution":{"value":"ok","source_field":"run.execution_status"},"evaluation":{"value":"ok","source_field":"run.evaluation_status"},"archive":{"value":"ok","source_field":"run.archive_status"},"cleanup":{"value":"ok","source_field":"run.cleanup_status"},"run_wall_s":{"value":null,"unit":"s","source_field":"run"}},
+     "model":{"requests":{"value":30,"unit":"calls","source_field":"agent_and_model.model_requests.total"},"ok":27,"failed":3},
+     "tools":{"calls":{"value":28,"unit":"calls","source_field":"tool_observation.calls"},"open":{"value":28,"unit":"events","source_field":"tool_observation.hook_events.open"},"closed":{"value":28,"unit":"events","source_field":"tool_observation.hook_events.closed"},"errors":{"value":0,"unit":"events","source_field":"tool_observation.hook_events.error"},"nonzero_returncodes":{"value":1,"unit":"calls","source_field":"tool_observation.nonzero_returncodes"},"closed_means_success":{"value":false,"source_field":"tool_observation.closed_means_success"}},
+     "containers":[
+       {"scope_kind":"agent_container","source_field":"resource_scopes[0]","cpu_core_seconds":{"value":51.007123,"unit":"core-s","source_field":"resource_scopes[0].cpu_core_seconds"},"wall_s":{"value":143.651636264,"unit":"s","source_field":"resource_scopes[0].wall_s"},"memory_kernel_peak_bytes":{"value":1434140672,"unit":"bytes","source_field":"resource_scopes[0].memory_kernel_peak_bytes"},"formal_io":{"value":null,"unit":"bytes","source_field":"resource_scopes[0].formal_io"}},
+       {"scope_kind":"verifier_container","source_field":"resource_scopes[1]","cpu_core_seconds":{"value":3.64963,"unit":"core-s","source_field":"resource_scopes[1].cpu_core_seconds"},"wall_s":{"value":12.264456124,"unit":"s","source_field":"resource_scopes[1].wall_s"},"memory_kernel_peak_bytes":{"value":72548352,"unit":"bytes","source_field":"resource_scopes[1].memory_kernel_peak_bytes"},"formal_io":{"value":null,"unit":"bytes","source_field":"resource_scopes[1].formal_io"}}],
+     "host":{"snapshots":{"value":717,"unit":"snapshots","source_field":"host_observation.snapshots"},"readable_snapshots":{"value":716,"unit":"snapshots","source_field":"host_observation.readable_snapshots"},"cpu_seconds":{"value":4.19,"unit":"s","source_field":"host_observation.cpu_seconds"},"rss_last_readable_bytes":{"value":218214400,"unit":"bytes","source_field":"host_observation.rss_last_readable_bytes"},"rss_sampled_max_bytes":{"value":226713600,"unit":"bytes","source_field":"host_observation.rss_sampled_max_bytes"},"final_read_status":{"value":"process_exited","source_field":"host_observation.final_read_status"},"scope":{"value":"host_mini_process_interval_only","source_field":"host_observation.limitations"}}}
+  ],
+  "derived":{"ranking":[{"role":"top_cpu","attempt_id":"20260915T012427Z-2d75aa-a1","scope_kind":"agent_container","source_field":"resource_scopes[0].cpu_core_seconds"},{"role":"top_wall","attempt_id":"20260915T012427Z-2d75aa-a1","scope_kind":"agent_container","source_field":"resource_scopes[0].wall_s"},{"role":"top_memory","attempt_id":"20260915T012427Z-2d75aa-a1","scope_kind":"agent_container","source_field":"resource_scopes[0].memory_kernel_peak_bytes"}],"call_rate":{"value":null,"formula":"not computed: counts have no valid time denominator"},"wait_inference":{"value":null,"formula":"not computed: no wait counter and no wall-minus-CPU"},"comparability":"descriptive_only_same_task_not_controlled_repeated_experiment"},
+  "acceptance":{"p2_01":"existing_small_sample_candidate_selection_scope_pending_reviewer_confirmation","g1_g2_decisions_changed":false},
+  "limitations":["two_attempts_one_task","verifier_descriptive_reference_not_strict_control","formal_io_null","host_cpu_interval_not_full_lifetime","no_exclusive_tool_cpu","no_global_representativeness"]
+}

@@ -45,6 +45,7 @@ CATALOG=PROJECT_ROOT/'workload_catalog/cpu_02.yaml'
 RECORD=PROJECT_ROOT/'data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/django__django-16485/record.json'
 CANDIDATE=PROJECT_ROOT/'data/raw/generated/RUN-02/20260915T012427Z-2d75aa/candidate.patch'
 SUPERVISOR=PROJECT_ROOT/'scripts/cpu_02_supervisor.py'
+PERF_SUPERVISOR=PROJECT_ROOT/'scripts/cpu_02_perf_supervisor.py'
 VENV_PYTHON=PROJECT_ROOT/'.venvs/swebench-eval-02e7a74/bin/python'
 APPROVAL=PROJECT_ROOT/'reports/cpu/CPU-02/APPROVAL.json'
 ATTEMPT=PROJECT_ROOT/'reports/cpu/CPU-02/ATTEMPT_STARTED.json'
@@ -388,8 +389,29 @@ def map_container_pid(container_pid, starttime, init_host_pid, *, proc_root=None
     return {'status':'map_failed','reason':'ambiguous_matches','candidates':sorted(matches)}
 
 
+def build_perf_supervisor_argv(supervisor_path, *, host_pid, starttime_ticks,
+                               pgid, data_path, ctl_path, ack_path, deadline,
+                               owner_uid=None):
+    """Build the fixed, non-shell argv for the separately installed supervisor."""
+    if not isinstance(host_pid, int) or host_pid <= 0:
+        raise CPU02Error('invalid_perf_target_pid')
+    if not isinstance(starttime_ticks, int) or starttime_ticks <= 0:
+        raise CPU02Error('invalid_perf_target_starttime')
+    if not isinstance(pgid, int) or pgid <= 0:
+        raise CPU02Error('invalid_perf_target_pgid')
+    if not isinstance(owner_uid, int) or owner_uid < 0:
+        raise CPU02Error('invalid_perf_output_owner')
+    return ['sudo','--non-interactive','--',str(supervisor_path),
+            '--target-pid',str(host_pid),'--target-starttime',str(starttime_ticks),
+            '--target-pgid',str(pgid),'--event','cycles','--frequency','99',
+            '--output',str(data_path),'--owner-uid',str(owner_uid),
+            '--control',str(ctl_path),'--ack',str(ack_path),
+            '--deadline-monotonic',str(deadline)]
+
+
 def start_perf_controlled(perf_bin, host_pid, data_path, *, cfg, output_dir,
-                          sudo=False):
+                          sudo=False, supervisor_path=None, target_starttime=None,
+                          target_pgid=None, deadline=None):
     """Launch host perf in attach mode under the DOCUMENTED control protocol.
 
     perf-record(1): ``--control=fifo:ctl-fifo[,ack-fifo]`` — listen on the
@@ -412,7 +434,12 @@ def start_perf_controlled(perf_bin, host_pid, data_path, *, cfg, output_dir,
     argv=[perf_bin,'record','-D','-1','-F',str(cfg['perf']['record']['frequency_hz']),
           '-e',cfg['perf']['record']['event'],'-p',str(host_pid),'-o',str(data_path),
           '--control',f'fifo:{ctl_path},{ack_path}']
-    launch_argv=(['sudo','--non-interactive','--']+argv) if sudo else argv
+    launch_argv=(build_perf_supervisor_argv(supervisor_path,host_pid=host_pid,
+                 starttime_ticks=target_starttime,pgid=target_pgid,data_path=data_path,
+                 ctl_path=ctl_path,ack_path=ack_path,deadline=deadline,
+                 owner_uid=os.getuid())
+                 if supervisor_path is not None else
+                 (['sudo','--non-interactive','--']+argv) if sudo else argv)
     if sudo:
         # Root perf must write a file that remains owned/readable by the
         # ordinary orchestrator.  Never relax permissions or follow a link.

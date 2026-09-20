@@ -1,0 +1,13 @@
+name: Offline synthetic checks
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Standard-library tests (no pip, no experiments)
+        run: python3 -B -m unittest tests.test_project_state
+      - name: Current state and registered evidence
+        run: python3 -B scripts/check_project_state.py

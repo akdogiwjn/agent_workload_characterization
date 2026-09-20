@@ -101,6 +101,11 @@ def build_plan():
                                     'sha256':_self_sha256(),
                                     'protocol':'ready -> release -> started -> bounded_cpu -> done',
                                     'same_pid':True}
+    identity['perf_supervisor']={'source':str(cpu02.PERF_SUPERVISOR.relative_to(PROJECT_ROOT)),
+        'sha256':hashlib.sha256(cpu02.PERF_SUPERVISOR.read_bytes()).hexdigest(),
+        'installed_path':'/usr/local/libexec/cpu02-perf-supervisor',
+        'fixed_perf':'/usr/bin/perf record cycles@99Hz',
+        'status':'offline_source_only_not_installed'}
     identity['config']['confirmation']={'container_count':1,'cpu':'1','memory':'256m',
         'batch_wall_s':60,'cleanup_reserve_s':15,'sample_max_s':MAX_SAMPLE_SECONDS,
         'worker_seconds':WORK_SECONDS,'namespace_before_perf':True,
@@ -226,7 +231,8 @@ def _check_perf_data_readable(path):
 def run_confirmation(runtime,output_dir,*,identity,deadline,proc_root=None,
                      perf_factory=None,report_runner=None,work_seconds=WORK_SECONDS,
                      init_namespace_reader=None, candidate_namespace_reader=None,
-                     mapping_post_validator=None, perf_sudo=False):
+                     mapping_post_validator=None, perf_sudo=False,
+                     perf_supervisor_path=None):
     started=time.monotonic();output_dir=cpu02.guarded(output_dir,new=True)
     output_dir.mkdir(parents=True)
     payload={'run_id':output_dir.name,'confirmation_id':CHECK_ID,'status':'FAIL',
@@ -285,6 +291,12 @@ def run_confirmation(runtime,output_dir,*,identity,deadline,proc_root=None,
                      'data_path':output_dir/'perf.data','cfg':cpu02.load_config(),
                      'output_dir':output_dir}
         if perf_sudo and perf_factory is None:perf_kwargs['sudo']=True
+        if perf_supervisor_path is not None and perf_factory is None:
+            perf_kwargs.update(supervisor_path=perf_supervisor_path,
+                               target_starttime=int(event.get('starttime_ticks',
+                                                               mapping.get('starttime_ticks',0))),
+                               target_pgid=int(os.getpgid(mapping['host_pid'])),
+                               deadline=sample_deadline if sample_deadline is not None else work_deadline)
         perf=factory(**perf_kwargs)
         payload['perf']={k:v for k,v in perf.items() if k not in ('proc','drains','ctl_fd','ack_fd')}
         if perf.get('status')!='started':raise cpu02.CPU02Error('perf_attach_failed')

@@ -1,0 +1,88 @@
+{
+  "schema": "awc-project-state-v1",
+  "updated_at": "2026-09-20",
+  "execution_authorization": "none_this_state_is_not_an_approval",
+  "gates": {
+    "g0": "existing_pass_record",
+    "g1": "passed_registered_limited_scope",
+    "g2": "not_passed",
+    "g3_r": "not_passed"
+  },
+  "cpu_02": {
+    "current_status": "paused",
+    "initial_b_attempt": "failed_preparation_eval_script_drift",
+    "offline_preparation_fix": "complete_before_r1",
+    "r1_attempt": "executed_failed_pid_mapping",
+    "later_permission_check": "mapping_confirmed_perf_access_denied_exit_255",
+    "valid_container_hotspot_sample": false,
+    "privileged_supervisor": "experimental_not_installed_not_approved",
+    "new_retry_authorized": false
+  },
+  "completed_limited_deliverables": {
+    "cpu_01": "synthetic_host_perf_feasibility_only",
+    "p2_01": "descriptive_selection_one_task_two_attempts",
+    "p3_01": "v3_existing_trace_audit_closed_not_replay_ready"
+  },
+  "current_work": {
+    "id": "P1-12",
+    "phase": "offline_selection_and_budget_design",
+    "execution_allowed": false,
+    "local_verified_task_records": 1,
+    "new_task_records_required": true,
+    "coding_proposal": {
+      "distinct_tasks": 3,
+      "repeats_per_task": 3,
+      "status": "proposal_not_statistical_sufficiency_or_authorization"
+    },
+    "office": "separate_adapter_smoke_and_artifact_correctness_required_not_batch_ready"
+  },
+  "frozen_catalog_semantics": {
+    "path": "workload_catalog/cpu_02.yaml",
+    "status_field": "historical_plan_snapshot_not_current_status",
+    "modify_for_status_sync": false
+  },
+  "public_summary": [
+    "G1：登记小闭环通过；G2 / G3-R 未通过。",
+    "CPU-02：初次 B 准备失败，修复后 R1 映射失败；后续 perf 权限受限。路线暂停，无有效容器热点样本，新 retry 未授权。",
+    "P2-01 小样分析与 P3-01 v3 现有 trace 审计已交付；不授权 Replay。",
+    "当前：P1-12 小规模独立任务 × 重复的离线选样与预算设计；不启动容器、模型或新实验。"
+  ],
+  "evidence": [
+    {
+      "path": "reports/quality/g0_review.md",
+      "sha256": "932e44869acb76077d8fe2d62a54941d9206fff9005121e7c2dea76ec63febf4"
+    },
+    {
+      "path": "reports/resource/G1-02/G1-02-20260915T093254Z-94bb0ee7/manifest.json",
+      "sha256": "e914c1393d600a00745803997fe6e52a16e9da05b2c84f5a1dd0a892519b254d"
+    },
+    {
+      "path": "reports/cpu/CPU-01/CPU-01-20260916T013510Z-cf30c2dd/manifest.json",
+      "sha256": "5ba8b20ece46edc97d88d32727ee156618149a45f2210581da5c88fa3a420924"
+    },
+    {
+      "path": "reports/cpu/CPU-02/CPU-02-20260916T062211Z-f5091ff5/summary.json",
+      "sha256": "2403b9f18612249e7bc995a8af9de8bcbade33e9691484dbf5d4b8b3ea4c2d07"
+    },
+    {
+      "path": "reports/cpu/CPU-02/retries/R1/CPU-02-R1-20260916T073500Z-da94a0fc/summary.json",
+      "sha256": "3de60757af1527618396e4af36356951e3a46d130c119bbb836e01c480c90a3f"
+    },
+    {
+      "path": "reports/cpu/CPU-02/perf-permission-check/CPU-02-PERF-PERMISSION-CHECK-01-20260917T062839Z-69731a2b/summary.json",
+      "sha256": "94d7e444723f58068c784e771722e1b0f992fc18c94ca9ec2d24e0b1305c77c9"
+    },
+    {
+      "path": "reports/analysis/P2-01-review-v1/manifest.json",
+      "sha256": "7a05c88d4db3bcc34b7a7c028368fee09b212baf39c6af1376f3f3abb97cd100"
+    },
+    {
+      "path": "reports/replay/P3-01-audit-v3/manifest.json",
+      "sha256": "3769d81958475a90a25b29d316a84291a4b88b23331a359c1e77f8a154f23405"
+    },
+    {
+      "path": "workload_catalog/cpu_02.yaml",
+      "sha256": "a730aec84fb4fc9e37f8b9025943205b8b29d5bf1fdb396e287330605238b50c"
+    }
+  ]
+}

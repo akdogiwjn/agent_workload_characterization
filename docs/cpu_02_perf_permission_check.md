@@ -196,7 +196,7 @@ sudo --non-interactive -- /usr/local/libexec/cpu02-perf-supervisor
   --target-starttime <validated-starttime>
   --target-pgid <validated-pgid>
   --event cycles --frequency 99
-  --output <validated-user-owned-perf-data>
+  --output <validated-user-owned-perf-data> --owner-uid <ordinary-user-uid>
   --control <validated-user-owned-control-endpoints>
   --deadline-monotonic <fixed-absolute-deadline>
 ```
@@ -241,3 +241,60 @@ A 阶段可用普通用户测试进程、fake supervisor/fake perf 和 fake FIFO
    哈希和 root-owned 安装路径；监督器的精确 watchdog/清理预算；以及是否允许
    它写入预创建的用户文件描述符。上述事项未确认前，现有 sudo perf 方案仍因
    特权回收不可可靠闭合而阻塞，不登记新的可执行批准或命令。
+
+## 监督器离线实现记录（仅源码，未安装/未执行）
+
+已在仓库加入最小源码 `scripts/cpu_02_perf_supervisor.py`，并在现有入口加入
+`build_perf_supervisor_argv()` 与可选 `perf_supervisor_path` 接线。默认入口仍
+不调用监督器；只有未来安装了固定 root-owned 副本并另行批准后，才可由现有
+编排传入该路径。监督器不接受命令字符串，不执行 shell/Python/Docker，只能构造
+固定的 `/usr/bin/perf record -D -1 -F 99 -e cycles -p PID -o OUTPUT --control`
+子进程，并负责 watchdog、进程组停止和 wait/reap。
+
+源码的拒绝规则包括：固定 event/frequency、最长 60 秒监督截止时间、输出及 FIFO
+必须位于固定报告根目录且父段无符号链接、目标 PID/starttime/PGID 必须匹配，且
+尽可能持有 pidfd。目标身份无法核验、路径越界/符号链接、参数漂移均在启动 perf
+前拒绝。stdin 只作为普通编排存活通道；EOF 触发断连回收，不提供额外控制命令。
+监控器启动的子进程由其自身进程组停止并 reap；这与普通用户是否还能向 root
+进程发信号无关。
+
+### 审阅用安装、权限与卸载步骤（不执行）
+
+管理员需先独立审阅并核对源码完整哈希，再在维护窗口执行以下等价步骤；本项目
+或模型不得代执行：
+
+```text
+install -o root -g root -m 0755 <reviewed-copy> /usr/local/libexec/cpu02-perf-supervisor
+sha256sum /usr/local/libexec/cpu02-perf-supervisor
+visudo  # 仅登记固定路径及受限参数接口，禁止 shell/Python/Docker/kill 通配
+```
+
+卸载同样必须由管理员在另行批准后执行：先确认无运行实例，再删除该单一固定文件
+并复核 sudoers 中没有遗留授权。本轮不执行 `install`、`chown`、`visudo` 或删除。
+安装后的 root-owned 文件、sudoers 规则、pidfd 支持和监督器实际权限行为均未在
+离线环境证明。
+
+### 本轮完整身份与离线测试
+
+```text
+scripts/cpu_02_perf_supervisor.py
+  sha256=d10c651d911e3736eb7c1aed75e49d17fc1770d411b2349b6817919a7b1af2a7
+src/agent_workload_characterization/runners/cpu_02_entry.py
+  sha256=1872f3c951952478f175913fce561cf188f6ce447ff5884aab2a9f5fb6bd4340
+src/agent_workload_characterization/runners/cpu_02_permission_confirmation.py
+  sha256=bcff5a5c0967f85276c68b28eedbfeca69d0373dc949fe444359ee4c82c85e45
+tests/test_cpu_02_perf_supervisor.py
+  sha256=98e6129075c19b65e5cbda1763ff881cdec93ece9ccac2494eb9a598108dc69b
+```
+
+定向测试使用普通用户创建的 `sleep` 子进程及 fake perf/FIFO 边界，经过固定 argv、
+路径/参数拒绝、目标身份变化、watchdog 停止和实际子进程 wait/reap 路径；监督器
+定向测试与既有 CPU-02 权限确认测试合计 36 项通过。执行了 `py_compile` 和
+`git diff --check`。这些测试不能证明 root-owned 安装、sudoers 约束或真实 perf
+退出行为。
+
+待单独批准的最小真实验证仅包括：管理员安装后核对固定文件/配置哈希，普通用户
+在一个固定 digest、network none、pull never、1 CPU/256 MiB 容器中运行自有 worker，
+监督器 watchdog 在 60 秒内完成正常、超时和断连回收，并核验 perf 子进程已退出、
+已 wait/reap、输出由普通用户可读且路径无残留。不得借此授权 CPU-02 重试或修改
+历史证据；若任一特权回收/文件所有权证据缺失，仍保持不可执行。

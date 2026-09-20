@@ -1,6 +1,13 @@
 # 文档索引
 
-这是文档导航入口。日常状态只看 **[项目总览与固定收尾清单](project_status.md)**；Gate 裁定只看 [G1 集中评审 §0](g1_consolidated_review.md)。G1登记小闭环、CPU-01可测性已验收；当前任务为CPU-02 A离线准备，G2未通过。
+<!-- PROJECT_STATE:START -->
+当前状态由 [2026-09-20 状态真源](../project_state.json)统一登记；这是进度记录，不是执行授权。
+
+- G1：登记小闭环通过；G2 / G3-R 未通过。
+- CPU-02：初次 B 准备失败，修复后 R1 映射失败；后续 perf 权限受限。路线暂停，无有效容器热点样本，新 retry 未授权。
+- P2-01 小样分析与 P3-01 v3 现有 trace 审计已交付；不授权 Replay。
+- 当前：P1-12 小规模独立任务 × 重复的离线选样与预算设计；不启动容器、模型或新实验。
+<!-- PROJECT_STATE:END -->
 
 历史文档原位保留并在本页折叠。文件仍存在不表示任务仍在进行；delivery 是交付声明，不自动等于验收通过，旧 prompt 不提供当前授权。
 
@@ -8,9 +15,7 @@
 
 - 日常查看：[`project_status.md`](project_status.md) 即可；不必浏览所有历史交付。
 - 新实施者：按当前任务书完整阅读必读四文档及语义/数据契约；本导航不替代任务要求。
-- 执行者：先读 [`development_tasks.md`](development_tasks.md) 和当前任务
-  [`cpu_02_handoff.md`](cpu_02_handoff.md)；旧 RUN-02/R1/R2
-  handoff/prompt 仅是各自历史授权文本。
+- 实施者：先读 [`project_status.md`](project_status.md) 和任务计划 P1-12；旧 CPU-02/RUN-02 handoff/prompt 仅供历史追溯。
 - 评审者：[`g1_consolidated_review.md`](g1_consolidated_review.md) →
   [`repository_closeout_delivery.md`](repository_closeout_delivery.md) →
   RUN-02-R2 的 [原始报告](../reports/resource/RUN-02/20260915T012427Z-2d75aa/)
@@ -21,10 +26,12 @@
 1. G0 有既有通过记录；G1 现为 `PASSED（登记小闭环范围）`，不是全部研究目标完成。
 2. RUN-01-C 是历史真实 attempt；RUN-02 原批和 R1 在启动阶段失败；READY-01 是只读准备证据。
 3. RUN-02-R2 已完成一次真实联合观测并保留 raw、原报告、批准和 marker；review-v2 只修正文义口径。
-4. CLOSEOUT-01、G1-02及CPU-01已验收。下一步CPU-02 A，不启动真实perf或容器。测试数量不等于任务数、模型请求数或独立实验数。
+4. CLOSEOUT-01、G1-02及CPU-01为已交付历史阶段；CPU-02 后续失败及暂停状态见顶部真源。测试数量不等于任务数或独立实验数。
 
 ## 长期规范
 
+- [状态真源](../project_state.json)：当前进度、历史事实和证据定位，不提供执行授权。
+- [复现与版本契约](reproducibility.md)：环境锁定缺口、实际/计划身份和离线检查边界。
 - [`methodology.md`](../methodology.md)：研究目标、路线、方法和 Gate 原则。
 - [`data_management.md`](data_management.md)：来源、raw/derived、血缘、保护和失败样本规则。
 - [`trace_contract.md`](trace_contract.md)：ID、时间、缺失、证据、资源归因和统计语义。
@@ -35,7 +42,7 @@
 
 ## 当前任务、评审与交付
 
-- [`cpu_02_handoff.md`](cpu_02_handoff.md)、[A 提示词](cpu_02_execution_prompt.md)、[A 交付](cpu_02_delivery.md)：真实 Verifier 执行段的目标映射与热点离线准备已交付（`A_OFFLINE_VERIFIED`），B 另批。
+- [`cpu_02_handoff.md`](cpu_02_handoff.md)、[A 提示词](cpu_02_execution_prompt.md)、[A 交付](cpu_02_delivery.md)：历史准备及执行记录；初次 B 与 R1 均已执行失败，路线暂停，不得直接重用旧命令。
 - CPU-01已完成：[`cpu_01_handoff.md`](cpu_01_handoff.md)、[历史提示词](cpu_01_execution_prompt.md)、[交付与评审](cpu_01_delivery.md)；不重跑。
 - G1-02 已完成：[`g1_02_handoff.md`](g1_02_handoff.md)、[历史提示词](g1_02_execution_prompt.md)、[交付](g1_02_delivery.md)；完整历史身份见 [`g1_02_identity.json`](../workload_catalog/g1_02_identity.json)，不重复执行。
 - [`project_status.md`](project_status.md)：日常状态、代码地图、固定收尾表和本次仓库审查记录。

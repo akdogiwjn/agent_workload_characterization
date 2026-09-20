@@ -17,7 +17,14 @@
 
 **决议**：原六条 Gate 在已登记 Coding scope＋确定性机制范围内满足，M2 小闭环完成，可以准备 P2。正式 I/O null、shared CPU、宿主非完整后代树等继续作为已接受边界；多任务代表性、独占 Tool CPU、PMU 和函数热点仍未完成，不倒挂为新 G1 前置。
 
-**当前下一步**：[CPU-01 A 任务书](cpu_01_handoff.md)。只准备候选 scope 与最小 perf 可测性路径；实际 perf/权限探测须最终清单另批，不重跑 G1-02。
+<!-- PROJECT_STATE:START -->
+当前状态由 [2026-09-20 状态真源](../project_state.json)统一登记；这是进度记录，不是执行授权。
+
+- G1：登记小闭环通过；G2 / G3-R 未通过。
+- CPU-02：初次 B 准备失败，修复后 R1 映射失败；后续 perf 权限受限。路线暂停，无有效容器热点样本，新 retry 未授权。
+- P2-01 小样分析与 P3-01 v3 现有 trace 审计已交付；不授权 Replay。
+- 当前：P1-12 小规模独立任务 × 重复的离线选样与预算设计；不启动容器、模型或新实验。
+<!-- PROJECT_STATE:END -->
 
 <details>
 <summary>G1-02 补证前的裁定（历史：当时为 LIMITED_SCOPE_ACCEPTED / PARTIAL）</summary>

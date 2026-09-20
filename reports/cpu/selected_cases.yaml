@@ -1,0 +1,158 @@
+schema: p2-01-selected-cases-v1
+derived_at_utc: '2026-09-17'
+method: read_only_selector_from_sealed_reports
+execution_performed: false
+selection_scope: existing_sealed_coding_attempts_only
+inputs:
+  - {path: reports/resource/RUN-02/20260915T012427Z-2d75aa-review-v2/summary.json, sha256: 6d4d4dda39499711815f03cd78cec81498f063a0452a598e8922f0cd9dc6c868}
+  - {path: reports/resource/RUN-02/20260915T012427Z-2d75aa-review-v2/manifest.json, sha256: de2721e93eeba8b64f8e9298f312c02e22d9edd42e15a36ee741b6c527efa943}
+  - {path: reports/resource/RUN-01-C-v2/summary.json, sha256: 48c35a635d05ae7a484ebe6097fe19651b89555f6cb0b864dc5187c741fc3c07}
+  - {path: reports/resource/RUN-01-C-v2/manifest.json, sha256: 60d3ac3d742dca589a043b8f0355742eb567d197075b089a42d774cd743b4206}
+criteria:
+  ordering: observed_value_descending_within_available_container_scope
+  missing_values: excluded_from_ordering_and_reported_as_missing
+  shared_scope: candidate_only_no_exclusive_tool_cpu_claim
+  wait_heavy: hypothesis_only_no_wait_counter_or_wall_minus_cpu
+  cpu_memory: scope_values_not_additive_across_overlapping_scopes
+ranking_universe:
+  registered_attempts: [20260912T125202Z-840e49-a1, 20260915T012427Z-2d75aa-a1]
+  eligible_scope_kinds: [agent_container, verifier_container]
+  eligible_scope_count: 4
+  included:
+    - {attempt: 20260912T125202Z-840e49-a1, scope_kind: agent_container, source_field: 'scopes[0]'}
+    - {attempt: 20260912T125202Z-840e49-a1, scope_kind: verifier_container, source_field: 'scopes[1]'}
+    - {attempt: 20260915T012427Z-2d75aa-a1, scope_kind: agent_container, source_field: 'resource_scopes[0]'}
+    - {attempt: 20260915T012427Z-2d75aa-a1, scope_kind: verifier_container, source_field: 'resource_scopes[1]'}
+  excluded:
+    - {source: CPU-01, reason: synthetic_host_process_fixture_not_real_agent_scope}
+    - {source: G1-02, reason: mechanism_overhead_evidence_not_task_selector_input}
+    - {source: host_observation, reason: not_a_container_scope}
+  note: available_registered_scopes_only_not_globally_representative
+phase_and_distribution_summary:
+  - source_run: RUN-01-C-v2/20260912T125202Z-840e49
+    evidence_locator: reports/resource/RUN-01-C-v2/summary.json
+    fields:
+      evaluation_elapsed_s: {value: 12.216613793, unit: s, source_field: budget.elapsed_s}
+      elapsed_total_s: {value: 146.540550945, unit: s, source_field: budget.elapsed_total_s}
+      phase: {value: evaluation, source_field: budget.phase}
+      model_requests: {value: {total: 30, ok: 26, failed: 4}, source_field: llm}
+      steps: {value: 26, unit: steps, source_field: budget.steps}
+      tool_calls: {value: 26, unit: calls, source_field: tools.calls}
+      tool_distribution: {value: unavailable, source_field: tools.classification}
+    host_observation: {status: unavailable, source_field: host_agent_runtime}
+  - source_run: RUN-02/20260915T012427Z-2d75aa
+    evidence_locator: reports/resource/RUN-02/20260915T012427Z-2d75aa-review-v2/summary.json
+    fields:
+      model_requests: {value: {total: 30, ok: 27, failed: 3}, source_field: agent_and_model.model_requests}
+      steps: {value: 26, unit: steps, source_field: agent_and_model.steps}
+      tool_calls: {value: 28, unit: calls, source_field: tool_observation.calls}
+      hook_open: {value: 28, unit: events, source_field: tool_observation.hook_events.open}
+      hook_closed: {value: 28, unit: events, source_field: tool_observation.hook_events.closed}
+      hook_error: {value: 0, unit: events, source_field: tool_observation.hook_events.error}
+      nonzero_returncodes: {value: 1, unit: calls, source_field: tool_observation.nonzero_returncodes}
+      phase_statuses: {value: [ok, ok, ok, ok], source_field: 'run.[execution_status,evaluation_status,archive_status,cleanup_status]'}
+    host_observation:
+      snapshots: {value: 717, unit: snapshots, source_field: host_observation.snapshots}
+      readable_snapshots: {value: 716, unit: snapshots, source_field: host_observation.readable_snapshots}
+      cpu_seconds: {value: 4.19, unit: s, source_field: host_observation.cpu_seconds}
+      rss_last_readable_bytes: {value: 218214400, unit: bytes, source_field: host_observation.rss_last_readable_bytes}
+      rss_sampled_max_bytes: {value: 226713600, unit: bytes, source_field: host_observation.rss_sampled_max_bytes}
+      final_read_status: {value: process_exited, source_field: host_observation.final_read_status}
+cases:
+  - case_id: p2-01-run02-agent-top-cpu
+    role: top_cpu
+    ranking_eligible: true
+    source_run: RUN-02/20260915T012427Z-2d75aa
+    scope_kind: agent_container
+    evidence_locator: reports/resource/RUN-02/20260915T012427Z-2d75aa-review-v2/summary.json
+    observed:
+      cpu_core_seconds: {value: 51.007123, unit: core-s, source_field: 'resource_scopes[0].cpu_core_seconds'}
+      wall_s: {value: 143.651636264, unit: s, source_field: 'resource_scopes[0].wall_s'}
+      memory_kernel_peak_bytes: {value: 1434140672, unit: bytes, source_field: 'resource_scopes[0].memory_kernel_peak_bytes'}
+      formal_io: {value: null, unit: bytes, source_field: 'resource_scopes[0].formal_io'}
+    rationale: highest_container_CPU_in_four_scope_available_universe
+    limitations: [single_task, single_attempt, overlapping_scope, no_exclusive_tool_cpu]
+  - case_id: p2-01-run02-agent-top-wall
+    role: top_wall
+    ranking_eligible: true
+    source_run: RUN-02/20260915T012427Z-2d75aa
+    scope_kind: agent_container
+    evidence_locator: reports/resource/RUN-02/20260915T012427Z-2d75aa-review-v2/summary.json
+    observed:
+      wall_s: {value: 143.651636264, unit: s, source_field: 'resource_scopes[0].wall_s'}
+      cpu_core_seconds: {value: 51.007123, unit: core-s, source_field: 'resource_scopes[0].cpu_core_seconds'}
+      memory_kernel_peak_bytes: {value: 1434140672, unit: bytes, source_field: 'resource_scopes[0].memory_kernel_peak_bytes'}
+    rationale: longest_measured_container_interval_in_available_universe
+    limitations: [single_task, single_attempt, wall_includes_wait_and_runtime]
+  - case_id: p2-01-run02-agent-top-memory
+    role: top_memory
+    ranking_eligible: true
+    source_run: RUN-02/20260915T012427Z-2d75aa
+    scope_kind: agent_container
+    evidence_locator: reports/resource/RUN-02/20260915T012427Z-2d75aa-review-v2/summary.json
+    observed:
+      memory_kernel_peak_bytes: {value: 1434140672, unit: bytes, source_field: 'resource_scopes[0].memory_kernel_peak_bytes'}
+      memory_basis: {value: cgroup_v1_kernel_peak, source_field: 'resource_scopes[0].memory_kernel_peak_bytes'}
+      memory_current_end_bytes: {value: null, unit: bytes, source_field: 'resource_scopes[0].memory_current_end_bytes'}
+      formal_io: {value: null, unit: bytes, source_field: 'resource_scopes[0].formal_io'}
+    rationale: highest_kernel_memory_peak_in_available_universe
+    limitations: [not_host_memory, not_additive, single_task, no_memory_cause]
+  - case_id: p2-01-run02-verifier-reference
+    role: descriptive_reference
+    ranking_eligible: true
+    source_run: RUN-02/20260915T012427Z-2d75aa
+    scope_kind: verifier_container
+    evidence_locator: reports/resource/RUN-02/20260915T012427Z-2d75aa-review-v2/summary.json
+    observed:
+      cpu_core_seconds: {value: 3.64963, unit: core-s, source_field: 'resource_scopes[1].cpu_core_seconds'}
+      wall_s: {value: 12.264456124, unit: s, source_field: 'resource_scopes[1].wall_s'}
+      memory_kernel_peak_bytes: {value: 72548352, unit: bytes, source_field: 'resource_scopes[1].memory_kernel_peak_bytes'}
+      formal_io: {value: null, unit: bytes, source_field: 'resource_scopes[1].formal_io'}
+    rationale: verifier_is_descriptive_reference_not_strict_same_workload_control
+    limitations: [paired_scope_not_causal, single_task, no_pmu, no_exclusive_tool_cpu]
+  - case_id: p2-01-run02-tool-count
+    role: tool_call_count
+    ranking_eligible: false
+    selection_basis: descriptive_only
+    source_run: RUN-02/20260915T012427Z-2d75aa
+    scope_kind: shared_tool_scope
+    evidence_locator: reports/resource/RUN-02/20260915T012427Z-2d75aa-review-v2/summary.json
+    observed:
+      native_hook_calls: {value: 28, unit: calls, source_field: tool_observation.calls}
+      hook_open: {value: 28, unit: events, source_field: tool_observation.hook_events.open}
+      hook_closed: {value: 28, unit: events, source_field: tool_observation.hook_events.closed}
+      hook_error: {value: 0, unit: events, source_field: tool_observation.hook_events.error}
+      nonzero_returncodes: {value: 1, unit: calls, source_field: tool_observation.nonzero_returncodes}
+    rationale: observed_hook_count_not_rate_or_frequency_ranking
+    limitations: [shared_scope, closed_not_success, no_tool_cpu, no_time_denominator]
+  - case_id: p2-01-run02-host-wait-hypothesis
+    role: wait_heavy_hypothesis
+    ranking_eligible: false
+    selection_basis: hypothesis_only
+    source_run: RUN-02/20260915T012427Z-2d75aa
+    scope_kind: host_observation
+    evidence_locator: reports/resource/RUN-02/20260915T012427Z-2d75aa-review-v2/summary.json
+    observed:
+      readable_snapshots: {value: 716, unit: snapshots, source_field: host_observation.readable_snapshots}
+      snapshots: {value: 717, unit: snapshots, source_field: host_observation.snapshots}
+      cpu_seconds: {value: 4.19, unit: s, source_field: host_observation.cpu_seconds}
+      rss_sampled_max_bytes: {value: 226713600, unit: bytes, source_field: host_observation.rss_sampled_max_bytes}
+      final_read_status: {value: process_exited, source_field: host_observation.final_read_status}
+    validity: host_interval_increment_only
+    rationale: low_host_CPU_is_hypothesis_proxy_not_wait_measurement
+    limitations: [wait_not_directly_measured, no_wall_minus_cpu, not_full_lifetime_cpu, incomplete_descendant_coverage]
+prohibitions:
+  - do_not_call_this_a_new_measurement_sample
+  - do_not_sum_overlapping_scope_cpu_or_memory
+  - do_not_call_shared_tool_scope_exclusive
+  - do_not_infer_cpu_causality_or_pmu_hotspots
+  - do_not_compare_RUN01_and_RUN02_as_causal_performance_results
+  - do_not_report_call_rate_without_valid_time_denominator
+excluded_inputs:
+  - {source_run: CPU-01, reason: synthetic_host_process_fixture_not_real_agent_case}
+  - {source_run: G1-02, reason: mechanism_overhead_evidence_not_task_selector_input}
+remaining_gate:
+  status: review_pending
+  next_step: P2-01 concentrated acceptance and offline comparison review
+  p2_02_perf: paused_not_authorized
+  requirements: [field_locator_review, source_hash_review, reviewer_acceptance]

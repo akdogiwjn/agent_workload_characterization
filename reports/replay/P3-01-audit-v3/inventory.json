@@ -1,0 +1,3291 @@
+{
+  "schema": "p3-01-audit-v3",
+  "source_run": "20260915T012427Z-2d75aa",
+  "attempt_id": "20260915T012427Z-2d75aa-a1",
+  "source_manifest_verified": true,
+  "file_checks": [
+    {
+      "path": "candidate.patch",
+      "status": "recorded",
+      "bytes": 547,
+      "expected_sha256": "d919b1322322abff8ac88cebdb25800d7b57285fbcfffc3216933c232097ebd5",
+      "actual_sha256": "d919b1322322abff8ac88cebdb25800d7b57285fbcfffc3216933c232097ebd5"
+    },
+    {
+      "path": "events.jsonl",
+      "status": "recorded",
+      "bytes": 29734,
+      "expected_sha256": "ef2a8ef1988737c316a53af8777b90249006070d86ba2cc9e4eede3f833d5e53",
+      "actual_sha256": "ef2a8ef1988737c316a53af8777b90249006070d86ba2cc9e4eede3f833d5e53"
+    },
+    {
+      "path": "host_process.jsonl",
+      "status": "recorded",
+      "bytes": 82070,
+      "expected_sha256": "ee4404a111681a2744e48ccb802330fd38b0046eecf12cc93ecda232a69b2487",
+      "actual_sha256": "ee4404a111681a2744e48ccb802330fd38b0046eecf12cc93ecda232a69b2487"
+    },
+    {
+      "path": "metadata.json",
+      "status": "recorded",
+      "bytes": 1362,
+      "expected_sha256": "2b390e22f79aa83a4e24a2eda0916ca7e1a130f29d2f841b317c90bcf81c3bd9",
+      "actual_sha256": "2b390e22f79aa83a4e24a2eda0916ca7e1a130f29d2f841b317c90bcf81c3bd9"
+    },
+    {
+      "path": "mini_status.jsonl",
+      "status": "recorded",
+      "bytes": 13188,
+      "expected_sha256": "bf819f4c6b17134418939adf182a324ad1f7edf8b3c64ccd0764690dc1ffa091",
+      "actual_sha256": "bf819f4c6b17134418939adf182a324ad1f7edf8b3c64ccd0764690dc1ffa091"
+    },
+    {
+      "path": "mini_tool_events.jsonl",
+      "status": "recorded",
+      "bytes": 14708,
+      "expected_sha256": "208a59ed6e8e821823c95562db4a85a4f51081e4c64b072680f9c013745654c3",
+      "actual_sha256": "208a59ed6e8e821823c95562db4a85a4f51081e4c64b072680f9c013745654c3"
+    },
+    {
+      "path": "mini_trajectory.json",
+      "status": "recorded",
+      "bytes": 229036,
+      "expected_sha256": "30dc2a0e6f63b0592638be94aab335e5681251ea3b1e223fbdaae5fea7234b03",
+      "actual_sha256": "30dc2a0e6f63b0592638be94aab335e5681251ea3b1e223fbdaae5fea7234b03"
+    },
+    {
+      "path": "samples.json",
+      "status": "recorded",
+      "bytes": 259969,
+      "expected_sha256": "103244ece8b3ad638ebc64493e8ab7f585cff514969657fd7e04f47bc095a6b3",
+      "actual_sha256": "103244ece8b3ad638ebc64493e8ab7f585cff514969657fd7e04f47bc095a6b3"
+    },
+    {
+      "path": "verifier/test_output.txt",
+      "status": "recorded",
+      "bytes": 15902,
+      "expected_sha256": "2f0737d73d3c276f1b52b69f1b80e0f45c3b0d156a2dff8cbe5f9b80cde668bb",
+      "actual_sha256": "2f0737d73d3c276f1b52b69f1b80e0f45c3b0d156a2dff8cbe5f9b80cde668bb"
+    }
+  ],
+  "counts": {
+    "trajectory_calls": 28,
+    "hook_events": 56,
+    "hook_pairs": 28
+  },
+  "event_integrity": {
+    "duplicate_open_ids": [],
+    "duplicate_closed_ids": [],
+    "orphan_closed_ids": [],
+    "unclosed_open_ids": [],
+    "unexpected_events": [],
+    "trajectory_event_order_match": true,
+    "trajectory_event_count_match": true,
+    "valid": true
+  },
+  "identity": {
+    "task_id": "django__django-16485",
+    "source_type": "benchmark_real",
+    "registration": {
+      "status": "recorded",
+      "source_fields": [
+        "reports/resource/RUN-02/retries/R2/ATTEMPT_STARTED.json.identity",
+        "reports/resource/RUN-02/retries/R2/ATTEMPT_STARTED.json.result.run_id",
+        "workload_catalog/run_02.yaml"
+      ],
+      "run_id_match": true,
+      "task_match": true,
+      "catalog_match": true,
+      "identity": {
+        "collection": "RUN-02",
+        "task": {
+          "instance_id": "django__django-16485",
+          "record_locator": "/home/lcq/agent_workload_characterization/data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/django__django-16485/record.json",
+          "record_sha256": "762de270d1ce06ab23104a35322098178624865c886d7b0ddadf9044d8fec46a",
+          "base_commit": "39f83765e12b0e5d260b7939fc3fe281d879b279"
+        },
+        "image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+        "catalog_sha256": "fca2c6f094196d4e4a62c285ed6a3fc230c8e4deded11e0c5f5bab573ed13656",
+        "code_sha256": {
+          "runners/run_02_entry.py": "11aa5d7d74321beb58778519d386b70416ed83de85f62e417deeb15de9ac740b",
+          "runners/coding_pilot.py": "db935008a9e71a2b8421d13a5d6d9d42d0f4efe6f55d468d6eb15c7530bd7377",
+          "runners/mini_agent_adapter.py": "e84c62fc17f7ca578cd9f8f5f60bb62810747cbeacf0d930f7dfdcf76007f87b",
+          "runners/container_runtime.py": "01efadaec9e4c9980aa2474990d72378b09d6c247d85de077ead9b00ad99ffac",
+          "runners/tool_event_env.py": "0de111c16411b30255b47328912395773330c0b9e6f844f7a62b68dd293e967b",
+          "collectors/host_process.py": "2ec98884c8b0d1ea005881f72e0a5498088e40960eebc3c44d3775ec2e150055",
+          "collectors/resource_sampler.py": "8418a9d793e170d96ce75d97ddd65a978a38038f80c2e34eb4c9485286bcca72",
+          "analyzers/run_02_analysis.py": "b1091969e8a41f00eed2137327b21f6925485c5909aed36f8c27c76512a496fa"
+        },
+        "model": "openai/deepseek-v4-flash",
+        "harness": "mini-SWE-agent 2.4.6",
+        "interpreters": {
+          "mini": "/home/lcq/agent_workload_characterization/.venvs/mini-swe-agent-2.4.6-env01/bin/python",
+          "evaluator": "/home/lcq/agent_workload_characterization/.venvs/swebench-eval-02e7a74/bin/python"
+        },
+        "budget": {
+          "max_model_requests": 30,
+          "max_steps": 30,
+          "max_output_tokens_per_request": 4096,
+          "agent_wall_s": 1500.0,
+          "verifier_wall_s": 300.0,
+          "total_wall_s": 1800.0,
+          "max_new_artifact_bytes": 5368709120
+        },
+        "container_limits": {
+          "cpu": 4,
+          "memory": "8g",
+          "network": "none",
+          "pull": "never"
+        },
+        "sampling": {
+          "mini_host_process_s": 0.2,
+          "resource_s": 0.5,
+          "artifact_monitor_s": 0.25
+        },
+        "credentials_env": {
+          "base": "PILOT_API_BASE",
+          "key": "PILOT_API_KEY",
+          "child_base": "OPENAI_API_BASE",
+          "child_key": "OPENAI_API_KEY"
+        },
+        "output": {
+          "raw": "data/raw/generated/RUN-02/<run_id>",
+          "report": "reports/resource/RUN-02/<run_id>"
+        },
+        "approval": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R2/APPROVAL.txt",
+        "proxy": "not required by static plan; any proxy must be approved",
+        "attempt_label": "RUN-02-R2",
+        "parent_failure": {
+          "attempt_label": "RUN-02-R1",
+          "approval_path": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R1/APPROVAL.txt",
+          "approval_sha256": "1f9442a7196b14a292b0b3ca1bf0f296bbfc0399328a754f754cac78aeb48d74",
+          "marker_path": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R1/ATTEMPT_STARTED.json",
+          "marker_sha256": "edebe9f82a3fdf91380b1c71e7c35d9954ed4fa330bd99eac9bbdec99503102d",
+          "preflight_path": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R1/PREFLIGHT.json",
+          "preflight_sha256": "55768beef63d97f3de6abee4facb17a23e94ba83d5c2abcb88692b65bf5ec96d"
+        },
+        "readiness_evidence": {
+          "summary_path": "/home/lcq/agent_workload_characterization/reports/preparation/READY-01/20260914T111017Z-7eb3c4/summary.json",
+          "summary_sha256": "cc234ad87b9c00189c20f9ec8c1836a3f762aca36a9ac420b83533b323ac2a65",
+          "manifest_path": "/home/lcq/agent_workload_characterization/reports/preparation/READY-01/20260914T111017Z-7eb3c4/manifest.json",
+          "manifest_sha256": "af76a6e481d56488f09031eb0702780dbc928174e2998151ef2f01725a4bf942",
+          "status": "READY_FOR_APPROVAL"
+        },
+        "r2_paths": {
+          "approval": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R2/APPROVAL.txt",
+          "attempt_marker": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R2/ATTEMPT_STARTED.json",
+          "preflight_evidence": "/home/lcq/agent_workload_characterization/reports/resource/RUN-02/retries/R2/PREFLIGHT.json",
+          "raw": "data/raw/generated/RUN-02/<new_run_id>",
+          "report": "reports/resource/RUN-02/<new_run_id>"
+        },
+        "credential_route": {
+          "reference": "{env:VOLCANO_API_KEY}",
+          "source": "/home/lcq/.config/opencode/opencode.json",
+          "resolved_in_memory": true,
+          "runner_mapping": {
+            "base": "OPENAI_API_BASE",
+            "key": "OPENAI_API_KEY"
+          },
+          "proxy_policy": "clear_only_this_process_and_children"
+        },
+        "execution_permission": {
+          "tool_execution_permission": "pending",
+          "required": "single command in an approved environment with access to unix:///var/run/docker.sock",
+          "no_alternatives": [
+            "chmod",
+            "sudo",
+            "remote_docker",
+            "global_sandbox_disable"
+          ]
+        },
+        "entry_code_sha256": "c1959f3e775d0947ce68cb413547af3769646c368e6ba41eb8782b0ea9e2ca8a",
+        "support_code_sha256": {
+          "runners/smoke_launcher.py": "ca0937752bbea1905134ba17f15448072da477de2bed7c650548d50aed592852"
+        }
+      }
+    },
+    "harness": "derived from mini_trajectory.info.mini_version",
+    "mini_version": "2.4.6",
+    "model": {
+      "status": "derived",
+      "value": "openai/deepseek-v4-flash",
+      "source_field": "mini_trajectory.json.info.config.model.model_name"
+    },
+    "image": {
+      "status": "derived",
+      "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+      "actual_observed": "unknown",
+      "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml"
+    },
+    "interpreters": {
+      "status": "derived",
+      "planned_value": {
+        "mini": "/home/lcq/agent_workload_characterization/.venvs/mini-swe-agent-2.4.6-env01/bin/python",
+        "evaluator": "/home/lcq/agent_workload_characterization/.venvs/swebench-eval-02e7a74/bin/python"
+      },
+      "actual_observed": "unknown",
+      "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters"
+    }
+  },
+  "calls": [
+    {
+      "ordinal": 1,
+      "tool_call_id": "call_3gtnargxsqfg05lptwz7o4cd",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[2].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_3gtnargxsqfg05lptwz7o4cd]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_3gtnargxsqfg05lptwz7o4cd]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "8ad988f1cc455a501cb76c52894cbb5d3a2715e199b5ad0b8fe18bea811ac784",
+        "length": 59,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 456365069,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 2203,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 2,
+      "tool_call_id": "call_9wc73642np24ici23x5vo1xl",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[2].tool_calls[1].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_9wc73642np24ici23x5vo1xl]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_9wc73642np24ici23x5vo1xl]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "acf335d4362390b3888a75eb4c32409e1ef8124e099c4d562ce37d544d4d4b2d",
+        "length": 125,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 277290550,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 165,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 3,
+      "tool_call_id": "call_7703c580de60472895f758ac",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[5].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_7703c580de60472895f758ac]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_7703c580de60472895f758ac]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "10b16fb4aad3cb257b762c8ac17df79736fff5c1539701975cb7686479bfbbb3",
+        "length": 74,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 217222717,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 34,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 4,
+      "tool_call_id": "call_gbz7nzhdj9fndzflxtmosn8e",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[7].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_gbz7nzhdj9fndzflxtmosn8e]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_gbz7nzhdj9fndzflxtmosn8e]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "a4fbfa5fc46d185c4df498d54c85509e4edcd995bb0406b7ad16909cecbd55cf",
+        "length": 65,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 206261596,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 2771,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 5,
+      "tool_call_id": "call_rzd06v0ixitimhve4bbcfxbp",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[9].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_rzd06v0ixitimhve4bbcfxbp]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_rzd06v0ixitimhve4bbcfxbp]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "f4b7ed6a0dadec1157acf594f4d8f8f42431aaa498267980e430e6373b923bce",
+        "length": 66,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 189975180,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 2377,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 6,
+      "tool_call_id": "call_ce101f1f5b294c26b65e9276",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[11].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_ce101f1f5b294c26b65e9276]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_ce101f1f5b294c26b65e9276]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "2f93e57a0af69c643fd010c202f62f0ec1304f2fde6eaecbc07052378db4d3cf",
+        "length": 647,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 230014905,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 180,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 7,
+      "tool_call_id": "call_7cd3h33zbbljzsxfk0rkj9re",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[13].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_7cd3h33zbbljzsxfk0rkj9re]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_7cd3h33zbbljzsxfk0rkj9re]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "e739305949df6361a0d96afc707f91025061c65282b2180d527db1d31ecfc32c",
+        "length": 108,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 191443541,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 1875,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 8,
+      "tool_call_id": "call_ag6z5f1182wn7jdnz2tyzsv7",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[15].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_ag6z5f1182wn7jdnz2tyzsv7]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_ag6z5f1182wn7jdnz2tyzsv7]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "cad6682f6942c230aee2c7a5d3bc211337523e67b9f687bbba4df8a2e29cf9f6",
+        "length": 84,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 216796201,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 6385,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 9,
+      "tool_call_id": "call_6b6xj2zc4nwdx53ppu4otrll",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[17].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_6b6xj2zc4nwdx53ppu4otrll]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_6b6xj2zc4nwdx53ppu4otrll]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "e3ff1a87b092c874ad294b1664a5dc8c4a8eb84c24066a3cfda7084af29556db",
+        "length": 1810,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 317665228,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 726,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 10,
+      "tool_call_id": "call_678dc8394a41418db721b617",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[19].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_678dc8394a41418db721b617]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_678dc8394a41418db721b617]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "3e79b443382403241fa75b65c1d7898a4ba5dee79decc57dcd2a1b34b852a0f5",
+        "length": 122,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 205132660,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 64,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 11,
+      "tool_call_id": "call_axdsqd8s29mldo2cfyxglyx9",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[21].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_axdsqd8s29mldo2cfyxglyx9]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_axdsqd8s29mldo2cfyxglyx9]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "523620731c2848ecb250f79841fd1fc24a04052ed36b825aa29327e015a7c779",
+        "length": 108,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 789938158,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 1719,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 12,
+      "tool_call_id": "call_d2d17890703b4a8197af56ed",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[23].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_d2d17890703b4a8197af56ed]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_d2d17890703b4a8197af56ed]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "becb707d7b374a621cbb50911bac4d49f26487f80dde3fd091239e81a379354e",
+        "length": 105,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 740839728,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 1418,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 13,
+      "tool_call_id": "call_7jz2shxqrmxxz94f4zv9m1sa",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[25].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_7jz2shxqrmxxz94f4zv9m1sa]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_7jz2shxqrmxxz94f4zv9m1sa]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "311316a40fb546df8cc52e7232a5804b898cab6db10e139fa20c7a48544fc928",
+        "length": 338,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 297723172,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 112,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 14,
+      "tool_call_id": "call_tk64uj2nowjh2ni48ov06c2e",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[27].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_tk64uj2nowjh2ni48ov06c2e]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_tk64uj2nowjh2ni48ov06c2e]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "67fc8390bf755290ad29fa4b4ab55c18d2b256499da53846b5a6dd43f5770907",
+        "length": 481,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 210546145,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 8,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 15,
+      "tool_call_id": "call_9kfppfbvdo74om2r9u16u6ku",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[29].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_9kfppfbvdo74om2r9u16u6ku]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_9kfppfbvdo74om2r9u16u6ku]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "3389245fbcb0755f9f1c736c4494729495229721e6a807f0863f54f70e22cee7",
+        "length": 292,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 324415131,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 1
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 1016,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 16,
+      "tool_call_id": "call_7ce8f154275a4a7cad2fa935",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[31].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_7ce8f154275a4a7cad2fa935]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_7ce8f154275a4a7cad2fa935]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "f9153ec478e344c5a244fda968b45d210240adfb2b04e91981152360894250c4",
+        "length": 649,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 413992542,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 216,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 17,
+      "tool_call_id": "call_sur3chf4f8snrnq2609zi0k2",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[33].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_sur3chf4f8snrnq2609zi0k2]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_sur3chf4f8snrnq2609zi0k2]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "0c8355834dc2b561225acc64aed1b28c82d0310321577e14a2264716e4e323af",
+        "length": 114,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 568137926,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 2355,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 18,
+      "tool_call_id": "call_0q9sakhyirowm0mq20lglfy6",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[35].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_0q9sakhyirowm0mq20lglfy6]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_0q9sakhyirowm0mq20lglfy6]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "a4e90d0ce6daf7c8742b582ce37e036b9aacd5b8085e8f9e75f32955791d9ddd",
+        "length": 75,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 554396566,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 1801,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 19,
+      "tool_call_id": "call_aa5386818d724e47b723072e",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[37].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_aa5386818d724e47b723072e]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_aa5386818d724e47b723072e]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "629957a6f035d2fa6ad9d915cfc7153031301e07c100a155dc2545cf249b8948",
+        "length": 2604,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 407736606,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 1183,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 20,
+      "tool_call_id": "call_nnyfjwr1omlhyjvhu9c0ye8j",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[39].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_nnyfjwr1omlhyjvhu9c0ye8j]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_nnyfjwr1omlhyjvhu9c0ye8j]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "e780069f0a9eaff06e2962a813e7e58b377d5fcc5c23dca2f2f33e7e54ad31f7",
+        "length": 582,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 384390832,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 1061,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 21,
+      "tool_call_id": "call_baed5eaeaca44b9085cd7165",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[41].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_baed5eaeaca44b9085cd7165]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_baed5eaeaca44b9085cd7165]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "1e9d5214e1b563affb3239a52514a85e1ff5e734be6dab0b3f07d4dd6c96f75d",
+        "length": 75,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 14610622318,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 1469,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 22,
+      "tool_call_id": "call_x4tldlfoa4fucxbgr4l23o1e",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[43].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_x4tldlfoa4fucxbgr4l23o1e]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_x4tldlfoa4fucxbgr4l23o1e]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "4f4e7c66d111a53b021a924c3871e8a5cb1c9b2d23fbcdffea595f3fdf43bffd",
+        "length": 118,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 771199628,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 1089,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 23,
+      "tool_call_id": "call_021033d35f2b420989802bf7",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[45].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_021033d35f2b420989802bf7]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_021033d35f2b420989802bf7]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "02593e2bf4837433692571ccaf70b4dfe2204ceb497f833c5c5846d80ff196c3",
+        "length": 23,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 203069162,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 548,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 24,
+      "tool_call_id": "call_3a087a7bd00744db80c0de97",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[47].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_3a087a7bd00744db80c0de97]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_3a087a7bd00744db80c0de97]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "fbdff9ec321d807408857cbd34734de9e7bc83f805574007f1f79f74ffc34128",
+        "length": 89,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 174330944,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 548,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 25,
+      "tool_call_id": "call_3e688172ef3243879dde3ea4",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[49].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_3e688172ef3243879dde3ea4]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_3e688172ef3243879dde3ea4]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "aa7d0720fdabc4cbb35045fde3aff2973c5d4100d6084751b5618ad3d5eacf04",
+        "length": 74,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 199841967,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 586,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 26,
+      "tool_call_id": "call_0kfw1rkpp4vylal5mwaprxrw",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[52].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_0kfw1rkpp4vylal5mwaprxrw]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_0kfw1rkpp4vylal5mwaprxrw]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "aa7d0720fdabc4cbb35045fde3aff2973c5d4100d6084751b5618ad3d5eacf04",
+        "length": 74,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 214544180,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 586,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 27,
+      "tool_call_id": "call_d18c9b8504db4418b74685c4",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[56].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_d18c9b8504db4418b74685c4]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_d18c9b8504db4418b74685c4]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "72ae26ef4602301c676164645cccdfdd2f9e6ba17ea7104982480df4ab5e063b",
+        "length": 28,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 201779284,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 548,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    },
+    {
+      "ordinal": 28,
+      "tool_call_id": "call_3cdb795448574cb5a84700ff",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[58].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_3cdb795448574cb5a84700ff]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_3cdb795448574cb5a84700ff]"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "2ffe37d2c7550c7e710ca4944bad6a7ed838e9ced995ba2dfe039c799415384c",
+        "length": 81,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 189055867,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 52,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "derived",
+          "source_field": "r2 marker + mini_agent_adapter.py AttachedDockerEnvironment.config.cwd",
+          "note": "/testbed is planned code/config behavior; actual per-call cwd is not recorded"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.image + workload_catalog/run_02.yaml",
+          "planned_value": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+          "actual_observed": "unknown"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version + R2 ATTEMPT_STARTED.json.identity.code_sha256",
+          "note": "version/code identity is registered; actual per-call executable path is not recorded"
+        },
+        "interpreter": {
+          "status": "derived",
+          "source_field": "R2 ATTEMPT_STARTED.json.identity.interpreters",
+          "note": "registered interpreter identity; per-call process observation is not recorded"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    }
+  ],
+  "assessment": {
+    "command_hashes_all_match": true,
+    "association_integrity": true,
+    "safe_executable": false,
+    "fidelity_ready": false,
+    "reason": "command string and hook projection are recoverable, but structured argv, actual cwd/stdin/environment, initial state, dependencies and semantic correctness are incomplete"
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "schema": "p3-01-audit-v2",
+  "source_run": "fixture",
+  "attempt_id": "fixture-a1",
+  "source_manifest_verified": true,
+  "file_checks": [
+    {
+      "path": "candidate.patch",
+      "status": "recorded",
+      "bytes": 0,
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "metadata.json",
+      "status": "recorded",
+      "bytes": 93,
+      "expected_sha256": "df5c1f199f9520112628c4c89e59751ec4b5dda33445d7409e6fddb1932d87b6",
+      "actual_sha256": "df5c1f199f9520112628c4c89e59751ec4b5dda33445d7409e6fddb1932d87b6"
+    },
+    {
+      "path": "mini_trajectory.json",
+      "status": "recorded",
+      "bytes": 354,
+      "expected_sha256": "fabcd55302e79bb1607216818f0aa2863f2ebbff20e19c0df780b9975890611d",
+      "actual_sha256": "fabcd55302e79bb1607216818f0aa2863f2ebbff20e19c0df780b9975890611d"
+    },
+    {
+      "path": "mini_tool_events.jsonl",
+      "status": "recorded",
+      "bytes": 378,
+      "expected_sha256": "6ee548e287741c50bf6dc86516725d38033894cbbfde6ba6d6180ba515e869f9",
+      "actual_sha256": "6ee548e287741c50bf6dc86516725d38033894cbbfde6ba6d6180ba515e869f9"
+    }
+  ],
+  "counts": {
+    "trajectory_calls": 1,
+    "hook_events": 2,
+    "hook_pairs": 1
+  },
+  "identity": {
+    "task_id": "t",
+    "source_type": "synthetic",
+    "harness": "derived from mini_trajectory.info.mini_version",
+    "mini_version": "2.4.6",
+    "model": {
+      "status": "derived",
+      "value": "fake/model",
+      "source_field": "mini_trajectory.json.info.config.model.model_name"
+    },
+    "image": {
+      "status": "missing",
+      "source_field": "metadata.json"
+    }
+  },
+  "calls": [
+    {
+      "ordinal": 1,
+      "tool_call_id": "call_fixture",
+      "source_fields": {
+        "trajectory_command": "mini_trajectory.json.messages[0].tool_calls[0].function.arguments.command",
+        "hook_open": "mini_tool_events.jsonl[event=open,tool_call_id=call_fixture]",
+        "hook_closed": "mini_tool_events.jsonl[event=closed,tool_call_id=call_fixture"
+      },
+      "command": {
+        "status": "recorded",
+        "sha256": "ef867f3649ebd4e8f51c08adc29afc0a085e94009c8df5ea259a66f471c44620",
+        "length": 9,
+        "hook_projection_match": true,
+        "projection": {
+          "status": "recorded",
+          "source_field": "mini_tool_events.jsonl.command_view"
+        },
+        "structured_argv": {
+          "status": "unknown",
+          "source_field": "trajectory command string",
+          "note": "shell command is not structured argv"
+        }
+      },
+      "association": {
+        "status": "recorded",
+        "duplicate_id": false,
+        "open_count": 1,
+        "closed_count": 1
+      },
+      "timing": {
+        "status": "recorded",
+        "duration_ns": 10,
+        "source": "mini_tool_events.jsonl t_start_ns/t_end_ns"
+      },
+      "returncode": {
+        "status": "recorded",
+        "value": 0
+      },
+      "output": {
+        "content_present": {
+          "status": "recorded",
+          "source_field": "mini_trajectory.json tool message.content"
+        },
+        "length": 3,
+        "truncation": {
+          "status": "unknown",
+          "source_field": "mini_tool_events.jsonl",
+          "note": "no truncation marker"
+        }
+      },
+      "fields": {
+        "cwd": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call cwd field"
+        },
+        "stdin": {
+          "status": "missing",
+          "source_field": "mini_trajectory.json/mini_tool_events.jsonl",
+          "note": "no per-call stdin field"
+        },
+        "environment": {
+          "status": "unknown",
+          "source_field": "mini_trajectory.json.info.config",
+          "note": "config is not observed child environment"
+        },
+        "image": {
+          "status": "missing",
+          "source_field": "metadata.json",
+          "note": "metadata has no image field"
+        },
+        "software": {
+          "status": "derived",
+          "source_field": "mini_trajectory.json.info.mini_version",
+          "note": "harness version only"
+        },
+        "file_initial_state": {
+          "status": "missing",
+          "source_field": "candidate.patch and run files",
+          "note": "final patch is not per-call initial state"
+        },
+        "prior_edits": {
+          "status": "unknown",
+          "source_field": "candidate.patch",
+          "note": "final patch does not establish per-call ordering"
+        },
+        "dependency": {
+          "status": "unknown",
+          "source_field": "trajectory and command string",
+          "note": "no dependency graph recorded"
+        },
+        "remote_dependency": {
+          "status": "unknown",
+          "source_field": "command projection and metadata",
+          "note": "no network/endpoint evidence"
+        },
+        "output_correctness": {
+          "status": "unknown",
+          "source_field": "returncode/output evidence",
+          "note": "no per-call semantic verifier"
+        }
+      }
+    }
+  ],
+  "assessment": {
+    "command_hashes_all_match": true,
+    "safe_executable": false,
+    "fidelity_ready": false,
+    "reason": "command string and hook projection are recoverable, but structured argv, cwd/stdin/environment, initial state, dependencies and semantic correctness are incomplete"
+  }
+}

@@ -1,6 +1,15 @@
 # 项目总览与收尾清单
 
-更新：2026-09-16。日常只读本页；查材料用 [文档索引](README.md)，实施时仍须遵守任务书的必读材料。这里不提供新的运行授权。
+更新：2026-09-20。日常只读本页；查材料用 [文档索引](README.md)，实施时仍须遵守任务书的必读材料。这里不提供新的运行授权。
+
+<!-- PROJECT_STATE:START -->
+当前状态由 [2026-09-20 状态真源](../project_state.json)统一登记；这是进度记录，不是执行授权。
+
+- G1：登记小闭环通过；G2 / G3-R 未通过。
+- CPU-02：初次 B 准备失败，修复后 R1 映射失败；后续 perf 权限受限。路线暂停，无有效容器热点样本，新 retry 未授权。
+- P2-01 小样分析与 P3-01 v3 现有 trace 审计已交付；不授权 Replay。
+- 当前：P1-12 小规模独立任务 × 重复的离线选样与预算设计；不启动容器、模型或新实验。
+<!-- PROJECT_STATE:END -->
 
 ## 1. 现在做到哪里
 
@@ -12,18 +21,49 @@
 | 真实 Coding | RUN-01-C 与 RUN-02-R2；同一 Django task 的两个真实 attempt | 已有封存证据，不是两个不同 benchmark；见 [集中裁定](g1_consolidated_review.md#0-本次裁定及下一步边界当前有效) |
 | G1 资源观测 | native arm64/cgroup v1；容器 CPU/Wall/memory、工具时间、mini 宿主区间观测及机制补证 | `PASSED（登记小闭环范围）`，见集中裁定 §0 |
 | G1-02 补证 | 常驻服务/异步生命周期、固定6对采集开销比较 | B 单次完成并验收；不重跑，不外推稳定开销百分比 |
-| CPU / Hotspot | CPU-01 已验收；CPU-02 真实 Verifier 段的容器映射与 record 接线 | CPU-02 A 评审五组反例（屏障协议、符号链、终态、端点、收尾）已一次修复重验（31 项定向回归）；B 未授权，见 [CPU-02 交付 §8](cpu_02_delivery.md)。容器 PMU 归因与 G2 仍未完成 |
+| CPU / Hotspot | CPU-01 合成进程 perf 可测性已验收；CPU-02 特权 perf 路线暂停 | CPU-02 无有效容器热点样本；特权监督器仅为实验性离线源码，未 root-owned 安装、未批准、未执行。旧命令仅作历史证据，不是当前行动指引。P2-01 已基于封存 RUN-01/RUN-02 生成 [候选清单](../reports/cpu/selected_cases.yaml) 及 [独立复核报告](../reports/analysis/P2-01-review-v1/summary.md) |
 | 多场景 / Replay / Scale | 依用途与 Gate 逐步扩展 | 后续计划，不在当前收尾中启动 |
 
 不使用任务完成百分比：已有小样工具链与最终研究目标的工作量不同，测试数也不是 benchmark 数。
 
-## 2. 当前只保留一个实施方向
+## 2. 当前实施方向
 
-CPU-01 B 已验收（宿主合成目标 10 项计数有效、354 samples；98 行中 83 行裸地址，0 个 `[unknown]` 不等于符号完整）。CPU-02 A 首轮交付后，原评审注入离线替身发现五组生产接线缺口（就绪屏障协议错误、符号链二进制损坏、失败仍 complete、Docker 端点未固定、日志收尾竞态），已一次修复并以 31 项定向＋4 项官方 parser venv 集成回归重验，见 [CPU-02 交付 §8](cpu_02_delivery.md)。A 未运行真实 Docker/perf，不重跑 Agent 或 READY/smoke/G1-02。
+按顶部状态真源推进 P1-12 离线设计；P3-01 以下内容为已完成审计记录，CPU-02 保持暂停。
 
-下一步顺序：原评审复核 CPU-02 A 修复 → 用户批准最终 B 清单及工具权限 → 单次真实 Verifier 采样（一次 eval＋一次 record，300s 预算）。当前 `A_REVIEW_FIXES_APPLIED / B_NOT_AUTHORIZED`。CPU-01/CPU-02 结果不构成真实 Agent 热点或容器 PMU 归因，G2 未通过。
+### 2.1 阶段总结与证据边界
 
-`reports/cpu/CPU-01/` 为一次性封存证据，不重复执行；`reports/cpu/CPU-02/` 尚不存在（A 未创建批准/attempt）。[G1-02 交付](g1_02_delivery.md) 为已完成历史阶段，当前 Gate 决议以集中评审为准。
+已有交付是一个真实 Coding task 的两个 attempt，不是多任务研究。RUN-02 Agent scope 为 51.007123 core-s、143.651636264 s、内核内存峰值 1,434,140,672 bytes；RUN-01 对应为 6.411718 core-s、134.099304929 s、68,497,408 bytes。这些差异只作描述，不能归因为模型、工具或硬件。
+
+P2-01 六条候选是观察角色，三项 Top 共用同一 RUN-02 Agent scope；Verifier 仅为描述性参照。宿主 mini 的 4.19 s CPU 仅覆盖可读区间，不能据此算整体等待比例。正式 I/O null、缺少真实函数热点及样本代表性仍如实保留。
+
+本轮回读 P2-01 manifest：4 个输入、2 个输出 bytes/SHA-256 全部一致。此核验不是逐字段重新验收，也不宣称完整 P2-01 代表性选择或 G2 通过。研究结论与必交/可选边界见 [方法阶段总结](../methodology.md#2026-09-17-阶段研究结论)。
+
+### 2.2 P3-01 离线审计已完成（v3 纠正，限定范围）
+
+依据任务计划，P3-01 设计可与 P2 交错；本次先判断 trace 是否足以支撑 replay，而非假定可重放。
+
+已只读盘点 `data/raw/generated/RUN-02/20260915T012427Z-2d75aa/`：
+
+| 证据 | 本轮实际确认 | 尚不能据此证明 |
+| --- | --- | --- |
+| metadata.json | 有 run/attempt/task、执行与评估状态、预算及归档字段 | 完整环境与文件初态 |
+| mini_trajectory.json | 28 条 `function.arguments.command` 可从真实 tool_call_id 关联读取 | 结构化 argv、stdin、cwd、依赖仍不可完整恢复 |
+| mini_tool_events.jsonl | 56 条 JSONL；28 个 open/closed 配对；命令 hash/length 与 trajectory 逐项匹配 | shell command 字符串不是安全可执行 argv；输出截断与逐步正确性仍未证明 |
+| candidate.patch、verifier/test_output.txt | 文件存在 | 可还原每次编辑前后的工作树，或逐工具输出正确性 |
+
+本次保留 v1/v2 原字节，并生成独立 `reports/replay/P3-01-audit-v3/` 下的 [inventory.json](../reports/replay/P3-01-audit-v3/inventory.json)、[summary.md](../reports/replay/P3-01-audit-v3/summary.md)、[corrections.md](../reports/replay/P3-01-audit-v3/corrections.md)、[manifest.json](../reports/replay/P3-01-audit-v3/manifest.json)。逐调用区分 recorded/derived/missing/unknown；通过 R2 marker、catalog 和版本化代码身份可推导注册 image、计划 cwd 与解释器，但实际逐调用运行时观测仍为 unknown。命令字符串可恢复但不等于结构化 argv、安全可执行或保真重放，未复制凭据或整段敏感命令。
+
+验收：源 manifest、R2 marker/catalog/代码身份、28 次工具调用配对、命令 hash/length、全局顺序及第 14 项自动生成哈希均已核验；孤立/重复/缺失事件不能通过，合成反例与重复分析回归通过。结论为 trace 支持调用序列、shell command 字符串 hash、生命周期和返回码的离线描述性审计，但仍不具备安全且保真的执行条件；限定 P3-01 审计工作包关闭，不代表 Replay Spec、P3-02 或 G3-R 完成。
+
+边界：只读取已有证据、编写最小离线分析及合成解析测试；不运行源命令、不调用 Docker/sudo/perf/网络/模型、不创建 approval/attempt、不安装、不提交推送。P3-02 executor 与真实保真验证另行审批；G1/G2/G3-R 不因本轮改变。
+
+### 2.3 CPU 历史状态与暂停边界
+
+CPU-01 B 已验收（宿主合成目标 10 项计数有效、354 samples；98 行中 83 行裸地址，0 个 `[unknown]` 不等于符号完整）。CPU-02 的权限确认、PID 诊断和监督器均只形成历史/实验性证据；没有有效的 CPU-02 容器热点样本。特权 perf/监督器路线暂停，不重跑 Agent 或 READY/smoke/G1-02；旧交付和失败报告仅作历史证据。
+
+CPU-02 特权 perf/监督器路线现暂停：没有有效容器热点样本，旧执行命令不得作为当前行动指引。监督器源码和历史证据保留；安装、sudoers、真实 perf 绑定与回收均未获批。P2-01 的离线候选选择已生成 [selected_cases.yaml](../reports/cpu/selected_cases.yaml) 和 [独立复核报告](../reports/analysis/P2-01-review-v1/summary.md)，仅满足现有小样候选选择的限定范围，不创建测量样本、不授权 P2-02 perf 执行。CPU-01/CPU-02 结果不构成真实 Agent 热点或容器 PMU 归因，G2 未通过。
+
+`reports/cpu/CPU-01/` 为一次性封存证据，不重复执行；`reports/cpu/CPU-02/` 仅含历史权限确认/PID 诊断等记录，不含有效容器热点样本，当前不创建新的批准/attempt。[G1-02 交付](g1_02_delivery.md) 为已完成历史阶段，当前 Gate 决议以集中评审为准。
 
 ## 3. 代码与证据地图
 

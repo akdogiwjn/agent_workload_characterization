@@ -1,0 +1,831 @@
+{
+  "schema": "local-package-observation-v1",
+  "observed_on": "2026-09-20",
+  "method": "read_dist_info_metadata_without_importing_packages",
+  "historical_environment_claim": false,
+  "rebuild_lock": false,
+  "limitations": [
+    "does_not_hash_all_installed_code",
+    "does_not_pin_build_dependencies_or_wheel_artifacts",
+    "does_not_freeze_remote_model_service",
+    "not_a_complete_machine_snapshot"
+  ],
+  "environments": [
+    {
+      "path": ".venvs/mini-swe-agent-2.4.6-env01",
+      "exists": true,
+      "python_binary_sha256": "e22abd8ede94ba8df9d737497b53a8840c2d78525ea2c666c81ff414c3df01ec",
+      "pyvenv_cfg_sha256": "374841307e7df5377c1b86bc20418beb398d76b1ec4f99c7f833e086f483e63d",
+      "packages": [
+        {
+          "name": "aiohappyeyeballs",
+          "version": "2.7.1",
+          "metadata_sha256": "e68d1bf48aec9dcc2767343dedec25e12860085cba180e10bc3d3bdd031602ba"
+        },
+        {
+          "name": "aiohttp",
+          "version": "3.14.3",
+          "metadata_sha256": "287d4346fb85cdf58dae89ac33639bef485653990a19af9bcd7d39e47e54ea1b"
+        },
+        {
+          "name": "aiosignal",
+          "version": "1.4.0",
+          "metadata_sha256": "09247ef1da8bc696728d47130e702e4307f6f7d101d6c485bff9f3a71ce7008d"
+        },
+        {
+          "name": "annotated-doc",
+          "version": "0.0.5",
+          "metadata_sha256": "8c24d70c5d9153d22123353a906042fd7603df2d15c2196290b0f8a962558c46"
+        },
+        {
+          "name": "annotated-types",
+          "version": "0.8.0",
+          "metadata_sha256": "614985b278f601b8ef863f82783b991cc3ada4b89f592eb71c7c48c5f2ef2298"
+        },
+        {
+          "name": "anyio",
+          "version": "4.15.1",
+          "metadata_sha256": "043aecb571af7189e8a6c528f5d8e32545f1b2cdfaaf761d51e6d5b67ea3ca81"
+        },
+        {
+          "name": "attrs",
+          "version": "26.1.0",
+          "metadata_sha256": "4cd40e690f23bf37cbcad34efd6758e062df1df07c86833f7e3ce95bf1fa38cc"
+        },
+        {
+          "name": "boto3",
+          "version": "1.43.92",
+          "metadata_sha256": "cad3ef832fd7715dfcb8ad94b277e530d960b9364e25899764392ddb94208acb"
+        },
+        {
+          "name": "botocore",
+          "version": "1.43.92",
+          "metadata_sha256": "fdae69d0c9c5dd6a3637b43f0c39411a9079d5f2dd358f7f355855a0bb238c4b"
+        },
+        {
+          "name": "certifi",
+          "version": "2026.7.22",
+          "metadata_sha256": "ef5af1638fbb23676ac3c5777dfcfc2cd9c348fe4172ed5ba3d277655b248090"
+        },
+        {
+          "name": "charset-normalizer",
+          "version": "3.5.1",
+          "metadata_sha256": "955c93827d59f1280f6d6a76b1e11bfb999cc65a55df83a6f9b28b7bc0e467f6"
+        },
+        {
+          "name": "click",
+          "version": "8.5.0",
+          "metadata_sha256": "e87bce0bd194de70dfb8e708e0a6b0483009f25611804eaf87bfeb63e6c20501"
+        },
+        {
+          "name": "datasets",
+          "version": "5.0.1",
+          "metadata_sha256": "66ad795b9be09559d4bacbe66615bd2ee0cfe47a8140ab58cdb3122e457c57b5"
+        },
+        {
+          "name": "dill",
+          "version": "0.4.1",
+          "metadata_sha256": "040d6c84eddf29c8c14dc2aef214962a919803f557243824dd4f8aa3b49e3868"
+        },
+        {
+          "name": "distro",
+          "version": "1.9.0",
+          "metadata_sha256": "31632ab2de5591131091b3397bdcdf797718579d85a75186f06839dd0c09e81d"
+        },
+        {
+          "name": "fastuuid",
+          "version": "0.14.0",
+          "metadata_sha256": "bb27f5891154881aef7f1a192f91d49f7d466be564fe0b2865b5e759342fb0b4"
+        },
+        {
+          "name": "filelock",
+          "version": "3.32.6",
+          "metadata_sha256": "68140423ada2344c8588386e4a402ee8a708cd09382803af5493329f9eb78afa"
+        },
+        {
+          "name": "frozenlist",
+          "version": "1.8.0",
+          "metadata_sha256": "946c22dc9f7e2c76f2d698f00a4306dbe49a820e2b3f1a0e22fe5286cbec35f1"
+        },
+        {
+          "name": "fsspec",
+          "version": "2026.6.0",
+          "metadata_sha256": "20c85c024a69a059237c3a7985d381a3745017ae1d634c554b0c5901dde81095"
+        },
+        {
+          "name": "h11",
+          "version": "0.16.0",
+          "metadata_sha256": "28f326098ac09fcba79b8f180f96087c841fe2456215cb7b872a9c7d5cd19d64"
+        },
+        {
+          "name": "hf-xet",
+          "version": "1.6.0",
+          "metadata_sha256": "becdd6ec73b515dc38c59501956134eb0b903bfed33ffcd99b252361acd926e9"
+        },
+        {
+          "name": "httpcore",
+          "version": "1.0.9",
+          "metadata_sha256": "fe2d4fda6199128978779e0cf27f3c045c531863fcdd987eacc74f3a18d41c21"
+        },
+        {
+          "name": "httpx",
+          "version": "0.28.1",
+          "metadata_sha256": "febb9b0f8f3e80d57c8199c304f35c4336e8581d1d18d7983c92766b82793b25"
+        },
+        {
+          "name": "huggingface_hub",
+          "version": "1.31.0",
+          "metadata_sha256": "9074a7b1a425e426705b35600411a126e90026b44475c3159b3b647edff1e1df"
+        },
+        {
+          "name": "idna",
+          "version": "3.19",
+          "metadata_sha256": "4d113161aca8582e8d28fddf3ea50f19b607209c2b3e4364379a163454680084"
+        },
+        {
+          "name": "importlib_metadata",
+          "version": "8.9.0",
+          "metadata_sha256": "e7bd660b50558f57190749c1af03c22b9d4b561ae833da46db403c525a37cbcf"
+        },
+        {
+          "name": "Jinja2",
+          "version": "3.1.6",
+          "metadata_sha256": "68c5548fb67c4132a13898d9b31ec50c6bea2abdd915d921f214355c3a6499c8"
+        },
+        {
+          "name": "jiter",
+          "version": "0.16.0",
+          "metadata_sha256": "b1bcf7374eb4f4195f890ab610b6de54ae8766456df7ddf757f95d255097ef2e"
+        },
+        {
+          "name": "jmespath",
+          "version": "1.1.0",
+          "metadata_sha256": "81181e9a312f1b87e5be7c8376c57b0e8c962ba524a25a313d43dc2e2d3984f3"
+        },
+        {
+          "name": "jsonschema",
+          "version": "4.26.0",
+          "metadata_sha256": "05b189866ca98a96da3934bf6b83687ced3ff85325273b77e16b705f6d8b26d2"
+        },
+        {
+          "name": "jsonschema-specifications",
+          "version": "2025.9.1",
+          "metadata_sha256": "35abd41757f32b4ea24756920ded47b70173d77cbc052a5a6d3ab583b2e8d89d"
+        },
+        {
+          "name": "linkify-it-py",
+          "version": "2.2.0",
+          "metadata_sha256": "5bc112f7a322ec1d8b3a71c3357daf6340353f773ad386fa9784c22de8339eb9"
+        },
+        {
+          "name": "litellm",
+          "version": "1.100.1",
+          "metadata_sha256": "fd8dbb1ff59dc9c97aa7be89dc66eca58c7f9422329fe02c350c34e7382f331f"
+        },
+        {
+          "name": "markdown-it-py",
+          "version": "4.2.0",
+          "metadata_sha256": "72c36ff516755443b1ecb61e17b2567a990230b49a504b0eb0c42d5f82448a9c"
+        },
+        {
+          "name": "MarkupSafe",
+          "version": "3.0.3",
+          "metadata_sha256": "12b4cc61a7fa288cf7667ee3f213786d9619db57fb33ff6f934afbcb5c12ec81"
+        },
+        {
+          "name": "mdit-py-plugins",
+          "version": "0.6.1",
+          "metadata_sha256": "cd9486029c276a4bf819a85ca25f32f3bcff07a7e1c577dd45be523c7f0c472e"
+        },
+        {
+          "name": "mdurl",
+          "version": "0.1.2",
+          "metadata_sha256": "b53b29d48f499367053fda3c81e7ce27d2558380ebbf83e66023b02eb7ddd25d"
+        },
+        {
+          "name": "mini-swe-agent",
+          "version": "2.4.6",
+          "metadata_sha256": "70969b38427738414d526b3662ac2323a17feb4e2ed8f75933a43ff84db9fc74"
+        },
+        {
+          "name": "multidict",
+          "version": "6.8.0",
+          "metadata_sha256": "4df12cd58b5f1f4054b4867baed24603372f1da4ee9abe98c66b752b032df4e2"
+        },
+        {
+          "name": "multiprocess",
+          "version": "0.70.19",
+          "metadata_sha256": "24146d46d724ce041d187426babb43dc5a6a4cd5d1acad0d7fc0d12693376fa5"
+        },
+        {
+          "name": "numpy",
+          "version": "2.4.6",
+          "metadata_sha256": "b082c52ccbe3b880bae177c35171b52ed6c947f3ad71e3762f2723f60a411de0"
+        },
+        {
+          "name": "openai",
+          "version": "2.54.0",
+          "metadata_sha256": "a2b835e6085339169e701557eca14b1b93d5cabc5ff01f535a66023b5f41bb59"
+        },
+        {
+          "name": "packaging",
+          "version": "26.3",
+          "metadata_sha256": "70fdb89fc4d4a9a043bf7372b8972bcc883fddff34ab55e9cf80d73875384763"
+        },
+        {
+          "name": "pandas",
+          "version": "3.0.5",
+          "metadata_sha256": "119bd5541f4e2d413f440c82ad75b7b0457602f368b4b02efb467297c3c4a5b1"
+        },
+        {
+          "name": "pip",
+          "version": "23.3.1",
+          "metadata_sha256": "78f778a09c2d08e83b7b986379173345181ac475126acc659913cd1ccb4a4e81"
+        },
+        {
+          "name": "platformdirs",
+          "version": "4.11.8",
+          "metadata_sha256": "394a81a9278255665492224e01f9af1873a8bb8c77450676b7ec4947c6909e26"
+        },
+        {
+          "name": "prompt_toolkit",
+          "version": "3.0.53",
+          "metadata_sha256": "d04994e4401b88abf884ca54fb3b85e50a8b4fb1fde1ed7eb3ece9d8bf5459a9"
+        },
+        {
+          "name": "propcache",
+          "version": "0.5.2",
+          "metadata_sha256": "f534495cdd2f915af8e649783d95fddcb1a05a1ac181850f0c973c0a78f7bbae"
+        },
+        {
+          "name": "pyarrow",
+          "version": "25.0.1",
+          "metadata_sha256": "12ed8d0988a6f7153fec923ee47b7fc1d6134463a86b1b89fa36f24c250163ff"
+        },
+        {
+          "name": "pydantic",
+          "version": "2.13.5",
+          "metadata_sha256": "0685830d13647bd6f3f05526043d32a8b2a221d86b53773053d6c52bb17a9c07"
+        },
+        {
+          "name": "pydantic_core",
+          "version": "2.46.5",
+          "metadata_sha256": "29768c038c0bb3564c0a87ef50ef78d18a2372474bdef0ba356a8c0fd4bd6028"
+        },
+        {
+          "name": "pydantic-settings",
+          "version": "2.15.0",
+          "metadata_sha256": "5ac12e408df62f1d4c7643146d9df04ace749f1fe5cf28b3b794be0b2834ca6d"
+        },
+        {
+          "name": "Pygments",
+          "version": "2.21.0",
+          "metadata_sha256": "1dde075570136774c706bf0009183a793fe0ee262e4a5590cc6eff8453eedd43"
+        },
+        {
+          "name": "python-dateutil",
+          "version": "2.9.0.post0",
+          "metadata_sha256": "a9d436da322be808332f98d88325998e87cb693a678a9969feb4cfad729a6e93"
+        },
+        {
+          "name": "python-dotenv",
+          "version": "1.2.3",
+          "metadata_sha256": "2380ea9700796b7398fd8156e22f9028afe5eebf918eb84a6bd5ebb0a8fdd3b5"
+        },
+        {
+          "name": "PyYAML",
+          "version": "6.0.3",
+          "metadata_sha256": "03c3b415ed38d09faedc49360e930769b40c58f68585e6de00e2e4916a858d34"
+        },
+        {
+          "name": "referencing",
+          "version": "0.37.0",
+          "metadata_sha256": "c93b00e6ab1524fd60848376604c189a114374776475c25a31d57be47b29de6a"
+        },
+        {
+          "name": "regex",
+          "version": "2026.9.10",
+          "metadata_sha256": "0ea2fa001b650382a8d968125230865955d559fbf1bd3d4064a665053620867f"
+        },
+        {
+          "name": "requests",
+          "version": "2.34.2",
+          "metadata_sha256": "8c384ba3e979480faae2859d3c5e6c1276dd2c3616e322e124d52c8cfc556f27"
+        },
+        {
+          "name": "rich",
+          "version": "15.0.0",
+          "metadata_sha256": "fad34fc603fac4481bf81f8dd629492fc302c0ec31909c86644751512afb2e3b"
+        },
+        {
+          "name": "rpds-py",
+          "version": "2026.6.3",
+          "metadata_sha256": "f8be7b17da3980b2c48596941411a43c70ac41b1e2d530aa531f2c15eab2eb1c"
+        },
+        {
+          "name": "s3transfer",
+          "version": "0.19.2",
+          "metadata_sha256": "8730b9a4c6d5e9104a664b610d2297176eb42444b5369b37486b668dc9e27471"
+        },
+        {
+          "name": "setuptools",
+          "version": "68.0.0",
+          "metadata_sha256": "4de99d6c16d4ac95c1c13a1a3c2fc28fbc96172637d8782b189be71ae5be1da9"
+        },
+        {
+          "name": "shellingham",
+          "version": "1.5.4",
+          "metadata_sha256": "183d80220a37493262795739dd357cc5bb3f49bd390cc9198d5180e5451a07fa"
+        },
+        {
+          "name": "six",
+          "version": "1.17.0",
+          "metadata_sha256": "562042078c2752549f6d8a7c86dbc5dd708088a7be6d80672ec7b07100b72468"
+        },
+        {
+          "name": "sniffio",
+          "version": "1.3.1",
+          "metadata_sha256": "0b318b57098edeccf585e60a889a6b6a7b5c4086f3a9aa62eff76a1d3cee12d9"
+        },
+        {
+          "name": "tenacity",
+          "version": "9.1.4",
+          "metadata_sha256": "2e3b45ca8334494f30fd1306d2adce6d47bc5c1d7a4e5df5462a3d1bd74bf5b0"
+        },
+        {
+          "name": "textual",
+          "version": "8.2.8",
+          "metadata_sha256": "fa4831c4001c94a8d8177cccd05099d8fa021575c81a3bd53eae3b995eb22f1e"
+        },
+        {
+          "name": "tiktoken",
+          "version": "0.14.0",
+          "metadata_sha256": "30086725221223f7a19463e71c0e9f79fe7aba9125b36632c00bf50a23fa968a"
+        },
+        {
+          "name": "tokenizers",
+          "version": "0.23.2",
+          "metadata_sha256": "d2d200c0d0c48895b2c3b02cdd8c06c26dea8f9be38ef193e9b4dd5a566c89be"
+        },
+        {
+          "name": "tqdm",
+          "version": "4.70.0",
+          "metadata_sha256": "0d95b85b90428f8776afc4a92b17c5094f78ee98d150b3255acbcdf4e9d57941"
+        },
+        {
+          "name": "typer",
+          "version": "0.27.2",
+          "metadata_sha256": "d1b73586e27d662dc32af374a4f073d167706e0b2e5fa025c0a507ba0eeb4ccb"
+        },
+        {
+          "name": "typing_extensions",
+          "version": "4.16.0",
+          "metadata_sha256": "b05084ca1d50879865178d9fff9fabeab61bdfb1f361bfbde95421ffc8f9be46"
+        },
+        {
+          "name": "typing-inspection",
+          "version": "0.4.4",
+          "metadata_sha256": "bad3d9e6342ef6750cf5128ec942327b8bebdce0b6e4d6f67cb15b27ae5118da"
+        },
+        {
+          "name": "urllib3",
+          "version": "2.7.0",
+          "metadata_sha256": "66147856d30bbb6bed01c6ce3326d0f48d84ed5f286ac177633a1486b82eace5"
+        },
+        {
+          "name": "wcwidth",
+          "version": "0.8.3",
+          "metadata_sha256": "fbb263da460e71ab9b46a61cae1078343151fa9da5cbefd928aa67f9e4b42033"
+        },
+        {
+          "name": "xxhash",
+          "version": "4.0.1",
+          "metadata_sha256": "c09b864a32b9501a18e6c0e88cf5ee34c8ff304475c59e6d825812f136f3cb38"
+        },
+        {
+          "name": "yarl",
+          "version": "1.24.5",
+          "metadata_sha256": "0fd7b817553598246289189dfb95b425a15c9319d1bae355a38860419937e1c7"
+        },
+        {
+          "name": "zipp",
+          "version": "4.1.0",
+          "metadata_sha256": "a08698d0dd509325853fea0c5f7bbeff5046f16cf1666fcf0e03d0a6094c89d7"
+        }
+      ]
+    },
+    {
+      "path": ".venvs/swebench-eval-02e7a74",
+      "exists": true,
+      "python_binary_sha256": "e22abd8ede94ba8df9d737497b53a8840c2d78525ea2c666c81ff414c3df01ec",
+      "pyvenv_cfg_sha256": "2f735d806dc9eaad8254ca7e5d1664730037a1365d307ad54b0e8cde2cca31b5",
+      "packages": [
+        {
+          "name": "aiohappyeyeballs",
+          "version": "2.7.1",
+          "metadata_sha256": "e68d1bf48aec9dcc2767343dedec25e12860085cba180e10bc3d3bdd031602ba"
+        },
+        {
+          "name": "aiohttp",
+          "version": "3.14.3",
+          "metadata_sha256": "287d4346fb85cdf58dae89ac33639bef485653990a19af9bcd7d39e47e54ea1b"
+        },
+        {
+          "name": "aiosignal",
+          "version": "1.4.0",
+          "metadata_sha256": "09247ef1da8bc696728d47130e702e4307f6f7d101d6c485bff9f3a71ce7008d"
+        },
+        {
+          "name": "annotated-doc",
+          "version": "0.0.5",
+          "metadata_sha256": "8c24d70c5d9153d22123353a906042fd7603df2d15c2196290b0f8a962558c46"
+        },
+        {
+          "name": "annotated-types",
+          "version": "0.8.0",
+          "metadata_sha256": "614985b278f601b8ef863f82783b991cc3ada4b89f592eb71c7c48c5f2ef2298"
+        },
+        {
+          "name": "anyio",
+          "version": "4.15.1",
+          "metadata_sha256": "043aecb571af7189e8a6c528f5d8e32545f1b2cdfaaf761d51e6d5b67ea3ca81"
+        },
+        {
+          "name": "attrs",
+          "version": "26.1.0",
+          "metadata_sha256": "4cd40e690f23bf37cbcad34efd6758e062df1df07c86833f7e3ce95bf1fa38cc"
+        },
+        {
+          "name": "beautifulsoup4",
+          "version": "4.15.0",
+          "metadata_sha256": "b2f888103259f1607c85f3b1163be1bc49fc9941a3243c3b89a21075bfc6d4fb"
+        },
+        {
+          "name": "cbor2",
+          "version": "6.1.4",
+          "metadata_sha256": "8a339a5550b797909334ca8983b3ab287c57f51d3e4398e72f63449b3945005e"
+        },
+        {
+          "name": "certifi",
+          "version": "2026.7.22",
+          "metadata_sha256": "ef5af1638fbb23676ac3c5777dfcfc2cd9c348fe4172ed5ba3d277655b248090"
+        },
+        {
+          "name": "cfgv",
+          "version": "3.5.0",
+          "metadata_sha256": "ae126b80e15f39d0feff7368cefea2ea6478fdcedcde52918d0f58b668e19137"
+        },
+        {
+          "name": "chardet",
+          "version": "7.6.0",
+          "metadata_sha256": "2c8577bdf827dd08a9ab4f5279bce3b0a06dad9445bf9b567a85ba9ae429e9a9"
+        },
+        {
+          "name": "charset-normalizer",
+          "version": "3.5.1",
+          "metadata_sha256": "955c93827d59f1280f6d6a76b1e11bfb999cc65a55df83a6f9b28b7bc0e467f6"
+        },
+        {
+          "name": "click",
+          "version": "8.5.0",
+          "metadata_sha256": "e87bce0bd194de70dfb8e708e0a6b0483009f25611804eaf87bfeb63e6c20501"
+        },
+        {
+          "name": "datasets",
+          "version": "5.0.1",
+          "metadata_sha256": "66ad795b9be09559d4bacbe66615bd2ee0cfe47a8140ab58cdb3122e457c57b5"
+        },
+        {
+          "name": "dill",
+          "version": "0.4.1",
+          "metadata_sha256": "040d6c84eddf29c8c14dc2aef214962a919803f557243824dd4f8aa3b49e3868"
+        },
+        {
+          "name": "distlib",
+          "version": "0.4.3",
+          "metadata_sha256": "6c988f8c23faa0ef8734f6863b32976d65f5851333161e8a8df3d80fc57e080d"
+        },
+        {
+          "name": "docker",
+          "version": "7.2.0",
+          "metadata_sha256": "8f7ef7a09bf45e724742b4f3fafd448c168eb151ed575ac93a1215c8bf2bd9e6"
+        },
+        {
+          "name": "fastcore",
+          "version": "1.14.5",
+          "metadata_sha256": "5b072103345d7af2ceb5397a761da94b8fd2c4674cb25109040ba2c0a2ec6c3b"
+        },
+        {
+          "name": "filelock",
+          "version": "3.32.6",
+          "metadata_sha256": "68140423ada2344c8588386e4a402ee8a708cd09382803af5493329f9eb78afa"
+        },
+        {
+          "name": "frozenlist",
+          "version": "1.8.0",
+          "metadata_sha256": "946c22dc9f7e2c76f2d698f00a4306dbe49a820e2b3f1a0e22fe5286cbec35f1"
+        },
+        {
+          "name": "fsspec",
+          "version": "2026.6.0",
+          "metadata_sha256": "20c85c024a69a059237c3a7985d381a3745017ae1d634c554b0c5901dde81095"
+        },
+        {
+          "name": "ghapi",
+          "version": "1.1.1",
+          "metadata_sha256": "ac111b06732abef5112e19da25aae3fa54c1af6eab2fdb41a138df7eb81b3524"
+        },
+        {
+          "name": "gitdb",
+          "version": "4.0.12",
+          "metadata_sha256": "9670d2dc866039d6b7c91f52cd81c7f224cd7467f7685c7c29e6c4691d1bf3d9"
+        },
+        {
+          "name": "GitPython",
+          "version": "3.1.62",
+          "metadata_sha256": "aca32c0f7c2ea2bfac8afcd42b44ab92f79352b788222270cf9ac01fd8956c61"
+        },
+        {
+          "name": "grpclib",
+          "version": "0.4.9",
+          "metadata_sha256": "d52fbf849bf769f9057e99a409e79e55bab1f69f7eaf86e085a9b8da18dad97e"
+        },
+        {
+          "name": "h11",
+          "version": "0.16.0",
+          "metadata_sha256": "28f326098ac09fcba79b8f180f96087c841fe2456215cb7b872a9c7d5cd19d64"
+        },
+        {
+          "name": "h2",
+          "version": "4.4.1",
+          "metadata_sha256": "b17f68f6127946c3b748ea5728a9b172589ede2b9cebfa353dd5f05263096c7f"
+        },
+        {
+          "name": "hf-xet",
+          "version": "1.6.0",
+          "metadata_sha256": "becdd6ec73b515dc38c59501956134eb0b903bfed33ffcd99b252361acd926e9"
+        },
+        {
+          "name": "hpack",
+          "version": "4.2.0",
+          "metadata_sha256": "d2408cbb7b7d2f4bd041a96a850300da45e1bf79b1a380148a5fc29dcd55255f"
+        },
+        {
+          "name": "httpcore",
+          "version": "1.0.9",
+          "metadata_sha256": "fe2d4fda6199128978779e0cf27f3c045c531863fcdd987eacc74f3a18d41c21"
+        },
+        {
+          "name": "httpx",
+          "version": "0.28.1",
+          "metadata_sha256": "febb9b0f8f3e80d57c8199c304f35c4336e8581d1d18d7983c92766b82793b25"
+        },
+        {
+          "name": "huggingface_hub",
+          "version": "1.31.0",
+          "metadata_sha256": "9074a7b1a425e426705b35600411a126e90026b44475c3159b3b647edff1e1df"
+        },
+        {
+          "name": "hyperframe",
+          "version": "6.1.0",
+          "metadata_sha256": "a29f5792b9459b47658804988520009156ef8c2dea66022c2969a145065bad69"
+        },
+        {
+          "name": "identify",
+          "version": "2.6.19",
+          "metadata_sha256": "6bd3f4b6084b3aa9bbfdd4631b2edffdc2908b396dfc2971891d0356bccb4965"
+        },
+        {
+          "name": "idna",
+          "version": "3.19",
+          "metadata_sha256": "4d113161aca8582e8d28fddf3ea50f19b607209c2b3e4364379a163454680084"
+        },
+        {
+          "name": "markdown-it-py",
+          "version": "4.2.0",
+          "metadata_sha256": "72c36ff516755443b1ecb61e17b2567a990230b49a504b0eb0c42d5f82448a9c"
+        },
+        {
+          "name": "mdurl",
+          "version": "0.1.2",
+          "metadata_sha256": "b53b29d48f499367053fda3c81e7ce27d2558380ebbf83e66023b02eb7ddd25d"
+        },
+        {
+          "name": "modal",
+          "version": "1.5.5",
+          "metadata_sha256": "7d9d316733b18e1177cde8d25a4156649b79dc18eac3231a8b38ff4414b3da64"
+        },
+        {
+          "name": "multidict",
+          "version": "6.8.0",
+          "metadata_sha256": "4df12cd58b5f1f4054b4867baed24603372f1da4ee9abe98c66b752b032df4e2"
+        },
+        {
+          "name": "multiprocess",
+          "version": "0.70.19",
+          "metadata_sha256": "24146d46d724ce041d187426babb43dc5a6a4cd5d1acad0d7fc0d12693376fa5"
+        },
+        {
+          "name": "nodeenv",
+          "version": "1.10.0",
+          "metadata_sha256": "a8424896a12fd1be10526834176fc754cd296c900f40da655fb2e03c1b7eb921"
+        },
+        {
+          "name": "numpy",
+          "version": "2.4.6",
+          "metadata_sha256": "b082c52ccbe3b880bae177c35171b52ed6c947f3ad71e3762f2723f60a411de0"
+        },
+        {
+          "name": "packaging",
+          "version": "26.3",
+          "metadata_sha256": "70fdb89fc4d4a9a043bf7372b8972bcc883fddff34ab55e9cf80d73875384763"
+        },
+        {
+          "name": "pandas",
+          "version": "3.0.5",
+          "metadata_sha256": "119bd5541f4e2d413f440c82ad75b7b0457602f368b4b02efb467297c3c4a5b1"
+        },
+        {
+          "name": "pip",
+          "version": "23.3.1",
+          "metadata_sha256": "78f778a09c2d08e83b7b986379173345181ac475126acc659913cd1ccb4a4e81"
+        },
+        {
+          "name": "platformdirs",
+          "version": "4.11.8",
+          "metadata_sha256": "394a81a9278255665492224e01f9af1873a8bb8c77450676b7ec4947c6909e26"
+        },
+        {
+          "name": "pre_commit",
+          "version": "4.6.2",
+          "metadata_sha256": "9bc6183a5087af76ef837daba7a8eda0ba2d7b75dfeccfdaee0fe3687dd1905b"
+        },
+        {
+          "name": "propcache",
+          "version": "0.5.2",
+          "metadata_sha256": "f534495cdd2f915af8e649783d95fddcb1a05a1ac181850f0c973c0a78f7bbae"
+        },
+        {
+          "name": "protobuf",
+          "version": "6.33.6",
+          "metadata_sha256": "6f3b31fd64380f5e60ed10f5a2954699bcc1f6266eb74316f0ba96702d30546f"
+        },
+        {
+          "name": "pyarrow",
+          "version": "25.0.1",
+          "metadata_sha256": "12ed8d0988a6f7153fec923ee47b7fc1d6134463a86b1b89fa36f24c250163ff"
+        },
+        {
+          "name": "pydantic",
+          "version": "2.13.5",
+          "metadata_sha256": "0685830d13647bd6f3f05526043d32a8b2a221d86b53773053d6c52bb17a9c07"
+        },
+        {
+          "name": "pydantic_core",
+          "version": "2.46.5",
+          "metadata_sha256": "29768c038c0bb3564c0a87ef50ef78d18a2372474bdef0ba356a8c0fd4bd6028"
+        },
+        {
+          "name": "Pygments",
+          "version": "2.21.0",
+          "metadata_sha256": "1dde075570136774c706bf0009183a793fe0ee262e4a5590cc6eff8453eedd43"
+        },
+        {
+          "name": "python-dateutil",
+          "version": "2.9.0.post0",
+          "metadata_sha256": "a9d436da322be808332f98d88325998e87cb693a678a9969feb4cfad729a6e93"
+        },
+        {
+          "name": "python-discovery",
+          "version": "1.6.0",
+          "metadata_sha256": "6c11ebe87e7dde1facb306405e15565ebc48a755df3d93a871905ff341f68515"
+        },
+        {
+          "name": "python-dotenv",
+          "version": "1.2.3",
+          "metadata_sha256": "2380ea9700796b7398fd8156e22f9028afe5eebf918eb84a6bd5ebb0a8fdd3b5"
+        },
+        {
+          "name": "PyYAML",
+          "version": "6.0.3",
+          "metadata_sha256": "03c3b415ed38d09faedc49360e930769b40c58f68585e6de00e2e4916a858d34"
+        },
+        {
+          "name": "requests",
+          "version": "2.34.2",
+          "metadata_sha256": "8c384ba3e979480faae2859d3c5e6c1276dd2c3616e322e124d52c8cfc556f27"
+        },
+        {
+          "name": "rich",
+          "version": "15.0.0",
+          "metadata_sha256": "fad34fc603fac4481bf81f8dd629492fc302c0ec31909c86644751512afb2e3b"
+        },
+        {
+          "name": "setuptools",
+          "version": "68.0.0",
+          "metadata_sha256": "4de99d6c16d4ac95c1c13a1a3c2fc28fbc96172637d8782b189be71ae5be1da9"
+        },
+        {
+          "name": "shellingham",
+          "version": "1.5.4",
+          "metadata_sha256": "183d80220a37493262795739dd357cc5bb3f49bd390cc9198d5180e5451a07fa"
+        },
+        {
+          "name": "six",
+          "version": "1.17.0",
+          "metadata_sha256": "562042078c2752549f6d8a7c86dbc5dd708088a7be6d80672ec7b07100b72468"
+        },
+        {
+          "name": "smmap",
+          "version": "5.0.3",
+          "metadata_sha256": "761d62d78dbca38efb80f17b95a5aef5224d8288aedf980ca99c453db95047b9"
+        },
+        {
+          "name": "soupsieve",
+          "version": "2.9.2",
+          "metadata_sha256": "25ade6580817381657a42b7c18aaa903223eb696401be3eea9850d3d4a1af182"
+        },
+        {
+          "name": "swebench",
+          "version": "5.0.2",
+          "metadata_sha256": "235e11e2ab44229d5b3ee2f3bfcede96b29085c7b33137020a743ae64d6f6017"
+        },
+        {
+          "name": "synchronicity",
+          "version": "0.12.5",
+          "metadata_sha256": "7e7eae70698a8130c0309ce8734e50406a853964a7011dea3b69ea2c2335ae71"
+        },
+        {
+          "name": "tenacity",
+          "version": "9.1.4",
+          "metadata_sha256": "2e3b45ca8334494f30fd1306d2adce6d47bc5c1d7a4e5df5462a3d1bd74bf5b0"
+        },
+        {
+          "name": "toml",
+          "version": "0.10.2",
+          "metadata_sha256": "9ff624b29bc48a177f4172c8659e74595485cf7ad9fe4ee340ff8e535594a566"
+        },
+        {
+          "name": "tqdm",
+          "version": "4.70.1",
+          "metadata_sha256": "a5da70b966afea3a759716041bad7187f2ece02c22348cf9e7c0a512bbf15f57"
+        },
+        {
+          "name": "typer",
+          "version": "0.27.2",
+          "metadata_sha256": "d1b73586e27d662dc32af374a4f073d167706e0b2e5fa025c0a507ba0eeb4ccb"
+        },
+        {
+          "name": "types-certifi",
+          "version": "2021.10.8.3",
+          "metadata_sha256": "7f139189ef0dc4ef713d2915ce16b7d95349d8c4e3ee6dc0f8fbd43e7171e1b4"
+        },
+        {
+          "name": "types-toml",
+          "version": "0.10.8.20260518",
+          "metadata_sha256": "583b516f2b4a85972c76f639a99295a16a8a9a7dc2ccbf0b3078221f8e09d240"
+        },
+        {
+          "name": "typing_extensions",
+          "version": "4.16.0",
+          "metadata_sha256": "b05084ca1d50879865178d9fff9fabeab61bdfb1f361bfbde95421ffc8f9be46"
+        },
+        {
+          "name": "typing-inspection",
+          "version": "0.4.4",
+          "metadata_sha256": "bad3d9e6342ef6750cf5128ec942327b8bebdce0b6e4d6f67cb15b27ae5118da"
+        },
+        {
+          "name": "unidiff",
+          "version": "1.0.0",
+          "metadata_sha256": "75853aacf92e9ee6b4dd2bdf11d5e458adacdced32ff690019253dcd6b83e1c1"
+        },
+        {
+          "name": "urllib3",
+          "version": "2.7.0",
+          "metadata_sha256": "66147856d30bbb6bed01c6ce3326d0f48d84ed5f286ac177633a1486b82eace5"
+        },
+        {
+          "name": "virtualenv",
+          "version": "21.7.9",
+          "metadata_sha256": "e1f6eb8c7ec960b9c688e0030b69e2b97684eb5f74a6baad4b47b9071d42cc74"
+        },
+        {
+          "name": "watchfiles",
+          "version": "1.2.0",
+          "metadata_sha256": "2c92c0bfebdf6743603f6e7c4da95a53ce4d575f00cede3aa2032a8d5ce3da17"
+        },
+        {
+          "name": "xxhash",
+          "version": "4.0.1",
+          "metadata_sha256": "c09b864a32b9501a18e6c0e88cf5ee34c8ff304475c59e6d825812f136f3cb38"
+        },
+        {
+          "name": "yarl",
+          "version": "1.24.5",
+          "metadata_sha256": "0fd7b817553598246289189dfb95b425a15c9319d1bae355a38860419937e1c7"
+        }
+      ]
+    }
+  ]
+}

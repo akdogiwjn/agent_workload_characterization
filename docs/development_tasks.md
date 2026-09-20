@@ -1,10 +1,15 @@
 # AI Agent Workload Characterization 开发任务计划
 
-当前摘要（2026-09-15）：G1-02 B 已验收，G1 资源小闭环在登记范围内通过；G0 有既有通过记录。P2 可以启动离线准备，实际 perf/Hotspot 测量仍另批。详见 [G1 评审 §0](g1_consolidated_review.md)。历史任务编号、目标与 Gate 保留，不代表全项实现或当前运行授权。
+<!-- PROJECT_STATE:START -->
+当前状态由 [2026-09-20 状态真源](../project_state.json)统一登记；这是进度记录，不是执行授权。
+
+- G1：登记小闭环通过；G2 / G3-R 未通过。
+- CPU-02：初次 B 准备失败，修复后 R1 映射失败；后续 perf 权限受限。路线暂停，无有效容器热点样本，新 retry 未授权。
+- P2-01 小样分析与 P3-01 v3 现有 trace 审计已交付；不授权 Replay。
+- 当前：P1-12 小规模独立任务 × 重复的离线选样与预算设计；不启动容器、模型或新实验。
+<!-- PROJECT_STATE:END -->
 
 ## 1. 目的、范围与共同约定
-
-当前工作包：[CPU-02 任务书](cpu_02_handoff.md)及[A 提示词](cpu_02_execution_prompt.md)，**A_REVIEW_FIXES_APPLIED / B_NOT_AUTHORIZED**。A 已离线交付并修复评审五组反例（control-ACK 屏障、二进制安全符号链、终态消费清理、端点固定、日志收尾；31 项定向＋4 项 venv 集成回归，见 [A 交付 §8](cpu_02_delivery.md)）；本批只准备一个真实 Verifier 段，不实现全部 P2 或宣布 G2 通过。日常状态统一维护在 [项目总览](project_status.md)。
 
 目标不是 Agent 能力排行榜，而是将公开宏观行为与本地系统观测连接到 CPU Characterization、Hotspot、Replay / Scale。
 
@@ -341,6 +346,29 @@ GEN：VideoWeaver；EDIT：AgenticVBench。分别约 2～3 条 smoke 是预算�
 
 依赖对应场景的 smoke 和 G1；先由 P2 试点反馈修正测量。
 
+#### 当前小批次设计（2026-09-20，离线，未授权运行）
+
+长期 50～75 task 数量仍仅为后续规模建议。当前先做 Coding 小试点，不恢复 CPU-02，不以 perf/Replay 可用作为普通容器资源观测的前置。Office/Computer 保留第二阶段候选，尚未证明其 runner、初态与产物验证可用，不与 Coding 一起承诺执行。
+
+本地 `data/raw/public/**/record.json` 盘点只有 `django__django-16485` 一个 SWE-bench 记录（固定 revision `78f471bf655a3137b2e8a75af1501690ec009ec3`）。两个历史 attempt 不增加 task 数，也不自动算作新试点的受控重复。公开 trace 小样不等价于可直接执行的 benchmark task。
+
+最小选样提案：同一固定数据集内 3 个不同 Coding task，每个 3 次重复，共 9 个计划 attempt。至少需再取得 2 个不同 task 的完整记录；目前不命名不存在的本地候选、不下载。选择前登记规则：本平台镜像/官方评估可用性、许可和安全范围优先；再依据题目/补丁或公开元数据中的测试、搜索、编辑工作类型覆盖选样，不使用待测 CPU 或运行成败事后挑选。若仅选 Django，应明确项目内覆盖，不能外推整个 Coding 类别。
+
+执行前冻结 task清单、排除理由、随机种子/区组顺序（每轮每task一次）、模型/环境、正确性判据和失败处置。原任务历史数据仅作参照；重复3次不等于允许失败后自动重试。遇基础设施/清理/安全失败停止批次，剩余计划样本未运行，不能偷偷补齐；任务 resolved=false 与基础设施失败分别记录。
+
+| 预算项 | 初步上限推算，不是授权 |
+| --- | --- |
+| attempt | 3 task × 3 repeat = 9；自动 retry=0 |
+| 模型请求 | 每attempt不超过30，总不超过270 |
+| 输出 token | 每请求4096上限，理论总上限1,105,920；不是预计用量 |
+| wall | 参照既有配置每attempt30分钟，9次为270分钟；批前预检、归档和清理总预算必须在真实入口中另行闭合，不能据此直接运行 |
+| 容器 | 顺序执行；沿用原试点资源提案4CPU/8GiB，但不同task须验证足够且不擅改 |
+| 成本 | 输入token与当前计价未确定，金额上限待用户批准；成本未闭合不得 READY |
+
+当前 ready=false：缺新增记录、镜像身份/可用性确认、逐task评估条件、货币预算和独立新批身份。下一安全动作是审批“指定revision的有限候选元数据/记录获取范围”，不是直接请求9次运行。获取和执行分别审批；不拉镜像、不安装、不联网，直到用户明确授权相应步骤。
+
+离线交付已落实：选样单位、排除原则、预算推算、失败规则与统计口径（见 methodology 的 Evidence → Allowed Claim）。后续收齐记录后复用现有 runner/hook/analyzer；不复制 RUN-02 入口或新建通用执行框架。完成选样不等于完整 P1-12 或 G2 验收。
+
 建议预算：Coding 15～20、Office 15～20、Assistant 10～15、Video GEN 5～10、EDIT 5～10，合计 **50～75 个不同 task**；不是 Gate 或统计充分性承诺。
 
 来源内 short/median/tail、Tool mix 与资源试点共同选样；无可比公开来源的场景按覆盖目的解释。普通任务先按 3 runs、重点 5 runs 估算预算，正式数量由变异/精度/成本决定。
@@ -374,7 +402,9 @@ G1 通过后立即可做 P2 试点；全场景与 50～75 task 目标属于后�
 
 依赖 G1 和 P1-13。分别选择 Top CPU、Wall、Memory、调用频率及 wait-heavy 对照；按来源/配置/coverage 分层，不把缺失值当低负载。
 
-典型 case 与尾部 case 都保留，解释选择目标和有效维度。输出 `reports/cpu/selected_cases.yaml`。
+状态：**离线派生及集中验收材料已完成，限定范围待评审确认**。输入为封存的 RUN-01-C-v2 与 RUN-02-R2 review-v2；输出 [候选清单](../reports/cpu/selected_cases.yaml) 与 [P2-01 review-v1](../reports/analysis/P2-01-review-v1/summary.md)，包含输入/输出哈希、候选角色、精确字段、有效性和限制。wait-heavy 仅为低 host CPU 的假设代理，没有直接 wait 计数；共享 scope 不解释为独占 Tool CPU。此输出不授权 P2-02 perf。
+
+验收：逐项核对来源哈希和字段；缺失值不排序为低负载；候选选择可追溯到 source/run/scope；不得将候选清单解释成新运行或 RUN-01/RUN-02 因果比较。
 
 ### P2-02：perf stat Collector
 
@@ -436,6 +466,8 @@ RQ3 控制 task/config 差异后讨论 Tool 与场景解释力；RQ4 不从不�
 ### P3-01：Replay Spec 与可重放性清单
 
 依赖 G1 后质量足够的源 trace；设计可与 P2 交错，scale 不能跳过保真验证。
+
+当前状态（2026-09-20）：**P3-01 限定离线审计已完成并关闭；v3 修正了关联身份与全局事件完整性核验**。已从 RUN-02-R2 trajectory 的 `function.arguments.command` 逐项重算并核验 hook hash/length、R2 marker/catalog/代码身份、顺序、配对、时长和返回码；不执行导入命令。交付为 [P3-01 v3 inventory](../reports/replay/P3-01-audit-v3/inventory.json)、[summary](../reports/replay/P3-01-audit-v3/summary.md)、[corrections](../reports/replay/P3-01-audit-v3/corrections.md) 和 manifest，详见 [项目总览 §2.2](project_status.md#22-p3-01-离线审计已完成-v3-纠正限定范围)。CPU-02 保持暂停；本项不以 G2 通过为前提，也不替代 G3-R；P3-02 仍需另行批准。
 
 除 source trace/trace_type=replay 外，记录 cwd、argv/shell、stdin、文件初态与编辑、环境白名单、image/software、cache、远端依赖、进程/依赖拓扑和输出验证。
 
@@ -523,9 +555,9 @@ Gate evidence / next dependency:
 | M0 资产审计 | P0-00 清单、来源/筛选、复用与缺口 | **DONE（2026-09-10，r2 审计返修通过；不代表 G0 通过）** |
 | M1 最小语义闭环 | 三种来源小样、指标 fixtures、coverage，G0 | 既有 G0 通过记录；历史小样和限制仍按原交付保存 |
 | M2 资源归因闭环 | 一个真实 Runner＋机制覆盖测试，G1 | DONE（登记小闭环范围；扩展机制与平台另验） |
-| M3 CPU 试点 | PMU/hotspot/受控实验可行性，反馈测量设计 | NOT_STARTED |
+| M3 CPU 试点 | PMU/hotspot/受控实验可行性，反馈测量设计 | PARTIAL：CPU-01 合成可测性完成；P2-01 小样分析已交付；CPU-02 暂停，G2 未通过 |
 | M4 多场景正式 Characterization | 扩展任务与重复，宏观/资源/CPU 分层报告，G2 | NOT_STARTED |
-| M5 Replay / Scale | G3-R、runtime 接入、并发报告 | NOT_STARTED |
+| M5 Replay / Scale | G3-R、runtime 接入、并发报告 | P3-01 限定离线审计已关闭；executor、保真实验与 scale 未开始 |
 
 P0-00-r2、P0-01～05、P0-10 小样和 P0-08/09 最小集已验收。模型=DeepSeek-V4-Flash，harness=mini-SWE-agent 2.4.6，任务=django__django-16485；任务记录获取与 wheel 静态核实已完成，不再重复询问这些选择。
 
