@@ -1,0 +1,272 @@
+{
+  "schema": "docops-measurement-validation-v1",
+  "verified_at_utc": "2026-10-11T09:39:51.857129+00:00",
+  "collection": "DOCOPS-MEASUREMENT-VALIDATE-01",
+  "run_id": "20261011T093515Z-excel001",
+  "identity_sha256": "184446b36ec5676e00c9559a8da2e0fd71f16e424ade30c347987a322ac265cb",
+  "measurement_integrity": "complete_within_declared_observation_scope",
+  "task_result": {
+    "reward": 1,
+    "verifier_status": "completed",
+    "ctrf_summary": {
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 1791711358824,
+      "stop": 1791711359531
+    }
+  },
+  "agent_termination": "finish",
+  "infrastructure": {
+    "exit_code": 0,
+    "infra_failures": [],
+    "container_removal": "removed",
+    "image_retained_id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+    "raw_archive_valid": true,
+    "report_archive_valid": true,
+    "within_budget": true
+  },
+  "wall_s": 54.2,
+  "requests": {
+    "logical_started": 7,
+    "logical_terminal": 7,
+    "response_models": {
+      "deepseek-flash": 7
+    },
+    "after_finish": 0,
+    "usage_observed": 7,
+    "transport_attempt_count": null
+  },
+  "tools": {
+    "agent": 6,
+    "bootstrap": 2,
+    "paired": 8,
+    "ok": 8,
+    "agent_names": {
+      "xlsx_read_sheet": 3,
+      "copy_file": 1,
+      "xlsx_set_formula": 2
+    },
+    "last_agent_tool_terminal_line": 35,
+    "next_request_start_line": 36,
+    "last_tool_return_precedes_next_request": true,
+    "evidence": "actual loop immediately appends/closes event file on tool return; saved order verified; not file creation-time inference"
+  },
+  "resource": {
+    "scope": "shared task container (setup, Agent/tools and verifier); not exclusive tool CPU",
+    "sample_count": 88,
+    "periodic_sample_count": 86,
+    "window_start_monotonic_ns": 636927228354296,
+    "window_end_monotonic_ns": 636970099373955,
+    "window_s": 42.871019659,
+    "cpu_core_s": 6.901357,
+    "memory_current_sample_peak_bytes": 74014720,
+    "memory_current_sample_peak_mib": 70.5859375,
+    "kernel_memory_peak_bytes": 80146432,
+    "kernel_memory_peak_mib": 76.43359375,
+    "host_shared_process_rss_peak_bytes": 165449728,
+    "host_shared_process_rss_peak_mib": 157.78515625,
+    "host_shared_process_cpu_core_s": 0.22,
+    "io_read_delta_bytes": 0,
+    "io_write_delta_bytes": 40960,
+    "io_source": "cgroup-v1 blkio.throttle.io_service_bytes_recursive, not complete application/filesystem I/O",
+    "quality": {
+      "status": "complete",
+      "rows": 88,
+      "interval_target_s": 0.5,
+      "boundaries": [
+        "boundary_start",
+        "boundary_end"
+      ],
+      "missing": {},
+      "counter_regressions": {},
+      "nonpositive_gaps": 0,
+      "max_gap_ns": 506277876,
+      "scope": "shared container; optional I/O availability reported separately"
+    },
+    "sample_interval_min_s": 0.001899496,
+    "sample_interval_median_s": 0.500641198
+  },
+  "phase_wall_s": {
+    "start": 0.867011847,
+    "setup": 0.358630722,
+    "agent": 41.190144362,
+    "verifier": 1.319464277,
+    "stop": 10.285884967
+  },
+  "environment": {
+    "machine": "aarch64",
+    "kernel": "6.6.0-28.0.0.34.oe2403.aarch64",
+    "python": {
+      "executable": "/home/lcq/agent_workload_characterization/.venvs/docops-pilot-01/bin/python",
+      "version": "3.12.14"
+    },
+    "cpu_fields": {
+      "model name": "not_exposed",
+      "CPU implementer": "observed",
+      "CPU part": "observed",
+      "microcode": "not_exposed"
+    },
+    "scope": "host snapshot; registered adapted ARM64 image is not byte-equivalent official AMD64 environment"
+  },
+  "explicit_unavailable": [
+    "actual transport attempts/TTFT",
+    "bill (library cost_usd=0 is not billing)",
+    "CPU model name and microcode not exposed",
+    "filesystem identity and initial cache not observed/controlled",
+    "full application/filesystem I/O and network bytes",
+    "exclusive tool CPU/PMU/hotspots/remote model resources"
+  ],
+  "unexercised_paths": [
+    "model transport failure/retry/cancellation",
+    "tool exception",
+    "steps_exhausted/timeout",
+    "verifier failure",
+    "cleanup failure"
+  ],
+  "hash_checks": {
+    "raw_output_files": 20,
+    "raw_input_hashes": 102,
+    "report_manifest_inputs": 4,
+    "report_manifest_outputs": 1,
+    "preparation_manifest_inputs": 102,
+    "preparation_manifest_outputs": 2,
+    "full_live_plan_frozen_structure": true,
+    "no_manifest_self_hash": true
+  },
+  "inputs": [
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VALIDATE-01/APPROVAL.json",
+      "bytes": 2413,
+      "sha256": "9d7a4e1f1a9fc8872504fcc6c1452d383be861d971e1361f021e30ab91fa9e60"
+    },
+    {
+      "path": "env/docops-measurement-validate-01/plan-identity.json",
+      "bytes": 34840,
+      "sha256": "b2bbbb2e6759a6b2c1bf8ad95582e5b8edca7f0c222be5b916036c1d824f5127"
+    },
+    {
+      "path": "env/docops-measurement-validate-01/frozen-identity.json",
+      "bytes": 34840,
+      "sha256": "b2bbbb2e6759a6b2c1bf8ad95582e5b8edca7f0c222be5b916036c1d824f5127"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/manifest.json",
+      "bytes": 25372,
+      "sha256": "979c8142c1ed15c6442533a23900d0be967d34e1756d6808023d71b3b5e5e0ae"
+    },
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VALIDATE-01/manifest.json",
+      "bytes": 1129,
+      "sha256": "5d141e5d7cc66ba1c2f0cece8dde24075a87f18f10950b63ec4ae176acf114d4"
+    },
+    {
+      "path": "env/docops-measurement-validate-01/preparation-manifest.json",
+      "bytes": 26082,
+      "sha256": "176a462a4f8e79bb2f955c30cec30156edb2d10b023bebfc66dfb8bda76bfb0c"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/ATTEMPT_COMPLETED.json",
+      "bytes": 176,
+      "sha256": "a71d1b011c61be68395867b7e56746c24496a441409b830191d0cb3a807f5da2"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/ATTEMPT_STARTED.json",
+      "bytes": 300,
+      "sha256": "4c40266c3ed16983752e91f8f0c271a71b3c15c6628a8532db37e91915fe1542"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/agent/document-tools-agent.txt",
+      "bytes": 4305,
+      "sha256": "5c28dfe7554cdc06b16dfe4859fa379bfc310fba99c4fc97d014d61c4e05b4f7"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/agent/events.jsonl",
+      "bytes": 27489,
+      "sha256": "7a533d7c6f18ca86f5536fd9f356822e7799b8816a14937421c64d2cd8124568"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/agent/llm_call_1.json",
+      "bytes": 33502,
+      "sha256": "c25e06875446beea8c18c8919ed696e1d0d44fdd0d8ea18e827e1661c2a01086"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/agent/llm_call_2.json",
+      "bytes": 55553,
+      "sha256": "cc969c8ff378d95289fccaf2ddfd4c65b749cac817919478b592f6fae0362827"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/agent/llm_call_3.json",
+      "bytes": 45611,
+      "sha256": "ffba332f4987adb4272026f9f716f33c73933af70222e9beed625f10a85008d0"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/agent/llm_call_4.json",
+      "bytes": 47318,
+      "sha256": "b93d7813322f861cf4e1ffbcdcc707b5502a27fe9cb7a7bdabbecf20cf59572a"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/agent/llm_call_5.json",
+      "bytes": 47965,
+      "sha256": "a895676f0a691fadc21d80272f02d9fd4bfbfb76e9f9cb7ca81cb012d7e5aa1e"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/agent/llm_call_6.json",
+      "bytes": 51575,
+      "sha256": "f515cff922c20e5f2c092ea777fada42a8f932a40113c26f2684133d89bd67ee"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/agent/llm_call_7.json",
+      "bytes": 55239,
+      "sha256": "eb60d94c527fc103c2be4c6bae428bacbcf6dcc3203571ad54d5954ba7403d31"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/environment.json",
+      "bytes": 4553,
+      "sha256": "33abf123a9a098e795293f1253666e9510d022367e6823661fd7c3352105bd12"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/measurement.json",
+      "bytes": 35516,
+      "sha256": "6bcfface6e74beb0611b83aef99c978df729a44e879fccfc54ce1d58a72c09bc"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/summary.json",
+      "bytes": 175880,
+      "sha256": "5a92e75e6357462253c15f8b2f449668929208c2068377cb5d448688d810fb82"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/verifier/ctrf.json",
+      "bytes": 1018,
+      "sha256": "5bf8075dfc001386e489796a176df93971588252bb2a811dbab1cd0c72d2cd83"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/verifier/original_task_description.txt",
+      "bytes": 1082,
+      "sha256": "506f5ee4d2d50c58cd9888f7cccc533cd93663a177802abf05d8389972780a38"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/verifier/reward.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/verifier/submission/excel_001_budget_bucket_totals_seed.xlsx",
+      "bytes": 6648,
+      "sha256": "0af27987db2739b38cc834d64b07ff105f0ea36db924c1a5ff857ef2b685ae72"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/verifier/task_metadata.json",
+      "bytes": 1823,
+      "sha256": "3cd03985af785be57928bd662a7e6c1d80bf284bbf405764121ee74a3ebfccca"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/verifier/test-stdout.txt",
+      "bytes": 649,
+      "sha256": "141a796e436681aa80f5aea2cc77ba9ba4ab853e3a7f993624099f75dd3f4622"
+    }
+  ]
+}

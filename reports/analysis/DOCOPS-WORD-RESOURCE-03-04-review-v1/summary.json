@@ -1,0 +1,966 @@
+{
+  "scope": "only the two explicitly named DOCOPS-WORD-RESOURCE-03/04 runs for one DocOps Word task",
+  "runs": [
+    {
+      "collection": "DOCOPS-WORD-RESOURCE-03",
+      "run_id": "20261010T105013Z-word001",
+      "max_steps": 12,
+      "model_calls": 12,
+      "tool_actions": 12,
+      "tool_categories": {
+        "file_copy": 1,
+        "document_structure_inspection": 1,
+        "format_inspection": 3,
+        "text_edit": 2,
+        "format_edit": 5
+      },
+      "termination": "steps_exhausted",
+      "reward": 0.0,
+      "wall_s": 85.38,
+      "container_cpu_core_s": 6.680099,
+      "memory_current_sampled_peak_bytes": 75710464,
+      "kernel_memory_peak_bytes": 77762560,
+      "host_agent_rss_sampled_peak_bytes": 163729408,
+      "sample_count": 149,
+      "sample_window_s": 74.096074883,
+      "identity_verified": true,
+      "archive_verified": true,
+      "bootstrap_tool_counts": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "tool_return_status_counts": {
+        "ok_true": 11,
+        "unknown_not_persisted_or_not_linkable": 1
+      },
+      "first_failure_detail": "Top-level headings are not styled consistently.",
+      "phase_durations_s": {
+        "harbor_start": 0.924594822,
+        "agent_setup": 0.438315786,
+        "agent": 70.35322446,
+        "verifier": 1.410398703,
+        "harbor_stop": 10.264617131,
+        "archive": 1.26e-05
+      },
+      "document_text_changed_indices": [
+        18,
+        40,
+        45
+      ],
+      "heading1_count_in_saved_document": 2,
+      "heading1_indices_in_saved_document": [
+        25,
+        45
+      ],
+      "phase_sampled_cpu_core_s": {
+        "agent_setup": null,
+        "agent": 5.318106,
+        "verifier": 1.006266
+      },
+      "historical_source_hash_mismatches": [
+        "entry"
+      ]
+    },
+    {
+      "collection": "DOCOPS-WORD-RESOURCE-04",
+      "run_id": "20261010T110820Z-word001",
+      "max_steps": 40,
+      "model_calls": 6,
+      "tool_actions": 5,
+      "tool_categories": {
+        "file_copy": 1,
+        "document_structure_inspection": 2,
+        "format_inspection": 1,
+        "text_edit": 1
+      },
+      "termination": "finish",
+      "reward": 0.0,
+      "wall_s": 58.98,
+      "container_cpu_core_s": 5.704128,
+      "memory_current_sampled_peak_bytes": 82542592,
+      "kernel_memory_peak_bytes": 82542592,
+      "host_agent_rss_sampled_peak_bytes": 162017280,
+      "sample_count": 96,
+      "sample_window_s": 47.575497794,
+      "identity_verified": true,
+      "archive_verified": true,
+      "bootstrap_tool_counts": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "tool_return_status_counts": {
+        "ok_true": 5
+      },
+      "first_failure_detail": "Top-level headings are not styled consistently.",
+      "phase_durations_s": {
+        "harbor_start": 0.914662919,
+        "agent_setup": 0.392767052,
+        "agent": 44.026393993,
+        "verifier": 1.38564357,
+        "harbor_stop": 10.269852107,
+        "archive": 1.168e-05
+      },
+      "document_text_changed_indices": [
+        18,
+        40
+      ],
+      "heading1_count_in_saved_document": 0,
+      "heading1_indices_in_saved_document": [],
+      "phase_sampled_cpu_core_s": {
+        "agent_setup": null,
+        "agent": 4.571002,
+        "verifier": 0.981776
+      },
+      "historical_source_hash_mismatches": []
+    }
+  ],
+  "run_details": [
+    {
+      "collection": "DOCOPS-WORD-RESOURCE-03",
+      "request_model": "openai/deepseek-v4-flash",
+      "response_model_counts": {
+        "deepseek-flash": 12
+      },
+      "bootstrap_tool_counts": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "tool_return_status_counts": {
+        "ok_true": 11,
+        "unknown_not_persisted_or_not_linkable": 1
+      },
+      "independent_report_crosscheck": null,
+      "first_failure_detail": "Top-level headings are not styled consistently.",
+      "assertions_before_first_failure": "passed by sequential verifier control flow",
+      "phase_durations_s": {
+        "harbor_start": 0.924594822,
+        "agent_setup": 0.438315786,
+        "agent": 70.35322446,
+        "verifier": 1.410398703,
+        "harbor_stop": 10.264617131,
+        "archive": 1.26e-05
+      },
+      "phase_sampled_cpu_core_s": {
+        "agent_setup": null,
+        "agent": 5.318106,
+        "verifier": 1.006266
+      },
+      "historical_source_hash_mismatches": [
+        "entry"
+      ],
+      "format_style_actions": [
+        {
+          "paragraph_index": 25,
+          "style_name": "Heading 1",
+          "direct_format_fields_supplied": []
+        },
+        {
+          "paragraph_index": 45,
+          "style_name": "Heading 1",
+          "direct_format_fields_supplied": []
+        },
+        {
+          "paragraph_index": 28,
+          "style_name": "Heading 2",
+          "direct_format_fields_supplied": []
+        },
+        {
+          "paragraph_index": 48,
+          "style_name": "Heading 2",
+          "direct_format_fields_supplied": []
+        },
+        {
+          "paragraph_index": 50,
+          "style_name": "Heading 2",
+          "direct_format_fields_supplied": []
+        }
+      ],
+      "format_edit_action_count": 5,
+      "direct_format_field_count": 0,
+      "submitted_label_counts": {
+        "new_body_label_exact_paragraphs": 1,
+        "new_toc_label_exact_paragraphs": 1,
+        "old_label_occurrences": 0
+      },
+      "heading_signature_summary": {
+        "matched_heading_count": 3,
+        "distinct_direct_xml_signatures": 3
+      },
+      "heading1_style_count": 2,
+      "document_state_comparison": {
+        "input_paragraph_count": 60,
+        "submitted_paragraph_count": 60,
+        "changed_paragraph_count_by_same_index": 7,
+        "changed_paragraphs": [
+          {
+            "paragraph_index": 18,
+            "before": {
+              "index": 18,
+              "text_chars": 21,
+              "text_sha256": "1b37d43b9a9ae505fea25e6ed673e8c2bf2528d8e6fa1b84b681954ed4d3e615",
+              "style_id": null,
+              "style_name": null,
+              "direct_paragraph_properties": {
+                "tabs": [
+                  {}
+                ],
+                "ind": [
+                  {
+                    "left": "1080"
+                  }
+                ]
+              },
+              "direct_run_properties": {
+                "rFonts": [
+                  {
+                    "ascii": "Calibri",
+                    "hAnsi": "Calibri",
+                    "eastAsia": "Calibri"
+                  }
+                ],
+                "b": [
+                  {
+                    "val": "0"
+                  }
+                ],
+                "i": [
+                  {
+                    "val": "0"
+                  }
+                ],
+                "sz": [
+                  {
+                    "val": "22"
+                  },
+                  {
+                    "val": "22"
+                  }
+                ]
+              },
+              "numbered_prefix": false
+            },
+            "after": {
+              "index": 18,
+              "text_chars": 21,
+              "text_sha256": "adaf600f6dbf2c1cfa4afff0f90b295f8461033aa35acfb1c8cc6f67ef19369c",
+              "style_id": null,
+              "style_name": null,
+              "direct_paragraph_properties": {
+                "tabs": [
+                  {}
+                ],
+                "ind": [
+                  {
+                    "left": "1080"
+                  }
+                ]
+              },
+              "direct_run_properties": {},
+              "numbered_prefix": false
+            }
+          },
+          {
+            "paragraph_index": 25,
+            "before": {
+              "index": 25,
+              "text_chars": 18,
+              "text_sha256": "9460bb09462bc5120529feb81374e7d4a8c0f9ecae5e4413ce6edbaf07e8893e",
+              "style_id": null,
+              "style_name": null,
+              "direct_paragraph_properties": {},
+              "direct_run_properties": {
+                "rFonts": [
+                  {
+                    "ascii": "Calibri",
+                    "hAnsi": "Calibri",
+                    "eastAsia": "Calibri"
+                  }
+                ],
+                "b": [
+                  {}
+                ],
+                "sz": [
+                  {
+                    "val": "32"
+                  }
+                ]
+              },
+              "numbered_prefix": false
+            },
+            "after": {
+              "index": 25,
+              "text_chars": 18,
+              "text_sha256": "9460bb09462bc5120529feb81374e7d4a8c0f9ecae5e4413ce6edbaf07e8893e",
+              "style_id": "Heading1",
+              "style_name": "heading 1",
+              "direct_paragraph_properties": {},
+              "direct_run_properties": {
+                "rFonts": [
+                  {
+                    "ascii": "Calibri",
+                    "hAnsi": "Calibri",
+                    "eastAsia": "Calibri"
+                  }
+                ],
+                "b": [
+                  {}
+                ],
+                "sz": [
+                  {
+                    "val": "32"
+                  }
+                ]
+              },
+              "numbered_prefix": false
+            }
+          },
+          {
+            "paragraph_index": 28,
+            "before": {
+              "index": 28,
+              "text_chars": 18,
+              "text_sha256": "d3a8e9b2a8fd8259cb59b9bf5108dc405c0d4278d6d9596d6bae48ced765873f",
+              "style_id": null,
+              "style_name": null,
+              "direct_paragraph_properties": {},
+              "direct_run_properties": {
+                "rFonts": [
+                  {
+                    "ascii": "Times New Roman",
+                    "hAnsi": "Times New Roman",
+                    "eastAsia": "Times New Roman"
+                  }
+                ],
+                "b": [
+                  {}
+                ],
+                "sz": [
+                  {
+                    "val": "28"
+                  }
+                ]
+              },
+              "numbered_prefix": false
+            },
+            "after": {
+              "index": 28,
+              "text_chars": 18,
+              "text_sha256": "d3a8e9b2a8fd8259cb59b9bf5108dc405c0d4278d6d9596d6bae48ced765873f",
+              "style_id": "Heading2",
+              "style_name": "heading 2",
+              "direct_paragraph_properties": {},
+              "direct_run_properties": {
+                "rFonts": [
+                  {
+                    "ascii": "Times New Roman",
+                    "hAnsi": "Times New Roman",
+                    "eastAsia": "Times New Roman"
+                  }
+                ],
+                "b": [
+                  {}
+                ],
+                "sz": [
+                  {
+                    "val": "28"
+                  }
+                ]
+              },
+              "numbered_prefix": false
+            }
+          },
+          {
+            "paragraph_index": 40,
+            "before": {
+              "index": 40,
+              "text_chars": 18,
+              "text_sha256": "910aab7f60c84d7e151511e47885bf71bf433d7e0c0de38a718a3893319518e6",
+              "style_id": null,
+              "style_name": null,
+              "direct_paragraph_properties": {},
+              "direct_run_properties": {
+                "rFonts": [
+                  {
+                    "ascii": "Calibri",
+                    "hAnsi": "Calibri",
+                    "eastAsia": "Calibri"
+                  }
+                ],
+                "b": [
+                  {}
+                ],
+                "color": [
+                  {
+                    "val": "640000"
+                  }
+                ],
+                "sz": [
+                  {
+                    "val": "24"
+                  }
+                ]
+              },
+              "numbered_prefix": false
+            },
+            "after": {
+              "index": 40,
+              "text_chars": 18,
+              "text_sha256": "9f347c8cc9e92bf19c1e729c822f9102a8f7244b17148dc222c62b6c508ef8db",
+              "style_id": null,
+              "style_name": null,
+              "direct_paragraph_properties": {},
+              "direct_run_properties": {},
+              "numbered_prefix": false
+            }
+          },
+          {
+            "paragraph_index": 45,
+            "before": {
+              "index": 45,
+              "text_chars": 16,
+              "text_sha256": "b0fc9ba0712f68ad2c8cb92fe28b005b228cbe05d8d7f8cfbcd3b44586a93029",
+              "style_id": null,
+              "style_name": null,
+              "direct_paragraph_properties": {},
+              "direct_run_properties": {
+                "rFonts": [
+                  {
+                    "ascii": "Arial",
+                    "hAnsi": "Arial",
+                    "eastAsia": "Arial"
+                  }
+                ],
+                "b": [
+                  {}
+                ],
+                "color": [
+                  {
+                    "val": "00468C"
+                  }
+                ],
+                "sz": [
+                  {
+                    "val": "30"
+                  }
+                ]
+              },
+              "numbered_prefix": false
+            },
+            "after": {
+              "index": 45,
+              "text_chars": 17,
+              "text_sha256": "0ae8982d5891f7494a57e032b91d804e865ea582ca9ab8287b2c88d9c69c76cf",
+              "style_id": "Heading1",
+              "style_name": "heading 1",
+              "direct_paragraph_properties": {},
+              "direct_run_properties": {},
+              "numbered_prefix": false
+            }
+          },
+          {
+            "paragraph_index": 48,
+            "before": {
+              "index": 48,
+              "text_chars": 19,
+              "text_sha256": "f749023641478351356792ac68f7d2049e96df782164be662be7d9aa0fa2768c",
+              "style_id": null,
+              "style_name": null,
+              "direct_paragraph_properties": {},
+              "direct_run_properties": {
+                "b": [
+                  {}
+                ],
+                "sz": [
+                  {
+                    "val": "28"
+                  }
+                ]
+              },
+              "numbered_prefix": false
+            },
+            "after": {
+              "index": 48,
+              "text_chars": 19,
+              "text_sha256": "f749023641478351356792ac68f7d2049e96df782164be662be7d9aa0fa2768c",
+              "style_id": "Heading2",
+              "style_name": "heading 2",
+              "direct_paragraph_properties": {},
+              "direct_run_properties": {
+                "b": [
+                  {}
+                ],
+                "sz": [
+                  {
+                    "val": "28"
+                  }
+                ]
+              },
+              "numbered_prefix": false
+            }
+          },
+          {
+            "paragraph_index": 50,
+            "before": {
+              "index": 50,
+              "text_chars": 18,
+              "text_sha256": "fe613e697b7cbc61986df1e8dc01c3e7cb1b8784dbc6a2b408ded5dc0292b88f",
+              "style_id": null,
+              "style_name": null,
+              "direct_paragraph_properties": {},
+              "direct_run_properties": {
+                "rFonts": [
+                  {
+                    "ascii": "Cambria",
+                    "hAnsi": "Cambria",
+                    "eastAsia": "Cambria"
+                  }
+                ],
+                "b": [
+                  {}
+                ],
+                "sz": [
+                  {
+                    "val": "28"
+                  }
+                ]
+              },
+              "numbered_prefix": false
+            },
+            "after": {
+              "index": 50,
+              "text_chars": 18,
+              "text_sha256": "fe613e697b7cbc61986df1e8dc01c3e7cb1b8784dbc6a2b408ded5dc0292b88f",
+              "style_id": "Heading2",
+              "style_name": "heading 2",
+              "direct_paragraph_properties": {},
+              "direct_run_properties": {
+                "rFonts": [
+                  {
+                    "ascii": "Cambria",
+                    "hAnsi": "Cambria",
+                    "eastAsia": "Cambria"
+                  }
+                ],
+                "b": [
+                  {}
+                ],
+                "sz": [
+                  {
+                    "val": "28"
+                  }
+                ]
+              },
+              "numbered_prefix": false
+            }
+          }
+        ],
+        "text_changed_paragraph_indices": [
+          18,
+          40,
+          45
+        ],
+        "same_text_replacement_groups": [
+          {
+            "paragraph_indices": [
+              18
+            ],
+            "before_text_sha256": "1b37d43b9a9ae505fea25e6ed673e8c2bf2528d8e6fa1b84b681954ed4d3e615",
+            "after_text_sha256": "adaf600f6dbf2c1cfa4afff0f90b295f8461033aa35acfb1c8cc6f67ef19369c",
+            "matches_emitted_tool_replacement_hash_pair": false
+          },
+          {
+            "paragraph_indices": [
+              40
+            ],
+            "before_text_sha256": "910aab7f60c84d7e151511e47885bf71bf433d7e0c0de38a718a3893319518e6",
+            "after_text_sha256": "9f347c8cc9e92bf19c1e729c822f9102a8f7244b17148dc222c62b6c508ef8db",
+            "matches_emitted_tool_replacement_hash_pair": true
+          },
+          {
+            "paragraph_indices": [
+              45
+            ],
+            "before_text_sha256": "b0fc9ba0712f68ad2c8cb92fe28b005b228cbe05d8d7f8cfbcd3b44586a93029",
+            "after_text_sha256": "0ae8982d5891f7494a57e032b91d804e865ea582ca9ab8287b2c88d9c69c76cf",
+            "matches_emitted_tool_replacement_hash_pair": true
+          }
+        ],
+        "input_heading1_count": 0,
+        "submitted_heading1_count": 2,
+        "submitted_heading1_paragraph_indices": [
+          25,
+          45
+        ],
+        "submitted_heading1_direct_format_signatures": [
+          {
+            "paragraph_index": 25,
+            "style_id": "Heading1",
+            "paragraph_properties": {},
+            "run_properties": {
+              "rFonts": [
+                {
+                  "ascii": "Calibri",
+                  "hAnsi": "Calibri",
+                  "eastAsia": "Calibri"
+                }
+              ],
+              "b": [
+                {}
+              ],
+              "sz": [
+                {
+                  "val": "32"
+                }
+              ]
+            }
+          },
+          {
+            "paragraph_index": 45,
+            "style_id": "Heading1",
+            "paragraph_properties": {},
+            "run_properties": {}
+          }
+        ],
+        "submitted_heading1_direct_format_counts": {
+          "{\"paragraph\": {}, \"run\": {\"b\": [{}], \"rFonts\": [{\"ascii\": \"Calibri\", \"eastAsia\": \"Calibri\", \"hAnsi\": \"Calibri\"}], \"sz\": [{\"val\": \"32\"}]}}": 1,
+          "{\"paragraph\": {}, \"run\": {}}": 1
+        },
+        "submitted_numbered_paragraph_count": 4,
+        "input_numbered_paragraph_count": 4,
+        "interpretation": "paragraphs aligned by document order/index; numbering and styles are saved-state observations, not verifier execution",
+        "verifier_top_level_heading_source": "static literals parsed from local test_outputs.py; not imported/executed",
+        "verifier_top_level_saved_direct_signatures": {
+          "top_level_1": {
+            "paragraph_index": 25,
+            "style_id": "Heading1",
+            "direct_paragraph_properties": {},
+            "first_nonempty_run_direct_properties": {
+              "rFonts": {
+                "ascii": "Calibri",
+                "hAnsi": "Calibri",
+                "eastAsia": "Calibri"
+              },
+              "b": {},
+              "sz": {
+                "val": "32"
+              }
+            }
+          },
+          "top_level_2": {
+            "paragraph_index": 45,
+            "style_id": "Heading1",
+            "direct_paragraph_properties": {},
+            "first_nonempty_run_direct_properties": {}
+          },
+          "top_level_3": {
+            "paragraph_index": 53,
+            "style_id": null,
+            "direct_paragraph_properties": {},
+            "first_nonempty_run_direct_properties": {
+              "rFonts": {
+                "ascii": "Courier New",
+                "hAnsi": "Courier New",
+                "eastAsia": "Courier New"
+              },
+              "b": {},
+              "sz": {
+                "val": "26"
+              }
+            }
+          },
+          "_evidence_summary": {
+            "matched_heading_count": 3,
+            "distinct_direct_xml_signatures": 3
+          }
+        },
+        "task_label_counts_input": {
+          "new_body_label_exact_paragraphs": 0,
+          "new_toc_label_exact_paragraphs": 0,
+          "old_label_occurrences": 2
+        },
+        "task_label_counts_submitted": {
+          "new_body_label_exact_paragraphs": 1,
+          "new_toc_label_exact_paragraphs": 1,
+          "old_label_occurrences": 0
+        }
+      }
+    },
+    {
+      "collection": "DOCOPS-WORD-RESOURCE-04",
+      "request_model": "openai/deepseek-v4-flash",
+      "response_model_counts": {
+        "deepseek-flash": 6
+      },
+      "bootstrap_tool_counts": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "tool_return_status_counts": {
+        "ok_true": 5
+      },
+      "independent_report_crosscheck": {
+        "run_id_matches": true,
+        "identity_matches": true,
+        "request_count_matches": true,
+        "termination_matches": true,
+        "reward_matches": true,
+        "wall_matches": true,
+        "tool_name_counts_match": true
+      },
+      "first_failure_detail": "Top-level headings are not styled consistently.",
+      "assertions_before_first_failure": "passed by sequential verifier control flow",
+      "phase_durations_s": {
+        "harbor_start": 0.914662919,
+        "agent_setup": 0.392767052,
+        "agent": 44.026393993,
+        "verifier": 1.38564357,
+        "harbor_stop": 10.269852107,
+        "archive": 1.168e-05
+      },
+      "phase_sampled_cpu_core_s": {
+        "agent_setup": null,
+        "agent": 4.571002,
+        "verifier": 0.981776
+      },
+      "historical_source_hash_mismatches": [],
+      "format_style_actions": [],
+      "format_edit_action_count": 0,
+      "direct_format_field_count": 0,
+      "submitted_label_counts": {
+        "new_body_label_exact_paragraphs": 1,
+        "new_toc_label_exact_paragraphs": 1,
+        "old_label_occurrences": 0
+      },
+      "heading_signature_summary": {
+        "matched_heading_count": 3,
+        "distinct_direct_xml_signatures": 3
+      },
+      "heading1_style_count": 0,
+      "document_state_comparison": {
+        "input_paragraph_count": 60,
+        "submitted_paragraph_count": 60,
+        "changed_paragraph_count_by_same_index": 2,
+        "changed_paragraphs": [
+          {
+            "paragraph_index": 18,
+            "before": {
+              "index": 18,
+              "text_chars": 21,
+              "text_sha256": "1b37d43b9a9ae505fea25e6ed673e8c2bf2528d8e6fa1b84b681954ed4d3e615",
+              "style_id": null,
+              "style_name": null,
+              "direct_paragraph_properties": {
+                "tabs": [
+                  {}
+                ],
+                "ind": [
+                  {
+                    "left": "1080"
+                  }
+                ]
+              },
+              "direct_run_properties": {
+                "rFonts": [
+                  {
+                    "ascii": "Calibri",
+                    "hAnsi": "Calibri",
+                    "eastAsia": "Calibri"
+                  }
+                ],
+                "b": [
+                  {
+                    "val": "0"
+                  }
+                ],
+                "i": [
+                  {
+                    "val": "0"
+                  }
+                ],
+                "sz": [
+                  {
+                    "val": "22"
+                  },
+                  {
+                    "val": "22"
+                  }
+                ]
+              },
+              "numbered_prefix": false
+            },
+            "after": {
+              "index": 18,
+              "text_chars": 21,
+              "text_sha256": "adaf600f6dbf2c1cfa4afff0f90b295f8461033aa35acfb1c8cc6f67ef19369c",
+              "style_id": null,
+              "style_name": null,
+              "direct_paragraph_properties": {
+                "tabs": [
+                  {}
+                ],
+                "ind": [
+                  {
+                    "left": "1080"
+                  }
+                ]
+              },
+              "direct_run_properties": {},
+              "numbered_prefix": false
+            }
+          },
+          {
+            "paragraph_index": 40,
+            "before": {
+              "index": 40,
+              "text_chars": 18,
+              "text_sha256": "910aab7f60c84d7e151511e47885bf71bf433d7e0c0de38a718a3893319518e6",
+              "style_id": null,
+              "style_name": null,
+              "direct_paragraph_properties": {},
+              "direct_run_properties": {
+                "rFonts": [
+                  {
+                    "ascii": "Calibri",
+                    "hAnsi": "Calibri",
+                    "eastAsia": "Calibri"
+                  }
+                ],
+                "b": [
+                  {}
+                ],
+                "color": [
+                  {
+                    "val": "640000"
+                  }
+                ],
+                "sz": [
+                  {
+                    "val": "24"
+                  }
+                ]
+              },
+              "numbered_prefix": false
+            },
+            "after": {
+              "index": 40,
+              "text_chars": 18,
+              "text_sha256": "9f347c8cc9e92bf19c1e729c822f9102a8f7244b17148dc222c62b6c508ef8db",
+              "style_id": null,
+              "style_name": null,
+              "direct_paragraph_properties": {},
+              "direct_run_properties": {},
+              "numbered_prefix": false
+            }
+          }
+        ],
+        "text_changed_paragraph_indices": [
+          18,
+          40
+        ],
+        "same_text_replacement_groups": [
+          {
+            "paragraph_indices": [
+              18
+            ],
+            "before_text_sha256": "1b37d43b9a9ae505fea25e6ed673e8c2bf2528d8e6fa1b84b681954ed4d3e615",
+            "after_text_sha256": "adaf600f6dbf2c1cfa4afff0f90b295f8461033aa35acfb1c8cc6f67ef19369c",
+            "matches_emitted_tool_replacement_hash_pair": false
+          },
+          {
+            "paragraph_indices": [
+              40
+            ],
+            "before_text_sha256": "910aab7f60c84d7e151511e47885bf71bf433d7e0c0de38a718a3893319518e6",
+            "after_text_sha256": "9f347c8cc9e92bf19c1e729c822f9102a8f7244b17148dc222c62b6c508ef8db",
+            "matches_emitted_tool_replacement_hash_pair": true
+          }
+        ],
+        "input_heading1_count": 0,
+        "submitted_heading1_count": 0,
+        "submitted_heading1_paragraph_indices": [],
+        "submitted_heading1_direct_format_signatures": [],
+        "submitted_heading1_direct_format_counts": {},
+        "submitted_numbered_paragraph_count": 4,
+        "input_numbered_paragraph_count": 4,
+        "interpretation": "paragraphs aligned by document order/index; numbering and styles are saved-state observations, not verifier execution",
+        "verifier_top_level_heading_source": "static literals parsed from local test_outputs.py; not imported/executed",
+        "verifier_top_level_saved_direct_signatures": {
+          "top_level_1": {
+            "paragraph_index": 25,
+            "style_id": null,
+            "direct_paragraph_properties": {},
+            "first_nonempty_run_direct_properties": {
+              "rFonts": {
+                "ascii": "Calibri",
+                "hAnsi": "Calibri",
+                "eastAsia": "Calibri"
+              },
+              "b": {},
+              "sz": {
+                "val": "32"
+              }
+            }
+          },
+          "top_level_2": {
+            "paragraph_index": 45,
+            "style_id": null,
+            "direct_paragraph_properties": {},
+            "first_nonempty_run_direct_properties": {
+              "rFonts": {
+                "ascii": "Arial",
+                "hAnsi": "Arial",
+                "eastAsia": "Arial"
+              },
+              "b": {},
+              "color": {
+                "val": "00468C"
+              },
+              "sz": {
+                "val": "30"
+              }
+            }
+          },
+          "top_level_3": {
+            "paragraph_index": 53,
+            "style_id": null,
+            "direct_paragraph_properties": {},
+            "first_nonempty_run_direct_properties": {
+              "rFonts": {
+                "ascii": "Courier New",
+                "hAnsi": "Courier New",
+                "eastAsia": "Courier New"
+              },
+              "b": {},
+              "sz": {
+                "val": "26"
+              }
+            }
+          },
+          "_evidence_summary": {
+            "matched_heading_count": 3,
+            "distinct_direct_xml_signatures": 3
+          }
+        },
+        "task_label_counts_input": {
+          "new_body_label_exact_paragraphs": 0,
+          "new_toc_label_exact_paragraphs": 0,
+          "old_label_occurrences": 2
+        },
+        "task_label_counts_submitted": {
+          "new_body_label_exact_paragraphs": 1,
+          "new_toc_label_exact_paragraphs": 1,
+          "old_label_occurrences": 0
+        }
+      }
+    }
+  ],
+  "comparability": "descriptive only; max_steps differs (12 vs 40), n=1 each; no causal effect or successful-completion cost inference",
+  "resource_scope": "container CPU/memory are shared task-container measurements; host RSS includes Agent/orchestration/collection scope; not per-tool or model-inference-only",
+  "time_scope": "attempt wall and event phase intervals are recorded monotonic-clock durations; request timestamps are not server inference time; no wall-minus-CPU waiting estimate",
+  "missing_evidence": [
+    "03 has no independent run-report.json",
+    "terminal tool result after last request may be unpersisted",
+    "no per-tool start/end resource timestamps",
+    "I/O counters do not establish complete document/filesystem I/O"
+  ]
+}

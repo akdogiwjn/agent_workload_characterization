@@ -1,0 +1,186 @@
+{
+ "schema": "toolsandbox-assistant-repeat-batch-manifest-v1",
+ "identity_sha256": "1643e0c8c6158734ce7186d24afd5ce36d5a40718d930e7eea2a507f0b32149b",
+ "inputs": [
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/APPROVAL.json",
+   "bytes": 2474,
+   "sha256": "8fa0de8160d028cf2d126037e289aabddffc4895040d55d2b48265cda8d8730c"
+  },
+  {
+   "path": "env/toolsandbox-assistant-repeat-01/plan-identity.json",
+   "bytes": 36601,
+   "sha256": "6dcf751cf59bec4186e7147bf1367e89810af8ebf4cf33d32ece9f1b56575016"
+  },
+  {
+   "path": "env/toolsandbox-assistant-repeat-01/frozen-identity.json",
+   "bytes": 36601,
+   "sha256": "6dcf751cf59bec4186e7147bf1367e89810af8ebf4cf33d32ece9f1b56575016"
+  },
+  {
+   "path": "env/toolsandbox-assistant-repeat-01/preparation-manifest.json",
+   "bytes": 3358,
+   "sha256": "c52228690cdd01da1745b1d5a0d249aa789f793b263d72f96f5f20a2d47ab595"
+  }
+ ],
+ "outputs": [
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/APPROVAL.json",
+   "bytes": 2474,
+   "sha256": "8fa0de8160d028cf2d126037e289aabddffc4895040d55d2b48265cda8d8730c"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/BATCH_ATTEMPT_COMPLETED.json",
+   "bytes": 256,
+   "sha256": "c277880079cf291eb9e4995be28da5c1415a0cef4ea087bb3463594d50eab4ee"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/BATCH_ATTEMPT_STARTED.json",
+   "bytes": 196,
+   "sha256": "52fe15d889c5015a25673056419844e6fc9bbc7fad58e52593287bd9ee7783d6"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/batch-summary.json",
+   "bytes": 41888,
+   "sha256": "444fb8a93a1680b912ef8cb3537811f23848e1dcd3594eb530d0f4af80f7643b"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135428Z-r0-a-tsbassistant01.json",
+   "bytes": 19127,
+   "sha256": "b10214f01e0ede330b126aa9a8b602d0c2ee3468367b28b680b99daa71132280"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135428Z-r0-a-tsbassistant01.manifest.json",
+   "bytes": 1156,
+   "sha256": "9e2a923408a9c0737262eb5bad615c9bfbf67977671e298a616f4d638c99eedc"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135444Z-r0-b-tsbassistant01.json",
+   "bytes": 18903,
+   "sha256": "3de9c31062cbb3cbb10bbe824f04b4206bb4e935265ede40645ed988120c905c"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135444Z-r0-b-tsbassistant01.manifest.json",
+   "bytes": 1156,
+   "sha256": "9c51c83fd6fd6a1a999ec528649a294cade9d7b597bd347c2c8cc9e44d62a90a"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135459Z-r0-c-tsbassistant01.json",
+   "bytes": 19237,
+   "sha256": "c21fc0519183d4db511936e167b0e77d149234be0282fea073f53d11351502c1"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135459Z-r0-c-tsbassistant01.manifest.json",
+   "bytes": 1156,
+   "sha256": "eb6f76af5304f4636c4f7aeef0cd8b259b8a04989cd958645be805e5b77965a0"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135529Z-r1-b-tsbassistant01.json",
+   "bytes": 18901,
+   "sha256": "667630128299d99866260cf3fe19d144de4e7c4b6f9b72573149f8ea8be31e1c"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135529Z-r1-b-tsbassistant01.manifest.json",
+   "bytes": 1156,
+   "sha256": "e7f81f577a7169fc8251f5c01451fc20a266affd99ea357fabeb059452101d33"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135543Z-r1-c-tsbassistant01.json",
+   "bytes": 19234,
+   "sha256": "a17da2be1869c4f4852c6a05ed0ffa518a318a2950fabf2bfefb8fc6eb0639c4"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135543Z-r1-c-tsbassistant01.manifest.json",
+   "bytes": 1156,
+   "sha256": "9db0e9630127154db93d99d4a2001bf5f8dcbccf8c1a5b605c9856b8d0f97de4"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135610Z-r1-a-tsbassistant01.json",
+   "bytes": 19131,
+   "sha256": "538052aed63bce6836ecfdcc6f4d750800a173dfe5ef2443bb938e0f6afc4d3f"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135610Z-r1-a-tsbassistant01.manifest.json",
+   "bytes": 1156,
+   "sha256": "a59433eb50c2ef8aa5591f627c37d3d47afe0ed3b562b5106e08701a20c4df16"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135627Z-r2-c-tsbassistant01.json",
+   "bytes": 19250,
+   "sha256": "6216eac5f8e8773f16e6b3cbdc2b1417e03802143331767cde75dab7de50ff6f"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135627Z-r2-c-tsbassistant01.manifest.json",
+   "bytes": 1156,
+   "sha256": "45e5f9c23f5581b77ff5ddf34d8c99ef9ee4db3edfe91cc11a8e90c1d0ff03ef"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135716Z-r2-a-tsbassistant01.json",
+   "bytes": 19126,
+   "sha256": "78a25d8671efcaa02c99da2c70d7a4174e28e98a733d25ceb4d674011301c8db"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135716Z-r2-a-tsbassistant01.manifest.json",
+   "bytes": 1156,
+   "sha256": "9dc46806759c33fe573fba75d2bf2d7a058497c1b735ab7b202e02373bd20667"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135730Z-r2-b-tsbassistant01.json",
+   "bytes": 18899,
+   "sha256": "20a0464f7e237f1a7771ab01ecb7c1c50d3410b75e8239de36a8fb912d61a85d"
+  },
+  {
+   "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135730Z-r2-b-tsbassistant01.manifest.json",
+   "bytes": 1156,
+   "sha256": "c669553caa87b58ae9b2bd03ba16ce0f6c63600798e46ab679b4c5e205a3f607"
+  }
+ ],
+ "raw_run_manifests": [
+  {
+   "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01/manifest.json",
+   "bytes": 2339,
+   "sha256": "7202689de0d9f96e6df5b000d4f833e2ad7c35e56cbbf7f7fd68c91c886a06ec"
+  },
+  {
+   "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01/manifest.json",
+   "bytes": 2332,
+   "sha256": "7a513c6e5d2b474c75310f070ad78922db58a0bbe899e381ad2d9ab08580ecd3"
+  },
+  {
+   "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01/manifest.json",
+   "bytes": 2364,
+   "sha256": "717789410a46a8e55200f5d10fe656971f30bbabf76931766aadd6d01a731f87"
+  },
+  {
+   "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01/manifest.json",
+   "bytes": 2332,
+   "sha256": "4c3f6c7809b20c560d18343e6ff199e5e8e3dbb3af2f1b595be7ef18a5bba085"
+  },
+  {
+   "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01/manifest.json",
+   "bytes": 2364,
+   "sha256": "b647951128e8d05b239fd52d5967da318c1838fbe3dffb2f0754dbb0ff6c02d9"
+  },
+  {
+   "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01/manifest.json",
+   "bytes": 2339,
+   "sha256": "ccd8bdea5570311e07de3cf5c52c10f1dfee05ca9781c6d6060c798f2a934e4a"
+  },
+  {
+   "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01/manifest.json",
+   "bytes": 2364,
+   "sha256": "dbcc0fa903675cdf8b7f864837ae8209994edf20e4a6c38134060e932fc152ea"
+  },
+  {
+   "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01/manifest.json",
+   "bytes": 2339,
+   "sha256": "ebc4c5422b63f1d43351ce638663e90252e868c791ef4dffd64d51bfc407090f"
+  },
+  {
+   "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01/manifest.json",
+   "bytes": 2332,
+   "sha256": "7c492bba5035b4005e4249274e349c810fd4b901facf712d6f1cb505112e7d3a"
+  }
+ ],
+ "manifest_self_hash": false
+}

@@ -1,0 +1,307 @@
+{
+  "schema": "awc-p1-12-a-acquisition-v1",
+  "delivered_at_utc": "2026-09-22T09:39:32Z",
+  "authorization": "user-approved bounded acquisition per docs/development_tasks.md P1-12-A section D; this file is a record, not an execution approval",
+  "dataset": {
+    "repository": "SWE-bench/SWE-bench_Verified",
+    "revision": "78f471bf655a3137b2e8a75af1501690ec009ec3",
+    "config": "default",
+    "split": "test",
+    "revision_verified_via": "https://huggingface.co/api/datasets/SWE-bench/SWE-bench_Verified/revision/78f471bf655a3137b2e8a75af1501690ec009ec3 (sha matches; num_examples=500)"
+  },
+  "method": {
+    "candidate_read": "HF datasets-server /rows endpoint with explicit revision parameter, row-level reads (no full-dataset download, no parquet fetch)",
+    "candidate_window": "first 30 rows in dataset order; verified strictly lexicographic by instance_id (astropy__astropy-12907 .. django__django-11087); django__django-16485 not inside the window",
+    "image_check": "official image names generated locally by pinned swebench harness make_test_spec (commit 02e7a74 venv, no network); arm64 existence checked via Docker Hub tags API listing only (no daemon query, no pull, no manifest/blob download)",
+    "order_of_rules": "B-section pre-registered order 1..4: arm64 image registration, official eval conditions, safety/license scope, work-type coverage"
+  },
+  "download_accounting": {
+    "revision_api_bytes": 2201,
+    "rows_probe_bytes": 22079,
+    "rows_30_candidates_bytes": 859455,
+    "docker_hub_api_bytes": 10246,
+    "dataset_card_bytes": 3485,
+    "total_bytes": 897466,
+    "limit_bytes": 10485760,
+    "within_limit": true
+  },
+  "license_findings": {
+    "dataset_card_at_revision": "https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified/raw/78f471bf655a3137b2e8a75af1501690ec009ec3/README.md (3485 bytes, snapshot retained at docs licensing note below)",
+    "card_license_field": "absent (card carries dataset_info/summary only; no license, curators or citation section)",
+    "head_card_license_field": "also absent (cross-checked, reference only)",
+    "conclusion": "no machine-readable dataset license statement at this revision; recorded as an OPEN licensing item, not claimed as verified. Upstream repos (astropy/astropy, django/django) carry their own open-source licenses; record patch/test_patch/eval_script are dataset-published content used for evaluation, which does not imply redistribution rights",
+    "blocking_for_execution": true
+  },
+  "candidate_checks": [
+    {
+      "instance_id": "astropy__astropy-12907",
+      "arm64_image": true,
+      "eval_conditions": "pass",
+      "outcome": "eligible-reserve",
+      "reason": "single-line modeling edit; overlaps work type of existing django-16485 task; kept as ranked reserve #5"
+    },
+    {
+      "instance_id": "astropy__astropy-13033",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository on Docker Hub (404)"
+    },
+    {
+      "instance_id": "astropy__astropy-13236",
+      "arm64_image": true,
+      "eval_conditions": "pass",
+      "outcome": "SELECTED",
+      "reason": "rule 4 coverage: deletion-type edit (0 add / 7 remove) with very large regression surface (P2P=644); distinct from both other pilot tasks"
+    },
+    {
+      "instance_id": "astropy__astropy-13398",
+      "arm64_image": true,
+      "eval_conditions": "pass",
+      "outcome": "SELECTED",
+      "reason": "rule 4 coverage: multi-file structural edit (4 files, +202/-13), 1-4h difficulty, 4 F2P; maximally different from small-edit tasks"
+    },
+    {
+      "instance_id": "astropy__astropy-13453",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "astropy__astropy-13579",
+      "arm64_image": true,
+      "eval_conditions": "pass",
+      "outcome": "eligible-reserve",
+      "reason": "small wcs edit; reserve #1"
+    },
+    {
+      "instance_id": "astropy__astropy-13977",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "astropy__astropy-14096",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "astropy__astropy-14182",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "astropy__astropy-14309",
+      "arm64_image": true,
+      "eval_conditions": "pass",
+      "outcome": "eligible-reserve",
+      "reason": "small io/fits edit (<15min); overlaps small-edit type; reserve #2"
+    },
+    {
+      "instance_id": "astropy__astropy-14365",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "astropy__astropy-14369",
+      "arm64_image": true,
+      "eval_conditions": "pass",
+      "outcome": "eligible-reserve",
+      "reason": "medium units-format edit incl. generated parsetab; reserve #3"
+    },
+    {
+      "instance_id": "astropy__astropy-14508",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "astropy__astropy-14539",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "astropy__astropy-14598",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "astropy__astropy-14995",
+      "arm64_image": true,
+      "eval_conditions": "pass",
+      "outcome": "eligible-reserve",
+      "reason": "small nddata edit (<15min); overlaps small-edit type; reserve #4"
+    },
+    {
+      "instance_id": "astropy__astropy-7166",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "astropy__astropy-7336",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "astropy__astropy-7606",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "astropy__astropy-7671",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "astropy__astropy-8707",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "astropy__astropy-8872",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "django__django-10097",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "django__django-10554",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "django__django-10880",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "django__django-10914",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "django__django-10973",
+      "arm64_image": true,
+      "eval_conditions": "pass",
+      "outcome": "eligible-reserve",
+      "reason": "db-client deletion edit; same repo as existing pilot task, lower coverage gain; reserve #6"
+    },
+    {
+      "instance_id": "django__django-10999",
+      "arm64_image": false,
+      "eval_conditions": "pass",
+      "outcome": "excluded",
+      "reason": "rule 1: no arm64 image repository (404)"
+    },
+    {
+      "instance_id": "django__django-11066",
+      "arm64_image": true,
+      "eval_conditions": "pass",
+      "outcome": "eligible-reserve",
+      "reason": "single-line contenttypes edit; overlaps small-edit type; reserve #7"
+    },
+    {
+      "instance_id": "django__django-11087",
+      "arm64_image": true,
+      "eval_conditions": "pass",
+      "outcome": "eligible-reserve",
+      "reason": "ORM deletion-logic edit, medium size; reserve #8"
+    }
+  ],
+  "selection_summary": {
+    "checked": 30,
+    "rule1_arm64_pass": 10,
+    "rule2_eval_conditions_pass": 30,
+    "selected": [
+      "astropy__astropy-13236",
+      "astropy__astropy-13398"
+    ],
+    "reserve_order": [
+      "astropy__astropy-13579",
+      "astropy__astropy-14309",
+      "astropy__astropy-14369",
+      "astropy__astropy-14995",
+      "astropy__astropy-12907",
+      "django__django-10973",
+      "django__django-11066",
+      "django__django-11087"
+    ],
+    "pilot_task_set_with_existing": [
+      "django__django-16485",
+      "astropy__astropy-13236",
+      "astropy__astropy-13398"
+    ],
+    "coverage_note": "two repos (django, astropy); difficulties <15min / 15min-1h / 1-4h; edit shapes small-edit / deletion+large-regression / multi-file-structural; pilot-scope coverage only, not a Coding-category claim"
+  },
+  "new_records": [
+    {
+      "instance_id": "astropy__astropy-13236",
+      "path": "data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/astropy__astropy-13236/record.json",
+      "bytes": 65426,
+      "sha256": "95203abf0dfa714f64ca17b1240d94d654f14a6fd86269a22d28e2daaf8b50c0"
+    },
+    {
+      "instance_id": "astropy__astropy-13398",
+      "path": "data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/astropy__astropy-13398/record.json",
+      "bytes": 58460,
+      "sha256": "6ab96f81bc7b4fc5ea704f0055c1cf4bdbfca5726a3d9b28c167f6391cb6a77e"
+    }
+  ],
+  "static_image_evidence": {
+    "13236_arm64_repo": "swebench/sweb.eval.arm64.astropy_1776_astropy-13236",
+    "13398_arm64_repo": "swebench/sweb.eval.arm64.astropy_1776_astropy-13398",
+    "evidence": "Docker Hub tags API listing shows arm64 architecture entries for the latest tag of both repositories (snapshots retained in per-record manifest.json)",
+    "unverified": [
+      "images not pulled and not proven present on this host",
+      "digests not pinned",
+      "runnability not tested",
+      "record image field carries the x86_64 tag as published by the dataset; arm64 digest pinning is a B-stage preflight duty"
+    ]
+  },
+  "boundary_compliance": {
+    "full_dataset_downloaded": false,
+    "parquet_fetched": false,
+    "docker_daemon_queried": false,
+    "images_pulled": false,
+    "models_called": false,
+    "tasks_executed": false,
+    "approval_or_attempt_created": false,
+    "network": "user-provided proxy http://127.0.0.1:22111 for this acquisition only"
+  }
+}

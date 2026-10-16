@@ -1,0 +1,25 @@
+{
+ "schema": "docops-word-resource-01-report-manifest-v1",
+ "inputs": [
+  {
+   "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-01/20261010T070350Z-word001/summary.json",
+   "sha256": "0b0ff07dfe4bebb93be98a04ae4ecabfe137b0d1f8542a61231fb1be7ab7dcd7"
+  },
+  {
+   "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-01/20261010T070350Z-word001/manifest.json",
+   "sha256": "38271fb7f4fcb19d6a9375d6923c4b38300f21f807d82ba4307c3423eddb47d3"
+  },
+  {
+   "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-01/20261010T070350Z-word001/ATTEMPT_COMPLETED.json",
+   "sha256": "045e6da93c10fffee02c2df49944b16e9cd668f123183bcbf08bffcdffac2e6b"
+  }
+ ],
+ "outputs": [
+  {
+   "path": "reports/resource/DOCOPS-WORD-RESOURCE-01/run-report.json",
+   "bytes": 4060,
+   "sha256": "9190c750d3fafaf0328709fcdee6e28603b4af163e1f7d4e3e525c521b897ec4",
+   "role": "output"
+  }
+ ]
+}

@@ -1,191 +1,44 @@
 # 文档索引
 
-<!-- PROJECT_STATE:START -->
-当前状态由 [2026-09-20 状态真源](../project_state.json)统一登记；这是进度记录，不是执行授权。
+日常只读当前文档，不再默认打开旧任务书。事实源为[project_state.json](../project_state.json)。
 
-- G1：登记小闭环通过；G2 / G3-R 未通过。
-- CPU-02：初次 B 准备失败，修复后 R1 映射失败；后续 perf 权限受限。路线暂停，无有效容器热点样本，新 retry 未授权。
-- P2-01 小样分析与 P3-01 v3 现有 trace 审计已交付；不授权 Replay。
-- 当前：P1-12 小规模独立任务 × 重复的离线选样与预算设计；不启动容器、模型或新实验。
+<!-- PROJECT_STATE:START -->
+当前状态由 [2026-10-16 状态真源](../project_state.json)统一登记；这是进度记录，不是执行授权。
+
+- 当前范围：本地单任务CPU、内存、磁盘I/O与占用、网络、时长、工具/软件统计和过程图；模型用量、阶段/错误、环境和采样质量一并记录。GPU、热点/PMU/微架构/优化不必交，Replay/并发仅可选。
+- 公开操作和软件汇总v3已完成限定分析：SWE-rebench 9,435轨迹，SWE-bench 19,876对象/41组；OSWorld 755模型×任务/108任务，H-EPM 414轨迹，AgentX/Applied为宏观证据。部分语义和软件运行身份未知，来源不混算分母。
+- 本地主设计：Coding、Office、Assistant各3任务×3重复，共27run/9任务设计。已有CPU/内存0.5s目标采样、有限I/O、阶段与调用统计；任务容器/共享进程不等于整机或工具独占测量。
+- 待补：scope明确的网络收发、任务目录/输出/缓存占用、I/O速率图及完整四面板；最新Assistant与软件成果待最后统一更新HTML。旧run不倒填缺项，Video/GUI覆盖限制保留。
+- 当前入口：docs/current_scope.md（目标）、docs/project_status.md（证据）、docs/current_task.md（工作）。77份历史文档已本机归档，5处旧报告链接已修复；HTML临时生成通过但来源版本标为PARTIAL。data保留配置/清单，原始大数据留本机；未授权实验或提交。
+- G1仅登记小闭环通过；G2/G3-R未通过，CPU-02/Replay继续暂停。状态、建议、旧批准和旧execute命令都不是新授权。
 <!-- PROJECT_STATE:END -->
 
-历史文档原位保留并在本页折叠。文件仍存在不表示任务仍在进行；delivery 是交付声明，不自动等于验收通过，旧 prompt 不提供当前授权。
+## 当前入口
 
-## 最短阅读路径
+| 内容 | 入口 |
+| --- | --- |
+| 项目目标、必采指标和排除项 | [current_scope](current_scope.md) |
+| 已有证据、实现能力和缺口 | [project_status](project_status.md) |
+| 当前工作、下一建议和授权边界 | [current_task](current_task.md) |
+| 采样字段与统计语义 | [trace_contract](trace_contract.md#11-当前目标的连续采样与图表要求2026-10-16) |
+| 环境、身份和状态维护 | [reproducibility](reproducibility.md) |
+| 数据与原始证据保护 | [data_management](data_management.md) |
 
-- 日常查看：[`project_status.md`](project_status.md) 即可；不必浏览所有历史交付。
-- 新实施者：按当前任务书完整阅读必读四文档及语义/数据契约；本导航不替代任务要求。
-- 实施者：先读 [`project_status.md`](project_status.md) 和任务计划 P1-12；旧 CPU-02/RUN-02 handoff/prompt 仅供历史追溯。
-- 评审者：[`g1_consolidated_review.md`](g1_consolidated_review.md) →
-  [`repository_closeout_delivery.md`](repository_closeout_delivery.md) →
-  RUN-02-R2 的 [原始报告](../reports/resource/RUN-02/20260915T012427Z-2d75aa/)
-  和 [review-v2](../reports/resource/RUN-02/20260915T012427Z-2d75aa-review-v2/)。
+## 成果入口
 
-## 当前状态时间线
+| 内容 | 报告 |
+| --- | --- |
+| 公开操作构成/工具接口 | [操作v3](../reports/analysis/PUBLIC-TRACE-OPERATIONS-v3/summary.md) |
+| 具体软件与程序库 | [软件工具集v3](../reports/analysis/PUBLIC-TRACE-SOFTWARE-TOOLKITS-v3/summary.md) |
+| 本地Coding | [特征化v3](../reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/summary.md) |
+| 本地Office | [REPEAT-02](../reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/summary.md) |
+| 本地Assistant | [REPEAT-01](../reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/summary.md) |
+| OSWorld | [任务与行为v3](../reports/analysis/OSWORLD-task-behavior-v3/summary.md) |
+| AgentX/Applied | [宏观分析](../reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.md) |
+| 离线HTML | [v5](../reports/html/PROJECT-RESULTS-v5/index.html)，最新成果最后统一更新 |
 
-1. G0 有既有通过记录；G1 现为 `PASSED（登记小闭环范围）`，不是全部研究目标完成。
-2. RUN-01-C 是历史真实 attempt；RUN-02 原批和 R1 在启动阶段失败；READY-01 是只读准备证据。
-3. RUN-02-R2 已完成一次真实联合观测并保留 raw、原报告、批准和 marker；review-v2 只修正文义口径。
-4. CLOSEOUT-01、G1-02及CPU-01为已交付历史阶段；CPU-02 后续失败及暂停状态见顶部真源。测试数量不等于任务数或独立实验数。
+## 历史只按需查询
 
-## 长期规范
+旧方法、逐轮任务、交接、批准说明、CPU/G1/IR/适配器设计等77份历史文档已移入本机Git忽略的local_archive。见[历史索引](history_index.md)、[迁移登记](archive_index.json)、[引用审计](archive_reference_audit.json)。本轮编辑前快照位于local_archive/20261016-full-docs/before-edit。
 
-- [状态真源](../project_state.json)：当前进度、历史事实和证据定位，不提供执行授权。
-- [复现与版本契约](reproducibility.md)：环境锁定缺口、实际/计划身份和离线检查边界。
-- [`methodology.md`](../methodology.md)：研究目标、路线、方法和 Gate 原则。
-- [`data_management.md`](data_management.md)：来源、raw/derived、血缘、保护和失败样本规则。
-- [`trace_contract.md`](trace_contract.md)：ID、时间、缺失、证据、资源归因和统计语义。
-- [`ir_v0_1.md`](ir_v0_1.md)、[`ir_v0_2.md`](ir_v0_2.md)：IR 版本约定。
-- [`adapter_framework.md`](adapter_framework.md)：adapter 接口与边界。
-- [`benchmark_selection.md`](benchmark_selection.md)：benchmark 选择与版本限制。
-- [`macro_coverage.md`](macro_coverage.md)：宏观指标与 coverage 口径。
-
-## 当前任务、评审与交付
-
-- [`cpu_02_handoff.md`](cpu_02_handoff.md)、[A 提示词](cpu_02_execution_prompt.md)、[A 交付](cpu_02_delivery.md)：历史准备及执行记录；初次 B 与 R1 均已执行失败，路线暂停，不得直接重用旧命令。
-- CPU-01已完成：[`cpu_01_handoff.md`](cpu_01_handoff.md)、[历史提示词](cpu_01_execution_prompt.md)、[交付与评审](cpu_01_delivery.md)；不重跑。
-- G1-02 已完成：[`g1_02_handoff.md`](g1_02_handoff.md)、[历史提示词](g1_02_execution_prompt.md)、[交付](g1_02_delivery.md)；完整历史身份见 [`g1_02_identity.json`](../workload_catalog/g1_02_identity.json)，不重复执行。
-- [`project_status.md`](project_status.md)：日常状态、代码地图、固定收尾表和本次仓库审查记录。
-- [`g1_consolidated_review.md`](g1_consolidated_review.md)：当前六条 G1 集中评审。
-- [`development_tasks.md`](development_tasks.md)：完整 P0–P4 目标、依赖与 Gate；长期任务库，不是要求当前全部实施。
-
-## 历史阶段交付
-
-<details>
-<summary>需要追溯时展开：历史交付与旧任务书</summary>
-
-下列文档是历史交付或实施记录，原文和哈希不因本索引改变：
-
-- CLOSEOUT-01：[`repository_closeout_handoff.md`](repository_closeout_handoff.md)、[提示词](repository_closeout_execution_prompt.md)、[交付](repository_closeout_delivery.md)。已验收，不是当前整理任务的新批准。
-
-- P0：[`p0_01_delivery.md`](p0_01_delivery.md)、[`p0_02_delivery.md`](p0_02_delivery.md)、[`p0_03_delivery.md`](p0_03_delivery.md)、[`p0_04_delivery.md`](p0_04_delivery.md)、[`p0_05_delivery.md`](p0_05_delivery.md)、[`p0_07_08_09_delivery.md`](p0_07_08_09_delivery.md)、[`p0_10_delivery.md`](p0_10_delivery.md)。
-- 资源/运行准备：[`first_run_preparation_delivery.md`](first_run_preparation_delivery.md)、[`first_run_approval.md`](first_run_approval.md)、[`pilot_taskdata_delivery.md`](pilot_taskdata_delivery.md)、[`pilot_harness_model_delivery.md`](pilot_harness_model_delivery.md)、[`environment_adaptation_delivery.md`](environment_adaptation_delivery.md)、[`mini_2_4_6_static_delivery.md`](mini_2_4_6_static_delivery.md)。
-- 模型/协议：[`model_smoke_delivery.md`](model_smoke_delivery.md)、[`coding_pilot_delivery.md`](coding_pilot_delivery.md)。
-- G1-01：[`g1_01_delivery.md`](g1_01_delivery.md)、[`g1_01_b_delivery.md`](g1_01_b_delivery.md)、[`run_02_delivery.md`](run_02_delivery.md)、[`run_02_r1_delivery.md`](run_02_r1_delivery.md)、[`run_02_r2_delivery.md`](run_02_r2_delivery.md)、[`run_02_launch_readiness_delivery.md`](run_02_launch_readiness_delivery.md)。
-- 方法/来源交付：[`agentx_adapter.md`](agentx_adapter.md)、[`applied_compute_adapter.md`](applied_compute_adapter.md)、[`videoweaver_adapter.md`](videoweaver_adapter.md)、[`legacy_asset_audit.md`](legacy_asset_audit.md)。
-
-## 历史任务书、提示词与执行文本
-
-这些文件描述当时的范围和批准门槛，不提供当前授权：
-
-- [`p0_05_luna_handoff.md`](p0_05_luna_handoff.md)、[`p0_07_08_09_handoff.md`](p0_07_08_09_handoff.md)、[`p0_07_g0_handoff.md`](p0_07_g0_handoff.md)、[`p0_10_handoff.md`](p0_10_handoff.md)。
-- [`first_run_preparation_handoff.md`](first_run_preparation_handoff.md)、[`pilot_harness_model_handoff.md`](pilot_harness_model_handoff.md)、[`environment_adaptation_handoff.md`](environment_adaptation_handoff.md)、[`model_smoke_handoff.md`](model_smoke_handoff.md)、[`coding_pilot_handoff.md`](coding_pilot_handoff.md)。
-- [`g1_01_handoff.md`](g1_01_handoff.md)、[`g1_01_execution_prompt.md`](g1_01_execution_prompt.md)、[`g1_01_b_handoff.md`](g1_01_b_handoff.md)、[`g1_01_b_execution_prompt.md`](g1_01_b_execution_prompt.md)。
-- [`run_02_handoff.md`](run_02_handoff.md)、[`run_02_execution_prompt.md`](run_02_execution_prompt.md)、[`run_02_r1_handoff.md`](run_02_r1_handoff.md)、[`run_02_r1_execution_prompt.md`](run_02_r1_execution_prompt.md)、[`run_02_r2_handoff.md`](run_02_r2_handoff.md)、[`run_02_r2_execution_prompt.md`](run_02_r2_execution_prompt.md)、[`run_02_launch_readiness_handoff.md`](run_02_launch_readiness_handoff.md)、[`run_02_launch_readiness_prompt.md`](run_02_launch_readiness_prompt.md)。
-
-</details>
-
-## 全文档目录（查找用，非必读清单）
-
-<details>
-<summary>展开全部 73 个文件名</summary>
-
-下面列出当前目录全部 Markdown 文件，避免索引遗漏：
-
-```text
-README.md
-adapter_framework.md
-agent_landscape.md
-agentx_adapter.md
-applied_compute_adapter.md
-benchmark_selection.md
-coding_pilot_delivery.md
-coding_pilot_handoff.md
-cpu_01_delivery.md
-cpu_01_execution_prompt.md
-cpu_01_handoff.md
-cpu_02_delivery.md
-cpu_02_execution_prompt.md
-cpu_02_handoff.md
-data_management.md
-development_tasks.md
-environment_adaptation_delivery.md
-environment_adaptation_handoff.md
-first_run_approval.md
-first_run_preparation_delivery.md
-first_run_preparation_handoff.md
-g1_01_b_delivery.md
-g1_01_b_execution_prompt.md
-g1_01_b_handoff.md
-g1_01_delivery.md
-g1_01_execution_prompt.md
-g1_01_handoff.md
-g1_02_delivery.md
-g1_02_handoff.md
-g1_02_execution_prompt.md
-g1_consolidated_review.md
-ir_v0_1.md
-ir_v0_2.md
-legacy_asset_audit.md
-macro_coverage.md
-mini_2_4_6_static_delivery.md
-mini_2_4_6_static_handoff.md
-model_smoke_delivery.md
-model_smoke_handoff.md
-p0_01_delivery.md
-p0_02_delivery.md
-p0_03_delivery.md
-p0_04_delivery.md
-p0_05_delivery.md
-p0_05_luna_handoff.md
-p0_07_08_09_delivery.md
-p0_07_08_09_handoff.md
-p0_07_g0_delivery.md
-p0_07_g0_handoff.md
-p0_10_delivery.md
-p0_10_handoff.md
-pilot_execution_spec.md
-pilot_harness_model_compatibility.md
-pilot_harness_model_delivery.md
-pilot_harness_model_handoff.md
-pilot_taskdata_delivery.md
-project_status.md
-repository_closeout_execution_prompt.md
-repository_closeout_handoff.md
-repository_closeout_delivery.md
-run_02_delivery.md
-run_02_execution_prompt.md
-run_02_handoff.md
-run_02_launch_readiness_delivery.md
-run_02_launch_readiness_handoff.md
-run_02_launch_readiness_prompt.md
-run_02_r1_delivery.md
-run_02_r1_execution_prompt.md
-run_02_r1_handoff.md
-run_02_r2_delivery.md
-run_02_r2_execution_prompt.md
-run_02_r2_handoff.md
-trace_contract.md
-videoweaver_adapter.md
-```
-
-</details>
-
-## 目录与产物地图
-
-```text
-src/agent_workload_characterization/  源码：adapters、runners、collectors、analyzers
-tests/                                单元、合成和封网 mini 集成测试
-scripts/                              自有脚本
-schemas/                              当前存在的 schema/契约资产（若有）
-workload_catalog/                     workload 配置与身份
-data/catalog/                         来源 catalog
-data/raw/                             外部 public 与封存 generated raw，逻辑只读
-data/normalized/                      规划/派生归一化数据，按实际批次判断
-reports/preparation/                  READY 只读准备证据
-reports/resource/                     运行 raw 关联报告、批准、marker 与派生报告
-reports/macro/、reports/quality/      宏观/质量派生报告
-references/                           第三方参考，不是运行数据
-.venvs/                               本地软件环境，不是仓库证据
-```
-
-权威数据按批次定位：RUN-01-C 在 `data/raw/generated/RUN-01-C/` 与其 resource 报告；
-G1 A/B 在 `reports/resource/G1-01-A/`、`reports/resource/G1-01-B/`；RUN-02-R2 的 raw、
-原报告和 [review-v2](../reports/resource/RUN-02/20260915T012427Z-2d75aa-review-v2/)；
-失败/准备证据在 `reports/resource/RUN-02/` 与 `reports/preparation/READY-01/`。不枚举大规模 trace。
-
-## 导航维护与未来迁移建议
-
-本次采用原位逻辑归档，不移动、删除历史文档或证据。以后只更新一份当前任务书、提示词、交付和固定问题表，不为零碎返修增加文件。物理迁移须先检查历史引用与身份绑定，不能把旧提示词改成新授权。
-
-文档分工：项目总览维护当前状态；本页只做导航；任务计划维护编号与长期要求；集中评审维护 Gate 裁定；原始 raw、历史批准/marker、报告按批次保留。代码或配置 hash 变化后的运行仍须按任务重新核验身份。
+报告历史原文及其manifest不改写。需要历史证据时按原逻辑路径查索引，再核对原登记SHA；不能把当前新目标当作旧批准或旧运行的证据。迁移后代码库仍不包含全部本地数据/归档，不承诺GitHub克隆后可核验全部历史证据。

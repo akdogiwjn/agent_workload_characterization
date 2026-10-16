@@ -1,0 +1,3472 @@
+{
+  "schema": "osworld-task-behavior-v1",
+  "inputs": {
+    "trajectory_revision": "01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f",
+    "task_revision": "e7996f4cc850be108e510bd8433c63ee7b8303dd",
+    "models": [
+      "MiniMax-M3",
+      "claude-opus-4-7",
+      "claude-sonnet-4-6-max",
+      "claude-sonnet-4-6-medium",
+      "gpt-5.5",
+      "gpt-5.6",
+      "qwen3.7"
+    ],
+    "trajectory_count": 755,
+    "task_semantics_count": 108,
+    "task_errors": [],
+    "trajectory_file_errors": []
+  },
+  "coverage": {
+    "trajectory_count": 755,
+    "model_counts": {
+      "MiniMax-M3": 108,
+      "claude-opus-4-7": 108,
+      "claude-sonnet-4-6-max": 108,
+      "claude-sonnet-4-6-medium": 108,
+      "gpt-5.5": 108,
+      "gpt-5.6": 107,
+      "qwen3.7": 108
+    },
+    "task_counts": {
+      "001": 7,
+      "002": 7,
+      "003": 7,
+      "004": 7,
+      "005": 7,
+      "006": 7,
+      "007": 7,
+      "008": 7,
+      "009": 7,
+      "010": 7,
+      "011": 7,
+      "012": 7,
+      "013": 7,
+      "014": 7,
+      "015": 7,
+      "016": 7,
+      "017": 7,
+      "018": 7,
+      "019": 7,
+      "020": 7,
+      "021": 7,
+      "022": 7,
+      "023": 7,
+      "024": 7,
+      "025": 7,
+      "026": 7,
+      "027": 7,
+      "028": 7,
+      "029": 7,
+      "030": 7,
+      "031": 7,
+      "032": 7,
+      "033": 7,
+      "034": 7,
+      "035": 7,
+      "036": 7,
+      "037": 7,
+      "038": 7,
+      "039": 7,
+      "040": 7,
+      "041": 7,
+      "042": 7,
+      "043": 7,
+      "044": 7,
+      "045": 7,
+      "046": 7,
+      "047": 7,
+      "048": 6,
+      "049": 7,
+      "050": 7,
+      "051": 7,
+      "052": 7,
+      "053": 7,
+      "054": 7,
+      "055": 7,
+      "056": 7,
+      "057": 7,
+      "058": 7,
+      "059": 7,
+      "060": 7,
+      "061": 7,
+      "062": 7,
+      "063": 7,
+      "064": 7,
+      "065": 7,
+      "066": 7,
+      "067": 7,
+      "068": 7,
+      "069": 7,
+      "070": 7,
+      "071": 7,
+      "072": 7,
+      "073": 7,
+      "074": 7,
+      "075": 7,
+      "076": 7,
+      "077": 7,
+      "078": 7,
+      "079": 7,
+      "080": 7,
+      "081": 7,
+      "082": 7,
+      "083": 7,
+      "084": 7,
+      "085": 7,
+      "086": 7,
+      "087": 7,
+      "088": 7,
+      "089": 7,
+      "090": 7,
+      "091": 7,
+      "092": 7,
+      "093": 7,
+      "094": 7,
+      "095": 7,
+      "096": 7,
+      "097": 7,
+      "098": 7,
+      "099": 7,
+      "100": 7,
+      "101": 7,
+      "102": 7,
+      "103": 7,
+      "104": 7,
+      "105": 7,
+      "106": 7,
+      "107": 7,
+      "108": 7
+    },
+    "analysis_status_counts": {
+      "valid": 21,
+      "partial": 195,
+      "unanalysable": 539
+    },
+    "step_anomalies": {
+      "missing": 1,
+      "duplicate_value_count": 32889,
+      "descending_adjacent_pairs": 1
+    },
+    "action_categories": {
+      "click": 15572,
+      "pointer": 2390,
+      "scroll": 3033,
+      "text_or_key": 3229484,
+      "wait": 3750
+    },
+    "task_label_counts": {
+      "email": 112,
+      "calendar": 77,
+      "browser_information_processing": 378,
+      "file_management": 489,
+      "presentation": 91,
+      "document_pdf": 224,
+      "spreadsheet": 91,
+      "development_terminal": 140,
+      "media_game": 111,
+      "unknown": 77
+    },
+    "labels_overlap": true,
+    "task_semantics_count": 108
+  },
+  "task_semantics": {
+    "rows": 108,
+    "errors": [],
+    "categories": "keyword labels from statically extracted instruction/related_apps/snapshot; labels overlap; related_apps is source declaration, not observed usage"
+  },
+  "minimax_api_usage": {
+    "summary": {
+      "task_count_with_file": 108,
+      "missing_task_count": 0,
+      "call_count_sum": 35272,
+      "calls_length_sum": 35272,
+      "missing_usage_count_sum": 10,
+      "request_equal_count": 4761,
+      "reported_numeric_totals": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 3083275800,
+        "input_tokens": 215387364,
+        "output_tokens": 7644794,
+        "input_tokens_including_cache": 3298663164
+      },
+      "recomputed_numeric_totals": {
+        "input_tokens": 215387364,
+        "output_tokens": 7644794,
+        "cache_read_input_tokens": 3083275800,
+        "cache_creation_input_tokens": 0
+      },
+      "request_level_field_stats": {
+        "input_tokens": {
+          "n": 35272,
+          "missing": 0,
+          "min": 2.0,
+          "q1": 2758.0,
+          "median": 2797.0,
+          "q3": 2970.0,
+          "iqr": 212.0,
+          "max": 224892.0
+        },
+        "output_tokens": {
+          "n": 35272,
+          "missing": 0,
+          "min": 1.0,
+          "q1": 37.0,
+          "median": 73.0,
+          "q3": 194.0,
+          "iqr": 157.0,
+          "max": 8192.0
+        },
+        "cache_read_input_tokens": {
+          "n": 35272,
+          "missing": 0,
+          "min": 114.0,
+          "q1": 63575.0,
+          "median": 86508.5,
+          "q3": 112221.25,
+          "iqr": 48646.25,
+          "max": 278404.0
+        },
+        "cache_creation_input_tokens": {
+          "n": 35272,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 0.0
+        },
+        "input_tokens_including_cache_derived": {
+          "n": 35272,
+          "missing": 0,
+          "min": 4002.0,
+          "q1": 68885.25,
+          "median": 90676.5,
+          "q3": 116143.75,
+          "iqr": 47258.5,
+          "max": 283471.0
+        }
+      },
+      "task_level_field_stats": {
+        "input_tokens": {
+          "n": 108,
+          "missing": 0,
+          "min": 66663.0,
+          "q1": 1243976.25,
+          "median": 1993601.0,
+          "q3": 2639940.25,
+          "iqr": 1395964.0,
+          "max": 5371207.0
+        },
+        "output_tokens": {
+          "n": 108,
+          "missing": 0,
+          "min": 3743.0,
+          "q1": 49024.5,
+          "median": 68874.0,
+          "q3": 90338.0,
+          "iqr": 41313.5,
+          "max": 201835.0
+        },
+        "cache_read_input_tokens": {
+          "n": 108,
+          "missing": 0,
+          "min": 684022.0,
+          "q1": 16994134.0,
+          "median": 26250169.5,
+          "q3": 41929461.5,
+          "iqr": 24935327.5,
+          "max": 64501192.0
+        },
+        "cache_creation_input_tokens": {
+          "n": 108,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 0.0
+        },
+        "input_tokens_including_cache_derived": {
+          "n": 108,
+          "missing": 0,
+          "min": 750685.0,
+          "q1": 18329848.25,
+          "median": 28366961.0,
+          "q3": 44480432.5,
+          "iqr": 26150584.25,
+          "max": 66992883.0
+        }
+      },
+      "errors": []
+    },
+    "per_task": [
+      {
+        "task_id": "001",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 44705998,
+          "input_tokens": 2712547,
+          "output_tokens": 65443,
+          "input_tokens_including_cache": 47418545
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2712547,
+          "output_tokens": 65443,
+          "cache_read_input_tokens": 44705998,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            47418545,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 51,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/001/api_usage.json"
+      },
+      {
+        "task_id": "002",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 49985151,
+          "input_tokens": 3307253,
+          "output_tokens": 98962,
+          "input_tokens_including_cache": 53292404
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 3307253,
+          "output_tokens": 98962,
+          "cache_read_input_tokens": 49985151,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            53292404,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 30,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/002/api_usage.json"
+      },
+      {
+        "task_id": "003",
+        "call_count": 251,
+        "calls_length": 251,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 17456065,
+          "input_tokens": 1550771,
+          "output_tokens": 49678,
+          "input_tokens_including_cache": 19006836
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1550771,
+          "output_tokens": 49678,
+          "cache_read_input_tokens": 17456065,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            19006836,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 39,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/003/api_usage.json"
+      },
+      {
+        "task_id": "004",
+        "call_count": 167,
+        "calls_length": 167,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 10535853,
+          "input_tokens": 869415,
+          "output_tokens": 29063,
+          "input_tokens_including_cache": 11405268
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 869415,
+          "output_tokens": 29063,
+          "cache_read_input_tokens": 10535853,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            11405268,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 42,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/004/api_usage.json"
+      },
+      {
+        "task_id": "005",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 40639181,
+          "input_tokens": 3052367,
+          "output_tokens": 66487,
+          "input_tokens_including_cache": 43691548
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 3052367,
+          "output_tokens": 66487,
+          "cache_read_input_tokens": 40639181,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            43691548,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 34,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/005/api_usage.json"
+      },
+      {
+        "task_id": "006",
+        "call_count": 294,
+        "calls_length": 294,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 21590750,
+          "input_tokens": 1940775,
+          "output_tokens": 52809,
+          "input_tokens_including_cache": 23531525
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1940775,
+          "output_tokens": 52809,
+          "cache_read_input_tokens": 21590750,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            23531525,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 32,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/006/api_usage.json"
+      },
+      {
+        "task_id": "007",
+        "call_count": 147,
+        "calls_length": 147,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 9857134,
+          "input_tokens": 880976,
+          "output_tokens": 35199,
+          "input_tokens_including_cache": 10738110
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 880976,
+          "output_tokens": 35199,
+          "cache_read_input_tokens": 9857134,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            10738110,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 32,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/007/api_usage.json"
+      },
+      {
+        "task_id": "008",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 40157713,
+          "input_tokens": 3137415,
+          "output_tokens": 56967,
+          "input_tokens_including_cache": 43295128
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 3137415,
+          "output_tokens": 56967,
+          "cache_read_input_tokens": 40157713,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            43295128,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 38,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/008/api_usage.json"
+      },
+      {
+        "task_id": "009",
+        "call_count": 115,
+        "calls_length": 115,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 6293689,
+          "input_tokens": 735290,
+          "output_tokens": 15112,
+          "input_tokens_including_cache": 7028979
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 735290,
+          "output_tokens": 15112,
+          "cache_read_input_tokens": 6293689,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            7028979,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 34,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/009/api_usage.json"
+      },
+      {
+        "task_id": "010",
+        "call_count": 248,
+        "calls_length": 248,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 17456948,
+          "input_tokens": 1909010,
+          "output_tokens": 47064,
+          "input_tokens_including_cache": 19365958
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1909010,
+          "output_tokens": 47064,
+          "cache_read_input_tokens": 17456948,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            19365958,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 33,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/010/api_usage.json"
+      },
+      {
+        "task_id": "011",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 43508732,
+          "input_tokens": 2855514,
+          "output_tokens": 71020,
+          "input_tokens_including_cache": 46364246
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2855514,
+          "output_tokens": 71020,
+          "cache_read_input_tokens": 43508732,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            46364246,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 34,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/011/api_usage.json"
+      },
+      {
+        "task_id": "012",
+        "call_count": 405,
+        "calls_length": 405,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 35290200,
+          "input_tokens": 2311385,
+          "output_tokens": 87062,
+          "input_tokens_including_cache": 37601585
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2311385,
+          "output_tokens": 87062,
+          "cache_read_input_tokens": 35290200,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            37601585,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 36,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/012/api_usage.json"
+      },
+      {
+        "task_id": "013",
+        "call_count": 120,
+        "calls_length": 120,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 7891493,
+          "input_tokens": 604173,
+          "output_tokens": 33100,
+          "input_tokens_including_cache": 8495666
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 604173,
+          "output_tokens": 33100,
+          "cache_read_input_tokens": 7891493,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            8495666,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 44,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/013/api_usage.json"
+      },
+      {
+        "task_id": "014",
+        "call_count": 173,
+        "calls_length": 173,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 14491895,
+          "input_tokens": 978938,
+          "output_tokens": 52024,
+          "input_tokens_including_cache": 15470833
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 978938,
+          "output_tokens": 52024,
+          "cache_read_input_tokens": 14491895,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            15470833,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 51,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/014/api_usage.json"
+      },
+      {
+        "task_id": "015",
+        "call_count": 226,
+        "calls_length": 226,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 17472413,
+          "input_tokens": 1203984,
+          "output_tokens": 69872,
+          "input_tokens_including_cache": 18676397
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1203984,
+          "output_tokens": 69872,
+          "cache_read_input_tokens": 17472413,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            18676397,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 51,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/015/api_usage.json"
+      },
+      {
+        "task_id": "016",
+        "call_count": 467,
+        "calls_length": 467,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 40629060,
+          "input_tokens": 2509228,
+          "output_tokens": 69157,
+          "input_tokens_including_cache": 43138288
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2509228,
+          "output_tokens": 69157,
+          "cache_read_input_tokens": 40629060,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            43138288,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 45,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/016/api_usage.json"
+      },
+      {
+        "task_id": "017",
+        "call_count": 110,
+        "calls_length": 110,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 6858815,
+          "input_tokens": 510098,
+          "output_tokens": 36604,
+          "input_tokens_including_cache": 7368913
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 510098,
+          "output_tokens": 36604,
+          "cache_read_input_tokens": 6858815,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            7368913,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 47,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/017/api_usage.json"
+      },
+      {
+        "task_id": "018",
+        "call_count": 251,
+        "calls_length": 251,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 20827898,
+          "input_tokens": 1896134,
+          "output_tokens": 65209,
+          "input_tokens_including_cache": 22724032
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1896134,
+          "output_tokens": 65209,
+          "cache_read_input_tokens": 20827898,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            22724032,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 49,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/018/api_usage.json"
+      },
+      {
+        "task_id": "019",
+        "call_count": 363,
+        "calls_length": 363,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 27281099,
+          "input_tokens": 1940504,
+          "output_tokens": 53367,
+          "input_tokens_including_cache": 29221603
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1940504,
+          "output_tokens": 53367,
+          "cache_read_input_tokens": 27281099,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            29221603,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 38,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/019/api_usage.json"
+      },
+      {
+        "task_id": "020",
+        "call_count": 52,
+        "calls_length": 52,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 2637331,
+          "input_tokens": 234794,
+          "output_tokens": 14361,
+          "input_tokens_including_cache": 2872125
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 234794,
+          "output_tokens": 14361,
+          "cache_read_input_tokens": 2637331,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            2872125,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 36,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/020/api_usage.json"
+      },
+      {
+        "task_id": "021",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 57724677,
+          "input_tokens": 2525132,
+          "output_tokens": 115323,
+          "input_tokens_including_cache": 60249809
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2525132,
+          "output_tokens": 115323,
+          "cache_read_input_tokens": 57724677,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            60249809,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 40,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/021/api_usage.json"
+      },
+      {
+        "task_id": "022",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 42153446,
+          "input_tokens": 2483954,
+          "output_tokens": 53792,
+          "input_tokens_including_cache": 44637400
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2483954,
+          "output_tokens": 53792,
+          "cache_read_input_tokens": 42153446,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            44637400,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 49,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/022/api_usage.json"
+      },
+      {
+        "task_id": "023",
+        "call_count": 345,
+        "calls_length": 345,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 24430212,
+          "input_tokens": 2122126,
+          "output_tokens": 43831,
+          "input_tokens_including_cache": 26552338
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2122126,
+          "output_tokens": 43831,
+          "cache_read_input_tokens": 24430212,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            26552338,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 46,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/023/api_usage.json"
+      },
+      {
+        "task_id": "024",
+        "call_count": 464,
+        "calls_length": 464,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 41854800,
+          "input_tokens": 2573310,
+          "output_tokens": 107411,
+          "input_tokens_including_cache": 44428110
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2573310,
+          "output_tokens": 107411,
+          "cache_read_input_tokens": 41854800,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            44428110,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 38,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/024/api_usage.json"
+      },
+      {
+        "task_id": "025",
+        "call_count": 462,
+        "calls_length": 462,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 50967616,
+          "input_tokens": 2782241,
+          "output_tokens": 137705,
+          "input_tokens_including_cache": 53749857
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2782241,
+          "output_tokens": 137705,
+          "cache_read_input_tokens": 50967616,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            53749857,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 44,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/025/api_usage.json"
+      },
+      {
+        "task_id": "026",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 49689595,
+          "input_tokens": 5371207,
+          "output_tokens": 101495,
+          "input_tokens_including_cache": 55060802
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 5371207,
+          "output_tokens": 101495,
+          "cache_read_input_tokens": 49689595,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            55060802,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 46,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/026/api_usage.json"
+      },
+      {
+        "task_id": "027",
+        "call_count": 239,
+        "calls_length": 239,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 16574103,
+          "input_tokens": 1448858,
+          "output_tokens": 51194,
+          "input_tokens_including_cache": 18022961
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1448858,
+          "output_tokens": 51194,
+          "cache_read_input_tokens": 16574103,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            18022961,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 52,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/027/api_usage.json"
+      },
+      {
+        "task_id": "028",
+        "call_count": 165,
+        "calls_length": 165,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 10035238,
+          "input_tokens": 764222,
+          "output_tokens": 34558,
+          "input_tokens_including_cache": 10799460
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 764222,
+          "output_tokens": 34558,
+          "cache_read_input_tokens": 10035238,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            10799460,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 46,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/028/api_usage.json"
+      },
+      {
+        "task_id": "029",
+        "call_count": 348,
+        "calls_length": 348,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 26699715,
+          "input_tokens": 1923844,
+          "output_tokens": 64679,
+          "input_tokens_including_cache": 28623559
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1923844,
+          "output_tokens": 64679,
+          "cache_read_input_tokens": 26699715,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            28623559,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 47,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/029/api_usage.json"
+      },
+      {
+        "task_id": "030",
+        "call_count": 333,
+        "calls_length": 333,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 23176112,
+          "input_tokens": 2245868,
+          "output_tokens": 46604,
+          "input_tokens_including_cache": 25421980
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2245868,
+          "output_tokens": 46604,
+          "cache_read_input_tokens": 23176112,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            25421980,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 51,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/030/api_usage.json"
+      },
+      {
+        "task_id": "031",
+        "call_count": 286,
+        "calls_length": 286,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 20231274,
+          "input_tokens": 1600539,
+          "output_tokens": 51957,
+          "input_tokens_including_cache": 21831813
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1600539,
+          "output_tokens": 51957,
+          "cache_read_input_tokens": 20231274,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            21831813,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 43,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/031/api_usage.json"
+      },
+      {
+        "task_id": "032",
+        "call_count": 347,
+        "calls_length": 347,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 35256753,
+          "input_tokens": 2096956,
+          "output_tokens": 109584,
+          "input_tokens_including_cache": 37353709
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2096956,
+          "output_tokens": 109584,
+          "cache_read_input_tokens": 35256753,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            37353709,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 52,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/032/api_usage.json"
+      },
+      {
+        "task_id": "033",
+        "call_count": 412,
+        "calls_length": 412,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 37424090,
+          "input_tokens": 2225772,
+          "output_tokens": 90178,
+          "input_tokens_including_cache": 39649862
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2225772,
+          "output_tokens": 90178,
+          "cache_read_input_tokens": 37424090,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            39649862,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 47,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/033/api_usage.json"
+      },
+      {
+        "task_id": "034",
+        "call_count": 223,
+        "calls_length": 223,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 15986489,
+          "input_tokens": 1273388,
+          "output_tokens": 40452,
+          "input_tokens_including_cache": 17259877
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1273388,
+          "output_tokens": 40452,
+          "cache_read_input_tokens": 15986489,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            17259877,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 53,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/034/api_usage.json"
+      },
+      {
+        "task_id": "035",
+        "call_count": 130,
+        "calls_length": 130,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 8305517,
+          "input_tokens": 718014,
+          "output_tokens": 32201,
+          "input_tokens_including_cache": 9023531
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 718014,
+          "output_tokens": 32201,
+          "cache_read_input_tokens": 8305517,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            9023531,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 45,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/035/api_usage.json"
+      },
+      {
+        "task_id": "036",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 47278344,
+          "input_tokens": 2797936,
+          "output_tokens": 87137,
+          "input_tokens_including_cache": 50076280
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2797936,
+          "output_tokens": 87137,
+          "cache_read_input_tokens": 47278344,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            50076280,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 57,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/036/api_usage.json"
+      },
+      {
+        "task_id": "037",
+        "call_count": 267,
+        "calls_length": 267,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 19082763,
+          "input_tokens": 1557352,
+          "output_tokens": 69377,
+          "input_tokens_including_cache": 20640115
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1557352,
+          "output_tokens": 69377,
+          "cache_read_input_tokens": 19082763,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            20640115,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 52,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/037/api_usage.json"
+      },
+      {
+        "task_id": "038",
+        "call_count": 408,
+        "calls_length": 408,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 33490459,
+          "input_tokens": 2103228,
+          "output_tokens": 69049,
+          "input_tokens_including_cache": 35593687
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2103228,
+          "output_tokens": 69049,
+          "cache_read_input_tokens": 33490459,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            35593687,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 44,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/038/api_usage.json"
+      },
+      {
+        "task_id": "039",
+        "call_count": 396,
+        "calls_length": 396,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 33175343,
+          "input_tokens": 2142913,
+          "output_tokens": 60869,
+          "input_tokens_including_cache": 35318256
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2142913,
+          "output_tokens": 60869,
+          "cache_read_input_tokens": 33175343,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            35318256,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 41,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/039/api_usage.json"
+      },
+      {
+        "task_id": "040",
+        "call_count": 409,
+        "calls_length": 409,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 39153352,
+          "input_tokens": 2464251,
+          "output_tokens": 89220,
+          "input_tokens_including_cache": 41617603
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2464251,
+          "output_tokens": 89220,
+          "cache_read_input_tokens": 39153352,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            41617603,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 41,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/040/api_usage.json"
+      },
+      {
+        "task_id": "041",
+        "call_count": 242,
+        "calls_length": 242,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 17415589,
+          "input_tokens": 1698798,
+          "output_tokens": 45598,
+          "input_tokens_including_cache": 19114387
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1698798,
+          "output_tokens": 45598,
+          "cache_read_input_tokens": 17415589,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            19114387,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 48,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/041/api_usage.json"
+      },
+      {
+        "task_id": "042",
+        "call_count": 264,
+        "calls_length": 264,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 21043400,
+          "input_tokens": 1617408,
+          "output_tokens": 78044,
+          "input_tokens_including_cache": 22660808
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1617408,
+          "output_tokens": 78044,
+          "cache_read_input_tokens": 21043400,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            22660808,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 50,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/042/api_usage.json"
+      },
+      {
+        "task_id": "043",
+        "call_count": 308,
+        "calls_length": 308,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 38402488,
+          "input_tokens": 2102133,
+          "output_tokens": 157700,
+          "input_tokens_including_cache": 40504621
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2102133,
+          "output_tokens": 157700,
+          "cache_read_input_tokens": 38402488,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            40504621,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 47,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/043/api_usage.json"
+      },
+      {
+        "task_id": "044",
+        "call_count": 210,
+        "calls_length": 210,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 20488707,
+          "input_tokens": 1198695,
+          "output_tokens": 76739,
+          "input_tokens_including_cache": 21687402
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1198695,
+          "output_tokens": 76739,
+          "cache_read_input_tokens": 20488707,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            21687402,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 41,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/044/api_usage.json"
+      },
+      {
+        "task_id": "045",
+        "call_count": 490,
+        "calls_length": 490,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 64501192,
+          "input_tokens": 2491691,
+          "output_tokens": 127296,
+          "input_tokens_including_cache": 66992883
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2491691,
+          "output_tokens": 127296,
+          "cache_read_input_tokens": 64501192,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            66992883,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 46,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/045/api_usage.json"
+      },
+      {
+        "task_id": "046",
+        "call_count": 353,
+        "calls_length": 353,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 24882677,
+          "input_tokens": 1859355,
+          "output_tokens": 40360,
+          "input_tokens_including_cache": 26742032
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1859355,
+          "output_tokens": 40360,
+          "cache_read_input_tokens": 24882677,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            26742032,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 52,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/046/api_usage.json"
+      },
+      {
+        "task_id": "047",
+        "call_count": 402,
+        "calls_length": 402,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 32701075,
+          "input_tokens": 2137475,
+          "output_tokens": 67333,
+          "input_tokens_including_cache": 34838550
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2137475,
+          "output_tokens": 67333,
+          "cache_read_input_tokens": 32701075,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            34838550,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 45,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/047/api_usage.json"
+      },
+      {
+        "task_id": "048",
+        "call_count": 217,
+        "calls_length": 217,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 15477163,
+          "input_tokens": 1211064,
+          "output_tokens": 87738,
+          "input_tokens_including_cache": 16688227
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1211064,
+          "output_tokens": 87738,
+          "cache_read_input_tokens": 15477163,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            16688227,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 48,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/048/api_usage.json"
+      },
+      {
+        "task_id": "049",
+        "call_count": 70,
+        "calls_length": 70,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 3586697,
+          "input_tokens": 308172,
+          "output_tokens": 13125,
+          "input_tokens_including_cache": 3894869
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 308172,
+          "output_tokens": 13125,
+          "cache_read_input_tokens": 3586697,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            3894869,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 37,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/049/api_usage.json"
+      },
+      {
+        "task_id": "050",
+        "call_count": 349,
+        "calls_length": 349,
+        "missing_usage_count": 1,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 30038668,
+          "input_tokens": 2688884,
+          "output_tokens": 76631,
+          "input_tokens_including_cache": 32727552
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2688884,
+          "output_tokens": 76631,
+          "cache_read_input_tokens": 30038668,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            32727552,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 57,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/050/api_usage.json"
+      },
+      {
+        "task_id": "051",
+        "call_count": 318,
+        "calls_length": 318,
+        "missing_usage_count": 1,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 25170735,
+          "input_tokens": 2967420,
+          "output_tokens": 71166,
+          "input_tokens_including_cache": 28138155
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2967420,
+          "output_tokens": 71166,
+          "cache_read_input_tokens": 25170735,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            28138155,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 45,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/051/api_usage.json"
+      },
+      {
+        "task_id": "052",
+        "call_count": 303,
+        "calls_length": 303,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 20887539,
+          "input_tokens": 1622725,
+          "output_tokens": 42491,
+          "input_tokens_including_cache": 22510264
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1622725,
+          "output_tokens": 42491,
+          "cache_read_input_tokens": 20887539,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            22510264,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 58,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/052/api_usage.json"
+      },
+      {
+        "task_id": "053",
+        "call_count": 121,
+        "calls_length": 121,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 8841462,
+          "input_tokens": 675201,
+          "output_tokens": 45058,
+          "input_tokens_including_cache": 9516663
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 675201,
+          "output_tokens": 45058,
+          "cache_read_input_tokens": 8841462,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            9516663,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 54,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/053/api_usage.json"
+      },
+      {
+        "task_id": "054",
+        "call_count": 233,
+        "calls_length": 233,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 20600107,
+          "input_tokens": 1453744,
+          "output_tokens": 91441,
+          "input_tokens_including_cache": 22053851
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1453744,
+          "output_tokens": 91441,
+          "cache_read_input_tokens": 20600107,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            22053851,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 46,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/054/api_usage.json"
+      },
+      {
+        "task_id": "055",
+        "call_count": 464,
+        "calls_length": 464,
+        "missing_usage_count": 1,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 45340187,
+          "input_tokens": 4135348,
+          "output_tokens": 106851,
+          "input_tokens_including_cache": 49475535
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 4135348,
+          "output_tokens": 106851,
+          "cache_read_input_tokens": 45340187,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            49475535,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 51,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/055/api_usage.json"
+      },
+      {
+        "task_id": "056",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 52203801,
+          "input_tokens": 3001825,
+          "output_tokens": 103348,
+          "input_tokens_including_cache": 55205626
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 3001825,
+          "output_tokens": 103348,
+          "cache_read_input_tokens": 52203801,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            55205626,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 45,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/056/api_usage.json"
+      },
+      {
+        "task_id": "057",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 48586333,
+          "input_tokens": 2790000,
+          "output_tokens": 80722,
+          "input_tokens_including_cache": 51376333
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2790000,
+          "output_tokens": 80722,
+          "cache_read_input_tokens": 48586333,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            51376333,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 49,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/057/api_usage.json"
+      },
+      {
+        "task_id": "058",
+        "call_count": 387,
+        "calls_length": 387,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 31488922,
+          "input_tokens": 2082778,
+          "output_tokens": 65667,
+          "input_tokens_including_cache": 33571700
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2082778,
+          "output_tokens": 65667,
+          "cache_read_input_tokens": 31488922,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            33571700,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 40,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/058/api_usage.json"
+      },
+      {
+        "task_id": "059",
+        "call_count": 139,
+        "calls_length": 139,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 13319604,
+          "input_tokens": 1141262,
+          "output_tokens": 94200,
+          "input_tokens_including_cache": 14460866
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1141262,
+          "output_tokens": 94200,
+          "cache_read_input_tokens": 13319604,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            14460866,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 45,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/059/api_usage.json"
+      },
+      {
+        "task_id": "060",
+        "call_count": 468,
+        "calls_length": 468,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 41245324,
+          "input_tokens": 2821048,
+          "output_tokens": 74899,
+          "input_tokens_including_cache": 44066372
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2821048,
+          "output_tokens": 74899,
+          "cache_read_input_tokens": 41245324,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            44066372,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 50,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/060/api_usage.json"
+      },
+      {
+        "task_id": "061",
+        "call_count": 138,
+        "calls_length": 138,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 8489834,
+          "input_tokens": 727556,
+          "output_tokens": 31160,
+          "input_tokens_including_cache": 9217390
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 727556,
+          "output_tokens": 31160,
+          "cache_read_input_tokens": 8489834,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            9217390,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 50,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/061/api_usage.json"
+      },
+      {
+        "task_id": "062",
+        "call_count": 495,
+        "calls_length": 495,
+        "missing_usage_count": 5,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 56703432,
+          "input_tokens": 3937506,
+          "output_tokens": 123655,
+          "input_tokens_including_cache": 60640938
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 3937506,
+          "output_tokens": 123655,
+          "cache_read_input_tokens": 56703432,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            60640938,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 48,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/062/api_usage.json"
+      },
+      {
+        "task_id": "063",
+        "call_count": 345,
+        "calls_length": 345,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 36429047,
+          "input_tokens": 1987062,
+          "output_tokens": 120167,
+          "input_tokens_including_cache": 38416109
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1987062,
+          "output_tokens": 120167,
+          "cache_read_input_tokens": 36429047,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            38416109,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 42,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/063/api_usage.json"
+      },
+      {
+        "task_id": "064",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 45728532,
+          "input_tokens": 2712727,
+          "output_tokens": 104566,
+          "input_tokens_including_cache": 48441259
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2712727,
+          "output_tokens": 104566,
+          "cache_read_input_tokens": 45728532,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            48441259,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 49,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/064/api_usage.json"
+      },
+      {
+        "task_id": "065",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 42544306,
+          "input_tokens": 2617755,
+          "output_tokens": 68979,
+          "input_tokens_including_cache": 45162061
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2617755,
+          "output_tokens": 68979,
+          "cache_read_input_tokens": 42544306,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            45162061,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 50,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/065/api_usage.json"
+      },
+      {
+        "task_id": "066",
+        "call_count": 202,
+        "calls_length": 202,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 15422615,
+          "input_tokens": 1028631,
+          "output_tokens": 54422,
+          "input_tokens_including_cache": 16451246
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1028631,
+          "output_tokens": 54422,
+          "cache_read_input_tokens": 15422615,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            16451246,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 47,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/066/api_usage.json"
+      },
+      {
+        "task_id": "067",
+        "call_count": 236,
+        "calls_length": 236,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 17111185,
+          "input_tokens": 1320959,
+          "output_tokens": 50439,
+          "input_tokens_including_cache": 18432144
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1320959,
+          "output_tokens": 50439,
+          "cache_read_input_tokens": 17111185,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            18432144,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 50,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/067/api_usage.json"
+      },
+      {
+        "task_id": "068",
+        "call_count": 382,
+        "calls_length": 382,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 35674001,
+          "input_tokens": 2303748,
+          "output_tokens": 91188,
+          "input_tokens_including_cache": 37977749
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2303748,
+          "output_tokens": 91188,
+          "cache_read_input_tokens": 35674001,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            37977749,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 48,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/068/api_usage.json"
+      },
+      {
+        "task_id": "069",
+        "call_count": 68,
+        "calls_length": 68,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 3516326,
+          "input_tokens": 270962,
+          "output_tokens": 10942,
+          "input_tokens_including_cache": 3787288
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 270962,
+          "output_tokens": 10942,
+          "cache_read_input_tokens": 3516326,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            3787288,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 41,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/069/api_usage.json"
+      },
+      {
+        "task_id": "070",
+        "call_count": 142,
+        "calls_length": 142,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 8156834,
+          "input_tokens": 638918,
+          "output_tokens": 19608,
+          "input_tokens_including_cache": 8795752
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 638918,
+          "output_tokens": 19608,
+          "cache_read_input_tokens": 8156834,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            8795752,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 47,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/070/api_usage.json"
+      },
+      {
+        "task_id": "071",
+        "call_count": 313,
+        "calls_length": 313,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 25839174,
+          "input_tokens": 1641598,
+          "output_tokens": 69613,
+          "input_tokens_including_cache": 27480772
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1641598,
+          "output_tokens": 69613,
+          "cache_read_input_tokens": 25839174,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            27480772,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 44,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/071/api_usage.json"
+      },
+      {
+        "task_id": "072",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 50220139,
+          "input_tokens": 2654359,
+          "output_tokens": 105551,
+          "input_tokens_including_cache": 52874498
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2654359,
+          "output_tokens": 105551,
+          "cache_read_input_tokens": 50220139,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            52874498,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 48,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/072/api_usage.json"
+      },
+      {
+        "task_id": "073",
+        "call_count": 371,
+        "calls_length": 371,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 26166902,
+          "input_tokens": 1952342,
+          "output_tokens": 39425,
+          "input_tokens_including_cache": 28119244
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1952342,
+          "output_tokens": 39425,
+          "cache_read_input_tokens": 26166902,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            28119244,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 41,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/073/api_usage.json"
+      },
+      {
+        "task_id": "074",
+        "call_count": 223,
+        "calls_length": 223,
+        "missing_usage_count": 2,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 19069052,
+          "input_tokens": 2145050,
+          "output_tokens": 150891,
+          "input_tokens_including_cache": 21214102
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2145050,
+          "output_tokens": 150891,
+          "cache_read_input_tokens": 19069052,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            21214102,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 45,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/074/api_usage.json"
+      },
+      {
+        "task_id": "075",
+        "call_count": 204,
+        "calls_length": 204,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 19204830,
+          "input_tokens": 3675672,
+          "output_tokens": 136995,
+          "input_tokens_including_cache": 22880502
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 3675672,
+          "output_tokens": 136995,
+          "cache_read_input_tokens": 19204830,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            22880502,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 52,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/075/api_usage.json"
+      },
+      {
+        "task_id": "076",
+        "call_count": 459,
+        "calls_length": 459,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 48749995,
+          "input_tokens": 2509021,
+          "output_tokens": 107213,
+          "input_tokens_including_cache": 51259016
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2509021,
+          "output_tokens": 107213,
+          "cache_read_input_tokens": 48749995,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            51259016,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 52,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/076/api_usage.json"
+      },
+      {
+        "task_id": "077",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 47084515,
+          "input_tokens": 2728899,
+          "output_tokens": 92073,
+          "input_tokens_including_cache": 49813414
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2728899,
+          "output_tokens": 92073,
+          "cache_read_input_tokens": 47084515,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            49813414,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 42,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/077/api_usage.json"
+      },
+      {
+        "task_id": "078",
+        "call_count": 260,
+        "calls_length": 260,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 21384724,
+          "input_tokens": 1648859,
+          "output_tokens": 64127,
+          "input_tokens_including_cache": 23033583
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1648859,
+          "output_tokens": 64127,
+          "cache_read_input_tokens": 21384724,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            23033583,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 38,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/078/api_usage.json"
+      },
+      {
+        "task_id": "079",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 44166537,
+          "input_tokens": 3973967,
+          "output_tokens": 75873,
+          "input_tokens_including_cache": 48140504
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 3973967,
+          "output_tokens": 75873,
+          "cache_read_input_tokens": 44166537,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            48140504,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 44,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/079/api_usage.json"
+      },
+      {
+        "task_id": "080",
+        "call_count": 390,
+        "calls_length": 390,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 34066070,
+          "input_tokens": 2195346,
+          "output_tokens": 80236,
+          "input_tokens_including_cache": 36261416
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2195346,
+          "output_tokens": 80236,
+          "cache_read_input_tokens": 34066070,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            36261416,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 48,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/080/api_usage.json"
+      },
+      {
+        "task_id": "081",
+        "call_count": 440,
+        "calls_length": 440,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 42681342,
+          "input_tokens": 2475855,
+          "output_tokens": 87587,
+          "input_tokens_including_cache": 45157197
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2475855,
+          "output_tokens": 87587,
+          "cache_read_input_tokens": 42681342,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            45157197,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 49,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/081/api_usage.json"
+      },
+      {
+        "task_id": "082",
+        "call_count": 150,
+        "calls_length": 150,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 9079516,
+          "input_tokens": 781001,
+          "output_tokens": 26534,
+          "input_tokens_including_cache": 9860517
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 781001,
+          "output_tokens": 26534,
+          "cache_read_input_tokens": 9079516,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            9860517,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 54,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/082/api_usage.json"
+      },
+      {
+        "task_id": "083",
+        "call_count": 308,
+        "calls_length": 308,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 26333437,
+          "input_tokens": 1987251,
+          "output_tokens": 72015,
+          "input_tokens_including_cache": 28320688
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1987251,
+          "output_tokens": 72015,
+          "cache_read_input_tokens": 26333437,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            28320688,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 48,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/083/api_usage.json"
+      },
+      {
+        "task_id": "084",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 51977320,
+          "input_tokens": 3124552,
+          "output_tokens": 115186,
+          "input_tokens_including_cache": 55101872
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 3124552,
+          "output_tokens": 115186,
+          "cache_read_input_tokens": 51977320,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            55101872,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 51,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/084/api_usage.json"
+      },
+      {
+        "task_id": "085",
+        "call_count": 191,
+        "calls_length": 191,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 13510906,
+          "input_tokens": 1061130,
+          "output_tokens": 50567,
+          "input_tokens_including_cache": 14572036
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1061130,
+          "output_tokens": 50567,
+          "cache_read_input_tokens": 13510906,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            14572036,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 45,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/085/api_usage.json"
+      },
+      {
+        "task_id": "086",
+        "call_count": 225,
+        "calls_length": 225,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 15207130,
+          "input_tokens": 1130355,
+          "output_tokens": 39318,
+          "input_tokens_including_cache": 16337485
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1130355,
+          "output_tokens": 39318,
+          "cache_read_input_tokens": 15207130,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            16337485,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 43,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/086/api_usage.json"
+      },
+      {
+        "task_id": "087",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 44854048,
+          "input_tokens": 2832829,
+          "output_tokens": 83773,
+          "input_tokens_including_cache": 47686877
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2832829,
+          "output_tokens": 83773,
+          "cache_read_input_tokens": 44854048,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            47686877,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 57,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/087/api_usage.json"
+      },
+      {
+        "task_id": "088",
+        "call_count": 437,
+        "calls_length": 437,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 42358765,
+          "input_tokens": 2706617,
+          "output_tokens": 86485,
+          "input_tokens_including_cache": 45065382
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2706617,
+          "output_tokens": 86485,
+          "cache_read_input_tokens": 42358765,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            45065382,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 44,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/088/api_usage.json"
+      },
+      {
+        "task_id": "089",
+        "call_count": 237,
+        "calls_length": 237,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 16642981,
+          "input_tokens": 1254698,
+          "output_tokens": 40530,
+          "input_tokens_including_cache": 17897679
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1254698,
+          "output_tokens": 40530,
+          "cache_read_input_tokens": 16642981,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            17897679,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 38,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/089/api_usage.json"
+      },
+      {
+        "task_id": "090",
+        "call_count": 432,
+        "calls_length": 432,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 34046233,
+          "input_tokens": 2780016,
+          "output_tokens": 61569,
+          "input_tokens_including_cache": 36826249
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2780016,
+          "output_tokens": 61569,
+          "cache_read_input_tokens": 34046233,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            36826249,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 61,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/090/api_usage.json"
+      },
+      {
+        "task_id": "091",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 49923692,
+          "input_tokens": 4567089,
+          "output_tokens": 98131,
+          "input_tokens_including_cache": 54490781
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 4567089,
+          "output_tokens": 98131,
+          "cache_read_input_tokens": 49923692,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            54490781,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 44,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/091/api_usage.json"
+      },
+      {
+        "task_id": "092",
+        "call_count": 306,
+        "calls_length": 306,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 25708046,
+          "input_tokens": 3052250,
+          "output_tokens": 68769,
+          "input_tokens_including_cache": 28760296
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 3052250,
+          "output_tokens": 68769,
+          "cache_read_input_tokens": 25708046,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            28760296,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 36,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/092/api_usage.json"
+      },
+      {
+        "task_id": "093",
+        "call_count": 317,
+        "calls_length": 317,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 21739127,
+          "input_tokens": 1999951,
+          "output_tokens": 42565,
+          "input_tokens_including_cache": 23739078
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1999951,
+          "output_tokens": 42565,
+          "cache_read_input_tokens": 21739127,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            23739078,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 52,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/093/api_usage.json"
+      },
+      {
+        "task_id": "094",
+        "call_count": 483,
+        "calls_length": 483,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 46904005,
+          "input_tokens": 2986279,
+          "output_tokens": 119559,
+          "input_tokens_including_cache": 49890284
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2986279,
+          "output_tokens": 119559,
+          "cache_read_input_tokens": 46904005,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            49890284,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 47,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/094/api_usage.json"
+      },
+      {
+        "task_id": "095",
+        "call_count": 224,
+        "calls_length": 224,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 18656172,
+          "input_tokens": 1371900,
+          "output_tokens": 71142,
+          "input_tokens_including_cache": 20028072
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1371900,
+          "output_tokens": 71142,
+          "cache_read_input_tokens": 18656172,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            20028072,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 22,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/095/api_usage.json"
+      },
+      {
+        "task_id": "096",
+        "call_count": 343,
+        "calls_length": 343,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 31277401,
+          "input_tokens": 1944879,
+          "output_tokens": 90818,
+          "input_tokens_including_cache": 33222280
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1944879,
+          "output_tokens": 90818,
+          "cache_read_input_tokens": 31277401,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            33222280,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 29,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/096/api_usage.json"
+      },
+      {
+        "task_id": "097",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 49977244,
+          "input_tokens": 2417984,
+          "output_tokens": 93385,
+          "input_tokens_including_cache": 52395228
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2417984,
+          "output_tokens": 93385,
+          "cache_read_input_tokens": 49977244,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            52395228,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 47,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/097/api_usage.json"
+      },
+      {
+        "task_id": "098",
+        "call_count": 131,
+        "calls_length": 131,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 7579886,
+          "input_tokens": 681510,
+          "output_tokens": 20749,
+          "input_tokens_including_cache": 8261396
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 681510,
+          "output_tokens": 20749,
+          "cache_read_input_tokens": 7579886,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            8261396,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 23,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/098/api_usage.json"
+      },
+      {
+        "task_id": "099",
+        "call_count": 22,
+        "calls_length": 22,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 684022,
+          "input_tokens": 66663,
+          "output_tokens": 3743,
+          "input_tokens_including_cache": 750685
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 66663,
+          "output_tokens": 3743,
+          "cache_read_input_tokens": 684022,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            750685,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 14,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/099/api_usage.json"
+      },
+      {
+        "task_id": "100",
+        "call_count": 289,
+        "calls_length": 289,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 34709576,
+          "input_tokens": 2336256,
+          "output_tokens": 201835,
+          "input_tokens_including_cache": 37045832
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2336256,
+          "output_tokens": 201835,
+          "cache_read_input_tokens": 34709576,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            37045832,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 25,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/100/api_usage.json"
+      },
+      {
+        "task_id": "101",
+        "call_count": 169,
+        "calls_length": 169,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 11927691,
+          "input_tokens": 1177417,
+          "output_tokens": 49709,
+          "input_tokens_including_cache": 13105108
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1177417,
+          "output_tokens": 49709,
+          "cache_read_input_tokens": 11927691,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            13105108,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 28,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/101/api_usage.json"
+      },
+      {
+        "task_id": "102",
+        "call_count": 500,
+        "calls_length": 500,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 44131340,
+          "input_tokens": 2635134,
+          "output_tokens": 78489,
+          "input_tokens_including_cache": 46766474
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2635134,
+          "output_tokens": 78489,
+          "cache_read_input_tokens": 44131340,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            46766474,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 42,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/102/api_usage.json"
+      },
+      {
+        "task_id": "103",
+        "call_count": 251,
+        "calls_length": 251,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 21746761,
+          "input_tokens": 1308968,
+          "output_tokens": 67859,
+          "input_tokens_including_cache": 23055729
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1308968,
+          "output_tokens": 67859,
+          "cache_read_input_tokens": 21746761,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            23055729,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 37,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/103/api_usage.json"
+      },
+      {
+        "task_id": "104",
+        "call_count": 242,
+        "calls_length": 242,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 20734238,
+          "input_tokens": 1211811,
+          "output_tokens": 60078,
+          "input_tokens_including_cache": 21946049
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1211811,
+          "output_tokens": 60078,
+          "cache_read_input_tokens": 20734238,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            21946049,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 43,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/104/api_usage.json"
+      },
+      {
+        "task_id": "105",
+        "call_count": 229,
+        "calls_length": 229,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 16467982,
+          "input_tokens": 1184104,
+          "output_tokens": 50924,
+          "input_tokens_including_cache": 17652086
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1184104,
+          "output_tokens": 50924,
+          "cache_read_input_tokens": 16467982,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            17652086,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 47,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/105/api_usage.json"
+      },
+      {
+        "task_id": "106",
+        "call_count": 416,
+        "calls_length": 416,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 35472808,
+          "input_tokens": 2122351,
+          "output_tokens": 72142,
+          "input_tokens_including_cache": 37595159
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 2122351,
+          "output_tokens": 72142,
+          "cache_read_input_tokens": 35472808,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            37595159,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 50,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/106/api_usage.json"
+      },
+      {
+        "task_id": "107",
+        "call_count": 325,
+        "calls_length": 325,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 27005210,
+          "input_tokens": 1408024,
+          "output_tokens": 66937,
+          "input_tokens_including_cache": 28413234
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1408024,
+          "output_tokens": 66937,
+          "cache_read_input_tokens": 27005210,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            28413234,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 40,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/107/api_usage.json"
+      },
+      {
+        "task_id": "108",
+        "call_count": 416,
+        "calls_length": 416,
+        "missing_usage_count": 0,
+        "report_numeric_totals": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 31731885,
+          "input_tokens": 1742845,
+          "output_tokens": 55690,
+          "input_tokens_including_cache": 33474730
+        },
+        "recomputed_usage_totals": {
+          "input_tokens": 1742845,
+          "output_tokens": 55690,
+          "cache_read_input_tokens": 31731885,
+          "cache_creation_input_tokens": 0
+        },
+        "numeric_total_differences": {
+          "input_tokens_including_cache": [
+            33474730,
+            0
+          ]
+        },
+        "request_time_equals_response_time": 35,
+        "usage_missing_in_calls": 0,
+        "source": "data/raw/public/osworld2_metadata/01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f/website_demo/MiniMax-M3/tasks/108/api_usage.json"
+      }
+    ],
+    "position_pairing_with_trajectory": false,
+    "api_logs_downloaded": false,
+    "request_level_field_stats": {
+      "input_tokens": {
+        "n": 35272,
+        "missing": 0,
+        "min": 2.0,
+        "q1": 2758.0,
+        "median": 2797.0,
+        "q3": 2970.0,
+        "iqr": 212.0,
+        "max": 224892.0
+      },
+      "output_tokens": {
+        "n": 35272,
+        "missing": 0,
+        "min": 1.0,
+        "q1": 37.0,
+        "median": 73.0,
+        "q3": 194.0,
+        "iqr": 157.0,
+        "max": 8192.0
+      },
+      "cache_read_input_tokens": {
+        "n": 35272,
+        "missing": 0,
+        "min": 114.0,
+        "q1": 63575.0,
+        "median": 86508.5,
+        "q3": 112221.25,
+        "iqr": 48646.25,
+        "max": 278404.0
+      },
+      "cache_creation_input_tokens": {
+        "n": 35272,
+        "missing": 0,
+        "min": 0.0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 0.0,
+        "iqr": 0.0,
+        "max": 0.0
+      },
+      "input_tokens_including_cache_derived": {
+        "n": 35272,
+        "missing": 0,
+        "min": 4002.0,
+        "q1": 68885.25,
+        "median": 90676.5,
+        "q3": 116143.75,
+        "iqr": 47258.5,
+        "max": 283471.0
+      }
+    },
+    "task_level_field_stats": {
+      "input_tokens": {
+        "n": 108,
+        "missing": 0,
+        "min": 66663.0,
+        "q1": 1243976.25,
+        "median": 1993601.0,
+        "q3": 2639940.25,
+        "iqr": 1395964.0,
+        "max": 5371207.0
+      },
+      "output_tokens": {
+        "n": 108,
+        "missing": 0,
+        "min": 3743.0,
+        "q1": 49024.5,
+        "median": 68874.0,
+        "q3": 90338.0,
+        "iqr": 41313.5,
+        "max": 201835.0
+      },
+      "cache_read_input_tokens": {
+        "n": 108,
+        "missing": 0,
+        "min": 684022.0,
+        "q1": 16994134.0,
+        "median": 26250169.5,
+        "q3": 41929461.5,
+        "iqr": 24935327.5,
+        "max": 64501192.0
+      },
+      "cache_creation_input_tokens": {
+        "n": 108,
+        "missing": 0,
+        "min": 0.0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 0.0,
+        "iqr": 0.0,
+        "max": 0.0
+      },
+      "input_tokens_including_cache_derived": {
+        "n": 108,
+        "missing": 0,
+        "min": 750685.0,
+        "q1": 18329848.25,
+        "median": 28366961.0,
+        "q3": 44480432.5,
+        "iqr": 26150584.25,
+        "max": 66992883.0
+      }
+    }
+  },
+  "gpt56_manifest": {
+    "status": "checked",
+    "manifest_tasks": 107,
+    "included_tasks": 107,
+    "missing_tasks": [
+      "048"
+    ],
+    "result_hash_checked": 107,
+    "mismatch": [],
+    "source_run_values": [
+      "gpt56sol_106tasks_max_sonnet46_bedrock_remote_20260715T055006Z",
+      "gpt56sol_106tasks_max_sonnet46_bedrock_remote_20260715T055006Z_failure_retry1_056",
+      "gpt56sol_106tasks_max_sonnet46_bedrock_remote_20260715T055006Z_failure_retry1_067",
+      "gpt56sol_106tasks_max_sonnet46_bedrock_remote_20260715T055006Z_failure_retry1_108",
+      "gpt56sol_106tasks_max_sonnet46_bedrock_remote_20260715T055006Z_failure_retry_wave_071a2_082a1",
+      "gpt56sol_106tasks_max_sonnet46_bedrock_remote_20260715T055006Z_failure_retry_wave_083a1_092a1",
+      "gpt56sol_final2_controllerfix_max_sonnet46_bedrock_200gb_20260720T161613Z",
+      "gpt56sol_remaining6_max_sonnet46_bedrock_200gb_20260716T060503Z",
+      "gpt56sol_retry3_026_048_064_max_sonnet46_bedrock_200gb_20260720T033319Z"
+    ]
+  },
+  "rules": {
+    "task_extraction": "AST only; literal/limited concatenation and name references; no import/eval/execute",
+    "trajectory": "reuse conservative MiniMax static action grammar; one JSONL row is not assumed one action",
+    "static_vs_execution": "AST occurrence, supported static calls, and actual GUI execution are separate",
+    "results": "done, reward, result files and checkpoint retained separately",
+    "time": "not analyzed; action_timestamp not treated as duration"
+  },
+  "limitations": [
+    "numeric task keys are dataset-local and historical version binding is unknown",
+    "no CPU/memory/I/O/hotspot/usage evidence for trajectories",
+    "result/evaluator fields are not reinterpreted as success",
+    "API usage is only for MiniMax-M3 and not a bill"
+  ]
+}

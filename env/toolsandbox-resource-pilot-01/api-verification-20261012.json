@@ -1,0 +1,142 @@
+{
+ "schema": "toolsandbox-pilot-api-verification-v1",
+ "collection": "TOOLSANDBOX-RESOURCE-PILOT-01",
+ "scope": "one synthetic no-side-effect tool-call protocol request; no benchmark task, no tool execution, no Agent/User loop, no evaluator; tool not executed; no second request under any outcome",
+ "authorization": "single-request verification accepted by the current user for this round; actual cost remains unknown",
+ "client_identity": {
+  "interpreter": "Python 3.11.6",
+  "openai_version": "1.17.0",
+  "sdk_max_retries": 0,
+  "outer_retry_loop": "none (worker 3-attempt loop deliberately NOT used here)",
+  "base_url": "https://api.deepseek.com/v1",
+  "request_model": "deepseek-v4-flash",
+  "api_key_env": "DEEPSEEK_API_KEY",
+  "api_key_handling": "read from environment into memory only; never printed, logged, hashed or persisted",
+  "timeout_s": 30.0,
+  "max_tokens": 512,
+  "stream": false,
+  "stop": "not set",
+  "tool_choice": "not set (same shape as the official ToolSandbox agent chain, which passes tools without tool_choice)",
+  "request_count_guard": "single create() call site; budget checked before send; httpx request event hook counts actual transport requests"
+ },
+ "request_summary": {
+  "message_count": 2,
+  "tool_count": 1,
+  "tool_name": "smoke_echo",
+  "system_excerpt": "You are a tool-use protocol test agent.",
+  "user_prompt": "Call the smoke_echo tool with value \"ok\"."
+ },
+ "timing": {
+  "t_start_utc": "2026-10-12T06:24:55.946650+00:00",
+  "t_end_utc": "2026-10-12T06:24:57.084431+00:00",
+  "wall_s": 1.137781844
+ },
+ "actual_transport_requests": 1,
+ "transport_request_shapes": [
+  {
+   "method": "POST",
+   "url": "https://api.deepseek.com/v1/chat/completions"
+  }
+ ],
+ "error": null,
+ "response": {
+  "response_model": "deepseek-flash",
+  "response_id": "4a672b5e-7108-41f1-8350-5437499d4524",
+  "finish_reason": "tool_calls",
+  "content": {
+   "present": false,
+   "length": 0
+  },
+  "reasoning_content": {
+   "present": true,
+   "length": 66
+  },
+  "tool_calls": {
+   "present": true,
+   "id_present": true,
+   "type_function": true,
+   "name_matches": true,
+   "arguments_parseable": true,
+   "value_ok": true,
+   "id": "call_00_kSTBiBy7xhaqehZH6u906872",
+   "name": "smoke_echo",
+   "arguments_raw": "{\"value\": \"ok\"}",
+   "arguments_parsed": {
+    "value": "ok"
+   }
+  }
+ },
+ "checks": {
+  "sdk_parsed": true,
+  "response_model": "deepseek-flash",
+  "request_model": "deepseek-v4-flash",
+  "model_alias_note": "request and response model strings are recorded as-is; registration is NOT auto-updated",
+  "finish_reason": "tool_calls",
+  "content_present": false,
+  "content_length": 0,
+  "reasoning_content_present": true,
+  "reasoning_content_length": 66,
+  "message_extra_keys": [
+   "reasoning_content"
+  ],
+  "tool_calls_count": 1,
+  "usage_raw_fields": {
+   "prompt_tokens": 329,
+   "completion_tokens": 57,
+   "total_tokens": 386,
+   "prompt_tokens_details": {
+    "cached_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 17
+   },
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 329
+  },
+  "usage_extracted_by_worker_logic": {
+   "prompt_tokens": 329,
+   "completion_tokens": 57,
+   "total_tokens": 386,
+   "prompt_tokens_details": {
+    "cached_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 17
+   },
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 329
+  },
+  "usage_after_sanitize_whitelist": {
+   "prompt_tokens": 329,
+   "completion_tokens": 57,
+   "total_tokens": 386,
+   "completion_tokens_details": {
+    "reasoning_tokens": 17
+   },
+   "prompt_tokens_details": {
+    "cached_tokens": 0
+   },
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 329
+  },
+  "sdk_preserves_vendor_fields": true
+ },
+ "status": "PASS",
+ "status_reasons": [
+  "single synthetic tool-call protocol verified: id/type/name/arguments/value all as expected",
+  "content empty/null is valid here: the answer is in tool_calls"
+ ],
+ "notes": [
+  "this is a single synthetic tool-call protocol test only",
+  "Agent/User full chain NOT verified by this record (still only offline-fake verified)",
+  "no ToolSandbox task, tool, loop or evaluator was executed",
+  "resource collection NOT measured; cost NOT closed (single-request cost accepted, amount unknown)"
+ ],
+ "identity_context": {
+  "candidate_identity_sha256": "ff5f43a20266fadd49523c0bcf0c4a394fd7b62389ef7ee915af923fb3750912",
+  "identity_match_confirmed_before_request": true,
+  "code_or_config_change_by_this_verification": false,
+  "identity_not_refrozen": true
+ },
+ "requests_made": 1
+}

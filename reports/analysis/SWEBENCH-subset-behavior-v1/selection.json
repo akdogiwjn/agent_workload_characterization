@@ -1,0 +1,605 @@
+{
+ "schema": "swebench-subset-behavior-selection-v1",
+ "created_at_utc": "2026-10-07",
+ "index_commit": "40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+ "selection_rule": "within each group: task-ID lexicographic order, first 30 trajectories; 3 groups x 30 = 90 total (upper bound)",
+ "selection_criteria": [
+  "task-set increment: sonar (test split) covers the full 2,294-task set, 1,794 tasks beyond the covered Verified 500; moatless covers the Lite 300 set (207 beyond Verified 500); sweagent group is on the Verified 500 already covered behaviorally by SWE-rebench but contributes format-level increment",
+  "harness/structure increment: sweagent = dedicated editor interface (create/open/edit/submit non-shell action commands) + in-trajectory exit_status; moatless = saved search-flow transitions (SearchCode/IdentifyCode/PlanToCode/EditCode/Finished) with structured parameters + in-trajectory info (duration/cost/submission); sonar = explicit tool_calls protocol (bash + str_replace_based_edit_tool) + thinking blocks + tool results WITHOUT tool_call_id",
+  "field analyzability and local completeness: all three groups fully downloaded (500/500, 300/300, 2147/2294-partial-but-first-30-complete)"
+ ],
+ "increment_vs_swe_rebench_v2": {
+  "swe_rebench_covers": "17 model-participants in a third-party NORMALIZED JSONL corpus; native tool_call interface dominated by bash_terminal (85.4%); explicit call/result IDs with association accounting; evaluation status and agent_exit fields; 111 tasks; no dedicated-editor interface evidence, no search-flow structure, no cost field, no thinking blocks",
+  "swebench_subset_adds": "(1) non-shell dedicated editor interfaces (sweagent create/open/edit; sonar str_replace_based_edit_tool); (2) saved search-flow transition structure (moatless) not present in the normalized corpus; (3) in-trajectory termination (exit_status) and submission patch fields; (4) a message-protocol corpus whose tool results lack tool_call_id (association-protocol gap evidence); (5) test-split task coverage (2,294 tasks) beyond SWE-rebench 111",
+  "not_a_reason": "file count; different benchmark task IDs do not by themselves prove task-content independence"
+ },
+ "examined_but_excluded": [
+  {
+   "submission": "lite/20240806_SuperCoder2.0",
+   "reason": "single {instance_id, trajectory} structure; smaller structural increment than the three selected groups"
+  },
+  {
+   "submission": "lite/20251009_MAYA_claude-sonnet-4-5-20250929",
+   "reason": "agents + llm_final_response structure preserves little per-step interaction"
+  },
+  {
+   "submission": "lite/20250619_KGCompass_claude-3.5-sonnet-20241022",
+   "reason": "free-text flow records without structured call records"
+  }
+ ],
+ "known_biases": [
+  "lexicographic first-30 within each group over-weights task IDs starting with astropy__/django__; cross-group differences must not be attributed to harness (task sets differ and overlap only partially)",
+  "one trajectory per task per submission (no repeat/episode dimension in this selection)",
+  "sonar group is a partial download (2147/2294 objects) though all selected first-30 files are present",
+  "no evaluation/result fields exist inside any of the three trajectory formats; resolved status is NOT analyzed here"
+ ],
+ "groups": [
+  {
+   "split": "verified",
+   "submission": "20240620_sweagent_claude3.5sonnet",
+   "group_files_total": 500,
+   "selected_n": 30,
+   "source_registration": "BULK-NONVIDEO-20260929 (verified group, completed by SWEBENCH-CONTINUATION-20260930) / SWEBENCH-SUPPLEMENT-20261006 (lite, test)",
+   "items": [
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-12907.traj",
+     "task_id": "astropy__astropy-12907",
+     "bytes": 336883,
+     "sha256": "3c9ab810e412bc5ba4164674488c8bff8d5009200a7cb6133f359109040696a5"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-13033.traj",
+     "task_id": "astropy__astropy-13033",
+     "bytes": 384958,
+     "sha256": "72bab0d531361564101a95fd555af0d055d3b4fc6c4b281639a5b5c1232c7e68"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-13236.traj",
+     "task_id": "astropy__astropy-13236",
+     "bytes": 427063,
+     "sha256": "f4fa39351de6a5201b2f0d64fc3f143f9adc4f1100329171513adde61adf2ac1"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-13398.traj",
+     "task_id": "astropy__astropy-13398",
+     "bytes": 171716,
+     "sha256": "98dcb140eb2d73ab41a34b43dd49ae49059a7a13c243ae18f989d381cadff2d0"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-13453.traj",
+     "task_id": "astropy__astropy-13453",
+     "bytes": 555927,
+     "sha256": "39930ac8a69c773d2899e215c3d66b80e87e9f2c4fe7d355997bf846e4cf307c"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-13579.traj",
+     "task_id": "astropy__astropy-13579",
+     "bytes": 547078,
+     "sha256": "0860b904831833ec5e8914aacf352e737636888ad1a7fef4cf7e30811a5d8350"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-13977.traj",
+     "task_id": "astropy__astropy-13977",
+     "bytes": 258049,
+     "sha256": "8ac62f0ac15ff86a3504fc49bee1d789d035bc045cff75d06e589f02f7e8fabf"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-14096.traj",
+     "task_id": "astropy__astropy-14096",
+     "bytes": 422430,
+     "sha256": "75338389232b2dfeb3ca58d85c49e68eae659fb6175d987f97f66820ad809f20"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-14182.traj",
+     "task_id": "astropy__astropy-14182",
+     "bytes": 424016,
+     "sha256": "9b3bfe7f19e74b36631dae9eacb20581e7382daa0889c5aa15a523b26d68a3f4"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-14309.traj",
+     "task_id": "astropy__astropy-14309",
+     "bytes": 400398,
+     "sha256": "7f90edeba1bff0cff75ee50e7a5a90489f9f076492be3353af34ffa4da4fc0ef"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-14365.traj",
+     "task_id": "astropy__astropy-14365",
+     "bytes": 368622,
+     "sha256": "3d895508ca49603a466934c81c1ee0f086f16aa3311543a17d20b0db3d00e13c"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-14369.traj",
+     "task_id": "astropy__astropy-14369",
+     "bytes": 384727,
+     "sha256": "2059c0072188bafd0a262e33c74e38c1ebe73c73d1750ee19a1e395ffa66a0de"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-14508.traj",
+     "task_id": "astropy__astropy-14508",
+     "bytes": 441022,
+     "sha256": "80d08153f5752b4e32a223c286e35d3680fc38edcda405054905cd49ed03d0d7"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-14539.traj",
+     "task_id": "astropy__astropy-14539",
+     "bytes": 315769,
+     "sha256": "ecbc505b47ad8927e9a344603e21619602b747b5a6c6ac8a241aed4f533bf7a7"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-14598.traj",
+     "task_id": "astropy__astropy-14598",
+     "bytes": 929194,
+     "sha256": "5a74ead702d9f0b839e44d3cbbff6038b3b3a8b96f0e684f3e7e62e2faeff389"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-14995.traj",
+     "task_id": "astropy__astropy-14995",
+     "bytes": 496424,
+     "sha256": "27326dd566af453522271a8b77e23ab738758485556059e7fa4ffddcb813e4d3"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-7166.traj",
+     "task_id": "astropy__astropy-7166",
+     "bytes": 84077,
+     "sha256": "d75b4c79435472ac29c41b7121dea54d0799f570022cea59d40f17d751d7a2ee"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-7336.traj",
+     "task_id": "astropy__astropy-7336",
+     "bytes": 73880,
+     "sha256": "e528bffd6506be60b0f1bb723040ec1efd9ba8b0a91c1ff6d7eb3a8e901e86c9"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-7606.traj",
+     "task_id": "astropy__astropy-7606",
+     "bytes": 80983,
+     "sha256": "665ba24dfe6dc50e9743ce122c7ce7e8bf537120d6d73aa86278db7c3b1570f8"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-7671.traj",
+     "task_id": "astropy__astropy-7671",
+     "bytes": 160091,
+     "sha256": "dd4df28d45d7882d64e95fb1e9b91ca88c76fc09bae45e94156ebcf564c44694"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-8707.traj",
+     "task_id": "astropy__astropy-8707",
+     "bytes": 247244,
+     "sha256": "1bbb8268a86ea233f32d2b9b183eb3316972e5be569889ac46a47bf12f6381e5"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/astropy__astropy-8872.traj",
+     "task_id": "astropy__astropy-8872",
+     "bytes": 371095,
+     "sha256": "4e250c52f1af36c22f2b0d38659dc9ec9d29621ef2c61381cfa22657544453dd"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/django__django-10097.traj",
+     "task_id": "django__django-10097",
+     "bytes": 110341,
+     "sha256": "8fa1154a1a662147558d5608646bd70afddada085722f75cc7af17224f49ecd3"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/django__django-10554.traj",
+     "task_id": "django__django-10554",
+     "bytes": 563735,
+     "sha256": "39487bff6c320d5635753c724064b37e8f780ae475b62a3d28b884c713df8684"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/django__django-10880.traj",
+     "task_id": "django__django-10880",
+     "bytes": 168600,
+     "sha256": "caabeecb0d315648109290afeeb14bffd65a9e952484bff24589adcc8fb9ec99"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/django__django-10914.traj",
+     "task_id": "django__django-10914",
+     "bytes": 167338,
+     "sha256": "7c2104a3bb72db767814e3c26a8558b95a9b1a42b154e5026119e74a6e547817"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/django__django-10973.traj",
+     "task_id": "django__django-10973",
+     "bytes": 506095,
+     "sha256": "212ce8414f7be501a1b2d9efcadfff4f7a9b090a821aefe7866b4abc71eeee2c"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/django__django-10999.traj",
+     "task_id": "django__django-10999",
+     "bytes": 600123,
+     "sha256": "d86766f94b167339079fd800f03c207e7ba07d455d4b857886e46b252e1b9f8a"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/django__django-11066.traj",
+     "task_id": "django__django-11066",
+     "bytes": 72878,
+     "sha256": "5d5b3fbc03e99b5fdcd3113d571923a490f8fd86e4828b7430d7739504c3825b"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/20240620_sweagent_claude3.5sonnet/trajs/django__django-11087.traj",
+     "task_id": "django__django-11087",
+     "bytes": 173258,
+     "sha256": "9c8854e1cbad6ebd3f0407d05f317691df8e6fe370068119f0bf053a73a56c5b"
+    }
+   ]
+  },
+  {
+   "split": "lite",
+   "submission": "20240617_moatless_gpt4o",
+   "group_files_total": 300,
+   "selected_n": 30,
+   "source_registration": "BULK-NONVIDEO-20260929 (verified group, completed by SWEBENCH-CONTINUATION-20260930) / SWEBENCH-SUPPLEMENT-20261006 (lite, test)",
+   "items": [
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/astropy__astropy-12907.json",
+     "task_id": "astropy__astropy-12907",
+     "bytes": 16436,
+     "sha256": "fde3a56ae6c87a37870d7c852aa1898b28df9546994bfef0579dd4a42a0266da"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/astropy__astropy-14182.json",
+     "task_id": "astropy__astropy-14182",
+     "bytes": 30385,
+     "sha256": "e3101a86d3e688065fe1fc08070813280a0d066a29273de58cb1a95b1e419967"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/astropy__astropy-14365.json",
+     "task_id": "astropy__astropy-14365",
+     "bytes": 20212,
+     "sha256": "288093cfee540933d4975a0a86752645a887f71356a675f63a31493944292e79"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/astropy__astropy-14995.json",
+     "task_id": "astropy__astropy-14995",
+     "bytes": 30606,
+     "sha256": "947c0237194922e3d5590eb09e110bd4d6a10512d7dda754e017eb74ceb70308"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/astropy__astropy-6938.json",
+     "task_id": "astropy__astropy-6938",
+     "bytes": 10303,
+     "sha256": "86b28e46c24b58aa5654a61232016b056857290509eca837d99de8f442d18976"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/astropy__astropy-7746.json",
+     "task_id": "astropy__astropy-7746",
+     "bytes": 37662,
+     "sha256": "f29d025e304ed2c89d14f1cb95094b78623476793babc210ec88074a627ac266"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-10914.json",
+     "task_id": "django__django-10914",
+     "bytes": 23510,
+     "sha256": "4b83cdb6b618c77a36ed46523cbe4580a8e8a40b782344850c8a65b4b1f7581f"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-10924.json",
+     "task_id": "django__django-10924",
+     "bytes": 24628,
+     "sha256": "367a4a6cf4624b1075ecaeaf5ab01535531774f68b406dea70bf80998535322b"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11001.json",
+     "task_id": "django__django-11001",
+     "bytes": 14701,
+     "sha256": "f9a335c74edfc250de0f257ae65bd64cde1c2e3e140762127119c204315c3295"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11019.json",
+     "task_id": "django__django-11019",
+     "bytes": 47062,
+     "sha256": "e3993182a3a697d5d32c6ab16bd6942478852e28fd775597609ba2d8536e3dca"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11039.json",
+     "task_id": "django__django-11039",
+     "bytes": 42405,
+     "sha256": "1888c1f2882e7102f9b04c9bcb16437ae23c094bcf499770c3911be41ac9cc28"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11049.json",
+     "task_id": "django__django-11049",
+     "bytes": 25578,
+     "sha256": "6f6166bba7f24607ed73971fb418c58c3265b29ea35ec7abc26a61ffcd8fdb62"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11099.json",
+     "task_id": "django__django-11099",
+     "bytes": 14029,
+     "sha256": "4b84535965df03fcb3437fca0f9bf74827b1b5d23a86cd0419042b83ab51fdc7"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11133.json",
+     "task_id": "django__django-11133",
+     "bytes": 16643,
+     "sha256": "66b85c362652b221b80f5c0eaac0a3292b021f5bf260fdfd1f1beefd1519707e"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11179.json",
+     "task_id": "django__django-11179",
+     "bytes": 22172,
+     "sha256": "ffab34a6a0457eb01d4877e448f7b785f1371ea08647d703bb4885c541dfa558"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11283.json",
+     "task_id": "django__django-11283",
+     "bytes": 27817,
+     "sha256": "12052ee79347be3014142eb936d524e23a75f292a6197b89c4722d44c595020e"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11422.json",
+     "task_id": "django__django-11422",
+     "bytes": 28007,
+     "sha256": "607a65dbd48446cc4e98f36e4c2d9d875f0e5744e8a869045d3357537f89cb6f"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11564.json",
+     "task_id": "django__django-11564",
+     "bytes": 79111,
+     "sha256": "1ebae2f9f470013bcef3509571f73e2f19c2cc7a9601b19f8a7e289b6ffc86df"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11583.json",
+     "task_id": "django__django-11583",
+     "bytes": 65029,
+     "sha256": "c2a77b9777cdc2b3f5f95166db9be3f2c6517f91e10a355187b75bc94dc56f43"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11620.json",
+     "task_id": "django__django-11620",
+     "bytes": 68451,
+     "sha256": "99ece75109d05475bb902d49d6f0f549180b7f6da733bb07eab22669c7fc171d"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11630.json",
+     "task_id": "django__django-11630",
+     "bytes": 21799,
+     "sha256": "d607c981485aaf7b9814e67800d2fe3d9fac8884bd7c3d37efe6179184aff8ff"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11742.json",
+     "task_id": "django__django-11742",
+     "bytes": 26346,
+     "sha256": "27c8f0d8f383daa0419722d9834c5ebd427cf99b7133ee645f9c625b6ec4cbaf"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11797.json",
+     "task_id": "django__django-11797",
+     "bytes": 32973,
+     "sha256": "c3e4784ab3f35d29ef5045bca2d7907fd49ef476fb580475ab897bc847fb404b"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11815.json",
+     "task_id": "django__django-11815",
+     "bytes": 31630,
+     "sha256": "a20a12b3de4f71f374d1e8f9b4924b1cdb0eb34d043a35aef16ae83da7307c9e"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11848.json",
+     "task_id": "django__django-11848",
+     "bytes": 10835,
+     "sha256": "47a77485cc47e9795724468d548715eacd9077f7073c86439eed54098b605c1b"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11905.json",
+     "task_id": "django__django-11905",
+     "bytes": 21985,
+     "sha256": "5a725aa506c60117afce133144d339a612478abea8f570692ef7472997de5821"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11910.json",
+     "task_id": "django__django-11910",
+     "bytes": 38740,
+     "sha256": "8c020928aafe1bfad65b2b13a73fc84573311019a9a3c20c5836d9a42a6928f5"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11964.json",
+     "task_id": "django__django-11964",
+     "bytes": 56021,
+     "sha256": "72354f9f5a5164fe7afbf985b50ebf9e272826617d4d2acc71d635a21f4a527f"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-11999.json",
+     "task_id": "django__django-11999",
+     "bytes": 17957,
+     "sha256": "33abd11523afaae9f190aaa58a72c3d358ab1936c680ca54c0712db00afc0774"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/lite/20240617_moatless_gpt4o/trajs/django__django-12113.json",
+     "task_id": "django__django-12113",
+     "bytes": 59219,
+     "sha256": "5b44c35051d6ca3a7ddf872b9827b609ec8626530ac46a68bc18bc91fcb335d5"
+    }
+   ]
+  },
+  {
+   "split": "test",
+   "submission": "20251219_sonar-foundation-agent_claude-opus-4-5",
+   "group_files_total": 2147,
+   "selected_n": 30,
+   "source_registration": "BULK-NONVIDEO-20260929 (verified group, completed by SWEBENCH-CONTINUATION-20260930) / SWEBENCH-SUPPLEMENT-20261006 (lite, test)",
+   "items": [
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-11693.json",
+     "task_id": "astropy__astropy-11693",
+     "bytes": 303577,
+     "sha256": "853cecd9b825653e45dc8d3c01519bd8ea4d2fbdc17c4737b8f5d3c1ab696228"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-12057.json",
+     "task_id": "astropy__astropy-12057",
+     "bytes": 363850,
+     "sha256": "b6a95c9a9d521b433263afee495ec74b0fb40d64031c74b56ad96228d29c6e6d"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-12318.json",
+     "task_id": "astropy__astropy-12318",
+     "bytes": 174632,
+     "sha256": "701bc9ce166fb8466855428c3282134c68039a6f4b3074866cc0b497b92327db"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-12544.json",
+     "task_id": "astropy__astropy-12544",
+     "bytes": 443528,
+     "sha256": "c92930f59a40271e84a6b56dc5bc6314f14a41b486c490bfd3a81b053eb3ea4b"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-12825.json",
+     "task_id": "astropy__astropy-12825",
+     "bytes": 191065,
+     "sha256": "32c7dfe0ecf089202c7269dc94e56b49d3f1399ed605ecf5fadb84b1481e24c6"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-12842.json",
+     "task_id": "astropy__astropy-12842",
+     "bytes": 412535,
+     "sha256": "fc702ec9fd64c7a3f6eef877e1b041c2ba0eedc9118d346a9e11bf5ca3379b27"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-12880.json",
+     "task_id": "astropy__astropy-12880",
+     "bytes": 323469,
+     "sha256": "13571fdcc476c12e62b8bfbba58ed419a6c56d6b601501a3a3427f99a878fa15"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-12891.json",
+     "task_id": "astropy__astropy-12891",
+     "bytes": 288612,
+     "sha256": "e0e3add68666bb16454c1233c540f96472ed409719e86ea233c281e9fab7017e"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-12907.json",
+     "task_id": "astropy__astropy-12907",
+     "bytes": 120765,
+     "sha256": "e312063760e3c89351bf3684f62852ba932ed0a66fed0a23f1e5b327ec1f2cbf"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-12962.json",
+     "task_id": "astropy__astropy-12962",
+     "bytes": 273264,
+     "sha256": "d83d9ebdd359bcc152bd0c41a792b0a44032bda71cb549e38bb89518820f7203"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13032.json",
+     "task_id": "astropy__astropy-13032",
+     "bytes": 386587,
+     "sha256": "d3a4962a2f28296427339f085fe134d27dea4f564c7524efc4d105833c71f1ad"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13033.json",
+     "task_id": "astropy__astropy-13033",
+     "bytes": 285474,
+     "sha256": "12e7578cf52fe8007d2bb5876e7a37ace389b9554a0e1e50e1efa0bd62d2f755"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13068.json",
+     "task_id": "astropy__astropy-13068",
+     "bytes": 323187,
+     "sha256": "d36a128dfb5928a6fa9a36ee662e4dfb3b4cfe12bdcacd019ce7aa1b8fc6f70a"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13073.json",
+     "task_id": "astropy__astropy-13073",
+     "bytes": 150469,
+     "sha256": "ec0f32fb11573f83b28214120f7d6afa542a29fae9a3f7519ed7724861ba543a"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13075.json",
+     "task_id": "astropy__astropy-13075",
+     "bytes": 482037,
+     "sha256": "a6847fdf674e0628c6b907a1e1bed42ef0955a7a7be90f40af3143fb8ffaf6e2"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13132.json",
+     "task_id": "astropy__astropy-13132",
+     "bytes": 434811,
+     "sha256": "70fc69eff89142d30a7a3cc5c378aef6afc94e6e25737324a2494fbb431f1fef"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13158.json",
+     "task_id": "astropy__astropy-13158",
+     "bytes": 356066,
+     "sha256": "a4b2b0ec5085f63fe52b96609674a6a6e077884841653480b04119320c5676de"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13162.json",
+     "task_id": "astropy__astropy-13162",
+     "bytes": 277162,
+     "sha256": "a9664b36c9acc03b48cbe9e829e0c77c3a682d3d230c81ed5b48dbdd63c81b60"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13234.json",
+     "task_id": "astropy__astropy-13234",
+     "bytes": 371522,
+     "sha256": "3c1217e32b8b844f1ff21aeee5247c111f1145f932545e7f55f8061b831e57c0"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13236.json",
+     "task_id": "astropy__astropy-13236",
+     "bytes": 253155,
+     "sha256": "23c9ab8e52ba2ccf81b28d4dbfdc93b840fa2966ed555afae178346cc8dc33c6"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13306.json",
+     "task_id": "astropy__astropy-13306",
+     "bytes": 343305,
+     "sha256": "faed4f7766019c0a591b8b5225e1092f47a8f3f5457b5bbae68f76e5184e6dcd"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13390.json",
+     "task_id": "astropy__astropy-13390",
+     "bytes": 287862,
+     "sha256": "6ee7be575ba06b24bd90494745fd79faa32b4c5c73225d158308e4d528073a7b"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13398.json",
+     "task_id": "astropy__astropy-13398",
+     "bytes": 414028,
+     "sha256": "ed738f86b6fc4ad8ec1e6413785373851a6e619a15b0d293b41cbc5cebc7ffe8"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13404.json",
+     "task_id": "astropy__astropy-13404",
+     "bytes": 303392,
+     "sha256": "32f90fb9bc80239365aa4f1921a007090c153f0acbe41e98dc473460472f5f4f"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13417.json",
+     "task_id": "astropy__astropy-13417",
+     "bytes": 407274,
+     "sha256": "47f27043e1c11d1bbc6a2be126adf2dcba12e1d95c0017de0b0eea51e8b9284f"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13438.json",
+     "task_id": "astropy__astropy-13438",
+     "bytes": 532743,
+     "sha256": "e31e9640db8342c892ba259c0fed331fcfa1fdec269dc6c0b494170c2a7a368c"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13453.json",
+     "task_id": "astropy__astropy-13453",
+     "bytes": 228032,
+     "sha256": "6752483b5f2d812c8c7d7d92c08ad91a47b9e46e81295b6f3d58e21c081946d4"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13462.json",
+     "task_id": "astropy__astropy-13462",
+     "bytes": 275351,
+     "sha256": "6135fe41376c2b146f9d014bf3a18bf19a4937c0a8f4c6dc9a241ab071227396"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13465.json",
+     "task_id": "astropy__astropy-13465",
+     "bytes": 186540,
+     "sha256": "811380091798c161490982a766b499930676bd0467fb751efda21f1d6ebc1b20"
+    },
+    {
+     "file": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/astropy__astropy-13469.json",
+     "task_id": "astropy__astropy-13469",
+     "bytes": 270108,
+     "sha256": "12971160ae46e8c0ad0d0e3dcbb0d83badfcc690f5a99e12737c00c0da2df106"
+    }
+   ]
+  }
+ ]
+}

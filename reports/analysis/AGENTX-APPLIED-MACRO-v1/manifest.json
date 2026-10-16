@@ -1,0 +1,86 @@
+{
+  "schema": "agentx-applied-macro-v1-manifest",
+  "inputs": [
+    {
+      "path": "data/raw/public/agentx/8fecd2fc56694469f758f0afbbb6335ad3043740/README.md",
+      "bytes": 3203,
+      "sha256": "fcc398cb4b18c1cf4ad8943c55d3fdbcfe79cc2045123eeb460313e4dd421728",
+      "role": "input"
+    },
+    {
+      "path": "data/raw/public/agentx/8fecd2fc56694469f758f0afbbb6335ad3043740/stats.txt",
+      "bytes": 237,
+      "sha256": "24274dc2ad2be375c3cf396570852af1835f66925ad422af53f754b717f1f93a",
+      "role": "input"
+    },
+    {
+      "path": "data/raw/public/agentx/8fecd2fc56694469f758f0afbbb6335ad3043740/traces.jsonl",
+      "bytes": 568864747,
+      "sha256": "e39cd2ff3eba21d4a3664be51da743ac3d2149a1933898cafc7bfeac8147eeef",
+      "role": "input"
+    },
+    {
+      "path": "data/raw/public/applied_compute/6918da7915e3ae57ce3750a375ef50e41cad2b36/README.md",
+      "bytes": 10649,
+      "sha256": "d58c397f399adc433643f0b0a5d00c4de66ba42834752aa0ce7e671ec67d0c72",
+      "role": "input"
+    },
+    {
+      "path": "data/raw/public/applied_compute/6918da7915e3ae57ce3750a375ef50e41cad2b36/LICENSE",
+      "bytes": 11389,
+      "sha256": "6acdab980f86b3738ef909fd7e3f573d54c5092bf166cd7a6fc853bba98ed469",
+      "role": "input"
+    },
+    {
+      "path": "data/raw/public/applied_compute/6918da7915e3ae57ce3750a375ef50e41cad2b36/workloads/agentic_coding_8k.jsonl",
+      "bytes": 4066885,
+      "sha256": "d2d55501e49b59f4f507b932929eea47043eed51619a632b919416e205523788",
+      "role": "input"
+    },
+    {
+      "path": "data/raw/public/applied_compute/6918da7915e3ae57ce3750a375ef50e41cad2b36/workloads/code_qa_8k.jsonl",
+      "bytes": 3065657,
+      "sha256": "779fddf362ef84455ee64a5f410e6ce9c95042ad6cce7608b858b64a349ab479",
+      "role": "input"
+    },
+    {
+      "path": "data/raw/public/applied_compute/6918da7915e3ae57ce3750a375ef50e41cad2b36/workloads/office_work_8k.jsonl",
+      "bytes": 6766438,
+      "sha256": "c5fd0a7aaa397178eafaac37f11fe5f52588d07c437f3507f157d6deb8821e2c",
+      "role": "input"
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/BULK-NONVIDEO-20260929/manifest.json",
+      "bytes": 2265692,
+      "sha256": "ebb68eb5ca220e390374cfa047bb064c48237024bcabf8ed53c5a3a801dfe75e",
+      "role": "acquisition_manifest"
+    }
+  ],
+  "analyzer": {
+    "path": "scripts/agentx_applied_macro.py",
+    "sha256": "874fe40803a28671d55b5bb495e64cd870b1b294a2e73ab5ae17c92877f59a10"
+  },
+  "outputs": [
+    {
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.json",
+      "bytes": 15252,
+      "sha256": "24f0dcfff9f0012c7c9b26e6b9bb3ba31df62ac4cccedd1b2d446b9556c55d36"
+    },
+    {
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.md",
+      "bytes": 2470,
+      "sha256": "f1d7e37da9abd63e572e2709f110ef5d9d216686884792d1b315377cf469194a"
+    },
+    {
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/per_trace.jsonl",
+      "bytes": 1945380,
+      "sha256": "192cc3df92dd2148ac549157054e818f0346a35dc08724c3e9a271077be491a3"
+    },
+    {
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/per_template.jsonl",
+      "bytes": 20248772,
+      "sha256": "94c6e8e35cebe05d3ae0b51662f09aff93c68137105505bd016af88bbdbd7350"
+    }
+  ],
+  "manifest_self_hash": "excluded"
+}

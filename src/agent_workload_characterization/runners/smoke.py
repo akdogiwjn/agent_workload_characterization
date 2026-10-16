@@ -503,12 +503,13 @@ def main(argv=None) -> int:
             print(json.dumps(plan, ensure_ascii=False, indent=2))
             print("\nOFFLINE PLAN ONLY — no request was sent. Real execution "
                   "requires --execute --i-approve-the-smoke plus user approval "
-                  "(docs/first_run_approval.md).", file=sys.stderr)
+                  "(docs/current_scope.md; historical record: "
+                  "docs/history_index.md).", file=sys.stderr)
             return 0
 
         if not args.i_approve_the_smoke:
             print("REFUSED: --execute requires --i-approve-the-smoke "
-                  "(separate user approval per docs/first_run_approval.md).", file=sys.stderr)
+                  "(separate user approval per docs/current_scope.md).", file=sys.stderr)
             return 1
 
         record = execute_smoke(args.config, result_dir=args.result_dir,

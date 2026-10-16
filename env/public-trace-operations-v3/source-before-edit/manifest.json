@@ -1,0 +1,28 @@
+{
+  "schema": "public-trace-operations-v2-source-snapshot",
+  "reason": "Preserve exact analysis code bound by PUBLIC-TRACE-OPERATIONS-v2 before implementing the five audited v3 fixes.",
+  "source_manifest": {
+    "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v2/manifest.json",
+    "sha256": "cfecb894d0d8c9e6cf6a3a6986421e90c59a19d30985034be40ff21b4aeb54a6"
+  },
+  "files": [
+    {
+      "path": "public_trace_operations.py",
+      "source_path": "scripts/public_trace_operations.py",
+      "bytes": 95540,
+      "sha256": "8b6e0be26f6f1b779e5443132affd2f542b77369cad8604d57abdb4d5dc699e6"
+    },
+    {
+      "path": "public_operations.py",
+      "source_path": "src/agent_workload_characterization/analyzers/public_operations.py",
+      "bytes": 20084,
+      "sha256": "5f92088f6c360316d30f0e7ad9cfff75856947be00d604b5c85be4ee3a230d76"
+    },
+    {
+      "path": "test_public_trace_operations.py",
+      "source_path": "tests/test_public_trace_operations.py",
+      "bytes": 23795,
+      "sha256": "082135d2cc1fd54d9b7a0f7160d11ae89a369c08c961cd48166a42738bf6468f"
+    }
+  ]
+}

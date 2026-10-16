@@ -1,0 +1,2156 @@
+{
+  "collection": "DOCOPS-OFFICE-REPEAT-02",
+  "identity_check": {
+    "historical_full_structure_equal": true,
+    "identity_sha256": "0886c0b0d64ae20813f518e0c0392d370d98f5a8479737bccabdd5016c539bf1",
+    "current_code_readback_drift": [],
+    "counts": {
+      "hash_records_verified": 1551,
+      "raw_outputs": 163
+    },
+    "approval_structure_note": "approval/attempt/archive bind digest; full structure exists in matching plan/frozen, not assumed duplicated in every record"
+  },
+  "explicit_run_ids": [
+    "20261011T104235Z-r0-excel001",
+    "20261011T104318Z-r0-ppt008",
+    "20261011T104344Z-r0-pdf004",
+    "20261011T104406Z-r1-ppt008",
+    "20261011T104431Z-r1-pdf004",
+    "20261011T104454Z-r1-excel001",
+    "20261011T104543Z-r2-pdf004",
+    "20261011T104605Z-r2-excel001",
+    "20261011T104641Z-r2-ppt008"
+  ],
+  "totals": {
+    "runs": 9,
+    "independent_tasks": 3,
+    "logical_requests": 46,
+    "agent_tools": 37,
+    "bootstrap_tools": 18,
+    "finish": 9,
+    "reward_1": 9,
+    "bootstrap_ok_false": 3,
+    "samples": 354,
+    "pairing_issue_count": 0
+  },
+  "by_task": {
+    "atomic__excel_001_budget_bucket_totals_seed": {
+      "n_runs": 3,
+      "metrics": {
+        "attempt_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 42.97
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 49.05
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 35.95
+            }
+          ],
+          "median": 42.97,
+          "q1": 39.46,
+          "q3": 46.01,
+          "iqr": 6.549999999999997,
+          "min": 35.95,
+          "max": 49.05,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "request_count": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 7
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 6
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 6
+            }
+          ],
+          "median": 6.0,
+          "q1": 6.0,
+          "q3": 6.5,
+          "iqr": 0.5,
+          "min": 6.0,
+          "max": 7.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_tool_count": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 6
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 5
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 5
+            }
+          ],
+          "median": 5.0,
+          "q1": 5.0,
+          "q3": 5.5,
+          "iqr": 0.5,
+          "min": 5.0,
+          "max": 6.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "bootstrap_tool_count": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 2
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 2
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 2
+            }
+          ],
+          "median": 2.0,
+          "q1": 2.0,
+          "q3": 2.0,
+          "iqr": 0.0,
+          "min": 2.0,
+          "max": 2.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "window_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 31.596574567
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 37.760333924
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 24.654851058
+            }
+          ],
+          "median": 31.596574567,
+          "q1": 28.125712812499998,
+          "q3": 34.6784542455,
+          "iqr": 6.552741433000001,
+          "min": 24.654851058,
+          "max": 37.760333924,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 6.840446
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 6.053172
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 6.733122
+            }
+          ],
+          "median": 6.733122,
+          "q1": 6.393147,
+          "q3": 6.786784,
+          "iqr": 0.393637,
+          "min": 6.053172,
+          "max": 6.840446,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "memory_current_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 82657280
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 70393856
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 86966272
+            }
+          ],
+          "median": 82657280.0,
+          "q1": 76525568.0,
+          "q3": 84811776.0,
+          "iqr": 8286208.0,
+          "min": 70393856.0,
+          "max": 86966272.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "kernel_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 83173376
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 79917056
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 86966272
+            }
+          ],
+          "median": 83173376.0,
+          "q1": 81545216.0,
+          "q3": 85069824.0,
+          "iqr": 3524608.0,
+          "min": 79917056.0,
+          "max": 86966272.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "host_rss_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 166981632
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 169078784
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 171175936
+            }
+          ],
+          "median": 169078784.0,
+          "q1": 168030208.0,
+          "q3": 170127360.0,
+          "iqr": 2097152.0,
+          "min": 166981632.0,
+          "max": 171175936.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "shared_host_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 0.18
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 0.13
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 0.11
+            }
+          ],
+          "median": 0.13,
+          "q1": 0.12,
+          "q3": 0.155,
+          "iqr": 0.035,
+          "min": 0.11,
+          "max": 0.18,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "collector_read_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 0.034513304
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 0.047451813
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 0.026403047
+            }
+          ],
+          "median": 0.034513304,
+          "q1": 0.0304581755,
+          "q3": 0.0409825585,
+          "iqr": 0.010524383000000002,
+          "min": 0.026403047,
+          "max": 0.047451813,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_setup_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 0.3976003
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 0.354126402
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 0.381699271
+            }
+          ],
+          "median": 0.381699271,
+          "q1": 0.3679128365,
+          "q3": 0.3896497855,
+          "iqr": 0.021736949000000005,
+          "min": 0.354126402,
+          "max": 0.3976003,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 29.969886575
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 36.115954629
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 22.874866618
+            }
+          ],
+          "median": 29.969886575,
+          "q1": 26.4223765965,
+          "q3": 33.042920602,
+          "iqr": 6.620544005500001,
+          "min": 22.874866618,
+          "max": 36.115954629,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "verifier_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 1.225959028
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 1.288533288
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 1.396259522
+            }
+          ],
+          "median": 1.288533288,
+          "q1": 1.257246158,
+          "q3": 1.3423964050000001,
+          "iqr": 0.08515024700000007,
+          "min": 1.225959028,
+          "max": 1.396259522,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "harbor_start_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 0.92521112
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 0.882608905
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 0.878650738
+            }
+          ],
+          "median": 0.882608905,
+          "q1": 0.8806298215,
+          "q3": 0.9039100125,
+          "iqr": 0.023280191000000006,
+          "min": 0.878650738,
+          "max": 0.92521112,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "harbor_stop_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 10.265671029
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 10.236681877
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 10.249220731
+            }
+          ],
+          "median": 10.249220731,
+          "q1": 10.242951304,
+          "q3": 10.257445879999999,
+          "iqr": 0.014494575999998816,
+          "min": 10.236681877,
+          "max": 10.265671029,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_setup_boundary_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 0.030872
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 0.022016
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 0.02667
+            }
+          ],
+          "median": 0.02667,
+          "q1": 0.024343,
+          "q3": 0.028770999999999998,
+          "iqr": 0.004427999999999998,
+          "min": 0.022016,
+          "max": 0.030872,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_boundary_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 5.822586
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 4.974882
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 5.532569
+            }
+          ],
+          "median": 5.532569,
+          "q1": 5.2537255,
+          "q3": 5.6775775,
+          "iqr": 0.4238520000000001,
+          "min": 4.974882,
+          "max": 5.822586,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "verifier_boundary_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 0.986988
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 1.056274
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 1.173883
+            }
+          ],
+          "median": 1.056274,
+          "q1": 1.021631,
+          "q3": 1.1150785,
+          "iqr": 0.09344750000000013,
+          "min": 0.986988,
+          "max": 1.173883,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "request_union_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 23.422489457
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 30.368674053
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 16.694216615
+            }
+          ],
+          "median": 23.422489457,
+          "q1": 20.058353036,
+          "q3": 26.895581755000002,
+          "iqr": 6.837228719000002,
+          "min": 16.694216615,
+          "max": 30.368674053,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "bootstrap_union_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 1.201103726
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 1.043000072
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 1.263802216
+            }
+          ],
+          "median": 1.201103726,
+          "q1": 1.122051899,
+          "q3": 1.2324529709999998,
+          "iqr": 0.11040107199999993,
+          "min": 1.043000072,
+          "max": 1.263802216,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_tool_union_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 5.336966443
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 4.696150991
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 4.908998116
+            }
+          ],
+          "median": 4.908998116,
+          "q1": 4.8025745534999995,
+          "q3": 5.1229822795,
+          "iqr": 0.3204077260000009,
+          "min": 4.696150991,
+          "max": 5.336966443,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_uncovered_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 0.009326949
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 0.008129513
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 0.007849671
+            }
+          ],
+          "median": 0.008129513,
+          "q1": 0.007989592,
+          "q3": 0.008728231,
+          "iqr": 0.0007386389999999993,
+          "min": 0.007849671,
+          "max": 0.009326949,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "io_read_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 0.0
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 0.0
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 0.0
+            }
+          ],
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "io_write_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104235Z-r0-excel001",
+              "value": 40960.0
+            },
+            {
+              "id": "20261011T104454Z-r1-excel001",
+              "value": 40960.0
+            },
+            {
+              "id": "20261011T104605Z-r2-excel001",
+              "value": 40960.0
+            }
+          ],
+          "median": 40960.0,
+          "q1": 40960.0,
+          "q3": 40960.0,
+          "iqr": 0.0,
+          "min": 40960.0,
+          "max": 40960.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        }
+      },
+      "sequences": [
+        {
+          "run_id": "20261011T104235Z-r0-excel001",
+          "sequence": [
+            "copy_file",
+            "xlsx_read_sheet",
+            "xlsx_read_sheet",
+            "xlsx_set_formula",
+            "xlsx_set_formula",
+            "xlsx_read_sheet",
+            "finish"
+          ]
+        },
+        {
+          "run_id": "20261011T104454Z-r1-excel001",
+          "sequence": [
+            "xlsx_read_sheet",
+            "copy_file",
+            "xlsx_set_formula",
+            "xlsx_set_formula",
+            "xlsx_read_sheet",
+            "finish"
+          ]
+        },
+        {
+          "run_id": "20261011T104605Z-r2-excel001",
+          "sequence": [
+            "xlsx_read_sheet",
+            "copy_file",
+            "xlsx_set_formula",
+            "xlsx_set_formula",
+            "xlsx_read_sheet",
+            "finish"
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "run_id": "20261011T104235Z-r0-excel001",
+          "reward": 1.0,
+          "termination": "finish",
+          "infra": [],
+          "bootstrap_errors": 0
+        },
+        {
+          "run_id": "20261011T104454Z-r1-excel001",
+          "reward": 1.0,
+          "termination": "finish",
+          "infra": [],
+          "bootstrap_errors": 0
+        },
+        {
+          "run_id": "20261011T104605Z-r2-excel001",
+          "reward": 1.0,
+          "termination": "finish",
+          "infra": [],
+          "bootstrap_errors": 0
+        }
+      ]
+    },
+    "atomic__ppt_008_bullet_editing_seed": {
+      "n_runs": 3,
+      "metrics": {
+        "attempt_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 25.27
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 24.64
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 25.88
+            }
+          ],
+          "median": 25.27,
+          "q1": 24.955,
+          "q3": 25.575,
+          "iqr": 0.620000000000001,
+          "min": 24.64,
+          "max": 25.88,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "request_count": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 5
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 5
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 5
+            }
+          ],
+          "median": 5.0,
+          "q1": 5.0,
+          "q3": 5.0,
+          "iqr": 0.0,
+          "min": 5.0,
+          "max": 5.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_tool_count": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 4
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 4
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 4
+            }
+          ],
+          "median": 4.0,
+          "q1": 4.0,
+          "q3": 4.0,
+          "iqr": 0.0,
+          "min": 4.0,
+          "max": 4.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "bootstrap_tool_count": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 2
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 2
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 2
+            }
+          ],
+          "median": 2.0,
+          "q1": 2.0,
+          "q3": 2.0,
+          "iqr": 0.0,
+          "min": 2.0,
+          "max": 2.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "window_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 13.867275025
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 13.30080803
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 14.417519752
+            }
+          ],
+          "median": 13.867275025,
+          "q1": 13.5840415275,
+          "q3": 14.142397388500001,
+          "iqr": 0.5583558610000008,
+          "min": 13.30080803,
+          "max": 14.417519752,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 5.368005
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 5.034718
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 5.557092
+            }
+          ],
+          "median": 5.368005,
+          "q1": 5.2013615,
+          "q3": 5.4625485000000005,
+          "iqr": 0.2611870000000005,
+          "min": 5.034718,
+          "max": 5.557092,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "memory_current_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 61702144
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 71262208
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 68624384
+            }
+          ],
+          "median": 68624384.0,
+          "q1": 65163264.0,
+          "q3": 69943296.0,
+          "iqr": 4780032.0,
+          "min": 61702144.0,
+          "max": 71262208.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "kernel_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 80543744
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 79597568
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 80674816
+            }
+          ],
+          "median": 80543744.0,
+          "q1": 80070656.0,
+          "q3": 80609280.0,
+          "iqr": 538624.0,
+          "min": 79597568.0,
+          "max": 80674816.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "host_rss_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 169078784
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 169078784
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 171175936
+            }
+          ],
+          "median": 169078784.0,
+          "q1": 169078784.0,
+          "q3": 170127360.0,
+          "iqr": 1048576.0,
+          "min": 169078784.0,
+          "max": 171175936.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "shared_host_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 0.08
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 0.08
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 0.09
+            }
+          ],
+          "median": 0.08,
+          "q1": 0.08,
+          "q3": 0.08499999999999999,
+          "iqr": 0.0049999999999999906,
+          "min": 0.08,
+          "max": 0.09,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "collector_read_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 0.012495302
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 0.015665066
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 0.015238171
+            }
+          ],
+          "median": 0.015238171,
+          "q1": 0.0138667365,
+          "q3": 0.0154516185,
+          "iqr": 0.0015848819999999993,
+          "min": 0.012495302,
+          "max": 0.015665066,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_setup_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 0.350894969
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 0.386333446
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 0.395534512
+            }
+          ],
+          "median": 0.386333446,
+          "q1": 0.3686142075,
+          "q3": 0.39093397900000004,
+          "iqr": 0.02231977150000003,
+          "min": 0.350894969,
+          "max": 0.395534512,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 12.17210992
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 11.660896186
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 12.68503531
+            }
+          ],
+          "median": 12.17210992,
+          "q1": 11.916503053,
+          "q3": 12.428572615,
+          "iqr": 0.5120695620000006,
+          "min": 11.660896186,
+          "max": 12.68503531,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "verifier_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 1.34236547
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 1.251836495
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 1.335013042
+            }
+          ],
+          "median": 1.335013042,
+          "q1": 1.2934247685,
+          "q3": 1.3386892559999999,
+          "iqr": 0.045264487499999895,
+          "min": 1.251836495,
+          "max": 1.34236547,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "harbor_start_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 0.968493506
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 0.899537577
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 0.943372504
+            }
+          ],
+          "median": 0.943372504,
+          "q1": 0.9214550404999999,
+          "q3": 0.9559330049999999,
+          "iqr": 0.03447796449999996,
+          "min": 0.899537577,
+          "max": 0.968493506,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "harbor_stop_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 10.272786696
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 10.271333716
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 10.344972568
+            }
+          ],
+          "median": 10.272786696,
+          "q1": 10.272060205999999,
+          "q3": 10.308879632,
+          "iqr": 0.03681942600000099,
+          "min": 10.271333716,
+          "max": 10.344972568,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_setup_boundary_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 0.026042
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 0.029444
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 0.02588
+            }
+          ],
+          "median": 0.026042,
+          "q1": 0.025960999999999998,
+          "q3": 0.027743,
+          "iqr": 0.0017820000000000023,
+          "min": 0.02588,
+          "max": 0.029444,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_boundary_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 4.223849
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 3.993457
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 4.420164
+            }
+          ],
+          "median": 4.223849,
+          "q1": 4.108653,
+          "q3": 4.3220065000000005,
+          "iqr": 0.2133535000000002,
+          "min": 3.993457,
+          "max": 4.420164,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "verifier_boundary_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 1.118114
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 1.011817
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 1.111048
+            }
+          ],
+          "median": 1.111048,
+          "q1": 1.0614325,
+          "q3": 1.114581,
+          "iqr": 0.05314850000000004,
+          "min": 1.011817,
+          "max": 1.118114,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "request_union_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 7.376923691
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 7.05930697
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 7.543609593
+            }
+          ],
+          "median": 7.376923691,
+          "q1": 7.2181153305,
+          "q3": 7.460266642000001,
+          "iqr": 0.2421513115000007,
+          "min": 7.05930697,
+          "max": 7.543609593,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "bootstrap_union_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 1.153493331
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 1.14463016
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 1.306074601
+            }
+          ],
+          "median": 1.153493331,
+          "q1": 1.1490617455,
+          "q3": 1.2297839659999998,
+          "iqr": 0.08072222049999978,
+          "min": 1.14463016,
+          "max": 1.306074601,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_tool_union_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 3.636304684
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 3.450629158
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 3.828117928
+            }
+          ],
+          "median": 3.636304684,
+          "q1": 3.5434669210000003,
+          "q3": 3.732211306,
+          "iqr": 0.18874438499999968,
+          "min": 3.450629158,
+          "max": 3.828117928,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_uncovered_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 0.005388214
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 0.006329898
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 0.007233188
+            }
+          ],
+          "median": 0.006329898,
+          "q1": 0.005859056,
+          "q3": 0.006781542999999999,
+          "iqr": 0.0009224869999999996,
+          "min": 0.005388214,
+          "max": 0.007233188,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "io_read_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 0.0
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 0.0
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 0.0
+            }
+          ],
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "io_write_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104318Z-r0-ppt008",
+              "value": 32768.0
+            },
+            {
+              "id": "20261011T104406Z-r1-ppt008",
+              "value": 28672.0
+            },
+            {
+              "id": "20261011T104641Z-r2-ppt008",
+              "value": 32768.0
+            }
+          ],
+          "median": 32768.0,
+          "q1": 30720.0,
+          "q3": 32768.0,
+          "iqr": 2048.0,
+          "min": 28672.0,
+          "max": 32768.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        }
+      },
+      "sequences": [
+        {
+          "run_id": "20261011T104318Z-r0-ppt008",
+          "sequence": [
+            "copy_file",
+            "ppt_list_slides",
+            "ppt_replace_text",
+            "ppt_list_slides",
+            "finish"
+          ]
+        },
+        {
+          "run_id": "20261011T104406Z-r1-ppt008",
+          "sequence": [
+            "copy_file",
+            "ppt_list_slides",
+            "ppt_replace_text",
+            "ppt_list_slides",
+            "finish"
+          ]
+        },
+        {
+          "run_id": "20261011T104641Z-r2-ppt008",
+          "sequence": [
+            "copy_file",
+            "ppt_list_slides",
+            "ppt_replace_text",
+            "ppt_list_slides",
+            "finish"
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "run_id": "20261011T104318Z-r0-ppt008",
+          "reward": 1.0,
+          "termination": "finish",
+          "infra": [],
+          "bootstrap_errors": 1
+        },
+        {
+          "run_id": "20261011T104406Z-r1-ppt008",
+          "reward": 1.0,
+          "termination": "finish",
+          "infra": [],
+          "bootstrap_errors": 1
+        },
+        {
+          "run_id": "20261011T104641Z-r2-ppt008",
+          "reward": 1.0,
+          "termination": "finish",
+          "infra": [],
+          "bootstrap_errors": 1
+        }
+      ]
+    },
+    "atomic__pdf_004_audit_pages_reorder_seed": {
+      "n_runs": 3,
+      "metrics": {
+        "attempt_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 21.5
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 22.05
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 21.16
+            }
+          ],
+          "median": 21.5,
+          "q1": 21.33,
+          "q3": 21.775,
+          "iqr": 0.4450000000000003,
+          "min": 21.16,
+          "max": 22.05,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "request_count": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 4
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 4
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 4
+            }
+          ],
+          "median": 4.0,
+          "q1": 4.0,
+          "q3": 4.0,
+          "iqr": 0.0,
+          "min": 4.0,
+          "max": 4.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_tool_count": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 3
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 3
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 3
+            }
+          ],
+          "median": 3.0,
+          "q1": 3.0,
+          "q3": 3.0,
+          "iqr": 0.0,
+          "min": 3.0,
+          "max": 3.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "bootstrap_tool_count": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 2
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 2
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 2
+            }
+          ],
+          "median": 2.0,
+          "q1": 2.0,
+          "q3": 2.0,
+          "iqr": 0.0,
+          "min": 2.0,
+          "max": 2.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "window_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 9.933847712
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 10.625234346
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 9.860871829
+            }
+          ],
+          "median": 9.933847712,
+          "q1": 9.8973597705,
+          "q3": 10.279541029,
+          "iqr": 0.38218125850000106,
+          "min": 9.860871829,
+          "max": 10.625234346,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 4.270158
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 4.518449
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 4.461739
+            }
+          ],
+          "median": 4.461739,
+          "q1": 4.3659485,
+          "q3": 4.490094,
+          "iqr": 0.12414550000000002,
+          "min": 4.270158,
+          "max": 4.518449,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "memory_current_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 76206080
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 82034688
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 67649536
+            }
+          ],
+          "median": 76206080.0,
+          "q1": 71927808.0,
+          "q3": 79120384.0,
+          "iqr": 7192576.0,
+          "min": 67649536.0,
+          "max": 82034688.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "kernel_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 84324352
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 82034688
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 82206720
+            }
+          ],
+          "median": 82206720.0,
+          "q1": 82120704.0,
+          "q3": 83265536.0,
+          "iqr": 1144832.0,
+          "min": 82034688.0,
+          "max": 84324352.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "host_rss_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 169078784
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 169078784
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 171175936
+            }
+          ],
+          "median": 169078784.0,
+          "q1": 169078784.0,
+          "q3": 170127360.0,
+          "iqr": 1048576.0,
+          "min": 169078784.0,
+          "max": 171175936.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "shared_host_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 0.06
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 0.07
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 0.07
+            }
+          ],
+          "median": 0.07,
+          "q1": 0.065,
+          "q3": 0.07,
+          "iqr": 0.0050000000000000044,
+          "min": 0.06,
+          "max": 0.07,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "collector_read_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 0.010312272
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 0.013382014
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 0.011568721
+            }
+          ],
+          "median": 0.011568721,
+          "q1": 0.0109404965,
+          "q3": 0.0124753675,
+          "iqr": 0.0015348710000000002,
+          "min": 0.010312272,
+          "max": 0.013382014,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_setup_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 0.344649872
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 0.367306064
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 0.384319787
+            }
+          ],
+          "median": 0.367306064,
+          "q1": 0.35597796800000003,
+          "q3": 0.3758129255,
+          "iqr": 0.019834957499999972,
+          "min": 0.344649872,
+          "max": 0.384319787,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 8.419824121
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 8.957068783
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 8.25127911
+            }
+          ],
+          "median": 8.419824121,
+          "q1": 8.3355516155,
+          "q3": 8.688446452,
+          "iqr": 0.35289483650000086,
+          "min": 8.25127911,
+          "max": 8.957068783,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "verifier_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 1.167545345
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 1.299003474
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 1.223317434
+            }
+          ],
+          "median": 1.223317434,
+          "q1": 1.1954313895,
+          "q3": 1.261160454,
+          "iqr": 0.06572906450000016,
+          "min": 1.167545345,
+          "max": 1.299003474,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "harbor_start_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 1.018549464
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 0.868586801
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 0.876167373
+            }
+          ],
+          "median": 0.876167373,
+          "q1": 0.872377087,
+          "q3": 0.9473584184999999,
+          "iqr": 0.07498133149999986,
+          "min": 0.868586801,
+          "max": 1.018549464,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "harbor_stop_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 10.381493252
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 10.393752141
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 10.25640622
+            }
+          ],
+          "median": 10.381493252,
+          "q1": 10.318949736,
+          "q3": 10.3876226965,
+          "iqr": 0.06867296049999894,
+          "min": 10.25640622,
+          "max": 10.393752141,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_setup_boundary_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 0.025329
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 0.025962
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 0.027396
+            }
+          ],
+          "median": 0.025962,
+          "q1": 0.0256455,
+          "q3": 0.026679,
+          "iqr": 0.0010334999999999997,
+          "min": 0.025329,
+          "max": 0.027396,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_boundary_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 3.30082
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 3.43281
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 3.423393
+            }
+          ],
+          "median": 3.423393,
+          "q1": 3.3621065,
+          "q3": 3.4281015,
+          "iqr": 0.06599500000000003,
+          "min": 3.30082,
+          "max": 3.43281,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "verifier_boundary_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 0.944009
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 1.059677
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 1.01095
+            }
+          ],
+          "median": 1.01095,
+          "q1": 0.9774795000000001,
+          "q3": 1.0353135,
+          "iqr": 0.05783399999999994,
+          "min": 0.944009,
+          "max": 1.059677,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "request_union_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 4.60846447
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 5.02132514
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 4.478660394
+            }
+          ],
+          "median": 4.60846447,
+          "q1": 4.543562432,
+          "q3": 4.814894805,
+          "iqr": 0.2713323729999999,
+          "min": 4.478660394,
+          "max": 5.02132514,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "bootstrap_union_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 1.167051348
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 1.300446153
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 1.225444555
+            }
+          ],
+          "median": 1.225444555,
+          "q1": 1.1962479515,
+          "q3": 1.262945354,
+          "iqr": 0.0666974025,
+          "min": 1.167051348,
+          "max": 1.300446153,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_tool_union_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 2.640085815
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 2.630159739
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 2.542189354
+            }
+          ],
+          "median": 2.630159739,
+          "q1": 2.5861745465,
+          "q3": 2.6351227770000003,
+          "iqr": 0.04894823050000019,
+          "min": 2.542189354,
+          "max": 2.640085815,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "agent_uncovered_s": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 0.004222488
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 0.005137751
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 0.004984807
+            }
+          ],
+          "median": 0.004984807,
+          "q1": 0.0046036475,
+          "q3": 0.005061279,
+          "iqr": 0.00045763149999999975,
+          "min": 0.004222488,
+          "max": 0.005137751,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "io_read_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 0.0
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 0.0
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 0.0
+            }
+          ],
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        },
+        "io_write_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "id": "20261011T104344Z-r0-pdf004",
+              "value": 4096.0
+            },
+            {
+              "id": "20261011T104431Z-r1-pdf004",
+              "value": 4096.0
+            },
+            {
+              "id": "20261011T104543Z-r2-pdf004",
+              "value": 4096.0
+            }
+          ],
+          "median": 4096.0,
+          "q1": 4096.0,
+          "q3": 4096.0,
+          "iqr": 0.0,
+          "min": 4096.0,
+          "max": 4096.0,
+          "objects": 3,
+          "missing_or_invalid": 0
+        }
+      },
+      "sequences": [
+        {
+          "run_id": "20261011T104344Z-r0-pdf004",
+          "sequence": [
+            "copy_file",
+            "pdf_reorder_pages",
+            "inspect_document",
+            "finish"
+          ]
+        },
+        {
+          "run_id": "20261011T104431Z-r1-pdf004",
+          "sequence": [
+            "copy_file",
+            "pdf_reorder_pages",
+            "inspect_document",
+            "finish"
+          ]
+        },
+        {
+          "run_id": "20261011T104543Z-r2-pdf004",
+          "sequence": [
+            "copy_file",
+            "pdf_reorder_pages",
+            "inspect_document",
+            "finish"
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "run_id": "20261011T104344Z-r0-pdf004",
+          "reward": 1.0,
+          "termination": "finish",
+          "infra": [],
+          "bootstrap_errors": 0
+        },
+        {
+          "run_id": "20261011T104431Z-r1-pdf004",
+          "reward": 1.0,
+          "termination": "finish",
+          "infra": [],
+          "bootstrap_errors": 0
+        },
+        {
+          "run_id": "20261011T104543Z-r2-pdf004",
+          "reward": 1.0,
+          "termination": "finish",
+          "infra": [],
+          "bootstrap_errors": 0
+        }
+      ]
+    }
+  },
+  "batch_wall_s": 273.374,
+  "quantile_method": "linear interpolation at (n-1)*p; metrics use finite non-bool values",
+  "definitions": {
+    "time": "same-host system_monotonic ns; request wall is client logical-call boundary, including possible internal retries",
+    "partition": "exclusive occupancy from clipped interval unions; overlap explicitly retained; uncovered has no causal interpretation",
+    "cpu": "shared container core-s; phase boundary counter reads preferred; sample bins only wholly contained intervals, mixed never prorated",
+    "memory": "memory.current sampled maximum; kernel peak cumulative high-water mark, never a phase-independent peak; shared host RSS separate",
+    "io": "observed cgroup block-service bytes, not complete filesystem/application I/O",
+    "archive": "saved marker span only; cannot reconstruct full archive duration from these markers"
+  },
+  "ppt_diagnosis": {
+    "saved_exception": "AttributeError",
+    "path": "Agent bootstrap -> project runtime dispatch -> official tool_inspect_document .pptx branch -> runtime catches exception class -> Agent saves false payload and continues",
+    "static_candidate_site": "prs.slides[:max_items] in document_tools_runtime.py; local container python-pptx implementation/traceback not archived; exact inner raising attribute unconfirmed",
+    "direct_effect": "initial PPT document inspection yielded no successful inspection payload; failure was supplied to subsequent requests; later ppt_list_slides/text edit/finish observed",
+    "unknown_effect": "counterfactual path, extra requests/cost/quality impact and deeper dependency stack are unknown; reward=1 does not establish no impact",
+    "static_source_positions": [
+      {
+        "path": "references/repos/DocOps/harnesses/document_tools_runtime.py",
+        "line": 112,
+        "expression": "prs.slides[:max_items]"
+      }
+    ]
+  },
+  "limitations": [
+    "No transport hook: actual HTTP tries unknown; usage and cost=0 are not bills.",
+    "Resource read timestamps precede event timestamps; offsets saved; tool windows are shared-scope changes, not exclusive cost.",
+    "0.5s periodic sampling undercovers short calls; boundary/mixed bins retained, no interpolation.",
+    "Three repetitions per fixed task, not nine independent tasks or representative Office population.",
+    "ARM64 adaptation not byte-equivalent official amd64 environment; alias not immutable model pin.",
+    "No CPU hotspots, remote inference cost, thinking time, causal effects or rankings; old batch/Excel smoke excluded."
+  ],
+  "cross_run_duplicate_span_ids": {},
+  "analysis_code": [
+    {
+      "path": "scripts/docops_office_repeat_02_characterization.py",
+      "bytes": 42673,
+      "sha256": "39edc8acedae2c4fd0f3f4702bb99721e9103de2cc0ebf6e0e3b5b308847e3e4"
+    },
+    {
+      "path": "scripts/docops_office_repeat_characterization.py",
+      "bytes": 54381,
+      "sha256": "9c7e297effb0f791875a8169b821d93bb77753acc46a9ec6ac77505928ee4105"
+    },
+    {
+      "path": "scripts/docops_word_resource_analysis.py",
+      "bytes": 53622,
+      "sha256": "d6be6b59ca09167300230c2ffe49377c835221644227594416b1e4f87f4fe752"
+    },
+    {
+      "path": "scripts/p1_12_coding_repeat_characterization_v2.py",
+      "bytes": 44742,
+      "sha256": "661baa5123be7b22d1d9a901d7000ce5c5eeb77cab1da0b4cd3df4e45260b897"
+    }
+  ],
+  "diagnostic_source_files_available": [
+    "references/repos/DocOps/harnesses/document_tools_runtime.py",
+    "references/repos/DocOps/harnesses/document_tools_agent.py",
+    "src/agent_workload_characterization/runners/docops_word_runtime.py",
+    "src/agent_workload_characterization/runners/docops_word_agent.py",
+    "scripts/docops_word_resource_01_entry.py"
+  ]
+}

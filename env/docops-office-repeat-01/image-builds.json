@@ -1,0 +1,88 @@
+{
+  "builds": [
+    {
+      "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+      "command": [
+        "docker",
+        "--host",
+        "unix:///var/run/docker.sock",
+        "build",
+        "--pull=false",
+        "--network=none",
+        "--platform=linux/arm64",
+        "-t",
+        "docops-office-repeat-01:excel001",
+        "."
+      ],
+      "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment",
+      "duration_s": 0.263,
+      "returncode": 0,
+      "log": {
+        "path": "env/docops-office-repeat-01/image-builds/excel001-initial.log",
+        "bytes": 1392,
+        "sha256": "0d3af303f8e0210e1b5e0f03f412378fcf065eeb380dc3c00ef1182e29a5dfab"
+      },
+      "image": {
+        "reference": "docops-office-repeat-01:excel001",
+        "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+        "platform": "linux/arm64"
+      }
+    },
+    {
+      "task_key": "atomic__ppt_008_bullet_editing_seed",
+      "command": [
+        "docker",
+        "--host",
+        "unix:///var/run/docker.sock",
+        "build",
+        "--pull=false",
+        "--network=none",
+        "--platform=linux/arm64",
+        "-t",
+        "docops-office-repeat-01:ppt008",
+        "."
+      ],
+      "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment",
+      "duration_s": 0.234,
+      "returncode": 0,
+      "log": {
+        "path": "env/docops-office-repeat-01/image-builds/ppt008-initial.log",
+        "bytes": 1374,
+        "sha256": "30a2f55e45a6b0479ae7a87bd12f8d82572695c01c3bf55e563fe6a05119ae10"
+      },
+      "image": {
+        "reference": "docops-office-repeat-01:ppt008",
+        "id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+        "platform": "linux/arm64"
+      }
+    },
+    {
+      "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+      "command": [
+        "docker",
+        "--host",
+        "unix:///var/run/docker.sock",
+        "build",
+        "--pull=false",
+        "--network=none",
+        "--platform=linux/arm64",
+        "-t",
+        "docops-office-repeat-01:pdf004",
+        "."
+      ],
+      "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment",
+      "duration_s": 0.244,
+      "returncode": 0,
+      "log": {
+        "path": "env/docops-office-repeat-01/image-builds/pdf004-initial.log",
+        "bytes": 1383,
+        "sha256": "2d8b91001a72db3704feadd2e075dd0dce7e9c63bbd28d8eb983e56db16d1af8"
+      },
+      "image": {
+        "reference": "docops-office-repeat-01:pdf004",
+        "id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+        "platform": "linux/arm64"
+      }
+    }
+  ]
+}

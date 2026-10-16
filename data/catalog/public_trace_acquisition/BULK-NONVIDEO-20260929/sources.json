@@ -1,0 +1,69 @@
+{
+  "created_at_utc": "2026-09-29",
+  "download_budget": {
+    "max_response_body_bytes": 21474836480,
+    "max_wall_hours": 4,
+    "max_concurrent_downloads": 3,
+    "single_file_skip_bytes": 2147483648,
+    "retry_limit": 1
+  },
+  "sources": [
+    {
+      "name": "SWE-bench Verified S3 + experiments index",
+      "kind": "public benchmark index plus public artifact bucket",
+      "version": "40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+      "status": "partial",
+      "metadata_submissions": 182,
+      "visible_s3_traj_prefix_groups": 127,
+      "selected_groups": [
+        "20240402_sweagent_claude3opus",
+        "20240402_sweagent_gpt4",
+        "20240612_MASAI_gpt4o",
+        "20240620_sweagent_claude3.5sonnet",
+        "20240721_amazon-q-developer-agent-20240719-dev",
+        "20240728_sweagent_gpt4o"
+      ],
+      "completed_objects": 2578,
+      "completed_bytes": 530810447,
+      "unique_dataset_local_tasks": 500,
+      "failed_selected_objects": 326,
+      "not_acquired": "Non-selected prefixes; failed selected objects; Lite/Test trajectory artifacts."
+    },
+    {
+      "name": "SWE-rebench",
+      "kind": "third-party normalized trajectory corpus",
+      "repo": "ibragim-bad/swe_rebench_07_2026_trajectories",
+      "revision": "cdae27cdd16673f0c682871ad55d325f24cc7020",
+      "status": "complete_local_payload_with_transfer_record_gap",
+      "trajectory_shards": 85,
+      "manifest_rows": 9435,
+      "participants": 17,
+      "independent_task_count": "555 stated by source manifest",
+      "saved_payload_bytes": 480862314,
+      "not_acquired": "53 local trajectory payloads lack saved per-file transfer records."
+    },
+    {
+      "name": "AgentX",
+      "kind": "request-flow / macro-structure trace corpus",
+      "repo": "semianalysisai/cc-traces-weka-062126-256k",
+      "revision": "8fecd2fc56694469f758f0afbbb6335ad3043740",
+      "status": "complete",
+      "trace_files": 1,
+      "trace_count": 393,
+      "saved_bytes": 569694616,
+      "not_acquired": "No other releases."
+    },
+    {
+      "name": "Applied Compute trie",
+      "kind": "reused repository files; derived workload templates",
+      "repo": "Applied-Compute/trie",
+      "revision": "6918da7915e3ae57ce3750a375ef50e41cad2b36",
+      "status": "reused_local",
+      "files": 5,
+      "saved_bytes": 13921018,
+      "confirmable_trace_count": 0,
+      "not_acquired": "Raw execution traces.",
+      "public_copy_root": "data/raw/public/applied_compute/6918da7915e3ae57ce3750a375ef50e41cad2b36/"
+    }
+  ]
+}

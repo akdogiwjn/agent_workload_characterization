@@ -1,0 +1,172 @@
+{
+ "schema": "project-characterization-synthesis-evidence-matrix-v1",
+ "generated_at_utc": "2026-10-07",
+ "basis": {
+  "research_questions": "methodology.md #25 (RQ1-RQ6)",
+  "status_source": "project_state.json (2026-10-07 真源)",
+  "verification_note": "本轮核验范围：五组已交付分析的 manifest outputs 哈希回读（SWE-REBENCH-v2 5/5、OSWORLD-v3 5/5、AGENTX-APPLIED-v1 4/4、CODING-REPEAT review-v1 2/2、characterization-v3 3/3）及三轮 SWE-bench 获取登记 outputs（2+3+3）；OSWorld acceptance_summary.md 登记的 summary.json/manifest.json SHA-256 复核一致。未重跑分析器、未逐字段重验，不声称全面验证。",
+  "correction_note": "2026-10-07 v1.1 correction: (1) resource gap re-described as layered (existing scope-level Coding 3x3 container data vs missing breadth/per-tool attribution/IO/hotspots) instead of \"no evidence\"; (2) CPU-02 wording tightened to permission-check record (unprivileged perf denied exit 255) + privileged scheme closure incomplete + route paused, not a proof that privileged perf is impossible; (3) the single \"best next step\" recommendation (CODING-RESOURCE-EXPAND-01) withdrawn; A/B/C decision table added; (4) selected findings scope-tightened (AgentX single-source, call-count observation limited to checked runs/categories, resolved/termination/infra tri-column, interface ratio vs activity-classification ratio are different dimensions)."
+ },
+ "matrix": [
+  {
+   "dimension": "任务需求与应用类型",
+   "rq": [
+    "RQ1",
+    "RQ3 前置"
+   ],
+   "sources": [
+    "OSWORLD-task-behavior-v3/task_semantics.jsonl (108 任务定义)",
+    "SWE-REBENCH-behavior-v2 (111 task)",
+    "P1-12-CODING-REPEAT-01 (3 task)"
+   ],
+   "unit_scope": "OSWorld: 108 个独立任务定义静态标签（可重叠）；SWE-rebench: 111 task×participant×run；Coding: 3 固定 task×3 repeat",
+   "findings": "桌面工作集是多应用混合：文件管理相关 74、浏览器信息处理 55、文档/PDF 25、演示文稿 17、媒体/游戏 16、开发/终端 15、邮件 12、表格 10、日历 7、Unknown 5（静态标签非金标准，不能相加为任务总量）。Coding 侧 task 语义未做同类标签化。",
+   "limits": "标签为静态关键词/短语规则；related_apps 是任务声明非实际应用调用；task 语义提取 98 ok / 10 partial",
+   "coverage": "部分支持",
+   "next_worth": "是——若开展本地资源测量，需按任务需求选择覆盖不同工具形态的 task；不建议为标签完备性单独扩建"
+  },
+  {
+   "dimension": "工具/动作类别、数量与序列",
+   "rq": [
+    "RQ1",
+    "RQ3",
+    "RQ4 前置"
+   ],
+   "sources": [
+    "SWE-REBENCH-behavior-v2",
+    "OSWORLD-task-behavior-v3",
+    "P1-12-CODING-REPEAT-01-characterization-v3"
+   ],
+   "unit_scope": "SWE-rebench: 9,435 trajectory / 598,148 原生 tool_call；OSWorld: 755 条 model×task 轨迹的原生动作与源码静态调用两层；Coding: 9 run / 348 次有效关联调用（FORM 分类）",
+   "findings": "公开 Coding corpus 工具形态以通用 shell 为主：bash_terminal 511,104（85.4% of 598,148）；保守活动分类 Unknown 476,590（79.7%）。桌面侧 Claude 三来源 click+text_or_key 占各自原生动作记录 76.15%-80.36%（分母含 unknown）。自运行 Coding 调用构成 Read/Search 为主、请求-工具区间近串行（overlap≈0）。 注：原生 shell 接口比例（bash_terminal 85.4%）与保守活动分类比例（Unknown 79.7%）属于不同维度（记录接口 vs 命令证据语义），不能互相换算或混用。",
+   "limits": "SWE-rebench Unknown 按 participant 分布 14.9%（cursor）至 >99%（gpt-5.6-luna 等），不支持活动密度排名；OSWorld GPT 两组 native 全 unknown（16,179+34,883 条）；静态源码调用数≠实际 GUI 执行次数；保存的序列转换≠实际执行顺序",
+   "coverage": "部分支持",
+   "next_worth": "有限——SWE-bench 已下载数据可增加 harness/task 多样性下的稳健性检查，但需先明确服务哪个 RQ"
+  },
+  {
+   "dimension": "请求、token、上下文与 subagent 结构",
+   "rq": [
+    "RQ1"
+   ],
+   "sources": [
+    "AGENTX-APPLIED-MACRO-v1",
+    "OSWORLD-task-behavior-v3 (MiniMax usage)",
+    "SWE-REBENCH-behavior-v2 (usage)"
+   ],
+   "unit_scope": "AgentX: 393 traces / 68,266 requests（主 28,444 + subagent 内部 39,822）/ 1,697 显式 subagent groups；MiniMax-M3: 35,272 条 API usage calls；SWE-rebench: 9,435 trajectory 的保存 usage 字段",
+   "findings": "AgentX 单一来源样本内的宏观请求流呈多轮大上下文 + subagent 普遍结构：AgentX pooled input median 88,768 token、output median 376 token；subagent 内部请求占 58.3%。MiniMax-M3 桌面逐请求中位数：input 2,797 / cache_read 86,508.5 / output 73 token（输入+缓存派生 90,676.5，IQR 47,258.5）——大量缓存读形态。Applied Compute 模板三类别 turn median 13/9/37。",
+   "limits": "token usage 不是账单；Applied 是 production-derived template 非真实执行；AgentX 的 t/api_time 区间重叠是记录区间重叠非 CPU/GPU 并发；4,761 条有效请求/响应时间相同不能报告零延迟；AgentX 为单一 request-flow 来源，形态不得外推为所有 Agent workload 的普遍规律",
+   "coverage": "部分支持（RQ1 描述性形态）",
+   "next_worth": "否——现有证据已支持形态描述；增量需受控对照，属本地测量范畴"
+  },
+  {
+   "dimension": "同任务重复波动",
+   "rq": [
+    "RQ2",
+    "RQ3 前置"
+   ],
+   "sources": [
+    "P1-12-CODING-REPEAT-01-review-v1",
+    "P1-12-CODING-REPEAT-01-characterization-v3",
+    "SWE-REBENCH-behavior-v2 repeat_groups"
+   ],
+   "unit_scope": "Coding: 3 task×3 显式 run（原始点非独立任务）；SWE-rebench: repeat_groups 内同 task×participant 多 run",
+   "findings": "固定条件同任务重复存在明确变异：astropy-13398 attempt wall IQR 41.28 s（原始点 93.95/162.69/176.51）、Agent CPU IQR 37.89 core-s（14.78/34.50/90.56）、内核峰值内存 IQR 136.1 MiB；其最高与最低 CPU run 的 Interpreter/Execute 调用数相同（2），在本批已核对的具体 run 与 Interpreter/Execute 类别范围内，调用数与 CPU 高低不一致（不否定其他调用特征的解释价值，后者未检验）。SWE-rebench 侧存在 n≥3 的 repeat_groups（如 Arcadedb-4281::claude-code n=5，tool_call raw 15/47/21/18/18）。",
+   "limits": "三点原始点非独立任务、非显著性检验；不可归因模型/工具/硬件；旧 P1-12 缺陷批次不能当正常完成态证据",
+   "coverage": "部分支持（Coding 类别内描述性）",
+   "next_worth": "是——repeat 数与 task 数扩展是资源测量的设计参数，属下一任务输入"
+  },
+  {
+   "dimension": "wall、CPU、内存及采样 scope",
+   "rq": [
+    "RQ2",
+    "RQ3"
+   ],
+   "sources": [
+    "P1-12-CODING-REPEAT-01-review-v1",
+    "P1-12-CODING-REPEAT-01-characterization-v3",
+    "G1 登记（RUN-01/02）"
+   ],
+   "unit_scope": "9 run 的 Agent/verifier 双 scope cgroup 计数（CPU core-s、wall、内核内存峰值），非独占 per-tool 归属",
+   "findings": "自运行 Coding 是当前唯一资源证据：per-task median agent CPU 25.10/34.50/39.42 core-s、内核峰值 113.3/140.8/1341.0 MiB（django 高内存与活动类别 co-occur，非因果）；观测窗内请求/工具区间近串行；verifier CPU 中位数 7.59/4.55/3.55 core-s 独立 scope。",
+   "limits": "共享容器无 per-tool 独占；uncovered 时间≠等待/思考；wall−CPU 不可用；3 task 不能推广 Coding 类别",
+   "coverage": "已支持（限定 3 task 的 cgroup scope 描述；类别与任务覆盖为部分）",
+   "next_worth": "是——但需区分：扩样增加覆盖广度（方向A），粒度/指标需采集增强（方向B）；更多同类 cgroup 样本不自动产生单工具归因、I/O 或热点"
+  },
+  {
+   "dimension": "I/O、热点、架构敏感性",
+   "rq": [
+    "RQ3",
+    "RQ4",
+    "RQ5"
+   ],
+   "sources": [
+    "CPU-01（合成 perf 可测性）",
+    "CPU-02（权限失败记录，暂停）",
+    "P2-01 候选清单"
+   ],
+   "unit_scope": "无真实 Agent 容器热点样本；正式 I/O null",
+   "findings": "无真实 Agent 容器热点样本。CPU-02 状态按记录：普通用户 perf 执行权限检查为访问被拒（exit 255）；特权方案（监督器）为实验性源码、未安装、未批准，执行安全闭环未完成；路线主动暂停。这不证明特权 perf 必然不可用。RQ3 的 scope 级描述部分已由 Coding 3×3 数据初步覆盖，本行缺口指归因粒度与架构层解释。",
+   "limits": "RQ4/RQ5 完全未支持；不能从 wall/CPU 推断热点或架构诉求",
+   "coverage": "未支持",
+   "next_worth": "是——项目最大缺口之一；需受控测量或具有相应资源观测的可信数据源，特权路线恢复与否待用户裁定"
+  },
+  {
+   "dimension": "Replay 可行性",
+   "rq": [
+    "RQ2",
+    "方法论主线末端"
+   ],
+   "sources": [
+    "P3-01-audit-v3"
+   ],
+   "unit_scope": "RUN-02 单 trace 的 28 次工具调用离线审计",
+   "findings": "调用序列、命令字符串 hash、生命周期与返回码可恢复且配对完整（28/28）；但不具备安全且保真的执行条件（非结构化 argv、输出截断、逐调用运行时观测 unknown）。",
+   "limits": "G3-R 未通过；Replay 执行暂停；不因可恢复命令而执行",
+   "coverage": "未支持（审计完成、执行条件未建立）",
+   "next_worth": "暂缓——依赖正确性与资源保真证据，不在近期关键路径"
+  },
+  {
+   "dimension": "任务结果与 Agent 终止机制",
+   "rq": [
+    "RQ2",
+    "证据边界"
+   ],
+   "sources": [
+    "P1-12-CODING-REPEAT-01-review-v1",
+    "SWE-REBENCH-behavior-v2 termination/evaluation counts"
+   ],
+   "unit_scope": "Coding: 9 run 终止与 resolved 分列；SWE-rebench: 9,435 trajectory 的 agent_exit_status 与 evaluation status",
+   "findings": "终止机制与任务结果是两个独立维度：Coding 9 run 中 Submitted 与 LimitsExceeded 并存（astropy-13398 三次均 LimitsExceeded 而 resolved 1T/2F；django 3 次 Submitted 全 resolved）；SWE-rebench 侧 agent_exit submit 7,212 / submitted 2,220 / 各类失败 3，evaluation resolved 4,751 / failed 4,683 / skipped 1——resolved 不等于正常 termination。 三维度分列：任务结果（resolved）、Agent 终止（Submitted/LimitsExceeded/agent_exit）、基础设施失败（agent_proxy/inference_server/prompt_too_long 类单独计数）；LimitsExceeded 按来源协议是预算边界正常终止信号，是否计入实验失败按各来源协议判断，不跨来源合并。",
+   "limits": "不用于成功率排名；预算限制终止≠工具故障",
+   "coverage": "已支持（描述性分列）",
+   "next_worth": "否——口径已建立，作为后续报告的标准分列即可"
+  }
+ ],
+ "acquisition_status_note": {
+  "downloaded_and_analyzed": [
+   "SWE-rebench 85 shard/9,435 trajectory（behavior-v2）",
+   "AgentX 393 traces + Applied Compute 24,576 templates（macro-v1）",
+   "OSWorld 755 条 model×task 轨迹（task-behavior-v3，MiniMax-M3 深入 + 7 模型联合）",
+   "OSWorld 第三方镜像小样 3 条（OSWORLD-20260929）",
+   "Coding 自运行 9 run（review-v1 + characterization-v3）"
+  ],
+  "downloaded_not_yet_analyzed": [
+   "SWE-bench Verified 35 组完整/16,229 对象、Lite 5 组/1,500 对象、Test sonar 2,147/2,294（对象数≠轨迹数，格式抽样确认）",
+   "OSWorld 配套 6 文件（字段语义已用于本轮引用，任务 key 映射 unknown/blocked）"
+  ],
+  "no_public_trace_available": [
+   "Office 真实执行轨迹",
+   "Assistant 类别",
+   "Video 类别（本登记不含视频）"
+  ],
+  "needs_self_generated_evidence": [
+   "所有 CPU/内存/I/O/热点资源观测（RQ3/RQ4/RQ5）"
+  ],
+  "paused_not_near_term": [
+   "CPU-02 特权 perf 路线",
+   "Replay 执行（P3-02）",
+   "G2/G3-R 裁定"
+  ]
+ }
+}

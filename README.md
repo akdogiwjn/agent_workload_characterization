@@ -1,80 +1,40 @@
 # AI Agent Workload Characterization
 
-面向 CPU / OS 的 Agent workload 研究与工程项目，不做 Agent 能力排行榜。
+研究Agent执行单个任务时的CPU、内存、磁盘I/O与占用、网络、时长、工具和具体软件使用。公开trace补充行为分布，本地执行提供资源采样；不做能力排行榜。
 
-## 当前状态与边界
+## 日常阅读入口
 
-日常先看 **[项目总览与固定收尾清单](docs/project_status.md)**；材料查询用 [文档索引](docs/README.md)。历史任务书在索引中折叠，不需要逐份重读。
+| 内容 | 入口 |
+| --- | --- |
+| 当前目标、必采指标与排除项 | [当前范围](docs/current_scope.md) |
+| 已完成什么、实现和证据限制 | [项目总览](docs/project_status.md) |
+| 当前工作、下一项建议和停止点 | [当前任务](docs/current_task.md#current-task) |
+| 成果、规范与历史导航 | [文档索引](docs/README.md) |
+
+GPU、热点/PMU、微架构和优化不是当前必交。旧方法文档与任务库已移入本机归档，见[历史索引](docs/history_index.md)，不默认全文读取，不从旧命令恢复授权。
 
 <!-- PROJECT_STATE:START -->
-当前状态由 [2026-09-20 状态真源](project_state.json)统一登记；这是进度记录，不是执行授权。
+当前状态由 [2026-10-16 状态真源](project_state.json)统一登记；这是进度记录，不是执行授权。
 
-- G1：登记小闭环通过；G2 / G3-R 未通过。
-- CPU-02：初次 B 准备失败，修复后 R1 映射失败；后续 perf 权限受限。路线暂停，无有效容器热点样本，新 retry 未授权。
-- P2-01 小样分析与 P3-01 v3 现有 trace 审计已交付；不授权 Replay。
-- 当前：P1-12 小规模独立任务 × 重复的离线选样与预算设计；不启动容器、模型或新实验。
+- 当前范围：本地单任务CPU、内存、磁盘I/O与占用、网络、时长、工具/软件统计和过程图；模型用量、阶段/错误、环境和采样质量一并记录。GPU、热点/PMU/微架构/优化不必交，Replay/并发仅可选。
+- 公开操作和软件汇总v3已完成限定分析：SWE-rebench 9,435轨迹，SWE-bench 19,876对象/41组；OSWorld 755模型×任务/108任务，H-EPM 414轨迹，AgentX/Applied为宏观证据。部分语义和软件运行身份未知，来源不混算分母。
+- 本地主设计：Coding、Office、Assistant各3任务×3重复，共27run/9任务设计。已有CPU/内存0.5s目标采样、有限I/O、阶段与调用统计；任务容器/共享进程不等于整机或工具独占测量。
+- 待补：scope明确的网络收发、任务目录/输出/缓存占用、I/O速率图及完整四面板；最新Assistant与软件成果待最后统一更新HTML。旧run不倒填缺项，Video/GUI覆盖限制保留。
+- 当前入口：docs/current_scope.md（目标）、docs/project_status.md（证据）、docs/current_task.md（工作）。77份历史文档已本机归档，5处旧报告链接已修复；HTML临时生成通过但来源版本标为PARTIAL。data保留配置/清单，原始大数据留本机；未授权实验或提交。
+- G1仅登记小闭环通过；G2/G3-R未通过，CPU-02/Replay继续暂停。状态、建议、旧批准和旧execute命令都不是新授权。
 <!-- PROJECT_STATE:END -->
 
-最短入口：[文档索引](docs/README.md) · [当前集中评审](docs/g1_consolidated_review.md) ·
-[CLOSEOUT-01 交付](docs/repository_closeout_delivery.md) ·
-[RUN-02-R2 review-v2](reports/resource/RUN-02/20260915T012427Z-2d75aa-review-v2/)。
+## 主要成果
 
-## 源码运行与测试
+- 公开操作：[操作v3](reports/analysis/PUBLIC-TRACE-OPERATIONS-v3/summary.md)。
+- 具体软件：[工具栈v3](reports/analysis/PUBLIC-TRACE-SOFTWARE-TOOLKITS-v3/summary.md)。
+- 本地资源：[Coding](reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/summary.md)、[Office](reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/summary.md)、[Assistant](reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/summary.md)。
+- [HTML v5](reports/html/PROJECT-RESULTS-v5/index.html)：旧时点展示，最新Assistant及软件成果待最后统一更新。
 
-要求 Python >=3.11；依赖版本以 `pyproject.toml` 为准。从项目根目录运行，以下仅帮助、版本及合成 IR 校验：
+## 开发与保护
 
-```bash
-PYTHONPATH=src python3 -B -m agent_workload_characterization --help
-PYTHONPATH=src python3 -B -m agent_workload_characterization --version
-PYTHONPATH=src python3 -B -m agent_workload_characterization validate tests/fixtures/ir/template_n2.json
-```
+代码在`src/agent_workload_characterization/`，要求Python >=3.11。按改动选择定向测试，不默认执行全历史测试或任何`--execute`入口。文档状态检查：`python3 -B scripts/check_project_state.py`。
 
-无参数显示帮助。注意：旧 CLI 帮助尾部“不会写文件”的概括已经过时，应按具体命令区分：
+当前事实在`project_state.json`，三个当前页面的状态块由既有render规则统一生成。原始trace、正式raw、批准/attempt、manifest、冻结身份、源码快照与环境不随文档整理删除或搬迁。未跟踪文件可能是正式成果，禁止用`git clean`代替清理审查。
 
-| 命令/入口 | 副作用与前置 |
-| --- | --- |
-| `inspect-source`、`check-*-samples` | 只读登记来源，依赖本地 catalog/数据，不启动实验 |
-| `analyze-macro-pilot` | 默认只读；指定 `--output-dir` 会写派生报告 |
-| `prepare-pilot` | 默认可做宿主/Docker 探针；离线需 `--skip-preflight`；指定输出目录会写报告，不作为日常查看入口 |
-| `plan-coding-pilot` | 历史 RUN-01 离线计划，不授权运行 |
-| `runners.*_entry --execute`、smoke 等 | 可能操作 Docker/模型/文件；历史命令不可直接复用，须当前任务批准 |
-
-ingest 仍为 Python API，没有全量转换 CLI。按任务选择测试，不为文档整理默认运行全历史 discover。G1-02 已改为短 fixture，正式工作量仅在另批 B 中运行；测试层级和证据边界见总览。
-
-实际代码位于 `src/agent_workload_characterization/`。`pyproject.toml` 声明安装后命令 `awc`；本轮仅核对源码帮助入口，未安装、打包或重验全部命令。
-
-## 阅读顺序
-
-先完整阅读：
-
-1. [methodology.md](methodology.md)
-2. [docs/development_tasks.md](docs/development_tasks.md)
-3. [references/README.md](references/README.md)
-4. [references/manifest.yaml](references/manifest.yaml)
-
-再阅读本次补充的共同约定：
-
-- [数据管理与旧资产接入](docs/data_management.md)：旧原始数据原地保留，新项目统一登记、转换和分析。
-- [Trace 语义与测量契约](docs/trace_contract.md)：ID、时间、缺失、证据、资源归因和统计口径。
-
-`references/repos/` 与 `references/papers/` 仅作设计参考，本阶段不修改第三方内容；不直接复制任何参考项目的数据格式。
-
-## 技术路线
-
-```text
-Public Trace ──→ 来源适配 ──→ 宏观分布与采样依据
-                              ↕ 共享语义 IR
-Real Agent Run → 原生埋点 ──→ 行为 / Job / Process / Resource Scope
-                              ↓
-                      CPU Characterization / Hotspot
-                              ↓
-                      Replay 保真验证 → Scale
-```
-
-公共 trace 和本地运行是互补的证据来源，不是同一条 trace 的自动转换；公开样本的分布不自动代表所有生产 workload。
-
-## 开发顺序摘要
-
-资产审计 → 最小 IR 与手算指标样例 → 少量任务资源归因闭环 → CPU 试点 → 扩展场景与样本 → Replay 保真与 Scale。
-
-保留 P0～P4 作为工作类别，不再要求完成所有 P0 adapter 才验证 P1，也不要求收集约 50 个任务才开始 P2 试点。各 Gate 的具体证据见任务计划；G0 已有通过记录，G1 仍 PARTIAL，后续 Gate 未验收。
+本机旧交接文档、导航备份和缓存归入`local_archive/`，不提交GitHub。镜像导出、原始数据、虚拟环境、第三方源码副本和指定大型派生明细也被忽略，但保留本机原件。GitHub代码副本不含完整实验数据；运行/核验全部历史证据需另行提供这些本地资产。未执行提交或推送。

@@ -1,0 +1,1961 @@
+{
+  "schema": "docops-office-repeat-execution-validation-v1",
+  "validated_at_utc": "2026-10-11T10:52:43.765373+00:00",
+  "collection": "DOCOPS-OFFICE-REPEAT-02",
+  "identity_sha256": "0886c0b0d64ae20813f518e0c0392d370d98f5a8479737bccabdd5016c539bf1",
+  "full_live_plan_frozen_identity_equal": true,
+  "exit_code": 0,
+  "execution_command": "PYTHONPATH=src LITELLM_LOCAL_MODEL_COST_MAP=True .venvs/docops-pilot-01/bin/python -B scripts/docops_office_repeat_02_entry.py --execute --i-approve-the-docops-office-repeat-02",
+  "executed": 9,
+  "failed": 0,
+  "not_executed": 0,
+  "stop_reason": "frozen nine-attempt schedule completed; authorization consumed",
+  "batch_wall_s": 273.374,
+  "within_batch_budget": true,
+  "budget": {
+    "per_attempt": {
+      "max_steps": 40,
+      "max_tokens_per_request": 32768,
+      "agent_s": 1200.0,
+      "verifier_s": 600.0,
+      "wall_s": 2700.0,
+      "cleanup_reserve_s": 300.0,
+      "cpu": 1,
+      "memory_gib": 4,
+      "storage_gib": 10,
+      "network": "none",
+      "sample_s": 0.5
+    },
+    "batch_wall_s": 27000.0,
+    "batch_closeout_reserve_s": 2700.0,
+    "framework_retry": "up to 3 actual tries per logical call",
+    "maximum_model_steps": 360,
+    "cost": "unknown; no hard cap requires new explicit batch acceptance",
+    "pre_execution_image_preparation_wall_s": 0.6239373550051823
+  },
+  "totals": {
+    "logical_requests": 46,
+    "agent_tool_calls": 37,
+    "bootstrap_tool_calls": 18,
+    "resource_samples": 354,
+    "actual_transport_attempts": null,
+    "actual_bill": null,
+    "bootstrap_ok_false": 3
+  },
+  "per_run": [
+    {
+      "run_id": "20261011T104235Z-r0-excel001",
+      "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+      "round": 0,
+      "measurement_status": "complete_within_declared_scope",
+      "reward": 1.0,
+      "termination": "finish",
+      "infra_failures": [],
+      "logical_requests": 7,
+      "actual_transport_attempts": null,
+      "agent_tool_calls": 6,
+      "bootstrap_tool_calls": 2,
+      "native_tool_names": {
+        "copy_file": 1,
+        "xlsx_read_sheet": 3,
+        "xlsx_set_formula": 2
+      },
+      "bootstrap_tool_names": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "tool_return_status_by_role": {
+        "agent": {
+          "True": 6
+        },
+        "bootstrap": {
+          "True": 2
+        }
+      },
+      "bootstrap_errors": [],
+      "action_counts": {
+        "call_tool": 6,
+        "finish": 1
+      },
+      "response_models": {
+        "deepseek-flash": 7
+      },
+      "usage_from_native_events": {
+        "prompt_tokens": 23145,
+        "completion_tokens": 4812,
+        "cached_tokens": 20480
+      },
+      "request_usage_missing": 0,
+      "requests_after_finish": 0,
+      "span_pairing": {
+        "requests": 7,
+        "tools_including_bootstrap": 8,
+        "unpaired_or_duplicate_spans": 0
+      },
+      "last_agent_tool_return": {
+        "event_id": "36d9ce9e9e9949468bdf0c0315f113a5",
+        "open_line": 34,
+        "terminal_line": 35,
+        "ok": true,
+        "terminal_monotonic_ns": 640994788799216,
+        "before_next_request": true
+      },
+      "resources": {
+        "attempt_wall_s": 42.97,
+        "sample_count": 66,
+        "sample_window_s": 31.596574567,
+        "sample_interval_s": {
+          "min": 0.0021426,
+          "max": 0.501583841
+        },
+        "container_cpu_core_s": 6.840446,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 82657280,
+        "kernel_memory_peak_bytes": 83173376,
+        "host_agent_rss_sample_peak_bytes": 166981632,
+        "phase_wall_s": {
+          "harbor_start": 0.92521112,
+          "agent_setup": 0.3976003,
+          "agent": 29.969886575,
+          "verifier": 1.225959028,
+          "harbor_stop": 10.265671029
+        }
+      },
+      "resource_window": {
+        "start_monotonic_ns": 640966886311367,
+        "end_monotonic_ns": 640998482885934,
+        "roles": {
+          "boundary_start": 1,
+          "sample": 64,
+          "boundary_end": 1
+        },
+        "nonpositive_gaps": 0,
+        "missing": {},
+        "counter_regressions": {},
+        "interval_target_s": 0.5
+      },
+      "cgroup_block_service_bytes_delta": {
+        "io_read_bytes": 0,
+        "io_write_bytes": 40960
+      },
+      "shared_host_cpu_core_s": 0.18,
+      "cleanup": "removed_verified",
+      "image_retained_id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+      "archive": "bytes_sha256_verified",
+      "verifier_summary": {
+        "tests": 1,
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0,
+        "start": 1791715387290,
+        "stop": 1791715387911
+      },
+      "environment_limitations": {
+        "cpu_fields": {
+          "model name": "not_exposed",
+          "CPU implementer": "observed",
+          "CPU part": "observed",
+          "microcode": "not_exposed"
+        },
+        "filesystem": {
+          "value": null,
+          "reason": "not_observed"
+        },
+        "cache_initial_state": {
+          "value": null,
+          "reason": "not_controlled"
+        }
+      }
+    },
+    {
+      "run_id": "20261011T104318Z-r0-ppt008",
+      "task_key": "atomic__ppt_008_bullet_editing_seed",
+      "round": 0,
+      "measurement_status": "complete_within_declared_scope",
+      "reward": 1.0,
+      "termination": "finish",
+      "infra_failures": [],
+      "logical_requests": 5,
+      "actual_transport_attempts": null,
+      "agent_tool_calls": 4,
+      "bootstrap_tool_calls": 2,
+      "native_tool_names": {
+        "copy_file": 1,
+        "ppt_list_slides": 2,
+        "ppt_replace_text": 1
+      },
+      "bootstrap_tool_names": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "tool_return_status_by_role": {
+        "agent": {
+          "True": 4
+        },
+        "bootstrap": {
+          "True": 1,
+          "False": 1
+        }
+      },
+      "bootstrap_errors": [
+        {
+          "event_id": "b1301d537c01490ba19cb509239e7de7",
+          "tool_name": "inspect_document",
+          "ok": false,
+          "error_type_from_saved_prompt": "AttributeError",
+          "terminal_line": 5
+        }
+      ],
+      "action_counts": {
+        "call_tool": 4,
+        "finish": 1
+      },
+      "response_models": {
+        "deepseek-flash": 5
+      },
+      "usage_from_native_events": {
+        "prompt_tokens": 11170,
+        "completion_tokens": 934,
+        "cached_tokens": 9472
+      },
+      "request_usage_missing": 0,
+      "requests_after_finish": 0,
+      "span_pairing": {
+        "requests": 5,
+        "tools_including_bootstrap": 6,
+        "unpaired_or_duplicate_spans": 0
+      },
+      "last_agent_tool_return": {
+        "event_id": "e313eb3d3758414ea53ed1c540a583dc",
+        "open_line": 24,
+        "terminal_line": 25,
+        "ok": true,
+        "terminal_monotonic_ns": 641021726567941,
+        "before_next_request": true
+      },
+      "resources": {
+        "attempt_wall_s": 25.27,
+        "sample_count": 30,
+        "sample_window_s": 13.867275025,
+        "sample_interval_s": {
+          "min": 0.000959924,
+          "max": 0.500661959
+        },
+        "container_cpu_core_s": 5.368005,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 61702144,
+        "kernel_memory_peak_bytes": 80543744,
+        "host_agent_rss_sample_peak_bytes": 169078784,
+        "phase_wall_s": {
+          "harbor_start": 0.968493506,
+          "agent_setup": 0.350894969,
+          "agent": 12.17210992,
+          "verifier": 1.34236547,
+          "harbor_stop": 10.272786696
+        }
+      },
+      "resource_window": {
+        "start_monotonic_ns": 641010347832717,
+        "end_monotonic_ns": 641024215107742,
+        "roles": {
+          "boundary_start": 1,
+          "sample": 28,
+          "boundary_end": 1
+        },
+        "nonpositive_gaps": 0,
+        "missing": {},
+        "counter_regressions": {},
+        "interval_target_s": 0.5
+      },
+      "cgroup_block_service_bytes_delta": {
+        "io_read_bytes": 0,
+        "io_write_bytes": 32768
+      },
+      "shared_host_cpu_core_s": 0.08,
+      "cleanup": "removed_verified",
+      "image_retained_id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+      "archive": "bytes_sha256_verified",
+      "verifier_summary": {
+        "tests": 1,
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0,
+        "start": 1791715412878,
+        "stop": 1791715413606
+      },
+      "environment_limitations": {
+        "cpu_fields": {
+          "model name": "not_exposed",
+          "CPU implementer": "observed",
+          "CPU part": "observed",
+          "microcode": "not_exposed"
+        },
+        "filesystem": {
+          "value": null,
+          "reason": "not_observed"
+        },
+        "cache_initial_state": {
+          "value": null,
+          "reason": "not_controlled"
+        }
+      }
+    },
+    {
+      "run_id": "20261011T104344Z-r0-pdf004",
+      "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+      "round": 0,
+      "measurement_status": "complete_within_declared_scope",
+      "reward": 1.0,
+      "termination": "finish",
+      "infra_failures": [],
+      "logical_requests": 4,
+      "actual_transport_attempts": null,
+      "agent_tool_calls": 3,
+      "bootstrap_tool_calls": 2,
+      "native_tool_names": {
+        "copy_file": 1,
+        "pdf_reorder_pages": 1,
+        "inspect_document": 1
+      },
+      "bootstrap_tool_names": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "tool_return_status_by_role": {
+        "agent": {
+          "True": 3
+        },
+        "bootstrap": {
+          "True": 2
+        }
+      },
+      "bootstrap_errors": [],
+      "action_counts": {
+        "call_tool": 3,
+        "finish": 1
+      },
+      "response_models": {
+        "deepseek-flash": 4
+      },
+      "usage_from_native_events": {
+        "prompt_tokens": 9411,
+        "completion_tokens": 529,
+        "cached_tokens": 8192
+      },
+      "request_usage_missing": 0,
+      "requests_after_finish": 0,
+      "span_pairing": {
+        "requests": 4,
+        "tools_including_bootstrap": 5,
+        "unpaired_or_duplicate_spans": 0
+      },
+      "last_agent_tool_return": {
+        "event_id": "ee5dcef5d5e542e89d52da35f1896b06",
+        "open_line": 19,
+        "terminal_line": 20,
+        "ok": true,
+        "terminal_monotonic_ns": 641043690542890,
+        "before_next_request": true
+      },
+      "resources": {
+        "attempt_wall_s": 21.5,
+        "sample_count": 22,
+        "sample_window_s": 9.933847712,
+        "sample_interval_s": {
+          "min": 0.000907172,
+          "max": 0.50069
+        },
+        "container_cpu_core_s": 4.270158,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 76206080,
+        "kernel_memory_peak_bytes": 84324352,
+        "host_agent_rss_sample_peak_bytes": 169078784,
+        "phase_wall_s": {
+          "harbor_start": 1.018549464,
+          "agent_setup": 0.344649872,
+          "agent": 8.419824121,
+          "verifier": 1.167545345,
+          "harbor_stop": 10.381493252
+        }
+      },
+      "resource_window": {
+        "start_monotonic_ns": 641036131421992,
+        "end_monotonic_ns": 641046065269704,
+        "roles": {
+          "boundary_start": 1,
+          "sample": 20,
+          "boundary_end": 1
+        },
+        "nonpositive_gaps": 0,
+        "missing": {},
+        "counter_regressions": {},
+        "interval_target_s": 0.5
+      },
+      "cgroup_block_service_bytes_delta": {
+        "io_read_bytes": 0,
+        "io_write_bytes": 4096
+      },
+      "shared_host_cpu_core_s": 0.06,
+      "cleanup": "removed_verified",
+      "image_retained_id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+      "archive": "bytes_sha256_verified",
+      "verifier_summary": {
+        "tests": 1,
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0,
+        "start": 1791715434901,
+        "stop": 1791715435503
+      },
+      "environment_limitations": {
+        "cpu_fields": {
+          "model name": "not_exposed",
+          "CPU implementer": "observed",
+          "CPU part": "observed",
+          "microcode": "not_exposed"
+        },
+        "filesystem": {
+          "value": null,
+          "reason": "not_observed"
+        },
+        "cache_initial_state": {
+          "value": null,
+          "reason": "not_controlled"
+        }
+      }
+    },
+    {
+      "run_id": "20261011T104406Z-r1-ppt008",
+      "task_key": "atomic__ppt_008_bullet_editing_seed",
+      "round": 1,
+      "measurement_status": "complete_within_declared_scope",
+      "reward": 1.0,
+      "termination": "finish",
+      "infra_failures": [],
+      "logical_requests": 5,
+      "actual_transport_attempts": null,
+      "agent_tool_calls": 4,
+      "bootstrap_tool_calls": 2,
+      "native_tool_names": {
+        "copy_file": 1,
+        "ppt_list_slides": 2,
+        "ppt_replace_text": 1
+      },
+      "bootstrap_tool_names": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "tool_return_status_by_role": {
+        "agent": {
+          "True": 4
+        },
+        "bootstrap": {
+          "True": 1,
+          "False": 1
+        }
+      },
+      "bootstrap_errors": [
+        {
+          "event_id": "71466548523249719358ef0501ec0645",
+          "tool_name": "inspect_document",
+          "ok": false,
+          "error_type_from_saved_prompt": "AttributeError",
+          "terminal_line": 5
+        }
+      ],
+      "action_counts": {
+        "call_tool": 4,
+        "finish": 1
+      },
+      "response_models": {
+        "deepseek-flash": 5
+      },
+      "usage_from_native_events": {
+        "prompt_tokens": 11090,
+        "completion_tokens": 964,
+        "cached_tokens": 9600
+      },
+      "request_usage_missing": 0,
+      "requests_after_finish": 0,
+      "span_pairing": {
+        "requests": 5,
+        "tools_including_bootstrap": 6,
+        "unpaired_or_duplicate_spans": 0
+      },
+      "last_agent_tool_return": {
+        "event_id": "751bea31a7a74c048f146add47c7dd52",
+        "open_line": 24,
+        "terminal_line": 25,
+        "ok": true,
+        "terminal_monotonic_ns": 641068588426697,
+        "before_next_request": true
+      },
+      "resources": {
+        "attempt_wall_s": 24.64,
+        "sample_count": 29,
+        "sample_window_s": 13.30080803,
+        "sample_interval_s": {
+          "min": 0.00141867,
+          "max": 0.501272677
+        },
+        "container_cpu_core_s": 5.034718,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 71262208,
+        "kernel_memory_peak_bytes": 79597568,
+        "host_agent_rss_sample_peak_bytes": 169078784,
+        "phase_wall_s": {
+          "harbor_start": 0.899537577,
+          "agent_setup": 0.386333446,
+          "agent": 11.660896186,
+          "verifier": 1.251836495,
+          "harbor_stop": 10.271333716
+        }
+      },
+      "resource_window": {
+        "start_monotonic_ns": 641057967991207,
+        "end_monotonic_ns": 641071268799237,
+        "roles": {
+          "boundary_start": 1,
+          "sample": 27,
+          "boundary_end": 1
+        },
+        "nonpositive_gaps": 0,
+        "missing": {},
+        "counter_regressions": {},
+        "interval_target_s": 0.5
+      },
+      "cgroup_block_service_bytes_delta": {
+        "io_read_bytes": 0,
+        "io_write_bytes": 28672
+      },
+      "shared_host_cpu_core_s": 0.08,
+      "cleanup": "removed_verified",
+      "image_retained_id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+      "archive": "bytes_sha256_verified",
+      "verifier_summary": {
+        "tests": 1,
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0,
+        "start": 1791715460068,
+        "stop": 1791715460699
+      },
+      "environment_limitations": {
+        "cpu_fields": {
+          "model name": "not_exposed",
+          "CPU implementer": "observed",
+          "CPU part": "observed",
+          "microcode": "not_exposed"
+        },
+        "filesystem": {
+          "value": null,
+          "reason": "not_observed"
+        },
+        "cache_initial_state": {
+          "value": null,
+          "reason": "not_controlled"
+        }
+      }
+    },
+    {
+      "run_id": "20261011T104431Z-r1-pdf004",
+      "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+      "round": 1,
+      "measurement_status": "complete_within_declared_scope",
+      "reward": 1.0,
+      "termination": "finish",
+      "infra_failures": [],
+      "logical_requests": 4,
+      "actual_transport_attempts": null,
+      "agent_tool_calls": 3,
+      "bootstrap_tool_calls": 2,
+      "native_tool_names": {
+        "copy_file": 1,
+        "pdf_reorder_pages": 1,
+        "inspect_document": 1
+      },
+      "bootstrap_tool_names": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "tool_return_status_by_role": {
+        "agent": {
+          "True": 3
+        },
+        "bootstrap": {
+          "True": 2
+        }
+      },
+      "bootstrap_errors": [],
+      "action_counts": {
+        "call_tool": 3,
+        "finish": 1
+      },
+      "response_models": {
+        "deepseek-flash": 4
+      },
+      "usage_from_native_events": {
+        "prompt_tokens": 9395,
+        "completion_tokens": 614,
+        "cached_tokens": 8192
+      },
+      "request_usage_missing": 0,
+      "requests_after_finish": 0,
+      "span_pairing": {
+        "requests": 4,
+        "tools_including_bootstrap": 5,
+        "unpaired_or_duplicate_spans": 0
+      },
+      "last_agent_tool_return": {
+        "event_id": "dc27f1d51982456c83b6584bd3d4d9c9",
+        "open_line": 19,
+        "terminal_line": 20,
+        "ok": true,
+        "terminal_monotonic_ns": 641091239624992,
+        "before_next_request": true
+      },
+      "resources": {
+        "attempt_wall_s": 22.05,
+        "sample_count": 24,
+        "sample_window_s": 10.625234346,
+        "sample_interval_s": {
+          "min": 0.000920583,
+          "max": 0.500976543
+        },
+        "container_cpu_core_s": 4.518449,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 82034688,
+        "kernel_memory_peak_bytes": 82034688,
+        "host_agent_rss_sample_peak_bytes": 169078784,
+        "phase_wall_s": {
+          "harbor_start": 0.868586801,
+          "agent_setup": 0.367306064,
+          "agent": 8.957068783,
+          "verifier": 1.299003474,
+          "harbor_stop": 10.393752141
+        }
+      },
+      "resource_window": {
+        "start_monotonic_ns": 641083021358754,
+        "end_monotonic_ns": 641093646593100,
+        "roles": {
+          "boundary_start": 1,
+          "sample": 22,
+          "boundary_end": 1
+        },
+        "nonpositive_gaps": 0,
+        "missing": {},
+        "counter_regressions": {},
+        "interval_target_s": 0.5
+      },
+      "cgroup_block_service_bytes_delta": {
+        "io_read_bytes": 0,
+        "io_write_bytes": 4096
+      },
+      "shared_host_cpu_core_s": 0.07,
+      "cleanup": "removed_verified",
+      "image_retained_id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+      "archive": "bytes_sha256_verified",
+      "verifier_summary": {
+        "tests": 1,
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0,
+        "start": 1791715482402,
+        "stop": 1791715483079
+      },
+      "environment_limitations": {
+        "cpu_fields": {
+          "model name": "not_exposed",
+          "CPU implementer": "observed",
+          "CPU part": "observed",
+          "microcode": "not_exposed"
+        },
+        "filesystem": {
+          "value": null,
+          "reason": "not_observed"
+        },
+        "cache_initial_state": {
+          "value": null,
+          "reason": "not_controlled"
+        }
+      }
+    },
+    {
+      "run_id": "20261011T104454Z-r1-excel001",
+      "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+      "round": 1,
+      "measurement_status": "complete_within_declared_scope",
+      "reward": 1.0,
+      "termination": "finish",
+      "infra_failures": [],
+      "logical_requests": 6,
+      "actual_transport_attempts": null,
+      "agent_tool_calls": 5,
+      "bootstrap_tool_calls": 2,
+      "native_tool_names": {
+        "xlsx_read_sheet": 2,
+        "copy_file": 1,
+        "xlsx_set_formula": 2
+      },
+      "bootstrap_tool_names": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "tool_return_status_by_role": {
+        "agent": {
+          "True": 5
+        },
+        "bootstrap": {
+          "True": 2
+        }
+      },
+      "bootstrap_errors": [],
+      "action_counts": {
+        "call_tool": 5,
+        "finish": 1
+      },
+      "response_models": {
+        "deepseek-flash": 6
+      },
+      "usage_from_native_events": {
+        "prompt_tokens": 19631,
+        "completion_tokens": 6998,
+        "cached_tokens": 17152
+      },
+      "request_usage_missing": 0,
+      "requests_after_finish": 0,
+      "span_pairing": {
+        "requests": 6,
+        "tools_including_bootstrap": 7,
+        "unpaired_or_duplicate_spans": 0
+      },
+      "last_agent_tool_return": {
+        "event_id": "6c63c4528bde461f96abf757cd6e7db0",
+        "open_line": 29,
+        "terminal_line": 30,
+        "ok": true,
+        "terminal_monotonic_ns": 641140404298010,
+        "before_next_request": true
+      },
+      "resources": {
+        "attempt_wall_s": 49.05,
+        "sample_count": 78,
+        "sample_window_s": 37.760333924,
+        "sample_interval_s": {
+          "min": 0.000855922,
+          "max": 0.501805885
+        },
+        "container_cpu_core_s": 6.053172,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 70393856,
+        "kernel_memory_peak_bytes": 79917056,
+        "host_agent_rss_sample_peak_bytes": 169078784,
+        "phase_wall_s": {
+          "harbor_start": 0.882608905,
+          "agent_setup": 0.354126402,
+          "agent": 36.115954629,
+          "verifier": 1.288533288,
+          "harbor_stop": 10.236681877
+        }
+      },
+      "resource_window": {
+        "start_monotonic_ns": 641105545949397,
+        "end_monotonic_ns": 641143306283321,
+        "roles": {
+          "boundary_start": 1,
+          "sample": 76,
+          "boundary_end": 1
+        },
+        "nonpositive_gaps": 0,
+        "missing": {},
+        "counter_regressions": {},
+        "interval_target_s": 0.5
+      },
+      "cgroup_block_service_bytes_delta": {
+        "io_read_bytes": 0,
+        "io_write_bytes": 40960
+      },
+      "shared_host_cpu_core_s": 0.13,
+      "cleanup": "removed_verified",
+      "image_retained_id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+      "archive": "bytes_sha256_verified",
+      "verifier_summary": {
+        "tests": 1,
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0,
+        "start": 1791715532034,
+        "stop": 1791715532739
+      },
+      "environment_limitations": {
+        "cpu_fields": {
+          "model name": "not_exposed",
+          "CPU implementer": "observed",
+          "CPU part": "observed",
+          "microcode": "not_exposed"
+        },
+        "filesystem": {
+          "value": null,
+          "reason": "not_observed"
+        },
+        "cache_initial_state": {
+          "value": null,
+          "reason": "not_controlled"
+        }
+      }
+    },
+    {
+      "run_id": "20261011T104543Z-r2-pdf004",
+      "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+      "round": 2,
+      "measurement_status": "complete_within_declared_scope",
+      "reward": 1.0,
+      "termination": "finish",
+      "infra_failures": [],
+      "logical_requests": 4,
+      "actual_transport_attempts": null,
+      "agent_tool_calls": 3,
+      "bootstrap_tool_calls": 2,
+      "native_tool_names": {
+        "copy_file": 1,
+        "pdf_reorder_pages": 1,
+        "inspect_document": 1
+      },
+      "bootstrap_tool_names": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "tool_return_status_by_role": {
+        "agent": {
+          "True": 3
+        },
+        "bootstrap": {
+          "True": 2
+        }
+      },
+      "bootstrap_errors": [],
+      "action_counts": {
+        "call_tool": 3,
+        "finish": 1
+      },
+      "response_models": {
+        "deepseek-flash": 4
+      },
+      "usage_from_native_events": {
+        "prompt_tokens": 9340,
+        "completion_tokens": 557,
+        "cached_tokens": 8192
+      },
+      "request_usage_missing": 0,
+      "requests_after_finish": 0,
+      "span_pairing": {
+        "requests": 4,
+        "tools_including_bootstrap": 5,
+        "unpaired_or_duplicate_spans": 0
+      },
+      "last_agent_tool_return": {
+        "event_id": "2f70599191324390889fbfb3d4634abf",
+        "open_line": 19,
+        "terminal_line": 20,
+        "ok": true,
+        "terminal_monotonic_ns": 641162563553470,
+        "before_next_request": true
+      },
+      "resources": {
+        "attempt_wall_s": 21.16,
+        "sample_count": 22,
+        "sample_window_s": 9.860871829,
+        "sample_interval_s": {
+          "min": 0.001018605,
+          "max": 0.500876372
+        },
+        "container_cpu_core_s": 4.461739,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 67649536,
+        "kernel_memory_peak_bytes": 82206720,
+        "host_agent_rss_sample_peak_bytes": 171175936,
+        "phase_wall_s": {
+          "harbor_start": 0.876167373,
+          "agent_setup": 0.384319787,
+          "agent": 8.25127911,
+          "verifier": 1.223317434,
+          "harbor_stop": 10.25640622
+        }
+      },
+      "resource_window": {
+        "start_monotonic_ns": 641155052361697,
+        "end_monotonic_ns": 641164913233526,
+        "roles": {
+          "boundary_start": 1,
+          "sample": 20,
+          "boundary_end": 1
+        },
+        "nonpositive_gaps": 0,
+        "missing": {},
+        "counter_regressions": {},
+        "interval_target_s": 0.5
+      },
+      "cgroup_block_service_bytes_delta": {
+        "io_read_bytes": 0,
+        "io_write_bytes": 4096
+      },
+      "shared_host_cpu_core_s": 0.07,
+      "cleanup": "removed_verified",
+      "image_retained_id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+      "archive": "bytes_sha256_verified",
+      "verifier_summary": {
+        "tests": 1,
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0,
+        "start": 1791715553733,
+        "stop": 1791715554346
+      },
+      "environment_limitations": {
+        "cpu_fields": {
+          "model name": "not_exposed",
+          "CPU implementer": "observed",
+          "CPU part": "observed",
+          "microcode": "not_exposed"
+        },
+        "filesystem": {
+          "value": null,
+          "reason": "not_observed"
+        },
+        "cache_initial_state": {
+          "value": null,
+          "reason": "not_controlled"
+        }
+      }
+    },
+    {
+      "run_id": "20261011T104605Z-r2-excel001",
+      "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+      "round": 2,
+      "measurement_status": "complete_within_declared_scope",
+      "reward": 1.0,
+      "termination": "finish",
+      "infra_failures": [],
+      "logical_requests": 6,
+      "actual_transport_attempts": null,
+      "agent_tool_calls": 5,
+      "bootstrap_tool_calls": 2,
+      "native_tool_names": {
+        "xlsx_read_sheet": 2,
+        "copy_file": 1,
+        "xlsx_set_formula": 2
+      },
+      "bootstrap_tool_names": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "tool_return_status_by_role": {
+        "agent": {
+          "True": 5
+        },
+        "bootstrap": {
+          "True": 2
+        }
+      },
+      "bootstrap_errors": [],
+      "action_counts": {
+        "call_tool": 5,
+        "finish": 1
+      },
+      "response_models": {
+        "deepseek-flash": 6
+      },
+      "usage_from_native_events": {
+        "prompt_tokens": 20102,
+        "completion_tokens": 3377,
+        "cached_tokens": 17536
+      },
+      "request_usage_missing": 0,
+      "requests_after_finish": 0,
+      "span_pairing": {
+        "requests": 6,
+        "tools_including_bootstrap": 7,
+        "unpaired_or_duplicate_spans": 0
+      },
+      "last_agent_tool_return": {
+        "event_id": "498171282e194c758790cea7f36f7859",
+        "open_line": 29,
+        "terminal_line": 30,
+        "ok": true,
+        "terminal_monotonic_ns": 641196550878463,
+        "before_next_request": true
+      },
+      "resources": {
+        "attempt_wall_s": 35.95,
+        "sample_count": 52,
+        "sample_window_s": 24.654851058,
+        "sample_interval_s": {
+          "min": 0.001044404,
+          "max": 0.500927203
+        },
+        "container_cpu_core_s": 6.733122,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 86966272,
+        "kernel_memory_peak_bytes": 86966272,
+        "host_agent_rss_sample_peak_bytes": 171175936,
+        "phase_wall_s": {
+          "harbor_start": 0.878650738,
+          "agent_setup": 0.381699271,
+          "agent": 22.874866618,
+          "verifier": 1.396259522,
+          "harbor_stop": 10.249220731
+        }
+      },
+      "resource_window": {
+        "start_monotonic_ns": 641176674415492,
+        "end_monotonic_ns": 641201329266550,
+        "roles": {
+          "boundary_start": 1,
+          "sample": 50,
+          "boundary_end": 1
+        },
+        "nonpositive_gaps": 0,
+        "missing": {},
+        "counter_regressions": {},
+        "interval_target_s": 0.5
+      },
+      "cgroup_block_service_bytes_delta": {
+        "io_read_bytes": 0,
+        "io_write_bytes": 40960
+      },
+      "shared_host_cpu_core_s": 0.11,
+      "cleanup": "removed_verified",
+      "image_retained_id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+      "archive": "bytes_sha256_verified",
+      "verifier_summary": {
+        "tests": 1,
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0,
+        "start": 1791715589981,
+        "stop": 1791715590753
+      },
+      "environment_limitations": {
+        "cpu_fields": {
+          "model name": "not_exposed",
+          "CPU implementer": "observed",
+          "CPU part": "observed",
+          "microcode": "not_exposed"
+        },
+        "filesystem": {
+          "value": null,
+          "reason": "not_observed"
+        },
+        "cache_initial_state": {
+          "value": null,
+          "reason": "not_controlled"
+        }
+      }
+    },
+    {
+      "run_id": "20261011T104641Z-r2-ppt008",
+      "task_key": "atomic__ppt_008_bullet_editing_seed",
+      "round": 2,
+      "measurement_status": "complete_within_declared_scope",
+      "reward": 1.0,
+      "termination": "finish",
+      "infra_failures": [],
+      "logical_requests": 5,
+      "actual_transport_attempts": null,
+      "agent_tool_calls": 4,
+      "bootstrap_tool_calls": 2,
+      "native_tool_names": {
+        "copy_file": 1,
+        "ppt_list_slides": 2,
+        "ppt_replace_text": 1
+      },
+      "bootstrap_tool_names": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "tool_return_status_by_role": {
+        "agent": {
+          "True": 4
+        },
+        "bootstrap": {
+          "True": 1,
+          "False": 1
+        }
+      },
+      "bootstrap_errors": [
+        {
+          "event_id": "c2acb328e6004cca9742f657323f23c8",
+          "tool_name": "inspect_document",
+          "ok": false,
+          "error_type_from_saved_prompt": "AttributeError",
+          "terminal_line": 5
+        }
+      ],
+      "action_counts": {
+        "call_tool": 4,
+        "finish": 1
+      },
+      "response_models": {
+        "deepseek-flash": 5
+      },
+      "usage_from_native_events": {
+        "prompt_tokens": 11133,
+        "completion_tokens": 991,
+        "cached_tokens": 9600
+      },
+      "request_usage_missing": 0,
+      "requests_after_finish": 0,
+      "span_pairing": {
+        "requests": 5,
+        "tools_including_bootstrap": 6,
+        "unpaired_or_duplicate_spans": 0
+      },
+      "last_agent_tool_return": {
+        "event_id": "8765d783f50442a5afcd579c7f77a57b",
+        "open_line": 24,
+        "terminal_line": 25,
+        "ok": true,
+        "terminal_monotonic_ns": 641225149337698,
+        "before_next_request": true
+      },
+      "resources": {
+        "attempt_wall_s": 25.88,
+        "sample_count": 31,
+        "sample_window_s": 14.417519752,
+        "sample_interval_s": {
+          "min": 0.001011464,
+          "max": 0.500956863
+        },
+        "container_cpu_core_s": 5.557092,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 68624384,
+        "kernel_memory_peak_bytes": 80674816,
+        "host_agent_rss_sample_peak_bytes": 171175936,
+        "phase_wall_s": {
+          "harbor_start": 0.943372504,
+          "agent_setup": 0.395534512,
+          "agent": 12.68503531,
+          "verifier": 1.335013042,
+          "harbor_stop": 10.344972568
+        }
+      },
+      "resource_window": {
+        "start_monotonic_ns": 641213149492934,
+        "end_monotonic_ns": 641227567012686,
+        "roles": {
+          "boundary_start": 1,
+          "sample": 29,
+          "boundary_end": 1
+        },
+        "nonpositive_gaps": 0,
+        "missing": {},
+        "counter_regressions": {},
+        "interval_target_s": 0.5
+      },
+      "cgroup_block_service_bytes_delta": {
+        "io_read_bytes": 0,
+        "io_write_bytes": 32768
+      },
+      "shared_host_cpu_core_s": 0.09,
+      "cleanup": "removed_verified",
+      "image_retained_id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+      "archive": "bytes_sha256_verified",
+      "verifier_summary": {
+        "tests": 1,
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0,
+        "start": 1791715616288,
+        "stop": 1791715616995
+      },
+      "environment_limitations": {
+        "cpu_fields": {
+          "model name": "not_exposed",
+          "CPU implementer": "observed",
+          "CPU part": "observed",
+          "microcode": "not_exposed"
+        },
+        "filesystem": {
+          "value": null,
+          "reason": "not_observed"
+        },
+        "cache_initial_state": {
+          "value": null,
+          "reason": "not_controlled"
+        }
+      }
+    }
+  ],
+  "by_task": {
+    "atomic__excel_001_budget_bucket_totals_seed": {
+      "logical_requests": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104235Z-r0-excel001",
+            "round": 0,
+            "value": 7
+          },
+          {
+            "run_id": "20261011T104454Z-r1-excel001",
+            "round": 1,
+            "value": 6
+          },
+          {
+            "run_id": "20261011T104605Z-r2-excel001",
+            "round": 2,
+            "value": 6
+          }
+        ],
+        "median": 6.0,
+        "q1": 6.0,
+        "q3": 6.5,
+        "iqr": 0.5,
+        "min": 6.0,
+        "max": 7.0
+      },
+      "agent_tool_calls": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104235Z-r0-excel001",
+            "round": 0,
+            "value": 6
+          },
+          {
+            "run_id": "20261011T104454Z-r1-excel001",
+            "round": 1,
+            "value": 5
+          },
+          {
+            "run_id": "20261011T104605Z-r2-excel001",
+            "round": 2,
+            "value": 5
+          }
+        ],
+        "median": 5.0,
+        "q1": 5.0,
+        "q3": 5.5,
+        "iqr": 0.5,
+        "min": 5.0,
+        "max": 6.0
+      },
+      "bootstrap_tool_calls": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104235Z-r0-excel001",
+            "round": 0,
+            "value": 2
+          },
+          {
+            "run_id": "20261011T104454Z-r1-excel001",
+            "round": 1,
+            "value": 2
+          },
+          {
+            "run_id": "20261011T104605Z-r2-excel001",
+            "round": 2,
+            "value": 2
+          }
+        ],
+        "median": 2.0,
+        "q1": 2.0,
+        "q3": 2.0,
+        "iqr": 0.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "attempt_wall_s": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104235Z-r0-excel001",
+            "round": 0,
+            "value": 42.97
+          },
+          {
+            "run_id": "20261011T104454Z-r1-excel001",
+            "round": 1,
+            "value": 49.05
+          },
+          {
+            "run_id": "20261011T104605Z-r2-excel001",
+            "round": 2,
+            "value": 35.95
+          }
+        ],
+        "median": 42.97,
+        "q1": 39.46,
+        "q3": 46.01,
+        "iqr": 6.549999999999997,
+        "min": 35.95,
+        "max": 49.05
+      },
+      "sample_window_s": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104235Z-r0-excel001",
+            "round": 0,
+            "value": 31.596574567
+          },
+          {
+            "run_id": "20261011T104454Z-r1-excel001",
+            "round": 1,
+            "value": 37.760333924
+          },
+          {
+            "run_id": "20261011T104605Z-r2-excel001",
+            "round": 2,
+            "value": 24.654851058
+          }
+        ],
+        "median": 31.596574567,
+        "q1": 28.125712812499998,
+        "q3": 34.6784542455,
+        "iqr": 6.552741433000001,
+        "min": 24.654851058,
+        "max": 37.760333924
+      },
+      "container_cpu_core_s": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104235Z-r0-excel001",
+            "round": 0,
+            "value": 6.840446
+          },
+          {
+            "run_id": "20261011T104454Z-r1-excel001",
+            "round": 1,
+            "value": 6.053172
+          },
+          {
+            "run_id": "20261011T104605Z-r2-excel001",
+            "round": 2,
+            "value": 6.733122
+          }
+        ],
+        "median": 6.733122,
+        "q1": 6.393147,
+        "q3": 6.786784,
+        "iqr": 0.393637,
+        "min": 6.053172,
+        "max": 6.840446
+      },
+      "memory_current_sample_peak_bytes": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104235Z-r0-excel001",
+            "round": 0,
+            "value": 82657280
+          },
+          {
+            "run_id": "20261011T104454Z-r1-excel001",
+            "round": 1,
+            "value": 70393856
+          },
+          {
+            "run_id": "20261011T104605Z-r2-excel001",
+            "round": 2,
+            "value": 86966272
+          }
+        ],
+        "median": 82657280.0,
+        "q1": 76525568.0,
+        "q3": 84811776.0,
+        "iqr": 8286208.0,
+        "min": 70393856.0,
+        "max": 86966272.0
+      },
+      "kernel_memory_peak_bytes": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104235Z-r0-excel001",
+            "round": 0,
+            "value": 83173376
+          },
+          {
+            "run_id": "20261011T104454Z-r1-excel001",
+            "round": 1,
+            "value": 79917056
+          },
+          {
+            "run_id": "20261011T104605Z-r2-excel001",
+            "round": 2,
+            "value": 86966272
+          }
+        ],
+        "median": 83173376.0,
+        "q1": 81545216.0,
+        "q3": 85069824.0,
+        "iqr": 3524608.0,
+        "min": 79917056.0,
+        "max": 86966272.0
+      },
+      "host_agent_rss_sample_peak_bytes": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104235Z-r0-excel001",
+            "round": 0,
+            "value": 166981632
+          },
+          {
+            "run_id": "20261011T104454Z-r1-excel001",
+            "round": 1,
+            "value": 169078784
+          },
+          {
+            "run_id": "20261011T104605Z-r2-excel001",
+            "round": 2,
+            "value": 171175936
+          }
+        ],
+        "median": 169078784.0,
+        "q1": 168030208.0,
+        "q3": 170127360.0,
+        "iqr": 2097152.0,
+        "min": 166981632.0,
+        "max": 171175936.0
+      }
+    },
+    "atomic__ppt_008_bullet_editing_seed": {
+      "logical_requests": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104318Z-r0-ppt008",
+            "round": 0,
+            "value": 5
+          },
+          {
+            "run_id": "20261011T104406Z-r1-ppt008",
+            "round": 1,
+            "value": 5
+          },
+          {
+            "run_id": "20261011T104641Z-r2-ppt008",
+            "round": 2,
+            "value": 5
+          }
+        ],
+        "median": 5.0,
+        "q1": 5.0,
+        "q3": 5.0,
+        "iqr": 0.0,
+        "min": 5.0,
+        "max": 5.0
+      },
+      "agent_tool_calls": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104318Z-r0-ppt008",
+            "round": 0,
+            "value": 4
+          },
+          {
+            "run_id": "20261011T104406Z-r1-ppt008",
+            "round": 1,
+            "value": 4
+          },
+          {
+            "run_id": "20261011T104641Z-r2-ppt008",
+            "round": 2,
+            "value": 4
+          }
+        ],
+        "median": 4.0,
+        "q1": 4.0,
+        "q3": 4.0,
+        "iqr": 0.0,
+        "min": 4.0,
+        "max": 4.0
+      },
+      "bootstrap_tool_calls": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104318Z-r0-ppt008",
+            "round": 0,
+            "value": 2
+          },
+          {
+            "run_id": "20261011T104406Z-r1-ppt008",
+            "round": 1,
+            "value": 2
+          },
+          {
+            "run_id": "20261011T104641Z-r2-ppt008",
+            "round": 2,
+            "value": 2
+          }
+        ],
+        "median": 2.0,
+        "q1": 2.0,
+        "q3": 2.0,
+        "iqr": 0.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "attempt_wall_s": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104318Z-r0-ppt008",
+            "round": 0,
+            "value": 25.27
+          },
+          {
+            "run_id": "20261011T104406Z-r1-ppt008",
+            "round": 1,
+            "value": 24.64
+          },
+          {
+            "run_id": "20261011T104641Z-r2-ppt008",
+            "round": 2,
+            "value": 25.88
+          }
+        ],
+        "median": 25.27,
+        "q1": 24.955,
+        "q3": 25.575,
+        "iqr": 0.620000000000001,
+        "min": 24.64,
+        "max": 25.88
+      },
+      "sample_window_s": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104318Z-r0-ppt008",
+            "round": 0,
+            "value": 13.867275025
+          },
+          {
+            "run_id": "20261011T104406Z-r1-ppt008",
+            "round": 1,
+            "value": 13.30080803
+          },
+          {
+            "run_id": "20261011T104641Z-r2-ppt008",
+            "round": 2,
+            "value": 14.417519752
+          }
+        ],
+        "median": 13.867275025,
+        "q1": 13.5840415275,
+        "q3": 14.142397388500001,
+        "iqr": 0.5583558610000008,
+        "min": 13.30080803,
+        "max": 14.417519752
+      },
+      "container_cpu_core_s": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104318Z-r0-ppt008",
+            "round": 0,
+            "value": 5.368005
+          },
+          {
+            "run_id": "20261011T104406Z-r1-ppt008",
+            "round": 1,
+            "value": 5.034718
+          },
+          {
+            "run_id": "20261011T104641Z-r2-ppt008",
+            "round": 2,
+            "value": 5.557092
+          }
+        ],
+        "median": 5.368005,
+        "q1": 5.2013615,
+        "q3": 5.4625485000000005,
+        "iqr": 0.2611870000000005,
+        "min": 5.034718,
+        "max": 5.557092
+      },
+      "memory_current_sample_peak_bytes": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104318Z-r0-ppt008",
+            "round": 0,
+            "value": 61702144
+          },
+          {
+            "run_id": "20261011T104406Z-r1-ppt008",
+            "round": 1,
+            "value": 71262208
+          },
+          {
+            "run_id": "20261011T104641Z-r2-ppt008",
+            "round": 2,
+            "value": 68624384
+          }
+        ],
+        "median": 68624384.0,
+        "q1": 65163264.0,
+        "q3": 69943296.0,
+        "iqr": 4780032.0,
+        "min": 61702144.0,
+        "max": 71262208.0
+      },
+      "kernel_memory_peak_bytes": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104318Z-r0-ppt008",
+            "round": 0,
+            "value": 80543744
+          },
+          {
+            "run_id": "20261011T104406Z-r1-ppt008",
+            "round": 1,
+            "value": 79597568
+          },
+          {
+            "run_id": "20261011T104641Z-r2-ppt008",
+            "round": 2,
+            "value": 80674816
+          }
+        ],
+        "median": 80543744.0,
+        "q1": 80070656.0,
+        "q3": 80609280.0,
+        "iqr": 538624.0,
+        "min": 79597568.0,
+        "max": 80674816.0
+      },
+      "host_agent_rss_sample_peak_bytes": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104318Z-r0-ppt008",
+            "round": 0,
+            "value": 169078784
+          },
+          {
+            "run_id": "20261011T104406Z-r1-ppt008",
+            "round": 1,
+            "value": 169078784
+          },
+          {
+            "run_id": "20261011T104641Z-r2-ppt008",
+            "round": 2,
+            "value": 171175936
+          }
+        ],
+        "median": 169078784.0,
+        "q1": 169078784.0,
+        "q3": 170127360.0,
+        "iqr": 1048576.0,
+        "min": 169078784.0,
+        "max": 171175936.0
+      }
+    },
+    "atomic__pdf_004_audit_pages_reorder_seed": {
+      "logical_requests": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104344Z-r0-pdf004",
+            "round": 0,
+            "value": 4
+          },
+          {
+            "run_id": "20261011T104431Z-r1-pdf004",
+            "round": 1,
+            "value": 4
+          },
+          {
+            "run_id": "20261011T104543Z-r2-pdf004",
+            "round": 2,
+            "value": 4
+          }
+        ],
+        "median": 4.0,
+        "q1": 4.0,
+        "q3": 4.0,
+        "iqr": 0.0,
+        "min": 4.0,
+        "max": 4.0
+      },
+      "agent_tool_calls": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104344Z-r0-pdf004",
+            "round": 0,
+            "value": 3
+          },
+          {
+            "run_id": "20261011T104431Z-r1-pdf004",
+            "round": 1,
+            "value": 3
+          },
+          {
+            "run_id": "20261011T104543Z-r2-pdf004",
+            "round": 2,
+            "value": 3
+          }
+        ],
+        "median": 3.0,
+        "q1": 3.0,
+        "q3": 3.0,
+        "iqr": 0.0,
+        "min": 3.0,
+        "max": 3.0
+      },
+      "bootstrap_tool_calls": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104344Z-r0-pdf004",
+            "round": 0,
+            "value": 2
+          },
+          {
+            "run_id": "20261011T104431Z-r1-pdf004",
+            "round": 1,
+            "value": 2
+          },
+          {
+            "run_id": "20261011T104543Z-r2-pdf004",
+            "round": 2,
+            "value": 2
+          }
+        ],
+        "median": 2.0,
+        "q1": 2.0,
+        "q3": 2.0,
+        "iqr": 0.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "attempt_wall_s": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104344Z-r0-pdf004",
+            "round": 0,
+            "value": 21.5
+          },
+          {
+            "run_id": "20261011T104431Z-r1-pdf004",
+            "round": 1,
+            "value": 22.05
+          },
+          {
+            "run_id": "20261011T104543Z-r2-pdf004",
+            "round": 2,
+            "value": 21.16
+          }
+        ],
+        "median": 21.5,
+        "q1": 21.33,
+        "q3": 21.775,
+        "iqr": 0.4450000000000003,
+        "min": 21.16,
+        "max": 22.05
+      },
+      "sample_window_s": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104344Z-r0-pdf004",
+            "round": 0,
+            "value": 9.933847712
+          },
+          {
+            "run_id": "20261011T104431Z-r1-pdf004",
+            "round": 1,
+            "value": 10.625234346
+          },
+          {
+            "run_id": "20261011T104543Z-r2-pdf004",
+            "round": 2,
+            "value": 9.860871829
+          }
+        ],
+        "median": 9.933847712,
+        "q1": 9.8973597705,
+        "q3": 10.279541029,
+        "iqr": 0.38218125850000106,
+        "min": 9.860871829,
+        "max": 10.625234346
+      },
+      "container_cpu_core_s": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104344Z-r0-pdf004",
+            "round": 0,
+            "value": 4.270158
+          },
+          {
+            "run_id": "20261011T104431Z-r1-pdf004",
+            "round": 1,
+            "value": 4.518449
+          },
+          {
+            "run_id": "20261011T104543Z-r2-pdf004",
+            "round": 2,
+            "value": 4.461739
+          }
+        ],
+        "median": 4.461739,
+        "q1": 4.3659485,
+        "q3": 4.490094,
+        "iqr": 0.12414550000000002,
+        "min": 4.270158,
+        "max": 4.518449
+      },
+      "memory_current_sample_peak_bytes": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104344Z-r0-pdf004",
+            "round": 0,
+            "value": 76206080
+          },
+          {
+            "run_id": "20261011T104431Z-r1-pdf004",
+            "round": 1,
+            "value": 82034688
+          },
+          {
+            "run_id": "20261011T104543Z-r2-pdf004",
+            "round": 2,
+            "value": 67649536
+          }
+        ],
+        "median": 76206080.0,
+        "q1": 71927808.0,
+        "q3": 79120384.0,
+        "iqr": 7192576.0,
+        "min": 67649536.0,
+        "max": 82034688.0
+      },
+      "kernel_memory_peak_bytes": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104344Z-r0-pdf004",
+            "round": 0,
+            "value": 84324352
+          },
+          {
+            "run_id": "20261011T104431Z-r1-pdf004",
+            "round": 1,
+            "value": 82034688
+          },
+          {
+            "run_id": "20261011T104543Z-r2-pdf004",
+            "round": 2,
+            "value": 82206720
+          }
+        ],
+        "median": 82206720.0,
+        "q1": 82120704.0,
+        "q3": 83265536.0,
+        "iqr": 1144832.0,
+        "min": 82034688.0,
+        "max": 84324352.0
+      },
+      "host_agent_rss_sample_peak_bytes": {
+        "n": 3,
+        "points": [
+          {
+            "run_id": "20261011T104344Z-r0-pdf004",
+            "round": 0,
+            "value": 169078784
+          },
+          {
+            "run_id": "20261011T104431Z-r1-pdf004",
+            "round": 1,
+            "value": 169078784
+          },
+          {
+            "run_id": "20261011T104543Z-r2-pdf004",
+            "round": 2,
+            "value": 171175936
+          }
+        ],
+        "median": 169078784.0,
+        "q1": 169078784.0,
+        "q3": 170127360.0,
+        "iqr": 1048576.0,
+        "min": 169078784.0,
+        "max": 171175936.0
+      }
+    }
+  },
+  "quantile_method": "linear interpolation at (n-1)*p; repetitions within a task, not independent tasks",
+  "hash_checks": {
+    "file_records_verified": 1180,
+    "batch_inputs": 188,
+    "batch_outputs": 10,
+    "batch_raw_run_manifests": 9,
+    "raw_inputs": 810,
+    "raw_outputs": 163
+  },
+  "history_protection": {
+    "roots": [
+      "reports/resource/DOCOPS-WORD-RESOURCE-01",
+      "data/raw/generated/DOCOPS-WORD-RESOURCE-01",
+      "reports/resource/DOCOPS-WORD-RESOURCE-02",
+      "data/raw/generated/DOCOPS-WORD-RESOURCE-02",
+      "reports/resource/DOCOPS-WORD-RESOURCE-03",
+      "data/raw/generated/DOCOPS-WORD-RESOURCE-03",
+      "reports/resource/DOCOPS-WORD-RESOURCE-04",
+      "data/raw/generated/DOCOPS-WORD-RESOURCE-04",
+      "reports/resource/DOCOPS-OFFICE-REPEAT-01",
+      "data/raw/generated/DOCOPS-OFFICE-REPEAT-01",
+      "reports/resource/DOCOPS-MEASUREMENT-VALIDATE-01",
+      "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01",
+      "env/docops-office-repeat-01",
+      "env/docops-measurement-validate-01",
+      "env/docops-arm64-word001",
+      "env/docops-office-repeat-02",
+      "references/repos/DocOps",
+      "workload_catalog"
+    ],
+    "files": 14754,
+    "file_set_bytes_sha256_unchanged": true
+  },
+  "limitations": [
+    "Normal finish paths observed; PPT bootstrap inspection returned ok=false/AttributeError in three runs; request exceptions/cancellation/retry/timeout/failure cleanup not exercised.",
+    "Framework max three internal attempts per logical request; no transport hook, actual count unknown; 360 steps is not HTTP hard cap.",
+    "Shared container and host Agent/Harbor/collector scopes; no exclusive per-tool resource attribution.",
+    "Cgroup block service bytes are not complete filesystem or document I/O.",
+    "CPU model/microcode not exposed; filesystem/cache state unobserved/uncontrolled.",
+    "ARM64 adaptation is not byte-equivalent official amd64 environment; request model alias not immutable.",
+    "No position pairing of trajectory rows and request logs; usage/cost_usd are not invoices.",
+    "Historical batch and Excel validation excluded; no Office representativeness/model ranking/Gate passage."
+  ]
+}

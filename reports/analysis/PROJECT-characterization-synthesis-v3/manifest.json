@@ -1,0 +1,430 @@
+{
+  "schema": "project-characterization-synthesis-manifest-v3",
+  "updated_at": "2026-10-12",
+  "inputs": [
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v2/manifest.json",
+      "bytes": 33201,
+      "sha256": "acf5cf1f9e13bdae7c73130bbd517abf18d240174adeb365bfec4f0c44bb9269"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v2/summary.json",
+      "bytes": 6010266,
+      "sha256": "93602707e6e7e00bc672aabeee4433a3c693e82342c122d066189c099e217637"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v2/summary.md",
+      "bytes": 2616,
+      "sha256": "c21bf7a120a682a528071f4dbfa3d267ba356d90430a48942f7eb2f316c29017"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v2/per_trajectory.jsonl",
+      "bytes": 24716050,
+      "sha256": "5c8ff80d0d210dad1eb9a4f2bdcff73e7c1ea068b92857d0f404d7de0c867cbf"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v2/measurement_candidates.json",
+      "bytes": 3449,
+      "sha256": "b26845448adced1769f8453e46a8414a8338a0555d55d442e59dea136a9e5ea8"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v2/corrections.md",
+      "bytes": 1424,
+      "sha256": "472d08c5f1d5849f369e77d885d0dc6a707a2a976f3ebe3864e9dfa5ac23cd8a"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-subset-behavior-v1/manifest.json",
+      "bytes": 31203,
+      "sha256": "07969a920e711e689ed130620f3d8a5df6acecb03155fa7b72e543a857332857"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-subset-behavior-v1/selection.json",
+      "bytes": 34601,
+      "sha256": "369806cf72d36077653aff6bd2734a62675002e0657fd79120c7e69818f8dc6a"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-subset-behavior-v1/per_trajectory.jsonl",
+      "bytes": 127546,
+      "sha256": "580d13b3828c74a855665a18f1a9b4725dc99476470533ef6d5df2fcf0b3162e"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-subset-behavior-v1/summary.json",
+      "bytes": 5477,
+      "sha256": "4047285c0da720f3417dfeb1f9325aa78c2b0737e335be3e7358c6e13d6a7957"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-subset-behavior-v1/summary.md",
+      "bytes": 7382,
+      "sha256": "1fa45276994da1b749a9278cf748c0f33bb90c33868d963f410e37987b966a28"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v3/manifest.json",
+      "bytes": 520559,
+      "sha256": "6d30e72f680bdf84a3369485521b7e0aba697b5a81776eb180e6c3ad5e26313f"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v3/task_semantics.jsonl",
+      "bytes": 245183,
+      "sha256": "075826fb20af5349a4364e257808b8c733c4a2a6b369d052585394407233ccf8"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v3/per_trajectory.jsonl",
+      "bytes": 33061656,
+      "sha256": "062703167b7a833f9ff428a498f1356e056b675e67f1ec6c6335a7ac77faab30"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v3/summary.json",
+      "bytes": 1054573,
+      "sha256": "87208891550de8cd0f38d931580d99464b93ec3bbce917655140434d12452e84"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v3/summary.md",
+      "bytes": 2166,
+      "sha256": "6bc7a6b7c4be583662cd919eb0b9bc67e0c3de237343d0b167d2b8ff19d0de00"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v3/corrections.md",
+      "bytes": 3835,
+      "sha256": "dea7c9cb169cc2b9f2d6cd356e51d903c66a052c098848cfaf79bdac7a558f6d"
+    },
+    {
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/manifest.json",
+      "bytes": 3261,
+      "sha256": "948bf81f50780f6c7b24141d5a4138d757c9049f61d5c619c7ac40a28a70026c"
+    },
+    {
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.json",
+      "bytes": 15252,
+      "sha256": "24f0dcfff9f0012c7c9b26e6b9bb3ba31df62ac4cccedd1b2d446b9556c55d36"
+    },
+    {
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.md",
+      "bytes": 2470,
+      "sha256": "f1d7e37da9abd63e572e2709f110ef5d9d216686884792d1b315377cf469194a"
+    },
+    {
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/per_trace.jsonl",
+      "bytes": 1945380,
+      "sha256": "192cc3df92dd2148ac549157054e818f0346a35dc08724c3e9a271077be491a3"
+    },
+    {
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/per_template.jsonl",
+      "bytes": 20248772,
+      "sha256": "94c6e8e35cebe05d3ae0b51662f09aff93c68137105505bd016af88bbdbd7350"
+    },
+    {
+      "path": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/manifest.json",
+      "bytes": 16609,
+      "sha256": "a00351a6a4dab2d5353bac073c22ff1e9a5c286c9a3566b28a28ebf26a9b16bf"
+    },
+    {
+      "path": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/summary.json",
+      "bytes": 399026,
+      "sha256": "221d19027c85fdb810d5a17f08f1174028d5765f65f72b30d25f8e22388fbe12"
+    },
+    {
+      "path": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/summary.md",
+      "bytes": 5174,
+      "sha256": "c0e126023075d7c95a724635c9c0da00e59edae04c6e3d49bfdf4f996a5fced1"
+    },
+    {
+      "path": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/corrections.md",
+      "bytes": 1675,
+      "sha256": "0e9d61624e96482a5b1903044d1e2ac4fc33e5c0895beaaff7af302206840f29"
+    },
+    {
+      "path": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/manifest.json",
+      "bytes": 11801,
+      "sha256": "fdc6d8c961d17c92e933c9951ebe5f7d8f06e60726837d5d894ca7729c64378c"
+    },
+    {
+      "path": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/summary.md",
+      "bytes": 6533,
+      "sha256": "41725cea2297a7b5590e80e4cdfcddc5937cefb703c7c0b7082fe4ea06d25bca"
+    },
+    {
+      "path": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/decision.json",
+      "bytes": 5269,
+      "sha256": "1a5f9b2edf8e8f4866e23a15b48267be776fe0aa294767c10077c2b748e6afb1"
+    },
+    {
+      "path": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/per_run_decomposition.json",
+      "bytes": 6531,
+      "sha256": "564afa6d3ce25b46ce5c29642e6ae598cbe86a46823268abc5e5b66cbf76d95a"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/manifest.json",
+      "bytes": 90824,
+      "sha256": "d39c9608d2556fb0b74d671da1ff6e3aeb9946c411c9e791feca841b0b6be642"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/summary.json",
+      "bytes": 58980,
+      "sha256": "ef32ce5cb759a6bc488dc33ab5e3adab3e5e14443cd90fcc00524495f1af6922"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/per_run.jsonl",
+      "bytes": 257908,
+      "sha256": "b43c0ec567c95af7dded62244df6dc780054e0252d5c51cd7553e762b5486533"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/summary.md",
+      "bytes": 11482,
+      "sha256": "67b52d81516b903f3e3eda1090be572cbb00d7cb33b7a7bd2f3561e54f0eef60"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/manifest.json",
+      "bytes": 347147,
+      "sha256": "591f15c72ef8caa2d92727da93ee13b4817f75268b3634e295ba7690042cf4cd"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/summary.md",
+      "bytes": 12234,
+      "sha256": "27fe83668a9e332004be278b169683bd00dfd948453c3abd288001d69d2649e0"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/summary.json",
+      "bytes": 53869,
+      "sha256": "c2b9c6735e872b6137611855441d112ffccff9359303705c38be48731d3177bf"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/per_trajectory.jsonl",
+      "bytes": 1779525,
+      "sha256": "ef940b1227fa657b1e2520c8f35a112514597196bcba9d643be4be76ec0d2f62"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/manifest.json",
+      "bytes": 45148,
+      "sha256": "deba4ae12443fa87025a0757a8c29f6f7848e210c087b8b3868d58985b5690b8"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/summary.json",
+      "bytes": 431920,
+      "sha256": "9f113ac28037a67d77fd8fa3ecf81c62712b6c161415951e6589ccfc84bba8cc"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/per_run.jsonl",
+      "bytes": 189337,
+      "sha256": "74ed2d6cdc3767a7a2010fd0e7f7dcddea597af344b7994164b2155180ee7dbf"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/summary.md",
+      "bytes": 18933,
+      "sha256": "216b72d580a60e0782e0fb51861ea5ae5bcf3be89de52ea86e4836884bb5d95c"
+    },
+    {
+      "path": "reports/replay/P3-01-audit-v3/manifest.json",
+      "bytes": 3759,
+      "sha256": "3769d81958475a90a25b29d316a84291a4b88b23331a359c1e77f8a154f23405"
+    },
+    {
+      "path": "reports/replay/P3-01-audit-v3/inventory.json",
+      "bytes": 126210,
+      "sha256": "46a17b47e81e9e6e3ccc210d16080db16d75ded03f69d12df7eb1f7f87755b8d"
+    },
+    {
+      "path": "reports/replay/P3-01-audit-v3/summary.md",
+      "bytes": 1133,
+      "sha256": "eef21f3792add6388b15a141d740f41035f69a9c2b4ec36ca0c1ca362d2566d3"
+    },
+    {
+      "path": "reports/replay/P3-01-audit-v3/corrections.md",
+      "bytes": 1014,
+      "sha256": "2755ee6ab22c2a0d1f39748d18275d0b2cf256b78ad99687d54663cd09f65b05"
+    },
+    {
+      "path": "reports/macro/macro-pilot-v6/manifest.json",
+      "bytes": 1913,
+      "sha256": "1e5be8107a79a8d2e857d57de8c74a9ec734c13221fcaf34cdb0aa7888ff8604"
+    },
+    {
+      "path": "reports/macro/macro-pilot-v6/macro_summary.csv",
+      "bytes": 12013,
+      "sha256": "db4cbca35ac7fad1b08f47cc2b00edf1eb646793a3be2ed0449b2fb7a564b1e7"
+    },
+    {
+      "path": "reports/macro/macro-pilot-v6/quality_checks.json",
+      "bytes": 30,
+      "sha256": "1b2a9a971dba4ffc1e34475d91c8851d9c2bdb6ed8fdde5a0b9912aca9752e60"
+    },
+    {
+      "path": "reports/macro/macro-pilot-v6/selection_ledger.jsonl",
+      "bytes": 3187,
+      "sha256": "7cf92cb13edfbc541738d46bf292278a389fa67ae165b2945ff10612bb5bb1d9"
+    },
+    {
+      "path": "reports/macro/macro-pilot-v6/summary.md",
+      "bytes": 357,
+      "sha256": "1110ac1c83ee0fd3bc0f6d4a9672706aa0bc510fc76777a42da754d0abe89fea"
+    },
+    {
+      "path": "reports/macro/macro-pilot-v6/trace_coverage.csv",
+      "bytes": 12025,
+      "sha256": "690a881aae5ef7b200aa60f839a95b4df6e506c67ac662432cd5b507d48adf85"
+    },
+    {
+      "path": "reports/quality/videoweaver_sample_validation.json",
+      "bytes": 5484,
+      "sha256": "7e7aefd70105614d66bfa04fb256c4b27995d446aec60b75f8779a577444466c"
+    },
+    {
+      "path": "reports/analysis/PROJECT-characterization-synthesis-v2/manifest.json",
+      "bytes": 6710,
+      "sha256": "2f7a08cfc5bbbaf2afd916b63f68a6592a6cf50d3fb2d7894b4991d3d381f841"
+    },
+    {
+      "path": "reports/analysis/PROJECT-characterization-synthesis-v2/summary.md",
+      "bytes": 11657,
+      "sha256": "b279ea9ed58453db24ae45a4d9eebcc1a4f36b263382ea8ba775b73f7ae9d37d"
+    },
+    {
+      "path": "reports/analysis/PROJECT-characterization-synthesis-v2/evidence_matrix.json",
+      "bytes": 16457,
+      "sha256": "82a5d0c16b882a90c67363c818aa2bf830a37447a435b24f3a19e8d880a53cbd"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "reports/analysis/PROJECT-characterization-synthesis-v3/summary.md",
+      "bytes": 8176,
+      "sha256": "08a3ebfea0e9bb21e53610e06d84a93f1f13b2e15cabcede759d58b0ed1979ba"
+    },
+    {
+      "path": "reports/analysis/PROJECT-characterization-synthesis-v3/evidence_matrix.json",
+      "bytes": 23420,
+      "sha256": "cc84a68ca45901d8479bdc34fad287b5e982a2d6ac597d100766ba125c2e40d9"
+    }
+  ],
+  "verification_scope": {
+    "source_packages": [
+      {
+        "package": "SWE-REBENCH-behavior-v2",
+        "manifest": "reports/analysis/SWE-REBENCH-behavior-v2/manifest.json",
+        "verified_output_count": 5,
+        "verified_outputs": [
+          "reports/analysis/SWE-REBENCH-behavior-v2/summary.json",
+          "reports/analysis/SWE-REBENCH-behavior-v2/summary.md",
+          "reports/analysis/SWE-REBENCH-behavior-v2/per_trajectory.jsonl",
+          "reports/analysis/SWE-REBENCH-behavior-v2/measurement_candidates.json",
+          "reports/analysis/SWE-REBENCH-behavior-v2/corrections.md"
+        ]
+      },
+      {
+        "package": "SWEBENCH-subset-behavior-v1",
+        "manifest": "reports/analysis/SWEBENCH-subset-behavior-v1/manifest.json",
+        "verified_output_count": 4,
+        "verified_outputs": [
+          "reports/analysis/SWEBENCH-subset-behavior-v1/selection.json",
+          "reports/analysis/SWEBENCH-subset-behavior-v1/per_trajectory.jsonl",
+          "reports/analysis/SWEBENCH-subset-behavior-v1/summary.json",
+          "reports/analysis/SWEBENCH-subset-behavior-v1/summary.md"
+        ]
+      },
+      {
+        "package": "OSWORLD-task-behavior-v3",
+        "manifest": "reports/analysis/OSWORLD-task-behavior-v3/manifest.json",
+        "verified_output_count": 5,
+        "verified_outputs": [
+          "reports/analysis/OSWORLD-task-behavior-v3/task_semantics.jsonl",
+          "reports/analysis/OSWORLD-task-behavior-v3/per_trajectory.jsonl",
+          "reports/analysis/OSWORLD-task-behavior-v3/summary.json",
+          "reports/analysis/OSWORLD-task-behavior-v3/summary.md",
+          "reports/analysis/OSWORLD-task-behavior-v3/corrections.md"
+        ]
+      },
+      {
+        "package": "AGENTX-APPLIED-MACRO-v1",
+        "manifest": "reports/analysis/AGENTX-APPLIED-MACRO-v1/manifest.json",
+        "verified_output_count": 4,
+        "verified_outputs": [
+          "reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.json",
+          "reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.md",
+          "reports/analysis/AGENTX-APPLIED-MACRO-v1/per_trace.jsonl",
+          "reports/analysis/AGENTX-APPLIED-MACRO-v1/per_template.jsonl"
+        ]
+      },
+      {
+        "package": "P1-12-CODING-REPEAT-01-characterization-v3",
+        "manifest": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/manifest.json",
+        "verified_output_count": 3,
+        "verified_outputs": [
+          "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/summary.json",
+          "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/summary.md",
+          "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/corrections.md"
+        ]
+      },
+      {
+        "package": "CODING-RESOURCE-LINK-feasibility-v1",
+        "manifest": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/manifest.json",
+        "verified_output_count": 3,
+        "verified_outputs": [
+          "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/summary.md",
+          "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/decision.json",
+          "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/per_run_decomposition.json"
+        ]
+      },
+      {
+        "package": "DOCOPS-OFFICE-REPEAT-02-characterization-v1",
+        "manifest": "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/manifest.json",
+        "verified_output_count": 3,
+        "verified_outputs": [
+          "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/summary.json",
+          "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/per_run.jsonl",
+          "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/summary.md"
+        ]
+      },
+      {
+        "package": "TOOLSANDBOX-HEPM-behavior-v2",
+        "manifest": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/manifest.json",
+        "verified_output_count": 3,
+        "verified_outputs": [
+          "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/summary.md",
+          "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/summary.json",
+          "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/per_trajectory.jsonl"
+        ]
+      },
+      {
+        "package": "TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1",
+        "manifest": "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/manifest.json",
+        "verified_output_count": 3,
+        "verified_outputs": [
+          "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/summary.json",
+          "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/per_run.jsonl",
+          "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/summary.md"
+        ]
+      },
+      {
+        "package": "P3-01-audit-v3",
+        "manifest": "reports/replay/P3-01-audit-v3/manifest.json",
+        "verified_output_count": 3,
+        "verified_outputs": [
+          "reports/replay/P3-01-audit-v3/inventory.json",
+          "reports/replay/P3-01-audit-v3/summary.md",
+          "reports/replay/P3-01-audit-v3/corrections.md"
+        ]
+      },
+      {
+        "package": "macro-pilot-v6",
+        "manifest": "reports/macro/macro-pilot-v6/manifest.json",
+        "verified_output_count": 5,
+        "verified_outputs": [
+          "reports/macro/macro-pilot-v6/macro_summary.csv",
+          "reports/macro/macro-pilot-v6/quality_checks.json",
+          "reports/macro/macro-pilot-v6/selection_ledger.jsonl",
+          "reports/macro/macro-pilot-v6/summary.md",
+          "reports/macro/macro-pilot-v6/trace_coverage.csv"
+        ]
+      }
+    ],
+    "registered_package_outputs_checked": 41,
+    "video_sample_validation": "read_and_hashed; no full_ingest or remote-resource claim",
+    "raw_inputs": "not reverified; refer to limited source acceptances",
+    "source_analyzers_rerun": false,
+    "experiments_run": false
+  },
+  "historical_protection": {
+    "snapshot_files": 67,
+    "scope": "source packages, synthesis-v1/v2 and HTML-v5; final readback required"
+  },
+  "manifest_self_hash_excluded": true
+}

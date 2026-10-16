@@ -1,0 +1,11 @@
+# PUBLIC-TRACE-SOFTWARE-TOOLKITS-v2 勘误
+
+| 问题组 | v1问题 | v2修复与重算 | 保留限制 |
+|---|---|---|---|
+| 来源组与Solver分母 | 多个unit_kind行覆盖身份；Solver操作软件误用检索分母 | 保留source/group/unit_kind；唯一组 41，语义行 44，含已识别软件的唯一公开组 36；Solver分母 {"20240920_solver": 5037, "20240924_solver": 5246, "20241028_solver": 6037} | 不同unit_kind不合并；静态组件不代表成功执行 |
+| 本地Coding摘要 | v1有39行明细但scene/source键不一致，summary漏接；component_calls未保留 | 固定来源、按任务分列；{"astropy__astropy-13236": {"bash_tool_calls": 134, "runs": 3}, "astropy__astropy-13398": {"bash_tool_calls": 133, "runs": 3}, "django__django-16485": {"bash_tool_calls": 81, "runs": 3}}；摘要/JSON/CSV同源 | 3次run是重复，不是3个独立任务 |
+| DocOps inspect_document | 通用检查接口未按格式条件映射库 | 参数SHA-256关联唯一工具事件，叠加路径分支、终态ok及已绑定runtime；{"all_call_branch_status_counts": {"branch_unknown": 9, "success": 3}, "argument_linked_agent_event_count": 3, "bootstrap_failed_call_count": 3, "bootstrap_failed_error_categories": {"AttributeError": 3}, "call_count": 12, "library_call_count_semantics": "unique saved inspect_document call events associated by argument SHA-256; successful PDF branch maps one call to both pypdf and pdfplumber", "resolved_status_counts": {"success": 3}, "return_limit": "saved terminal event retains ok/result_sha256, not result body/type", "role_counts": {"agent": 3, "bootstrap": 9}, "unlinked_or_unavailable_branch_count": 9} | 返回正文/类型未归档；失败不计成功库执行；版本unknown |
+| Python模块边界 | 参数中任意python/-m误识别pytest/unittest | 命令头解析、env/timeout/xvfb-run及实际出现的赋值前缀；脚本/-c后停止。公开模块重算：{"pytest": {"delta_call_incidences": -208, "delta_component_occurrences": -215, "v1": {"call_incidences": 26651, "component_occurrences": 26794}, "v2": {"call_incidences": 26443, "component_occurrences": 26579}}, "unittest": {"delta_call_incidences": 0, "delta_component_occurrences": 0, "v1": {"call_incidences": 508, "component_occurrences": 508}, "v2": {"call_incidences": 508, "component_occurrences": 508}}}；Sonar组pytest 13471→13470。npx总组件数 5879→5879 | 不识别复杂Shell语义；旧新差值需按静态命令组件解释，不代表执行成功 |
+| 未受影响范围 | 修复只改变身份/分母接线、摘要投影、条件库映射和Python入口识别 | Coding分析行 23944、唯一来源组 41、本地bash调用 348；OSWorld 108任务定义/755 model×task；npx组件 5879→5879，unittest组件 508→508 | 分母仍按来源及保存单位分开；历史v1报告不改写 |
+
+v1报告和manifest未改写。修改前源码快照：`env/public-trace-software-toolkits-v2/source-before-edit/public_trace_software_toolkits.py`。

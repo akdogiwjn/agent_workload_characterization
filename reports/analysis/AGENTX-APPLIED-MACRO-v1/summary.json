@@ -1,0 +1,510 @@
+{
+  "schema": "agentx-applied-macro-v1",
+  "sources": {
+    "AgentX": {
+      "nature": "published filtered proxy/request-flow corpus; not complete tool execution logs",
+      "revision": "8fecd2fc56694469f758f0afbbb6335ad3043740",
+      "summary": {
+        "trace_count": 393,
+        "main_request_count": 28444,
+        "subagent_group_count": 1697,
+        "subagent_inner_request_count": 39822,
+        "total_model_request_count": 68266,
+        "models": {
+          "claude-opus-4-8": 35904,
+          "claude-haiku-4-5-20251001": 7973,
+          "claude-fable-5": 12176,
+          "claude-opus-4-7": 6080,
+          "claude-opus-4-6": 5450,
+          "claude-sonnet-4-6": 576,
+          "claude-sonnet-4-5": 107
+        },
+        "request_input_tokens": {
+          "n": 68266,
+          "missing": 0,
+          "min": 128.0,
+          "q1": 47360.0,
+          "median": 88768.0,
+          "q3": 148800.0,
+          "iqr": 101440.0,
+          "max": 255808.0
+        },
+        "request_output_tokens": {
+          "n": 68266,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 172.0,
+          "median": 376.0,
+          "q3": 849.0,
+          "iqr": 677.0,
+          "max": 59903.0
+        },
+        "trace_total_input_tokens": {
+          "n": 393,
+          "missing": 0,
+          "min": 194368.0,
+          "q1": 3817856.0,
+          "median": 8729856.0,
+          "q3": 17235264.0,
+          "iqr": 13417408.0,
+          "max": 532458048.0
+        },
+        "trace_total_output_tokens": {
+          "n": 393,
+          "missing": 0,
+          "min": 1860.0,
+          "q1": 34957.0,
+          "median": 77958.0,
+          "q3": 148600.0,
+          "iqr": 113643.0,
+          "max": 2108495.0
+        },
+        "scope_time": {
+          "valid_intervals": 28444,
+          "union_s": 94393.76099999889,
+          "overlap_s": 267648.5159999986,
+          "observed_span_s": 917243.082
+        },
+        "errors": []
+      },
+      "errors": []
+    },
+    "Applied Compute": {
+      "nature": "production-derived synthetic workload templates; not original Agent messages or Office execution logs",
+      "revision": "6918da7915e3ae57ce3750a375ef50e41cad2b36",
+      "summary": {
+        "agentic_coding_8k": {
+          "template_count": 8192,
+          "valid_template_count": 8192,
+          "invalid_template_count": 0,
+          "errors": {},
+          "num_turns": {
+            "n": 8192,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 7.0,
+            "median": 13.0,
+            "q3": 26.0,
+            "iqr": 19.0,
+            "max": 159.0
+          },
+          "initial_prompt_tokens": {
+            "n": 8192,
+            "missing": 0,
+            "min": 4940.0,
+            "q1": 6267.75,
+            "median": 6448.0,
+            "q3": 6705.0,
+            "iqr": 437.25,
+            "max": 13195.0
+          },
+          "assistant_output_per_turn_tokens": {
+            "n": 165711,
+            "missing": 0,
+            "min": 23.0,
+            "q1": 78.0,
+            "median": 112.0,
+            "q3": 282.0,
+            "iqr": 204.0,
+            "max": 1889.0
+          },
+          "tool_output_per_turn_tokens": {
+            "n": 165711,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 37.0,
+            "median": 162.0,
+            "q3": 506.0,
+            "iqr": 469.0,
+            "max": 24917.0
+          },
+          "final_response_tokens": {
+            "n": 8192,
+            "missing": 0,
+            "min": 28.0,
+            "q1": 319.0,
+            "median": 416.0,
+            "q3": 548.0,
+            "iqr": 229.0,
+            "max": 1149.0
+          },
+          "latency_s": {
+            "n": 165711,
+            "missing": 0,
+            "min": 0.006,
+            "q1": 0.173,
+            "median": 0.429,
+            "q3": 1.25,
+            "iqr": 1.077,
+            "max": 60.347
+          },
+          "derived_completion_requests": {
+            "n": 8192,
+            "missing": 0,
+            "min": 2.0,
+            "q1": 8.0,
+            "median": 14.0,
+            "q3": 27.0,
+            "iqr": 19.0,
+            "max": 160.0
+          },
+          "derived_total_input_tokens": {
+            "n": 8192,
+            "missing": 0,
+            "min": 12613.0,
+            "q1": 88607.5,
+            "median": 200635.0,
+            "q3": 529592.0,
+            "iqr": 440984.5,
+            "max": 12726042.0
+          },
+          "derived_max_context_tokens": {
+            "n": 8192,
+            "missing": 0,
+            "min": 6359.0,
+            "q1": 14037.75,
+            "median": 19836.0,
+            "q3": 29992.0,
+            "iqr": 15954.25,
+            "max": 134492.0
+          },
+          "derived_total_output_tokens": {
+            "n": 8192,
+            "missing": 0,
+            "min": 138.0,
+            "q1": 1828.75,
+            "median": 3079.0,
+            "q3": 5904.25,
+            "iqr": 4075.5,
+            "max": 68484.0
+          },
+          "derived_total_simulated_delay_s": {
+            "n": 8192,
+            "missing": 0,
+            "min": 0.176,
+            "q1": 7.50275,
+            "median": 26.678000000000004,
+            "q3": 44.33474999999999,
+            "iqr": 36.831999999999994,
+            "max": 759.1290000000005
+          }
+        },
+        "code_qa_8k": {
+          "template_count": 8192,
+          "valid_template_count": 8192,
+          "invalid_template_count": 0,
+          "errors": {},
+          "num_turns": {
+            "n": 8192,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 5.0,
+            "median": 9.0,
+            "q3": 16.0,
+            "iqr": 11.0,
+            "max": 208.0
+          },
+          "initial_prompt_tokens": {
+            "n": 8192,
+            "missing": 0,
+            "min": 1469.0,
+            "q1": 1503.0,
+            "median": 1515.0,
+            "q3": 1531.0,
+            "iqr": 28.0,
+            "max": 1684.0
+          },
+          "assistant_output_per_turn_tokens": {
+            "n": 102117,
+            "missing": 0,
+            "min": 32.0,
+            "q1": 69.0,
+            "median": 94.0,
+            "q3": 130.0,
+            "iqr": 61.0,
+            "max": 2856.0
+          },
+          "tool_output_per_turn_tokens": {
+            "n": 102117,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 136.0,
+            "median": 678.0,
+            "q3": 2298.0,
+            "iqr": 2162.0,
+            "max": 41313.0
+          },
+          "final_response_tokens": {
+            "n": 8192,
+            "missing": 0,
+            "min": 94.0,
+            "q1": 754.0,
+            "median": 1044.0,
+            "q3": 1423.0,
+            "iqr": 669.0,
+            "max": 65536.0
+          },
+          "latency_s": {
+            "n": 102117,
+            "missing": 0,
+            "min": 0.0,
+            "q1": 0.194,
+            "median": 0.371,
+            "q3": 0.691,
+            "iqr": 0.49699999999999994,
+            "max": 120.124
+          },
+          "derived_completion_requests": {
+            "n": 8192,
+            "missing": 0,
+            "min": 2.0,
+            "q1": 6.0,
+            "median": 10.0,
+            "q3": 17.0,
+            "iqr": 11.0,
+            "max": 209.0
+          },
+          "derived_total_input_tokens": {
+            "n": 8192,
+            "missing": 0,
+            "min": 3333.0,
+            "q1": 44577.5,
+            "median": 121707.5,
+            "q3": 305254.75,
+            "iqr": 260677.25,
+            "max": 4475173.0
+          },
+          "derived_max_context_tokens": {
+            "n": 8192,
+            "missing": 0,
+            "min": 1799.0,
+            "q1": 11533.25,
+            "median": 20919.5,
+            "q3": 35748.75,
+            "iqr": 24215.5,
+            "max": 146968.0
+          },
+          "derived_total_output_tokens": {
+            "n": 8192,
+            "missing": 0,
+            "min": 249.0,
+            "q1": 1633.0,
+            "median": 2309.5,
+            "q3": 3210.0,
+            "iqr": 1577.0,
+            "max": 69104.0
+          },
+          "derived_total_simulated_delay_s": {
+            "n": 8192,
+            "missing": 0,
+            "min": 0.0,
+            "q1": 1.8877499999999998,
+            "median": 3.965,
+            "q3": 8.177249999999999,
+            "iqr": 6.289499999999999,
+            "max": 838.3260000000002
+          }
+        },
+        "office_work_8k": {
+          "template_count": 8192,
+          "valid_template_count": 8192,
+          "invalid_template_count": 0,
+          "errors": {},
+          "num_turns": {
+            "n": 8192,
+            "missing": 0,
+            "min": 4.0,
+            "q1": 28.0,
+            "median": 37.0,
+            "q3": 50.0,
+            "iqr": 22.0,
+            "max": 138.0
+          },
+          "initial_prompt_tokens": {
+            "n": 8192,
+            "missing": 0,
+            "min": 8722.0,
+            "q1": 8792.0,
+            "median": 8841.0,
+            "q3": 8914.0,
+            "iqr": 122.0,
+            "max": 9417.0
+          },
+          "assistant_output_per_turn_tokens": {
+            "n": 333792,
+            "missing": 0,
+            "min": 3.0,
+            "q1": 18.0,
+            "median": 33.0,
+            "q3": 152.0,
+            "iqr": 134.0,
+            "max": 5628.0
+          },
+          "tool_output_per_turn_tokens": {
+            "n": 333792,
+            "missing": 0,
+            "min": 3.0,
+            "q1": 56.0,
+            "median": 202.0,
+            "q3": 936.0,
+            "iqr": 880.0,
+            "max": 17134.0
+          },
+          "final_response_tokens": {
+            "n": 8192,
+            "missing": 0,
+            "min": 16.0,
+            "q1": 834.0,
+            "median": 1173.0,
+            "q3": 1796.25,
+            "iqr": 962.25,
+            "max": 10590.0
+          },
+          "latency_s": {
+            "n": 333792,
+            "missing": 0,
+            "min": 0.117,
+            "q1": 0.385,
+            "median": 0.602,
+            "q3": 1.256,
+            "iqr": 0.871,
+            "max": 20.257
+          },
+          "derived_completion_requests": {
+            "n": 8192,
+            "missing": 0,
+            "min": 5.0,
+            "q1": 29.0,
+            "median": 38.0,
+            "q3": 51.0,
+            "iqr": 22.0,
+            "max": 139.0
+          },
+          "derived_total_input_tokens": {
+            "n": 8192,
+            "missing": 0,
+            "min": 50472.0,
+            "q1": 695240.0,
+            "median": 1115045.5,
+            "q3": 1715127.5,
+            "iqr": 1019887.5,
+            "max": 9069206.0
+          },
+          "derived_max_context_tokens": {
+            "n": 8192,
+            "missing": 0,
+            "min": 12320.0,
+            "q1": 38143.75,
+            "median": 49300.0,
+            "q3": 61975.0,
+            "iqr": 23831.25,
+            "max": 121886.0
+          },
+          "derived_total_output_tokens": {
+            "n": 8192,
+            "missing": 0,
+            "min": 728.0,
+            "q1": 4810.75,
+            "median": 7415.5,
+            "q3": 11522.0,
+            "iqr": 6711.25,
+            "max": 37583.0
+          },
+          "derived_total_simulated_delay_s": {
+            "n": 8192,
+            "missing": 0,
+            "min": 1.064,
+            "q1": 21.930999999999994,
+            "median": 35.482,
+            "q3": 61.80274999999999,
+            "iqr": 39.87174999999999,
+            "max": 669.142
+          }
+        }
+      },
+      "errors": []
+    }
+  },
+  "semantics": {
+    "AgentX": {
+      "t": "source-relative seconds per existing adapter and README retention rule; not host monotonic",
+      "api_time": "recorded request interval duration in seconds per adapter; not CPU time",
+      "tokens": "in/out request token fields; pooled and trace totals are separate",
+      "subagents": "explicit subagent records with nested requests; parent marker not counted as model request",
+      "hash": "hash_ids retained with block_size and local scope; only same trace/scope adjacency inspected",
+      "limits": [
+        "No cross-clock parent/child recombination beyond source-relative scope",
+        "No cache hit, memory, CPU, or performance inference"
+      ]
+    },
+    "Applied Compute": {
+      "num_turns": "tool-use turns",
+      "completion_requests": "N+1 derived from README",
+      "latency": "simulated tool delay in seconds",
+      "lengths": "template token parameters, not observed usage",
+      "limits": [
+        "No tool names, parallelism, real timestamps, CPU or memory"
+      ]
+    }
+  },
+  "input_verification": {
+    "files": [
+      {
+        "path": "data/raw/public/agentx/8fecd2fc56694469f758f0afbbb6335ad3043740/README.md",
+        "bytes": 3203,
+        "sha256": "fcc398cb4b18c1cf4ad8943c55d3fdbcfe79cc2045123eeb460313e4dd421728",
+        "role": "input"
+      },
+      {
+        "path": "data/raw/public/agentx/8fecd2fc56694469f758f0afbbb6335ad3043740/stats.txt",
+        "bytes": 237,
+        "sha256": "24274dc2ad2be375c3cf396570852af1835f66925ad422af53f754b717f1f93a",
+        "role": "input"
+      },
+      {
+        "path": "data/raw/public/agentx/8fecd2fc56694469f758f0afbbb6335ad3043740/traces.jsonl",
+        "bytes": 568864747,
+        "sha256": "e39cd2ff3eba21d4a3664be51da743ac3d2149a1933898cafc7bfeac8147eeef",
+        "role": "input"
+      },
+      {
+        "path": "data/raw/public/applied_compute/6918da7915e3ae57ce3750a375ef50e41cad2b36/README.md",
+        "bytes": 10649,
+        "sha256": "d58c397f399adc433643f0b0a5d00c4de66ba42834752aa0ce7e671ec67d0c72",
+        "role": "input"
+      },
+      {
+        "path": "data/raw/public/applied_compute/6918da7915e3ae57ce3750a375ef50e41cad2b36/LICENSE",
+        "bytes": 11389,
+        "sha256": "6acdab980f86b3738ef909fd7e3f573d54c5092bf166cd7a6fc853bba98ed469",
+        "role": "input"
+      },
+      {
+        "path": "data/raw/public/applied_compute/6918da7915e3ae57ce3750a375ef50e41cad2b36/workloads/agentic_coding_8k.jsonl",
+        "bytes": 4066885,
+        "sha256": "d2d55501e49b59f4f507b932929eea47043eed51619a632b919416e205523788",
+        "role": "input"
+      },
+      {
+        "path": "data/raw/public/applied_compute/6918da7915e3ae57ce3750a375ef50e41cad2b36/workloads/code_qa_8k.jsonl",
+        "bytes": 3065657,
+        "sha256": "779fddf362ef84455ee64a5f410e6ce9c95042ad6cce7608b858b64a349ab479",
+        "role": "input"
+      },
+      {
+        "path": "data/raw/public/applied_compute/6918da7915e3ae57ce3750a375ef50e41cad2b36/workloads/office_work_8k.jsonl",
+        "bytes": 6766438,
+        "sha256": "c5fd0a7aaa397178eafaac37f11fe5f52588d07c437f3507f157d6deb8821e2c",
+        "role": "input"
+      }
+    ],
+    "problems": []
+  },
+  "analysis_rules": {
+    "quantile": "linear interpolation on sorted values; IQR=Q3-Q1",
+    "AgentX": "top-level main requests and nested subagent requests counted once; subagent marker excluded",
+    "Applied": "valid row requires all six fields and vectors length N; missing/invalid rows excluded from valid denominators but retained",
+    "time": "intervals only within each recorded scope; no parent/subagent clock merge"
+  },
+  "cross_source_comparison": "method/evidence comparison only; sources are not pooled"
+}

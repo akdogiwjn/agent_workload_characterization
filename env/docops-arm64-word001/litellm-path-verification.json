@@ -1,0 +1,20 @@
+{
+ "schema": "docops-pilot-litellm-path-verification-v1",
+ "date": "2026-10-08",
+ "transport": "Harbor 0.4.0 LiteLLM.call (exact class DocumentToolsAgent uses; .venvs/docops-pilot-01)",
+ "request_model": "openai/deepseek-v4-flash",
+ "api_base": "https://st8tp3ajl0df3n8b8l8qu.apigateway-cn-beijing.volceapi.com/v1",
+ "credential_consumption": "VOLCANO_API_KEY mapped to OPENAI_API_KEY in-process; consumed by the real litellm call chain inside Harbor LiteLLM",
+ "prompt": "Reply with exactly: OK (no task/document/tool/history content sent)",
+ "verdict": "PARTIAL_SUCCESS: the call chain completed - request constructed by Harbor LiteLLM, gateway returned 200 in 1.32s, response parsed into LLMResponse with a populated UsageInfo object. The verification script then crashed reading usage.total_tokens (a field Harbor's UsageInfo does not have: it exposes prompt_tokens/completion_tokens/cache_tokens/cost_usd), so content/response-model/finish_reason values were not persisted.",
+ "evidence_for_connectivity": [
+  "no API/auth/network exception raised - the AttributeError is a local record-serialization bug, raised AFTER a successful response",
+  "r.usage was a non-None UsageInfo instance (the AttributeError proves it was parsed)",
+  "latency 1.32s consistent with the earlier successful bare-HTTP probe of the same route"
+ ],
+ "record_gaps": ["content text", "response model id", "finish_reason", "usage numbers"],
+ "boundary_compliance": "per the one-request rule, no second request was sent after the record bug; the fixed field mapping is retained below for the first real agent call of the approved run",
+ "usage_field_mapping_fix": "prompt_tokens / completion_tokens / cache_tokens / cost_usd (Harbor UsageInfo has no total_tokens)",
+ "retry_behavior": "Harbor LiteLLM call is wrapped in tenacity (up to 3 attempts per logical call, auth errors not retried); a single attempt occurred here",
+ "ready_implication": "LiteLLM path connectivity VERIFIED; full field recording will be produced by the first real agent call in the approved run"
+}

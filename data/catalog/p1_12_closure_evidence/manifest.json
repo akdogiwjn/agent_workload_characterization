@@ -1,0 +1,137 @@
+{
+  "schema": "awc-p1-12-closure-evidence-v1",
+  "delivered_at_utc": "2026-09-28T01:42:32Z",
+  "authorization": "user-approved pre-execution information closure; read-only official sources, image registry listing, pricing docs; NO image layers, NO full dataset, NO daemon query, NO credentials, NO model calls, NO execution",
+  "network_budget": {
+    "request_limit": 20,
+    "requests_used": 13,
+    "response_body_limit_bytes": 5242880,
+    "response_body_bytes": 76362,
+    "proxy": "user-provided http://127.0.0.1:22111 (this closure only)",
+    "fetch_log": "fetch_log_full.json (every request: url, final url, status, redirects, bytes, sha256, time)"
+  },
+  "item_1_usage_conditions": {
+    "status": "partial",
+    "evidence": [
+      {
+        "file": "license_swebench_repo.txt",
+        "finding": "SWE-bench GitHub repository LICENSE = MIT (c) 2023 Jimenez et al.; covers the repository including the evaluation harness code"
+      },
+      {
+        "file": "readme_swebench_repo.md",
+        "finding": "README section 'Citation & license' states 'MIT license. Check LICENSE.md.' — a single project-wide statement; no separate dataset-specific terms found in the repository README"
+      },
+      {
+        "file": "license_django.txt",
+        "finding": "django/django upstream = Django Software Foundation BSD-3-Clause license (task source repository)"
+      },
+      {
+        "file": "license_astropy.rst",
+        "finding": "astropy/astropy upstream = Astropy Developers BSD-3-Clause license (task source repository)"
+      }
+    ],
+    "interpretation": [
+      "harness/evaluation code (pinned commit 02e7a74 of princeton-nlp/SWE-bench): MIT",
+      "task source repositories (django/django, astropy/astropy): their own BSD-3-Clause licenses; record.json patch/test_patch/eval_script are dataset-published content used for evaluation, which is NOT a claim of redistribution rights over upstream code",
+      "the DATASET itself (SWE-bench/SWE-bench_Verified at revision 78f471bf...): the HuggingFace dataset card carries NO license field (verified 2026-09-22 and again documented in p1_12_a_acquisition_review.json); the repository's MIT statement is not automatically the dataset's redistribution license"
+    ],
+    "open_gaps": [
+      "dataset-level terms for SWE-bench_Verified are not explicitly published at the sources checked within this budget: no license field on the dataset card, no dataset-specific section in the repository README. This is recorded as an UNRESOLVED usage-conditions gap; no legal conclusion is made here"
+    ]
+  },
+  "item_2_image_identities": {
+    "status": "closed_for_remote_identity",
+    "method": "Docker Hub registry v2 read-only API: one anonymous token request covering all three repos, then GET <repo>/manifests/latest (manifest bodies saved raw); the registry did not return Docker-Content-Digest headers, so each digest is COMPUTED as sha256 of the saved manifest body — identical by definition to the registry digest; config blobs (small JSON, NOT image layers) fetched to confirm architecture/os",
+    "digest_semantics": "all three repositories serve a SINGLE-PLATFORM manifest (application/vnd.docker.distribution.manifest.v2+json), NOT a multi-platform index; the catalog therefore pins the arm64 PLATFORM-MANIFEST digest — the same digest docker records in RepoDigests when pulling these arm64-only repositories",
+    "images": [
+      {
+        "task": "django__django-16485",
+        "repo": "swebench/sweb.eval.arm64.django_1776_django-16485",
+        "manifest_digest": "sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+        "architecture": "arm64",
+        "os": "linux",
+        "note": "REGISTRY DIGEST TODAY EQUALS THE FROZEN CATALOG DIGEST used by the real 2026-09-15 batch: identity unchanged, NOT replaced"
+      },
+      {
+        "task": "astropy__astropy-13236",
+        "repo": "swebench/sweb.eval.arm64.astropy_1776_astropy-13236",
+        "manifest_digest": "sha256:e7512a4ee3451cdd949098a496fb68f8488a4970ef00ab3d96ed40a5fb1a2011",
+        "architecture": "arm64",
+        "os": "linux",
+        "note": "newly registered full digest; catalog entry previously carried only a truncated 19-hex form; identity change is recorded in workload_catalog/p1_12.yaml image_status; no prior approval existed for this batch, none is reused"
+      },
+      {
+        "task": "astropy__astropy-13398",
+        "repo": "swebench/sweb.eval.arm64.astropy_1776_astropy-13398",
+        "manifest_digest": "sha256:4475e9bab862169dc0622cc9686f6a6e53232dc7beba244b525ec2af4fef6a4a",
+        "architecture": "arm64",
+        "os": "linux",
+        "note": "newly registered full digest; same identity-change recording as above"
+      }
+    ],
+    "still_unverified": [
+      "local image presence and runnability on this host (Docker read-only preflight at execution time, separately authorized)",
+      "image LAYERS were not downloaded and not inspected"
+    ],
+    "raw_evidence": [
+      "registry_token_response.json",
+      "registry_manifest_sweb.eval.arm64.django_1776_django-16485.json",
+      "registry_manifest_sweb.eval.arm64.astropy_1776_astropy-13236.json",
+      "registry_manifest_sweb.eval.arm64.astropy_1776_astropy-13398.json",
+      "registry_config_sweb.eval.arm64.django_1776_django-16485.json",
+      "registry_config_sweb.eval.arm64.astropy_1776_astropy-13236.json",
+      "registry_config_sweb.eval.arm64.astropy_1776_astropy-13398.json",
+      "registry_digest_results.json"
+    ]
+  },
+  "item_3_pricing_and_cost_safeguard": {
+    "status": "open",
+    "model_in_config": "DeepSeek-V4-Flash (request id openai/deepseek-v4-flash) via the Volcengine AI Gateway provider (火山AI网关) — the same provider/model the RUN-02 chain used",
+    "public_pricing_attempts": [
+      {
+        "file": "pricing_volcengine_doc_1099320.html",
+        "result": "200 but the page is a JavaScript application shell (~11.9KB, no static pricing table)"
+      },
+      {
+        "file": "pricing_volcengine_doc_1544106.html",
+        "result": "200 but the identical JS shell; stopped after two attempts per the no-retry rule"
+      }
+    ],
+    "conclusion": "public per-token pricing for this provider/model could NOT be determined from official static pages within this budget; no pricing numbers are invented and no same-name-model prices from other platforms are substituted",
+    "fields_required_from_user": [
+      "input price per 1M tokens (USD or CNY, state which) for DeepSeek-V4-Flash on the actual Volcengine account/route",
+      "output price per 1M tokens (same currency)",
+      "cached-input price and its applicability (if any)",
+      "any account-level discount/tier that changes the effective price",
+      "the currency to use for batch_cap",
+      "a conservative max_input_tokens_per_request value to freeze as the planning cap (no execution-time hard stop exists for input tokens)"
+    ],
+    "existing_execution_chain_limits_reviewed": [
+      "model requests: HARD limit — BudgetTracker max_model_requests=30 per attempt; budget.check() raises during execution (shared runner, unchanged)",
+      "output tokens: HARD limit — max_output_tokens_per_request=4096 per request, enforced per call and stop-checked",
+      "input tokens: NO execution-time limit or accounting in the current chain (usage.prompt_tokens is recorded but never budget-checked)",
+      "monetary amount: NO execution-time cost accounting or cap enforcement anywhere in the chain"
+    ],
+    "minimal_viable_safeguard_proposal_NOT_IMPLEMENTED": {
+      "summary": "after each attempt, accumulate requests and output_tokens from outcome.budget_usage, multiply by the registered prices, compare against batch_cap; stop the batch on breach (same stop vocabulary as other infra stops)",
+      "exact_change_points": [
+        "workload_catalog/p1_12.yaml budget_batch.monetary: fill prices + input cap + batch_cap (structure already accepted by monetary_bound)",
+        "src/agent_workload_characterization/runners/p1_12_entry.py run_batch: after each attempt's outcome, add an executed_cost accumulator and a stop condition 'monetary_cap_exceeded'; no shared-runner changes",
+        "tests/test_p1_12.py: one counter-example test injecting a fake budget_usage that crosses the cap"
+      ],
+      "explicit_limitation": "input tokens remain un-enforced at execution time; the cap is a conservative planning bound plus an output/requests-based runtime tripwire, NOT a guaranteed spend ceiling; awaiting separate confirmation before implementation"
+    }
+  },
+  "catalog_update_note": "workload_catalog/p1_12.yaml: the two astropy image_arm64_digest entries changed from null (truncated evidence only) to full registry manifest digests; django entry UNCHANGED (registry-verified equal to the frozen value); every identity change is recorded in each task's image_status; monetary remains open; readiness remains NOT READY (monetary only)",
+  "boundary_compliance": {
+    "http_requests": 13,
+    "within_limit": true,
+    "image_layers_downloaded": false,
+    "docker_daemon_queried": false,
+    "full_dataset_downloaded": false,
+    "credentials_read": false,
+    "model_called": false,
+    "approval_or_attempt_created": false,
+    "git_operations": "none"
+  }
+}

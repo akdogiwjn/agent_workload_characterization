@@ -424,7 +424,7 @@ class MiniSweAgentHarness(AgentHarness):
     # -- child script (runs INSIDE the venv subprocess) --------------------
 
     REAL_CHILD_CODE = r'''
-import json, os, subprocess, sys, time
+import json, os, pathlib, subprocess, sys, time
 
 payload = json.loads(sys.stdin.read())
 os.environ.update(payload.get("retry_env", {}))
@@ -467,18 +467,28 @@ class AttachedDockerEnvironment(Environment):
             result = subprocess.run(cmd, text=True, timeout=timeout or self.config.timeout,
                                     encoding="utf-8", errors="replace",
                                     stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-            return {"output": result.stdout, "returncode": result.returncode,
-                    "exception_info": ""}
+            output = {"output": result.stdout, "returncode": result.returncode,
+                      "exception_info": ""}
         except Exception as e:  # same shape as mini's DockerEnvironment
-            return {"output": "", "returncode": -1,
-                    "exception_info": f"error executing command: {e}"}
+            output = {"output": "", "returncode": -1,
+                      "exception_info": f"error executing command: {e}"}
+        self._check_finished(output)
+        return output
 
     def get_template_vars(self, **kwargs):
         return {"cwd": self.config.cwd, **kwargs}
 
     def _check_finished(self, output):
-        if output["exception_info"]:
-            raise RuntimeError(output["exception_info"])
+        from minisweagent.exceptions import Submitted
+        lines = output.get("output", "").lstrip().splitlines(keepends=True)
+        if lines and lines[0].strip() == "COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT" \
+                and output["returncode"] == 0:
+            submission = "".join(lines[1:])
+            raise Submitted({
+                "role": "exit",
+                "content": submission,
+                "extra": {"exit_status": "Submitted",
+                          "submission": submission}})
 
 
 class FakeScriptedEnvironment(Environment):
@@ -529,10 +539,32 @@ class FakeScriptedEnvironment(Environment):
                           "submission": "".join(lines[1:])}})
 
 
+class RequestStartModel:
+    """Record a start only after native budget checks reach model.query.
+
+    A hard-killed child cannot emit a terminal; this independent start makes
+    the missing terminal visible, rather than reporting zero requests.
+    """
+    def __init__(self, inner, agent):
+        self.inner, self.agent = inner, agent
+
+    def __getattr__(self, name):
+        return getattr(self.inner, name)
+
+    def query(self, messages):
+        if self.agent._status_path:
+            path = pathlib.Path(self.agent._status_path).with_name('mini_request_starts.jsonl')
+            with path.open('a') as fh:
+                fh.write(json.dumps({'n_calls': self.agent.n_calls,
+                    't_start_ns': self.agent._query_t0,
+                    'clock_domain': 'system_monotonic'}) + '\n')
+        return self.inner.query(messages)
+
+
 class StatusTrackingAgent(DefaultAgent):
     """DefaultAgent + one status JSONL line PER MODEL REQUEST.
 
-    The hook sits at query() level: a billed request that later fails to
+    The hook sits at query() level: a returned request that later fails to
     parse (FormatError) still writes its line with ok=false, and the final
     request before exit is recorded too. Each line carries the request's
     OWN monotonic start/end timestamps so the parent never has to invent
@@ -542,8 +574,9 @@ class StatusTrackingAgent(DefaultAgent):
         super().__init__(*args, **kwargs)
         self._status_path = status_path
         self._n_steps = 0
+        self.model = RequestStartModel(self.model, self)
 
-    def _write_status(self, *, ok, usage, t_start_ns, t_end_ns):
+    def _write_status(self, *, ok, usage, t_start_ns, t_end_ns, error_type=None):
         if not self._status_path:
             return
         with open(self._status_path, "a") as fh:
@@ -551,7 +584,9 @@ class StatusTrackingAgent(DefaultAgent):
                 "n_calls": self.n_calls, "n_steps": self._n_steps,
                 "cost": self.cost,
                 "elapsed_s": int(time.time() - self._start_time),
-                "ok": ok, "usage": usage,
+                "ok": ok, "usage": usage, "error_type": error_type,
+                "context_message_count": self._context_message_count,
+                "context_characters": self._context_characters,
                 "t_start_ns": t_start_ns, "t_end_ns": t_end_ns}) + "\n")
 
     @staticmethod
@@ -568,19 +603,30 @@ class StatusTrackingAgent(DefaultAgent):
 
     def query(self):
         t0 = time.monotonic_ns()
+        self._query_t0 = t0
+        previous_calls = self.n_calls
+        self._context_message_count = len(self.messages)
+        self._context_characters = sum(len(m.get('content') or '') for m in self.messages)
         try:
             message = super().query()
             self._write_status(ok=True, usage=self._usage_of(message),
                                t_start_ns=t0, t_end_ns=time.monotonic_ns())
             return message
         except FormatError as e:
-            # the call was billed before parsing failed: count it too
+            # A response was returned before parsing failed; usage is not a bill.
             usage = None
             msgs = getattr(e, "messages", None) or []
             if msgs:
                 usage = self._usage_of(msgs[0])
             self._write_status(ok=False, usage=usage,
-                               t_start_ns=t0, t_end_ns=time.monotonic_ns())
+                               t_start_ns=t0, t_end_ns=time.monotonic_ns(), error_type='FormatError')
+            raise
+        except BaseException as exc:
+            # Native budget refusals happen BEFORE n_calls increments; do not
+            # invent a request for them. Started calls retain an error terminal.
+            if self.n_calls > previous_calls:
+                self._write_status(ok=False, usage=None,
+                    t_start_ns=t0, t_end_ns=time.monotonic_ns(), error_type=type(exc).__name__)
             raise
 
 
@@ -809,11 +855,8 @@ main()
             host_records = []
             while proc.poll() is None:
                 snap = host_monitor.poll_once()
-                host_records.append({
-                    "t_monotonic_ns": snap.t_monotonic_ns,
-                    "cpu_ticks": snap.cpu_ticks,
-                    "rss_bytes": snap.rss_bytes,
-                    "stat": snap.read_status.get("stat")})
+                from dataclasses import asdict
+                host_records.append({**asdict(snap), 'stat': snap.read_status.get('stat')})
                 lines = self._read_status(status_path)
                 for line in lines[seen_lines:]:
                     seen_lines += 1
@@ -828,11 +871,8 @@ main()
                 time.sleep(self.poll_interval_s)
             # one final read after exit (typically process_exited — kept)
             final_snap = host_monitor.poll_once()
-            host_records.append({
-                "t_monotonic_ns": final_snap.t_monotonic_ns,
-                "cpu_ticks": final_snap.cpu_ticks,
-                "rss_bytes": final_snap.rss_bytes,
-                "stat": final_snap.read_status.get("stat")})
+            from dataclasses import asdict
+            host_records.append({**asdict(final_snap), 'stat': final_snap.read_status.get('stat')})
             self.host_summary = host_monitor.summary()
             # PERSIST the full host evidence: identity, units, coverage
             # interval and the summary — a write failure is recorded as
@@ -1040,8 +1080,14 @@ main()
                  "usage": line.get("usage"),
                  "t_start_ns": line.get("t_start_ns"),
                  "t_end_ns": line.get("t_end_ns"),
-                 "timing_source": "child_status"}
-        recorder.end(ev, attrs=attrs)
+                 "timing_source": "child_status",
+                 "context_message_count": line.get('context_message_count'),
+                 "context_characters": line.get('context_characters'),
+                 "transport_attempt_count": None,
+                 "retry_scope": 'logical_call_includes_sdk_retries',
+                 "error": line.get('error_type')}
+        error_type = line.get('error_type')
+        recorder.end(ev, attrs=attrs, error=(error_type if error_type != 'FormatError' else None))
 
     @staticmethod
     def _parse_child_summary(stdout: str) -> dict | None:

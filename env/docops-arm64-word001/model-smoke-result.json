@@ -1,0 +1,75 @@
+{
+ "schema": "docops-pilot-model-smoke-v1",
+ "date": "2026-10-08",
+ "route": {
+  "model_requested": "openai/glm-5.3 (fallback route)",
+  "api_base": "https://st8tp3ajl0df3n8b8l8qu.apigateway-cn-beijing.volceapi.com/v1",
+  "primary_deepseek": "not attempted (no key), per fallback policy"
+ },
+ "attempts": [
+  {
+   "attempt": 1,
+   "transport": "litellm.acompletion 1.83.0 (num_retries=0, max_tokens=32, timeout=60)",
+   "credential_source": "opencode.json provider options.apiKey (on-disk)",
+   "outcome": "auth_error",
+   "detail": "AuthenticationError Consumer authentication failed (0.29s) - request DID reach gateway with valid OpenAI-format protocol; key rejected"
+  },
+  {
+   "attempt": 2,
+   "transport": "bare HTTP POST /chat/completions",
+   "credential_source": "same on-disk key",
+   "outcome": "auth_error",
+   "detail": "HTTP 401 Consumer authentication failed - confirms on-disk key is invalid for this endpoint, not a litellm issue"
+  },
+  {
+   "attempt": 3,
+   "transport": "bare HTTP POST /chat/completions",
+   "credential_source": "VOLCANO_API_KEY process environment variable (same variable the historical R2 chain used)",
+   "outcome": "ok",
+   "response_model": "glm-5-3-260814",
+   "content": "OK",
+   "finish": "stop",
+   "usage": {
+    "prompt_tokens": 17,
+    "completion_tokens": 22,
+    "total_tokens": 39,
+    "reasoning_tokens": 19,
+    "cached_tokens": 0
+   }
+  },
+  {
+   "attempt": 4,
+   "transport": "bare HTTP POST /chat/completions",
+   "credential_source": "VOLCANO_API_KEY env var",
+   "request_model": "deepseek-v4-flash",
+   "outcome": "ok",
+   "latency_s": 1.2,
+   "response_model": "deepseek-v4-flash-ga-260731",
+   "content": "OK",
+   "reasoning_content_present": true,
+   "reasoning_note": "reasoning returned in a SEPARATE reasoning_content field; content field is clean - favorable for DocumentToolsAgent strict-JSON parsing",
+   "usage": {
+    "prompt_tokens": 88,
+    "completion_tokens": 11,
+    "total_tokens": 99,
+    "reasoning_tokens": 9,
+    "cached_tokens": 0
+   }
+  }
+ ],
+ "findings": [
+  "VOLCANO_API_KEY env var is the working credential; the on-disk opencode.json apiKey is invalid/rotated (never printed either)",
+  "response carries a versioned model id glm-5-3-260814 (date-stamped 2026-08-14) - partially closes the alias-not-pinned gap; record response model at every execution",
+  "glm-5.3 is a thinking model (19 reasoning tokens in a trivial OK reply) - token budgets for the pilot must account for reasoning overhead; 32-token cap would truncate real agent steps (agent default max_tokens 32768 stands)",
+  "litellm protocol path reached the gateway correctly (401 is a gateway business response); litellm + VOLCANO_API_KEY combination will be confirmed by the first real agent call unless separately re-approved for one more probe"
+ ],
+ "boundary_note": "four requests total during diagnosis: 3 auth-failed/successful probes for the glm-5.3 route (2 auth-failed with an invalid on-disk key + 1 success) and 1 success for the user-selected deepseek-v4-flash route; no task content, documents, tools or history sent; no key material printed or stored",
+ "cost": "unknown (gateway-side billing not visible to us; usage tokens recorded above)",
+ "model_switch_decision": {
+  "date": "2026-10-08",
+  "decided_by_user": true,
+  "new_fallback_model": "deepseek-v4-flash @ volcano-gateway",
+  "rationale": "same DeepSeek FAMILY as the Coding baseline (FINISH-02 / CODING-REPEAT used deepseek-flash), but model version, provider (gateway vs official API) and runtime configuration are NOT identical - cross-category comparison still carries model confounds",
+  "limits": "minimal-smoke latency (1.2s) and token counts (99 total) do NOT prove the formal run will be faster or cheaper; per-step agent prompts are far larger"
+ }
+}

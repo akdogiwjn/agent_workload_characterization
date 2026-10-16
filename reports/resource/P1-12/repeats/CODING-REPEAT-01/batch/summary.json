@@ -1,0 +1,440 @@
+{
+  "run_id": "P1-12-99906708",
+  "status": "complete",
+  "planned_attempts": [
+    {
+      "round": 0,
+      "instance_id": "astropy__astropy-13236"
+    },
+    {
+      "round": 0,
+      "instance_id": "astropy__astropy-13398"
+    },
+    {
+      "round": 0,
+      "instance_id": "django__django-16485"
+    },
+    {
+      "round": 1,
+      "instance_id": "astropy__astropy-13398"
+    },
+    {
+      "round": 1,
+      "instance_id": "astropy__astropy-13236"
+    },
+    {
+      "round": 1,
+      "instance_id": "django__django-16485"
+    },
+    {
+      "round": 2,
+      "instance_id": "django__django-16485"
+    },
+    {
+      "round": 2,
+      "instance_id": "astropy__astropy-13398"
+    },
+    {
+      "round": 2,
+      "instance_id": "astropy__astropy-13236"
+    }
+  ],
+  "attempts": [
+    {
+      "round": 0,
+      "instance_id": "astropy__astropy-13236",
+      "status": "executed",
+      "runner_image": "swebench/sweb.eval.arm64.astropy_1776_astropy-13236@sha256:e7512a4ee3451cdd949098a496fb68f8488a4970ef00ab3d96ed40a5fb1a2011",
+      "attempt_budget_total_wall_s": 1800,
+      "run_id": "20260928T121110Z-bc1dca",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "archive_status": "ok",
+      "cleanup_status": "ok",
+      "cleanup_errors": [],
+      "resolved": true,
+      "run_dir": "/home/lcq/agent_workload_characterization/data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121110Z-bc1dca",
+      "budget_usage": {
+        "requests": 30,
+        "steps": 29,
+        "output_tokens": 10625,
+        "artifact_bytes": 743640,
+        "artifact_exceeded": false,
+        "elapsed_s": 16.24607971,
+        "elapsed_total_s": 128.135424101,
+        "phase": "evaluation",
+        "exceeded": null
+      }
+    },
+    {
+      "round": 0,
+      "instance_id": "astropy__astropy-13398",
+      "status": "executed",
+      "runner_image": "swebench/sweb.eval.arm64.astropy_1776_astropy-13398@sha256:4475e9bab862169dc0622cc9686f6a6e53232dc7beba244b525ec2af4fef6a4a",
+      "attempt_budget_total_wall_s": 1800,
+      "run_id": "20260928T121318Z-11bacd",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "archive_status": "ok",
+      "cleanup_status": "ok",
+      "cleanup_errors": [],
+      "resolved": false,
+      "run_dir": "/home/lcq/agent_workload_characterization/data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121318Z-11bacd",
+      "budget_usage": {
+        "requests": 30,
+        "steps": 29,
+        "output_tokens": 18098,
+        "artifact_bytes": 965654,
+        "artifact_exceeded": false,
+        "elapsed_s": 11.829123684,
+        "elapsed_total_s": 149.744971849,
+        "phase": "evaluation",
+        "exceeded": null
+      }
+    },
+    {
+      "round": 0,
+      "instance_id": "django__django-16485",
+      "status": "executed",
+      "runner_image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+      "attempt_budget_total_wall_s": 1800,
+      "run_id": "20260928T121548Z-ad0290",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "archive_status": "ok",
+      "cleanup_status": "ok",
+      "cleanup_errors": [],
+      "resolved": true,
+      "run_dir": "/home/lcq/agent_workload_characterization/data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121548Z-ad0290",
+      "budget_usage": {
+        "requests": 22,
+        "steps": 21,
+        "output_tokens": 10129,
+        "artifact_bytes": 583520,
+        "artifact_exceeded": false,
+        "elapsed_s": 11.088181217,
+        "elapsed_total_s": 99.838022299,
+        "phase": "evaluation",
+        "exceeded": null
+      }
+    },
+    {
+      "round": 1,
+      "instance_id": "astropy__astropy-13398",
+      "status": "executed",
+      "runner_image": "swebench/sweb.eval.arm64.astropy_1776_astropy-13398@sha256:4475e9bab862169dc0622cc9686f6a6e53232dc7beba244b525ec2af4fef6a4a",
+      "attempt_budget_total_wall_s": 1800,
+      "run_id": "20260928T121728Z-d87dd3",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "archive_status": "ok",
+      "cleanup_status": "ok",
+      "cleanup_errors": [],
+      "resolved": true,
+      "run_dir": "/home/lcq/agent_workload_characterization/data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121728Z-d87dd3",
+      "budget_usage": {
+        "requests": 30,
+        "steps": 29,
+        "output_tokens": 10595,
+        "artifact_bytes": 960281,
+        "artifact_exceeded": false,
+        "elapsed_s": 13.472591098,
+        "elapsed_total_s": 176.523926143,
+        "phase": "evaluation",
+        "exceeded": null
+      }
+    },
+    {
+      "round": 1,
+      "instance_id": "astropy__astropy-13236",
+      "status": "executed",
+      "runner_image": "swebench/sweb.eval.arm64.astropy_1776_astropy-13236@sha256:e7512a4ee3451cdd949098a496fb68f8488a4970ef00ab3d96ed40a5fb1a2011",
+      "attempt_budget_total_wall_s": 1800,
+      "run_id": "20260928T122024Z-004fd1",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "archive_status": "ok",
+      "cleanup_status": "ok",
+      "cleanup_errors": [],
+      "resolved": true,
+      "run_dir": "/home/lcq/agent_workload_characterization/data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122024Z-004fd1",
+      "budget_usage": {
+        "requests": 20,
+        "steps": 19,
+        "output_tokens": 13615,
+        "artifact_bytes": 2423283,
+        "artifact_exceeded": false,
+        "elapsed_s": 16.839935308,
+        "elapsed_total_s": 128.188345924,
+        "phase": "evaluation",
+        "exceeded": null
+      }
+    },
+    {
+      "round": 1,
+      "instance_id": "django__django-16485",
+      "status": "executed",
+      "runner_image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+      "attempt_budget_total_wall_s": 1800,
+      "run_id": "20260928T122232Z-03d61c",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "archive_status": "ok",
+      "cleanup_status": "ok",
+      "cleanup_errors": [],
+      "resolved": true,
+      "run_dir": "/home/lcq/agent_workload_characterization/data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122232Z-03d61c",
+      "budget_usage": {
+        "requests": 15,
+        "steps": 14,
+        "output_tokens": 8680,
+        "artifact_bytes": 461387,
+        "artifact_exceeded": false,
+        "elapsed_s": 11.207511952,
+        "elapsed_total_s": 83.10087879,
+        "phase": "evaluation",
+        "exceeded": null
+      }
+    },
+    {
+      "round": 2,
+      "instance_id": "django__django-16485",
+      "status": "executed",
+      "runner_image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+      "attempt_budget_total_wall_s": 1800,
+      "run_id": "20260928T122356Z-2bbb44",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "archive_status": "ok",
+      "cleanup_status": "ok",
+      "cleanup_errors": [],
+      "resolved": true,
+      "run_dir": "/home/lcq/agent_workload_characterization/data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122356Z-2bbb44",
+      "budget_usage": {
+        "requests": 20,
+        "steps": 19,
+        "output_tokens": 12606,
+        "artifact_bytes": 575972,
+        "artifact_exceeded": false,
+        "elapsed_s": 11.342396048,
+        "elapsed_total_s": 106.675277158,
+        "phase": "evaluation",
+        "exceeded": null
+      }
+    },
+    {
+      "round": 2,
+      "instance_id": "astropy__astropy-13398",
+      "status": "executed",
+      "runner_image": "swebench/sweb.eval.arm64.astropy_1776_astropy-13398@sha256:4475e9bab862169dc0622cc9686f6a6e53232dc7beba244b525ec2af4fef6a4a",
+      "attempt_budget_total_wall_s": 1800,
+      "run_id": "20260928T122542Z-8adc15",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "archive_status": "ok",
+      "cleanup_status": "ok",
+      "cleanup_errors": [],
+      "resolved": false,
+      "run_dir": "/home/lcq/agent_workload_characterization/data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122542Z-8adc15",
+      "budget_usage": {
+        "requests": 30,
+        "steps": 29,
+        "output_tokens": 9224,
+        "artifact_bytes": 791510,
+        "artifact_exceeded": false,
+        "elapsed_s": 11.912875692,
+        "elapsed_total_s": 93.965695981,
+        "phase": "evaluation",
+        "exceeded": null
+      }
+    },
+    {
+      "round": 2,
+      "instance_id": "astropy__astropy-13236",
+      "status": "executed",
+      "runner_image": "swebench/sweb.eval.arm64.astropy_1776_astropy-13236@sha256:e7512a4ee3451cdd949098a496fb68f8488a4970ef00ab3d96ed40a5fb1a2011",
+      "attempt_budget_total_wall_s": 1800,
+      "run_id": "20260928T122716Z-441807",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "archive_status": "ok",
+      "cleanup_status": "ok",
+      "cleanup_errors": [],
+      "resolved": true,
+      "run_dir": "/home/lcq/agent_workload_characterization/data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122716Z-441807",
+      "budget_usage": {
+        "requests": 29,
+        "steps": 28,
+        "output_tokens": 11938,
+        "artifact_bytes": 760217,
+        "artifact_exceeded": false,
+        "elapsed_s": 15.163466602,
+        "elapsed_total_s": 111.779086811,
+        "phase": "evaluation",
+        "exceeded": null
+      }
+    }
+  ],
+  "per_task": {
+    "django__django-16485": {
+      "planned": 3,
+      "executed": 3,
+      "failed": 0,
+      "not_executed": 0,
+      "resolved_true": 3,
+      "resolved_false": 0,
+      "resolved_none": 0,
+      "raw_points": [
+        {
+          "round": 0,
+          "run_id": "20260928T121548Z-ad0290",
+          "status": "executed",
+          "resolved": true,
+          "execution_status": "ok",
+          "evaluation_status": "ok"
+        },
+        {
+          "round": 1,
+          "run_id": "20260928T122232Z-03d61c",
+          "status": "executed",
+          "resolved": true,
+          "execution_status": "ok",
+          "evaluation_status": "ok"
+        },
+        {
+          "round": 2,
+          "run_id": "20260928T122356Z-2bbb44",
+          "status": "executed",
+          "resolved": true,
+          "execution_status": "ok",
+          "evaluation_status": "ok"
+        }
+      ],
+      "wall_s_stats": {
+        "n": 3,
+        "median": 99.838022299,
+        "iqr": 11.787199184000002,
+        "min": 83.10087879,
+        "max": 106.675277158
+      },
+      "model_requests_stats": {
+        "n": 3,
+        "median": 20,
+        "iqr": 3.5,
+        "min": 15,
+        "max": 22
+      },
+      "note": "repeats within a task are not independent samples; no P95/P99 claims"
+    },
+    "astropy__astropy-13236": {
+      "planned": 3,
+      "executed": 3,
+      "failed": 0,
+      "not_executed": 0,
+      "resolved_true": 3,
+      "resolved_false": 0,
+      "resolved_none": 0,
+      "raw_points": [
+        {
+          "round": 0,
+          "run_id": "20260928T121110Z-bc1dca",
+          "status": "executed",
+          "resolved": true,
+          "execution_status": "ok",
+          "evaluation_status": "ok"
+        },
+        {
+          "round": 1,
+          "run_id": "20260928T122024Z-004fd1",
+          "status": "executed",
+          "resolved": true,
+          "execution_status": "ok",
+          "evaluation_status": "ok"
+        },
+        {
+          "round": 2,
+          "run_id": "20260928T122716Z-441807",
+          "status": "executed",
+          "resolved": true,
+          "execution_status": "ok",
+          "evaluation_status": "ok"
+        }
+      ],
+      "wall_s_stats": {
+        "n": 3,
+        "median": 128.135424101,
+        "iqr": 8.20462955650001,
+        "min": 111.779086811,
+        "max": 128.188345924
+      },
+      "model_requests_stats": {
+        "n": 3,
+        "median": 29,
+        "iqr": 5.0,
+        "min": 20,
+        "max": 30
+      },
+      "note": "repeats within a task are not independent samples; no P95/P99 claims"
+    },
+    "astropy__astropy-13398": {
+      "planned": 3,
+      "executed": 3,
+      "failed": 0,
+      "not_executed": 0,
+      "resolved_true": 1,
+      "resolved_false": 2,
+      "resolved_none": 0,
+      "raw_points": [
+        {
+          "round": 0,
+          "run_id": "20260928T121318Z-11bacd",
+          "status": "executed",
+          "resolved": false,
+          "execution_status": "ok",
+          "evaluation_status": "ok"
+        },
+        {
+          "round": 1,
+          "run_id": "20260928T121728Z-d87dd3",
+          "status": "executed",
+          "resolved": true,
+          "execution_status": "ok",
+          "evaluation_status": "ok"
+        },
+        {
+          "round": 2,
+          "run_id": "20260928T122542Z-8adc15",
+          "status": "executed",
+          "resolved": false,
+          "execution_status": "ok",
+          "evaluation_status": "ok"
+        }
+      ],
+      "wall_s_stats": {
+        "n": 3,
+        "median": 149.744971849,
+        "iqr": 41.279115081000015,
+        "min": 93.965695981,
+        "max": 176.523926143
+      },
+      "model_requests_stats": {
+        "n": 3,
+        "median": 30,
+        "iqr": 0.0,
+        "min": 30,
+        "max": 30
+      },
+      "note": "repeats within a task are not independent samples; no P95/P99 claims"
+    }
+  },
+  "errors": [],
+  "budget_overrun": false,
+  "clock_anchor": {
+    "monotonic_ns": 3403330445572992,
+    "utc_ns": 1790597470073976422,
+    "domain": "same_host_CLOCK_MONOTONIC"
+  },
+  "statistics_note": "median/IQR use linear interpolation; grouped by task; 3x3 is a pilot proposal, not statistical sufficiency",
+  "wall_min": 17.985290919252066,
+  "archive_status": "complete"
+}

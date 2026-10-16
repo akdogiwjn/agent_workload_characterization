@@ -1,0 +1,98 @@
+{
+ "collection": "DOCOPS-WORD-RESOURCE-01",
+ "identity": {
+  "collection": "DOCOPS-WORD-RESOURCE-01",
+  "task_dir": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed",
+  "files": {
+   "task_toml": {
+    "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/task.toml",
+    "bytes": 1311,
+    "sha256": "541e0d24a9f97aafdd312d00af1b063571836ec303cc2e7694bb72118655bca0"
+   },
+   "instruction": {
+    "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/instruction.md",
+    "bytes": 1713,
+    "sha256": "940e78174858258ddbda0ec1b7f74be27241db3a1b836de96b59006bc67ec31a"
+   },
+   "input_docx": {
+    "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/environment/word_001_engineering_report_toc_hierarchy_seed.docx",
+    "bytes": 39756,
+    "sha256": "9cb56bb42d83e3f0f62d09fb38d46ab5fabcadbc9fb1e8d19da4e5276f5951c2"
+   },
+   "test_sh": {
+    "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/test.sh",
+    "bytes": 730,
+    "sha256": "638074862a1f8779ca4741e76a5a254553eaaaa24340e0d5c781f34edab3e60a"
+   },
+   "test_outputs": {
+    "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/test_outputs.py",
+    "bytes": 2161,
+    "sha256": "37232616c07d64d07d4a336bed6c5d3af3e31908e8b804d15302c916f7fb9a09"
+   },
+   "verifier_utils": {
+    "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/verifier_utils.py",
+    "bytes": 14389,
+    "sha256": "d1a084507ea7aa1ae001c6c8b33f6505cad4ccb51cd372d10323fe5d63d93e78"
+   },
+   "agent_harness": {
+    "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/harnesses/document_tools_agent.py",
+    "bytes": 13569,
+    "sha256": "c63244323eea071ba63442dec70531a447365c31e87710b5a2a02c52322f449a"
+   },
+   "runtime_tools": {
+    "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/harnesses/document_tools_runtime.py",
+    "bytes": 16880,
+    "sha256": "855c4cdfdcd9ac6a8ca9e67d57809262236bf93848d0d8142cf356fb2f558878"
+   },
+   "harbor_pyproject": {
+    "path": "/home/lcq/agent_workload_characterization/env/docops-arm64-word001/harbor-src/pyproject.toml",
+    "bytes": 2884,
+    "sha256": "7f5a7baf35fa83d5ea3499845e58f3ad4b502c64f37c660c8fa434409b611d09"
+   },
+   "entry": {
+    "path": "/home/lcq/agent_workload_characterization/scripts/docops_word_resource_01_entry.py",
+    "bytes": 19400,
+    "sha256": "db6ac657c6b039058c49193271fc716e8478fc4067f46832c131eaf7ffe57f8c"
+   }
+  },
+  "task_image": {
+   "reference": "docops-word001-task:arm64-adapted-v1",
+   "expected_id": "sha256:869486d7bdb34f8da3a1affabaeb085413c850630ef01e0ed1f8a01d64db779f"
+  },
+  "base_image": {
+   "label": "harbor-claude-code-base:2.1.114",
+   "expected_id": "sha256:062bf50871c0e9d7d4a175643343746f27c7857325962525d7ebe9ae0c08fe9b1",
+   "note": "ARM64 adapted environment (provenance unknown, registered); NOT claimed equivalent to the official amd64 archive"
+  },
+  "model_route": {
+   "request_id": "openai/deepseek-v4-flash",
+   "api_base": "https://st8tp3ajl0df3n8b8l8qu.apigateway-cn-beijing.volceapi.com/v1",
+   "credential": "VOLCANO_API_KEY mapped to OPENAI_API_KEY in-process only; fixed, no auto-switching"
+  },
+  "budget": {
+   "total_wall_s": 2700.0,
+   "agent_s": 1200.0,
+   "verifier_s": 600.0,
+   "cleanup_reserve_s": 300.0,
+   "container": {
+    "cpus": 1,
+    "memory_mb": 4096,
+    "network": "none"
+   },
+   "max_steps": 12,
+   "max_tokens_per_request": 32768,
+   "max_tokens_note": "output cap; reasoning-token accounting is provider-side semantics",
+   "attempt_retries": 0,
+   "framework_retry": "Harbor LiteLLM call has tenacity retry: up to 3 attempts per logical call, auth errors not retried; registered approval item, not disabled"
+  },
+  "sampling": {
+   "interval_s": 0.5,
+   "container_counters": "cgroup v1 cpuacct/memory(+throttle blkio variant; io recorded as read, semantics ok_no_records_real_zero)",
+   "host_agent_process": "proc cpu_ticks/rss via HostProcessReader",
+   "clock": "host monotonic for sampling and events"
+  }
+ },
+ "identity_sha256": "b7a5eabb0d142e847b523faffb656556b0e34a749a01aaf89eb4cbdec80b9469",
+ "existing_attempts": [],
+ "ready_for_approval": true
+}

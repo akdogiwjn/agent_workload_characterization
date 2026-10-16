@@ -1,0 +1,1082 @@
+{
+  "schema": "awc-p1-12-coding-repeat-review-v1",
+  "collection": "P1-12-CODING-REPEAT-01",
+  "selected_run_count": 9,
+  "selected_run_ids": [
+    "20260928T121110Z-bc1dca",
+    "20260928T121318Z-11bacd",
+    "20260928T121548Z-ad0290",
+    "20260928T121728Z-d87dd3",
+    "20260928T122024Z-004fd1",
+    "20260928T122232Z-03d61c",
+    "20260928T122356Z-2bbb44",
+    "20260928T122542Z-8adc15",
+    "20260928T122716Z-441807"
+  ],
+  "unselected_raw_directories": [],
+  "identity_check": {
+    "approval_equals_batch": true,
+    "attempt_equals_batch": true
+  },
+  "runs": [
+    {
+      "round": 0,
+      "task": "astropy__astropy-13236",
+      "run_id": "20260928T121110Z-bc1dca",
+      "run_dir": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121110Z-bc1dca",
+      "termination": {
+        "agent": "LimitsExceeded",
+        "submission_present": false,
+        "resolved": true,
+        "execution_status": "ok",
+        "evaluation_status": "ok",
+        "archive_status": "ok",
+        "cleanup_status": "ok"
+      },
+      "requests": {
+        "count": 30,
+        "budget_counter": 30,
+        "usage": {
+          "prompt_tokens": 489653,
+          "completion_tokens": 10625,
+          "total_tokens": 500278,
+          "status_lines": 30,
+          "all_ok": true,
+          "source": "mini_status.jsonl usage summed across recorded calls"
+        }
+      },
+      "tools": {
+        "calls": 47,
+        "closed": 47,
+        "error": 0,
+        "error_exception_types": [],
+        "submitted_error": 0,
+        "other_error": 0,
+        "source": "mini_tool_events.jsonl open/terminal events"
+      },
+      "resources": {
+        "agent": {
+          "scope_key": "20260928T121110Z-bc1dca-agent-sandbox",
+          "scope_kind": "agent_container",
+          "cpu_core_seconds": 43.778057,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 111.445875197,
+          "memory_current_end_bytes": 194801664,
+          "memory_kernel_peak_bytes": 328105984,
+          "memory_sampled_max_bytes": 328105984,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 223,
+          "status": "present"
+        },
+        "verifier": {
+          "scope_key": "20260928T121110Z-bc1dca-verifier",
+          "scope_kind": "verifier_container",
+          "cpu_core_seconds": 7.586793,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 15.869145956,
+          "memory_current_end_bytes": 17678336,
+          "memory_kernel_peak_bytes": 110858240,
+          "memory_sampled_max_bytes": 107069440,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 32,
+          "status": "present"
+        }
+      },
+      "host_observation": {
+        "scope": "host_mini_child",
+        "cpu_seconds": 4.35,
+        "rss_sampled_max": 226795520,
+        "n_snapshots": 556,
+        "window": {
+          "first": 3403330716579667,
+          "last": 3403441902332869
+        },
+        "source": "host_process.jsonl summary; host scope is separate from container scopes"
+      },
+      "source_fields": {
+        "metadata": "metadata.json:budget_usage, resolved, statuses",
+        "agent_verifier": "samples.json:scopes[*] selected by scope_kind/key suffix",
+        "termination": "mini_trajectory.json:info.exit_status/submission",
+        "tokens": "mini_status.jsonl:usage",
+        "tools": "mini_tool_events.jsonl:event"
+      },
+      "attempt_wall_s": 128.121387866
+    },
+    {
+      "round": 0,
+      "task": "astropy__astropy-13398",
+      "run_id": "20260928T121318Z-11bacd",
+      "run_dir": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121318Z-11bacd",
+      "termination": {
+        "agent": "LimitsExceeded",
+        "submission_present": false,
+        "resolved": false,
+        "execution_status": "ok",
+        "evaluation_status": "ok",
+        "archive_status": "ok",
+        "cleanup_status": "ok"
+      },
+      "requests": {
+        "count": 30,
+        "budget_counter": 30,
+        "usage": {
+          "prompt_tokens": 1033293,
+          "completion_tokens": 18098,
+          "total_tokens": 1051391,
+          "status_lines": 30,
+          "all_ok": true,
+          "source": "mini_status.jsonl usage summed across recorded calls"
+        }
+      },
+      "tools": {
+        "calls": 51,
+        "closed": 51,
+        "error": 0,
+        "error_exception_types": [],
+        "submitted_error": 0,
+        "other_error": 0,
+        "source": "mini_tool_events.jsonl open/terminal events"
+      },
+      "resources": {
+        "agent": {
+          "scope_key": "20260928T121318Z-11bacd-agent-sandbox",
+          "scope_kind": "agent_container",
+          "cpu_core_seconds": 34.501083,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 137.49537943,
+          "memory_current_end_bytes": 28905472,
+          "memory_kernel_peak_bytes": 147668992,
+          "memory_sampled_max_bytes": 141967360,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 275,
+          "status": "present"
+        },
+        "verifier": {
+          "scope_key": "20260928T121318Z-11bacd-verifier",
+          "scope_kind": "verifier_container",
+          "cpu_core_seconds": 4.476615,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 11.472755576,
+          "memory_current_end_bytes": 18018304,
+          "memory_kernel_peak_bytes": 84242432,
+          "memory_sampled_max_bytes": 82145280,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 23,
+          "status": "present"
+        }
+      },
+      "host_observation": {
+        "scope": "host_mini_child",
+        "cpu_seconds": 4.63,
+        "rss_sampled_max": 226791424,
+        "n_snapshots": 686,
+        "window": {
+          "first": 3403458928442307,
+          "last": 3403596164377351
+        },
+        "source": "host_process.jsonl summary; host scope is separate from container scopes"
+      },
+      "source_fields": {
+        "metadata": "metadata.json:budget_usage, resolved, statuses",
+        "agent_verifier": "samples.json:scopes[*] selected by scope_kind/key suffix",
+        "termination": "mini_trajectory.json:info.exit_status/submission",
+        "tokens": "mini_status.jsonl:usage",
+        "tools": "mini_tool_events.jsonl:event"
+      },
+      "attempt_wall_s": 149.726819928
+    },
+    {
+      "round": 0,
+      "task": "django__django-16485",
+      "run_id": "20260928T121548Z-ad0290",
+      "run_dir": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121548Z-ad0290",
+      "termination": {
+        "agent": "Submitted",
+        "submission_present": true,
+        "resolved": true,
+        "execution_status": "ok",
+        "evaluation_status": "ok",
+        "archive_status": "ok",
+        "cleanup_status": "ok"
+      },
+      "requests": {
+        "count": 22,
+        "budget_counter": 22,
+        "usage": {
+          "prompt_tokens": 409042,
+          "completion_tokens": 10129,
+          "total_tokens": 419171,
+          "status_lines": 22,
+          "all_ok": true,
+          "source": "mini_status.jsonl usage summed across recorded calls"
+        }
+      },
+      "tools": {
+        "calls": 25,
+        "closed": 24,
+        "error": 1,
+        "error_exception_types": [
+          "Submitted"
+        ],
+        "submitted_error": 1,
+        "other_error": 0,
+        "source": "mini_tool_events.jsonl open/terminal events"
+      },
+      "resources": {
+        "agent": {
+          "scope_key": "20260928T121548Z-ad0290-agent-sandbox",
+          "scope_kind": "agent_container",
+          "cpu_core_seconds": 52.468421,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 88.402989765,
+          "memory_current_end_bytes": 18112512,
+          "memory_kernel_peak_bytes": 1452724224,
+          "memory_sampled_max_bytes": 1452347392,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 177,
+          "status": "present"
+        },
+        "verifier": {
+          "scope_key": "20260928T121548Z-ad0290-verifier",
+          "scope_kind": "verifier_container",
+          "cpu_core_seconds": 3.240013,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 10.725301289,
+          "memory_current_end_bytes": 12808192,
+          "memory_kernel_peak_bytes": 72667136,
+          "memory_sampled_max_bytes": 72667136,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 21,
+          "status": "present"
+        }
+      },
+      "host_observation": {
+        "scope": "host_mini_child",
+        "cpu_seconds": 3.99,
+        "rss_sampled_max": 226787328,
+        "n_snapshots": 441,
+        "window": {
+          "first": 3403608790180275,
+          "last": 3403696935516240
+        },
+        "source": "host_process.jsonl summary; host scope is separate from container scopes"
+      },
+      "source_fields": {
+        "metadata": "metadata.json:budget_usage, resolved, statuses",
+        "agent_verifier": "samples.json:scopes[*] selected by scope_kind/key suffix",
+        "termination": "mini_trajectory.json:info.exit_status/submission",
+        "tokens": "mini_status.jsonl:usage",
+        "tools": "mini_tool_events.jsonl:event"
+      },
+      "attempt_wall_s": 99.821033403
+    },
+    {
+      "round": 1,
+      "task": "astropy__astropy-13398",
+      "run_id": "20260928T121728Z-d87dd3",
+      "run_dir": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121728Z-d87dd3",
+      "termination": {
+        "agent": "LimitsExceeded",
+        "submission_present": false,
+        "resolved": true,
+        "execution_status": "ok",
+        "evaluation_status": "ok",
+        "archive_status": "ok",
+        "cleanup_status": "ok"
+      },
+      "requests": {
+        "count": 30,
+        "budget_counter": 30,
+        "usage": {
+          "prompt_tokens": 886091,
+          "completion_tokens": 10595,
+          "total_tokens": 896686,
+          "status_lines": 30,
+          "all_ok": true,
+          "source": "mini_status.jsonl usage summed across recorded calls"
+        }
+      },
+      "tools": {
+        "calls": 34,
+        "closed": 34,
+        "error": 0,
+        "error_exception_types": [],
+        "submitted_error": 0,
+        "other_error": 0,
+        "source": "mini_tool_events.jsonl open/terminal events"
+      },
+      "resources": {
+        "agent": {
+          "scope_key": "20260928T121728Z-d87dd3-agent-sandbox",
+          "scope_kind": "agent_container",
+          "cpu_core_seconds": 90.562382,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 162.688540457,
+          "memory_current_end_bytes": 197648384,
+          "memory_kernel_peak_bytes": 404287488,
+          "memory_sampled_max_bytes": 379412480,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 326,
+          "status": "present"
+        },
+        "verifier": {
+          "scope_key": "20260928T121728Z-d87dd3-verifier",
+          "scope_kind": "verifier_container",
+          "cpu_core_seconds": 5.955052,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 13.125143563,
+          "memory_current_end_bytes": 12750848,
+          "memory_kernel_peak_bytes": 128241664,
+          "memory_sampled_max_bytes": 105738240,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 27,
+          "status": "present"
+        }
+      },
+      "host_observation": {
+        "scope": "host_mini_child",
+        "cpu_seconds": 4.53,
+        "rss_sampled_max": 226791424,
+        "n_snapshots": 812,
+        "window": {
+          "first": 3403708723642406,
+          "last": 3403871202405817
+        },
+        "source": "host_process.jsonl summary; host scope is separate from container scopes"
+      },
+      "source_fields": {
+        "metadata": "metadata.json:budget_usage, resolved, statuses",
+        "agent_verifier": "samples.json:scopes[*] selected by scope_kind/key suffix",
+        "termination": "mini_trajectory.json:info.exit_status/submission",
+        "tokens": "mini_status.jsonl:usage",
+        "tools": "mini_tool_events.jsonl:event"
+      },
+      "attempt_wall_s": 176.509461282
+    },
+    {
+      "round": 1,
+      "task": "astropy__astropy-13236",
+      "run_id": "20260928T122024Z-004fd1",
+      "run_dir": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122024Z-004fd1",
+      "termination": {
+        "agent": "Submitted",
+        "submission_present": true,
+        "resolved": true,
+        "execution_status": "ok",
+        "evaluation_status": "ok",
+        "archive_status": "ok",
+        "cleanup_status": "ok"
+      },
+      "requests": {
+        "count": 20,
+        "budget_counter": 20,
+        "usage": {
+          "prompt_tokens": 3943514,
+          "completion_tokens": 13615,
+          "total_tokens": 3957129,
+          "status_lines": 20,
+          "all_ok": true,
+          "source": "mini_status.jsonl usage summed across recorded calls"
+        }
+      },
+      "tools": {
+        "calls": 43,
+        "closed": 42,
+        "error": 1,
+        "error_exception_types": [
+          "Submitted"
+        ],
+        "submitted_error": 1,
+        "other_error": 0,
+        "source": "mini_tool_events.jsonl open/terminal events"
+      },
+      "resources": {
+        "agent": {
+          "scope_key": "20260928T122024Z-004fd1-agent-sandbox",
+          "scope_kind": "agent_container",
+          "cpu_core_seconds": 22.899077,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 111.022288907,
+          "memory_current_end_bytes": 16166912,
+          "memory_kernel_peak_bytes": 117649408,
+          "memory_sampled_max_bytes": 110452736,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 222,
+          "status": "present"
+        },
+        "verifier": {
+          "scope_key": "20260928T122024Z-004fd1-verifier",
+          "scope_kind": "verifier_container",
+          "cpu_core_seconds": 8.71514,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 16.242917235,
+          "memory_current_end_bytes": 61919232,
+          "memory_kernel_peak_bytes": 156225536,
+          "memory_sampled_max_bytes": 154791936,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 33,
+          "status": "present"
+        }
+      },
+      "host_observation": {
+        "scope": "host_mini_child",
+        "cpu_seconds": 4.51,
+        "rss_sampled_max": 243707904,
+        "n_snapshots": 554,
+        "window": {
+          "first": 3403885305613993,
+          "last": 3403996069802553
+        },
+        "source": "host_process.jsonl summary; host scope is separate from container scopes"
+      },
+      "source_fields": {
+        "metadata": "metadata.json:budget_usage, resolved, statuses",
+        "agent_verifier": "samples.json:scopes[*] selected by scope_kind/key suffix",
+        "termination": "mini_trajectory.json:info.exit_status/submission",
+        "tokens": "mini_status.jsonl:usage",
+        "tools": "mini_tool_events.jsonl:event"
+      },
+      "attempt_wall_s": 128.172263261
+    },
+    {
+      "round": 1,
+      "task": "django__django-16485",
+      "run_id": "20260928T122232Z-03d61c",
+      "run_dir": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122232Z-03d61c",
+      "termination": {
+        "agent": "Submitted",
+        "submission_present": true,
+        "resolved": true,
+        "execution_status": "ok",
+        "evaluation_status": "ok",
+        "archive_status": "ok",
+        "cleanup_status": "ok"
+      },
+      "requests": {
+        "count": 15,
+        "budget_counter": 15,
+        "usage": {
+          "prompt_tokens": 223575,
+          "completion_tokens": 8680,
+          "total_tokens": 232255,
+          "status_lines": 15,
+          "all_ok": true,
+          "source": "mini_status.jsonl usage summed across recorded calls"
+        }
+      },
+      "tools": {
+        "calls": 25,
+        "closed": 24,
+        "error": 1,
+        "error_exception_types": [
+          "Submitted"
+        ],
+        "submitted_error": 1,
+        "other_error": 0,
+        "source": "mini_tool_events.jsonl open/terminal events"
+      },
+      "resources": {
+        "agent": {
+          "scope_key": "20260928T122232Z-03d61c-agent-sandbox",
+          "scope_kind": "agent_container",
+          "cpu_core_seconds": 39.423826,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 71.558156957,
+          "memory_current_end_bytes": 20295680,
+          "memory_kernel_peak_bytes": 1406164992,
+          "memory_sampled_max_bytes": 1401470976,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 143,
+          "status": "present"
+        },
+        "verifier": {
+          "scope_key": "20260928T122232Z-03d61c-verifier",
+          "scope_kind": "verifier_container",
+          "cpu_core_seconds": 3.545132,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 10.875993084,
+          "memory_current_end_bytes": 13488128,
+          "memory_kernel_peak_bytes": 72536064,
+          "memory_sampled_max_bytes": 72441856,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 22,
+          "status": "present"
+        }
+      },
+      "host_observation": {
+        "scope": "host_mini_child",
+        "cpu_seconds": 3.88,
+        "rss_sampled_max": 226779136,
+        "n_snapshots": 357,
+        "window": {
+          "first": 3404013589901226,
+          "last": 3404084891631185
+        },
+        "source": "host_process.jsonl summary; host scope is separate from container scopes"
+      },
+      "source_fields": {
+        "metadata": "metadata.json:budget_usage, resolved, statuses",
+        "agent_verifier": "samples.json:scopes[*] selected by scope_kind/key suffix",
+        "termination": "mini_trajectory.json:info.exit_status/submission",
+        "tokens": "mini_status.jsonl:usage",
+        "tools": "mini_tool_events.jsonl:event"
+      },
+      "attempt_wall_s": 83.085595818
+    },
+    {
+      "round": 2,
+      "task": "django__django-16485",
+      "run_id": "20260928T122356Z-2bbb44",
+      "run_dir": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122356Z-2bbb44",
+      "termination": {
+        "agent": "Submitted",
+        "submission_present": true,
+        "resolved": true,
+        "execution_status": "ok",
+        "evaluation_status": "ok",
+        "archive_status": "ok",
+        "cleanup_status": "ok"
+      },
+      "requests": {
+        "count": 20,
+        "budget_counter": 20,
+        "usage": {
+          "prompt_tokens": 356892,
+          "completion_tokens": 12606,
+          "total_tokens": 369498,
+          "status_lines": 20,
+          "all_ok": true,
+          "source": "mini_status.jsonl usage summed across recorded calls"
+        }
+      },
+      "tools": {
+        "calls": 31,
+        "closed": 30,
+        "error": 1,
+        "error_exception_types": [
+          "Submitted"
+        ],
+        "submitted_error": 1,
+        "other_error": 0,
+        "source": "mini_tool_events.jsonl open/terminal events"
+      },
+      "resources": {
+        "agent": {
+          "scope_key": "20260928T122356Z-2bbb44-agent-sandbox",
+          "scope_kind": "agent_container",
+          "cpu_core_seconds": 32.691907,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 95.030175371,
+          "memory_current_end_bytes": 13656064,
+          "memory_kernel_peak_bytes": 1395421184,
+          "memory_sampled_max_bytes": 1390989312,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 190,
+          "status": "present"
+        },
+        "verifier": {
+          "scope_key": "20260928T122356Z-2bbb44-verifier",
+          "scope_kind": "verifier_container",
+          "cpu_core_seconds": 3.621972,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 10.970415271,
+          "memory_current_end_bytes": 10715136,
+          "memory_kernel_peak_bytes": 71249920,
+          "memory_sampled_max_bytes": 71249920,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 22,
+          "status": "present"
+        }
+      },
+      "host_observation": {
+        "scope": "host_mini_child",
+        "cpu_seconds": 4.18,
+        "rss_sampled_max": 226779136,
+        "n_snapshots": 474,
+        "window": {
+          "first": 3404096770703909,
+          "last": 3404191543514878
+        },
+        "source": "host_process.jsonl summary; host scope is separate from container scopes"
+      },
+      "source_fields": {
+        "metadata": "metadata.json:budget_usage, resolved, statuses",
+        "agent_verifier": "samples.json:scopes[*] selected by scope_kind/key suffix",
+        "termination": "mini_trajectory.json:info.exit_status/submission",
+        "tokens": "mini_status.jsonl:usage",
+        "tools": "mini_tool_events.jsonl:event"
+      },
+      "attempt_wall_s": 106.65877902
+    },
+    {
+      "round": 2,
+      "task": "astropy__astropy-13398",
+      "run_id": "20260928T122542Z-8adc15",
+      "run_dir": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122542Z-8adc15",
+      "termination": {
+        "agent": "LimitsExceeded",
+        "submission_present": false,
+        "resolved": false,
+        "execution_status": "ok",
+        "evaluation_status": "ok",
+        "archive_status": "ok",
+        "cleanup_status": "ok"
+      },
+      "requests": {
+        "count": 30,
+        "budget_counter": 30,
+        "usage": {
+          "prompt_tokens": 832074,
+          "completion_tokens": 9224,
+          "total_tokens": 841298,
+          "status_lines": 30,
+          "all_ok": true,
+          "source": "mini_status.jsonl usage summed across recorded calls"
+        }
+      },
+      "tools": {
+        "calls": 48,
+        "closed": 48,
+        "error": 0,
+        "error_exception_types": [],
+        "submitted_error": 0,
+        "other_error": 0,
+        "source": "mini_tool_events.jsonl open/terminal events"
+      },
+      "resources": {
+        "agent": {
+          "scope_key": "20260928T122542Z-8adc15-agent-sandbox",
+          "scope_kind": "agent_container",
+          "cpu_core_seconds": 14.783254,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 81.77025921,
+          "memory_current_end_bytes": 18108416,
+          "memory_kernel_peak_bytes": 132014080,
+          "memory_sampled_max_bytes": 130703360,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 164,
+          "status": "present"
+        },
+        "verifier": {
+          "scope_key": "20260928T122542Z-8adc15-verifier",
+          "scope_kind": "verifier_container",
+          "cpu_core_seconds": 4.548494,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 11.573846421,
+          "memory_current_end_bytes": 20217856,
+          "memory_kernel_peak_bytes": 86761472,
+          "memory_sampled_max_bytes": 77295616,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 24,
+          "status": "present"
+        }
+      },
+      "host_observation": {
+        "scope": "host_mini_child",
+        "cpu_seconds": 4.17,
+        "rss_sampled_max": 228880384,
+        "n_snapshots": 408,
+        "window": {
+          "first": 3404203567393946,
+          "last": 3404285130476879
+        },
+        "source": "host_process.jsonl summary; host scope is separate from container scopes"
+      },
+      "source_fields": {
+        "metadata": "metadata.json:budget_usage, resolved, statuses",
+        "agent_verifier": "samples.json:scopes[*] selected by scope_kind/key suffix",
+        "termination": "mini_trajectory.json:info.exit_status/submission",
+        "tokens": "mini_status.jsonl:usage",
+        "tools": "mini_tool_events.jsonl:event"
+      },
+      "attempt_wall_s": 93.949509057
+    },
+    {
+      "round": 2,
+      "task": "astropy__astropy-13236",
+      "run_id": "20260928T122716Z-441807",
+      "run_dir": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122716Z-441807",
+      "termination": {
+        "agent": "Submitted",
+        "submission_present": true,
+        "resolved": true,
+        "execution_status": "ok",
+        "evaluation_status": "ok",
+        "archive_status": "ok",
+        "cleanup_status": "ok"
+      },
+      "requests": {
+        "count": 29,
+        "budget_counter": 29,
+        "usage": {
+          "prompt_tokens": 614663,
+          "completion_tokens": 11938,
+          "total_tokens": 626601,
+          "status_lines": 29,
+          "all_ok": true,
+          "source": "mini_status.jsonl usage summed across recorded calls"
+        }
+      },
+      "tools": {
+        "calls": 44,
+        "closed": 43,
+        "error": 1,
+        "error_exception_types": [
+          "Submitted"
+        ],
+        "submitted_error": 1,
+        "other_error": 0,
+        "source": "mini_tool_events.jsonl open/terminal events"
+      },
+      "resources": {
+        "agent": {
+          "scope_key": "20260928T122716Z-441807-agent-sandbox",
+          "scope_kind": "agent_container",
+          "cpu_core_seconds": 25.097775,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 96.285172247,
+          "memory_current_end_bytes": 25710592,
+          "memory_kernel_peak_bytes": 118804480,
+          "memory_sampled_max_bytes": 113094656,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 193,
+          "status": "present"
+        },
+        "verifier": {
+          "scope_key": "20260928T122716Z-441807-verifier",
+          "scope_kind": "verifier_container",
+          "cpu_core_seconds": 7.592808,
+          "cpu_evidence": "counter_boundary",
+          "cpu_core_seconds_reason": null,
+          "wall_s": 14.787438059,
+          "memory_current_end_bytes": 19398656,
+          "memory_kernel_peak_bytes": 113078272,
+          "memory_sampled_max_bytes": 108056576,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "n_samples": 29,
+          "status": "present"
+        }
+      },
+      "host_observation": {
+        "scope": "host_mini_child",
+        "cpu_seconds": 4.08,
+        "rss_sampled_max": 228884480,
+        "n_snapshots": 480,
+        "window": {
+          "first": 3404297646413116,
+          "last": 3404393723938019
+        },
+        "source": "host_process.jsonl summary; host scope is separate from container scopes"
+      },
+      "source_fields": {
+        "metadata": "metadata.json:budget_usage, resolved, statuses",
+        "agent_verifier": "samples.json:scopes[*] selected by scope_kind/key suffix",
+        "termination": "mini_trajectory.json:info.exit_status/submission",
+        "tokens": "mini_status.jsonl:usage",
+        "tools": "mini_tool_events.jsonl:event"
+      },
+      "attempt_wall_s": 111.764056273
+    }
+  ],
+  "per_task": {
+    "astropy__astropy-13236": {
+      "n_runs": 3,
+      "termination_counts": {
+        "LimitsExceeded": 1,
+        "Submitted": 2
+      },
+      "resolved_true": 3,
+      "resolved_false": 0,
+      "resolved_unknown": 0,
+      "metrics": {
+        "attempt_wall_s": {
+          "n": 3,
+          "median": 128.121387866,
+          "iqr": 8.204103493999995,
+          "min": 111.764056273,
+          "max": 128.172263261
+        },
+        "agent_cpu_core_seconds": {
+          "n": 3,
+          "median": 25.097775,
+          "iqr": 10.439490000000003,
+          "min": 22.899077,
+          "max": 43.778057
+        },
+        "agent_wall_s": {
+          "n": 3,
+          "median": 111.022288907,
+          "iqr": 7.5803514750000005,
+          "min": 96.285172247,
+          "max": 111.445875197
+        },
+        "agent_memory_kernel_peak_bytes": {
+          "n": 3,
+          "median": 118804480,
+          "iqr": 105228288.0,
+          "min": 117649408,
+          "max": 328105984
+        },
+        "agent_memory_sampled_max_bytes": {
+          "n": 3,
+          "median": 113094656,
+          "iqr": 108826624.0,
+          "min": 110452736,
+          "max": 328105984
+        },
+        "verifier_cpu_core_seconds": {
+          "n": 3,
+          "median": 7.592808,
+          "iqr": 0.5641734999999999,
+          "min": 7.586793,
+          "max": 8.71514
+        },
+        "verifier_wall_s": {
+          "n": 3,
+          "median": 15.869145956,
+          "iqr": 0.7277395880000022,
+          "min": 14.787438059,
+          "max": 16.242917235
+        },
+        "verifier_memory_kernel_peak_bytes": {
+          "n": 3,
+          "median": 113078272,
+          "iqr": 22683648.0,
+          "min": 110858240,
+          "max": 156225536
+        },
+        "tool_calls": {
+          "n": 3,
+          "median": 44,
+          "iqr": 2.0,
+          "min": 43,
+          "max": 47
+        },
+        "model_requests": {
+          "n": 3,
+          "median": 29,
+          "iqr": 5.0,
+          "min": 20,
+          "max": 30
+        }
+      }
+    },
+    "astropy__astropy-13398": {
+      "n_runs": 3,
+      "termination_counts": {
+        "LimitsExceeded": 3
+      },
+      "resolved_true": 1,
+      "resolved_false": 2,
+      "resolved_unknown": 0,
+      "metrics": {
+        "attempt_wall_s": {
+          "n": 3,
+          "median": 149.726819928,
+          "iqr": 41.27997611250001,
+          "min": 93.949509057,
+          "max": 176.509461282
+        },
+        "agent_cpu_core_seconds": {
+          "n": 3,
+          "median": 34.501083,
+          "iqr": 37.88956400000001,
+          "min": 14.783254,
+          "max": 90.562382
+        },
+        "agent_wall_s": {
+          "n": 3,
+          "median": 137.49537943,
+          "iqr": 40.45914062349999,
+          "min": 81.77025921,
+          "max": 162.688540457
+        },
+        "agent_memory_kernel_peak_bytes": {
+          "n": 3,
+          "median": 147668992,
+          "iqr": 136136704.0,
+          "min": 132014080,
+          "max": 404287488
+        },
+        "agent_memory_sampled_max_bytes": {
+          "n": 3,
+          "median": 141967360,
+          "iqr": 124354560.0,
+          "min": 130703360,
+          "max": 379412480
+        },
+        "verifier_cpu_core_seconds": {
+          "n": 3,
+          "median": 4.548494,
+          "iqr": 0.7392184999999998,
+          "min": 4.476615,
+          "max": 5.955052
+        },
+        "verifier_wall_s": {
+          "n": 3,
+          "median": 11.573846421,
+          "iqr": 0.8261939934999987,
+          "min": 11.472755576,
+          "max": 13.125143563
+        },
+        "verifier_memory_kernel_peak_bytes": {
+          "n": 3,
+          "median": 86761472,
+          "iqr": 21999616.0,
+          "min": 84242432,
+          "max": 128241664
+        },
+        "tool_calls": {
+          "n": 3,
+          "median": 48,
+          "iqr": 8.5,
+          "min": 34,
+          "max": 51
+        },
+        "model_requests": {
+          "n": 3,
+          "median": 30,
+          "iqr": 0.0,
+          "min": 30,
+          "max": 30
+        }
+      }
+    },
+    "django__django-16485": {
+      "n_runs": 3,
+      "termination_counts": {
+        "Submitted": 3
+      },
+      "resolved_true": 3,
+      "resolved_false": 0,
+      "resolved_unknown": 0,
+      "metrics": {
+        "attempt_wall_s": {
+          "n": 3,
+          "median": 99.821033403,
+          "iqr": 11.786591600999998,
+          "min": 83.085595818,
+          "max": 106.65877902
+        },
+        "agent_cpu_core_seconds": {
+          "n": 3,
+          "median": 39.423826,
+          "iqr": 9.888256999999996,
+          "min": 32.691907,
+          "max": 52.468421
+        },
+        "agent_wall_s": {
+          "n": 3,
+          "median": 88.402989765,
+          "iqr": 11.73600920700001,
+          "min": 71.558156957,
+          "max": 95.030175371
+        },
+        "agent_memory_kernel_peak_bytes": {
+          "n": 3,
+          "median": 1406164992,
+          "iqr": 28651520.0,
+          "min": 1395421184,
+          "max": 1452724224
+        },
+        "agent_memory_sampled_max_bytes": {
+          "n": 3,
+          "median": 1401470976,
+          "iqr": 30679040.0,
+          "min": 1390989312,
+          "max": 1452347392
+        },
+        "verifier_cpu_core_seconds": {
+          "n": 3,
+          "median": 3.545132,
+          "iqr": 0.19097950000000008,
+          "min": 3.240013,
+          "max": 3.621972
+        },
+        "verifier_wall_s": {
+          "n": 3,
+          "median": 10.875993084,
+          "iqr": 0.12255699099999973,
+          "min": 10.725301289,
+          "max": 10.970415271
+        },
+        "verifier_memory_kernel_peak_bytes": {
+          "n": 3,
+          "median": 72536064,
+          "iqr": 708608.0,
+          "min": 71249920,
+          "max": 72667136
+        },
+        "tool_calls": {
+          "n": 3,
+          "median": 25,
+          "iqr": 3.0,
+          "min": 25,
+          "max": 31
+        },
+        "model_requests": {
+          "n": 3,
+          "median": 20,
+          "iqr": 3.5,
+          "min": 15,
+          "max": 22
+        }
+      }
+    }
+  },
+  "statistics": {
+    "quantiles": "linear interpolation on sorted n-point values; IQR=Q3-Q1",
+    "scope": "agent/verifier metrics remain separate; missing values are null",
+    "memory": "kernel peak and sampled maximum are distinct; neither is process RSS unless labelled",
+    "cpu": "cgroup counter-boundary cpu_core_seconds; no cumulative counters summed"
+  },
+  "limitations": [
+    "three repeats per task are raw points, not independent tasks",
+    "container scopes overlap with host observations and are not additive",
+    "tool calls are counts, not rates; no valid time denominator is claimed",
+    "wall minus CPU is not interpreted as waiting",
+    "model usage is not a bill; pricing and network variation are unknown",
+    "descriptive batch only; no Coding-category or causal claim"
+  ],
+  "batch_status": {
+    "status": "complete",
+    "budget_overrun": false,
+    "wall_min": 17.985290919252066,
+    "archive_status": "complete"
+  },
+  "descriptive_findings": {
+    "astropy__astropy-13398": {
+      "agent_termination": {
+        "LimitsExceeded": 3
+      },
+      "resolved": {
+        "true": 1,
+        "false": 2,
+        "unknown": 0
+      },
+      "largest_absolute_iqr_among_tasks": {
+        "attempt_wall_s": 41.27997611200001,
+        "agent_cpu_core_seconds": 37.88956400000001,
+        "agent_memory_kernel_peak_bytes": 136136704.0
+      },
+      "basis": "per-task metrics in this report; largest absolute IQR among the three fixed-task groups, not a significance claim"
+    }
+  }
+}

@@ -1,0 +1,965 @@
+{
+  "schema": "docops-office-repeat-frozen-v1",
+  "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+  "identity": {
+    "schema": "docops-office-repeat-identity-v1",
+    "collection": "DOCOPS-OFFICE-REPEAT-01",
+    "docops_commit": "ccf7a751bc5c8a69c1cdd0400125d53455b33be3",
+    "docker_endpoint": "unix:///var/run/docker.sock",
+    "base_image": {
+      "reference": "harbor-claude-code-base:2.1.114",
+      "expected_id": "sha256:062bf50871c0e9d7d4a175643343746f27c785732596252d7ebe9ae0c08fe9b1",
+      "platform": "linux/arm64"
+    },
+    "tasks": [
+      {
+        "key": "atomic__excel_001_budget_bucket_totals_seed",
+        "short": "excel001",
+        "task_id": "excel_001",
+        "doc_type": "excel",
+        "asset": "excel_001_budget_bucket_totals_seed.xlsx",
+        "operation": "formula-driven budget bucket aggregation",
+        "task_dir": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed",
+        "image_ref": "docops-office-repeat-01:excel001",
+        "image_id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+        "files": [
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/Dockerfile",
+            "bytes": 520,
+            "sha256": "4e98690078c7066f64677a3501523332fc85714abc0e805018ee6495d7a7ab78"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/excel_001_budget_bucket_totals_seed.xlsx",
+            "bytes": 6549,
+            "sha256": "4e398873d0188789978dc9f627901f9a71fdb91d66623a3986b19c08c6df7aa0"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/original_task_description.txt",
+            "bytes": 1082,
+            "sha256": "506f5ee4d2d50c58cd9888f7cccc533cd93663a177802abf05d8389972780a38"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/LICENSE.txt",
+            "bytes": 1467,
+            "sha256": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/SKILL.md",
+            "bytes": 11463,
+            "sha256": "dd316db7785a6be12966c2a2d848931fbf5f518b3cdb0a66fa62ee835ead1cfc"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/helpers/__init__.py",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/helpers/merge_runs.py",
+            "bytes": 5567,
+            "sha256": "7c40ed838b88639c51f9ffdcfd564b568f26832b78fe44008c0e01b742669ca7"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/helpers/simplify_redlines.py",
+            "bytes": 5754,
+            "sha256": "560cb55978a834c505406eb18e2c61f62f998fc7a2d8e9721b9c563b42597896"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/pack.py",
+            "bytes": 4991,
+            "sha256": "b1800987e568261a31f462df8e1303d386e9e6ccc11a75ef46e60cc528c20683"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+            "bytes": 74984,
+            "sha256": "41b93bd8857cc68b1e43be2806a872d736a9bdd6566900062d8fdb57d7bbb354"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+            "bytes": 6956,
+            "sha256": "3fd0586f2637b98bb9886f0e0b67d89e1cc987c2d158cc7deb5f5b9890ced412"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+            "bytes": 51302,
+            "sha256": "29b254ee0d10414a8504b5a08149c7baec35a60d5ff607d6b3f492aa36815f40"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+            "bytes": 624,
+            "sha256": "5cb76dabd8b97d1e9308a1700b90c20139be4d50792d21a7f09789f5cccd6026"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+            "bytes": 152039,
+            "sha256": "5375417f0f5394b8dd1a7035b9679151f19a6b65df309dec10cfb4a420cb00e9"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+            "bytes": 1231,
+            "sha256": "5d389d42befbebd91945d620242347caecd3367f9a3a7cf8d97949507ae1f53c"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+            "bytes": 8862,
+            "sha256": "b4532b6d258832953fbb3ee4c711f4fe25d3faf46a10644b2505f17010d01e88"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+            "bytes": 14795,
+            "sha256": "bdad416b096b61d37b71603b2c949484f9070c830bdaeba93bf35e15c8900614"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd",
+            "bytes": 83612,
+            "sha256": "d173c3e5d61e42e2e3a97226c632fd2ab7cc481fc4e492365b87024ab546daff"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+            "bytes": 1269,
+            "sha256": "3c6709101c6aaa82888df5d8795c33f9e857196790eb320d9194e64be2b6bdd8"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+            "bytes": 7328,
+            "sha256": "0b364451dc36a48dd6dae0f3b6ada05fd9b71e5208211f8ee5537d7e51a587e2"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+            "bytes": 6382,
+            "sha256": "e2abacbb9a55ce1365f8961bc1b1395bbc811e512b111000d8c333f98458dece"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+            "bytes": 1248,
+            "sha256": "0ef4bb354ff44b923564c4ddbdda5987919d220225129ec94614a618ceafc281"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+            "bytes": 880,
+            "sha256": "0d103b99a4a8652f8871552a69d42d2a3760ac6a5e3ef02d979c4273257ff6a4"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+            "bytes": 2608,
+            "sha256": "9c085407751b9061c1f996f6c39ce58451be22a8d334f09175f0e89e42736285"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+            "bytes": 3507,
+            "sha256": "bc92e36ccd233722d4c5869bec71ddc7b12e2df56059942cce5a39065cc9c368"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+            "bytes": 7507,
+            "sha256": "7b5b7413e2c895b1e148e82e292a117d53c7ec65b0696c992edca57b61b4a74b"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+            "bytes": 23313,
+            "sha256": "3213ef1631606250f5010b42cad7ef716f7c59426367798e33c374c0ec391d3a"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+            "bytes": 1367,
+            "sha256": "12264f3c03d738311cd9237d212f1c07479e70f0cbe1ae725d29b36539aef637"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd",
+            "bytes": 242277,
+            "sha256": "beffeed56945c22a77440122c8bdc426f3fcbe7f3b12ea0976c770d1f8d54578"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+            "bytes": 26148,
+            "sha256": "f5ee623b08b6a66935e5aced2f5d8ad0fc71bf9e8e833cd490150c0fa94b8763"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+            "bytes": 25279,
+            "sha256": "585bedc1313b40888dcc544cb74cd939a105ee674f3b1d3aa1cc6d34f70ff155"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+            "bytes": 535,
+            "sha256": "133c9f64a5c5d573b78d0a474122b22506d8eadb5e063f67cdbbb8fa2f161d0e"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+            "bytes": 5712,
+            "sha256": "6bdeb169c3717eb01108853bd9fc5a3750fb1fa5b82abbdd854d49855a40f519"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+            "bytes": 4010,
+            "sha256": "475dcae1e7d1ea46232db6f8481040c15e53a52a3c256831d3df204212b0e831"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd",
+            "bytes": 171367,
+            "sha256": "c2dd9f61f892deae6acd8d20771ea79b12018af25f3bf8d06639c8542d218cfd"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd",
+            "bytes": 4646,
+            "sha256": "a539aa2fb154fa50e0f5cc97e6ad7cbc66f8ec3e3746f61ec6a8b0d5d15ecdf2"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+            "bytes": 1963,
+            "sha256": "9e0b7209fc69ab11987900404540969976000c5ebe4d4f58c43dc3842886bf3a"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+            "bytes": 2515,
+            "sha256": "451958454e8588dfc7cd945981ada142ca06ff3307937f5700df059c2b307fa8"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+            "bytes": 2856,
+            "sha256": "6de111e11403f7cd49027400755bae0ea1cabef2815f09bd40a24f0017613b24"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+            "bytes": 1344,
+            "sha256": "f565adfef5a502044abc3a9153e157edc25af78304d335994afb958874b15e26"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/mce/mc.xsd",
+            "bytes": 3127,
+            "sha256": "3a37e461ecf5a8670fdec34029703401f8728ab9c96ec1739a6ae58d55212413"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-2010.xsd",
+            "bytes": 26549,
+            "sha256": "568b26ee156cb9549aa439ca2158965f77b7c1602b7e0316f40ac6cf586e35f2"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-2012.xsd",
+            "bytes": 3745,
+            "sha256": "0fa75578a000439a7988ba0c59fdc69f774bbd416cbacc14d07125b3f686cb74"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-2018.xsd",
+            "bytes": 901,
+            "sha256": "be0ff793a22dd31384650c3a4da14c2fa8062751c2e97b0e5ee852bda13c60ad"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-cex-2018.xsd",
+            "bytes": 1778,
+            "sha256": "fddc2b880cabb9005aebbc7e783e53c19fec1c03df7d0e2f2076a33a0fdfd081"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-cid-2016.xsd",
+            "bytes": 1002,
+            "sha256": "127ca209fa73d7cb708449cb355c871867948a96e4a74f7bf5811ef62d17991d"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+            "bytes": 600,
+            "sha256": "842e7163409c8d74f4d7088a8bc99500d80bc75332681a0980055b08f374a604"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-symex-2015.xsd",
+            "bytes": 745,
+            "sha256": "16f6f8072249f431370723c2cd8974672e0d9c897e00e97dd918079df934871b"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/soffice.py",
+            "bytes": 5301,
+            "sha256": "a3e21840e29e32f947d5286028931b96eaf2dee63f75d883b8eb19c943c80aa0"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/unpack.py",
+            "bytes": 4052,
+            "sha256": "83f69cecc87910183654c06345837244402e8a99edbf3bdddc1cf72f11304b62"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validate.py",
+            "bytes": 3668,
+            "sha256": "1aef24f8e316965a0584c30859776bd2c82a9fb69f72d79cfed041119cf95514"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validators/__init__.py",
+            "bytes": 336,
+            "sha256": "83e0f035c5abea238d3f2c3968afbd511ed022b527b7c9cb60a9434cc34ff987"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validators/base.py",
+            "bytes": 32651,
+            "sha256": "d6358b67252df4dbfe4fa6647423a765960c949346ef6a8c4eb8722bb1108d25"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validators/docx.py",
+            "bytes": 16376,
+            "sha256": "0ef04ce86b2e6b6a1cb088c0276fd0bd5b770d96fdfe7a6cc73d005feb3f0345"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validators/pptx.py",
+            "bytes": 9824,
+            "sha256": "f937961e62a5fa0d002b8dc51a4c4e2cd8fcd59fe65853fa54edaca3fe99eccc"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validators/redlining.py",
+            "bytes": 8918,
+            "sha256": "f4c33fdb9da0651d1d9aa76f0d5294cc9955869339ae131b2f75f3b2e366cb40"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/recalc.py",
+            "bytes": 5782,
+            "sha256": "cf419d15e02965aeaec17773c05b61303f7f520f67fa2696547e7da07502eac7"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/task_metadata.json",
+            "bytes": 1823,
+            "sha256": "3cd03985af785be57928bd662a7e6c1d80bf284bbf405764121ee74a3ebfccca"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/instruction.md",
+            "bytes": 1511,
+            "sha256": "fa675cdd3d340048c510ed2204686a0b4bed2da7049e89e1931b6f4804e0ddf6"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/task.toml",
+            "bytes": 1257,
+            "sha256": "70e24df982c84afbf7519b632fdd1466f7c0dd9c4202e98567f5d9c818a20083"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/tests/task_metadata.json",
+            "bytes": 1823,
+            "sha256": "3cd03985af785be57928bd662a7e6c1d80bf284bbf405764121ee74a3ebfccca"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/tests/test.sh",
+            "bytes": 730,
+            "sha256": "638074862a1f8779ca4741e76a5a254553eaaaa24340e0d5c781f34edab3e60a"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/tests/test_outputs.py",
+            "bytes": 4961,
+            "sha256": "6e547786845d10f16198bdc644126f17ee3362550ba91feb1c90f94782bf8c79"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/tests/verifier_utils.py",
+            "bytes": 14389,
+            "sha256": "d1a084507ea7aa1ae001c6c8b33f6505cad4ccb51cd372d10323fe5d63d93e78"
+          }
+        ]
+      },
+      {
+        "key": "atomic__ppt_008_bullet_editing_seed",
+        "short": "ppt008",
+        "task_id": "ppt_008",
+        "doc_type": "ppt",
+        "asset": "ppt_008_bullet_editing_seed.pptx",
+        "operation": "professional copy editing while preserving meaning",
+        "task_dir": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed",
+        "image_ref": "docops-office-repeat-01:ppt008",
+        "image_id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+        "files": [
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/Dockerfile",
+            "bytes": 504,
+            "sha256": "39643d58d3fd7a01d3f0564621832e0bb11ae9c4114e44c05dd42722f805d5d4"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/original_task_description.txt",
+            "bytes": 1005,
+            "sha256": "74fa566781a671812e9ba9b422c486f38a8f7eb21b29d15060aae448bca6f153"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/ppt_008_bullet_editing_seed.pptx",
+            "bytes": 28647,
+            "sha256": "e797f28a30e411449a23870b1a67fa544af7e4729382bbdd337d3b4b55cd3bdf"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/LICENSE.txt",
+            "bytes": 1467,
+            "sha256": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/SKILL.md",
+            "bytes": 9182,
+            "sha256": "e5b0df918cbe9d62508b3cf808d73899633f82fc19f6258a25ef9f0de7e62125"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/editing.md",
+            "bytes": 6885,
+            "sha256": "6cb47c3ab17e60b7de37e83131c409ef5a90a01bfb54e999905a9c9f7dd88e68"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/pptxgenjs.md",
+            "bytes": 12819,
+            "sha256": "9539534d92b7170813b735a448750df3580390da2da6c52a02b687ed53ecba86"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/__init__.py",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/add_slide.py",
+            "bytes": 6872,
+            "sha256": "04233ba3932c6b8611677347891616456e243cc09b7f9769408b8c83d9acfe64"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/clean.py",
+            "bytes": 9583,
+            "sha256": "3e3966a17f488a1ddc7145f0b7ec9f25595afa1f3a427ab05e610f1a328feea9"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/helpers/__init__.py",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/helpers/merge_runs.py",
+            "bytes": 5567,
+            "sha256": "7c40ed838b88639c51f9ffdcfd564b568f26832b78fe44008c0e01b742669ca7"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/helpers/simplify_redlines.py",
+            "bytes": 5754,
+            "sha256": "560cb55978a834c505406eb18e2c61f62f998fc7a2d8e9721b9c563b42597896"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/pack.py",
+            "bytes": 4991,
+            "sha256": "b1800987e568261a31f462df8e1303d386e9e6ccc11a75ef46e60cc528c20683"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+            "bytes": 74984,
+            "sha256": "41b93bd8857cc68b1e43be2806a872d736a9bdd6566900062d8fdb57d7bbb354"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+            "bytes": 6956,
+            "sha256": "3fd0586f2637b98bb9886f0e0b67d89e1cc987c2d158cc7deb5f5b9890ced412"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+            "bytes": 51302,
+            "sha256": "29b254ee0d10414a8504b5a08149c7baec35a60d5ff607d6b3f492aa36815f40"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+            "bytes": 624,
+            "sha256": "5cb76dabd8b97d1e9308a1700b90c20139be4d50792d21a7f09789f5cccd6026"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+            "bytes": 152039,
+            "sha256": "5375417f0f5394b8dd1a7035b9679151f19a6b65df309dec10cfb4a420cb00e9"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+            "bytes": 1231,
+            "sha256": "5d389d42befbebd91945d620242347caecd3367f9a3a7cf8d97949507ae1f53c"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+            "bytes": 8862,
+            "sha256": "b4532b6d258832953fbb3ee4c711f4fe25d3faf46a10644b2505f17010d01e88"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+            "bytes": 14795,
+            "sha256": "bdad416b096b61d37b71603b2c949484f9070c830bdaeba93bf35e15c8900614"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd",
+            "bytes": 83612,
+            "sha256": "d173c3e5d61e42e2e3a97226c632fd2ab7cc481fc4e492365b87024ab546daff"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+            "bytes": 1269,
+            "sha256": "3c6709101c6aaa82888df5d8795c33f9e857196790eb320d9194e64be2b6bdd8"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+            "bytes": 7328,
+            "sha256": "0b364451dc36a48dd6dae0f3b6ada05fd9b71e5208211f8ee5537d7e51a587e2"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+            "bytes": 6382,
+            "sha256": "e2abacbb9a55ce1365f8961bc1b1395bbc811e512b111000d8c333f98458dece"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+            "bytes": 1248,
+            "sha256": "0ef4bb354ff44b923564c4ddbdda5987919d220225129ec94614a618ceafc281"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+            "bytes": 880,
+            "sha256": "0d103b99a4a8652f8871552a69d42d2a3760ac6a5e3ef02d979c4273257ff6a4"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+            "bytes": 2608,
+            "sha256": "9c085407751b9061c1f996f6c39ce58451be22a8d334f09175f0e89e42736285"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+            "bytes": 3507,
+            "sha256": "bc92e36ccd233722d4c5869bec71ddc7b12e2df56059942cce5a39065cc9c368"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+            "bytes": 7507,
+            "sha256": "7b5b7413e2c895b1e148e82e292a117d53c7ec65b0696c992edca57b61b4a74b"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+            "bytes": 23313,
+            "sha256": "3213ef1631606250f5010b42cad7ef716f7c59426367798e33c374c0ec391d3a"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+            "bytes": 1367,
+            "sha256": "12264f3c03d738311cd9237d212f1c07479e70f0cbe1ae725d29b36539aef637"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd",
+            "bytes": 242277,
+            "sha256": "beffeed56945c22a77440122c8bdc426f3fcbe7f3b12ea0976c770d1f8d54578"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+            "bytes": 26148,
+            "sha256": "f5ee623b08b6a66935e5aced2f5d8ad0fc71bf9e8e833cd490150c0fa94b8763"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+            "bytes": 25279,
+            "sha256": "585bedc1313b40888dcc544cb74cd939a105ee674f3b1d3aa1cc6d34f70ff155"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+            "bytes": 535,
+            "sha256": "133c9f64a5c5d573b78d0a474122b22506d8eadb5e063f67cdbbb8fa2f161d0e"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+            "bytes": 5712,
+            "sha256": "6bdeb169c3717eb01108853bd9fc5a3750fb1fa5b82abbdd854d49855a40f519"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+            "bytes": 4010,
+            "sha256": "475dcae1e7d1ea46232db6f8481040c15e53a52a3c256831d3df204212b0e831"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd",
+            "bytes": 171367,
+            "sha256": "c2dd9f61f892deae6acd8d20771ea79b12018af25f3bf8d06639c8542d218cfd"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd",
+            "bytes": 4646,
+            "sha256": "a539aa2fb154fa50e0f5cc97e6ad7cbc66f8ec3e3746f61ec6a8b0d5d15ecdf2"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+            "bytes": 1963,
+            "sha256": "9e0b7209fc69ab11987900404540969976000c5ebe4d4f58c43dc3842886bf3a"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+            "bytes": 2515,
+            "sha256": "451958454e8588dfc7cd945981ada142ca06ff3307937f5700df059c2b307fa8"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+            "bytes": 2856,
+            "sha256": "6de111e11403f7cd49027400755bae0ea1cabef2815f09bd40a24f0017613b24"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+            "bytes": 1344,
+            "sha256": "f565adfef5a502044abc3a9153e157edc25af78304d335994afb958874b15e26"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/mce/mc.xsd",
+            "bytes": 3127,
+            "sha256": "3a37e461ecf5a8670fdec34029703401f8728ab9c96ec1739a6ae58d55212413"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/microsoft/wml-2010.xsd",
+            "bytes": 26549,
+            "sha256": "568b26ee156cb9549aa439ca2158965f77b7c1602b7e0316f40ac6cf586e35f2"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/microsoft/wml-2012.xsd",
+            "bytes": 3745,
+            "sha256": "0fa75578a000439a7988ba0c59fdc69f774bbd416cbacc14d07125b3f686cb74"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/microsoft/wml-2018.xsd",
+            "bytes": 901,
+            "sha256": "be0ff793a22dd31384650c3a4da14c2fa8062751c2e97b0e5ee852bda13c60ad"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/microsoft/wml-cex-2018.xsd",
+            "bytes": 1778,
+            "sha256": "fddc2b880cabb9005aebbc7e783e53c19fec1c03df7d0e2f2076a33a0fdfd081"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/microsoft/wml-cid-2016.xsd",
+            "bytes": 1002,
+            "sha256": "127ca209fa73d7cb708449cb355c871867948a96e4a74f7bf5811ef62d17991d"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+            "bytes": 600,
+            "sha256": "842e7163409c8d74f4d7088a8bc99500d80bc75332681a0980055b08f374a604"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/microsoft/wml-symex-2015.xsd",
+            "bytes": 745,
+            "sha256": "16f6f8072249f431370723c2cd8974672e0d9c897e00e97dd918079df934871b"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/soffice.py",
+            "bytes": 5301,
+            "sha256": "a3e21840e29e32f947d5286028931b96eaf2dee63f75d883b8eb19c943c80aa0"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/unpack.py",
+            "bytes": 4052,
+            "sha256": "83f69cecc87910183654c06345837244402e8a99edbf3bdddc1cf72f11304b62"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/validate.py",
+            "bytes": 3668,
+            "sha256": "1aef24f8e316965a0584c30859776bd2c82a9fb69f72d79cfed041119cf95514"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/validators/__init__.py",
+            "bytes": 336,
+            "sha256": "83e0f035c5abea238d3f2c3968afbd511ed022b527b7c9cb60a9434cc34ff987"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/validators/base.py",
+            "bytes": 32651,
+            "sha256": "d6358b67252df4dbfe4fa6647423a765960c949346ef6a8c4eb8722bb1108d25"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/validators/docx.py",
+            "bytes": 16376,
+            "sha256": "0ef04ce86b2e6b6a1cb088c0276fd0bd5b770d96fdfe7a6cc73d005feb3f0345"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/validators/pptx.py",
+            "bytes": 9824,
+            "sha256": "f937961e62a5fa0d002b8dc51a4c4e2cd8fcd59fe65853fa54edaca3fe99eccc"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/validators/redlining.py",
+            "bytes": 8918,
+            "sha256": "f4c33fdb9da0651d1d9aa76f0d5294cc9955869339ae131b2f75f3b2e366cb40"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/thumbnail.py",
+            "bytes": 8785,
+            "sha256": "e959ecd4f19735161218bc44d0648a46da17874323fb3e19c2e9cb50cefe6ce7"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/task_metadata.json",
+            "bytes": 1659,
+            "sha256": "164605b95801dee37c7d185ad9da1f326493168ac379c441eaa0c90f2ffe11b3"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/instruction.md",
+            "bytes": 1426,
+            "sha256": "0a8ead0f35fcfd154000de162b5358908e5c64b14fee03857972e2ae35ab447d"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/task.toml",
+            "bytes": 1208,
+            "sha256": "754b945f770f6944fd631775192d3ca7ce03c01e85af30b6dad9dc8115e33481"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/tests/task_metadata.json",
+            "bytes": 1659,
+            "sha256": "164605b95801dee37c7d185ad9da1f326493168ac379c441eaa0c90f2ffe11b3"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/tests/test.sh",
+            "bytes": 730,
+            "sha256": "638074862a1f8779ca4741e76a5a254553eaaaa24340e0d5c781f34edab3e60a"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/tests/test_outputs.py",
+            "bytes": 1462,
+            "sha256": "711302387ed534166fd5acc02806584e6a8a14dc2deabb7090ce3ce42cb241cd"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/tests/verifier_utils.py",
+            "bytes": 14389,
+            "sha256": "d1a084507ea7aa1ae001c6c8b33f6505cad4ccb51cd372d10323fe5d63d93e78"
+          }
+        ]
+      },
+      {
+        "key": "atomic__pdf_004_audit_pages_reorder_seed",
+        "short": "pdf004",
+        "task_id": "pdf_004",
+        "doc_type": "pdf",
+        "asset": "pdf_004_audit_pages_reorder_seed.pdf",
+        "operation": "audit PDF page reordering",
+        "task_dir": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed",
+        "image_ref": "docops-office-repeat-01:pdf004",
+        "image_id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+        "files": [
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment/Dockerfile",
+            "bytes": 512,
+            "sha256": "4b5f45c8c665d7a2610795454438f8ea2f4fa9aaef0ce9cd00a0a36d15df3fe1"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment/original_task_description.txt",
+            "bytes": 875,
+            "sha256": "004acf1c6d737750ccbbe8a7ed953fd7dd8daf0390a7271b8fbc0b8c9b81d2c6"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment/pdf_004_audit_pages_reorder_seed.pdf",
+            "bytes": 3688,
+            "sha256": "a8e95b457addb6d87d693fee9c45681d65c65bc5375c423b5477a403ff0372cd"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment/skills/pdf/LICENSE.txt",
+            "bytes": 10776,
+            "sha256": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment/skills/pdf/SKILL.md",
+            "bytes": 2517,
+            "sha256": "d108cf2b36355ab37eb5962933f4d09785ec002f3105c506129320209306b9d2"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment/skills/pdf/agents/openai.yaml",
+            "bytes": 219,
+            "sha256": "f8b223e25343559f57e1839ccd849fd1494a9729da33da04bb5074b7f80f4887"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment/skills/pdf/assets/pdf.png",
+            "bytes": 1312,
+            "sha256": "17da356d195d4e3fa24f9becbee6b8d9e60e13005762b5ab0809c520c76da6ee"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment/task_metadata.json",
+            "bytes": 1580,
+            "sha256": "2b190f61dbea97549036cc4facc9d443ba6d6ea2a08c10880509d4a7e09d8c79"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/instruction.md",
+            "bytes": 1302,
+            "sha256": "679d6c33d8feed586e2a02382b3bc0b094682b4956449edc13d25c8b068f7a28"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/task.toml",
+            "bytes": 1213,
+            "sha256": "0155edf8700485bbad9864873034e1a20dd6766efd8cb9ddc0eb327198532208"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/tests/task_metadata.json",
+            "bytes": 1580,
+            "sha256": "2b190f61dbea97549036cc4facc9d443ba6d6ea2a08c10880509d4a7e09d8c79"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/tests/test.sh",
+            "bytes": 730,
+            "sha256": "638074862a1f8779ca4741e76a5a254553eaaaa24340e0d5c781f34edab3e60a"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/tests/test_outputs.py",
+            "bytes": 1152,
+            "sha256": "8cb1aa9e17e26b974f0d536feb24789edc80e46a66767b4b0df80cdd4c7ce4e7"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/tests/verifier_utils.py",
+            "bytes": 14389,
+            "sha256": "d1a084507ea7aa1ae001c6c8b33f6505cad4ccb51cd372d10323fe5d63d93e78"
+          }
+        ]
+      }
+    ],
+    "code_and_runtime_files": [
+      {
+        "path": "scripts/docops_office_repeat_01_entry.py",
+        "bytes": 59778,
+        "sha256": "782d41481b1033914ef9e010daf39dcc988414cb938fe25d42d9904a8ccb49a2"
+      },
+      {
+        "path": "scripts/docops_word_resource_01_entry.py",
+        "bytes": 37490,
+        "sha256": "56e6217dc66fb7655ed27ff390d9b05dae63d61a97d4eac5bcd713496b780417"
+      },
+      {
+        "path": "src/agent_workload_characterization/runners/docops_word_agent.py",
+        "bytes": 3223,
+        "sha256": "d41fae0fe8b8f90b21030e9cbb2c2392e2431f54cd6a474000e5fd7e72036eb3"
+      },
+      {
+        "path": "src/agent_workload_characterization/runners/docops_word_runtime.py",
+        "bytes": 18257,
+        "sha256": "a1e73980e3908ad158c6827d2853d7fab625db6ad46c2beaeafbaae2fcda9ab2"
+      },
+      {
+        "path": "src/agent_workload_characterization/runners/container_runtime.py",
+        "bytes": 36616,
+        "sha256": "a2608e5549da73581c3a1b036080d64fa641eefe8e4bdf3cf429bc5a55ac1d83"
+      },
+      {
+        "path": "src/agent_workload_characterization/collectors/host_process.py",
+        "bytes": 8822,
+        "sha256": "2ec98884c8b0d1ea005881f72e0a5498088e40960eebc3c44d3775ec2e150055"
+      },
+      {
+        "path": "src/agent_workload_characterization/collectors/resource_sampler.py",
+        "bytes": 27396,
+        "sha256": "8418a9d793e170d96ce75d97ddd65a978a38038f80c2e34eb4c9485286bcca72"
+      },
+      {
+        "path": "references/repos/DocOps/harnesses/document_tools_agent.py",
+        "bytes": 13569,
+        "sha256": "c63244323eea071ba63442dec70531a447365c31e87710b5a2a02c52322f449a"
+      },
+      {
+        "path": "references/repos/DocOps/harnesses/document_tools_runtime.py",
+        "bytes": 16880,
+        "sha256": "855c4cdfdcd9ac6a8ca9e67d57809262236bf93848d0d8142cf356fb2f558878"
+      },
+      {
+        "path": "env/docops-arm64-word001/harbor-src/pyproject.toml",
+        "bytes": 2884,
+        "sha256": "7f5a7baf35fa83d5ea3499845e58f3ad4b502c64f37c660c8fa434409b611d09"
+      },
+      {
+        "path": "env/docops-arm64-word001/harbor-src/src/harbor/environments/docker/docker.py",
+        "bytes": 18808,
+        "sha256": "4479e969235519f86bb804bc3a681ebe6be5bd0891cf295fbea5efccf5febc09"
+      },
+      {
+        "path": "env/docops-arm64-word001/harbor-src/src/harbor/llms/lite_llm.py",
+        "bytes": 29687,
+        "sha256": "621491f784dbe65ad1eb61e98cca3a836f90c78b50e0a76501a2db36cecb20a0"
+      },
+      {
+        "path": "env/docops-arm64-word001/harbor-src/src/harbor/verifier/verifier.py",
+        "bytes": 5160,
+        "sha256": "b914e9166bf35a7b5f062366f8d08c8d6e62d8177f36978d965eb9b3fc9a0742"
+      },
+      {
+        "path": "env/docops-arm64-word001/harbor-venv-freeze.txt",
+        "bytes": 1126,
+        "sha256": "e2d552bbb1bcc8757a4d75f0f1dc0fc5c48f5275f2bda4f57ed257c8cdb73721"
+      }
+    ],
+    "model": {
+      "api_base": "https://api.deepseek.com/v1",
+      "request_model": "openai/deepseek-v4-flash",
+      "response_model": "record_actual_per_request",
+      "credential_name": "DEEPSEEK_API_KEY",
+      "json_action": {
+        "stop_omitted": true,
+        "extra_body_none_omitted": true,
+        "thinking_mode": "provider_default"
+      }
+    },
+    "tools": {
+      "same_tool_names_all_tasks": [
+        "get_task_metadata",
+        "copy_file",
+        "inspect_document",
+        "word_replace_text",
+        "word_insert_table_column",
+        "xlsx_read_sheet",
+        "xlsx_write_cells",
+        "xlsx_set_formula",
+        "xlsx_highlight_cells",
+        "xlsx_delete_sheet",
+        "xlsx_reorder_sheets",
+        "ppt_list_slides",
+        "ppt_replace_text",
+        "ppt_reorder_slides",
+        "ppt_delete_slides",
+        "ppt_set_bullets",
+        "pdf_extract_text",
+        "pdf_reorder_pages",
+        "pdf_delete_pages",
+        "word_inspect_format",
+        "word_set_format"
+      ],
+      "word_tools_not_applicable_to_excel_ppt_pdf": [
+        "word_replace_text",
+        "word_insert_table_column",
+        "word_inspect_format",
+        "word_set_format"
+      ],
+      "tool_source": "fixed project DocOpsWordAgent tool specs"
+    },
+    "schedule": [
+      {
+        "round": 0,
+        "tasks": [
+          "atomic__excel_001_budget_bucket_totals_seed",
+          "atomic__ppt_008_bullet_editing_seed",
+          "atomic__pdf_004_audit_pages_reorder_seed"
+        ]
+      },
+      {
+        "round": 1,
+        "tasks": [
+          "atomic__ppt_008_bullet_editing_seed",
+          "atomic__pdf_004_audit_pages_reorder_seed",
+          "atomic__excel_001_budget_bucket_totals_seed"
+        ]
+      },
+      {
+        "round": 2,
+        "tasks": [
+          "atomic__pdf_004_audit_pages_reorder_seed",
+          "atomic__excel_001_budget_bucket_totals_seed",
+          "atomic__ppt_008_bullet_editing_seed"
+        ]
+      }
+    ],
+    "attempt_count": 9,
+    "attempt_retry": 0,
+    "budget": {
+      "per_attempt": {
+        "max_steps": 40,
+        "max_tokens_per_request": 32768,
+        "agent_s": 1200.0,
+        "verifier_s": 600.0,
+        "wall_s": 2700.0,
+        "cleanup_reserve_s": 300.0,
+        "cpu": 1,
+        "memory_gib": 4,
+        "storage_gib": 10,
+        "network": "none",
+        "sample_s": 0.5
+      },
+      "batch_wall_s": 27000.0,
+      "batch_closeout_reserve_s": 900.0,
+      "framework_retry": "up to 3 actual tries per logical call",
+      "maximum_model_steps": 360,
+      "cost": "unknown; no hard amount cap approved for this batch"
+    },
+    "paths": {
+      "approval": "reports/resource/DOCOPS-OFFICE-REPEAT-01/APPROVAL.json",
+      "reports": "reports/resource/DOCOPS-OFFICE-REPEAT-01",
+      "raw": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01",
+      "plan": "env/docops-office-repeat-01/plan-identity.json",
+      "frozen": "env/docops-office-repeat-01/frozen-identity.json"
+    },
+    "identity_limits": [
+      "request alias is not immutable model version",
+      "not representative of all Office tasks"
+    ]
+  }
+}

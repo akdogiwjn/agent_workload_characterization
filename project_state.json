@@ -1,7 +1,56 @@
 {
   "schema": "awc-project-state-v1",
-  "updated_at": "2026-09-20",
+  "updated_at": "2026-10-16",
   "execution_authorization": "none_this_state_is_not_an_approval",
+  "research_scope": {
+    "effective_date": "2026-10-16",
+    "decision_source": "explicit user request: focus on sampled CPU/memory/disk IO/network, task wall and tool statistics; no function-hotspot requirement",
+    "goal_document": "docs/current_scope.md",
+    "current_capability_review": "docs/project_status.md#当前目标与采样能力2026-10-16",
+    "required": [
+      "public_trace_operation_and_concrete_software_statistics",
+      "single_task_wall_and_observed_phases",
+      "cpu_memory_disk_io_network_time_series",
+      "task_workspace_output_and_cache_disk_footprint_start_end_growth",
+      "tool_and_request_statistics",
+      "aligned_resource_panels_and_per_task_repeat_summaries",
+      "scope_units_and_missing_data_quality"
+    ],
+    "supporting_records": [
+      "model_request_counts_client_latency_input_output_cached_tokens_and_observed_retries",
+      "startup_setup_agent_evaluator_cleanup_phase_durations",
+      "task_evaluation_termination_tool_errors_timeouts_and_observed_oom",
+      "available_process_thread_counts_user_system_cpu_context_switches_and_faults",
+      "machine_software_identity_and_cpu_memory_resource_limits",
+      "actual_sampling_intervals_coverage_missing_reads_resets_and_collector_overhead"
+    ],
+    "disk_footprint_policy": "Required per-task workspace/output/cache footprint at start and end plus growth; identify path scope and apparent versus allocated bytes, shared-path deduplication and unavailable fields; distinct from disk IO and whole-host free capacity; no blanket disk scans or cache deletion",
+    "supporting_record_policy": "Record existing observable fields and explicit unavailable reasons; this scope update does not implement missing collection, claim complete coverage, or require TTFT/profiling/privileged probes",
+    "not_required": [
+      "gpu_usage_for_current_scope",
+      "function_or_binary_hotspots",
+      "perf_pmu_or_microarchitecture_classification",
+      "architecture_requirements_or_optimization",
+      "exclusive_per_tool_resource_attribution"
+    ],
+    "optional_extensions": [
+      "traditional_llm_performance_control",
+      "multi_agent_concurrency",
+      "replay_and_scale"
+    ],
+    "current_main_sampling_interval_s": 0.5,
+    "existing_scope": "task containers or a selected shared worker/host process; not unified whole-machine monitoring",
+    "pending_capabilities": [
+      "network_rx_tx_bytes_sampling_with_explicit_scope",
+      "disk_io_rate_panels_from_valid_saved_counters",
+      "per_task_disk_footprint_collection_and_summary_coverage",
+      "latest_assistant_curves_in_final_html",
+      "aligned_four_metric_task_overview"
+    ],
+    "agentcgroup_reuse": "integer-ns interval union and parts of tool classification adapted; resource readers are project-owned cgroup/proc implementations, not direct reuse of upstream podman ResourceMonitor; per-tool cgroup scheduler not integrated",
+    "historical_rq_reports_and_gate_verdicts": "preserved at original scope; new requirements do not mark any gate passed",
+    "execution_authorized": false
+  },
   "gates": {
     "g0": "existing_pass_record",
     "g1": "passed_registered_limited_scope",
@@ -19,22 +68,1046 @@
     "new_retry_authorized": false
   },
   "completed_limited_deliverables": {
+    "public_trace_software_toolkits": {
+      "status": "unit_kind_wiring_repaired_offline_v3_complete",
+      "report": "reports/analysis/PUBLIC-TRACE-SOFTWARE-TOOLKITS-v3/",
+      "inputs_verified": 9569,
+      "output_files_verified": 5,
+      "coding_public_groups": 41,
+      "coding_source_group_unit_rows": 44,
+      "coding_groups_with_identified_software": 36,
+      "v2_affected_rows_reassociated": 26,
+      "v2_affected_groups_reassociated": 16,
+      "v2_affected_static_components_reassociated": 18723,
+      "coding_component_total_delta_v2_to_v3": 0,
+      "osworld_task_declarations": 108,
+      "osworld_model_task_records": 755,
+      "local_coding_runs": 9,
+      "docops_repeat02_runs": 9,
+      "toolsandbox_assistant_repeat01_runs": 9,
+      "evidence_layers_separate": [
+        "saved_command_static",
+        "execution_return",
+        "task_declaration",
+        "implementation_mapping",
+        "unknown"
+      ],
+      "experiments": false,
+      "html_updated": false,
+      "gates_unchanged": true
+    },
+    "public_trace_operations": {
+      "status": "offline_file_census_and_observed_action_protocols_complete_semantics_limited",
+      "report": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v2/",
+      "swe_rebench": {
+        "trajectories": 9435,
+        "saved_tool_calls": 598148,
+        "standalone_unknown": 18028,
+        "partial_calls": 56588
+      },
+      "swebench": {
+        "registered_objects": 19876,
+        "submission_groups": 41,
+        "action_objects": 12010,
+        "process_or_action_boundary_uncertain_objects": 6053,
+        "companion_artifacts": 1813,
+        "parsed_operation_or_process_units": 387870,
+        "missing_hash_mismatch_registration_conflict_unregistered": 0,
+        "new_action_objects_beyond_v1": 6771,
+        "new_units_beyond_v1": 174687
+      },
+      "osworld_trajectories": 755,
+      "hepm_trajectories": 414,
+      "statistics": "exclusive labels plus nonexclusive per-call operation presence; tool frequency and record prevalence; participant/submission/repository/application/activity slices",
+      "limits": "Source syntax only, not execution/time/resource counts; no public DocOps execution corpus; macro templates lack tool identity; Video public toolkit incomplete",
+      "historical_correction": "old SWE-agent 30-file text said1053; raw and registered JSON both1064; old outputs preserved",
+      "validation": {
+        "focused_unittest_tests_passed": 23,
+        "input_files": 20762,
+        "output_files": 8,
+        "hash_readback": "pass"
+      },
+      "experiments": false,
+      "html_updated": false
+    },
     "cpu_01": "synthetic_host_perf_feasibility_only",
     "p2_01": "descriptive_selection_one_task_two_attempts",
-    "p3_01": "v3_existing_trace_audit_closed_not_replay_ready"
+    "p3_01": "v3_existing_trace_audit_closed_not_replay_ready",
+    "public_trace_acquisition": {
+      "status": "limited OSWorld sample acquired; DocOps trace not found in checked public repository",
+      "manifest": "data/catalog/public_trace_acquisition/OSWORLD-20260929/manifest.json",
+      "review": "data/catalog/public_trace_acquisition/OSWORLD-20260929/review.md",
+      "execution_allowed": false,
+      "cpu_memory_evidence": false,
+      "offline_review": "data/catalog/public_trace_acquisition/OSWORLD-20260929/offline_review.json",
+      "offline_review_status": "file integrity pass; source/version partial; budget audit unknown; browser-sequence use limited",
+      "light_inventory": "reports/analysis/OSWORLD-OFFICIAL-LIGHT-inventory-v1/",
+      "light_inventory_status": "local-only inventory complete; cache revision matches requested; upstream file completeness unverified; no resource evidence",
+      "behavior_analysis": "reports/analysis/OSWORLD-MINIMAX-M3-behavior-v2/",
+      "behavior_analysis_status": "v2 offline action-sequence analysis complete; conservative static grammar; no resource evidence",
+      "behavior_analysis_v1_preserved": "reports/analysis/OSWORLD-MINIMAX-M3-behavior-v1/"
+    },
+    "bulk_public_trace_acquisition": {
+      "status": "partial_download_continued_gap_filled_still_partial_no_execution",
+      "acquisition": "data/catalog/public_trace_acquisition/BULK-NONVIDEO-20260929/",
+      "swebench_verified": "cumulative 16229 objects / 35 complete prefix groups of 127 in S3 listing; 91 not attempted; 1 group S3-404; 60 no-confirmable-trajectory metadata submissions; 326 old failures resolved this round",
+      "swebench_supplement_20261006": {
+        "manifest": "data/catalog/public_trace_acquisition/SWEBENCH-SUPPLEMENT-20261006/manifest.json",
+        "p1": "3 partial groups completed (devlo x2, claude3.5sonnet incl. all 326 old failures)",
+        "p2": "5 new lite groups complete (SuperCoder2.0, MAYA, globant, moatless, KGCompass) + sonar test group 2147/2294 partial; independent tasks 500 -> 2206",
+        "osworld_supplement": "field semantics confirmed from xlang-ai/OSWorld commit b138d348256078fa634fc3b73567a7337c793e6b; task-key mapping unknown/blocked (huggingface.co unreachable; UUID vs 3-digit key systems differ)",
+        "coverage": "still partial for fixed index scope; download and offline analysis are separate work tracks; analysis not gated on full download"
+      },
+      "swe_rebench": "local_payload_revision_fixed_transfer_record_gap_not_official",
+      "agentx": "fixed_revision_corpus_saved",
+      "applied_compute": "reused_commit_6918da7915e3ae57ce3750a375ef50e41cad2b36_templates_only",
+      "execution_allowed": false,
+      "next_step": "next download round: sonar tail (147 objects), lite/test remaining groups per selection policy; analysis track independent",
+      "cpu_02_replay_gates_unchanged": true
+    },
+    "swe_rebench_behavior_analysis": {
+      "status": "offline_behavior_analysis_v2_complete",
+      "report": "reports/analysis/SWE-REBENCH-behavior-v2/",
+      "source": "third_party_normalized_corpus",
+      "revision": "cdae27cdd16673f0c682871ad55d325f24cc7020",
+      "trajectory_count": 9435,
+      "task_count": 111,
+      "participant_count": 17,
+      "tool_call_count": 598148,
+      "tool_result_count": 616980,
+      "resource_evidence": false,
+      "execution_allowed": false,
+      "v1_preserved": true,
+      "corrections": [
+        "native_tool_vs_activity_semantics",
+        "strict_test_boundary",
+        "counter_preserving_id_association",
+        "saved_event_order_statement",
+        "duration_ms_availability"
+      ],
+      "next_step": "review_limited_measurement_candidates_before_any_local_resource_measurement",
+      "cpu_02_replay_gates_unchanged": true
+    },
+    "agentx_applied_macro_analysis": {
+      "status": "offline_macro_analysis_complete",
+      "report": "reports/analysis/AGENTX-APPLIED-MACRO-v1/",
+      "agentx_revision": "8fecd2fc56694469f758f0afbbb6335ad3043740",
+      "agentx_trace_count": 393,
+      "agentx_model_request_count": 68266,
+      "agentx_subagent_group_count": 1697,
+      "applied_revision": "6918da7915e3ae57ce3750a375ef50e41cad2b36",
+      "applied_workloads": {
+        "agentic_coding_8k": 8192,
+        "code_qa_8k": 8192,
+        "office_work_8k": 8192
+      },
+      "resource_evidence": false,
+      "execution_allowed": false,
+      "sources_not_pooled": true,
+      "next_step": "review source-conditioned candidates before any resource measurement"
+    },
+    "osworld_task_behavior_analysis": {
+      "status": "offline_joint_task_semantics_behavior_analysis_complete",
+      "report": "reports/analysis/OSWORLD-task-behavior-v1/",
+      "trajectory_revision": "01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f",
+      "task_revision": "e7996f4cc850be108e510bd8433c63ee7b8303dd",
+      "trajectory_count": 755,
+      "task_semantics_count": 108,
+      "model_count": 7,
+      "minimax_api_usage_calls": 35272,
+      "resource_evidence": false,
+      "execution_allowed": false,
+      "historical_task_version_binding": "unknown",
+      "gpt_5_6_manifest_hash_checked": 107,
+      "gpt_5_6_missing_task": "048",
+      "gates_unchanged": true,
+      "v1_preserved": true
+    },
+    "osworld_task_behavior_analysis_v2": {
+      "status": "offline_joint_task_semantics_behavior_analysis_v2_complete",
+      "report": "reports/analysis/OSWORLD-task-behavior-v2/",
+      "trajectory_revision": "01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f",
+      "task_revision_or_cache_commit": "e7996f4cc850be108e510bd8433c63ee7b8303dd",
+      "trajectory_count": 755,
+      "task_semantics_count": 108,
+      "model_count": 7,
+      "model_counts": {
+        "MiniMax-M3": 108,
+        "claude-opus-4-7": 108,
+        "claude-sonnet-4-6-max": 108,
+        "claude-sonnet-4-6-medium": 108,
+        "gpt-5.5": 108,
+        "gpt-5.6": 107,
+        "qwen3.7": 108
+      },
+      "gpt_5_6_missing_task": "048",
+      "minimax_usage_calls": 35272,
+      "minimax_source_missing_usage_count": 10,
+      "inventory_completeness": "PASS",
+      "resource_evidence": false,
+      "execution_allowed": false,
+      "historical_task_version_binding": "unknown",
+      "v1_preserved": true,
+      "gates_unchanged": true,
+      "analysis_status_counts": {
+        "valid": 21,
+        "partial": 734,
+        "unanalysable": 0
+      },
+      "native_unknown_action_count": 51093,
+      "minimax_usage_validation_status": "PARTIAL_source_declared_missing_usage_10_calls_usage_missing_0"
+    },
+    "osworld_task_behavior_analysis_v3": {
+      "status": "offline_joint_task_semantics_behavior_analysis_v3_complete_with_limited_unknowns",
+      "report": "reports/analysis/OSWORLD-task-behavior-v3/",
+      "trajectory_revision": "01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f",
+      "task_revision_or_cache_commit": "e7996f4cc850be108e510bd8433c63ee7b8303dd",
+      "trajectory_count": 755,
+      "task_semantics_count": 108,
+      "model_count": 7,
+      "analysis_status_counts": {
+        "valid": 21,
+        "partial": 734
+      },
+      "native_not_applicable_models": [
+        "MiniMax-M3",
+        "qwen3.7"
+      ],
+      "minimax_request_count": 35272,
+      "minimax_request_input_cache_median": 90676.5,
+      "minimax_request_input_cache_iqr": 47258.5,
+      "minimax_request_input_cache_max": 283471,
+      "minimax_source_missing_usage_count": 10,
+      "minimax_calls_usage_missing_count": 0,
+      "usage_validation_status": "PARTIAL_source_declared_missing_usage_only",
+      "task_version_evidence": "local HF cache tree recorded and hashed; historical execution binding unknown",
+      "resource_evidence": false,
+      "execution_allowed": false,
+      "v1_v2_preserved": true,
+      "gates_unchanged": true
+    },
+    "docops_word_resource_02": {
+      "status": "completed_task_unsolved_reward_zero",
+      "run_id": "20261010T073324Z-word001",
+      "report": "reports/resource/DOCOPS-WORD-RESOURCE-02/run-report.json",
+      "model_calls": 6,
+      "successful_model_selected_tool_actions": 5,
+      "reward": 0,
+      "metadata_bootstrap": "missing_container_task_metadata_at_time_of_historical_attempt",
+      "preserved": true
+    },
+    "docops_word_resource_03_preparation": {
+      "status": "single_formal_attempt_completed_agent_steps_exhausted_reward_zero",
+      "collection": "DOCOPS-WORD-RESOURCE-03",
+      "identity_sha256": "cc4d713a3c16677dd4e7ad17920914de799f324dbf900315a489c787843fe2d4",
+      "identity_plan": "env/docops-arm64-word001/plan-identity-03.json",
+      "identity_freeze": "env/docops-arm64-word001/frozen-identity-03.json",
+      "metadata_sha256": "4f65f1028757566a3ef49f6d781f323e31c1c1d35c9b8f650b40ea738fd9efff",
+      "approval_path": "reports/resource/DOCOPS-WORD-RESOURCE-03/APPROVAL.json",
+      "preflight_path": "reports/resource/DOCOPS-WORD-RESOURCE-03/PREFLIGHT.json",
+      "attempt_root": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/<run_id>/",
+      "report_path": "reports/resource/DOCOPS-WORD-RESOURCE-03/run-report.json",
+      "namespace_was_unoccupied_at_preparation": true,
+      "docops_02_run_manifest_hashes": "all_declared_inputs_and_output_match",
+      "environment_manifest": "preserved_but_three_local_files_do_not_match_its_registered_hashes; not used to validate DOCOPS-02 runtime identity",
+      "user_approval": "approved_and_consumed_for_one_attempt",
+      "tool_execution_permission": "granted_for_exact_command",
+      "execution_allowed": false,
+      "initial_refused_entry_invocation": {
+        "exit_code": 3,
+        "status": "refused_before_attempt_creation",
+        "reason": "entry counted its own APPROVAL.json as an existing namespace record",
+        "attempt_started": false,
+        "docker_or_api_started": false,
+        "retry_authorized": false
+      },
+      "tool_extension_is_project_owned": true,
+      "official_instruction_and_verifier_unchanged": true,
+      "previous_attempts_unchanged": true,
+      "cpu_02_replay_and_gates_unchanged": true,
+      "model_route": {
+        "request_id": "openai/deepseek-v4-flash",
+        "api_base": "https://api.deepseek.com/v1",
+        "credential": "DEEPSEEK_API_KEY mapped to OPENAI_API_KEY in-process only; fixed, no auto-switching",
+        "documented_backend": "DeepSeek-V4.1-Flash",
+        "model_version_note": "User-selected legacy request alias; official docs route it to V4.1-Flash. Not an immutable version pin; actual response model not yet observed.",
+        "documentation": "https://api-docs.deepseek.com/"
+      },
+      "route_validation": "passed_one_synthetic_json_action",
+      "api_smoke": {
+        "path": "env/docops-arm64-word001/deepseek-official-smoke-20261010.json",
+        "sha256": "5e97a75808d1b7a56c2b3975a2f7855b8d555c21865d170ae08400df442dd862",
+        "transport_calls": 1,
+        "response_model": "deepseek-flash",
+        "valid_action_schema": true,
+        "full_document_task_executed": false
+      },
+      "approval_gate_fix": {
+        "namespace_policy": "APPROVAL.json excluded from attempt records; other namespace records still block",
+        "approval_policy": "fresh docops-single-run-approval-v1 with current collection, approved user decision and matching full identity digest; consumed approval rejected",
+        "previous_approval_snapshot": "env/docops-arm64-word001/approval-03-refused-before-gate-fix.json",
+        "current_approval": "preserved unchanged; stale identity and prior refused invocation; not reusable",
+        "tests": "20 entry tests and 12 adapter tests passed offline"
+      },
+      "completed_run": {
+        "run_id": "20261010T105013Z-word001",
+        "identity_sha256": "cc4d713a3c16677dd4e7ad17920914de799f324dbf900315a489c787843fe2d4",
+        "agent_termination": "steps_exhausted",
+        "model_calls": 12,
+        "reward": 0,
+        "wall_s": 85.38,
+        "resource_report": "reports/resource/DOCOPS-WORD-RESOURCE-03/run-report.json was not produced; raw summary/manifest retained"
+      }
+    },
+    "docops_word_resource_03_04_joint_analysis": {
+      "id": "DOCOPS-WORD-RESOURCE-03-04-JOINT-ANALYSIS",
+      "phase": "OFFLINE_BEHAVIOR_RESOURCE_ANALYSIS_COMPLETED",
+      "execution_allowed": false,
+      "result": {
+        "status": "completed_single_attempt_agent_finish_reward_zero",
+        "identity_sha256": "1a468b63e8da0535a8f67b895859f987916212fcddd6fd5d90d47780cb716a78",
+        "identity_plan": "env/docops-arm64-word001/plan-identity-04.json",
+        "identity_freeze": "env/docops-arm64-word001/frozen-identity-04.json",
+        "run_id": "20261010T110820Z-word001",
+        "run_dir": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/",
+        "report": "reports/resource/DOCOPS-WORD-RESOURCE-04/run-report.json",
+        "command": "PYTHONPATH=src LITELLM_LOCAL_MODEL_COST_MAP=True .venvs/docops-pilot-01/bin/python -B scripts/docops_word_resource_01_entry.py --execute --i-approve-the-docops-word-resource-04",
+        "execution_allowed": false,
+        "user_approval": "approved_and_consumed_for_one_attempt",
+        "tool_execution_permission": "granted_for_exact_command",
+        "attempt_created": true,
+        "entry_exit_code": 0,
+        "agent_termination": "finish",
+        "model_calls": 6,
+        "request_model": "openai/deepseek-v4-flash",
+        "observed_response_model": "deepseek-flash",
+        "tool_actions": 5,
+        "tool_action_counts": {
+          "copy_file": 1,
+          "inspect_document": 2,
+          "word_inspect_format": 1,
+          "word_replace_text": 1,
+          "word_set_format": 0
+        },
+        "tool_results": {
+          "persisted": 5,
+          "ok_true": 5,
+          "ok_false": 0
+        },
+        "verifier": {
+          "status": "completed",
+          "reward": 0,
+          "first_failure": "test_outputs.py::test_semantic_verifier: Top-level headings are not styled consistently.",
+          "later_assertions": "not_run_or_unknown"
+        },
+        "measurement": {
+          "attempt_wall_s": 58.98,
+          "within_total_budget": true,
+          "sample_count": 96,
+          "sample_window_s": 47.575,
+          "scope": "shared agent container through verifier phase; not per-tool",
+          "container_cpu_core_s": 5.704128,
+          "container_memory_peak_bytes": 82542592,
+          "host_agent_rss_peak_bytes": 162017280
+        },
+        "cleanup": {
+          "container_id": "adbbe71942777d7a08665c9a0aa3dfa05c35ca50e05773e43ab331a836bd3a2b",
+          "container_removal": "verified_removed",
+          "task_image_tag_after_stop": "absent_removed_by_harbor_cleanup"
+        },
+        "archive": {
+          "manifest_outputs_verified": 16,
+          "manifest_mismatches": 0,
+          "independent_report": "reports/resource/DOCOPS-WORD-RESOURCE-04/run-report.json"
+        },
+        "stop_reason": "single authorized attempt completed; no retry",
+        "comparison_with_03": "descriptive_two_run_comparison_only; differences are not causally attributable solely to max_steps",
+        "official_task_and_verifier_unchanged": true,
+        "cpu_02_replay_gates_unchanged": true,
+        "model_route": {
+          "request_id": "openai/deepseek-v4-flash",
+          "api_base": "https://api.deepseek.com/v1",
+          "credential": "DEEPSEEK_API_KEY mapped to OPENAI_API_KEY in-process only; fixed, no auto-switching",
+          "documented_backend": "DeepSeek-V4.1-Flash",
+          "model_version_note": "Observed response model deepseek-flash; request alias is not an immutable version pin.",
+          "documentation": "https://api-docs.deepseek.com/"
+        },
+        "route_validation": "passed_one_synthetic_json_action",
+        "api_smoke": {
+          "path": "env/docops-arm64-word001/deepseek-official-smoke-20261010.json",
+          "sha256": "5e97a75808d1b7a56c2b3975a2f7855b8d555c21865d170ae08400df442dd862",
+          "transport_calls": 1,
+          "response_model": "deepseek-flash",
+          "valid_action_schema": true,
+          "full_document_task_executed": false
+        },
+        "cost": "unknown; usage is not an invoice",
+        "privacy_note": "LLM logs contain api_key_sha256 field; value not recorded here; raw evidence unchanged"
+      },
+      "analysis": {
+        "status": "DocOps single task, finite behavior-resource analysis across two different step-budget configurations completed",
+        "report_dir": "reports/analysis/DOCOPS-WORD-RESOURCE-03-04-review-v1/",
+        "source_runs": [
+          "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/",
+          "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/"
+        ],
+        "identity_chains_verified": 2,
+        "raw_manifest_outputs_verified": 38,
+        "next_step": "assess fixed-configuration repeats on a different Office task if distinguishing task-specific behavior from repeat variation is required; no automatic rerun"
+      }
+    },
+    "project_synthesis_v2": {
+      "status": "offline_report_integration_complete",
+      "path": "reports/analysis/PROJECT-characterization-synthesis-v2/",
+      "scope": "public behavior + fixed Coding/Office scope measurements; six original RQs; no category rankings"
+    },
+    "real_run_measurement_contract": {
+      "status": "offline_implemented_not_real_validated",
+      "contract": "docs/trace_contract.md",
+      "contract_version": "real-run-measurement-v1",
+      "historical_evidence_modified": false,
+      "experiment_executed": false
+    },
+    "docops_office_repeat_02": {
+      "status": "executed_once_nine_normal_finish_paths_verified_stopped",
+      "identity_sha256": "0886c0b0d64ae20813f518e0c0392d370d98f5a8479737bccabdd5016c539bf1",
+      "report": "reports/resource/DOCOPS-OFFICE-REPEAT-02/batch-summary.json",
+      "validation": "reports/resource/DOCOPS-OFFICE-REPEAT-02/VALIDATION.json",
+      "historical_evidence_modified": false,
+      "scope": "Three fixed tasks x three repetitions; resource/measurement evidence only, not Office-wide characterization or Gate passage."
+    },
+    "docops_office_repeat_02_characterization": {
+      "status": "本批限定分析完成",
+      "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1",
+      "analyzer": "scripts/docops_office_repeat_02_characterization.py",
+      "tests": {
+        "new": 11,
+        "affected_existing": 14,
+        "unique_executed": 25
+      },
+      "identity_sha256": "0886c0b0d64ae20813f518e0c0392d370d98f5a8479737bccabdd5016c539bf1",
+      "historical_identity_full_plan_frozen_equal": true,
+      "current_registered_code_drift": [],
+      "totals": {
+        "runs": 9,
+        "independent_tasks": 3,
+        "logical_requests": 46,
+        "agent_tools": 37,
+        "bootstrap_tools": 18,
+        "finish": 9,
+        "reward_1": 9,
+        "bootstrap_ok_false": 3,
+        "samples": 354,
+        "pairing_issue_count": 0
+      },
+      "scope": "saved client logical-call and shared container/host observations; exact tool exclusivity, remote inference time, causal impacts and PPT dependency stack are unknown",
+      "historical_files_unchanged": 185,
+      "html_regenerated": false,
+      "new_experiment_executed": false
+    },
+    "toolsandbox_hepm_behavior_analysis": {
+      "status": "offline_behavior_analysis_v2_complete",
+      "report": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/",
+      "analyzer": "scripts/toolsandbox_hepm_behavior.py",
+      "tests": "tests/test_toolsandbox_hepm_behavior.py (12 directed tests, executed by direct function calls; environment has no pytest)",
+      "source": "third_party_H-EPM_adapted_ToolSandbox_experiments_not_apple_official_release",
+      "repository": "LISijia-dev/H-EPM",
+      "commit": "4ad8ad335fe63d365f4baf97df77e19055c79f1c",
+      "acquisition": "data/catalog/public_trace_acquisition/TOOLSANDBOX-HEPM-20261011/",
+      "payload_files_verified": 832,
+      "group_directories": [
+        "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_False_11_24_2025_09_02_55-7",
+        "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_True_05_19_2026_06_52_36"
+      ],
+      "trajectory_count": 414,
+      "scenario_count_per_group": 207,
+      "shared_scenario_keys": 207,
+      "base_scenario_count_per_group": 109,
+      "tool_call_count": 2021,
+      "tool_result_count": 2021,
+      "pairing_anomaly_count": 0,
+      "native_tool_count": 35,
+      "tool_execution_error_count": 304,
+      "unresolved_scrambled_call_count": 24,
+      "result_fields_as_saved_only": true,
+      "termination_status": "unknown",
+      "resource_evidence": false,
+      "execution_allowed": false,
+      "groups_not_independent_samples_no_causal_claim": true,
+      "gates_unchanged": true,
+      "v1_report_preserved": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v1/ (outputs unchanged)",
+      "run_provenance": {
+        "split": "test",
+        "split_seed": 42,
+        "split_ratio": 0.8,
+        "git_sha_graph_False": "4f7fffb17fe1fdfd969350b5ab081fcfec130585 + local changes",
+        "git_sha_graph_True": "75cf0c9bb12a87f60c95fb1407e1ab431869a42f + local changes",
+        "note": "groups ran on different source versions, both with local changes; additional confounder for group comparison; graph on/off evidenced only by directory names"
+      },
+      "sandbox_cross_verification": "all 2021 call ids uniquely matched in execution_context._dbs.SANDBOX; tool_call_exception counts equal content-regex error counts (157/147)",
+      "scrambled_resolution": "202 of 228 via SANDBOX actual tool_trace keyed by call id (exception rows excluded; 69 stale summarize_the_task traces on exception rows not trusted); 2 via database namespace; 24 kept Unknown",
+      "final_conversation_active": {
+        "False": 402,
+        "True": 12
+      },
+      "sandbox_user_side_end_conversation_trajectories": 402,
+      "agent_end_conversation_calls": 0,
+      "v2_corrections": [
+        "scrambled_resolution_via_sandbox_tool_trace",
+        "run_provenance_and_confounder",
+        "activity_stats_dual_denominators",
+        "transition_wording_fixed"
+      ]
+    },
+    "toolsandbox_resource_pilot_01_preparation": {
+      "status": "offline_deadline_repair_verified_refrozen_waiting_fresh_approval",
+      "design_section": "local_archive/20261016-full-docs/docs/development_tasks.md#当前任务toolsandbox-resource-pilot-012026-10-12只读执行准备设计完成未授权未开始",
+      "scope": "design only: local source inventory, baseline choice, single pilot task selection, execution topology, measurement scope and budget proposal; no network, install, model call, task execution, credential read, APPROVAL/ATTEMPT creation or git commit",
+      "local_official_toolsandbox": {
+        "path": "references/repos/ToolSandbox",
+        "commit": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+        "working_tree_changes": 0,
+        "pinned_deps_note": "polars==0.20.31, openai==1.17.0 etc.; no local environment satisfies the pinned set"
+      },
+      "h_epm_local_source": "missing; only public traces and README; public run git_shas differ and carry local changes",
+      "baseline_choice": "official ToolSandbox baseline; H-EPM summary/graph extensions not adopted",
+      "pilot_task": "send_message_with_contact_content_cellular_off",
+      "pilot_task_selection": "chosen before run without consulting saved similarity values",
+      "execution_topology": "single host Python process, no Docker; agent model + user simulator model; in-process tools and evaluator",
+      "model_route_adapter_status": "structurally supported via subclass overriding hardcoded base_url; dependency pending install; real verification not done; no credentials read; no cost acceptance inherited",
+      "measurement_scope": "shared single-process scope with phase boundaries; reuse SemanticRecorder/span_coverage/measurement_report and HostProcessReader/Monitor; tool windows are shared-scope diffs",
+      "budget_proposal": "one attempt retry=0; agent<=20 and user<=20 logical model calls; max_messages=30; play<=300s evaluate<=60s total<=480s cleanup reserve 120s; cost unknown no hard cap",
+      "pending_authorized_actions": [
+        "dependency install into a new dedicated venv plus frozen source snapshot",
+        "minimal model route verification with one synthetic call",
+        "minimal collection wiring entry and tests",
+        "single approved execution"
+      ],
+      "execution_allowed": false,
+      "ready": false,
+      "gates_unchanged": true,
+      "cpu_02_replay_unchanged": true,
+      "phase_2_scope": "dedicated venv with pinned minimal dependency subset; frozen official source copy; minimal routing/event/resource/lifecycle wiring; offline regression driving the real official chain with a fake transport",
+      "venv": {
+        "path": ".venvs/toolsandbox-pilot-01",
+        "python": "3.11.6 (system interpreter)",
+        "packages": 50,
+        "pip_check": "pass",
+        "strategy": "minimal subset actually imported by the pilot chain; full official environment NOT claimed",
+        "pinned_examples": "polars==0.20.31 openai==1.17.0 tenacity==8.4.1 langchain-core==0.1.17",
+        "not_installed": [
+          "anthropic",
+          "vertexai",
+          "langchain (full)",
+          "transformers",
+          "sentencepiece",
+          "tree-sitter",
+          "huggingface_hub",
+          "jsonschema"
+        ]
+      },
+      "frozen_source": {
+        "path": "env/toolsandbox-resource-pilot-01/source",
+        "origin_commit": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+        "files": 110,
+        "references_tree_unchanged": true
+      },
+      "new_code": {
+        "entry": "scripts/toolsandbox_resource_pilot_01_entry.py",
+        "worker": "src/agent_workload_characterization/runners/toolsandbox_worker.py",
+        "tests": "tests/test_toolsandbox_resource_pilot_01.py",
+        "shared_additive_edits": [
+          "semantic_recorder: tool_batch kind + llm_request role attr",
+          "preparation: USAGE_WHITELIST += DeepSeek prompt_cache_hit/miss_tokens"
+        ]
+      },
+      "design_corrections_implemented": [
+        "retry: single explicit counted layer, sdk max_retries=0, per-role logical counting outside the loop; official agent tenacity is a no-op with the httpx SDK, official user tenacity retries any exception, official defaults stack sdk retries=2",
+        "batches: official permutation semantics preserved and counted (planned/executed orderings); shared-scope batch windows only; per-call durations unknown",
+        "budget: max_messages=30 kept as message-index threshold with actual increment recorded; per-role caps checked before each request",
+        "doc: environment statement corrected to pinned-set compatibility"
+      ],
+      "offline_tests": {
+        "new": 7,
+        "all_passed": true,
+        "runner": "direct function calls; environment has no pytest",
+        "affected_existing": "test_execution_measurement 10, test_preparation 56, test_ir 32, test_coding_pilot 129 all OK"
+      },
+      "candidate_identity": {
+        "digest": "0e087329ba60e846317c30e77ab66d3c0f937642283dc1a083ade3a4a42837b2",
+        "files": [
+          "env/toolsandbox-resource-pilot-01/plan-identity.json",
+          "env/toolsandbox-resource-pilot-01/frozen-identity.json"
+        ],
+        "approved": false,
+        "attempts": 0
+      },
+      "real_api_compatibility_verified": false,
+      "api_verification": {
+        "status": "PASS_single_synthetic_tool_call",
+        "record": "env/toolsandbox-resource-pilot-01/api-verification-20261012.json",
+        "sha256": "f89c873c34f4522e7f8434c31c4cefb3e48335675881ebf21418546bbfdbcbea",
+        "requests_made": 1,
+        "actual_transport_requests": 1,
+        "sdk_max_retries": 0,
+        "request_model": "deepseek-v4-flash",
+        "observed_response_model": "deepseek-flash",
+        "finish_reason": "tool_calls",
+        "tool_protocol": "id/type/name/arguments/value all verified (smoke_echo, {\"value\": \"ok\"})",
+        "usage_fields_observed": [
+          "prompt_tokens",
+          "completion_tokens",
+          "total_tokens",
+          "prompt_tokens_details.cached_tokens",
+          "completion_tokens_details.reasoning_tokens",
+          "prompt_cache_hit_tokens",
+          "prompt_cache_miss_tokens"
+        ],
+        "vendor_fields_preserved_by_sdk": true,
+        "worker_extraction_reads_all": true,
+        "sanitize_whitelist_covers_all_observed": true,
+        "scope_note": "protocol test only; agent/user full chain still only offline-fake verified; no task executed; resource collection not measured; cost not closed",
+        "identity_not_refrozen": true
+      },
+      "execution_precheck": {
+        "status": "blocked_before_approval_or_attempt",
+        "record": "env/toolsandbox-resource-pilot-01/execution-precheck-stop-20261012.json",
+        "identity_sha256": "ff5f43a20266fadd49523c0bcf0c4a394fd7b62389ef7ee915af923fb3750912",
+        "full_saved_live_identity_match": true,
+        "user_authorization_received": true,
+        "unknown_cost_no_hard_cap_accepted_for_this_single_attempt": true,
+        "approval_created": false,
+        "attempt_started": false,
+        "worker_or_api_started": false,
+        "blocker": "play_s=300 and evaluate_s=60 are only configuration/post-hoc reporting; only shared parent 360s work deadline is enforced",
+        "next_requires_separate_authority": "minimal phase-deadline repair, offline validation, new identity/freeze and fresh execution approval"
+      },
+      "previous_candidate_identity": {
+        "digest": "ff5f43a20266fadd49523c0bcf0c4a394fd7b62389ef7ee915af923fb3750912",
+        "files": [
+          "env/toolsandbox-resource-pilot-01/identity-before-deadline-fix/plan-identity.json",
+          "env/toolsandbox-resource-pilot-01/identity-before-deadline-fix/frozen-identity.json"
+        ],
+        "approved": false,
+        "attempts": 0
+      },
+      "deadline_repair": {
+        "status": "offline_deadline_repair_verified_refrozen_waiting_fresh_approval",
+        "identity_sha256": "0e087329ba60e846317c30e77ab66d3c0f937642283dc1a083ade3a4a42837b2",
+        "prior_identity_sha256": "ff5f43a20266fadd49523c0bcf0c4a394fd7b62389ef7ee915af923fb3750912",
+        "manifest": "env/toolsandbox-resource-pilot-01/deadline-repair-manifest.json",
+        "old_snapshot_directory": "env/toolsandbox-resource-pilot-01/identity-before-deadline-fix/",
+        "common_origin": "parent monotonic before spawn; imports/setup counted",
+        "phase_rule": "min(actual phase start + phase cap, unchanged common deadline)",
+        "parent_poll_interval_s": 0.02,
+        "tests": {
+          "toolsandbox_existing": 7,
+          "toolsandbox_new": 6,
+          "toolsandbox_total": 13,
+          "shared_measurement": 10,
+          "shared_host_reader": 5,
+          "all_final_passed": true
+        },
+        "real_execution_performed": false,
+        "approval_created": false,
+        "attempt_started": false,
+        "fresh_approval_required": true
+      }
+    },
+    "toolsandbox_execution_work_history": {
+      "id": "TOOLSANDBOX-ASSISTANT-REPEAT-01-REVIEW",
+      "phase": "OFFLINE_NINE_RUN_BEHAVIOR_RESOURCE_CHARACTERIZATION_COMPLETE",
+      "scope": "Offline analysis of the nine explicitly frozen Assistant Repeat-01 runs is complete. No task execution, API call, Docker action, or new sample is authorized by this state.",
+      "review_report": "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/",
+      "review_identity_sha256": "1643e0c8c6158734ce7186d24afd5ce36d5a40718d930e7eea2a507f0b32149b",
+      "review_tests": {
+        "new": 7,
+        "shared_regression": 6,
+        "passed": 13
+      },
+      "execution_allowed": false,
+      "ready": false,
+      "entry": "scripts/toolsandbox_resource_pilot_02_entry.py (thin fixed profile over the shared P01 lifecycle)",
+      "worker": "src/agent_workload_characterization/runners/toolsandbox_worker.py",
+      "venv": ".venvs/toolsandbox-pilot-01 (PILOT-02 freeze records httpx==0.27.2; openai==1.17.0 and httpcore==1.0.9 unchanged; pip check pass)",
+      "tests": {
+        "directed_runner": "dedicated venv: direct test-function discovery",
+        "toolsandbox": 16,
+        "existing": 13,
+        "new": 3,
+        "shared_runner": "unittest",
+        "shared_measurement": 10,
+        "shared_host_reader": 5,
+        "all_final_passed": true,
+        "execution_note": "16/16 direct test functions passed in the final run; earlier single stale namespace assertion was corrected to compare protected tree hashes"
+      },
+      "result": {
+        "environment": "no previously verified environment satisfied the pinned set (system polars 1.44.1 != 0.20.31); new dedicated venv now satisfies the minimal imported subset",
+        "baseline": "official ToolSandbox @ 165848b frozen byte-identical copy; H-EPM extensions not adopted",
+        "pilot_task": "send_message_with_contact_content_cellular_off (unchanged from design)",
+        "topology": "thin entry + worker subprocess (official roles, in-process tools and evaluator) + parent host-process sampling with hard-deadline SIGKILL",
+        "retry": "single explicit counted layer (sdk max_retries=0, 3 attempts, APIConnectionError/RateLimitError/InternalServerError); logical counting per role outside the loop, checked before each request",
+        "offline_evidence": "fake transport through the real official chain: milestone_similarity 1.0 genuinely computed by the official evaluator; permutation path exercised (2 orderings); budget cap refuses before transport; timeout kill preserves right-censored evidence",
+        "candidate_identity_digest": "0e087329ba60e846317c30e77ab66d3c0f937642283dc1a083ade3a4a42837b2",
+        "api_verification": "PASS: one real request via raw openai==1.17.0 to https://api.deepseek.com/v1 with deepseek-v4-flash; response model deepseek-flash; finish_reason tool_calls; smoke_echo called with value \"ok\"; usage vendor fields preserved end-to-end",
+        "deadline": "parent receives persisted actual phase starts, enforces phase/common minimum and reaps SIGKILLed worker; timeout evaluation stays null"
+      },
+      "unverified": [
+        "Agent/User scenario, ToolSandbox actions and official evaluation were not reached",
+        "phase deadline behavior was not exercised in this real attempt; only offline fake tests cover it",
+        "actual HTTP request/transport count is zero before client construction completed; billing, remote resources and exclusive-tool CPU remain unavailable"
+      ],
+      "next_minimal_action_pending_authorization": "PILOT-02 formal execution requires a separate user approval and tool permissions; do not retry or reuse PILOT-01 approval/attempt",
+      "gates_unchanged": true,
+      "cpu_02_replay_unchanged": true,
+      "ready_for_approval": false,
+      "prior_execution_precheck": {
+        "status": "blocked_before_approval_or_attempt",
+        "record": "env/toolsandbox-resource-pilot-01/execution-precheck-stop-20261012.json",
+        "identity_sha256": "ff5f43a20266fadd49523c0bcf0c4a394fd7b62389ef7ee915af923fb3750912",
+        "full_saved_live_identity_match": true,
+        "user_authorization_received": true,
+        "unknown_cost_no_hard_cap_accepted_for_this_single_attempt": true,
+        "approval_created": false,
+        "attempt_started": false,
+        "worker_or_api_started": false,
+        "blocker": "play_s=300 and evaluate_s=60 are only configuration/post-hoc reporting; only shared parent 360s work deadline is enforced",
+        "next_requires_separate_authority": "minimal phase-deadline repair, offline validation, new identity/freeze and fresh execution approval"
+      },
+      "deadline_repair": {
+        "status": "offline_deadline_repair_verified_refrozen_waiting_fresh_approval",
+        "identity_sha256": "0e087329ba60e846317c30e77ab66d3c0f937642283dc1a083ade3a4a42837b2",
+        "prior_identity_sha256": "ff5f43a20266fadd49523c0bcf0c4a394fd7b62389ef7ee915af923fb3750912",
+        "manifest": "env/toolsandbox-resource-pilot-01/deadline-repair-manifest.json",
+        "old_snapshot_directory": "env/toolsandbox-resource-pilot-01/identity-before-deadline-fix/",
+        "common_origin": "parent monotonic before spawn; imports/setup counted",
+        "phase_rule": "min(actual phase start + phase cap, unchanged common deadline)",
+        "parent_poll_interval_s": 0.02,
+        "tests": {
+          "toolsandbox_existing": 7,
+          "toolsandbox_new": 6,
+          "toolsandbox_total": 13,
+          "shared_measurement": 10,
+          "shared_host_reader": 5,
+          "all_final_passed": true
+        },
+        "real_execution_performed": false,
+        "approval_created": false,
+        "attempt_started": false,
+        "fresh_approval_required": true
+      },
+      "formal_execution": {
+        "status": "failed_before_first_api_request",
+        "run_id": "20261012T080926Z-tsbpilot01",
+        "identity_sha256": "0e087329ba60e846317c30e77ab66d3c0f937642283dc1a083ade3a4a42837b2",
+        "approval": "reports/resource/TOOLSANDBOX-RESOURCE-PILOT-01/APPROVAL.json",
+        "attempt": "data/raw/generated/TOOLSANDBOX-RESOURCE-PILOT-01/20261012T080926Z-tsbpilot01/",
+        "entry_return_code": 1,
+        "failure": "OpenAI client construction raised TypeError: httpx.Client got unexpected keyword argument 'proxies' (openai==1.17.0, httpx==0.28.1); no chat completion request was issued",
+        "agent_logical_requests": 0,
+        "user_logical_requests": 0,
+        "observed_http_transports": 0,
+        "tool_calls": 0,
+        "execution_batches": 0,
+        "evaluation_status": "not_started",
+        "termination": "worker_exit_1_during_client_initialization",
+        "attempt_wall_s": 6.872147185,
+        "worker_sampling": {
+          "samples": 14,
+          "window_s": 6.500075546,
+          "cpu_ticks_delta": 23121,
+          "clock_ticks_per_second": 100,
+          "cpu_seconds_delta": 231.21,
+          "max_rss_bytes": 1108578304,
+          "scope": "shared ToolSandbox worker process"
+        },
+        "cleanup": "worker wait/reap confirmed; original PID instance absent; sampler stopped",
+        "raw_archive_hash_verification": "PASS_all_8_registered_files_and_exact_file_set",
+        "outer_manifest_hash_verification": "PASS_4_inputs_and_1_output",
+        "authorization_consumed": true,
+        "retry_or_rerun": false
+      },
+      "pilot02_preparation": {
+        "status": "single_formal_attempt_and_limited_offline_review_completed",
+        "identity_sha256": "3f855a9c70efff83e259093c147e95cd87b7915a7891f2128ecae64021a7ea7b",
+        "plan": "env/toolsandbox-resource-pilot-02/plan-identity.json",
+        "frozen_identity": "env/toolsandbox-resource-pilot-02/frozen-identity.json",
+        "preparation_manifest": "env/toolsandbox-resource-pilot-02/preparation-manifest.json",
+        "dependency_record": "env/toolsandbox-resource-pilot-02/dependency-change.json",
+        "dependency_change": "httpx 0.28.1 -> 0.27.2 only; openai 1.17.0 and httpcore 1.0.9 unchanged; pip check passed",
+        "pilot01_code_identity": "shared entry and worker now differ from the historical PILOT-01 frozen code hashes; historical identity and archive were not rewritten; PILOT-02 binds current code",
+        "default_client_regression": "Agent/User SDK default clients constructed with max_retries=0; HTTP send boundary observed zero requests; clients closed",
+        "initialization_failure_recording": "fake initialization error is recorded as safe infra_error, evaluation not_started, then parent reaps and archives",
+        "namespace": "one approved run archived at data/raw/generated/TOOLSANDBOX-RESOURCE-PILOT-02/20261012T091455Z-tsbpilot02; no other run was added",
+        "tests": {
+          "direct_functions": 16,
+          "passed": 16,
+          "failed": 0
+        },
+        "real_api_or_task_executed": true,
+        "approval_created": true,
+        "attempt_created": true,
+        "authorization_consumed": true,
+        "execution_allowed": false,
+        "next_command": null,
+        "execution": {
+          "run_id": "20261012T091455Z-tsbpilot02",
+          "exit_code": 0,
+          "identity_sha256": "3f855a9c70efff83e259093c147e95cd87b7915a7891f2128ecae64021a7ea7b",
+          "agent_logical_calls": 5,
+          "user_logical_calls": 1,
+          "tool_call_spans": 5,
+          "tool_batches": 5,
+          "worker_respond_to_messages_count": 6,
+          "worker_window_wall_s": 16.148652663,
+          "attempt_wall_s": 16.173282049,
+          "evaluation_status": "completed; raw similarity 0.9187765934944198, no threshold-based pass label",
+          "host_process_sampling": "33 points over 16.000090079s; shared worker process; 70658 CPU ticks at 100 ticks/s; sampled RSS peak 1536806912 bytes",
+          "cleanup": "worker reaped, original PID instance absent, sampler stopped",
+          "raw_archive_sha256": "218d6b5688649209426d79fdb9b1e2cb1e0e306bdd1fac0a2dc0593c5134380e",
+          "run_report_sha256": "a74baf81f05d0227822f67a706d4422ce5264288c91605f6e5737cdce0038348",
+          "outer_manifest_sha256": "a6e4b647592d6d500db467871583e35440ea981ae5ab2afc04e5a166c8b9ee75",
+          "actual_transport_count": "unknown; no transport-level hook",
+          "actual_bill": "unknown",
+          "retry_or_rerun": false
+        }
+      },
+      "offline_behavior_resource_review": {
+        "status": "complete_limited_single_run_n1",
+        "report": "reports/analysis/TOOLSANDBOX-RESOURCE-PILOT-02-review-v1/",
+        "identity_sha256": "3f855a9c70efff83e259093c147e95cd87b7915a7891f2128ecae64021a7ea7b",
+        "tests": {
+          "passed": 6,
+          "failed": 0,
+          "runner": "dedicated venv unittest"
+        },
+        "event_integrity": "request and tool IDs reconciled; run root remains right-censored; actual HTTP transport count unknown",
+        "resource_scope": "single shared worker process; phase boundary counters and periodic samples use distinct endpoints; no per-tool exclusive CPU attribution",
+        "recommendation": "expand fixed task coverage before considering repeats; this is not execution authorization",
+        "execution_allowed": false,
+        "gates_unchanged": true,
+        "cpu_02_replay_unchanged": true
+      }
+    },
+    "project_synthesis_v3": {
+      "status": "offline_evidence_coverage_update_complete",
+      "path": "reports/analysis/PROJECT-characterization-synthesis-v3/",
+      "date": "2026-10-12",
+      "scope": "four canonical categories, original six RQs and metric coverage; Coding/Office/Assistant fixed 3x3 designs; Video legacy sample vs missing local resources separated",
+      "primary_repeat_designs": {
+        "categories": 3,
+        "tasks": 9,
+        "runs": 27,
+        "not_a_cross_category_controlled_experiment": true
+      },
+      "source_verification": {
+        "packages": 11,
+        "registered_outputs": 41,
+        "source_analyzers_rerun": false,
+        "all_raw_inputs_reverified": false
+      },
+      "next_task": {
+        "id": "VIDEO-RESOURCE-PILOT-PREP-01",
+        "status": "proposed_not_started",
+        "execution_authorized": false,
+        "title": "既定Video benchmark的本地编辑资源试点可行性核查",
+        "goal": "先补四大类中唯一尚无已验收本地资源批次的Video；优先核查AgenticVBench本地剪辑/编码任务条件，而非把远端VideoWeaver生成服务当作本机CPU负载。",
+        "scope": [
+          "只读盘点已有VideoWeaver小样、既定AgenticVBench源码/任务/媒体/verifier的本地可用性与来源身份。",
+          "比较现有Agent、模型输入能力、arm64依赖、工具执行位置和测量边界，选一个候选任务。",
+          "已有资产不足时提出最小获取需求；不联网补抓，不自行创造替代benchmark或任务。",
+          "复用已实测采集链，设计单次试点；暂不实现新框架或申请九次运行。"
+        ],
+        "stop_condition": "交付一个可审的单任务方案及缺口/权限清单即停。",
+        "authority_note": "这是研究顺序建议，不授权下载、安装、API、Docker/VM、任务执行、批准或attempt。"
+      },
+      "html_updated": false,
+      "gates_unchanged": true,
+      "cpu_02_replay_unchanged": true
+    }
+  },
+  "docops_office_repeat_01": {
+    "status": "completed_nine_attempt_batch",
+    "collection": "DOCOPS-OFFICE-REPEAT-01",
+    "base_image_registration_correction": {
+      "historical_erroneous_id_preserved": "sha256:062bf50871c0e9d7d4a175643343746f27c7857325962525d7ebe9ae0c08fe9b1",
+      "corrected_id": "sha256:062bf50871c0e9d7d4a175643343746f27c785732596252d7ebe9ae0c08fe9b1",
+      "inspect": "fixed unix:///var/run/docker.sock; exact ID and linux/arm64 verified",
+      "historical_docops_01_to_04_evidence_modified": false
+    },
+    "source_commit": "ccf7a751bc5c8a69c1cdd0400125d53455b33be3",
+    "task_images_built_offline": {
+      "atomic__excel_001_budget_bucket_totals_seed": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+      "atomic__ppt_008_bullet_editing_seed": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+      "atomic__pdf_004_audit_pages_reorder_seed": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87"
+    },
+    "builds": "three local linux/arm64 task images; --pull=false and --network=none; build logs hash-verified",
+    "environment_preflight": {
+      "status": "passed",
+      "tasks": {
+        "excel001": {
+          "status": "passed",
+          "container_removal": "removed"
+        },
+        "ppt008": {
+          "status": "passed",
+          "container_removal": "removed"
+        },
+        "pdf004": {
+          "status": "passed",
+          "container_removal": "removed"
+        }
+      }
+    },
+    "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+    "identity_plan": "env/docops-office-repeat-01/plan-identity.json",
+    "identity_freeze": "env/docops-office-repeat-01/frozen-identity.json",
+    "approval": "reports/resource/DOCOPS-OFFICE-REPEAT-01/APPROVAL.json",
+    "attempts_created": 9,
+    "executed": 9,
+    "failed": 0,
+    "not_executed": 0,
+    "logical_model_requests": 49,
+    "model_response": "deepseek-flash",
+    "transport_attempt_count": "unknown_not_persisted",
+    "tool_calls": 34,
+    "behavior_resource_characterization": {
+      "status": "offline_analysis_complete",
+      "report": "reports/analysis/DOCOPS-OFFICE-REPEAT-01-characterization-v1/",
+      "scope": "nine batch-summary-listed runs only; three fixed local DocOps tasks x three repeats",
+      "reconstructed_agent_tool_calls": 37,
+      "batch_summary_tool_calls": 34,
+      "invalid_or_unknown_reconstructed": 3,
+      "batch_summary_invalid_or_unknown": 6,
+      "embedded_json_actions_recovered_by_runtime_semantics": 3,
+      "tool_returns_saved_ok_true": 37,
+      "identity_and_archives": "full plan/frozen structure and digest cross-links verified; all batch/raw manifest listed inputs and outputs hash-verified",
+      "resource_scope": "shared task-container and host sampler observations; no per-tool timing or exclusive attribution",
+      "office_category_generalization": false,
+      "gates_unchanged": true
+    },
+    "termination": "finish for all nine attempts",
+    "reward": "1.0 for all nine attempts",
+    "batch_wall_s": 299.891,
+    "batch_summary": "reports/resource/DOCOPS-OFFICE-REPEAT-01/batch-summary.json",
+    "batch_manifest": "reports/resource/DOCOPS-OFFICE-REPEAT-01/batch-manifest.json",
+    "raw_root": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/",
+    "raw_manifests_verified": 9,
+    "batch_manifest_inputs_verified": 161,
+    "batch_manifest_outputs_verified": 25,
+    "archive_status": "all nine raw manifests and batch output hashes verified",
+    "old_execution_stop_preserved": true,
+    "new_stop_record": "env/docops-office-repeat-01/execution-stop-20261010T153722622788Z.json",
+    "preflight_wiring_fix": "preflight_one imports Harbor _sanitize_docker_compose_project_name directly; real-path offline integration regression added",
+    "automatic_retry": false,
+    "gates_unchanged": true
   },
   "current_work": {
-    "id": "P1-12",
-    "phase": "offline_selection_and_budget_design",
+    "id": "PROJECT-CLEANUP-01",
+    "phase": "archive_link_and_reader_repair_complete",
+    "scope": "all 77 historical Markdown documents locally archived; seven current documents retained; current navigation/readers rewired; immutable reports keep original logical paths and hashes",
+    "review_report": "docs/current_task.md",
     "execution_allowed": false,
-    "local_verified_task_records": 1,
-    "new_task_records_required": true,
-    "coding_proposal": {
-      "distinct_tasks": 3,
-      "repeats_per_task": 3,
-      "status": "proposal_not_statistical_sufficiency_or_authorization"
+    "ready": false,
+    "deleted_files": 0,
+    "moved_evidence_paths": 0,
+    "production_code_changed": true,
+    "html_updated": false,
+    "gates_unchanged": true,
+    "cpu_02_replay_unchanged": true,
+    "next_proposed_task": "network and task-disk-footprint measurement wiring preparation; not started or authorized",
+    "moved_files": 237,
+    "moved_historical_documents": 77,
+    "execution_logic_changed": false,
+    "historical_reports_rewritten": true,
+    "historical_report_revision_scope": "G0 reading navigation only: five links plus explicit provenance note; original bytes preserved separately",
+    "temporary_html_generation_test_passed": true
+  },
+  "toolsandbox_assistant_repeat_01_preparation": {
+    "status": "completed_nine_sequential_runs_and_limited_acceptance",
+    "identity_sha256": "1643e0c8c6158734ce7186d24afd5ce36d5a40718d930e7eea2a507f0b32149b",
+    "plan": "env/toolsandbox-assistant-repeat-01/plan-identity.json",
+    "frozen_identity": "env/toolsandbox-assistant-repeat-01/frozen-identity.json",
+    "preparation_manifest": "env/toolsandbox-assistant-repeat-01/preparation-manifest.json",
+    "official_source_commit": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "official_source_files": 79,
+    "tasks": [
+      "send_message_with_contact_content_cellular_off",
+      "add_reminder_content_and_week_delta_and_time",
+      "modify_contact_with_message_recency_multiple_user_turn"
+    ],
+    "schedule": "fixed 3x3 round-robin; sequential; not randomized",
+    "tests": {
+      "new_batch": 5,
+      "pilot01_regression": 16,
+      "execution_measurement": 11
     },
-    "office": "separate_adapter_smoke_and_artifact_correctness_required_not_batch_ready"
+    "identity_and_preparation_hashes": "plan/frozen full identity equal; preparation manifest inputs and outputs and 79 source files re-read and match",
+    "real_api_or_task_executed": true,
+    "credential_value_logged": false,
+    "credential_source": "inherited DEEPSEEK_API_KEY environment; value never displayed or hashed",
+    "approval_created": true,
+    "attempt_created": true,
+    "raw_run_created": true,
+    "batch_summary": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/batch-summary.json",
+    "batch_manifest": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/manifest.json",
+    "executed": 9,
+    "failed": 0,
+    "not_executed": 0,
+    "logical_requests": {
+      "agent": 52,
+      "user": 13,
+      "total": 65
+    },
+    "agent_tool_calls": 48,
+    "user_end_conversation_calls": 9,
+    "project_attempts": 65,
+    "actual_http_transport_count": "unknown; no transport-level hook",
+    "observed_response_model": "deepseek-flash",
+    "entry_return_code": 0,
+    "batch_wall_seconds": 196.376527,
+    "evaluation_completed": 9,
+    "termination": "worker finished normally for all nine; conversation stop reason user_end_conversation",
+    "fee": "unknown",
+    "retry_or_rerun": false,
+    "execution_allowed": false,
+    "cost_acceptance": "explicitly accepted for this batch only; actual bill unknown",
+    "real_api_compatibility_verified": true,
+    "archive_verification": "batch and all nine raw archives valid; bytes/SHA-256 re-read matched; manifest is not self-hashed",
+    "cleanup": "all nine workers reaped and samplers stopped",
+    "gates_unchanged": true,
+    "cpu_02_replay_unchanged": true
+  },
+  "toolsandbox_assistant_repeat_01_review": {
+    "status": "offline_behavior_resource_characterization_complete",
+    "report": "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/",
+    "identity_sha256": "1643e0c8c6158734ce7186d24afd5ce36d5a40718d930e7eea2a507f0b32149b",
+    "runs": 9,
+    "logical_requests": {
+      "agent": 52,
+      "user": 13,
+      "total": 65
+    },
+    "agent_tool_calls": 48,
+    "user_end_conversation_calls": 9,
+    "tool_batches": 48,
+    "batch_ordering_executions": 59,
+    "system_setup_executions": 9,
+    "periodic_samples": 396,
+    "tool_errors": [
+      "A/r1 send_message_with_phone_number ConnectionError",
+      "C/r2 search_messages ValueError"
+    ],
+    "integrity": "batch/raw manifests, identity links, exact file sets, cleanup and archive hashes verified; current code matches frozen identity",
+    "tests": {
+      "review": 7,
+      "shared_interval_review_regression": 6,
+      "passed": 13
+    },
+    "execution_allowed": false,
+    "gates_unchanged": true,
+    "cpu_02_replay_unchanged": true,
+    "recommendation": "consider additional fixed Assistant task coverage; this is not execution authorization"
   },
   "frozen_catalog_semantics": {
     "path": "workload_catalog/cpu_02.yaml",
@@ -42,15 +1115,72 @@
     "modify_for_status_sync": false
   },
   "public_summary": [
-    "G1：登记小闭环通过；G2 / G3-R 未通过。",
-    "CPU-02：初次 B 准备失败，修复后 R1 映射失败；后续 perf 权限受限。路线暂停，无有效容器热点样本，新 retry 未授权。",
-    "P2-01 小样分析与 P3-01 v3 现有 trace 审计已交付；不授权 Replay。",
-    "当前：P1-12 小规模独立任务 × 重复的离线选样与预算设计；不启动容器、模型或新实验。"
+    "当前范围：本地单任务CPU、内存、磁盘I/O与占用、网络、时长、工具/软件统计和过程图；模型用量、阶段/错误、环境和采样质量一并记录。GPU、热点/PMU/微架构/优化不必交，Replay/并发仅可选。",
+    "公开操作和软件汇总v3已完成限定分析：SWE-rebench 9,435轨迹，SWE-bench 19,876对象/41组；OSWorld 755模型×任务/108任务，H-EPM 414轨迹，AgentX/Applied为宏观证据。部分语义和软件运行身份未知，来源不混算分母。",
+    "本地主设计：Coding、Office、Assistant各3任务×3重复，共27run/9任务设计。已有CPU/内存0.5s目标采样、有限I/O、阶段与调用统计；任务容器/共享进程不等于整机或工具独占测量。",
+    "待补：scope明确的网络收发、任务目录/输出/缓存占用、I/O速率图及完整四面板；最新Assistant与软件成果待最后统一更新HTML。旧run不倒填缺项，Video/GUI覆盖限制保留。",
+    "当前入口：docs/current_scope.md（目标）、docs/project_status.md（证据）、docs/current_task.md（工作）。77份历史文档已本机归档，5处旧报告链接已修复；HTML临时生成通过但来源版本标为PARTIAL。data保留配置/清单，原始大数据留本机；未授权实验或提交。",
+    "G1仅登记小闭环通过；G2/G3-R未通过，CPU-02/Replay继续暂停。状态、建议、旧批准和旧execute命令都不是新授权。"
   ],
+  "html_reading_pack": {
+    "status": "generated_revised_offline_static_reading_pack",
+    "path": "reports/html/PROJECT-RESULTS-v5/index.html",
+    "revision": "v5",
+    "pages": [
+      "index.html",
+      "public-traces.html",
+      "local-measurements.html",
+      "run-details.html"
+    ],
+    "coding_sampling": "all nine explicit runs; agent_container and verifier_container evidence scopes hash-verified and projected; each scope has saved points, valid CPU intervals, memory points, gaps and monotonic timestamps in verification.json",
+    "history_protected": [
+      "PROJECT-RESULTS-v1",
+      "PROJECT-RESULTS-v2",
+      "PROJECT-RESULTS-v3",
+      "PROJECT-characterization-synthesis-v1",
+      "historical raw and reports",
+      "PROJECT-RESULTS-v4",
+      "DOCOPS-OFFICE-REPEAT-02 raw and characterization-v1"
+    ],
+    "browser_render_check": "not performed; no local browser executable or browser tool available",
+    "generator_sha256": "dd81c2d001ab787c3ba28173d49a7f3e0519f79beed4bb44304db779e6e3c52c",
+    "test_sha256": "998c7fe741e4bb1225112972e414a3e673626673d4e82e6ed3d0b746045ab8c6",
+    "execution_authorized": false,
+    "gates_unchanged": true,
+    "synthesis_source": "reports/analysis/PROJECT-characterization-synthesis-v2/evidence_matrix.json",
+    "detail_runs": 29,
+    "office_repeat_02_source": "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/",
+    "office_repeat_02_totals": {
+      "runs": 9,
+      "independent_tasks": 3,
+      "logical_requests": 46,
+      "agent_tools": 37,
+      "bootstrap_tools": 18,
+      "finish": 9,
+      "reward_1": 9,
+      "bootstrap_ok_false": 3,
+      "samples": 354,
+      "pairing_issue_count": 0
+    },
+    "office_repeat_02_display": {
+      "unique_details": 9,
+      "call_timelines": 9,
+      "resource_curves": 18,
+      "source_statistics_only": true,
+      "single_excel_not_in_repeats": true
+    },
+    "tests": {
+      "existing": 6,
+      "new": 5,
+      "total": 11
+    }
+  },
   "evidence": [
     {
-      "path": "reports/quality/g0_review.md",
-      "sha256": "932e44869acb76077d8fe2d62a54941d9206fff9005121e7c2dea76ec63febf4"
+      "path": "local_archive/20261016-repair/before-edit/reports/quality/g0_review.md",
+      "sha256": "932e44869acb76077d8fe2d62a54941d9206fff9005121e7c2dea76ec63febf4",
+      "original_logical_path": "reports/quality/g0_review.md",
+      "role": "original historical G0 review, before navigation-only revision"
     },
     {
       "path": "reports/resource/G1-02/G1-02-20260915T093254Z-94bb0ee7/manifest.json",
@@ -83,6 +1213,879 @@
     {
       "path": "workload_catalog/cpu_02.yaml",
       "sha256": "a730aec84fb4fc9e37f8b9025943205b8b29d5bf1fdb396e287330605238b50c"
+    },
+    {
+      "path": "env/docops-arm64-word001/deepseek-official-smoke-20261010.json",
+      "sha256": "5e97a75808d1b7a56c2b3975a2f7855b8d555c21865d170ae08400df442dd862"
+    },
+    {
+      "path": "reports/resource/DOCOPS-WORD-RESOURCE-04/run-report.json",
+      "sha256": "86b7cbba8b49c31fc9688f045b221fe9c28e14b74e72ad7dd8ef3a1f0e61917c"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/manifest.json",
+      "sha256": "ae4f31274e94b4a5a7296976f12d76c45024119f3842ff449b38f78d7c28c7b6"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-WORD-RESOURCE-03-04-review-v1/manifest.json",
+      "sha256": "b1b444237d4c8ead095c018cd8b3a462def262a33e3c9fe753a10be486044b78"
+    },
+    {
+      "path": "scripts/docops_word_resource_analysis.py",
+      "sha256": "d6be6b59ca09167300230c2ffe49377c835221644227594416b1e4f87f4fe752"
+    },
+    {
+      "path": "env/docops-office-repeat-01/base-image-correction.json",
+      "sha256": "11cc2e1857d879cd56fd2fb2ad95eccfb0b2e3cc424ee9fd2b00d79d6fe6fa6e"
+    },
+    {
+      "path": "env/docops-office-repeat-01/base-image.json",
+      "sha256": "d14475edd13cbf9bc6a6267433e5200d8f659a00814bd72cfa333612196d4488"
+    },
+    {
+      "path": "env/docops-office-repeat-01/image-builds.json",
+      "sha256": "cac8cd3a8e021faf2fdae8f8717fd3c6277a24946458e7f7fed6821aa221d336"
+    },
+    {
+      "path": "env/docops-office-repeat-01/image-builds/excel001-initial.log",
+      "sha256": "0d3af303f8e0210e1b5e0f03f412378fcf065eeb380dc3c00ef1182e29a5dfab"
+    },
+    {
+      "path": "env/docops-office-repeat-01/image-builds/ppt008-initial.log",
+      "sha256": "30a2f55e45a6b0479ae7a87bd12f8d82572695c01c3bf55e563fe6a05119ae10"
+    },
+    {
+      "path": "env/docops-office-repeat-01/image-builds/pdf004-initial.log",
+      "sha256": "2d8b91001a72db3704feadd2e075dd0dce7e9c63bbd28d8eb983e56db16d1af8"
+    },
+    {
+      "path": "env/docops-office-repeat-01/execution-stop.json",
+      "sha256": "19e33caaa0ea9f68d7966593f1a3c4a0084d4918408da4eefc12efcf2b08fc8a"
+    },
+    {
+      "path": "env/docops-office-repeat-01/execution-stop-20261010T153722622788Z.json",
+      "sha256": "3e24ef90e2fce9b4633f606b61f2ac9c1ceaa49300702638e6d28f9e046c4be9"
+    },
+    {
+      "path": "scripts/docops_office_repeat_01_entry.py",
+      "sha256": "458a9f9668497ed21a0b083e9cad20fd2509bf6621cb8fc3de198eee3a6bc758",
+      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
+    },
+    {
+      "path": "tests/test_docops_office_repeat_01_entry.py",
+      "sha256": "fd2c0f3710571a421c666a09ab894204b2bfeeaba3a3e73894bceb9882b984a0"
+    },
+    {
+      "path": "env/docops-office-repeat-01/plan-identity.json",
+      "sha256": "704334d9184b56250d58ae10e210b7d3332a896cc748310f5d0dfc88d9f886bb"
+    },
+    {
+      "path": "env/docops-office-repeat-01/frozen-identity.json",
+      "sha256": "5c3dde2bac260fc56fa160629a4830167792c1578e4de008849f8e3bfadb5de1"
+    },
+    {
+      "path": "env/docops-office-repeat-01/preflight-excel001.json",
+      "sha256": "a5c3e728f022a6943aba4de38c85cd04965806628207dd1aad2ad209bd20b5e7"
+    },
+    {
+      "path": "env/docops-office-repeat-01/preflight-ppt008.json",
+      "sha256": "22881a44ce084c0e3d9de4dc342c6a6dc8831a8e818f9f8e310a7540ee916586"
+    },
+    {
+      "path": "env/docops-office-repeat-01/preflight-pdf004.json",
+      "sha256": "8cdb8179d90951ea805122ad97435a04cdec5d189a70835068b1dcb9ee2eb955"
+    },
+    {
+      "path": "reports/resource/DOCOPS-OFFICE-REPEAT-01/APPROVAL.json",
+      "sha256": "547b9a99a80aa6bacebded0fb93d3bf9415f80314327c04bd2724341c969a309"
+    },
+    {
+      "path": "reports/resource/DOCOPS-OFFICE-REPEAT-01/batch-summary.json",
+      "sha256": "1f6dacebef195684330c7ea42e08ab89907e7bb76f88f6b6ab38dd073b8255bd"
+    },
+    {
+      "path": "reports/resource/DOCOPS-OFFICE-REPEAT-01/batch-summary.md",
+      "sha256": "a4212635cdadf59c4416c6fcbadb2387f775ed156e2fa3531c244c341f7c3186"
+    },
+    {
+      "path": "reports/resource/DOCOPS-OFFICE-REPEAT-01/batch-manifest.json",
+      "sha256": "5465bd104c23186f2688c6b3d463483df0a9fa41aa566c08fff8256151b91c55"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T154928Z-r0-excel001/manifest.json",
+      "sha256": "89839feeb0b87611e38d7ed2e3bd955cbf48e179dd75b22b548694baf4fcdd5d"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T155019Z-r0-ppt008/manifest.json",
+      "sha256": "89ef91c3ebd0eab38f17eeff728d638fd7120488f7cdfa812289879965c13793"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T155045Z-r0-pdf004/manifest.json",
+      "sha256": "feeba5835a45b2fe4eddfdefe4a0e5ae80f5e01fa79f22ee2798699ce587b693"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T155107Z-r1-ppt008/manifest.json",
+      "sha256": "8e8eb6f1991153629008fd920140793c99086ab53e6880aba982a9e32ff06ad2"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T155132Z-r1-pdf004/manifest.json",
+      "sha256": "5e3577db500547878153097faddbd96d770f2d7766cff5a9ad0995cb9b23b208"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T155154Z-r1-excel001/manifest.json",
+      "sha256": "4bef1c61e0a3ba0df78416e56b26de11cdb8677efb16229670af8bfb00fb7a79"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T155227Z-r2-pdf004/manifest.json",
+      "sha256": "1ff7e85aa9913bcfd5ac1224427a6c4feaa0cd149449c5855fd7512d09da8ee0"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T155248Z-r2-excel001/manifest.json",
+      "sha256": "682083d8926fa614fd64871af9078965325c9fc38bb08a37add526aab3e01fb0"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T155323Z-r2-ppt008/manifest.json",
+      "sha256": "4608e2b88b62e578e57ae88413e1090ef816659b5ac2ee8f625760d883692d26"
+    },
+    {
+      "path": "scripts/docops_office_repeat_characterization.py",
+      "sha256": "9c7e297effb0f791875a8169b821d93bb77753acc46a9ec6ac77505928ee4105"
+    },
+    {
+      "path": "tests/test_docops_office_repeat_characterization.py",
+      "sha256": "09921e65027f9f267b03b82d8e278ee8a63615f3af3dc1b64b6bebfed7430ca8"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-01-characterization-v1/summary.json",
+      "sha256": "f1fa0d598b3a1a52520abc5c16821433a5f71e0dd3208135dc1266fe523f1ec2"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-01-characterization-v1/summary.md",
+      "sha256": "347c8c9321b4b5025512ff2fb3f4f349b4b6c78d19f018892df6ed33fedc69d9"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-01-characterization-v1/per_run.jsonl",
+      "sha256": "e3d7eaf3afdd004a684057de69eb5462807b7f34120e55837e842002e1448f60"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-01-characterization-v1/manifest.json",
+      "sha256": "c29159f0880a1496fcef18f01948ed2b658a2c877ed273d61cec3cb85b44d1a9"
+    },
+    {
+      "path": "scripts/generate_project_results_html.py",
+      "sha256": "479e03a0a30c2f679552c42d98456ebe44762b5befe7ce9ea700131a42ad9533"
+    },
+    {
+      "path": "tests/test_generate_project_results_html.py",
+      "sha256": "95246a2776eae57c6cf98877d42c930a00097bce823b54452a815503730f9b63"
+    },
+    {
+      "path": "reports/analysis/PROJECT-characterization-synthesis-v2/summary.md",
+      "sha256": "b279ea9ed58453db24ae45a4d9eebcc1a4f36b263382ea8ba775b73f7ae9d37d"
+    },
+    {
+      "path": "reports/analysis/PROJECT-characterization-synthesis-v2/evidence_matrix.json",
+      "sha256": "82a5d0c16b882a90c67363c818aa2bf830a37447a435b24f3a19e8d880a53cbd"
+    },
+    {
+      "path": "reports/analysis/PROJECT-characterization-synthesis-v2/manifest.json",
+      "sha256": "2f7a08cfc5bbbaf2afd916b63f68a6592a6cf50d3fb2d7894b4991d3d381f841"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/execution_measurement.py",
+      "sha256": "e520938f431e34e0b7f8d9c6e996c82dbf7e5beb48554f355fd8d656a7bc0df6",
+      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/semantic_recorder.py",
+      "sha256": "b5921e6a287067d0f15352fede88477913f71cc122cb270bf79f5aebc69204a8",
+      "role": "current shared recorder includes ToolSandbox batch run-root closure; historical run identities remain in their manifests; not an execution approval"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/host_process.py",
+      "sha256": "7b05e9d89bfbbdb1ff6a246230770470992c2a5dbccb68fef81965c62d4e8c1e",
+      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/resource_sampler.py",
+      "sha256": "3576a38eb71379ce2771ea096b0b9cade9c06c5f8f772e11b9c162f5cee2af4b",
+      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/docops_word_agent.py",
+      "sha256": "d2dcf447e2d634755cb662ece23050bb38a328cdebc903ad5a085732d7ceba44",
+      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/coding_pilot.py",
+      "sha256": "5d63e1911a5c34d3fc1e4edcfe603ff42907fa8e87d255546c6cb4f42715796b",
+      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/mini_agent_adapter.py",
+      "sha256": "78d2e76d353aced360f6c1a01c65afd9689917397113a3c4cbfed8646a06f2ed",
+      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
+    },
+    {
+      "path": "scripts/docops_word_resource_01_entry.py",
+      "sha256": "5b5d84f3f1bd7640b51773bd20ff696990d1b006b15e7ff3e2932994788c0014",
+      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
+    },
+    {
+      "path": "tests/test_execution_measurement.py",
+      "sha256": "a2af5ad5b6b0c1347ff93b3946b32fc6b97f6e4be4fa85ff6a7c5dd8ac480953",
+      "role": "current shared measurement regression includes ToolSandbox batch root-close case; historical identities remain in their manifests; not an execution approval"
+    },
+    {
+      "path": "docs/trace_contract.md",
+      "sha256": "2371dad5cfc12ca7837958703cd41575ce34b6dee4ff2907508ed0c4185c0886",
+      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
+    },
+    {
+      "path": "docs/reproducibility.md",
+      "sha256": "845c6ffb068d0d447a58d74dbd7ad5a03063671a06a1830f52cff4e49e9a95d7",
+      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
+    },
+    {
+      "path": "tests/test_docops_word_format_adapter.py",
+      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; no execution authorization",
+      "sha256": "97598523f88e62fd4b13c8c3c6b10453c2ddba13b569782218a041f69207e1ca"
+    },
+    {
+      "path": "tests/test_docops_word_resource_01_entry.py",
+      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; no execution authorization",
+      "sha256": "741d9e0b2618a07ba2d21b42586f8eff3b88e97a1b229fd7f94725a4ea07132c"
+    },
+    {
+      "path": "tests/test_coding_pilot.py",
+      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; no execution authorization",
+      "sha256": "f01ab5036091d97b30e9b96d125bff8953100ffc5d0948a7d7a9998fd0f94cbb"
+    },
+    {
+      "path": "tests/test_p1_12_finish_protocol.py",
+      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; no execution authorization",
+      "sha256": "69f05ed252ae170a9e440a484484e6b67a957b2cb2d411431c0939d057f7ba01"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/docops_environment.py",
+      "role": "DocOps image-retaining cleanup; offline validated, real effect unvalidated",
+      "sha256": "84c20c655de54e1ca20965c4ab5935d7b95f8229747058f9cc7517cfbaf70ab0"
+    },
+    {
+      "path": "tests/test_docops_cleanup.py",
+      "role": "Eight real-production-wiring offline cleanup regressions; temporary outputs only",
+      "sha256": "ba8cd7a222b0cfe94e2a8a5abd87dc991fa387fbf039cc0c1e92174fd6693ae6"
+    },
+    {
+      "path": "scripts/docops_measurement_validate_01_entry.py",
+      "role": "Fixed single Excel measurement entry; prepared only, execution awaits independent approval",
+      "sha256": "d1a9bdb8dafebf580f7c4e599896c280caf2f8a0d3252aa77811ce0d1391459b"
+    },
+    {
+      "path": "tests/test_docops_measurement_validate_01_entry.py",
+      "role": "Eight temporary-root production-wiring regressions; not a real measurement validation",
+      "sha256": "5afcc0529e61160e269878f345244b173e10bc1dcb1c8c77fc85efedf56bf67a"
+    },
+    {
+      "path": "env/docops-measurement-validate-01/image-restore.json",
+      "role": "Actual fixed-endpoint offline restoration evidence; no task container or API",
+      "sha256": "31195390f160068031e13a96ca48f7739d7768a3678c0032c1384b5418806631"
+    },
+    {
+      "path": "env/docops-measurement-validate-01/frozen-identity.json",
+      "role": "New full identity freeze; not approval and not historical identity replacement",
+      "sha256": "b2bbbb2e6759a6b2c1bf8ad95582e5b8edca7f0c222be5b916036c1d824f5127"
+    },
+    {
+      "path": "env/docops-measurement-validate-01/preparation-manifest.json",
+      "role": "Preparation input/output identity manifest; excludes itself",
+      "sha256": "176a462a4f8e79bb2f955c30cec30156edb2d10b023bebfc66dfb8bda76bfb0c"
+    },
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VALIDATE-01/APPROVAL.json",
+      "role": "Current user authorization for one identity-bound run; consumed, not reusable",
+      "sha256": "9d7a4e1f1a9fc8872504fcc6c1452d383be861d971e1361f021e30ab91fa9e60"
+    },
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VALIDATE-01/run-report.json",
+      "role": "Single real Excel execution result; no retry",
+      "sha256": "2dfa77239cea9997043727dfa57e5eb5aa2e332918a5c29a85701a70af164fbc"
+    },
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VALIDATE-01/VALIDATION.json",
+      "role": "Post-run declared-scope measurement/resource/environment/cleanup/archive acceptance; explicit unknown extensions",
+      "sha256": "c4ddf5ee84d1984b65ad94fe6cb8c1ee5541ca09db5b08612bb11afb66108b05"
+    },
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VALIDATE-01/VALIDATION-MANIFEST.json",
+      "role": "Acceptance evidence inputs and output bytes/SHA; excludes itself",
+      "sha256": "c6ff49e402c2b04bfbb3e640bc41370f421cdf45d0532b8eaead0866efffdc61"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VALIDATE-01/20261011T093515Z-excel001/manifest.json",
+      "role": "Single-run sealed raw outputs and execution inputs",
+      "sha256": "979c8142c1ed15c6442533a23900d0be967d34e1756d6808023d71b3b5e5e0ae"
+    },
+    {
+      "path": "scripts/docops_office_repeat_02_entry.py",
+      "sha256": "538a9fef77c707e2a1d8a2ebb87fd8aca1726446f9c8bdba196e897ed00064d9"
+    },
+    {
+      "path": "tests/test_docops_office_repeat_02_entry.py",
+      "sha256": "054095532c6a80fab971358c63e540e30d2d02ca98495598ff0203adce09951c"
+    },
+    {
+      "path": "env/docops-office-repeat-02/image-preparation.json",
+      "sha256": "c6215d358d4642b74ef8bff02d32acaee94e21105a28ddd4174bb415f4c506cc"
+    },
+    {
+      "path": "env/docops-office-repeat-02/image-builds/ppt008-restore.log",
+      "sha256": "c2f8c6d5e1c6af25f32902d8ed016dc67194d5fa7eb5a791fd5819b3a5c3cad6"
+    },
+    {
+      "path": "env/docops-office-repeat-02/image-builds/pdf004-restore.log",
+      "sha256": "69078d11e956198fd39f02b15e9b6ab4c51adf400e3db50f926425321bf8ac20"
+    },
+    {
+      "path": "env/docops-office-repeat-02/plan-identity.json",
+      "sha256": "69e2d083c9f08d2e92adde4c3910fe35a3536da64831c23b22d187ea4bcc72ce"
+    },
+    {
+      "path": "env/docops-office-repeat-02/frozen-identity.json",
+      "sha256": "69e2d083c9f08d2e92adde4c3910fe35a3536da64831c23b22d187ea4bcc72ce"
+    },
+    {
+      "path": "env/docops-office-repeat-02/preparation-manifest.json",
+      "sha256": "4331ab52f0785c2bd267d9e6a7b13d6844d4b6f42c3ed992fa443f7393fb0a54"
+    },
+    {
+      "path": "reports/resource/DOCOPS-OFFICE-REPEAT-02/APPROVAL.json",
+      "sha256": "5b8fd504fd210124c59a1d00642323982eda3557c2e36a7234a50acfa67a2206"
+    },
+    {
+      "path": "reports/resource/DOCOPS-OFFICE-REPEAT-02/ATTEMPT_STARTED.json",
+      "sha256": "0cc349a43b2a9da05d5d60c1cd7a799200dffc6e7a715336eb03f82d95156d7b"
+    },
+    {
+      "path": "reports/resource/DOCOPS-OFFICE-REPEAT-02/batch-summary.json",
+      "sha256": "0589ead3b29ce7f96739c1a09e340729445b629a8c06dfc61623b9f7f41322a7"
+    },
+    {
+      "path": "reports/resource/DOCOPS-OFFICE-REPEAT-02/batch-manifest.json",
+      "sha256": "9f263c53b06e9fd2c41ac852529361ce0fba5f0caa7aaf7bdcc99538d1c9cfaf"
+    },
+    {
+      "path": "reports/resource/DOCOPS-OFFICE-REPEAT-02/VALIDATION.json",
+      "sha256": "8cd2125ad1eb57bef4c03c9d28ef3c861e90145c022ce0702a3bb7628d653ec8"
+    },
+    {
+      "path": "reports/resource/DOCOPS-OFFICE-REPEAT-02/VALIDATION-MANIFEST.json",
+      "sha256": "57e98ef551e7cea2d3bb2c815fdaf0fb2b9f2df6c4a92ce3c8d382cc8acbca99"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/summary.json",
+      "sha256": "ef32ce5cb759a6bc488dc33ab5e3adab3e5e14443cd90fcc00524495f1af6922"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/summary.md",
+      "sha256": "67b52d81516b903f3e3eda1090be572cbb00d7cb33b7a7bd2f3561e54f0eef60"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/per_run.jsonl",
+      "sha256": "b43c0ec567c95af7dded62244df6dc780054e0252d5c51cd7553e762b5486533"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/manifest.json",
+      "sha256": "d39c9608d2556fb0b74d671da1ff6e3aeb9946c411c9e791feca841b0b6be642"
+    },
+    {
+      "path": "scripts/docops_office_repeat_02_characterization.py",
+      "sha256": "39edc8acedae2c4fd0f3f4702bb99721e9103de2cc0ebf6e0e3b5b308847e3e4"
+    },
+    {
+      "path": "tests/test_docops_office_repeat_02_characterization.py",
+      "sha256": "bbe31cff111469a8a50928dc1cf984aa3fad775d6319b536696aff9a531b68b8"
+    },
+    {
+      "path": "scripts/toolsandbox_hepm_behavior.py",
+      "sha256": "4cc1f687644f174d9fdb210cb97063aecbce07afc44a57c0b05268676b50313f"
+    },
+    {
+      "path": "tests/test_toolsandbox_hepm_behavior.py",
+      "sha256": "cd06c871066481629189181c9d278e8ab32a55c379601eb1f5c0e38e66fa021d"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/summary.md",
+      "sha256": "27fe83668a9e332004be278b169683bd00dfd948453c3abd288001d69d2649e0"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/summary.json",
+      "sha256": "c2b9c6735e872b6137611855441d112ffccff9359303705c38be48731d3177bf"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/per_trajectory.jsonl",
+      "sha256": "ef940b1227fa657b1e2520c8f35a112514597196bcba9d643be4be76ec0d2f62"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/manifest.json",
+      "sha256": "591f15c72ef8caa2d92727da93ee13b4817f75268b3634e295ba7690042cf4cd"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/api-verification-20261012.json",
+      "sha256": "f89c873c34f4522e7f8434c31c4cefb3e48335675881ebf21418546bbfdbcbea"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/execution-precheck-stop-20261012.json",
+      "sha256": "39266a3c406a29f30f3cd30dc3ef6c86d8ec650f6d035404142ff3248b53d5a6"
+    },
+    {
+      "path": "scripts/toolsandbox_resource_pilot_01_entry.py",
+      "sha256": "4b0da9fa829f0e0a0de1e4ac6f888426a86c0fedfb99cbf864fff35d7b694d63"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/toolsandbox_worker.py",
+      "sha256": "3eb3dcd4c03df82dfb2fc956936ed05a6c78854e5f3dd1a79f4e04bde5f8ee50"
+    },
+    {
+      "path": "tests/test_toolsandbox_resource_pilot_01.py",
+      "sha256": "01754aad391ec93da293ec82592461d45f9d932e7d98d5972132777f4e712298"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/plan-identity.json",
+      "sha256": "291ff378f934da7a98d5ff47db367a70d50512ec60f7391099f38a17274279fa"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/frozen-identity.json",
+      "sha256": "291ff378f934da7a98d5ff47db367a70d50512ec60f7391099f38a17274279fa"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/deadline-repair-manifest.json",
+      "sha256": "1541d385c3de545051bca53e063a9b3123a591363fc19ac20d3643a95b967cf5"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/identity-before-deadline-fix/frozen-identity.json",
+      "sha256": "a159c0a8722a6ccdf2ba7df90074323a6a36a836f6a3553c848a71a123de53f0"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/identity-before-deadline-fix/plan-identity.json",
+      "sha256": "a159c0a8722a6ccdf2ba7df90074323a6a36a836f6a3553c848a71a123de53f0"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/identity-before-deadline-fix/preparation-manifest.json",
+      "sha256": "d23e13dc5e5d41977ba85d3c6ac7cc1d48a5176ea619678a1e3050dede744196"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/identity-before-deadline-fix/toolsandbox_resource_pilot_01_entry.py",
+      "sha256": "4d42692eb118c05d19129520ebaa8387cff5b2cdd5dbe67ab2a698a0ceb31ae9"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/identity-before-deadline-fix/toolsandbox_worker.py",
+      "sha256": "6c6c5dec9aff98db4541b986418de08048deaa9274d84c3932eb2aebe0414575"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-RESOURCE-PILOT-01/APPROVAL.json",
+      "sha256": "d9db018b25058ef0196d0888f43969e8dbad749ac88f1c8c9e3b2cece2499a85"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-RESOURCE-PILOT-01/run-report.json",
+      "sha256": "f8b8338809608ae53837f8478d3f110f78a3adbc09a7930a50bffbf82d004bce"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-RESOURCE-PILOT-01/manifest.json",
+      "sha256": "fbf76180da65fd5a2b8efa29aae6196ca3085a02d207d6f23363fd968962e716"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-RESOURCE-PILOT-01/20261012T080926Z-tsbpilot01/ATTEMPT_STARTED.json",
+      "sha256": "bc0c6d6ded89fc13c845abd92833cd693af4bf291708424abc5960a5c6afc43f"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-RESOURCE-PILOT-01/20261012T080926Z-tsbpilot01/ATTEMPT_COMPLETED.json",
+      "sha256": "c26c52d42db875ec3daf2676deb17a90088709bdbc186b92d4552683b80b150b"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-RESOURCE-PILOT-01/20261012T080926Z-tsbpilot01/manifest.json",
+      "sha256": "f7b03dbb39210aba0927311eebfe8220061923fe5be7d71f4d61309410c842de"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-RESOURCE-PILOT-01/20261012T080926Z-tsbpilot01/events.jsonl",
+      "sha256": "8bc96d216f1b412f799c6339dfb693557c3626c20908324b5f8b5bceac1a201d"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-RESOURCE-PILOT-01/20261012T080926Z-tsbpilot01/boundaries.jsonl",
+      "sha256": "8fe0a1a3d1caf46d82baec0c44816e06f1fffdb887e9400065976ea09edb4301"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-RESOURCE-PILOT-01/20261012T080926Z-tsbpilot01/samples.jsonl",
+      "sha256": "c49d5903b4e983adb6b6b9c3d667101d4aad38480f5d810f030d5d824c240615"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-RESOURCE-PILOT-01/20261012T080926Z-tsbpilot01/worker.stderr",
+      "sha256": "adc6033cb1bda9097db5d3acab3aeddb0e795f3b38d7bf57f7e1f161e9435fc6"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-02/frozen-identity.json",
+      "sha256": "a8d899398c3f4ac64b77c1176a33ddb3443a000d0d8c4d57813e7d39826a8ed9"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-02/plan-identity.json",
+      "sha256": "a8d899398c3f4ac64b77c1176a33ddb3443a000d0d8c4d57813e7d39826a8ed9"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-02/preparation-manifest.json",
+      "sha256": "875617788ebf9f917345821e0cb19b62751c736295e26138f34b48d16e56ecb8"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-02/source-manifest.json",
+      "sha256": "a62c964a859fdb32602b0348c66ecc192ae7092bb2bc60fa2a9800afc929e708"
+    },
+    {
+      "path": "scripts/toolsandbox_resource_pilot_02_entry.py",
+      "sha256": "2aa3df9cfc23d916bafe8b7f7102a9d7a2cb85cfdd40587379ce3bc332b20151"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-02/venv-freeze.txt",
+      "sha256": "de5ecf241ad89d6de7cf01f0fc75f4a4730c2ea623b7e0d9f354ea4cf3f01b59"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-02/dependency-change.json",
+      "sha256": "75aa1c0e2c5a0f9a4230272b5db5a3db8b5dafd3db7c0576e5210c27dd15b4cd"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-RESOURCE-PILOT-02/APPROVAL.json",
+      "sha256": "d421e1416277432d5f43cac5679152620709ec0917b0f4f4281e98d52749885e"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-RESOURCE-PILOT-02/run-report.json",
+      "sha256": "a74baf81f05d0227822f67a706d4422ce5264288c91605f6e5737cdce0038348"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-RESOURCE-PILOT-02/manifest.json",
+      "sha256": "a6e4b647592d6d500db467871583e35440ea981ae5ab2afc04e5a166c8b9ee75"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-RESOURCE-PILOT-02/20261012T091455Z-tsbpilot02/ATTEMPT_STARTED.json",
+      "sha256": "ee17d66708a4b04736b51c0a4a63716e02370f6b659ada8de8e16c2a990e4281"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-RESOURCE-PILOT-02/20261012T091455Z-tsbpilot02/ATTEMPT_COMPLETED.json",
+      "sha256": "c049087c46282aec3fb9562b9bf2eda393bf0717182fc87d99f6c23834fed9da"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-RESOURCE-PILOT-02/20261012T091455Z-tsbpilot02/manifest.json",
+      "sha256": "218d6b5688649209426d79fdb9b1e2cb1e0e306bdd1fac0a2dc0593c5134380e"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-RESOURCE-PILOT-02-review-v1/summary.md",
+      "sha256": "599a10167f15fd776731d5982a2bce10f268b8bbc9332bca665bca3d7ac0560a"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-RESOURCE-PILOT-02-review-v1/summary.json",
+      "sha256": "b8e9ecd85b6d3625c11a3eef516050c15dcb594a295baeda435fa42c7146e4ab"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-RESOURCE-PILOT-02-review-v1/per_run.json",
+      "sha256": "a4b34cd60320852aa5b8c7630ab4f72d184194818fc4dcbc35c0d544ff08160e"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-RESOURCE-PILOT-02-review-v1/manifest.json",
+      "sha256": "e9de7ae73b477ea3cb4c3098b6b80a7a92eb34d4ad438d5b5712df4e0041220d"
+    },
+    {
+      "path": "reports/analysis/PROJECT-characterization-synthesis-v3/summary.md",
+      "sha256": "08a3ebfea0e9bb21e53610e06d84a93f1f13b2e15cabcede759d58b0ed1979ba"
+    },
+    {
+      "path": "reports/analysis/PROJECT-characterization-synthesis-v3/evidence_matrix.json",
+      "sha256": "cc84a68ca45901d8479bdc34fad287b5e982a2d6ac597d100766ba125c2e40d9"
+    },
+    {
+      "path": "reports/analysis/PROJECT-characterization-synthesis-v3/manifest.json",
+      "sha256": "6fa66ae4e38e20b1899f2856fcf957bd023c35f75b3cb783afc97e7eb7c1df0c"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v1/coding_operations.csv",
+      "sha256": "9bb8876ba79e06ae4b807dde63d3bdc6a970ae1250f201e94adef4cc938c2763"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v1/coverage.json",
+      "sha256": "1080667da2f861f0b7de7ffaffafee1e259b00d846ae5f0edbf9f01c946b638b"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v1/coverage.md",
+      "sha256": "cfcf2b26ea4edbabae3b605bf985582026019153e5cb8004cbe7677b48b6e17f"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v1/per_trajectory.jsonl",
+      "sha256": "91daa8662c3220599bb9b23d4bcb9528001f6844d853b1f5bd4e0e644d145f85"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v1/summary.json",
+      "sha256": "7a5c0e8a469a3b95111e58ce8897e619750af3aff81e9ee423913ffca3a2207c"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v1/summary.md",
+      "sha256": "7f535d6fd02e25003f7870d09d55bac5b776cb85d32dbfad7a9abdaeb3abeeaf"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v1/toolkits.json",
+      "sha256": "27632eab34eb99844244a7b6190c85f66c22827e15def55ed4c4bad1530b1224"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v1/toolkits.md",
+      "sha256": "8757763cfa2772a1d493a19e6d3273f9334151624fe05c76d8a8517c2160157c"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v1/manifest.json",
+      "sha256": "ebeb1cbe096d99601b7e3b4eb8bdd684382db17f1778b177438041ef0c60ff06"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v2/summary.md",
+      "sha256": "3136e90a4692120ca6100e5fef471a92345d1dedafbca644e9e7e6bf2738b4dd"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v2/summary.json",
+      "sha256": "5bc9274580bd1f34efe91cd2a70d55edffbcad940ef345d612c76b9d01e3362e"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v2/toolkits.md",
+      "sha256": "efa5ec722d844d3dd9ffbb0bc712f0b8eaffe3ac748d78260e9e88baff4c84c6"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v2/toolkits.json",
+      "sha256": "ec2b4be19eaee706257e1a0be92a07dfe602db986e5a56859155f0e0522c27fc"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v2/coding_operations.csv",
+      "sha256": "c2cc3e6e32152b857ec4dd18da3c732bbc6e952f05cbf9144c14f0d774dc3a63"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v2/per_trajectory.jsonl",
+      "sha256": "fd9fbaa00d35a5b20100b3f7034973fa02fbfc38431c049b928f03a09a6f6b73"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v2/coverage.md",
+      "sha256": "6cef4657765883866d6a1ec66177e72704037120a0f2c621457a7d01b95252b6"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v2/coverage.json",
+      "sha256": "4b30c2ea7e4c026d672953f9809cbae98323dacd78c968b6e26cd3f2c0be8959"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-OPERATIONS-v2/manifest.json",
+      "sha256": "cfecb894d0d8c9e6cf6a3a6986421e90c59a19d30985034be40ff21b4aeb54a6"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-TRACE-SOFTWARE-TOOLKITS-v3/manifest.json",
+      "sha256": "3acf2c278352287371ee7c51de3e591252a0c833c5f3689632d4246a74be7e54"
+    },
+    {
+      "path": "scripts/public_trace_software_toolkits.py",
+      "sha256": "5e593bcfe7bd244d51b2ca467ede1e979d81cb06022bda20f6c730a6d9a93d2e"
+    },
+    {
+      "path": "env/public-trace-software-toolkits-v3/source-before-edit/public_trace_software_toolkits.py",
+      "sha256": "556c22732115b1cb0905d0a9e73f0a7a56009629e425c61b2942b3d66e2fe43e"
+    },
+    {
+      "path": "docs/current_scope.md",
+      "sha256": "c1ffd5e8a2bf0db73aff36ac7eba1d9d27d8b92e26a8dee309d927f6c2f8e303",
+      "role": "current documentation entry; not execution authorization"
+    },
+    {
+      "path": "docs/current_task.md",
+      "sha256": "712db958363cca13e867dc6fef820ec9840533436caf338f3753ccc85cff122d",
+      "role": "current documentation entry; not execution authorization"
+    },
+    {
+      "path": "docs/archive_index.json",
+      "sha256": "d90d72e0ee801e94110ea45d3a23e18028752b2c6830d31a37623b870640213e",
+      "role": "document relocation metadata and read-only audit; not execution authorization"
+    },
+    {
+      "path": "docs/history_index.md",
+      "sha256": "a535963f252cb30832bf15f15459a706c801d15ab53cbf7ee752c4036626e1a4",
+      "role": "document relocation metadata and read-only audit; not execution authorization"
+    },
+    {
+      "path": "scripts/audit_document_archive.py",
+      "sha256": "0e5b5c43aa48dbd9c409477583c18dc2ef430e9505f8ee234b693f8f662b015b",
+      "role": "document relocation metadata and read-only audit; not execution authorization"
+    },
+    {
+      "path": "tests/test_document_archive.py",
+      "sha256": "78a59cdf33d37f95f1b6f57659549630e4702aefcc7ff2a8a76c9d15174ced7c",
+      "role": "document relocation metadata and read-only audit; not execution authorization"
+    },
+    {
+      "path": "reports/quality/g0_review.md",
+      "sha256": "0cb55bed5492a897ecd3dab5dd4167481757700050b963deb65cc595e769a7d1",
+      "role": "navigation-only revised reading copy; original G0 evidence archived with unchanged hash"
+    },
+    {
+      "path": "tests/test_repository_hygiene.py",
+      "sha256": "b876b117282f2378f84b0cadaeab94cf9b9e99fbce95b31036f03d99cd17b4bf",
+      "role": "repository publication/navigation policy; not execution authorization"
+    },
+    {
+      "path": "data/catalog/README.md",
+      "sha256": "d83c25cfbd6ba71bf8d1cb965bfcdef761d363c2d839b1fe6e837cd8f9c52e9b",
+      "role": "repository publication/navigation policy; not execution authorization"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "059c373709c4b8281259c192ebd7ae176ab6d6c6891cdbf08a340b8b702e6d32",
+      "role": "repository publication/navigation policy; not execution authorization"
     }
-  ]
+  ],
+  "planned_api_route": {
+    "provider": "deepseek-official",
+    "api_base": "https://api.deepseek.com/v1",
+    "model_request_id": "openai/deepseek-flash",
+    "documented_model": "DeepSeek-V4.1-Flash",
+    "model_version_note": "official alias; actual response not yet observed; not an immutable version pin",
+    "catalog": "workload_catalog/p1_12_deepseek_official.yaml",
+    "historical_catalog_unchanged": "workload_catalog/p1_12.yaml",
+    "credential_check": "provider/address/model match; apiKey empty on disk at this check",
+    "execution_authorized": false,
+    "note": "route and model change are separate from the finish fix; not a same-model controlled comparison; old approval/attempt must not be reused or removed",
+    "fallback_route": {
+      "decided_by_user": "2026-10-08",
+      "condition": "use fallback when the primary (deepseek-official) credential is unavailable; primary stays preferred whenever its key is provided",
+      "provider": "volcano-gateway (OpenAI-compatible endpoint)",
+      "api_base": "https://st8tp3ajl0df3n8b8l8qu.apigateway-cn-beijing.volceapi.com/v1",
+      "model_request_id": "openai/deepseek-v4-flash",
+      "documented_model": "deepseek-v4-flash (gateway alias; same DeepSeek family as Coding baseline deepseek-flash)",
+      "model_version_note": "gateway alias, not an immutable version pin; response model observed deepseek-v4-flash-ga-260731; same DeepSeek FAMILY as the Coding baseline but version/provider/runtime-config not identical - cross-category comparison still carries model confounds",
+      "credential_location": "VOLCANO_API_KEY process environment variable (working); opencode.json on-disk apiKey found INVALID for this endpoint (2026-10-08 smoke) and must not be used",
+      "credential_env_for_execution": "OPENAI_API_KEY mapped from VOLCANO_API_KEY at runtime (in-process, never on disk)",
+      "not_yet_verified": "litellm + VOLCANO_API_KEY combo (protocol and credential each verified separately); first real agent call confirms",
+      "observed_response_model": "deepseek-v4-flash-ga-260731 (GA, date-stamped 2026-07-31; record at every execution)",
+      "thinking_model_note": "glm-5.3 returns reasoning tokens (19 in minimal smoke); token budgets must account for reasoning overhead",
+      "verified_alternative": "openai/glm-5.3 (smoke-verified 2026-10-08, response glm-5-3-260814) retained as fallback-of-fallback",
+      "reasoning_note": "thinking model; reasoning returned in a separate reasoning_content field (content clean); reasoning-token accounting is provider-side semantics; minimal-smoke latency/token counts do not prove formal-run cost or speed"
+    }
+  },
+  "documentation_policy": {
+    "goal": "docs/current_scope.md",
+    "current_facts": "project_state.json",
+    "next_task": "docs/current_task.md#current-task",
+    "navigation": "docs/README.md",
+    "historical_prompts": "reference_only_not_execution_authorization",
+    "rule": "seven live documents plus on-demand history index; three rendered status pages; archived documents never receive status updates; historical path/hash fields preserved; no execution authorization",
+    "historical_methods": "local_archive/20261016-full-docs/methodology.md",
+    "historical_tasks": "local_archive/20261016-full-docs/docs/development_tasks.md",
+    "historical_index": "docs/history_index.md",
+    "relocation_index": "docs/archive_index.json"
+  },
+  "documentation_cleanup": {
+    "date": "2026-10-16",
+    "phase": "all_historical_documents_archived",
+    "snapshots": [
+      {
+        "original": "README.md",
+        "snapshot": "local_archive/20261016/env/project-cleanup-20261016/README.before.md",
+        "bytes": 10075,
+        "sha256": "4c5f2e38c5b7abf0f913608234409288791882444af102d4220e23ab17c8c098"
+      },
+      {
+        "original": "docs/README.md",
+        "snapshot": "local_archive/20261016/env/project-cleanup-20261016/docs-index.before.md",
+        "bytes": 13040,
+        "sha256": "ce59d3e0b43f93a5ac1e279ca6d3ff6fa4ce34e47b95bbd421c2c6256227dde5"
+      },
+      {
+        "original": "project_state.json",
+        "snapshot": "local_archive/20261016/env/project-cleanup-20261016/project-state.before.json",
+        "bytes": 101671,
+        "sha256": "94b95ed9c694a05574f433f8059d1b6c9ff1f81b79b7b573eea5a3cc536b0fce"
+      }
+    ],
+    "original_evidence_paths_preserved": true,
+    "deleted_files": 0,
+    "compressed_files": 0,
+    "data_reports_code_tests_references_and_environments_not_cleaned": true,
+    "archive_directory": "local_archive",
+    "archive_manifest": "local_archive/20261016/manifest.json",
+    "archive_manifest_sha256": "2f45eb4ff19f622a3bf4667e7ab159dac296e5efd5416cb043219857cfb89419",
+    "moved_files": 237,
+    "moved_historical_documents": 77,
+    "moved_navigation_backups": 3,
+    "moved_python_cache_files": 157,
+    "moved_bytes": 6418981,
+    "disk_space_freed_bytes": 0,
+    "gitignore_updated": true,
+    "git_index_changed": false,
+    "commit_or_push": false,
+    "large_derived_outputs_kept_in_place": true,
+    "retained_candidates": "docs/current_task.md#保留事项与后续清理边界",
+    "dependency_audit": "full text path scan of current sources, reports, environment records, catalogs and generated raw; historical records remain immutable and use explicit document relocation catalog",
+    "historical_document_paths_preserved": false,
+    "formal_run_and_report_paths_preserved": true,
+    "relocation_index": "docs/archive_index.json",
+    "relocation_index_sha256": "d90d72e0ee801e94110ea45d3a23e18028752b2c6830d31a37623b870640213e",
+    "reference_audit": "docs/archive_reference_audit.json",
+    "second_archive_manifest": "local_archive/20261016-full-docs/manifest.json",
+    "current_status_pages": [
+      "README.md",
+      "docs/README.md",
+      "docs/project_status.md"
+    ],
+    "protected_trees_before_migration": [
+      {
+        "path": "reports",
+        "files": 498,
+        "bytes": 1814346044,
+        "tree_sha256": "0eea03c8205353db59cf401c454d37f8988a1cb877fba7ec09fe6fe9b00aceec"
+      },
+      {
+        "path": "data/catalog",
+        "files": 103,
+        "bytes": 137193145,
+        "tree_sha256": "1e413557470c1f2eec63a049c84b01a98dda15ccda52e06a00bb405b24fa6cd1"
+      },
+      {
+        "path": "data/raw/generated",
+        "files": 786,
+        "bytes": 27761918,
+        "tree_sha256": "9eaa7f87ecddaf4425584ae02389897b466682e7b6dea608c5612c42748813ea"
+      }
+    ],
+    "verification": {
+      "archive_tests_and_state_tests": 10,
+      "html_tests_passed": 13,
+      "html_full_generation_test": "PASS in TemporaryDirectory only; no official HTML pack overwritten",
+      "historical_document_hash_references": 13,
+      "historical_document_hash_mismatches_preexisting": 13,
+      "archive_hygiene_state_html_tests": 26,
+      "html_source_provenance": "PARTIAL: trace_contract and semantic_recorder current-source drift recorded as match=false; raw/identity/analysis code remain strict",
+      "publication_hygiene_tests": 3
+    },
+    "navigation_repairs": {
+      "report": "reports/quality/g0_review.md",
+      "original_snapshot": "local_archive/20261016-repair/before-edit/reports/quality/g0_review.md",
+      "original_sha256": "932e44869acb76077d8fe2d62a54941d9206fff9005121e7c2dea76ec63febf4",
+      "navigation_copy_sha256": "0cb55bed5492a897ecd3dab5dd4167481757700050b963deb65cc595e769a7d1",
+      "links_repaired": 5,
+      "scientific_content_changed": false,
+      "formal_run_records_changed": false
+    },
+    "data_publication_policy": {
+      "root": "data",
+      "rule": "ignore non-catalog directories and catalog payload/source_metadata/raw/http/token bodies; retain curated configuration, provenance manifests, source metadata summaries and licenses",
+      "observed_total_bytes": 4598835801,
+      "raw_bytes": 4461641615,
+      "already_tracked_files": 11,
+      "already_tracked_raw_or_images": 0,
+      "git_index_changed": false,
+      "commit_or_push": false,
+      "local_payload_deleted": false,
+      "git_candidate_bytes": 12910678,
+      "git_candidate_files": 38
+    },
+    "allowed_post_migration_changes": [
+      "reports/quality/g0_review.md",
+      "data/catalog/README.md"
+    ],
+    "repair_manifest": "local_archive/20261016-repair/manifest.json"
+  }
 }

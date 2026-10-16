@@ -1,0 +1,167 @@
+{
+  "schema": "public_trace_acquisition.v1",
+  "acquisition_id": "OSWORLD-20260929",
+  "acquired_at_utc": "2026-09-29",
+  "selection": {
+    "benchmark": "OSWorld",
+    "source_role": "public third-party trajectory mirror",
+    "dataset": "Hcompany/trajectories",
+    "revision": "ede2a362c99ddba0d03f439c47a0b8fea6abae22",
+    "rule": "filter benchmark=OSWorld, model=Holo4 27B, run=1; sort task then id; take first three distinct task ids",
+    "selected": [
+      "chrome-1-2c59a0c1",
+      "chrome-10-a6282ce2",
+      "chrome-11-0c8292b4"
+    ],
+    "not_official_publisher_artifact": true,
+    "upstream_attribution": "xlang-ai/OSWorld"
+  },
+  "comparison": {
+    "DocOps": {
+      "local_commit": "ccf7a751bc5c8a69c1cdd0400125d53455b33be3",
+      "observed": "tasks, assets, harness structure and deterministic verifiers; no public execution trajectory in the checked repository",
+      "eligible_for_download": false
+    },
+    "OSWorld": {
+      "official_release_checked": "osworld-v2-2026.08.08",
+      "official_trace_access": "official trajectory dataset is publicly listed but gated by a separate contact-information agreement and is much larger than this acquisition budget",
+      "selected_reason": "the mirror exposes per-run JSON trajectories with task/action/verifier linkage under a fixed dataset revision and within the byte budget"
+    }
+  },
+  "http_budget": {
+    "counted_acquisition_requests": 8,
+    "known_response_body_bytes": 8603911,
+    "saved_selected_body_bytes": 5197002,
+    "limit_requests": 30,
+    "limit_response_body_bytes": 31457280,
+    "accounting_note": "The bounded discovery tool did not expose byte counters for prior web-page discovery responses; those are listed as discovery evidence in review.md and are not silently counted as saved acquisition bytes. No large archive, image, video or complete dataset was fetched.",
+    "discovery_web_tool_operations_lower_bound": 16,
+    "known_http_operations_lower_bound": 24,
+    "redirect_count": "not exposed by the discovery tool; no redirect was relied on for the fixed-revision trace URLs",
+    "budget_status": "within the known lower bound; discovery response-byte counters are not exposed, so the report does not claim a stronger byte audit than the saved/known ledger"
+  },
+  "responses": [
+    {
+      "url": "https://huggingface.co/datasets/Hcompany/trajectories/resolve/main/data/index.json",
+      "status": 200,
+      "body_bytes": 5046690,
+      "file": "raw/index.json"
+    },
+    {
+      "url": "https://huggingface.co/datasets/Hcompany/trajectories/resolve/main/README.md",
+      "status": 200,
+      "body_bytes": 2031,
+      "file": "raw/README.md"
+    },
+    {
+      "url": "https://huggingface.co/datasets/Hcompany/trajectories/resolve/ede2a362c99ddba0d03f439c47a0b8fea6abae22/data/t/chrome-1-2c59a0c1.json",
+      "status": 200,
+      "body_bytes": 47695,
+      "file": "raw/chrome-1-2c59a0c1.json"
+    },
+    {
+      "url": "https://huggingface.co/datasets/Hcompany/trajectories/resolve/ede2a362c99ddba0d03f439c47a0b8fea6abae22/data/t/chrome-10-a6282ce2.json",
+      "status": 200,
+      "body_bytes": 45591,
+      "file": "raw/chrome-10-a6282ce2.json"
+    },
+    {
+      "url": "https://huggingface.co/datasets/Hcompany/trajectories/resolve/ede2a362c99ddba0d03f439c47a0b8fea6abae22/data/t/chrome-11-0c8292b4.json",
+      "status": 200,
+      "body_bytes": 54995,
+      "file": "raw/chrome-11-0c8292b4.json"
+    },
+    {
+      "url": "https://huggingface.co/datasets/Hcompany/trajectories/raw/main/dataset_info.json",
+      "status": 404,
+      "body_bytes": 15,
+      "file": null
+    },
+    {
+      "url": "https://huggingface.co/api/datasets/Hcompany/trajectories",
+      "status": 200,
+      "body_bytes": 3406894,
+      "file": null,
+      "note": "response rejected by local 2 MiB single-file cap; headers retained"
+    },
+    {
+      "url": "https://huggingface.co/datasets/Hcompany/trajectories/resolve/main/README.md?download=true",
+      "status": "transport_error",
+      "body_bytes": null,
+      "file": null
+    }
+  ],
+  "files": [
+    {
+      "path": "http/chrome-1-2c59a0c1.headers",
+      "bytes": 2836,
+      "sha256": "0470e2e453137f12a9aa4bec725a6257c0bb58e357b4f1e163a3bf5c5e43060c"
+    },
+    {
+      "path": "http/chrome-10-a6282ce2.headers",
+      "bytes": 2670,
+      "sha256": "fc71b5f4a1e18f19d6548e364701f02b218450ebdfea52a9e26f0ad198594100"
+    },
+    {
+      "path": "http/chrome-11-0c8292b4.headers",
+      "bytes": 2840,
+      "sha256": "5258de8f46ab0c772364d5724319adfa3982b6a978f47cfe853723c59d9266f4"
+    },
+    {
+      "path": "http/dataset-api.headers",
+      "bytes": 1017,
+      "sha256": "bccc2184cedeaea756a531027a46ca890ff797f1e1334b0185ab0c1fb776c9bc"
+    },
+    {
+      "path": "http/dataset-info.headers",
+      "bytes": 1081,
+      "sha256": "c55a8d9a2471515a170b5a2f6234d3666589942eb7b7f60bc61182627cf842ef"
+    },
+    {
+      "path": "http/index-raw.headers",
+      "bytes": 1245,
+      "sha256": "f743bbce49fda4a53e865da6c146aa1b47a2ca1894e3d5334f541ccd92a08815"
+    },
+    {
+      "path": "http/readme-raw.headers",
+      "bytes": 1240,
+      "sha256": "9f28c9b680ab82b949dcb8fd8619b4cc97cffaa7ebea465a51032fd7efde9e00"
+    },
+    {
+      "path": "http/readme.headers",
+      "bytes": 39,
+      "sha256": "f55260227c507b4e203ec14ceb78ce8e64d11734111bed9bd18936a3bd4d48f3"
+    },
+    {
+      "path": "raw/README.md",
+      "bytes": 2031,
+      "sha256": "ee2feb78fb0ee48bc89f8f0af9aff178ac678464afe0782901812a3719dea89e"
+    },
+    {
+      "path": "raw/chrome-1-2c59a0c1.json",
+      "bytes": 47695,
+      "sha256": "3da635014ee61d17415773ecafd6a556f285569960676ca7f931d21221dae890"
+    },
+    {
+      "path": "raw/chrome-10-a6282ce2.json",
+      "bytes": 45591,
+      "sha256": "499bc2898887516ff636479903287744ca028457339802ffdd4bdbb950d0f9d6"
+    },
+    {
+      "path": "raw/chrome-11-0c8292b4.json",
+      "bytes": 54995,
+      "sha256": "198ff9cbebaf2d62e8db41a7857de800392518cc38f0a36acdc4b67d866dec4d"
+    },
+    {
+      "path": "raw/index.json",
+      "bytes": 5046690,
+      "sha256": "a8525624049894e1aeb220790ed8c013067a99f2ffdbcb938d5a4cef91f0cf53"
+    },
+    {
+      "path": "review.md",
+      "bytes": 4403,
+      "sha256": "654b0e9add524dc40129ba51ea67d049825475a0c6e497eafda026c1a396c502"
+    }
+  ],
+  "manifest_self_hash": false
+}

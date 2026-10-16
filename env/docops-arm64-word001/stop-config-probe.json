@@ -1,0 +1,29 @@
+[
+ {
+  "probe": "A_original_stop",
+  "stop": [
+   "</think>",
+   "</thinking>",
+   "<action>",
+   "```"
+  ],
+  "content_len": 0,
+  "content_head": "",
+  "reasoning_len": 730,
+  "usage": {
+   "in": 970,
+   "out": 164
+  }
+ },
+ {
+  "probe": "B_no_stop",
+  "stop": null,
+  "content_len": 198,
+  "content_head": "{\"thought\":\"Need to read task metadata first to determine the actual input and output paths before copying.\",\"action\":\"call_tool\",\"tool_name\":\"get_task_metadata\",\"arguments\":{},\"fi",
+  "reasoning_len": 2490,
+  "usage": {
+   "in": 970,
+   "out": 604
+  }
+ }
+]

@@ -1,0 +1,304 @@
+{
+ "schema": "coding-resource-link-feasibility-manifest-v1",
+ "created_at_utc": "2026-10-07",
+ "generation": "offline directed analysis: pure-interval CPU decomposition over the nine CODING-REPEAT-01 runs; analysis script and 4 synthetic counter-example tests executed this round; totals cross-checked bit-identical against characterization-v3; manifest self-hash excluded",
+ "inputs": [
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121110Z-bc1dca/samples.json",
+   "bytes": 213689,
+   "sha256": "a79b7b1aabdb86cf88725e77556807613c9aaa149582c9baf45d98ee7a5133d0",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121110Z-bc1dca/mini_tool_events.jsonl",
+   "bytes": 24974,
+   "sha256": "0548f7d691bfa204aa8dfa17f427eeaea962ce9ea6dec54a9af0aa1d0568cd93",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121110Z-bc1dca/mini_status.jsonl",
+   "bytes": 15208,
+   "sha256": "0342ce6be82c82d793271790c323115ec9f66bd6a38c9d90ee090aa044681354",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121110Z-bc1dca/metadata.json",
+   "bytes": 1375,
+   "sha256": "3fc292060e006ba407ca09cdff0645506bf3ea32a9e0aefc9221fc0f93a24c85",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121318Z-11bacd/samples.json",
+   "bytes": 247555,
+   "sha256": "9030205d1409bec30da85573b1df7a804b3351dd3517de5174a1e7f0127e3a20",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121318Z-11bacd/mini_tool_events.jsonl",
+   "bytes": 27128,
+   "sha256": "35c18f67dc5618b1edad9e2249be24c62ac69c7d4b0ad7d730434b0244b8847e",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121318Z-11bacd/mini_status.jsonl",
+   "bytes": 15246,
+   "sha256": "22084e0f0331c38d2d30a62110c7884be6b1b337c982640bf0ca32aaa62ed6af",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121318Z-11bacd/metadata.json",
+   "bytes": 1376,
+   "sha256": "85154bab50b2bb9ac7f04b25cde4ab9fcd8044aaf8f1c8d9b65f2bc311306c5d",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121548Z-ad0290/samples.json",
+   "bytes": 166756,
+   "sha256": "333c70a0db1c5fa88739216c9dc27d3095b14f426e75c04aa0aa63f906e46d63",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121548Z-ad0290/mini_tool_events.jsonl",
+   "bytes": 13252,
+   "sha256": "9ef9bdfa03be82e6a88464c3935ea4fc8f028ebd2f4b74c3649802707d7f9b13",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121548Z-ad0290/mini_status.jsonl",
+   "bytes": 11151,
+   "sha256": "67073eaeb4b085e8359d1d00f37497e2813feab16819e4b5c95bfb389b300ed6",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121548Z-ad0290/metadata.json",
+   "bytes": 1372,
+   "sha256": "5c24e8f3cf568fca1b5b2111d7ff385a16e528ad5788e29d8f7639257388f707",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121728Z-d87dd3/samples.json",
+   "bytes": 293643,
+   "sha256": "142079452863e00de6ebe0216b5d85698d432030d81aeef80ed992018afc3ac4",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121728Z-d87dd3/mini_tool_events.jsonl",
+   "bytes": 18088,
+   "sha256": "e9138e321df478e468ca1bbd7e354d4063a0e836f200e21482161dabd133f776",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121728Z-d87dd3/mini_status.jsonl",
+   "bytes": 15232,
+   "sha256": "e2ed64c487c32f9f17baedd99fb9c1a391e90a2b1fcea065036d2e9a2c9abfc1",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121728Z-d87dd3/metadata.json",
+   "bytes": 1375,
+   "sha256": "ff4ea6a57ca0e9911cd838fa41265a184e793d52df8e5f72d0b10b1a0a70b069",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122024Z-004fd1/samples.json",
+   "bytes": 212981,
+   "sha256": "396f872e2e8a68de445878748ee3d817d113fc4b59a4bd22843923dad8c29c35",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122024Z-004fd1/mini_tool_events.jsonl",
+   "bytes": 22827,
+   "sha256": "3db611dcfd5f84708c3194f854a1aafb328a84bb1166667683c495beb67fe147",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122024Z-004fd1/mini_status.jsonl",
+   "bytes": 10200,
+   "sha256": "0f2a13fe476dd24380ff527c7d0c1f29cca7caa490a14fb8056241a58bc38f81",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122024Z-004fd1/metadata.json",
+   "bytes": 1376,
+   "sha256": "8dcce2e325d3dcbac82710209ff46618d14c8390553e8e6b6b87c31b0b460cf7",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122232Z-03d61c/samples.json",
+   "bytes": 139891,
+   "sha256": "f9e69c7a952cb409359857b31afdbc3a79191be871e8ccf9ba0944eaa3d0b5a6",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122232Z-03d61c/mini_tool_events.jsonl",
+   "bytes": 13243,
+   "sha256": "b2a90bd03794b9a5efdb8b5df38ea170d1eb83010d6cdabae5b1472bc186f2a7",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122232Z-03d61c/mini_status.jsonl",
+   "bytes": 7597,
+   "sha256": "8b075c2e4198be411b4944b037a2474e953af2b2dd53222e21b69860c6ce82e2",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122232Z-03d61c/metadata.json",
+   "bytes": 1370,
+   "sha256": "34107a2f59b30abf3cd04c20ccf8ba82a47d692acc3e5837b12600c0fbd396f8",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122356Z-2bbb44/samples.json",
+   "bytes": 178031,
+   "sha256": "56a207f928ddd3a4e7b90372fe20b399ff3ca0c3973ee1480ebaea6f956c3dee",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122356Z-2bbb44/mini_tool_events.jsonl",
+   "bytes": 16435,
+   "sha256": "da20c10e85437d3d46a799ba708770b108e1f4bffe43b549a34dd7d0252edec1",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122356Z-2bbb44/mini_status.jsonl",
+   "bytes": 10135,
+   "sha256": "c5e60df7384ef1af6e5d6726ed5333bc4629d39b05b17c4306a0051a8d304c7c",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122356Z-2bbb44/metadata.json",
+   "bytes": 1371,
+   "sha256": "3ba0b514bece0cd83d00347556ac80910c1b8682a1122d9da5dffcffc66598ad",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122542Z-8adc15/samples.json",
+   "bytes": 158353,
+   "sha256": "e3128bd6722d537aa574f118a3116afb745bb1b2c436708482fe00855a5bf599",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122542Z-8adc15/mini_tool_events.jsonl",
+   "bytes": 25525,
+   "sha256": "fa0d151045d8a3b864faaaf6cf920c3f5a39f9357f14b318382f68930719a09d",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122542Z-8adc15/mini_status.jsonl",
+   "bytes": 15228,
+   "sha256": "4a9a98d5e020569708672ee3afc0e8885da6fd6c8a02c596babc69eb7ff376e2",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122542Z-8adc15/metadata.json",
+   "bytes": 1374,
+   "sha256": "2ae91d47e30960a1a9a413ae922516aede1cd6cad12d2ac02f66bcc166d71be5",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122716Z-441807/samples.json",
+   "bytes": 186133,
+   "sha256": "5c75b67f5d22056bf3c90ed86fa271be4a7e13e9ea446fef7e9f0882bb1b7587",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122716Z-441807/mini_tool_events.jsonl",
+   "bytes": 23344,
+   "sha256": "1eb35d5ccea0cc86f001cf0152b9efc9e81c29d0f5824f1fd94f931229e1300a",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122716Z-441807/mini_status.jsonl",
+   "bytes": 14717,
+   "sha256": "6ffe462c9a3b23182bbed5d29bc6c035fc9a044f86b07195ec0e8284f3ede568",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122716Z-441807/metadata.json",
+   "bytes": 1375,
+   "sha256": "6ae66461e971b122e7ca0ae37f6212441d46d54b0b1f34ddfc731ea6f8438bb5",
+   "role": "raw_run_input"
+  },
+  {
+   "path": "reports/resource/P1-12/repeats/CODING-REPEAT-01/batch/summary.json",
+   "bytes": 13680,
+   "sha256": "41de9d20459b2e2a30d6f2aae5ad47559cda8310ba83dd35bfc320a9ba97fdeb",
+   "role": "batch_identity"
+  },
+  {
+   "path": "reports/resource/P1-12/repeats/CODING-REPEAT-01/batch/manifest.json",
+   "bytes": 14092,
+   "sha256": "733f763d69a18fcde4ad4d07e0372f09726c86020a2d986e2c097be5434bf208",
+   "role": "batch_identity"
+  },
+  {
+   "path": "reports/analysis/P1-12-CODING-REPEAT-01-review-v1/summary.md",
+   "bytes": 2194,
+   "sha256": "d42d7b042fbeb0d4f5f9a06b0ae323959fcd1c8dbc9147ec681ce3a8d344038e",
+   "role": "prior_report_referenced"
+  },
+  {
+   "path": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/summary.md",
+   "bytes": 5174,
+   "sha256": "c0e126023075d7c95a724635c9c0da00e59edae04c6e3d49bfdf4f996a5fced1",
+   "role": "prior_report_referenced"
+  },
+  {
+   "path": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/summary.json",
+   "bytes": 399026,
+   "sha256": "221d19027c85fdb810d5a17f08f1174028d5765f65f72b30d25f8e22388fbe12",
+   "role": "prior_report_referenced"
+  },
+  {
+   "path": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/manifest.json",
+   "bytes": 16609,
+   "sha256": "a00351a6a4dab2d5353bac073c22ff1e9a5c286c9a3566b28a28ebf26a9b16bf",
+   "role": "prior_report_referenced"
+  },
+  {
+   "path": "reports/analysis/PROJECT-characterization-synthesis-v1/summary.md",
+   "bytes": 11084,
+   "sha256": "26fd2c9edba4fde840ea9f85f0732e20b96db2db2752737c3848d92e5b6cc7ec",
+   "role": "prior_report_referenced"
+  },
+  {
+   "path": "methodology.md",
+   "bytes": 47197,
+   "sha256": "caed3128b5c2a573ff0b3d30e3621c382d3b55347596fc303d6f8594adb445b8",
+   "role": "reference"
+  },
+  {
+   "path": "scripts/coding_resource_link_feasibility.py",
+   "bytes": 7431,
+   "sha256": "f5c3dce7139fb0d0d031ab6c18e32fad5676f2d95f46a834c853fcb591da2af3",
+   "role": "analysis_code"
+  },
+  {
+   "path": "tests/test_coding_resource_link_feasibility.py",
+   "bytes": 5841,
+   "sha256": "32deaf1769bf1de6cd71863d50c980a1a89916dc6f37b93a66e48b49417bde6f",
+   "role": "analysis_test"
+  }
+ ],
+ "outputs": [
+  {
+   "path": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/summary.md",
+   "bytes": 6533,
+   "sha256": "41725cea2297a7b5590e80e4cdfcddc5937cefb703c7c0b7082fe4ea06d25bca",
+   "role": "output"
+  },
+  {
+   "path": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/decision.json",
+   "bytes": 5269,
+   "sha256": "1a5f9b2edf8e8f4866e23a15b48267be776fe0aa294767c10077c2b748e6afb1",
+   "role": "output"
+  },
+  {
+   "path": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/per_run_decomposition.json",
+   "bytes": 6531,
+   "sha256": "564afa6d3ce25b46ce5c29642e6ae598cbe86a46823268abc5e5b66cbf76d95a",
+   "role": "output"
+  }
+ ],
+ "revision_note": "2026-10-08: scope-limited wording, only_req interval count 82-154, and exclusion of upper-middle tool-duration statistics corrected in summary/decision. Analysis code, per_run_decomposition and raw inputs unchanged."
+}

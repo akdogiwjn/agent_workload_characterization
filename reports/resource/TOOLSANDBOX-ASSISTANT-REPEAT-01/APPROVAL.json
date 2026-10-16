@@ -1,0 +1,50 @@
+{
+  "schema": "toolsandbox-pilot-approval-v1",
+  "collection": "TOOLSANDBOX-ASSISTANT-REPEAT-01",
+  "user_approval": "approved",
+  "identity_sha256": "1643e0c8c6158734ce7186d24afd5ce36d5a40718d930e7eea2a507f0b32149b",
+  "approved_at_utc": "2026-10-12T13:53:19Z",
+  "approval_source": "explicit user authorization in current conversation",
+  "scope": {
+    "tasks": [
+      "send_message_with_contact_content_cellular_off",
+      "add_reminder_content_and_week_delta_and_time",
+      "modify_contact_with_message_recency_multiple_user_turn"
+    ],
+    "round_schedule": [
+      ["send_message_with_contact_content_cellular_off", "add_reminder_content_and_week_delta_and_time", "modify_contact_with_message_recency_multiple_user_turn"],
+      ["add_reminder_content_and_week_delta_and_time", "modify_contact_with_message_recency_multiple_user_turn", "send_message_with_contact_content_cellular_off"],
+      ["modify_contact_with_message_recency_multiple_user_turn", "send_message_with_contact_content_cellular_off", "add_reminder_content_and_week_delta_and_time"]
+    ],
+    "execution": "nine sequential attempts; one fresh worker/process/scenario per run; no rerun or replacement",
+    "attempt_retry": 0,
+    "per_attempt": {
+      "agent_logical_calls_max": 20,
+      "user_logical_calls_max": 20,
+      "max_messages": 30,
+      "play_s_max": 300,
+      "evaluate_s_max": 60,
+      "common_work_s_max": 360,
+      "total_wall_s_max": 480,
+      "cleanup_reserve_s": 120,
+      "sampling_interval_s": 0.5,
+      "sdk_max_retries": 0,
+      "project_max_attempts_per_logical_call": 3,
+      "output_token_limit": "not set by frozen configuration"
+    },
+    "batch": {
+      "total_wall_s_max": 4800,
+      "cleanup_reserve_s": 480,
+      "max_logical_model_calls": 360,
+      "logical_call_limit_is_http_request_limit": false
+    },
+    "route": "https://api.deepseek.com/v1",
+    "request_model": "deepseek-v4-flash",
+    "failure_policy": "stop on infrastructure, collection/archive/reap failure, forced worker deadline, or insufficient batch budget; remaining planned runs not_executed; no top-up",
+    "official_baseline_only": true,
+    "h_epm_summary_or_graph_suggestion_or_perturbation": false
+  },
+  "accept_unknown_cost_no_hard_cap": true,
+  "cost_note": "Actual bill is unknown; user explicitly accepted unknown cost and no hard monetary cap for this batch.",
+  "tool_permission": "separate product tool permission required; not implied by this approval file"
+}

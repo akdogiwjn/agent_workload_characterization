@@ -1,0 +1,43 @@
+{
+  "status": "READY",
+  "checks": {
+    "mini_venv": true,
+    "eval_venv": true,
+    "records_sha": true,
+    "image_digests_full": true,
+    "monetary_gate_satisfied": true
+  },
+  "readiness": {
+    "ready": true,
+    "missing": [],
+    "monetary_bound": {
+      "closed": false,
+      "enforced": false,
+      "bound_kind": "planning_estimate",
+      "currency": null,
+      "reason": "missing_or_invalid:input_price_per_mtok"
+    },
+    "cost_risk_acceptance": {
+      "registered": true,
+      "decision": "no_hard_monetary_cap_accepted",
+      "scope": "this_pilot_only",
+      "note": "user execution-condition decision; not a license verification or cost proof; monetary_bound remains a planning estimate with unknown prices"
+    }
+  },
+  "notes": {
+    "image_digests": "identities must be repo@sha256:<64hex>; tags and truncated digests are refused",
+    "local_image_presence": "NOT verified by this offline preflight; a Docker read-only preflight is a separately-authorized step"
+  },
+  "docker_images": {
+    "status": "READY",
+    "images": {
+      "django__django-16485": {
+        "present": true,
+        "os_arch": "linux/arm64",
+        "repo_digest": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+        "matches_pinned_digest": true
+      }
+    },
+    "note": "local presence + digest match verified read-only; no pull, no container start"
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "schema": "project-characterization-synthesis-manifest-v2",
+  "updated_at": "2026-10-11",
+  "verification_scope": "Eight source report packages: 30 registered outputs bytes/SHA-256 matched. No source analyzer rerun or independent full raw-input revalidation.",
+  "inputs": [
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v2/manifest.json",
+      "bytes": 33201,
+      "sha256": "acf5cf1f9e13bdae7c73130bbd517abf18d240174adeb365bfec4f0c44bb9269",
+      "role": "source_analysis_manifest"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v2/summary.md",
+      "bytes": 2616,
+      "sha256": "c21bf7a120a682a528071f4dbfa3d267ba356d90430a48942f7eb2f316c29017",
+      "role": "source_report"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v2/summary.json",
+      "bytes": 6010266,
+      "sha256": "93602707e6e7e00bc672aabeee4433a3c693e82342c122d066189c099e217637",
+      "role": "source_report"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-subset-behavior-v1/manifest.json",
+      "bytes": 31203,
+      "sha256": "07969a920e711e689ed130620f3d8a5df6acecb03155fa7b72e543a857332857",
+      "role": "source_analysis_manifest"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-subset-behavior-v1/summary.md",
+      "bytes": 7382,
+      "sha256": "1fa45276994da1b749a9278cf748c0f33bb90c33868d963f410e37987b966a28",
+      "role": "source_report"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-subset-behavior-v1/summary.json",
+      "bytes": 5477,
+      "sha256": "4047285c0da720f3417dfeb1f9325aa78c2b0737e335be3e7358c6e13d6a7957",
+      "role": "source_report"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v3/manifest.json",
+      "bytes": 520559,
+      "sha256": "6d30e72f680bdf84a3369485521b7e0aba697b5a81776eb180e6c3ad5e26313f",
+      "role": "source_analysis_manifest"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v3/summary.md",
+      "bytes": 2166,
+      "sha256": "6bc7a6b7c4be583662cd919eb0b9bc67e0c3de237343d0b167d2b8ff19d0de00",
+      "role": "source_report"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v3/summary.json",
+      "bytes": 1054573,
+      "sha256": "87208891550de8cd0f38d931580d99464b93ec3bbce917655140434d12452e84",
+      "role": "source_report"
+    },
+    {
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/manifest.json",
+      "bytes": 3261,
+      "sha256": "948bf81f50780f6c7b24141d5a4138d757c9049f61d5c619c7ac40a28a70026c",
+      "role": "source_analysis_manifest"
+    },
+    {
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.md",
+      "bytes": 2470,
+      "sha256": "f1d7e37da9abd63e572e2709f110ef5d9d216686884792d1b315377cf469194a",
+      "role": "source_report"
+    },
+    {
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.json",
+      "bytes": 15252,
+      "sha256": "24f0dcfff9f0012c7c9b26e6b9bb3ba31df62ac4cccedd1b2d446b9556c55d36",
+      "role": "source_report"
+    },
+    {
+      "path": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/manifest.json",
+      "bytes": 16609,
+      "sha256": "a00351a6a4dab2d5353bac073c22ff1e9a5c286c9a3566b28a28ebf26a9b16bf",
+      "role": "source_analysis_manifest"
+    },
+    {
+      "path": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/summary.md",
+      "bytes": 5174,
+      "sha256": "c0e126023075d7c95a724635c9c0da00e59edae04c6e3d49bfdf4f996a5fced1",
+      "role": "source_report"
+    },
+    {
+      "path": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/summary.json",
+      "bytes": 399026,
+      "sha256": "221d19027c85fdb810d5a17f08f1174028d5765f65f72b30d25f8e22388fbe12",
+      "role": "source_report"
+    },
+    {
+      "path": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/manifest.json",
+      "bytes": 11801,
+      "sha256": "fdc6d8c961d17c92e933c9951ebe5f7d8f06e60726837d5d894ca7729c64378c",
+      "role": "source_analysis_manifest"
+    },
+    {
+      "path": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/summary.md",
+      "bytes": 6533,
+      "sha256": "41725cea2297a7b5590e80e4cdfcddc5937cefb703c7c0b7082fe4ea06d25bca",
+      "role": "source_report"
+    },
+    {
+      "path": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/decision.json",
+      "bytes": 5269,
+      "sha256": "1a5f9b2edf8e8f4866e23a15b48267be776fe0aa294767c10077c2b748e6afb1",
+      "role": "source_report"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-WORD-RESOURCE-03-04-review-v1/manifest.json",
+      "bytes": 12047,
+      "sha256": "b1b444237d4c8ead095c018cd8b3a462def262a33e3c9fe753a10be486044b78",
+      "role": "source_analysis_manifest"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-WORD-RESOURCE-03-04-review-v1/summary.md",
+      "bytes": 7313,
+      "sha256": "022ec8013ac5a4877e803a450631dfbbaaaf0e5a1c2d6d84571e5ce9f82587a6",
+      "role": "source_report"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-WORD-RESOURCE-03-04-review-v1/summary.json",
+      "bytes": 30597,
+      "sha256": "afbefb60a42fd040eee1aaefc98464fb612af6cc309854acb5ce964600e77313",
+      "role": "source_report"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-01-characterization-v1/manifest.json",
+      "bytes": 82960,
+      "sha256": "c29159f0880a1496fcef18f01948ed2b658a2c877ed273d61cec3cb85b44d1a9",
+      "role": "source_analysis_manifest"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-01-characterization-v1/summary.md",
+      "bytes": 12432,
+      "sha256": "347c8c9321b4b5025512ff2fb3f4f349b4b6c78d19f018892df6ed33fedc69d9",
+      "role": "source_report"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-01-characterization-v1/summary.json",
+      "bytes": 97263,
+      "sha256": "f1fa0d598b3a1a52520abc5c16821433a5f71e0dd3208135dc1266fe523f1ec2",
+      "role": "source_report"
+    },
+    {
+      "path": "methodology.md",
+      "bytes": 46599,
+      "sha256": "bdc42fada7e66f14d8358386f7225643ed1645cb2d9ee2c5cae286283e4bbeb3",
+      "role": "original_RQ_definitions"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "reports/analysis/PROJECT-characterization-synthesis-v2/summary.md",
+      "bytes": 11657,
+      "sha256": "b279ea9ed58453db24ae45a4d9eebcc1a4f36b263382ea8ba775b73f7ae9d37d"
+    },
+    {
+      "path": "reports/analysis/PROJECT-characterization-synthesis-v2/evidence_matrix.json",
+      "bytes": 16457,
+      "sha256": "82a5d0c16b882a90c67363c818aa2bf830a37447a435b24f3a19e8d880a53cbd"
+    }
+  ],
+  "notes": [
+    "Manifest deliberately does not self-hash.",
+    "Methodology defines RQ1-RQ6; public/current status blocks may change in later snapshots.",
+    "Historical synthesis-v1, HTML v1/v2/v3 and raw evidence are preserved."
+  ]
+}

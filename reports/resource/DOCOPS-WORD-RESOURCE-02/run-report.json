@@ -1,0 +1,45 @@
+{
+ "schema": "docops-word-resource-02-report-v1",
+ "run_id": "20261010T073324Z-word001",
+ "date": "2026-10-10",
+ "approval": "user 2026-10-10: stop adaptation approved; single attempt, 45min budget, original model/resource limits, no hard spend cap, no rerun",
+ "identity_sha256": "3a243271132a305c62be3d3f5dbd532b559da08191ba7674abf84bc29a943578",
+ "four_column_adjudication": {
+  "measurement_completeness": "LIMITED PASS: 122 samples with non-null container CPU/current memory/peak memory and host CPU readings; 20 lifecycle events; 6 recorded model calls, 5 model-selected tool actions and 1 finish. Sampling window 60.651s is shorter than 72.21s attempt wall; cleanup removal recorded. No per-tool attribution or full-wall coverage established.",
+  "task_result": "UNSOLVED (reward 0.0) - VALID result, retained",
+  "termination": "finish (explicit at model step 6); no later llm_call file in the archived run",
+  "infra": "No recorded lifecycle infra failures; verifier completed and removal verified. Separately, bootstrap get_task_metadata returned ok=false (missing /root/task_metadata.json); model continued from prompt paths. Not all tool paths were error-free."
+ },
+ "gateway_adaptation_verdict": "Validated in this attempt: 6 responses contain parseable action JSON; 5 model-selected tool results are ok=true; step 6 is finish. No stop parameter appears in recorded optional_params. Empty-content symptom resolved for this attempt, not a future guarantee or proof of exact gateway delimiter mechanism.",
+ "reward_0_root_cause": {
+  "finding": "Three subsection/TOC text checks passed, then top-level style consistency failed (Arial 15pt/color 00468C, Calibri 16pt, Courier New 13pt). Subsequent second/third/fourth-level style checks were not reached. Full heading-hierarchy repair and absence of other defects are not established.",
+  "evidence": "verifier test-stdout.txt assertion output showing 3 distinct docx_para_signature dicts; submission/word_001...docx saved and parsed successfully",
+  "classification": "Observed submission-quality failure at the top-level style assertion; verifier completed. Model capability or task understanding is not a proven causal explanation; bootstrap metadata error retained separately."
+ },
+ "comparison_with_run_01": {
+  "run_01": "12 model-loop steps INVALID due to empty content; no model-selected task actions or submission; setup/bootstrap still occurred. Exact stop-token mechanism unconfirmed; saved A/B probe and run02 support observed stop-config incompatibility/adaptation.",
+  "run_02": "6 model calls: 5 successful selected tool actions (copy_file x1, inspect_document x3, word_replace_text x1), then finish x1. Submission saved; verifier failed at top-level styles; later checks unobserved."
+ },
+ "usage": {
+  "input_tokens": 19040,
+  "output_tokens": 3222,
+  "cache_tokens": 2048,
+  "cost": "unknown"
+ },
+ "pilot_verdict": "Limited pilot closed without rerun: observation, model-selected editing, explicit finish, verifier completion, cleanup and archive evidence present. Not Office category characterization, model-capability attribution, causal resource comparison with run01, or G2 passage.",
+ "offline_review": {
+  "date": "2026-10-10",
+  "corrections": [
+   "Configured max_steps=12 was mistaken for executed steps; actual 6 model calls, 5 selected tool actions, 1 finish.",
+   "Later hierarchy checks not reached; causal model-capability language withdrawn.",
+   "Bootstrap metadata error and sampling-window limits retained."
+  ],
+  "response_model_counts": {
+   "deepseek-v4-flash-ga-260731": 4,
+   "deepseek-v4-flash-0731": 2
+  },
+  "response_backend_equivalence": "unknown",
+  "scope_note": "Container counters cover shared setup/agent/verifier scope; host PID includes orchestration/collection, not exclusive Agent CPU. I/O counters do not establish total filesystem I/O; usage does not establish billing.",
+  "raw_unchanged": true
+ }
+}

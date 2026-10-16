@@ -1,6 +1,8 @@
 # Trace 语义与测量契约
 
-修订日期：2026-09-10。本文规定 P0-02 设计和验收所需语义；不是已实现的 JSON Schema。字段名可在评审中细化，含义不可静默改变。
+当前目标以[current_scope.md](current_scope.md)为准；日常只需按需阅读本契约§11，前文保留详细语义和历史版本，不扩大当前必交范围。
+
+修订日期：2026-10-11。本文规定共享语义与实测验收清单；不是全字段已实现的 JSON Schema。§10 明确当前实现、未支持能力与后续实测要求。字段含义不可静默改变。
 
 ## 1. 共享语义，不强制相同观测能力
 
@@ -103,7 +105,7 @@ cgroup 约束：domain controller 的内部节点/叶节点布局必须合法；
 - 分开报告 task 数、attempt 数、run 数、调用数。重复三次同任务不是三个独立任务；置信区间/重采样按 task 等合理单位分层或聚类。
 - 3 次重复、重点 5 次是初始预算建议，不是统计充分性保证。少样本 P95/P99 只作带样本量说明的描述，必要时不报告，不能据此外推尾部规律。
 - phase 是可回退、交错、重复的注释；保留分类规则和置信/未知状态，不强制 Explore → Modify → Verify 单向流程。
-- RQ1 必须定义传统 LLM 对照与测量边界；RQ3 控制任务/配置差异；RQ4 的 memory/compute 等分类结合 PMU、利用率、I/O 和受控 scaling，不凭单一 IPC。
+- 若另行做原RQ1传统LLM性能对照，必须定义对照与测量边界；因果比较控制任务/配置。原RQ4的memory/compute分类需PMU、利用率、I/O与受控scaling，不凭单一IPC；这些扩展不再是2026-10-16收窄目标的必交。
 
 ## 9. Replay 契约
 
@@ -114,3 +116,73 @@ Replay 分开记录原 trace、spec 与执行结果，永远不能改标为 real
 - 远端服务、交互式 shell 状态等无法复现时说明替代/省略；不能把不可执行 trace 变成虚构的等价负载。
 - 扩并发前先验证输出/状态正确性、依赖顺序、工具/进程形态及 CPU/内存/I/O 分布；声明保真目标和事先固定的容差，记录失败项。
 - scaling 结果只对通过对应保真目标的部分成立；不要求重放完全复现模型 reasoning，也不伪造 token。
+
+## 10. 后续真实执行的必备记录（REAL-RUN-MEASUREMENT-01）
+
+**先决定问题、scope 和必需能力，再批准执行；不能执行完才发现缺少研究所需字段。** 此清单用于后续所有本地实测（Coding、Office，以及未来 Computer/Video），不追溯填补旧 trace。新类别复用现有 recorder/reader，但必须在真实入口接入并验证，不因填写此表就视为实现。
+
+| 记录组 | 每次必须保存/检查什么 | 当前实现与范围 |
+| --- | --- | --- |
+| 身份与配置 | task/输入/代码/harness/镜像完整身份，模型路由和实际响应标识，预算/采样/重试/资源限制，独立批准与 attempt | 复用既有执行门禁；新采集模块进入 DocOps 单次与批次 identity，Coding 全源文件身份包含该模块。旧冻结值不改，旧批准不适用于新代码 |
+| 环境 | 架构、CPU 可得字段、kernel、boot ID、Python 路径/版本、宿主包名/版本，governor/SMT/NUMA 的观测或缺失原因；容器环境引用镜像/preflight/freeze | `environment.json` 自动保存本次宿主观察，不读密钥/environ/无关进程，不运行外部探针。CPU0 governor 不代表所有核；包版本观察不是完整可重建 lock；filesystem/cache/perf 未测则明确 unknown |
+| 生命周期 | 初始化/setup、Agent、verifier、清理、删除核验、归档起止；同宿主 monotonic + UTC 锚点；容器 ID/cgroup 与宿主 PID/starttime/CLK_TCK/page size | Coding 保留双容器 scope；DocOps 保留共享容器阶段，并新增 setup/Agent/verifier 资源边界。采样窗口不是 attempt wall |
+| 模型调用 | 每个实际开始的逻辑请求 ID、起止/错误终态、模型、返回 usage（含真实零值）、上下文规模的已观测口径；预算拒绝不得算请求 | DocOps 在真实 `LLM.call` 外记录 span；Coding 保存 child query 的真实时间，API 异常也留终态。DocOps 保存返回模型/request ID；Coding 响应模型逐调用尚未接入。上下文字符数不是 token。逻辑调用包含内部 retry，实际传输尝试未装 hook，保持 unknown；usage/cost 不是账单 |
+| 工具调用 | 独立 event ID、工具/命令身份、参数摘要/长度、调用与结果起止/错误/删失，末次返回；bootstrap 与自主动作分开；finish/invalid 与工具结果分开 | DocOps `agent/events.jsonl` 直接记录实际官方循环及参数/结果 UTF-8 bytes+SHA，工具用 `request_event_id` 表示因果链接（不是 span 包含）；bootstrap 无 request ID。Coding native hook 保留 tool-call ID/命令 hash/长度及真实边界，不靠位置补配 |
+| 资源 | scope 起止累计 CPU 差分、memory.current 采样与内核 peak、宿主进程 CPU/RSS，I/O 的 controller/source/读数状态；保留原始时间序列与边界 | Coding 复用既有 scope evidence；DocOps 增加起止采样、阶段和工具前后共享 cgroup 计数器。宿主 reader 补 user/system ticks、faults、threads、context switches、进程 io（权限不足留原因）。宿主 Agent 与 collector 同进程时不能称独立 Agent 成本 |
+| 采集质量与开销 | 目标间隔、实际 gap、时间异常、counter 回退、缺读、边界、调用起止覆盖与期望数量对照，读数耗时 | `measurement.json` 保存调用覆盖；DocOps 另存采样质量/读状态。Coding samples 保留 gap/边界/读状态；两链新增 read wall cost（不是采集器 CPU 或全部记录开销）。数量、退出码 0、reward=1 均不能替代测量完整性检查 |
+| 结果与封存 | 测量完整性、任务结果、Agent 终止、infra、清理/归档分别判定；输出文件清单 bytes/SHA 回读 | 新环境/measurement/events 纳入既有 manifest；工具返回 `ok=false` 不自动等于 infra。预算/取消/未闭合事件保留，不补零，不删失败路径 |
+
+### 10.1 本轮确实补齐的内容
+
+实现位于 `collectors/execution_measurement.py`（小型本地快照、请求包装与覆盖检查），继续使用 `SemanticRecorder`，没有第二套执行框架。DocOps 实际执行路径强制走测量 Agent；批摘要直接消费该事件文件，不再按响应是否为裸 JSON 重建动作数。最后一次工具结果在返回时写入，不依赖下一次模型请求的 history。
+
+DocOps 工具前后 cgroup 值只能产生 **共享 scope 调用窗口差分**：包含可能同时发生的后台工作，不能累加重叠窗口或称单工具独占资源。前后读数与记录有开销；时间尺度很短时不得把微小差分过度解释。CPU/内存边界缺失或 counter reset 时停止对应推导，不以首尾可读点冒充完整生命周期。
+
+新 span 是客户端包装的观测边界，可能包含事件写入、结果解析和工具末端计数器读取；没有开销校准时不称纯工具 CPU 执行时间。传输层 TTFT、服务端推理时间与逻辑 API 延迟是不同指标。
+
+`measurement.json.call_timing_status` 只评价请求/工具配对和起止覆盖，不是全指标 PASS。另审 usage 缺失、resource scopes/采样状态、环境缺口、cleanup 和 manifest。Coding 用 trajectory **提议** tool-call 数作独立对照；若有提议但未派发，登记 coverage gap，而不是捏造执行。事件/实际工具返回与任务 termination 分列（例如 Submitted 异常是协议正常终止，不是工具基础设施故障）。
+
+Coding 另存 `mini_request_starts.jsonl`，在原生预算检查放行并实际进入 `model.query` 后登记开始；被硬杀时仍可见已开始、终态缺失，覆盖报告不会把它当作零请求。正常结束的预算拒绝没有 start 记录。`runtime_completed_request_count` 与开始数分列，不从缺少 usage 推断未发请求。
+
+### 10.2 执行前与归档后各做一次明确核对
+
+DocOps 当前生产环境使用项目 `DocOpsDockerEnvironment`：保留 Harbor 的日志权限处理与 compose 项目/文件绑定，`stop(delete=True)` 仅执行 `down --volumes --remove-orphans`，保留可复用镜像。失败必须传回调用方并单列，仍执行本批容器删除核验；删除确认不能抹掉 stop 失败。清理超时继续服从总 deadline。两个入口 identity 绑定项目适配层与实际安装的 Harbor Docker 实现。此策略仅经离线真实接线测试；历史清理/身份不改，真实镜像保留尚未验证。
+
+1. 执行前：声明要回答哪些 RQ、每个必需指标的来源与 scope；在入口真实链路的离线测试中核对末次返回/finish/异常；真实预检只在另行授权后验证 controller/环境。若研究目标需要当前尚无的能力，先补该能力或缩小目标，不能标为“测量就绪”。
+2. 归档后：核对独立 runtime/trajectory 数与 span 数、时钟域/时间顺序/删失；检查 CPU reset、缺读、边界与采样 gaps；核验新输出 bytes/SHA；分别列 complete/partial/unavailable。缺失必需指标时仍保存实验结果，但不验收为“测量完整”，不得用于对应结论。
+3. **默认自动记录不等于自动授权执行。** 本轮只离线实现；既有真实数据不会凭新代码得到新字段。下次需要独立 identity/新批准，不能复用已消费 namespace。
+
+### 10.3 有意不自动开启的能力
+
+PMU（cycles/instructions/cache/TLB/branches 等）、函数热点、逐进程树/独占工具归因、网络传输字节、远端 CPU/内存、完整应用/文件系统 I/O、受控缓存、精确传输 retry/TTFT 都不是本轮已实现能力。相应位置保留 unavailable/unknown 及原因，绝不把空值或 cgroup blkio 的真实零写成“没有文件操作”。需要这些研究指标时，应一次性列入新实验设计和权限范围；CPU-02/perf/Replay 不因此恢复。
+
+## 11. 当前目标的连续采样与图表要求（2026-10-16）
+
+本节是用户调整后的交付要求，不表示下表缺口已实现，也不改变历史REAL-RUN-MEASUREMENT-01的合同版本或冻结代码。热点/PMU/微架构/优化、单工具独占归因不再必交；网络从“明确不可用扩展项”改为当前需要补齐的指标，但旧run仍保留unknown。
+
+| 项目 | 后续过程观测与展示要求 | 当前已有/缺口 |
+| --- | --- | --- |
+| 采样与范围 | 单run内周期采样，当前主链目标0.5s；保存真实monotonic时间、scope/PID或container身份、读状态、gap/reset。明确任务与宿主整机不是一个scope | 已有cgroup/进程采样；无整机统一采集。不同长度任务不以固定点数验收，不为多采点强制补跑 |
+| CPU | 累计CPU差分/真实Δt转平均core；若百分比，100%=1core或明确其他归一化；另报总core-s | 已有CPU累计计数和部分HTML时序图；不是服务器端模型CPU |
+| 内存 | current/RSS时间序列及有效样本峰值，内核peak单列；不同scope不相加 | 已有采样，Coding/DocOps有曲线；Assistant最新样本待展示接入 |
+| 磁盘I/O | 分读/写累计B与差分B/s，明确cgroup块设备服务字节或proc read_bytes/write_bytes；rchar/wchar另列为逻辑字符I/O | 已有有限原始计数，速率图待补；缺失controller/进程退出不填零，缓存导致真实块I/O为零不表示无文件操作 |
+| 磁盘占用（必统计） | 任务工作目录/输出/缓存起止占用及增长，标明路径范围、表观大小或实际分配字节；共享/重叠路径不重复相加 | 统一的逐任务目录占用采集与汇总尚未接通；历史缺项保留unknown，镜像大小或整机可用空间不代替任务占用。优先边界统计，目录扫描不强制按0.5s执行 |
+| 网络通信 | 收/发累计B及相邻样本B/s，明确netns/接口/宿主/worker或transport观测层；宿主API与禁网容器分开。若仅能整机采集，标背景干扰，不冒充任务专属 | 当前reader与历史raw没有统一网络字节字段；客户端请求数、token、请求耗时不是网络流量，客户端字节也不冒充含TLS/头部的线速字节 |
+| 时长与行为 | attempt wall、实际阶段、请求/工具起止与计数、具体软件集合；bootstrap、自主动作、错误、终止和评估分列 | 三类已有不同范围的事件/资源边界，旧缺边界不倒填 |
+| 总览与重复 | 一次任务时间对齐的CPU/内存/磁盘/网络四面板，分别标单位与阶段；缺失断线或显示unavailable。重复run保留独立曲线，另报原始点/median/IQR | 现有HTML主要CPU/内存；无完整四面板，最新Assistant未纳入。不能将重复run拼成一次过程或把不同任务折线平均为“典型任务” |
+
+除四项资源及工具统计外，报告还包含以下支撑记录。新增要求不是“全部已经实现”的声明；字段不可得则明确unavailable，历史未采不倒填。
+
+| 支撑记录 | 记录范围与口径 | 当前已有/限制 |
+| --- | --- | --- |
+| 模型调用与用量 | 逻辑请求数、客户端耗时、输入/输出/cache token、错误及有证据的重试 | 三类已有不同范围的请求与usage；真实HTTP传输次数、完整TTFT与账单不能由现有计数推定 |
+| 阶段时间与结果 | 启动/setup/Agent/评估/清理边界；评分、终止、超时、工具错误、infra与可观测OOM分列 | 已有生命周期和独立结果记录；OOM未保存时unknown，不把工具错误当infra或未解决当测量无效 |
+| 进程/线程活动 | 可得线程/进程数、user/system CPU、上下文切换、minor/major faults；明确scope | HostProcessReader已有相关进程字段；不是整机/进程树全量采集，线程数不代表使用核心数 |
+| 环境和限制 | CPU/内存/OS/kernel/软件/模型身份、CPU及内存配额、采样scope | 已有环境快照及冻结配置；按运行时记录判断覆盖，不能用当前机器配置倒填历史 |
+| 采样质量与开销 | 有效点数、真实间隔、gap/缺读/reset、时间窗与实际可得读数开销 | 已有部分质量检查与read wall cost；后者不是采集器全部CPU成本 |
+
+磁盘占用按用户补充已列入上方必统计项目；禁止因此默认全盘扫描、清缓存、删除数据或安装新监测器。采集开销须记录，共享缓存与任务独占数据分开。
+
+GPU使用暂不统计，不列为当前缺口或验收要求；支撑记录也不引入函数热点、PMU、逐工具独占归因或微架构分类要求。
+
+新执行若以“覆盖全部当前必需指标”申请，应先接通并离线验证网络等缺口；若明确批准缩小范围，仍保存有效数据，但清楚标为partial，不能用旧complete标签声称网络已测。采样器开销、短任务覆盖、缺读与异常须一起报告。网络或后续采集代码变化需要新identity及新执行批准，本次文档更新不读取凭据、不运行采样器/Docker/模型、不补跑，不改旧批准。

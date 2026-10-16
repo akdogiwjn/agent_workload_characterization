@@ -28,19 +28,32 @@ from ..runners.preparation import (SENSITIVE_CONFIG_KEYS, _sanitize_error,
 
 _SECRET_VALUE_RE = re.compile(r"(sk-[A-Za-z0-9]{8,}|Bearer\s+[A-Za-z0-9._-]{8,})")
 
-# Event kinds emitted by the pilot runner.
-EVENT_KINDS = ("run", "llm_request", "tool_call", "container", "verifier",
-               "archive", "budget", "infra")
+# Event kinds emitted by the pilot runner. tool_batch is the
+# TOOLSANDBOX-RESOURCE-PILOT-01 execution-batch span: one official
+# ExecutionEnvironment.respond() covering one or more logical tool calls.
+EVENT_KINDS = ("run", "llm_request", "tool_call", "tool_batch", "container",
+               "verifier", "archive", "budget", "infra", "agent_action")
 
 # Attr keys allowed per event kind (whitelist; new keys are dropped, not
 # propagated silently).
 _ATTR_WHITELIST = {
     "run": ("run_id", "attempt_id", "task_id", "source_type", "phase"),
-    "llm_request": ("request_id", "step_index", "ok", "usage", "error",
+    "llm_request": ("request_id", "step_index", "role", "ok", "usage", "error",
                     "cost_status", "model", "t_start_ns", "t_end_ns",
-                    "timing_source"),
+                    "timing_source", "response_model", "response_id",
+                    "context_message_count", "context_characters",
+                    "transport_attempt_count", "retry_scope"),
     "tool_call": ("tool_index", "command", "category", "returncode",
-                  "timed_out", "error", "container_id"),
+                  "timed_out", "error", "container_id", "tool_name",
+                  "role", "request_event_id", "argument_sha256",
+                  "argument_bytes", "result_sha256", "result_bytes",
+                  "ok", "resource_before", "resource_after",
+                  "attribution_method"),
+    "tool_batch": ("batch_index", "call_ids", "tool_names", "ok", "error",
+                   "resource_before", "resource_after", "attribution_method",
+                   "planned_orderings", "executed_orderings"),
+    "agent_action": ("request_event_id", "step_index", "action",
+                     "tool_name", "error"),
     "container": ("container_id", "image", "scope", "action", "detail"),
     "verifier": ("status", "resolved", "detail"),
     "archive": ("status", "detail"),
@@ -167,6 +180,7 @@ class SemanticRecorder:
         self._open_events: dict[str, dict] = {}
         self._sealed = False
         self._anchor_written = False
+        self._run_event_id: str | None = None
 
     # -- low-level ---------------------------------------------------------
 
@@ -187,7 +201,8 @@ class SemanticRecorder:
         if self._anchor_written:
             raise RuntimeError("run already begun")
         self._anchor_written = True
-        self._emit({"event_id": uuid.uuid4().hex, "kind": "run",
+        self._run_event_id = uuid.uuid4().hex
+        self._emit({"event_id": self._run_event_id, "kind": "run",
                     "status": "open", "parent_id": None,
                     **self._stamp(),
                     "attrs": {"run_id": self.run_id,
@@ -250,7 +265,7 @@ class SemanticRecorder:
                         **self._stamp(), "attrs": {"note": "right-censored; "
                                                          "end never observed"}})
         self._open_events.clear()
-        self._emit({"event_id": uuid.uuid4().hex, "kind": "run",
+        self._emit({"event_id": self._run_event_id, "kind": "run",
                     "status": "closed", "parent_id": None, **self._stamp(),
                     "attrs": {"run_id": self.run_id,
                               "attempt_id": self.attempt_id,

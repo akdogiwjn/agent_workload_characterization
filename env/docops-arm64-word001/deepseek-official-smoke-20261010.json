@@ -1,0 +1,23 @@
+{
+  "schema": "docops-official-api-smoke-v1",
+  "scope": "one synthetic JSON action; no document task or tools",
+  "api_base": "https://api.deepseek.com/v1",
+  "request_model": "openai/deepseek-v4-flash",
+  "credential_source": "/home/lcq/.bashrc:DEEPSEEK_API_KEY",
+  "automatic_retries": 0,
+  "transport_calls": 1,
+  "status": "pass",
+  "finish_reason": "stop",
+  "response_model": "deepseek-flash",
+  "content_length": 103,
+  "reasoning_content_present": true,
+  "valid_action_schema": true,
+  "action": "finish",
+  "usage": {
+    "prompt_tokens": 91,
+    "completion_tokens": 39,
+    "cache_tokens": 0
+  },
+  "billing_cost": "unknown",
+  "wall_s": 2.562
+}

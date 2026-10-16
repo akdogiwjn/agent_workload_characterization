@@ -1,0 +1,38 @@
+{
+  "check_id": "P1-12-FINISH-01-cleanup-check-01",
+  "checked_at_utc": "2026-09-28T10:59:43Z",
+  "endpoint": "unix:///var/run/docker.sock",
+  "operation": "one targeted read-only docker inspect; no stop/kill/rm/prune",
+  "target": {
+    "container_id": "e8891f215d9cede0d16c24a2a928a42c7071d8e4561c5ce3555b3d793db067c8",
+    "source": "data/raw/generated/P1-12-FINISH-01/20260928T092455Z-69ecb7/events.jsonl unique verifier scope=start event",
+    "image": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+    "run_scope": "P1-12-FINISH-01 / django__django-16485"
+  },
+  "query": {
+    "argv_projection": "docker inspect --format <safe ID/name/image/state fields> <exact full ID>",
+    "returncode": 1,
+    "stderr_category": "no_such_object",
+    "stderr_projection": "Error: No such object: <target ID>",
+    "stdout_projection": "empty",
+    "result": "not_present_at_check_time"
+  },
+  "identity_association": {
+    "explicit_full_id": true,
+    "raw_unique_verifier_start": true,
+    "image_matches_registered_identity": true,
+    "runtime_label": "not_registered; runtime binds run_id in container name",
+    "association": "clear"
+  },
+  "interpretation": {
+    "current_existence": "not present at this check time",
+    "historical_cleanup_proof": false,
+    "historical_residual_state": "unknown from prior evidence",
+    "next_action": "separate approval may proceed for a repaired single Django validation; this check did not start it"
+  },
+  "scope_limits": [
+    "no global enumeration",
+    "no current PID or unrelated container inspection",
+    "no cleanup operation"
+  ]
+}

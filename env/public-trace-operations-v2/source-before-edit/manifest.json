@@ -1,0 +1,21 @@
+{
+  "schema": "public-trace-operations-v1-source-snapshot",
+  "reason": "Preserve exact code inputs bound by the immutable PUBLIC-TRACE-OPERATIONS-v1 manifest before implementing v2 format readers.",
+  "files": [
+    {
+      "path": "scripts/public_trace_operations.py",
+      "bytes": 43314,
+      "sha256": "c8ad5d6c9d83defce53e49febfe756082428d2a3675f706ac212bbd4e318e49f"
+    },
+    {
+      "path": "src/agent_workload_characterization/analyzers/public_operations.py",
+      "bytes": 20074,
+      "sha256": "f241f2ee15b410179962c51fe21e3fedc9890b794a38f62716d016fd7d363a62"
+    },
+    {
+      "path": "tests/test_public_trace_operations.py",
+      "bytes": 13600,
+      "sha256": "462c7ffd9dab4c6c4f890e6a4bad972994093819c2d0b96d4aee724428a76501"
+    }
+  ]
+}

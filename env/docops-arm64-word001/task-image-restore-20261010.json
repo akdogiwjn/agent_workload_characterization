@@ -1,0 +1,42 @@
+{
+  "schema": "docops-task-image-restore-v1",
+  "status": "restored_and_verified",
+  "build_log_file_mtime_utc": "2026-10-10T10:01:21.191049896Z",
+  "build_completion_time": "not_independently_recorded; post-build image inspection succeeded immediately afterward",
+  "build_start_time": "not_independently_recorded",
+  "endpoint": "unix:///var/run/docker.sock",
+  "build": {
+    "command": "docker --host unix:///var/run/docker.sock build -t docops-word001-task:arm64-adapted-v1 .",
+    "working_directory": "references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/environment",
+    "dockerfile": "references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/environment/Dockerfile",
+    "dockerfile_bytes": 542,
+    "dockerfile_sha256": "0de1ec9114c1a21ef96e451cb221fbcd6530f6de0dd917973939acd626ffa8cd",
+    "context_basis": "Previously recorded successful build in env/docops-arm64-word001/manifest.json; official task environment used unchanged.",
+    "exit_code": 0,
+    "pull_requested": false,
+    "build_log": {
+      "path": "env/docops-arm64-word001/task-image-restore-20261010-build.log",
+      "bytes": 1418,
+      "sha256": "87d483fdf0c06f3bf98887bf83a63836e42d71f064d6b7692bbe10ccb3313154"
+    }
+  },
+  "base_image": {
+    "reference": "harbor-claude-code-base:2.1.114",
+    "image_id": "sha256:062bf50871c0e9d7d4a175643343746f27c7857325962525d7ebe9ae0c08fe9b1",
+    "os_architecture": "linux/arm64",
+    "inspection": "matched registered full ID and architecture before build"
+  },
+  "task_image": {
+    "reference": "docops-word001-task:arm64-adapted-v1",
+    "expected_image_id": "sha256:869486d7bdb34f8da3a1affabaeb085413c850630ef01e0ed1f8a01d64db779f",
+    "actual_image_id": "sha256:869486d7bdb34f8da3a1affabaeb085413c850630ef01e0ed1f8a01d64db779f",
+    "os_architecture": "linux/arm64",
+    "inspection": "matched expected full ID and architecture after build"
+  },
+  "execution_boundary": {
+    "task_container_started": false,
+    "agent_or_verifier_run": false,
+    "approval_or_attempt_created": false,
+    "api_called": false
+  }
+}

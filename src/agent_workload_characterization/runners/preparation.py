@@ -309,7 +309,10 @@ def check_model_config(config: dict) -> ModelPlan:
 USAGE_WHITELIST = ("prompt_tokens", "completion_tokens", "total_tokens",
                    "input_tokens", "output_tokens", "cached_tokens",
                    "reasoning_tokens", "completion_tokens_details",
-                   "prompt_tokens_details")
+                   "prompt_tokens_details",
+                   # DeepSeek OpenAI-compatible vendor fields (raw openai
+                   # client path, TOOLSANDBOX-RESOURCE-PILOT-01)
+                   "prompt_cache_hit_tokens", "prompt_cache_miss_tokens")
 
 _ERROR_TYPE_WHITELIST = frozenset({
     "AuthenticationError", "PermissionDeniedError", "NotFoundError",

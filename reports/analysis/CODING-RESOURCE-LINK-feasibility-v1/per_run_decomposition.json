@@ -1,0 +1,291 @@
+{
+ "schema": "coding-resource-link-feasibility-v1",
+ "method": {
+  "cpu_basis": "cgroup cpuacct adjacent-point counter difference (same as characterization-v3 cpu_intervals)",
+  "classification": "pure-interval: interval 100% inside request-union and 0% tool -> only_req; 100% tool and 0% request -> only_tool; 0%/0% -> uncovered; anything else -> mixed (never prorated)",
+  "tolerance": 1e-09,
+  "no_per_call_attribution": true,
+  "no_time_proration": true
+ },
+ "runs": [
+  {
+   "run_id": "20260928T121110Z-bc1dca",
+   "task": "astropy__astropy-13236",
+   "termination": "ok",
+   "n_tool_calls": 47,
+   "n_requests": 30,
+   "tool_duration_s": {
+    "median": 0.2143069,
+    "n_below_sampling_interval": 35,
+    "sampling_interval_s": 0.5
+   },
+   "cpu_intervals": {
+    "neg_diff": 0,
+    "invalid_time": 0,
+    "n": 224,
+    "n_by_category": {
+     "only_req": 86,
+     "only_tool": 70,
+     "uncovered": 8,
+     "mixed": 60
+    }
+   },
+   "cpu_core_s_by_category": {
+    "only_req": 0.0,
+    "only_tool": 30.937453,
+    "uncovered": 0.13521,
+    "mixed": 12.705394
+   },
+   "cpu_total_core_s": 43.778057,
+   "pure_share_of_cpu": 0.7098
+  },
+  {
+   "run_id": "20260928T121318Z-11bacd",
+   "task": "astropy__astropy-13398",
+   "termination": "ok",
+   "n_tool_calls": 51,
+   "n_requests": 30,
+   "tool_duration_s": {
+    "median": 0.220533056,
+    "n_below_sampling_interval": 34,
+    "sampling_interval_s": 0.5
+   },
+   "cpu_intervals": {
+    "neg_diff": 0,
+    "invalid_time": 0,
+    "n": 276,
+    "n_by_category": {
+     "only_req": 154,
+     "only_tool": 51,
+     "uncovered": 8,
+     "mixed": 63
+    }
+   },
+   "cpu_core_s_by_category": {
+    "only_req": 0.0,
+    "only_tool": 15.642488,
+    "uncovered": 0.135744,
+    "mixed": 18.722851
+   },
+   "cpu_total_core_s": 34.501083,
+   "pure_share_of_cpu": 0.4573
+  },
+  {
+   "run_id": "20260928T121548Z-ad0290",
+   "task": "django__django-16485",
+   "termination": "ok",
+   "n_tool_calls": 25,
+   "n_requests": 22,
+   "tool_duration_s": {
+    "median": 0.250033255,
+    "n_below_sampling_interval": 20,
+    "sampling_interval_s": 0.5
+   },
+   "cpu_intervals": {
+    "neg_diff": 0,
+    "invalid_time": 0,
+    "n": 178,
+    "n_by_category": {
+     "only_req": 101,
+     "only_tool": 31,
+     "uncovered": 8,
+     "mixed": 38
+    }
+   },
+   "cpu_core_s_by_category": {
+    "only_req": 0.0,
+    "only_tool": 45.47386,
+    "uncovered": 0.200796,
+    "mixed": 6.793765
+   },
+   "cpu_total_core_s": 52.468421,
+   "pure_share_of_cpu": 0.8705
+  },
+  {
+   "run_id": "20260928T121728Z-d87dd3",
+   "task": "astropy__astropy-13398",
+   "termination": "ok",
+   "n_tool_calls": 34,
+   "n_requests": 30,
+   "tool_duration_s": {
+    "median": 0.22948913,
+    "n_below_sampling_interval": 25,
+    "sampling_interval_s": 0.5
+   },
+   "cpu_intervals": {
+    "neg_diff": 0,
+    "invalid_time": 0,
+    "n": 327,
+    "n_by_category": {
+     "only_req": 112,
+     "only_tool": 155,
+     "uncovered": 9,
+     "mixed": 51
+    }
+   },
+   "cpu_core_s_by_category": {
+    "only_req": 0.0,
+    "only_tool": 82.433357,
+    "uncovered": 0.131444,
+    "mixed": 7.997581
+   },
+   "cpu_total_core_s": 90.562382,
+   "pure_share_of_cpu": 0.9117
+  },
+  {
+   "run_id": "20260928T122024Z-004fd1",
+   "task": "astropy__astropy-13236",
+   "termination": "ok",
+   "n_tool_calls": 43,
+   "n_requests": 20,
+   "tool_duration_s": {
+    "median": 0.205845172,
+    "n_below_sampling_interval": 32,
+    "sampling_interval_s": 0.5
+   },
+   "cpu_intervals": {
+    "neg_diff": 0,
+    "invalid_time": 0,
+    "n": 223,
+    "n_by_category": {
+     "only_req": 153,
+     "only_tool": 16,
+     "uncovered": 8,
+     "mixed": 46
+    }
+   },
+   "cpu_core_s_by_category": {
+    "only_req": 0.0,
+    "only_tool": 11.771269,
+    "uncovered": 0.132141,
+    "mixed": 10.995667
+   },
+   "cpu_total_core_s": 22.899077,
+   "pure_share_of_cpu": 0.5198
+  },
+  {
+   "run_id": "20260928T122232Z-03d61c",
+   "task": "django__django-16485",
+   "termination": "ok",
+   "n_tool_calls": 25,
+   "n_requests": 15,
+   "tool_duration_s": {
+    "median": 0.287053152,
+    "n_below_sampling_interval": 21,
+    "sampling_interval_s": 0.5
+   },
+   "cpu_intervals": {
+    "neg_diff": 0,
+    "invalid_time": 0,
+    "n": 144,
+    "n_by_category": {
+     "only_req": 82,
+     "only_tool": 24,
+     "uncovered": 7,
+     "mixed": 31
+    }
+   },
+   "cpu_core_s_by_category": {
+    "only_req": 0.0,
+    "only_tool": 32.961091,
+    "uncovered": 0.198749,
+    "mixed": 6.263986
+   },
+   "cpu_total_core_s": 39.423826,
+   "pure_share_of_cpu": 0.8411
+  },
+  {
+   "run_id": "20260928T122356Z-2bbb44",
+   "task": "django__django-16485",
+   "termination": "ok",
+   "n_tool_calls": 31,
+   "n_requests": 20,
+   "tool_duration_s": {
+    "median": 0.283686295,
+    "n_below_sampling_interval": 24,
+    "sampling_interval_s": 0.5
+   },
+   "cpu_intervals": {
+    "neg_diff": 0,
+    "invalid_time": 0,
+    "n": 191,
+    "n_by_category": {
+     "only_req": 121,
+     "only_tool": 21,
+     "uncovered": 8,
+     "mixed": 41
+    }
+   },
+   "cpu_core_s_by_category": {
+    "only_req": 0.0,
+    "only_tool": 24.732665,
+    "uncovered": 0.211784,
+    "mixed": 7.747458
+   },
+   "cpu_total_core_s": 32.691907,
+   "pure_share_of_cpu": 0.763
+  },
+  {
+   "run_id": "20260928T122542Z-8adc15",
+   "task": "astropy__astropy-13398",
+   "termination": "ok",
+   "n_tool_calls": 48,
+   "n_requests": 30,
+   "tool_duration_s": {
+    "median": 0.196323807,
+    "n_below_sampling_interval": 42,
+    "sampling_interval_s": 0.5
+   },
+   "cpu_intervals": {
+    "neg_diff": 0,
+    "invalid_time": 0,
+    "n": 165,
+    "n_by_category": {
+     "only_req": 97,
+     "only_tool": 5,
+     "uncovered": 8,
+     "mixed": 55
+    }
+   },
+   "cpu_core_s_by_category": {
+    "only_req": 0.0,
+    "only_tool": 4.171304,
+    "uncovered": 0.127638,
+    "mixed": 10.484312
+   },
+   "cpu_total_core_s": 14.783254,
+   "pure_share_of_cpu": 0.2908
+  },
+  {
+   "run_id": "20260928T122716Z-441807",
+   "task": "astropy__astropy-13236",
+   "termination": "ok",
+   "n_tool_calls": 44,
+   "n_requests": 29,
+   "tool_duration_s": {
+    "median": 0.259067485,
+    "n_below_sampling_interval": 30,
+    "sampling_interval_s": 0.5
+   },
+   "cpu_intervals": {
+    "neg_diff": 0,
+    "invalid_time": 0,
+    "n": 194,
+    "n_by_category": {
+     "only_req": 116,
+     "only_tool": 15,
+     "uncovered": 8,
+     "mixed": 55
+    }
+   },
+   "cpu_core_s_by_category": {
+    "only_req": 0.0,
+    "only_tool": 10.875656,
+    "uncovered": 0.132588,
+    "mixed": 14.089531
+   },
+   "cpu_total_core_s": 25.097775,
+   "pure_share_of_cpu": 0.4386
+  }
+ ]
+}

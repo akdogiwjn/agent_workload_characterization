@@ -1,0 +1,156 @@
+{
+ "schema": "project-characterization-synthesis-manifest-v1",
+ "created_at_utc": "2026-10-07",
+ "generation": "offline manual synthesis; v1.1 (2026-10-07) minimal semantic correction of three overall judgments and scope-tightening per user review instruction; no analyzer re-run, no network, no execution; output hashes recomputed from disk; manifest self-hash excluded",
+ "verification_scope": "manifest outputs of the five analysis packages and three acquisition catalogs re-read and matched (see evidence_matrix.json basis.verification_note); OSWorld acceptance registered SHA-256 re-checked; no claim of full re-validation",
+ "inputs": [
+  {
+   "path": "reports/analysis/SWE-REBENCH-behavior-v2/summary.md",
+   "bytes": 2616,
+   "sha256": "c21bf7a120a682a528071f4dbfa3d267ba356d90430a48942f7eb2f316c29017",
+   "role": "consumed_input"
+  },
+  {
+   "path": "reports/analysis/SWE-REBENCH-behavior-v2/summary.json",
+   "bytes": 6010266,
+   "sha256": "93602707e6e7e00bc672aabeee4433a3c693e82342c122d066189c099e217637",
+   "role": "consumed_input"
+  },
+  {
+   "path": "reports/analysis/SWE-REBENCH-behavior-v2/manifest.json",
+   "bytes": 33201,
+   "sha256": "acf5cf1f9e13bdae7c73130bbd517abf18d240174adeb365bfec4f0c44bb9269",
+   "role": "consumed_input"
+  },
+  {
+   "path": "reports/analysis/OSWORLD-task-behavior-v3/summary.md",
+   "bytes": 2166,
+   "sha256": "6bc7a6b7c4be583662cd919eb0b9bc67e0c3de237343d0b167d2b8ff19d0de00",
+   "role": "consumed_input"
+  },
+  {
+   "path": "reports/analysis/OSWORLD-task-behavior-v3/acceptance_summary.md",
+   "bytes": 6288,
+   "sha256": "ea86cc7c1539dd9086b9396700934d9c0ad4191800bc6c8358ab2bf66678e148",
+   "role": "consumed_input"
+  },
+  {
+   "path": "reports/analysis/OSWORLD-task-behavior-v3/manifest.json",
+   "bytes": 520559,
+   "sha256": "6d30e72f680bdf84a3369485521b7e0aba697b5a81776eb180e6c3ad5e26313f",
+   "role": "consumed_input"
+  },
+  {
+   "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.md",
+   "bytes": 2470,
+   "sha256": "f1d7e37da9abd63e572e2709f110ef5d9d216686884792d1b315377cf469194a",
+   "role": "consumed_input"
+  },
+  {
+   "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/manifest.json",
+   "bytes": 3261,
+   "sha256": "948bf81f50780f6c7b24141d5a4138d757c9049f61d5c619c7ac40a28a70026c",
+   "role": "consumed_input"
+  },
+  {
+   "path": "reports/analysis/P1-12-CODING-REPEAT-01-review-v1/summary.md",
+   "bytes": 2194,
+   "sha256": "d42d7b042fbeb0d4f5f9a06b0ae323959fcd1c8dbc9147ec681ce3a8d344038e",
+   "role": "consumed_input"
+  },
+  {
+   "path": "reports/analysis/P1-12-CODING-REPEAT-01-review-v1/manifest.json",
+   "bytes": 29574,
+   "sha256": "3e48f6995895a821dfd98398c37d226e91a1b919a2d44fe8323ee1a381a57493",
+   "role": "consumed_input"
+  },
+  {
+   "path": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/summary.md",
+   "bytes": 5174,
+   "sha256": "c0e126023075d7c95a724635c9c0da00e59edae04c6e3d49bfdf4f996a5fced1",
+   "role": "consumed_input"
+  },
+  {
+   "path": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/manifest.json",
+   "bytes": 16609,
+   "sha256": "a00351a6a4dab2d5353bac073c22ff1e9a5c286c9a3566b28a28ebf26a9b16bf",
+   "role": "consumed_input"
+  },
+  {
+   "path": "data/catalog/public_trace_acquisition/BULK-NONVIDEO-20260929/sources.json",
+   "bytes": 2521,
+   "sha256": "68dca15c581f1a4825675568639c767c53c7951287f126a24678ef73623a277f",
+   "role": "consumed_input"
+  },
+  {
+   "path": "data/catalog/public_trace_acquisition/BULK-NONVIDEO-20260929/summary.md",
+   "bytes": 2798,
+   "sha256": "2d79515e8e6ffcbaf7694ac0983b950300bd0953186022c1d292d4168e048e8c",
+   "role": "consumed_input"
+  },
+  {
+   "path": "data/catalog/public_trace_acquisition/SWEBENCH-CONTINUATION-20260930/sources.json",
+   "bytes": 4561,
+   "sha256": "a1362036cc3d8b42b31cba36fdadc9a404ccb8bd6f4ebc17697acb9090e6947e",
+   "role": "consumed_input"
+  },
+  {
+   "path": "data/catalog/public_trace_acquisition/SWEBENCH-CONTINUATION-20260930/summary.md",
+   "bytes": 3902,
+   "sha256": "6e46b2a494ceeb159ca09ccf1755c2d59bb418ed73f6c4e2770bae62244c5312",
+   "role": "consumed_input"
+  },
+  {
+   "path": "data/catalog/public_trace_acquisition/SWEBENCH-SUPPLEMENT-20261006/plan.json",
+   "bytes": 1151897,
+   "sha256": "cf45105108f3df36999b840fa6cf9e9f801f0131f15a15dc11802792a651a83f",
+   "role": "consumed_input"
+  },
+  {
+   "path": "data/catalog/public_trace_acquisition/SWEBENCH-SUPPLEMENT-20261006/summary.md",
+   "bytes": 4583,
+   "sha256": "5d498ff0610e3f083f3f53afde442e6b8f1d8ee1d73424a6c630ff4531252a70",
+   "role": "consumed_input"
+  },
+  {
+   "path": "methodology.md",
+   "bytes": 47197,
+   "sha256": "caed3128b5c2a573ff0b3d30e3621c382d3b55347596fc303d6f8594adb445b8",
+   "role": "consumed_input"
+  },
+  {
+   "path": "project_state.json",
+   "bytes": 15808,
+   "sha256": "191bdd85c6a9f83bb069e67e42523e4cb31648d3b6c8b5e5a8e634f72d7bf25a",
+   "role": "consumed_input"
+  },
+  {
+   "path": "docs/project_status.md",
+   "bytes": 21070,
+   "sha256": "49915dc17e6ddfbf8e49acb6a9c6afb23b08c3afe0a536e16d1c02924c5eac7d",
+   "role": "consumed_input"
+  },
+  {
+   "path": "docs/development_tasks.md",
+   "bytes": 112120,
+   "sha256": "5fea2bcb8c9f7543b2bd8fe230d3efd73b8c389c72f5b279d688f129b3abb478",
+   "role": "consumed_input"
+  }
+ ],
+ "outputs": [
+  {
+   "path": "reports/analysis/PROJECT-characterization-synthesis-v1/summary.md",
+   "bytes": 11084,
+   "sha256": "26fd2c9edba4fde840ea9f85f0732e20b96db2db2752737c3848d92e5b6cc7ec",
+   "role": "output",
+   "note": "v1.1 corrected 2026-10-07"
+  },
+  {
+   "path": "reports/analysis/PROJECT-characterization-synthesis-v1/evidence_matrix.json",
+   "bytes": 12068,
+   "sha256": "c540ca8c435501e59007fe9ad868658aeca23a2b586e2fc04047b19b4f4f5e5d",
+   "role": "output",
+   "note": "v1.1 corrected 2026-10-07 (matrix rows scope-tightened, basis.correction_note added)"
+  }
+ ]
+}

@@ -1,0 +1,699 @@
+{
+  "source_packages": [
+    {
+      "package": "swe",
+      "manifest": "reports/analysis/SWE-REBENCH-behavior-v2/manifest.json",
+      "output_checks": [
+        {
+          "path": "reports/analysis/SWE-REBENCH-behavior-v2/summary.json",
+          "exists": true,
+          "expected_sha256": "93602707e6e7e00bc672aabeee4433a3c693e82342c122d066189c099e217637",
+          "actual_sha256": "93602707e6e7e00bc672aabeee4433a3c693e82342c122d066189c099e217637",
+          "expected_bytes": 6010266,
+          "actual_bytes": 6010266,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/SWE-REBENCH-behavior-v2/summary.md",
+          "exists": true,
+          "expected_sha256": "c21bf7a120a682a528071f4dbfa3d267ba356d90430a48942f7eb2f316c29017",
+          "actual_sha256": "c21bf7a120a682a528071f4dbfa3d267ba356d90430a48942f7eb2f316c29017",
+          "expected_bytes": 2616,
+          "actual_bytes": 2616,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/SWE-REBENCH-behavior-v2/per_trajectory.jsonl",
+          "exists": true,
+          "expected_sha256": "5c8ff80d0d210dad1eb9a4f2bdcff73e7c1ea068b92857d0f404d7de0c867cbf",
+          "actual_sha256": "5c8ff80d0d210dad1eb9a4f2bdcff73e7c1ea068b92857d0f404d7de0c867cbf",
+          "expected_bytes": 24716050,
+          "actual_bytes": 24716050,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/SWE-REBENCH-behavior-v2/measurement_candidates.json",
+          "exists": true,
+          "expected_sha256": "b26845448adced1769f8453e46a8414a8338a0555d55d442e59dea136a9e5ea8",
+          "actual_sha256": "b26845448adced1769f8453e46a8414a8338a0555d55d442e59dea136a9e5ea8",
+          "expected_bytes": 3449,
+          "actual_bytes": 3449,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/SWE-REBENCH-behavior-v2/corrections.md",
+          "exists": true,
+          "expected_sha256": "472d08c5f1d5849f369e77d885d0dc6a707a2a976f3ebe3864e9dfa5ac23cd8a",
+          "actual_sha256": "472d08c5f1d5849f369e77d885d0dc6a707a2a976f3ebe3864e9dfa5ac23cd8a",
+          "expected_bytes": 1424,
+          "actual_bytes": 1424,
+          "match": true
+        }
+      ],
+      "outputs_pass": true,
+      "historical_reference_checks": [],
+      "historical_status_snapshot_checks": []
+    },
+    {
+      "package": "swebench",
+      "manifest": "reports/analysis/SWEBENCH-subset-behavior-v1/manifest.json",
+      "output_checks": [
+        {
+          "path": "reports/analysis/SWEBENCH-subset-behavior-v1/selection.json",
+          "exists": true,
+          "expected_sha256": "369806cf72d36077653aff6bd2734a62675002e0657fd79120c7e69818f8dc6a",
+          "actual_sha256": "369806cf72d36077653aff6bd2734a62675002e0657fd79120c7e69818f8dc6a",
+          "expected_bytes": 34601,
+          "actual_bytes": 34601,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/SWEBENCH-subset-behavior-v1/per_trajectory.jsonl",
+          "exists": true,
+          "expected_sha256": "580d13b3828c74a855665a18f1a9b4725dc99476470533ef6d5df2fcf0b3162e",
+          "actual_sha256": "580d13b3828c74a855665a18f1a9b4725dc99476470533ef6d5df2fcf0b3162e",
+          "expected_bytes": 127546,
+          "actual_bytes": 127546,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/SWEBENCH-subset-behavior-v1/summary.json",
+          "exists": true,
+          "expected_sha256": "4047285c0da720f3417dfeb1f9325aa78c2b0737e335be3e7358c6e13d6a7957",
+          "actual_sha256": "4047285c0da720f3417dfeb1f9325aa78c2b0737e335be3e7358c6e13d6a7957",
+          "expected_bytes": 5477,
+          "actual_bytes": 5477,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/SWEBENCH-subset-behavior-v1/summary.md",
+          "exists": true,
+          "expected_sha256": "1fa45276994da1b749a9278cf748c0f33bb90c33868d963f410e37987b966a28",
+          "actual_sha256": "1fa45276994da1b749a9278cf748c0f33bb90c33868d963f410e37987b966a28",
+          "expected_bytes": 7382,
+          "actual_bytes": 7382,
+          "match": true
+        }
+      ],
+      "outputs_pass": true,
+      "historical_reference_checks": [],
+      "historical_status_snapshot_checks": []
+    },
+    {
+      "package": "osworld",
+      "manifest": "reports/analysis/OSWORLD-task-behavior-v3/manifest.json",
+      "output_checks": [
+        {
+          "path": "reports/analysis/OSWORLD-task-behavior-v3/task_semantics.jsonl",
+          "exists": true,
+          "expected_sha256": "075826fb20af5349a4364e257808b8c733c4a2a6b369d052585394407233ccf8",
+          "actual_sha256": "075826fb20af5349a4364e257808b8c733c4a2a6b369d052585394407233ccf8",
+          "expected_bytes": 245183,
+          "actual_bytes": 245183,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/OSWORLD-task-behavior-v3/per_trajectory.jsonl",
+          "exists": true,
+          "expected_sha256": "062703167b7a833f9ff428a498f1356e056b675e67f1ec6c6335a7ac77faab30",
+          "actual_sha256": "062703167b7a833f9ff428a498f1356e056b675e67f1ec6c6335a7ac77faab30",
+          "expected_bytes": 33061656,
+          "actual_bytes": 33061656,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/OSWORLD-task-behavior-v3/summary.json",
+          "exists": true,
+          "expected_sha256": "87208891550de8cd0f38d931580d99464b93ec3bbce917655140434d12452e84",
+          "actual_sha256": "87208891550de8cd0f38d931580d99464b93ec3bbce917655140434d12452e84",
+          "expected_bytes": 1054573,
+          "actual_bytes": 1054573,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/OSWORLD-task-behavior-v3/summary.md",
+          "exists": true,
+          "expected_sha256": "6bc7a6b7c4be583662cd919eb0b9bc67e0c3de237343d0b167d2b8ff19d0de00",
+          "actual_sha256": "6bc7a6b7c4be583662cd919eb0b9bc67e0c3de237343d0b167d2b8ff19d0de00",
+          "expected_bytes": 2166,
+          "actual_bytes": 2166,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/OSWORLD-task-behavior-v3/corrections.md",
+          "exists": true,
+          "expected_sha256": "dea7c9cb169cc2b9f2d6cd356e51d903c66a052c098848cfaf79bdac7a558f6d",
+          "actual_sha256": "dea7c9cb169cc2b9f2d6cd356e51d903c66a052c098848cfaf79bdac7a558f6d",
+          "expected_bytes": 3835,
+          "actual_bytes": 3835,
+          "match": true
+        }
+      ],
+      "outputs_pass": true,
+      "historical_reference_checks": [],
+      "historical_status_snapshot_checks": []
+    },
+    {
+      "package": "macro",
+      "manifest": "reports/analysis/AGENTX-APPLIED-MACRO-v1/manifest.json",
+      "output_checks": [
+        {
+          "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.json",
+          "exists": true,
+          "expected_sha256": "24f0dcfff9f0012c7c9b26e6b9bb3ba31df62ac4cccedd1b2d446b9556c55d36",
+          "actual_sha256": "24f0dcfff9f0012c7c9b26e6b9bb3ba31df62ac4cccedd1b2d446b9556c55d36",
+          "expected_bytes": 15252,
+          "actual_bytes": 15252,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.md",
+          "exists": true,
+          "expected_sha256": "f1d7e37da9abd63e572e2709f110ef5d9d216686884792d1b315377cf469194a",
+          "actual_sha256": "f1d7e37da9abd63e572e2709f110ef5d9d216686884792d1b315377cf469194a",
+          "expected_bytes": 2470,
+          "actual_bytes": 2470,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/per_trace.jsonl",
+          "exists": true,
+          "expected_sha256": "192cc3df92dd2148ac549157054e818f0346a35dc08724c3e9a271077be491a3",
+          "actual_sha256": "192cc3df92dd2148ac549157054e818f0346a35dc08724c3e9a271077be491a3",
+          "expected_bytes": 1945380,
+          "actual_bytes": 1945380,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/per_template.jsonl",
+          "exists": true,
+          "expected_sha256": "94c6e8e35cebe05d3ae0b51662f09aff93c68137105505bd016af88bbdbd7350",
+          "actual_sha256": "94c6e8e35cebe05d3ae0b51662f09aff93c68137105505bd016af88bbdbd7350",
+          "expected_bytes": 20248772,
+          "actual_bytes": 20248772,
+          "match": true
+        }
+      ],
+      "outputs_pass": true,
+      "historical_reference_checks": [],
+      "historical_status_snapshot_checks": []
+    },
+    {
+      "package": "coding",
+      "manifest": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/manifest.json",
+      "output_checks": [
+        {
+          "path": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/summary.json",
+          "exists": true,
+          "expected_sha256": "221d19027c85fdb810d5a17f08f1174028d5765f65f72b30d25f8e22388fbe12",
+          "actual_sha256": "221d19027c85fdb810d5a17f08f1174028d5765f65f72b30d25f8e22388fbe12",
+          "expected_bytes": 399026,
+          "actual_bytes": 399026,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/summary.md",
+          "exists": true,
+          "expected_sha256": "c0e126023075d7c95a724635c9c0da00e59edae04c6e3d49bfdf4f996a5fced1",
+          "actual_sha256": "c0e126023075d7c95a724635c9c0da00e59edae04c6e3d49bfdf4f996a5fced1",
+          "expected_bytes": 5174,
+          "actual_bytes": 5174,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/corrections.md",
+          "exists": true,
+          "expected_sha256": "0e9d61624e96482a5b1903044d1e2ac4fc33e5c0895beaaff7af302206840f29",
+          "actual_sha256": "0e9d61624e96482a5b1903044d1e2ac4fc33e5c0895beaaff7af302206840f29",
+          "expected_bytes": 1675,
+          "actual_bytes": 1675,
+          "match": true
+        }
+      ],
+      "outputs_pass": true,
+      "historical_reference_checks": [
+        {
+          "manifest_path": "analysis/tool_timing.py",
+          "resolved_project_path": "references/repos/agentcgroup/analysis/tool_timing.py",
+          "registered_sha256": "78199b9c843a0024bebe2b4e1cc765cfa66f17a6cde49c100b18cf94129c7bde",
+          "current_sha256": "78199b9c843a0024bebe2b4e1cc765cfa66f17a6cde49c100b18cf94129c7bde",
+          "registered_bytes": 2605,
+          "current_bytes": 2605,
+          "status": "match",
+          "current_exists": true,
+          "drift": false
+        },
+        {
+          "manifest_path": "analysis/compute_active_time.py",
+          "resolved_project_path": "references/repos/agentcgroup/analysis/compute_active_time.py",
+          "registered_sha256": "1eb6c164b155c5dedd1478cb74ce9321dea20f6f541b97dec19f6894b2cbce62",
+          "current_sha256": "1eb6c164b155c5dedd1478cb74ce9321dea20f6f541b97dec19f6894b2cbce62",
+          "registered_bytes": 13578,
+          "current_bytes": 13578,
+          "status": "match",
+          "current_exists": true,
+          "drift": false
+        }
+      ],
+      "historical_status_snapshot_checks": []
+    },
+    {
+      "package": "link",
+      "manifest": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/manifest.json",
+      "output_checks": [
+        {
+          "path": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/summary.md",
+          "exists": true,
+          "expected_sha256": "41725cea2297a7b5590e80e4cdfcddc5937cefb703c7c0b7082fe4ea06d25bca",
+          "actual_sha256": "41725cea2297a7b5590e80e4cdfcddc5937cefb703c7c0b7082fe4ea06d25bca",
+          "expected_bytes": 6533,
+          "actual_bytes": 6533,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/decision.json",
+          "exists": true,
+          "expected_sha256": "1a5f9b2edf8e8f4866e23a15b48267be776fe0aa294767c10077c2b748e6afb1",
+          "actual_sha256": "1a5f9b2edf8e8f4866e23a15b48267be776fe0aa294767c10077c2b748e6afb1",
+          "expected_bytes": 5269,
+          "actual_bytes": 5269,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/per_run_decomposition.json",
+          "exists": true,
+          "expected_sha256": "564afa6d3ce25b46ce5c29642e6ae598cbe86a46823268abc5e5b66cbf76d95a",
+          "actual_sha256": "564afa6d3ce25b46ce5c29642e6ae598cbe86a46823268abc5e5b66cbf76d95a",
+          "expected_bytes": 6531,
+          "actual_bytes": 6531,
+          "match": true
+        }
+      ],
+      "outputs_pass": true,
+      "historical_reference_checks": [],
+      "historical_status_snapshot_checks": [
+        {
+          "manifest_path": "methodology.md",
+          "resolved_project_path": "methodology.md",
+          "registered_sha256": "caed3128b5c2a573ff0b3d30e3621c382d3b55347596fc303d6f8594adb445b8",
+          "current_sha256": "a0c91cfe50a5d4fa4a95a7d36be9141475eb9897a171859c4a253be6d145d180",
+          "registered_bytes": 47197,
+          "current_bytes": 48846,
+          "status": "current_status_snapshot_drift",
+          "current_exists": true,
+          "drift": true
+        }
+      ]
+    },
+    {
+      "package": "word",
+      "manifest": "reports/analysis/DOCOPS-WORD-RESOURCE-03-04-review-v1/manifest.json",
+      "output_checks": [
+        {
+          "path": "reports/analysis/DOCOPS-WORD-RESOURCE-03-04-review-v1/per_run.json",
+          "exists": true,
+          "expected_sha256": "d566027393370e0604007ca4fca25f9c34f029d83f109960fbc544badbb23581",
+          "actual_sha256": "d566027393370e0604007ca4fca25f9c34f029d83f109960fbc544badbb23581",
+          "expected_bytes": 45571,
+          "actual_bytes": 45571,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/DOCOPS-WORD-RESOURCE-03-04-review-v1/summary.json",
+          "exists": true,
+          "expected_sha256": "afbefb60a42fd040eee1aaefc98464fb612af6cc309854acb5ce964600e77313",
+          "actual_sha256": "afbefb60a42fd040eee1aaefc98464fb612af6cc309854acb5ce964600e77313",
+          "expected_bytes": 30597,
+          "actual_bytes": 30597,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/DOCOPS-WORD-RESOURCE-03-04-review-v1/summary.md",
+          "exists": true,
+          "expected_sha256": "022ec8013ac5a4877e803a450631dfbbaaaf0e5a1c2d6d84571e5ce9f82587a6",
+          "actual_sha256": "022ec8013ac5a4877e803a450631dfbbaaaf0e5a1c2d6d84571e5ce9f82587a6",
+          "expected_bytes": 7313,
+          "actual_bytes": 7313,
+          "match": true
+        }
+      ],
+      "outputs_pass": true,
+      "historical_reference_checks": [],
+      "historical_status_snapshot_checks": []
+    },
+    {
+      "package": "office",
+      "manifest": "reports/analysis/DOCOPS-OFFICE-REPEAT-01-characterization-v1/manifest.json",
+      "output_checks": [
+        {
+          "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-01-characterization-v1/per_run.jsonl",
+          "exists": true,
+          "expected_sha256": "e3d7eaf3afdd004a684057de69eb5462807b7f34120e55837e842002e1448f60",
+          "actual_sha256": "e3d7eaf3afdd004a684057de69eb5462807b7f34120e55837e842002e1448f60",
+          "expected_bytes": 104054,
+          "actual_bytes": 104054,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-01-characterization-v1/summary.json",
+          "exists": true,
+          "expected_sha256": "f1fa0d598b3a1a52520abc5c16821433a5f71e0dd3208135dc1266fe523f1ec2",
+          "actual_sha256": "f1fa0d598b3a1a52520abc5c16821433a5f71e0dd3208135dc1266fe523f1ec2",
+          "expected_bytes": 97263,
+          "actual_bytes": 97263,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/DOCOPS-OFFICE-REPEAT-01-characterization-v1/summary.md",
+          "exists": true,
+          "expected_sha256": "347c8c9321b4b5025512ff2fb3f4f349b4b6c78d19f018892df6ed33fedc69d9",
+          "actual_sha256": "347c8c9321b4b5025512ff2fb3f4f349b4b6c78d19f018892df6ed33fedc69d9",
+          "expected_bytes": 12432,
+          "actual_bytes": 12432,
+          "match": true
+        }
+      ],
+      "outputs_pass": true,
+      "historical_reference_checks": [],
+      "historical_status_snapshot_checks": []
+    },
+    {
+      "package": "synthesis",
+      "manifest": "reports/analysis/PROJECT-characterization-synthesis-v1/manifest.json",
+      "output_checks": [
+        {
+          "path": "reports/analysis/PROJECT-characterization-synthesis-v1/summary.md",
+          "exists": true,
+          "expected_sha256": "26fd2c9edba4fde840ea9f85f0732e20b96db2db2752737c3848d92e5b6cc7ec",
+          "actual_sha256": "26fd2c9edba4fde840ea9f85f0732e20b96db2db2752737c3848d92e5b6cc7ec",
+          "expected_bytes": 11084,
+          "actual_bytes": 11084,
+          "match": true
+        },
+        {
+          "path": "reports/analysis/PROJECT-characterization-synthesis-v1/evidence_matrix.json",
+          "exists": true,
+          "expected_sha256": "c540ca8c435501e59007fe9ad868658aeca23a2b586e2fc04047b19b4f4f5e5d",
+          "actual_sha256": "c540ca8c435501e59007fe9ad868658aeca23a2b586e2fc04047b19b4f4f5e5d",
+          "expected_bytes": 12068,
+          "actual_bytes": 12068,
+          "match": true
+        }
+      ],
+      "outputs_pass": true,
+      "historical_reference_checks": [],
+      "historical_status_snapshot_checks": [
+        {
+          "manifest_path": "methodology.md",
+          "resolved_project_path": "methodology.md",
+          "registered_sha256": "caed3128b5c2a573ff0b3d30e3621c382d3b55347596fc303d6f8594adb445b8",
+          "current_sha256": "a0c91cfe50a5d4fa4a95a7d36be9141475eb9897a171859c4a253be6d145d180",
+          "registered_bytes": 47197,
+          "current_bytes": 48846,
+          "status": "current_status_snapshot_drift",
+          "current_exists": true,
+          "drift": true
+        },
+        {
+          "manifest_path": "project_state.json",
+          "resolved_project_path": "project_state.json",
+          "registered_sha256": "191bdd85c6a9f83bb069e67e42523e4cb31648d3b6c8b5e5a8e634f72d7bf25a",
+          "current_sha256": "fc5e12341565a2f73a23a3711988e30beb2582bda447b4431ca0afdaefb9aec0",
+          "registered_bytes": 15808,
+          "current_bytes": 36178,
+          "status": "current_status_snapshot_drift",
+          "current_exists": true,
+          "drift": true
+        },
+        {
+          "manifest_path": "docs/project_status.md",
+          "resolved_project_path": "docs/project_status.md",
+          "registered_sha256": "49915dc17e6ddfbf8e49acb6a9c6afb23b08c3afe0a536e16d1c02924c5eac7d",
+          "current_sha256": "bd2dc9a06c6eb59f17ee101ef8cdf4bfe4e8e9dec9a73d0629837922a1b91a75",
+          "registered_bytes": 21070,
+          "current_bytes": 22719,
+          "status": "current_status_snapshot_drift",
+          "current_exists": true,
+          "drift": true
+        },
+        {
+          "manifest_path": "docs/development_tasks.md",
+          "resolved_project_path": "docs/development_tasks.md",
+          "registered_sha256": "5fea2bcb8c9f7543b2bd8fe230d3efd73b8c389c72f5b279d688f129b3abb478",
+          "current_sha256": "fd97c980f18cb9cba86951a18baaac7b3a00a817efd9e1fef7dd672ca3f8efc2",
+          "registered_bytes": 112120,
+          "current_bytes": 169154,
+          "status": "current_status_snapshot_drift",
+          "current_exists": true,
+          "drift": true
+        }
+      ]
+    }
+  ],
+  "status_source": "project_state.json",
+  "detail_run_count": 20,
+  "coding_detail_count": 9,
+  "coding_raw_manifest_verified_file_count": 81,
+  "office_detail_count": 9,
+  "word_detail_count": 2,
+  "coding_detail_errors": [],
+  "coding_detail_integrity": "verified",
+  "historical_reference_checks": {
+    "swe": [],
+    "swebench": [],
+    "osworld": [],
+    "macro": [],
+    "coding": [
+      {
+        "manifest_path": "analysis/tool_timing.py",
+        "resolved_project_path": "references/repos/agentcgroup/analysis/tool_timing.py",
+        "registered_sha256": "78199b9c843a0024bebe2b4e1cc765cfa66f17a6cde49c100b18cf94129c7bde",
+        "current_sha256": "78199b9c843a0024bebe2b4e1cc765cfa66f17a6cde49c100b18cf94129c7bde",
+        "registered_bytes": 2605,
+        "current_bytes": 2605,
+        "status": "match",
+        "current_exists": true,
+        "drift": false
+      },
+      {
+        "manifest_path": "analysis/compute_active_time.py",
+        "resolved_project_path": "references/repos/agentcgroup/analysis/compute_active_time.py",
+        "registered_sha256": "1eb6c164b155c5dedd1478cb74ce9321dea20f6f541b97dec19f6894b2cbce62",
+        "current_sha256": "1eb6c164b155c5dedd1478cb74ce9321dea20f6f541b97dec19f6894b2cbce62",
+        "registered_bytes": 13578,
+        "current_bytes": 13578,
+        "status": "match",
+        "current_exists": true,
+        "drift": false
+      }
+    ],
+    "link": [],
+    "word": [],
+    "office": [],
+    "synthesis": []
+  },
+  "historical_status_snapshot_checks": {
+    "swe": [],
+    "swebench": [],
+    "osworld": [],
+    "macro": [],
+    "coding": [],
+    "link": [
+      {
+        "manifest_path": "methodology.md",
+        "resolved_project_path": "methodology.md",
+        "registered_sha256": "caed3128b5c2a573ff0b3d30e3621c382d3b55347596fc303d6f8594adb445b8",
+        "current_sha256": "a0c91cfe50a5d4fa4a95a7d36be9141475eb9897a171859c4a253be6d145d180",
+        "registered_bytes": 47197,
+        "current_bytes": 48846,
+        "status": "current_status_snapshot_drift",
+        "current_exists": true,
+        "drift": true
+      }
+    ],
+    "word": [],
+    "office": [],
+    "synthesis": [
+      {
+        "manifest_path": "methodology.md",
+        "resolved_project_path": "methodology.md",
+        "registered_sha256": "caed3128b5c2a573ff0b3d30e3621c382d3b55347596fc303d6f8594adb445b8",
+        "current_sha256": "a0c91cfe50a5d4fa4a95a7d36be9141475eb9897a171859c4a253be6d145d180",
+        "registered_bytes": 47197,
+        "current_bytes": 48846,
+        "status": "current_status_snapshot_drift",
+        "current_exists": true,
+        "drift": true
+      },
+      {
+        "manifest_path": "project_state.json",
+        "resolved_project_path": "project_state.json",
+        "registered_sha256": "191bdd85c6a9f83bb069e67e42523e4cb31648d3b6c8b5e5a8e634f72d7bf25a",
+        "current_sha256": "fc5e12341565a2f73a23a3711988e30beb2582bda447b4431ca0afdaefb9aec0",
+        "registered_bytes": 15808,
+        "current_bytes": 36178,
+        "status": "current_status_snapshot_drift",
+        "current_exists": true,
+        "drift": true
+      },
+      {
+        "manifest_path": "docs/project_status.md",
+        "resolved_project_path": "docs/project_status.md",
+        "registered_sha256": "49915dc17e6ddfbf8e49acb6a9c6afb23b08c3afe0a536e16d1c02924c5eac7d",
+        "current_sha256": "bd2dc9a06c6eb59f17ee101ef8cdf4bfe4e8e9dec9a73d0629837922a1b91a75",
+        "registered_bytes": 21070,
+        "current_bytes": 22719,
+        "status": "current_status_snapshot_drift",
+        "current_exists": true,
+        "drift": true
+      },
+      {
+        "manifest_path": "docs/development_tasks.md",
+        "resolved_project_path": "docs/development_tasks.md",
+        "registered_sha256": "5fea2bcb8c9f7543b2bd8fe230d3efd73b8c389c72f5b279d688f129b3abb478",
+        "current_sha256": "fd97c980f18cb9cba86951a18baaac7b3a00a817efd9e1fef7dd672ca3f8efc2",
+        "registered_bytes": 112120,
+        "current_bytes": 169154,
+        "status": "current_status_snapshot_drift",
+        "current_exists": true,
+        "drift": true
+      }
+    ]
+  },
+  "office_table_column_count": 10,
+  "detail_runs": [
+    {
+      "run_id": "20260928T121110Z-bc1dca",
+      "source": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121110Z-bc1dca/samples.json",
+      "sample_count": 0,
+      "window_s": null
+    },
+    {
+      "run_id": "20260928T121318Z-11bacd",
+      "source": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121318Z-11bacd/samples.json",
+      "sample_count": 0,
+      "window_s": null
+    },
+    {
+      "run_id": "20260928T121548Z-ad0290",
+      "source": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121548Z-ad0290/samples.json",
+      "sample_count": 0,
+      "window_s": null
+    },
+    {
+      "run_id": "20260928T121728Z-d87dd3",
+      "source": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121728Z-d87dd3/samples.json",
+      "sample_count": 0,
+      "window_s": null
+    },
+    {
+      "run_id": "20260928T122024Z-004fd1",
+      "source": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122024Z-004fd1/samples.json",
+      "sample_count": 0,
+      "window_s": null
+    },
+    {
+      "run_id": "20260928T122232Z-03d61c",
+      "source": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122232Z-03d61c/samples.json",
+      "sample_count": 0,
+      "window_s": null
+    },
+    {
+      "run_id": "20260928T122356Z-2bbb44",
+      "source": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122356Z-2bbb44/samples.json",
+      "sample_count": 0,
+      "window_s": null
+    },
+    {
+      "run_id": "20260928T122542Z-8adc15",
+      "source": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122542Z-8adc15/samples.json",
+      "sample_count": 0,
+      "window_s": null
+    },
+    {
+      "run_id": "20260928T122716Z-441807",
+      "source": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122716Z-441807/samples.json",
+      "sample_count": 0,
+      "window_s": null
+    },
+    {
+      "run_id": "20261010T154928Z-r0-excel001",
+      "source": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T154928Z-r0-excel001/summary.json",
+      "sample_count": 78,
+      "window_s": 38.543623213
+    },
+    {
+      "run_id": "20261010T155019Z-r0-ppt008",
+      "source": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T155019Z-r0-ppt008/summary.json",
+      "sample_count": 29,
+      "window_s": 14.016835525
+    },
+    {
+      "run_id": "20261010T155045Z-r0-pdf004",
+      "source": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T155045Z-r0-pdf004/summary.json",
+      "sample_count": 21,
+      "window_s": 10.011705613
+    },
+    {
+      "run_id": "20261010T155107Z-r1-ppt008",
+      "source": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T155107Z-r1-ppt008/summary.json",
+      "sample_count": 28,
+      "window_s": 13.517154433
+    },
+    {
+      "run_id": "20261010T155132Z-r1-pdf004",
+      "source": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T155132Z-r1-pdf004/summary.json",
+      "sample_count": 21,
+      "window_s": 10.011217086
+    },
+    {
+      "run_id": "20261010T155154Z-r1-excel001",
+      "source": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T155154Z-r1-excel001/summary.json",
+      "sample_count": 43,
+      "window_s": 21.02070479
+    },
+    {
+      "run_id": "20261010T155227Z-r2-pdf004",
+      "source": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T155227Z-r2-pdf004/summary.json",
+      "sample_count": 19,
+      "window_s": 9.014114076
+    },
+    {
+      "run_id": "20261010T155248Z-r2-excel001",
+      "source": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T155248Z-r2-excel001/summary.json",
+      "sample_count": 47,
+      "window_s": 23.024895857
+    },
+    {
+      "run_id": "20261010T155323Z-r2-ppt008",
+      "source": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01/20261010T155323Z-r2-ppt008/summary.json",
+      "sample_count": 27,
+      "window_s": 13.012056278
+    },
+    {
+      "run_id": "20261010T105013Z-word001",
+      "source": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/summary.json",
+      "sample_count": 149,
+      "window_s": 74.096074883
+    },
+    {
+      "run_id": "20261010T110820Z-word001",
+      "source": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/summary.json",
+      "sample_count": 96,
+      "window_s": 47.575497794
+    }
+  ],
+  "gates": {
+    "g0": "existing_pass_record",
+    "g1": "passed_registered_limited_scope",
+    "g2": "not_passed",
+    "g3_r": "not_passed"
+  },
+  "cpu_02_status": "paused",
+  "limitations": [
+    "No direct per-tool resource attribution",
+    "Public trace packages do not supply local resource observations",
+    "Source snapshot drift is preserved as a caveat",
+    "This renderer does not independently re-run analyses"
+  ]
+}

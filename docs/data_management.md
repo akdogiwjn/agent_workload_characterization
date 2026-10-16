@@ -33,7 +33,7 @@
 
 ```text
 agent_workload_characterization/
-├── methodology.md
+├── docs/current_scope.md         # 当前目标；历史方法已迁入local_archive
 ├── docs/
 ├── references/                  # 外部参考，非数据入口
 ├── workload_catalog/            # 任务选择与 workload 配置
@@ -44,7 +44,8 @@ agent_workload_characterization/
 │   │   ├── public/              # 后续确需新增的公共数据
 │   │   └── replay/              # 重放执行原始日志，独立于 real
 │   └── normalized/              # 派生 IR，按输入与转换版本隔离
-└── reports/                     # quality / macro / resource / cpu / replay / scale
+├── reports/                     # 正式报告保留原路径，不与历史文档混搬
+└── local_archive/               # 本机历史文档/备份/缓存，Git忽略
 ```
 
 统一使用 `data/normalized/` 与 `reports/`，不另建含义相同的 `traces/normalized/` 或 `results/`。大型数据通常不进代码版本库；元数据也应先做隐私检查再提交。
@@ -99,3 +100,11 @@ agent_workload_characterization/
 当需要独立备份、迁移或发布时，再决定是否复制旧数据。顺序为：冻结来源清单 → 估算空间和许可 → 明确批准 → 复制到新批次 → 校验文件/成员与元数据完整性 → 切换 locator → 保留回退入口。
 
 删除旧副本是单独的破坏性决定，不包含在“归档”或“统一接入”的默认授权中。
+
+## 9. 当前 Git 发布范围（2026-10-16）
+
+`data/`不整目录上传，也不整体隐藏：原始/normalized及未来非catalog数据目录默认忽略；`data/catalog`保留配置、来源登记和获取manifest等小型元数据。catalog中的下载正文、HTTP记录、对象大索引和registry token响应排除，许可文本与来源指针可保留。具体规则见[catalog说明](../data/catalog/README.md)及根`.gitignore`。
+
+本机data约4.60GB，其中raw约4.46GB；调整忽略规则后，当前data提交候选约12.9MB。此为工作区大小与候选清点，不代表网络上传量。已有跟踪项为11个配置/登记文件；没有执行Git暂存、提交、推送、取消跟踪或数据删除。
+
+代码仓库不携带全部实验数据；完整历史核验需同时提供对应本机数据/归档。提交前仍需检查密钥与敏感正文，不能因为目录叫catalog就默认所有内容适合公开。

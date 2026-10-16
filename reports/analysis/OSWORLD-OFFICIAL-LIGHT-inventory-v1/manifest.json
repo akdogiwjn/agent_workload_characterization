@@ -1,0 +1,27 @@
+{
+  "schema": "osworld_official_light_inventory_manifest.v1",
+  "input_root": "data/raw/public/osworld2_trajectory_light",
+  "input_file_index": "inventory.json contains every input file/cache bytes and SHA-256",
+  "input_scope": {
+    "total_files": 6177,
+    "total_bytes": 847596719,
+    "data_files": 2058,
+    "data_bytes": 787052044,
+    "cache_files": 4119,
+    "cache_bytes": 60544675
+  },
+  "requested_revision": "01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f",
+  "outputs": [
+    {
+      "path": "inventory.json",
+      "bytes": 3371176,
+      "sha256": "51cb70b3fcacfbba25eedf6d285893f6320a1123eb58350acec2fa5e51b19f2e"
+    },
+    {
+      "path": "summary.md",
+      "bytes": 5803,
+      "sha256": "eaa818d3a511129b4592606fc4c5b7f8e367566b3f43ce77864da26edc208cc6"
+    }
+  ],
+  "manifest_self_hash_excluded": true
+}

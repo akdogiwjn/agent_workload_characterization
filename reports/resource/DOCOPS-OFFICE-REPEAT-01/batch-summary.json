@@ -1,0 +1,2170 @@
+{
+  "schema": "docops-office-repeat-batch-summary-v1",
+  "collection": "DOCOPS-OFFICE-REPEAT-01",
+  "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+  "results": [
+    {
+      "round": 0,
+      "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+      "run_id": "20261010T154928Z-r0-excel001",
+      "status": "executed",
+      "returncode": 0,
+      "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+      "wall_s": 50.3,
+      "termination": "finish",
+      "reward": 1.0,
+      "archive_verified": true,
+      "archive_errors": [],
+      "image_action": {
+        "status": "built_restore-r0-excel001",
+        "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+        "build": {
+          "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+          "command": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "build",
+            "--pull=false",
+            "--network=none",
+            "--platform=linux/arm64",
+            "-t",
+            "docops-office-repeat-01:excel001",
+            "."
+          ],
+          "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment",
+          "duration_s": 0.228,
+          "returncode": 0,
+          "log": {
+            "path": "env/docops-office-repeat-01/image-builds/excel001-restore-r0-excel001.log",
+            "bytes": 1392,
+            "sha256": "cba3cf363ede74c40ea84c8fc441bca9e528163d069b8b91e2681ffa39d31880"
+          },
+          "image": {
+            "reference": "docops-office-repeat-01:excel001",
+            "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+            "platform": "linux/arm64"
+          }
+        }
+      },
+      "model_requests_logged": 7,
+      "request_model_counts": {
+        "openai/deepseek-v4-flash": 7
+      },
+      "response_model_counts": {
+        "deepseek-flash": 7
+      },
+      "action_counts": {
+        "invalid_or_unknown": 3,
+        "call_tool": 3,
+        "finish": 1
+      },
+      "tool_name_counts": {
+        "copy_file": 1,
+        "xlsx_set_formula": 1,
+        "xlsx_read_sheet": 1
+      },
+      "tool_activity_category_counts": {
+        "file_copy": 1,
+        "spreadsheet_formula_edit": 1,
+        "spreadsheet_inspection": 1
+      },
+      "tool_return_status_counts": {
+        "ok_true": 3,
+        "unknown_not_persisted_or_not_linkable": 0
+      },
+      "bootstrap_tool_counts_from_first_request_history": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "usage_from_agent_context": {
+        "n_input_tokens": 23937,
+        "n_output_tokens": 7245,
+        "n_cache_tokens": 19456,
+        "cost_usd": 0.0
+      },
+      "verifier_failed_test_ids": [],
+      "resources": {
+        "attempt_wall_s": 50.3,
+        "sample_count": 78,
+        "sample_window_s": 38.543623213,
+        "sample_interval_s": {
+          "min": 0.500289629,
+          "max": 0.501524016
+        },
+        "container_cpu_core_s": 7.069852,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 67645440,
+        "kernel_memory_peak_bytes": 75599872,
+        "host_agent_rss_sample_peak_bytes": 168558592,
+        "phase_wall_s": {
+          "harbor_start": 0.921817335,
+          "agent_setup": 0.431087436,
+          "agent": 37.318566975,
+          "verifier": 1.284901093,
+          "harbor_stop": 10.273144417
+        }
+      },
+      "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+    },
+    {
+      "round": 0,
+      "task_key": "atomic__ppt_008_bullet_editing_seed",
+      "run_id": "20261010T155019Z-r0-ppt008",
+      "status": "executed",
+      "returncode": 0,
+      "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+      "wall_s": 25.43,
+      "termination": "finish",
+      "reward": 1.0,
+      "archive_verified": true,
+      "archive_errors": [],
+      "image_action": {
+        "status": "built_restore-r0-ppt008",
+        "id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+        "build": {
+          "task_key": "atomic__ppt_008_bullet_editing_seed",
+          "command": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "build",
+            "--pull=false",
+            "--network=none",
+            "--platform=linux/arm64",
+            "-t",
+            "docops-office-repeat-01:ppt008",
+            "."
+          ],
+          "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment",
+          "duration_s": 0.226,
+          "returncode": 0,
+          "log": {
+            "path": "env/docops-office-repeat-01/image-builds/ppt008-restore-r0-ppt008.log",
+            "bytes": 1379,
+            "sha256": "e50857648da97c6653f60b4fc45b5f405b1c766874f4e120e2a5dc80079fd138"
+          },
+          "image": {
+            "reference": "docops-office-repeat-01:ppt008",
+            "id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+            "platform": "linux/arm64"
+          }
+        }
+      },
+      "model_requests_logged": 5,
+      "request_model_counts": {
+        "openai/deepseek-v4-flash": 5
+      },
+      "response_model_counts": {
+        "deepseek-flash": 5
+      },
+      "action_counts": {
+        "call_tool": 4,
+        "finish": 1
+      },
+      "tool_name_counts": {
+        "ppt_list_slides": 2,
+        "copy_file": 1,
+        "ppt_replace_text": 1
+      },
+      "tool_activity_category_counts": {
+        "presentation_inspection": 2,
+        "file_copy": 1,
+        "presentation_text_edit": 1
+      },
+      "tool_return_status_counts": {
+        "ok_true": 4,
+        "unknown_not_persisted_or_not_linkable": 0
+      },
+      "bootstrap_tool_counts_from_first_request_history": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "usage_from_agent_context": {
+        "n_input_tokens": 11367,
+        "n_output_tokens": 1074,
+        "n_cache_tokens": 9088,
+        "cost_usd": 0.0
+      },
+      "verifier_failed_test_ids": [],
+      "resources": {
+        "attempt_wall_s": 25.43,
+        "sample_count": 29,
+        "sample_window_s": 14.016835525,
+        "sample_interval_s": {
+          "min": 0.5003492,
+          "max": 0.501729919
+        },
+        "container_cpu_core_s": 5.366808,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 85241856,
+        "kernel_memory_peak_bytes": 85241856,
+        "host_agent_rss_sample_peak_bytes": 168558592,
+        "phase_wall_s": {
+          "harbor_start": 0.917687189,
+          "agent_setup": 0.425905546,
+          "agent": 12.279795697,
+          "verifier": 1.363368894,
+          "harbor_stop": 10.376057419
+        }
+      },
+      "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+    },
+    {
+      "round": 0,
+      "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+      "run_id": "20261010T155045Z-r0-pdf004",
+      "status": "executed",
+      "returncode": 0,
+      "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+      "wall_s": 21.55,
+      "termination": "finish",
+      "reward": 1.0,
+      "archive_verified": true,
+      "archive_errors": [],
+      "image_action": {
+        "status": "built_restore-r0-pdf004",
+        "id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+        "build": {
+          "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+          "command": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "build",
+            "--pull=false",
+            "--network=none",
+            "--platform=linux/arm64",
+            "-t",
+            "docops-office-repeat-01:pdf004",
+            "."
+          ],
+          "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment",
+          "duration_s": 0.208,
+          "returncode": 0,
+          "log": {
+            "path": "env/docops-office-repeat-01/image-builds/pdf004-restore-r0-pdf004.log",
+            "bytes": 1383,
+            "sha256": "bfdc90529f53800bd50581bf2ede8d000b77056f916ec12c41a5921e822105b7"
+          },
+          "image": {
+            "reference": "docops-office-repeat-01:pdf004",
+            "id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+            "platform": "linux/arm64"
+          }
+        }
+      },
+      "model_requests_logged": 4,
+      "request_model_counts": {
+        "openai/deepseek-v4-flash": 4
+      },
+      "response_model_counts": {
+        "deepseek-flash": 4
+      },
+      "action_counts": {
+        "call_tool": 3,
+        "finish": 1
+      },
+      "tool_name_counts": {
+        "copy_file": 1,
+        "pdf_reorder_pages": 1,
+        "inspect_document": 1
+      },
+      "tool_activity_category_counts": {
+        "file_copy": 1,
+        "pdf_page_reorder": 1,
+        "document_structure_inspection": 1
+      },
+      "tool_return_status_counts": {
+        "ok_true": 3,
+        "unknown_not_persisted_or_not_linkable": 0
+      },
+      "bootstrap_tool_counts_from_first_request_history": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "usage_from_agent_context": {
+        "n_input_tokens": 9415,
+        "n_output_tokens": 679,
+        "n_cache_tokens": 7168,
+        "cost_usd": 0.0
+      },
+      "verifier_failed_test_ids": [],
+      "resources": {
+        "attempt_wall_s": 21.55,
+        "sample_count": 21,
+        "sample_window_s": 10.011705613,
+        "sample_interval_s": {
+          "min": 0.50033764,
+          "max": 0.501598657
+        },
+        "container_cpu_core_s": 4.014582,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 62980096,
+        "kernel_memory_peak_bytes": 72388608,
+        "host_agent_rss_sample_peak_bytes": 168558592,
+        "phase_wall_s": {
+          "harbor_start": 0.909998743,
+          "agent_setup": 0.396325992,
+          "agent": 8.639832774,
+          "verifier": 1.277428841,
+          "harbor_stop": 10.259850026
+        }
+      },
+      "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+    },
+    {
+      "round": 1,
+      "task_key": "atomic__ppt_008_bullet_editing_seed",
+      "run_id": "20261010T155107Z-r1-ppt008",
+      "status": "executed",
+      "returncode": 0,
+      "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+      "wall_s": 25.2,
+      "termination": "finish",
+      "reward": 1.0,
+      "archive_verified": true,
+      "archive_errors": [],
+      "image_action": {
+        "status": "built_restore-r1-ppt008",
+        "id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+        "build": {
+          "task_key": "atomic__ppt_008_bullet_editing_seed",
+          "command": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "build",
+            "--pull=false",
+            "--network=none",
+            "--platform=linux/arm64",
+            "-t",
+            "docops-office-repeat-01:ppt008",
+            "."
+          ],
+          "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment",
+          "duration_s": 0.19,
+          "returncode": 0,
+          "log": {
+            "path": "env/docops-office-repeat-01/image-builds/ppt008-restore-r1-ppt008.log",
+            "bytes": 1374,
+            "sha256": "18377626be3db094652653865ad04b319f6a62280c29e6cf272cd6b54f421834"
+          },
+          "image": {
+            "reference": "docops-office-repeat-01:ppt008",
+            "id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+            "platform": "linux/arm64"
+          }
+        }
+      },
+      "model_requests_logged": 6,
+      "request_model_counts": {
+        "openai/deepseek-v4-flash": 6
+      },
+      "response_model_counts": {
+        "deepseek-flash": 6
+      },
+      "action_counts": {
+        "call_tool": 4,
+        "invalid_or_unknown": 1,
+        "finish": 1
+      },
+      "tool_name_counts": {
+        "copy_file": 1,
+        "ppt_list_slides": 2,
+        "ppt_replace_text": 1
+      },
+      "tool_activity_category_counts": {
+        "file_copy": 1,
+        "presentation_inspection": 2,
+        "presentation_text_edit": 1
+      },
+      "tool_return_status_counts": {
+        "ok_true": 4,
+        "unknown_not_persisted_or_not_linkable": 0
+      },
+      "bootstrap_tool_counts_from_first_request_history": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "usage_from_agent_context": {
+        "n_input_tokens": 13477,
+        "n_output_tokens": 1182,
+        "n_cache_tokens": 11648,
+        "cost_usd": 0.0
+      },
+      "verifier_failed_test_ids": [],
+      "resources": {
+        "attempt_wall_s": 25.2,
+        "sample_count": 28,
+        "sample_window_s": 13.517154433,
+        "sample_interval_s": {
+          "min": 0.500286769,
+          "max": 0.503244619
+        },
+        "container_cpu_core_s": 5.209944,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 63598592,
+        "kernel_memory_peak_bytes": 78237696,
+        "host_agent_rss_sample_peak_bytes": 168558592,
+        "phase_wall_s": {
+          "harbor_start": 0.888143116,
+          "agent_setup": 0.396767488,
+          "agent": 12.276783977,
+          "verifier": 1.288787086,
+          "harbor_stop": 10.285252982
+        }
+      },
+      "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+    },
+    {
+      "round": 1,
+      "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+      "run_id": "20261010T155132Z-r1-pdf004",
+      "status": "executed",
+      "returncode": 0,
+      "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+      "wall_s": 21.73,
+      "termination": "finish",
+      "reward": 1.0,
+      "archive_verified": true,
+      "archive_errors": [],
+      "image_action": {
+        "status": "built_restore-r1-pdf004",
+        "id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+        "build": {
+          "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+          "command": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "build",
+            "--pull=false",
+            "--network=none",
+            "--platform=linux/arm64",
+            "-t",
+            "docops-office-repeat-01:pdf004",
+            "."
+          ],
+          "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment",
+          "duration_s": 0.208,
+          "returncode": 0,
+          "log": {
+            "path": "env/docops-office-repeat-01/image-builds/pdf004-restore-r1-pdf004.log",
+            "bytes": 1383,
+            "sha256": "e62b67175792dc2a490ced331a460125a4c17931293dad8bc522f2192a9b03b8"
+          },
+          "image": {
+            "reference": "docops-office-repeat-01:pdf004",
+            "id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+            "platform": "linux/arm64"
+          }
+        }
+      },
+      "model_requests_logged": 4,
+      "request_model_counts": {
+        "openai/deepseek-v4-flash": 4
+      },
+      "response_model_counts": {
+        "deepseek-flash": 4
+      },
+      "action_counts": {
+        "call_tool": 3,
+        "finish": 1
+      },
+      "tool_name_counts": {
+        "copy_file": 1,
+        "pdf_reorder_pages": 1,
+        "inspect_document": 1
+      },
+      "tool_activity_category_counts": {
+        "file_copy": 1,
+        "pdf_page_reorder": 1,
+        "document_structure_inspection": 1
+      },
+      "tool_return_status_counts": {
+        "ok_true": 3,
+        "unknown_not_persisted_or_not_linkable": 0
+      },
+      "bootstrap_tool_counts_from_first_request_history": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "usage_from_agent_context": {
+        "n_input_tokens": 9350,
+        "n_output_tokens": 525,
+        "n_cache_tokens": 8192,
+        "cost_usd": 0.0
+      },
+      "verifier_failed_test_ids": [],
+      "resources": {
+        "attempt_wall_s": 21.73,
+        "sample_count": 21,
+        "sample_window_s": 10.011217086,
+        "sample_interval_s": {
+          "min": 0.500291359,
+          "max": 0.501757759
+        },
+        "container_cpu_core_s": 4.31821,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 58531840,
+        "kernel_memory_peak_bytes": 73515008,
+        "host_agent_rss_sample_peak_bytes": 168558592,
+        "phase_wall_s": {
+          "harbor_start": 0.937079353,
+          "agent_setup": 0.410668217,
+          "agent": 8.831449116,
+          "verifier": 1.2259288,
+          "harbor_stop": 10.256912175
+        }
+      },
+      "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+    },
+    {
+      "round": 1,
+      "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+      "run_id": "20261010T155154Z-r1-excel001",
+      "status": "executed",
+      "returncode": 0,
+      "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+      "wall_s": 32.34,
+      "termination": "finish",
+      "reward": 1.0,
+      "archive_verified": true,
+      "archive_errors": [],
+      "image_action": {
+        "status": "built_restore-r1-excel001",
+        "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+        "build": {
+          "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+          "command": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "build",
+            "--pull=false",
+            "--network=none",
+            "--platform=linux/arm64",
+            "-t",
+            "docops-office-repeat-01:excel001",
+            "."
+          ],
+          "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment",
+          "duration_s": 0.224,
+          "returncode": 0,
+          "log": {
+            "path": "env/docops-office-repeat-01/image-builds/excel001-restore-r1-excel001.log",
+            "bytes": 1392,
+            "sha256": "8d2e4e582c7c1bce307825f0ad95ebe8c44064f9e437dd65ca9c3acdfd31056f"
+          },
+          "image": {
+            "reference": "docops-office-repeat-01:excel001",
+            "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+            "platform": "linux/arm64"
+          }
+        }
+      },
+      "model_requests_logged": 6,
+      "request_model_counts": {
+        "openai/deepseek-v4-flash": 6
+      },
+      "response_model_counts": {
+        "deepseek-flash": 6
+      },
+      "action_counts": {
+        "call_tool": 5,
+        "finish": 1
+      },
+      "tool_name_counts": {
+        "xlsx_read_sheet": 2,
+        "copy_file": 1,
+        "xlsx_set_formula": 2
+      },
+      "tool_activity_category_counts": {
+        "spreadsheet_inspection": 2,
+        "file_copy": 1,
+        "spreadsheet_formula_edit": 2
+      },
+      "tool_return_status_counts": {
+        "ok_true": 5,
+        "unknown_not_persisted_or_not_linkable": 0
+      },
+      "bootstrap_tool_counts_from_first_request_history": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "usage_from_agent_context": {
+        "n_input_tokens": 19362,
+        "n_output_tokens": 2835,
+        "n_cache_tokens": 17152,
+        "cost_usd": 0.0
+      },
+      "verifier_failed_test_ids": [],
+      "resources": {
+        "attempt_wall_s": 32.34,
+        "sample_count": 43,
+        "sample_window_s": 21.02070479,
+        "sample_interval_s": {
+          "min": 0.500287979,
+          "max": 0.501735539
+        },
+        "container_cpu_core_s": 6.006818,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 78770176,
+        "kernel_memory_peak_bytes": 78770176,
+        "host_agent_rss_sample_peak_bytes": 168558592,
+        "phase_wall_s": {
+          "harbor_start": 0.916588934,
+          "agent_setup": 0.412960779,
+          "agent": 19.284257841,
+          "verifier": 1.372260355,
+          "harbor_stop": 10.288586567
+        }
+      },
+      "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+    },
+    {
+      "round": 2,
+      "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+      "run_id": "20261010T155227Z-r2-pdf004",
+      "status": "executed",
+      "returncode": 0,
+      "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+      "wall_s": 20.81,
+      "termination": "finish",
+      "reward": 1.0,
+      "archive_verified": true,
+      "archive_errors": [],
+      "image_action": {
+        "status": "built_restore-r2-pdf004",
+        "id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+        "build": {
+          "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+          "command": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "build",
+            "--pull=false",
+            "--network=none",
+            "--platform=linux/arm64",
+            "-t",
+            "docops-office-repeat-01:pdf004",
+            "."
+          ],
+          "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment",
+          "duration_s": 0.225,
+          "returncode": 0,
+          "log": {
+            "path": "env/docops-office-repeat-01/image-builds/pdf004-restore-r2-pdf004.log",
+            "bytes": 1383,
+            "sha256": "8124752301b68c6fc2b8e7126d536428a9e922e0a8560733114cdbe203f36b37"
+          },
+          "image": {
+            "reference": "docops-office-repeat-01:pdf004",
+            "id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+            "platform": "linux/arm64"
+          }
+        }
+      },
+      "model_requests_logged": 4,
+      "request_model_counts": {
+        "openai/deepseek-v4-flash": 4
+      },
+      "response_model_counts": {
+        "deepseek-flash": 4
+      },
+      "action_counts": {
+        "call_tool": 3,
+        "finish": 1
+      },
+      "tool_name_counts": {
+        "copy_file": 1,
+        "pdf_reorder_pages": 1,
+        "inspect_document": 1
+      },
+      "tool_activity_category_counts": {
+        "file_copy": 1,
+        "pdf_page_reorder": 1,
+        "document_structure_inspection": 1
+      },
+      "tool_return_status_counts": {
+        "ok_true": 3,
+        "unknown_not_persisted_or_not_linkable": 0
+      },
+      "bootstrap_tool_counts_from_first_request_history": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "usage_from_agent_context": {
+        "n_input_tokens": 9323,
+        "n_output_tokens": 503,
+        "n_cache_tokens": 8192,
+        "cost_usd": 0.0
+      },
+      "verifier_failed_test_ids": [],
+      "resources": {
+        "attempt_wall_s": 20.81,
+        "sample_count": 19,
+        "sample_window_s": 9.014114076,
+        "sample_interval_s": {
+          "min": 0.50037096,
+          "max": 0.50333248
+        },
+        "container_cpu_core_s": 4.279262,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 66600960,
+        "kernel_memory_peak_bytes": 73711616,
+        "host_agent_rss_sample_peak_bytes": 168558592,
+        "phase_wall_s": {
+          "harbor_start": 0.911372203,
+          "agent_setup": 0.391121101,
+          "agent": 7.769768375,
+          "verifier": 1.316975101,
+          "harbor_stop": 10.356671925
+        }
+      },
+      "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+    },
+    {
+      "round": 2,
+      "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+      "run_id": "20261010T155248Z-r2-excel001",
+      "status": "executed",
+      "returncode": 0,
+      "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+      "wall_s": 34.47,
+      "termination": "finish",
+      "reward": 1.0,
+      "archive_verified": true,
+      "archive_errors": [],
+      "image_action": {
+        "status": "built_restore-r2-excel001",
+        "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+        "build": {
+          "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+          "command": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "build",
+            "--pull=false",
+            "--network=none",
+            "--platform=linux/arm64",
+            "-t",
+            "docops-office-repeat-01:excel001",
+            "."
+          ],
+          "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment",
+          "duration_s": 0.215,
+          "returncode": 0,
+          "log": {
+            "path": "env/docops-office-repeat-01/image-builds/excel001-restore-r2-excel001.log",
+            "bytes": 1392,
+            "sha256": "c8bb4fbb46e2b5806e2c21b8d8ae58f70752fc1af0232ecc2b058d7ab29386f9"
+          },
+          "image": {
+            "reference": "docops-office-repeat-01:excel001",
+            "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+            "platform": "linux/arm64"
+          }
+        }
+      },
+      "model_requests_logged": 8,
+      "request_model_counts": {
+        "openai/deepseek-v4-flash": 8
+      },
+      "response_model_counts": {
+        "deepseek-flash": 8
+      },
+      "action_counts": {
+        "invalid_or_unknown": 2,
+        "call_tool": 5,
+        "finish": 1
+      },
+      "tool_name_counts": {
+        "copy_file": 1,
+        "xlsx_read_sheet": 2,
+        "xlsx_set_formula": 2
+      },
+      "tool_activity_category_counts": {
+        "file_copy": 1,
+        "spreadsheet_inspection": 2,
+        "spreadsheet_formula_edit": 2
+      },
+      "tool_return_status_counts": {
+        "ok_true": 5,
+        "unknown_not_persisted_or_not_linkable": 0
+      },
+      "bootstrap_tool_counts_from_first_request_history": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "usage_from_agent_context": {
+        "n_input_tokens": 27939,
+        "n_output_tokens": 3273,
+        "n_cache_tokens": 24704,
+        "cost_usd": 0.0
+      },
+      "verifier_failed_test_ids": [],
+      "resources": {
+        "attempt_wall_s": 34.47,
+        "sample_count": 47,
+        "sample_window_s": 23.024895857,
+        "sample_interval_s": {
+          "min": 0.500321449,
+          "max": 0.501764579
+        },
+        "container_cpu_core_s": 5.969424,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 76169216,
+        "kernel_memory_peak_bytes": 76169216,
+        "host_agent_rss_sample_peak_bytes": 168558592,
+        "phase_wall_s": {
+          "harbor_start": 0.931205982,
+          "agent_setup": 0.422099654,
+          "agent": 21.402470483,
+          "verifier": 1.346184799,
+          "harbor_stop": 10.29618025
+        }
+      },
+      "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+    },
+    {
+      "round": 2,
+      "task_key": "atomic__ppt_008_bullet_editing_seed",
+      "run_id": "20261010T155323Z-r2-ppt008",
+      "status": "executed",
+      "returncode": 0,
+      "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+      "wall_s": 24.74,
+      "termination": "finish",
+      "reward": 1.0,
+      "archive_verified": true,
+      "archive_errors": [],
+      "image_action": {
+        "status": "built_restore-r2-ppt008",
+        "id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+        "build": {
+          "task_key": "atomic__ppt_008_bullet_editing_seed",
+          "command": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "build",
+            "--pull=false",
+            "--network=none",
+            "--platform=linux/arm64",
+            "-t",
+            "docops-office-repeat-01:ppt008",
+            "."
+          ],
+          "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment",
+          "duration_s": 0.215,
+          "returncode": 0,
+          "log": {
+            "path": "env/docops-office-repeat-01/image-builds/ppt008-restore-r2-ppt008.log",
+            "bytes": 1379,
+            "sha256": "37b75ae09caad86d8636bb3eec35470ff6837c53ff3a864b7ba021747d124937"
+          },
+          "image": {
+            "reference": "docops-office-repeat-01:ppt008",
+            "id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+            "platform": "linux/arm64"
+          }
+        }
+      },
+      "model_requests_logged": 5,
+      "request_model_counts": {
+        "openai/deepseek-v4-flash": 5
+      },
+      "response_model_counts": {
+        "deepseek-flash": 5
+      },
+      "action_counts": {
+        "call_tool": 4,
+        "finish": 1
+      },
+      "tool_name_counts": {
+        "ppt_list_slides": 2,
+        "copy_file": 1,
+        "ppt_replace_text": 1
+      },
+      "tool_activity_category_counts": {
+        "presentation_inspection": 2,
+        "file_copy": 1,
+        "presentation_text_edit": 1
+      },
+      "tool_return_status_counts": {
+        "ok_true": 4,
+        "unknown_not_persisted_or_not_linkable": 0
+      },
+      "bootstrap_tool_counts_from_first_request_history": {
+        "get_task_metadata": 1,
+        "inspect_document": 1
+      },
+      "usage_from_agent_context": {
+        "n_input_tokens": 11164,
+        "n_output_tokens": 1094,
+        "n_cache_tokens": 9472,
+        "cost_usd": 0.0
+      },
+      "verifier_failed_test_ids": [],
+      "resources": {
+        "attempt_wall_s": 24.74,
+        "sample_count": 27,
+        "sample_window_s": 13.012056278,
+        "sample_interval_s": {
+          "min": 0.50030003,
+          "max": 0.501536716
+        },
+        "container_cpu_core_s": 4.932665,
+        "container_cpu_status": "valid_endpoint_delta",
+        "memory_current_sample_peak_bytes": 71151616,
+        "kernel_memory_peak_bytes": 74493952,
+        "host_agent_rss_sample_peak_bytes": 168558592,
+        "phase_wall_s": {
+          "harbor_start": 1.023711783,
+          "agent_setup": 0.360037588,
+          "agent": 11.73047264,
+          "verifier": 1.218371807,
+          "harbor_stop": 10.345075657
+        }
+      },
+      "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+    }
+  ],
+  "by_task": {
+    "atomic__excel_001_budget_bucket_totals_seed": {
+      "scheduled_rounds": [
+        0,
+        1,
+        2
+      ],
+      "executed": 3,
+      "failed": 0,
+      "not_executed": 0,
+      "runs": [
+        {
+          "round": 0,
+          "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+          "run_id": "20261010T154928Z-r0-excel001",
+          "status": "executed",
+          "returncode": 0,
+          "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+          "wall_s": 50.3,
+          "termination": "finish",
+          "reward": 1.0,
+          "archive_verified": true,
+          "archive_errors": [],
+          "image_action": {
+            "status": "built_restore-r0-excel001",
+            "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+            "build": {
+              "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+              "command": [
+                "docker",
+                "--host",
+                "unix:///var/run/docker.sock",
+                "build",
+                "--pull=false",
+                "--network=none",
+                "--platform=linux/arm64",
+                "-t",
+                "docops-office-repeat-01:excel001",
+                "."
+              ],
+              "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment",
+              "duration_s": 0.228,
+              "returncode": 0,
+              "log": {
+                "path": "env/docops-office-repeat-01/image-builds/excel001-restore-r0-excel001.log",
+                "bytes": 1392,
+                "sha256": "cba3cf363ede74c40ea84c8fc441bca9e528163d069b8b91e2681ffa39d31880"
+              },
+              "image": {
+                "reference": "docops-office-repeat-01:excel001",
+                "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+                "platform": "linux/arm64"
+              }
+            }
+          },
+          "model_requests_logged": 7,
+          "request_model_counts": {
+            "openai/deepseek-v4-flash": 7
+          },
+          "response_model_counts": {
+            "deepseek-flash": 7
+          },
+          "action_counts": {
+            "invalid_or_unknown": 3,
+            "call_tool": 3,
+            "finish": 1
+          },
+          "tool_name_counts": {
+            "copy_file": 1,
+            "xlsx_set_formula": 1,
+            "xlsx_read_sheet": 1
+          },
+          "tool_activity_category_counts": {
+            "file_copy": 1,
+            "spreadsheet_formula_edit": 1,
+            "spreadsheet_inspection": 1
+          },
+          "tool_return_status_counts": {
+            "ok_true": 3,
+            "unknown_not_persisted_or_not_linkable": 0
+          },
+          "bootstrap_tool_counts_from_first_request_history": {
+            "get_task_metadata": 1,
+            "inspect_document": 1
+          },
+          "usage_from_agent_context": {
+            "n_input_tokens": 23937,
+            "n_output_tokens": 7245,
+            "n_cache_tokens": 19456,
+            "cost_usd": 0.0
+          },
+          "verifier_failed_test_ids": [],
+          "resources": {
+            "attempt_wall_s": 50.3,
+            "sample_count": 78,
+            "sample_window_s": 38.543623213,
+            "sample_interval_s": {
+              "min": 0.500289629,
+              "max": 0.501524016
+            },
+            "container_cpu_core_s": 7.069852,
+            "container_cpu_status": "valid_endpoint_delta",
+            "memory_current_sample_peak_bytes": 67645440,
+            "kernel_memory_peak_bytes": 75599872,
+            "host_agent_rss_sample_peak_bytes": 168558592,
+            "phase_wall_s": {
+              "harbor_start": 0.921817335,
+              "agent_setup": 0.431087436,
+              "agent": 37.318566975,
+              "verifier": 1.284901093,
+              "harbor_stop": 10.273144417
+            }
+          },
+          "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+        },
+        {
+          "round": 1,
+          "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+          "run_id": "20261010T155154Z-r1-excel001",
+          "status": "executed",
+          "returncode": 0,
+          "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+          "wall_s": 32.34,
+          "termination": "finish",
+          "reward": 1.0,
+          "archive_verified": true,
+          "archive_errors": [],
+          "image_action": {
+            "status": "built_restore-r1-excel001",
+            "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+            "build": {
+              "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+              "command": [
+                "docker",
+                "--host",
+                "unix:///var/run/docker.sock",
+                "build",
+                "--pull=false",
+                "--network=none",
+                "--platform=linux/arm64",
+                "-t",
+                "docops-office-repeat-01:excel001",
+                "."
+              ],
+              "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment",
+              "duration_s": 0.224,
+              "returncode": 0,
+              "log": {
+                "path": "env/docops-office-repeat-01/image-builds/excel001-restore-r1-excel001.log",
+                "bytes": 1392,
+                "sha256": "8d2e4e582c7c1bce307825f0ad95ebe8c44064f9e437dd65ca9c3acdfd31056f"
+              },
+              "image": {
+                "reference": "docops-office-repeat-01:excel001",
+                "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+                "platform": "linux/arm64"
+              }
+            }
+          },
+          "model_requests_logged": 6,
+          "request_model_counts": {
+            "openai/deepseek-v4-flash": 6
+          },
+          "response_model_counts": {
+            "deepseek-flash": 6
+          },
+          "action_counts": {
+            "call_tool": 5,
+            "finish": 1
+          },
+          "tool_name_counts": {
+            "xlsx_read_sheet": 2,
+            "copy_file": 1,
+            "xlsx_set_formula": 2
+          },
+          "tool_activity_category_counts": {
+            "spreadsheet_inspection": 2,
+            "file_copy": 1,
+            "spreadsheet_formula_edit": 2
+          },
+          "tool_return_status_counts": {
+            "ok_true": 5,
+            "unknown_not_persisted_or_not_linkable": 0
+          },
+          "bootstrap_tool_counts_from_first_request_history": {
+            "get_task_metadata": 1,
+            "inspect_document": 1
+          },
+          "usage_from_agent_context": {
+            "n_input_tokens": 19362,
+            "n_output_tokens": 2835,
+            "n_cache_tokens": 17152,
+            "cost_usd": 0.0
+          },
+          "verifier_failed_test_ids": [],
+          "resources": {
+            "attempt_wall_s": 32.34,
+            "sample_count": 43,
+            "sample_window_s": 21.02070479,
+            "sample_interval_s": {
+              "min": 0.500287979,
+              "max": 0.501735539
+            },
+            "container_cpu_core_s": 6.006818,
+            "container_cpu_status": "valid_endpoint_delta",
+            "memory_current_sample_peak_bytes": 78770176,
+            "kernel_memory_peak_bytes": 78770176,
+            "host_agent_rss_sample_peak_bytes": 168558592,
+            "phase_wall_s": {
+              "harbor_start": 0.916588934,
+              "agent_setup": 0.412960779,
+              "agent": 19.284257841,
+              "verifier": 1.372260355,
+              "harbor_stop": 10.288586567
+            }
+          },
+          "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+        },
+        {
+          "round": 2,
+          "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+          "run_id": "20261010T155248Z-r2-excel001",
+          "status": "executed",
+          "returncode": 0,
+          "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+          "wall_s": 34.47,
+          "termination": "finish",
+          "reward": 1.0,
+          "archive_verified": true,
+          "archive_errors": [],
+          "image_action": {
+            "status": "built_restore-r2-excel001",
+            "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+            "build": {
+              "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+              "command": [
+                "docker",
+                "--host",
+                "unix:///var/run/docker.sock",
+                "build",
+                "--pull=false",
+                "--network=none",
+                "--platform=linux/arm64",
+                "-t",
+                "docops-office-repeat-01:excel001",
+                "."
+              ],
+              "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment",
+              "duration_s": 0.215,
+              "returncode": 0,
+              "log": {
+                "path": "env/docops-office-repeat-01/image-builds/excel001-restore-r2-excel001.log",
+                "bytes": 1392,
+                "sha256": "c8bb4fbb46e2b5806e2c21b8d8ae58f70752fc1af0232ecc2b058d7ab29386f9"
+              },
+              "image": {
+                "reference": "docops-office-repeat-01:excel001",
+                "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+                "platform": "linux/arm64"
+              }
+            }
+          },
+          "model_requests_logged": 8,
+          "request_model_counts": {
+            "openai/deepseek-v4-flash": 8
+          },
+          "response_model_counts": {
+            "deepseek-flash": 8
+          },
+          "action_counts": {
+            "invalid_or_unknown": 2,
+            "call_tool": 5,
+            "finish": 1
+          },
+          "tool_name_counts": {
+            "copy_file": 1,
+            "xlsx_read_sheet": 2,
+            "xlsx_set_formula": 2
+          },
+          "tool_activity_category_counts": {
+            "file_copy": 1,
+            "spreadsheet_inspection": 2,
+            "spreadsheet_formula_edit": 2
+          },
+          "tool_return_status_counts": {
+            "ok_true": 5,
+            "unknown_not_persisted_or_not_linkable": 0
+          },
+          "bootstrap_tool_counts_from_first_request_history": {
+            "get_task_metadata": 1,
+            "inspect_document": 1
+          },
+          "usage_from_agent_context": {
+            "n_input_tokens": 27939,
+            "n_output_tokens": 3273,
+            "n_cache_tokens": 24704,
+            "cost_usd": 0.0
+          },
+          "verifier_failed_test_ids": [],
+          "resources": {
+            "attempt_wall_s": 34.47,
+            "sample_count": 47,
+            "sample_window_s": 23.024895857,
+            "sample_interval_s": {
+              "min": 0.500321449,
+              "max": 0.501764579
+            },
+            "container_cpu_core_s": 5.969424,
+            "container_cpu_status": "valid_endpoint_delta",
+            "memory_current_sample_peak_bytes": 76169216,
+            "kernel_memory_peak_bytes": 76169216,
+            "host_agent_rss_sample_peak_bytes": 168558592,
+            "phase_wall_s": {
+              "harbor_start": 0.931205982,
+              "agent_setup": 0.422099654,
+              "agent": 21.402470483,
+              "verifier": 1.346184799,
+              "harbor_stop": 10.29618025
+            }
+          },
+          "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+        }
+      ],
+      "resource_distributions": {
+        "wall_s": {
+          "n": 3,
+          "raw_points": [
+            50.3,
+            32.34,
+            34.47
+          ],
+          "median": 34.47,
+          "q1": 33.405,
+          "q3": 42.385,
+          "iqr": 8.979999999999997,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        },
+        "container_cpu_core_s": {
+          "n": 3,
+          "raw_points": [
+            7.069852,
+            6.006818,
+            5.969424
+          ],
+          "median": 6.006818,
+          "q1": 5.988121,
+          "q3": 6.538335,
+          "iqr": 0.5502140000000004,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        },
+        "memory_current_sample_peak_bytes": {
+          "n": 3,
+          "raw_points": [
+            67645440,
+            78770176,
+            76169216
+          ],
+          "median": 76169216.0,
+          "q1": 71907328.0,
+          "q3": 77469696.0,
+          "iqr": 5562368.0,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        },
+        "kernel_memory_peak_bytes": {
+          "n": 3,
+          "raw_points": [
+            75599872,
+            78770176,
+            76169216
+          ],
+          "median": 76169216.0,
+          "q1": 75884544.0,
+          "q3": 77469696.0,
+          "iqr": 1585152.0,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        },
+        "host_agent_rss_sample_peak_bytes": {
+          "n": 3,
+          "raw_points": [
+            168558592,
+            168558592,
+            168558592
+          ],
+          "median": 168558592.0,
+          "q1": 168558592.0,
+          "q3": 168558592.0,
+          "iqr": 0.0,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        }
+      },
+      "termination_values": [
+        "finish",
+        "finish",
+        "finish"
+      ],
+      "reward_values": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "request_count_values": [
+        7,
+        6,
+        8
+      ],
+      "tool_count_values": [
+        3,
+        5,
+        5
+      ]
+    },
+    "atomic__ppt_008_bullet_editing_seed": {
+      "scheduled_rounds": [
+        0,
+        1,
+        2
+      ],
+      "executed": 3,
+      "failed": 0,
+      "not_executed": 0,
+      "runs": [
+        {
+          "round": 0,
+          "task_key": "atomic__ppt_008_bullet_editing_seed",
+          "run_id": "20261010T155019Z-r0-ppt008",
+          "status": "executed",
+          "returncode": 0,
+          "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+          "wall_s": 25.43,
+          "termination": "finish",
+          "reward": 1.0,
+          "archive_verified": true,
+          "archive_errors": [],
+          "image_action": {
+            "status": "built_restore-r0-ppt008",
+            "id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+            "build": {
+              "task_key": "atomic__ppt_008_bullet_editing_seed",
+              "command": [
+                "docker",
+                "--host",
+                "unix:///var/run/docker.sock",
+                "build",
+                "--pull=false",
+                "--network=none",
+                "--platform=linux/arm64",
+                "-t",
+                "docops-office-repeat-01:ppt008",
+                "."
+              ],
+              "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment",
+              "duration_s": 0.226,
+              "returncode": 0,
+              "log": {
+                "path": "env/docops-office-repeat-01/image-builds/ppt008-restore-r0-ppt008.log",
+                "bytes": 1379,
+                "sha256": "e50857648da97c6653f60b4fc45b5f405b1c766874f4e120e2a5dc80079fd138"
+              },
+              "image": {
+                "reference": "docops-office-repeat-01:ppt008",
+                "id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+                "platform": "linux/arm64"
+              }
+            }
+          },
+          "model_requests_logged": 5,
+          "request_model_counts": {
+            "openai/deepseek-v4-flash": 5
+          },
+          "response_model_counts": {
+            "deepseek-flash": 5
+          },
+          "action_counts": {
+            "call_tool": 4,
+            "finish": 1
+          },
+          "tool_name_counts": {
+            "ppt_list_slides": 2,
+            "copy_file": 1,
+            "ppt_replace_text": 1
+          },
+          "tool_activity_category_counts": {
+            "presentation_inspection": 2,
+            "file_copy": 1,
+            "presentation_text_edit": 1
+          },
+          "tool_return_status_counts": {
+            "ok_true": 4,
+            "unknown_not_persisted_or_not_linkable": 0
+          },
+          "bootstrap_tool_counts_from_first_request_history": {
+            "get_task_metadata": 1,
+            "inspect_document": 1
+          },
+          "usage_from_agent_context": {
+            "n_input_tokens": 11367,
+            "n_output_tokens": 1074,
+            "n_cache_tokens": 9088,
+            "cost_usd": 0.0
+          },
+          "verifier_failed_test_ids": [],
+          "resources": {
+            "attempt_wall_s": 25.43,
+            "sample_count": 29,
+            "sample_window_s": 14.016835525,
+            "sample_interval_s": {
+              "min": 0.5003492,
+              "max": 0.501729919
+            },
+            "container_cpu_core_s": 5.366808,
+            "container_cpu_status": "valid_endpoint_delta",
+            "memory_current_sample_peak_bytes": 85241856,
+            "kernel_memory_peak_bytes": 85241856,
+            "host_agent_rss_sample_peak_bytes": 168558592,
+            "phase_wall_s": {
+              "harbor_start": 0.917687189,
+              "agent_setup": 0.425905546,
+              "agent": 12.279795697,
+              "verifier": 1.363368894,
+              "harbor_stop": 10.376057419
+            }
+          },
+          "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+        },
+        {
+          "round": 1,
+          "task_key": "atomic__ppt_008_bullet_editing_seed",
+          "run_id": "20261010T155107Z-r1-ppt008",
+          "status": "executed",
+          "returncode": 0,
+          "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+          "wall_s": 25.2,
+          "termination": "finish",
+          "reward": 1.0,
+          "archive_verified": true,
+          "archive_errors": [],
+          "image_action": {
+            "status": "built_restore-r1-ppt008",
+            "id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+            "build": {
+              "task_key": "atomic__ppt_008_bullet_editing_seed",
+              "command": [
+                "docker",
+                "--host",
+                "unix:///var/run/docker.sock",
+                "build",
+                "--pull=false",
+                "--network=none",
+                "--platform=linux/arm64",
+                "-t",
+                "docops-office-repeat-01:ppt008",
+                "."
+              ],
+              "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment",
+              "duration_s": 0.19,
+              "returncode": 0,
+              "log": {
+                "path": "env/docops-office-repeat-01/image-builds/ppt008-restore-r1-ppt008.log",
+                "bytes": 1374,
+                "sha256": "18377626be3db094652653865ad04b319f6a62280c29e6cf272cd6b54f421834"
+              },
+              "image": {
+                "reference": "docops-office-repeat-01:ppt008",
+                "id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+                "platform": "linux/arm64"
+              }
+            }
+          },
+          "model_requests_logged": 6,
+          "request_model_counts": {
+            "openai/deepseek-v4-flash": 6
+          },
+          "response_model_counts": {
+            "deepseek-flash": 6
+          },
+          "action_counts": {
+            "call_tool": 4,
+            "invalid_or_unknown": 1,
+            "finish": 1
+          },
+          "tool_name_counts": {
+            "copy_file": 1,
+            "ppt_list_slides": 2,
+            "ppt_replace_text": 1
+          },
+          "tool_activity_category_counts": {
+            "file_copy": 1,
+            "presentation_inspection": 2,
+            "presentation_text_edit": 1
+          },
+          "tool_return_status_counts": {
+            "ok_true": 4,
+            "unknown_not_persisted_or_not_linkable": 0
+          },
+          "bootstrap_tool_counts_from_first_request_history": {
+            "get_task_metadata": 1,
+            "inspect_document": 1
+          },
+          "usage_from_agent_context": {
+            "n_input_tokens": 13477,
+            "n_output_tokens": 1182,
+            "n_cache_tokens": 11648,
+            "cost_usd": 0.0
+          },
+          "verifier_failed_test_ids": [],
+          "resources": {
+            "attempt_wall_s": 25.2,
+            "sample_count": 28,
+            "sample_window_s": 13.517154433,
+            "sample_interval_s": {
+              "min": 0.500286769,
+              "max": 0.503244619
+            },
+            "container_cpu_core_s": 5.209944,
+            "container_cpu_status": "valid_endpoint_delta",
+            "memory_current_sample_peak_bytes": 63598592,
+            "kernel_memory_peak_bytes": 78237696,
+            "host_agent_rss_sample_peak_bytes": 168558592,
+            "phase_wall_s": {
+              "harbor_start": 0.888143116,
+              "agent_setup": 0.396767488,
+              "agent": 12.276783977,
+              "verifier": 1.288787086,
+              "harbor_stop": 10.285252982
+            }
+          },
+          "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+        },
+        {
+          "round": 2,
+          "task_key": "atomic__ppt_008_bullet_editing_seed",
+          "run_id": "20261010T155323Z-r2-ppt008",
+          "status": "executed",
+          "returncode": 0,
+          "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+          "wall_s": 24.74,
+          "termination": "finish",
+          "reward": 1.0,
+          "archive_verified": true,
+          "archive_errors": [],
+          "image_action": {
+            "status": "built_restore-r2-ppt008",
+            "id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+            "build": {
+              "task_key": "atomic__ppt_008_bullet_editing_seed",
+              "command": [
+                "docker",
+                "--host",
+                "unix:///var/run/docker.sock",
+                "build",
+                "--pull=false",
+                "--network=none",
+                "--platform=linux/arm64",
+                "-t",
+                "docops-office-repeat-01:ppt008",
+                "."
+              ],
+              "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment",
+              "duration_s": 0.215,
+              "returncode": 0,
+              "log": {
+                "path": "env/docops-office-repeat-01/image-builds/ppt008-restore-r2-ppt008.log",
+                "bytes": 1379,
+                "sha256": "37b75ae09caad86d8636bb3eec35470ff6837c53ff3a864b7ba021747d124937"
+              },
+              "image": {
+                "reference": "docops-office-repeat-01:ppt008",
+                "id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+                "platform": "linux/arm64"
+              }
+            }
+          },
+          "model_requests_logged": 5,
+          "request_model_counts": {
+            "openai/deepseek-v4-flash": 5
+          },
+          "response_model_counts": {
+            "deepseek-flash": 5
+          },
+          "action_counts": {
+            "call_tool": 4,
+            "finish": 1
+          },
+          "tool_name_counts": {
+            "ppt_list_slides": 2,
+            "copy_file": 1,
+            "ppt_replace_text": 1
+          },
+          "tool_activity_category_counts": {
+            "presentation_inspection": 2,
+            "file_copy": 1,
+            "presentation_text_edit": 1
+          },
+          "tool_return_status_counts": {
+            "ok_true": 4,
+            "unknown_not_persisted_or_not_linkable": 0
+          },
+          "bootstrap_tool_counts_from_first_request_history": {
+            "get_task_metadata": 1,
+            "inspect_document": 1
+          },
+          "usage_from_agent_context": {
+            "n_input_tokens": 11164,
+            "n_output_tokens": 1094,
+            "n_cache_tokens": 9472,
+            "cost_usd": 0.0
+          },
+          "verifier_failed_test_ids": [],
+          "resources": {
+            "attempt_wall_s": 24.74,
+            "sample_count": 27,
+            "sample_window_s": 13.012056278,
+            "sample_interval_s": {
+              "min": 0.50030003,
+              "max": 0.501536716
+            },
+            "container_cpu_core_s": 4.932665,
+            "container_cpu_status": "valid_endpoint_delta",
+            "memory_current_sample_peak_bytes": 71151616,
+            "kernel_memory_peak_bytes": 74493952,
+            "host_agent_rss_sample_peak_bytes": 168558592,
+            "phase_wall_s": {
+              "harbor_start": 1.023711783,
+              "agent_setup": 0.360037588,
+              "agent": 11.73047264,
+              "verifier": 1.218371807,
+              "harbor_stop": 10.345075657
+            }
+          },
+          "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+        }
+      ],
+      "resource_distributions": {
+        "wall_s": {
+          "n": 3,
+          "raw_points": [
+            25.43,
+            25.2,
+            24.74
+          ],
+          "median": 25.2,
+          "q1": 24.97,
+          "q3": 25.314999999999998,
+          "iqr": 0.34499999999999886,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        },
+        "container_cpu_core_s": {
+          "n": 3,
+          "raw_points": [
+            5.366808,
+            5.209944,
+            4.932665
+          ],
+          "median": 5.209944,
+          "q1": 5.0713045,
+          "q3": 5.2883759999999995,
+          "iqr": 0.21707149999999942,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        },
+        "memory_current_sample_peak_bytes": {
+          "n": 3,
+          "raw_points": [
+            85241856,
+            63598592,
+            71151616
+          ],
+          "median": 71151616.0,
+          "q1": 67375104.0,
+          "q3": 78196736.0,
+          "iqr": 10821632.0,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        },
+        "kernel_memory_peak_bytes": {
+          "n": 3,
+          "raw_points": [
+            85241856,
+            78237696,
+            74493952
+          ],
+          "median": 78237696.0,
+          "q1": 76365824.0,
+          "q3": 81739776.0,
+          "iqr": 5373952.0,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        },
+        "host_agent_rss_sample_peak_bytes": {
+          "n": 3,
+          "raw_points": [
+            168558592,
+            168558592,
+            168558592
+          ],
+          "median": 168558592.0,
+          "q1": 168558592.0,
+          "q3": 168558592.0,
+          "iqr": 0.0,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        }
+      },
+      "termination_values": [
+        "finish",
+        "finish",
+        "finish"
+      ],
+      "reward_values": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "request_count_values": [
+        5,
+        6,
+        5
+      ],
+      "tool_count_values": [
+        4,
+        4,
+        4
+      ]
+    },
+    "atomic__pdf_004_audit_pages_reorder_seed": {
+      "scheduled_rounds": [
+        0,
+        1,
+        2
+      ],
+      "executed": 3,
+      "failed": 0,
+      "not_executed": 0,
+      "runs": [
+        {
+          "round": 0,
+          "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+          "run_id": "20261010T155045Z-r0-pdf004",
+          "status": "executed",
+          "returncode": 0,
+          "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+          "wall_s": 21.55,
+          "termination": "finish",
+          "reward": 1.0,
+          "archive_verified": true,
+          "archive_errors": [],
+          "image_action": {
+            "status": "built_restore-r0-pdf004",
+            "id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+            "build": {
+              "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+              "command": [
+                "docker",
+                "--host",
+                "unix:///var/run/docker.sock",
+                "build",
+                "--pull=false",
+                "--network=none",
+                "--platform=linux/arm64",
+                "-t",
+                "docops-office-repeat-01:pdf004",
+                "."
+              ],
+              "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment",
+              "duration_s": 0.208,
+              "returncode": 0,
+              "log": {
+                "path": "env/docops-office-repeat-01/image-builds/pdf004-restore-r0-pdf004.log",
+                "bytes": 1383,
+                "sha256": "bfdc90529f53800bd50581bf2ede8d000b77056f916ec12c41a5921e822105b7"
+              },
+              "image": {
+                "reference": "docops-office-repeat-01:pdf004",
+                "id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+                "platform": "linux/arm64"
+              }
+            }
+          },
+          "model_requests_logged": 4,
+          "request_model_counts": {
+            "openai/deepseek-v4-flash": 4
+          },
+          "response_model_counts": {
+            "deepseek-flash": 4
+          },
+          "action_counts": {
+            "call_tool": 3,
+            "finish": 1
+          },
+          "tool_name_counts": {
+            "copy_file": 1,
+            "pdf_reorder_pages": 1,
+            "inspect_document": 1
+          },
+          "tool_activity_category_counts": {
+            "file_copy": 1,
+            "pdf_page_reorder": 1,
+            "document_structure_inspection": 1
+          },
+          "tool_return_status_counts": {
+            "ok_true": 3,
+            "unknown_not_persisted_or_not_linkable": 0
+          },
+          "bootstrap_tool_counts_from_first_request_history": {
+            "get_task_metadata": 1,
+            "inspect_document": 1
+          },
+          "usage_from_agent_context": {
+            "n_input_tokens": 9415,
+            "n_output_tokens": 679,
+            "n_cache_tokens": 7168,
+            "cost_usd": 0.0
+          },
+          "verifier_failed_test_ids": [],
+          "resources": {
+            "attempt_wall_s": 21.55,
+            "sample_count": 21,
+            "sample_window_s": 10.011705613,
+            "sample_interval_s": {
+              "min": 0.50033764,
+              "max": 0.501598657
+            },
+            "container_cpu_core_s": 4.014582,
+            "container_cpu_status": "valid_endpoint_delta",
+            "memory_current_sample_peak_bytes": 62980096,
+            "kernel_memory_peak_bytes": 72388608,
+            "host_agent_rss_sample_peak_bytes": 168558592,
+            "phase_wall_s": {
+              "harbor_start": 0.909998743,
+              "agent_setup": 0.396325992,
+              "agent": 8.639832774,
+              "verifier": 1.277428841,
+              "harbor_stop": 10.259850026
+            }
+          },
+          "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+        },
+        {
+          "round": 1,
+          "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+          "run_id": "20261010T155132Z-r1-pdf004",
+          "status": "executed",
+          "returncode": 0,
+          "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+          "wall_s": 21.73,
+          "termination": "finish",
+          "reward": 1.0,
+          "archive_verified": true,
+          "archive_errors": [],
+          "image_action": {
+            "status": "built_restore-r1-pdf004",
+            "id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+            "build": {
+              "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+              "command": [
+                "docker",
+                "--host",
+                "unix:///var/run/docker.sock",
+                "build",
+                "--pull=false",
+                "--network=none",
+                "--platform=linux/arm64",
+                "-t",
+                "docops-office-repeat-01:pdf004",
+                "."
+              ],
+              "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment",
+              "duration_s": 0.208,
+              "returncode": 0,
+              "log": {
+                "path": "env/docops-office-repeat-01/image-builds/pdf004-restore-r1-pdf004.log",
+                "bytes": 1383,
+                "sha256": "e62b67175792dc2a490ced331a460125a4c17931293dad8bc522f2192a9b03b8"
+              },
+              "image": {
+                "reference": "docops-office-repeat-01:pdf004",
+                "id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+                "platform": "linux/arm64"
+              }
+            }
+          },
+          "model_requests_logged": 4,
+          "request_model_counts": {
+            "openai/deepseek-v4-flash": 4
+          },
+          "response_model_counts": {
+            "deepseek-flash": 4
+          },
+          "action_counts": {
+            "call_tool": 3,
+            "finish": 1
+          },
+          "tool_name_counts": {
+            "copy_file": 1,
+            "pdf_reorder_pages": 1,
+            "inspect_document": 1
+          },
+          "tool_activity_category_counts": {
+            "file_copy": 1,
+            "pdf_page_reorder": 1,
+            "document_structure_inspection": 1
+          },
+          "tool_return_status_counts": {
+            "ok_true": 3,
+            "unknown_not_persisted_or_not_linkable": 0
+          },
+          "bootstrap_tool_counts_from_first_request_history": {
+            "get_task_metadata": 1,
+            "inspect_document": 1
+          },
+          "usage_from_agent_context": {
+            "n_input_tokens": 9350,
+            "n_output_tokens": 525,
+            "n_cache_tokens": 8192,
+            "cost_usd": 0.0
+          },
+          "verifier_failed_test_ids": [],
+          "resources": {
+            "attempt_wall_s": 21.73,
+            "sample_count": 21,
+            "sample_window_s": 10.011217086,
+            "sample_interval_s": {
+              "min": 0.500291359,
+              "max": 0.501757759
+            },
+            "container_cpu_core_s": 4.31821,
+            "container_cpu_status": "valid_endpoint_delta",
+            "memory_current_sample_peak_bytes": 58531840,
+            "kernel_memory_peak_bytes": 73515008,
+            "host_agent_rss_sample_peak_bytes": 168558592,
+            "phase_wall_s": {
+              "harbor_start": 0.937079353,
+              "agent_setup": 0.410668217,
+              "agent": 8.831449116,
+              "verifier": 1.2259288,
+              "harbor_stop": 10.256912175
+            }
+          },
+          "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+        },
+        {
+          "round": 2,
+          "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+          "run_id": "20261010T155227Z-r2-pdf004",
+          "status": "executed",
+          "returncode": 0,
+          "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+          "wall_s": 20.81,
+          "termination": "finish",
+          "reward": 1.0,
+          "archive_verified": true,
+          "archive_errors": [],
+          "image_action": {
+            "status": "built_restore-r2-pdf004",
+            "id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+            "build": {
+              "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+              "command": [
+                "docker",
+                "--host",
+                "unix:///var/run/docker.sock",
+                "build",
+                "--pull=false",
+                "--network=none",
+                "--platform=linux/arm64",
+                "-t",
+                "docops-office-repeat-01:pdf004",
+                "."
+              ],
+              "cwd": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment",
+              "duration_s": 0.225,
+              "returncode": 0,
+              "log": {
+                "path": "env/docops-office-repeat-01/image-builds/pdf004-restore-r2-pdf004.log",
+                "bytes": 1383,
+                "sha256": "8124752301b68c6fc2b8e7126d536428a9e922e0a8560733114cdbe203f36b37"
+              },
+              "image": {
+                "reference": "docops-office-repeat-01:pdf004",
+                "id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+                "platform": "linux/arm64"
+              }
+            }
+          },
+          "model_requests_logged": 4,
+          "request_model_counts": {
+            "openai/deepseek-v4-flash": 4
+          },
+          "response_model_counts": {
+            "deepseek-flash": 4
+          },
+          "action_counts": {
+            "call_tool": 3,
+            "finish": 1
+          },
+          "tool_name_counts": {
+            "copy_file": 1,
+            "pdf_reorder_pages": 1,
+            "inspect_document": 1
+          },
+          "tool_activity_category_counts": {
+            "file_copy": 1,
+            "pdf_page_reorder": 1,
+            "document_structure_inspection": 1
+          },
+          "tool_return_status_counts": {
+            "ok_true": 3,
+            "unknown_not_persisted_or_not_linkable": 0
+          },
+          "bootstrap_tool_counts_from_first_request_history": {
+            "get_task_metadata": 1,
+            "inspect_document": 1
+          },
+          "usage_from_agent_context": {
+            "n_input_tokens": 9323,
+            "n_output_tokens": 503,
+            "n_cache_tokens": 8192,
+            "cost_usd": 0.0
+          },
+          "verifier_failed_test_ids": [],
+          "resources": {
+            "attempt_wall_s": 20.81,
+            "sample_count": 19,
+            "sample_window_s": 9.014114076,
+            "sample_interval_s": {
+              "min": 0.50037096,
+              "max": 0.50333248
+            },
+            "container_cpu_core_s": 4.279262,
+            "container_cpu_status": "valid_endpoint_delta",
+            "memory_current_sample_peak_bytes": 66600960,
+            "kernel_memory_peak_bytes": 73711616,
+            "host_agent_rss_sample_peak_bytes": 168558592,
+            "phase_wall_s": {
+              "harbor_start": 0.911372203,
+              "agent_setup": 0.391121101,
+              "agent": 7.769768375,
+              "verifier": 1.316975101,
+              "harbor_stop": 10.356671925
+            }
+          },
+          "request_count_semantics": "saved logical request logs; provider/framework transport retries may not be separately represented"
+        }
+      ],
+      "resource_distributions": {
+        "wall_s": {
+          "n": 3,
+          "raw_points": [
+            21.55,
+            21.73,
+            20.81
+          ],
+          "median": 21.55,
+          "q1": 21.18,
+          "q3": 21.64,
+          "iqr": 0.46000000000000085,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        },
+        "container_cpu_core_s": {
+          "n": 3,
+          "raw_points": [
+            4.014582,
+            4.31821,
+            4.279262
+          ],
+          "median": 4.279262,
+          "q1": 4.146922,
+          "q3": 4.298736,
+          "iqr": 0.1518139999999999,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        },
+        "memory_current_sample_peak_bytes": {
+          "n": 3,
+          "raw_points": [
+            62980096,
+            58531840,
+            66600960
+          ],
+          "median": 62980096.0,
+          "q1": 60755968.0,
+          "q3": 64790528.0,
+          "iqr": 4034560.0,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        },
+        "kernel_memory_peak_bytes": {
+          "n": 3,
+          "raw_points": [
+            72388608,
+            73515008,
+            73711616
+          ],
+          "median": 73515008.0,
+          "q1": 72951808.0,
+          "q3": 73613312.0,
+          "iqr": 661504.0,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        },
+        "host_agent_rss_sample_peak_bytes": {
+          "n": 3,
+          "raw_points": [
+            168558592,
+            168558592,
+            168558592
+          ],
+          "median": 168558592.0,
+          "q1": 168558592.0,
+          "q3": 168558592.0,
+          "iqr": 0.0,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        }
+      },
+      "termination_values": [
+        "finish",
+        "finish",
+        "finish"
+      ],
+      "reward_values": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "request_count_values": [
+        4,
+        4,
+        4
+      ],
+      "tool_count_values": [
+        3,
+        3,
+        3
+      ]
+    }
+  },
+  "stopped_reason": null,
+  "batch_wall_s": 299.891,
+  "batch_budget_s": 27000.0,
+  "closeout_reserve_s": 900.0
+}

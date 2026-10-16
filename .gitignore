@@ -20,7 +20,9 @@ dist/
 .coverage
 htmlcov/
 
-# 原始和派生大数据不进入代码库；保留 data/catalog/ 审计登记
+# data 默认只允许 catalog；原始数据、normalized、缓存及未来数据目录留在本机
+/data/*
+!/data/catalog/
 /data/raw/
 /data/normalized/
 
@@ -31,3 +33,45 @@ htmlcov/
 
 .venvs/
 data/raw/software/env01/
+
+# 本机可恢复归档：旧文档、整理备份和缓存，不提交 GitHub
+/local_archive/
+
+# Docker/OCI 导出、虚拟机及安装镜像；不影响 Docker daemon 中的镜像
+*.tar
+*.tar.gz
+*.tar.zst
+*.tgz
+*.oci
+*.qcow2
+*.vmdk
+*.vdi
+*.vhd
+*.vhdx
+*.img
+*.iso
+*.sif
+
+# 冻结的第三方源码副本：保留本机，提交相邻身份清单/版本登记
+/env/**/harbor-src/
+/env/**/source/
+
+# 大型派生明细与下载对象索引：保留原路径和哈希，GitHub 仅保留摘要/清单
+# 不通配忽略所有 JSON/JSONL，以免隐藏配置、测试和小型正式报告
+/reports/**/per_trajectory.jsonl
+/reports/**/per_template.jsonl
+/reports/analysis/OSWORLD-MINIMAX-M3-behavior-v*/summary.json
+/reports/analysis/PUBLIC-TRACE-OPERATIONS-*/coverage.json
+/reports/analysis/PUBLIC-TRACE-OPERATIONS-*/summary.json
+/reports/analysis/PUBLIC-TRACE-OPERATIONS-*/toolkits.json
+/data/catalog/public_trace_acquisition/**/source_metadata/*objects*.jsonl
+
+# catalog 里的下载正文/HTTP记录不是配置；保留相邻manifest、sources和summary
+/data/catalog/public_trace_acquisition/**/source_metadata/
+/data/catalog/public_trace_acquisition/**/raw/
+/data/catalog/public_trace_acquisition/**/http/
+
+# 许可/镜像核查的网页、registry响应留本机，尤其不可提交token响应
+/data/catalog/p1_12_closure_evidence/*
+!/data/catalog/p1_12_closure_evidence/manifest.json
+!/data/catalog/p1_12_closure_evidence/license_*

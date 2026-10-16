@@ -1,0 +1,91 @@
+{
+  "jsonl_record_count": 35282,
+  "unparsed_action_records": 1,
+  "parsed_source_ast_call_total": 3241101,
+  "top_jsonl_records": [
+    {
+      "task_key": "075",
+      "jsonl_line": 33,
+      "step_num": 33,
+      "source_file": "website_demo/MiniMax-M3/tasks/075/traj.jsonl",
+      "action_characters": 517799,
+      "ast_call_count": 24596,
+      "call_names": {
+        "pyautogui.press": 24596
+      },
+      "top_level_statement_count": 24596,
+      "top_level_statement_types": {
+        "Expr": 24596
+      },
+      "all_statements_direct_calls": true,
+      "distinct_statement_ast_count": 91,
+      "max_identical_statement_occurrences": 7960,
+      "max_consecutive_identical_statements": 36
+    },
+    {
+      "task_key": "079",
+      "jsonl_line": 194,
+      "step_num": 194,
+      "source_file": "website_demo/MiniMax-M3/tasks/079/traj.jsonl",
+      "action_characters": 472595,
+      "ast_call_count": 22412,
+      "call_names": {
+        "pyautogui.press": 22412
+      },
+      "top_level_statement_count": 22412,
+      "top_level_statement_types": {
+        "Expr": 22412
+      },
+      "all_statements_direct_calls": true,
+      "distinct_statement_ast_count": 89,
+      "max_identical_statement_occurrences": 4442,
+      "max_consecutive_identical_statements": 8
+    },
+    {
+      "task_key": "075",
+      "jsonl_line": 34,
+      "step_num": 34,
+      "source_file": "website_demo/MiniMax-M3/tasks/075/traj.jsonl",
+      "action_characters": 451751,
+      "ast_call_count": 21320,
+      "call_names": {
+        "pyautogui.press": 21320
+      },
+      "top_level_statement_count": 21320,
+      "top_level_statement_types": {
+        "Expr": 21320
+      },
+      "all_statements_direct_calls": true,
+      "distinct_statement_ast_count": 83,
+      "max_identical_statement_occurrences": 3604,
+      "max_consecutive_identical_statements": 41
+    }
+  ],
+  "top3_jsonl_share": 0.021081725006409858,
+  "v2_task_level_concentration": {
+    "top_records": [
+      {
+        "task_key": "062",
+        "source_call_syntax_count": 102174,
+        "supported_action_call_count": 102174,
+        "unknown_action_record_count": 9
+      },
+      {
+        "task_key": "079",
+        "source_call_syntax_count": 95937,
+        "supported_action_call_count": 95937,
+        "unknown_action_record_count": 0
+      },
+      {
+        "task_key": "096",
+        "source_call_syntax_count": 94708,
+        "supported_action_call_count": 94708,
+        "unknown_action_record_count": 1
+      }
+    ],
+    "top3_share_of_source_call_syntax": 0.09034553381705784,
+    "source_call_syntax_total": 3241101
+  },
+  "correction": "v2 top_records are whole task trajectories, not individual JSONL action records.",
+  "limits": "AST/source occurrences only; execution, retry, latency and origin of repetition remain unknown."
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "docops-batch-approval-v1",
+  "collection": "DOCOPS-OFFICE-REPEAT-01",
+  "user_approval": "approved",
+  "identity_sha256": "25da9eeab2600401630ca54aa11f739dbfe08be3a57d6d4808fbc8956d65712a",
+  "approval_source": "explicit user authorization in current request",
+  "approved_at_utc": "2026-10-10T15:49:28.610398+00:00",
+  "scope": {
+    "attempts": 9,
+    "attempt_retry": 0,
+    "maximum_model_steps": 360,
+    "model": "openai/deepseek-v4-flash",
+    "api_base": "https://api.deepseek.com/v1",
+    "max_tokens_per_request": 32768,
+    "per_attempt": {
+      "max_steps": 40,
+      "agent_s": 1200.0,
+      "verifier_s": 600.0,
+      "wall_s": 2700.0,
+      "cleanup_reserve_s": 300.0,
+      "cpu": 1,
+      "memory_gib": 4,
+      "storage_gib": 10,
+      "network": "none",
+      "sample_interval_s": 0.5
+    },
+    "batch_wall_s": 27000.0,
+    "batch_closeout_reserve_s": 900.0,
+    "framework_attempts_per_logical_call_max": 3,
+    "cost": "unknown; no hard cap accepted for this batch"
+  }
+}

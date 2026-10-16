@@ -1,0 +1,1714 @@
+{
+  "schema": "osworld_minimax_behavior_manifest.v1",
+  "input_root": "/home/lcq/agent_workload_characterization/data/raw/public/osworld2_trajectory_light",
+  "input_scope": {
+    "model": "MiniMax-M3",
+    "task_records": 108,
+    "file_count": 336
+  },
+  "inputs": [
+    {
+      "path": "reports/analysis/OSWORLD-OFFICIAL-LIGHT-inventory-v1/inventory.json",
+      "bytes": 3371176,
+      "sha256": "51cb70b3fcacfbba25eedf6d285893f6320a1123eb58350acec2fa5e51b19f2e"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/001/checkpoint_results.json",
+      "bytes": 566,
+      "sha256": "14befd86f76823fdafe3223ea6e10ff780d59e6988f7dfe8af95b373f7a47dcc"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/001/result.txt",
+      "bytes": 19,
+      "sha256": "2dc5d1c91dbc5e8e5132fb15d1fe519ab0073195e2affa33b091550baae6361e"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/001/traj.jsonl",
+      "bytes": 627222,
+      "sha256": "03d59198d1bf6d5b5b1dcaa1e3af75bb4d3cc91c4a49a893ae7c7922f12d13a7"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/002/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "b2538ba48cae27bd224f0a4c7c96e4da527fc5f3d46f8566bbf0a8843889ee16"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/002/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/002/traj.jsonl",
+      "bytes": 1571051,
+      "sha256": "90d952df3ce6d5d96fc7d40a2d61c10514a77fa255d204ef9689bbc2aa8c9110"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/003/checkpoint_results.json",
+      "bytes": 168,
+      "sha256": "13fffc25118429c4942fe672b8218514c5096c70de4d7170380e1c6e00ee5d01"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/003/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/003/traj.jsonl",
+      "bytes": 562762,
+      "sha256": "55876f5f5b8516e9a913e32d035e1bd273120647757279bae6fb94c850075d0a"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/004/checkpoint_results.json",
+      "bytes": 168,
+      "sha256": "d17418bc80f97a771c8aa78ba5888bd80713c152e1ac9792d7a15fbeb6cebc26"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/004/result.txt",
+      "bytes": 4,
+      "sha256": "88930bd051d214a973581b9492a5ca110aea3fdd5dc65a68bc444b6173877bbd"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/004/traj.jsonl",
+      "bytes": 508707,
+      "sha256": "804d194cfe5eb044f768d6ce3318fe31c7365fa83e93c29a3c870b3501897eca"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/005/checkpoint_results.json",
+      "bytes": 333,
+      "sha256": "d1c38f03cb157ba99f6bce3fb75335b1d034493b3967bcda781bbd5574f146a2"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/005/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/005/traj.jsonl",
+      "bytes": 801109,
+      "sha256": "bac5020d30b7e5f8efcdb7eb57d9efacb72397b10b3764912804283fba603ef9"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/006/checkpoint_results.json",
+      "bytes": 277,
+      "sha256": "6d7ed590d34c26d611f01b8b57831158dcbaecaba591b11a387a18838469f013"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/006/result.txt",
+      "bytes": 19,
+      "sha256": "8152fce06e8a2ace577ed80dd1e8885cdb868817cb50e1ebacebf034ebdbf171"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/006/traj.jsonl",
+      "bytes": 837865,
+      "sha256": "1d5e6c29a21fbd3455a5a1c64786f6eecaaf12d7db5ccaef29ce2db224f59b73"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/007/result.txt",
+      "bytes": 4,
+      "sha256": "c36fdbcf57ed3348e59da37beebc5c3696b3e451b7ffe16f2ebb6c9b5ee5916b"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/007/traj.jsonl",
+      "bytes": 210156,
+      "sha256": "bd4502be58d0798d0e536490969a127576a48a73f2c8a455ce36a8f7107d517f"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/008/checkpoint_results.json",
+      "bytes": 591,
+      "sha256": "6627e62f6c0cc231fd144e5d7e64ebbc161092317f17e9f2d0189f8dacf5b9d7"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/008/result.json",
+      "bytes": 214,
+      "sha256": "ab29b2950d04549d351bf5fa4a27b7ab23b630bcbb627bf31e60b267dfdcad0f"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/008/result.txt",
+      "bytes": 7,
+      "sha256": "d54ca21c0b3168e73c628645c53a6010e283bec50fb1736e0e1d2e57a71bb883"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/008/traj.jsonl",
+      "bytes": 768834,
+      "sha256": "a809f9c371f72f43f1924cbdaa0a369c9d6a8abab34b42eff092c9c75a7c998e"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/009/result.json",
+      "bytes": 215,
+      "sha256": "e4823be257f42358d091ee5fca3fe5236693dcf3c0d19bd5bfacd4e16628a354"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/009/result.txt",
+      "bytes": 4,
+      "sha256": "c36fdbcf57ed3348e59da37beebc5c3696b3e451b7ffe16f2ebb6c9b5ee5916b"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/009/traj.jsonl",
+      "bytes": 102685,
+      "sha256": "4a24a44e62b0ace0ed4a53fe7f6981496fb6ac2b7fc43f53444052b0f3dbbc17"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/010/checkpoint_results.json",
+      "bytes": 295,
+      "sha256": "9392fe797533959dd12807899e44f34a25128a26ea3cf13bf04a9c34b3e9bbf4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/010/result.json",
+      "bytes": 215,
+      "sha256": "62dfa2f2b6d2e0723a703907e2de1ef0056034f69346d9505b3f7a4900e4e5fd"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/010/result.txt",
+      "bytes": 4,
+      "sha256": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/010/traj.jsonl",
+      "bytes": 698025,
+      "sha256": "3017be00cc108099a5f92cba72be9910a14c56d839f150ea1bea32eb323ef475"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/011/checkpoint_results.json",
+      "bytes": 587,
+      "sha256": "d86cc46afbfd8882b30d60e43c169cca24f3d69d90fc2c9361d0d2511337ab0b"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/011/result.json",
+      "bytes": 231,
+      "sha256": "8b9fc47d8e980ed53dd74b4cf269edfc6f082a6314744491e184fb9c74561e03"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/011/result.txt",
+      "bytes": 19,
+      "sha256": "2dc5d1c91dbc5e8e5132fb15d1fe519ab0073195e2affa33b091550baae6361e"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/011/traj.jsonl",
+      "bytes": 1566356,
+      "sha256": "bb48d8be7dd9000da47564e0fadfcd3631ddb56e9be9e6e164a82f28f74634da"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/012/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "9f100d954c484d8601d6eae64434252a9c6a0525fe4b777d7b23a65a50c97376"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/012/result.txt",
+      "bytes": 4,
+      "sha256": "88930bd051d214a973581b9492a5ca110aea3fdd5dc65a68bc444b6173877bbd"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/012/traj.jsonl",
+      "bytes": 897435,
+      "sha256": "00ea0a5ef710bd236b555087d06b5f796cc4a1a177a5649d3b2539f46096e7da"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/013/result.txt",
+      "bytes": 4,
+      "sha256": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/013/traj.jsonl",
+      "bytes": 297286,
+      "sha256": "ab44dbcc4031ee7431a4e7330400bda64d9dd0b82e2cbf2f794723a50cc31ede"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/014/checkpoint_results.json",
+      "bytes": 168,
+      "sha256": "39e18ff38d8fe8a8681b60e49620c52eeb6729bcb3205ab41c77530cba52938f"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/014/result.txt",
+      "bytes": 19,
+      "sha256": "039593c490a4ee23e8aca2b7ce8a7464df9f208d3b669c1bbf3241f44a5074f2"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/014/traj.jsonl",
+      "bytes": 304559,
+      "sha256": "9408f7236c3c45c760d773ebf2109d2427b95ef84a8423d919c99b3dd00d1feb"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/015/checkpoint_results.json",
+      "bytes": 168,
+      "sha256": "01468bc9d826c50e6371c261345d5b5fe400b74c4f5a655f61bbd8ffe2702a7a"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/015/result.json",
+      "bytes": 501,
+      "sha256": "e5150655af4b6261e74837356b155b5344c37f13af5d5bd1914c578c1aeca102"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/015/result.txt",
+      "bytes": 20,
+      "sha256": "bcee7904fff93fe39d58fb4f89d878ded321e6243146d3ac757c39734ab51eb7"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/015/traj.jsonl",
+      "bytes": 1011667,
+      "sha256": "3b924da9c5859e18e951750ab62b5fa37510bdb5798a8df0d53056c4b6c368ab"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/016/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "fa27f9590944d713c7032f1a2ebcc21e61b734908e53b6ab1417b2a7858e1486"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/016/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/016/traj.jsonl",
+      "bytes": 999761,
+      "sha256": "4988b31e9ae941214f49fc6dbdb7556fe73bf321d629204d8683cb3e5fca7a42"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/017/result.txt",
+      "bytes": 19,
+      "sha256": "898c4bfb35a1e8604cf54ed17626a552b204fd1e64051f6726f62c1afc1f85ae"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/017/traj.jsonl",
+      "bytes": 179432,
+      "sha256": "4cd71326e712c2a76794e7a1e2367d24acfcd7223b342b51c3fd0672882aec86"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/018/checkpoint_results.json",
+      "bytes": 295,
+      "sha256": "d0d776c20d09af174a7c9f0a55f8b07786b38c80d8a7f10d60c5f8a0ec6959a2"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/018/result.json",
+      "bytes": 327,
+      "sha256": "a11e2b64eb500d702115aab6f617d9d9bd56d34cc96ff3475e958fe3c93413a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/018/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/018/traj.jsonl",
+      "bytes": 376450,
+      "sha256": "2f276aef8ee63bcd70fa5ec9c369b97ca1726bdc4e33e591fec2da861d1b5b26"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/019/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "d394ebe72b30588f21aeeb0985fdbcf7c96089f92852b8c58d8d949c6cf27e66"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/019/result.txt",
+      "bytes": 5,
+      "sha256": "697db5ee2261539ad33db88b899bab4ebe1cca91879049778fcc3e3ac73fadb2"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/019/traj.jsonl",
+      "bytes": 907920,
+      "sha256": "c0e9a0101d702cb3724f936b03f5c1381ee1b6477011f84e595507c22356b15d"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/020/result.txt",
+      "bytes": 4,
+      "sha256": "a6311009c6c322ca8ac2e620cff5204f0c3af23115d403293a0cb5be36796688"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/020/traj.jsonl",
+      "bytes": 72546,
+      "sha256": "35bfb3646242b6cd5127713c85ae9311b95c337a57c3473e179c421ec0d7df97"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/021/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "b3d673bd3a3a2956a58162329ac73d967f329203d1a8134f65ce88b207cd6270"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/021/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/021/traj.jsonl",
+      "bytes": 525387,
+      "sha256": "08384a2fb3496d9a7cdb9d2d2727798884900d04e0ab0d6074e8fb4a68445deb"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/022/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "bcbf6b59191dd103b0e421fa19b509cdf7d4ba9d2548f3d7f3418859f69954ca"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/022/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/022/traj.jsonl",
+      "bytes": 643176,
+      "sha256": "a8778ba3b6c7030f7cb814a48162dffb75a947e77f4d1327ede843b77bd4e7db"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/023/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "ba6ba743c3f80a3bd3fec8f0abf441f4f629d36a7661f00a2cb1e3ca590efd02"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/023/result.txt",
+      "bytes": 5,
+      "sha256": "d5acda43b14e8b2510a300a69c94ed448f9597593eea10a0850b0d66840e46c5"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/023/traj.jsonl",
+      "bytes": 750330,
+      "sha256": "1f62ab193918290733ded49094a6d83a22219cf1d073105b3c99aea40c41919d"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/024/checkpoint_results.json",
+      "bytes": 333,
+      "sha256": "adbf356b320a72fa149b8d6affe9691becf44cf28dad093e5d95f2bc147fdbbb"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/024/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/024/traj.jsonl",
+      "bytes": 647525,
+      "sha256": "9b2590585ed42c532f33679c1d24af6d94a26ccf2b7a956a835050f300d761b9"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/025/checkpoint_results.json",
+      "bytes": 587,
+      "sha256": "e7a5832e120ad279392eb9ef7ccca434905d7aa892286c9cf5be7c54713a2a29"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/025/result.json",
+      "bytes": 215,
+      "sha256": "080e7e1370da8d64f54c158abf4e808990c4a690316ab7636a079681a863374f"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/025/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/025/traj.jsonl",
+      "bytes": 1784241,
+      "sha256": "683839d3a9927a7e83273e1a20625ccf894509c4b3440991e1b0f2937286dedd"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/026/checkpoint_results.json",
+      "bytes": 589,
+      "sha256": "418f48acb2136832291609b6fa80e60817a96e0b4d53f71ecda18ad7a2729a2c"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/026/result.json",
+      "bytes": 282,
+      "sha256": "1376b22536390081f05ea6ed3f663c5c016693f5cbfd7d6dcd92faee6e292f6d"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/026/result.txt",
+      "bytes": 6,
+      "sha256": "3b912d4f0cc51bc49f39446704e096a1a207565b502f6f438b9cde0f7930bbd2"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/026/traj.jsonl",
+      "bytes": 1596717,
+      "sha256": "263e9afec6e69d78a7f876cc23d569bc7dd8754d4f5f4b96216ffcc5530dfcd7"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/027/checkpoint_results.json",
+      "bytes": 168,
+      "sha256": "f17d94618f613aa3345547d444f87a1c8977087ab6cd4dfac53b13ca60c1217b"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/027/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/027/traj.jsonl",
+      "bytes": 1044301,
+      "sha256": "1ede39dfc5536b502f5d3a98ad893f3edb4602234b7b00e29976f6675dedd48d"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/028/checkpoint_results.json",
+      "bytes": 168,
+      "sha256": "73476fbe3303cbc892d51ea8f43f138e3af40894e76787a5c68ad5a21fa45899"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/028/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/028/traj.jsonl",
+      "bytes": 198575,
+      "sha256": "b258762e37319222d377533e92cf360f06efe436f4e1e396e5ad1ed45d17cd2e"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/029/checkpoint_results.json",
+      "bytes": 333,
+      "sha256": "b2ddba8fc94f45bc93879a19e64bb4b9d11058dc683db2e87d9a8e3be843c549"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/029/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/029/traj.jsonl",
+      "bytes": 665729,
+      "sha256": "1c0448c685450e7ebab56b355a122638359b1363abdb8a20642418d0c3d1a009"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/030/checkpoint_results.json",
+      "bytes": 333,
+      "sha256": "03617f0ec2d911dae5278f726d924a22cb4f93ae48c99331a6e4d4694e588df1"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/030/result.txt",
+      "bytes": 19,
+      "sha256": "fb45bb6b825fd0a9a2b6c987020ed379e1c08cca11d1f7080b611d14981c89aa"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/030/traj.jsonl",
+      "bytes": 990890,
+      "sha256": "5d40f953ee5579490fefef12cd7a3e9ef583eecef964afbb4ce0add4c05a7fb1"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/031/checkpoint_results.json",
+      "bytes": 277,
+      "sha256": "e7fcb728b01fc65d74c455dc3c588b96f7e02d3fe91c1e13efeb40521be2826e"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/031/result.txt",
+      "bytes": 19,
+      "sha256": "c2091e3a1172877309eb338fee1dd518df92447ed6844e8889072790abae301e"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/031/traj.jsonl",
+      "bytes": 702556,
+      "sha256": "d0181172d9bf3cb0a686f8ef9d13bb6b0afda26ebc7f261a39ee0f9a27328992"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/032/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "bf4e19fb9d0edef3e206ac2b0b4336f1f3474f4bbe480054f2e20759b3e4e58f"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/032/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/032/traj.jsonl",
+      "bytes": 1149014,
+      "sha256": "99f00d32e2904425174c0122bf0df9c46f9c7406fa3f68430c2a02b2dde8e44c"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/033/checkpoint_results.json",
+      "bytes": 587,
+      "sha256": "d0136f1f8ed9081a524277f1cc21a0ded05290e25b68da54c0f48e1f6bbd685f"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/033/result.json",
+      "bytes": 211,
+      "sha256": "233ec81a7e7c73f1b677fceedbdbb108ab4c199a991c97fe64bb821448edf900"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/033/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/033/traj.jsonl",
+      "bytes": 1730982,
+      "sha256": "a9505a2d1b830ddfeee0f4f561350aab0ee73d0d6b00bf426cf9d956c0fe259f"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/034/checkpoint_results.json",
+      "bytes": 168,
+      "sha256": "05b2fa7b4330c7ed316e45ce758f2cf9f1f4384ffdaf0c3d1cb14d7f0111f8da"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/034/result.json",
+      "bytes": 274,
+      "sha256": "b7cdf491764143d70a9df879094d91407ea6b03b678a65e3edbe9ec81da8db83"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/034/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/034/traj.jsonl",
+      "bytes": 1463037,
+      "sha256": "69aeb2c48fd49f52f6b91422229c578be3163dceb2623a0c3f35d5672d0ffa1e"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/035/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/035/traj.jsonl",
+      "bytes": 300228,
+      "sha256": "4899324ad30161559bb3d9493176536262cb304cf4829dedf4731385d2d00e13"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/036/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "27fe06393f94d69986e1508c3e639001b41fd1ba6dd24f27df8cd435d6f84e56"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/036/result.txt",
+      "bytes": 19,
+      "sha256": "721ae8b4452283ca4f223e55556a02b06f21c0fc8246cd4875411c5c16f86afb"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/036/traj.jsonl",
+      "bytes": 1710257,
+      "sha256": "855fb5bbe0e1c2acf8afe0ee2ec89e1948b8152f42a3d06b10f25c2abc8f243d"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/037/checkpoint_results.json",
+      "bytes": 277,
+      "sha256": "c8790d02bf6b35f976fafca0aef8a038615ff4c8cbdfb3967706df5342b6fc57"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/037/result.txt",
+      "bytes": 4,
+      "sha256": "88930bd051d214a973581b9492a5ca110aea3fdd5dc65a68bc444b6173877bbd"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/037/traj.jsonl",
+      "bytes": 960378,
+      "sha256": "5b487614a0304651ac5040f2499544c6c3d079ddc21d0896873895b66781d016"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/038/checkpoint_results.json",
+      "bytes": 557,
+      "sha256": "236cf61a0f9a40e126f4a59f71846f7128a7d6446d2c0981f2019e019efd9aea"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/038/result.txt",
+      "bytes": 7,
+      "sha256": "056ab778bc3069666d5dbe26c209389683514ec514c956caf8bb9ba098069648"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/038/traj.jsonl",
+      "bytes": 394931,
+      "sha256": "2f1cf6878aef0423d1b56a876bd2735dcd54b4b57fc861f7147a2b5e06d5a45d"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/039/checkpoint_results.json",
+      "bytes": 552,
+      "sha256": "4add02268abaa91facb3be631b02ffa2a491121e22151e24ab43b84963e82524"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/039/result.txt",
+      "bytes": 5,
+      "sha256": "7747240b40ef7064f499d4ddd256767cba251ce7c2cc4b26faf542d9a2c5c104"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/039/traj.jsonl",
+      "bytes": 362375,
+      "sha256": "aa5ee72e5c2157aae3370216b77c88077e6f6be14e96cc5d9b48ae6d9a368e94"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/040/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "4084c484d84057cccc3f7594f8af24c3c163e828f71632b3df88a41b1dfe91ca"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/040/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/040/traj.jsonl",
+      "bytes": 1335135,
+      "sha256": "36fb37aa882e1a57668285f3164f50f7db16f3a95fc29a6e3aafd8b781615001"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/041/checkpoint_results.json",
+      "bytes": 168,
+      "sha256": "abf687619334fe94e952d75f87fbd3fec47684b4f77ccc5a463c64ae04ecc823"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/041/result.txt",
+      "bytes": 7,
+      "sha256": "df614ef3eee857ad51f1e85cb111523ce0fb5acd84ef800977589e2f6cdb14ab"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/041/traj.jsonl",
+      "bytes": 1258120,
+      "sha256": "ddcbcfc7f5c15240c52de3fbc441bf3b12bcbfdb82715fe0a7a8b8aaf81cb65b"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/042/checkpoint_results.json",
+      "bytes": 278,
+      "sha256": "dc8766359b23e754f9b98b22e346599ca06cc7f332288e3569087f9d7aede860"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/042/result.txt",
+      "bytes": 5,
+      "sha256": "ec5b66271bb2734c9023406ef56d1b8c81ebfe07ca941e11d154206fdf3ea5ec"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/042/traj.jsonl",
+      "bytes": 434006,
+      "sha256": "22d65ed6b3b07745eca43eabf61d9b0ff02f89379882a34ac64cf1da69b6b34e"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/043/checkpoint_results.json",
+      "bytes": 593,
+      "sha256": "fbdf9ac290692525b0e379b22cda78905f3c0f0beff1d41362956a0156df6eb0"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/043/result.json",
+      "bytes": 218,
+      "sha256": "93d51f852b17bea08d2819b361026ae71e3838615f7a09dd535c116d5de4bb1b"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/043/result.txt",
+      "bytes": 7,
+      "sha256": "d761d81c77b883f486b727260211eccef4dfe90a4be9f8ba3f5f3b8a9e32857c"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/043/traj.jsonl",
+      "bytes": 927512,
+      "sha256": "0a6dac9ebc204c658a8b8564e3bc39a633078f4dcd5402717f7eee6b417f4f68"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/044/checkpoint_results.json",
+      "bytes": 277,
+      "sha256": "94192dd4570368cdbfb4c8689982c70e1d43c4d60ec2e4b7577cfb21a737dda6"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/044/result.txt",
+      "bytes": 19,
+      "sha256": "2c5f034bf4136fb01c92c3abfee136a1f756704c6d6bdad27cb2f7c5cf27f03e"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/044/traj.jsonl",
+      "bytes": 435198,
+      "sha256": "f759aa639d6c2ac59346d7945ceb45cea9c318d86b54d4d9cf3851d664f957ad"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/045/checkpoint_results.json",
+      "bytes": 587,
+      "sha256": "a2b3b3d5af611168a6f426dcfd2aa3f8f6ac286488b2ee6bd15d7cf39499ce0e"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/045/result.json",
+      "bytes": 334,
+      "sha256": "874f41ba354e3981a59637ad9301bf09f538cb2f9e58c91676b69c2810c897fa"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/045/result.txt",
+      "bytes": 4,
+      "sha256": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/045/traj.jsonl",
+      "bytes": 1210294,
+      "sha256": "26eec1b21a0cbea484e95927bd820020ec26c1916ea2cdf0d6b9cb95e876570e"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/046/checkpoint_results.json",
+      "bytes": 587,
+      "sha256": "21d9d6a8909c1ef2b61dabf9fd6987332a8a3bfd552fe42e6585f835f00b9e88"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/046/result.json",
+      "bytes": 207,
+      "sha256": "73ebf904ae13f2da3eec49dcb67b85682c468fd31d0d1ad073897bd4222288bb"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/046/result.txt",
+      "bytes": 4,
+      "sha256": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/046/traj.jsonl",
+      "bytes": 361071,
+      "sha256": "f8f750060b79a03d14ebd638991b0b761070fa404f83fe207202e3e622e0b63e"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/047/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "e13d305a61d00eb6d006241b0be96456b96732bb94cd036c4c0fbe2c8735bab4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/047/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/047/traj.jsonl",
+      "bytes": 738344,
+      "sha256": "9466b59be1ab09cf3935aa7a22bc299bc37c02f9234963b6000cac81b83af5bb"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/048/checkpoint_results.json",
+      "bytes": 168,
+      "sha256": "e14572c3889a046673cb4c5d5b3ccada283e4c1d2995ee688e2e8738ff0e4d5e"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/048/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/048/traj.jsonl",
+      "bytes": 455287,
+      "sha256": "732dd47d9bd1368cfeffddbb1acfe6f8cec67a72afbd7df20c35b291985638da"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/049/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/049/traj.jsonl",
+      "bytes": 88733,
+      "sha256": "c01217c1f192857d03f010cea3aeec262c644b557af708c361244b94e378ddb9"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/050/checkpoint_results.json",
+      "bytes": 587,
+      "sha256": "c434be5ff9aeb78e1d074bb21cb6ee90fdca9539195d88c4bf70fdeff1a90b6c"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/050/result.json",
+      "bytes": 339,
+      "sha256": "71338ec2e25d85efd4d47432b7c7e784e89707f91253c842ea0fa89735aa9510"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/050/result.txt",
+      "bytes": 5,
+      "sha256": "95d020e1024da4b79092a4cd784eb0e765f045e43c0ca38d1430cf227994358f"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/050/traj.jsonl",
+      "bytes": 1168762,
+      "sha256": "050a31e31c5fefbb7b9ad9dda3a4a5c667007ef21fde5092ba27a08448e0f48a"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/051/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "22e1336009429f9b8d0cc714dd001c8f45eb11d16551b9504f88f7242bbeb340"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/051/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/051/traj.jsonl",
+      "bytes": 1005501,
+      "sha256": "b69c60c6789e059aa4122bd82b3b4547363844b1396b01f0efe1772947a6e9c5"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/052/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "d94985970a1cdcc3b7ec99d3c3f83f1704de32b437bd8d965a0a72fc267f4d57"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/052/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/052/traj.jsonl",
+      "bytes": 301340,
+      "sha256": "8b437415fb6ee2a0e2ff1d45ee9efcd9456dfc59b6a4a6e44414f5f231caaeb0"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/053/result.txt",
+      "bytes": 4,
+      "sha256": "a6311009c6c322ca8ac2e620cff5204f0c3af23115d403293a0cb5be36796688"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/053/traj.jsonl",
+      "bytes": 527713,
+      "sha256": "8c899d83d5685ce078cd9164a82172929493bcf3d33b865583c651490679b600"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/054/checkpoint_results.json",
+      "bytes": 168,
+      "sha256": "e37338f9130a375cfd5df3bfe711756fb3e76b6ebaec9a8c0f9408568912c921"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/054/result.txt",
+      "bytes": 7,
+      "sha256": "3d1a8e7994f01475cd1c20322f147fd60b59c31fdf207d5196823a29fc356a94"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/054/traj.jsonl",
+      "bytes": 550231,
+      "sha256": "14ddbf55db142cec643206ae94365a64fd7a09d2bdd8e0432ac0cf9cbf003277"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/055/checkpoint_results.json",
+      "bytes": 587,
+      "sha256": "03c27145550752e0dd31a41cba84fc9d3d81b590e6fe7cd54fc0c2734692bd82"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/055/result.json",
+      "bytes": 207,
+      "sha256": "f17e39440c87d5dbf472988c5eecfc05f0a699717440e773863b691add8b14a0"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/055/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/055/traj.jsonl",
+      "bytes": 1683350,
+      "sha256": "4a796e5afd3f35a3cd1ad925e989b54f04413e61012f13efe73a52a4458eeb70"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/056/checkpoint_results.json",
+      "bytes": 588,
+      "sha256": "250aed3fc3d5d5b1bf6dd40033065d0213c64a9ce3db3e878e8c9897865f7713"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/056/result.json",
+      "bytes": 339,
+      "sha256": "bdaac490a394991ead715978d542ec03f0beff46ff4abf089c15884c86f950aa"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/056/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/056/traj.jsonl",
+      "bytes": 1731846,
+      "sha256": "9ed4a1f5257dfcba65ed5b034cbe111153a13519dad9c0beb10403e0c81c540d"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/057/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "8cea3e64b8dd2d89d8238fd62de853ef352d347379c1fa0ebf776a1462bbe053"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/057/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/057/traj.jsonl",
+      "bytes": 2250532,
+      "sha256": "4c4dfd0bc4b0b0fd7aa17ac23401dc0a711b9d0c0438933f0b72aac6b14b2aa8"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/058/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "b394f779e791724ebcf34173374ea00da0db503e295818e1bf41dd6d0166a803"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/058/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/058/traj.jsonl",
+      "bytes": 985321,
+      "sha256": "48d357a0c0dd6977a42cdb0024eda696e7f1d572f6cb736e98ff5438c16d3f64"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/059/result.txt",
+      "bytes": 4,
+      "sha256": "88930bd051d214a973581b9492a5ca110aea3fdd5dc65a68bc444b6173877bbd"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/059/traj.jsonl",
+      "bytes": 584216,
+      "sha256": "b1f6aa9a17e6228842d94408356c9a1be7e90865e28b1f043ddbb9797b48c186"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/060/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "755c24ba1d892f37d0d30a8cc4887149f8fa6d84435f8b6107a9c9e8cd893654"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/060/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/060/traj.jsonl",
+      "bytes": 1954656,
+      "sha256": "3c67f0922bb8e6680b748f9b5a719b2d3bda77e65eb30b09dd5f971aa46a66bd"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/061/result.txt",
+      "bytes": 20,
+      "sha256": "9b5cf09622051fe25eeda97ef21b6f34db72620c58519609164cf58022ccc574"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/061/traj.jsonl",
+      "bytes": 586248,
+      "sha256": "a512a663218a5931cc33d5d6464fafbeea04962ce6f253d600d2f44c511686bd"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/062/checkpoint_results.json",
+      "bytes": 583,
+      "sha256": "01fec64382e716e140ef615de7eb78c0e41e89a984d864a11d216549b6d68a09"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/062/result.txt",
+      "bytes": 19,
+      "sha256": "0e8ec4725e8319547460cb3542f7213d7ce4783bfebc2356ac341d1ea2fd8b9c"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/062/traj.jsonl",
+      "bytes": 2848886,
+      "sha256": "2a1cd74f85013d97e60de7a4e8b26ca053c918fe2a7f3591a023ae3782f4a35c"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/063/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "4ce7bc970f13af642e41bdcfe729b9d71fb8faccf94ef1ad0474857368c9925c"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/063/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/063/traj.jsonl",
+      "bytes": 600359,
+      "sha256": "41124bdfb7e163ddb201ad428995861cd8cd994c37d126f5f41ef4e1757aec2c"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/064/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "00eeb7794d70ac3e9ff03d732e9322f59a822fa251e11eec694b95ce72c7809f"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/064/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/064/traj.jsonl",
+      "bytes": 1165278,
+      "sha256": "c6b53890dfeac3728f6f38f674f4fceda9c0bd68db5a233b104582735e527406"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/065/checkpoint_results.json",
+      "bytes": 333,
+      "sha256": "b3edc6157d5754102273855d7ba26d3f9101441e38ca6312da0961d1bf703849"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/065/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/065/traj.jsonl",
+      "bytes": 1519058,
+      "sha256": "6e21270ca0401837af9a1849e2afe7009b9dfc7231546816cf2867ca8eb1e2cc"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/066/checkpoint_results.json",
+      "bytes": 277,
+      "sha256": "e6499ad808d80cf21e8a8cdcd820449bfd02d616ee525a209aee039a34c4576a"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/066/result.txt",
+      "bytes": 4,
+      "sha256": "c36fdbcf57ed3348e59da37beebc5c3696b3e451b7ffe16f2ebb6c9b5ee5916b"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/066/traj.jsonl",
+      "bytes": 883863,
+      "sha256": "f62182b2b302a62dc6fdbc6beaab3e3f9c3ee673ede21351be893a3a7cfff8f2"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/067/checkpoint_results.json",
+      "bytes": 168,
+      "sha256": "c8af7c5c5ba5b98df911ee5bf670510fa186224386ff4eec0e7417117bf0e993"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/067/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/067/traj.jsonl",
+      "bytes": 784790,
+      "sha256": "90d4f726f9b59c3691076865ea80864675b2cb10b83a1c4348a250803673db26"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/068/checkpoint_results.json",
+      "bytes": 591,
+      "sha256": "af56414ee80790fa14cd08d6f79bb7b483d68d12635d7ec6eaad7539e0a6a0f7"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/068/result.json",
+      "bytes": 181,
+      "sha256": "757cad1d4e988e19871b1174c5388d2af6db93c710036dfc919911decbdafd81"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/068/result.txt",
+      "bytes": 7,
+      "sha256": "44be8bb9fc8c094cecfe6c1ed99bf05f652a169ecf49b2910bc22a7c65ac27d2"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/068/traj.jsonl",
+      "bytes": 1237213,
+      "sha256": "f13564928905b57ad66f3503fd4529fc3c258f99c2c0ee71fe617da4e65217fe"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/069/result.txt",
+      "bytes": 6,
+      "sha256": "99eff2c59981c4cba4514b70d2bddc42484942ac35f40961aab2066264be466e"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/069/traj.jsonl",
+      "bytes": 82959,
+      "sha256": "64dd398b24277c56335a60735e78a086988fc6b5716c7fc52f4eac82022601c3"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/070/result.txt",
+      "bytes": 4,
+      "sha256": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/070/traj.jsonl",
+      "bytes": 166357,
+      "sha256": "e50e275747b5c2190bdc1102ab82d4f2fda0e09b5a6db943e86d5a27702237a2"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/071/checkpoint_results.json",
+      "bytes": 333,
+      "sha256": "f1fc386d32b8fb2286e3a80931e6ca7bf2ff38daee3f19b068ab895c4753c637"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/071/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/071/traj.jsonl",
+      "bytes": 990104,
+      "sha256": "78216070b3bba3b5af56a8ccd7cd15d8fdb21ce2d80ccff12785161d6b546e82"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/072/checkpoint_results.json",
+      "bytes": 588,
+      "sha256": "b42e7d39b8839f0bcc7ea4527951aa0068ae5ae459b3098078e5e78400b48b62"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/072/result.json",
+      "bytes": 207,
+      "sha256": "2144dbd1b3ee95aecc1f033772a634aeef0012c09387714177c1608b6124e799"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/072/result.txt",
+      "bytes": 4,
+      "sha256": "fdf276f0183c71742823b061f7342d581e56de0af10648339b525249e26ee94f"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/072/traj.jsonl",
+      "bytes": 907923,
+      "sha256": "a5a1ffc069107085a3aa165d6c4d81e9404926df2b89b46cfb60a4bb92a3c015"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/073/checkpoint_results.json",
+      "bytes": 554,
+      "sha256": "1db018de9003804b837688ec1a4698a3dad2a23fe70356cdd934bde3066f04fa"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/073/result.txt",
+      "bytes": 6,
+      "sha256": "d941a3c4634daded6cda01a939f338c6804a736d116edfe1ca72a90541632545"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/073/traj.jsonl",
+      "bytes": 590630,
+      "sha256": "cf38497b2701bdeedfa0e684424611af18be238b8de64f4a17f1e9dae680d3e8"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/074/checkpoint_results.json",
+      "bytes": 277,
+      "sha256": "b0885c08698764aae181c51382a2f559aef64867a812979fea1fe9392bf3885f"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/074/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/074/traj.jsonl",
+      "bytes": 1917490,
+      "sha256": "9963e81dec7557aecac2cc5d2404273db33f07592096bc8424ebf83debc65d49"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/075/checkpoint_results.json",
+      "bytes": 277,
+      "sha256": "6513de23fa753919db626d7d1dca867f552380a60339f389f1640cace00856ee"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/075/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/075/traj.jsonl",
+      "bytes": 2610159,
+      "sha256": "dd017fddacef34c59fd2b7c169b5540a96a5f9f59377c1a4441d35397619bf20"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/076/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "363f6838815c5a3490cb5b743a1b9a487291b88c8997e77e78f2360c64d816e2"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/076/result.txt",
+      "bytes": 5,
+      "sha256": "ecc415608f496aa4312f4a24122d0b7f242f909cce14eedeb4eea40e1cdb1ffa"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/076/traj.jsonl",
+      "bytes": 1307244,
+      "sha256": "ec38c912821e256312fb4af586c04a751e4c6f3f40b98dadae7824c2ac04ceca"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/077/checkpoint_results.json",
+      "bytes": 333,
+      "sha256": "afb2ba3f77b1f44189458ffa1e585bcceed505435a1b3e23928cd7b9adcc0e36"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/077/result.txt",
+      "bytes": 7,
+      "sha256": "179ccb6c2346128a2edc2eb63e5f82e3b200cbe7ce560ceec177718ecd187e38"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/077/traj.jsonl",
+      "bytes": 2210468,
+      "sha256": "00ee4797f2fdb65d6edc207d6d2d53ca498331572d58fed5048c53e79afc8079"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/078/checkpoint_results.json",
+      "bytes": 277,
+      "sha256": "9164561ad0323ae7e87b1fc33676e2ecc41fb6418d755eba06f58769bb9b3c5d"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/078/result.txt",
+      "bytes": 4,
+      "sha256": "3b1add489f8961560bc1562f10cabcf762bce961623cca362f0128522fe1ed29"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/078/traj.jsonl",
+      "bytes": 1163139,
+      "sha256": "df680967bb86c0ed66ede6da0811374e4b2061b32bb19c1f473274bafb882510"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/079/checkpoint_results.json",
+      "bytes": 333,
+      "sha256": "dc2d6d6c64d5050697cfea72a4a6df1e6d89a07ff23b6d77a3b0cccf67a4a3cc"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/079/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/079/traj.jsonl",
+      "bytes": 2534910,
+      "sha256": "f8777935e90fc1c6cacae8b56c0d9bf82c6cf2f58480b5e2a6be8208529dfd05"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/080/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "50b40dd971f645767e3edacdf760a400862564158fc38aa86241746fb3fec733"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/080/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/080/traj.jsonl",
+      "bytes": 1438613,
+      "sha256": "3be96ddbff6e3e382c6eb4eddec31916e4bd4a20c9a74d3c7433e32e77cf20e8"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/081/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "a166a026d9b01518a95542b590c3cf3c8c6307e8ae200547d711599532066aaf"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/081/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/081/traj.jsonl",
+      "bytes": 699021,
+      "sha256": "71cdd5697b817e0c68e9b9da4a7f934bba53c1e732ce82689799f00faf05e838"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/082/checkpoint_results.json",
+      "bytes": 280,
+      "sha256": "a5464ffb0fed5a4ac07c6f2d13ecb9639ed7d6ee7232a8c8c7291cd9ebc49edf"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/082/result.txt",
+      "bytes": 7,
+      "sha256": "365c88289c5e8ec88b0e0a53ce5740f8aebc89bb77b5d5136362b0349318aaa6"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/082/traj.jsonl",
+      "bytes": 332500,
+      "sha256": "39ce770c6c939bb6867ffb0749e909ba5aba587eacf97457f8d1c65be0284748"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/083/checkpoint_results.json",
+      "bytes": 567,
+      "sha256": "a120d5bfb553931447ae68684d04ef8a37d7f27b4f81927d2a184a1da6c49468"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/083/result.txt",
+      "bytes": 19,
+      "sha256": "18794cd4b91037b7358b557a0dd1fccb43157488aaa2d71a2530f66cdfd18307"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/083/traj.jsonl",
+      "bytes": 2320137,
+      "sha256": "364ebe85600b54ea9c81eb42a3c25349634624d1918ffd65413e1586184cad76"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/084/checkpoint_results.json",
+      "bytes": 567,
+      "sha256": "c8a1fe5b59c763af1f317210b491609420361daff7be768624166ae52a5da106"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/084/result.txt",
+      "bytes": 20,
+      "sha256": "868c0fca0cbb6a2bbd99404d45a0d44b2785199d0667afce64c8da58696c28fa"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/084/traj.jsonl",
+      "bytes": 1432248,
+      "sha256": "739588f7c0fc202db4fd89be973f5a107768c5cfe83564ee4dc18c37c5240804"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/085/checkpoint_results.json",
+      "bytes": 280,
+      "sha256": "4ec7c34735e638e8cedd5c8f2524434b34bcc80c1dc4371695bf397891363790"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/085/result.txt",
+      "bytes": 7,
+      "sha256": "2019d0565fc444e80678f22125ce9d24779ed323f87de17e1929db686f67c4fb"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/085/traj.jsonl",
+      "bytes": 907930,
+      "sha256": "b982881a9839dfd81eda0a14d2ad61adcc7745a36527913ebe443e288b9f1caf"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/086/checkpoint_results.json",
+      "bytes": 168,
+      "sha256": "7dfd39d8fa30964786f57dc7a1126c2c738590e52d950d5965702be1e1119964"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/086/result.txt",
+      "bytes": 4,
+      "sha256": "a6311009c6c322ca8ac2e620cff5204f0c3af23115d403293a0cb5be36796688"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/086/traj.jsonl",
+      "bytes": 657400,
+      "sha256": "d2e68355d8bff0bed11e754c70ee421a178e7e88693b00968203ec3fa9cf3ff3"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/087/checkpoint_results.json",
+      "bytes": 553,
+      "sha256": "4c2fa113304b56794f414c56b32c34c630b760a77cefffd1ebd3041b19244be2"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/087/result.txt",
+      "bytes": 20,
+      "sha256": "a8de6fdf5b61053be1608e66e5121ab6d3b60354af97cb7ea8eac13387735fab"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/087/traj.jsonl",
+      "bytes": 1549314,
+      "sha256": "2f9588168f56608d5acc1383013f0715d3a84ac86edc799fc1241fa0fb97ab0b"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/088/checkpoint_results.json",
+      "bytes": 553,
+      "sha256": "abccccd0f2de37f6a4dadeb82a584ea2f44347da070a3d72a178422f4c9a7034"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/088/result.txt",
+      "bytes": 5,
+      "sha256": "a292516faafdc2b78ca3549846d67dcebbf7fbc7c5a76a639a16157f7349a735"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/088/traj.jsonl",
+      "bytes": 1189575,
+      "sha256": "b2e85a8734229a5cdd83d02fed1a0a9c6270dd996a833c68f0cd058177f52220"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/089/checkpoint_results.json",
+      "bytes": 278,
+      "sha256": "632ef78be42bef85f724aebe90a7f18437a6e0f183a0276e2063b93445e0bc89"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/089/result.txt",
+      "bytes": 5,
+      "sha256": "78ee04c43cf6c61ba6ed92c4d37acba6579d1884282372d0bc1f8fa947798ece"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/089/traj.jsonl",
+      "bytes": 502697,
+      "sha256": "1b20c2bc4545dab755c192317cc89cbaf3060e7f16e1f5571361476a897b47f5"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/090/checkpoint_results.json",
+      "bytes": 557,
+      "sha256": "fdd3701635e97f493ba913840b20750b40a295df662b630494c3074d16cb0269"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/090/result.txt",
+      "bytes": 7,
+      "sha256": "4555229951c7fb913b05b0c81caab436c8bf029fa0eeb1bcae531e742cbd0f75"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/090/traj.jsonl",
+      "bytes": 1525134,
+      "sha256": "b799f1d5a72281e385ee36f5a7a73e6830bf9345ca5bf00724633e03b134823d"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/091/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "97aa8dc0173a0048108c587b82e1a1a50d87c9b8bd1e1f9e7eac014f2e8a52ab"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/091/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/091/traj.jsonl",
+      "bytes": 2009508,
+      "sha256": "61752490d1560de9e08a769f7005aa88e038e957611e35fc94f158dd96cfbeb7"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/092/checkpoint_results.json",
+      "bytes": 333,
+      "sha256": "b25bfe9c4c24140d900bc7240a89c5410bc1164464253964bb75c725a0397c63"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/092/result.txt",
+      "bytes": 5,
+      "sha256": "b8713d4438c8855ac1ab83ca3baac5895bdddc9429b49b65d3804f95877e55ea"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/092/traj.jsonl",
+      "bytes": 807151,
+      "sha256": "3671d1a42092581bbba9605c85ae986bf039bdaa8cfe9c9e7a39ef66b20d9199"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/093/checkpoint_results.json",
+      "bytes": 333,
+      "sha256": "fcb70828899245f3d81b4780f0e9179e6e83d9c3a639f3baecfee1915b0d8835"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/093/result.txt",
+      "bytes": 5,
+      "sha256": "115286a1c210304a14ecbdd29e1706f119572b362af2ad19510441d54736a321"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/093/traj.jsonl",
+      "bytes": 307721,
+      "sha256": "ee453ae94f1ecb1a63f4607eb65e3102800457961939e8df72c21d26937eae22"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/094/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "e0513d0b83dff2670280b061b86eca2338b1fb32052adef2d7085053b8f35235"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/094/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/094/traj.jsonl",
+      "bytes": 1160078,
+      "sha256": "614188659b327343c65fd580486e7b017660fae9e3a433ce46f02e0c3b541f67"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/095/checkpoint_results.json",
+      "bytes": 277,
+      "sha256": "cac35da3ced8044bc5cc53925a91ae0f0d5656c9ecdd7ac83625ae0684b7ed10"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/095/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/095/traj.jsonl",
+      "bytes": 1427662,
+      "sha256": "cca32fe623ad8b05c0b0711865bc3f786ea5a7a0e73615bb381a164fbb7d9df3"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/096/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "e5feffd294719048a6fd5823b2f4cf651d7ce5f4df44800f67d08842b53bfe90"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/096/result.txt",
+      "bytes": 20,
+      "sha256": "514f096e4b2d99f2a2837f852c81029cfa2d45d4c06647efa44c7919f358f056"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/096/traj.jsonl",
+      "bytes": 2484416,
+      "sha256": "7c9adfb9c7f702540907fc8bb5d5d762ab29d960c24266b1ce3010b11e62ed25"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/097/checkpoint_results.json",
+      "bytes": 333,
+      "sha256": "7711c7d3684ba833c7ba16ba7d4bc7238fa6fad56dc399a00c1ae65725f14462"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/097/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/097/traj.jsonl",
+      "bytes": 2437726,
+      "sha256": "d5d3fac22e6ee841c80c9fc80b924256f2d082ba254193c5b67cf3c6ec24eceb"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/098/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/098/traj.jsonl",
+      "bytes": 437394,
+      "sha256": "0adfb825ae5ab8215752af40564c632384f9db9ee31742cdcdecbd585d8e77c5"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/099/result.json",
+      "bytes": 159,
+      "sha256": "08793780556cd09bb45c4782beef65fc7df0112890894d3c23667c714aec2527"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/099/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/099/traj.jsonl",
+      "bytes": 27094,
+      "sha256": "b410e6efd4b41076e0e62c39eb83a58df382949298b85f9c9b990f9d625801f3"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/100/checkpoint_results.json",
+      "bytes": 295,
+      "sha256": "93db70f03c49b4dc0c7801710015a865c4a8c3fd0797d4453c0ca98277f55314"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/100/result.json",
+      "bytes": 161,
+      "sha256": "7097deffefa0445e749d0dbc0c1600330e2fc4a9fcb2db593a7dec643fa8d2cd"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/100/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/100/traj.jsonl",
+      "bytes": 1366570,
+      "sha256": "a602b215d9628dfff6da9df3b681e7bce70f589c5f00f1c85c180b0162a4a504"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/101/checkpoint_results.json",
+      "bytes": 168,
+      "sha256": "82887ff73662a3dd744fd848b04c6784142dde7e0524a49c5869e784ada3542f"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/101/result.json",
+      "bytes": 585,
+      "sha256": "d7d09495898bd994b4f5d1ef5deabbe7e1bdb29a8d57c28771dbe2c85b61cd9b"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/101/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/101/traj.jsonl",
+      "bytes": 256082,
+      "sha256": "259658c4cb6fe3d4369505655725d1e292ab190db34de71426aa14621ff92657"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/102/checkpoint_results.json",
+      "bytes": 551,
+      "sha256": "a29c01333889f7df1ba63fa02351cb4cc9e1abba4a4cffb0054395f6d510e003"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/102/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/102/traj.jsonl",
+      "bytes": 1495946,
+      "sha256": "0a855997894998fedbc5e6cdcdedb1f82cb0198582a143d6fe92760822cba26c"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/103/checkpoint_results.json",
+      "bytes": 295,
+      "sha256": "1c1787d18659039979950e76b5048d4a77b6d5b24a0ee1673be2272814fb74d2"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/103/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/103/traj.jsonl",
+      "bytes": 970586,
+      "sha256": "614d0d0c233111d2454b35191468a4b0a79aab95ddb316fa503bb2f7bcd35426"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/104/checkpoint_results.json",
+      "bytes": 168,
+      "sha256": "afc0b5683e4be98c41c3664a2eaf597a73f992819424a263833326332d8de8b4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/104/result.json",
+      "bytes": 76574,
+      "sha256": "e1a10dc3bee145734d792ec3b14c85161e870b50b5c90e6f9bef308c4b12c049"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/104/result.txt",
+      "bytes": 5,
+      "sha256": "f94411c2f6954a5f9184c1756fb7e683c25894e87e04c3ae5dd832ba53bc939a"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/104/traj.jsonl",
+      "bytes": 986628,
+      "sha256": "b245681bb75beb99201d19f050300a2299ed9724e57819465c8b938017f30948"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/105/checkpoint_results.json",
+      "bytes": 168,
+      "sha256": "5c7d81d6b4675eb6e98565a8b212682506895768cfeb3144dde3004401a46a85"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/105/result.json",
+      "bytes": 1447,
+      "sha256": "3f6eebd26d5047a916e4d8c3c136681639cdf4e4e9fce29577e21599e547344a"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/105/result.txt",
+      "bytes": 4,
+      "sha256": "88930bd051d214a973581b9492a5ca110aea3fdd5dc65a68bc444b6173877bbd"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/105/traj.jsonl",
+      "bytes": 1188972,
+      "sha256": "03ea40ba175c096d4dd604504e9cb8fd34527aa15be2b8f0df57067488507054"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/106/checkpoint_results.json",
+      "bytes": 587,
+      "sha256": "fb6050074cf4a1041de2d2425b345d58f9f22f119df0ebe5118754a89b57e3a6"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/106/result.json",
+      "bytes": 2064,
+      "sha256": "6cb186b44d6a2cd311b86f6e1d1ded285951bec6397dc15f6ad1e7d8f733e6c9"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/106/result.txt",
+      "bytes": 7,
+      "sha256": "325d3a73db35830327ff34820bc6fc5d2d4cba7d5bf034ec917a2b327e806f75"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/106/traj.jsonl",
+      "bytes": 1520032,
+      "sha256": "c1feb1b0bf76d94e190f3344e6fe58a59b4a75dd84eef79560b10732f71321fd"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/107/checkpoint_results.json",
+      "bytes": 587,
+      "sha256": "ed4312b99fac98e0b81e5d6578315ee95e1a48027a9ce0e5e437a33d1b41ec3b"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/107/result.json",
+      "bytes": 2887,
+      "sha256": "aa80f3be4582fa057db3b659be0c913f180b3a23a4d22010d2a62e8c82a3307f"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/107/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/107/traj.jsonl",
+      "bytes": 787670,
+      "sha256": "97fa999d2f66648044d4713c302ec0bc468eaf92fae7ef900815b85c4e1cc34d"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/108/checkpoint_results.json",
+      "bytes": 587,
+      "sha256": "ad0f6e435beb4595cc377879a946ac0794c92716618b8c1130d3bd79567d2f25"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/108/result.json",
+      "bytes": 2277,
+      "sha256": "9a545655925d8cb8c9087a03a9f53277029457b604ddd41bfa0addf4ccd4c538"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/108/result.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+    },
+    {
+      "path": "data/raw/public/osworld2_trajectory_light/website_demo/MiniMax-M3/tasks/108/traj.jsonl",
+      "bytes": 1294081,
+      "sha256": "1c08f2eb616838344e26f7b065fcb08eaa0f09a002aec9b014b0e8d92475c058"
+    }
+  ],
+  "analysis_code": {
+    "path": "scripts/osworld_minimax_behavior.py",
+    "bytes": 15953,
+    "sha256": "3f86d013357487af1de180d80e0d47b01d36244f84063cc931c6cdaec72d2947"
+  },
+  "outputs": [
+    {
+      "path": "summary.json",
+      "bytes": 481750015,
+      "sha256": "98e45a95160967388675736b2308cae02cd20c2832c10a4df5972b9ea6a74aa0"
+    },
+    {
+      "path": "summary.md",
+      "bytes": 2480,
+      "sha256": "38a50e2bf5720306792a06a3278c09ff55aec008c0f0fa60d77428a7d6f9853e"
+    }
+  ],
+  "manifest_self_hash_excluded": true
+}

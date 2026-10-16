@@ -1,0 +1,41 @@
+{
+  "schema": "docops-single-run-approval-v1",
+  "collection": "DOCOPS-WORD-RESOURCE-03",
+  "approved_at_utc": "2026-10-10T10:40:01Z",
+  "approval_source": "user message in this conversation",
+  "user_approval": "approved",
+  "tool_execution_permission": "granted_for_the_single_registered_command",
+  "entry_invocation": {
+    "command_result": "refused_before_attempt_creation",
+    "exit_code": 3,
+    "reason": "entry treated its own APPROVAL.json as an existing DOCOPS-WORD-RESOURCE-03 namespace record",
+    "attempt_started": false,
+    "docker_or_api_started": false,
+    "retry_authorized": false
+  },
+  "identity_sha256": "5de79f64ad8871a33bb40b9de04efb60b82782bc364a4ca2661aae92c0365c64",
+  "task": "atomic__word_001_engineering_report_toc_hierarchy_seed",
+  "scope": {
+    "attempts": 1,
+    "attempt_retry": 0,
+    "max_total_wall_s": 2700,
+    "cleanup_archive_reserve_s": 300,
+    "max_agent_s": 1200,
+    "max_verifier_s": 600,
+    "max_steps": 12,
+    "max_tokens_per_request": 32768,
+    "container": {
+      "cpus": 1,
+      "memory_gib": 4,
+      "network": "none"
+    },
+    "sampling_interval_s": 0.5,
+    "docker_endpoint": "unix:///var/run/docker.sock",
+    "api_base": "https://api.deepseek.com/v1",
+    "request_model": "openai/deepseek-v4-flash",
+    "fees": "unknown; no hard monetary cap accepted",
+    "framework_retry": "existing Harbor limit of at most 3 actual attempts per logical call accepted"
+  },
+  "command": "PYTHONPATH=src LITELLM_LOCAL_MODEL_COST_MAP=True .venvs/docops-pilot-01/bin/python -B scripts/docops_word_resource_01_entry.py --execute --i-approve-the-docops-word-resource-03",
+  "approval_text": "User authorized one formal DOCOPS-WORD-RESOURCE-03 execution for the unchanged official atomic__word_001_engineering_report_toc_hierarchy_seed task, bound to the identity above; no rerun, retry, budget expansion, manual document editing, task/verifier modification, or further attempt is authorized."
+}

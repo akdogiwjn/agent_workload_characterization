@@ -1,0 +1,190 @@
+{
+  "status": "offline_approval_gate_fix_complete_new_approval_required",
+  "user_approval": "pending",
+  "tool_execution_permission": "pending",
+  "execution_allowed": false,
+  "identity_sha256": "cc4d713a3c16677dd4e7ad17920914de799f324dbf900315a489c787843fe2d4",
+  "frozen_identity_sha256": "cc4d713a3c16677dd4e7ad17920914de799f324dbf900315a489c787843fe2d4",
+  "collection": "DOCOPS-WORD-RESOURCE-03",
+  "command": ".venvs/docops-pilot-01/bin/python scripts/docops_word_resource_01_entry.py --execute --i-approve-the-docops-word-resource-03",
+  "existing_attempts": [],
+  "existing_namespace_records": [],
+  "identity": {
+    "collection": "DOCOPS-WORD-RESOURCE-03",
+    "task_dir": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed",
+    "execution_interface": {
+      "approval_flag": "--i-approve-the-docops-word-resource-03",
+      "command": ".venvs/docops-pilot-01/bin/python scripts/docops_word_resource_01_entry.py --execute --i-approve-the-docops-word-resource-03"
+    },
+    "state_paths": {
+      "approval": "reports/resource/DOCOPS-WORD-RESOURCE-03/APPROVAL.json",
+      "preflight": "reports/resource/DOCOPS-WORD-RESOURCE-03/PREFLIGHT.json",
+      "attempt_root": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/<run_id>/",
+      "attempt_started": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/<run_id>/ATTEMPT_STARTED.json",
+      "attempt_completed": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/<run_id>/ATTEMPT_COMPLETED.json",
+      "report": "reports/resource/DOCOPS-WORD-RESOURCE-03/run-report.json"
+    },
+    "files": {
+      "task_toml": {
+        "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/task.toml",
+        "bytes": 1311,
+        "sha256": "541e0d24a9f97aafdd312d00af1b063571836ec303cc2e7694bb72118655bca0"
+      },
+      "instruction": {
+        "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/instruction.md",
+        "bytes": 1713,
+        "sha256": "940e78174858258ddbda0ec1b7f74be27241db3a1b836de96b59006bc67ec31a"
+      },
+      "input_docx": {
+        "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/environment/word_001_engineering_report_toc_hierarchy_seed.docx",
+        "bytes": 39756,
+        "sha256": "9cb56bb42d83e3f0f62d09fb38d46ab5fabcadbc9fb1e8d19da4e5276f5951c2"
+      },
+      "test_sh": {
+        "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/test.sh",
+        "bytes": 730,
+        "sha256": "638074862a1f8779ca4741e76a5a254553eaaaa24340e0d5c781f34edab3e60a"
+      },
+      "test_outputs": {
+        "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/test_outputs.py",
+        "bytes": 2161,
+        "sha256": "37232616c07d64d07d4a336bed6c5d3af3e31908e8b804d15302c916f7fb9a09"
+      },
+      "verifier_utils": {
+        "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/verifier_utils.py",
+        "bytes": 14389,
+        "sha256": "d1a084507ea7aa1ae001c6c8b33f6505cad4ccb51cd372d10323fe5d63d93e78"
+      },
+      "agent_harness": {
+        "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/harnesses/document_tools_agent.py",
+        "bytes": 13569,
+        "sha256": "c63244323eea071ba63442dec70531a447365c31e87710b5a2a02c52322f449a"
+      },
+      "runtime_tools": {
+        "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/harnesses/document_tools_runtime.py",
+        "bytes": 16880,
+        "sha256": "855c4cdfdcd9ac6a8ca9e67d57809262236bf93848d0d8142cf356fb2f558878"
+      },
+      "task_metadata": {
+        "path": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/environment/task_metadata.json",
+        "bytes": 2140,
+        "sha256": "4f65f1028757566a3ef49f6d781f323e31c1c1d35c9b8f650b40ea738fd9efff"
+      },
+      "project_agent_adapter": {
+        "path": "/home/lcq/agent_workload_characterization/src/agent_workload_characterization/runners/docops_word_agent.py",
+        "bytes": 3223,
+        "sha256": "d41fae0fe8b8f90b21030e9cbb2c2392e2431f54cd6a474000e5fd7e72036eb3"
+      },
+      "project_runtime_adapter": {
+        "path": "/home/lcq/agent_workload_characterization/src/agent_workload_characterization/runners/docops_word_runtime.py",
+        "bytes": 18257,
+        "sha256": "a1e73980e3908ad158c6827d2853d7fab625db6ad46c2beaeafbaae2fcda9ab2"
+      },
+      "harbor_pyproject": {
+        "path": "/home/lcq/agent_workload_characterization/env/docops-arm64-word001/harbor-src/pyproject.toml",
+        "bytes": 2884,
+        "sha256": "7f5a7baf35fa83d5ea3499845e58f3ad4b502c64f37c660c8fa434409b611d09"
+      },
+      "harbor_docker_env": {
+        "path": "/home/lcq/agent_workload_characterization/env/docops-arm64-word001/harbor-src/src/harbor/environments/docker/docker.py",
+        "bytes": 18808,
+        "sha256": "4479e969235519f86bb804bc3a681ebe6be5bd0891cf295fbea5efccf5febc09"
+      },
+      "harbor_lite_llm": {
+        "path": "/home/lcq/agent_workload_characterization/env/docops-arm64-word001/harbor-src/src/harbor/llms/lite_llm.py",
+        "bytes": 29687,
+        "sha256": "621491f784dbe65ad1eb61e98cca3a836f90c78b50e0a76501a2db36cecb20a0"
+      },
+      "harbor_verifier": {
+        "path": "/home/lcq/agent_workload_characterization/env/docops-arm64-word001/harbor-src/src/harbor/verifier/verifier.py",
+        "bytes": 5160,
+        "sha256": "b914e9166bf35a7b5f062366f8d08c8d6e62d8177f36978d965eb9b3fc9a0742"
+      },
+      "collector_container_runtime": {
+        "path": "/home/lcq/agent_workload_characterization/src/agent_workload_characterization/runners/container_runtime.py",
+        "bytes": 36616,
+        "sha256": "a2608e5549da73581c3a1b036080d64fa641eefe8e4bdf3cf429bc5a55ac1d83"
+      },
+      "collector_host_process": {
+        "path": "/home/lcq/agent_workload_characterization/src/agent_workload_characterization/collectors/host_process.py",
+        "bytes": 8822,
+        "sha256": "2ec98884c8b0d1ea005881f72e0a5498088e40960eebc3c44d3775ec2e150055"
+      },
+      "collector_resource_sampler": {
+        "path": "/home/lcq/agent_workload_characterization/src/agent_workload_characterization/collectors/resource_sampler.py",
+        "bytes": 27396,
+        "sha256": "8418a9d793e170d96ce75d97ddd65a978a38038f80c2e34eb4c9485286bcca72"
+      },
+      "dependency_freeze": {
+        "path": "/home/lcq/agent_workload_characterization/env/docops-arm64-word001/harbor-venv-freeze.txt",
+        "bytes": 1126,
+        "sha256": "e2d552bbb1bcc8757a4d75f0f1dc0fc5c48f5275f2bda4f57ed257c8cdb73721"
+      },
+      "entry": {
+        "path": "/home/lcq/agent_workload_characterization/scripts/docops_word_resource_01_entry.py",
+        "bytes": 32912,
+        "sha256": "287df6819795aba98558cb6937ad2cd667c81d468996bbb01e138aa890d17a61"
+      }
+    },
+    "task_image": {
+      "reference": "docops-word001-task:arm64-adapted-v1",
+      "expected_id": "sha256:869486d7bdb34f8da3a1affabaeb085413c850630ef01e0ed1f8a01d64db779f"
+    },
+    "base_image": {
+      "label": "harbor-claude-code-base:2.1.114",
+      "expected_id": "sha256:062bf50871c0e9d7d4a175643343746f27c7857325962525d7ebe9ae0c08fe9b1",
+      "note": "ARM64 adapted environment (provenance unknown, registered); NOT claimed equivalent to the official amd64 archive"
+    },
+    "model_route": {
+      "request_id": "openai/deepseek-v4-flash",
+      "api_base": "https://api.deepseek.com/v1",
+      "credential": "DEEPSEEK_API_KEY mapped to OPENAI_API_KEY in-process only; fixed, no auto-switching",
+      "documented_backend": "DeepSeek-V4.1-Flash",
+      "model_version_note": "User-selected legacy request alias; official docs route it to V4.1-Flash. Not an immutable version pin; actual response model not yet observed.",
+      "documentation": "https://api-docs.deepseek.com/"
+    },
+    "agent_api_configuration": {
+      "stop_policy": "omitted by JsonActionLLM; project-side JSON action configuration, not a verified official-provider fix",
+      "extra_body": null,
+      "extra_body_note": "Do not send the former gateway thinking_mode parameter; official provider defaults apply.",
+      "validation_scope": "API smoke is recorded separately; configuration identity does not prove full-task success"
+    },
+    "budget": {
+      "total_wall_s": 2700,
+      "agent_s": 1200,
+      "verifier_s": 600,
+      "start_s": 300,
+      "setup_s": 60,
+      "stop_s": 300,
+      "cleanup_reserve_s": 300,
+      "container": {
+        "cpus": 1,
+        "memory_mb": 4096,
+        "network": "none"
+      },
+      "max_steps": 12,
+      "max_tokens_per_request": 32768,
+      "max_tokens_note": "output cap; reasoning-token accounting is provider-side semantics",
+      "attempt_retries": 0,
+      "framework_retry": "Harbor LiteLLM call has tenacity retry: up to 3 attempts per logical call, auth errors not retried; registered approval item, not disabled"
+    },
+    "sampling": {
+      "interval_s": 0.5,
+      "container_counters": "cgroup v1 cpuacct/memory(+throttle blkio variant; io recorded as read, semantics ok_no_records_real_zero)",
+      "host_agent_process": "proc cpu_ticks/rss via HostProcessReader",
+      "clock": "host monotonic for sampling and events"
+    }
+  },
+  "superseded_identity_sha256": "5de79f64ad8871a33bb40b9de04efb60b82782bc364a4ca2661aae92c0365c64",
+  "route_validation": "passed_one_synthetic_json_action; full_document_task_not_executed",
+  "api_smoke": {
+    "path": "env/docops-arm64-word001/deepseek-official-smoke-20261010.json",
+    "sha256": "5e97a75808d1b7a56c2b3975a2f7855b8d555c21865d170ae08400df442dd862"
+  },
+  "approval_status": "invalid_or_stale",
+  "ready_for_approval": true,
+  "ready_for_execution": false,
+  "approval_renewal_required": true,
+  "previous_plan": "env/docops-arm64-word001/plan-identity-03-before-approval-gate-fix.json",
+  "note": "Existing APPROVAL.json preserves the refused invocation and old identity; unchanged, not valid for this revised entry."
+}

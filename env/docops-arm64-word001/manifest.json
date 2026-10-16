@@ -1,0 +1,303 @@
+{
+ "schema": "docops-arm64-adapted-env-manifest-v1",
+ "created_at_utc": "2026-10-08",
+ "verdict": "A: limited-function smoke of the native arm64 adapted environment PASSED; not formal-experiment READY",
+ "environment_identity": {
+  "name": "DocOps 原生 arm64 适配环境 (native arm64 adapted environment)",
+  "base_image_label": "harbor-claude-code-base:2.1.114 (LOCAL, arm64)",
+  "base_image_id": "sha256:062bf50871c0e9d7d4a175643343746f27c785732596252d7ebe9ae0c08fe9b1",
+  "base_image_provenance": "unknown (pre-existing local buildkit build, 2026-08-31, no RepoDigest; layer composition verified via docker history and runtime checks this round)",
+  "official_archive_relation": "no byte-level relation to official amd64 LFS archive (oid 1b1f4682..., not downloaded)",
+  "task_image_label": "docops-word001-task:arm64-adapted-v1",
+  "task_image_id": "sha256:869486d7bdb34f8da3a1affabaeb085413c850630ef01e0ed1f8a01d64db779f",
+  "task_image_build": "docker build per official task Dockerfile (read-only context), unique tag, no existing tag overwritten",
+  "architecture": "linux/arm64 native, no QEMU"
+ },
+ "build_and_smoke_commands": {
+  "task_image_build": "cd <official task environment dir> && docker build -t docops-word001-task:arm64-adapted-v1 . (exit 0)",
+  "smoke_containers": "five short-lived containers (docops-smoke-word001-s1, -s1b, -s23, -s4, -s5), each --network none --cpus 1 --memory 4g, stopped and removed with verified removal (docker ps -a count 0 for each name)"
+ },
+ "smoke_results": {
+  "s1_architecture_modules": "PASS: aarch64, Python 3.12.14, all 11 target modules import (docx/openpyxl/pptx/pypdf/pdfplumber/pytest/reportlab/pymupdf/pillow/pandas/numpy); pytest CLI 9.1.1",
+  "s2_docx_read_write": "PASS: real input docx read (49 paragraphs); synthetic doc write-reopen verified",
+  "s3_runtime_tools": "PASS: copy_file / inspect_document / word_replace_text functional (replaced_count=1, content verified)",
+  "s4_verifier": "PASS (infrastructure): pytest + json-ctrf-0.5.3 plugin loaded, ctrf.json produced, test.sh exit 0, reward.txt=0 on unmodified input copy - expected score-0 (task not performed), NOT an infrastructure failure; preflight reached output-missing assertion as designed",
+  "s5_metadata_layout": "PASS: tool_get_task_metadata works under real /root/task_metadata.json layout (ok=true, paths resolved)",
+  "not_verified": "model/API routing (not called per instruction); Harbor host-side stack (not installed this round); action-event export, resource sampling wiring, blkio, clock-domain alignment (post-pilot items); render_docx.py soffice/poppler path (intentionally absent, registered as difference)"
+ },
+ "dependency_provenance": {
+  "upstream_declared": "DocOps requirements.txt constraints (openpyxl/python-docx/python-pptx/pypdf/pdfplumber/PyMuPDF/reportlab/Pillow/pandas/numpy/pytest)",
+  "this_round_selected": "none (local pre-built image used; resolved versions recorded in requirements-frozen.txt, e.g. python-docx 1.2.0, pytest 9.1.1, pytest-json-ctrf 0.5.3)",
+  "unknown": "official amd64 base exact contents (not downloaded)",
+  "absent_by_design": "harbor (host-side), tomli, LibreOffice, poppler, pdf2image"
+ },
+ "cleanup_evidence": "all 5 smoke containers stopped+removed (docker ps -a per-name count 0); no existing image or unrelated container touched; task and base images retained",
+ "inputs": [
+  {
+   "path": "references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/environment/Dockerfile",
+   "bytes": 542,
+   "sha256": "0de1ec9114c1a21ef96e451cb221fbcd6530f6de0dd917973939acd626ffa8cd",
+   "role": "official_task_dockerfile_readonly_build_context"
+  },
+  {
+   "path": "references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/environment/word_001_engineering_report_toc_hierarchy_seed.docx",
+   "bytes": 39756,
+   "sha256": "9cb56bb42d83e3f0f62d09fb38d46ab5fabcadbc9fb1e8d19da4e5276f5951c2",
+   "role": "official_input_asset"
+  },
+  {
+   "path": "references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/environment/task_metadata.json",
+   "bytes": 2140,
+   "sha256": "4f65f1028757566a3ef49f6d781f323e31c1c1d35c9b8f650b40ea738fd9efff",
+   "role": "official_task_metadata"
+  },
+  {
+   "path": "references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/task_metadata.json",
+   "bytes": 2140,
+   "sha256": "4f65f1028757566a3ef49f6d781f323e31c1c1d35c9b8f650b40ea738fd9efff",
+   "role": "official_verifier_metadata"
+  },
+  {
+   "path": "references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/test.sh",
+   "bytes": 730,
+   "sha256": "638074862a1f8779ca4741e76a5a254553eaaaa24340e0d5c781f34edab3e60a",
+   "role": "official_verifier_entry"
+  },
+  {
+   "path": "references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/test_outputs.py",
+   "bytes": 2161,
+   "sha256": "37232616c07d64d07d4a336bed6c5d3af3e31908e8b804d15302c916f7fb9a09",
+   "role": "official_verifier"
+  },
+  {
+   "path": "references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/verifier_utils.py",
+   "bytes": 14389,
+   "sha256": "d1a084507ea7aa1ae001c6c8b33f6505cad4ccb51cd372d10323fe5d63d93e78",
+   "role": "official_verifier_utils"
+  },
+  {
+   "path": "references/repos/DocOps/harnesses/document_tools_runtime.py",
+   "bytes": 16880,
+   "sha256": "855c4cdfdcd9ac6a8ca9e67d57809262236bf93848d0d8142cf356fb2f558878",
+   "role": "document_tools_runtime"
+  },
+  {
+   "path": "references/repos/DocOps/requirements.txt",
+   "bytes": 238,
+   "sha256": "cf6389877136ecc7613ce3b755a5d79798ec192766123e6a929ce16c2cb76bc3",
+   "role": "declared_dependency_constraints"
+  },
+  {
+   "path": "references/repos/DocOps/harnesses/document_tools_agent.py",
+   "bytes": 13569,
+   "sha256": "c63244323eea071ba63442dec70531a447365c31e87710b5a2a02c52322f449a",
+   "role": "agent_harness_readonly"
+  },
+  {
+   "path": "env/docops-arm64-word001/harbor-src/pyproject.toml",
+   "bytes": 2884,
+   "sha256": "7f5a7baf35fa83d5ea3499845e58f3ad4b502c64f37c660c8fa434409b611d09",
+   "role": "harbor_source_copy_identity"
+  },
+  {
+   "path": "env/docops-arm64-word001/harbor-src/uv.lock",
+   "bytes": 836741,
+   "sha256": "3fe89d49f9f484519e179d92d916a78e1bcb3b04f2edead6dca2520e9dfa9681",
+   "role": "harbor_source_copy_identity"
+  }
+ ],
+ "outputs": [
+  {
+   "path": "env/docops-arm64-word001/ENV-DIFFERENCES.md",
+   "bytes": 2885,
+   "sha256": "0f437d0cbe0e4c1b728ea965eeb968a38dce7b7256684e180e5d4913df2b70e0",
+   "role": "output"
+  },
+  {
+   "path": "env/docops-arm64-word001/requirements-frozen.txt",
+   "bytes": 495,
+   "sha256": "a2d7c72f0a678d0301e9ccbed7a0ba5e914fdf99b54703a7af75615bc96fa22e",
+   "role": "output"
+  },
+  {
+   "path": "env/docops-arm64-word001/smoke1-modules.log",
+   "bytes": 298,
+   "sha256": "72b00a7fc7c840c78525afb7d97a0aa4ba99361438b82e3a51552fe07f554b40",
+   "role": "output"
+  },
+  {
+   "path": "env/docops-arm64-word001/smoke2-3-docx-tools.log",
+   "bytes": 343,
+   "sha256": "59047c456535988ceae8ad110969d4ad6aec627c485a3d8c3e61690c35df3323",
+   "role": "output"
+  },
+  {
+   "path": "env/docops-arm64-word001/smoke4-verifier.log",
+   "bytes": 2066,
+   "sha256": "44374a46e654760ac9c3b3253f451c2ff453f71ba9b386d67c6fb3bd05ede809",
+   "role": "output"
+  },
+  {
+   "path": "env/docops-arm64-word001/smoke5-metadata.log",
+   "bytes": 245,
+   "sha256": "75eef6c3beb9742290286f308ba013bc8d2460ced572007341e46ec35a158771",
+   "role": "output"
+  },
+  {
+   "path": "env/docops-arm64-word001/smoke-work/smoke23.py",
+   "bytes": 1494,
+   "sha256": "aaf441e70936267fc178eccffe8054ef0d01c68f6cc2fd76cc24472dd83be2db",
+   "role": "output"
+  },
+  {
+   "path": "env/docops-arm64-word001/smoke-work/out/synthetic.docx",
+   "bytes": 36585,
+   "sha256": "e74eb574040dd2ee1c91a59bce72214cfaa63e6ec4f022f47335551f67bf4475",
+   "role": "output"
+  },
+  {
+   "path": "env/docops-arm64-word001/smoke-work/out/copied.docx",
+   "bytes": 36588,
+   "sha256": "99d584d8bd09d0ffdce34eee2cd2dc7ebdc14ec7cd628f906ebb8553e32f32ad",
+   "role": "output"
+  },
+  {
+   "path": "env/docops-arm64-word001/build-context/Dockerfile",
+   "bytes": 1385,
+   "sha256": "e9159332535c3bc3faff5bb75568b8003540a4f12cb5e00e7b611c35b71fc1c3",
+   "role": "output",
+   "note": "unused alternative (superseded by local image per user instruction)"
+  },
+  {
+   "path": "env/docops-arm64-word001/build-context/requirements-adapted.txt",
+   "bytes": 469,
+   "sha256": "4c775f6ecb9fa927460f55187ef9d10942d038e8cb759ca44fb1cb43953e4fe0",
+   "role": "output",
+   "note": "unused alternative (superseded by local image per user instruction)"
+  },
+  {
+   "path": "env/docops-arm64-word001/harbor-venv-freeze.txt",
+   "bytes": 1126,
+   "sha256": "e2d552bbb1bcc8757a4d75f0f1dc0fc5c48f5275f2bda4f57ed257c8cdb73721",
+   "role": "output"
+  },
+  {
+   "path": "env/docops-arm64-word001/wiring_smoke.py",
+   "bytes": 7824,
+   "sha256": "7defab5869362d58ff5f5383f30c03aee45793bda66a0dec77b304553d9de1bc",
+   "role": "output"
+  },
+  {
+   "path": "env/docops-arm64-word001/wiring-smoke-result.json",
+   "bytes": 6228,
+   "sha256": "97a5f9241f63030af81393f539c478b87625b7a234e25bc6fadecee0c95062b9",
+   "role": "output"
+  },
+  {
+   "path": "tests/test_docops_pilot_wiring.py",
+   "bytes": 6628,
+   "sha256": "042bc962245ef8c22ad61a48bbafac59fda9a3e55ba67e512c35f49ad6f1679f",
+   "role": "output",
+   "note": "wiring tests (3 directed, all passed)"
+  },
+  {
+   "path": "env/docops-arm64-word001/model-smoke-result.json",
+   "bytes": 3786,
+   "sha256": "91c0da766886b41a1fd518fd5f2a5b8db7f9c61a8e18557689d32105831e66c8",
+   "role": "output"
+  },
+  {
+   "path": "scripts/docops_word_resource_01_entry.py",
+   "bytes": 27854,
+   "sha256": "115ffd3419a1b93fcbad11380c3754ab3ce3e17456c68848da5e41bdd733deee",
+   "role": "output",
+   "note": "v3: agent.setup + dual work/cleanup deadlines + archive guard + exit_code_for + --rmi all; 13 tests"
+  },
+  {
+   "path": "tests/test_docops_word_resource_01_entry.py",
+   "bytes": 24628,
+   "sha256": "d8625b624f485544f31164c82bed7de6ef1a873dfa4c0b67fc711905bd3afde5",
+   "role": "output",
+   "note": "v3: agent.setup + dual work/cleanup deadlines + archive guard + exit_code_for + --rmi all; 13 tests"
+  },
+  {
+   "path": "env/docops-arm64-word001/litellm-path-verification.json",
+   "bytes": 2052,
+   "sha256": "dfcc357d34216becbea2ec7fecd5c393cd3ed613897cfe1f94c5d5f16fb65cce",
+   "role": "output",
+   "note": "Harbor LiteLLM path verification (partial-success, connectivity proven)"
+  },
+  {
+   "path": "env/docops-arm64-word001/frozen-identity.json",
+   "bytes": 285,
+   "sha256": "ad2a649471175ac6365ef64b349a6b57e383d8a1c5c94352fc24f9a2fc51a54f",
+   "role": "output",
+   "note": "re-frozen after v3"
+  },
+  {
+   "path": "env/docops-arm64-word001/plan-identity.json",
+   "bytes": 4671,
+   "sha256": "24023f408d7014ce130d4d14e86ab73d0c1315714d90b9bf70c330f65e6a51f5",
+   "role": "output",
+   "note": "v1 plan snapshot (superseded by frozen-identity.json; kept as history)"
+  }
+ ],
+ "wiring_round": {
+  "date": "2026-10-08",
+  "harbor_install": {
+   "venv": ".venvs/docops-pilot-01",
+   "python": "/home/lcq/.local/bin/python3.12 (3.12.14, uv-managed interpreter)",
+   "harbor": "0.4.0 from fixed source copy env/docops-arm64-word001/harbor-src (vendored third_party/harbor @ DocOps repo ccf7a751bc5c8a69c1cdd0400125d53455b33be3; pyproject sha 7f5a7baf..., uv.lock sha 3fe89d49...)",
+   "install_method": "pip + aliyun index with locked core versions (litellm==1.83.0, pydantic==2.12.5, shortuuid==1.0.13, typer==0.21.1, requests==2.32.5, pyyaml==6.0.3) + 2 import-chain fixes from lock (toml==0.10.2, tenacity==9.1.2); uv sync retried 3x, network-infeasible (registered conflict, not silently upgraded)",
+   "imports": "DocumentToolsAgent (document-tools-agent v0.1.1), DockerEnvironment, LiteLLM, AgentContext, UsageInfo all load",
+   "freeze": "env/docops-arm64-word001/harbor-venv-freeze.txt (60 packages)"
+  },
+  "model_smoke": "STOPPED per instruction on route conflict: registered route is api.deepseek.com + openai/deepseek-flash but the only credential found is a Volcano AI gateway (different base and model names deepseek-v4-flash/v4-pro); no request sent, staged key deleted; user must choose (provide deepseek key / approve gateway route update / skip)",
+  "wiring_result": {
+   "verdict": "PASS: real Harbor lifecycle (compose up/exec/down) wired to existing DockerCliRuntime sampling",
+   "container_id_full": "9475789a35718e3875cb2af2d08f84da2a21bf38ede78f95d7e9fe879e6fbfd3",
+   "cgroup": "v1 at /sys/fs/cgroup/cpu,cpuacct/docker/<full-id>; NOTE: v1 reader requires FULL container id (docker ps --no-trunc), short id yields all-None",
+   "counters": "cpu_usage_usec (ns->usec, recorded), mem_current/mem_peak (v1 max_usage), blkio via throttle.io_service_bytes_recursive (ok_no_records_real_zero semantics, same as Coding chain); io_service_bytes variants not_found",
+   "observed_deltas": "cpu 55,777 -> 1,024,756 usec across synthetic docx exec; mem_peak 7,049,216 -> 63,987,712 bytes",
+   "ownership": "Harbor owns lifecycle; DockerCliRuntime cleanup namespace (awc-<collection>-<run_id>- prefix) cannot match compose container names; script never calls runtime stop/cleanup",
+   "harbor_delete_behavior": "stop(delete=True) runs compose down --rmi local which REMOVES the local task image tag; task image rebuilds deterministically from cache (same image ID 869486d7bdb3... verified twice)",
+   "wall_seconds": 14.74,
+   "agent_events": "DocumentToolsAgent writes per-step transcript document-tools-agent.txt + llm_call_N.json + usage into AgentContext (validated via 3 fake-transport directed tests: normal finish, invalid-JSON recovery, max-steps bounded)",
+   "not_verified": "real model routing (blocked), verifier phase inside a real Harbor trial (verifier runs via harbor.verifier in a full trial; this round exercised env-side only), blkio nonzero semantics"
+  }
+ },
+ "model_smoke": "executed 2026-10-08: fallback route VOLCANO_API_KEY verified for BOTH glm-5.3 (response glm-5-3-260814) and user-selected deepseek-v4-flash (response deepseek-v4-flash-ga-260731, reasoning in separate field); deepseek-v4-flash chosen for same-family-with-Coding-baseline rationale",
+ "official_entry": {
+  "collection": "DOCOPS-WORD-RESOURCE-01",
+  "entry": "scripts/docops_word_resource_01_entry.py",
+  "modes": "default --plan read-only; --execute requires --i-approve-the-docops-word-resource-01 and refuses existing attempts",
+  "chain": "identity -> Harbor start -> full-id container check -> 0.5s sampling (container cgroup + host agent proc) -> DocumentToolsAgent -> official Verifier -> Harbor stop(delete) + removal verify + --rmi tag-removal recorded -> archive",
+  "tests": "16 directed scenarios passed (14 from v4 + normal-path archive wall + image-query failure/skip)",
+  "litellm_verification": "PARTIAL_SUCCESS: connectivity proven via Harbor LiteLLM.call (single request, 1.32s, response parsed); content/model/finish fields not persisted due to a record-serialization bug (UsageInfo has no total_tokens); no second request sent per one-request rule",
+  "version": "v5",
+  "v2_fixes": [
+   "identity: binds 17 files (harbor impl x4, collectors x3, dependency freeze, entry); execute compares recomputed digest to external frozen-identity.json; actual image id verified via docker image inspect before start",
+   "lifecycle: Harbor start/container-id/sampler init INSIDE try/finally; startup exception still cleans and archives; start/stop deadline-bounded; all phase timeouts capped by total-minus-300s-reserve",
+   "adjudication: reads real VerifierResult.rewards (dict); agent termination classified finish/steps_exhausted (transcript tail)/agent_timeout/agent_error; CLI exits 7 on infra failures",
+   "archive: ATTEMPT_COMPLETED written before manifest scan; llm_call_* hashed in manifest; archive_done persisted in on-disk summary; manifest covers summary.json and everything except itself"
+  ],
+  "v3_fixes": [
+   "official agent.setup(env) now called (uploads document-tools runtime, creates submission dir) inside the guarded section with its own SETUP budget; verifier skipped when setup fails",
+   "dual deadlines: work phases capped by total-minus-300s reserve; cleanup (stop/removal) capped by the TOTAL wall - offline counter-example of zero stop-timeout after work exhaustion now covered",
+   "summary container field guards on handle (not just cid): ownership-mismatch counter-example still cleans AND archives",
+   "exit adjudication extracted to exit_code_for: 0 normal (agent_timeout is a normal budget outcome), 7 infra, 8 agent_error/agent_setup_error/verifier_timeout",
+   "actual Harbor 0.4.0 stop uses compose down --rmi all (not --rmi local from 0.22.0 docs); registered per actual code and observed behavior (task image tag removed, base retained)"
+  ],
+  "v4_fixes": [
+   "removal verification and image-tag query now use the REMAINING total budget (cleanup-shareable deadlines), not fixed defaults",
+   "final wall adjudicated AFTER all archiving work (including the manifest scan/hashing/write): archive overrun flips within_total_budget on disk, rewrites summary/ATTEMPT_COMPLETED and refreshes their manifest hashes",
+   "exit 9: total-wall overrun is a distinct non-zero exit (0 normal / 7 infra / 8 agent-error+verifier-timeout / 9 wall overrun)",
+   "new directed counter-example: injected archive delay crosses the wall -> persisted flag false, exit 9, manifest hashes consistent"
+  ],
+  "identity_sha256": "fc35b07a66ac853b01ff26a2b074f26d7c53a471bca76b36c9a921c2f1ed93ee",
+  "v5_fixes": [
+   "final observed wall persisted on the NORMAL path too (not only on overrun): summary/ATTEMPT_COMPLETED rewritten and manifest hashes refreshed in both cases",
+   "image-tag query guarded: exceptions recorded as unknown:<ErrorType> without aborting archive; query not attempted when remaining budget <= 0 (recorded skipped_no_remaining_budget)"
+  ]
+ }
+}

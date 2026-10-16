@@ -1,0 +1,697 @@
+{
+  "schema": "awc-p1-12-review-v1",
+  "batch_run_id": "P1-12-49bfc714",
+  "acceptance": {
+    "archive_recheck": {
+      "outputs": {
+        "summary.json": true
+      },
+      "all_match": true
+    },
+    "identity_consistency": {
+      "approval_checklist_equals_batch_manifest_identity": true,
+      "attempt_identity_equals_batch_manifest_identity": true
+    },
+    "attempts_executed": 9,
+    "verdict_basis": "9/9 planned attempts ran; see per-task results"
+  },
+  "focused_questions": {
+    "q1_requests": {
+      "question": "batch-level 270 requests: counter vs actual call records",
+      "budget_counter_total": 270,
+      "llm_closed_event_total": 270,
+      "llm_ok_total": 261,
+      "llm_error_total": 9,
+      "error_kinds_seen": [
+        "None"
+      ],
+      "finding": "budget counter total 270 equals the sum of per-run llm_request closed events (270); both count CLOSED model calls (ok 261 / errored 9); every attempt hit its 30-request cap. 'Requests' here = closed model calls; successful responses vs retries cannot be further split from this evidence (mini retry mapping not recorded per-call): unknown. Tool steps are counted separately (mini_tool_events) and are not requests.",
+      "steps_vs_requests": [
+        41,
+        58,
+        35,
+        53,
+        64,
+        28,
+        35,
+        49,
+        45
+      ]
+    },
+    "q2_no_candidate": {
+      "question": "astropy__astropy-13398 no_candidate attempt",
+      "attempts": [
+        {
+          "run_id": "20260928T023501Z-28a197",
+          "round": 0,
+          "candidate_patch_exists": false,
+          "candidate_patch_bytes": 0,
+          "execution_status": "no_candidate",
+          "evaluation_status": "not_run",
+          "verifier_scope_present": false,
+          "resolved": null,
+          "finding": "agent ended without a candidate patch (execution_status=no_candidate); the verifier was NEVER started for this attempt (no verifier scope, evaluation not_run) - this is NOT an evaluation failure and must not be counted as one"
+        }
+      ]
+    },
+    "q3_credentials": {
+      "question": "credential handling statement (static chain check)",
+      "finding": "resolve_credentials() loads via smoke_launcher.load_credentials into memory and maps to child env keys; values are passed as runner credentials to the harness child environment only. No credential values appear in argv, events.jsonl, mini_status, metadata.json, samples.json or the batch report (checked statically over the nine raw dirs). Whether anything outside this batch ever persisted them is outside this evidence: no absolute guarantee is made; within the archived evidence of this batch no credential material was found."
+    }
+  },
+  "raw_points": [
+    {
+      "round": 0,
+      "instance_id": "astropy__astropy-13236",
+      "run_id": "20260928T023250Z-20d5ed",
+      "run_dir": "data/raw/generated/P1-12/20260928T023250Z-20d5ed",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "resolved": true,
+      "resolved_note": null,
+      "wall_s_total": 130.462280245,
+      "wall_s_execution_phase": 15.922454319,
+      "budget_requests_counter": 30,
+      "llm": {
+        "requests_closed": 30,
+        "ok": 30,
+        "errors": 0,
+        "error_kinds": [],
+        "prompt_tokens": 415660,
+        "completion_tokens": 7202
+      },
+      "tools": {
+        "tool_calls": 41,
+        "tool_closed": 41,
+        "nonzero_returncodes": 0
+      },
+      "agent_scope": {
+        "cpu_core_seconds": 20.567662,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 114.181691962,
+        "memory_kernel_peak_bytes": 116752384,
+        "memory_sampled_max_bytes": 116228096,
+        "n_samples": 229,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "verifier_scope": {
+        "cpu_core_seconds": 7.199007,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 15.501338972,
+        "memory_kernel_peak_bytes": 111345664,
+        "memory_sampled_max_bytes": 105381888,
+        "n_samples": 31,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "cleanup_status": "ok",
+      "archive_status": "ok"
+    },
+    {
+      "round": 0,
+      "instance_id": "astropy__astropy-13398",
+      "run_id": "20260928T023501Z-28a197",
+      "run_dir": "data/raw/generated/P1-12/20260928T023501Z-28a197",
+      "execution_status": "no_candidate",
+      "evaluation_status": "not_run",
+      "resolved": null,
+      "resolved_note": "agent produced no candidate patch; verifier not started; evaluation_status=not_run by design",
+      "wall_s_total": 134.417827798,
+      "wall_s_execution_phase": 134.417825968,
+      "budget_requests_counter": 30,
+      "llm": {
+        "requests_closed": 30,
+        "ok": 30,
+        "errors": 0,
+        "error_kinds": [],
+        "prompt_tokens": 731426,
+        "completion_tokens": 7094
+      },
+      "tools": {
+        "tool_calls": 58,
+        "tool_closed": 58,
+        "nonzero_returncodes": 0
+      },
+      "agent_scope": {
+        "cpu_core_seconds": 28.118863,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 134.052873898,
+        "memory_kernel_peak_bytes": 215769088,
+        "memory_sampled_max_bytes": 215769088,
+        "n_samples": 268,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "verifier_scope": null,
+      "cleanup_status": "ok",
+      "archive_status": "ok"
+    },
+    {
+      "round": 0,
+      "instance_id": "django__django-16485",
+      "run_id": "20260928T023716Z-743095",
+      "run_dir": "data/raw/generated/P1-12/20260928T023716Z-743095",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "resolved": true,
+      "resolved_note": null,
+      "wall_s_total": 146.866876817,
+      "wall_s_execution_phase": 11.234189074,
+      "budget_requests_counter": 30,
+      "llm": {
+        "requests_closed": 30,
+        "ok": 29,
+        "errors": 1,
+        "error_kinds": [
+          "None"
+        ],
+        "prompt_tokens": 514836,
+        "completion_tokens": 11796
+      },
+      "tools": {
+        "tool_calls": 35,
+        "tool_closed": 35,
+        "nonzero_returncodes": 1
+      },
+      "agent_scope": {
+        "cpu_core_seconds": 16.178434,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 135.28609292,
+        "memory_kernel_peak_bytes": 717516800,
+        "memory_sampled_max_bytes": 640806912,
+        "n_samples": 271,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "verifier_scope": {
+        "cpu_core_seconds": 3.280055,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 10.869994463,
+        "memory_kernel_peak_bytes": 72708096,
+        "memory_sampled_max_bytes": 72503296,
+        "n_samples": 21,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "cleanup_status": "ok",
+      "archive_status": "ok"
+    },
+    {
+      "round": 1,
+      "instance_id": "astropy__astropy-13398",
+      "run_id": "20260928T023942Z-201a12",
+      "run_dir": "data/raw/generated/P1-12/20260928T023942Z-201a12",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "resolved": false,
+      "resolved_note": null,
+      "wall_s_total": 204.50897941,
+      "wall_s_execution_phase": 13.484585451,
+      "budget_requests_counter": 30,
+      "llm": {
+        "requests_closed": 30,
+        "ok": 30,
+        "errors": 0,
+        "error_kinds": [],
+        "prompt_tokens": 902295,
+        "completion_tokens": 17397
+      },
+      "tools": {
+        "tool_calls": 53,
+        "tool_closed": 53,
+        "nonzero_returncodes": 1
+      },
+      "agent_scope": {
+        "cpu_core_seconds": 13.571924,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 190.690901884,
+        "memory_kernel_peak_bytes": 47378432,
+        "memory_sampled_max_bytes": 43450368,
+        "n_samples": 382,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "verifier_scope": {
+        "cpu_core_seconds": 5.999492,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 13.125629361,
+        "memory_kernel_peak_bytes": 127508480,
+        "memory_sampled_max_bytes": 105226240,
+        "n_samples": 27,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "cleanup_status": "ok",
+      "archive_status": "ok"
+    },
+    {
+      "round": 1,
+      "instance_id": "astropy__astropy-13236",
+      "run_id": "20260928T024307Z-53761e",
+      "run_dir": "data/raw/generated/P1-12/20260928T024307Z-53761e",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "resolved": true,
+      "resolved_note": null,
+      "wall_s_total": 148.055569576,
+      "wall_s_execution_phase": 14.951265144,
+      "budget_requests_counter": 30,
+      "llm": {
+        "requests_closed": 30,
+        "ok": 30,
+        "errors": 0,
+        "error_kinds": [],
+        "prompt_tokens": 649145,
+        "completion_tokens": 9355
+      },
+      "tools": {
+        "tool_calls": 64,
+        "tool_closed": 64,
+        "nonzero_returncodes": 1
+      },
+      "agent_scope": {
+        "cpu_core_seconds": 15.706197,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 132.804732967,
+        "memory_kernel_peak_bytes": 84701184,
+        "memory_sampled_max_bytes": 79548416,
+        "n_samples": 266,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "verifier_scope": {
+        "cpu_core_seconds": 7.40763,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 14.635103174,
+        "memory_kernel_peak_bytes": 110653440,
+        "memory_sampled_max_bytes": 106598400,
+        "n_samples": 30,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "cleanup_status": "ok",
+      "archive_status": "ok"
+    },
+    {
+      "round": 1,
+      "instance_id": "django__django-16485",
+      "run_id": "20260928T024535Z-eb2d90",
+      "run_dir": "data/raw/generated/P1-12/20260928T024535Z-eb2d90",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "resolved": true,
+      "resolved_note": null,
+      "wall_s_total": 135.719736294,
+      "wall_s_execution_phase": 11.143858451,
+      "budget_requests_counter": 30,
+      "llm": {
+        "requests_closed": 30,
+        "ok": 25,
+        "errors": 5,
+        "error_kinds": [
+          "None"
+        ],
+        "prompt_tokens": 346095,
+        "completion_tokens": 9710
+      },
+      "tools": {
+        "tool_calls": 28,
+        "tool_closed": 28,
+        "nonzero_returncodes": 1
+      },
+      "agent_scope": {
+        "cpu_core_seconds": 10.463032,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 124.263076587,
+        "memory_kernel_peak_bytes": 658452480,
+        "memory_sampled_max_bytes": 565403648,
+        "n_samples": 249,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "verifier_scope": {
+        "cpu_core_seconds": 3.240824,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 10.818381391,
+        "memory_kernel_peak_bytes": 73879552,
+        "memory_sampled_max_bytes": 73646080,
+        "n_samples": 22,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "cleanup_status": "ok",
+      "archive_status": "ok"
+    },
+    {
+      "round": 2,
+      "instance_id": "django__django-16485",
+      "run_id": "20260928T024751Z-12c3df",
+      "run_dir": "data/raw/generated/P1-12/20260928T024751Z-12c3df",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "resolved": true,
+      "resolved_note": null,
+      "wall_s_total": 138.44796404,
+      "wall_s_execution_phase": 11.141902073,
+      "budget_requests_counter": 30,
+      "llm": {
+        "requests_closed": 30,
+        "ok": 27,
+        "errors": 3,
+        "error_kinds": [
+          "None"
+        ],
+        "prompt_tokens": 599832,
+        "completion_tokens": 10030
+      },
+      "tools": {
+        "tool_calls": 35,
+        "tool_closed": 35,
+        "nonzero_returncodes": 0
+      },
+      "agent_scope": {
+        "cpu_core_seconds": 8.694135,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 126.988979982,
+        "memory_kernel_peak_bytes": 66732032,
+        "memory_sampled_max_bytes": 42721280,
+        "n_samples": 254,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "verifier_scope": {
+        "cpu_core_seconds": 3.228039,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 10.817328186,
+        "memory_kernel_peak_bytes": 71618560,
+        "memory_sampled_max_bytes": 71618560,
+        "n_samples": 21,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "cleanup_status": "ok",
+      "archive_status": "ok"
+    },
+    {
+      "round": 2,
+      "instance_id": "astropy__astropy-13398",
+      "run_id": "20260928T025010Z-5ed403",
+      "run_dir": "data/raw/generated/P1-12/20260928T025010Z-5ed403",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "resolved": false,
+      "resolved_note": null,
+      "wall_s_total": 168.49373719,
+      "wall_s_execution_phase": 11.65641307,
+      "budget_requests_counter": 30,
+      "llm": {
+        "requests_closed": 30,
+        "ok": 30,
+        "errors": 0,
+        "error_kinds": [],
+        "prompt_tokens": 880949,
+        "completion_tokens": 13000
+      },
+      "tools": {
+        "tool_calls": 49,
+        "tool_closed": 49,
+        "nonzero_returncodes": 2
+      },
+      "agent_scope": {
+        "cpu_core_seconds": 22.576351,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 156.504474917,
+        "memory_kernel_peak_bytes": 132202496,
+        "memory_sampled_max_bytes": 108609536,
+        "n_samples": 313,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "verifier_scope": {
+        "cpu_core_seconds": 4.238537,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 11.370254165,
+        "memory_kernel_peak_bytes": 84103168,
+        "memory_sampled_max_bytes": 83951616,
+        "n_samples": 23,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "cleanup_status": "ok",
+      "archive_status": "ok"
+    },
+    {
+      "round": 2,
+      "instance_id": "astropy__astropy-13236",
+      "run_id": "20260928T025258Z-1a3046",
+      "run_dir": "data/raw/generated/P1-12/20260928T025258Z-1a3046",
+      "execution_status": "ok",
+      "evaluation_status": "ok",
+      "resolved": true,
+      "resolved_note": null,
+      "wall_s_total": 147.28257995,
+      "wall_s_execution_phase": 15.153049091,
+      "budget_requests_counter": 30,
+      "llm": {
+        "requests_closed": 30,
+        "ok": 30,
+        "errors": 0,
+        "error_kinds": [],
+        "prompt_tokens": 446213,
+        "completion_tokens": 10263
+      },
+      "tools": {
+        "tool_calls": 45,
+        "tool_closed": 45,
+        "nonzero_returncodes": 3
+      },
+      "agent_scope": {
+        "cpu_core_seconds": 26.219565,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 131.847816321,
+        "memory_kernel_peak_bytes": 115372032,
+        "memory_sampled_max_bytes": 109465600,
+        "n_samples": 264,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "verifier_scope": {
+        "cpu_core_seconds": 7.71932,
+        "cpu_evidence": "counter_boundary",
+        "wall_s": 14.785979089,
+        "memory_kernel_peak_bytes": 109936640,
+        "memory_sampled_max_bytes": 105619456,
+        "n_samples": 29,
+        "formal_io": "io.stat_boundary_delta"
+      },
+      "cleanup_status": "ok",
+      "archive_status": "ok"
+    }
+  ],
+  "per_task": {
+    "astropy__astropy-13236": {
+      "planned": 3,
+      "executed_ok": 3,
+      "resolved_true": 3,
+      "resolved_false": 0,
+      "not_evaluated": 0,
+      "wall_s_stats": {
+        "n": 3,
+        "median": 147.28257995,
+        "iqr": 8.796644665500025,
+        "min": 130.462280245,
+        "max": 148.055569576
+      },
+      "agent_cpu_core_s_stats": {
+        "n": 3,
+        "median": 20.567662,
+        "iqr": 5.256684,
+        "min": 15.706197,
+        "max": 26.219565
+      },
+      "agent_wall_s_stats": {
+        "n": 3,
+        "median": 131.847816321,
+        "iqr": 9.311520502500017,
+        "min": 114.181691962,
+        "max": 132.804732967
+      },
+      "agent_memory_kernel_peak_bytes_stats": {
+        "n": 3,
+        "median": 115372032,
+        "iqr": 16025600.0,
+        "min": 84701184,
+        "max": 116752384
+      },
+      "verifier_cpu_core_s_stats": {
+        "n": 3,
+        "median": 7.40763,
+        "iqr": 0.2601565000000008,
+        "min": 7.199007,
+        "max": 7.71932
+      },
+      "verifier_memory_kernel_peak_bytes_stats": {
+        "n": 3,
+        "median": 110653440,
+        "iqr": 704512.0,
+        "min": 109936640,
+        "max": 111345664
+      },
+      "llm_prompt_tokens_stats": {
+        "n": 3,
+        "median": 446213,
+        "iqr": 116742.5,
+        "min": 415660,
+        "max": 649145
+      },
+      "llm_completion_tokens_stats": {
+        "n": 3,
+        "median": 9355,
+        "iqr": 1530.5,
+        "min": 7202,
+        "max": 10263
+      },
+      "tool_calls_stats": {
+        "n": 3,
+        "median": 45,
+        "iqr": 11.5,
+        "min": 41,
+        "max": 64
+      },
+      "note": "repeats are raw points within one task, not independent tasks; median/IQR linear interpolation"
+    },
+    "astropy__astropy-13398": {
+      "planned": 3,
+      "executed_ok": 2,
+      "resolved_true": 0,
+      "resolved_false": 2,
+      "not_evaluated": 1,
+      "wall_s_stats": {
+        "n": 3,
+        "median": 168.49373719,
+        "iqr": 35.04557580599999,
+        "min": 134.417827798,
+        "max": 204.50897941
+      },
+      "agent_cpu_core_s_stats": {
+        "n": 3,
+        "median": 22.576351,
+        "iqr": 7.273469500000001,
+        "min": 13.571924,
+        "max": 28.118863
+      },
+      "agent_wall_s_stats": {
+        "n": 3,
+        "median": 156.504474917,
+        "iqr": 28.319013993,
+        "min": 134.052873898,
+        "max": 190.690901884
+      },
+      "agent_memory_kernel_peak_bytes_stats": {
+        "n": 3,
+        "median": 132202496,
+        "iqr": 84195328.0,
+        "min": 47378432,
+        "max": 215769088
+      },
+      "verifier_cpu_core_s_stats": {
+        "n": 2,
+        "median": 5.1190145000000005,
+        "iqr": 0.8804775000000005,
+        "min": 4.238537,
+        "max": 5.999492
+      },
+      "verifier_memory_kernel_peak_bytes_stats": {
+        "n": 2,
+        "median": 105805824.0,
+        "iqr": 21702656.0,
+        "min": 84103168,
+        "max": 127508480
+      },
+      "llm_prompt_tokens_stats": {
+        "n": 3,
+        "median": 880949,
+        "iqr": 85434.5,
+        "min": 731426,
+        "max": 902295
+      },
+      "llm_completion_tokens_stats": {
+        "n": 3,
+        "median": 13000,
+        "iqr": 5151.5,
+        "min": 7094,
+        "max": 17397
+      },
+      "tool_calls_stats": {
+        "n": 3,
+        "median": 53,
+        "iqr": 4.5,
+        "min": 49,
+        "max": 58
+      },
+      "note": "repeats are raw points within one task, not independent tasks; median/IQR linear interpolation"
+    },
+    "django__django-16485": {
+      "planned": 3,
+      "executed_ok": 3,
+      "resolved_true": 3,
+      "resolved_false": 0,
+      "not_evaluated": 0,
+      "wall_s_stats": {
+        "n": 3,
+        "median": 138.44796404,
+        "iqr": 5.573570261500009,
+        "min": 135.719736294,
+        "max": 146.866876817
+      },
+      "agent_cpu_core_s_stats": {
+        "n": 3,
+        "median": 10.463032,
+        "iqr": 3.7421495,
+        "min": 8.694135,
+        "max": 16.178434
+      },
+      "agent_wall_s_stats": {
+        "n": 3,
+        "median": 126.988979982,
+        "iqr": 5.511508166499993,
+        "min": 124.263076587,
+        "max": 135.28609292
+      },
+      "agent_memory_kernel_peak_bytes_stats": {
+        "n": 3,
+        "median": 658452480,
+        "iqr": 325392384.0,
+        "min": 66732032,
+        "max": 717516800
+      },
+      "verifier_cpu_core_s_stats": {
+        "n": 3,
+        "median": 3.240824,
+        "iqr": 0.02600800000000003,
+        "min": 3.228039,
+        "max": 3.280055
+      },
+      "verifier_memory_kernel_peak_bytes_stats": {
+        "n": 3,
+        "median": 72708096,
+        "iqr": 1130496.0,
+        "min": 71618560,
+        "max": 73879552
+      },
+      "llm_prompt_tokens_stats": {
+        "n": 3,
+        "median": 514836,
+        "iqr": 126868.5,
+        "min": 346095,
+        "max": 599832
+      },
+      "llm_completion_tokens_stats": {
+        "n": 3,
+        "median": 10030,
+        "iqr": 1043.0,
+        "min": 9710,
+        "max": 11796
+      },
+      "tool_calls_stats": {
+        "n": 3,
+        "median": 35,
+        "iqr": 3.5,
+        "min": 28,
+        "max": 35
+      },
+      "note": "repeats are raw points within one task, not independent tasks; median/IQR linear interpolation"
+    }
+  },
+  "statistics_note": "median/IQR linear interpolation; n = valid points per task (verifier stats n=2 for astropy-13398 because one attempt was not evaluated); costs unknown; formal I/O null by design",
+  "allowed_claims": [
+    "descriptive run-to-run variation within each fixed task under the registered configuration",
+    "task-level resolved counts (3/3, 3/3, 0-of-3 with one not-evaluated) for exactly these three tasks",
+    "NOT cross-task causal claims, NOT Coding-category representativeness, NOT per-tool CPU, NOT wait-time inference"
+  ]
+}

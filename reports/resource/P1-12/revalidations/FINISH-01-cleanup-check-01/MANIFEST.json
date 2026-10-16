@@ -1,0 +1,23 @@
+{
+  "check_id": "P1-12-FINISH-01-cleanup-check-01",
+  "checked_at_utc": "2026-09-28T10:59:43Z",
+  "inputs": {
+    "raw_verifier_start_source.jsonl": {
+      "path": "data/raw/generated/P1-12-FINISH-01/20260928T092455Z-69ecb7/events.jsonl",
+      "bytes": 17084,
+      "sha256": "639e47db355e3924d6271245a09d63744bce8f37111b8e7770d95137fd308c00"
+    },
+    "prior_finish_manifest.json": {
+      "path": "reports/resource/P1-12/revalidations/FINISH-01/MANIFEST.json",
+      "bytes": 11694,
+      "sha256": "5f14028a193e5489392582e40606b49727f7ef1e13034cb1e70eed9ed9b2a5da"
+    }
+  },
+  "outputs": {
+    "CHECK.json": {
+      "bytes": 1667,
+      "sha256": "cfaee23467837cf7d78cc3ae86fd484f74d3f63508cf23cf95cf9cf7754be078"
+    }
+  },
+  "manifest_self_hash": false
+}

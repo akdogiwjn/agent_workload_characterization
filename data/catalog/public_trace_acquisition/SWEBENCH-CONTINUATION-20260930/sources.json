@@ -1,0 +1,102 @@
+{
+ "created_at_utc": "2026-10-05",
+ "round_window": {
+  "started": "2026-09-30T01:44Z",
+  "interrupted": "2026-09-30T~03:41Z (server shutdown)",
+  "resumed": "2026-10-05T15:27Z"
+ },
+ "continuation_of": "data/catalog/public_trace_acquisition/BULK-NONVIDEO-20260929/",
+ "index_commit": "40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+ "download_budget": {
+  "max_response_body_bytes_total_round": 21474836480,
+  "prerestart_response_bytes": "unknown (records lost); on-disk new bytes 0.27 GiB; conservative estimate 0.29 GiB used",
+  "postrestart_response_bytes_counter": 501285623,
+  "max_concurrent_downloads": 3,
+  "single_file_skip_bytes": 2147483648,
+  "retry_limit_new_objects": 1,
+  "retry_limit_old_failed_objects": 1
+ },
+ "selection_policy": {
+  "tier_order": [
+   "verified remaining groups",
+   "lite",
+   "test",
+   "previous-round 326 failed objects"
+  ],
+  "within_tier_order": "submission groups sorted ascending by total trajs bytes to maximize submission coverage under budget",
+  "object_scope": "S3 objects under */<group>/trajs/ only; logs/, all_preds.jsonl, preds.json not fetched; experiments evaluation metadata already local from previous round",
+  "path_layout": "verified/<group>/<rest> -> experiments/<group>/<rest>; lite|test/<group>/<rest> -> experiments/lite|test/<group>/<rest> (avoids collision with same-named verified groups)",
+  "resume_semantics": "files already on disk with listing-matching size are skipped, not re-downloaded"
+ },
+ "sources": [
+  {
+   "name": "SWE-bench public submissions S3 bucket (swe-bench-submissions)",
+   "kind": "public artifact bucket referenced by fixed experiments index metadata assets",
+   "version_anchor": "experiments commit 40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+   "listing_snapshots": [
+    "verified: BULK-NONVIDEO-20260929/source_metadata/swebench_s3_verified_objects.jsonl (373220 objects, 2026-09-29)",
+    "lite: source_metadata/swebench_s3_lite_objects_snapshot.jsonl (137370 objects, 2026-09-30)",
+    "test: source_metadata/swebench_s3_test_objects_snapshot.jsonl (267492 objects, 2026-09-30)"
+   ],
+   "verified": {
+    "listing_trajs_groups": 127,
+    "expected_objects": 127303,
+    "expected_bytes_gib": 37.3,
+    "previous_round_objects": 2578,
+    "this_round_new_objects": 12827,
+    "cumulative_complete_objects": 15405,
+    "groups_complete_after": 32,
+    "groups_partial_after": 3,
+    "groups_untouched": 93,
+    "metadata_submissions_total": 182,
+    "metadata_s3_linked": 162,
+    "metadata_trajs_null": 11,
+    "metadata_other": 2,
+    "metadata_note": "49 metadata s3 links have no objects in listing (mini-* absent; some logs only). 14 listing groups lack explicit metadata s3 link (incl. codeshellagent with dangling internal link); acquired per bucket path convention."
+   },
+   "lite": {
+    "listing_trajs_groups": 65,
+    "expected_objects": 64492,
+    "this_round_new_objects": 0,
+    "status": "not reached (tier 1 unfinished within budget)"
+   },
+   "test": {
+    "listing_trajs_groups": 15,
+    "expected_objects": 153250,
+    "this_round_new_objects": 0,
+    "status": "not reached (tier 1 unfinished within budget)"
+   }
+  },
+  {
+   "name": "SemAgent_Multi (external GitHub, lite submission trajectories)",
+   "repo": "AnvithPabba/SemAgent_Multi",
+   "pinned_commit": "826396fa30f002e126762bdb90ef934d2aad3afa",
+   "license": "MIT (source_metadata/semagent_multi_LICENSE.txt from pinned commit)",
+   "status": "index_registered_not_downloaded (tier 2 not reached)",
+   "registration": "source_metadata/semagent_multi_tree_registration.json (tree API truncated; >=29276 blobs / >=453358014 bytes in SWEBench_Lite subtree)",
+   "snapshot_semantics": "future fetch is a byte snapshot at pinned commit; metadata links to branch main"
+  },
+  {
+   "name": "john-bang/20260901_mini-v2.4.2_gemini-3-5-flash (external GitHub, verified submission)",
+   "status": "unavailable_404 (checked 2026-09-30)",
+   "note": "metadata asset link returns 404; no confirmable public trajectory"
+  }
+ ],
+ "budget_report": {
+  "postrestart_stop_reasons": [
+   "budget_or_deadline_stop",
+   "wall_deadline"
+  ],
+  "postrestart_wall_seconds": 9570.1,
+  "postrestart_response_bytes": 501285623,
+  "postrestart_saved_bytes": 500942629,
+  "prerestart_response_bytes": "unknown (see manifest notes)",
+  "accounting_limits": "response-byte counter covers S3 GET response bodies only; headers, TLS, listing/API calls, GitHub API reads not included"
+ },
+ "tier4_old_failed": {
+  "old_failed_objects": 326,
+  "retried_this_round": 0,
+  "succeeded_this_round": 0,
+  "failed_again": 0
+ }
+}

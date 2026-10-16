@@ -2,6 +2,8 @@
 
 本页是下一批的设计要求，不授权预检、安装或实验。历史 raw、catalog、批准、marker、manifest 不改写。
 
+后续实测的统一记录与验收清单见 [trace 契约 §10](trace_contract.md#10-后续真实执行的必备记录real-run-measurement-01)。Coding/DocOps 新执行路径自动封存 `environment.json` 与 `measurement.json`；环境是执行当时的宿主观察，不补写历史环境，也不是依赖 lock。采集代码变更进入身份，旧冻结值/批准保持原样，不可授权修改后代码。
+
 ## 当前真实缺口
 
 `pyproject.toml` 使用版本范围（含构建依赖），仓库目前没有可验证的全环境 lockfile。`references/manifest.yaml` 是 partial 参考登记，空 commit 不是 latest，也不代表正式实验实际使用版本。当前包清单是环境观察，不是可重建 lock，不提供历史环境证明。
@@ -26,9 +28,11 @@
 ## 状态维护
 
 `project_state.json` 是日常进度唯一真源，不被任何 runner 用作批准记录。
-其 evidence 保留来源哈希，公开摘要由六个文档中的 PROJECT_STATE 块展示。
+其 evidence 保留来源哈希，公开摘要只由README、文档索引和项目总览三个当前页面的PROJECT_STATE块展示；归档旧文档不再跟随当前状态更新。
 修改状态时同步对应块；运行 `python3 -B scripts/check_project_state.py` 检查漂移和证据哈希。
 脚本只读，不自动修改文档或放行实验。历史 catalog 的 status 是当时计划快照，当前状态以真源为准；安全开关保持原值。
+
+历史文档迁移见[历史索引](history_index.md)与[路径登记](archive_index.json)。历史manifest中的旧路径是原始来源标识，不替换成内容不同的新规范；需要核验时按索引定位，并比较该manifest原登记的SHA-256。原版本与归档版本哈希不同仍是内容漂移，不能因“已找到新位置”而判通过。归档仅在本机，不随GitHub代码分发。
 
 ## 纯离线检查
 

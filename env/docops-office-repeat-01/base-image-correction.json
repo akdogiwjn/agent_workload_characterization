@@ -1,0 +1,14 @@
+{
+  "collection": "DOCOPS-OFFICE-REPEAT-01",
+  "corrected_at_utc": "2026-10-10T15:37:21.759614+00:00",
+  "historical_erroneous_base_id": "sha256:062bf50871c0e9d7d4a175643343746f27c7857325962525d7ebe9ae0c08fe9b1",
+  "corrected_base_id": "sha256:062bf50871c0e9d7d4a175643343746f27c785732596252d7ebe9ae0c08fe9b1",
+  "inspect_reference": "harbor-claude-code-base:2.1.114",
+  "inspect_platform": "linux/arm64",
+  "basis": [
+    "env/docops-arm64-word001/plan-identity-04.json",
+    "env/docops-office-repeat-01/execution-stop.json",
+    "fixed-endpoint read-only Docker inspect in this preparation"
+  ],
+  "historical_files_modified": false
+}

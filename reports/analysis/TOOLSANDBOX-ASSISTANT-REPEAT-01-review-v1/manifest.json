@@ -1,0 +1,941 @@
+{
+  "schema": "toolsandbox-assistant-repeat-01-review-manifest-v1",
+  "identity_sha256": "1643e0c8c6158734ce7186d24afd5ce36d5a40718d930e7eea2a507f0b32149b",
+  "inputs": [
+    {
+      "path": ".venvs/toolsandbox-pilot-01/bin/python",
+      "bytes": 67632,
+      "sha256": "e22abd8ede94ba8df9d737497b53a8840c2d78525ea2c666c81ff414c3df01ec"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01/ATTEMPT_COMPLETED.json",
+      "bytes": 528,
+      "sha256": "71cc955cbd7889465062a9dc26253552688994bd9112fabadad5a3f4956c2754"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01/ATTEMPT_STARTED.json",
+      "bytes": 511,
+      "sha256": "e716da68da999e599113b818bafd3ef01bda29cbacd3a1f9ca54dd8fe74f01c6"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01/boundaries.jsonl",
+      "bytes": 4802,
+      "sha256": "8e7124f79c913b49923f37ec00f2b7f8e41cdb5b7169c8ed80998300d6f6d6ca"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01/environment.json",
+      "bytes": 2264,
+      "sha256": "38b01cfb3e8e37d795de00cd97f9db6214c01a57b74ff80365ea2e69813f0fa8"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01/events.jsonl",
+      "bytes": 18988,
+      "sha256": "811ee934b071cd7aca5ac874ca915d908d927573f775b0c570349c500c4d1fb2"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01/job.json",
+      "bytes": 3213,
+      "sha256": "a58732572d364fb4cc9e271a6ea03aee7df671058dab88c4fdbe4eaab483368b"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01/manifest.json",
+      "bytes": 2339,
+      "sha256": "7202689de0d9f96e6df5b000d4f833e2ad7c35e56cbbf7f7fd68c91c886a06ec"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01/official/trajectories/send_message_with_contact_content_cellular_off/conversation.json",
+      "bytes": 17490,
+      "sha256": "0f32f76048aa7aa260293814e7aa12f87374f9c07b11d71de26519ced31394be"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01/official/trajectories/send_message_with_contact_content_cellular_off/execution_context.json",
+      "bytes": 35134,
+      "sha256": "aa3d163f7759cde527c00c537adff23e7e4fe888e263223d510bb16ca9fa8bd0"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01/official/trajectories/send_message_with_contact_content_cellular_off/pretty_print.txt",
+      "bytes": 6740,
+      "sha256": "e07924622db21f045e7fd9eb9bbfef3ea79ae859ad653b154447045c2ae1ec2c"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01/result.json",
+      "bytes": 4117,
+      "sha256": "609adc0624c94bab752360ad2bf674dc6c0870ab74961cb2a55351ff2ad16233"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01/samples.jsonl",
+      "bytes": 13025,
+      "sha256": "6f0ad76a50b6b3336c2a9dc15decca8b721ab85e2a3cafa96bb8fafc3d4960c9"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01/scenario_context.json",
+      "bytes": 15330,
+      "sha256": "45191ef88d01d2d4b17c184f4bffd25086a469e532af11136c39a8a932322d01"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01/worker.stderr",
+      "bytes": 803,
+      "sha256": "95cac3685eba9804f706350245b4483acc8a39a21bb8b058356053a25f147d9f"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01/worker.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01/ATTEMPT_COMPLETED.json",
+      "bytes": 528,
+      "sha256": "0cd97c81a48233fc7a89739fc396d45a6116279dc9b1904052e28de494e780fc"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01/ATTEMPT_STARTED.json",
+      "bytes": 509,
+      "sha256": "fd9f6b2f775cb6ed2e808e3301f272f48d146bbce0dddba3293e149a2d61b526"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01/boundaries.jsonl",
+      "bytes": 4805,
+      "sha256": "481b560bbca8a9d024b94eafa6eb37c59eea326dd0a98b3af47b72ada19c978b"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01/environment.json",
+      "bytes": 2264,
+      "sha256": "647c9398cbb41dd44f58205a996835dca834cb8b3a46f2a91514c65460743df0"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01/events.jsonl",
+      "bytes": 18959,
+      "sha256": "5ce81a9962a154a91e6d7567960ee7eed0ba0a5d51014c75d06fc50a84716f9d"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01/job.json",
+      "bytes": 3211,
+      "sha256": "ee3bd18393e4f9ddf0f00f819eaa5d0b637d903d262ac05f3365cbf8252aeb90"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01/manifest.json",
+      "bytes": 2332,
+      "sha256": "7a513c6e5d2b474c75310f070ad78922db58a0bbe899e381ad2d9ab08580ecd3"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01/official/trajectories/add_reminder_content_and_week_delta_and_time/conversation.json",
+      "bytes": 9326,
+      "sha256": "01580e439587e5e7f7e92f3c6e77bc50eb0b8cf185acd4799070d0c0bbc43e53"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01/official/trajectories/add_reminder_content_and_week_delta_and_time/execution_context.json",
+      "bytes": 31944,
+      "sha256": "97094fee4612204f23670e8a0ade5f4cfe2aedf19f6ac5ece336deac37f3ac06"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01/official/trajectories/add_reminder_content_and_week_delta_and_time/pretty_print.txt",
+      "bytes": 6738,
+      "sha256": "4a4e70ba0aa343d378d6f7888f3e95ecc4b54ce59edb55291b58c4841db1067a"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01/result.json",
+      "bytes": 4006,
+      "sha256": "06d353bdb5e4828d582b77a770ba06c558f8e0a90d40aa5bc34365bb0a35cd46"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01/samples.jsonl",
+      "bytes": 12602,
+      "sha256": "3290c4702dc9b4ec0f01d8248d7081dca72e17b917f3288b72adb75971265ed2"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01/scenario_context.json",
+      "bytes": 11937,
+      "sha256": "02ddfc2b7adcc9a5efda96e474462c2fa749c9d191f0d883c9cb8c35310b235e"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01/worker.stderr",
+      "bytes": 787,
+      "sha256": "a2143739704d7c6fe4efd5501027783a3c4f8f866ea04aa2a4b1a7cf80d1e967"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01/worker.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01/ATTEMPT_COMPLETED.json",
+      "bytes": 528,
+      "sha256": "0b4be0a94c641997510078d42f4c6917d317228ce42d629cc980a3165c94d7b0"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01/ATTEMPT_STARTED.json",
+      "bytes": 519,
+      "sha256": "122d175297100ece5c12a0234bd7ebb7eadfc46705034dd8b2eeead6190d9eb8"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01/boundaries.jsonl",
+      "bytes": 4814,
+      "sha256": "b6c240c1d12abf4f1df4440a248f31c3accb1e47233a184a67c88822aebdff31"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01/environment.json",
+      "bytes": 2264,
+      "sha256": "b52c93b02d99e9f6cde7f6265e97488980da77232f4ac4440c714e776221ac22"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01/events.jsonl",
+      "bytes": 26304,
+      "sha256": "db0cd0a78a1a677c68526c9a0a00fc3aec4dc217570edcf8e2b695a573fae4a9"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01/job.json",
+      "bytes": 3221,
+      "sha256": "f244935603d784d31010df38f95ba506f745348b910a391a8fcde60b66950a49"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01/manifest.json",
+      "bytes": 2364,
+      "sha256": "717789410a46a8e55200f5d10fe656971f30bbabf76931766aadd6d01a731f87"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/conversation.json",
+      "bytes": 25721,
+      "sha256": "84df807e83b3897e72e79feac61f79b3ab83749f5acba73eb3816def7f90076c"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/execution_context.json",
+      "bytes": 47327,
+      "sha256": "0f994a83c13185594c91d021dd052fc70bf51ac03263eeede2a3383ed5cd055d"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/pretty_print.txt",
+      "bytes": 6500,
+      "sha256": "5f12871ef3a455c744e1b19f9ccf88f731cfafa2307ded53296d69d62254259e"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01/result.json",
+      "bytes": 4158,
+      "sha256": "a3f6ad0f542349ca5e24063cb943b9c8ac7a91536dfbf9230999bef3a79e2048"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01/samples.jsonl",
+      "bytes": 25796,
+      "sha256": "2f12e23ef155f4990df6d275048f299016d18d1fa5cc817e79a4eddbb91c96a5"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01/scenario_context.json",
+      "bytes": 19672,
+      "sha256": "893ae5731ec74d27dbc08fcb896c5af67ede305ab26cc0a07c86f6524338e274"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01/worker.stderr",
+      "bytes": 1528,
+      "sha256": "4f0e5cb895115499dfffaa43c12e6f0dd1f1d30fc6c3037b6abd162f1a972118"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01/worker.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01/ATTEMPT_COMPLETED.json",
+      "bytes": 528,
+      "sha256": "adc05e74ac4bd39efe539ff7650ceb18eadb37a6cba99a7a8b339655f4653f86"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01/ATTEMPT_STARTED.json",
+      "bytes": 509,
+      "sha256": "d900bedcf92be91ce06eb8e85737746044e82ac67cdd4041500ec6babeb8efed"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01/boundaries.jsonl",
+      "bytes": 4804,
+      "sha256": "738b705c566b3f1f269a950b90969521d47a433d7f189b5ab21d4e2cdae19c89"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01/environment.json",
+      "bytes": 2264,
+      "sha256": "d697f25467298d3c0fd98a6a38b650d2a36151f49e5f296a1d861d15fa1e7594"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01/events.jsonl",
+      "bytes": 18966,
+      "sha256": "e8f5e96037267abc31506260c1286f74a3fc258c499256074ff1546ae2baa627"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01/job.json",
+      "bytes": 3211,
+      "sha256": "3d233a9a1d8e6ef60db45cdc4c18b93a8ba41e861b190d4a6e4120ed0e91d4b2"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01/manifest.json",
+      "bytes": 2332,
+      "sha256": "4c3f6c7809b20c560d18343e6ff199e5e8e3dbb3af2f1b595be7ef18a5bba085"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01/official/trajectories/add_reminder_content_and_week_delta_and_time/conversation.json",
+      "bytes": 9327,
+      "sha256": "11f070296bc458ac3f9be57c7f17e841b2bad423e03d83ab084f2bfff01dbe13"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01/official/trajectories/add_reminder_content_and_week_delta_and_time/execution_context.json",
+      "bytes": 31957,
+      "sha256": "51771dc3275c5c47b057d28d67ff765cb34c649e75c35c5aaeab27c0cc715018"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01/official/trajectories/add_reminder_content_and_week_delta_and_time/pretty_print.txt",
+      "bytes": 6738,
+      "sha256": "1b3c0ee1eb9823c4cbc3676ea5e6059a6002322903ef62cbc17e13f678570551"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01/result.json",
+      "bytes": 4006,
+      "sha256": "ce48f85ca98cb7c272b5d2aee3184cae18d2676fd206deaa45d9a89865d068f9"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01/samples.jsonl",
+      "bytes": 12177,
+      "sha256": "967ceceb89da0c8ac1aac342eff8e905bf90e084114416d44eafae897ff847c1"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01/scenario_context.json",
+      "bytes": 11935,
+      "sha256": "065c5b9d1fbeb9b23f0489ed6f6536a7a6a03f203a55534aa563a649a5c600c0"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01/worker.stderr",
+      "bytes": 787,
+      "sha256": "8a889634ddaf4b325783bc61dda755a7b58edb9ea6aea3fd49271c3e4a0b006b"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01/worker.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01/ATTEMPT_COMPLETED.json",
+      "bytes": 528,
+      "sha256": "48e950eebe352a8b1900eafcfc0a37e43dd107cc1d07a239845bcf7869f72289"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01/ATTEMPT_STARTED.json",
+      "bytes": 519,
+      "sha256": "81969d6b33f96e00e5abf944d9834f7329d05151cc5698752a82eae44dc96035"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01/boundaries.jsonl",
+      "bytes": 4813,
+      "sha256": "2e1df5ced8c2f7886da491b2ed941056295e165c58356d5c323294804b9f7cd5"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01/environment.json",
+      "bytes": 2264,
+      "sha256": "6bd588ee9209ed54da09ea38c3a66a65d1dc41d65abdc6227857e77aa629c32d"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01/events.jsonl",
+      "bytes": 26308,
+      "sha256": "4ebadf88f6f05dc46dd20ee3c71cd68c1b2fc7bb3e58a28846b41650fa87d783"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01/job.json",
+      "bytes": 3221,
+      "sha256": "a871f3645eeee84e6117679b92e944e1cd391f905e814bb333ad1eb528c54388"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01/manifest.json",
+      "bytes": 2364,
+      "sha256": "b647951128e8d05b239fd52d5967da318c1838fbe3dffb2f0754dbb0ff6c02d9"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/conversation.json",
+      "bytes": 26031,
+      "sha256": "0586107d897a868695b40ff57de51cc2c86856b87b5e3837fa8c7cc897470cc7"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/execution_context.json",
+      "bytes": 47641,
+      "sha256": "d137c300da3cd0ff4fbff82e5cc74ec8d9aee0bae1d77b87ffb56d05122a1cb1"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/pretty_print.txt",
+      "bytes": 6619,
+      "sha256": "00a94aea9ef1f469858daf19322a9a1792a01065060d410512240bcb095f3f16"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01/result.json",
+      "bytes": 4158,
+      "sha256": "3ec60bad73ea4a37adc87c3537825463563583b0756624e3f22305ad7f41130d"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01/samples.jsonl",
+      "bytes": 22794,
+      "sha256": "b809dfd6b488cfd9a15ae559e3dcdc9f0593240ddd9313d70a6936d79e27d2d1"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01/scenario_context.json",
+      "bytes": 19673,
+      "sha256": "538108869a483761cd1f7669d28af45e6cf1d3ed888b1bf8f1b9efc6e1b3570b"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01/worker.stderr",
+      "bytes": 1425,
+      "sha256": "aeb841678ea02099fd0a75e667c3c499ceec4e848f19daf0eadbfddeb9d24f6b"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01/worker.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01/ATTEMPT_COMPLETED.json",
+      "bytes": 528,
+      "sha256": "b8bf08fdbe510a000f4f1a0f7119a1dd19a350d7fef94b3a27dab1572373065f"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01/ATTEMPT_STARTED.json",
+      "bytes": 511,
+      "sha256": "f115b6337ea373416aef6284ddfd593c26c71ba08e90c23b3b498ec74bc2d2d4"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01/boundaries.jsonl",
+      "bytes": 4805,
+      "sha256": "dd48f0ce5c2e2580d37e1eafbb1c2eb047c199b956e4fb3163a7627361810f34"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01/environment.json",
+      "bytes": 2264,
+      "sha256": "cc863d068166ce0c6cd0fb63a0fa8e27a4f08200194960e30dd5e5c8862bc86c"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01/events.jsonl",
+      "bytes": 19039,
+      "sha256": "bea8a0111d86b6f4ea74585f54733a1953f8b1c882983d6f915ed03b623d2f5d"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01/job.json",
+      "bytes": 3213,
+      "sha256": "7523ba423bfe9e226a9cf85e653f76905a1f5f2a1e4a7b6cf163ad46151c198a"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01/manifest.json",
+      "bytes": 2339,
+      "sha256": "ccd8bdea5570311e07de3cf5c52c10f1dfee05ca9781c6d6060c798f2a934e4a"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01/official/trajectories/send_message_with_contact_content_cellular_off/conversation.json",
+      "bytes": 17537,
+      "sha256": "a91df78aac0cb9f4a5107d815eca5ffe853cdf42bd53bca2058ee57b16b32cf4"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01/official/trajectories/send_message_with_contact_content_cellular_off/execution_context.json",
+      "bytes": 34661,
+      "sha256": "5a9f7ca6c6d2f5bad25ae023e9af2914d3b9e98d8e144e27769ea95672d4728c"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01/official/trajectories/send_message_with_contact_content_cellular_off/pretty_print.txt",
+      "bytes": 6738,
+      "sha256": "cb974f9b7caf7f73aa0af6367e058043e5565b2006e4e9746e72d1e4a892dc3d"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01/result.json",
+      "bytes": 4116,
+      "sha256": "af77e0c72822ad1349028c6894f536cacb4a05b496e7af543a8de8c559c2e72a"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01/samples.jsonl",
+      "bytes": 14294,
+      "sha256": "609856f1d3cad6913399eda3636298235bcdfdd499314b25e4b9ce337471c309"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01/scenario_context.json",
+      "bytes": 15329,
+      "sha256": "9ec10520e63c11fabc6e2a7b76b0d03105a58e1a46fc9bf2151b0eadd2c94ae3"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01/worker.stderr",
+      "bytes": 803,
+      "sha256": "ba4dd6ba1ca32b76207f3f8f7c97daa9cb255cb955a57fee7925fcdd0c6ecb84"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01/worker.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01/ATTEMPT_COMPLETED.json",
+      "bytes": 528,
+      "sha256": "5f8d3d76b518e0770a9deead9df1d6b46a1a8557622a1c4310dd5f4606dffbbe"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01/ATTEMPT_STARTED.json",
+      "bytes": 519,
+      "sha256": "4e5c3977d8e506d7b73c46a3e236c98e30768553daadb6cd29124ec5bc5943ea"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01/boundaries.jsonl",
+      "bytes": 4814,
+      "sha256": "642646ca0bd43a1a0f402b2e090fda682b33f8303bf5df1dcc58e7037748f30f"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01/environment.json",
+      "bytes": 2264,
+      "sha256": "bc7abf3bfde22abe1a9999397e1d24411c555f8b52b894ab11f9453b823be04c"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01/events.jsonl",
+      "bytes": 33688,
+      "sha256": "8d1cc4adf919db171240d65004f02033e05a799f963f8de50a0652803c17445f"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01/job.json",
+      "bytes": 3221,
+      "sha256": "573935e6993431651de81e410226bbea5636171ce10869d6d0c665069e97fc34"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01/manifest.json",
+      "bytes": 2364,
+      "sha256": "dbcc0fa903675cdf8b7f864837ae8209994edf20e4a6c38134060e932fc152ea"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/conversation.json",
+      "bytes": 27206,
+      "sha256": "3540c701d455d7a25cbfa0ebdb5e0a07b770d4108eeda44a4a94b045b23108c7"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/execution_context.json",
+      "bytes": 53983,
+      "sha256": "1a00990b889a8d7818514048bb181454e122293b4f4c4335bcb276ead7479921"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/pretty_print.txt",
+      "bytes": 6500,
+      "sha256": "c4263a83c502b99112b060e241cd8dee989032cf2177478e7009aabe86d20ba4"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01/result.json",
+      "bytes": 4166,
+      "sha256": "b674f9f0bbaa0295a0c859f3c9a81841312dc2d193655b261ea66ff8b08593ef"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01/samples.jsonl",
+      "bytes": 42033,
+      "sha256": "13b4f75b7a1294e9a4c5a88445affaf09e51837ba134c1ad5a5f8c3ef38b85b4"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01/scenario_context.json",
+      "bytes": 19673,
+      "sha256": "a7377e36ca04e89ec2caafd623c4adbb2536888512fe4d750766f6ac71bc0966"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01/worker.stderr",
+      "bytes": 1765,
+      "sha256": "6567f14d524cbd18de5ccd83e1657f54a3982eae8f918b6c2cabed9acd55cc0a"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01/worker.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01/ATTEMPT_COMPLETED.json",
+      "bytes": 528,
+      "sha256": "a339aef5fb6b8f8b9c09b117d0715d622d3c4872e88e3a91b2619d8b9d56d3f2"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01/ATTEMPT_STARTED.json",
+      "bytes": 511,
+      "sha256": "9555cce1de96c7aa3519c10fc16801d7114df71a8e88f8e47fb5624afe65bc2d"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01/boundaries.jsonl",
+      "bytes": 4802,
+      "sha256": "e7498d9f08e0540f24bf2252e11f111997df4bd955b0f937ada1f33be19b0f9f"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01/environment.json",
+      "bytes": 2264,
+      "sha256": "a30923070004a7b8b356a67bcfeb4a30fe835a22524873391d63b672d6b91764"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01/events.jsonl",
+      "bytes": 16453,
+      "sha256": "531b7ac68b1ff6be6018df362c0f3a0ba509e39dd50fc03c42a21ebdf2babd9e"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01/job.json",
+      "bytes": 3213,
+      "sha256": "caf2ab387f505efd19d8f74dddf80768e276658fd8f2adbad2b57ef0d2efc5f9"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01/manifest.json",
+      "bytes": 2339,
+      "sha256": "ebc4c5422b63f1d43351ce638663e90252e868c791ef4dffd64d51bfc407090f"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01/official/trajectories/send_message_with_contact_content_cellular_off/conversation.json",
+      "bytes": 17326,
+      "sha256": "f482f7706d97ebfa75d2fcd3a3f7d2a5e1d810dcde1d1718fb4bc62424add28f"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01/official/trajectories/send_message_with_contact_content_cellular_off/execution_context.json",
+      "bytes": 34610,
+      "sha256": "a13f67dd9743a8e13d66ba08fb965b0d3bfe12a7ee1eee299404dc5c736fe20a"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01/official/trajectories/send_message_with_contact_content_cellular_off/pretty_print.txt",
+      "bytes": 6738,
+      "sha256": "e8616c47470ab1346f774b0fb020cd1586bc2413f9e11565a5b0f9568e9f41a2"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01/result.json",
+      "bytes": 4117,
+      "sha256": "7fe706c3dc8cc0a70ebdc1a23ff7ebbc2b319241de0daf5c7f2308986a075184"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01/samples.jsonl",
+      "bytes": 12179,
+      "sha256": "d524914b6690a9930528f7c7a8fee15eb6f44c64b758bfc0fce66560a65030a0"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01/scenario_context.json",
+      "bytes": 15330,
+      "sha256": "7bb5e44e7699d4c996b76f36860595264a50775c33a035ecbe96a30d2bcf79a5"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01/worker.stderr",
+      "bytes": 795,
+      "sha256": "90b7c4ae8b4d296d2b696d5d019aa9df7c8f215e1378427a692a6aad94d3331e"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01/worker.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01/ATTEMPT_COMPLETED.json",
+      "bytes": 528,
+      "sha256": "a87fc8ced97e749d106922733af6c670685d8c93501be5371c8a7f3d4440ad6d"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01/ATTEMPT_STARTED.json",
+      "bytes": 509,
+      "sha256": "6b5f71e9d71288b9ce31ad9de12f3609d9d8441c5a8156db514e5cab82e55569"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01/boundaries.jsonl",
+      "bytes": 4803,
+      "sha256": "e70c231999447859086c5e07e6556819c5b125e929b4de702b188c5aa3c102cb"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01/environment.json",
+      "bytes": 2264,
+      "sha256": "c300a62ecf3a0053511d89742d7be1f5f735f76def744ffd7cdfcd33baf7b284"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01/events.jsonl",
+      "bytes": 18962,
+      "sha256": "129c200ee5ff7343a1878757e730cc8c2a4d3d7dbe0154a38cf74b305770954b"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01/job.json",
+      "bytes": 3211,
+      "sha256": "74d2583f4fd7130411df5af98bcb83a0976eb090be4df4d539d820a8f36356e4"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01/manifest.json",
+      "bytes": 2332,
+      "sha256": "7c492bba5035b4005e4249274e349c810fd4b901facf712d6f1cb505112e7d3a"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01/official/trajectories/add_reminder_content_and_week_delta_and_time/conversation.json",
+      "bytes": 9337,
+      "sha256": "2295b2f9e0f35954ae32497989538861337c9396be212fab1fe6d9f009597c5a"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01/official/trajectories/add_reminder_content_and_week_delta_and_time/execution_context.json",
+      "bytes": 31956,
+      "sha256": "7e255483c425fef251cd4758e78daafc13167112202e668d41530356f47bcdf1"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01/official/trajectories/add_reminder_content_and_week_delta_and_time/pretty_print.txt",
+      "bytes": 6738,
+      "sha256": "6adc8009a7a07492ef95a4e0ee58c4e08f4d90665e18714ed9855bc229f30e80"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01/result.json",
+      "bytes": 4006,
+      "sha256": "9bdb3c0951d84dd69d70a4300bca9958f22effd89ae829ee8bbebe7a30611570"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01/samples.jsonl",
+      "bytes": 12179,
+      "sha256": "2a95ea1710ebbd8f7832aafff0a2a3525b1386af23ab7aa5b57c14664bbe5498"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01/scenario_context.json",
+      "bytes": 11936,
+      "sha256": "1df03d45f3c2170213b02042b5cdc1a3f48bcf7ab91e76288e1c522ce24720c0"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01/worker.stderr",
+      "bytes": 787,
+      "sha256": "27620e12d698253bb8c3552ae5d6fda2a58bff35d7cbb2086bff127d667d6628"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01/worker.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/trace_contract.md",
+      "bytes": 19130,
+      "sha256": "6b598f7955b5c36aa5420862fc53495d39a03f10d3be77450586506a5a701593"
+    },
+    {
+      "path": "env/toolsandbox-assistant-repeat-01/frozen-identity.json",
+      "bytes": 36601,
+      "sha256": "6dcf751cf59bec4186e7147bf1367e89810af8ebf4cf33d32ece9f1b56575016"
+    },
+    {
+      "path": "env/toolsandbox-assistant-repeat-01/plan-identity.json",
+      "bytes": 36601,
+      "sha256": "6dcf751cf59bec4186e7147bf1367e89810af8ebf4cf33d32ece9f1b56575016"
+    },
+    {
+      "path": "env/toolsandbox-assistant-repeat-01/preparation-manifest.json",
+      "bytes": 3358,
+      "sha256": "c52228690cdd01da1745b1d5a0d249aa789f793b263d72f96f5f20a2d47ab595"
+    },
+    {
+      "path": "env/toolsandbox-assistant-repeat-01/source-manifest.json",
+      "bytes": 12491,
+      "sha256": "a62c964a859fdb32602b0348c66ecc192ae7092bb2bc60fa2a9800afc929e708"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/source/tool_sandbox/common/evaluation.py",
+      "bytes": 56027,
+      "sha256": "0425cff032bd1ca2ebe8cc1c875cdf2ea86463af24b2940734007d938e516ab3"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/source/tool_sandbox/roles/execution_environment.py",
+      "bytes": 15005,
+      "sha256": "b6088fec693848e132272bced87f34ae6ec9c7d2a85ddca8a71d74b2e028b116"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/source/tool_sandbox/scenarios/base_scenarios.py",
+      "bytes": 10833,
+      "sha256": "226bc95508de98b9abda46d209e8a7d6232b9afeae9c949021198916c4401f9d"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/source/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "bytes": 265184,
+      "sha256": "e2d351bebf9afec76d37263b02544120c78b687f4dd4501ab0a4b6c981ce1ff3"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/source/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "bytes": 148087,
+      "sha256": "784c636140afbb452e94df301191f466f6d06929d3eebec13ba1a66992a74baf"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/source/tool_sandbox/tools/messaging.py",
+      "bytes": 7143,
+      "sha256": "d992831c735c44167b46f67ff45b11ad37fa70df951ebe9eac283c4b44e5607c"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/source/tool_sandbox/tools/setting.py",
+      "bytes": 6362,
+      "sha256": "01cd0c5f45cc6ceadcd5935369f1260585bbc99852562ca30f81771b56a18e97"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/APPROVAL.json",
+      "bytes": 2474,
+      "sha256": "8fa0de8160d028cf2d126037e289aabddffc4895040d55d2b48265cda8d8730c"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/BATCH_ATTEMPT_COMPLETED.json",
+      "bytes": 256,
+      "sha256": "c277880079cf291eb9e4995be28da5c1415a0cef4ea087bb3463594d50eab4ee"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/BATCH_ATTEMPT_STARTED.json",
+      "bytes": 196,
+      "sha256": "52fe15d889c5015a25673056419844e6fc9bbc7fad58e52593287bd9ee7783d6"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/batch-summary.json",
+      "bytes": 41888,
+      "sha256": "444fb8a93a1680b912ef8cb3537811f23848e1dcd3594eb530d0f4af80f7643b"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/manifest.json",
+      "bytes": 7736,
+      "sha256": "3d001363448c2f10cc3a9f02f794f31147126e4cb4bd5c06310091cf6f6fa518"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135428Z-r0-a-tsbassistant01.json",
+      "bytes": 19127,
+      "sha256": "b10214f01e0ede330b126aa9a8b602d0c2ee3468367b28b680b99daa71132280"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135428Z-r0-a-tsbassistant01.manifest.json",
+      "bytes": 1156,
+      "sha256": "9e2a923408a9c0737262eb5bad615c9bfbf67977671e298a616f4d638c99eedc"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135444Z-r0-b-tsbassistant01.json",
+      "bytes": 18903,
+      "sha256": "3de9c31062cbb3cbb10bbe824f04b4206bb4e935265ede40645ed988120c905c"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135444Z-r0-b-tsbassistant01.manifest.json",
+      "bytes": 1156,
+      "sha256": "9c51c83fd6fd6a1a999ec528649a294cade9d7b597bd347c2c8cc9e44d62a90a"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135459Z-r0-c-tsbassistant01.json",
+      "bytes": 19237,
+      "sha256": "c21fc0519183d4db511936e167b0e77d149234be0282fea073f53d11351502c1"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135459Z-r0-c-tsbassistant01.manifest.json",
+      "bytes": 1156,
+      "sha256": "eb6f76af5304f4636c4f7aeef0cd8b259b8a04989cd958645be805e5b77965a0"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135529Z-r1-b-tsbassistant01.json",
+      "bytes": 18901,
+      "sha256": "667630128299d99866260cf3fe19d144de4e7c4b6f9b72573149f8ea8be31e1c"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135529Z-r1-b-tsbassistant01.manifest.json",
+      "bytes": 1156,
+      "sha256": "e7f81f577a7169fc8251f5c01451fc20a266affd99ea357fabeb059452101d33"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135543Z-r1-c-tsbassistant01.json",
+      "bytes": 19234,
+      "sha256": "a17da2be1869c4f4852c6a05ed0ffa518a318a2950fabf2bfefb8fc6eb0639c4"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135543Z-r1-c-tsbassistant01.manifest.json",
+      "bytes": 1156,
+      "sha256": "9db0e9630127154db93d99d4a2001bf5f8dcbccf8c1a5b605c9856b8d0f97de4"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135610Z-r1-a-tsbassistant01.json",
+      "bytes": 19131,
+      "sha256": "538052aed63bce6836ecfdcc6f4d750800a173dfe5ef2443bb938e0f6afc4d3f"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135610Z-r1-a-tsbassistant01.manifest.json",
+      "bytes": 1156,
+      "sha256": "a59433eb50c2ef8aa5591f627c37d3d47afe0ed3b562b5106e08701a20c4df16"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135627Z-r2-c-tsbassistant01.json",
+      "bytes": 19250,
+      "sha256": "6216eac5f8e8773f16e6b3cbdc2b1417e03802143331767cde75dab7de50ff6f"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135627Z-r2-c-tsbassistant01.manifest.json",
+      "bytes": 1156,
+      "sha256": "45e5f9c23f5581b77ff5ddf34d8c99ef9ee4db3edfe91cc11a8e90c1d0ff03ef"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135716Z-r2-a-tsbassistant01.json",
+      "bytes": 19126,
+      "sha256": "78a25d8671efcaa02c99da2c70d7a4174e28e98a733d25ceb4d674011301c8db"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135716Z-r2-a-tsbassistant01.manifest.json",
+      "bytes": 1156,
+      "sha256": "9dc46806759c33fe573fba75d2bf2d7a058497c1b735ab7b202e02373bd20667"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135730Z-r2-b-tsbassistant01.json",
+      "bytes": 18899,
+      "sha256": "20a0464f7e237f1a7771ab01ecb7c1c50d3410b75e8239de36a8fb912d61a85d"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135730Z-r2-b-tsbassistant01.manifest.json",
+      "bytes": 1156,
+      "sha256": "c669553caa87b58ae9b2bd03ba16ce0f6c63600798e46ab679b4c5e205a3f607"
+    },
+    {
+      "path": "scripts/toolsandbox_assistant_repeat_01_entry.py",
+      "bytes": 19624,
+      "sha256": "5516022f2045fbd0deec496abb2fef302073e98ab17fc18d1c32e4cbd2fe8034"
+    },
+    {
+      "path": "scripts/toolsandbox_resource_pilot_01_entry.py",
+      "bytes": 43752,
+      "sha256": "4b0da9fa829f0e0a0de1e4ac6f888426a86c0fedfb99cbf864fff35d7b694d63"
+    },
+    {
+      "path": "src/agent_workload_characterization/__init__.py",
+      "bytes": 95,
+      "sha256": "f8b90d73ae7ab7394c123a083e4f39fee1dbe191d32ccafc866378244286ca4a"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/execution_measurement.py",
+      "bytes": 12531,
+      "sha256": "e520938f431e34e0b7f8d9c6e996c82dbf7e5beb48554f355fd8d656a7bc0df6"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/host_process.py",
+      "bytes": 9999,
+      "sha256": "7b05e9d89bfbbdb1ff6a246230770470992c2a5dbccb68fef81965c62d4e8c1e"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/semantic_recorder.py",
+      "bytes": 12105,
+      "sha256": "b5921e6a287067d0f15352fede88477913f71cc122cb270bf79f5aebc69204a8"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/preparation.py",
+      "bytes": 22290,
+      "sha256": "f3801ed6d8c87a0adae4979ffb3c679c8b12c75784a8ab19e7d42c1885b55465"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/toolsandbox_worker.py",
+      "bytes": 41188,
+      "sha256": "3eb3dcd4c03df82dfb2fc956936ed05a6c78854e5f3dd1a79f4e04bde5f8ee50"
+    }
+  ],
+  "analysis_code": [
+    {
+      "path": "scripts/toolsandbox_assistant_repeat_01_review.py",
+      "bytes": 85268,
+      "sha256": "a3c0936bb538c18942f7c6956434fdc84b06a488d03382bc6b51840606d68af0"
+    },
+    {
+      "path": "scripts/toolsandbox_resource_pilot_02_review.py",
+      "bytes": 57155,
+      "sha256": "6a8c5426e54425754af14eefc8645a56ad3f1b499a4634f0d4409f62b057361b"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/summary.json",
+      "bytes": 431920,
+      "sha256": "9f113ac28037a67d77fd8fa3ecf81c62712b6c161415951e6589ccfc84bba8cc"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/per_run.jsonl",
+      "bytes": 189337,
+      "sha256": "74ed2d6cdc3767a7a2010fd0e7f7dcddea597af344b7994164b2155180ee7dbf"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/summary.md",
+      "bytes": 18933,
+      "sha256": "216b72d580a60e0782e0fb51861ea5ae5bcf3be89de52ea86e4836884bb5d95c"
+    }
+  ],
+  "manifest_self_hash": false
+}

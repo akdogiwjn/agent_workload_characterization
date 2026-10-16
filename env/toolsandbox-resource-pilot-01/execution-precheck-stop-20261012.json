@@ -1,0 +1,133 @@
+{
+  "schema": "toolsandbox-execution-precheck-stop-v1",
+  "collection": "TOOLSANDBOX-RESOURCE-PILOT-01",
+  "checked_at_utc": "2026-10-12 06:43:50 UTC",
+  "status": "stopped_before_approval_or_attempt",
+  "identity_sha256": "ff5f43a20266fadd49523c0bcf0c4a394fd7b62389ef7ee915af923fb3750912",
+  "scenario": "send_message_with_contact_content_cellular_off",
+  "identity_checks": {
+    "live_plan_frozen_full_structures_equal": true,
+    "canonical_digests_equal": true,
+    "reference_commit": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "registered_source_file_pairs_verified": 79,
+    "source_file_hash_conflicts": 0,
+    "dependency_versions_checked": 50,
+    "dependency_version_conflicts": 0,
+    "credential_environment_available": true,
+    "namespace": {
+      "attempts": [],
+      "report_records": [],
+      "approval_present": false
+    }
+  },
+  "approved_budget": {
+    "agent_logical_calls": 20,
+    "user_logical_calls": 20,
+    "play_s": 300,
+    "evaluate_s": 60,
+    "total_wall_s": 480,
+    "cleanup_reserve_s": 120,
+    "max_messages": 30,
+    "max_messages_note": "official Scenario.max_messages is a SANDBOX message-index threshold, not a strict model-request or tool-call cap; one scheduling round may append several messages. The official default 30 is kept and the actual message increment is recorded",
+    "max_tokens": "not set (official model_inference omits it; provider default applies). No hard token guarantee is claimed; the budget is enforced by logical-call caps, the shared work deadline and the parent kill"
+  },
+  "execution_command_not_run": "PYTHONPATH=src .venvs/toolsandbox-pilot-01/bin/python -B scripts/toolsandbox_resource_pilot_01_entry.py --execute --i-approve-the-toolsandbox-resource-pilot-01",
+  "blocking_issue": {
+    "kind": "registered_phase_limits_not_enforced",
+    "parent_work_deadline_s": 360,
+    "play_limit_s": 300,
+    "evaluator_limit_s": 60,
+    "description": "play_s and evaluate_s are configuration/post-hoc report values only. The parent wait enforces a shared 360s work deadline, not the separate 300s play / 60s evaluator limits. The evaluator wrapper records begin/end only; play_begin/play_end wrap play_and_evaluate including evaluation.",
+    "evidence": [
+      {
+        "path": "scripts/toolsandbox_resource_pilot_01_entry.py",
+        "lines": [
+          424,
+          465,
+          495,
+          499
+        ]
+      },
+      {
+        "path": "src/agent_workload_characterization/runners/toolsandbox_worker.py",
+        "lines": [
+          528,
+          585,
+          589,
+          602,
+          603,
+          606
+        ]
+      },
+      {
+        "path": "env/toolsandbox-resource-pilot-01/source/tool_sandbox/common/scenario.py",
+        "lines": [
+          60,
+          96,
+          113,
+          140,
+          189
+        ]
+      }
+    ]
+  },
+  "effects": {
+    "formal_attempt_started": false,
+    "approval_created": false,
+    "worker_started": false,
+    "api_called": false,
+    "implementation_or_frozen_identity_changed": false,
+    "user_authorization_received": true,
+    "tool_execution_permission_requested": false
+  },
+  "inputs": [
+    {
+      "path": "scripts/toolsandbox_resource_pilot_01_entry.py",
+      "bytes": 28536,
+      "sha256": "4d42692eb118c05d19129520ebaa8387cff5b2cdd5dbe67ab2a698a0ceb31ae9"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/toolsandbox_worker.py",
+      "bytes": 31681,
+      "sha256": "6c6c5dec9aff98db4541b986418de08048deaa9274d84c3932eb2aebe0414575"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/plan-identity.json",
+      "bytes": 9510,
+      "sha256": "a159c0a8722a6ccdf2ba7df90074323a6a36a836f6a3553c848a71a123de53f0"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/frozen-identity.json",
+      "bytes": 9510,
+      "sha256": "a159c0a8722a6ccdf2ba7df90074323a6a36a836f6a3553c848a71a123de53f0"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/source-manifest.json",
+      "bytes": 12491,
+      "sha256": "a62c964a859fdb32602b0348c66ecc192ae7092bb2bc60fa2a9800afc929e708"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/venv-freeze.txt",
+      "bytes": 819,
+      "sha256": "d1d509bbdddbfc67240b21dfe605e599f8659d08151570af9bd956889d5e6f83"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/api-verification-20261012.json",
+      "bytes": 4579,
+      "sha256": "f89c873c34f4522e7f8434c31c4cefb3e48335675881ebf21418546bbfdbcbea"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/source/tool_sandbox/common/scenario.py",
+      "bytes": 10307,
+      "sha256": "95ca3ec161a8a66d98bfb1e00516a99c9f849f91bf10933e2d08aeb601543eb9"
+    }
+  ],
+  "limitations": [
+    "Read-only precheck, not a resource measurement or task evaluation.",
+    "Source check covers manifest-registered bytes, not an audit of all unregistered caches.",
+    "Frozen route flag remains false while the separately saved single API verification is PASS; no smoke was repeated."
+  ],
+  "required_next_step": "Separately authorize a minimal phase-deadline wiring repair and focused offline tests; changed implementation needs a new full freeze and a fresh execution approval. No automatic continuation.",
+  "gates_unchanged": true,
+  "cpu_02_replay_paused": true
+}

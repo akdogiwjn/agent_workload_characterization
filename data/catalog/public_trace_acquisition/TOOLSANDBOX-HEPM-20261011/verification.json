@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "acquisition_manifest_sha256": "590173dcdc65e600c79f52d23c87ed140b88a84eb7b37b0415c3e564e9567bef",
+  "verifier_sha256": "1377a9e1e02143a031fefb7e2a05b332100c63c4e1d6736f8499420908776ce3",
+  "payload_files_verified": 832,
+  "acquisition_evidence_files_verified": 10,
+  "files_by_basename": {
+    "README.md": 2,
+    "result_summary.json": 2,
+    "conversation.json": 414,
+    "execution_context.json": 414
+  },
+  "trajectories": 414,
+  "dataset_local_scenario_keys": 207,
+  "scenario_keys_shared_between_groups": 207,
+  "per_group_trajectory_counts": {
+    "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_False_11_24_2025_09_02_55-7": 207,
+    "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_True_05_19_2026_06_52_36": 207
+  },
+  "saved_payload_bytes": 23150323,
+  "scope_note": "Scenario keys are local identifiers, not proven independent tasks. Third-party adapted experiments; no execution or resource claims."
+}

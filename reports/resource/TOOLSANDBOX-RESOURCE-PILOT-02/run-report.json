@@ -1,0 +1,751 @@
+{
+ "schema": "toolsandbox-pilot-run-report-v1",
+ "collection": "TOOLSANDBOX-RESOURCE-PILOT-02",
+ "run_id": "20261012T091455Z-tsbpilot02",
+ "identity_sha256": "3f855a9c70efff83e259093c147e95cd87b7915a7891f2128ecae64021a7ea7b",
+ "scenario": "send_message_with_contact_content_cellular_off",
+ "worker_exit_code": 0,
+ "killed_by_deadline": false,
+ "exit_code": 0,
+ "wall_s": 16.173282049,
+ "work_deadline_s": 360.0,
+ "parent_start_ns": 722105721463909,
+ "common_work_deadline_ns": 722465721463909,
+ "total_deadline_ns": 722585721463909,
+ "deadline_timeout": null,
+ "cleanup": {
+  "pid": 1539938,
+  "starttime_ticks": 72210572,
+  "returncode": 0,
+  "wait_reaped": true,
+  "original_process_gone": true,
+  "sampler_stopped": true,
+  "checked_monotonic_ns": 722121870116572
+ },
+ "evaluation": {
+  "milestone_mapping": {
+   "0": [
+    21,
+    1.0
+   ],
+   "1": [
+    17,
+    1.0
+   ],
+   "2": [
+    23,
+    1.0
+   ],
+   "3": [
+    24,
+    0.6751063739776791
+   ]
+  },
+  "minefield_mapping": {},
+  "milestone_similarity": 0.9187765934944198,
+  "minefield_similarity": 0,
+  "similarity": 0.9187765934944198,
+  "turn_count": 9
+ },
+ "evaluation_status": "completed",
+ "boundary_incomplete_tail": false,
+ "measurement": {
+  "span_coverage": {
+   "status": "verified",
+   "spans": {
+    "llm_request": {
+     "started": 6,
+     "timed": 6,
+     "error_terminal": 0,
+     "usage_observed": 6
+    },
+    "tool_call": {
+     "started": 5,
+     "timed": 5,
+     "error_terminal": 0,
+     "usage_observed": 0,
+     "bootstrap": 0
+    }
+   },
+   "errors": [],
+   "scope": "saved events; must also compare expected runtime/trajectory counts"
+  },
+  "right_censored_event_ids": [
+   "75d804d81ced498fbae60c98da3b9c80"
+  ],
+  "worker_completion": "reported",
+  "note": "no synthetic terminal rows are appended after a deadline kill"
+ },
+ "budget_phase_report": {
+  "play_s_budget": 300.0,
+  "evaluate_s_budget": 60.0,
+  "phases": [
+   {
+    "phase": "worker_start",
+    "t_monotonic_ns": 722105789147221,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 6,
+    "user_ticks": 6,
+    "system_ticks": 0,
+    "rss_bytes": 21106688,
+    "minor_faults": 3159,
+    "major_faults": 0,
+    "threads": 1,
+    "process_io": {
+     "rchar": 2858508,
+     "wchar": 430,
+     "read_bytes": 0,
+     "write_bytes": 4096
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 0,
+     "nonvoluntary_ctxt_switches": 2
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "transport_kind": "openai_compatible"
+   },
+   {
+    "phase": "imports_begin",
+    "t_monotonic_ns": 722105790405038,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 6,
+    "user_ticks": 6,
+    "system_ticks": 0,
+    "rss_bytes": 21106688,
+    "minor_faults": 3159,
+    "major_faults": 0,
+    "threads": 1,
+    "process_io": {
+     "rchar": 2860261,
+     "wchar": 935,
+     "read_bytes": 0,
+     "write_bytes": 8192
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 2,
+     "nonvoluntary_ctxt_switches": 2
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    }
+   },
+   {
+    "phase": "imports_end",
+    "t_monotonic_ns": 722106928530824,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 1175,
+    "user_ticks": 1164,
+    "system_ticks": 11,
+    "rss_bytes": 177332224,
+    "minor_faults": 35628,
+    "major_faults": 0,
+    "threads": 127,
+    "process_io": {
+     "rchar": 41869414,
+     "wchar": 1406,
+     "read_bytes": 0,
+     "write_bytes": 12288
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 9,
+     "nonvoluntary_ctxt_switches": 28
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    }
+   },
+   {
+    "phase": "play_begin",
+    "t_monotonic_ns": 722112339423927,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 25211,
+    "user_ticks": 24879,
+    "system_ticks": 332,
+    "rss_bytes": 1150877696,
+    "minor_faults": 85888,
+    "major_faults": 0,
+    "threads": 383,
+    "process_io": {
+     "rchar": 42544118,
+     "wchar": 1886,
+     "read_bytes": 0,
+     "write_bytes": 16384
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 4798,
+     "nonvoluntary_ctxt_switches": 49
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "phase_start_ns": 722112339412887,
+    "phase_deadline_ns": 722412339412887,
+    "common_work_deadline_ns": 722465721463909,
+    "deadline_kind": "play_deadline"
+   },
+   {
+    "phase": "system_setup_exec",
+    "t_monotonic_ns": 722112354075377,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 25244,
+    "user_ticks": 24910,
+    "system_ticks": 334,
+    "rss_bytes": 1155108864,
+    "minor_faults": 86358,
+    "major_faults": 0,
+    "threads": 383,
+    "process_io": {
+     "rchar": 42545901,
+     "wchar": 2523,
+     "read_bytes": 0,
+     "write_bytes": 20480
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 4813,
+     "nonvoluntary_ctxt_switches": 49
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "ending_index": 0
+   },
+   {
+    "phase": "play_end",
+    "t_monotonic_ns": 722119413168898,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 34376,
+    "user_ticks": 33912,
+    "system_ticks": 464,
+    "rss_bytes": 1297887232,
+    "minor_faults": 99179,
+    "major_faults": 0,
+    "threads": 384,
+    "process_io": {
+     "rchar": 42783533,
+     "wchar": 46340,
+     "read_bytes": 0,
+     "write_bytes": 45056
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 5808,
+     "nonvoluntary_ctxt_switches": 52
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "phase_end_ns": 722119413166338
+   },
+   {
+    "phase": "evaluate_begin",
+    "t_monotonic_ns": 722119423473509,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 34472,
+    "user_ticks": 34008,
+    "system_ticks": 464,
+    "rss_bytes": 1297887232,
+    "minor_faults": 99225,
+    "major_faults": 0,
+    "threads": 384,
+    "process_io": {
+     "rchar": 42785321,
+     "wchar": 88652,
+     "read_bytes": 0,
+     "write_bytes": 94208
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 5823,
+     "nonvoluntary_ctxt_switches": 52
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "phase_start_ns": 722119423468049,
+    "phase_deadline_ns": 722179423468049,
+    "common_work_deadline_ns": 722465721463909,
+    "deadline_kind": "evaluate_deadline"
+   },
+   {
+    "phase": "evaluate_end",
+    "t_monotonic_ns": 722121474386258,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 69236,
+    "user_ticks": 68410,
+    "system_ticks": 826,
+    "rss_bytes": 1532481536,
+    "minor_faults": 109244,
+    "major_faults": 0,
+    "threads": 384,
+    "process_io": {
+     "rchar": 42787109,
+     "wchar": 89298,
+     "read_bytes": 0,
+     "write_bytes": 98304
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 9321,
+     "nonvoluntary_ctxt_switches": 59
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "phase_end_ns": 722121474382178
+   },
+   {
+    "phase": "worker_end",
+    "t_monotonic_ns": 722121561426094,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 70632,
+    "user_ticks": 69795,
+    "system_ticks": 837,
+    "rss_bytes": 1536806912,
+    "minor_faults": 109301,
+    "major_faults": 0,
+    "threads": 384,
+    "process_io": {
+     "rchar": 42788897,
+     "wchar": 107248,
+     "read_bytes": 0,
+     "write_bytes": 126976
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 9468,
+     "nonvoluntary_ctxt_switches": 59
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "exit_code": 0
+   }
+  ],
+  "parent_observed_phase_signals": [
+   {
+    "phase": "worker_start",
+    "t_monotonic_ns": 722105789147221,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 6,
+    "user_ticks": 6,
+    "system_ticks": 0,
+    "rss_bytes": 21106688,
+    "minor_faults": 3159,
+    "major_faults": 0,
+    "threads": 1,
+    "process_io": {
+     "rchar": 2858508,
+     "wchar": 430,
+     "read_bytes": 0,
+     "write_bytes": 4096
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 0,
+     "nonvoluntary_ctxt_switches": 2
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "transport_kind": "openai_compatible"
+   },
+   {
+    "phase": "imports_begin",
+    "t_monotonic_ns": 722105790405038,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 6,
+    "user_ticks": 6,
+    "system_ticks": 0,
+    "rss_bytes": 21106688,
+    "minor_faults": 3159,
+    "major_faults": 0,
+    "threads": 1,
+    "process_io": {
+     "rchar": 2860261,
+     "wchar": 935,
+     "read_bytes": 0,
+     "write_bytes": 8192
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 2,
+     "nonvoluntary_ctxt_switches": 2
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    }
+   },
+   {
+    "phase": "imports_end",
+    "t_monotonic_ns": 722106928530824,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 1175,
+    "user_ticks": 1164,
+    "system_ticks": 11,
+    "rss_bytes": 177332224,
+    "minor_faults": 35628,
+    "major_faults": 0,
+    "threads": 127,
+    "process_io": {
+     "rchar": 41869414,
+     "wchar": 1406,
+     "read_bytes": 0,
+     "write_bytes": 12288
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 9,
+     "nonvoluntary_ctxt_switches": 28
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    }
+   },
+   {
+    "phase": "play_begin",
+    "t_monotonic_ns": 722112339423927,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 25211,
+    "user_ticks": 24879,
+    "system_ticks": 332,
+    "rss_bytes": 1150877696,
+    "minor_faults": 85888,
+    "major_faults": 0,
+    "threads": 383,
+    "process_io": {
+     "rchar": 42544118,
+     "wchar": 1886,
+     "read_bytes": 0,
+     "write_bytes": 16384
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 4798,
+     "nonvoluntary_ctxt_switches": 49
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "phase_start_ns": 722112339412887,
+    "phase_deadline_ns": 722412339412887,
+    "common_work_deadline_ns": 722465721463909,
+    "deadline_kind": "play_deadline"
+   },
+   {
+    "phase": "system_setup_exec",
+    "t_monotonic_ns": 722112354075377,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 25244,
+    "user_ticks": 24910,
+    "system_ticks": 334,
+    "rss_bytes": 1155108864,
+    "minor_faults": 86358,
+    "major_faults": 0,
+    "threads": 383,
+    "process_io": {
+     "rchar": 42545901,
+     "wchar": 2523,
+     "read_bytes": 0,
+     "write_bytes": 20480
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 4813,
+     "nonvoluntary_ctxt_switches": 49
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "ending_index": 0
+   },
+   {
+    "phase": "play_end",
+    "t_monotonic_ns": 722119413168898,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 34376,
+    "user_ticks": 33912,
+    "system_ticks": 464,
+    "rss_bytes": 1297887232,
+    "minor_faults": 99179,
+    "major_faults": 0,
+    "threads": 384,
+    "process_io": {
+     "rchar": 42783533,
+     "wchar": 46340,
+     "read_bytes": 0,
+     "write_bytes": 45056
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 5808,
+     "nonvoluntary_ctxt_switches": 52
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "phase_end_ns": 722119413166338
+   },
+   {
+    "phase": "evaluate_begin",
+    "t_monotonic_ns": 722119423473509,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 34472,
+    "user_ticks": 34008,
+    "system_ticks": 464,
+    "rss_bytes": 1297887232,
+    "minor_faults": 99225,
+    "major_faults": 0,
+    "threads": 384,
+    "process_io": {
+     "rchar": 42785321,
+     "wchar": 88652,
+     "read_bytes": 0,
+     "write_bytes": 94208
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 5823,
+     "nonvoluntary_ctxt_switches": 52
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "phase_start_ns": 722119423468049,
+    "phase_deadline_ns": 722179423468049,
+    "common_work_deadline_ns": 722465721463909,
+    "deadline_kind": "evaluate_deadline"
+   },
+   {
+    "phase": "evaluate_end",
+    "t_monotonic_ns": 722121474386258,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 69236,
+    "user_ticks": 68410,
+    "system_ticks": 826,
+    "rss_bytes": 1532481536,
+    "minor_faults": 109244,
+    "major_faults": 0,
+    "threads": 384,
+    "process_io": {
+     "rchar": 42787109,
+     "wchar": 89298,
+     "read_bytes": 0,
+     "write_bytes": 98304
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 9321,
+     "nonvoluntary_ctxt_switches": 59
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "phase_end_ns": 722121474382178
+   },
+   {
+    "phase": "worker_end",
+    "t_monotonic_ns": 722121561426094,
+    "pid": 1539938,
+    "starttime_ticks": 72210572,
+    "cpu_ticks": 70632,
+    "user_ticks": 69795,
+    "system_ticks": 837,
+    "rss_bytes": 1536806912,
+    "minor_faults": 109301,
+    "major_faults": 0,
+    "threads": 384,
+    "process_io": {
+     "rchar": 42788897,
+     "wchar": 107248,
+     "read_bytes": 0,
+     "write_bytes": 126976
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 9468,
+     "nonvoluntary_ctxt_switches": 59
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "exit_code": 0
+   }
+  ],
+  "note": "actual play/evaluate start signals are persisted before blocking; parent kills at the earlier phase/common deadline; imports/setup consume common work budget"
+ },
+ "host_sampling": {
+  "rows": 33,
+  "interval_target_s": 0.5,
+  "max_gap_ns": 500073897,
+  "nonpositive_gaps": 0,
+  "cpu_counter_regressions": 0,
+  "scope": "worker process pid+starttime; shared scope, not per-tool"
+ },
+ "worker_result": {
+  "schema": "toolsandbox-pilot-worker-result-v1",
+  "run_id": "20261012T091455Z-tsbpilot02",
+  "scenario_name": "send_message_with_contact_content_cellular_off",
+  "transport": {
+   "kind": "openai_compatible",
+   "note": "real OpenAI-compatible route; transport attempts counted by worker layer",
+   "request_model_label": "deepseek-v4-flash",
+   "stats": {
+    "agent_requests": null,
+    "user_requests": null,
+    "note": "per-logical-call attempt counts live on llm_request spans; no transport-level hook"
+   }
+  },
+  "budgets": {
+   "agent_logical_calls": 20,
+   "user_logical_calls": 20,
+   "play_s": 300.0,
+   "evaluate_s": 60.0,
+   "total_wall_s": 480.0,
+   "cleanup_reserve_s": 120.0,
+   "max_messages": 30,
+   "max_messages_note": "official Scenario.max_messages is a SANDBOX message-index threshold, not a strict model-request or tool-call cap; one scheduling round may append several messages. The official default 30 is kept and the actual message increment is recorded",
+   "max_tokens": "not set (official model_inference omits it; provider default applies). No hard token guarantee is claimed; the budget is enforced by logical-call caps, the shared work deadline and the parent kill",
+   "official_max_messages_default": 30
+  },
+  "retry": {
+   "sdk_max_retries": 0,
+   "max_attempts_per_logical_call": 3,
+   "retry_on": [
+    "APIConnectionError",
+    "RateLimitError",
+    "InternalServerError"
+   ],
+   "backoff_base_s": 1.0,
+   "backoff_cap_s": 8.0,
+   "counting": "logical calls are counted outside the retry loop, per role, before any transport attempt; every attempt inside the loop is counted as transport_attempt_count",
+   "official_defaults_and_deviation": "official OpenAIAPIAgent tenacity retries requests.exceptions.HTTPError only — the httpx-based openai SDK never raises it, so that layer is a no-op; official OpenAIAPIUser tenacity retries ANY exception; official defaults also stack the SDK's internal max_retries=2 under tenacity. The pilot replaces both with ONE explicit counted layer and sdk_max_retries=0, identical for both roles"
+  },
+  "stop": {
+   "conversation_active": false,
+   "user_end_conversation_executed": true,
+   "reason": "user_end_conversation"
+  },
+  "initial_max_sandbox_message_index": 15,
+  "final_max_sandbox_message_index": 26,
+  "counts": {
+   "agent_logical_calls": 5,
+   "user_logical_calls": 1,
+   "tool_call_executions": 6,
+   "tool_batches": {
+    "started": 5,
+    "closed": 5,
+    "error": 0,
+    "unclosed": 0
+   },
+   "logical_tool_calls": {
+    "started": 5,
+    "closed": 5,
+    "error": 0,
+    "unclosed": 0
+   }
+  },
+  "evaluation": {
+   "milestone_mapping": {
+    "0": [
+     21,
+     1.0
+    ],
+    "1": [
+     17,
+     1.0
+    ],
+    "2": [
+     23,
+     1.0
+    ],
+    "3": [
+     24,
+     0.6751063739776791
+    ]
+   },
+   "minefield_mapping": {},
+   "milestone_similarity": 0.9187765934944198,
+   "minefield_similarity": 0,
+   "similarity": 0.9187765934944198,
+   "turn_count": 9
+  },
+  "failure": null,
+  "worker_exit_code": 0,
+  "measurement": {
+   "span_coverage": {
+    "status": "verified",
+    "spans": {
+     "llm_request": {
+      "started": 6,
+      "timed": 6,
+      "error_terminal": 0,
+      "usage_observed": 6
+     },
+     "tool_call": {
+      "started": 5,
+      "timed": 5,
+      "error_terminal": 0,
+      "usage_observed": 0,
+      "bootstrap": 0
+     }
+    },
+    "errors": [],
+    "scope": "saved events; must also compare expected runtime/trajectory counts"
+   }
+  },
+  "known_nondeterminism": {
+   "initial_message_creation_timestamps": "base scenario builds MESSAGING rows with timestamps relative to the run clock; IDs are deterministic_uuid(payload) and stable"
+  }
+ },
+ "archive_verification": {
+  "valid": true,
+  "errors": []
+ },
+ "actual_bill": "unknown",
+ "worker_window_wall_s": 16.148652663,
+ "within_total_budget": true,
+ "wall_scope": "parent start through cleanup and raw archive verification; final report/outer-manifest writes follow this snapshot",
+ "remaining_cleanup_archive_s": 463.851347337
+}

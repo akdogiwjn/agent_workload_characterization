@@ -1,0 +1,506 @@
+{
+  "schema": "project-characterization-synthesis-evidence-matrix-v3",
+  "updated_at": "2026-10-12",
+  "project_goal": "研究Agent行为与CPU/OS资源特征；benchmark是负载来源，不是能力排行榜。",
+  "basis": {
+    "research_questions": "保留methodology.md §25原RQ1–RQ6；问题文字与已封存v2一致。",
+    "verification": "本轮回读11个既有分析/宏观包的41个输出并核对登记哈希；另读取VideoWeaver sample validation。未重跑源分析器或重新核验全部raw。原始级结论引用已验收来源报告。",
+    "historical_protection": "synthesis-v1/v2、来源分析/raw/批准/冻结身份及HTML v5原位保留。",
+    "supersedes_current_judgment": "reports/analysis/PROJECT-characterization-synthesis-v2/evidence_matrix.json；v2仍为其时点历史证据。"
+  },
+  "stage": "多来源公开行为 + Coding/Office/Assistant各三个固定任务的重复scope资源描述；Video仅旧宏观小样、无已验收本地资源批次；工具独占归因、热点和受控并发未闭合。",
+  "category_coverage": [
+    {
+      "id": "coding",
+      "label": "Coding",
+      "benchmarks": [
+        "SWE-bench Verified / SWE-rebench"
+      ],
+      "public_behavior": {
+        "status": "analyzed_limited",
+        "scope": "SWE-rebench 9,435 trajectory / 111 task / 17 participant；SWE-bench 三种原生格式各30条，合计90条。",
+        "sources": [
+          "SWE-REBENCH-behavior-v2",
+          "SWEBENCH-subset-behavior-v1"
+        ]
+      },
+      "local_resources": {
+        "status": "measured_limited",
+        "primary_batch": "P1-12-CODING-REPEAT-01",
+        "tasks": 3,
+        "repeats_per_task": 3,
+        "runs": 9,
+        "logical_model_requests": 226,
+        "agent_tool_calls": 348,
+        "scope": "Agent/verifier独立容器cgroup；宿主记录另列。"
+      },
+      "limits": [
+        "三个固定任务不是Coding类别代表性集合。",
+        "5 Submitted / 4 LimitsExceeded与评估7 true / 2 false独立。",
+        "纯请求采样区间容器CPU为0不证明宿主阻塞或系统CPU为0。"
+      ],
+      "sources": [
+        "P1-12-CODING-REPEAT-01-characterization-v3",
+        "CODING-RESOURCE-LINK-feasibility-v1"
+      ]
+    },
+    {
+      "id": "computer_office",
+      "label": "Computer / Office",
+      "benchmarks": [
+        "OSWorld 2.0",
+        "DocOps"
+      ],
+      "public_behavior": {
+        "status": "analyzed_limited",
+        "scope": "OSWorld 755 model×task / 108任务 / 7模型；任务语义及原生动作/静态源码层分开。Applied Office仅为派生模板。",
+        "sources": [
+          "OSWORLD-task-behavior-v3",
+          "AGENTX-APPLIED-MACRO-v1"
+        ]
+      },
+      "local_resources": {
+        "status": "office_measured_gui_missing",
+        "primary_batch": "DOCOPS-OFFICE-REPEAT-02",
+        "tasks": 3,
+        "repeats_per_task": 3,
+        "runs": 9,
+        "logical_model_requests": 46,
+        "agent_tool_calls": 37,
+        "bootstrap_calls": 18,
+        "scope": "Excel/PPT/PDF共享任务容器；Agent/verifier阶段边界分列，宿主RSS为共享批进程。"
+      },
+      "subdomain_gap": "DocOps文档测量不等于OSWorld GUI/VM资源测量；Computer-use GUI仍无本项目受控资源批次。",
+      "limits": [
+        "九次finish/reward=1只支持固定任务配置。",
+        "三次PPT bootstrap inspect_document失败已保留；具体抛错属性与反事实影响unknown。",
+        "arm64适配环境与官方amd64基础环境不字节等同。",
+        "旧REPEAT-01和Word不同配置样本不自动并入新口径重复。"
+      ],
+      "sources": [
+        "DOCOPS-OFFICE-REPEAT-02-characterization-v1"
+      ]
+    },
+    {
+      "id": "assistant",
+      "label": "Assistant / Tool",
+      "benchmarks": [
+        "ToolSandbox 官方基线",
+        "H-EPM第三方ToolSandbox扩展"
+      ],
+      "public_behavior": {
+        "status": "analyzed_limited",
+        "scope": "H-EPM两组×207场景键=414轨迹；109个剥离指定扰动后缀的基础场景标签，不冒称109个独立任务。",
+        "sources": [
+          "TOOLSANDBOX-HEPM-behavior-v2"
+        ]
+      },
+      "local_resources": {
+        "status": "measured_limited",
+        "primary_batch": "TOOLSANDBOX-ASSISTANT-REPEAT-01",
+        "tasks": 3,
+        "repeats_per_task": 3,
+        "runs": 9,
+        "logical_model_requests": 65,
+        "agent_requests": 52,
+        "user_requests": 13,
+        "agent_tool_calls": 48,
+        "user_end_calls": 9,
+        "tool_batches": 48,
+        "ordering_attempts": 59,
+        "system_setup_executions": 9,
+        "periodic_samples": 396,
+        "scope": "单worker进程内Agent/User/工具/evaluator共享CPU/RSS/proc I/O；每run保存CLK_TCK与阶段边界。"
+      },
+      "limits": [
+        "官方实测不含H-EPM摘要和graph扩展，不能作为其受控复现。",
+        "工具逻辑调用、batch排列尝试与逐工具底层执行次数不同。",
+        "Task C波动主要落在evaluator，不能因果归因于更多调用或某函数。",
+        "两次工具错误有恢复路径，但影响unknown；similarity不是跨任务统一reward。"
+      ],
+      "sources": [
+        "TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1"
+      ]
+    },
+    {
+      "id": "video",
+      "label": "Video",
+      "benchmarks": [
+        "VideoWeaver（生成型）",
+        "AgenticVBench（编辑型）"
+      ],
+      "public_behavior": {
+        "status": "legacy_macro_sample_partial",
+        "scope": "已有VideoWeaver宏观小样、adapter及macro-pilot-v6；sample validation full_ingest=false、parsed_records=2。不是零trace，也不是完整官方视频任务行为分析。",
+        "sources": [
+          "macro-pilot-v6",
+          "reports/quality/videoweaver_sample_validation.json"
+        ]
+      },
+      "local_resources": {
+        "status": "missing_accepted_video_resource_batch",
+        "primary_batch": null,
+        "tasks": null,
+        "repeats_per_task": null,
+        "runs": null,
+        "scope": "旧VideoWeaver记录未提供有效local_cpu_time/tool_cpu_time；远端生成服务CPU不可由本机获得。"
+      },
+      "limits": [
+        "不得把已有小样或pipeline生成状态当作视频任务完整成功。",
+        "没有已验收的本地视频剪辑/编码/渲染资源批次。",
+        "本次references/repos清单未见AgenticVBench目录，仅有方法文档引用；源码、任务、媒体与verifier需先核查。"
+      ],
+      "sources": [
+        "reports/macro/macro-pilot-v6/summary.md",
+        "reports/quality/videoweaver_sample_validation.json"
+      ]
+    }
+  ],
+  "matrix": [
+    {
+      "rq": "RQ1",
+      "question": "Agent workload 与传统 LLM workload 有什么不同？",
+      "status": "partially_supported",
+      "evidence": "公开Coding、Computer/Office、Assistant和宏观请求/模板证据；三类固定任务真实路径。",
+      "allowed_claim": "描述各来源多轮、上下文、工具交错、状态与用户模拟器形态。",
+      "missing": [
+        "受控传统LLM对照缺失。",
+        "公开trace、生产派生模板与自运行数据不能合并分母或做模型排名。"
+      ]
+    },
+    {
+      "rq": "RQ2",
+      "question": "Agent 时间到底花在哪里？",
+      "status": "partially_supported_with_real_intervals",
+      "evidence": "Coding区间并集；DocOps REPEAT-02真实请求/自主工具/bootstrap/阶段边界；Assistant Agent/User请求、batch与setup/play/evaluator分解。",
+      "allowed_claim": "限定窗口的时间分解、mixed/uncovered、同任务重复差异；DocOps时间边界不再列为未实现。",
+      "missing": [
+        "端到端、采样窗与阶段窗口不同。",
+        "无服务端思考时间；调用跨度不等于独占执行时间。",
+        "视频时间与GUI/VM完整边界仍缺。"
+      ]
+    },
+    {
+      "rq": "RQ3",
+      "question": "真正造成 CPU / Memory / IO 压力的是什么？",
+      "status": "partially_supported_scope_measurements",
+      "evidence": "Coding、Office、Assistant各3×3，已有scope级CPU、内存及有限I/O；Assistant明确较高初始化/evaluator开销。",
+      "allowed_claim": "固定配置的资源原始点/median/IQR、阶段与活动共现及错误路径。",
+      "missing": [
+        "共享scope不证明工具独占资源或压力原因。",
+        "任务/模型/harness/资源限制/硬件不统一，不能跨类别性能排名。",
+        "视频资源、GUI/VM资源、完整文件系统与网络流量缺失。"
+      ]
+    },
+    {
+      "rq": "RQ4",
+      "question": "不同 Tool 的 CPU workload 特征是什么？",
+      "status": "partial_precursors_not_tool_characterization",
+      "evidence": "已有关联工具接口、调用/batch窗口；共享进程线程数、CPU时间与部分fault/context-switch记录。",
+      "allowed_claim": "描述工具结构和可观测共享窗口，提出后续可测候选。",
+      "missing": [
+        "缺可靠单工具/进程树归因及统一基本CPU统计（cycles/instructions/IPC等）。",
+        "无cache/TLB/带宽PMU证据；不能认定compute/memory/IO/latency-bound。",
+        "线程数不是实际并行度，scope多线程不等于某工具多线程。"
+      ]
+    },
+    {
+      "rq": "RQ5",
+      "question": "主要热点和软件优化机会在哪里？",
+      "status": "not_supported_real_function_hotspots",
+      "evidence": "CPU-01仅合成可测性；CPU-02没有有效真实Agent热点样本，特权方案安全闭环未完成且路线暂停。",
+      "allowed_claim": "定位值得进一步观测的阶段，静态源码只列候选机制。",
+      "missing": [
+        "Binary→Library→Function热点和优化收益没有真实证据。",
+        "不能由evaluator高CPU认定Polars/深拷贝/某函数是热点。",
+        "不自行恢复特权perf，不把现有失败解释为必然不可用。"
+      ]
+    },
+    {
+      "rq": "RQ6",
+      "question": "多个 Agent 并发时系统会发生什么？",
+      "status": "not_supported_controlled_concurrency",
+      "evidence": "AgentX有subagent/request形态；当前自运行三类批次均为顺序重复。",
+      "allowed_claim": "描述保存的请求结构，不当成本机调度或争用实验。",
+      "missing": [
+        "缺受控Agent并发度、资源争用、尾延迟与sandbox扩展实验。",
+        "顺序run与工具排列检查都不是Agent并发实验。"
+      ]
+    }
+  ],
+  "metric_coverage": [
+    {
+      "id": "behavior_and_call_identity",
+      "status": "observed_limited",
+      "available": "公开多来源行为；新Office/Assistant请求、工具、bootstrap/User与batch区分。",
+      "missing": "原生格式及公开动作仍有Unknown/partial；保存顺序不自动代表执行或并发。"
+    },
+    {
+      "id": "time_windows",
+      "status": "observed_limited",
+      "available": "Coding区间；Office REPEAT-02请求/工具边界；Assistant角色请求/batch/阶段边界。",
+      "missing": "服务端思考/完整TTFT和独占工具耗时不由客户端窗口证明。"
+    },
+    {
+      "id": "cpu",
+      "status": "scope_observed",
+      "available": "cgroup累计CPU/宿主utime+stime及有效窗口差分；Assistant运行时CLK_TCK已保存。",
+      "missing": "cycles/instructions/IPC、PMU、工具独占归因与架构对照。"
+    },
+    {
+      "id": "memory",
+      "status": "scope_observed",
+      "available": "Coding/Office memory.current、内核peak及宿主RSS；Assistant RSS采样峰值。",
+      "missing": "Assistant宿主内核peak未采集；不同口径不相加或直接排名。"
+    },
+    {
+      "id": "io",
+      "status": "narrow_counters_observed",
+      "available": "DocOps cgroup blkio service-byte；Assistant proc rchar/wchar/read_bytes/write_bytes。",
+      "missing": "完整文件系统/网络字节、I/O路径和bottleneck因果；不能继续写正式I/O全部null。"
+    },
+    {
+      "id": "repetition_and_coverage",
+      "status": "three_categories_small_fixed_design",
+      "available": "当前主设计为Coding/Office/Assistant各3 task×3 repeat。",
+      "missing": "Video资源；GUI子域资源；独立任务代表性与足够统计力度。"
+    },
+    {
+      "id": "environment_reproducibility",
+      "status": "experiment_identity_partial_environment",
+      "available": "新批代码/依赖/任务身份、运行时CPU可见性和affinity；DocOps镜像/环境差异登记。",
+      "missing": "全项目references/license/version与lock尚非全闭合；模型别名不是不可变后端版本；跨平台条件不统一。"
+    },
+    {
+      "id": "transport_billing",
+      "status": "unknown_for_resource_batches",
+      "available": "逻辑调用/项目层尝试和供应商usage。",
+      "missing": "实际HTTP传输次数和账单；API单次smoke有hook不证明正式批次传输数。"
+    },
+    {
+      "id": "hotspots_and_concurrency",
+      "status": "not_supported",
+      "available": "高值阶段和静态候选机制。",
+      "missing": "函数profile/优化收益/受控并发争用；CPU-02和Replay继续暂停。"
+    }
+  ],
+  "current_primary_designs": {
+    "categories_with_resource_repeats": 3,
+    "task_designs": 9,
+    "runs": 27,
+    "basis": "只计CODING-REPEAT-01、DOCOPS-OFFICE-REPEAT-02、TOOLSANDBOX-ASSISTANT-REPEAT-01；不是跨类别统一实验或总体样本。",
+    "do_not_merge": [
+      "旧Coding缺陷批次",
+      "Office REPEAT-01旧采集口径",
+      "Word不同步数配置",
+      "ToolSandbox PILOT-01/02",
+      "公开trace或Applied模板"
+    ]
+  },
+  "findings": [
+    {
+      "id": "three_local_domains",
+      "text": "资源侧不再只有Coding：三个固定本地设计各3×3；范围、harness和资源限制不同，不能作类别性能排名。"
+    },
+    {
+      "id": "new_time_boundaries",
+      "text": "Office REPEAT-02与Assistant已有真实客户端/工具或batch时间边界；旧TOOL-OBSERVABILITY-01建议不再是未启动缺口。"
+    },
+    {
+      "id": "assistant_evaluator",
+      "text": "Assistant Task C重复波动主要落在evaluator；evaluator CPU原始点1536.27/845.15/2765.90 process CPU-s、IQR960.375；与更多请求/错误共现，不作因果或函数热点结论。"
+    },
+    {
+      "id": "io_not_all_null",
+      "text": "已有有限blkio及proc I/O观测，不能再说I/O全部null；也不能称完整文件系统I/O。"
+    },
+    {
+      "id": "video_not_zero_trace",
+      "text": "VideoWeaver已有旧宏观小样及部分解析，缺的是本地视频处理资源与完整可追溯任务测量，不是所有视频trace一概不存在。"
+    }
+  ],
+  "comparison_boundaries": [
+    "四大类保持Coding、Computer/Office、Assistant/Tool、Video；GUI是Computer/Office内部未测子域。",
+    "公开H-EPM与官方ToolSandbox自运行不是受控复现；两组公开H-EPM运行源码不同且带local changes。",
+    "客户端请求跨度不是模型思考时间；uncovered不是等待时间。",
+    "任务评分、工具错误、Agent/User终止、infra及测量完整性分列。",
+    "少量任务/重复、模型与harness混杂不支持总体、因果、architecture sensitivity、P95/P99或模型排名。",
+    "VideoWeaver远端生成CPU不可归到本机；本地FFmpeg等编辑候选需真实资产与官方任务身份。"
+  ],
+  "completed_old_recommendations": [
+    "Coding区间资源关联已完成限定分析。",
+    "SWE-bench三格式子集已分析。",
+    "DocOps请求/工具时间边界已实测并完成REPEAT-02分析。",
+    "Assistant公开H-EPM行为与官方ToolSandbox 3×3资源分析已完成。"
+  ],
+  "next_task": {
+    "id": "VIDEO-RESOURCE-PILOT-PREP-01",
+    "status": "proposed_not_started",
+    "execution_authorized": false,
+    "title": "既定Video benchmark的本地编辑资源试点可行性核查",
+    "goal": "先补四大类中唯一尚无已验收本地资源批次的Video；优先核查AgenticVBench本地剪辑/编码任务条件，而非把远端VideoWeaver生成服务当作本机CPU负载。",
+    "scope": [
+      "只读盘点已有VideoWeaver小样、既定AgenticVBench源码/任务/媒体/verifier的本地可用性与来源身份。",
+      "比较现有Agent、模型输入能力、arm64依赖、工具执行位置和测量边界，选一个候选任务。",
+      "已有资产不足时提出最小获取需求；不联网补抓，不自行创造替代benchmark或任务。",
+      "复用已实测采集链，设计单次试点；暂不实现新框架或申请九次运行。"
+    ],
+    "stop_condition": "交付一个可审的单任务方案及缺口/权限清单即停。",
+    "authority_note": "这是研究顺序建议，不授权下载、安装、API、Docker/VM、任务执行、批准或attempt。"
+  },
+  "later_gaps_in_order": [
+    {
+      "priority": 2,
+      "id": "tool_resource_granularity",
+      "goal": "结合新增类别任务寻找自然子进程边界，补单工具/进程树与基础CPU统计；共享窗口不冒称独占。",
+      "execution_authorized": false
+    },
+    {
+      "priority": 3,
+      "id": "gui_resource_subdomain",
+      "goal": "若需Computer-use结论，再准备OSWorld GUI/VM资源观测；DocOps不能替代GUI。",
+      "execution_authorized": false
+    },
+    {
+      "priority": 4,
+      "id": "controlled_baselines_and_concurrency",
+      "goal": "RQ1传统LLM对照、RQ3可比条件及RQ6并发留待测量边界稳定后独立设计。",
+      "execution_authorized": false
+    },
+    {
+      "priority": null,
+      "id": "function_hotspots_and_replay",
+      "goal": "热点与Replay仍有缺口；不自行恢复CPU-02特权或Replay执行。",
+      "execution_authorized": false
+    }
+  ],
+  "gates": {
+    "g0": "existing_pass_record",
+    "g1": "passed_registered_limited_scope",
+    "g2": "not_passed",
+    "g3_r": "not_passed",
+    "cpu_02_route": "paused",
+    "replay_execution": "paused",
+    "changed_by_this_report": false
+  },
+  "source_packages": [
+    {
+      "package": "SWE-REBENCH-behavior-v2",
+      "manifest": "reports/analysis/SWE-REBENCH-behavior-v2/manifest.json",
+      "verified_output_count": 5,
+      "verified_outputs": [
+        "reports/analysis/SWE-REBENCH-behavior-v2/summary.json",
+        "reports/analysis/SWE-REBENCH-behavior-v2/summary.md",
+        "reports/analysis/SWE-REBENCH-behavior-v2/per_trajectory.jsonl",
+        "reports/analysis/SWE-REBENCH-behavior-v2/measurement_candidates.json",
+        "reports/analysis/SWE-REBENCH-behavior-v2/corrections.md"
+      ]
+    },
+    {
+      "package": "SWEBENCH-subset-behavior-v1",
+      "manifest": "reports/analysis/SWEBENCH-subset-behavior-v1/manifest.json",
+      "verified_output_count": 4,
+      "verified_outputs": [
+        "reports/analysis/SWEBENCH-subset-behavior-v1/selection.json",
+        "reports/analysis/SWEBENCH-subset-behavior-v1/per_trajectory.jsonl",
+        "reports/analysis/SWEBENCH-subset-behavior-v1/summary.json",
+        "reports/analysis/SWEBENCH-subset-behavior-v1/summary.md"
+      ]
+    },
+    {
+      "package": "OSWORLD-task-behavior-v3",
+      "manifest": "reports/analysis/OSWORLD-task-behavior-v3/manifest.json",
+      "verified_output_count": 5,
+      "verified_outputs": [
+        "reports/analysis/OSWORLD-task-behavior-v3/task_semantics.jsonl",
+        "reports/analysis/OSWORLD-task-behavior-v3/per_trajectory.jsonl",
+        "reports/analysis/OSWORLD-task-behavior-v3/summary.json",
+        "reports/analysis/OSWORLD-task-behavior-v3/summary.md",
+        "reports/analysis/OSWORLD-task-behavior-v3/corrections.md"
+      ]
+    },
+    {
+      "package": "AGENTX-APPLIED-MACRO-v1",
+      "manifest": "reports/analysis/AGENTX-APPLIED-MACRO-v1/manifest.json",
+      "verified_output_count": 4,
+      "verified_outputs": [
+        "reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.json",
+        "reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.md",
+        "reports/analysis/AGENTX-APPLIED-MACRO-v1/per_trace.jsonl",
+        "reports/analysis/AGENTX-APPLIED-MACRO-v1/per_template.jsonl"
+      ]
+    },
+    {
+      "package": "P1-12-CODING-REPEAT-01-characterization-v3",
+      "manifest": "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/manifest.json",
+      "verified_output_count": 3,
+      "verified_outputs": [
+        "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/summary.json",
+        "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/summary.md",
+        "reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/corrections.md"
+      ]
+    },
+    {
+      "package": "CODING-RESOURCE-LINK-feasibility-v1",
+      "manifest": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/manifest.json",
+      "verified_output_count": 3,
+      "verified_outputs": [
+        "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/summary.md",
+        "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/decision.json",
+        "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/per_run_decomposition.json"
+      ]
+    },
+    {
+      "package": "DOCOPS-OFFICE-REPEAT-02-characterization-v1",
+      "manifest": "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/manifest.json",
+      "verified_output_count": 3,
+      "verified_outputs": [
+        "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/summary.json",
+        "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/per_run.jsonl",
+        "reports/analysis/DOCOPS-OFFICE-REPEAT-02-characterization-v1/summary.md"
+      ]
+    },
+    {
+      "package": "TOOLSANDBOX-HEPM-behavior-v2",
+      "manifest": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/manifest.json",
+      "verified_output_count": 3,
+      "verified_outputs": [
+        "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/summary.md",
+        "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/summary.json",
+        "reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/per_trajectory.jsonl"
+      ]
+    },
+    {
+      "package": "TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1",
+      "manifest": "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/manifest.json",
+      "verified_output_count": 3,
+      "verified_outputs": [
+        "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/summary.json",
+        "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/per_run.jsonl",
+        "reports/analysis/TOOLSANDBOX-ASSISTANT-REPEAT-01-review-v1/summary.md"
+      ]
+    },
+    {
+      "package": "P3-01-audit-v3",
+      "manifest": "reports/replay/P3-01-audit-v3/manifest.json",
+      "verified_output_count": 3,
+      "verified_outputs": [
+        "reports/replay/P3-01-audit-v3/inventory.json",
+        "reports/replay/P3-01-audit-v3/summary.md",
+        "reports/replay/P3-01-audit-v3/corrections.md"
+      ]
+    },
+    {
+      "package": "macro-pilot-v6",
+      "manifest": "reports/macro/macro-pilot-v6/manifest.json",
+      "verified_output_count": 5,
+      "verified_outputs": [
+        "reports/macro/macro-pilot-v6/macro_summary.csv",
+        "reports/macro/macro-pilot-v6/quality_checks.json",
+        "reports/macro/macro-pilot-v6/selection_ledger.jsonl",
+        "reports/macro/macro-pilot-v6/summary.md",
+        "reports/macro/macro-pilot-v6/trace_coverage.csv"
+      ]
+    }
+  ]
+}

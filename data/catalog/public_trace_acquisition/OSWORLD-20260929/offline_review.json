@@ -1,0 +1,306 @@
+{
+  "schema": "public_trace_offline_review.v1",
+  "review_id": "OSWORLD-20260929-offline-review",
+  "source_acquisition": "manifest.json",
+  "checks": {
+    "A_file_integrity": {
+      "status": "pass",
+      "evidence": "all 14 files listed by manifest exist and match bytes/SHA-256; raw JSON parses"
+    },
+    "B_source_version_binding": {
+      "status": "partial",
+      "evidence": "full Hcompany revision is recorded; selected trace URLs use that revision and response headers expose matching x-repo-commit; README/index used main URLs but headers expose the same commit; Hcompany is third-party and exact official OSWorld task/version match is not established"
+    },
+    "C_budget_auditability": {
+      "status": "unknown",
+      "evidence": "known lower bound is 24 HTTP operations and known response bodies total 8603911 bytes; saved bodies total 5197002 bytes; discovery response byte counters and redirect count are not fully recoverable, so compliance with the 30-request/30MiB ceilings cannot be independently proved or disproved"
+    },
+    "D_selection_coverage": {
+      "status": "partial_pass",
+      "evidence": "selection rule was recorded before trace inspection and is reproducible from saved index; coverage is only three mirror records from OSWorld/model/run stratum, not random or representative"
+    },
+    "E_downstream_use": {
+      "status": "limited",
+      "evidence": "browser action sequence description is supported; reliable step timing, CPU/memory/I/O/hotspot and exact official task-version claims are not supported"
+    }
+  },
+  "source_and_version": {
+    "publisher_status": "third-party mirror",
+    "dataset": "Hcompany/trajectories",
+    "revision": "ede2a362c99ddba0d03f439c47a0b8fea6abae22",
+    "upstream_attribution": "xlang-ai/OSWorld",
+    "official_osworld_release_checked": "osworld-v2-2026.08.08",
+    "official_equivalence": "not established"
+  },
+  "traces": [
+    {
+      "file": "raw/chrome-1-2c59a0c1.json",
+      "id": "chrome-1-2c59a0c1",
+      "id_semantics": "mirror_record_id; not proven official task or episode id",
+      "benchmark": "OSWorld",
+      "model": "Holo4 27B",
+      "run": 1,
+      "runs": 3,
+      "task": "chrome_1",
+      "task_association": "mirror_recorded; exact official task/version match unknown",
+      "application_category": "browser/Chrome according to mirror task label; official category mapping not independently verified",
+      "description": "present but not copied into this report",
+      "success": true,
+      "score": 1.0,
+      "duration_s": 89.482005,
+      "duration_semantics": "published top-level run summary; clock/observation boundary unknown",
+      "registered_steps": 9,
+      "message_count": "unknown; no message array, steps are the available records",
+      "action_count": 9,
+      "action_types": {
+        "wait_desktop": 3,
+        "click_desktop": 4,
+        "scroll_desktop": 1,
+        "answer": 1
+      },
+      "action_order": [
+        "wait_desktop",
+        "click_desktop",
+        "click_desktop",
+        "click_desktop",
+        "wait_desktop",
+        "click_desktop",
+        "wait_desktop",
+        "scroll_desktop",
+        "answer"
+      ],
+      "action_argument_keys": [
+        "button",
+        "content",
+        "direction",
+        "element",
+        "scroll_size",
+        "seconds",
+        "x",
+        "y"
+      ],
+      "action_result_association_ids": "missing",
+      "structured_tool_results": false,
+      "result_record_count": 0,
+      "result_types": {},
+      "result_completeness": "unknown; strings/absence do not establish full tool output",
+      "timestamps": "missing at step level; no clock/unit/window established",
+      "usage": "present at top level and per step; aggregation semantics not stated",
+      "verifier_fields": [
+        "details",
+        "exception",
+        "execution_time_s"
+      ],
+      "verifier_result": "present; task-completion interpretation limited to mirror verifier fields",
+      "resource_cpu_memory": "missing",
+      "harness_environment_identity": "unknown; no immutable image/harness identity in saved record",
+      "raw_json_parse": "pass"
+    },
+    {
+      "file": "raw/chrome-10-a6282ce2.json",
+      "id": "chrome-10-a6282ce2",
+      "id_semantics": "mirror_record_id; not proven official task or episode id",
+      "benchmark": "OSWorld",
+      "model": "Holo4 27B",
+      "run": 1,
+      "runs": 3,
+      "task": "chrome_10",
+      "task_association": "mirror_recorded; exact official task/version match unknown",
+      "application_category": "browser/Chrome according to mirror task label; official category mapping not independently verified",
+      "description": "present but not copied into this report",
+      "success": true,
+      "score": 1.0,
+      "duration_s": 97.545258,
+      "duration_semantics": "published top-level run summary; clock/observation boundary unknown",
+      "registered_steps": 8,
+      "message_count": "unknown; no message array, steps are the available records",
+      "action_count": 8,
+      "action_types": {
+        "click_desktop": 3,
+        "wait_desktop": 2,
+        "write_at_desktop": 2,
+        "answer": 1
+      },
+      "action_order": [
+        "click_desktop",
+        "wait_desktop",
+        "click_desktop",
+        "write_at_desktop",
+        "wait_desktop",
+        "click_desktop",
+        "write_at_desktop",
+        "answer"
+      ],
+      "action_argument_keys": [
+        "button",
+        "content",
+        "element",
+        "overwrite",
+        "press_enter",
+        "seconds",
+        "x",
+        "y"
+      ],
+      "action_result_association_ids": "missing",
+      "structured_tool_results": false,
+      "result_record_count": 0,
+      "result_types": {},
+      "result_completeness": "unknown; strings/absence do not establish full tool output",
+      "timestamps": "missing at step level; no clock/unit/window established",
+      "usage": "present at top level and per step; aggregation semantics not stated",
+      "verifier_fields": [
+        "details",
+        "exception",
+        "execution_time_s"
+      ],
+      "verifier_result": "present; task-completion interpretation limited to mirror verifier fields",
+      "resource_cpu_memory": "missing",
+      "harness_environment_identity": "unknown; no immutable image/harness identity in saved record",
+      "raw_json_parse": "pass"
+    },
+    {
+      "file": "raw/chrome-11-0c8292b4.json",
+      "id": "chrome-11-0c8292b4",
+      "id_semantics": "mirror_record_id; not proven official task or episode id",
+      "benchmark": "OSWorld",
+      "model": "Holo4 27B",
+      "run": 1,
+      "runs": 3,
+      "task": "chrome_11",
+      "task_association": "mirror_recorded; exact official task/version match unknown",
+      "application_category": "browser/Chrome according to mirror task label; official category mapping not independently verified",
+      "description": "present but not copied into this report",
+      "success": true,
+      "score": 1.0,
+      "duration_s": 83.483876,
+      "duration_semantics": "published top-level run summary; clock/observation boundary unknown",
+      "registered_steps": 10,
+      "message_count": "unknown; no message array, steps are the available records",
+      "action_count": 10,
+      "action_types": {
+        "shell": 3,
+        "click_desktop": 5,
+        "write_at_desktop": 1,
+        "answer": 1
+      },
+      "action_order": [
+        "shell",
+        "shell",
+        "click_desktop",
+        "click_desktop",
+        "click_desktop",
+        "write_at_desktop",
+        "click_desktop",
+        "click_desktop",
+        "shell",
+        "answer"
+      ],
+      "action_argument_keys": [
+        "button",
+        "command",
+        "content",
+        "element",
+        "overwrite",
+        "press_enter",
+        "x",
+        "y"
+      ],
+      "action_result_association_ids": "missing",
+      "structured_tool_results": false,
+      "result_record_count": 3,
+      "result_types": {
+        "str": 3
+      },
+      "result_completeness": "unknown; strings/absence do not establish full tool output",
+      "timestamps": "missing at step level; no clock/unit/window established",
+      "usage": "present at top level and per step; aggregation semantics not stated",
+      "verifier_fields": [
+        "details",
+        "exception",
+        "execution_time_s"
+      ],
+      "verifier_result": "present; task-completion interpretation limited to mirror verifier fields",
+      "resource_cpu_memory": "missing",
+      "harness_environment_identity": "unknown; no immutable image/harness identity in saved record",
+      "raw_json_parse": "pass"
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "manifest.json",
+      "bytes": 6314,
+      "sha256": "e02ea7a93dc9b1b7527603d1f122c41edf84d6ef00406f4ff8f78b83de1d5c0a"
+    },
+    {
+      "path": "http/chrome-1-2c59a0c1.headers",
+      "bytes": 2836,
+      "sha256": "0470e2e453137f12a9aa4bec725a6257c0bb58e357b4f1e163a3bf5c5e43060c"
+    },
+    {
+      "path": "http/chrome-10-a6282ce2.headers",
+      "bytes": 2670,
+      "sha256": "fc71b5f4a1e18f19d6548e364701f02b218450ebdfea52a9e26f0ad198594100"
+    },
+    {
+      "path": "http/chrome-11-0c8292b4.headers",
+      "bytes": 2840,
+      "sha256": "5258de8f46ab0c772364d5724319adfa3982b6a978f47cfe853723c59d9266f4"
+    },
+    {
+      "path": "http/dataset-api.headers",
+      "bytes": 1017,
+      "sha256": "bccc2184cedeaea756a531027a46ca890ff797f1e1334b0185ab0c1fb776c9bc"
+    },
+    {
+      "path": "http/dataset-info.headers",
+      "bytes": 1081,
+      "sha256": "c55a8d9a2471515a170b5a2f6234d3666589942eb7b7f60bc61182627cf842ef"
+    },
+    {
+      "path": "http/index-raw.headers",
+      "bytes": 1245,
+      "sha256": "f743bbce49fda4a53e865da6c146aa1b47a2ca1894e3d5334f541ccd92a08815"
+    },
+    {
+      "path": "http/readme-raw.headers",
+      "bytes": 1240,
+      "sha256": "9f28c9b680ab82b949dcb8fd8619b4cc97cffaa7ebea465a51032fd7efde9e00"
+    },
+    {
+      "path": "http/readme.headers",
+      "bytes": 39,
+      "sha256": "f55260227c507b4e203ec14ceb78ce8e64d11734111bed9bd18936a3bd4d48f3"
+    },
+    {
+      "path": "raw/README.md",
+      "bytes": 2031,
+      "sha256": "ee2feb78fb0ee48bc89f8f0af9aff178ac678464afe0782901812a3719dea89e"
+    },
+    {
+      "path": "raw/chrome-1-2c59a0c1.json",
+      "bytes": 47695,
+      "sha256": "3da635014ee61d17415773ecafd6a556f285569960676ca7f931d21221dae890"
+    },
+    {
+      "path": "raw/chrome-10-a6282ce2.json",
+      "bytes": 45591,
+      "sha256": "499bc2898887516ff636479903287744ca028457339802ffdd4bdbb950d0f9d6"
+    },
+    {
+      "path": "raw/chrome-11-0c8292b4.json",
+      "bytes": 54995,
+      "sha256": "198ff9cbebaf2d62e8db41a7857de800392518cc38f0a36acdc4b67d866dec4d"
+    },
+    {
+      "path": "raw/index.json",
+      "bytes": 5046690,
+      "sha256": "a8525624049894e1aeb220790ed8c013067a99f2ffdbcb938d5a4cef91f0cf53"
+    },
+    {
+      "path": "review.md",
+      "bytes": 4403,
+      "sha256": "654b0e9add524dc40129ba51ea67d049825475a0c6e497eafda026c1a396c502"
+    }
+  ],
+  "self_hash_excluded": true
+}

@@ -1,0 +1,211 @@
+{
+  "kind": "P1-12-finish-protocol-review-v1",
+  "generated_at_utc": "2026-09-28T03:54:59Z",
+  "inputs": {
+    "data/raw/generated/P1-12/20260928T023250Z-20d5ed/mini_trajectory.json": {
+      "bytes": 252732,
+      "sha256": "a7654655c16cae51a23b9a30903b23e97126a602e29db0dffd1b1df454e225fd"
+    },
+    "data/raw/generated/P1-12/20260928T023250Z-20d5ed/metadata.json": {
+      "bytes": 1357,
+      "sha256": "4a1f8bdd9798acfa5d7c628d7eedb07006960819543c02b5f1ad0a68cd93d205"
+    },
+    "data/raw/generated/P1-12/20260928T023501Z-28a197/mini_trajectory.json": {
+      "bytes": 435315,
+      "sha256": "71f6a3acde43c1b7347fcdb00c3ed6a1c1227f82e52c84f258f2447ac1f00baa"
+    },
+    "data/raw/generated/P1-12/20260928T023501Z-28a197/metadata.json": {
+      "bytes": 1372,
+      "sha256": "55177fb84059a1c9bbc10ed314d7b4d06cfc2d365bcf33308881a52d0002aec9"
+    },
+    "data/raw/generated/P1-12/20260928T023716Z-743095/mini_trajectory.json": {
+      "bytes": 268464,
+      "sha256": "686612e530cc9d79430a4be6461ea7f72cdeda00627793649a5a5744e2ade06c"
+    },
+    "data/raw/generated/P1-12/20260928T023716Z-743095/metadata.json": {
+      "bytes": 1356,
+      "sha256": "99562b16d7fab7e7618ae847a9a52bcf05f1f242c3eefd758465b5d2b3b47e3e"
+    },
+    "data/raw/generated/P1-12/20260928T023942Z-201a12/mini_trajectory.json": {
+      "bytes": 492066,
+      "sha256": "7ced4ef4a82ceaf4219092022e83778a93323270e1cfe372f43f5fd0b0da10ac"
+    },
+    "data/raw/generated/P1-12/20260928T023942Z-201a12/metadata.json": {
+      "bytes": 1359,
+      "sha256": "eca6704df5baf224d11d8dca52a50ce2e2710f361117d822599a479d578d17a9"
+    },
+    "data/raw/generated/P1-12/20260928T024307Z-53761e/mini_trajectory.json": {
+      "bytes": 358910,
+      "sha256": "20a2cf81aa154094b394607f52a71ecb6106a9056417950528a95a3666cc7910"
+    },
+    "data/raw/generated/P1-12/20260928T024307Z-53761e/metadata.json": {
+      "bytes": 1357,
+      "sha256": "0bfdab3e6dfd8332b2bbf741eabcdb92ef02abe559b33b7b2a28cd783ac0fbf4"
+    },
+    "data/raw/generated/P1-12/20260928T024535Z-eb2d90/mini_trajectory.json": {
+      "bytes": 202756,
+      "sha256": "fe7940044bb3d89b99ff735a82bc4a4d7be3dae8fee9da1cb1c4606a7851e0d1"
+    },
+    "data/raw/generated/P1-12/20260928T024535Z-eb2d90/metadata.json": {
+      "bytes": 1355,
+      "sha256": "29890fc4b60363df148b2e2d98a576b86817b41c1c2d0926c669028618063461"
+    },
+    "data/raw/generated/P1-12/20260928T024751Z-12c3df/mini_trajectory.json": {
+      "bytes": 266997,
+      "sha256": "426dd1d5a2d7aba93a31d83b08ab35260aa71bb6e3c044cc3d5b46853811e4bc"
+    },
+    "data/raw/generated/P1-12/20260928T024751Z-12c3df/metadata.json": {
+      "bytes": 1355,
+      "sha256": "b019bdbaaf6dc32f8d73dbd7ff6502acfd95f3e2049f7ae17708eedbb44900f1"
+    },
+    "data/raw/generated/P1-12/20260928T025010Z-5ed403/mini_trajectory.json": {
+      "bytes": 436692,
+      "sha256": "e2e52443345037b110dbac27c3b091d72b00993264e3658379bec7f3fe2115c3"
+    },
+    "data/raw/generated/P1-12/20260928T025010Z-5ed403/metadata.json": {
+      "bytes": 1357,
+      "sha256": "325cd41a43332412e89d0da619cfd40200e9118ea64f58ba7f601016ac4091a3"
+    },
+    "data/raw/generated/P1-12/20260928T025258Z-1a3046/mini_trajectory.json": {
+      "bytes": 268834,
+      "sha256": "731ce46485bde050104cbee8b18d01a0f76005abfa1c322b724e587126ed18f2"
+    },
+    "data/raw/generated/P1-12/20260928T025258Z-1a3046/metadata.json": {
+      "bytes": 1357,
+      "sha256": "8a6f2fb205d9f83292708b4396aa447531389fb7052110e0db4c4bbafe4515be"
+    },
+    "src/agent_workload_characterization/runners/mini_agent_adapter.py": {
+      "bytes": 48688,
+      "sha256": "e84c62fc17f7ca578cd9f8f5f60bb62810747cbeacf0d930f7dfdcf76007f87b"
+    }
+  },
+  "rows": [
+    {
+      "run_dir": "data/raw/generated/P1-12/20260928T023250Z-20d5ed",
+      "task": "astropy__astropy-13236",
+      "resolved": true,
+      "mini_exit_status": "LimitsExceeded",
+      "n_commands": 41,
+      "submit_events": [],
+      "last_command_head": "cd /testbed && git show 5f1c8e68cf --stat | head -30"
+    },
+    {
+      "run_dir": "data/raw/generated/P1-12/20260928T023501Z-28a197",
+      "task": "astropy__astropy-13398",
+      "resolved": null,
+      "mini_exit_status": "LimitsExceeded",
+      "n_commands": 58,
+      "submit_events": [],
+      "last_command_head": "git diff --name-only 6500928dc0 1efaab7bb3 -- astropy/ | grep -v tests"
+    },
+    {
+      "run_dir": "data/raw/generated/P1-12/20260928T023716Z-743095",
+      "task": "django__django-16485",
+      "resolved": true,
+      "mini_exit_status": "LimitsExceeded",
+      "n_commands": 35,
+      "submit_events": [
+        {
+          "at_message_index": 64,
+          "command_head": "cd /testbed && echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT && cat patch.txt",
+          "executed_returncode_0": true,
+          "marker_is_first_output_line": false,
+          "assistant_messages_after": 0,
+          "signal_consumed": false
+        }
+      ],
+      "last_command_head": "cd /testbed && echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT && cat patch.txt"
+    },
+    {
+      "run_dir": "data/raw/generated/P1-12/20260928T023942Z-201a12",
+      "task": "astropy__astropy-13398",
+      "resolved": false,
+      "mini_exit_status": "LimitsExceeded",
+      "n_commands": 53,
+      "submit_events": [],
+      "last_command_head": "cd /testbed && cat > astropy/coordinates/builtin_frames/itrs.py << 'EOF'\n# Licen"
+    },
+    {
+      "run_dir": "data/raw/generated/P1-12/20260928T024307Z-53761e",
+      "task": "astropy__astropy-13236",
+      "resolved": true,
+      "mini_exit_status": "LimitsExceeded",
+      "n_commands": 64,
+      "submit_events": [],
+      "last_command_head": "cd /testbed && git diff --stat"
+    },
+    {
+      "run_dir": "data/raw/generated/P1-12/20260928T024535Z-eb2d90",
+      "task": "django__django-16485",
+      "resolved": true,
+      "mini_exit_status": "LimitsExceeded",
+      "n_commands": 28,
+      "submit_events": [
+        {
+          "at_message_index": 39,
+          "command_head": "echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT && cat patch.txt",
+          "executed_returncode_0": true,
+          "marker_is_first_output_line": false,
+          "assistant_messages_after": 7,
+          "signal_consumed": false
+        },
+        {
+          "at_message_index": 57,
+          "command_head": "echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT && cat patch.txt",
+          "executed_returncode_0": true,
+          "marker_is_first_output_line": false,
+          "assistant_messages_after": 0,
+          "signal_consumed": false
+        }
+      ],
+      "last_command_head": "echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT && cat patch.txt"
+    },
+    {
+      "run_dir": "data/raw/generated/P1-12/20260928T024751Z-12c3df",
+      "task": "django__django-16485",
+      "resolved": true,
+      "mini_exit_status": "LimitsExceeded",
+      "n_commands": 35,
+      "submit_events": [
+        {
+          "at_message_index": 54,
+          "command_head": "echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT && cat patch.txt",
+          "executed_returncode_0": true,
+          "marker_is_first_output_line": false,
+          "assistant_messages_after": 4,
+          "signal_consumed": false
+        }
+      ],
+      "last_command_head": "true"
+    },
+    {
+      "run_dir": "data/raw/generated/P1-12/20260928T025010Z-5ed403",
+      "task": "astropy__astropy-13398",
+      "resolved": false,
+      "mini_exit_status": "LimitsExceeded",
+      "n_commands": 49,
+      "submit_events": [],
+      "last_command_head": "cd /testbed && python -m pytest astropy/coordinates/tests/test_intermediate_tran"
+    },
+    {
+      "run_dir": "data/raw/generated/P1-12/20260928T025258Z-1a3046",
+      "task": "astropy__astropy-13236",
+      "resolved": true,
+      "mini_exit_status": "LimitsExceeded",
+      "n_commands": 45,
+      "submit_events": [],
+      "last_command_head": "cd /testbed && git stash && python -m pytest astropy/table/tests/test_mixin.py::"
+    }
+  ],
+  "analysis_code": {
+    "path": "scripts/p1_12_finish_protocol_review.py",
+    "bytes": 10794,
+    "sha256": "5ce44d2ee4e08407c9b78eed0b047ade759e81ad495a093854ab2a3314c9bbc8"
+  },
+  "outputs": {
+    "summary.md": {
+      "bytes": 5344,
+      "sha256": "b824a46ea2649d8311d9a2e902ece1b1979c3dbfd34e2307d573dc5570a2ad3b"
+    }
+  }
+}

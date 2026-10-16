@@ -1,0 +1,21 @@
+{
+ "schema": "docops-word-resource-02-report-manifest-v1",
+ "inputs": [
+  {
+   "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-02/20261010T073324Z-word001/summary.json",
+   "sha256": "16f51bb12c0af2d686b951287621883fdc1d93259ae88e4414a3a56e42df2477"
+  },
+  {
+   "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-02/20261010T073324Z-word001/manifest.json",
+   "sha256": "8da91848687467012328e007392f12bfff4369d92a3d6a6b33fbbdf1997f625e"
+  }
+ ],
+ "outputs": [
+  {
+   "path": "reports/resource/DOCOPS-WORD-RESOURCE-02/run-report.json",
+   "bytes": 3918,
+   "sha256": "0567c2d49a6de3f2d9c7ab022933608218d5f07b254aabcd7af58a5277e0cce9",
+   "role": "output"
+  }
+ ]
+}

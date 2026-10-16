@@ -1,0 +1,109 @@
+{
+  "schema": "docops-batch-approval-v1",
+  "collection": "DOCOPS-OFFICE-REPEAT-02",
+  "user_approval": "approved",
+  "identity_sha256": "0886c0b0d64ae20813f518e0c0392d370d98f5a8479737bccabdd5016c539bf1",
+  "approved_at_utc": "2026-10-11T10:41:44.230326+00:00",
+  "approval_source": "User message approving DOCOPS-OFFICE-REPEAT-02 single batch with this complete identity in the current conversation",
+  "authorization_text": "批准DOCOPS-OFFICE-REPEAT-02单批正式执行；固定三任务各三次、顺序运行、retry=0；明确接受费用unknown、无硬金额上限及每逻辑调用最多3次框架内部尝试。基础设施、清理、归档、身份或预算失败即停，剩余not_executed，不补跑不扩预算。",
+  "accept_unknown_cost_no_hard_cap": true,
+  "scope": {
+    "attempts": 9,
+    "attempt_retry": 0,
+    "maximum_model_steps": 360,
+    "per_attempt": {
+      "max_steps": 40,
+      "max_tokens_per_request": 32768,
+      "agent_s": 1200.0,
+      "verifier_s": 600.0,
+      "wall_s": 2700.0,
+      "cleanup_reserve_s": 300.0,
+      "cpu": 1,
+      "memory_gib": 4,
+      "storage_gib": 10,
+      "network": "none",
+      "sample_s": 0.5
+    },
+    "batch_wall_s": 27000.0,
+    "batch_closeout_reserve_s": 2700.0,
+    "framework_attempts_per_logical_call_max": 3,
+    "transport_attempt_count": "unknown_without_transport_hook",
+    "actual_bill": "unknown",
+    "model": "openai/deepseek-v4-flash",
+    "api_base": "https://api.deepseek.com/v1",
+    "tasks": [
+      "atomic__excel_001_budget_bucket_totals_seed",
+      "atomic__ppt_008_bullet_editing_seed",
+      "atomic__pdf_004_audit_pages_reorder_seed"
+    ],
+    "schedule": [
+      {
+        "round": 0,
+        "tasks": [
+          "atomic__excel_001_budget_bucket_totals_seed",
+          "atomic__ppt_008_bullet_editing_seed",
+          "atomic__pdf_004_audit_pages_reorder_seed"
+        ]
+      },
+      {
+        "round": 1,
+        "tasks": [
+          "atomic__ppt_008_bullet_editing_seed",
+          "atomic__pdf_004_audit_pages_reorder_seed",
+          "atomic__excel_001_budget_bucket_totals_seed"
+        ]
+      },
+      {
+        "round": 2,
+        "tasks": [
+          "atomic__pdf_004_audit_pages_reorder_seed",
+          "atomic__excel_001_budget_bucket_totals_seed",
+          "atomic__ppt_008_bullet_editing_seed"
+        ]
+      }
+    ],
+    "docker_endpoint": "unix:///var/run/docker.sock"
+  },
+  "full_identity_binding": [
+    {
+      "path": "env/docops-office-repeat-02/plan-identity.json",
+      "bytes": 62280,
+      "sha256": "69e2d083c9f08d2e92adde4c3910fe35a3536da64831c23b22d187ea4bcc72ce"
+    },
+    {
+      "path": "env/docops-office-repeat-02/frozen-identity.json",
+      "bytes": 62280,
+      "sha256": "69e2d083c9f08d2e92adde4c3910fe35a3536da64831c23b22d187ea4bcc72ce"
+    }
+  ],
+  "execute_command": "PYTHONPATH=src LITELLM_LOCAL_MODEL_COST_MAP=True .venvs/docops-pilot-01/bin/python -B scripts/docops_office_repeat_02_entry.py --execute --i-approve-the-docops-office-repeat-02",
+  "tool_permissions": "Separate platform permission request required; this approval is not a tool grant",
+  "pre_execution_checks": {
+    "full_structure_live_plan_frozen_equal": true,
+    "preparation_input_hashes_verified": 188,
+    "preparation_output_hashes_verified": 2,
+    "namespace_unoccupied": true,
+    "image_identity_and_architecture_verified": [
+      {
+        "reference": "harbor-claude-code-base:2.1.114",
+        "expected_id": "sha256:062bf50871c0e9d7d4a175643343746f27c785732596252d7ebe9ae0c08fe9b1",
+        "platform": "linux/arm64"
+      },
+      {
+        "reference": "docops-office-repeat-01:excel001",
+        "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+        "platform": "linux/arm64"
+      },
+      {
+        "reference": "docops-office-repeat-01:ppt008",
+        "id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+        "platform": "linux/arm64"
+      },
+      {
+        "reference": "docops-office-repeat-01:pdf004",
+        "id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+        "platform": "linux/arm64"
+      }
+    ]
+  }
+}

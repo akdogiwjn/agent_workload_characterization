@@ -7,9 +7,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 START = '<!-- PROJECT_STATE:START -->'
 END = '<!-- PROJECT_STATE:END -->'
-PAGES = ('README.md', 'methodology.md', 'docs/README.md',
-         'docs/project_status.md', 'docs/development_tasks.md',
-         'docs/g1_consolidated_review.md')
+PAGES = ('README.md', 'docs/README.md', 'docs/project_status.md')
 
 
 def render(state, page):

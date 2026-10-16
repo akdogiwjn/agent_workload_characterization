@@ -1,0 +1,30 @@
+{
+  "schema": "toolsandbox-pilot-approval-v1",
+  "collection": "TOOLSANDBOX-RESOURCE-PILOT-01",
+  "user_approval": "approved",
+  "identity_sha256": "0e087329ba60e846317c30e77ab66d3c0f937642283dc1a083ade3a4a42837b2",
+  "approved_at_utc": "2026-10-12",
+  "approval_source": "explicit user authorization in current conversation",
+  "scope": {
+    "scenario": "send_message_with_contact_content_cellular_off",
+    "attempts": 1,
+    "attempt_retry": 0,
+    "route": "https://api.deepseek.com/v1",
+    "request_model": "deepseek-v4-flash",
+    "agent_logical_calls_max": 20,
+    "user_logical_calls_max": 20,
+    "play_s_max": 300,
+    "evaluate_s_max": 60,
+    "common_work_s_max": 360,
+    "total_wall_s_max": 480,
+    "cleanup_reserve_s": 120,
+    "max_messages": 30,
+    "sampling_interval_s": 0.5,
+    "sdk_max_retries": 0,
+    "project_max_attempts_per_logical_call": 3,
+    "output_token_limit": "not set by frozen configuration"
+  },
+  "accept_unknown_cost_no_hard_cap": true,
+  "cost_note": "Actual bill is unknown; no hard monetary cap was set for this one attempt.",
+  "tool_permission": "must be obtained through the execution tool approval mechanism"
+}

@@ -1,0 +1,84 @@
+# P1-12 pilot: 3 distinct SWE-bench Verified tasks x 3 controlled repeats.
+# Frozen offline registration; execution_authorized is false and this file
+# is NOT an approval. Image digests marked null are pending completion and
+# make the batch preflight NOT READY until filled with verified full digests.
+spec_version: 0.1.0
+collection_id: P1-12
+status: A_OFFLINE_WIRED_B_PENDING_READY_GAPS
+execution_authorized: false
+dataset:
+  name: SWE-bench/SWE-bench_Verified
+  revision: 78f471bf655a3137b2e8a75af1501690ec009ec3
+  content_binding: verified-2026-09-24-parquet-sha-cross-time-and-field-identical
+tasks:
+  - instance_id: django__django-16485
+    record_locator: data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/django__django-16485/record.json
+    record_sha256: 762de270d1ce06ab23104a35322098178624865c886d7b0ddadf9044d8fec46a
+    image_arm64_digest: swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2
+    image_status: frozen-digest-verified-against-registry-2026-09-24-unchanged-since-2026-09-15-local-presence-unverified
+  - instance_id: astropy__astropy-13236
+    record_locator: data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/astropy__astropy-13236/record.json
+    record_sha256: 95203abf0dfa714f64ca17b1240d94d654f14a6fd86269a22d28e2daaf8b50c0
+    image_arm64_digest: swebench/sweb.eval.arm64.astropy_1776_astropy-13236@sha256:e7512a4ee3451cdd949098a496fb68f8488a4970ef00ab3d96ed40a5fb1a2011
+    image_status: full-digest-registered-2026-09-24-from-registry-manifest-read-only-identity-changed-from-truncated-2026-09-22-entry-no-approval-existed-local-presence-unverified
+  - instance_id: astropy__astropy-13398
+    record_locator: data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/astropy__astropy-13398/record.json
+    record_sha256: 6ab96f81bc7b4fc5ea704f0055c1cf4bdbfca5726a3d9b28c167f6391cb6a77e
+    image_arm64_digest: swebench/sweb.eval.arm64.astropy_1776_astropy-13398@sha256:4475e9bab862169dc0622cc9686f6a6e53232dc7beba244b525ec2af4fef6a4a
+    image_status: full-digest-registered-2026-09-24-from-registry-manifest-read-only-identity-changed-from-truncated-2026-09-22-entry-no-approval-existed-local-presence-unverified
+agent:
+  harness: mini-SWE-agent 2.4.6
+  harness_venv: .venvs/mini-swe-agent-2.4.6-env01
+  model_display_name: DeepSeek-V4-Flash
+  model_request_id: openai/deepseek-v4-flash
+  agent_input_fields: [instance_id, problem_statement]
+evaluator:
+  venv_python: .venvs/swebench-eval-02e7a74/bin/python
+  parser_semantics: official make_test_spec + get_eval_report at pinned harness commit 02e7a74
+design:
+  rounds: 3
+  repeats_per_task: 3
+  block_seed: 20260924
+  order_rule: within each round, tasks sorted by sha256("<seed>:<round>:<instance_id>") ascending; deterministic and registered
+  retry_policy: zero-automatic-retry; repeats are pre-planned blocks, not failure retries
+budget_per_attempt:
+  max_model_requests: 30
+  max_steps: 30
+  max_output_tokens_per_request: 4096
+  agent_wall_min: 25
+  verifier_wall_min: 5
+  total_wall_min: 30
+  max_new_artifact_bytes_gib: 5
+budget_batch:
+  batch_wall_min: 300
+  cleanup_and_summary_reserve_min: 30
+  note: 9 x 30min planned attempts + preflight/summary/cleanup reserve inside one shared deadline
+  monetary:
+    status: open
+    # Closure requires ALL of: status=closed, currency,
+    # input_price_per_mtok>0, output_price_per_mtok>0,
+    # max_input_tokens_per_request>0 (conservative input cap),
+    # batch_cap>0, AND the computed conservative bound
+    #   (9*30*input_cap*in_price + 9*30*4096*out_price)/1e6 <= batch_cap
+    # A bare positive number is NOT closure. Known limitation: input tokens
+    # have no execution-time hard stop, so the bound is a planning bound
+    # over the registered cap.
+  user_cost_risk_acceptance:
+    registered_at: '2026-09-28'
+    decision: user_accepted_no_hard_monetary_cap_for_this_pilot
+    scope: this_pilot_only
+    acknowledged_gaps: [dataset_terms_unresolved, pricing_unknown]
+    basis: >-
+      用户 2026-09-28 会话决定：数据集许可核查与价格确认不作为本次试点前置；
+      接受本次试点没有硬金额上限。这是用户对执行条件的调整，不是许可已验证
+      或费用一定低的证明。请求数、输出 token、时间、资源限制和失败即停规则
+      全部保留；monetary_bound 继续仅作 planning estimate，价格保留 unknown。
+failure_policy:
+  resolved_false: valid completed sample; continue batch
+  infra_failure_or_budget_or_cleanup_or_safety: stop batch; remaining planned attempts recorded not_executed; no auto re-run
+authorization:
+  user_approval: pending
+  tool_execution_permission: pending
+  approval_path: reports/resource/P1-12/APPROVAL.json
+  attempt_path: reports/resource/P1-12/ATTEMPT_STARTED.json
+  report_root: reports/resource/P1-12

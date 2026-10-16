@@ -1,0 +1,187 @@
+{
+  "schema": "awc-p1-12-a-acquisition-review-v1",
+  "reviewed_at_utc": "2026-09-24T07:10:00Z",
+  "authorization": "offline evidence closeout only; no network, no re-download, no experiment; this file corrects interpretations, it does not alter any original bytes",
+  "reviewed_files": {
+    "data/catalog/p1_12_a_acquisition.json": {
+      "bytes": 11646,
+      "sha256": "1408c0c91d6006890639d63db8f2c014078ccfc9ea85111e7e233b7a3653ccce"
+    },
+    "data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/astropy__astropy-13236/record.json": {
+      "bytes": 65426,
+      "sha256": "95203abf0dfa714f64ca17b1240d94d654f14a6fd86269a22d28e2daaf8b50c0"
+    },
+    "data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/astropy__astropy-13398/record.json": {
+      "bytes": 58460,
+      "sha256": "6ab96f81bc7b4fc5ea704f0055c1cf4bdbfca5726a3d9b28c167f6391cb6a77e"
+    },
+    "data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/astropy__astropy-13236/manifest.json": {
+      "bytes": 2205,
+      "sha256": "c89c47645e605f91d612715e2f78319eef73caf305fcc855625374bd2fa712e3"
+    },
+    "data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/astropy__astropy-13398/manifest.json": {
+      "bytes": 2204,
+      "sha256": "c23fa8cc9426612c47a223b3e2ef3c4b2a68641981b1cd9daec4ee4809a6087c"
+    }
+  },
+  "search_scope": {
+    "locations_inspected": [
+      "/tmp/lcq-p112a/ (the acquisition working directory retained from 2026-09-22)",
+      "data/catalog/p1_12_a_acquisition.json",
+      "data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/ (all three task directories)"
+    ],
+    "not_scanned": [
+      "full filesystem",
+      "credentials/config files",
+      "shell history",
+      "unrelated process state"
+    ],
+    "note": "no other acquisition-time artifacts (logs, response dumps, proxies logs) were saved anywhere by the 2026-09-22 execution; the four files below are the complete retained set"
+  },
+  "retained_evidence_found": [
+    {
+      "path": "/tmp/lcq-p112a/candidates.json",
+      "bytes": 863987,
+      "sha256": "75714957dfaff56cdcc9144885d3bfb942aa1d41256360b7ef01108ae04a3d25",
+      "nature": "POST-PROCESSED: the 30 candidate ROWS extracted from the /rows response, re-serialized locally. NOT the raw HTTP response; contains no response headers, no features metadata, no revision echo, no request log",
+      "independent_download_verification": "no — this file is a local rewrite (863,987 bytes) and differs from the registered 859,455-byte response size; file size must not be read as network bytes"
+    },
+    {
+      "path": "/tmp/lcq-p112a/dataset_card.md",
+      "bytes": 3485,
+      "sha256": "923e6b481ff75c709737251e602bdc311a9be49235b5c20107366747f5640fe4",
+      "nature": "RAW BYTES of the dataset card fetched from raw/{revision}/README.md; the only retained original-response artifact",
+      "independent_download_verification": "size matches the registered 3,485 bytes; content carries dataset_info (num_examples=500) consistent with the registered revision-API metadata, but the card text itself contains no revision identifier"
+    },
+    {
+      "path": "/tmp/lcq-p112a/hub_check.json",
+      "bytes": 5008,
+      "sha256": "a99c8902a65adaacfef81d21021f17dcf122ee7c5db57dc8c5f27b0992380a71",
+      "nature": "POST-PROCESSED: per-candidate Docker Hub results (repo/exists/arm64 flag plus a tags snapshot). Digests in the snapshot are TRUNCATED to 19 hex characters by the acquisition script",
+      "independent_download_verification": "no — derived data, not the raw Hub API responses",
+      "digest_note": "truncated digests (19 hex chars) are recorded as truncated; they are NOT extended or guessed into full digests"
+    },
+    {
+      "path": "/tmp/lcq-p112a/image_names.json",
+      "bytes": 2419,
+      "sha256": "eb67c7f6861a43a20bf60a90ac372b70f0440292f91c98b45187fc0c551ef84d",
+      "nature": "local make_test_spec output (no network involved)",
+      "independent_download_verification": "not applicable (local computation)"
+    }
+  ],
+  "issue_1_revision_content_binding": {
+    "status": "OPEN",
+    "what_current_evidence_proves": [
+      "the revision 78f471bf655a3137b2e8a75af1501690ec009ec3 exists as a commit of SWE-bench/SWE-bench_Verified (registered claim of a 2,201-byte revision-API response; the raw response was NOT retained)",
+      "the retained dataset card is byte-identical in size to what was registered (3,485 bytes) and was fetched from a raw/{revision}/ URL",
+      "the 30 rows were returned by a /rows request whose URL included the revision parameter (asserted by the executed script, visible in the acquisition registry URL field; no independent request log exists)"
+    ],
+    "what_it_does_not_prove": [
+      "that the /rows service actually honored the revision parameter and returned rows from commit 78f471bf rather than from HEAD or a cache: the /rows response body, headers, and any revision echo were not retained, and the response schema itself is not known to echo the revision",
+      "that candidates.json content equals the revision's parquet content (no cross-check against the revision's data file was performed)",
+      "consequently: the two new records' content membership in the fixed revision is asserted by the acquisition chain but not independently evidenced"
+    ]
+  },
+  "issue_2_snapshots_and_download_accounting": {
+    "status": "PARTIAL_OPEN",
+    "retained_and_registered": [
+      "dataset_card.md: raw bytes retained (3,485), hash registered below in this review",
+      "candidates.json / hub_check.json / image_names.json: retained as post-processed artifacts, hashes registered below, nature documented"
+    ],
+    "not_saved_or_not_found": [
+      "raw /rows HTTP response (859,455 bytes claimed): not retained — cannot be re-verified byte-wise",
+      "raw revision-API response (2,201 bytes claimed): not retained",
+      "raw Docker Hub tags API responses (10,246 bytes claimed across 30 requests): not retained",
+      "any HTTP response headers, request logs, or proxy logs: not retained",
+      "for all of the above: '未保存或未找到，无法追溯验证' (not saved or not found; cannot be verified retrospectively)"
+    ],
+    "registered_vs_independently_verifiable": {
+      "registered_download_bytes_total": 897466,
+      "registered_breakdown": {
+        "revision_api": 2201,
+        "rows_probe": 22079,
+        "rows_30_candidates": 859455,
+        "docker_hub_api": 10246,
+        "dataset_card": 3485
+      },
+      "independently_verifiable_from_retained_files": "only the dataset card (3,485 bytes) can be size-matched against its retained raw copy; every other figure is a code-measured claim from execution time with no retained artifact to re-verify",
+      "note": "record.json file sizes (65,426 / 58,460) are local re-serializations of row data and are NOT network download figures; candidates.json (863,987) likewise is a local rewrite, not network bytes"
+    }
+  },
+  "issue_3_selection_wording": {
+    "status": "CLOSED_WITH_CORRECTIONS",
+    "corrections": [
+      {
+        "topic": "reserve_order ordering basis",
+        "original_wording": "'备选 8 条按字典序登记' / 'reserve_order ... (lexicographic)'",
+        "correction": "the retained reserve_order (astropy-13579, astropy-14309, astropy-14369, astropy-14995, astropy-12907, django-10973, django-11066, django-11087) is NOT lexicographic (astropy-12907 would come first). The order reflects an at-execution-time judgement about work-type overlap (small-edit tasks demoted), but that basis was never registered; the candidate_checks reserve-number annotations are consistent with this order, yet the ordering RULE itself is unregistered. Correct statement: '排序依据未登记；非字典序；不事后补造预注册规则'",
+        "action": "wording corrected in development_tasks.md; original acquisition.json bytes unchanged"
+      },
+      {
+        "topic": "SELECTED semantics under open licensing",
+        "original_wording": "'SELECTED' plus rule-1..4 pass notes could read as 'all screening conditions passed'",
+        "correction": "with dataset licensing UNVERIFIED at this revision, astropy__astropy-13236 and astropy__astropy-13398 are TENTATIVE candidates only: rules 1 (static arm64 registration), 2 (eval conditions) and 3-scope checks passed as recorded, but rule 3's licensing component and all execution-readiness conditions remain open. They must not be described as fully screened or execution-ready",
+        "action": "downgraded to 'tentative candidates' in current conclusions; no candidate substitution, no re-ordering"
+      }
+    ],
+    "unchanged": [
+      "candidate set",
+      "reserve set and its order",
+      "all original file bytes"
+    ]
+  },
+  "minimal_online_verification_request": {
+    "status": "PROPOSED_NOT_EXECUTED_not_an_authorization",
+    "purpose": "close issue 1: prove the retained 30-row candidate data (and both new records) are content-identical to dataset revision 78f471bf655a3137b2e8a75af1501690ec009ec3",
+    "why_previous_approach_was_insufficient": "a revision query parameter on /rows proves nothing about the served content; content binding requires comparing against the revision's own data file",
+    "requests": [
+      {
+        "target": "the parquet data file OF THE FIXED REVISION",
+        "source_url": "https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified/resolve/78f471bf655a3137b2e8a75af1501690ec009ec3/data/test-00000-of-00001.parquet",
+        "interface": "single HTTPS GET (HTTP response headers retained alongside the body)",
+        "count": "1 file",
+        "byte_ceiling": 7000000,
+        "expected_bytes": 6304616,
+        "expected_sha256": "030cfd7f2a704c4c0226e7f104c725a3b41230b1d3517f9c915ad7ea5be3fa25",
+        "expected_sha256_basis": "independently registered on 2026-09-10 in the django__django-16485 acquisition manifest from a separate fetch of the same revision file; a byte-identical re-fetch cross-time is strong evidence the file (and revision) content is what both acquisitions consumed"
+      }
+    ],
+    "offline_steps_after_download": [
+      "sha256 the downloaded parquet and compare against the 2026-09-10 registered digest",
+      "parse the parquet locally (existing evaluator venv, no network) and extract the rows for astropy__astropy-13236, astropy__astropy-13398 and the 30-candidate window",
+      "compare field-by-field against the retained candidates.json and both record.json files"
+    ],
+    "success_criteria": [
+      "downloaded bytes == 6,304,616 AND sha256 == 030cfd7f... (revision content cross-time consistency)",
+      "parquet rows for both selected instances are field-identical to the saved record.json files",
+      "parquet rows 0..29 are field-identical to the retained candidates.json window (including strict lexicographic order)"
+    ],
+    "stop_conditions": [
+      "sha256 mismatch, byte-size mismatch, any field-level row mismatch, download exceeding 7,000,000 bytes, or parsing failure → stop and report; no retry, no alternate source",
+      "if the resolve endpoint serves the file only via a redirect chain, each hop counts toward the ceiling; exceeding it stops the request"
+    ],
+    "evidence_to_save": [
+      "raw parquet bytes at data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/test-00000-of-00001.parquet",
+      "HTTP response headers and final URL to a retained snapshot file under data/catalog/",
+      "sha256 and byte-size recorded in a new verification registry (never overwriting the 2026-09-22 acquisition registry)"
+    ],
+    "open_unknowns": [
+      "whether the resolve endpoint redirects or serves directly: unverified, listed not guessed",
+      "whether the byte size registered on 2026-09-10 still matches: that is exactly what the check verifies"
+    ],
+    "relation_to_prior_authorization": "the 2026-09-22 acquisition authorization forbade full-dataset download for SELECTION purposes; this request downloads the single revision data file for VERIFICATION purposes and therefore requires a NEW, explicit user approval — it is not covered by, and does not extend, any prior grant"
+  },
+  "conclusion_after_review": {
+    "may_claim_now": [
+      "two new record files exist, hash-stable and structurally consistent with the reference record format",
+      "candidate screening (rules 1/2 plus repo-scope part of rule 3) was performed and recorded for 30 candidates; 10 passed rule 1",
+      "the retained dataset card is the only raw response artifact; download accounting is a registered claim, independently verifiable only for the card"
+    ],
+    "may_not_claim": [
+      "content membership of the 30 candidates / two records in revision 78f471bf (issue 1 open)",
+      "independently verified download accounting beyond the dataset card (issue 2 open)",
+      "fully screened or execution-ready selected tasks; licensing open (issue 3 corrected interpretation)"
+    ],
+    "pilot_status": "still NOT ready; the minimal online verification request above is the next user-approval step for evidence closure, separate from any execution approval"
+  }
+}

@@ -37,6 +37,7 @@ from typing import Any
 from ..collectors.resource_sampler import (CounterSnapshot, ResourceSampler,
                                            ScopeReader)
 from ..collectors.semantic_recorder import Clock, SemanticRecorder, SystemClock
+from ..collectors.execution_measurement import environment_snapshot, measurement_report
 from .container_runtime import (ContainerHandle, ContainerRuntime,
                                 ContainerSpec, RuntimeError_)
 from .report_writer import _catalog_protected_roots
@@ -834,6 +835,7 @@ class CodingPilotRunner:
         try:
             recorder.begin_run()
             budget.start()
+            (run_dir / 'environment.json').write_text(json.dumps(environment_snapshot(), indent=2))
             if self.host_runtime_reader is not None:
                 sampler.register(host_scope, "host_agent_runtime",
                                  self.host_runtime_reader)
@@ -932,6 +934,23 @@ class CodingPilotRunner:
                     pass
             recorder.point("infra", {"status": "infra_failure",
                                      "detail": f"error:{type(exc).__name__}"})
+            archive_status = self._archive(
+                run_dir, recorder, sampler, budget, agent_result,
+                verifier_result, execution_status, evaluation_status)
+        except Exception as exc:  # noqa: BLE001 — preserve unexpected phase failures
+            # Lazy evaluator imports and other unexpected phase errors must
+            # still enter the archive/finally path. Keep execution success
+            # separate from verifier infrastructure failure and expose only
+            # a safe error category.
+            if execution_status == "ok":
+                evaluation_status = "infra_failure"
+            else:
+                execution_status = "infra_failure"
+            detail = f"error:{type(exc).__name__}"
+            if isinstance(exc, ModuleNotFoundError) and exc.name:
+                detail += f":{exc.name}"
+            recorder.point("infra", {"status": "infra_failure",
+                                     "detail": detail})
             archive_status = self._archive(
                 run_dir, recorder, sampler, budget, agent_result,
                 verifier_result, execution_status, evaluation_status)
@@ -1135,6 +1154,47 @@ class CodingPilotRunner:
             # seal FIRST, then account the (now final) events.jsonl size
             seal = recorder.seal()
             events_path = run_dir / "events.jsonl"
+            native_tools = run_dir / 'mini_tool_events.jsonl'
+            trajectory_path = run_dir / 'mini_trajectory.json'
+            expected_tools = None
+            tool_count_basis = 'unavailable'
+            if trajectory_path.is_file():
+                try:
+                    trajectory = json.loads(trajectory_path.read_text())
+                    expected_tools = sum(len(m.get('tool_calls') or [])
+                                         for m in trajectory['messages'] if m.get('role') == 'assistant')
+                    tool_count_basis = 'trajectory_proposed_tool_calls; undispatched calls are a coverage gap'
+                except (ValueError, KeyError, TypeError):
+                    tool_count_basis = 'trajectory_unreadable'
+            elif agent_result is not None and self.harness.name == 'fake':
+                expected_tools = sum('command' in item for item in agent_result.trajectory)
+                tool_count_basis = 'synthetic_harness_trajectory'
+            native_starts_path = run_dir / 'mini_request_starts.jsonl'
+            expected_requests = budget.requests
+            start_evidence_status = 'not_native; runtime_completed_count'
+            if native_starts_path.is_file():
+                try:
+                    starts = [json.loads(line) for line in native_starts_path.read_text().splitlines()]
+                    request_ids = [item['n_calls'] for item in starts]
+                    if (len(set(request_ids)) != len(request_ids)
+                            or any(type(i) is not int or i <= 0 for i in request_ids)):
+                        raise ValueError('invalid_native_request_starts')
+                    expected_requests = len(starts)
+                    start_evidence_status = 'native_starts; absent terminal is censored/incomplete'
+                except (ValueError, KeyError, TypeError):
+                    expected_requests = None
+                    start_evidence_status = 'native_start_evidence_invalid'
+            measurement = measurement_report(
+                events_path, expected_requests=expected_requests,
+                expected_tools=expected_tools,
+                tool_path=native_tools if native_tools.is_file() else None)
+            measurement['tool_count_basis'] = tool_count_basis
+            measurement['request_count_basis'] = start_evidence_status
+            measurement['runtime_completed_request_count'] = budget.requests
+            measurement['resource_scopes'] = sampler.all_scope_summaries()
+            measurement['collector'] = sampler.collector_self_observation()
+            _write_accounted(run_dir / 'measurement.json',
+                             json.dumps(measurement, indent=2).encode('utf-8'), optional=False)
             if events_path.is_file():
                 budget.account_artifact_bytes(events_path.stat().st_size)
                 accounted.append(events_path.name)
@@ -1156,6 +1216,7 @@ class CodingPilotRunner:
             # manifest.json are accounted when written below.
             already = {run_dir / "candidate.patch",
                        run_dir / "events.jsonl",
+                       run_dir / "measurement.json",
                        run_dir / "samples.json"}
             for p in sorted(run_dir.rglob("*")):
                 if p.is_file() and p not in already:
@@ -1175,6 +1236,7 @@ class CodingPilotRunner:
                 "nested_retry_detected": (agent_result.nested_retry_detected
                                           if agent_result else False),
                 "events_sealed": seal,
+                "measurement_call_timing_status": measurement['call_timing_status'],
                 "archive": {
                     "skipped_files": skipped,
                     "artifact_exceeded": budget.artifact_exceeded,

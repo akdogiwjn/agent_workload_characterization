@@ -1,0 +1,39 @@
+{
+ "schema": "docops-word-resource-01-report-v1",
+ "run_id": "20261010T070350Z-word001",
+ "date": "2026-10-10",
+ "approval": "user 2026-10-08: single word task, 45min budget, multi-turn model calls, <=3 framework attempts per logical call, no hard spend cap, no rerun on failure",
+ "identity_sha256": "fc35b07a66ac853b01ff26a2b074f26d7c53a471bca76b36c9a921c2f1ed93ee",
+ "four_column_adjudication": {
+  "measurement_completeness": "PASS within the observed scope: 92 container+host samples, 20 lifecycle events and 12 response logs; CPU/memory fields readable in all 92 samples, wall 57.19s, recorded cleanup verified. Sampling covers setup/agent/verifier intervals, not the whole container lifetime; no normal document-editing workload was observed.",
+  "task_result": "UNSOLVED (reward 0.0) - VALID pilot result, retained",
+  "termination": "steps_exhausted (12 steps, no explicit finish)",
+  "infra": "clean (no infra failures; cleanup verified: removal=removed; image tag NOT removed this run)"
+ },
+ "root_cause_of_reward_0": {
+  "finding": "Confirmed observed failure chain: all 12 original responses have empty content, populated reasoning_content and finish_reason=stop; all 12 actions are INVALID; no model-selected task tool action occurred; the verifier reports the expected output document missing and reward=0. The request includes four stop strings, including </think>. Stop-sequence interference is a plausible hypothesis; these logs do not identify the matched stop string or prove that the answer was truncated at </think>.",
+  "evidence": "12 original_response objects parsed from llm_call_1..12.json: empty content in every response, reasoning lengths 321-1007 characters, finish_reason=stop; transcript has 12 INVALID steps; verifier output reports the missing submission. Reasoning text describes intended actions but does not establish task-solving capability.",
+  "classification": "observed output-protocol failure; specific gateway/stop-sequence cause unconfirmed. Recorded lifecycle infra failures are empty; compatibility status is separate from that infra field.",
+  "not_done": "no answer was fabricated; no rerun; no stop-sequence or prompt change (official agent config is frozen in the identity)",
+  "causal_status": "unconfirmed; finish_reason=stop alone cannot identify a stop sequence. No same-model comparison with changed stop configuration or provider trace of the matched stop is available.",
+  "tool_scope_note": "Zero model-selected task actions does not mean zero tool/bootstrap operations: official setup and the bootstrap get_task_metadata call are part of the executed Agent path."
+ },
+ "usage": {
+  "input_tokens": 18355,
+  "output_tokens": 1457,
+  "cache_tokens": 0,
+  "note": "output includes reasoning tokens per provider semantics; cost unknown"
+ },
+ "measurement_validity": "Valid resource observations of this failed interaction loop, setup/bootstrap and verifier phases. These are not measurements of successful or normally progressing Word editing, and do not establish Office-category resource characteristics.",
+ "next_step_suggestion": "If separately approved, perform a minimal same-model stop-configuration comparison before choosing a new model or repeating the task. No such comparison, model call or rerun was performed in this review.",
+ "pilot_verdict": "Observed sampling/lifecycle/verifier/cleanup/archive path validated for this failed interaction run; task unsolved. Empty-output failure is confirmed, specific stop-sequence root cause remains unconfirmed; no rerun.",
+ "observed_response_model_ids": {
+  "deepseek-v4-flash-0731": 5,
+  "deepseek-v4-flash-ga-260731": 7,
+  "note": "Both identifiers appear in saved responses; exact backend equivalence is unconfirmed."
+ },
+ "review_correction": {
+  "date": "2026-10-10",
+  "reason": "Independent offline review separates confirmed observations from stop-sequence causality, distinguishes model-selected actions from bootstrap tools, and limits resource claims to this failed loop. Original raw, approval and attempt records are preserved."
+ }
+}

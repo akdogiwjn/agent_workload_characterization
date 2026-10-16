@@ -1,0 +1,1 @@
+(()=>{const s=document.getElementById("run-select");if(!s)return;const status=document.getElementById("selection-status");function show(){document.querySelectorAll(".run-panel").forEach((p,i)=>p.style.display=String(i)===s.value?"block":"none");status.textContent="显示第 "+(Number(s.value)+1)+" / "+s.options.length+" 个登记运行";}s.addEventListener("change",show);show();})();

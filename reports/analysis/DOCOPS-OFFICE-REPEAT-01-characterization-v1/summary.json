@@ -1,0 +1,2859 @@
+{
+  "scope": "仅 batch-summary 显式列出的九个 DOCOPS-OFFICE-REPEAT-01 run；三项固定本地 DocOps 原子任务",
+  "identity": {
+    "schema": "docops-office-repeat-identity-v1",
+    "collection": "DOCOPS-OFFICE-REPEAT-01",
+    "docops_commit": "ccf7a751bc5c8a69c1cdd0400125d53455b33be3",
+    "docker_endpoint": "unix:///var/run/docker.sock",
+    "base_image": {
+      "reference": "harbor-claude-code-base:2.1.114",
+      "expected_id": "sha256:062bf50871c0e9d7d4a175643343746f27c785732596252d7ebe9ae0c08fe9b1",
+      "platform": "linux/arm64"
+    },
+    "tasks": [
+      {
+        "key": "atomic__excel_001_budget_bucket_totals_seed",
+        "short": "excel001",
+        "task_id": "excel_001",
+        "doc_type": "excel",
+        "asset": "excel_001_budget_bucket_totals_seed.xlsx",
+        "operation": "formula-driven budget bucket aggregation",
+        "task_dir": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed",
+        "image_ref": "docops-office-repeat-01:excel001",
+        "image_id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+        "files": [
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/Dockerfile",
+            "bytes": 520,
+            "sha256": "4e98690078c7066f64677a3501523332fc85714abc0e805018ee6495d7a7ab78"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/excel_001_budget_bucket_totals_seed.xlsx",
+            "bytes": 6549,
+            "sha256": "4e398873d0188789978dc9f627901f9a71fdb91d66623a3986b19c08c6df7aa0"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/original_task_description.txt",
+            "bytes": 1082,
+            "sha256": "506f5ee4d2d50c58cd9888f7cccc533cd93663a177802abf05d8389972780a38"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/LICENSE.txt",
+            "bytes": 1467,
+            "sha256": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/SKILL.md",
+            "bytes": 11463,
+            "sha256": "dd316db7785a6be12966c2a2d848931fbf5f518b3cdb0a66fa62ee835ead1cfc"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/helpers/__init__.py",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/helpers/merge_runs.py",
+            "bytes": 5567,
+            "sha256": "7c40ed838b88639c51f9ffdcfd564b568f26832b78fe44008c0e01b742669ca7"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/helpers/simplify_redlines.py",
+            "bytes": 5754,
+            "sha256": "560cb55978a834c505406eb18e2c61f62f998fc7a2d8e9721b9c563b42597896"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/pack.py",
+            "bytes": 4991,
+            "sha256": "b1800987e568261a31f462df8e1303d386e9e6ccc11a75ef46e60cc528c20683"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+            "bytes": 74984,
+            "sha256": "41b93bd8857cc68b1e43be2806a872d736a9bdd6566900062d8fdb57d7bbb354"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+            "bytes": 6956,
+            "sha256": "3fd0586f2637b98bb9886f0e0b67d89e1cc987c2d158cc7deb5f5b9890ced412"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+            "bytes": 51302,
+            "sha256": "29b254ee0d10414a8504b5a08149c7baec35a60d5ff607d6b3f492aa36815f40"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+            "bytes": 624,
+            "sha256": "5cb76dabd8b97d1e9308a1700b90c20139be4d50792d21a7f09789f5cccd6026"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+            "bytes": 152039,
+            "sha256": "5375417f0f5394b8dd1a7035b9679151f19a6b65df309dec10cfb4a420cb00e9"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+            "bytes": 1231,
+            "sha256": "5d389d42befbebd91945d620242347caecd3367f9a3a7cf8d97949507ae1f53c"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+            "bytes": 8862,
+            "sha256": "b4532b6d258832953fbb3ee4c711f4fe25d3faf46a10644b2505f17010d01e88"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+            "bytes": 14795,
+            "sha256": "bdad416b096b61d37b71603b2c949484f9070c830bdaeba93bf35e15c8900614"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd",
+            "bytes": 83612,
+            "sha256": "d173c3e5d61e42e2e3a97226c632fd2ab7cc481fc4e492365b87024ab546daff"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+            "bytes": 1269,
+            "sha256": "3c6709101c6aaa82888df5d8795c33f9e857196790eb320d9194e64be2b6bdd8"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+            "bytes": 7328,
+            "sha256": "0b364451dc36a48dd6dae0f3b6ada05fd9b71e5208211f8ee5537d7e51a587e2"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+            "bytes": 6382,
+            "sha256": "e2abacbb9a55ce1365f8961bc1b1395bbc811e512b111000d8c333f98458dece"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+            "bytes": 1248,
+            "sha256": "0ef4bb354ff44b923564c4ddbdda5987919d220225129ec94614a618ceafc281"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+            "bytes": 880,
+            "sha256": "0d103b99a4a8652f8871552a69d42d2a3760ac6a5e3ef02d979c4273257ff6a4"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+            "bytes": 2608,
+            "sha256": "9c085407751b9061c1f996f6c39ce58451be22a8d334f09175f0e89e42736285"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+            "bytes": 3507,
+            "sha256": "bc92e36ccd233722d4c5869bec71ddc7b12e2df56059942cce5a39065cc9c368"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+            "bytes": 7507,
+            "sha256": "7b5b7413e2c895b1e148e82e292a117d53c7ec65b0696c992edca57b61b4a74b"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+            "bytes": 23313,
+            "sha256": "3213ef1631606250f5010b42cad7ef716f7c59426367798e33c374c0ec391d3a"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+            "bytes": 1367,
+            "sha256": "12264f3c03d738311cd9237d212f1c07479e70f0cbe1ae725d29b36539aef637"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd",
+            "bytes": 242277,
+            "sha256": "beffeed56945c22a77440122c8bdc426f3fcbe7f3b12ea0976c770d1f8d54578"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+            "bytes": 26148,
+            "sha256": "f5ee623b08b6a66935e5aced2f5d8ad0fc71bf9e8e833cd490150c0fa94b8763"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+            "bytes": 25279,
+            "sha256": "585bedc1313b40888dcc544cb74cd939a105ee674f3b1d3aa1cc6d34f70ff155"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+            "bytes": 535,
+            "sha256": "133c9f64a5c5d573b78d0a474122b22506d8eadb5e063f67cdbbb8fa2f161d0e"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+            "bytes": 5712,
+            "sha256": "6bdeb169c3717eb01108853bd9fc5a3750fb1fa5b82abbdd854d49855a40f519"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+            "bytes": 4010,
+            "sha256": "475dcae1e7d1ea46232db6f8481040c15e53a52a3c256831d3df204212b0e831"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd",
+            "bytes": 171367,
+            "sha256": "c2dd9f61f892deae6acd8d20771ea79b12018af25f3bf8d06639c8542d218cfd"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd",
+            "bytes": 4646,
+            "sha256": "a539aa2fb154fa50e0f5cc97e6ad7cbc66f8ec3e3746f61ec6a8b0d5d15ecdf2"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+            "bytes": 1963,
+            "sha256": "9e0b7209fc69ab11987900404540969976000c5ebe4d4f58c43dc3842886bf3a"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+            "bytes": 2515,
+            "sha256": "451958454e8588dfc7cd945981ada142ca06ff3307937f5700df059c2b307fa8"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+            "bytes": 2856,
+            "sha256": "6de111e11403f7cd49027400755bae0ea1cabef2815f09bd40a24f0017613b24"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+            "bytes": 1344,
+            "sha256": "f565adfef5a502044abc3a9153e157edc25af78304d335994afb958874b15e26"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/mce/mc.xsd",
+            "bytes": 3127,
+            "sha256": "3a37e461ecf5a8670fdec34029703401f8728ab9c96ec1739a6ae58d55212413"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-2010.xsd",
+            "bytes": 26549,
+            "sha256": "568b26ee156cb9549aa439ca2158965f77b7c1602b7e0316f40ac6cf586e35f2"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-2012.xsd",
+            "bytes": 3745,
+            "sha256": "0fa75578a000439a7988ba0c59fdc69f774bbd416cbacc14d07125b3f686cb74"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-2018.xsd",
+            "bytes": 901,
+            "sha256": "be0ff793a22dd31384650c3a4da14c2fa8062751c2e97b0e5ee852bda13c60ad"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-cex-2018.xsd",
+            "bytes": 1778,
+            "sha256": "fddc2b880cabb9005aebbc7e783e53c19fec1c03df7d0e2f2076a33a0fdfd081"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-cid-2016.xsd",
+            "bytes": 1002,
+            "sha256": "127ca209fa73d7cb708449cb355c871867948a96e4a74f7bf5811ef62d17991d"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+            "bytes": 600,
+            "sha256": "842e7163409c8d74f4d7088a8bc99500d80bc75332681a0980055b08f374a604"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-symex-2015.xsd",
+            "bytes": 745,
+            "sha256": "16f6f8072249f431370723c2cd8974672e0d9c897e00e97dd918079df934871b"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/soffice.py",
+            "bytes": 5301,
+            "sha256": "a3e21840e29e32f947d5286028931b96eaf2dee63f75d883b8eb19c943c80aa0"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/unpack.py",
+            "bytes": 4052,
+            "sha256": "83f69cecc87910183654c06345837244402e8a99edbf3bdddc1cf72f11304b62"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validate.py",
+            "bytes": 3668,
+            "sha256": "1aef24f8e316965a0584c30859776bd2c82a9fb69f72d79cfed041119cf95514"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validators/__init__.py",
+            "bytes": 336,
+            "sha256": "83e0f035c5abea238d3f2c3968afbd511ed022b527b7c9cb60a9434cc34ff987"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validators/base.py",
+            "bytes": 32651,
+            "sha256": "d6358b67252df4dbfe4fa6647423a765960c949346ef6a8c4eb8722bb1108d25"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validators/docx.py",
+            "bytes": 16376,
+            "sha256": "0ef04ce86b2e6b6a1cb088c0276fd0bd5b770d96fdfe7a6cc73d005feb3f0345"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validators/pptx.py",
+            "bytes": 9824,
+            "sha256": "f937961e62a5fa0d002b8dc51a4c4e2cd8fcd59fe65853fa54edaca3fe99eccc"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validators/redlining.py",
+            "bytes": 8918,
+            "sha256": "f4c33fdb9da0651d1d9aa76f0d5294cc9955869339ae131b2f75f3b2e366cb40"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/recalc.py",
+            "bytes": 5782,
+            "sha256": "cf419d15e02965aeaec17773c05b61303f7f520f67fa2696547e7da07502eac7"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/task_metadata.json",
+            "bytes": 1823,
+            "sha256": "3cd03985af785be57928bd662a7e6c1d80bf284bbf405764121ee74a3ebfccca"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/instruction.md",
+            "bytes": 1511,
+            "sha256": "fa675cdd3d340048c510ed2204686a0b4bed2da7049e89e1931b6f4804e0ddf6"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/task.toml",
+            "bytes": 1257,
+            "sha256": "70e24df982c84afbf7519b632fdd1466f7c0dd9c4202e98567f5d9c818a20083"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/tests/task_metadata.json",
+            "bytes": 1823,
+            "sha256": "3cd03985af785be57928bd662a7e6c1d80bf284bbf405764121ee74a3ebfccca"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/tests/test.sh",
+            "bytes": 730,
+            "sha256": "638074862a1f8779ca4741e76a5a254553eaaaa24340e0d5c781f34edab3e60a"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/tests/test_outputs.py",
+            "bytes": 4961,
+            "sha256": "6e547786845d10f16198bdc644126f17ee3362550ba91feb1c90f94782bf8c79"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/tests/verifier_utils.py",
+            "bytes": 14389,
+            "sha256": "d1a084507ea7aa1ae001c6c8b33f6505cad4ccb51cd372d10323fe5d63d93e78"
+          }
+        ]
+      },
+      {
+        "key": "atomic__ppt_008_bullet_editing_seed",
+        "short": "ppt008",
+        "task_id": "ppt_008",
+        "doc_type": "ppt",
+        "asset": "ppt_008_bullet_editing_seed.pptx",
+        "operation": "professional copy editing while preserving meaning",
+        "task_dir": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed",
+        "image_ref": "docops-office-repeat-01:ppt008",
+        "image_id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+        "files": [
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/Dockerfile",
+            "bytes": 504,
+            "sha256": "39643d58d3fd7a01d3f0564621832e0bb11ae9c4114e44c05dd42722f805d5d4"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/original_task_description.txt",
+            "bytes": 1005,
+            "sha256": "74fa566781a671812e9ba9b422c486f38a8f7eb21b29d15060aae448bca6f153"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/ppt_008_bullet_editing_seed.pptx",
+            "bytes": 28647,
+            "sha256": "e797f28a30e411449a23870b1a67fa544af7e4729382bbdd337d3b4b55cd3bdf"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/LICENSE.txt",
+            "bytes": 1467,
+            "sha256": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/SKILL.md",
+            "bytes": 9182,
+            "sha256": "e5b0df918cbe9d62508b3cf808d73899633f82fc19f6258a25ef9f0de7e62125"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/editing.md",
+            "bytes": 6885,
+            "sha256": "6cb47c3ab17e60b7de37e83131c409ef5a90a01bfb54e999905a9c9f7dd88e68"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/pptxgenjs.md",
+            "bytes": 12819,
+            "sha256": "9539534d92b7170813b735a448750df3580390da2da6c52a02b687ed53ecba86"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/__init__.py",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/add_slide.py",
+            "bytes": 6872,
+            "sha256": "04233ba3932c6b8611677347891616456e243cc09b7f9769408b8c83d9acfe64"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/clean.py",
+            "bytes": 9583,
+            "sha256": "3e3966a17f488a1ddc7145f0b7ec9f25595afa1f3a427ab05e610f1a328feea9"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/helpers/__init__.py",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/helpers/merge_runs.py",
+            "bytes": 5567,
+            "sha256": "7c40ed838b88639c51f9ffdcfd564b568f26832b78fe44008c0e01b742669ca7"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/helpers/simplify_redlines.py",
+            "bytes": 5754,
+            "sha256": "560cb55978a834c505406eb18e2c61f62f998fc7a2d8e9721b9c563b42597896"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/pack.py",
+            "bytes": 4991,
+            "sha256": "b1800987e568261a31f462df8e1303d386e9e6ccc11a75ef46e60cc528c20683"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+            "bytes": 74984,
+            "sha256": "41b93bd8857cc68b1e43be2806a872d736a9bdd6566900062d8fdb57d7bbb354"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+            "bytes": 6956,
+            "sha256": "3fd0586f2637b98bb9886f0e0b67d89e1cc987c2d158cc7deb5f5b9890ced412"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+            "bytes": 51302,
+            "sha256": "29b254ee0d10414a8504b5a08149c7baec35a60d5ff607d6b3f492aa36815f40"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+            "bytes": 624,
+            "sha256": "5cb76dabd8b97d1e9308a1700b90c20139be4d50792d21a7f09789f5cccd6026"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+            "bytes": 152039,
+            "sha256": "5375417f0f5394b8dd1a7035b9679151f19a6b65df309dec10cfb4a420cb00e9"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+            "bytes": 1231,
+            "sha256": "5d389d42befbebd91945d620242347caecd3367f9a3a7cf8d97949507ae1f53c"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+            "bytes": 8862,
+            "sha256": "b4532b6d258832953fbb3ee4c711f4fe25d3faf46a10644b2505f17010d01e88"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+            "bytes": 14795,
+            "sha256": "bdad416b096b61d37b71603b2c949484f9070c830bdaeba93bf35e15c8900614"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd",
+            "bytes": 83612,
+            "sha256": "d173c3e5d61e42e2e3a97226c632fd2ab7cc481fc4e492365b87024ab546daff"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+            "bytes": 1269,
+            "sha256": "3c6709101c6aaa82888df5d8795c33f9e857196790eb320d9194e64be2b6bdd8"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+            "bytes": 7328,
+            "sha256": "0b364451dc36a48dd6dae0f3b6ada05fd9b71e5208211f8ee5537d7e51a587e2"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+            "bytes": 6382,
+            "sha256": "e2abacbb9a55ce1365f8961bc1b1395bbc811e512b111000d8c333f98458dece"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+            "bytes": 1248,
+            "sha256": "0ef4bb354ff44b923564c4ddbdda5987919d220225129ec94614a618ceafc281"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+            "bytes": 880,
+            "sha256": "0d103b99a4a8652f8871552a69d42d2a3760ac6a5e3ef02d979c4273257ff6a4"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+            "bytes": 2608,
+            "sha256": "9c085407751b9061c1f996f6c39ce58451be22a8d334f09175f0e89e42736285"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+            "bytes": 3507,
+            "sha256": "bc92e36ccd233722d4c5869bec71ddc7b12e2df56059942cce5a39065cc9c368"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+            "bytes": 7507,
+            "sha256": "7b5b7413e2c895b1e148e82e292a117d53c7ec65b0696c992edca57b61b4a74b"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+            "bytes": 23313,
+            "sha256": "3213ef1631606250f5010b42cad7ef716f7c59426367798e33c374c0ec391d3a"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+            "bytes": 1367,
+            "sha256": "12264f3c03d738311cd9237d212f1c07479e70f0cbe1ae725d29b36539aef637"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd",
+            "bytes": 242277,
+            "sha256": "beffeed56945c22a77440122c8bdc426f3fcbe7f3b12ea0976c770d1f8d54578"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+            "bytes": 26148,
+            "sha256": "f5ee623b08b6a66935e5aced2f5d8ad0fc71bf9e8e833cd490150c0fa94b8763"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+            "bytes": 25279,
+            "sha256": "585bedc1313b40888dcc544cb74cd939a105ee674f3b1d3aa1cc6d34f70ff155"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+            "bytes": 535,
+            "sha256": "133c9f64a5c5d573b78d0a474122b22506d8eadb5e063f67cdbbb8fa2f161d0e"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+            "bytes": 5712,
+            "sha256": "6bdeb169c3717eb01108853bd9fc5a3750fb1fa5b82abbdd854d49855a40f519"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+            "bytes": 4010,
+            "sha256": "475dcae1e7d1ea46232db6f8481040c15e53a52a3c256831d3df204212b0e831"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd",
+            "bytes": 171367,
+            "sha256": "c2dd9f61f892deae6acd8d20771ea79b12018af25f3bf8d06639c8542d218cfd"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd",
+            "bytes": 4646,
+            "sha256": "a539aa2fb154fa50e0f5cc97e6ad7cbc66f8ec3e3746f61ec6a8b0d5d15ecdf2"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+            "bytes": 1963,
+            "sha256": "9e0b7209fc69ab11987900404540969976000c5ebe4d4f58c43dc3842886bf3a"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+            "bytes": 2515,
+            "sha256": "451958454e8588dfc7cd945981ada142ca06ff3307937f5700df059c2b307fa8"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+            "bytes": 2856,
+            "sha256": "6de111e11403f7cd49027400755bae0ea1cabef2815f09bd40a24f0017613b24"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+            "bytes": 1344,
+            "sha256": "f565adfef5a502044abc3a9153e157edc25af78304d335994afb958874b15e26"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/mce/mc.xsd",
+            "bytes": 3127,
+            "sha256": "3a37e461ecf5a8670fdec34029703401f8728ab9c96ec1739a6ae58d55212413"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/microsoft/wml-2010.xsd",
+            "bytes": 26549,
+            "sha256": "568b26ee156cb9549aa439ca2158965f77b7c1602b7e0316f40ac6cf586e35f2"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/microsoft/wml-2012.xsd",
+            "bytes": 3745,
+            "sha256": "0fa75578a000439a7988ba0c59fdc69f774bbd416cbacc14d07125b3f686cb74"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/microsoft/wml-2018.xsd",
+            "bytes": 901,
+            "sha256": "be0ff793a22dd31384650c3a4da14c2fa8062751c2e97b0e5ee852bda13c60ad"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/microsoft/wml-cex-2018.xsd",
+            "bytes": 1778,
+            "sha256": "fddc2b880cabb9005aebbc7e783e53c19fec1c03df7d0e2f2076a33a0fdfd081"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/microsoft/wml-cid-2016.xsd",
+            "bytes": 1002,
+            "sha256": "127ca209fa73d7cb708449cb355c871867948a96e4a74f7bf5811ef62d17991d"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+            "bytes": 600,
+            "sha256": "842e7163409c8d74f4d7088a8bc99500d80bc75332681a0980055b08f374a604"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/schemas/microsoft/wml-symex-2015.xsd",
+            "bytes": 745,
+            "sha256": "16f6f8072249f431370723c2cd8974672e0d9c897e00e97dd918079df934871b"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/soffice.py",
+            "bytes": 5301,
+            "sha256": "a3e21840e29e32f947d5286028931b96eaf2dee63f75d883b8eb19c943c80aa0"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/unpack.py",
+            "bytes": 4052,
+            "sha256": "83f69cecc87910183654c06345837244402e8a99edbf3bdddc1cf72f11304b62"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/validate.py",
+            "bytes": 3668,
+            "sha256": "1aef24f8e316965a0584c30859776bd2c82a9fb69f72d79cfed041119cf95514"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/validators/__init__.py",
+            "bytes": 336,
+            "sha256": "83e0f035c5abea238d3f2c3968afbd511ed022b527b7c9cb60a9434cc34ff987"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/validators/base.py",
+            "bytes": 32651,
+            "sha256": "d6358b67252df4dbfe4fa6647423a765960c949346ef6a8c4eb8722bb1108d25"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/validators/docx.py",
+            "bytes": 16376,
+            "sha256": "0ef04ce86b2e6b6a1cb088c0276fd0bd5b770d96fdfe7a6cc73d005feb3f0345"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/validators/pptx.py",
+            "bytes": 9824,
+            "sha256": "f937961e62a5fa0d002b8dc51a4c4e2cd8fcd59fe65853fa54edaca3fe99eccc"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/office/validators/redlining.py",
+            "bytes": 8918,
+            "sha256": "f4c33fdb9da0651d1d9aa76f0d5294cc9955869339ae131b2f75f3b2e366cb40"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/skills/pptx/scripts/thumbnail.py",
+            "bytes": 8785,
+            "sha256": "e959ecd4f19735161218bc44d0648a46da17874323fb3e19c2e9cb50cefe6ce7"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/environment/task_metadata.json",
+            "bytes": 1659,
+            "sha256": "164605b95801dee37c7d185ad9da1f326493168ac379c441eaa0c90f2ffe11b3"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/instruction.md",
+            "bytes": 1426,
+            "sha256": "0a8ead0f35fcfd154000de162b5358908e5c64b14fee03857972e2ae35ab447d"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/task.toml",
+            "bytes": 1208,
+            "sha256": "754b945f770f6944fd631775192d3ca7ce03c01e85af30b6dad9dc8115e33481"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/tests/task_metadata.json",
+            "bytes": 1659,
+            "sha256": "164605b95801dee37c7d185ad9da1f326493168ac379c441eaa0c90f2ffe11b3"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/tests/test.sh",
+            "bytes": 730,
+            "sha256": "638074862a1f8779ca4741e76a5a254553eaaaa24340e0d5c781f34edab3e60a"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/tests/test_outputs.py",
+            "bytes": 1462,
+            "sha256": "711302387ed534166fd5acc02806584e6a8a14dc2deabb7090ce3ce42cb241cd"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__ppt_008_bullet_editing_seed/tests/verifier_utils.py",
+            "bytes": 14389,
+            "sha256": "d1a084507ea7aa1ae001c6c8b33f6505cad4ccb51cd372d10323fe5d63d93e78"
+          }
+        ]
+      },
+      {
+        "key": "atomic__pdf_004_audit_pages_reorder_seed",
+        "short": "pdf004",
+        "task_id": "pdf_004",
+        "doc_type": "pdf",
+        "asset": "pdf_004_audit_pages_reorder_seed.pdf",
+        "operation": "audit PDF page reordering",
+        "task_dir": "/home/lcq/agent_workload_characterization/references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed",
+        "image_ref": "docops-office-repeat-01:pdf004",
+        "image_id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+        "files": [
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment/Dockerfile",
+            "bytes": 512,
+            "sha256": "4b5f45c8c665d7a2610795454438f8ea2f4fa9aaef0ce9cd00a0a36d15df3fe1"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment/original_task_description.txt",
+            "bytes": 875,
+            "sha256": "004acf1c6d737750ccbbe8a7ed953fd7dd8daf0390a7271b8fbc0b8c9b81d2c6"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment/pdf_004_audit_pages_reorder_seed.pdf",
+            "bytes": 3688,
+            "sha256": "a8e95b457addb6d87d693fee9c45681d65c65bc5375c423b5477a403ff0372cd"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment/skills/pdf/LICENSE.txt",
+            "bytes": 10776,
+            "sha256": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment/skills/pdf/SKILL.md",
+            "bytes": 2517,
+            "sha256": "d108cf2b36355ab37eb5962933f4d09785ec002f3105c506129320209306b9d2"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment/skills/pdf/agents/openai.yaml",
+            "bytes": 219,
+            "sha256": "f8b223e25343559f57e1839ccd849fd1494a9729da33da04bb5074b7f80f4887"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment/skills/pdf/assets/pdf.png",
+            "bytes": 1312,
+            "sha256": "17da356d195d4e3fa24f9becbee6b8d9e60e13005762b5ab0809c520c76da6ee"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/environment/task_metadata.json",
+            "bytes": 1580,
+            "sha256": "2b190f61dbea97549036cc4facc9d443ba6d6ea2a08c10880509d4a7e09d8c79"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/instruction.md",
+            "bytes": 1302,
+            "sha256": "679d6c33d8feed586e2a02382b3bc0b094682b4956449edc13d25c8b068f7a28"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/task.toml",
+            "bytes": 1213,
+            "sha256": "0155edf8700485bbad9864873034e1a20dd6766efd8cb9ddc0eb327198532208"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/tests/task_metadata.json",
+            "bytes": 1580,
+            "sha256": "2b190f61dbea97549036cc4facc9d443ba6d6ea2a08c10880509d4a7e09d8c79"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/tests/test.sh",
+            "bytes": 730,
+            "sha256": "638074862a1f8779ca4741e76a5a254553eaaaa24340e0d5c781f34edab3e60a"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/tests/test_outputs.py",
+            "bytes": 1152,
+            "sha256": "8cb1aa9e17e26b974f0d536feb24789edc80e46a66767b4b0df80cdd4c7ce4e7"
+          },
+          {
+            "path": "references/repos/DocOps/tasks/atomic__pdf_004_audit_pages_reorder_seed/tests/verifier_utils.py",
+            "bytes": 14389,
+            "sha256": "d1a084507ea7aa1ae001c6c8b33f6505cad4ccb51cd372d10323fe5d63d93e78"
+          }
+        ]
+      }
+    ],
+    "code_and_runtime_files": [
+      {
+        "path": "scripts/docops_office_repeat_01_entry.py",
+        "bytes": 59778,
+        "sha256": "782d41481b1033914ef9e010daf39dcc988414cb938fe25d42d9904a8ccb49a2"
+      },
+      {
+        "path": "scripts/docops_word_resource_01_entry.py",
+        "bytes": 37490,
+        "sha256": "56e6217dc66fb7655ed27ff390d9b05dae63d61a97d4eac5bcd713496b780417"
+      },
+      {
+        "path": "src/agent_workload_characterization/runners/docops_word_agent.py",
+        "bytes": 3223,
+        "sha256": "d41fae0fe8b8f90b21030e9cbb2c2392e2431f54cd6a474000e5fd7e72036eb3"
+      },
+      {
+        "path": "src/agent_workload_characterization/runners/docops_word_runtime.py",
+        "bytes": 18257,
+        "sha256": "a1e73980e3908ad158c6827d2853d7fab625db6ad46c2beaeafbaae2fcda9ab2"
+      },
+      {
+        "path": "src/agent_workload_characterization/runners/container_runtime.py",
+        "bytes": 36616,
+        "sha256": "a2608e5549da73581c3a1b036080d64fa641eefe8e4bdf3cf429bc5a55ac1d83"
+      },
+      {
+        "path": "src/agent_workload_characterization/collectors/host_process.py",
+        "bytes": 8822,
+        "sha256": "2ec98884c8b0d1ea005881f72e0a5498088e40960eebc3c44d3775ec2e150055"
+      },
+      {
+        "path": "src/agent_workload_characterization/collectors/resource_sampler.py",
+        "bytes": 27396,
+        "sha256": "8418a9d793e170d96ce75d97ddd65a978a38038f80c2e34eb4c9485286bcca72"
+      },
+      {
+        "path": "references/repos/DocOps/harnesses/document_tools_agent.py",
+        "bytes": 13569,
+        "sha256": "c63244323eea071ba63442dec70531a447365c31e87710b5a2a02c52322f449a"
+      },
+      {
+        "path": "references/repos/DocOps/harnesses/document_tools_runtime.py",
+        "bytes": 16880,
+        "sha256": "855c4cdfdcd9ac6a8ca9e67d57809262236bf93848d0d8142cf356fb2f558878"
+      },
+      {
+        "path": "env/docops-arm64-word001/harbor-src/pyproject.toml",
+        "bytes": 2884,
+        "sha256": "7f5a7baf35fa83d5ea3499845e58f3ad4b502c64f37c660c8fa434409b611d09"
+      },
+      {
+        "path": "env/docops-arm64-word001/harbor-src/src/harbor/environments/docker/docker.py",
+        "bytes": 18808,
+        "sha256": "4479e969235519f86bb804bc3a681ebe6be5bd0891cf295fbea5efccf5febc09"
+      },
+      {
+        "path": "env/docops-arm64-word001/harbor-src/src/harbor/llms/lite_llm.py",
+        "bytes": 29687,
+        "sha256": "621491f784dbe65ad1eb61e98cca3a836f90c78b50e0a76501a2db36cecb20a0"
+      },
+      {
+        "path": "env/docops-arm64-word001/harbor-src/src/harbor/verifier/verifier.py",
+        "bytes": 5160,
+        "sha256": "b914e9166bf35a7b5f062366f8d08c8d6e62d8177f36978d965eb9b3fc9a0742"
+      },
+      {
+        "path": "env/docops-arm64-word001/harbor-venv-freeze.txt",
+        "bytes": 1126,
+        "sha256": "e2d552bbb1bcc8757a4d75f0f1dc0fc5c48f5275f2bda4f57ed257c8cdb73721"
+      }
+    ],
+    "model": {
+      "api_base": "https://api.deepseek.com/v1",
+      "request_model": "openai/deepseek-v4-flash",
+      "response_model": "record_actual_per_request",
+      "credential_name": "DEEPSEEK_API_KEY",
+      "json_action": {
+        "stop_omitted": true,
+        "extra_body_none_omitted": true,
+        "thinking_mode": "provider_default"
+      }
+    },
+    "tools": {
+      "same_tool_names_all_tasks": [
+        "get_task_metadata",
+        "copy_file",
+        "inspect_document",
+        "word_replace_text",
+        "word_insert_table_column",
+        "xlsx_read_sheet",
+        "xlsx_write_cells",
+        "xlsx_set_formula",
+        "xlsx_highlight_cells",
+        "xlsx_delete_sheet",
+        "xlsx_reorder_sheets",
+        "ppt_list_slides",
+        "ppt_replace_text",
+        "ppt_reorder_slides",
+        "ppt_delete_slides",
+        "ppt_set_bullets",
+        "pdf_extract_text",
+        "pdf_reorder_pages",
+        "pdf_delete_pages",
+        "word_inspect_format",
+        "word_set_format"
+      ],
+      "word_tools_not_applicable_to_excel_ppt_pdf": [
+        "word_replace_text",
+        "word_insert_table_column",
+        "word_inspect_format",
+        "word_set_format"
+      ],
+      "tool_source": "fixed project DocOpsWordAgent tool specs"
+    },
+    "schedule": [
+      {
+        "round": 0,
+        "tasks": [
+          "atomic__excel_001_budget_bucket_totals_seed",
+          "atomic__ppt_008_bullet_editing_seed",
+          "atomic__pdf_004_audit_pages_reorder_seed"
+        ]
+      },
+      {
+        "round": 1,
+        "tasks": [
+          "atomic__ppt_008_bullet_editing_seed",
+          "atomic__pdf_004_audit_pages_reorder_seed",
+          "atomic__excel_001_budget_bucket_totals_seed"
+        ]
+      },
+      {
+        "round": 2,
+        "tasks": [
+          "atomic__pdf_004_audit_pages_reorder_seed",
+          "atomic__excel_001_budget_bucket_totals_seed",
+          "atomic__ppt_008_bullet_editing_seed"
+        ]
+      }
+    ],
+    "attempt_count": 9,
+    "attempt_retry": 0,
+    "budget": {
+      "per_attempt": {
+        "max_steps": 40,
+        "max_tokens_per_request": 32768,
+        "agent_s": 1200.0,
+        "verifier_s": 600.0,
+        "wall_s": 2700.0,
+        "cleanup_reserve_s": 300.0,
+        "cpu": 1,
+        "memory_gib": 4,
+        "storage_gib": 10,
+        "network": "none",
+        "sample_s": 0.5
+      },
+      "batch_wall_s": 27000.0,
+      "batch_closeout_reserve_s": 900.0,
+      "framework_retry": "up to 3 actual tries per logical call",
+      "maximum_model_steps": 360,
+      "cost": "unknown; no hard amount cap approved for this batch"
+    },
+    "paths": {
+      "approval": "reports/resource/DOCOPS-OFFICE-REPEAT-01/APPROVAL.json",
+      "reports": "reports/resource/DOCOPS-OFFICE-REPEAT-01",
+      "raw": "data/raw/generated/DOCOPS-OFFICE-REPEAT-01",
+      "plan": "env/docops-office-repeat-01/plan-identity.json",
+      "frozen": "env/docops-office-repeat-01/frozen-identity.json"
+    },
+    "identity_limits": [
+      "request alias is not immutable model version",
+      "not representative of all Office tasks"
+    ]
+  },
+  "identity_verification": "plan/frozen 完整 identity 结构相等；规范 JSON SHA-256 与批准、批摘要、批 manifest、九次 raw summary/manifest 一致",
+  "n_runs": 9,
+  "execution_counts": {
+    "executed": 9
+  },
+  "termination_counts": {
+    "finish": 9
+  },
+  "reward_counts": {
+    "1.0": 9
+  },
+  "logical_request_count": 49,
+  "agent_tool_call_count": 37,
+  "batch_summary_agent_tool_call_count": 34,
+  "archived_batch_invalid_or_unknown_count": 6,
+  "reconstructed_invalid_or_unknown_count": 3,
+  "non_bare_json_actions_accepted_by_harness_parser": 3,
+  "all_invalid_requests_match_transcript_invalid_markers": true,
+  "all_transcript_step_counts_match": true,
+  "batch_summary_action_count_disagreement_run_ids": [
+    "20261010T154928Z-r0-excel001"
+  ],
+  "agent_action_counts": {
+    "call_tool": 37,
+    "finish": 9,
+    "invalid": 1,
+    "invalid_or_unknown": 2
+  },
+  "invalid_or_unknown_reasons": {
+    "no_json_object_decoded": 1,
+    "unsupported_action_value": 2
+  },
+  "tool_return_status_counts": {
+    "saved_ok_true": 37
+  },
+  "request_models": {
+    "openai/deepseek-v4-flash": 49
+  },
+  "response_models": {
+    "deepseek-flash": 49
+  },
+  "request_usage_field_coverage": {
+    "completion_tokens": {
+      "n_total_requests": 49,
+      "n_valid": 49,
+      "n_missing": 0,
+      "observed_values": [
+        276,
+        2222,
+        2360,
+        1060,
+        146,
+        604,
+        577,
+        93,
+        173,
+        520,
+        81,
+        207,
+        230,
+        270,
+        69,
+        110,
+        105,
+        73,
+        261,
+        461,
+        78,
+        204,
+        247,
+        108,
+        69,
+        101,
+        208,
+        1347,
+        527,
+        156,
+        106,
+        491,
+        205,
+        122,
+        69,
+        107,
+        152,
+        87,
+        124,
+        1440,
+        200,
+        265,
+        571,
+        434,
+        189,
+        306,
+        364,
+        84,
+        151
+      ]
+    },
+    "completion_tokens_details.reasoning_tokens": {
+      "n_total_requests": 49,
+      "n_valid": 49,
+      "n_missing": 0,
+      "observed_values": [
+        162,
+        2110,
+        2180,
+        823,
+        9,
+        514,
+        365,
+        0,
+        51,
+        299,
+        12,
+        36,
+        98,
+        153,
+        11,
+        17,
+        0,
+        9,
+        261,
+        247,
+        10,
+        31,
+        119,
+        18,
+        10,
+        19,
+        111,
+        1228,
+        341,
+        7,
+        13,
+        165,
+        85,
+        33,
+        11,
+        17,
+        28,
+        6,
+        26,
+        1220,
+        44,
+        121,
+        471,
+        266,
+        106,
+        210,
+        185,
+        11,
+        14
+      ]
+    },
+    "prompt_cache_hit_tokens": {
+      "n_total_requests": 49,
+      "n_valid": 49,
+      "n_missing": 0,
+      "observed_values": [
+        896,
+        2304,
+        2688,
+        3072,
+        3328,
+        3456,
+        3712,
+        896,
+        1792,
+        1792,
+        2176,
+        2432,
+        896,
+        1792,
+        2176,
+        2304,
+        1664,
+        1792,
+        1920,
+        1920,
+        2176,
+        2176,
+        1920,
+        1792,
+        2176,
+        2304,
+        2176,
+        2304,
+        2688,
+        3072,
+        3328,
+        3584,
+        1920,
+        1792,
+        2176,
+        2304,
+        2176,
+        2304,
+        2560,
+        2688,
+        3328,
+        3712,
+        3968,
+        3968,
+        1664,
+        1792,
+        1792,
+        1920,
+        2304
+      ]
+    },
+    "prompt_cache_miss_tokens": {
+      "n_total_requests": 49,
+      "n_valid": 49,
+      "n_missing": 0,
+      "observed_values": [
+        1468,
+        663,
+        505,
+        353,
+        426,
+        526,
+        540,
+        984,
+        281,
+        454,
+        320,
+        240,
+        1177,
+        464,
+        236,
+        370,
+        216,
+        243,
+        280,
+        314,
+        301,
+        475,
+        153,
+        460,
+        205,
+        340,
+        188,
+        646,
+        434,
+        325,
+        306,
+        311,
+        153,
+        452,
+        196,
+        330,
+        188,
+        362,
+        240,
+        699,
+        457,
+        322,
+        302,
+        665,
+        216,
+        271,
+        418,
+        498,
+        289
+      ]
+    },
+    "prompt_tokens": {
+      "n_total_requests": 49,
+      "n_valid": 49,
+      "n_missing": 0,
+      "observed_values": [
+        2364,
+        2967,
+        3193,
+        3425,
+        3754,
+        3982,
+        4252,
+        1880,
+        2073,
+        2246,
+        2496,
+        2672,
+        2073,
+        2256,
+        2412,
+        2674,
+        1880,
+        2035,
+        2200,
+        2234,
+        2477,
+        2651,
+        2073,
+        2252,
+        2381,
+        2644,
+        2364,
+        2950,
+        3122,
+        3397,
+        3634,
+        3895,
+        2073,
+        2244,
+        2372,
+        2634,
+        2364,
+        2666,
+        2800,
+        3387,
+        3785,
+        4034,
+        4270,
+        4633,
+        1880,
+        2063,
+        2210,
+        2418,
+        2593
+      ]
+    },
+    "prompt_tokens_details.cached_tokens": {
+      "n_total_requests": 49,
+      "n_valid": 49,
+      "n_missing": 0,
+      "observed_values": [
+        896,
+        2304,
+        2688,
+        3072,
+        3328,
+        3456,
+        3712,
+        896,
+        1792,
+        1792,
+        2176,
+        2432,
+        896,
+        1792,
+        2176,
+        2304,
+        1664,
+        1792,
+        1920,
+        1920,
+        2176,
+        2176,
+        1920,
+        1792,
+        2176,
+        2304,
+        2176,
+        2304,
+        2688,
+        3072,
+        3328,
+        3584,
+        1920,
+        1792,
+        2176,
+        2304,
+        2176,
+        2304,
+        2560,
+        2688,
+        3328,
+        3712,
+        3968,
+        3968,
+        1664,
+        1792,
+        1792,
+        1920,
+        2304
+      ]
+    },
+    "total_tokens": {
+      "n_total_requests": 49,
+      "n_valid": 49,
+      "n_missing": 0,
+      "observed_values": [
+        2640,
+        5189,
+        5553,
+        4485,
+        3900,
+        4586,
+        4829,
+        1973,
+        2246,
+        2766,
+        2577,
+        2879,
+        2303,
+        2526,
+        2481,
+        2784,
+        1985,
+        2108,
+        2461,
+        2695,
+        2555,
+        2855,
+        2320,
+        2360,
+        2450,
+        2745,
+        2572,
+        4297,
+        3649,
+        3553,
+        3740,
+        4386,
+        2278,
+        2366,
+        2441,
+        2741,
+        2516,
+        2753,
+        2924,
+        4827,
+        3985,
+        4299,
+        4841,
+        5067,
+        2069,
+        2369,
+        2574,
+        2502,
+        2744
+      ]
+    }
+  },
+  "agent_phase_usage_coverage": {
+    "n_input_tokens": {
+      "n_total_runs": 9,
+      "n_valid": 9,
+      "n_missing": 0,
+      "values": [
+        23937,
+        11367,
+        9415,
+        13477,
+        9350,
+        19362,
+        9323,
+        27939,
+        11164
+      ]
+    },
+    "n_output_tokens": {
+      "n_total_runs": 9,
+      "n_valid": 9,
+      "n_missing": 0,
+      "values": [
+        7245,
+        1074,
+        679,
+        1182,
+        525,
+        2835,
+        503,
+        3273,
+        1094
+      ]
+    },
+    "n_cache_tokens": {
+      "n_total_runs": 9,
+      "n_valid": 9,
+      "n_missing": 0,
+      "values": [
+        19456,
+        9088,
+        7168,
+        11648,
+        8192,
+        17152,
+        8192,
+        24704,
+        9472
+      ]
+    }
+  },
+  "bootstrap_totals": {
+    "get_task_metadata": 9,
+    "inspect_document": 9
+  },
+  "bootstrap_observed_counts_by_tool": {
+    "get_task_metadata": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "inspect_document": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "bootstrap_counted_as_agent_tool_actions": false,
+  "task_summaries": {
+    "atomic__excel_001_budget_bucket_totals_seed": {
+      "task_label": "Excel",
+      "n_runs": 3,
+      "termination_points": [
+        "finish",
+        "finish",
+        "finish"
+      ],
+      "reward_points": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "metrics": {
+        "logical_requests": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T154928Z-r0-excel001",
+              "value": 7
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155154Z-r1-excel001",
+              "value": 6
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155248Z-r2-excel001",
+              "value": 8
+            }
+          ],
+          "median": 7.0,
+          "q1": 6.5,
+          "q3": 7.5,
+          "iqr": 1.0,
+          "min": 6.0,
+          "max": 8.0
+        },
+        "agent_tool_calls": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T154928Z-r0-excel001",
+              "value": 6
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155154Z-r1-excel001",
+              "value": 5
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155248Z-r2-excel001",
+              "value": 5
+            }
+          ],
+          "median": 5.0,
+          "q1": 5.0,
+          "q3": 5.5,
+          "iqr": 0.5,
+          "min": 5.0,
+          "max": 6.0
+        },
+        "attempt_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T154928Z-r0-excel001",
+              "value": 50.3
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155154Z-r1-excel001",
+              "value": 32.34
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155248Z-r2-excel001",
+              "value": 34.47
+            }
+          ],
+          "median": 34.47,
+          "q1": 33.405,
+          "q3": 42.385,
+          "iqr": 8.979999999999997,
+          "min": 32.34,
+          "max": 50.3
+        },
+        "sample_window_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T154928Z-r0-excel001",
+              "value": 38.543623213
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155154Z-r1-excel001",
+              "value": 21.02070479
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155248Z-r2-excel001",
+              "value": 23.024895857
+            }
+          ],
+          "median": 23.024895857,
+          "q1": 22.0228003235,
+          "q3": 30.784259534999997,
+          "iqr": 8.761459211499997,
+          "min": 21.02070479,
+          "max": 38.543623213
+        },
+        "container_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T154928Z-r0-excel001",
+              "value": 7.069852
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155154Z-r1-excel001",
+              "value": 6.006818
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155248Z-r2-excel001",
+              "value": 5.969424
+            }
+          ],
+          "median": 6.006818,
+          "q1": 5.988121,
+          "q3": 6.538335,
+          "iqr": 0.5502140000000004,
+          "min": 5.969424,
+          "max": 7.069852
+        },
+        "memory_current_sampled_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T154928Z-r0-excel001",
+              "value": 67645440
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155154Z-r1-excel001",
+              "value": 78770176
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155248Z-r2-excel001",
+              "value": 76169216
+            }
+          ],
+          "median": 76169216.0,
+          "q1": 71907328.0,
+          "q3": 77469696.0,
+          "iqr": 5562368.0,
+          "min": 67645440.0,
+          "max": 78770176.0
+        },
+        "kernel_memory_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T154928Z-r0-excel001",
+              "value": 75599872
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155154Z-r1-excel001",
+              "value": 78770176
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155248Z-r2-excel001",
+              "value": 76169216
+            }
+          ],
+          "median": 76169216.0,
+          "q1": 75884544.0,
+          "q3": 77469696.0,
+          "iqr": 1585152.0,
+          "min": 75599872.0,
+          "max": 78770176.0
+        },
+        "host_agent_rss_sampled_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T154928Z-r0-excel001",
+              "value": 168558592
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155154Z-r1-excel001",
+              "value": 168558592
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155248Z-r2-excel001",
+              "value": 168558592
+            }
+          ],
+          "median": 168558592.0,
+          "q1": 168558592.0,
+          "q3": 168558592.0,
+          "iqr": 0.0,
+          "min": 168558592.0,
+          "max": 168558592.0
+        },
+        "agent_phase_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T154928Z-r0-excel001",
+              "value": 37.318566975
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155154Z-r1-excel001",
+              "value": 19.284257841
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155248Z-r2-excel001",
+              "value": 21.402470483
+            }
+          ],
+          "median": 21.402470483,
+          "q1": 20.343364162,
+          "q3": 29.360518729,
+          "iqr": 9.017154566999999,
+          "min": 19.284257841,
+          "max": 37.318566975
+        },
+        "verifier_phase_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T154928Z-r0-excel001",
+              "value": 1.284901093
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155154Z-r1-excel001",
+              "value": 1.372260355
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155248Z-r2-excel001",
+              "value": 1.346184799
+            }
+          ],
+          "median": 1.346184799,
+          "q1": 1.3155429459999999,
+          "q3": 1.3592225770000002,
+          "iqr": 0.043679631000000274,
+          "min": 1.284901093,
+          "max": 1.372260355
+        },
+        "agent_phase_sampled_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T154928Z-r0-excel001",
+              "value": 6.34218
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155154Z-r1-excel001",
+              "value": 4.996102
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155248Z-r2-excel001",
+              "value": 5.040865
+            }
+          ],
+          "median": 5.040865,
+          "q1": 5.0184835,
+          "q3": 5.6915225,
+          "iqr": 0.6730389999999993,
+          "min": 4.996102,
+          "max": 6.34218
+        },
+        "verifier_phase_sampled_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T154928Z-r0-excel001",
+              "value": 0.609442
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155154Z-r1-excel001",
+              "value": 0.92862
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155248Z-r2-excel001",
+              "value": 0.890143
+            }
+          ],
+          "median": 0.890143,
+          "q1": 0.7497925000000001,
+          "q3": 0.9093815000000001,
+          "iqr": 0.15958899999999998,
+          "min": 0.609442,
+          "max": 0.92862
+        },
+        "phase_input_tokens": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T154928Z-r0-excel001",
+              "value": 23937
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155154Z-r1-excel001",
+              "value": 19362
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155248Z-r2-excel001",
+              "value": 27939
+            }
+          ],
+          "median": 23937.0,
+          "q1": 21649.5,
+          "q3": 25938.0,
+          "iqr": 4288.5,
+          "min": 19362.0,
+          "max": 27939.0
+        },
+        "phase_output_tokens": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T154928Z-r0-excel001",
+              "value": 7245
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155154Z-r1-excel001",
+              "value": 2835
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155248Z-r2-excel001",
+              "value": 3273
+            }
+          ],
+          "median": 3273.0,
+          "q1": 3054.0,
+          "q3": 5259.0,
+          "iqr": 2205.0,
+          "min": 2835.0,
+          "max": 7245.0
+        },
+        "phase_cache_tokens": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T154928Z-r0-excel001",
+              "value": 19456
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155154Z-r1-excel001",
+              "value": 17152
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155248Z-r2-excel001",
+              "value": 24704
+            }
+          ],
+          "median": 19456.0,
+          "q1": 18304.0,
+          "q3": 22080.0,
+          "iqr": 3776.0,
+          "min": 17152.0,
+          "max": 24704.0
+        }
+      },
+      "tool_sequences": [
+        {
+          "round": 0,
+          "run_id": "20261010T154928Z-r0-excel001",
+          "sequence": [
+            "xlsx_read_sheet",
+            "xlsx_read_sheet",
+            "copy_file",
+            "xlsx_set_formula",
+            "xlsx_set_formula",
+            "xlsx_read_sheet"
+          ]
+        },
+        {
+          "round": 1,
+          "run_id": "20261010T155154Z-r1-excel001",
+          "sequence": [
+            "xlsx_read_sheet",
+            "copy_file",
+            "xlsx_set_formula",
+            "xlsx_set_formula",
+            "xlsx_read_sheet"
+          ]
+        },
+        {
+          "round": 2,
+          "run_id": "20261010T155248Z-r2-excel001",
+          "sequence": [
+            "copy_file",
+            "xlsx_read_sheet",
+            "xlsx_set_formula",
+            "xlsx_set_formula",
+            "xlsx_read_sheet"
+          ]
+        }
+      ],
+      "tool_name_counts": {
+        "xlsx_read_sheet": 7,
+        "copy_file": 3,
+        "xlsx_set_formula": 6
+      },
+      "activity_counts": {
+        "document_or_content_inspection": 7,
+        "file_copy": 3,
+        "spreadsheet_formula_edit": 6
+      }
+    },
+    "atomic__ppt_008_bullet_editing_seed": {
+      "task_label": "PPT",
+      "n_runs": 3,
+      "termination_points": [
+        "finish",
+        "finish",
+        "finish"
+      ],
+      "reward_points": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "metrics": {
+        "logical_requests": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155019Z-r0-ppt008",
+              "value": 5
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155107Z-r1-ppt008",
+              "value": 6
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155323Z-r2-ppt008",
+              "value": 5
+            }
+          ],
+          "median": 5.0,
+          "q1": 5.0,
+          "q3": 5.5,
+          "iqr": 0.5,
+          "min": 5.0,
+          "max": 6.0
+        },
+        "agent_tool_calls": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155019Z-r0-ppt008",
+              "value": 4
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155107Z-r1-ppt008",
+              "value": 4
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155323Z-r2-ppt008",
+              "value": 4
+            }
+          ],
+          "median": 4.0,
+          "q1": 4.0,
+          "q3": 4.0,
+          "iqr": 0.0,
+          "min": 4.0,
+          "max": 4.0
+        },
+        "attempt_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155019Z-r0-ppt008",
+              "value": 25.43
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155107Z-r1-ppt008",
+              "value": 25.2
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155323Z-r2-ppt008",
+              "value": 24.74
+            }
+          ],
+          "median": 25.2,
+          "q1": 24.97,
+          "q3": 25.314999999999998,
+          "iqr": 0.34499999999999886,
+          "min": 24.74,
+          "max": 25.43
+        },
+        "sample_window_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155019Z-r0-ppt008",
+              "value": 14.016835525
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155107Z-r1-ppt008",
+              "value": 13.517154433
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155323Z-r2-ppt008",
+              "value": 13.012056278
+            }
+          ],
+          "median": 13.517154433,
+          "q1": 13.264605355499999,
+          "q3": 13.766994979,
+          "iqr": 0.5023896235000009,
+          "min": 13.012056278,
+          "max": 14.016835525
+        },
+        "container_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155019Z-r0-ppt008",
+              "value": 5.366808
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155107Z-r1-ppt008",
+              "value": 5.209944
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155323Z-r2-ppt008",
+              "value": 4.932665
+            }
+          ],
+          "median": 5.209944,
+          "q1": 5.0713045,
+          "q3": 5.2883759999999995,
+          "iqr": 0.21707149999999942,
+          "min": 4.932665,
+          "max": 5.366808
+        },
+        "memory_current_sampled_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155019Z-r0-ppt008",
+              "value": 85241856
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155107Z-r1-ppt008",
+              "value": 63598592
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155323Z-r2-ppt008",
+              "value": 71151616
+            }
+          ],
+          "median": 71151616.0,
+          "q1": 67375104.0,
+          "q3": 78196736.0,
+          "iqr": 10821632.0,
+          "min": 63598592.0,
+          "max": 85241856.0
+        },
+        "kernel_memory_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155019Z-r0-ppt008",
+              "value": 85241856
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155107Z-r1-ppt008",
+              "value": 78237696
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155323Z-r2-ppt008",
+              "value": 74493952
+            }
+          ],
+          "median": 78237696.0,
+          "q1": 76365824.0,
+          "q3": 81739776.0,
+          "iqr": 5373952.0,
+          "min": 74493952.0,
+          "max": 85241856.0
+        },
+        "host_agent_rss_sampled_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155019Z-r0-ppt008",
+              "value": 168558592
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155107Z-r1-ppt008",
+              "value": 168558592
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155323Z-r2-ppt008",
+              "value": 168558592
+            }
+          ],
+          "median": 168558592.0,
+          "q1": 168558592.0,
+          "q3": 168558592.0,
+          "iqr": 0.0,
+          "min": 168558592.0,
+          "max": 168558592.0
+        },
+        "agent_phase_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155019Z-r0-ppt008",
+              "value": 12.279795697
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155107Z-r1-ppt008",
+              "value": 12.276783977
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155323Z-r2-ppt008",
+              "value": 11.73047264
+            }
+          ],
+          "median": 12.276783977,
+          "q1": 12.0036283085,
+          "q3": 12.278289836999999,
+          "iqr": 0.27466152849999936,
+          "min": 11.73047264,
+          "max": 12.279795697
+        },
+        "verifier_phase_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155019Z-r0-ppt008",
+              "value": 1.363368894
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155107Z-r1-ppt008",
+              "value": 1.288787086
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155323Z-r2-ppt008",
+              "value": 1.218371807
+            }
+          ],
+          "median": 1.288787086,
+          "q1": 1.2535794464999999,
+          "q3": 1.32607799,
+          "iqr": 0.07249854350000007,
+          "min": 1.218371807,
+          "max": 1.363368894
+        },
+        "agent_phase_sampled_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155019Z-r0-ppt008",
+              "value": 4.300341
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155107Z-r1-ppt008",
+              "value": 4.438534
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155323Z-r2-ppt008",
+              "value": 4.100144
+            }
+          ],
+          "median": 4.300341,
+          "q1": 4.2002425,
+          "q3": 4.3694375,
+          "iqr": 0.1691950000000002,
+          "min": 4.100144,
+          "max": 4.438534
+        },
+        "verifier_phase_sampled_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155019Z-r0-ppt008",
+              "value": 0.97307
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155107Z-r1-ppt008",
+              "value": 0.593044
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155323Z-r2-ppt008",
+              "value": 0.510067
+            }
+          ],
+          "median": 0.593044,
+          "q1": 0.5515555000000001,
+          "q3": 0.783057,
+          "iqr": 0.23150149999999992,
+          "min": 0.510067,
+          "max": 0.97307
+        },
+        "phase_input_tokens": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155019Z-r0-ppt008",
+              "value": 11367
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155107Z-r1-ppt008",
+              "value": 13477
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155323Z-r2-ppt008",
+              "value": 11164
+            }
+          ],
+          "median": 11367.0,
+          "q1": 11265.5,
+          "q3": 12422.0,
+          "iqr": 1156.5,
+          "min": 11164.0,
+          "max": 13477.0
+        },
+        "phase_output_tokens": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155019Z-r0-ppt008",
+              "value": 1074
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155107Z-r1-ppt008",
+              "value": 1182
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155323Z-r2-ppt008",
+              "value": 1094
+            }
+          ],
+          "median": 1094.0,
+          "q1": 1084.0,
+          "q3": 1138.0,
+          "iqr": 54.0,
+          "min": 1074.0,
+          "max": 1182.0
+        },
+        "phase_cache_tokens": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155019Z-r0-ppt008",
+              "value": 9088
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155107Z-r1-ppt008",
+              "value": 11648
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155323Z-r2-ppt008",
+              "value": 9472
+            }
+          ],
+          "median": 9472.0,
+          "q1": 9280.0,
+          "q3": 10560.0,
+          "iqr": 1280.0,
+          "min": 9088.0,
+          "max": 11648.0
+        }
+      },
+      "tool_sequences": [
+        {
+          "round": 0,
+          "run_id": "20261010T155019Z-r0-ppt008",
+          "sequence": [
+            "ppt_list_slides",
+            "copy_file",
+            "ppt_replace_text",
+            "ppt_list_slides"
+          ]
+        },
+        {
+          "round": 1,
+          "run_id": "20261010T155107Z-r1-ppt008",
+          "sequence": [
+            "copy_file",
+            "ppt_list_slides",
+            "ppt_replace_text",
+            "ppt_list_slides"
+          ]
+        },
+        {
+          "round": 2,
+          "run_id": "20261010T155323Z-r2-ppt008",
+          "sequence": [
+            "ppt_list_slides",
+            "copy_file",
+            "ppt_replace_text",
+            "ppt_list_slides"
+          ]
+        }
+      ],
+      "tool_name_counts": {
+        "ppt_list_slides": 6,
+        "copy_file": 3,
+        "ppt_replace_text": 3
+      },
+      "activity_counts": {
+        "document_or_content_inspection": 6,
+        "file_copy": 3,
+        "presentation_edit": 3
+      }
+    },
+    "atomic__pdf_004_audit_pages_reorder_seed": {
+      "task_label": "PDF",
+      "n_runs": 3,
+      "termination_points": [
+        "finish",
+        "finish",
+        "finish"
+      ],
+      "reward_points": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "metrics": {
+        "logical_requests": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155045Z-r0-pdf004",
+              "value": 4
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155132Z-r1-pdf004",
+              "value": 4
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155227Z-r2-pdf004",
+              "value": 4
+            }
+          ],
+          "median": 4.0,
+          "q1": 4.0,
+          "q3": 4.0,
+          "iqr": 0.0,
+          "min": 4.0,
+          "max": 4.0
+        },
+        "agent_tool_calls": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155045Z-r0-pdf004",
+              "value": 3
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155132Z-r1-pdf004",
+              "value": 3
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155227Z-r2-pdf004",
+              "value": 3
+            }
+          ],
+          "median": 3.0,
+          "q1": 3.0,
+          "q3": 3.0,
+          "iqr": 0.0,
+          "min": 3.0,
+          "max": 3.0
+        },
+        "attempt_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155045Z-r0-pdf004",
+              "value": 21.55
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155132Z-r1-pdf004",
+              "value": 21.73
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155227Z-r2-pdf004",
+              "value": 20.81
+            }
+          ],
+          "median": 21.55,
+          "q1": 21.18,
+          "q3": 21.64,
+          "iqr": 0.46000000000000085,
+          "min": 20.81,
+          "max": 21.73
+        },
+        "sample_window_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155045Z-r0-pdf004",
+              "value": 10.011705613
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155132Z-r1-pdf004",
+              "value": 10.011217086
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155227Z-r2-pdf004",
+              "value": 9.014114076
+            }
+          ],
+          "median": 10.011217086,
+          "q1": 9.512665581,
+          "q3": 10.0114613495,
+          "iqr": 0.49879576849999907,
+          "min": 9.014114076,
+          "max": 10.011705613
+        },
+        "container_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155045Z-r0-pdf004",
+              "value": 4.014582
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155132Z-r1-pdf004",
+              "value": 4.31821
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155227Z-r2-pdf004",
+              "value": 4.279262
+            }
+          ],
+          "median": 4.279262,
+          "q1": 4.146922,
+          "q3": 4.298736,
+          "iqr": 0.1518139999999999,
+          "min": 4.014582,
+          "max": 4.31821
+        },
+        "memory_current_sampled_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155045Z-r0-pdf004",
+              "value": 62980096
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155132Z-r1-pdf004",
+              "value": 58531840
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155227Z-r2-pdf004",
+              "value": 66600960
+            }
+          ],
+          "median": 62980096.0,
+          "q1": 60755968.0,
+          "q3": 64790528.0,
+          "iqr": 4034560.0,
+          "min": 58531840.0,
+          "max": 66600960.0
+        },
+        "kernel_memory_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155045Z-r0-pdf004",
+              "value": 72388608
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155132Z-r1-pdf004",
+              "value": 73515008
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155227Z-r2-pdf004",
+              "value": 73711616
+            }
+          ],
+          "median": 73515008.0,
+          "q1": 72951808.0,
+          "q3": 73613312.0,
+          "iqr": 661504.0,
+          "min": 72388608.0,
+          "max": 73711616.0
+        },
+        "host_agent_rss_sampled_peak_bytes": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155045Z-r0-pdf004",
+              "value": 168558592
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155132Z-r1-pdf004",
+              "value": 168558592
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155227Z-r2-pdf004",
+              "value": 168558592
+            }
+          ],
+          "median": 168558592.0,
+          "q1": 168558592.0,
+          "q3": 168558592.0,
+          "iqr": 0.0,
+          "min": 168558592.0,
+          "max": 168558592.0
+        },
+        "agent_phase_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155045Z-r0-pdf004",
+              "value": 8.639832774
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155132Z-r1-pdf004",
+              "value": 8.831449116
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155227Z-r2-pdf004",
+              "value": 7.769768375
+            }
+          ],
+          "median": 8.639832774,
+          "q1": 8.2048005745,
+          "q3": 8.735640945,
+          "iqr": 0.5308403705,
+          "min": 7.769768375,
+          "max": 8.831449116
+        },
+        "verifier_phase_wall_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155045Z-r0-pdf004",
+              "value": 1.277428841
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155132Z-r1-pdf004",
+              "value": 1.2259288
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155227Z-r2-pdf004",
+              "value": 1.316975101
+            }
+          ],
+          "median": 1.277428841,
+          "q1": 1.2516788205,
+          "q3": 1.297201971,
+          "iqr": 0.0455231505,
+          "min": 1.2259288,
+          "max": 1.316975101
+        },
+        "agent_phase_sampled_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155045Z-r0-pdf004",
+              "value": 3.224803
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155132Z-r1-pdf004",
+              "value": 3.623545
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155227Z-r2-pdf004",
+              "value": 3.523441
+            }
+          ],
+          "median": 3.523441,
+          "q1": 3.374122,
+          "q3": 3.573493,
+          "iqr": 0.1993710000000002,
+          "min": 3.224803,
+          "max": 3.623545
+        },
+        "verifier_phase_sampled_cpu_core_s": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155045Z-r0-pdf004",
+              "value": 0.488748
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155132Z-r1-pdf004",
+              "value": 0.589584
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155227Z-r2-pdf004",
+              "value": 0.599853
+            }
+          ],
+          "median": 0.589584,
+          "q1": 0.539166,
+          "q3": 0.5947184999999999,
+          "iqr": 0.055552499999999894,
+          "min": 0.488748,
+          "max": 0.599853
+        },
+        "phase_input_tokens": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155045Z-r0-pdf004",
+              "value": 9415
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155132Z-r1-pdf004",
+              "value": 9350
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155227Z-r2-pdf004",
+              "value": 9323
+            }
+          ],
+          "median": 9350.0,
+          "q1": 9336.5,
+          "q3": 9382.5,
+          "iqr": 46.0,
+          "min": 9323.0,
+          "max": 9415.0
+        },
+        "phase_output_tokens": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155045Z-r0-pdf004",
+              "value": 679
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155132Z-r1-pdf004",
+              "value": 525
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155227Z-r2-pdf004",
+              "value": 503
+            }
+          ],
+          "median": 525.0,
+          "q1": 514.0,
+          "q3": 602.0,
+          "iqr": 88.0,
+          "min": 503.0,
+          "max": 679.0
+        },
+        "phase_cache_tokens": {
+          "n": 3,
+          "points": [
+            {
+              "round": 0,
+              "run_id": "20261010T155045Z-r0-pdf004",
+              "value": 7168
+            },
+            {
+              "round": 1,
+              "run_id": "20261010T155132Z-r1-pdf004",
+              "value": 8192
+            },
+            {
+              "round": 2,
+              "run_id": "20261010T155227Z-r2-pdf004",
+              "value": 8192
+            }
+          ],
+          "median": 8192.0,
+          "q1": 7680.0,
+          "q3": 8192.0,
+          "iqr": 512.0,
+          "min": 7168.0,
+          "max": 8192.0
+        }
+      },
+      "tool_sequences": [
+        {
+          "round": 0,
+          "run_id": "20261010T155045Z-r0-pdf004",
+          "sequence": [
+            "copy_file",
+            "pdf_reorder_pages",
+            "inspect_document"
+          ]
+        },
+        {
+          "round": 1,
+          "run_id": "20261010T155132Z-r1-pdf004",
+          "sequence": [
+            "copy_file",
+            "pdf_reorder_pages",
+            "inspect_document"
+          ]
+        },
+        {
+          "round": 2,
+          "run_id": "20261010T155227Z-r2-pdf004",
+          "sequence": [
+            "copy_file",
+            "pdf_reorder_pages",
+            "inspect_document"
+          ]
+        }
+      ],
+      "tool_name_counts": {
+        "copy_file": 3,
+        "pdf_reorder_pages": 3,
+        "inspect_document": 3
+      },
+      "activity_counts": {
+        "file_copy": 3,
+        "pdf_page_edit": 3,
+        "document_or_content_inspection": 3
+      }
+    }
+  },
+  "statistics": {
+    "n": "per task, valid observations only",
+    "quantile": "linear interpolation at position (n-1)*p; IQR=Q3-Q1",
+    "unit": "three repeats are within-task repeated runs, not independent tasks"
+  },
+  "phase_and_resource_scope": {
+    "attempt_wall": "summary wall_s; whole attempt",
+    "sample_window": "first to last saved monotonic sampler timestamp",
+    "phase_wall": "differences between saved monotonic phase events",
+    "phase_cpu": "sum of cumulative cgroup CPU differences only for adjacent sample pairs wholly inside that phase",
+    "boundary_cpu": "intervals crossing recorded phase boundaries remain mixed; no proportional allocation",
+    "container_cpu_memory": "shared task-container scope; not attributable to one tool",
+    "host_rss": "host Agent/process observation, not inference-only",
+    "memory_current": "sampled maximum; distinct from kernel memory peak",
+    "io": "counters/read status only; not equivalent to complete document/filesystem I/O"
+  },
+  "limitations": [
+    "logical request logs do not reveal actual provider/framework transport-attempt count",
+    "cost remains unknown; saved cost_usd=0 is not a bill",
+    "no reliable per-tool start/end intervals; no tool duration or thinking time",
+    "0.5s sampling cannot resolve short tool-level resource attribution",
+    "three tasks are fixed local DocOps samples in ARM64-adapted environments, not Office-category representatives",
+    "reward=1 supports these recorded task outcomes, not a project/G2 pass or official amd64 equivalence"
+  ],
+  "archive_verification": {
+    "batch_manifest_input_records_verified": 161,
+    "batch_manifest_output_records_verified": 25,
+    "raw_run_manifests_verified": 9,
+    "raw_manifest_input_records_verified": 441,
+    "raw_manifest_output_records_verified": 139,
+    "distinct_input_and_archive_files_hashed": 335,
+    "read_after_write_output_hashes_verified": true,
+    "manifest_self_hash": "omitted_by_design"
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "schema": "docops-word-resource-analysis-manifest-v1",
+  "inputs": [
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/ATTEMPT_COMPLETED.json",
+      "bytes": 185,
+      "sha256": "f583d97cc4a6ed5479623be887d13cf10a85253cef5cee3ee48e47a06cd966ce"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/ATTEMPT_STARTED.json",
+      "bytes": 216,
+      "sha256": "a0ab2adb539c40c5698fdd25447d3c11dbfc73ab0d19c39b70531756c159ad00"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/agent/document-tools-agent.txt",
+      "bytes": 6325,
+      "sha256": "038d60b747d9e44b8fce98eb7e250abe121465643351c6940830054aa7f82e98"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/agent/llm_call_1.json",
+      "bytes": 35806,
+      "sha256": "d322b4c9808a042328c91b982d833259888367ef98472c39067ac905d6c97721"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/agent/llm_call_10.json",
+      "bytes": 96464,
+      "sha256": "39bce963c4f90bb8a1bae00f5d41d828cda99db29addc901c98366735098b23a"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/agent/llm_call_11.json",
+      "bytes": 98754,
+      "sha256": "d172992c94e8be1fa3805d51982bddbd140cc6cb91ede760d2dd21d955168e03"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/agent/llm_call_12.json",
+      "bytes": 101084,
+      "sha256": "c06ca1f771cc7cd609fa7fdbc8e05dd58d4cb2919ec0c90c068a9929202bd26a"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/agent/llm_call_2.json",
+      "bytes": 38224,
+      "sha256": "5831aadc644180b2ad14f7128c526756f81566dc3853844e578010ac22ee1fbc"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/agent/llm_call_3.json",
+      "bytes": 73423,
+      "sha256": "f750333337465f5c527ece5af9fed6ec67b34e88f0afcd6f886a2cf630236d53"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/agent/llm_call_4.json",
+      "bytes": 75444,
+      "sha256": "4400ace85655b6d1548c01a32c8c28e6d71adb1cc71db30487431a4fb2719204"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/agent/llm_call_5.json",
+      "bytes": 83111,
+      "sha256": "9e74f4788e3e42f715858b2ed428357e3933046795769b3ada564a6be0c28caf"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/agent/llm_call_6.json",
+      "bytes": 108317,
+      "sha256": "0b8e63b7f04ec45a034c1c95d97d9f6718818e141e66f989d2ec6582a97f6bc1"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/agent/llm_call_7.json",
+      "bytes": 98157,
+      "sha256": "320a7f31a77824da4b03d68e5d1b339309f83084ee17b08e1cf50c9049a5498f"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/agent/llm_call_8.json",
+      "bytes": 92855,
+      "sha256": "53b98d10157acf1dd76b432b712d54316b5de0bab33c5805ddc325e9a7eb930b"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/agent/llm_call_9.json",
+      "bytes": 94235,
+      "sha256": "78aa33087508196010772910a6b05ff6113309ad8e447ec235b7984bf6a963d0"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/manifest.json",
+      "bytes": 3927,
+      "sha256": "5fd4ba9c87076a1276e15d472c0da99da65e64f3fad9f6378c60519eb6959199"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/summary.json",
+      "bytes": 122920,
+      "sha256": "1f7e0412c3389853ccb6d27c28d4fb59b854f945077dfa30eec27f157ad5ef73"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/verifier/ctrf.json",
+      "bytes": 3429,
+      "sha256": "b511c957b427537c68b1576d6e3e8e718c05ffb5f56f4efc2b9f1b9da79d8292"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/verifier/original_task_description.txt",
+      "bytes": 1284,
+      "sha256": "52b1009a59ce96a6ce97790cacc26981064a1ed854e098bd4167572a27e5e7c8"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/verifier/reward.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/verifier/submission/word_001_engineering_report_toc_hierarchy_seed.docx",
+      "bytes": 39746,
+      "sha256": "4ecae16d588f2c9cc70df36330006da64a554ffdec758c60376759748f2d0337"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/verifier/task_metadata.json",
+      "bytes": 2140,
+      "sha256": "4f65f1028757566a3ef49f6d781f323e31c1c1d35c9b8f650b40ea738fd9efff"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-03/20261010T105013Z-word001/verifier/test-stdout.txt",
+      "bytes": 2890,
+      "sha256": "c2907b1aec7222fc3840ec9d89d215f462cd26b99eb9ce6c6868298afeddc0d9"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/ATTEMPT_COMPLETED.json",
+      "bytes": 176,
+      "sha256": "3ce309597dc552b255963b4cc193ee01f1a7e0866da58eff228f8e3c2359e1c8"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/ATTEMPT_STARTED.json",
+      "bytes": 216,
+      "sha256": "135418f107d79548e2ecc72da959dbe5d60017d4908a8bc6592e9755b55e9a1c"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/agent/document-tools-agent.txt",
+      "bytes": 4266,
+      "sha256": "0d0d8376be8de4f79ad0916e696ebb793d839bade9dac9ac9362d45133a37d18"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/agent/llm_call_1.json",
+      "bytes": 35691,
+      "sha256": "a74fa3e448af231771e03bd5994a4af31853b66ac3ee87672fa30e94082acbb2"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/agent/llm_call_2.json",
+      "bytes": 37968,
+      "sha256": "102363da7437cf23330689b20b230eee671803fdcaea9cf0ce2b516de277e4cd"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/agent/llm_call_3.json",
+      "bytes": 82703,
+      "sha256": "c9b9158c33bf43162c5dfb4a36ff8a1cf067759bf8c23fcfb0759181218a4cc6"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/agent/llm_call_4.json",
+      "bytes": 87494,
+      "sha256": "ff2952eeb52a478e176522015f884b919edd06d42faf64326cd6a29348b8e52e"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/agent/llm_call_5.json",
+      "bytes": 75031,
+      "sha256": "8f4167031dbe7195a4501b00c11fae1958744c82dfc3ff646c773e2d84ae5036"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/agent/llm_call_6.json",
+      "bytes": 105076,
+      "sha256": "ff9cb383f6373117a344f5241fa4bc41203f573772b235f8548d9acd08494424"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/manifest.json",
+      "bytes": 3058,
+      "sha256": "ae4f31274e94b4a5a7296976f12d76c45024119f3842ff449b38f78d7c28c7b6"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/summary.json",
+      "bytes": 80352,
+      "sha256": "3fe0ce9075d99d2b4fde876994ede3cdedd04786378d566a694d7e3cba3874b2"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/verifier/ctrf.json",
+      "bytes": 3436,
+      "sha256": "80d9f3412c2dfc981ae9ad460bc33f4a5667478584dbaf24e4bc5e4b457c69c5"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/verifier/original_task_description.txt",
+      "bytes": 1284,
+      "sha256": "52b1009a59ce96a6ce97790cacc26981064a1ed854e098bd4167572a27e5e7c8"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/verifier/reward.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/verifier/submission/word_001_engineering_report_toc_hierarchy_seed.docx",
+      "bytes": 39744,
+      "sha256": "133d5e147a343715cdbe53f42e07f69b01c2afbd4ab6018400776c9ec810bec7"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/verifier/task_metadata.json",
+      "bytes": 2140,
+      "sha256": "4f65f1028757566a3ef49f6d781f323e31c1c1d35c9b8f650b40ea738fd9efff"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/verifier/test-stdout.txt",
+      "bytes": 2893,
+      "sha256": "b5e716909af524d794bc272d51b60e3e7319f6487781baaa20203282fdf290ba"
+    },
+    {
+      "path": "env/docops-arm64-word001/frozen-identity-03.json",
+      "bytes": 282,
+      "sha256": "757af7a7608d31b47d0de5aab537eca38b2bceb117b31986241e91828b93ead5"
+    },
+    {
+      "path": "env/docops-arm64-word001/frozen-identity-04.json",
+      "bytes": 279,
+      "sha256": "82bc31e9148b4134757b910a6bca09ae81c5e64bed3735187bbdba34c4dcb3a2"
+    },
+    {
+      "path": "env/docops-arm64-word001/plan-identity-03.json",
+      "bytes": 10439,
+      "sha256": "4d426504cf8421149d7ec5ff462c59a0202fd38529f258838ee157d6c5a79b1d"
+    },
+    {
+      "path": "env/docops-arm64-word001/plan-identity-04.json",
+      "bytes": 9929,
+      "sha256": "c999ef9d0a6efade2a9b2ee3e2709b6c7205457f3c3a6a73717bf6b2b1440d3c"
+    },
+    {
+      "path": "references/repos/DocOps/harnesses/document_tools_agent.py",
+      "bytes": 13569,
+      "sha256": "c63244323eea071ba63442dec70531a447365c31e87710b5a2a02c52322f449a"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/environment/word_001_engineering_report_toc_hierarchy_seed.docx",
+      "bytes": 39756,
+      "sha256": "9cb56bb42d83e3f0f62d09fb38d46ab5fabcadbc9fb1e8d19da4e5276f5951c2"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/test_outputs.py",
+      "bytes": 2161,
+      "sha256": "37232616c07d64d07d4a336bed6c5d3af3e31908e8b804d15302c916f7fb9a09"
+    },
+    {
+      "path": "reports/resource/DOCOPS-WORD-RESOURCE-03/APPROVAL.json",
+      "bytes": 1643,
+      "sha256": "4660ceeb3eb81a5217e0c5a7d6a73b612fa693c6e05f51c10a24128a15ea6582"
+    },
+    {
+      "path": "reports/resource/DOCOPS-WORD-RESOURCE-04/APPROVAL.json",
+      "bytes": 2211,
+      "sha256": "83a22d5ce6a888b3378d75eec51fefd254a67405239fef3c5f67b6b1aa44eae4"
+    },
+    {
+      "path": "reports/resource/DOCOPS-WORD-RESOURCE-04/run-report.json",
+      "bytes": 3796,
+      "sha256": "86b7cbba8b49c31fc9688f045b221fe9c28e14b74e72ad7dd8ef3a1f0e61917c"
+    }
+  ],
+  "analysis_code": {
+    "path": "scripts/docops_word_resource_analysis.py",
+    "bytes": 53622,
+    "sha256": "d6be6b59ca09167300230c2ffe49377c835221644227594416b1e4f87f4fe752"
+  },
+  "outputs": [
+    {
+      "path": "reports/analysis/DOCOPS-WORD-RESOURCE-03-04-review-v1/per_run.json",
+      "bytes": 45571,
+      "sha256": "d566027393370e0604007ca4fca25f9c34f029d83f109960fbc544badbb23581"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-WORD-RESOURCE-03-04-review-v1/summary.json",
+      "bytes": 30597,
+      "sha256": "afbefb60a42fd040eee1aaefc98464fb612af6cc309854acb5ce964600e77313"
+    },
+    {
+      "path": "reports/analysis/DOCOPS-WORD-RESOURCE-03-04-review-v1/summary.md",
+      "bytes": 7313,
+      "sha256": "022ec8013ac5a4877e803a450631dfbbaaaf0e5a1c2d6d84571e5ce9f82587a6"
+    }
+  ],
+  "manifest_self_hash": "omitted_by_design"
+}

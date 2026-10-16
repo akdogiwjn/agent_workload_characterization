@@ -468,8 +468,8 @@ class ScopeSamples:
 class ResourceSampler:
     """Samples gauge series + boundary counters for registered scopes.
 
-    The sampler runs OUTSIDE the measured scopes (its own cost is recorded
-    under the 'collector' scope by the caller)."""
+    The sampler is outside container scopes, but may share a measured host
+    process. Read wall cost is recorded; it is not full instrumentation CPU."""
 
     def __init__(self, clock: Clock | None = None,
                  interval_s: float = 0.5):
@@ -481,6 +481,17 @@ class ResourceSampler:
         self._stop = threading.Event()
         self._thread: threading.Thread | None = None
         self._lock = threading.Lock()
+        self._read_count = 0
+        self._read_wall_ns = 0
+
+    def _read(self, scope):
+        started = time.monotonic_ns()
+        try:
+            return self._readers[scope].read(self.clock.monotonic_ns())
+        finally:
+            with self._lock:
+                self._read_count += 1
+                self._read_wall_ns += time.monotonic_ns() - started
 
     def register(self, scope: str, scope_kind: str, reader: ScopeReader) -> None:
         if scope_kind not in SCOPE_KINDS:
@@ -497,7 +508,7 @@ class ResourceSampler:
         with self._lock:
             if scope not in self._readers:
                 raise KeyError(scope)
-        snap = self._readers[scope].read(self.clock.monotonic_ns())
+        snap = self._read(scope)
         with self._lock:
             self._data[scope].boundary_start = snap
             if snap.read_status.get("cpu.stat") != "ok":
@@ -526,7 +537,7 @@ class ResourceSampler:
                 stopped = self._data[scope].boundary_end is not None
             if stopped:
                 return  # idempotent
-            snap = self._readers[scope].read(self.clock.monotonic_ns())
+            snap = self._read(scope)
             with self._lock:
                 self._data[scope].boundary_end = snap
 
@@ -566,7 +577,7 @@ class ResourceSampler:
                 with self._lock:
                     if self._data[scope].boundary_end is not None:
                         continue  # stopped while we waited for the gate
-                snap = reader.read(self.clock.monotonic_ns())
+                snap = self._read(scope)
                 with self._lock:
                     data = self._data[scope]
                     if data.boundary_end is not None:
@@ -594,10 +605,12 @@ class ResourceSampler:
     def collector_self_observation(self) -> dict[str, Any]:
         """Sampler's own cost statement (scope: collector)."""
         with self._lock:
-            n = sum(len(d.samples) for d in self._data.values())
+            n = self._read_count
+            read_wall_ns = self._read_wall_ns
         return {"scope": "collector",
                 "sampling_interval_s": self.interval_s,
                 "total_reads": n,
-                "note": ("collector runs outside measured scopes; its own "
-                         "CPU/RSS is not included in any measured scope "
-                         "and must be stated separately")}
+                "read_wall_ns": read_wall_ns,
+                "note": ("includes boundary reads; read wall cost is not "
+                         "collector CPU or full instrumentation overhead; "
+                         "collector is outside container scopes, may share host process scope")}

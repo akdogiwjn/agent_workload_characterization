@@ -1,0 +1,103 @@
+{
+  "schema": "docops-word-resource-04-result-v1",
+  "collection": "DOCOPS-WORD-RESOURCE-04",
+  "run_id": "20261010T110820Z-word001",
+  "identity_sha256": "1a468b63e8da0535a8f67b895859f987916212fcddd6fd5d90d47780cb716a78",
+  "task": "atomic__word_001_engineering_report_toc_hierarchy_seed",
+  "experiment_change": "max_steps 12 -> 40 only; other registered task/model/prompt/image/resource/time/retry settings retained",
+  "invocation": {
+    "entry_command": "PYTHONPATH=src LITELLM_LOCAL_MODEL_COST_MAP=True .venvs/docops-pilot-01/bin/python -B scripts/docops_word_resource_01_entry.py --execute --i-approve-the-docops-word-resource-04",
+    "exit_code": 0,
+    "attempt_count": 1,
+    "attempt_retry": 0
+  },
+  "measurement_integrity": {
+    "attempt_wall_s": 58.98,
+    "within_total_wall_budget": true,
+    "sampling_interval_s": 0.5,
+    "sample_count": 96,
+    "observed_sample_window_s": 47.575,
+    "sample_scope": "shared task container from cgroup resolution through verifier; not tool-exclusive",
+    "container_cpu_core_s": 5.704128,
+    "container_memory_peak_bytes": 82542592,
+    "host_agent_rss_peak_bytes": 162017280,
+    "counter_read_status": "all 96 container CPU reads successful",
+    "actual_cost": "unknown"
+  },
+  "agent": {
+    "termination": "finish",
+    "model_call_count": 6,
+    "request_model": "openai/deepseek-v4-flash",
+    "observed_response_model": "deepseek-flash",
+    "usage_tokens": {
+      "input": 27664,
+      "output": 8742,
+      "cache": 21504,
+      "note": "reported usage, not an invoice"
+    },
+    "metadata_bootstrap": "agent_setup_begin/done recorded; metadata bootstrap marker present in first request context",
+    "tool_actions": {
+      "total": 5,
+      "counts": {
+        "copy_file": 1,
+        "inspect_document": 2,
+        "word_inspect_format": 1,
+        "word_replace_text": 1,
+        "word_set_format": 0
+      },
+      "persisted_results": 5,
+      "persisted_ok_true": 5,
+      "persisted_ok_false": 0
+    },
+    "submitted_document": {
+      "path": "verifier/submission/word_001_engineering_report_toc_hierarchy_seed.docx",
+      "bytes": 39744,
+      "sha256": "133d5e147a343715cdbe53f42e07f69b01c2afbd4ab6018400776c9ec810bec7"
+    }
+  },
+  "task_result": {
+    "verifier_status": "completed",
+    "reward": 0,
+    "first_failed_assertion": "test_outputs.py::test_semantic_verifier: Top-level headings are not styled consistently.",
+    "later_assertions": "not run or unknown"
+  },
+  "infrastructure": {
+    "failures": [],
+    "container_id": "adbbe71942777d7a08665c9a0aa3dfa05c35ca50e05773e43ab331a836bd3a2b",
+    "container_removal": "verified_removed",
+    "task_image_tag_after_harbor_stop": "absent"
+  },
+  "archive": {
+    "raw_run_dir": "data/raw/generated/DOCOPS-WORD-RESOURCE-04/20261010T110820Z-word001/",
+    "manifest_output_count": 16,
+    "manifest_outputs_bytes_sha256_verified": 16,
+    "manifest_mismatches": 0,
+    "raw_files_modified_after_run": false
+  },
+  "descriptive_comparison_with_docops_03": {
+    "docops_03": {
+      "max_steps": 12,
+      "model_calls": 12,
+      "termination": "steps_exhausted",
+      "reward": 0,
+      "wall_s": 85.38,
+      "container_cpu_core_s": 6.680099,
+      "container_memory_peak_bytes": 77762560
+    },
+    "docops_04": {
+      "max_steps": 40,
+      "model_calls": 6,
+      "termination": "finish",
+      "reward": 0,
+      "wall_s": 58.98,
+      "container_cpu_core_s": 5.704128,
+      "container_memory_peak_bytes": 82542592
+    },
+    "limitation": "two descriptive runs only; differences cannot be attributed solely to max_steps or generalized"
+  },
+  "evidence_notes": {
+    "independent_report_is_derived_from_raw": true,
+    "raw_llm_logs_include_api_key_sha256_field": "present; value not reproduced",
+    "cost_is_not_known_from_usage": true
+  }
+}

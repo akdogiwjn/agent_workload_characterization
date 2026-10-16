@@ -1,0 +1,86 @@
+{
+  "schema": "toolsandbox-pilot-preparation-manifest-v1",
+  "identity_sha256": "ff5f43a20266fadd49523c0bcf0c4a394fd7b62389ef7ee915af923fb3750912",
+  "inputs": [
+    {
+      "path": "scripts/toolsandbox_resource_pilot_01_entry.py",
+      "bytes": 28536,
+      "sha256": "4d42692eb118c05d19129520ebaa8387cff5b2cdd5dbe67ab2a698a0ceb31ae9"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/toolsandbox_worker.py",
+      "bytes": 31681,
+      "sha256": "6c6c5dec9aff98db4541b986418de08048deaa9274d84c3932eb2aebe0414575"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/preparation.py",
+      "bytes": 22290,
+      "sha256": "f3801ed6d8c87a0adae4979ffb3c679c8b12c75784a8ab19e7d42c1885b55465"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/semantic_recorder.py",
+      "bytes": 12009,
+      "sha256": "b5e947ee141043eab299821ef19c77badb43732751be8300e666005d911fb34c"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/host_process.py",
+      "bytes": 9999,
+      "sha256": "7b05e9d89bfbbdb1ff6a246230770470992c2a5dbccb68fef81965c62d4e8c1e"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/execution_measurement.py",
+      "bytes": 12531,
+      "sha256": "e520938f431e34e0b7f8d9c6e996c82dbf7e5beb48554f355fd8d656a7bc0df6"
+    },
+    {
+      "path": "src/agent_workload_characterization/__init__.py",
+      "bytes": 95,
+      "sha256": "f8b90d73ae7ab7394c123a083e4f39fee1dbe191d32ccafc866378244286ca4a"
+    },
+    {
+      "path": "docs/trace_contract.md",
+      "bytes": 19130,
+      "sha256": "6b598f7955b5c36aa5420862fc53495d39a03f10d3be77450586506a5a701593"
+    },
+    {
+      "path": ".venvs/toolsandbox-pilot-01/bin/python",
+      "bytes": 67632,
+      "sha256": "e22abd8ede94ba8df9d737497b53a8840c2d78525ea2c666c81ff414c3df01ec"
+    },
+    {
+      "path": "source-manifest.json",
+      "bytes": 12491,
+      "sha256": "a62c964a859fdb32602b0348c66ecc192ae7092bb2bc60fa2a9800afc929e708"
+    },
+    {
+      "path": "venv-freeze.txt",
+      "bytes": 819,
+      "sha256": "d1d509bbdddbfc67240b21dfe605e599f8659d08151570af9bd956889d5e6f83"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "env/toolsandbox-resource-pilot-01/plan-identity.json",
+      "bytes": 9510,
+      "sha256": "a159c0a8722a6ccdf2ba7df90074323a6a36a836f6a3553c848a71a123de53f0"
+    },
+    {
+      "path": "env/toolsandbox-resource-pilot-01/frozen-identity.json",
+      "bytes": 9510,
+      "sha256": "a159c0a8722a6ccdf2ba7df90074323a6a36a836f6a3553c848a71a123de53f0"
+    }
+  ],
+  "input_root": "/home/lcq/agent_workload_characterization",
+  "output_root": "/home/lcq/agent_workload_characterization",
+  "execution_authorized": false
+}

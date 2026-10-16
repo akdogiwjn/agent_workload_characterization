@@ -1,0 +1,138 @@
+{
+  "roles": {
+    "typical_workload": [
+      {
+        "role": "closest_to_pooled_median",
+        "task_id": "ArcadeData__arcadedb-4281",
+        "participant": "qwen3.6-27b",
+        "run_index": 1,
+        "value": 53
+      },
+      {
+        "role": "closest_to_pooled_median",
+        "task_id": "Gentleman-Programming__gentle-ai-595",
+        "participant": "deepseek-v4-pro",
+        "run_index": 3,
+        "value": 53
+      },
+      {
+        "role": "closest_to_pooled_median",
+        "task_id": "Gentleman-Programming__gentle-ai-595",
+        "participant": "qwen3.6-27b",
+        "run_index": 0,
+        "value": 53
+      }
+    ],
+    "high_tool_call_volume": [
+      {
+        "role": "high_tool_call_volume",
+        "task_id": "mikro-orm__mikro-orm-7799",
+        "participant": "claude-code",
+        "run_index": 3,
+        "value": 617
+      },
+      {
+        "role": "high_tool_call_volume",
+        "task_id": "ArcadeData__arcadedb-4455",
+        "participant": "cursor",
+        "run_index": 3,
+        "value": 528
+      },
+      {
+        "role": "high_tool_call_volume",
+        "task_id": "ArcadeData__arcadedb-4455",
+        "participant": "cursor",
+        "run_index": 4,
+        "value": 498
+      }
+    ],
+    "high_read_search_share": [
+      {
+        "role": "high_read_search_share",
+        "task_id": "stablyai__orca-4331",
+        "participant": "cursor",
+        "run_index": 0,
+        "value": 0.9191919191919192
+      },
+      {
+        "role": "high_read_search_share",
+        "task_id": "stablyai__orca-4331",
+        "participant": "cursor",
+        "run_index": 2,
+        "value": 0.9111111111111111
+      },
+      {
+        "role": "high_read_search_share",
+        "task_id": "stablyai__orca-4331",
+        "participant": "cursor",
+        "run_index": 1,
+        "value": 0.8974358974358975
+      }
+    ],
+    "high_test_share": [
+      {
+        "role": "high_test_share",
+        "task_id": "nesquena__hermes-webui-3069",
+        "participant": "gpt-5.6-sol",
+        "run_index": 3,
+        "value": 0.21739130434782608
+      },
+      {
+        "role": "high_test_share",
+        "task_id": "sipeed__picoclaw-2928",
+        "participant": "gpt-5.6-sol",
+        "run_index": 0,
+        "value": 0.21428571428571427
+      },
+      {
+        "role": "high_test_share",
+        "task_id": "cloudnative-pg__cloudnative-pg-10747",
+        "participant": "gpt-5.6-sol",
+        "run_index": 3,
+        "value": 0.1875
+      }
+    ],
+    "largest_repeat_iqr": [
+      {
+        "role": "largest_repeat_iqr",
+        "task_id": "ArcadeData__arcadedb-4455",
+        "participant": "cursor",
+        "tool_call_counts": [
+          395,
+          286,
+          241,
+          528,
+          498
+        ],
+        "iqr": 212
+      },
+      {
+        "role": "largest_repeat_iqr",
+        "task_id": "openrewrite__rewrite-7784",
+        "participant": "claude-code",
+        "tool_call_counts": [
+          72,
+          195,
+          391,
+          273,
+          452
+        ],
+        "iqr": 196
+      },
+      {
+        "role": "largest_repeat_iqr",
+        "task_id": "floci-io__floci-1325",
+        "participant": "minimax-m3",
+        "tool_call_counts": [
+          311,
+          430,
+          239,
+          164,
+          459
+        ],
+        "iqr": 191
+      }
+    ]
+  },
+  "note": "Roles can overlap; they are research leads, not execution authorization or independent-task counts."
+}

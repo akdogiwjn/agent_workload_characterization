@@ -1,0 +1,199 @@
+{
+ "schema": "swebench-subset-behavior-summary-v1",
+ "generated_at_utc": "2026-10-07",
+ "selection": "selection.json (frozen before analysis)",
+ "n_trajectories": 90,
+ "n_errors": 0,
+ "errors": [],
+ "groups": {
+  "20240620_sweagent_claude3.5sonnet": {
+   "n_selected": 30,
+   "n_analyzed": 30,
+   "format": "sweagent-traj",
+   "interface_totals": {
+    "create": 46,
+    "edit": 286,
+    "python": 265,
+    "pip": 87,
+    "ls": 35,
+    "cython": 14,
+    "submit": 24,
+    "rm": 3,
+    "cd": 11,
+    "find": 20,
+    "open": 83,
+    "pwd": 4,
+    "diff": 1,
+    "search_file": 40,
+    "pytest": 9,
+    "PYTHONPATH=$PYTHONPATH:.": 3,
+    "goto": 45,
+    "exit_cost": 6,
+    "cat": 33,
+    "PYTHONPATH=.": 1,
+    "find_file": 33,
+    "cythonize": 2,
+    "mv": 1,
+    "chmod": 1,
+    "apt-get": 1,
+    "./compile_extensions.sh": 1,
+    "grep": 2,
+    "search_dir": 2,
+    "mkdir": 2,
+    "touch": 2,
+    "scroll_down": 1
+   },
+   "activity_totals": {
+    "Edit/Write": 333,
+    "Interpreter/Execute": 256,
+    "Unknown": 171,
+    "Read/Search": 269,
+    "Submit-marker": 24,
+    "Test": 11
+   },
+   "unknown_reasons": {
+    "simple_interpreter_command": 256,
+    "unrecognized_command": 131,
+    "simple_read_search_command": 47,
+    "compound_or_redirection": 38,
+    "explicit_test_command": 11,
+    "shell_parse_error": 2,
+    "simple_write_command": 1
+   },
+   "transition_totals_top": {
+    "Read/Search->Read/Search": 155,
+    "Edit/Write->Interpreter/Execute": 149,
+    "Edit/Write->Edit/Write": 118,
+    "Interpreter/Execute->Edit/Write": 97,
+    "Read/Search->Edit/Write": 75,
+    "Interpreter/Execute->Unknown": 66,
+    "START->Unknown": 63,
+    "Interpreter/Execute->Read/Search": 47,
+    "Interpreter/Execute->Interpreter/Execute": 35,
+    "Edit/Write->Read/Search": 30,
+    "Edit/Write->Unknown": 20,
+    "Read/Search->Unknown": 18
+   },
+   "termination_values": {
+    "submitted": 24,
+    "submitted (exit_cost)": 6
+   },
+   "submission_patch_present_n": 30,
+   "evaluation_in_trajectory_any": false,
+   "anomaly_totals": {},
+   "per_trajectory_size": {
+    "median": 36,
+    "min": 5,
+    "max": 74,
+    "n": 30
+   },
+   "last_saved_transition_values": {}
+  },
+  "20240617_moatless_gpt4o": {
+   "n_selected": 30,
+   "n_analyzed": 30,
+   "format": "moatless-transitions",
+   "interface_totals": {
+    "SearchCode": 65,
+    "IdentifyCode": 65,
+    "PlanToCode": 82,
+    "EditCode": 52,
+    "Finished": 27,
+    "ClarifyCodeChange": 10,
+    "Rejected": 2
+   },
+   "activity_totals": {
+    "Read/Search": 130,
+    "Plan": 82,
+    "Edit/Write": 52,
+    "Finished": 27,
+    "Unknown": 12
+   },
+   "unknown_reasons": {
+    "unknown_transition_name": 12
+   },
+   "transition_totals_top": {
+    "SearchCode->IdentifyCode": 65,
+    "EditCode->PlanToCode": 52,
+    "PlanToCode->EditCode": 43,
+    "IdentifyCode->SearchCode": 35,
+    "START->SearchCode": 30,
+    "IdentifyCode->PlanToCode": 30,
+    "PlanToCode->Finished": 27,
+    "PlanToCode->ClarifyCodeChange": 10,
+    "ClarifyCodeChange->EditCode": 9,
+    "PlanToCode->Rejected": 2
+   },
+   "termination_values": {
+    "None": 30
+   },
+   "submission_patch_present_n": 30,
+   "evaluation_in_trajectory_any": false,
+   "anomaly_totals": {},
+   "per_trajectory_size": {
+    "median": 9,
+    "min": 6,
+    "max": 20,
+    "n": 30
+   },
+   "last_saved_transition_values": {
+    "Finished": 27,
+    "Rejected": 2,
+    "ClarifyCodeChange": 1
+   }
+  },
+  "20251219_sonar-foundation-agent_claude-opus-4-5": {
+   "n_selected": 30,
+   "n_analyzed": 30,
+   "format": "sonar-message-list",
+   "interface_totals": {
+    "str_replace_based_edit_tool": 481,
+    "bash": 1544,
+    "find_symbols": 4
+   },
+   "activity_totals": {
+    "Read/Search": 414,
+    "Unknown": 1548,
+    "Edit/Write": 67
+   },
+   "unknown_reasons": {
+    "unrecognized_command": 106,
+    "compound_or_redirection": 1437,
+    "unrecognized_tool": 4,
+    "shell_parse_error": 1
+   },
+   "transition_totals_top": {
+    "START->Unknown": 1279,
+    "Read/Search->Unknown": 218,
+    "Read/Search->Read/Search": 158,
+    "Edit/Write->Unknown": 51,
+    "Read/Search->Edit/Write": 35,
+    "Edit/Write->Read/Search": 9,
+    "Edit/Write->Edit/Write": 7
+   },
+   "termination_values": {
+    "None": 30
+   },
+   "submission_patch_present_n": 0,
+   "evaluation_in_trajectory_any": false,
+   "anomaly_totals": {
+    "tool_messages_without_tool_call_id": 2029
+   },
+   "per_trajectory_size": {
+    "median": 153,
+    "min": 61,
+    "max": 209,
+    "n": 30
+   },
+   "last_saved_transition_values": {}
+  }
+ },
+ "method_notes": {
+  "activity_rules": "SWE-rebench v2 conservative shell rule set reused verbatim (scripts/swe_rebench_behavior.py activity); applied only to shell-like command strings; dedicated editor interfaces classified as interface actions",
+  "no_cross_group_aggregation": "three groups use different saved formats and different task sets; only per-group statistics reported",
+  "unknown_breaks_sequence": "Unknown entries break the saved-sequence transition counting (START after Unknown)",
+  "no_resource_claims": "no CPU/memory/IO/duration-as-resource/bill claims; moatless info.duration/total_cost reported only as saved fields",
+  "termination_semantics": "Only explicit source exit fields are termination evidence; last saved moatless transition and final sonar message do not establish termination cause.",
+  "evaluation_scope": "No evaluation fields found in the selected trajectories; separate evaluation artifacts have not been linked in this analysis."
+ }
+}

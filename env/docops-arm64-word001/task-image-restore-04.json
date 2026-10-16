@@ -1,0 +1,44 @@
+{
+  "schema": "docops-task-image-restore-v1",
+  "status": "restored_and_verified_for_DOCOPS_04",
+  "completed_at_utc": "2026-10-10T11:06:45Z",
+  "endpoint": "unix:///var/run/docker.sock",
+  "prior_restore_record_preserved": "env/docops-arm64-word001/task-image-restore-20261010.json",
+  "build": {
+    "command": "docker --host unix:///var/run/docker.sock build --pull=false -t docops-word001-task:arm64-adapted-v1 .",
+    "working_directory": "references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/environment",
+    "dockerfile": {
+      "path": "references/repos/DocOps/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/environment/Dockerfile",
+      "bytes": 542,
+      "sha256": "0de1ec9114c1a21ef96e451cb221fbcd6530f6de0dd917973939acd626ffa8cd"
+    },
+    "started_at_utc": "not_independently_recorded",
+    "completed_at_utc": "2026-10-10T11:06:45Z",
+    "exit_code": 0,
+    "pull_disabled": true,
+    "build_log": {
+      "path": "env/docops-arm64-word001/task-image-restore-04-build.log",
+      "bytes": 1400,
+      "sha256": "572996bed0707ce2856ad1a4a125595494dc00455c911d908ebb4576cb95995a",
+      "note": "saved transcript of the authorized Docker build output"
+    }
+  },
+  "base_image": {
+    "reference": "harbor-claude-code-base:2.1.114",
+    "image_id": "sha256:062bf50871c0e9d7d4a175643343746f27c7857325962525d7ebe9ae0c08fe9b1",
+    "architecture": "linux/arm64",
+    "verification": "read-only inspect matched before build"
+  },
+  "task_image": {
+    "reference": "docops-word001-task:arm64-adapted-v1",
+    "expected_image_id": "sha256:869486d7bdb34f8da3a1affabaeb085413c850630ef01e0ed1f8a01d64db779f",
+    "inspected_image_id": "sha256:869486d7bdb34f8da3a1affabaeb085413c850630ef01e0ed1f8a01d64db779f",
+    "architecture": "linux/arm64",
+    "verification": "tag and exact ID now match after one local build"
+  },
+  "execution_boundary": {
+    "agent_started_during_restore": false,
+    "verifier_started_during_restore": false,
+    "api_called_during_restore": false
+  }
+}

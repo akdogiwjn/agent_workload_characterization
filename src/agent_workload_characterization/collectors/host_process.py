@@ -36,6 +36,13 @@ class HostSnapshot:
     cpu_ticks: int | None          # utime + stime
     rss_bytes: int | None          # resident pages * page size
     read_status: dict[str, str] = field(default_factory=dict)
+    user_ticks: int | None = None
+    system_ticks: int | None = None
+    minor_faults: int | None = None
+    major_faults: int | None = None
+    threads: int | None = None
+    process_io: dict[str, int] = field(default_factory=dict)
+    context_switches: dict[str, int] = field(default_factory=dict)
 
 
 class HostProcessReader:
@@ -100,6 +107,22 @@ class HostProcessReader:
         snap.starttime_ticks = starttime
         snap.cpu_ticks = utime + stime
         snap.rss_bytes = rss_pages * self.page_size
+        snap.user_ticks, snap.system_ticks = utime, stime
+        snap.minor_faults, snap.major_faults = int(rest[7]), int(rest[9])
+        snap.threads = int(rest[17])
+        for name, keys, target in (
+            ('io', {'rchar', 'wchar', 'read_bytes', 'write_bytes'}, snap.process_io),
+            ('status', {'voluntary_ctxt_switches', 'nonvoluntary_ctxt_switches'}, snap.context_switches),
+        ):
+            try:
+                for line in (self.root / str(self.pid) / name).read_text().splitlines():
+                    key, _, value = line.partition(':')
+                    if key in keys:
+                        target[key] = int(value.strip())
+                status[name] = 'ok' if target.keys() == keys else 'fields_missing'
+            except (OSError, ValueError) as exc:
+                target.clear()
+                status[name] = type(exc).__name__
         self._account_read(t0)
         return snap
 

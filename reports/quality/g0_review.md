@@ -1,10 +1,12 @@
 # G0 评审证据（最小语义 Gate）
 
+> 导航修订（2026-10-16）：仅将5处已迁移文档链接改到历史索引，评审内容和结论不变。[修订前原文](../../local_archive/20261016-repair/before-edit/reports/quality/g0_review.md)保持原字节，SHA-256为`932e44869acb76077d8fe2d62a54941d9206fff9005121e7c2dea76ec63febf4`；本地归档不随GitHub分发。
+
 状态：**PASSED（2026-09-12T12:39Z 正式决议；C 执行等待用户磁盘风险确认）**。
 
-任务记录、mini 安装与离线适配、SMOKE-01R、arm64 digest、canary r7 和隔离 gold-patch verifier 已完成；C 真实 Agent attempt 尚未执行。最终范围、降级与命令登记以 [RUN-01 任务书第 8 节](../../docs/coding_pilot_handoff.md#8-c-审批清单一次真实-agent-任务) 为准（已冻结，唯一有效版本）。
+任务记录、mini 安装与离线适配、SMOKE-01R、arm64 digest、canary r7 和隔离 gold-patch verifier 已完成；C 真实 Agent attempt 尚未执行。最终范围、降级与命令登记以 [RUN-01 任务书第 8 节](../../docs/history_index.md#docs-coding_pilot_handoff-md) 为准（已冻结，唯一有效版本）。
 
-历史过程见 [宏观交付](../../docs/p0_07_08_09_delivery.md) 与 [RUN-01 交付](../../docs/coding_pilot_delivery.md)。以下第 1～4 项是既有已验收语义证据；第 5 项为本次试点环境与配置证据。
+历史过程见 [宏观交付](../../docs/history_index.md#docs-p0_07_08_09_delivery-md) 与 [RUN-01 交付](../../docs/history_index.md#docs-coding_pilot_delivery-md)。以下第 1～4 项是既有已验收语义证据；第 5 项为本次试点环境与配置证据。
 
 ## G0 五条逐项证据
 
@@ -48,7 +50,7 @@
 
 - 固定任务：SWE-bench Verified `django__django-16485`；[任务记录登记](../../data/catalog/pilot_task_record.yaml)，SHA `762de270d1ce06ab23104a35322098178624865c886d7b0ddadf9044d8fec46a`，base commit `39f83765e12b0e5d260b7939fc3fe281d879b279`。原始记录只读，答案不进入 Agent。
 - harness：mini-SWE-agent 2.4.6 已安装；真实 mini + fake transport/执行器离线贯通 3 项已验收，默认测试 378 项、evaluator 解析链 5 项已验收。不是实际 Agent attempt。
-- 模型/认证：[SMOKE-01R 交付](../../docs/model_smoke_delivery.md) 已验证 `openai/deepseek-v4-flash` 工具协议与 usage；引用凭据内存解析，传递走环境变量。有限已测序列化路径通过，不声称任意第三方日志绝不泄漏。
+- 模型/认证：[SMOKE-01R 交付](../../docs/history_index.md#docs-model_smoke_delivery-md) 已验证 `openai/deepseek-v4-flash` 工具协议与 usage；引用凭据内存解析，传递走环境变量。有限已测序列化路径通过，不声称任意第三方日志绝不泄漏。
 - 镜像：原生 arm64，`swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2`；record 的 x86_64 字段保留，配置层显式映射，不自动使用 qemu fallback。
 - 资源：[r7](../resource/RUN-01-B-canary-r7/canary.json) 双 workload 成功；[停止链](../resource/RUN-01-B-canary-r7-stopchain/stop_chain.json) 与 r7 覆盖存活容器确认、docker-stop 兜底。cgroup v1 CPU/memory 基础 scope 可测；I/O 降级，不证明完整 G1 或独占 Tool CPU。
 - evaluator：[隔离 gold 验证](../resource/RUN-01-B-goldverify/RUN01BGOLD-20260912T104224Z-617538/goldverify.json) 实际执行 apply→eval→parse，10/10 测试、resolved=true；固定版本 `02e7a74`。该证据仅支持所测任务/镜像/gold patch，不作为真实 Agent 样本。
@@ -66,7 +68,7 @@
 | GAP-COST-001 / OI-PRICE-001 | 采用成本未知口径，usage 单列，原生零不当免费；价格仍未知，用户未设金额上限，不再申请价格上限作为准备前置 |
 | 磁盘降级 | `--storage-opt` 本机不支持；run_dir 检测不覆盖容器可写层，容器删除仅事后回收；用户须看到可用空间与风险后批准 |
 | 离网安装失败 | gold 验证中 pip editable 安装失败，但日志确认导入工作树且 10/10 通过；保留限制，不自动开网补依赖 |
-| C 最终入口与命令 | **已登记并冻结（2026-09-12 第二轮收紧后）**：入口 `src/agent_workload_characterization/runners/c_entry.py`（SHA-256 前缀 `65f4d62faa02c0db`）；解释器 `.venvs/swebench-eval-02e7a74/bin/python`；计划/执行双命令与配置/代码身份见 [任务书 §8.2](../../docs/coding_pilot_handoff.md)（唯一有效版本，含登记字段表）。默认仅离线计划；执行需用户键入双旗标 `--execute --i-approve-the-c-run` 且凭据环境齐备（缺失在任何容器前拒绝）；**catalog SHA-256 `aee38eaca781df01...902f83` 由入口硬编码绑定——预算篡改/NaN/任意漂移在计划与执行两种模式均拒绝组装**（含评审复现的 30→300 与 NaN 场景，离线回归覆盖）；catalog `execution_authorized: true` 被拒（配置不能授权）；双旗标仅为软件门禁、不证明输入者身份（任务书 §8.2/§8.5 已声明）。入口测试 12 项（全合成 fixtures，不依赖本地真实 record/catalog/venv）+ 全量 390 项通过。**C 未执行**。 |
+| C 最终入口与命令 | **已登记并冻结（2026-09-12 第二轮收紧后）**：入口 `src/agent_workload_characterization/runners/c_entry.py`（SHA-256 前缀 `65f4d62faa02c0db`）；解释器 `.venvs/swebench-eval-02e7a74/bin/python`；计划/执行双命令与配置/代码身份见 [任务书 §8.2](../../docs/history_index.md#docs-coding_pilot_handoff-md)（唯一有效版本，含登记字段表）。默认仅离线计划；执行需用户键入双旗标 `--execute --i-approve-the-c-run` 且凭据环境齐备（缺失在任何容器前拒绝）；**catalog SHA-256 `aee38eaca781df01...902f83` 由入口硬编码绑定——预算篡改/NaN/任意漂移在计划与执行两种模式均拒绝组装**（含评审复现的 30→300 与 NaN 场景，离线回归覆盖）；catalog `execution_authorized: true` 被拒（配置不能授权）；双旗标仅为软件门禁、不证明输入者身份（任务书 §8.2/§8.5 已声明）。入口测试 12 项（全合成 fixtures，不依赖本地真实 record/catalog/venv）+ 全量 390 项通过。**C 未执行**。 |
 
 ## 正式决议记录（2026-09-12）
 

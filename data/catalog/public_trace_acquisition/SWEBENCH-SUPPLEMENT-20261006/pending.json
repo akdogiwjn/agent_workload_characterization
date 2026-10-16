@@ -1,0 +1,37 @@
+{
+ "generated_at": "2026-10-06T03:42Z",
+ "sonar_partial": {
+  "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+  "downloaded": 2147,
+  "expected": 2294,
+  "gap": 147,
+  "reason": "wall deadline reached during final group; 3 in-flight objects failed (transient, deadline), 144 not attempted"
+ },
+ "osworld_task_key_mapping": {
+  "status": "unknown_and_blocked",
+  "finding": "trajectory dataset uses 3-digit dataset-local task keys (001-108); official OSWorld repo task definitions and test_all.json use UUID ids - different identifier systems; no mapping file available locally; the only candidate mapping file website_demo/gpt-5.6/manifest.json exists in the fixed revision tree but huggingface.co is network-unreachable from this host",
+  "hf_reachability": "blocked (Errno 101 network unreachable, checked 2026-10-06); hf-mirror.com reachable but NOT used (unregistered mirror source)",
+  "action": "stopped per policy: no guessed task-title associations, no broad new search"
+ },
+ "verified_remaining_groups_not_attempted": 91,
+ "verified_group_s3_404_inaccessible": [
+  "20250616_Skywork-SWE-32B+TTS_Bo8"
+ ],
+ "lite_remaining_groups_not_attempted": 60,
+ "lite_external_pending": {
+  "repo": "AnvithPabba/SemAgent_Multi",
+  "pinned_commit": "826396fa30f002e126762bdb90ef934d2aad3afa"
+ },
+ "test_remaining_groups_not_attempted": 14,
+ "old_326_failed_objects": {
+  "status": "resolved_this_round",
+  "retried": 326,
+  "succeeded": 326,
+  "failed_again": 0
+ },
+ "not_worth_retrying": [
+  "20250616_Skywork-SWE-32B+TTS_Bo8: S3 404 on all attempted objects (listing snapshot vs current bucket mismatch); only revisit if official metadata provides a new location",
+  "john-bang/20260901_mini-v2.4.2_gemini-3-5-flash: repo 404",
+  "49 metadata s3-linked verified submissions with no objects in listing (mini-* absent or logs-only): no public trajectory exists at registered location"
+ ]
+}

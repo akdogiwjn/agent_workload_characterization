@@ -302,6 +302,21 @@ class IsolationTests(PilotTestBase):
 # ---------------------------------------------------------------------------
 
 class EndToEndPathTests(PilotTestBase):
+    def test_native_started_request_without_terminal_is_archived_as_incomplete(self):
+        from agent_workload_characterization.runners.mini_agent_adapter import AgentResult
+        runner = self.make_runner()
+        def start_only(task, budget, recorder, runtime, handle, watchdog, run_dir, **kwargs):
+            (run_dir / 'mini_request_starts.jsonl').write_text(json.dumps({
+                'n_calls': 1, 't_start_ns': 1, 'clock_domain': 'system_monotonic'}) + '\n')
+            return AgentResult(status='agent_error', candidate_patch=None)
+        runner.harness.run = start_only
+        outcome = runner.run()
+        report = json.loads((Path(outcome.run_dir) / 'measurement.json').read_text())
+        self.assertEqual(report['expected_requests'], 1)
+        self.assertEqual(report['runtime_completed_request_count'], 0)
+        self.assertEqual(report['call_timing_status'], 'partial')
+        self.assertIn('requests:count_or_timing_incomplete', report['gaps'])
+
     def test_success_full_path(self):
         runner = self.make_runner(host_reader=_reader_pair()["host"])
         outcome = runner.run()
@@ -312,10 +327,15 @@ class EndToEndPathTests(PilotTestBase):
         self.assertEqual(outcome.source_type, "synthetic")
         run_dir = Path(outcome.run_dir)
         for name in ("events.jsonl", "samples.json", "metadata.json",
-                     "manifest.json", "candidate.patch"):
+                     "manifest.json", "candidate.patch", "measurement.json", "environment.json"):
             self.assertTrue((run_dir / name).is_file(), name)
         manifest = json.loads((run_dir / "manifest.json").read_text())
         self.assertIn("candidate.patch", manifest["files"])
+        self.assertIn('measurement.json', manifest['files'])
+        measured = json.loads((run_dir / 'measurement.json').read_text())
+        self.assertEqual(measured['call_timing_status'], 'complete')
+        self.assertEqual(measured['expected_requests'], outcome.budget_usage['requests'])
+        self.assertGreater(measured['collector']['total_reads'], 0)
 
     def test_agent_error_path(self):
         script = {"steps": [{"model": {"error": "RuntimeError: boom"}}],
@@ -2402,3 +2422,26 @@ class AnalyzerCliTests(PilotTestBase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class UnexpectedVerifierFailureTests(PilotTestBase):
+    def test_unexpected_verifier_import_failure_is_archived_and_cleaned(self):
+        class ImportFailVerifier:
+            def run(self, *args, **kwargs):
+                raise ModuleNotFoundError("No module named 'swebench'",
+                                          name="swebench")
+
+        runner = self.make_runner()
+        runner.verifier = ImportFailVerifier()
+        outcome = runner.run()
+
+        self.assertEqual(outcome.execution_status, "ok")
+        self.assertEqual(outcome.evaluation_status, "infra_failure")
+        self.assertEqual(outcome.archive_status, "ok")
+        self.assertEqual(outcome.cleanup_status, "ok")
+        run_dir = Path(outcome.run_dir)
+        self.assertTrue((run_dir / "metadata.json").is_file())
+        self.assertTrue((run_dir / "manifest.json").is_file())
+        events = (run_dir / "events.jsonl").read_text()
+        self.assertIn("ModuleNotFoundError:swebench", events)
+        self.assertFalse(runner.runtime.containers)

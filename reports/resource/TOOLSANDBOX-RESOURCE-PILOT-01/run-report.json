@@ -1,0 +1,238 @@
+{
+ "schema": "toolsandbox-pilot-run-report-v1",
+ "collection": "TOOLSANDBOX-RESOURCE-PILOT-01",
+ "run_id": "20261012T080926Z-tsbpilot01",
+ "identity_sha256": "0e087329ba60e846317c30e77ab66d3c0f937642283dc1a083ade3a4a42837b2",
+ "scenario": "send_message_with_contact_content_cellular_off",
+ "worker_exit_code": 1,
+ "killed_by_deadline": false,
+ "exit_code": 1,
+ "wall_s": 6.872147185,
+ "work_deadline_s": 360.0,
+ "parent_start_ns": 718177210141412,
+ "common_work_deadline_ns": 718537210141412,
+ "total_deadline_ns": 718657210141412,
+ "deadline_timeout": null,
+ "cleanup": {
+  "pid": 1425088,
+  "starttime_ticks": 71817721,
+  "returncode": 1,
+  "wait_reaped": true,
+  "original_process_gone": true,
+  "sampler_stopped": true,
+  "checked_monotonic_ns": 718184059407537
+ },
+ "evaluation": null,
+ "evaluation_status": "not_started",
+ "boundary_incomplete_tail": false,
+ "measurement": {
+  "span_coverage": {
+   "status": "verified",
+   "spans": {},
+   "errors": [],
+   "scope": "saved events; must also compare expected runtime/trajectory counts"
+  },
+  "right_censored_event_ids": [
+   "04e0001b7f4642768fe19b693071a67d"
+  ],
+  "worker_completion": "partial",
+  "note": "no synthetic terminal rows are appended after a deadline kill"
+ },
+ "budget_phase_report": {
+  "play_s_budget": 300.0,
+  "evaluate_s_budget": 60.0,
+  "phases": [
+   {
+    "phase": "worker_start",
+    "t_monotonic_ns": 718177284667741,
+    "pid": 1425088,
+    "starttime_ticks": 71817721,
+    "cpu_ticks": 7,
+    "user_ticks": 6,
+    "system_ticks": 1,
+    "rss_bytes": 21102592,
+    "minor_faults": 3204,
+    "major_faults": 0,
+    "threads": 1,
+    "process_io": {
+     "rchar": 2886893,
+     "wchar": 430,
+     "read_bytes": 0,
+     "write_bytes": 4096
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 0,
+     "nonvoluntary_ctxt_switches": 0
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "transport_kind": "openai_compatible"
+   },
+   {
+    "phase": "imports_begin",
+    "t_monotonic_ns": 718177287062193,
+    "pid": 1425088,
+    "starttime_ticks": 71817721,
+    "cpu_ticks": 7,
+    "user_ticks": 6,
+    "system_ticks": 1,
+    "rss_bytes": 21102592,
+    "minor_faults": 3204,
+    "major_faults": 0,
+    "threads": 1,
+    "process_io": {
+     "rchar": 2888647,
+     "wchar": 935,
+     "read_bytes": 0,
+     "write_bytes": 8192
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 2,
+     "nonvoluntary_ctxt_switches": 0
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    }
+   },
+   {
+    "phase": "imports_end",
+    "t_monotonic_ns": 718178417457300,
+    "pid": 1425088,
+    "starttime_ticks": 71817721,
+    "cpu_ticks": 1174,
+    "user_ticks": 1162,
+    "system_ticks": 12,
+    "rss_bytes": 173998080,
+    "minor_faults": 35917,
+    "major_faults": 0,
+    "threads": 127,
+    "process_io": {
+     "rchar": 41428284,
+     "wchar": 1406,
+     "read_bytes": 0,
+     "write_bytes": 12288
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 6,
+     "nonvoluntary_ctxt_switches": 33
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    }
+   }
+  ],
+  "parent_observed_phase_signals": [
+   {
+    "phase": "worker_start",
+    "t_monotonic_ns": 718177284667741,
+    "pid": 1425088,
+    "starttime_ticks": 71817721,
+    "cpu_ticks": 7,
+    "user_ticks": 6,
+    "system_ticks": 1,
+    "rss_bytes": 21102592,
+    "minor_faults": 3204,
+    "major_faults": 0,
+    "threads": 1,
+    "process_io": {
+     "rchar": 2886893,
+     "wchar": 430,
+     "read_bytes": 0,
+     "write_bytes": 4096
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 0,
+     "nonvoluntary_ctxt_switches": 0
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "transport_kind": "openai_compatible"
+   },
+   {
+    "phase": "imports_begin",
+    "t_monotonic_ns": 718177287062193,
+    "pid": 1425088,
+    "starttime_ticks": 71817721,
+    "cpu_ticks": 7,
+    "user_ticks": 6,
+    "system_ticks": 1,
+    "rss_bytes": 21102592,
+    "minor_faults": 3204,
+    "major_faults": 0,
+    "threads": 1,
+    "process_io": {
+     "rchar": 2888647,
+     "wchar": 935,
+     "read_bytes": 0,
+     "write_bytes": 8192
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 2,
+     "nonvoluntary_ctxt_switches": 0
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    }
+   },
+   {
+    "phase": "imports_end",
+    "t_monotonic_ns": 718178417457300,
+    "pid": 1425088,
+    "starttime_ticks": 71817721,
+    "cpu_ticks": 1174,
+    "user_ticks": 1162,
+    "system_ticks": 12,
+    "rss_bytes": 173998080,
+    "minor_faults": 35917,
+    "major_faults": 0,
+    "threads": 127,
+    "process_io": {
+     "rchar": 41428284,
+     "wchar": 1406,
+     "read_bytes": 0,
+     "write_bytes": 12288
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 6,
+     "nonvoluntary_ctxt_switches": 33
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    }
+   }
+  ],
+  "note": "actual play/evaluate start signals are persisted before blocking; parent kills at the earlier phase/common deadline; imports/setup consume common work budget"
+ },
+ "host_sampling": {
+  "rows": 14,
+  "interval_target_s": 0.5,
+  "max_gap_ns": 500081311,
+  "nonpositive_gaps": 0,
+  "cpu_counter_regressions": 0,
+  "scope": "worker process pid+starttime; shared scope, not per-tool"
+ },
+ "worker_result": null,
+ "archive_verification": {
+  "valid": true,
+  "errors": []
+ },
+ "actual_bill": "unknown",
+ "worker_window_wall_s": 6.849266125,
+ "within_total_budget": true,
+ "wall_scope": "parent start through cleanup and raw archive verification; final report/outer-manifest writes follow this snapshot",
+ "remaining_cleanup_archive_s": 473.150733875
+}

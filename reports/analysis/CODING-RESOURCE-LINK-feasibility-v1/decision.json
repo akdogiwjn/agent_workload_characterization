@@ -1,0 +1,59 @@
+{
+ "schema": "coding-resource-link-feasibility-decision-v1",
+ "generated_at_utc": "2026-10-07",
+ "inputs_basis": "CODING-REPEAT-01 nine explicit runs per batch/summary.json (paths from characterization-v3 manifest); same clock domain verified (t_monotonic_ns in samples.json, mini_tool_events.jsonl, mini_status.jsonl)",
+ "feasibility_findings": {
+  "clock": "tool events, request events and resource samples all use host t_monotonic_ns; direct alignment without offset guessing",
+  "resource_semantics": "cpu_usage_usec is a cumulative cgroup cpuacct counter (differences give core-s); mem_current_bytes instantaneous, mem_peak_bytes kernel cumulative peak; agent/verifier separate cgroup scopes; 9/9 runs: neg_diff=0, counter_reset=0 (v3), sample gaps recorded",
+  "event_coverage": "348/348 tool calls identity-paired (v3 strict gates); shared-container background activity cannot be excluded",
+  "resolution_limit": "263/348 (75.6%) calls are shorter than 0.5s. Existing shared-scope sampling does not support reliable exclusive per-call attribution. Upper-middle tool_duration_s.median values for even counts are excluded."
+ },
+ "candidates": [
+  {
+   "question": "Container CPU decomposed by event-interval type (pure-request / pure-tool / uncovered / mixed), pure-interval method, no proration",
+   "answered_by_existing": "No - characterization-v3 reported time decomposition (durations) and total CPU and top-interval co-occurrence, but not CPU by interval type",
+   "fields_needed": "samples.json point series + boundary counters; tool/request intervals - all available",
+   "decision": "DONE (the single minimal analysis of this round)",
+   "result": {
+    "only_req_cpu": "Zero measured container CPU increment in all nine runs, 82-154 fully request-covered sample intervals each. Does not establish host Agent/API CPU inactivity or a blocking mechanism.",
+    "only_tool_cpu": "29.1%-91.2% of total run CPU (per-run; medians by task: astropy-13236 11.77, astropy-13398 15.64, django-16485 32.96 core-s)",
+    "mixed_cpu": "remainder 6.26-18.72 core-s (event-boundary intervals, not further decomposable without proration)",
+    "uncovered_cpu": "0.13-0.21 core-s per run (mostly the final boundary segment)",
+    "cross_check": "per-run totals bit-identical to characterization-v3 cpu_core_seconds (9/9)"
+   },
+   "allowed_claims": "Container CPU increments grouped by event coverage; only_tool is shared-scope CPU, not exclusive tool consumption. Zero increment applies to only_req sampling intervals and counter precision.",
+   "confounds_not_excluded": "Background activity may occur in any category. Host orchestration/API CPU is outside target scope; client-observed intervals, sampling precision and three-task coverage limit interpretation."
+  },
+  {
+   "question": "Are resource high values concentrated in a few intervals (concentration statistics)",
+   "answered_by_existing": "Partially - v3 already reports top intervals by core-rate with overlapping activity categories",
+   "decision": "NOT DONE - concentration numbers are threshold-sensitive and add little beyond v3 top-interval reporting; risk of trying multiple cuts"
+  },
+  {
+   "question": "Do high-value intervals across runs of the same task come with different activity combinations",
+   "answered_by_existing": "No, but field granularity is insufficient",
+   "decision": "NOT DONE - v3 activity_correlations shows most high-value intervals overlap exactly 1 call; category-level combination comparison would rest on n=1 overlaps per interval"
+  },
+  {
+   "question": "Per-tool-call resource attribution",
+   "answered_by_existing": "No (and v3 explicitly limits against it)",
+   "decision": "Reliable exclusive per-call attribution is not supported by these shared-scope samples; not a universal impossibility claim."
+  }
+ ],
+ "increment_verdict": "INCREMENT_FOUND_AND_COMPLETED: one minimal analysis (pure-interval CPU decomposition) with a clear new observation; call-level attribution and high-value combination analyses are closed as infeasible/low-value on this data",
+ "single_next_step": {
+  "recommendation": "representative SWE-bench subset behavior analysis (offline, data already downloaded locally)",
+  "reasoning": "Coding behavior-resource linkage on CODING-REPEAT-01 has reached its data boundary: interval-type level now answered, call-level requires new measurement capability (direction B), more cgroup samples add no attribution/IO/hotspot. SWE-bench subset (selected for task/harness diversity, not success rate) extends Coding behavioral coverage (RQ1/tool-form) with zero new authorization; public Computer/Office measurement preparation depends on user decisions on execution authorization and assets and is not unilaterally started here",
+  "stop_condition": "subset analysis completes and is registered; no automatic full-corpus expansion, no new adapters beyond the subset need",
+  "authorized": false
+ },
+ "independent_review": {
+  "reviewed_at": "2026-10-07",
+  "correction_applied_at": "2026-10-08",
+  "result": "Nine-run integer interval decomposition and boundary-counter conservation verified.",
+  "excluded_fields": [
+   "tool_duration_s.median for even call counts (d87dd3, 8adc15, 441807)"
+  ],
+  "code_and_numeric_artifact_unchanged": true
+ }
+}

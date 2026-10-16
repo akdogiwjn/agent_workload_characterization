@@ -1,0 +1,1807 @@
+{
+ "schema": "toolsandbox-assistant-repeat-batch-summary-v1",
+ "collection": "TOOLSANDBOX-ASSISTANT-REPEAT-01",
+ "planned_tasks": [
+  "send_message_with_contact_content_cellular_off",
+  "add_reminder_content_and_week_delta_and_time",
+  "modify_contact_with_message_recency_multiple_user_turn"
+ ],
+ "schedule": [
+  [
+   {
+    "task": "send_message_with_contact_content_cellular_off",
+    "label": "A"
+   },
+   {
+    "task": "add_reminder_content_and_week_delta_and_time",
+    "label": "B"
+   },
+   {
+    "task": "modify_contact_with_message_recency_multiple_user_turn",
+    "label": "C"
+   }
+  ],
+  [
+   {
+    "task": "add_reminder_content_and_week_delta_and_time",
+    "label": "B"
+   },
+   {
+    "task": "modify_contact_with_message_recency_multiple_user_turn",
+    "label": "C"
+   },
+   {
+    "task": "send_message_with_contact_content_cellular_off",
+    "label": "A"
+   }
+  ],
+  [
+   {
+    "task": "modify_contact_with_message_recency_multiple_user_turn",
+    "label": "C"
+   },
+   {
+    "task": "send_message_with_contact_content_cellular_off",
+    "label": "A"
+   },
+   {
+    "task": "add_reminder_content_and_week_delta_and_time",
+    "label": "B"
+   }
+  ]
+ ],
+ "executed": 9,
+ "not_executed_count": 0,
+ "not_executed": [],
+ "stop_reason": null,
+ "per_task": {
+  "send_message_with_contact_content_cellular_off": {
+   "task_label": "A",
+   "planned_repeats": 3,
+   "executed": 3,
+   "not_executed": 0,
+   "runs": [
+    {
+     "run_id": "20261012T135428Z-r0-a-tsbassistant01",
+     "task": "send_message_with_contact_content_cellular_off",
+     "task_label": "A",
+     "round": 0,
+     "position_in_round": 0,
+     "report_path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135428Z-r0-a-tsbassistant01.json",
+     "raw_path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135428Z-r0-a-tsbassistant01",
+     "exit_code": 0,
+     "termination": "finished",
+     "logical_requests": {
+      "agent": 5,
+      "user": 1
+     },
+     "logical_tool_calls": {
+      "started": 5,
+      "closed": 5,
+      "error": 0,
+      "unclosed": 0
+     },
+     "tool_batches": {
+      "started": 5,
+      "closed": 5,
+      "error": 0,
+      "unclosed": 0
+     },
+     "tool_call_executions": 6,
+     "evaluation": {
+      "milestone_mapping": {
+       "0": [
+        21,
+        1.0
+       ],
+       "1": [
+        17,
+        1.0
+       ],
+       "2": [
+        23,
+        1.0
+       ],
+       "3": [
+        24,
+        0.6494848458641774
+       ]
+      },
+      "minefield_mapping": {},
+      "milestone_similarity": 0.9123712114660444,
+      "minefield_similarity": 0,
+      "similarity": 0.9123712114660444,
+      "turn_count": 9
+     },
+     "worker_failure": null,
+     "wall_s": 15.275002731,
+     "worker_window_wall_s": 15.251238462,
+     "phase_boundaries": {
+      "setup": {
+       "wall_s": 6.709106038,
+       "cpu_ticks": 24518,
+       "user_ticks": 24093,
+       "system_ticks": 425
+      },
+      "play": {
+       "wall_s": 6.470613341,
+       "cpu_ticks": 4960,
+       "user_ticks": 4897,
+       "system_ticks": 63
+      },
+      "evaluator": {
+       "wall_s": 1.660139251,
+       "cpu_ticks": 23715,
+       "user_ticks": 23335,
+       "system_ticks": 380
+      }
+     },
+     "phase_metrics_flat": {
+      "setup_wall_s": 6.709106038,
+      "setup_cpu_ticks": 24518,
+      "setup_user_ticks": 24093,
+      "setup_system_ticks": 425,
+      "play_wall_s": 6.470613341,
+      "play_cpu_ticks": 4960,
+      "play_user_ticks": 4897,
+      "play_system_ticks": 63,
+      "evaluator_wall_s": 1.660139251,
+      "evaluator_cpu_ticks": 23715,
+      "evaluator_user_ticks": 23335,
+      "evaluator_system_ticks": 380
+     },
+     "sample_points": 31,
+     "sample_cpu_ticks_delta": 54226,
+     "rss_sampled_peak_bytes": 1480892416,
+     "runtime_environment_present": true,
+     "scenario_context_present": true,
+     "cleanup": {
+      "pid": 1828156,
+      "starttime_ticks": 73887939,
+      "returncode": 0,
+      "wait_reaped": true,
+      "original_process_gone": true,
+      "sampler_stopped": true,
+      "checked_monotonic_ns": 738894642073579
+     },
+     "archive_verification": {
+      "valid": true,
+      "errors": []
+     },
+     "within_total_budget": true
+    },
+    {
+     "run_id": "20261012T135610Z-r1-a-tsbassistant01",
+     "task": "send_message_with_contact_content_cellular_off",
+     "task_label": "A",
+     "round": 1,
+     "position_in_round": 2,
+     "report_path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135610Z-r1-a-tsbassistant01.json",
+     "raw_path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135610Z-r1-a-tsbassistant01",
+     "exit_code": 0,
+     "termination": "finished",
+     "logical_requests": {
+      "agent": 5,
+      "user": 1
+     },
+     "logical_tool_calls": {
+      "started": 5,
+      "closed": 4,
+      "error": 1,
+      "unclosed": 0
+     },
+     "tool_batches": {
+      "started": 5,
+      "closed": 5,
+      "error": 0,
+      "unclosed": 0
+     },
+     "tool_call_executions": 6,
+     "evaluation": {
+      "milestone_mapping": {
+       "0": [
+        21,
+        1.0
+       ],
+       "1": [
+        17,
+        1.0
+       ],
+       "2": [
+        23,
+        1.0
+       ],
+       "3": [
+        24,
+        0.711810292587994
+       ]
+      },
+      "minefield_mapping": {},
+      "milestone_similarity": 0.9279525731469985,
+      "minefield_similarity": 0,
+      "similarity": 0.9279525731469985,
+      "turn_count": 9
+     },
+     "worker_failure": null,
+     "wall_s": 16.778466306,
+     "worker_window_wall_s": 16.774993259,
+     "phase_boundaries": {
+      "setup": {
+       "wall_s": 7.107987041,
+       "cpu_ticks": 33467,
+       "user_ticks": 32920,
+       "system_ticks": 547
+      },
+      "play": {
+       "wall_s": 7.539875248,
+       "cpu_ticks": 5012,
+       "user_ticks": 4949,
+       "system_ticks": 63
+      },
+      "evaluator": {
+       "wall_s": 1.685030456,
+       "cpu_ticks": 25048,
+       "user_ticks": 24774,
+       "system_ticks": 274
+      }
+     },
+     "phase_metrics_flat": {
+      "setup_wall_s": 7.107987041,
+      "setup_cpu_ticks": 33467,
+      "setup_user_ticks": 32920,
+      "setup_system_ticks": 547,
+      "play_wall_s": 7.539875248,
+      "play_cpu_ticks": 5012,
+      "play_user_ticks": 4949,
+      "play_system_ticks": 63,
+      "evaluator_wall_s": 1.685030456,
+      "evaluator_cpu_ticks": 25048,
+      "evaluator_user_ticks": 24774,
+      "evaluator_system_ticks": 274
+     },
+     "sample_points": 34,
+     "sample_cpu_ticks_delta": 64566,
+     "rss_sampled_peak_bytes": 1485660160,
+     "runtime_environment_present": true,
+     "scenario_context_present": true,
+     "cleanup": {
+      "pid": 1830903,
+      "starttime_ticks": 73898110,
+      "returncode": 0,
+      "wait_reaped": true,
+      "original_process_gone": true,
+      "sampler_stopped": true,
+      "checked_monotonic_ns": 738997877277035
+     },
+     "archive_verification": {
+      "valid": true,
+      "errors": []
+     },
+     "within_total_budget": true
+    },
+    {
+     "run_id": "20261012T135716Z-r2-a-tsbassistant01",
+     "task": "send_message_with_contact_content_cellular_off",
+     "task_label": "A",
+     "round": 2,
+     "position_in_round": 1,
+     "report_path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135716Z-r2-a-tsbassistant01.json",
+     "raw_path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135716Z-r2-a-tsbassistant01",
+     "exit_code": 0,
+     "termination": "finished",
+     "logical_requests": {
+      "agent": 4,
+      "user": 1
+     },
+     "logical_tool_calls": {
+      "started": 5,
+      "closed": 5,
+      "error": 0,
+      "unclosed": 0
+     },
+     "tool_batches": {
+      "started": 4,
+      "closed": 4,
+      "error": 0,
+      "unclosed": 0
+     },
+     "tool_call_executions": 6,
+     "evaluation": {
+      "milestone_mapping": {
+       "0": [
+        21,
+        1.0
+       ],
+       "1": [
+        18,
+        1.0
+       ],
+       "2": [
+        23,
+        1.0
+       ],
+       "3": [
+        24,
+        0.6972566304691834
+       ]
+      },
+      "minefield_mapping": {},
+      "milestone_similarity": 0.9243141576172959,
+      "minefield_similarity": 0,
+      "similarity": 0.9243141576172959,
+      "turn_count": 9
+     },
+     "worker_failure": null,
+     "wall_s": 14.19209188,
+     "worker_window_wall_s": 14.188562163,
+     "phase_boundaries": {
+      "setup": {
+       "wall_s": 6.8639756,
+       "cpu_ticks": 27598,
+       "user_ticks": 27159,
+       "system_ticks": 439
+      },
+      "play": {
+       "wall_s": 5.186236612,
+       "cpu_ticks": 4872,
+       "user_ticks": 4819,
+       "system_ticks": 53
+      },
+      "evaluator": {
+       "wall_s": 1.654072569,
+       "cpu_ticks": 24322,
+       "user_ticks": 24012,
+       "system_ticks": 310
+      }
+     },
+     "phase_metrics_flat": {
+      "setup_wall_s": 6.8639756,
+      "setup_cpu_ticks": 27598,
+      "setup_user_ticks": 27159,
+      "setup_system_ticks": 439,
+      "play_wall_s": 5.186236612,
+      "play_cpu_ticks": 4872,
+      "play_user_ticks": 4819,
+      "play_system_ticks": 53,
+      "evaluator_wall_s": 1.654072569,
+      "evaluator_cpu_ticks": 24322,
+      "evaluator_user_ticks": 24012,
+      "evaluator_system_ticks": 310
+     },
+     "sample_points": 29,
+     "sample_cpu_ticks_delta": 57836,
+     "rss_sampled_peak_bytes": 1593425920,
+     "runtime_environment_present": true,
+     "scenario_context_present": true,
+     "cleanup": {
+      "pid": 1832356,
+      "starttime_ticks": 73904718,
+      "returncode": 0,
+      "wait_reaped": true,
+      "original_process_gone": true,
+      "sampler_stopped": true,
+      "checked_monotonic_ns": 739061377265349
+     },
+     "archive_verification": {
+      "valid": true,
+      "errors": []
+     },
+     "within_total_budget": true
+    }
+   ],
+   "metrics": {
+    "wall_s": {
+     "n": 3,
+     "raw_points": [
+      15.275002731,
+      16.778466306,
+      14.19209188
+     ],
+     "median": 15.275002731,
+     "q1": 14.7335473055,
+     "q3": 16.0267345185,
+     "iqr": 1.2931872129999995,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "worker_window_wall_s": {
+     "n": 3,
+     "raw_points": [
+      15.251238462,
+      16.774993259,
+      14.188562163
+     ],
+     "median": 15.251238462,
+     "q1": 14.7199003125,
+     "q3": 16.0131158605,
+     "iqr": 1.293215548000001,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "sample_points": {
+     "n": 3,
+     "raw_points": [
+      31,
+      34,
+      29
+     ],
+     "median": 31.0,
+     "q1": 30.0,
+     "q3": 32.5,
+     "iqr": 2.5,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "rss_sampled_peak_bytes": {
+     "n": 3,
+     "raw_points": [
+      1480892416,
+      1485660160,
+      1593425920
+     ],
+     "median": 1485660160.0,
+     "q1": 1483276288.0,
+     "q3": 1539543040.0,
+     "iqr": 56266752.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    }
+   },
+   "logical_requests_agent": {
+    "n": 3,
+    "raw_points": [
+     5,
+     5,
+     4
+    ],
+    "median": 5.0,
+    "q1": 4.5,
+    "q3": 5.0,
+    "iqr": 0.5,
+    "quantile_method": "linear interpolation at (n-1)*p"
+   },
+   "logical_requests_user": {
+    "n": 3,
+    "raw_points": [
+     1,
+     1,
+     1
+    ],
+    "median": 1.0,
+    "q1": 1.0,
+    "q3": 1.0,
+    "iqr": 0.0,
+    "quantile_method": "linear interpolation at (n-1)*p"
+   },
+   "phase_metrics": {
+    "evaluator_cpu_ticks": {
+     "n": 3,
+     "raw_points": [
+      23715,
+      25048,
+      24322
+     ],
+     "median": 24322.0,
+     "q1": 24018.5,
+     "q3": 24685.0,
+     "iqr": 666.5,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "evaluator_system_ticks": {
+     "n": 3,
+     "raw_points": [
+      380,
+      274,
+      310
+     ],
+     "median": 310.0,
+     "q1": 292.0,
+     "q3": 345.0,
+     "iqr": 53.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "evaluator_user_ticks": {
+     "n": 3,
+     "raw_points": [
+      23335,
+      24774,
+      24012
+     ],
+     "median": 24012.0,
+     "q1": 23673.5,
+     "q3": 24393.0,
+     "iqr": 719.5,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "evaluator_wall_s": {
+     "n": 3,
+     "raw_points": [
+      1.660139251,
+      1.685030456,
+      1.654072569
+     ],
+     "median": 1.660139251,
+     "q1": 1.6571059099999998,
+     "q3": 1.6725848535,
+     "iqr": 0.01547894350000023,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "play_cpu_ticks": {
+     "n": 3,
+     "raw_points": [
+      4960,
+      5012,
+      4872
+     ],
+     "median": 4960.0,
+     "q1": 4916.0,
+     "q3": 4986.0,
+     "iqr": 70.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "play_system_ticks": {
+     "n": 3,
+     "raw_points": [
+      63,
+      63,
+      53
+     ],
+     "median": 63.0,
+     "q1": 58.0,
+     "q3": 63.0,
+     "iqr": 5.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "play_user_ticks": {
+     "n": 3,
+     "raw_points": [
+      4897,
+      4949,
+      4819
+     ],
+     "median": 4897.0,
+     "q1": 4858.0,
+     "q3": 4923.0,
+     "iqr": 65.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "play_wall_s": {
+     "n": 3,
+     "raw_points": [
+      6.470613341,
+      7.539875248,
+      5.186236612
+     ],
+     "median": 6.470613341,
+     "q1": 5.8284249765,
+     "q3": 7.005244294500001,
+     "iqr": 1.1768193180000006,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "setup_cpu_ticks": {
+     "n": 3,
+     "raw_points": [
+      24518,
+      33467,
+      27598
+     ],
+     "median": 27598.0,
+     "q1": 26058.0,
+     "q3": 30532.5,
+     "iqr": 4474.5,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "setup_system_ticks": {
+     "n": 3,
+     "raw_points": [
+      425,
+      547,
+      439
+     ],
+     "median": 439.0,
+     "q1": 432.0,
+     "q3": 493.0,
+     "iqr": 61.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "setup_user_ticks": {
+     "n": 3,
+     "raw_points": [
+      24093,
+      32920,
+      27159
+     ],
+     "median": 27159.0,
+     "q1": 25626.0,
+     "q3": 30039.5,
+     "iqr": 4413.5,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "setup_wall_s": {
+     "n": 3,
+     "raw_points": [
+      6.709106038,
+      7.107987041,
+      6.8639756
+     ],
+     "median": 6.8639756,
+     "q1": 6.786540819,
+     "q3": 6.9859813205000005,
+     "iqr": 0.1994405015000007,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    }
+   },
+   "sample_cpu_ticks_delta": {
+    "n": 3,
+    "raw_points": [
+     54226,
+     64566,
+     57836
+    ],
+    "median": 57836.0,
+    "q1": 56031.0,
+    "q3": 61201.0,
+    "iqr": 5170.0,
+    "quantile_method": "linear interpolation at (n-1)*p"
+   }
+  },
+  "add_reminder_content_and_week_delta_and_time": {
+   "task_label": "B",
+   "planned_repeats": 3,
+   "executed": 3,
+   "not_executed": 0,
+   "runs": [
+    {
+     "run_id": "20261012T135444Z-r0-b-tsbassistant01",
+     "task": "add_reminder_content_and_week_delta_and_time",
+     "task_label": "B",
+     "round": 0,
+     "position_in_round": 1,
+     "report_path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135444Z-r0-b-tsbassistant01.json",
+     "raw_path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135444Z-r0-b-tsbassistant01",
+     "exit_code": 0,
+     "termination": "finished",
+     "logical_requests": {
+      "agent": 5,
+      "user": 1
+     },
+     "logical_tool_calls": {
+      "started": 5,
+      "closed": 5,
+      "error": 0,
+      "unclosed": 0
+     },
+     "tool_batches": {
+      "started": 5,
+      "closed": 5,
+      "error": 0,
+      "unclosed": 0
+     },
+     "tool_call_executions": 6,
+     "evaluation": {
+      "milestone_mapping": {
+       "0": [
+        17,
+        1.0
+       ],
+       "1": [
+        23,
+        1.0
+       ]
+      },
+      "minefield_mapping": {},
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0,
+      "similarity": 1.0,
+      "turn_count": 9
+     },
+     "worker_failure": null,
+     "wall_s": 14.901895625,
+     "worker_window_wall_s": 14.898346937,
+     "phase_boundaries": {
+      "setup": {
+       "wall_s": 7.228523242,
+       "cpu_ticks": 36992,
+       "user_ticks": 36459,
+       "system_ticks": 533
+      },
+      "play": {
+       "wall_s": 6.569057584,
+       "cpu_ticks": 4708,
+       "user_ticks": 4644,
+       "system_ticks": 64
+      },
+      "evaluator": {
+       "wall_s": 0.615893911,
+       "cpu_ticks": 9290,
+       "user_ticks": 9189,
+       "system_ticks": 101
+      }
+     },
+     "phase_metrics_flat": {
+      "setup_wall_s": 7.228523242,
+      "setup_cpu_ticks": 36992,
+      "setup_user_ticks": 36459,
+      "setup_system_ticks": 533,
+      "play_wall_s": 6.569057584,
+      "play_cpu_ticks": 4708,
+      "play_user_ticks": 4644,
+      "play_system_ticks": 64,
+      "evaluator_wall_s": 0.615893911,
+      "evaluator_cpu_ticks": 9290,
+      "evaluator_user_ticks": 9189,
+      "evaluator_system_ticks": 101
+     },
+     "sample_points": 30,
+     "sample_cpu_ticks_delta": 51121,
+     "rss_sampled_peak_bytes": 1509556224,
+     "runtime_environment_present": true,
+     "scenario_context_present": true,
+     "cleanup": {
+      "pid": 1828741,
+      "starttime_ticks": 73889466,
+      "returncode": 0,
+      "wait_reaped": true,
+      "original_process_gone": true,
+      "sampler_stopped": true,
+      "checked_monotonic_ns": 738909566659428
+     },
+     "archive_verification": {
+      "valid": true,
+      "errors": []
+     },
+     "within_total_budget": true
+    },
+    {
+     "run_id": "20261012T135529Z-r1-b-tsbassistant01",
+     "task": "add_reminder_content_and_week_delta_and_time",
+     "task_label": "B",
+     "round": 1,
+     "position_in_round": 0,
+     "report_path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135529Z-r1-b-tsbassistant01.json",
+     "raw_path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135529Z-r1-b-tsbassistant01",
+     "exit_code": 0,
+     "termination": "finished",
+     "logical_requests": {
+      "agent": 5,
+      "user": 1
+     },
+     "logical_tool_calls": {
+      "started": 5,
+      "closed": 5,
+      "error": 0,
+      "unclosed": 0
+     },
+     "tool_batches": {
+      "started": 5,
+      "closed": 5,
+      "error": 0,
+      "unclosed": 0
+     },
+     "tool_call_executions": 6,
+     "evaluation": {
+      "milestone_mapping": {
+       "0": [
+        17,
+        1.0
+       ],
+       "1": [
+        23,
+        1.0
+       ]
+      },
+      "minefield_mapping": {},
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0,
+      "similarity": 1.0,
+      "turn_count": 9
+     },
+     "worker_failure": null,
+     "wall_s": 14.206141949,
+     "worker_window_wall_s": 14.202791774,
+     "phase_boundaries": {
+      "setup": {
+       "wall_s": 6.797567857,
+       "cpu_ticks": 27401,
+       "user_ticks": 26897,
+       "system_ticks": 504
+      },
+      "play": {
+       "wall_s": 6.3886794,
+       "cpu_ticks": 4800,
+       "user_ticks": 4735,
+       "system_ticks": 65
+      },
+      "evaluator": {
+       "wall_s": 0.608439161,
+       "cpu_ticks": 8921,
+       "user_ticks": 8769,
+       "system_ticks": 152
+      }
+     },
+     "phase_metrics_flat": {
+      "setup_wall_s": 6.797567857,
+      "setup_cpu_ticks": 27401,
+      "setup_user_ticks": 26897,
+      "setup_system_ticks": 504,
+      "play_wall_s": 6.3886794,
+      "play_cpu_ticks": 4800,
+      "play_user_ticks": 4735,
+      "play_system_ticks": 65,
+      "evaluator_wall_s": 0.608439161,
+      "evaluator_cpu_ticks": 8921,
+      "evaluator_user_ticks": 8769,
+      "evaluator_system_ticks": 152
+     },
+     "sample_points": 29,
+     "sample_cpu_ticks_delta": 41892,
+     "rss_sampled_peak_bytes": 1494028288,
+     "runtime_environment_present": true,
+     "scenario_context_present": true,
+     "cleanup": {
+      "pid": 1829837,
+      "starttime_ticks": 73893992,
+      "returncode": 0,
+      "wait_reaped": true,
+      "original_process_gone": true,
+      "sampler_stopped": true,
+      "checked_monotonic_ns": 738954122746390
+     },
+     "archive_verification": {
+      "valid": true,
+      "errors": []
+     },
+     "within_total_budget": true
+    },
+    {
+     "run_id": "20261012T135730Z-r2-b-tsbassistant01",
+     "task": "add_reminder_content_and_week_delta_and_time",
+     "task_label": "B",
+     "round": 2,
+     "position_in_round": 2,
+     "report_path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135730Z-r2-b-tsbassistant01.json",
+     "raw_path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135730Z-r2-b-tsbassistant01",
+     "exit_code": 0,
+     "termination": "finished",
+     "logical_requests": {
+      "agent": 5,
+      "user": 1
+     },
+     "logical_tool_calls": {
+      "started": 5,
+      "closed": 5,
+      "error": 0,
+      "unclosed": 0
+     },
+     "tool_batches": {
+      "started": 5,
+      "closed": 5,
+      "error": 0,
+      "unclosed": 0
+     },
+     "tool_call_executions": 6,
+     "evaluation": {
+      "milestone_mapping": {
+       "0": [
+        17,
+        1.0
+       ],
+       "1": [
+        23,
+        1.0
+       ]
+      },
+      "minefield_mapping": {},
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0,
+      "similarity": 1.0,
+      "turn_count": 9
+     },
+     "worker_failure": null,
+     "wall_s": 14.366460025,
+     "worker_window_wall_s": 14.362959188,
+     "phase_boundaries": {
+      "setup": {
+       "wall_s": 6.69513296,
+       "cpu_ticks": 22582,
+       "user_ticks": 22206,
+       "system_ticks": 376
+      },
+      "play": {
+       "wall_s": 6.663811989,
+       "cpu_ticks": 4442,
+       "user_ticks": 4376,
+       "system_ticks": 66
+      },
+      "evaluator": {
+       "wall_s": 0.594588455,
+       "cpu_ticks": 8654,
+       "user_ticks": 8489,
+       "system_ticks": 165
+      }
+     },
+     "phase_metrics_flat": {
+      "setup_wall_s": 6.69513296,
+      "setup_cpu_ticks": 22582,
+      "setup_user_ticks": 22206,
+      "setup_system_ticks": 376,
+      "play_wall_s": 6.663811989,
+      "play_cpu_ticks": 4442,
+      "play_user_ticks": 4376,
+      "play_system_ticks": 66,
+      "evaluator_wall_s": 0.594588455,
+      "evaluator_cpu_ticks": 8654,
+      "evaluator_user_ticks": 8489,
+      "evaluator_system_ticks": 165
+     },
+     "sample_points": 29,
+     "sample_cpu_ticks_delta": 35291,
+     "rss_sampled_peak_bytes": 1464041472,
+     "runtime_environment_present": true,
+     "scenario_context_present": true,
+     "cleanup": {
+      "pid": 1832771,
+      "starttime_ticks": 73906138,
+      "returncode": 0,
+      "wait_reaped": true,
+      "original_process_gone": true,
+      "sampler_stopped": true,
+      "checked_monotonic_ns": 739075746363060
+     },
+     "archive_verification": {
+      "valid": true,
+      "errors": []
+     },
+     "within_total_budget": true
+    }
+   ],
+   "metrics": {
+    "wall_s": {
+     "n": 3,
+     "raw_points": [
+      14.901895625,
+      14.206141949,
+      14.366460025
+     ],
+     "median": 14.366460025,
+     "q1": 14.286300987,
+     "q3": 14.634177825,
+     "iqr": 0.34787683799999947,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "worker_window_wall_s": {
+     "n": 3,
+     "raw_points": [
+      14.898346937,
+      14.202791774,
+      14.362959188
+     ],
+     "median": 14.362959188,
+     "q1": 14.282875481,
+     "q3": 14.630653062499999,
+     "iqr": 0.34777758149999904,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "sample_points": {
+     "n": 3,
+     "raw_points": [
+      30,
+      29,
+      29
+     ],
+     "median": 29.0,
+     "q1": 29.0,
+     "q3": 29.5,
+     "iqr": 0.5,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "rss_sampled_peak_bytes": {
+     "n": 3,
+     "raw_points": [
+      1509556224,
+      1494028288,
+      1464041472
+     ],
+     "median": 1494028288.0,
+     "q1": 1479034880.0,
+     "q3": 1501792256.0,
+     "iqr": 22757376.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    }
+   },
+   "logical_requests_agent": {
+    "n": 3,
+    "raw_points": [
+     5,
+     5,
+     5
+    ],
+    "median": 5.0,
+    "q1": 5.0,
+    "q3": 5.0,
+    "iqr": 0.0,
+    "quantile_method": "linear interpolation at (n-1)*p"
+   },
+   "logical_requests_user": {
+    "n": 3,
+    "raw_points": [
+     1,
+     1,
+     1
+    ],
+    "median": 1.0,
+    "q1": 1.0,
+    "q3": 1.0,
+    "iqr": 0.0,
+    "quantile_method": "linear interpolation at (n-1)*p"
+   },
+   "phase_metrics": {
+    "evaluator_cpu_ticks": {
+     "n": 3,
+     "raw_points": [
+      9290,
+      8921,
+      8654
+     ],
+     "median": 8921.0,
+     "q1": 8787.5,
+     "q3": 9105.5,
+     "iqr": 318.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "evaluator_system_ticks": {
+     "n": 3,
+     "raw_points": [
+      101,
+      152,
+      165
+     ],
+     "median": 152.0,
+     "q1": 126.5,
+     "q3": 158.5,
+     "iqr": 32.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "evaluator_user_ticks": {
+     "n": 3,
+     "raw_points": [
+      9189,
+      8769,
+      8489
+     ],
+     "median": 8769.0,
+     "q1": 8629.0,
+     "q3": 8979.0,
+     "iqr": 350.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "evaluator_wall_s": {
+     "n": 3,
+     "raw_points": [
+      0.615893911,
+      0.608439161,
+      0.594588455
+     ],
+     "median": 0.608439161,
+     "q1": 0.601513808,
+     "q3": 0.6121665359999999,
+     "iqr": 0.010652727999999945,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "play_cpu_ticks": {
+     "n": 3,
+     "raw_points": [
+      4708,
+      4800,
+      4442
+     ],
+     "median": 4708.0,
+     "q1": 4575.0,
+     "q3": 4754.0,
+     "iqr": 179.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "play_system_ticks": {
+     "n": 3,
+     "raw_points": [
+      64,
+      65,
+      66
+     ],
+     "median": 65.0,
+     "q1": 64.5,
+     "q3": 65.5,
+     "iqr": 1.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "play_user_ticks": {
+     "n": 3,
+     "raw_points": [
+      4644,
+      4735,
+      4376
+     ],
+     "median": 4644.0,
+     "q1": 4510.0,
+     "q3": 4689.5,
+     "iqr": 179.5,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "play_wall_s": {
+     "n": 3,
+     "raw_points": [
+      6.569057584,
+      6.3886794,
+      6.663811989
+     ],
+     "median": 6.569057584,
+     "q1": 6.478868492,
+     "q3": 6.6164347865,
+     "iqr": 0.13756629450000002,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "setup_cpu_ticks": {
+     "n": 3,
+     "raw_points": [
+      36992,
+      27401,
+      22582
+     ],
+     "median": 27401.0,
+     "q1": 24991.5,
+     "q3": 32196.5,
+     "iqr": 7205.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "setup_system_ticks": {
+     "n": 3,
+     "raw_points": [
+      533,
+      504,
+      376
+     ],
+     "median": 504.0,
+     "q1": 440.0,
+     "q3": 518.5,
+     "iqr": 78.5,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "setup_user_ticks": {
+     "n": 3,
+     "raw_points": [
+      36459,
+      26897,
+      22206
+     ],
+     "median": 26897.0,
+     "q1": 24551.5,
+     "q3": 31678.0,
+     "iqr": 7126.5,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "setup_wall_s": {
+     "n": 3,
+     "raw_points": [
+      7.228523242,
+      6.797567857,
+      6.69513296
+     ],
+     "median": 6.797567857,
+     "q1": 6.7463504085,
+     "q3": 7.013045549499999,
+     "iqr": 0.2666951409999996,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    }
+   },
+   "sample_cpu_ticks_delta": {
+    "n": 3,
+    "raw_points": [
+     51121,
+     41892,
+     35291
+    ],
+    "median": 41892.0,
+    "q1": 38591.5,
+    "q3": 46506.5,
+    "iqr": 7915.0,
+    "quantile_method": "linear interpolation at (n-1)*p"
+   }
+  },
+  "modify_contact_with_message_recency_multiple_user_turn": {
+   "task_label": "C",
+   "planned_repeats": 3,
+   "executed": 3,
+   "not_executed": 0,
+   "runs": [
+    {
+     "run_id": "20261012T135459Z-r0-c-tsbassistant01",
+     "task": "modify_contact_with_message_recency_multiple_user_turn",
+     "task_label": "C",
+     "round": 0,
+     "position_in_round": 2,
+     "report_path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135459Z-r0-c-tsbassistant01.json",
+     "raw_path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135459Z-r0-c-tsbassistant01",
+     "exit_code": 0,
+     "termination": "finished",
+     "logical_requests": {
+      "agent": 7,
+      "user": 2
+     },
+     "logical_tool_calls": {
+      "started": 8,
+      "closed": 8,
+      "error": 0,
+      "unclosed": 0
+     },
+     "tool_batches": {
+      "started": 6,
+      "closed": 6,
+      "error": 0,
+      "unclosed": 0
+     },
+     "tool_call_executions": 9,
+     "evaluation": {
+      "milestone_mapping": {
+       "0": [
+        26,
+        1.0
+       ],
+       "1": [
+        27,
+        1.0
+       ],
+       "2": [
+        30,
+        1.0
+       ],
+       "3": [
+        37,
+        1.0
+       ],
+       "4": [
+        40,
+        0.8220706888135783
+       ]
+      },
+      "minefield_mapping": {},
+      "milestone_similarity": 0.9644141377627158,
+      "minefield_similarity": 0,
+      "similarity": 0.9644141377627158,
+      "turn_count": 17
+     },
+     "worker_failure": null,
+     "wall_s": 30.344633141,
+     "worker_window_wall_s": 30.340537046,
+     "phase_boundaries": {
+      "setup": {
+       "wall_s": 7.2112646,
+       "cpu_ticks": 38759,
+       "user_ticks": 38312,
+       "system_ticks": 447
+      },
+      "play": {
+       "wall_s": 12.29623673,
+       "cpu_ticks": 10056,
+       "user_ticks": 9915,
+       "system_ticks": 141
+      },
+      "evaluator": {
+       "wall_s": 10.362790244,
+       "cpu_ticks": 153627,
+       "user_ticks": 152011,
+       "system_ticks": 1616
+      }
+     },
+     "phase_metrics_flat": {
+      "setup_wall_s": 7.2112646,
+      "setup_cpu_ticks": 38759,
+      "setup_user_ticks": 38312,
+      "setup_system_ticks": 447,
+      "play_wall_s": 12.29623673,
+      "play_cpu_ticks": 10056,
+      "play_user_ticks": 9915,
+      "play_system_ticks": 141,
+      "evaluator_wall_s": 10.362790244,
+      "evaluator_cpu_ticks": 153627,
+      "evaluator_user_ticks": 152011,
+      "evaluator_system_ticks": 1616
+     },
+     "sample_points": 61,
+     "sample_cpu_ticks_delta": 203221,
+     "rss_sampled_peak_bytes": 1850597376,
+     "runtime_environment_present": true,
+     "scenario_context_present": true,
+     "cleanup": {
+      "pid": 1829149,
+      "starttime_ticks": 73890957,
+      "returncode": 0,
+      "wait_reaped": true,
+      "original_process_gone": true,
+      "sampler_stopped": true,
+      "checked_monotonic_ns": 738939913150904
+     },
+     "archive_verification": {
+      "valid": true,
+      "errors": []
+     },
+     "within_total_budget": true
+    },
+    {
+     "run_id": "20261012T135543Z-r1-c-tsbassistant01",
+     "task": "modify_contact_with_message_recency_multiple_user_turn",
+     "task_label": "C",
+     "round": 1,
+     "position_in_round": 1,
+     "report_path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135543Z-r1-c-tsbassistant01.json",
+     "raw_path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135543Z-r1-c-tsbassistant01",
+     "exit_code": 0,
+     "termination": "finished",
+     "logical_requests": {
+      "agent": 7,
+      "user": 2
+     },
+     "logical_tool_calls": {
+      "started": 8,
+      "closed": 8,
+      "error": 0,
+      "unclosed": 0
+     },
+     "tool_batches": {
+      "started": 6,
+      "closed": 6,
+      "error": 0,
+      "unclosed": 0
+     },
+     "tool_call_executions": 9,
+     "evaluation": {
+      "milestone_mapping": {
+       "0": [
+        27,
+        1.0
+       ],
+       "1": [
+        33,
+        1.0
+       ],
+       "2": [
+        30,
+        1.0
+       ],
+       "3": [
+        37,
+        1.0
+       ],
+       "4": [
+        40,
+        0.5331122726917767
+       ]
+      },
+      "minefield_mapping": {},
+      "milestone_similarity": 0.9066224545383553,
+      "minefield_similarity": 0,
+      "similarity": 0.9066224545383553,
+      "turn_count": 17
+     },
+     "worker_failure": null,
+     "wall_s": 26.97095524,
+     "worker_window_wall_s": 26.966966836,
+     "phase_boundaries": {
+      "setup": {
+       "wall_s": 7.19266846,
+       "cpu_ticks": 38370,
+       "user_ticks": 37923,
+       "system_ticks": 447
+      },
+      "play": {
+       "wall_s": 12.800251837,
+       "cpu_ticks": 7208,
+       "user_ticks": 7112,
+       "system_ticks": 96
+      },
+      "evaluator": {
+       "wall_s": 6.566286387,
+       "cpu_ticks": 84515,
+       "user_ticks": 83331,
+       "system_ticks": 1184
+      }
+     },
+     "phase_metrics_flat": {
+      "setup_wall_s": 7.19266846,
+      "setup_cpu_ticks": 38370,
+      "setup_user_ticks": 37923,
+      "setup_system_ticks": 447,
+      "play_wall_s": 12.800251837,
+      "play_cpu_ticks": 7208,
+      "play_user_ticks": 7112,
+      "play_system_ticks": 96,
+      "evaluator_wall_s": 6.566286387,
+      "evaluator_cpu_ticks": 84515,
+      "evaluator_user_ticks": 83331,
+      "evaluator_system_ticks": 1184
+     },
+     "sample_points": 54,
+     "sample_cpu_ticks_delta": 128506,
+     "rss_sampled_peak_bytes": 1744093184,
+     "runtime_environment_present": true,
+     "scenario_context_present": true,
+     "cleanup": {
+      "pid": 1830403,
+      "starttime_ticks": 73895412,
+      "returncode": 0,
+      "wait_reaped": true,
+      "original_process_gone": true,
+      "sampler_stopped": true,
+      "checked_monotonic_ns": 738981095563755
+     },
+     "archive_verification": {
+      "valid": true,
+      "errors": []
+     },
+     "within_total_budget": true
+    },
+    {
+     "run_id": "20261012T135627Z-r2-c-tsbassistant01",
+     "task": "modify_contact_with_message_recency_multiple_user_turn",
+     "task_label": "C",
+     "round": 2,
+     "position_in_round": 0,
+     "report_path": "reports/resource/TOOLSANDBOX-ASSISTANT-REPEAT-01/runs/20261012T135627Z-r2-c-tsbassistant01.json",
+     "raw_path": "data/raw/generated/TOOLSANDBOX-ASSISTANT-REPEAT-01/20261012T135627Z-r2-c-tsbassistant01",
+     "exit_code": 0,
+     "termination": "finished",
+     "logical_requests": {
+      "agent": 9,
+      "user": 3
+     },
+     "logical_tool_calls": {
+      "started": 11,
+      "closed": 10,
+      "error": 1,
+      "unclosed": 0
+     },
+     "tool_batches": {
+      "started": 7,
+      "closed": 7,
+      "error": 0,
+      "unclosed": 0
+     },
+     "tool_call_executions": 14,
+     "evaluation": {
+      "milestone_mapping": {
+       "0": [
+        39,
+        1.0
+       ],
+       "1": [
+        47,
+        1.0
+       ],
+       "2": [
+        39,
+        0.0
+       ],
+       "3": [
+        47,
+        1.0
+       ],
+       "4": [
+        48,
+        0.8220706888135783
+       ]
+      },
+      "minefield_mapping": {},
+      "milestone_similarity": 0.7644141377627156,
+      "minefield_similarity": 0,
+      "similarity": 0.7644141377627156,
+      "turn_count": 25
+     },
+     "worker_failure": null,
+     "wall_s": 49.302069275,
+     "worker_window_wall_s": 49.297907679,
+     "phase_boundaries": {
+      "setup": {
+       "wall_s": 6.679918415,
+       "cpu_ticks": 24499,
+       "user_ticks": 24059,
+       "system_ticks": 440
+      },
+      "play": {
+       "wall_s": 17.250310711,
+       "cpu_ticks": 9967,
+       "user_ticks": 9829,
+       "system_ticks": 138
+      },
+      "evaluator": {
+       "wall_s": 24.93304629,
+       "cpu_ticks": 276590,
+       "user_ticks": 272700,
+       "system_ticks": 3890
+      }
+     },
+     "phase_metrics_flat": {
+      "setup_wall_s": 6.679918415,
+      "setup_cpu_ticks": 24499,
+      "setup_user_ticks": 24059,
+      "setup_system_ticks": 440,
+      "play_wall_s": 17.250310711,
+      "play_cpu_ticks": 9967,
+      "play_user_ticks": 9829,
+      "play_system_ticks": 138,
+      "evaluator_wall_s": 24.93304629,
+      "evaluator_cpu_ticks": 276590,
+      "evaluator_user_ticks": 272700,
+      "evaluator_system_ticks": 3890
+     },
+     "sample_points": 99,
+     "sample_cpu_ticks_delta": 311718,
+     "rss_sampled_peak_bytes": 1649020928,
+     "runtime_environment_present": true,
+     "scenario_context_present": true,
+     "cleanup": {
+      "pid": 1831474,
+      "starttime_ticks": 73899788,
+      "returncode": 0,
+      "wait_reaped": true,
+      "original_process_gone": true,
+      "sampler_stopped": true,
+      "checked_monotonic_ns": 739047181278096
+     },
+     "archive_verification": {
+      "valid": true,
+      "errors": []
+     },
+     "within_total_budget": true
+    }
+   ],
+   "metrics": {
+    "wall_s": {
+     "n": 3,
+     "raw_points": [
+      30.344633141,
+      26.97095524,
+      49.302069275
+     ],
+     "median": 30.344633141,
+     "q1": 28.6577941905,
+     "q3": 39.823351208,
+     "iqr": 11.1655570175,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "worker_window_wall_s": {
+     "n": 3,
+     "raw_points": [
+      30.340537046,
+      26.966966836,
+      49.297907679
+     ],
+     "median": 30.340537046,
+     "q1": 28.653751941000003,
+     "q3": 39.8192223625,
+     "iqr": 11.165470421499997,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "sample_points": {
+     "n": 3,
+     "raw_points": [
+      61,
+      54,
+      99
+     ],
+     "median": 61.0,
+     "q1": 57.5,
+     "q3": 80.0,
+     "iqr": 22.5,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "rss_sampled_peak_bytes": {
+     "n": 3,
+     "raw_points": [
+      1850597376,
+      1744093184,
+      1649020928
+     ],
+     "median": 1744093184.0,
+     "q1": 1696557056.0,
+     "q3": 1797345280.0,
+     "iqr": 100788224.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    }
+   },
+   "logical_requests_agent": {
+    "n": 3,
+    "raw_points": [
+     7,
+     7,
+     9
+    ],
+    "median": 7.0,
+    "q1": 7.0,
+    "q3": 8.0,
+    "iqr": 1.0,
+    "quantile_method": "linear interpolation at (n-1)*p"
+   },
+   "logical_requests_user": {
+    "n": 3,
+    "raw_points": [
+     2,
+     2,
+     3
+    ],
+    "median": 2.0,
+    "q1": 2.0,
+    "q3": 2.5,
+    "iqr": 0.5,
+    "quantile_method": "linear interpolation at (n-1)*p"
+   },
+   "phase_metrics": {
+    "evaluator_cpu_ticks": {
+     "n": 3,
+     "raw_points": [
+      153627,
+      84515,
+      276590
+     ],
+     "median": 153627.0,
+     "q1": 119071.0,
+     "q3": 215108.5,
+     "iqr": 96037.5,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "evaluator_system_ticks": {
+     "n": 3,
+     "raw_points": [
+      1616,
+      1184,
+      3890
+     ],
+     "median": 1616.0,
+     "q1": 1400.0,
+     "q3": 2753.0,
+     "iqr": 1353.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "evaluator_user_ticks": {
+     "n": 3,
+     "raw_points": [
+      152011,
+      83331,
+      272700
+     ],
+     "median": 152011.0,
+     "q1": 117671.0,
+     "q3": 212355.5,
+     "iqr": 94684.5,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "evaluator_wall_s": {
+     "n": 3,
+     "raw_points": [
+      10.362790244,
+      6.566286387,
+      24.93304629
+     ],
+     "median": 10.362790244,
+     "q1": 8.4645383155,
+     "q3": 17.647918267,
+     "iqr": 9.183379951500001,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "play_cpu_ticks": {
+     "n": 3,
+     "raw_points": [
+      10056,
+      7208,
+      9967
+     ],
+     "median": 9967.0,
+     "q1": 8587.5,
+     "q3": 10011.5,
+     "iqr": 1424.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "play_system_ticks": {
+     "n": 3,
+     "raw_points": [
+      141,
+      96,
+      138
+     ],
+     "median": 138.0,
+     "q1": 117.0,
+     "q3": 139.5,
+     "iqr": 22.5,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "play_user_ticks": {
+     "n": 3,
+     "raw_points": [
+      9915,
+      7112,
+      9829
+     ],
+     "median": 9829.0,
+     "q1": 8470.5,
+     "q3": 9872.0,
+     "iqr": 1401.5,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "play_wall_s": {
+     "n": 3,
+     "raw_points": [
+      12.29623673,
+      12.800251837,
+      17.250310711
+     ],
+     "median": 12.800251837,
+     "q1": 12.5482442835,
+     "q3": 15.025281274000001,
+     "iqr": 2.4770369905000003,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "setup_cpu_ticks": {
+     "n": 3,
+     "raw_points": [
+      38759,
+      38370,
+      24499
+     ],
+     "median": 38370.0,
+     "q1": 31434.5,
+     "q3": 38564.5,
+     "iqr": 7130.0,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "setup_system_ticks": {
+     "n": 3,
+     "raw_points": [
+      447,
+      447,
+      440
+     ],
+     "median": 447.0,
+     "q1": 443.5,
+     "q3": 447.0,
+     "iqr": 3.5,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "setup_user_ticks": {
+     "n": 3,
+     "raw_points": [
+      38312,
+      37923,
+      24059
+     ],
+     "median": 37923.0,
+     "q1": 30991.0,
+     "q3": 38117.5,
+     "iqr": 7126.5,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    },
+    "setup_wall_s": {
+     "n": 3,
+     "raw_points": [
+      7.2112646,
+      7.19266846,
+      6.679918415
+     ],
+     "median": 7.19266846,
+     "q1": 6.9362934375,
+     "q3": 7.20196653,
+     "iqr": 0.26567309250000015,
+     "quantile_method": "linear interpolation at (n-1)*p"
+    }
+   },
+   "sample_cpu_ticks_delta": {
+    "n": 3,
+    "raw_points": [
+     203221,
+     128506,
+     311718
+    ],
+    "median": 203221.0,
+    "q1": 165863.5,
+    "q3": 257469.5,
+    "iqr": 91606.0,
+    "quantile_method": "linear interpolation at (n-1)*p"
+   }
+  }
+ },
+ "statistics": "Per-task n, raw points, median and linear-interpolated Q1/Q3/IQR where a numeric metric is available; missing metrics are omitted, never zero-filled.",
+ "execution_occurred": true
+}

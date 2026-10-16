@@ -1,0 +1,33 @@
+{
+  "schema": "toolsandbox-pilot02-dependency-change-v1",
+  "recorded_at_utc": "2026-10-12T08:30:24Z",
+  "environment": ".venvs/toolsandbox-pilot-01",
+  "reason": "openai==1.17.0 default client passes proxies to httpx; httpx==0.28.1 removed that constructor parameter",
+  "resolver_check": {
+    "command": "python -m pip install --dry-run --report <temporary-report> httpx==0.27.2",
+    "result": "Would install httpx-0.27.2; all other requirements already satisfied",
+    "httpx_requirement": "httpcore==1.*",
+    "httpcore_before": "1.0.9"
+  },
+  "install": {
+    "command": "python -m pip install httpx==0.27.2",
+    "result": "success",
+    "changed_packages": [
+      {"name": "httpx", "before": "0.28.1", "after": "0.27.2"}
+    ],
+    "unchanged_relevant_packages": {
+      "openai": "1.17.0",
+      "httpcore": "1.0.9"
+    },
+    "pip_check": "No broken requirements found"
+  },
+  "freeze_history": {
+    "pilot01_registered_freeze": "env/toolsandbox-resource-pilot-01/venv-freeze.txt",
+    "pilot01_registered_freeze_sha256": "d1d509bbdddbfc67240b21dfe605e599f8659d08151570af9bd956889d5e6f83",
+    "pilot02_pre_install_snapshot": "env/toolsandbox-resource-pilot-02/environment-before-install.txt",
+    "pilot02_pre_install_sha256": "d1d509bbdddbfc67240b21dfe605e599f8659d08151570af9bd956889d5e6f83",
+    "pilot02_post_install_freeze": "env/toolsandbox-resource-pilot-02/venv-freeze.txt",
+    "pilot02_post_install_sha256": "de5ecf241ad89d6de7cf01f0fc75f4a4730c2ea623b7e0d9f354ea4cf3f01b59"
+  },
+  "historical_scope": "PILOT-01 freeze remains unchanged and describes its historical environment; the shared dedicated venv has since been updated and the new freeze is the current PILOT-02 environment record."
+}

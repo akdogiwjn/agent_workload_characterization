@@ -1,0 +1,1339 @@
+{
+  "schema": "toolsandbox-hepm-behavior-v1",
+  "inputs": {
+    "repository": "LISijia-dev/H-EPM",
+    "commit": "4ad8ad335fe63d365f4baf97df77e19055c79f1c",
+    "acquisition_manifest": "data/catalog/public_trace_acquisition/TOOLSANDBOX-HEPM-20261011/manifest.json",
+    "acquisition_manifest_sha256": "590173dcdc65e600c79f52d23c87ed140b88a84eb7b37b0415c3e564e9567bef",
+    "source_note": "third-party H-EPM adapted ToolSandbox experiments; not an Apple official trace release",
+    "payload_files_verified": 832,
+    "payload_bytes": 23150323,
+    "groups": [
+      {
+        "directory": "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_False_11_24_2025_09_02_55-7",
+        "trajectories": 207
+      },
+      {
+        "directory": "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_True_05_19_2026_06_52_36",
+        "trajectories": 207
+      }
+    ],
+    "group_config_evidence": "summary_on/split_test/graph flags appear only in directory names and the source README; no per-run config field is saved in trajectory files"
+  },
+  "coverage": {
+    "shared_scenario_keys": 207,
+    "scenario_keys_per_group": {
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_False_11_24_2025_09_02_55-7": 207,
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_True_05_19_2026_06_52_36": 207
+    },
+    "base_scenario_method": "strip H-EPM suffixes only (scramble + distraction + all_tools); official scenario-name tokens are not merged",
+    "base_scenario_evidence": "stripped scramble suffixes equal tool_augmentation_list for 207/207 scenarios; distraction/all_tools suffixes equal declared categories; every suffix-free scenario carries NO_DISTRACTION_TOOLS",
+    "per_group": {
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_False_11_24_2025_09_02_55-7": {
+        "trajectories": 207,
+        "scenario_count": 207,
+        "base_scenario_count": 109,
+        "source_category_scenario_counts": {
+          "ALL_TOOLS_AVAILABLE": 27,
+          "ARG_DESCRIPTION_SCRAMBLED": 25,
+          "ARG_TYPE_SCRAMBLED": 21,
+          "CANONICALIZATION": 103,
+          "INSUFFICIENT_INFORMATION": 41,
+          "MULTIPLE_TOOL_CALL": 137,
+          "MULTIPLE_USER_TURN": 45,
+          "NO_DISTRACTION_TOOLS": 24,
+          "SINGLE_TOOL_CALL": 29,
+          "SINGLE_USER_TURN": 121,
+          "STATE_DEPENDENCY": 38,
+          "TEN_DISTRACTION_TOOLS": 29,
+          "THREE_DISTRACTION_TOOLS": 127,
+          "TOOL_DESCRIPTION_SCRAMBLED": 23,
+          "TOOL_NAME_SCRAMBLED": 25
+        },
+        "tool_augmentation_scenario_counts": {
+          "ARG_DESCRIPTION_SCRAMBLED": 25,
+          "ARG_TYPE_SCRAMBLED": 21,
+          "TOOL_DESCRIPTION_SCRAMBLED": 23,
+          "TOOL_NAME_SCRAMBLED": 25
+        },
+        "variant_suffix_counts": {
+          "10_distraction_tools": 29,
+          "3_distraction_tools": 33,
+          "3_distraction_tools_arg_description_scrambled": 25,
+          "3_distraction_tools_arg_type_scrambled": 21,
+          "3_distraction_tools_tool_description_scrambled": 23,
+          "3_distraction_tools_tool_name_scrambled": 25,
+          "all_tools": 27
+        },
+        "scenarios_with_non_null_deny_list": 41
+      },
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_True_05_19_2026_06_52_36": {
+        "trajectories": 207,
+        "scenario_count": 207,
+        "base_scenario_count": 109,
+        "source_category_scenario_counts": {
+          "ALL_TOOLS_AVAILABLE": 27,
+          "ARG_DESCRIPTION_SCRAMBLED": 25,
+          "ARG_TYPE_SCRAMBLED": 21,
+          "CANONICALIZATION": 103,
+          "INSUFFICIENT_INFORMATION": 41,
+          "MULTIPLE_TOOL_CALL": 137,
+          "MULTIPLE_USER_TURN": 45,
+          "NO_DISTRACTION_TOOLS": 24,
+          "SINGLE_TOOL_CALL": 29,
+          "SINGLE_USER_TURN": 121,
+          "STATE_DEPENDENCY": 38,
+          "TEN_DISTRACTION_TOOLS": 29,
+          "THREE_DISTRACTION_TOOLS": 127,
+          "TOOL_DESCRIPTION_SCRAMBLED": 23,
+          "TOOL_NAME_SCRAMBLED": 25
+        },
+        "tool_augmentation_scenario_counts": {
+          "ARG_DESCRIPTION_SCRAMBLED": 25,
+          "ARG_TYPE_SCRAMBLED": 21,
+          "TOOL_DESCRIPTION_SCRAMBLED": 23,
+          "TOOL_NAME_SCRAMBLED": 25
+        },
+        "variant_suffix_counts": {
+          "10_distraction_tools": 29,
+          "3_distraction_tools": 33,
+          "3_distraction_tools_arg_description_scrambled": 25,
+          "3_distraction_tools_arg_type_scrambled": 21,
+          "3_distraction_tools_tool_description_scrambled": 23,
+          "3_distraction_tools_tool_name_scrambled": 25,
+          "all_tools": 27
+        },
+        "scenarios_with_non_null_deny_list": 41
+      }
+    }
+  },
+  "tool_interface": {
+    "native_tool_names": [
+      "add_contact",
+      "add_reminder",
+      "calculate_lat_lon_distance",
+      "convert_currency",
+      "datetime_info_to_timestamp",
+      "end_conversation",
+      "get_cellular_service_status",
+      "get_current_location",
+      "get_current_timestamp",
+      "get_location_service_status",
+      "get_low_battery_mode_status",
+      "get_wifi_status",
+      "modify_contact",
+      "modify_reminder",
+      "remove_contact",
+      "remove_reminder",
+      "search_contacts",
+      "search_holiday",
+      "search_lat_lon",
+      "search_location_around_lat_lon",
+      "search_messages",
+      "search_reminder",
+      "search_stock",
+      "search_weather_around_lat_lon",
+      "seconds_to_hours_minutes_seconds",
+      "send_message_with_phone_number",
+      "set_cellular_service_status",
+      "set_location_service_status",
+      "set_low_battery_mode_status",
+      "set_wifi_status",
+      "shift_timestamp",
+      "summarize_the_task",
+      "timestamp_diff",
+      "timestamp_to_datetime_info",
+      "unit_conversion"
+    ],
+    "native_inventory_evidence": "union of execution_context.tool_allow_list across all 414 execution_context.json files",
+    "activity_classification": {
+      "add_contact": "contact",
+      "add_reminder": "reminder",
+      "calculate_lat_lon_distance": "location",
+      "convert_currency": "web_api_search",
+      "datetime_info_to_timestamp": "datetime",
+      "end_conversation": "harness_termination",
+      "get_cellular_service_status": "settings",
+      "get_current_location": "location",
+      "get_current_timestamp": "datetime",
+      "get_location_service_status": "settings",
+      "get_low_battery_mode_status": "settings",
+      "get_wifi_status": "settings",
+      "modify_contact": "contact",
+      "modify_reminder": "reminder",
+      "remove_contact": "contact",
+      "remove_reminder": "reminder",
+      "search_contacts": "contact",
+      "search_holiday": "web_api_search",
+      "search_lat_lon": "location",
+      "search_location_around_lat_lon": "location",
+      "search_messages": "messaging",
+      "search_reminder": "reminder",
+      "search_stock": "web_api_search",
+      "search_weather_around_lat_lon": "weather",
+      "seconds_to_hours_minutes_seconds": "datetime",
+      "send_message_with_phone_number": "messaging",
+      "set_cellular_service_status": "settings",
+      "set_location_service_status": "settings",
+      "set_low_battery_mode_status": "settings",
+      "set_wifi_status": "settings",
+      "shift_timestamp": "datetime",
+      "summarize_the_task": "harness_summary",
+      "timestamp_diff": "datetime",
+      "timestamp_to_datetime_info": "datetime",
+      "unit_conversion": "unit_conversion"
+    },
+    "harness_tools": {
+      "end_conversation": "harness_termination",
+      "summarize_the_task": "harness_summary"
+    },
+    "activity_classification_notes": "db-backed activities (reminder/contact/messaging/settings) verified against observed tool_details.database_update namespaces; datetime/location/weather/web_api_search classified from descriptive names; unknown is never guessed",
+    "per_group": {
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_False_11_24_2025_09_02_55-7": {
+        "called_name_counts": {
+          "add_contact": 3,
+          "add_reminder": 23,
+          "calculate_lat_lon_distance": 3,
+          "contact_0": 1,
+          "contact_1": 7,
+          "contact_2": 2,
+          "contact_3": 4,
+          "convert_currency": 5,
+          "datetime_info_to_timestamp": 45,
+          "get_cellular_service_status": 15,
+          "get_current_location": 11,
+          "get_current_timestamp": 76,
+          "get_location_service_status": 26,
+          "get_low_battery_mode_status": 25,
+          "get_wifi_status": 36,
+          "messaging_0": 1,
+          "messaging_1": 3,
+          "modify_contact": 30,
+          "modify_reminder": 3,
+          "rapid_api_search_tools_0": 1,
+          "rapid_api_search_tools_2": 2,
+          "rapid_api_search_tools_4": 1,
+          "reminder_0": 4,
+          "reminder_1": 3,
+          "reminder_2": 1,
+          "reminder_3": 12,
+          "remove_contact": 14,
+          "remove_reminder": 2,
+          "search_contacts": 34,
+          "search_holiday": 23,
+          "search_lat_lon": 4,
+          "search_location_around_lat_lon": 34,
+          "search_messages": 43,
+          "search_reminder": 42,
+          "search_stock": 7,
+          "search_weather_around_lat_lon": 15,
+          "seconds_to_hours_minutes_seconds": 1,
+          "send_message_with_phone_number": 9,
+          "set_cellular_service_status": 14,
+          "set_location_service_status": 32,
+          "set_low_battery_mode_status": 29,
+          "set_wifi_status": 42,
+          "setting_0": 2,
+          "setting_2": 2,
+          "setting_3": 1,
+          "setting_4": 4,
+          "setting_5": 1,
+          "setting_6": 2,
+          "setting_7": 1,
+          "setting_8": 2,
+          "shift_timestamp": 22,
+          "summarize_0": 28,
+          "summarize_the_task": 179,
+          "timestamp_diff": 16,
+          "timestamp_to_datetime_info": 46,
+          "utilities_1": 8,
+          "utilities_2": 10,
+          "utilities_3": 3,
+          "utilities_5": 2,
+          "utilities_6": 2,
+          "utilities_7": 10
+        },
+        "native_identity_counts": {
+          "add_contact": 3,
+          "add_reminder": 23,
+          "calculate_lat_lon_distance": 3,
+          "convert_currency": 5,
+          "datetime_info_to_timestamp": 46,
+          "get_cellular_service_status": 15,
+          "get_current_location": 11,
+          "get_current_timestamp": 82,
+          "get_location_service_status": 26,
+          "get_low_battery_mode_status": 25,
+          "get_wifi_status": 36,
+          "modify_contact": 30,
+          "modify_reminder": 3,
+          "remove_contact": 14,
+          "remove_reminder": 2,
+          "search_contacts": 38,
+          "search_holiday": 23,
+          "search_lat_lon": 4,
+          "search_location_around_lat_lon": 34,
+          "search_messages": 44,
+          "search_reminder": 43,
+          "search_stock": 7,
+          "search_weather_around_lat_lon": 15,
+          "seconds_to_hours_minutes_seconds": 1,
+          "send_message_with_phone_number": 9,
+          "set_cellular_service_status": 14,
+          "set_location_service_status": 32,
+          "set_low_battery_mode_status": 29,
+          "set_wifi_status": 42,
+          "shift_timestamp": 22,
+          "summarize_the_task": 207,
+          "timestamp_diff": 18,
+          "timestamp_to_datetime_info": 46
+        },
+        "call_resolution_counts": {
+          "content_prefix_summary_tool": 28,
+          "database_namespace_activity": 22,
+          "milestone_tool_trace": 15,
+          "native_name": 909,
+          "unresolved_scrambled": 55
+        },
+        "scrambled_name_counts": {
+          "contact_0": 1,
+          "contact_1": 7,
+          "contact_2": 2,
+          "contact_3": 4,
+          "messaging_0": 1,
+          "messaging_1": 3,
+          "rapid_api_search_tools_0": 1,
+          "rapid_api_search_tools_2": 2,
+          "rapid_api_search_tools_4": 1,
+          "reminder_0": 4,
+          "reminder_1": 3,
+          "reminder_2": 1,
+          "reminder_3": 12,
+          "setting_0": 2,
+          "setting_2": 2,
+          "setting_3": 1,
+          "setting_4": 4,
+          "setting_5": 1,
+          "setting_6": 2,
+          "setting_7": 1,
+          "setting_8": 2,
+          "summarize_0": 28,
+          "utilities_1": 8,
+          "utilities_2": 10,
+          "utilities_3": 3,
+          "utilities_5": 2,
+          "utilities_6": 2,
+          "utilities_7": 10
+        },
+        "pooled_activity_call_counts": {
+          "contact": 92,
+          "datetime": 215,
+          "harness_summary": 207,
+          "location": 52,
+          "messaging": 55,
+          "reminder": 79,
+          "settings": 224,
+          "weather": 15,
+          "web_api_search": 35
+        },
+        "activity_trajectories_with_calls": {
+          "contact": 49,
+          "datetime": 92,
+          "harness_summary": 197,
+          "location": 27,
+          "messaging": 32,
+          "reminder": 58,
+          "settings": 47,
+          "weather": 11,
+          "web_api_search": 25
+        },
+        "activity_calls_per_trajectory_stats": {
+          "contact": {
+            "n": 49,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 1.0,
+            "median": 2.0,
+            "q3": 2.0,
+            "iqr": 1.0,
+            "max": 5.0
+          },
+          "datetime": {
+            "n": 92,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 1.0,
+            "median": 2.0,
+            "q3": 3.0,
+            "iqr": 2.0,
+            "max": 5.0
+          },
+          "harness_summary": {
+            "n": 197,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 1.0,
+            "median": 1.0,
+            "q3": 1.0,
+            "iqr": 0.0,
+            "max": 3.0
+          },
+          "location": {
+            "n": 27,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 1.0,
+            "median": 2.0,
+            "q3": 2.0,
+            "iqr": 1.0,
+            "max": 5.0
+          },
+          "messaging": {
+            "n": 32,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 1.0,
+            "median": 2.0,
+            "q3": 2.0,
+            "iqr": 1.0,
+            "max": 3.0
+          },
+          "reminder": {
+            "n": 58,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 1.0,
+            "median": 1.0,
+            "q3": 2.0,
+            "iqr": 1.0,
+            "max": 4.0
+          },
+          "settings": {
+            "n": 47,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 2.0,
+            "median": 5.0,
+            "q3": 7.0,
+            "iqr": 5.0,
+            "max": 10.0
+          },
+          "weather": {
+            "n": 11,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 1.0,
+            "median": 1.0,
+            "q3": 2.0,
+            "iqr": 1.0,
+            "max": 2.0
+          },
+          "web_api_search": {
+            "n": 25,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 1.0,
+            "median": 1.0,
+            "q3": 2.0,
+            "iqr": 1.0,
+            "max": 2.0
+          }
+        },
+        "observed_database_update_namespaces_by_native_tool": {
+          "add_contact": {
+            "CONTACT": 3
+          },
+          "add_reminder": {
+            "REMINDER": 23
+          },
+          "modify_contact": {
+            "CONTACT": 19
+          },
+          "modify_reminder": {
+            "REMINDER": 3
+          },
+          "remove_contact": {
+            "CONTACT": 14
+          },
+          "remove_reminder": {
+            "REMINDER": 2
+          },
+          "send_message_with_phone_number": {
+            "MESSAGING": 5
+          },
+          "set_cellular_service_status": {
+            "SETTING": 9
+          },
+          "set_location_service_status": {
+            "SETTING": 14
+          },
+          "set_low_battery_mode_status": {
+            "SETTING": 18
+          },
+          "set_wifi_status": {
+            "SETTING": 26
+          }
+        }
+      },
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_True_05_19_2026_06_52_36": {
+        "called_name_counts": {
+          "add_contact": 2,
+          "add_reminder": 24,
+          "calculate_lat_lon_distance": 3,
+          "contact_0": 1,
+          "contact_1": 7,
+          "contact_2": 2,
+          "contact_3": 4,
+          "convert_currency": 5,
+          "datetime_info_to_timestamp": 37,
+          "get_cellular_service_status": 14,
+          "get_current_location": 11,
+          "get_current_timestamp": 76,
+          "get_location_service_status": 24,
+          "get_low_battery_mode_status": 28,
+          "get_wifi_status": 29,
+          "messaging_0": 1,
+          "messaging_1": 2,
+          "modify_contact": 31,
+          "modify_reminder": 5,
+          "rapid_api_search_tools_0": 1,
+          "rapid_api_search_tools_2": 2,
+          "rapid_api_search_tools_4": 2,
+          "reminder_0": 4,
+          "reminder_1": 2,
+          "reminder_3": 8,
+          "remove_contact": 15,
+          "remove_reminder": 2,
+          "search_contacts": 31,
+          "search_holiday": 24,
+          "search_lat_lon": 6,
+          "search_location_around_lat_lon": 24,
+          "search_messages": 39,
+          "search_reminder": 44,
+          "search_stock": 8,
+          "search_weather_around_lat_lon": 19,
+          "send_message_with_phone_number": 9,
+          "set_cellular_service_status": 17,
+          "set_location_service_status": 31,
+          "set_low_battery_mode_status": 26,
+          "set_wifi_status": 39,
+          "setting_0": 2,
+          "setting_2": 3,
+          "setting_3": 2,
+          "setting_4": 4,
+          "setting_5": 1,
+          "setting_6": 2,
+          "setting_7": 1,
+          "setting_8": 2,
+          "shift_timestamp": 26,
+          "summarize_0": 24,
+          "summarize_the_task": 182,
+          "timestamp_diff": 21,
+          "timestamp_to_datetime_info": 32,
+          "utilities_1": 5,
+          "utilities_2": 10,
+          "utilities_3": 3,
+          "utilities_5": 4,
+          "utilities_6": 2,
+          "utilities_7": 7
+        },
+        "native_identity_counts": {
+          "add_contact": 2,
+          "add_reminder": 24,
+          "calculate_lat_lon_distance": 3,
+          "convert_currency": 5,
+          "datetime_info_to_timestamp": 38,
+          "get_cellular_service_status": 14,
+          "get_current_location": 11,
+          "get_current_timestamp": 82,
+          "get_location_service_status": 24,
+          "get_low_battery_mode_status": 28,
+          "get_wifi_status": 29,
+          "modify_contact": 31,
+          "modify_reminder": 5,
+          "remove_contact": 15,
+          "remove_reminder": 2,
+          "search_contacts": 35,
+          "search_holiday": 24,
+          "search_lat_lon": 6,
+          "search_location_around_lat_lon": 24,
+          "search_messages": 40,
+          "search_reminder": 45,
+          "search_stock": 8,
+          "search_weather_around_lat_lon": 19,
+          "send_message_with_phone_number": 9,
+          "set_cellular_service_status": 17,
+          "set_location_service_status": 31,
+          "set_low_battery_mode_status": 26,
+          "set_wifi_status": 39,
+          "shift_timestamp": 26,
+          "summarize_the_task": 206,
+          "timestamp_diff": 23,
+          "timestamp_to_datetime_info": 32
+        },
+        "call_resolution_counts": {
+          "content_prefix_summary_tool": 24,
+          "database_namespace_activity": 19,
+          "milestone_tool_trace": 15,
+          "native_name": 884,
+          "unresolved_scrambled": 50
+        },
+        "scrambled_name_counts": {
+          "contact_0": 1,
+          "contact_1": 7,
+          "contact_2": 2,
+          "contact_3": 4,
+          "messaging_0": 1,
+          "messaging_1": 2,
+          "rapid_api_search_tools_0": 1,
+          "rapid_api_search_tools_2": 2,
+          "rapid_api_search_tools_4": 2,
+          "reminder_0": 4,
+          "reminder_1": 2,
+          "reminder_3": 8,
+          "setting_0": 2,
+          "setting_2": 3,
+          "setting_3": 2,
+          "setting_4": 4,
+          "setting_5": 1,
+          "setting_6": 2,
+          "setting_7": 1,
+          "setting_8": 2,
+          "summarize_0": 24,
+          "utilities_1": 5,
+          "utilities_2": 10,
+          "utilities_3": 3,
+          "utilities_5": 4,
+          "utilities_6": 2,
+          "utilities_7": 7
+        },
+        "pooled_activity_call_counts": {
+          "contact": 90,
+          "datetime": 201,
+          "harness_summary": 206,
+          "location": 44,
+          "messaging": 50,
+          "reminder": 82,
+          "settings": 213,
+          "weather": 19,
+          "web_api_search": 37
+        },
+        "activity_trajectories_with_calls": {
+          "contact": 48,
+          "datetime": 93,
+          "harness_summary": 198,
+          "location": 24,
+          "messaging": 32,
+          "reminder": 56,
+          "settings": 50,
+          "weather": 9,
+          "web_api_search": 25
+        },
+        "activity_calls_per_trajectory_stats": {
+          "contact": {
+            "n": 48,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 1.0,
+            "median": 2.0,
+            "q3": 2.0,
+            "iqr": 1.0,
+            "max": 5.0
+          },
+          "datetime": {
+            "n": 93,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 1.0,
+            "median": 2.0,
+            "q3": 3.0,
+            "iqr": 2.0,
+            "max": 5.0
+          },
+          "harness_summary": {
+            "n": 198,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 1.0,
+            "median": 1.0,
+            "q3": 1.0,
+            "iqr": 0.0,
+            "max": 2.0
+          },
+          "location": {
+            "n": 24,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 1.0,
+            "median": 1.0,
+            "q3": 2.25,
+            "iqr": 1.25,
+            "max": 4.0
+          },
+          "messaging": {
+            "n": 32,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 1.0,
+            "median": 1.0,
+            "q3": 2.0,
+            "iqr": 1.0,
+            "max": 3.0
+          },
+          "reminder": {
+            "n": 56,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 1.0,
+            "median": 1.0,
+            "q3": 2.0,
+            "iqr": 1.0,
+            "max": 5.0
+          },
+          "settings": {
+            "n": 50,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 2.0,
+            "median": 4.5,
+            "q3": 6.0,
+            "iqr": 4.0,
+            "max": 9.0
+          },
+          "weather": {
+            "n": 9,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 2.0,
+            "median": 2.0,
+            "q3": 2.0,
+            "iqr": 0.0,
+            "max": 3.0
+          },
+          "web_api_search": {
+            "n": 25,
+            "missing": 0,
+            "min": 1.0,
+            "q1": 1.0,
+            "median": 1.0,
+            "q3": 2.0,
+            "iqr": 1.0,
+            "max": 3.0
+          }
+        },
+        "observed_database_update_namespaces_by_native_tool": {
+          "add_contact": {
+            "CONTACT": 2
+          },
+          "add_reminder": {
+            "REMINDER": 24
+          },
+          "get_low_battery_mode_status": {
+            "SETTING": 1
+          },
+          "modify_contact": {
+            "CONTACT": 20
+          },
+          "modify_reminder": {
+            "REMINDER": 5
+          },
+          "remove_contact": {
+            "CONTACT": 15
+          },
+          "remove_reminder": {
+            "REMINDER": 2
+          },
+          "send_message_with_phone_number": {
+            "MESSAGING": 5
+          },
+          "set_cellular_service_status": {
+            "SETTING": 10
+          },
+          "set_location_service_status": {
+            "SETTING": 16
+          },
+          "set_low_battery_mode_status": {
+            "SETTING": 20
+          },
+          "set_wifi_status": {
+            "SETTING": 28
+          }
+        }
+      }
+    }
+  },
+  "pairing": {
+    "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_False_11_24_2025_09_02_55-7": {
+      "tool_call_entries": 1029,
+      "tool_result_messages": 1029,
+      "calls_with_id": 1029,
+      "calls_missing_id": 0,
+      "results_with_id": 1029,
+      "results_missing_id": 0,
+      "paired_call_entries": 1029,
+      "calls_with_id_without_return": 0,
+      "orphan_result_messages": 0,
+      "duplicate_call_id_entries": 0,
+      "duplicate_result_id_entries": 0,
+      "call_result_name_mismatches": 0,
+      "protocol_issue_counts": {}
+    },
+    "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_True_05_19_2026_06_52_36": {
+      "tool_call_entries": 992,
+      "tool_result_messages": 992,
+      "calls_with_id": 992,
+      "calls_missing_id": 0,
+      "results_with_id": 992,
+      "results_missing_id": 0,
+      "paired_call_entries": 992,
+      "calls_with_id_without_return": 0,
+      "orphan_result_messages": 0,
+      "duplicate_call_id_entries": 0,
+      "duplicate_result_id_entries": 0,
+      "call_result_name_mismatches": 0,
+      "protocol_issue_counts": {}
+    }
+  },
+  "tool_result_errors": {
+    "per_group": {
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_False_11_24_2025_09_02_55-7": {
+        "count": 157,
+        "classes": {
+          "ConnectionError": 24,
+          "PermissionError": 99,
+          "TypeError": 2,
+          "ValueError": 26,
+          "phonenumbers.phonenumberutil.NumberParseException": 2,
+          "polars.exceptions.NoDataError": 4
+        }
+      },
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_True_05_19_2026_06_52_36": {
+        "count": 147,
+        "classes": {
+          "ConnectionError": 30,
+          "PermissionError": 82,
+          "TypeError": 4,
+          "ValueError": 26,
+          "phonenumbers.phonenumberutil.NumberParseException": 1,
+          "polars.exceptions.NoDataError": 4
+        }
+      }
+    },
+    "classification_note": "tool execution error = saved tool-role content starts with a Python exception header; harness exception = result_summary.exception_type (counted separately under termination_and_results); task evaluation = similarity fields, never converted to success here"
+  },
+  "sequences": {
+    "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_False_11_24_2025_09_02_55-7": {
+      "calls_per_trajectory_stats": {
+        "n": 207,
+        "missing": 0,
+        "min": 0.0,
+        "q1": 3.0,
+        "median": 5.0,
+        "q3": 7.0,
+        "iqr": 4.0,
+        "max": 13.0
+      },
+      "called_name_transition_counts": {
+        "summarize_the_task->get_current_timestamp": 37,
+        "get_current_timestamp->search_messages": 22,
+        "timestamp_to_datetime_info->datetime_info_to_timestamp": 21,
+        "get_low_battery_mode_status->set_low_battery_mode_status": 19,
+        "datetime_info_to_timestamp->add_reminder": 17,
+        "get_current_timestamp->timestamp_to_datetime_info": 17,
+        "shift_timestamp->timestamp_to_datetime_info": 16,
+        "get_wifi_status->set_wifi_status": 16,
+        "search_contacts->modify_contact": 16,
+        "summarize_the_task->search_reminder": 15,
+        "summarize_the_task->search_contacts": 14,
+        "set_low_battery_mode_status->set_location_service_status": 13,
+        "get_current_timestamp->search_holiday": 13,
+        "search_holiday->timestamp_diff": 12,
+        "set_low_battery_mode_status->set_wifi_status": 12,
+        "modify_contact->modify_contact": 12,
+        "timestamp_to_datetime_info->shift_timestamp": 11,
+        "get_location_service_status->set_location_service_status": 11,
+        "set_location_service_status->get_low_battery_mode_status": 11,
+        "search_messages->search_messages": 11,
+        "get_current_timestamp->shift_timestamp": 10,
+        "summarize_the_task->search_location_around_lat_lon": 10,
+        "datetime_info_to_timestamp->search_reminder": 10,
+        "summarize_the_task->datetime_info_to_timestamp": 9,
+        "search_messages->search_contacts": 9,
+        "search_weather_around_lat_lon->get_wifi_status": 8,
+        "summarize_the_task->search_messages": 8,
+        "search_reminder->summarize_the_task": 8,
+        "search_location_around_lat_lon->summarize_the_task": 7,
+        "set_location_service_status->set_wifi_status": 7,
+        "set_wifi_status->get_low_battery_mode_status": 7,
+        "search_contacts->remove_contact": 7,
+        "summarize_the_task->remove_contact": 7,
+        "search_messages->get_current_timestamp": 7,
+        "search_reminder->search_reminder": 7,
+        "datetime_info_to_timestamp->datetime_info_to_timestamp": 7,
+        "get_cellular_service_status->set_cellular_service_status": 7,
+        "utilities_7->utilities_1": 6,
+        "search_holiday->get_wifi_status": 6,
+        "get_current_timestamp->search_reminder": 6
+      },
+      "called_name_transition_count_total_distinct": 210,
+      "activity_transition_counts": {
+        "settings->settings": 161,
+        "datetime->datetime": 92,
+        "harness_summary->datetime": 52,
+        "datetime->reminder": 42,
+        "contact->contact": 40,
+        "harness_summary->contact": 29,
+        "datetime->messaging": 24,
+        "harness_summary->reminder": 20,
+        "harness_summary->settings": 19,
+        "web_api_search->datetime": 16,
+        "datetime->web_api_search": 15,
+        "location->location": 14,
+        "harness_summary->location": 13,
+        "reminder->harness_summary": 12,
+        "datetime->harness_summary": 12,
+        "settings->harness_summary": 12,
+        "contact->harness_summary": 11,
+        "messaging->messaging": 11,
+        "location->harness_summary": 9,
+        "settings->location": 9,
+        "web_api_search->settings": 9,
+        "messaging->contact": 9,
+        "reminder->reminder": 9,
+        "datetime->location": 8,
+        "harness_summary->web_api_search": 8,
+        "weather->settings": 8,
+        "reminder->datetime": 8,
+        "messaging->datetime": 8,
+        "harness_summary->messaging": 8,
+        "location->settings": 7,
+        "location->datetime": 6,
+        "settings->web_api_search": 6,
+        "location->weather": 6,
+        "settings->weather": 6,
+        "settings->messaging": 5,
+        "messaging->harness_summary": 4,
+        "contact->messaging": 4,
+        "messaging->settings": 4,
+        "web_api_search->harness_summary": 3,
+        "settings->datetime": 3
+      },
+      "activity_transition_count_total_distinct": 44,
+      "same_activity_transitions": 328,
+      "cross_activity_transitions": 421,
+      "activity_boundary_adjacent_pairs": 74
+    },
+    "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_True_05_19_2026_06_52_36": {
+      "calls_per_trajectory_stats": {
+        "n": 207,
+        "missing": 0,
+        "min": 0.0,
+        "q1": 3.0,
+        "median": 5.0,
+        "q3": 6.0,
+        "iqr": 3.0,
+        "max": 14.0
+      },
+      "called_name_transition_counts": {
+        "summarize_the_task->get_current_timestamp": 31,
+        "get_current_timestamp->search_messages": 23,
+        "get_wifi_status->set_wifi_status": 19,
+        "get_low_battery_mode_status->set_low_battery_mode_status": 18,
+        "timestamp_to_datetime_info->datetime_info_to_timestamp": 16,
+        "datetime_info_to_timestamp->add_reminder": 15,
+        "get_current_timestamp->timestamp_to_datetime_info": 15,
+        "search_contacts->modify_contact": 15,
+        "shift_timestamp->search_reminder": 15,
+        "get_location_service_status->set_location_service_status": 14,
+        "get_current_timestamp->search_holiday": 14,
+        "search_holiday->timestamp_diff": 13,
+        "summarize_the_task->search_contacts": 13,
+        "summarize_the_task->search_reminder": 12,
+        "modify_contact->modify_contact": 12,
+        "get_cellular_service_status->set_cellular_service_status": 11,
+        "get_current_timestamp->shift_timestamp": 10,
+        "summarize_the_task->get_location_service_status": 10,
+        "search_weather_around_lat_lon->get_wifi_status": 10,
+        "summarize_the_task->datetime_info_to_timestamp": 9,
+        "set_location_service_status->get_low_battery_mode_status": 9,
+        "set_low_battery_mode_status->set_location_service_status": 9,
+        "set_low_battery_mode_status->set_wifi_status": 9,
+        "set_wifi_status->get_low_battery_mode_status": 9,
+        "search_reminder->summarize_the_task": 9,
+        "search_messages->search_messages": 8,
+        "search_location_around_lat_lon->summarize_the_task": 7,
+        "set_wifi_status->search_weather_around_lat_lon": 7,
+        "search_messages->search_contacts": 7,
+        "search_reminder->search_reminder": 7,
+        "search_contacts->remove_contact": 7,
+        "summarize_the_task->remove_contact": 7,
+        "summarize_the_task->search_messages": 7,
+        "shift_timestamp->timestamp_to_datetime_info": 6,
+        "timestamp_to_datetime_info->shift_timestamp": 6,
+        "timestamp_to_datetime_info->summarize_the_task": 6,
+        "search_holiday->get_wifi_status": 6,
+        "summarize_the_task->search_location_around_lat_lon": 6,
+        "datetime_info_to_timestamp->shift_timestamp": 6,
+        "add_reminder->summarize_the_task": 5
+      },
+      "called_name_transition_count_total_distinct": 229,
+      "activity_transition_counts": {
+        "settings->settings": 144,
+        "datetime->datetime": 78,
+        "harness_summary->datetime": 47,
+        "datetime->reminder": 45,
+        "contact->contact": 39,
+        "harness_summary->contact": 31,
+        "harness_summary->settings": 23,
+        "datetime->messaging": 23,
+        "harness_summary->reminder": 18,
+        "reminder->harness_summary": 17,
+        "web_api_search->datetime": 17,
+        "datetime->web_api_search": 15,
+        "datetime->harness_summary": 14,
+        "settings->location": 12,
+        "contact->harness_summary": 12,
+        "settings->harness_summary": 11,
+        "settings->weather": 11,
+        "weather->settings": 11,
+        "reminder->reminder": 10,
+        "web_api_search->settings": 10,
+        "reminder->datetime": 10,
+        "location->harness_summary": 9,
+        "location->location": 9,
+        "location->settings": 9,
+        "harness_summary->web_api_search": 9,
+        "harness_summary->location": 8,
+        "messaging->harness_summary": 8,
+        "messaging->messaging": 8,
+        "datetime->location": 7,
+        "settings->web_api_search": 7,
+        "messaging->contact": 7,
+        "harness_summary->messaging": 7,
+        "messaging->datetime": 5,
+        "messaging->settings": 5,
+        "location->weather": 4,
+        "harness_summary->weather": 4,
+        "contact->messaging": 4,
+        "settings->messaging": 4,
+        "location->reminder": 3,
+        "web_api_search->harness_summary": 3
+      },
+      "activity_transition_count_total_distinct": 44,
+      "same_activity_transitions": 288,
+      "cross_activity_transitions": 437,
+      "activity_boundary_adjacent_pairs": 64
+    }
+  },
+  "sequence_note": "saved record order only; not real execution order or concurrency; unresolved activity tokens are None boundaries and transitions never cross them",
+  "termination_and_results": {
+    "end_conversation_calls_per_group": {
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_False_11_24_2025_09_02_55-7": 0,
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_True_05_19_2026_06_52_36": 0
+    },
+    "termination_status": "unknown: no termination field is saved in conversations; end_conversation is a declared allow-list tool but is never called; last_message_role is reported without guessing normal ending",
+    "last_message_role_counts": {
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_False_11_24_2025_09_02_55-7": {
+        "assistant": 202,
+        "tool": 2,
+        "user": 3
+      },
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_True_05_19_2026_06_52_36": {
+        "assistant": 204,
+        "tool": 2,
+        "user": 1
+      }
+    },
+    "per_group_result_fields": {
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_False_11_24_2025_09_02_55-7": {
+        "milestone_similarity": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.6794815142733577,
+          "median": 0.933729570102293,
+          "q3": 1.0,
+          "iqr": 0.3205184857266423,
+          "max": 1.0
+        },
+        "minefield_similarity": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 1.0
+        },
+        "similarity": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.4800885271984573,
+          "median": 0.89990306819505,
+          "q3": 0.9654269740132871,
+          "iqr": 0.48533844681482985,
+          "max": 1.0
+        },
+        "turn_count": {
+          "n": 207,
+          "missing": 0,
+          "min": 3.0,
+          "q1": 9.0,
+          "median": 13.0,
+          "q3": 17.0,
+          "iqr": 8.0,
+          "max": 30.0
+        },
+        "exception_type_non_null": 0,
+        "traceback_non_null": 0
+      },
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_True_05_19_2026_06_52_36": {
+        "milestone_similarity": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.6666666666666666,
+          "median": 0.9200093052786817,
+          "q3": 1.0,
+          "iqr": 0.33333333333333337,
+          "max": 1.0
+        },
+        "minefield_similarity": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 1.0
+        },
+        "similarity": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.5,
+          "median": 0.8781023829191136,
+          "q3": 0.9602416479036742,
+          "iqr": 0.46024164790367417,
+          "max": 1.0
+        },
+        "turn_count": {
+          "n": 207,
+          "missing": 0,
+          "min": 3.0,
+          "q1": 9.0,
+          "median": 11.0,
+          "q3": 17.0,
+          "iqr": 8.0,
+          "max": 30.0
+        },
+        "exception_type_non_null": 0,
+        "traceback_non_null": 0
+      }
+    },
+    "source_declared_rule": {
+      "text": "H-EPM source README build_graph keeps scenarios with milestone_similarity > 0.55",
+      "scope": "tool-graph construction filter only; not a task-success definition",
+      "applied_in_this_analysis": false
+    }
+  },
+  "group_comparison": {
+    "shared_scenario_keys": 207,
+    "same_scenario_metric_diffs": {
+      "milestone_similarity": {
+        "n_scenario_pairs": 207,
+        "tie_count": 98,
+        "diff_stats": {
+          "n": 207,
+          "missing": 0,
+          "min": -0.72836970172358,
+          "q1": -0.002636064876511801,
+          "median": 0.0,
+          "q3": 0.00047667251220251394,
+          "iqr": 0.003112737388714315,
+          "max": 0.5
+        },
+        "diff_definition": "graph_True minus graph_False"
+      },
+      "minefield_similarity": {
+        "n_scenario_pairs": 207,
+        "tie_count": 200,
+        "diff_stats": {
+          "n": 207,
+          "missing": 0,
+          "min": -1.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 1.0
+        },
+        "diff_definition": "graph_True minus graph_False"
+      },
+      "similarity": {
+        "n_scenario_pairs": 207,
+        "tie_count": 91,
+        "diff_stats": {
+          "n": 207,
+          "missing": 0,
+          "min": -1.0,
+          "q1": -0.004814602133640267,
+          "median": 0.0,
+          "q3": 0.003355768846395102,
+          "iqr": 0.008170370980035369,
+          "max": 1.0
+        },
+        "diff_definition": "graph_True minus graph_False"
+      },
+      "turn_count": {
+        "n_scenario_pairs": 207,
+        "tie_count": 84,
+        "diff_stats": {
+          "n": 207,
+          "missing": 0,
+          "min": -15.0,
+          "q1": -2.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 2.0,
+          "max": 11.0
+        },
+        "diff_definition": "graph_True minus graph_False"
+      }
+    },
+    "note": "descriptive differences of saved fields on shared scenario keys; same model family per directory naming; not a controlled experiment; no causal attribution to the graph configuration; groups are not independent random samples"
+  },
+  "field_inventory": {
+    "per_group_message_fields": {
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_False_11_24_2025_09_02_55-7": {
+        "role": 3081,
+        "content": 3081,
+        "tool_calls": 960,
+        "tool_call_id": 1029,
+        "name": 1029,
+        "tool_details": 360,
+        "assistant_details": 107,
+        "user_details": 39
+      },
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_True_05_19_2026_06_52_36": {
+        "role": 3013,
+        "content": 3013,
+        "tool_calls": 937,
+        "tool_call_id": 992,
+        "name": 992,
+        "tool_details": 367,
+        "assistant_details": 105,
+        "user_details": 41
+      }
+    },
+    "per_group_details_keys": {
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_False_11_24_2025_09_02_55-7": {
+        "tool_details.database_update": 158,
+        "tool_details.milestone_matches": 309,
+        "assistant_details.milestone_matches": 101,
+        "user_details.milestone_matches": 17,
+        "user_details.minefield_matches": 22,
+        "assistant_details.minefield_matches": 6,
+        "tool_details.minefield_matches": 12
+      },
+      "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_True_05_19_2026_06_52_36": {
+        "tool_details.database_update": 167,
+        "tool_details.milestone_matches": 303,
+        "assistant_details.milestone_matches": 98,
+        "user_details.milestone_matches": 18,
+        "user_details.minefield_matches": 23,
+        "assistant_details.minefield_matches": 7,
+        "tool_details.minefield_matches": 10
+      }
+    },
+    "execution_context_keys": [
+      "_dbs",
+      "interactive_console",
+      "tool_allow_list",
+      "tool_deny_list",
+      "trace_tool",
+      "tool_augmentation_list",
+      "preferred_tool_backend"
+    ],
+    "result_summary_keys": [
+      "name",
+      "categories",
+      "traceback",
+      "exception_type",
+      "milestone_similarity",
+      "minefield_similarity",
+      "similarity",
+      "turn_count",
+      "milestone_mapping",
+      "minefield_mapping"
+    ],
+    "absent_fields": [
+      "timestamps",
+      "usage/token counts",
+      "per-call latency or duration",
+      "termination status field",
+      "resource measurements"
+    ],
+    "resource_evidence": "not supported: no CPU/memory/IO fields exist in the saved data",
+    "quantile_method": "linear interpolation on sorted finite values"
+  },
+  "behavior_notes": {
+    "zero_call_trajectory_count": 5,
+    "zero_call_category_combinations": [
+      [
+        "CANONICALIZATION",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN",
+        "THREE_DISTRACTION_TOOLS",
+        "TOOL_DESCRIPTION_SCRAMBLED"
+      ],
+      [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      [
+        "INSUFFICIENT_INFORMATION",
+        "TEN_DISTRACTION_TOOLS"
+      ],
+      [
+        "INSUFFICIENT_INFORMATION",
+        "TEN_DISTRACTION_TOOLS"
+      ],
+      [
+        "INSUFFICIENT_INFORMATION",
+        "THREE_DISTRACTION_TOOLS",
+        "TOOL_NAME_SCRAMBLED"
+      ]
+    ],
+    "summarize_the_task_calls_per_trajectory": {
+      "0": 19,
+      "1": 378,
+      "2": 16,
+      "3": 1
+    },
+    "system_prompt_requires_at_least_one_summarize_call": true,
+    "multi_tool_call_assistant_messages_total": 123,
+    "trajectories_with_unresolved_scrambled_calls": 34,
+    "minefield_similarity_positive_trajectories": 35,
+    "milestone_similarity_equal_one_trajectories": 128,
+    "db_backed_tools_only_write_expected_namespace": true
+  },
+  "conservation_checks": {
+    "per_trajectory_records": 414,
+    "records_equal_sum_of_groups": true,
+    "call_entries_sum": 2021,
+    "result_messages_sum": 2021,
+    "paired_plus_missing_conserves_per_group": true
+  },
+  "limitations": [
+    "saved order is not execution order; no concurrency evidence",
+    "call counts are not call rates, tool latency or resource consumption",
+    "token/usage fields do not exist; nothing about cost or billing",
+    "similarity fields are reported as saved and never converted into success",
+    "scrambled tool calls without milestone/content/database evidence stay Unknown",
+    "two groups are compared descriptively only; no causal claim about the graph configuration"
+  ]
+}

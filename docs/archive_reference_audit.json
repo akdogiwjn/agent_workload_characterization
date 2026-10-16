@@ -1,0 +1,644 @@
+{
+  "schema": "document-reference-audit-v1",
+  "historical_records_rewritten": false,
+  "scanned_files": 1605,
+  "scanned_bytes": 1983248076,
+  "relocated_documents": 77,
+  "excluded": [
+    "local_archive (original bytes preserved)",
+    "public trace payloads",
+    "virtual environments",
+    "external/vendor frozen source",
+    "non-text files"
+  ],
+  "reference_files": 41,
+  "hash_check_counts": {
+    "preexisting_content_drift": 13
+  },
+  "references": [
+    {
+      "file": "project_state.json",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "already_new_locator": true,
+      "occurrences": 2,
+      "first_byte_offset": 28898,
+      "policy": "current_navigation_or_explicit_logical_key"
+    },
+    {
+      "file": "project_state.json",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": true,
+      "occurrences": 1,
+      "first_byte_offset": 101552,
+      "policy": "current_navigation_or_explicit_logical_key"
+    },
+    {
+      "file": "docs/current_task.md",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 877,
+      "policy": "current_navigation_or_explicit_logical_key"
+    },
+    {
+      "file": "scripts/generate_project_results_html.py",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 2,
+      "first_byte_offset": 2242,
+      "policy": "current_navigation_or_explicit_logical_key"
+    },
+    {
+      "file": "scripts/generate_project_results_html.py",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": true,
+      "occurrences": 2,
+      "first_byte_offset": 2293,
+      "policy": "current_navigation_or_explicit_logical_key"
+    },
+    {
+      "file": "tests/test_generate_project_results_html.py",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": true,
+      "occurrences": 1,
+      "first_byte_offset": 24196,
+      "policy": "current_navigation_or_explicit_logical_key"
+    },
+    {
+      "file": "tests/test_repository_hygiene.py",
+      "original": "docs/coding_pilot_handoff.md",
+      "archived": "local_archive/20261016-full-docs/docs/coding_pilot_handoff.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 2346,
+      "policy": "current_navigation_or_explicit_logical_key"
+    },
+    {
+      "file": "tests/test_repository_hygiene.py",
+      "original": "docs/p0_07_08_09_delivery.md",
+      "archived": "local_archive/20261016-full-docs/docs/p0_07_08_09_delivery.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 2373,
+      "policy": "current_navigation_or_explicit_logical_key"
+    },
+    {
+      "file": "tests/test_repository_hygiene.py",
+      "original": "docs/coding_pilot_delivery.md",
+      "archived": "local_archive/20261016-full-docs/docs/coding_pilot_delivery.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 2420,
+      "policy": "current_navigation_or_explicit_logical_key"
+    },
+    {
+      "file": "tests/test_repository_hygiene.py",
+      "original": "docs/model_smoke_delivery.md",
+      "archived": "local_archive/20261016-full-docs/docs/model_smoke_delivery.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 2448,
+      "policy": "current_navigation_or_explicit_logical_key"
+    },
+    {
+      "file": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/manifest.json",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 10372,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/analysis/PROJECT-characterization-synthesis-v1/evidence_matrix.json",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 142,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/analysis/PROJECT-characterization-synthesis-v1/manifest.json",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 4544,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/analysis/PROJECT-characterization-synthesis-v1/manifest.json",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 5059,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/analysis/PROJECT-characterization-synthesis-v2/evidence_matrix.json",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 260,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/analysis/PROJECT-characterization-synthesis-v2/manifest.json",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 5864,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/analysis/PROJECT-characterization-synthesis-v3/evidence_matrix.json",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 261,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/cpu/CPU-01/APPROVAL.json",
+      "original": "docs/cpu_01_delivery.md",
+      "archived": "local_archive/20261016-full-docs/docs/cpu_01_delivery.md",
+      "already_new_locator": false,
+      "occurrences": 2,
+      "first_byte_offset": 182,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/cpu/CPU-02/APPROVAL.json",
+      "original": "docs/cpu_02_delivery.md",
+      "archived": "local_archive/20261016-full-docs/docs/cpu_02_delivery.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 12873,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/cpu/CPU-02/permission-confirmation/APPROVAL.json",
+      "original": "docs/cpu_02_execution_environment_plan.md",
+      "archived": "local_archive/20261016-full-docs/docs/cpu_02_execution_environment_plan.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 141,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/cpu/CPU-02/pid-diagnostic/APPROVAL.json",
+      "original": "docs/cpu_02_pid_diagnostic_delivery.md",
+      "archived": "local_archive/20261016-full-docs/docs/cpu_02_pid_diagnostic_delivery.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 141,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/cpu/CPU-02/retries/R1/APPROVAL.json",
+      "original": "docs/cpu_02_r1_delivery.md",
+      "archived": "local_archive/20261016-full-docs/docs/cpu_02_r1_delivery.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 130,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v1/manifest.json",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 3023,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v1/verification.json",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 2,
+      "first_byte_offset": 11961,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v1/verification.json",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 17573,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v2/manifest.json",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 27287,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v2/manifest.json",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 27696,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v2/verification.json",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 8,
+      "first_byte_offset": 12667,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v2/verification.json",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "already_new_locator": false,
+      "occurrences": 4,
+      "first_byte_offset": 18904,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v3/manifest.json",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 27287,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v3/manifest.json",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 27696,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v3/verification.json",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 8,
+      "first_byte_offset": 12667,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v3/verification.json",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "already_new_locator": false,
+      "occurrences": 4,
+      "first_byte_offset": 18904,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v4/manifest.json",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 27302,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v4/manifest.json",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 27496,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v4/verification.json",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 8,
+      "first_byte_offset": 12667,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v5/manifest.json",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 78090,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v5/manifest.json",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 82599,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v5/verification.json",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "already_new_locator": false,
+      "occurrences": 8,
+      "first_byte_offset": 12667,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/quality/g0_review.md",
+      "original": "docs/legacy_asset_audit.md",
+      "archived": "local_archive/20261016-full-docs/docs/legacy_asset_audit.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 1215,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/quality/pilot_evidence.json",
+      "original": "docs/pilot_execution_spec.md",
+      "archived": "local_archive/20261016-full-docs/docs/pilot_execution_spec.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 11754,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/resource/G1-01-A/G1-01-A-20260913T074244Z/g1_evidence.md",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 74,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/resource/G1-01-A/G1-01-A-R2-20260913T075652Z-r2/g1_evidence.md",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 77,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/resource/G1-01-A/G1-01-A-R3-20260913T082046Z/g1_evidence.md",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 83,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/resource/G1-01-A/G1-01-A-R4-20260913T085846Z/g1_evidence.md",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 83,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "reports/resource/G1-02/APPROVAL.json",
+      "original": "docs/g1_02_handoff.md",
+      "archived": "local_archive/20261016-full-docs/docs/g1_02_handoff.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 770,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "data/catalog/env01_environment.json",
+      "original": "docs/environment_adaptation_delivery.md",
+      "archived": "local_archive/20261016-full-docs/docs/environment_adaptation_delivery.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 1601,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "data/catalog/mini_2_4_6_artifact.yaml",
+      "original": "docs/mini_2_4_6_static_delivery.md",
+      "archived": "local_archive/20261016-full-docs/docs/mini_2_4_6_static_delivery.md",
+      "already_new_locator": false,
+      "occurrences": 2,
+      "first_byte_offset": 213,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "data/catalog/p1_12_a_acquisition.json",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 153,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "data/catalog/p1_12_a_acquisition_review.json",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 7906,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "data/catalog/pilot_task_record.yaml",
+      "original": "docs/pilot_taskdata_delivery.md",
+      "archived": "local_archive/20261016-full-docs/docs/pilot_taskdata_delivery.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 795,
+      "policy": "preserve_historical_record_use_index"
+    },
+    {
+      "file": "workload_catalog/coding.yaml",
+      "original": "docs/pilot_execution_spec.md",
+      "archived": "local_archive/20261016-full-docs/docs/pilot_execution_spec.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 107,
+      "policy": "current_navigation_or_explicit_logical_key"
+    },
+    {
+      "file": "workload_catalog/coding_pilot.yaml",
+      "original": "docs/coding_pilot_delivery.md",
+      "archived": "local_archive/20261016-full-docs/docs/coding_pilot_delivery.md",
+      "already_new_locator": false,
+      "occurrences": 3,
+      "first_byte_offset": 4101,
+      "policy": "current_navigation_or_explicit_logical_key"
+    },
+    {
+      "file": "workload_catalog/coding_pilot.yaml",
+      "original": "docs/coding_pilot_handoff.md",
+      "archived": "local_archive/20261016-full-docs/docs/coding_pilot_handoff.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 7092,
+      "policy": "current_navigation_or_explicit_logical_key"
+    },
+    {
+      "file": "workload_catalog/pilot.yaml",
+      "original": "docs/first_run_preparation_delivery.md",
+      "archived": "local_archive/20261016-full-docs/docs/first_run_preparation_delivery.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 9548,
+      "policy": "current_navigation_or_explicit_logical_key"
+    },
+    {
+      "file": "workload_catalog/pilot.yaml",
+      "original": "docs/first_run_approval.md",
+      "archived": "local_archive/20261016-full-docs/docs/first_run_approval.md",
+      "already_new_locator": false,
+      "occurrences": 1,
+      "first_byte_offset": 9609,
+      "policy": "current_navigation_or_explicit_logical_key"
+    }
+  ],
+  "hash_checks": [
+    {
+      "file": "reports/analysis/CODING-RESOURCE-LINK-feasibility-v1/manifest.json",
+      "pointer": "/inputs/43",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "expected_sha256": "caed3128b5c2a573ff0b3d30e3621c382d3b55347596fc303d6f8594adb445b8",
+      "archived_sha256": "ef9fdd992c8a9b6192e4aa9d0ada14e4f940866704fd7b37db123a83db957b37",
+      "status": "preexisting_content_drift"
+    },
+    {
+      "file": "reports/analysis/PROJECT-characterization-synthesis-v1/manifest.json",
+      "pointer": "/inputs/21",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "expected_sha256": "5fea2bcb8c9f7543b2bd8fe230d3efd73b8c389c72f5b279d688f129b3abb478",
+      "archived_sha256": "2b8d10e936ea3922c7aac8d1ad86710ed5e586dc7bb9102bbc22e619f735f7cf",
+      "status": "preexisting_content_drift"
+    },
+    {
+      "file": "reports/analysis/PROJECT-characterization-synthesis-v1/manifest.json",
+      "pointer": "/inputs/18",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "expected_sha256": "caed3128b5c2a573ff0b3d30e3621c382d3b55347596fc303d6f8594adb445b8",
+      "archived_sha256": "ef9fdd992c8a9b6192e4aa9d0ada14e4f940866704fd7b37db123a83db957b37",
+      "status": "preexisting_content_drift"
+    },
+    {
+      "file": "reports/analysis/PROJECT-characterization-synthesis-v2/manifest.json",
+      "pointer": "/inputs/24",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "expected_sha256": "bdc42fada7e66f14d8358386f7225643ed1645cb2d9ee2c5cae286283e4bbeb3",
+      "archived_sha256": "ef9fdd992c8a9b6192e4aa9d0ada14e4f940866704fd7b37db123a83db957b37",
+      "status": "preexisting_content_drift"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v1/manifest.json",
+      "pointer": "/inputs/11",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "expected_sha256": "1cd0372e073465cfc08b85adb16a2fba48b71dac398e1dddcc2aabecb3ac298d",
+      "archived_sha256": "2b8d10e936ea3922c7aac8d1ad86710ed5e586dc7bb9102bbc22e619f735f7cf",
+      "status": "preexisting_content_drift"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v2/manifest.json",
+      "pointer": "/inputs/103",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "expected_sha256": "a0c91cfe50a5d4fa4a95a7d36be9141475eb9897a171859c4a253be6d145d180",
+      "archived_sha256": "ef9fdd992c8a9b6192e4aa9d0ada14e4f940866704fd7b37db123a83db957b37",
+      "status": "preexisting_content_drift"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v2/manifest.json",
+      "pointer": "/inputs/101",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "expected_sha256": "fd97c980f18cb9cba86951a18baaac7b3a00a817efd9e1fef7dd672ca3f8efc2",
+      "archived_sha256": "2b8d10e936ea3922c7aac8d1ad86710ed5e586dc7bb9102bbc22e619f735f7cf",
+      "status": "preexisting_content_drift"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v3/manifest.json",
+      "pointer": "/inputs/103",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "expected_sha256": "a80069e46963faa0425bdbae91dd179b17b87b62b41a291b43313947c0180b55",
+      "archived_sha256": "ef9fdd992c8a9b6192e4aa9d0ada14e4f940866704fd7b37db123a83db957b37",
+      "status": "preexisting_content_drift"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v3/manifest.json",
+      "pointer": "/inputs/101",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "expected_sha256": "f305b52bb9a5b32252f034392ce91a44430a12ee9f48e837cfb17a16eea3ec45",
+      "archived_sha256": "2b8d10e936ea3922c7aac8d1ad86710ed5e586dc7bb9102bbc22e619f735f7cf",
+      "status": "preexisting_content_drift"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v4/manifest.json",
+      "pointer": "/inputs/102",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "expected_sha256": "bdc42fada7e66f14d8358386f7225643ed1645cb2d9ee2c5cae286283e4bbeb3",
+      "archived_sha256": "ef9fdd992c8a9b6192e4aa9d0ada14e4f940866704fd7b37db123a83db957b37",
+      "status": "preexisting_content_drift"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v4/manifest.json",
+      "pointer": "/inputs/101",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "expected_sha256": "d7be7c9a79e448a7adbb53e6c2a8d7be9ba8dd1e4fca213c5cce47dc2ff136ac",
+      "archived_sha256": "2b8d10e936ea3922c7aac8d1ad86710ed5e586dc7bb9102bbc22e619f735f7cf",
+      "status": "preexisting_content_drift"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v5/manifest.json",
+      "pointer": "/inputs/305",
+      "original": "methodology.md",
+      "archived": "local_archive/20261016-full-docs/methodology.md",
+      "expected_sha256": "8bbedd63afa8c39a206d43d349be7ad84fa55ae5ff9e19a03a9be0d124b475af",
+      "archived_sha256": "ef9fdd992c8a9b6192e4aa9d0ada14e4f940866704fd7b37db123a83db957b37",
+      "status": "preexisting_content_drift"
+    },
+    {
+      "file": "reports/html/PROJECT-RESULTS-v5/manifest.json",
+      "pointer": "/inputs/286",
+      "original": "docs/development_tasks.md",
+      "archived": "local_archive/20261016-full-docs/docs/development_tasks.md",
+      "expected_sha256": "0674cd33bc4dcf5f40e94e16247ad907d0d682955e72e1bc851907f83a30779f",
+      "archived_sha256": "2b8d10e936ea3922c7aac8d1ad86710ed5e586dc7bb9102bbc22e619f735f7cf",
+      "status": "preexisting_content_drift"
+    }
+  ],
+  "hash_structure_unchecked": []
+}

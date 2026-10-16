@@ -1,0 +1,199 @@
+{
+ "schema": "docops-wiring-smoke-v1",
+ "session": "docops-wiring-smoke-20261008-r3",
+ "compose_project": "docops-wiring-smoke-20261008-r3",
+ "image": "docops-word001-task:arm64-adapted-v1",
+ "container_id": "9475789a35718e3875cb2af2d08f84da2a21bf38ede78f95d7e9fe879e6fbfd3",
+ "container_name": "docops-wiring-smoke-20261008-r3-main-1",
+ "cgroup_version": "v1",
+ "cgroup_dir": "/sys/fs/cgroup/cpu,cpuacct/docker/9475789a35718e3875cb2af2d08f84da2a21bf38ede78f95d7e9fe879e6fbfd3",
+ "events": [
+  {
+   "phase": "script_start",
+   "t_monotonic_ns": 472794006478155
+  },
+  {
+   "phase": "harbor_start_begin",
+   "t_monotonic_ns": 472794009608818
+  },
+  {
+   "phase": "harbor_start_done",
+   "t_monotonic_ns": 472795004840874
+  },
+  {
+   "phase": "container_identified",
+   "container_id": "9475789a35718e3875cb2af2d08f84da2a21bf38ede78f95d7e9fe879e6fbfd3",
+   "container_name": "docops-wiring-smoke-20261008-r3-main-1",
+   "compose_project": "docops-wiring-smoke-20261008-r3",
+   "t_monotonic_ns": 472795021343211
+  },
+  {
+   "phase": "ownership_registered",
+   "owner": "harbor",
+   "container_name": "docops-wiring-smoke-20261008-r3-main-1",
+   "runtime_cleanup_prefix_not_matching": "awc-docops-wiring-smoke-docops-wiring-smoke-20261008-r3-",
+   "t_monotonic_ns": 472795021358102
+  },
+  {
+   "phase": "cgroup_resolved",
+   "cgroup_version": "v1",
+   "cgroup_dir": "/sys/fs/cgroup/cpu,cpuacct/docker/9475789a35718e3875cb2af2d08f84da2a21bf38ede78f95d7e9fe879e6fbfd3",
+   "t_monotonic_ns": 472795038218884
+  },
+  {
+   "phase": "synthetic_exec_begin",
+   "t_monotonic_ns": 472795039474051
+  },
+  {
+   "phase": "synthetic_exec_done",
+   "return_code": 0,
+   "stdout_tail": "SYNTH_OK\n",
+   "t_monotonic_ns": 472796120160274
+  },
+  {
+   "phase": "artifact_check",
+   "return_code": 0,
+   "stdout_tail": "r--. 1 root root 36585 Oct  9 11:59 /root/smoke_out.docx\nREOPEN_OK wiring smoke\n",
+   "t_monotonic_ns": 472796388167945
+  },
+  {
+   "phase": "harbor_stop_begin",
+   "delete": true,
+   "t_monotonic_ns": 472798391541736
+  },
+  {
+   "phase": "harbor_stop_done",
+   "t_monotonic_ns": 472808718550190
+  },
+  {
+   "phase": "removal_verified",
+   "result": "removed",
+   "containers_left_for_project": 0,
+   "t_monotonic_ns": 472808750471240
+  }
+ ],
+ "samples": [
+  {
+   "scope": "agent_container",
+   "scope_kind": "agent_container",
+   "t_monotonic_ns": 472795038229174,
+   "cpu_usage_usec": 55777,
+   "mem_current_bytes": 1417216,
+   "mem_peak_bytes": 7049216,
+   "io_read_bytes": 0,
+   "io_write_bytes": 0,
+   "read_status": {
+    "cpuacct.usage": "ok_ns_converted_to_usec",
+    "memory.usage_in_bytes": "ok",
+    "memory.max_usage_in_bytes": "ok",
+    "blkio.io_service_bytes_recursive": "not_found",
+    "blkio.io_service_bytes": "not_found",
+    "blkio.throttle.io_service_bytes_recursive": "ok",
+    "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+   },
+   "tag": "baseline"
+  },
+  {
+   "scope": "agent_container",
+   "scope_kind": "agent_container",
+   "t_monotonic_ns": 472796120164795,
+   "cpu_usage_usec": 1024756,
+   "mem_current_bytes": 7020544,
+   "mem_peak_bytes": 63987712,
+   "io_read_bytes": 0,
+   "io_write_bytes": 0,
+   "read_status": {
+    "cpuacct.usage": "ok_ns_converted_to_usec",
+    "memory.usage_in_bytes": "ok",
+    "memory.max_usage_in_bytes": "ok",
+    "blkio.io_service_bytes_recursive": "not_found",
+    "blkio.io_service_bytes": "not_found",
+    "blkio.throttle.io_service_bytes_recursive": "ok",
+    "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+   },
+   "tag": "after_exec1"
+  },
+  {
+   "scope": "agent_container",
+   "scope_kind": "agent_container",
+   "t_monotonic_ns": 472796888738339,
+   "cpu_usage_usec": 1142182,
+   "mem_current_bytes": 1675264,
+   "mem_peak_bytes": 63987712,
+   "io_read_bytes": 0,
+   "io_write_bytes": 0,
+   "read_status": {
+    "cpuacct.usage": "ok_ns_converted_to_usec",
+    "memory.usage_in_bytes": "ok",
+    "memory.max_usage_in_bytes": "ok",
+    "blkio.io_service_bytes_recursive": "not_found",
+    "blkio.io_service_bytes": "not_found",
+    "blkio.throttle.io_service_bytes_recursive": "ok",
+    "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+   },
+   "tag": "window2_0"
+  },
+  {
+   "scope": "agent_container",
+   "scope_kind": "agent_container",
+   "t_monotonic_ns": 472797389690938,
+   "cpu_usage_usec": 1142182,
+   "mem_current_bytes": 1675264,
+   "mem_peak_bytes": 63987712,
+   "io_read_bytes": 0,
+   "io_write_bytes": 0,
+   "read_status": {
+    "cpuacct.usage": "ok_ns_converted_to_usec",
+    "memory.usage_in_bytes": "ok",
+    "memory.max_usage_in_bytes": "ok",
+    "blkio.io_service_bytes_recursive": "not_found",
+    "blkio.io_service_bytes": "not_found",
+    "blkio.throttle.io_service_bytes_recursive": "ok",
+    "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+   },
+   "tag": "window2_1"
+  },
+  {
+   "scope": "agent_container",
+   "scope_kind": "agent_container",
+   "t_monotonic_ns": 472797890584197,
+   "cpu_usage_usec": 1142182,
+   "mem_current_bytes": 1675264,
+   "mem_peak_bytes": 63987712,
+   "io_read_bytes": 0,
+   "io_write_bytes": 0,
+   "read_status": {
+    "cpuacct.usage": "ok_ns_converted_to_usec",
+    "memory.usage_in_bytes": "ok",
+    "memory.max_usage_in_bytes": "ok",
+    "blkio.io_service_bytes_recursive": "not_found",
+    "blkio.io_service_bytes": "not_found",
+    "blkio.throttle.io_service_bytes_recursive": "ok",
+    "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+   },
+   "tag": "window2_2"
+  },
+  {
+   "scope": "agent_container",
+   "scope_kind": "agent_container",
+   "t_monotonic_ns": 472798391344763,
+   "cpu_usage_usec": 1142182,
+   "mem_current_bytes": 1675264,
+   "mem_peak_bytes": 63987712,
+   "io_read_bytes": 0,
+   "io_write_bytes": 0,
+   "read_status": {
+    "cpuacct.usage": "ok_ns_converted_to_usec",
+    "memory.usage_in_bytes": "ok",
+    "memory.max_usage_in_bytes": "ok",
+    "blkio.io_service_bytes_recursive": "not_found",
+    "blkio.io_service_bytes": "not_found",
+    "blkio.throttle.io_service_bytes_recursive": "ok",
+    "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+   },
+   "tag": "window2_3"
+  }
+ ],
+ "wall_seconds": 14.74,
+ "within_budget": true
+}

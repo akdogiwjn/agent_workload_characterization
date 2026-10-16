@@ -1,0 +1,46 @@
+{
+  "schema": "docops-single-run-approval-v1",
+  "collection": "DOCOPS-MEASUREMENT-VALIDATE-01",
+  "user_approval": "approved",
+  "identity_sha256": "184446b36ec5676e00c9559a8da2e0fd71f16e424ade30c347987a322ac265cb",
+  "recorded_at_utc": "2026-10-11T09:30:44Z",
+  "source": "Current user message: 批准 DOCOPS-MEASUREMENT-VALIDATE-01 单次正式执行; use the delivered unique command once, stop on failure and never rerun or raise budgets.",
+  "task_key": "atomic__excel_001_budget_bucket_totals_seed",
+  "accept_unknown_cost_no_hard_cap": true,
+  "actual_bill": "unknown",
+  "scope": {
+    "attempt_count": 1,
+    "attempt_retry": 0,
+    "api_base": "https://api.deepseek.com/v1",
+    "request_model": "openai/deepseek-v4-flash",
+    "docker_endpoint": "unix:///var/run/docker.sock",
+    "task_image_reference": "docops-office-repeat-01:excel001",
+    "task_image_id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+    "allowed": "One existing shared setup/Agent/verifier/cleanup/archive chain; official multi-turn API calls; independent attempt; cleanup only owned compose resources; retain and verify the fixed task image.",
+    "excluded": "No extra smoke, rerun, budget increase, implementation changes, history rewriting, image replacement/restoration, dependency installation, sudo, perf, Replay, or Git commit."
+  },
+  "budget": {
+    "max_steps": 40,
+    "max_output_tokens_per_request": 32768,
+    "agent_s": 1200,
+    "verifier_s": 600,
+    "total_wall_s": 2700,
+    "cleanup_archive_reserve_s": 300,
+    "cpus": 1,
+    "memory_mib": 4096,
+    "sample_interval_s": 0.5,
+    "container_network": "none",
+    "framework_transport_attempts_per_logical_request_max": 3,
+    "actual_transport_attempt_count": "unknown_without_evidence"
+  },
+  "preexecution_checks": {
+    "full_live_plan_frozen_identity_structure_and_digest_match": true,
+    "namespace_unoccupied": true,
+    "preparation_manifest_input_files_verified": 102,
+    "preparation_manifest_output_files_verified": 2,
+    "base_image_id": "sha256:062bf50871c0e9d7d4a175643343746f27c785732596252d7ebe9ae0c08fe9b1",
+    "base_and_task_platform": "linux/arm64",
+    "image_inspection": "Fixed Docker endpoint returned both exact registered image IDs before execution."
+  },
+  "tool_permission": "Separate product approval is still required for the execution command; this record does not grant tool permissions."
+}

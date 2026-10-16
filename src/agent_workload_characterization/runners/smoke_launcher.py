@@ -77,7 +77,8 @@ def _strip_jsonc(text: str) -> str:
 
 def load_credentials(config_path: Path | None = None,
                      provider_name: str = PROVIDER_NAME,
-                     model_key: str = MODEL_KEY) -> tuple[str, str]:
+                     model_key: str = MODEL_KEY,
+                     model_display_name: str = "DeepSeek-V4-Flash") -> tuple[str, str]:
     """Return (api_base, api_key) for the single approved provider+model entry.
 
     ONLY call after SMOKE-01 approval. Raises LauncherError with fixed
@@ -147,7 +148,7 @@ def load_credentials(config_path: Path | None = None,
     # model display-name check: entry['name'] must match the approved model
     # (case-insensitive compare of the stem)
     display = entry.get("name") if isinstance(entry, dict) else None
-    if not isinstance(display, str) or display.strip().lower() != "deepseek-v4-flash":
+    if not isinstance(display, str) or display.strip().lower() != model_display_name.lower():
         raise LauncherError("E_MODEL_ENTRY_MISMATCH")
 
     return api_base, api_key

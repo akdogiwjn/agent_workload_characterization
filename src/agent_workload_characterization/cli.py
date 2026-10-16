@@ -213,7 +213,8 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "gates": config.get("gates"),
                 "note": ("offline validation only; no model requests, no "
                          "containers, no installs; B/C approval lists in "
-                         "docs/coding_pilot_delivery.md"),
+                         "docs/current_scope.md (historical approval notes: "
+                         "docs/history_index.md)"),
             }
             print(_json.dumps(plan, ensure_ascii=False, sort_keys=True, indent=2))
             return 0
