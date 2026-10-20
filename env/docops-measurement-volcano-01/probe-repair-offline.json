@@ -1,0 +1,64 @@
+{
+  "schema": "volcano-protocol-probe-repair-v1",
+  "status": "stopped_before_authorized_live_probes",
+  "date": "2026-10-16",
+  "scope": "offline_probe_repair_and_regression_only",
+  "confirmed_repairs": [
+    {
+      "issue": "tenacity_retry_with_assignment_dropped_bound_self",
+      "change": "retain_the_bound_call_and_set_its_probe_instance_retry.stop_to_one_attempt",
+      "formal_retry_policy_changed": false
+    },
+    {
+      "issue": "office_probe_used_non_exported_agent_class",
+      "change": "call_build_agent_result._parse_action_with_recorder_context",
+      "schema_validation_substituted_for_agent_parser": false
+    },
+    {
+      "issue": "send_observation_missed_async_and_httpx2_paths_and_exception_counts",
+      "change": "count_and_cap_sync_async_httpx_client_send_boundaries_for_httpx_and_frozen_openai_httpx2; persist_counts_in_finally",
+      "remote_service_receipt": "unknown_even_when_client_response_returns"
+    }
+  ],
+  "offline_validation": {
+    "command": "LITELLM_LOCAL_MODEL_COST_MAP=True PYTHONPATH=src:scripts:references/repos/DocOps/harnesses .venvs/docops-pilot-01/bin/python -m unittest -v tests.test_probe_volcano_protocols.ProbeProtocolTests.test_assistant_real_sync_client_path_records_one_send_and_tool_call tests.test_probe_volcano_protocols.ProbeProtocolTests.test_office_pre_send_type_error_is_saved_as_proven_zero tests.test_probe_volcano_protocols.ProbeProtocolTests.test_second_transport_entry_is_blocked_before_forwarding tests.test_probe_volcano_protocols.ProbeProtocolTests.test_result_and_failure_logs_are_confined_to_temp_root",
+    "executed": 4,
+    "passed": 4,
+    "failed": 0,
+    "not_completed": [
+      "Office full probe success path with fake response did not complete within bounded offline runs",
+      "Office connection-failure and post-response parse-failure probe cases were not completed"
+    ],
+    "suite_complete": false,
+    "socket_guards_enabled_for_final_selected_test_run": true,
+    "temporary_outputs_only": true
+  },
+  "unresolved_test_transport_event": {
+    "description": "An early fake Assistant probe test preceded the socket-level offline guard and patched httpx rather than the frozen OpenAI httpx2 client. It failed with a client connection error; the test had a synthetic credential, not VOLCANO_API_KEY.",
+    "client_send_count": "unknown",
+    "remote_service_receipt": "unknown",
+    "user_credential_used": false,
+    "response_body_or_credentials_saved": false,
+    "downstream_probes_and_formal_attempts_stopped": true
+  },
+  "real_authorized_probe_calls": 0,
+  "formal_approvals_created": 0,
+  "formal_attempts_created": 0,
+  "modified_files": {
+    "scripts/probe_volcano_protocols.py": "8fbc7aa9eabde785a8486325691914a0c76513c3ad66ad5431fe51575076bad3",
+    "tests/test_probe_volcano_protocols.py": "2400b87c71f0c41d4e094a253ad933d0a718ce0b1a96a0ac116a31cefcd5db40",
+    "docs/current_task.md": "151d10bea89b04ef6aa0412fecccc10b81b59dfa685d0e5e0391c6fde8f75abf"
+  },
+  "old_evidence_preserved": {
+    "protocol_probe": {
+      "path": "env/docops-measurement-volcano-01/protocol-probe.json",
+      "sha256": "8b281ca5e0d34d6c772c1b48b720ec4112f77a2ca1c819aa5122381f07aa9d8d",
+      "historical_send_count": "unknown"
+    },
+    "validation_stop": {
+      "path": "env/docops-measurement-volcano-01/validation-stop.json",
+      "sha256": "14fd773696ea11d119591cbc3d074c52a5210ad8cc37643c4392b02397d5ec0e"
+    }
+  },
+  "stop_reason": "Office end-to-end fake transport path remains unverified and an earlier fake test had unknown client send status; no further probe or formal execution is safe in this turn."
+}

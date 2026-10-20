@@ -8,6 +8,29 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class RepositoryHygieneTests(unittest.TestCase):
+    def test_new_measurement_details_and_auth_failure_reports_stay_local(self):
+        paths = [
+            'reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/series/run.csv',
+            'reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/per_run.jsonl',
+            'reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/series/coding.csv',
+            'reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/per_run.jsonl',
+            'reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/run-report.json',
+        ]
+        for path in paths:
+            with self.subTest(path=path):
+                self.assertEqual(subprocess.run(['git', 'check-ignore', '--no-index', '-q', path],
+                                               cwd=ROOT).returncode, 0)
+        visible = [
+            'reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/summary.md',
+            'reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/task_statistics.csv',
+            'reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/figures/run.svg',
+            'reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/manifest.json',
+        ]
+        for path in visible:
+            with self.subTest(path=path):
+                self.assertEqual(subprocess.run(['git', 'check-ignore', '--no-index', '-q', path],
+                                               cwd=ROOT).returncode, 1)
+
     def test_data_payloads_and_archive_are_ignored(self):
         paths = ['data/raw/public/example.json', 'data/normalized/example.jsonl',
                  'data/future_dataset/payload.json', 'local_archive/example.md',

@@ -1,0 +1,1096 @@
+{
+  "input_root": "/home/lcq/agent_workload_characterization",
+  "output_root": "/home/lcq/agent_workload_characterization/reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1",
+  "inputs": [
+    {
+      "path": ".venvs/docops-pilot-01/bin/python",
+      "bytes": 23323176,
+      "sha256": "0f1c0fc2c82cd4d382b9a2fc6f5ced5264709e1c1195e73a5f6a27fa74c2d0ed"
+    },
+    {
+      "path": ".venvs/docops-pilot-01/lib/python3.12/site-packages/harbor/environments/base.py",
+      "bytes": 14141,
+      "sha256": "d98343a4f9b53a7d0810d20d214eb459c09cb8a2143959b94b87ba20f5a0865e"
+    },
+    {
+      "path": ".venvs/docops-pilot-01/lib/python3.12/site-packages/harbor/environments/docker/__init__.py",
+      "bytes": 413,
+      "sha256": "b223ba8fbaf0b0627c06eb2b04001ed5addc012cd3f91bf95208df704eaa19f3"
+    },
+    {
+      "path": ".venvs/docops-pilot-01/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml",
+      "bytes": 297,
+      "sha256": "cd1ab1c0fa653e3857c37831635c872245c1f62f1e778926e121821339a182bb"
+    },
+    {
+      "path": ".venvs/docops-pilot-01/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-no-network.yaml",
+      "bytes": 41,
+      "sha256": "17ceef0a82e7dfb63d9f5ce974350f392dd8a323eac174ec69d28a90c7de8388"
+    },
+    {
+      "path": ".venvs/docops-pilot-01/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-prebuilt.yaml",
+      "bytes": 98,
+      "sha256": "1dfdd58a598685bb60fb90ca11c4fc16024b5cb1cdf73d83f8f84a2a4978e4d4"
+    },
+    {
+      "path": ".venvs/docops-pilot-01/lib/python3.12/site-packages/harbor/environments/docker/docker.py",
+      "bytes": 18808,
+      "sha256": "4479e969235519f86bb804bc3a681ebe6be5bd0891cf295fbea5efccf5febc09"
+    },
+    {
+      "path": ".venvs/docops-pilot-01/lib/python3.12/site-packages/harbor/llms/base.py",
+      "bytes": 2417,
+      "sha256": "7a6b03a835d8f62f770291a94bc6269291675e60a38c74c0b8a764c692a522a9"
+    },
+    {
+      "path": ".venvs/docops-pilot-01/lib/python3.12/site-packages/harbor/llms/lite_llm.py",
+      "bytes": 29687,
+      "sha256": "621491f784dbe65ad1eb61e98cca3a836f90c78b50e0a76501a2db36cecb20a0"
+    },
+    {
+      "path": ".venvs/docops-pilot-01/lib/python3.12/site-packages/harbor/models/task/config.py",
+      "bytes": 8899,
+      "sha256": "d5b6676289151b5d072199979347234b18de65da7ecd3bb3d2bbdf6e58ebdd61"
+    },
+    {
+      "path": ".venvs/docops-pilot-01/lib/python3.12/site-packages/harbor/models/task/task.py",
+      "bytes": 2618,
+      "sha256": "d48955014cdecbbb8fdb82b2226dac4988599eddf31f91e375992c9af04304f4"
+    },
+    {
+      "path": ".venvs/docops-pilot-01/lib/python3.12/site-packages/harbor/models/trial/paths.py",
+      "bytes": 5102,
+      "sha256": "8dc769b4391098cec8432cb60f23dc08307ee6b990b2846466c9d73ee8bc8de2"
+    },
+    {
+      "path": ".venvs/docops-pilot-01/lib/python3.12/site-packages/harbor/verifier/verifier.py",
+      "bytes": 5160,
+      "sha256": "b914e9166bf35a7b5f062366f8d08c8d6e62d8177f36978d965eb9b3fc9a0742"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/candidate.patch",
+      "bytes": 1143,
+      "sha256": "91f3c6430a19d961545d31e7474593b4572d9cf01aafd9783d9a7d69842fad02"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/environment.json",
+      "bytes": 6532,
+      "sha256": "e0494035e01e94068f6c55569adbcde32f12d2ea581d42e1c2854d9490b828c6"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/events.jsonl",
+      "bytes": 24351,
+      "sha256": "8de5a56ab9a3e11cdce7e577c1654e61c30be3f84be5854d455ecd176e3cca36"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/host_process.jsonl",
+      "bytes": 342201,
+      "sha256": "b6afaafa8e7f93c4d17b853f515f0a0ea147cea5afb666c75aa73f2238baee7f"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/manifest.json",
+      "bytes": 1336,
+      "sha256": "a5e3bf1608539f1dbd7d118ea2969bbc4c3161be771e3eeb66ca4850c4a44efd"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/measurement.json",
+      "bytes": 5433,
+      "sha256": "34a669fbe5c3715cf9eeab7b69f5b09bf6b92e777fdaa73e438adcab67cf5b1a"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/metadata.json",
+      "bytes": 1560,
+      "sha256": "6629b6b516aea8000b5d10d22142c658fc4f5c313c61817cc4897305ae07a3a1"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/mini_request_starts.jsonl",
+      "bytes": 1671,
+      "sha256": "79708485a6c217bb3f6958744ab60914fc063a320d4114d1879e5dd07a1f6e69"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/mini_status.jsonl",
+      "bytes": 10333,
+      "sha256": "eefe778d272480bc53d015b4cc51c6ae3ee99fc62cb202826691e49b635bce91"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/mini_tool_events.jsonl",
+      "bytes": 15718,
+      "sha256": "ffccc3729a1e991a1872f68e7391f7f7ab6b2a27667e2306e908f41aa280a285"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/mini_trajectory.json",
+      "bytes": 233999,
+      "sha256": "d343a2190c77d805f4fb17b0ad75ba451ce90acb2c479bfb1be0d1479ae14e65"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/samples.json",
+      "bytes": 476604,
+      "sha256": "c06345a5837948621dcbf7b75a98a18861e95aa379c28278bb179a91b6d50f08"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/supplemental_measurements.json",
+      "bytes": 55953094,
+      "sha256": "f53d3dcf3c759b5b5164a297968c35105f83146534731784dffbf7af25d4e71c"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/verifier/test_output.txt",
+      "bytes": 16498,
+      "sha256": "d54d931a9e0648e793bc7c902a85e86eebdea3792490e6bd2e3c5a3c5fdb0288"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/ATTEMPT_COMPLETED.json",
+      "bytes": 202,
+      "sha256": "a7b76d58bfc4fb28a9128aa7fd2fe832b8a5843adb8499de20c8a8318a9cfe64"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/ATTEMPT_STARTED.json",
+      "bytes": 300,
+      "sha256": "e56f50e4581f8f05f111bd004bcc97835a5f843f2fb81ee105397226bda7770f"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/document-tools-agent.txt",
+      "bytes": 3635,
+      "sha256": "ebad0388857f901e80ea79c24b7aeb159416212fc0693744e320f95e9545878e"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/events.jsonl",
+      "bytes": 31146,
+      "sha256": "75c6fcb84d2d248f932765cb6a5a2e70518de21ac74100b0c85731fb3f465305"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/llm_call_1.json",
+      "bytes": 34234,
+      "sha256": "4dbd647efdf57980718bd359c8914b2e0560e8c4a51bafeb3d22623566358adc"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/llm_call_2.json",
+      "bytes": 35072,
+      "sha256": "b36ab43fc7fb27b1fc3bc977afb0de94ea83449599c60d53a583a369a0373300"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/llm_call_3.json",
+      "bytes": 41503,
+      "sha256": "92f0d936f624ec4c7e00a7d0f07a6b364ec60303a44cbe1193e455e1b39f7c72"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/llm_call_4.json",
+      "bytes": 48012,
+      "sha256": "dba9654d2fa34ab4dfd47ad40b2842f3f598d01373eee20e96233e20af48b9b3"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/llm_call_5.json",
+      "bytes": 53008,
+      "sha256": "9aa0601c0539ed617b61b84754c7639115034b44b94fc4ffc12dcf4af16c8bb8"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/llm_call_6.json",
+      "bytes": 52246,
+      "sha256": "308ec1325cd1ddc643290dded743f7e3032533143e7884d15da449b4aeb36dfa"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/llm_call_7.json",
+      "bytes": 54322,
+      "sha256": "0e411fe443f7c4d140febb522ac3ff161b50a674920891c7c85b22d4554a7901"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/llm_call_8.json",
+      "bytes": 67127,
+      "sha256": "00b0e540eb5643eae2a66690b1b3b661ee5192f80b19963f2c8bc405cf6f5c00"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/environment.json",
+      "bytes": 4553,
+      "sha256": "b4d76e5b35731af0808570446b67baa034408e44a7e7773284dc578662788547"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/manifest.json",
+      "bytes": 25823,
+      "sha256": "4b1be98faeea78bb6b49fe4dadc18da65462cf9926d4397557f5701e6450cbf9"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/measurement.json",
+      "bytes": 384026,
+      "sha256": "19d0ec3ff55f510c7f056b94a6b28ae82f2cc93ab8c218429b42223bc4cf8dae"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/summary.json",
+      "bytes": 696222,
+      "sha256": "05dba9a04df3f0d1ed3f25303b4877bce4e0dca3bc8fc51db8fda6e042237dba"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/supplemental_measurements.json",
+      "bytes": 33102609,
+      "sha256": "e631d3eeca7d5fde904bf59ee276f0175463a738bfec066fca2da9fcb36c97c2"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/verifier/ctrf.json",
+      "bytes": 1018,
+      "sha256": "66dcffcf83b0f14fc474188fe07cc2588d8d8d8355e109d25cc25a077b0eee0f"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/verifier/original_task_description.txt",
+      "bytes": 1082,
+      "sha256": "506f5ee4d2d50c58cd9888f7cccc533cd93663a177802abf05d8389972780a38"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/verifier/reward.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/verifier/submission/excel_001_budget_bucket_totals_seed.xlsx",
+      "bytes": 6629,
+      "sha256": "8018fe7e17574433e95866f6f6a838db51b429fbe65ac18710365f9d2fd73054"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/verifier/task_metadata.json",
+      "bytes": 1823,
+      "sha256": "3cd03985af785be57928bd662a7e6c1d80bf284bbf405764121ee74a3ebfccca"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/verifier/test-stdout.txt",
+      "bytes": 649,
+      "sha256": "804524998c51032a02b63e5f9d88db2fb16f875deb359843b2c0314be5e2b31f"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/ATTEMPT_COMPLETED.json",
+      "bytes": 522,
+      "sha256": "3defe03accf69e01d433c972f76b29c2dd684c2092ce42813de1581db2d4cd71"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/ATTEMPT_STARTED.json",
+      "bytes": 329,
+      "sha256": "d19336951dff06960c30d9f80896dfcddf8b30e2ab7d45f8e6f08a9702b7026e"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/boundaries.jsonl",
+      "bytes": 4819,
+      "sha256": "4f7713350a6494039e88f40cd1352221c3972f5aaaabd06503556338d92daacf"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/environment.json",
+      "bytes": 2662,
+      "sha256": "b69ee5d847d81dca153f91aa6621626bc870758710bc1e4f91df48617a8e8631"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/events.jsonl",
+      "bytes": 22142,
+      "sha256": "2f0a3d577509f61f88e3a650a999362e3d38d7372df006dc78b1282b2fbfefd0"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/job.json",
+      "bytes": 3069,
+      "sha256": "47127f9ae8fb0af5f891c6a4488adb762ca6972ece7f03ac60ad0a152002ab8d"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/manifest.json",
+      "bytes": 2487,
+      "sha256": "95bb121cd88288f9a269b458e76ce887dd934f83cd2aa6a1134aed87776f803f"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/official/trajectories/send_message_with_contact_content_cellular_off/conversation.json",
+      "bytes": 17858,
+      "sha256": "52d4e3534ffd5eb24c77dab6b49df2f017b828ea7975b81a53a9b8e56d51a6f0"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/official/trajectories/send_message_with_contact_content_cellular_off/execution_context.json",
+      "bytes": 36433,
+      "sha256": "ee016763423cf2dc52a9e0af919a2171866cb2561c20631bdd1c933d99db0f27"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/official/trajectories/send_message_with_contact_content_cellular_off/pretty_print.txt",
+      "bytes": 6738,
+      "sha256": "2298299cbab57c51acc948fe3c4e5d4e592c76096b4648b6f21a968bb7a8014e"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/result.json",
+      "bytes": 4111,
+      "sha256": "d2d0958cf4f5568fba65f5a5e5e809820d091659ed66ba3d8e3ccc1ace7f94ba"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/samples.jsonl",
+      "bytes": 16441,
+      "sha256": "da06d8658cbe572a4920e8f398a6b5753bbd3c5357bb22e5c4fa41706d8585dd"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/scenario_context.json",
+      "bytes": 15328,
+      "sha256": "a32c12fedb1aa93ce77cd8d4a20d0ac0b048b0e589dec28d713eb9bc492fa727"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/supplemental_measurements.json",
+      "bytes": 6489223,
+      "sha256": "5a7053c5681b5437bfe04e82a36a5ba9078138f803192f9f6c933aafbe568ac9"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/worker.stderr",
+      "bytes": 907,
+      "sha256": "9e70ae2d48a7c82034c29ec1fb76014b60b5aa4aa4e9d44cea843e76080ecd47"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/worker.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/trace_contract.md",
+      "bytes": 24702,
+      "sha256": "05ed40a9c2bb426ca9545bc90536a3f20f4cc62d8c5adadd3e2a81c35f09df7d"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/frozen-identity.json",
+      "bytes": 8777,
+      "sha256": "76c6b9253844a16d4bf907d7b4c7fd0b83b8b3fcae7b977d7b694628f467b4b9"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/plan-identity.json",
+      "bytes": 8777,
+      "sha256": "76c6b9253844a16d4bf907d7b4c7fd0b83b8b3fcae7b977d7b694628f467b4b9"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/pre-scan-fix-identity/frozen-identity.json",
+      "bytes": 8777,
+      "sha256": "045f0c2d32fe6be648c97d432edd670847c41086e20ed7ffe0592f4e0e985258"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/pre-scan-fix-identity/plan-identity.json",
+      "bytes": 8777,
+      "sha256": "045f0c2d32fe6be648c97d432edd670847c41086e20ed7ffe0592f4e0e985258"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/pre-scan-fix-identity/preparation-manifest.json",
+      "bytes": 3487,
+      "sha256": "e92013e3432968773129c930c8659cd84c86516c394969ac57a5146fa1e1d04b"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/preparation-manifest.json",
+      "bytes": 3487,
+      "sha256": "cc2c85fab6939cc15c61a6a32258bec3f5271e1760c981313e262c484f915115"
+    },
+    {
+      "path": "env/docops-arm64-word001/harbor-src/pyproject.toml",
+      "bytes": 2884,
+      "sha256": "7f5a7baf35fa83d5ea3499845e58f3ad4b502c64f37c660c8fa434409b611d09"
+    },
+    {
+      "path": "env/docops-arm64-word001/harbor-src/src/harbor/environments/docker/docker.py",
+      "bytes": 18808,
+      "sha256": "4479e969235519f86bb804bc3a681ebe6be5bd0891cf295fbea5efccf5febc09"
+    },
+    {
+      "path": "env/docops-arm64-word001/harbor-src/src/harbor/llms/lite_llm.py",
+      "bytes": 29687,
+      "sha256": "621491f784dbe65ad1eb61e98cca3a836f90c78b50e0a76501a2db36cecb20a0"
+    },
+    {
+      "path": "env/docops-arm64-word001/harbor-src/src/harbor/verifier/verifier.py",
+      "bytes": 5160,
+      "sha256": "b914e9166bf35a7b5f062366f8d08c8d6e62d8177f36978d965eb9b3fc9a0742"
+    },
+    {
+      "path": "env/docops-arm64-word001/harbor-venv-freeze.txt",
+      "bytes": 1126,
+      "sha256": "e2d552bbb1bcc8757a4d75f0f1dc0fc5c48f5275f2bda4f57ed257c8cdb73721"
+    },
+    {
+      "path": "env/docops-measurement-validate-01/excel-image-restore.log",
+      "bytes": 1397,
+      "sha256": "61f3cfa7401b62743f89ebfc4e950125ad6eb90a0a13101f7f970d53e7211d0f"
+    },
+    {
+      "path": "env/docops-measurement-validate-01/image-restore.json",
+      "bytes": 22293,
+      "sha256": "31195390f160068031e13a96ca48f7739d7768a3678c0032c1384b5418806631"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/check_disk_scan.py",
+      "bytes": 4380,
+      "sha256": "35ccbc7ae608983ae9024f1a2090e3f90f0466344d9e77f90742ed536915c1d6"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/frozen-identity.json",
+      "bytes": 35816,
+      "sha256": "0643070334be70ce33f12063988f15e89bb486b6e31109d1ae2470b0abdb962d"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/history-protection.json",
+      "bytes": 9948,
+      "sha256": "0db69fe87ec6a35619e8e5939491418a186796fade3ace527cab366474be128c"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/no-model-check.json",
+      "bytes": 2550,
+      "sha256": "3408406f2e2b382870d915fe6a650df156c5870248f47d5365cb80894b7f497d"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/plan-identity.json",
+      "bytes": 35816,
+      "sha256": "0643070334be70ce33f12063988f15e89bb486b6e31109d1ae2470b0abdb962d"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/preparation-manifest.json",
+      "bytes": 26260,
+      "sha256": "676a3c3704f8ebca850854b7a3d44753c4fff8ad834bd8d8766104ce71e13b63"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/validation-closeout.json",
+      "bytes": 57002,
+      "sha256": "20818f0172b22d51f59a48da4ee55f10892d92fec7b31d1df07a47c53f6a1ddf"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/validation-manifest.json",
+      "bytes": 12709,
+      "sha256": "aca12d8bebc10428bdd21b7ed5a446b9fd7dbbfabca71ebbda4ec17161a5491f"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/validation-summary.md",
+      "bytes": 4653,
+      "sha256": "3b7a362fb78f4bb4d9284daf1ebd548ff5660500591ca17d57bc5f8b035052e5"
+    },
+    {
+      "path": "env/docops-office-repeat-01/frozen-identity.json",
+      "bytes": 52237,
+      "sha256": "5c3dde2bac260fc56fa160629a4830167792c1578e4de008849f8e3bfadb5de1"
+    },
+    {
+      "path": "env/docops-office-repeat-01/image-builds.json",
+      "bytes": 2879,
+      "sha256": "cac8cd3a8e021faf2fdae8f8717fd3c6277a24946458e7f7fed6821aa221d336"
+    },
+    {
+      "path": "env/docops-office-repeat-01/image-builds/excel001-initial.log",
+      "bytes": 1392,
+      "sha256": "0d3af303f8e0210e1b5e0f03f412378fcf065eeb380dc3c00ef1182e29a5dfab"
+    },
+    {
+      "path": "env/docops-office-repeat-01/plan-identity.json",
+      "bytes": 56802,
+      "sha256": "704334d9184b56250d58ae10e210b7d3332a896cc748310f5d0dfc88d9f886bb"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/frozen-identity.json",
+      "bytes": 16536,
+      "sha256": "718241df50ed1b6d08e1a7045dd8e9bb5eb2918c12729f45bd24d937309ced6a"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/plan-identity.json",
+      "bytes": 16536,
+      "sha256": "718241df50ed1b6d08e1a7045dd8e9bb5eb2918c12729f45bd24d937309ced6a"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/pre-scan-fix-identity/frozen-identity.json",
+      "bytes": 16536,
+      "sha256": "1e7f5c5c3e44f0055a9093ca8d2826bb8310fc7f22a5d8476b50ffbd110e89a6"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/pre-scan-fix-identity/plan-identity.json",
+      "bytes": 16536,
+      "sha256": "1e7f5c5c3e44f0055a9093ca8d2826bb8310fc7f22a5d8476b50ffbd110e89a6"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/pre-scan-fix-identity/preparation-manifest.json",
+      "bytes": 3371,
+      "sha256": "412b3ecb6d3d53881d7d5b8a878f8112f5152365b15b2160fec7cb4866c4dc0e"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/preparation-manifest.json",
+      "bytes": 3371,
+      "sha256": "3ae3d684c4677cd0d68b4f19085f3abafb94db4148375197a394ddce2f21ca42"
+    },
+    {
+      "path": "references/repos/DocOps/harnesses/document_tools_agent.py",
+      "bytes": 13569,
+      "sha256": "c63244323eea071ba63442dec70531a447365c31e87710b5a2a02c52322f449a"
+    },
+    {
+      "path": "references/repos/DocOps/harnesses/document_tools_runtime.py",
+      "bytes": 16880,
+      "sha256": "855c4cdfdcd9ac6a8ca9e67d57809262236bf93848d0d8142cf356fb2f558878"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/Dockerfile",
+      "bytes": 520,
+      "sha256": "4e98690078c7066f64677a3501523332fc85714abc0e805018ee6495d7a7ab78"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/excel_001_budget_bucket_totals_seed.xlsx",
+      "bytes": 6549,
+      "sha256": "4e398873d0188789978dc9f627901f9a71fdb91d66623a3986b19c08c6df7aa0"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/original_task_description.txt",
+      "bytes": 1082,
+      "sha256": "506f5ee4d2d50c58cd9888f7cccc533cd93663a177802abf05d8389972780a38"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/LICENSE.txt",
+      "bytes": 1467,
+      "sha256": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/SKILL.md",
+      "bytes": 11463,
+      "sha256": "dd316db7785a6be12966c2a2d848931fbf5f518b3cdb0a66fa62ee835ead1cfc"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/helpers/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/helpers/merge_runs.py",
+      "bytes": 5567,
+      "sha256": "7c40ed838b88639c51f9ffdcfd564b568f26832b78fe44008c0e01b742669ca7"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/helpers/simplify_redlines.py",
+      "bytes": 5754,
+      "sha256": "560cb55978a834c505406eb18e2c61f62f998fc7a2d8e9721b9c563b42597896"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/pack.py",
+      "bytes": 4991,
+      "sha256": "b1800987e568261a31f462df8e1303d386e9e6ccc11a75ef46e60cc528c20683"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+      "bytes": 74984,
+      "sha256": "41b93bd8857cc68b1e43be2806a872d736a9bdd6566900062d8fdb57d7bbb354"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+      "bytes": 6956,
+      "sha256": "3fd0586f2637b98bb9886f0e0b67d89e1cc987c2d158cc7deb5f5b9890ced412"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+      "bytes": 51302,
+      "sha256": "29b254ee0d10414a8504b5a08149c7baec35a60d5ff607d6b3f492aa36815f40"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+      "bytes": 624,
+      "sha256": "5cb76dabd8b97d1e9308a1700b90c20139be4d50792d21a7f09789f5cccd6026"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+      "bytes": 152039,
+      "sha256": "5375417f0f5394b8dd1a7035b9679151f19a6b65df309dec10cfb4a420cb00e9"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+      "bytes": 1231,
+      "sha256": "5d389d42befbebd91945d620242347caecd3367f9a3a7cf8d97949507ae1f53c"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+      "bytes": 8862,
+      "sha256": "b4532b6d258832953fbb3ee4c711f4fe25d3faf46a10644b2505f17010d01e88"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+      "bytes": 14795,
+      "sha256": "bdad416b096b61d37b71603b2c949484f9070c830bdaeba93bf35e15c8900614"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd",
+      "bytes": 83612,
+      "sha256": "d173c3e5d61e42e2e3a97226c632fd2ab7cc481fc4e492365b87024ab546daff"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+      "bytes": 1269,
+      "sha256": "3c6709101c6aaa82888df5d8795c33f9e857196790eb320d9194e64be2b6bdd8"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+      "bytes": 7328,
+      "sha256": "0b364451dc36a48dd6dae0f3b6ada05fd9b71e5208211f8ee5537d7e51a587e2"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+      "bytes": 6382,
+      "sha256": "e2abacbb9a55ce1365f8961bc1b1395bbc811e512b111000d8c333f98458dece"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+      "bytes": 1248,
+      "sha256": "0ef4bb354ff44b923564c4ddbdda5987919d220225129ec94614a618ceafc281"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+      "bytes": 880,
+      "sha256": "0d103b99a4a8652f8871552a69d42d2a3760ac6a5e3ef02d979c4273257ff6a4"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+      "bytes": 2608,
+      "sha256": "9c085407751b9061c1f996f6c39ce58451be22a8d334f09175f0e89e42736285"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+      "bytes": 3507,
+      "sha256": "bc92e36ccd233722d4c5869bec71ddc7b12e2df56059942cce5a39065cc9c368"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+      "bytes": 7507,
+      "sha256": "7b5b7413e2c895b1e148e82e292a117d53c7ec65b0696c992edca57b61b4a74b"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+      "bytes": 23313,
+      "sha256": "3213ef1631606250f5010b42cad7ef716f7c59426367798e33c374c0ec391d3a"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+      "bytes": 1367,
+      "sha256": "12264f3c03d738311cd9237d212f1c07479e70f0cbe1ae725d29b36539aef637"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd",
+      "bytes": 242277,
+      "sha256": "beffeed56945c22a77440122c8bdc426f3fcbe7f3b12ea0976c770d1f8d54578"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+      "bytes": 26148,
+      "sha256": "f5ee623b08b6a66935e5aced2f5d8ad0fc71bf9e8e833cd490150c0fa94b8763"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+      "bytes": 25279,
+      "sha256": "585bedc1313b40888dcc544cb74cd939a105ee674f3b1d3aa1cc6d34f70ff155"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+      "bytes": 535,
+      "sha256": "133c9f64a5c5d573b78d0a474122b22506d8eadb5e063f67cdbbb8fa2f161d0e"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+      "bytes": 5712,
+      "sha256": "6bdeb169c3717eb01108853bd9fc5a3750fb1fa5b82abbdd854d49855a40f519"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+      "bytes": 4010,
+      "sha256": "475dcae1e7d1ea46232db6f8481040c15e53a52a3c256831d3df204212b0e831"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd",
+      "bytes": 171367,
+      "sha256": "c2dd9f61f892deae6acd8d20771ea79b12018af25f3bf8d06639c8542d218cfd"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd",
+      "bytes": 4646,
+      "sha256": "a539aa2fb154fa50e0f5cc97e6ad7cbc66f8ec3e3746f61ec6a8b0d5d15ecdf2"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+      "bytes": 1963,
+      "sha256": "9e0b7209fc69ab11987900404540969976000c5ebe4d4f58c43dc3842886bf3a"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+      "bytes": 2515,
+      "sha256": "451958454e8588dfc7cd945981ada142ca06ff3307937f5700df059c2b307fa8"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+      "bytes": 2856,
+      "sha256": "6de111e11403f7cd49027400755bae0ea1cabef2815f09bd40a24f0017613b24"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+      "bytes": 1344,
+      "sha256": "f565adfef5a502044abc3a9153e157edc25af78304d335994afb958874b15e26"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/mce/mc.xsd",
+      "bytes": 3127,
+      "sha256": "3a37e461ecf5a8670fdec34029703401f8728ab9c96ec1739a6ae58d55212413"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-2010.xsd",
+      "bytes": 26549,
+      "sha256": "568b26ee156cb9549aa439ca2158965f77b7c1602b7e0316f40ac6cf586e35f2"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-2012.xsd",
+      "bytes": 3745,
+      "sha256": "0fa75578a000439a7988ba0c59fdc69f774bbd416cbacc14d07125b3f686cb74"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-2018.xsd",
+      "bytes": 901,
+      "sha256": "be0ff793a22dd31384650c3a4da14c2fa8062751c2e97b0e5ee852bda13c60ad"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-cex-2018.xsd",
+      "bytes": 1778,
+      "sha256": "fddc2b880cabb9005aebbc7e783e53c19fec1c03df7d0e2f2076a33a0fdfd081"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-cid-2016.xsd",
+      "bytes": 1002,
+      "sha256": "127ca209fa73d7cb708449cb355c871867948a96e4a74f7bf5811ef62d17991d"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+      "bytes": 600,
+      "sha256": "842e7163409c8d74f4d7088a8bc99500d80bc75332681a0980055b08f374a604"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/schemas/microsoft/wml-symex-2015.xsd",
+      "bytes": 745,
+      "sha256": "16f6f8072249f431370723c2cd8974672e0d9c897e00e97dd918079df934871b"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/soffice.py",
+      "bytes": 5301,
+      "sha256": "a3e21840e29e32f947d5286028931b96eaf2dee63f75d883b8eb19c943c80aa0"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/unpack.py",
+      "bytes": 4052,
+      "sha256": "83f69cecc87910183654c06345837244402e8a99edbf3bdddc1cf72f11304b62"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validate.py",
+      "bytes": 3668,
+      "sha256": "1aef24f8e316965a0584c30859776bd2c82a9fb69f72d79cfed041119cf95514"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validators/__init__.py",
+      "bytes": 336,
+      "sha256": "83e0f035c5abea238d3f2c3968afbd511ed022b527b7c9cb60a9434cc34ff987"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validators/base.py",
+      "bytes": 32651,
+      "sha256": "d6358b67252df4dbfe4fa6647423a765960c949346ef6a8c4eb8722bb1108d25"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validators/docx.py",
+      "bytes": 16376,
+      "sha256": "0ef04ce86b2e6b6a1cb088c0276fd0bd5b770d96fdfe7a6cc73d005feb3f0345"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validators/pptx.py",
+      "bytes": 9824,
+      "sha256": "f937961e62a5fa0d002b8dc51a4c4e2cd8fcd59fe65853fa54edaca3fe99eccc"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/office/validators/redlining.py",
+      "bytes": 8918,
+      "sha256": "f4c33fdb9da0651d1d9aa76f0d5294cc9955869339ae131b2f75f3b2e366cb40"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/skills/xlsx/scripts/recalc.py",
+      "bytes": 5782,
+      "sha256": "cf419d15e02965aeaec17773c05b61303f7f520f67fa2696547e7da07502eac7"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/environment/task_metadata.json",
+      "bytes": 1823,
+      "sha256": "3cd03985af785be57928bd662a7e6c1d80bf284bbf405764121ee74a3ebfccca"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/instruction.md",
+      "bytes": 1511,
+      "sha256": "fa675cdd3d340048c510ed2204686a0b4bed2da7049e89e1931b6f4804e0ddf6"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/task.toml",
+      "bytes": 1257,
+      "sha256": "70e24df982c84afbf7519b632fdd1466f7c0dd9c4202e98567f5d9c818a20083"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/tests/task_metadata.json",
+      "bytes": 1823,
+      "sha256": "3cd03985af785be57928bd662a7e6c1d80bf284bbf405764121ee74a3ebfccca"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/tests/test.sh",
+      "bytes": 730,
+      "sha256": "638074862a1f8779ca4741e76a5a254553eaaaa24340e0d5c781f34edab3e60a"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/tests/test_outputs.py",
+      "bytes": 4961,
+      "sha256": "6e547786845d10f16198bdc644126f17ee3362550ba91feb1c90f94782bf8c79"
+    },
+    {
+      "path": "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed/tests/verifier_utils.py",
+      "bytes": 14389,
+      "sha256": "d1a084507ea7aa1ae001c6c8b33f6505cad4ccb51cd372d10323fe5d63d93e78"
+    },
+    {
+      "path": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/APPROVAL.json",
+      "bytes": 860,
+      "sha256": "7717cfcb2c6f4cf156c0a71af7cbf73662ddfc29bfcc581646f54be7eedb7f1b"
+    },
+    {
+      "path": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/ATTEMPT_STARTED.json",
+      "bytes": 380,
+      "sha256": "ceebe2dc2561091474741b76f3b9126754379c0adeb75dba809cf8ff4678e5cf"
+    },
+    {
+      "path": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/manifest.json",
+      "bytes": 1585,
+      "sha256": "5835ecdee67d8253cff22ab727c41d19f9450e1fe03e5313c240fc1efe064445"
+    },
+    {
+      "path": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/run-report.json",
+      "bytes": 1255,
+      "sha256": "beb51b50c9a63571d021c694098029f208ade6addc208444f6fc410568f88a7f"
+    },
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VOLCANO-02/APPROVAL.json",
+      "bytes": 903,
+      "sha256": "0fbc51b8351b18cc364cd3c27bb303c84dba941fc4e2ce863f3f0a05f04f1f64"
+    },
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VOLCANO-02/manifest.json",
+      "bytes": 1123,
+      "sha256": "9555227ea6fd66c5e10633233a58e811d14da2fa4e777848c105d520d54a1fbc"
+    },
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VOLCANO-02/run-report.json",
+      "bytes": 889111,
+      "sha256": "ad4734a056cc1afc2b0eea24363ddf35d3c74eddd49790dc373745a58bf60e81"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/APPROVAL.json",
+      "bytes": 1595,
+      "sha256": "f6e322da32ca3b9a2d748c24a0b6d1bb9ed683a0186a00c2f90341652681c57e"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/manifest.json",
+      "bytes": 1126,
+      "sha256": "0b94a0baf5db44db44beb1b4ea2bf40064b63489c9ddc168c1b565a284d05784"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/run-report.json",
+      "bytes": 60060,
+      "sha256": "8060be7b795e589ae751729ff111939143be7879818b7502c5b78dfb97f68033"
+    },
+    {
+      "path": "scripts/docops_measurement_validate_01_entry.py",
+      "bytes": 20259,
+      "sha256": "5f2f468df54f7e5ada70b94672443e56c5400adfda719b6b2840a9a6d4e28aaa"
+    },
+    {
+      "path": "scripts/docops_measurement_volcano_02_entry.py",
+      "bytes": 258,
+      "sha256": "23ce9c1bf4402ce154ce4c473b83ddd50dec0319e8315d77f2b40576fd2f3c3b"
+    },
+    {
+      "path": "scripts/docops_office_repeat_01_entry.py",
+      "bytes": 61623,
+      "sha256": "458a9f9668497ed21a0b083e9cad20fd2509bf6621cb8fc3de198eee3a6bc758"
+    },
+    {
+      "path": "scripts/docops_word_resource_01_entry.py",
+      "bytes": 49695,
+      "sha256": "2867bfa00727d1d02ff6a98adcd233af4eab618dadf5ed48eeb1482df2dc503e"
+    },
+    {
+      "path": "scripts/toolsandbox_resource_pilot_02_review.py",
+      "bytes": 57155,
+      "sha256": "6a8c5426e54425754af14eefc8645a56ad3f1b499a4634f0d4409f62b057361b"
+    },
+    {
+      "path": "scripts/volcano_three_chain_characterization.py",
+      "bytes": 53542,
+      "sha256": "aa47ba4ec1fec9cb3196ca5825bdddb8a86ad390c8190a898badb11ecadb91a3"
+    },
+    {
+      "path": "src/agent_workload_characterization/analyzers/public_operations.py",
+      "bytes": 20084,
+      "sha256": "5f92088f6c360316d30f0e7ad9cfff75856947be00d604b5c85be4ee3a230d76"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/execution_measurement.py",
+      "bytes": 47352,
+      "sha256": "fd5bf70fdbcc366f61426fcb7b5de1b5c2e3e15b78e56ef4cfe5fbeca7b83243"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/host_process.py",
+      "bytes": 9999,
+      "sha256": "7b05e9d89bfbbdb1ff6a246230770470992c2a5dbccb68fef81965c62d4e8c1e"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/resource_sampler.py",
+      "bytes": 29341,
+      "sha256": "ef83348c308ff9b910f9eaeac11eaa75f87668fa58ea3e24e10aa15388898bda"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/semantic_recorder.py",
+      "bytes": 12105,
+      "sha256": "b5921e6a287067d0f15352fede88477913f71cc122cb270bf79f5aebc69204a8"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/container_runtime.py",
+      "bytes": 36616,
+      "sha256": "a2608e5549da73581c3a1b036080d64fa641eefe8e4bdf3cf429bc5a55ac1d83"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/docops_environment.py",
+      "bytes": 601,
+      "sha256": "84c20c655de54e1ca20965c4ab5935d7b95f8229747058f9cc7517cfbaf70ab0"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/docops_word_agent.py",
+      "bytes": 6357,
+      "sha256": "d2dcf447e2d634755cb662ece23050bb38a328cdebc903ad5a085732d7ceba44"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/docops_word_runtime.py",
+      "bytes": 18257,
+      "sha256": "a1e73980e3908ad158c6827d2853d7fab625db6ad46c2beaeafbaae2fcda9ab2"
+    },
+    {
+      "path": "tests/test_office_disk_scan_wiring.py",
+      "bytes": 6207,
+      "sha256": "caa199036022d2eb077452348fc558351a1ff37331e97a9a363360a19418ab89"
+    },
+    {
+      "path": "tests/test_volcano_three_chain_characterization.py",
+      "bytes": 17426,
+      "sha256": "33230d70c13c241cf333d2e92ee20b0a24b3fbd79c85967b636093056069ce83"
+    }
+  ],
+  "analysis_code": "/home/lcq/agent_workload_characterization/scripts/volcano_three_chain_characterization.py",
+  "historical_file_sets_unchanged": {
+    "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001": [
+      "ATTEMPT_COMPLETED.json",
+      "ATTEMPT_STARTED.json",
+      "agent/document-tools-agent.txt",
+      "agent/events.jsonl",
+      "agent/llm_call_1.json",
+      "agent/llm_call_2.json",
+      "agent/llm_call_3.json",
+      "agent/llm_call_4.json",
+      "agent/llm_call_5.json",
+      "agent/llm_call_6.json",
+      "agent/llm_call_7.json",
+      "agent/llm_call_8.json",
+      "environment.json",
+      "manifest.json",
+      "measurement.json",
+      "summary.json",
+      "supplemental_measurements.json",
+      "verifier/ctrf.json",
+      "verifier/original_task_description.txt",
+      "verifier/reward.txt",
+      "verifier/submission/excel_001_budget_bucket_totals_seed.xlsx",
+      "verifier/task_metadata.json",
+      "verifier/test-stdout.txt"
+    ],
+    "reports/resource/DOCOPS-MEASUREMENT-VOLCANO-02": [
+      "APPROVAL.json",
+      "manifest.json",
+      "run-report.json"
+    ],
+    "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c": [
+      "candidate.patch",
+      "environment.json",
+      "events.jsonl",
+      "host_process.jsonl",
+      "manifest.json",
+      "measurement.json",
+      "metadata.json",
+      "mini_request_starts.jsonl",
+      "mini_status.jsonl",
+      "mini_tool_events.jsonl",
+      "mini_trajectory.json",
+      "samples.json",
+      "supplemental_measurements.json",
+      "verifier/test_output.txt"
+    ],
+    "reports/resource/CODING-MEASUREMENT-VOLCANO-01": [
+      "APPROVAL.json",
+      "ATTEMPT_STARTED.json",
+      "manifest.json",
+      "run-report.json"
+    ],
+    "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01": [
+      "ATTEMPT_COMPLETED.json",
+      "ATTEMPT_STARTED.json",
+      "boundaries.jsonl",
+      "environment.json",
+      "events.jsonl",
+      "job.json",
+      "manifest.json",
+      "official/trajectories/send_message_with_contact_content_cellular_off/conversation.json",
+      "official/trajectories/send_message_with_contact_content_cellular_off/execution_context.json",
+      "official/trajectories/send_message_with_contact_content_cellular_off/pretty_print.txt",
+      "result.json",
+      "samples.jsonl",
+      "scenario_context.json",
+      "supplemental_measurements.json",
+      "worker.stderr",
+      "worker.stdout"
+    ],
+    "reports/resource/TOOLSANDBOX-MEASUREMENT-VOLCANO-01": [
+      "APPROVAL.json",
+      "manifest.json",
+      "run-report.json"
+    ]
+  },
+  "outputs": [
+    {
+      "path": "directory_footprint.csv",
+      "bytes": 1179,
+      "sha256": "00b16724563af2d988dc8168d61796db7de9704f1150f08cbeffc287c1282307"
+    },
+    {
+      "path": "figures/assistant.svg",
+      "bytes": 55405,
+      "sha256": "27b88aa46905c1d21a6e42e50257d6fd12051b9f7b0fc4d5464a83430af2a4fa"
+    },
+    {
+      "path": "figures/coding.svg",
+      "bytes": 621407,
+      "sha256": "09754a781fa030bc7d013f1e1f1d09342028bef5dd060d672944976d22bde20f"
+    },
+    {
+      "path": "figures/office.svg",
+      "bytes": 301053,
+      "sha256": "5a60611b1608d91057c82b259c53637edbcc54c94c5b6f207c2776e54dfe3b28"
+    },
+    {
+      "path": "per_run.jsonl",
+      "bytes": 354019,
+      "sha256": "5786e24b45c218db0361cf85c4c205daca77f4f151a1fe0aa5389baf2768d071"
+    },
+    {
+      "path": "series/assistant.csv",
+      "bytes": 139816,
+      "sha256": "faf9cb65e4bed2a98aae99aaaea29ddf05f673e4ae06cf29172427d4efc3ca47"
+    },
+    {
+      "path": "series/coding.csv",
+      "bytes": 2047152,
+      "sha256": "6e04dc1d39672b5907952ab9921777d1ec7f5a7edd9f847b806a84a00a10305f"
+    },
+    {
+      "path": "series/office.csv",
+      "bytes": 886935,
+      "sha256": "51f1f1f3d094789a18b7a1c35ae5dbafb5cfa751919f376b9daa87322b7675a8"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 642809,
+      "sha256": "433727c9bbd4735dd67e1c3c4c0f107e3c359ea2dc81167fe859c223cd2698e0"
+    },
+    {
+      "path": "summary.md",
+      "bytes": 16986,
+      "sha256": "1178fec984947a2b53316dca73ec13aad0205e97022ec9cf7f4a79e48f182cda"
+    }
+  ]
+}

@@ -184,6 +184,17 @@ class AssistantRepeatBatchTests(unittest.TestCase):
                     self.assertIn("initialization_started_utc", context)
                     self.assertTrue(context["evaluation_milestone_targets"])
                     self.assertTrue(shared.verify_run_archive(raw)[0])
+                    raw_manifest = json.loads((raw / 'manifest.json').read_text())
+                    self.assertIn('supplemental_measurements.json',
+                                  {row['path'] for row in raw_manifest['outputs']})
+                    supplement = json.loads((raw / 'supplemental_measurements.json').read_text())
+                    self.assertEqual(supplement['network']['scope_kind'],
+                                     'network_namespace_shared')
+                    self.assertEqual(supplement['task_workspace']['status'], 'not_applicable')
+                    self.assertEqual(supplement['disk_footprint']['paths'][0]['role'],
+                                     'attempt_output')
+                    self.assertEqual(report['host_sampling']['resource_intervals'][0]
+                                     ['metrics']['cpu']['unit'], 'cpu_seconds')
                     events = read_jsonl(raw / "events.jsonl")
                     roots = [e for e in events if e["kind"] == "run"]
                     opened = next(e for e in roots if e["status"] == "open")

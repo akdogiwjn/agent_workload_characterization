@@ -1,0 +1,1786 @@
+{
+  "sequence": 0,
+  "chain": "Coding",
+  "round": 1,
+  "task": "django__django-16485",
+  "replaces_original_sequence": 5,
+  "run_id": "20261017T041030Z-00-r1-coding",
+  "identity_sha256": "8a17109cf441e3ae68e3f9820babe5685467657cbcafb56d765dd1158dc4942d",
+  "returncode": 0,
+  "runner_wall_s": 161.71120110386983,
+  "raw_path": "data/raw/generated/LOCAL-THREE-CLASS-COMPLETE-02/20261017T041030Z-00-r1-coding",
+  "report_path": "reports/resource/LOCAL-THREE-CLASS-COMPLETE-02/20261017T041030Z-00-r1-coding/run-report.json",
+  "slot_status": "executed",
+  "report_status": "reported",
+  "task_result": true,
+  "agent_termination": "ok",
+  "infra_status": "ok",
+  "measurement": {
+    "status": "complete",
+    "gaps": [],
+    "not_applicable": {},
+    "cpu_intervals": {
+      "agent_container": {
+        "candidate": 287,
+        "valid": 287,
+        "gaps": 0
+      },
+      "verifier_container": {
+        "candidate": 24,
+        "valid": 24,
+        "gaps": 0
+      }
+    },
+    "memory_valid_samples": {
+      "agent_container": 288,
+      "verifier_container": 25
+    },
+    "io_intervals": {
+      "agent_container": {
+        "io_read": {
+          "candidate": 287,
+          "valid": 287,
+          "gaps": 0
+        },
+        "io_write": {
+          "candidate": 287,
+          "valid": 287,
+          "gaps": 0
+        }
+      },
+      "verifier_container": {
+        "io_read": {
+          "candidate": 24,
+          "valid": 24,
+          "gaps": 0
+        },
+        "io_write": {
+          "candidate": 24,
+          "valid": 24,
+          "gaps": 0
+        }
+      }
+    },
+    "network": {
+      "network_samples": 315,
+      "network_candidate_interface_metric_interval_records": 212892,
+      "network_valid_interface_interval_records": 212892,
+      "network_gap_interface_interval_records": 0,
+      "network_per_interface": {
+        "br-ab4c5aff09be": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "docker0": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "eno1": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "eno2": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "eno3": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "eno4": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "enp65s0f0": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "enp65s0f1": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "lo": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-10": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-100": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-101": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-102": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-103": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-104": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-105": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-106": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-107": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-108": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-109": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-11": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-110": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-111": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-112": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-113": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-114": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-115": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-116": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-117": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-118": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-119": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-12": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-120": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-121": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-122": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-123": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-124": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-125": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-126": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-127": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-128": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-129": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-13": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-130": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-131": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-132": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-133": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-134": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-135": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-136": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-137": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-138": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-139": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-14": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-140": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-141": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-142": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-143": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-144": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-145": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-146": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-147": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-148": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-149": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-15": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-150": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-151": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-152": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-153": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-154": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-155": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-156": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-157": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-158": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-159": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-16": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-160": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-161": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-162": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-163": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-164": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-165": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-166": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-167": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-168": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-169": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-17": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-170": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-171": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-172": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-173": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-174": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-175": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-176": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-177": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-178": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-179": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-18": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-180": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-181": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-182": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-183": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-184": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-185": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-186": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-187": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-188": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-189": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-19": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-190": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-191": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-192": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-193": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-194": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-195": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-196": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-197": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-198": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-199": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-2": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-20": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-200": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-201": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-202": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-203": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-204": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-205": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-206": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-207": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-208": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-209": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-21": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-210": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-211": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-212": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-213": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-214": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-215": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-216": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-217": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-218": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-219": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-22": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-220": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-221": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-222": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-223": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-224": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-225": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-226": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-227": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-228": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-229": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-23": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-230": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-231": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-232": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-233": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-234": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-235": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-236": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-237": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-238": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-239": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-24": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-240": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-241": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-242": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-243": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-244": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-245": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-246": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-247": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-248": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-249": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-25": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-250": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-251": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-252": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-253": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-254": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-255": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-256": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-257": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-258": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-259": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-26": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-260": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-261": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-262": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-263": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-264": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-265": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-266": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-267": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-268": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-269": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-27": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-270": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-271": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-272": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-273": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-274": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-275": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-276": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-277": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-278": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-279": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-28": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-280": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-281": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-282": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-283": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-284": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-285": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-286": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-287": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-288": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-289": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-29": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-290": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-291": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-292": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-293": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-294": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-295": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-296": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-297": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-298": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-299": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-3": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-30": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-300": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-301": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-302": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-303": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-304": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-305": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-306": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-307": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-308": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-309": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-31": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-310": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-311": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-312": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-313": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-314": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-315": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-316": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-317": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-318": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-319": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-32": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-320": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-321": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-33": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-34": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-35": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-36": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-37": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-38": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-39": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-4": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-40": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-41": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-42": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-43": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-44": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-45": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-46": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-47": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-48": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-49": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-5": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-50": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-51": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-52": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-53": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-54": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-55": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-56": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-57": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-58": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-59": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-6": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-60": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-61": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-62": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-63": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-64": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-65": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-66": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-67": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-68": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-69": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-7": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-70": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-71": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-72": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-73": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-74": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-75": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-76": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-77": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-78": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-79": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-8": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-80": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-81": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-82": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-83": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-84": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-85": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-86": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-87": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-88": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-89": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-9": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-90": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-91": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-92": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-93": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-94": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-95": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-96": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-97": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-98": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth-99": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth1eaeac7": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth49b6ece": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth5378b6f": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth5ab3ba6": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth696ac4c": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "veth8499b70": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "vetha9729e3": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "vethae91238": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "vethdf37ec4": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        },
+        "vethf2952c1": {
+          "candidate": 628,
+          "valid": 628,
+          "gaps": 0
+        }
+      },
+      "network_gap_intervals": 0,
+      "network_status": "observed",
+      "disk_roles": {
+        "agent_workspace": "complete",
+        "verifier_workspace": "complete",
+        "before": "unknown",
+        "after": "unknown"
+      },
+      "cache": "unsupported",
+      "supplement_status": "partial"
+    },
+    "observation_scope": "shared netns interfaces; not task/API-exclusive"
+  },
+  "cleanup_status": "confirmed",
+  "archive_status": "verified",
+  "archive_error_type": null,
+  "measurement_parse_error_type": null,
+  "acceptance_status": "complete",
+  "stop_reason": null,
+  "shared_auth_failure": false
+}

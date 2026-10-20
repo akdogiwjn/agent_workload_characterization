@@ -1,0 +1,91 @@
+{
+  "schema": "toolsandbox-pilot-preparation-manifest-v1",
+  "identity_sha256": "2a79b7710ec6d699628ad35d08993e5b1cd1cf77e3733f58e958e843737d029b",
+  "inputs": [
+    {
+      "path": "scripts/toolsandbox_measurement_volcano_01_entry.py",
+      "bytes": 249,
+      "sha256": "98072bbb2a53e2891c6fb080658e483939ee3687b95c71760574cb4219225ef7"
+    },
+    {
+      "path": "scripts/toolsandbox_resource_pilot_01_entry.py",
+      "bytes": 59059,
+      "sha256": "4d0dd271889256acb83a276433b9ce91de11aa6b973009c7e0a542d116adda33"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/toolsandbox_worker.py",
+      "bytes": 41188,
+      "sha256": "3eb3dcd4c03df82dfb2fc956936ed05a6c78854e5f3dd1a79f4e04bde5f8ee50"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/preparation.py",
+      "bytes": 22290,
+      "sha256": "f3801ed6d8c87a0adae4979ffb3c679c8b12c75784a8ab19e7d42c1885b55465"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/semantic_recorder.py",
+      "bytes": 12105,
+      "sha256": "b5921e6a287067d0f15352fede88477913f71cc122cb270bf79f5aebc69204a8"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/host_process.py",
+      "bytes": 9999,
+      "sha256": "7b05e9d89bfbbdb1ff6a246230770470992c2a5dbccb68fef81965c62d4e8c1e"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/execution_measurement.py",
+      "bytes": 46392,
+      "sha256": "fe553e543cedd4f127ee990bd909c2b661cdaa7735652eb6be301aeb31cb6849"
+    },
+    {
+      "path": "src/agent_workload_characterization/__init__.py",
+      "bytes": 95,
+      "sha256": "f8b90d73ae7ab7394c123a083e4f39fee1dbe191d32ccafc866378244286ca4a"
+    },
+    {
+      "path": "docs/trace_contract.md",
+      "bytes": 24702,
+      "sha256": "05ed40a9c2bb426ca9545bc90536a3f20f4cc62d8c5adadd3e2a81c35f09df7d"
+    },
+    {
+      "path": ".venvs/toolsandbox-pilot-01/bin/python",
+      "bytes": 67632,
+      "sha256": "e22abd8ede94ba8df9d737497b53a8840c2d78525ea2c666c81ff414c3df01ec"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/source-manifest.json",
+      "bytes": 12491,
+      "sha256": "a62c964a859fdb32602b0348c66ecc192ae7092bb2bc60fa2a9800afc929e708"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/venv-freeze.txt",
+      "bytes": 819,
+      "sha256": "de5ecf241ad89d6de7cf01f0fc75f4a4730c2ea623b7e0d9f354ea4cf3f01b59"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/plan-identity.json",
+      "bytes": 16536,
+      "sha256": "1e7f5c5c3e44f0055a9093ca8d2826bb8310fc7f22a5d8476b50ffbd110e89a6"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/frozen-identity.json",
+      "bytes": 16536,
+      "sha256": "1e7f5c5c3e44f0055a9093ca8d2826bb8310fc7f22a5d8476b50ffbd110e89a6"
+    }
+  ],
+  "input_root": "/home/lcq/agent_workload_characterization",
+  "output_root": "/home/lcq/agent_workload_characterization",
+  "execution_authorized": false
+}

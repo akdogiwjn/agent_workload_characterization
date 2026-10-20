@@ -1,0 +1,22 @@
+{
+  "collection": "LOCAL-THREE-CLASS-REPEAT-01",
+  "identity_sha256": "460c9c28e4799d864ff2aa3a2bf7cf2e272fa095eabb917f4bec4f1b45893b22",
+  "wall_s": 208.93585415999405,
+  "within_batch_budget": true,
+  "class_stops": {
+    "Coding": {
+      "reason": "required_fixed_image_missing_no_registered_local_recovery",
+      "missing_tasks": [
+        "astropy__astropy-13236",
+        "astropy__astropy-13398"
+      ],
+      "policy": "all nine class slots not_executed; no pull or substitution"
+    }
+  },
+  "global_stop": "acceptance_or_cleanup_unconfirmed:KeyError",
+  "counts": {
+    "executed": 0,
+    "failed": 1,
+    "not_executed": 26
+  }
+}

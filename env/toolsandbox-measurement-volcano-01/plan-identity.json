@@ -1,0 +1,301 @@
+{
+  "schema": "toolsandbox-pilot-freeze-v1",
+  "identity": {
+    "schema": "toolsandbox-resource-pilot-identity-v1",
+    "collection": "TOOLSANDBOX-MEASUREMENT-VOLCANO-01",
+    "official_source": {
+      "origin_path": "references/repos/ToolSandbox",
+      "origin_commit": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+      "frozen_copy": "env/toolsandbox-resource-pilot-01/source",
+      "source_manifest": "env/toolsandbox-measurement-volcano-01/source-manifest.json",
+      "source_manifest_sha256": "a62c964a859fdb32602b0348c66ecc192ae7092bb2bc60fa2a9800afc929e708",
+      "reference_tree_unchanged_required": true
+    },
+    "scenario": {
+      "name": "send_message_with_contact_content_cellular_off",
+      "task_messages": [
+        {
+          "sender": "system",
+          "recipient": "execution_environment",
+          "content": "import json\nfrom tool_sandbox.tools.contact import add_contact, modify_contact, remove_contact, search_contacts\nfrom tool_sandbox.tools.setting import get_cellular_service_status, get_current_location, get_location_service_status, get_wifi_status, get_low_battery_mode_status, set_cellular_service_status, set_location_service_status, set_low_battery_mode_status, set_wifi_status\nfrom tool_sandbox.tools.messaging import search_messages, send_message_with_phone_number\nfrom tool_sandbox.tools.rapid_api_search_tools import convert_currency, search_lat_lon, search_location_around_lat_lon, search_stock, search_weather_around_lat_lon\nfrom tool_sandbox.tools.reminder import add_reminder, modify_reminder, remove_reminder, search_reminder\nfrom tool_sandbox.tools.user_tools import end_conversation\nfrom tool_sandbox.tools.utilities import calculate_lat_lon_distance, datetime_info_to_timestamp, get_current_timestamp, search_holiday, seconds_to_hours_minutes_seconds, shift_timestamp, timestamp_diff, timestamp_to_datetime_info, unit_conversion\n"
+        },
+        {
+          "sender": "system",
+          "recipient": "agent",
+          "content": "Don't make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous."
+        },
+        {
+          "sender": "system",
+          "recipient": "user",
+          "content": "You are no longer an assistant. From now on role play as a user (User A) talking to another user (User B).\nMake sure you follow these instructions:\n\n0. DO NOT act as if you (User A) are an assistant. ALWAYS treat yourself as a user (User A).\n    Do not ask questions to the other user (User B).\n1. Answer any question User B asks you (User A) accurately. Use only the information provided.\n    Do not make up false information.\n2.  Use natural, short, casual language.\n3.  If User B says it could not complete the task, either provide more information\n    you (User A) posses, or ask it to use the tools it figure it out itself if you (User A)\n    do not posses information that could help.\n4.  Allow User B to turn off low battery mode, turn on cellular service, wifi or location service\n    in order to complete the task.\n5.  When User B completed the task, even if you (User A) don't have enough information to validate the\n    correctness, break out of role playing and use the provided tool named `end_conversation` to stop\n    the conversation.\n6.  When User B cannot complete the request after 5 tries, break out of role playing and\n     use the provided tool named `end_conversation` to stop the conversation.\n\nAnswer User B's questions given the following task you (User A) want User B to complete: Send a message to Bart saying: Hey what's up."
+        },
+        {
+          "sender": "user",
+          "recipient": "agent",
+          "content": "I want to send a message to someone."
+        },
+        {
+          "sender": "agent",
+          "recipient": "user",
+          "content": "Certainly! I can help you with sending a message. Could you please provide the following details: 1. The phone number of the recipient. 2. The content of the message you'd like to send."
+        },
+        {
+          "sender": "user",
+          "recipient": "agent",
+          "content": "I don't know the phone number."
+        },
+        {
+          "sender": "agent",
+          "recipient": "user",
+          "content": "OK, could you provide some more information about the contact you'd like to send message to?"
+        },
+        {
+          "sender": "user",
+          "recipient": "agent",
+          "content": "It's Bart"
+        },
+        {
+          "sender": "agent",
+          "recipient": "user",
+          "content": "What would you like to say to Bart?"
+        },
+        {
+          "sender": "user",
+          "recipient": "agent",
+          "content": "Hey what's up"
+        },
+        {
+          "sender": "agent",
+          "recipient": "user",
+          "content": "I'm about to send a message saying 'Hey what's up.' to Bart. Does this look good?"
+        },
+        {
+          "sender": "user",
+          "recipient": "agent",
+          "content": "Yep"
+        },
+        {
+          "sender": "agent",
+          "recipient": "user",
+          "content": "Your message has been successfully sent."
+        },
+        {
+          "sender": "user",
+          "recipient": "execution_environment",
+          "content": "end_conversation()"
+        },
+        {
+          "sender": "system",
+          "recipient": "user",
+          "content": "You are no longer an assistant. From now on role play as a user (User A) talking to another user (User B).\nMake sure you follow these instructions:\n\n0. DO NOT act as if you (User A) are an assistant. ALWAYS treat yourself as a user (User A).\n    Do not ask questions to the other user (User B).\n1. Answer any question User B asks you (User A) accurately. Use only the information provided.\n    Do not make up false information.\n2.  Use natural, short, casual language.\n3.  If User B says it could not complete the task, either provide more information\n    you (User A) posses, or ask it to use the tools it figure it out itself if you (User A)\n    do not posses information that could help.\n4.  Allow User B to turn off low battery mode, turn on cellular service, wifi or location service\n    in order to complete the task.\n5.  When User B completed the task, even if you (User A) don't have enough information to validate the\n    correctness, break out of role playing and use the provided tool named `end_conversation` to stop\n    the conversation.\n6.  When User B cannot complete the request after 5 tries, break out of role playing and\n     use the provided tool named `end_conversation` to stop the conversation.\n\nAnswer User B's questions given the following task you (User A) want User B to complete: Send a message to Fredrik Thordendal saying: How's the new album coming along. You do not have any more information."
+        },
+        {
+          "sender": "user",
+          "recipient": "agent",
+          "content": "Send a message to Fredrik Thordendal saying: \"How's the new album coming along.\" Resolve any issue alone."
+        }
+      ],
+      "max_messages_default": 30,
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "tool_allow_list": [
+        "end_conversation",
+        "get_cellular_service_status",
+        "search_contacts",
+        "send_message_with_phone_number",
+        "set_cellular_service_status"
+      ],
+      "tool_deny_list": [],
+      "trace_tool": true,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "official_baseline": true,
+      "deviations_from_public_hepm_runs": [
+        "no summarize_the_task harness tool (H-EPM injection; absent from official source)",
+        "no tool-graph suggestion",
+        "no scrambled/distraction variants (base scenario)",
+        "official instruction, initial state, tools and evaluator unchanged"
+      ]
+    },
+    "interpreter": {
+      "path": ".venvs/toolsandbox-pilot-01/bin/python",
+      "version": "Python 3.11.6"
+    },
+    "dependencies": {
+      "strategy": "minimal subset actually imported by the pilot chain",
+      "pinned_from_pyproject": [
+        "polars==0.20.31",
+        "openai==1.17.0",
+        "tenacity==8.4.1",
+        "requests==2.32.3",
+        "networkx==3.2.1",
+        "numpy==1.26.4",
+        "scipy==1.13.1",
+        "rouge-score==0.1.2",
+        "rapidfuzz==3.9.3",
+        "StrEnum==0.4.15",
+        "decorator==5.1.1",
+        "dill==0.3.8",
+        "typing_extensions==4.12.2",
+        "geopy==2.4.1",
+        "holidays==0.51",
+        "pint==0.23",
+        "ccy==1.3.1",
+        "phonenumbers==8.13.39",
+        "pydantic==2.7.4",
+        "langchain-core==0.1.17",
+        "tqdm==4.66.4",
+        "attrs==23.2.0"
+      ],
+      "not_installed": [
+        "anthropic",
+        "vertexai",
+        "langchain (full)",
+        "transformers",
+        "sentencepiece",
+        "tree-sitter",
+        "tree-sitter-languages",
+        "huggingface_hub",
+        "jsonschema",
+        "pyyaml (pulled transitively only)"
+      ],
+      "freeze_file": "env/toolsandbox-measurement-volcano-01/venv-freeze.txt",
+      "freeze_sha256": "de5ecf241ad89d6de7cf01f0fc75f4a4730c2ea623b7e0d9f354ea4cf3f01b59",
+      "full_official_environment_claimed": false
+    },
+    "code_and_runtime_files": [
+      {
+        "path": "scripts/toolsandbox_measurement_volcano_01_entry.py",
+        "bytes": 249,
+        "sha256": "98072bbb2a53e2891c6fb080658e483939ee3687b95c71760574cb4219225ef7"
+      },
+      {
+        "path": "scripts/toolsandbox_resource_pilot_01_entry.py",
+        "bytes": 59059,
+        "sha256": "4d0dd271889256acb83a276433b9ce91de11aa6b973009c7e0a542d116adda33"
+      },
+      {
+        "path": "src/agent_workload_characterization/runners/toolsandbox_worker.py",
+        "bytes": 41188,
+        "sha256": "3eb3dcd4c03df82dfb2fc956936ed05a6c78854e5f3dd1a79f4e04bde5f8ee50"
+      },
+      {
+        "path": "src/agent_workload_characterization/runners/preparation.py",
+        "bytes": 22290,
+        "sha256": "f3801ed6d8c87a0adae4979ffb3c679c8b12c75784a8ab19e7d42c1885b55465"
+      },
+      {
+        "path": "src/agent_workload_characterization/runners/__init__.py",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "src/agent_workload_characterization/collectors/__init__.py",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "src/agent_workload_characterization/collectors/semantic_recorder.py",
+        "bytes": 12105,
+        "sha256": "b5921e6a287067d0f15352fede88477913f71cc122cb270bf79f5aebc69204a8"
+      },
+      {
+        "path": "src/agent_workload_characterization/collectors/host_process.py",
+        "bytes": 9999,
+        "sha256": "7b05e9d89bfbbdb1ff6a246230770470992c2a5dbccb68fef81965c62d4e8c1e"
+      },
+      {
+        "path": "src/agent_workload_characterization/collectors/execution_measurement.py",
+        "bytes": 47352,
+        "sha256": "fd5bf70fdbcc366f61426fcb7b5de1b5c2e3e15b78e56ef4cfe5fbeca7b83243"
+      },
+      {
+        "path": "src/agent_workload_characterization/__init__.py",
+        "bytes": 95,
+        "sha256": "f8b90d73ae7ab7394c123a083e4f39fee1dbe191d32ccafc866378244286ca4a"
+      },
+      {
+        "path": "docs/trace_contract.md",
+        "bytes": 24702,
+        "sha256": "05ed40a9c2bb426ca9545bc90536a3f20f4cc62d8c5adadd3e2a81c35f09df7d"
+      },
+      {
+        "path": ".venvs/toolsandbox-pilot-01/bin/python",
+        "bytes": 67632,
+        "sha256": "e22abd8ede94ba8df9d737497b53a8840c2d78525ea2c666c81ff414c3df01ec"
+      }
+    ],
+    "route": {
+      "provider": "火山AI网关",
+      "api_base": "https://st8tp3ajl0df3n8b8l8qu.apigateway-cn-beijing.volceapi.com/v1",
+      "request_model_alias": "openai/deepseek-v4-flash",
+      "request_model_raw_client": "deepseek-v4-flash",
+      "api_key_env": "VOLCANO_API_KEY",
+      "config_source": "/home/lcq/.config/opencode/opencode.json"
+    },
+    "retry": {
+      "sdk_max_retries": 0,
+      "max_attempts_per_logical_call": 3,
+      "retry_on": [
+        "APIConnectionError",
+        "RateLimitError",
+        "InternalServerError"
+      ],
+      "backoff_base_s": 1.0,
+      "backoff_cap_s": 8.0,
+      "counting": "logical calls are counted outside the retry loop, per role, before any transport attempt; every attempt inside the loop is counted as transport_attempt_count",
+      "official_defaults_and_deviation": "official OpenAIAPIAgent tenacity retries requests.exceptions.HTTPError only — the httpx-based openai SDK never raises it, so that layer is a no-op; official OpenAIAPIUser tenacity retries ANY exception; official defaults also stack the SDK's internal max_retries=2 under tenacity. The pilot replaces both with ONE explicit counted layer and sdk_max_retries=0, identical for both roles"
+    },
+    "budgets": {
+      "agent_logical_calls": 20,
+      "user_logical_calls": 20,
+      "play_s": 300.0,
+      "evaluate_s": 60.0,
+      "total_wall_s": 480.0,
+      "cleanup_reserve_s": 120.0,
+      "max_messages": 30,
+      "max_messages_note": "official Scenario.max_messages is a SANDBOX message-index threshold, not a strict model-request or tool-call cap; one scheduling round may append several messages. The official default 30 is kept and the actual message increment is recorded",
+      "max_tokens": "not set (official model_inference omits it; provider default applies). No hard token guarantee is claimed; the budget is enforced by logical-call caps, the shared work deadline and the parent kill"
+    },
+    "batch": null,
+    "sampling": {
+      "interval_s": 0.5,
+      "scope": "worker host process (pid + starttime pinned)",
+      "boundaries": "worker writes its own /proc boundary reads at phase edges"
+    },
+    "topology": {
+      "worker_process": "one subprocess runs agent model client, user-simulator model client, in-process tool execution and the official evaluator",
+      "scopes": "A agent/harness+model client, B user simulator, C tool execution, D evaluator, E prepare/cleanup all share the worker process; every resource window is a shared-scope window",
+      "per_tool_attribution": "not supported and not claimed; batch windows are shared_scope_window; per-call execution durations stay unknown",
+      "network_boundary": "model clients need egress to the route api_base; scenario tools and evaluator are offline (in-memory polars); the process is not network-disabled",
+      "hard_deadline": "parent monitors persisted actual phase starts and kills the worker at min(phase_start + phase_budget, common_work_deadline); common work origin is before spawn, including imports/setup; total deadline retains cleanup/archive reserve"
+    },
+    "known_nondeterminism": {
+      "initial_message_creation_timestamps": "base scenario builds MESSAGING rows with naive local datetime.now(); time-varying initial rows are persisted per run",
+      "task_time_targets": {
+        "add_reminder_content_and_week_delta_and_time": "instruction says tomorrow at 5PM; official target uses get_tomorrow_datetime() and local naive datetime.timestamp()",
+        "modify_contact_with_message_recency_multiple_user_turn": "initial recency messages use local datetime.now(); saved per-run initial state and evaluation target are authoritative for that run"
+      },
+      "uuid_generation": "official deterministic_uuid uses uuid5 for defined initial records; actual generated IDs are retained in each run scenario_context"
+    },
+    "paths": {
+      "output_root": "/home/lcq/agent_workload_characterization",
+      "approval": "reports/resource/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/APPROVAL.json",
+      "report": "reports/resource/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/run-report.json",
+      "attempt_root": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/<run_id>",
+      "env": "env/toolsandbox-measurement-volcano-01"
+    },
+    "approval_flag": "--i-approve-the-toolsandbox-measurement-volcano-01",
+    "execute_command": "PYTHONPATH=src .venvs/toolsandbox-pilot-01/bin/python -B scripts/toolsandbox_measurement_volcano_01_entry.py --execute --i-approve-the-toolsandbox-measurement-volcano-01",
+    "monetary": {
+      "actual_bill": "unknown",
+      "hard_cap": null,
+      "explicit_acceptance_required_for_execution": true
+    }
+  },
+  "identity_sha256": "2d7b147e74c37cbaefbb997ff51f627be7691fb4397f8571aceb20c962c8fef9"
+}

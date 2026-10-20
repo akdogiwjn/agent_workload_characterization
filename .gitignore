@@ -75,3 +75,12 @@ data/raw/software/env01/
 /data/catalog/p1_12_closure_evidence/*
 !/data/catalog/p1_12_closure_evidence/manifest.json
 !/data/catalog/p1_12_closure_evidence/license_*
+
+# 新采样批次的逐点/逐run派生明细保留本机；上传汇总表、SVG和哈希清单
+/reports/analysis/LOCAL-THREE-CLASS-*/series/
+/reports/analysis/LOCAL-THREE-CLASS-*/per_run.jsonl
+/reports/analysis/VOLCANO-THREE-CHAIN-*/series/
+/reports/analysis/VOLCANO-THREE-CHAIN-*/per_run.jsonl
+
+# 历史错路由Office报告含认证拒绝细节；原件只留本机，不改写证据
+/reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/*-office/run-report.json

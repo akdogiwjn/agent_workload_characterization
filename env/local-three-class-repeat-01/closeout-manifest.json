@@ -1,0 +1,97 @@
+{
+  "schema": "local-three-class-closeout-manifest-v1",
+  "execution_identity_sha256": "460c9c28e4799d864ff2aa3a2bf7cf2e272fa095eabb917f4bec4f1b45893b22",
+  "inputs": [
+    {
+      "path": "env/local-three-class-repeat-01/closeout.json",
+      "bytes": 8083,
+      "sha256": "a0c124193d6075453cb2ce98604bd855758a235f7d819f5f5463cf4879d69f11"
+    },
+    {
+      "path": "env/local-three-class-repeat-01/plan-identity.json",
+      "bytes": 144838,
+      "sha256": "746f652c3025e6e0855a16210c92f77af623d9345fc790fd59f5e7cd016ee129"
+    },
+    {
+      "path": "env/local-three-class-repeat-01/frozen-identity.json",
+      "bytes": 144838,
+      "sha256": "746f652c3025e6e0855a16210c92f77af623d9345fc790fd59f5e7cd016ee129"
+    },
+    {
+      "path": "env/local-three-class-repeat-01/preparation-manifest.json",
+      "bytes": 71010,
+      "sha256": "df4cf95743da4fc2b09b4d7e6d060f5b791ecf2ff917308d0470e3fbade0b4e0"
+    },
+    {
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01/manifest.json",
+      "bytes": 2216,
+      "sha256": "bdeea91a852714ce338d351012d790ed3be2640ba0484e79575673d2465b4269"
+    },
+    {
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/manifest.json",
+      "bytes": 264003,
+      "sha256": "3bcab58c3467863bf27ee2058cb79f3a1ca5d1df4959ce98e3336ae6e3a2ad87"
+    }
+  ],
+  "current_code": [
+    {
+      "path": "scripts/coding_measurement_volcano_01_entry.py",
+      "bytes": 14354,
+      "sha256": "5c08980ccc830a3285c53e6b451d6401f057165defaec18691bec99e79a524ce"
+    },
+    {
+      "path": "scripts/local_three_class_repeat_01_entry.py",
+      "bytes": 25782,
+      "sha256": "190efb8634455c530894124e74adf9e454ca4d4b26b4c82890ddbbc15fd54085"
+    },
+    {
+      "path": "scripts/local_three_class_repeat_01_review.py",
+      "bytes": 22089,
+      "sha256": "3c959be71830e7aa1e721bc1e78993b273d271cb170f19fb1b51b5a48629d2c3"
+    },
+    {
+      "path": "scripts/volcano_three_chain_characterization.py",
+      "bytes": 53617,
+      "sha256": "1e374a07185b1f22e1bdf40331dbea96d57d0b069fbf9a2f7efab0d54f00071f"
+    },
+    {
+      "path": "tests/test_local_three_class_repeat_01.py",
+      "bytes": 7010,
+      "sha256": "03e136fc5a77e8a5332259a17893b348c0e78cfd6b678e194c6e094fccd238a4"
+    },
+    {
+      "path": "tests/test_local_three_class_repeat_01_review.py",
+      "bytes": 5501,
+      "sha256": "a04467b32013c2efeb5873ea08d44c3c8341994ec0a9c34ee4fade43657b004e"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "project_state.json",
+      "bytes": 127830,
+      "sha256": "b5cd392d062e7324ecdc2b8a0862ea67b98fc24e359d9926f5e4ed7a9fd260c9"
+    },
+    {
+      "path": "docs/current_task.md",
+      "bytes": 8821,
+      "sha256": "7732ac44574d55049e2e8ecb3b03f3d456cf3247cc4ccda19d7654f813d0b46a"
+    },
+    {
+      "path": "docs/project_status.md",
+      "bytes": 14886,
+      "sha256": "89453327e584701c47120365dea17680437019059cfb75bdb69e1a5f7df496f0"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 4594,
+      "sha256": "fff5dc42c400d0a1786c056629723f5ffe9bea8b21c89595e4f4ec142c282dfe"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5086,
+      "sha256": "2420fb5b19f2a6915f2bcc9a253a9aab46a5608d9341ceb0ee414c0670f08dcb"
+    }
+  ],
+  "snapshot_note": "Current batch gate fixed offline after stop; execution source exact hash remains in closeout snapshots, no identity rewrite or resume",
+  "manifest_does_not_self_hash": true
+}

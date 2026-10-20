@@ -1,0 +1,2457 @@
+{
+ "schema": "toolsandbox-pilot-run-report-v1",
+ "collection": "LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01",
+ "run_id": "20261017T025049Z-17-r0-assistant",
+ "identity_sha256": "ad6db92924e5adaf507a81370ebb0bc245ad6be57433d5ca6159813f6e5615af",
+ "scenario": "send_message_with_contact_content_cellular_off",
+ "run_metadata": {
+  "sequence": 17,
+  "original_sequence": 18,
+  "chain": "Assistant",
+  "round": 0,
+  "task": "send_message_with_contact_content_cellular_off"
+ },
+ "worker_exit_code": 0,
+ "killed_by_deadline": false,
+ "worker_wait_error": null,
+ "exit_code": 0,
+ "wall_s": 18.78036287,
+ "work_deadline_s": 360.0,
+ "parent_start_ns": 1131060025983572,
+ "common_work_deadline_ns": 1131420025983572,
+ "total_deadline_ns": 1131540025983572,
+ "deadline_timeout": null,
+ "cleanup": {
+  "pid": 973376,
+  "starttime_ticks": 113106002,
+  "returncode": 0,
+  "wait_reaped": true,
+  "original_process_gone": true,
+  "sampler_stopped": true,
+  "checked_monotonic_ns": 1131078791140632
+ },
+ "evaluation": {
+  "milestone_mapping": {
+   "0": [
+    21,
+    1.0
+   ],
+   "1": [
+    17,
+    1.0
+   ],
+   "2": [
+    23,
+    1.0
+   ],
+   "3": [
+    24,
+    0.760590477854836
+   ]
+  },
+  "minefield_mapping": {},
+  "milestone_similarity": 0.9401476194637091,
+  "minefield_similarity": 0,
+  "similarity": 0.9401476194637091,
+  "turn_count": 9
+ },
+ "evaluation_status": "completed",
+ "boundary_incomplete_tail": false,
+ "measurement": {
+  "span_coverage": {
+   "status": "verified",
+   "spans": {
+    "llm_request": {
+     "started": 6,
+     "timed": 6,
+     "error_terminal": 0,
+     "usage_observed": 6
+    },
+    "tool_call": {
+     "started": 5,
+     "timed": 5,
+     "error_terminal": 0,
+     "usage_observed": 0,
+     "bootstrap": 0
+    }
+   },
+   "errors": [],
+   "scope": "saved events; must also compare expected runtime/trajectory counts"
+  },
+  "right_censored_event_ids": [],
+  "worker_completion": "reported",
+  "note": "no synthetic terminal rows are appended after a deadline kill"
+ },
+ "budget_phase_report": {
+  "play_s_budget": 300.0,
+  "evaluate_s_budget": 60.0,
+  "phases": [
+   {
+    "phase": "worker_start",
+    "t_monotonic_ns": 1131060094256128,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 6,
+    "user_ticks": 5,
+    "system_ticks": 1,
+    "rss_bytes": 21217280,
+    "minor_faults": 3186,
+    "major_faults": 0,
+    "threads": 1,
+    "process_io": {
+     "rchar": 2911096,
+     "wchar": 441,
+     "read_bytes": 0,
+     "write_bytes": 4096
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 0,
+     "nonvoluntary_ctxt_switches": 1
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "transport_kind": "openai_compatible"
+   },
+   {
+    "phase": "imports_begin",
+    "t_monotonic_ns": 1131060095528495,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 6,
+    "user_ticks": 5,
+    "system_ticks": 1,
+    "rss_bytes": 21217280,
+    "minor_faults": 3186,
+    "major_faults": 0,
+    "threads": 1,
+    "process_io": {
+     "rchar": 2912840,
+     "wchar": 947,
+     "read_bytes": 0,
+     "write_bytes": 8192
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 2,
+     "nonvoluntary_ctxt_switches": 1
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    }
+   },
+   {
+    "phase": "imports_end",
+    "t_monotonic_ns": 1131061235978887,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 1175,
+    "user_ticks": 1164,
+    "system_ticks": 11,
+    "rss_bytes": 183926784,
+    "minor_faults": 35559,
+    "major_faults": 0,
+    "threads": 127,
+    "process_io": {
+     "rchar": 41921984,
+     "wchar": 1419,
+     "read_bytes": 0,
+     "write_bytes": 12288
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 9,
+     "nonvoluntary_ctxt_switches": 33
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    }
+   },
+   {
+    "phase": "play_begin",
+    "t_monotonic_ns": 1131066790016253,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 24506,
+    "user_ticks": 24112,
+    "system_ticks": 394,
+    "rss_bytes": 1176027136,
+    "minor_faults": 86158,
+    "major_faults": 0,
+    "threads": 383,
+    "process_io": {
+     "rchar": 42598105,
+     "wchar": 17228,
+     "read_bytes": 0,
+     "write_bytes": 32768
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 4845,
+     "nonvoluntary_ctxt_switches": 51
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "phase_start_ns": 1131066790003343,
+    "phase_deadline_ns": 1131366790003343,
+    "common_work_deadline_ns": 1131420025983572,
+    "deadline_kind": "play_deadline"
+   },
+   {
+    "phase": "system_setup_exec",
+    "t_monotonic_ns": 1131066799417573,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 24561,
+    "user_ticks": 24166,
+    "system_ticks": 395,
+    "rss_bytes": 1171628032,
+    "minor_faults": 86330,
+    "major_faults": 0,
+    "threads": 383,
+    "process_io": {
+     "rchar": 42599879,
+     "wchar": 17870,
+     "read_bytes": 0,
+     "write_bytes": 36864
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 4860,
+     "nonvoluntary_ctxt_switches": 51
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "ending_index": 0
+   },
+   {
+    "phase": "play_end",
+    "t_monotonic_ns": 1131076297500212,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 29349,
+    "user_ticks": 28889,
+    "system_ticks": 460,
+    "rss_bytes": 1274392576,
+    "minor_faults": 100024,
+    "major_faults": 0,
+    "threads": 384,
+    "process_io": {
+     "rchar": 42835750,
+     "wchar": 61469,
+     "read_bytes": 0,
+     "write_bytes": 61440
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 5841,
+     "nonvoluntary_ctxt_switches": 55
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "phase_end_ns": 1131076297497752
+   },
+   {
+    "phase": "evaluate_begin",
+    "t_monotonic_ns": 1131076307114966,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 29406,
+    "user_ticks": 28945,
+    "system_ticks": 461,
+    "rss_bytes": 1269501952,
+    "minor_faults": 100084,
+    "major_faults": 0,
+    "threads": 384,
+    "process_io": {
+     "rchar": 42837528,
+     "wchar": 103618,
+     "read_bytes": 0,
+     "write_bytes": 110592
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 5856,
+     "nonvoluntary_ctxt_switches": 55
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "phase_start_ns": 1131076307109626,
+    "phase_deadline_ns": 1131136307109626,
+    "common_work_deadline_ns": 1131420025983572,
+    "deadline_kind": "evaluate_deadline"
+   },
+   {
+    "phase": "evaluate_end",
+    "t_monotonic_ns": 1131077970022842,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 52952,
+    "user_ticks": 51879,
+    "system_ticks": 1073,
+    "rss_bytes": 1546653696,
+    "minor_faults": 111718,
+    "major_faults": 0,
+    "threads": 384,
+    "process_io": {
+     "rchar": 42839307,
+     "wchar": 104271,
+     "read_bytes": 0,
+     "write_bytes": 114688
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 9346,
+     "nonvoluntary_ctxt_switches": 58
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "phase_end_ns": 1131077970017092
+   },
+   {
+    "phase": "worker_end",
+    "t_monotonic_ns": 1131078047348872,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 53881,
+    "user_ticks": 52791,
+    "system_ticks": 1090,
+    "rss_bytes": 1553219584,
+    "minor_faults": 111778,
+    "major_faults": 0,
+    "threads": 384,
+    "process_io": {
+     "rchar": 42841087,
+     "wchar": 122118,
+     "read_bytes": 0,
+     "write_bytes": 143360
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 9494,
+     "nonvoluntary_ctxt_switches": 58
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "exit_code": 0
+   }
+  ],
+  "parent_observed_phase_signals": [
+   {
+    "phase": "worker_start",
+    "t_monotonic_ns": 1131060094256128,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 6,
+    "user_ticks": 5,
+    "system_ticks": 1,
+    "rss_bytes": 21217280,
+    "minor_faults": 3186,
+    "major_faults": 0,
+    "threads": 1,
+    "process_io": {
+     "rchar": 2911096,
+     "wchar": 441,
+     "read_bytes": 0,
+     "write_bytes": 4096
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 0,
+     "nonvoluntary_ctxt_switches": 1
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "transport_kind": "openai_compatible"
+   },
+   {
+    "phase": "imports_begin",
+    "t_monotonic_ns": 1131060095528495,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 6,
+    "user_ticks": 5,
+    "system_ticks": 1,
+    "rss_bytes": 21217280,
+    "minor_faults": 3186,
+    "major_faults": 0,
+    "threads": 1,
+    "process_io": {
+     "rchar": 2912840,
+     "wchar": 947,
+     "read_bytes": 0,
+     "write_bytes": 8192
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 2,
+     "nonvoluntary_ctxt_switches": 1
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    }
+   },
+   {
+    "phase": "imports_end",
+    "t_monotonic_ns": 1131061235978887,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 1175,
+    "user_ticks": 1164,
+    "system_ticks": 11,
+    "rss_bytes": 183926784,
+    "minor_faults": 35559,
+    "major_faults": 0,
+    "threads": 127,
+    "process_io": {
+     "rchar": 41921984,
+     "wchar": 1419,
+     "read_bytes": 0,
+     "write_bytes": 12288
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 9,
+     "nonvoluntary_ctxt_switches": 33
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    }
+   },
+   {
+    "phase": "play_begin",
+    "t_monotonic_ns": 1131066790016253,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 24506,
+    "user_ticks": 24112,
+    "system_ticks": 394,
+    "rss_bytes": 1176027136,
+    "minor_faults": 86158,
+    "major_faults": 0,
+    "threads": 383,
+    "process_io": {
+     "rchar": 42598105,
+     "wchar": 17228,
+     "read_bytes": 0,
+     "write_bytes": 32768
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 4845,
+     "nonvoluntary_ctxt_switches": 51
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "phase_start_ns": 1131066790003343,
+    "phase_deadline_ns": 1131366790003343,
+    "common_work_deadline_ns": 1131420025983572,
+    "deadline_kind": "play_deadline"
+   },
+   {
+    "phase": "system_setup_exec",
+    "t_monotonic_ns": 1131066799417573,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 24561,
+    "user_ticks": 24166,
+    "system_ticks": 395,
+    "rss_bytes": 1171628032,
+    "minor_faults": 86330,
+    "major_faults": 0,
+    "threads": 383,
+    "process_io": {
+     "rchar": 42599879,
+     "wchar": 17870,
+     "read_bytes": 0,
+     "write_bytes": 36864
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 4860,
+     "nonvoluntary_ctxt_switches": 51
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "ending_index": 0
+   },
+   {
+    "phase": "play_end",
+    "t_monotonic_ns": 1131076297500212,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 29349,
+    "user_ticks": 28889,
+    "system_ticks": 460,
+    "rss_bytes": 1274392576,
+    "minor_faults": 100024,
+    "major_faults": 0,
+    "threads": 384,
+    "process_io": {
+     "rchar": 42835750,
+     "wchar": 61469,
+     "read_bytes": 0,
+     "write_bytes": 61440
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 5841,
+     "nonvoluntary_ctxt_switches": 55
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "phase_end_ns": 1131076297497752
+   },
+   {
+    "phase": "evaluate_begin",
+    "t_monotonic_ns": 1131076307114966,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 29406,
+    "user_ticks": 28945,
+    "system_ticks": 461,
+    "rss_bytes": 1269501952,
+    "minor_faults": 100084,
+    "major_faults": 0,
+    "threads": 384,
+    "process_io": {
+     "rchar": 42837528,
+     "wchar": 103618,
+     "read_bytes": 0,
+     "write_bytes": 110592
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 5856,
+     "nonvoluntary_ctxt_switches": 55
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "phase_start_ns": 1131076307109626,
+    "phase_deadline_ns": 1131136307109626,
+    "common_work_deadline_ns": 1131420025983572,
+    "deadline_kind": "evaluate_deadline"
+   },
+   {
+    "phase": "evaluate_end",
+    "t_monotonic_ns": 1131077970022842,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 52952,
+    "user_ticks": 51879,
+    "system_ticks": 1073,
+    "rss_bytes": 1546653696,
+    "minor_faults": 111718,
+    "major_faults": 0,
+    "threads": 384,
+    "process_io": {
+     "rchar": 42839307,
+     "wchar": 104271,
+     "read_bytes": 0,
+     "write_bytes": 114688
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 9346,
+     "nonvoluntary_ctxt_switches": 58
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "phase_end_ns": 1131077970017092
+   },
+   {
+    "phase": "worker_end",
+    "t_monotonic_ns": 1131078047348872,
+    "pid": 973376,
+    "starttime_ticks": 113106002,
+    "cpu_ticks": 53881,
+    "user_ticks": 52791,
+    "system_ticks": 1090,
+    "rss_bytes": 1553219584,
+    "minor_faults": 111778,
+    "major_faults": 0,
+    "threads": 384,
+    "process_io": {
+     "rchar": 42841087,
+     "wchar": 122118,
+     "read_bytes": 0,
+     "write_bytes": 143360
+    },
+    "context_switches": {
+     "voluntary_ctxt_switches": 9494,
+     "nonvoluntary_ctxt_switches": 58
+    },
+    "read_status": {
+     "stat": "ok",
+     "io": "ok",
+     "status": "ok"
+    },
+    "exit_code": 0
+   }
+  ],
+  "note": "actual play/evaluate start signals are persisted before blocking; parent kills at the earlier phase/common deadline; imports/setup consume common work budget"
+ },
+ "host_sampling": {
+  "rows": 37,
+  "interval_target_s": 0.5,
+  "max_gap_ns": 500423450,
+  "nonpositive_gaps": 0,
+  "cpu_counter_regressions": 0,
+  "scope": "worker process pid+starttime; shared scope, not per-tool",
+  "resource_intervals": [
+   {
+    "t_start_ns": 1131060033009719,
+    "t_end_ns": 1131060533095084,
+    "delta_wall_s": 0.500085365,
+    "metrics": {
+     "cpu": {
+      "delta": 11.04,
+      "rate_per_s": 22.07623092509416,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 24605206.0,
+      "rate_per_s": 49202011.740535535,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 1419.0,
+      "rate_per_s": 2837.515550969983,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 12288.0,
+      "rate_per_s": 24571.80485575698,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131060533095084,
+    "t_end_ns": 1131061033092108,
+    "delta_wall_s": 0.499997024,
+    "metrics": {
+     "cpu": {
+      "delta": 0.5,
+      "rate_per_s": 1.0000059520354265,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 14136029.0,
+      "rate_per_s": 28272226.276290797,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131061033092108,
+    "t_end_ns": 1131061533108721,
+    "delta_wall_s": 0.500016613,
+    "metrics": {
+     "cpu": {
+      "delta": 20.02,
+      "rate_per_s": 40.03866967516137,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 3347550.0,
+      "rate_per_s": 6694877.555998324,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 481.0,
+      "rate_per_s": 961.968037649981,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 4096.0,
+      "rate_per_s": 8191.727821651398,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131061533108721,
+    "t_end_ns": 1131062033090184,
+    "delta_wall_s": 0.499981463,
+    "metrics": {
+     "cpu": {
+      "delta": 44.52,
+      "rate_per_s": 89.04330119134838,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131062033090184,
+    "t_end_ns": 1131062533095258,
+    "delta_wall_s": 0.500005074,
+    "metrics": {
+     "cpu": {
+      "delta": 45.82,
+      "rate_per_s": 91.63907004671715,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131062533095258,
+    "t_end_ns": 1131063033091191,
+    "delta_wall_s": 0.499995933,
+    "metrics": {
+     "cpu": {
+      "delta": 49.48,
+      "rate_per_s": 98.96080494718743,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131063033091191,
+    "t_end_ns": 1131063533098745,
+    "delta_wall_s": 0.500007554,
+    "metrics": {
+     "cpu": {
+      "delta": 51.59,
+      "rate_per_s": 103.17844118011067,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131063533098745,
+    "t_end_ns": 1131064033101228,
+    "delta_wall_s": 0.500002483,
+    "metrics": {
+     "cpu": {
+      "delta": 17.48,
+      "rate_per_s": 34.95982638950215,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131064033101228,
+    "t_end_ns": 1131064533096222,
+    "delta_wall_s": 0.499994994,
+    "metrics": {
+     "cpu": {
+      "delta": 0.49,
+      "rate_per_s": 0.9800098118582362,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131064533096222,
+    "t_end_ns": 1131065033093295,
+    "delta_wall_s": 0.499997073,
+    "metrics": {
+     "cpu": {
+      "delta": 0.5,
+      "rate_per_s": 1.0000058540342696,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131065033093295,
+    "t_end_ns": 1131065533093049,
+    "delta_wall_s": 0.499999754,
+    "metrics": {
+     "cpu": {
+      "delta": 0.5,
+      "rate_per_s": 1.000000492000242,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131065533093049,
+    "t_end_ns": 1131066033093502,
+    "delta_wall_s": 0.500000453,
+    "metrics": {
+     "cpu": {
+      "delta": 0.5,
+      "rate_per_s": 0.9999990940008209,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131066033093502,
+    "t_end_ns": 1131066533095256,
+    "delta_wall_s": 0.500001754,
+    "metrics": {
+     "cpu": {
+      "delta": 0.5,
+      "rate_per_s": 0.999996492012306,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131066533095256,
+    "t_end_ns": 1131067033102539,
+    "delta_wall_s": 0.500007283,
+    "metrics": {
+     "cpu": {
+      "delta": 5.72,
+      "rate_per_s": 11.439833367387171,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 683743.0,
+      "rate_per_s": 1367466.081489057,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 20642.0,
+      "rate_per_s": 41283.39866601503,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 28672.0,
+      "rate_per_s": 57343.16473946241,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131067033102539,
+    "t_end_ns": 1131067533094182,
+    "delta_wall_s": 0.499991643,
+    "metrics": {
+     "cpu": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131067533094182,
+    "t_end_ns": 1131068033517632,
+    "delta_wall_s": 0.50042345,
+    "metrics": {
+     "cpu": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131068033517632,
+    "t_end_ns": 1131068533094609,
+    "delta_wall_s": 0.499576977,
+    "metrics": {
+     "cpu": {
+      "delta": 8.2,
+      "rate_per_s": 16.41388690335904,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 5293.0,
+      "rate_per_s": 10594.963826765781,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 6710.0,
+      "rate_per_s": 13431.363551407214,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 4096.0,
+      "rate_per_s": 8198.936677580321,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131068533094609,
+    "t_end_ns": 1131069033093073,
+    "delta_wall_s": 0.499998464,
+    "metrics": {
+     "cpu": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131069033093073,
+    "t_end_ns": 1131069533474602,
+    "delta_wall_s": 0.500381529,
+    "metrics": {
+     "cpu": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131069533474602,
+    "t_end_ns": 1131070033091060,
+    "delta_wall_s": 0.499616458,
+    "metrics": {
+     "cpu": {
+      "delta": 7.91,
+      "rate_per_s": 15.832144584796685,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 5046.0,
+      "rate_per_s": 10099.747354599756,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 7046.0,
+      "rate_per_s": 14102.818046078059,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131070033091060,
+    "t_end_ns": 1131070533148434,
+    "delta_wall_s": 0.500057374,
+    "metrics": {
+     "cpu": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131070533148434,
+    "t_end_ns": 1131071033086517,
+    "delta_wall_s": 0.499938083,
+    "metrics": {
+     "cpu": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131071033086517,
+    "t_end_ns": 1131071533100460,
+    "delta_wall_s": 0.500013943,
+    "metrics": {
+     "cpu": {
+      "delta": 9.43,
+      "rate_per_s": 18.859474084705674,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 4792.0,
+      "rate_per_s": 9583.732748028588,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 7372.0,
+      "rate_per_s": 14743.588860281041,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 4096.0,
+      "rate_per_s": 8191.771564258159,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131071533100460,
+    "t_end_ns": 1131072033088134,
+    "delta_wall_s": 0.499987674,
+    "metrics": {
+     "cpu": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131072033088134,
+    "t_end_ns": 1131072533095927,
+    "delta_wall_s": 0.500007793,
+    "metrics": {
+     "cpu": {
+      "delta": 9.64,
+      "rate_per_s": 19.279699506603492,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 7996.0,
+      "rate_per_s": 15991.75075257277,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 7819.0,
+      "rate_per_s": 15637.756269930778,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 4096.0,
+      "rate_per_s": 8191.8723214779975,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131072533095927,
+    "t_end_ns": 1131073033267453,
+    "delta_wall_s": 0.500171526,
+    "metrics": {
+     "cpu": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131073033267453,
+    "t_end_ns": 1131073533094494,
+    "delta_wall_s": 0.499827041,
+    "metrics": {
+     "cpu": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131073533094494,
+    "t_end_ns": 1131074033092527,
+    "delta_wall_s": 0.499998033,
+    "metrics": {
+     "cpu": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131074033092527,
+    "t_end_ns": 1131074533126171,
+    "delta_wall_s": 0.500033644,
+    "metrics": {
+     "cpu": {
+      "delta": 2.39,
+      "rate_per_s": 4.77967838500083,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 5870.0,
+      "rate_per_s": 11739.210092031326,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 6887.0,
+      "rate_per_s": 13773.073237447998,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131074533126171,
+    "t_end_ns": 1131075033091314,
+    "delta_wall_s": 0.499965143,
+    "metrics": {
+     "cpu": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131075033091314,
+    "t_end_ns": 1131075533089518,
+    "delta_wall_s": 0.499998204,
+    "metrics": {
+     "cpu": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131075533089518,
+    "t_end_ns": 1131076033085791,
+    "delta_wall_s": 0.499996273,
+    "metrics": {
+     "cpu": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131076033085791,
+    "t_end_ns": 1131076533103065,
+    "delta_wall_s": 0.500017274,
+    "metrics": {
+     "cpu": {
+      "delta": 32.82,
+      "rate_per_s": 65.63773234762286,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 8892.0,
+      "rate_per_s": 17783.385619593617,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 45895.0,
+      "rate_per_s": 91786.8289486335,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 57344.0,
+      "rate_per_s": 114684.03789585878,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131076533103065,
+    "t_end_ns": 1131077033116108,
+    "delta_wall_s": 0.500013043,
+    "metrics": {
+     "cpu": {
+      "delta": 70.84,
+      "rate_per_s": 141.6763042319278,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131077033116108,
+    "t_end_ns": 1131077533106242,
+    "delta_wall_s": 0.499990134,
+    "metrics": {
+     "cpu": {
+      "delta": 70.43,
+      "rate_per_s": 140.8627795043652,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   },
+   {
+    "t_start_ns": 1131077533106242,
+    "t_end_ns": 1131078033116515,
+    "delta_wall_s": 0.500010273,
+    "metrics": {
+     "cpu": {
+      "delta": 77.03,
+      "rate_per_s": 154.05683474827327,
+      "unit": "cpu_seconds",
+      "rate_unit": "average_core",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_rchar": {
+      "delta": 1779.0,
+      "rate_per_s": 3557.9268988339363,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_wchar": {
+      "delta": 528.0,
+      "rate_per_s": 1055.9783038697688,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_read_bytes": {
+      "delta": 0.0,
+      "rate_per_s": 0.0,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     },
+     "proc_write_bytes": {
+      "delta": 8192.0,
+      "rate_per_s": 16383.663381252169,
+      "unit": "bytes",
+      "rate_unit": "bytes_per_second",
+      "status": "valid",
+      "reason": null
+     }
+    }
+   }
+  ]
+ },
+ "supplemental_measurements": "supplemental_measurements.json",
+ "worker_result": {
+  "schema": "toolsandbox-pilot-worker-result-v1",
+  "run_id": "20261017T025049Z-17-r0-assistant",
+  "scenario_name": "send_message_with_contact_content_cellular_off",
+  "transport": {
+   "kind": "openai_compatible",
+   "note": "real OpenAI-compatible route; transport attempts counted by worker layer",
+   "request_model_label": "deepseek-v4-flash",
+   "stats": {
+    "agent_requests": null,
+    "user_requests": null,
+    "note": "per-logical-call attempt counts live on llm_request spans; no transport-level hook"
+   }
+  },
+  "budgets": {
+   "agent_logical_calls": 20,
+   "user_logical_calls": 20,
+   "play_s": 300.0,
+   "evaluate_s": 60.0,
+   "total_wall_s": 480.0,
+   "cleanup_reserve_s": 120.0,
+   "max_messages": 30,
+   "max_messages_note": "official Scenario.max_messages is a SANDBOX message-index threshold, not a strict model-request or tool-call cap; one scheduling round may append several messages. The official default 30 is kept and the actual message increment is recorded",
+   "max_tokens": "not set (official model_inference omits it; provider default applies). No hard token guarantee is claimed; the budget is enforced by logical-call caps, the shared work deadline and the parent kill",
+   "official_max_messages_default": 30
+  },
+  "retry": {
+   "sdk_max_retries": 0,
+   "max_attempts_per_logical_call": 3,
+   "retry_on": [
+    "APIConnectionError",
+    "RateLimitError",
+    "InternalServerError"
+   ],
+   "backoff_base_s": 1.0,
+   "backoff_cap_s": 8.0,
+   "counting": "logical calls are counted outside the retry loop, per role, before any transport attempt; every attempt inside the loop is counted as transport_attempt_count",
+   "official_defaults_and_deviation": "official OpenAIAPIAgent tenacity retries requests.exceptions.HTTPError only — the httpx-based openai SDK never raises it, so that layer is a no-op; official OpenAIAPIUser tenacity retries ANY exception; official defaults also stack the SDK's internal max_retries=2 under tenacity. The pilot replaces both with ONE explicit counted layer and sdk_max_retries=0, identical for both roles"
+  },
+  "stop": {
+   "conversation_active": false,
+   "user_end_conversation_executed": true,
+   "reason": "user_end_conversation"
+  },
+  "initial_max_sandbox_message_index": 15,
+  "final_max_sandbox_message_index": 26,
+  "counts": {
+   "agent_logical_calls": 5,
+   "user_logical_calls": 1,
+   "tool_call_executions": 6,
+   "tool_batches": {
+    "started": 5,
+    "closed": 5,
+    "error": 0,
+    "unclosed": 0
+   },
+   "logical_tool_calls": {
+    "started": 5,
+    "closed": 5,
+    "error": 0,
+    "unclosed": 0
+   }
+  },
+  "evaluation": {
+   "milestone_mapping": {
+    "0": [
+     21,
+     1.0
+    ],
+    "1": [
+     17,
+     1.0
+    ],
+    "2": [
+     23,
+     1.0
+    ],
+    "3": [
+     24,
+     0.760590477854836
+    ]
+   },
+   "minefield_mapping": {},
+   "milestone_similarity": 0.9401476194637091,
+   "minefield_similarity": 0,
+   "similarity": 0.9401476194637091,
+   "turn_count": 9
+  },
+  "failure": null,
+  "worker_exit_code": 0,
+  "measurement": {
+   "span_coverage": {
+    "status": "verified",
+    "spans": {
+     "llm_request": {
+      "started": 6,
+      "timed": 6,
+      "error_terminal": 0,
+      "usage_observed": 6
+     },
+     "tool_call": {
+      "started": 5,
+      "timed": 5,
+      "error_terminal": 0,
+      "usage_observed": 0,
+      "bootstrap": 0
+     }
+    },
+    "errors": [],
+    "scope": "saved events; must also compare expected runtime/trajectory counts"
+   }
+  },
+  "known_nondeterminism": {
+   "initial_message_creation_timestamps": "base scenario builds MESSAGING rows with naive local datetime.now(); time-varying initial rows are persisted per run",
+   "task_time_targets": {
+    "add_reminder_content_and_week_delta_and_time": "instruction says tomorrow at 5PM; official target uses get_tomorrow_datetime() and local naive datetime.timestamp()",
+    "modify_contact_with_message_recency_multiple_user_turn": "initial recency messages use local datetime.now(); saved per-run initial state and evaluation target are authoritative for that run"
+   },
+   "uuid_generation": "official deterministic_uuid uses uuid5 for defined initial records; actual generated IDs are retained in each run scenario_context"
+  }
+ },
+ "archive_verification": {
+  "valid": true,
+  "errors": []
+ },
+ "actual_bill": "unknown",
+ "worker_window_wall_s": 18.76515706,
+ "within_total_budget": true,
+ "wall_scope": "parent start through cleanup and raw archive verification; final report/outer-manifest writes follow this snapshot",
+ "remaining_cleanup_archive_s": 461.23484294
+}

@@ -1,0 +1,658 @@
+{
+  "schema": "volcano-three-chain-validation-closeout-v1",
+  "closed_at_utc": "2026-10-16T14:12:20.231879+00:00",
+  "status": "stopped_after_office_critical_disk_measurement_gap",
+  "stop_reason": "Office /root/submission before_agent and after_agent scans returned container_scan_command_failed; no downstream attempt permitted",
+  "attempts_executed": 1,
+  "not_executed": 2,
+  "no_attempt_rerun": true,
+  "offline_tests": {
+    "probe_environment_tests": 15,
+    "route_namespace_profile_tests": 7,
+    "shared_office_entry_tests": 25,
+    "total_passed": 47,
+    "failed": 0,
+    "not_completed_in_final_selected_suite": 0,
+    "diagnostic_timeouts_not_counted_as_tests": "sandbox diagnostic children bounded and reaped; not successful test runs"
+  },
+  "diagnosis": {
+    "observed_office_fake_stall": "Harbor/LiteLLM at litellm/main.py:612 await loop.run_in_executor(...), executor worker idle; minimal asyncio thread completion/shutdown also hangs in sandbox",
+    "environment_control": "same minimal example completes in approximately 0.22s outside sandbox; 15 full isolated probe tests pass outside sandbox with socket/connect/getaddrinfo guards",
+    "no_harbor_response_mock": true,
+    "fixes": [
+      "native SDK HTTP module capability detection per interpreter",
+      "instance-bound Tenacity retry_with copy; finally restores without mutating shared stop",
+      "single-request sync/async forwarding counter: cap before forwarding and exception checkpoint",
+      "actual Agent parser plus RecorderContext; cached clients closed in live event loop",
+      "Office outer report collection uses profile.collection"
+    ],
+    "disk_static_candidate": {
+      "office_handle_cwd": "ContainerSpec default /testbed retained by Office handle",
+      "actual_exec_argv_prefix": "docker exec -w /testbed <this_run_container> bash -lc <boundary_scan>",
+      "status": "static candidate only; saved failure lacks command returncode/output; exact execution error unknown; no runtime fix/retry"
+    }
+  },
+  "probes": [
+    {
+      "probe": "office",
+      "file": {
+        "path": "env/docops-measurement-volcano-01/protocol-probe-environment-fixed.json",
+        "bytes": 3809,
+        "sha256": "64035b03c47fb615e35b8c3c310521c179578593b86bddd627252bcdfba39272"
+      },
+      "status": "passed",
+      "environment": {
+        "probe": "office",
+        "sys_executable": "/home/lcq/agent_workload_characterization/.venvs/docops-pilot-01/bin/python",
+        "python_version": "3.12.14",
+        "versions": {
+          "openai": "3.26.0",
+          "httpx": "0.28.1",
+          "httpx2": "2.13.1",
+          "litellm": "1.83.0",
+          "harbor": "0.4.0"
+        },
+        "module_files": {
+          "openai": "/home/lcq/agent_workload_characterization/.venvs/docops-pilot-01/lib/python3.12/site-packages/openai/__init__.py",
+          "httpx": "/home/lcq/agent_workload_characterization/.venvs/docops-pilot-01/lib/python3.12/site-packages/httpx/__init__.py",
+          "httpx2": "/home/lcq/agent_workload_characterization/.venvs/docops-pilot-01/lib/python3.12/site-packages/httpx2/__init__.py",
+          "litellm": "/home/lcq/agent_workload_characterization/.venvs/docops-pilot-01/lib/python3.12/site-packages/litellm/__init__.py",
+          "harbor.llms.lite_llm": "/home/lcq/agent_workload_characterization/.venvs/docops-pilot-01/lib/python3.12/site-packages/harbor/llms/lite_llm.py"
+        }
+      },
+      "counts": {
+        "send_observation": {
+          "boundary": "http_client_single_request_transport_dispatch",
+          "covered_clients": [
+            "httpx.Client",
+            "httpx.AsyncClient",
+            "httpx2.Client",
+            "httpx2.AsyncClient"
+          ],
+          "boundary_entries": 1,
+          "forwarded_attempts": 1,
+          "blocked_attempts": 0,
+          "responses_received": 1,
+          "remote_service_receipt": "unknown",
+          "wrappers_restored": true
+        }
+      },
+      "response_model": "deepseek-v4-flash-ga-260731",
+      "parsed_action": "finish",
+      "tool_calls": null
+    },
+    {
+      "probe": "assistant",
+      "file": {
+        "path": "env/toolsandbox-measurement-volcano-01/protocol-probe-environment-fixed.json",
+        "bytes": 2837,
+        "sha256": "ae59106ed57848c38e1a01b72db7c309bb6da2f7e25bf43a547e92d0d7a9bd1a"
+      },
+      "status": "passed",
+      "environment": {
+        "probe": "assistant",
+        "sys_executable": "/home/lcq/agent_workload_characterization/.venvs/toolsandbox-pilot-01/bin/python",
+        "python_version": "3.11.6",
+        "versions": {
+          "openai": "1.17.0",
+          "httpx": "0.27.2",
+          "httpx2": null,
+          "litellm": null,
+          "harbor": null
+        },
+        "module_files": {
+          "openai": "/home/lcq/agent_workload_characterization/.venvs/toolsandbox-pilot-01/lib64/python3.11/site-packages/openai/__init__.py",
+          "httpx": "/home/lcq/agent_workload_characterization/.venvs/toolsandbox-pilot-01/lib64/python3.11/site-packages/httpx/__init__.py"
+        }
+      },
+      "counts": {
+        "send_observation": {
+          "boundary": "http_client_single_request_transport_dispatch",
+          "covered_clients": [
+            "httpx.Client",
+            "httpx.AsyncClient"
+          ],
+          "boundary_entries": 1,
+          "forwarded_attempts": 1,
+          "blocked_attempts": 0,
+          "responses_received": 1,
+          "remote_service_receipt": "unknown",
+          "wrappers_restored": true
+        }
+      },
+      "response_model": "deepseek-v4-flash-ga-260731",
+      "parsed_action": null,
+      "tool_calls": [
+        {
+          "id": "call_zfmrmaimf5c4y3fel9vilb12",
+          "name": "probe_noop",
+          "arguments": "{\"ok\": true}"
+        }
+      ]
+    }
+  ],
+  "identity": {
+    "office": "5bf20f90530a546412c1825dcffdba1acd5c8c94bd7a248642f2144509f0187f",
+    "coding": "94854d53746d3ce190a7d99a5efc2eaa6046fc801592aca9c3a772fc95f8c764",
+    "assistant": "2a79b7710ec6d699628ad35d08993e5b1cd1cf77e3733f58e958e843737d029b",
+    "all_live_plan_frozen_full_structures_checked_equal": true,
+    "only_office_refrozen_due_to_profile_collection_fix": true,
+    "old_office_identity": "8910f2519db78161fbac9a1d26f329b3a95e2e49daaa3118397be47aaaf9cf27",
+    "old_preparation_snapshot": [
+      {
+        "path": "env/docops-measurement-volcano-01/pre-environment-repair-identity/plan-identity.json",
+        "bytes": 35816,
+        "sha256": "c19bbe2a0d18b183f34ce15d930dd383aa3086fb8b9a1de6e500c1cc9416aa35"
+      },
+      {
+        "path": "env/docops-measurement-volcano-01/pre-environment-repair-identity/frozen-identity.json",
+        "bytes": 35816,
+        "sha256": "c19bbe2a0d18b183f34ce15d930dd383aa3086fb8b9a1de6e500c1cc9416aa35"
+      },
+      {
+        "path": "env/docops-measurement-volcano-01/pre-environment-repair-identity/preparation-manifest.json",
+        "bytes": 26260,
+        "sha256": "e31e4f72127bd210ccd97c3b10bfb8349118ba141c1a46c7ac29544e5756cece"
+      }
+    ]
+  },
+  "runs": [
+    {
+      "chain": "Office",
+      "run_id": "20261016T140640Z-excel001",
+      "identity_sha256": "5bf20f90530a546412c1825dcffdba1acd5c8c94bd7a248642f2144509f0187f",
+      "entry_exit_code": 0,
+      "measurement": "partial",
+      "critical_gaps": {
+        "before_agent": {
+          "status": "partial",
+          "reason": "container_scan_command_failed",
+          "bytes": null,
+          "read_wall_ns": 51044036
+        },
+        "after_agent": {
+          "status": "partial",
+          "reason": "container_scan_command_failed",
+          "bytes": null,
+          "read_wall_ns": 101465363
+        }
+      },
+      "task_reward": 1,
+      "termination": "finish",
+      "infra_failures": [],
+      "attempt_wall_s": 95.17,
+      "within_total_budget": true,
+      "sample_count": 166,
+      "sample_window_ns": [
+        1085211638394192,
+        1085293667454919
+      ],
+      "sample_window_s": 82.029060727,
+      "cpu_core_s": 6.746343,
+      "container_memory_current_peak_bytes": 68308992,
+      "kernel_memory_peak_bytes": 76537856,
+      "host_shared_rss_peak_bytes": 181051392,
+      "container_io_read_delta_bytes": 0,
+      "container_io_write_delta_bytes": 40960,
+      "host_cpu_s": 2.04,
+      "host_clk_tck": 100,
+      "rate_coverage": {
+        "container": {
+          "cpu": {
+            "candidate": 165,
+            "valid": 165,
+            "gap_reasons": {}
+          },
+          "io_read": {
+            "candidate": 165,
+            "valid": 165,
+            "gap_reasons": {}
+          },
+          "io_write": {
+            "candidate": 165,
+            "valid": 165,
+            "gap_reasons": {}
+          }
+        },
+        "host_agent_process": {
+          "cpu": {
+            "candidate": 165,
+            "valid": 165,
+            "gap_reasons": {}
+          },
+          "proc_rchar": {
+            "candidate": 165,
+            "valid": 165,
+            "gap_reasons": {}
+          },
+          "proc_wchar": {
+            "candidate": 165,
+            "valid": 165,
+            "gap_reasons": {}
+          },
+          "proc_read_bytes": {
+            "candidate": 165,
+            "valid": 165,
+            "gap_reasons": {}
+          },
+          "proc_write_bytes": {
+            "candidate": 165,
+            "valid": 165,
+            "gap_reasons": {}
+          }
+        }
+      },
+      "phase_windows": {
+        "setup": {
+          "wall_s": 0.35799405,
+          "shared_container_cpu_core_s": 0.025288
+        },
+        "agent": {
+          "wall_s": 80.319168216,
+          "shared_container_cpu_core_s": 5.638057
+        },
+        "verifier": {
+          "wall_s": 1.297848685,
+          "shared_container_cpu_core_s": 1.071461
+        },
+        "stop": {
+          "wall_s": 10.241131748,
+          "shared_container_cpu_core_s": null
+        }
+      },
+      "logical_requests": 7,
+      "request_response_models": {
+        "deepseek-v4-flash-0731": 4,
+        "deepseek-v4-flash-ga-260731": 3
+      },
+      "request_model": "openai/deepseek-v4-flash",
+      "transport_attempts": null,
+      "transport_reason": "no formal-runtime transport hook; probe-only count does not cover task",
+      "bootstrap_tools": 2,
+      "autonomous_tools": 6,
+      "tools": [
+        {
+          "role": "bootstrap",
+          "name": "get_task_metadata",
+          "ok": true,
+          "event_id": "8bac6da4c70c4aa89a0f15d9087d6419"
+        },
+        {
+          "role": "bootstrap",
+          "name": "inspect_document",
+          "ok": true,
+          "event_id": "70fe528acc7a4ec6b39072f46cbbadb7"
+        },
+        {
+          "role": "agent",
+          "name": "copy_file",
+          "ok": true,
+          "event_id": "ff2fe3d4b4884c66a05d1abce3f97b13"
+        },
+        {
+          "role": "agent",
+          "name": "xlsx_read_sheet",
+          "ok": true,
+          "event_id": "f0c14d61a5584de2841770d42ba57a24"
+        },
+        {
+          "role": "agent",
+          "name": "xlsx_read_sheet",
+          "ok": true,
+          "event_id": "174f9acb12b24be6bfcd72bd99d8167f"
+        },
+        {
+          "role": "agent",
+          "name": "xlsx_set_formula",
+          "ok": true,
+          "event_id": "d2cd575f36164b6d892740f7d1b18ebe"
+        },
+        {
+          "role": "agent",
+          "name": "xlsx_set_formula",
+          "ok": true,
+          "event_id": "e7728c7b481f4c0c95079c789ffe3f1e"
+        },
+        {
+          "role": "agent",
+          "name": "xlsx_read_sheet",
+          "ok": true,
+          "event_id": "201e973a32b747f6a3009b6be4a3ecfe"
+        }
+      ],
+      "paired_requests": 7,
+      "paired_tools": 8,
+      "pairing_errors": [],
+      "last_tool_return_saved": true,
+      "requests_after_finish": 0,
+      "network": {
+        "status": "observed",
+        "scope": "current process network namespace; shared by all processes in namespace",
+        "scope_kind": "network_namespace_shared",
+        "counter_basis": "kernel interface tx/rx bytes; not HTTP payload, TLS bytes, or PID-exclusive traffic",
+        "interval_target_s": 0.5,
+        "sample_count": 188,
+        "valid_metric_interval_count": 126786,
+        "metric_gap_count": 0,
+        "metric_gap_reasons": {},
+        "read_wall_ns": 2128236604,
+        "sampler_stopped": true,
+        "unsupported": {
+          "container_netns": "not observed by this host process sampler",
+          "per_pid_bytes": "not available from /proc/net/dev",
+          "http_application_bytes": "not instrumented"
+        },
+        "namespace_ids": [
+          "net:[4026531840]"
+        ],
+        "interface_count": 339,
+        "window_ns": [
+          1085210663204199,
+          1085303935600301
+        ]
+      },
+      "host_disk_paths": [
+        {
+          "role": "attempt_output",
+          "scope": "host_visible_trial_and_archive",
+          "before": {
+            "role": "attempt_output",
+            "scope": "host_visible_trial_and_archive",
+            "ownership": "run_scoped",
+            "path": "/home/lcq/agent_workload_characterization/data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-01/20261016T140640Z-excel001",
+            "size_basis": "apparent_file_size_bytes",
+            "status": "complete",
+            "bytes": 300,
+            "observed_subtotal_bytes": 300,
+            "files_seen": 1,
+            "symlinks_skipped": 0,
+            "scan_started_monotonic_ns": 1085210663133768,
+            "scan_wall_ns": 57871
+          },
+          "after": {
+            "role": "attempt_output",
+            "scope": "host_visible_trial_and_archive",
+            "ownership": "run_scoped",
+            "path": "/home/lcq/agent_workload_characterization/data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-01/20261016T140640Z-excel001",
+            "size_basis": "apparent_file_size_bytes",
+            "status": "complete",
+            "bytes": 373291,
+            "observed_subtotal_bytes": 373291,
+            "files_seen": 16,
+            "symlinks_skipped": 0,
+            "scan_started_monotonic_ns": 1085304268008587,
+            "scan_wall_ns": 305064
+          },
+          "delta_bytes": 372991,
+          "delta_status": "observed"
+        },
+        {
+          "role": "shared_task_cache",
+          "scope": "host_and_container",
+          "before": {
+            "role": "shared_task_cache",
+            "scope": "host_and_container",
+            "ownership": "shared_unassigned",
+            "path": null,
+            "size_basis": "apparent_file_size_bytes",
+            "status": "unsupported",
+            "bytes": null,
+            "observed_subtotal_bytes": 0,
+            "files_seen": 0,
+            "symlinks_skipped": 0,
+            "scan_started_monotonic_ns": 1085210663194389,
+            "scan_wall_ns": 2070,
+            "reason": "no_task_exclusive_cache_path_registered"
+          },
+          "after": {
+            "role": "shared_task_cache",
+            "scope": "host_and_container",
+            "ownership": "shared_unassigned",
+            "path": null,
+            "size_basis": "apparent_file_size_bytes",
+            "status": "unsupported",
+            "bytes": null,
+            "observed_subtotal_bytes": 0,
+            "files_seen": 0,
+            "symlinks_skipped": 0,
+            "scan_started_monotonic_ns": 1085304268315421,
+            "scan_wall_ns": 3790,
+            "reason": "no_task_exclusive_cache_path_registered"
+          },
+          "delta_bytes": null,
+          "delta_status": "unavailable_or_partial"
+        }
+      ],
+      "task_workspace_disk": {
+        "before_agent": {
+          "status": "partial",
+          "reason": "container_scan_command_failed",
+          "bytes": null,
+          "read_wall_ns": 51044036
+        },
+        "after_agent": {
+          "status": "partial",
+          "reason": "container_scan_command_failed",
+          "bytes": null,
+          "read_wall_ns": 101465363
+        }
+      },
+      "cleanup": {
+        "removal": "removed",
+        "stop_error": null,
+        "image_retained": true,
+        "image_id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+        "sampler_stopped": true,
+        "network_sampler_stopped": true
+      },
+      "archive_valid": true
+    },
+    {
+      "chain": "Coding",
+      "status": "not_executed",
+      "approval_created": false,
+      "attempt_created": false,
+      "reason": "upstream Office critical task disk-occupancy observation failed"
+    },
+    {
+      "chain": "Assistant",
+      "status": "not_executed",
+      "approval_created": false,
+      "attempt_created": false,
+      "reason": "upstream Office critical task disk-occupancy observation failed"
+    }
+  ],
+  "archive_verification": [
+    {
+      "manifest": {
+        "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-01/20261016T140640Z-excel001/manifest.json",
+        "bytes": 25679,
+        "sha256": "92752408f9a5366812bc318bc67da52f8065a2a5eb2a392a681a817a65208650"
+      },
+      "verified": {
+        "inputs": 103,
+        "outputs": 21
+      },
+      "status": "pass"
+    },
+    {
+      "manifest": {
+        "path": "reports/resource/DOCOPS-MEASUREMENT-VOLCANO-01/manifest.json",
+        "bytes": 1123,
+        "sha256": "b87ff80e8e2456f42cc3a13e3f29436ec722bd62424537517f6fedd0ac30e67f"
+      },
+      "verified": {
+        "inputs": 4,
+        "outputs": 1
+      },
+      "status": "pass"
+    },
+    {
+      "manifest": {
+        "path": "env/docops-measurement-volcano-01/preparation-manifest.json",
+        "bytes": 26260,
+        "sha256": "f57ddcbc4865ecfd83199064fd89c2a7375036738081d3bbd4d0b689b319f337"
+      },
+      "verified": {
+        "inputs": 103,
+        "outputs": 2
+      },
+      "status": "pass"
+    }
+  ],
+  "protected_previous_records": [
+    {
+      "path": "env/docops-measurement-volcano-01/protocol-probe.json",
+      "bytes": 107,
+      "sha256": "8b281ca5e0d34d6c772c1b48b720ec4112f77a2ca1c819aa5122381f07aa9d8d"
+    },
+    {
+      "path": "env/docops-measurement-volcano-01/validation-stop.json",
+      "bytes": 1396,
+      "sha256": "14fd773696ea11d119591cbc3d074c52a5210ad8cc37643c4392b02397d5ec0e"
+    },
+    {
+      "path": "env/docops-measurement-volcano-01/probe-repair-offline.json",
+      "bytes": 3617,
+      "sha256": "3c590a48539e960ba6b22cea3368da59d375bb8f7b2896efe8a886834c0e6358"
+    }
+  ],
+  "source_snapshots": [
+    {
+      "path": "env/docops-measurement-volcano-01/probe-environment-repair-source/docops_measurement_validate_01_entry.py",
+      "bytes": 19822,
+      "sha256": "9488ea482914fbdd3583ded83af1af913f0eecaa546ccfd809d5579a3e807a92"
+    },
+    {
+      "path": "env/docops-measurement-volcano-01/probe-environment-repair-source/probe_volcano_protocols.py",
+      "bytes": 17641,
+      "sha256": "8fbc7aa9eabde785a8486325691914a0c76513c3ad66ad5431fe51575076bad3"
+    },
+    {
+      "path": "env/docops-measurement-volcano-01/probe-environment-repair-source/test_measurement_volcano_routes.py",
+      "bytes": 6214,
+      "sha256": "fa376ce0199c28e5a3328cc314f5ff7ae00cb6a517c9fde5f49d2120e39701c5"
+    },
+    {
+      "path": "env/docops-measurement-volcano-01/probe-environment-repair-source/test_probe_volcano_protocols.py",
+      "bytes": 13885,
+      "sha256": "2400b87c71f0c41d4e094a253ad933d0a718ce0b1a96a0ac116a31cefcd5db40"
+    }
+  ],
+  "history_protection_scope": "exact old probe/stop/offline records and preparation/source snapshots hash-checked; no writes to historical raw/reports/references; not a re-audit of all historical datasets",
+  "inputs": [
+    {
+      "path": "env/docops-measurement-volcano-01/plan-identity.json",
+      "bytes": 35816,
+      "sha256": "f81fd02ff352a84b6bf6be88353c92d170f898b2aea00ccc6c947ee966c66363"
+    },
+    {
+      "path": "env/docops-measurement-volcano-01/frozen-identity.json",
+      "bytes": 35816,
+      "sha256": "f81fd02ff352a84b6bf6be88353c92d170f898b2aea00ccc6c947ee966c66363"
+    },
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VOLCANO-01/APPROVAL.json",
+      "bytes": 903,
+      "sha256": "ec13a01426937a9b3597b0c274e839ec4850c617985aa6cc6835a3f93f15ae5e"
+    },
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VOLCANO-01/run-report.json",
+      "bytes": 825321,
+      "sha256": "3971d927c2c7fc7f1839346a8261967b4d27c01850d4d4e1f5d7714537182b32"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-01/20261016T140640Z-excel001/summary.json",
+      "bytes": 646303,
+      "sha256": "60c5005d6e75eab6b859f428f840cb1ae8f83cedb9610a40506883f9783c2327"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-01/20261016T140640Z-excel001/measurement.json",
+      "bytes": 356130,
+      "sha256": "04ff4c6f0db89c6a4428436d01c8dca92440522911dc7d080a63a50d52d855d7"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-01/20261016T140640Z-excel001/environment.json",
+      "bytes": 4553,
+      "sha256": "b4d76e5b35731af0808570446b67baa034408e44a7e7773284dc578662788547"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-01/20261016T140640Z-excel001/supplemental_measurements.json",
+      "bytes": 31002070,
+      "sha256": "a5c5cdf414426a8febb196c3b844f247c2bcd455f127f37b5dc6c3acb635aed1"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-01/20261016T140640Z-excel001/ATTEMPT_STARTED.json",
+      "bytes": 300,
+      "sha256": "7f2f974d6fd87f27f1713c5d8f8e9b6f9245fefd88370dbf62c0969049f0af13"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-01/20261016T140640Z-excel001/ATTEMPT_COMPLETED.json",
+      "bytes": 201,
+      "sha256": "603e134972d685d36e55889428e72e2582fe1376c57d4d010d3aec04db993edd"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-01/20261016T140640Z-excel001/agent/events.jsonl",
+      "bytes": 27610,
+      "sha256": "04f01a3ad78d8318364b05b99d78d6c9018027468c6fe2fe015161857888d58e"
+    }
+  ],
+  "analysis_and_probe_code": [
+    {
+      "path": "scripts/probe_volcano_protocols.py",
+      "bytes": 17542,
+      "sha256": "6d7062d0278eaecf7aaa02d4f9ad4aa2bfd0418ce3098af0c8a6ff348c56389f"
+    },
+    {
+      "path": "tests/test_probe_volcano_protocols.py",
+      "bytes": 11813,
+      "sha256": "fdd6d17201d448077403ca8b07580079e3c20cc7ac05f33735c50d65af9c0844"
+    },
+    {
+      "path": "scripts/docops_measurement_validate_01_entry.py",
+      "bytes": 19830,
+      "sha256": "d2b97c64cd11b6ec3774c36243f67760d67a2d02c9b3d3ae38a9e2d0096cc12b"
+    },
+    {
+      "path": "tests/test_measurement_volcano_routes.py",
+      "bytes": 7759,
+      "sha256": "5cd23300aa499dc27b0f361dab3faa9ba45d4fadda7cc405929801c04719233a"
+    }
+  ],
+  "limitations": [
+    "Shared netns interface traffic only, not task/API-exclusive bytes; no cross-interface sum",
+    "Formal HTTP attempts and billing unknown",
+    "Container/host scopes shared; no exclusive per-tool attribution",
+    "Office task disk bytes unavailable; no backfill from current host-directory size",
+    "Coding and Assistant new resource paths not live-validated in this authorization",
+    "Gates unchanged; CPU-02 and Replay paused; no HTML or Git commit"
+  ],
+  "execution_commands": {
+    "office": "PYTHONPATH=src LITELLM_LOCAL_MODEL_COST_MAP=True .venvs/docops-pilot-01/bin/python -B scripts/docops_measurement_volcano_01_entry.py --execute --i-approve-the-docops-measurement-volcano-01",
+    "coding": "not_executed",
+    "assistant": "not_executed"
+  },
+  "image_inspection_before_office": {
+    "endpoint": "unix:///var/run/docker.sock",
+    "returncode": 0,
+    "all_complete_ids_and_architectures_match": true,
+    "images": [
+      {
+        "reference": "harbor-claude-code-base:2.1.114",
+        "id": "sha256:062bf50871c0e9d7d4a175643343746f27c785732596252d7ebe9ae0c08fe9b1",
+        "platform": "linux/arm64"
+      },
+      {
+        "reference": "docops-office-repeat-01:excel001",
+        "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+        "platform": "linux/arm64"
+      },
+      {
+        "reference": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+        "id": "sha256:bba60201758effbb3e4795367d470e3d0e00427f0e2e86636801b9f93df0b664",
+        "platform": "linux/arm64"
+      }
+    ],
+    "restoration_builds": 0
+  }
+}

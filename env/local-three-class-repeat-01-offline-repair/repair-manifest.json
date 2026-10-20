@@ -1,0 +1,103 @@
+{
+  "schema": "local-three-class-offline-repair-v1",
+  "date": "2026-10-17",
+  "scope": "offline repair and reanalysis only",
+  "tests": {
+    "continuation_acceptance": 11,
+    "combined_review": 7,
+    "existing_resource_plot_regression": 8,
+    "total_passed": 26
+  },
+  "verification": {
+    "v2_manifest_inputs": 575,
+    "v2_manifest_analysis_code": 8,
+    "v2_manifest_outputs": 65,
+    "hash_errors": 0,
+    "protected_files_unchanged": 532,
+    "svg_xml_valid": 36,
+    "local_links_valid": 46,
+    "ast_compile_checked_files": 4
+  },
+  "corrections": [
+    "Office explicit per-run route propagation and fail-closed checks before client/credentials/attempt",
+    "Recognize both structured exception fields and SemanticRecorder fixed sanitized BadRequestError class; conservatively stop",
+    "Skipped verifier lifecycle is not_applicable, not missing CPU/workspace",
+    "Aggregate CPU/memory by scope role while retaining unique scope IDs",
+    "Original Excel route is explicitly Volcano, not the old DeepSeek default"
+  ],
+  "history_policy": "No old raw/report/approval/frozen identity edits or re-freezing. Exact pre-edit source snapshots preserve v1 code identities. Archived stop/partial statuses coexist with independent corrected assessment.",
+  "execution": {
+    "new_attempts": 0,
+    "api_calls": 0,
+    "docker_operations": 0,
+    "credential_reads": 0,
+    "live_fix_validation": false,
+    "html_updated": false,
+    "git_committed": false
+  },
+  "remaining": {
+    "unexecuted_coding_slots": 4,
+    "office_route_mismatch_attempts": 8,
+    "credential_misrouting_risk": "Recommend rotating the affected Volcano key before future use; not read or rotated here"
+  },
+  "inputs": [
+    {
+      "path": "env/local-three-class-repeat-01-offline-repair/source-before/scripts__local_three_class_repeat_01_continuation_01_entry.py",
+      "bytes": 60405,
+      "sha256": "ea36c28df33012cf97480670e2ec5bba6cd585b779fd8e02abf5c1fdddda0d59"
+    },
+    {
+      "path": "env/local-three-class-repeat-01-offline-repair/source-before/scripts__local_three_class_repeat_01_combined_review.py",
+      "bytes": 45702,
+      "sha256": "307b5e1cf1736952d163456d8658bba4cdb40c9df42c64361dbd1aca0c7552df"
+    },
+    {
+      "path": "env/local-three-class-repeat-01-offline-repair/source-before/tests__test_local_three_class_repeat_01_continuation_01.py",
+      "bytes": 6553,
+      "sha256": "97305c7d0f931de2dc81bacb02101df4de6681f6cec96841f2cc5158af3b7168"
+    },
+    {
+      "path": "env/local-three-class-repeat-01-offline-repair/source-before/tests__test_local_three_class_repeat_01_combined_review.py",
+      "bytes": 3363,
+      "sha256": "85e73597a5b0ae319dc92a9184e831f3050ac908e2fed9799a6604105c0a7b70"
+    },
+    {
+      "path": "env/local-three-class-repeat-01-offline-repair/protected-before.json",
+      "bytes": 127066,
+      "sha256": "0af30cb1c64aa19d90c61ef4eea8211f495687c3e58f3f1cb49888889cc4664c"
+    },
+    {
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/manifest.json",
+      "bytes": 142349,
+      "sha256": "77a0fac08d0fc61b2341d5fa3432aadc29950dec2ac2924f9185e28bd4ddbcf2"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "scripts/local_three_class_repeat_01_continuation_01_entry.py",
+      "bytes": 63993,
+      "sha256": "865eaf8f0d35fda03a44b41cd812c2980d4cdc27eeeabbe7af5435ce507ca8cb"
+    },
+    {
+      "path": "scripts/local_three_class_repeat_01_combined_review.py",
+      "bytes": 50718,
+      "sha256": "2b5a52142df469ad97d952eff4cc626bd6cc72fe7921b39015d273026d17be29"
+    },
+    {
+      "path": "tests/test_local_three_class_repeat_01_continuation_01.py",
+      "bytes": 12816,
+      "sha256": "cc8c294a888f8d610d30a3b313ad09249ed8ffb2f6ab4618bf0ea1431d792c98"
+    },
+    {
+      "path": "tests/test_local_three_class_repeat_01_combined_review.py",
+      "bytes": 6578,
+      "sha256": "69450757309539b5f7a65c36f0a0c541a081d1c684b889876370c3700dd7ab43"
+    },
+    {
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/manifest.json",
+      "bytes": 159713,
+      "sha256": "adca48eb33642306afdcaa7c8f199af19d72fe74e0dd27830640903298ada6f4"
+    }
+  ],
+  "manifest_note": "This repair manifest does not hash itself; v2 analysis manifest independently binds analysis inputs and outputs."
+}

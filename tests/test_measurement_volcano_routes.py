@@ -1,0 +1,141 @@
+"""Offline route wiring regressions for the three single-run profiles."""
+from __future__ import annotations
+
+import os
+import sys
+import subprocess
+import tempfile
+from pathlib import Path
+import unittest
+from unittest.mock import patch
+
+os.environ.setdefault("LITELLM_LOCAL_MODEL_COST_MAP", "True")
+ROOT = Path(__file__).resolve().parents[1]
+sys.path[:0] = [str(ROOT / "scripts"), str(ROOT / "src"),
+               str(ROOT / "references/repos/DocOps/harnesses")]
+
+import docops_measurement_validate_01_entry as office_profile
+import docops_word_resource_01_entry as office_shared
+import toolsandbox_resource_pilot_01_entry as assistant_entry
+from agent_workload_characterization.runners import c_entry
+
+
+class VolcanoRouteWiringTests(unittest.TestCase):
+    def test_office_production_agent_consumes_explicit_route(self):
+        route = office_profile.configured_route(office_profile.VOLCANO_PROFILE)
+        config = {"task_dir": str(ROOT / "references/repos/DocOps/tasks/atomic__excel_001_budget_bucket_totals_seed"),
+                  "max_steps": 40, "max_tokens": 32768,
+                  "model_route": {"api_base": route["api_base"],
+                                  "request_model": route["request_model"],
+                                  "credential_env": route["credential_env"]}}
+        with tempfile.TemporaryDirectory(prefix="volcano-office-route-") as tmp:
+            agent = office_shared.build_agent(Path(tmp), config)
+        self.assertEqual(agent.api_base, route["api_base"])
+        self.assertEqual(agent.llm._inner._model_name, route["request_model"])
+        self.assertNotEqual(route["api_base"], office_shared.API_BASE)
+        self.assertEqual(route["credential_env"], "VOLCANO_API_KEY")
+
+    def test_coding_shared_runner_consumes_explicit_route_and_namespace(self):
+        runner, identity = c_entry.build_c_runner(
+            authorized=False,
+            collection="CODING-MEASUREMENT-VOLCANO-01",
+            model_name="openai/deepseek-v4-flash",
+            credentials_env=("PILOT_API_BASE", "PILOT_API_KEY"))
+        self.assertEqual(runner.collection, "CODING-MEASUREMENT-VOLCANO-01")
+        self.assertEqual(runner.harness.mini_config["model"]["model_name"],
+                         "openai/deepseek-v4-flash")
+        self.assertEqual(identity["credentials_env"]["user_api_base_env"],
+                         "PILOT_API_BASE")
+        self.assertEqual(identity["credentials_env"]["child_sdk_env"],
+                         ["OPENAI_API_BASE", "OPENAI_API_KEY"])
+
+    def test_assistant_agent_user_transport_uses_same_explicit_route(self):
+        route = assistant_entry.route_for(assistant_entry.VOLCANO_PROFILE)
+        identity = assistant_entry.build_identity(profile=assistant_entry.VOLCANO_PROFILE)
+        self.assertEqual(identity["route"], route)
+        self.assertEqual(route["provider"], "火山AI网关")
+        self.assertEqual(route["request_model_alias"], "openai/deepseek-v4-flash")
+        self.assertEqual(route["request_model_raw_client"], "deepseek-v4-flash")
+        self.assertEqual(route["api_key_env"], "VOLCANO_API_KEY")
+        self.assertNotEqual(route["api_base"], assistant_entry.ROUTE["api_base"])
+        code = '''import socket,openai
+from agent_workload_characterization.runners.toolsandbox_worker import construct_openai_role_clients
+def deny(*a,**k): raise AssertionError("network forbidden")
+socket.getaddrinfo=deny; socket.socket.connect=deny
+a,u=construct_openai_role_clients(openai,base_url="https://probe.invalid/v1",api_key="synthetic")
+assert openai.__version__ == "1.17.0"
+assert a.max_retries == u.max_retries == 0
+assert str(a.base_url).rstrip("/") == str(u.base_url).rstrip("/") == "https://probe.invalid/v1"
+a.close();u.close()
+assert a.is_closed() and u.is_closed()
+'''
+        child = subprocess.run([str(ROOT / '.venvs/toolsandbox-pilot-01/bin/python'),
+                                '-B', '-c', code], cwd=ROOT, timeout=15,
+                               env={'PYTHONPATH': str(ROOT / 'src'),
+                                    'LITELLM_LOCAL_MODEL_COST_MAP': 'True'},
+                               capture_output=True, text=True)
+        self.assertEqual(child.returncode, 0, child.stderr)
+
+    def test_volcano_report_keeps_profile_collection_through_real_shared_entry(self):
+        import json
+        from tests.test_docops_measurement_validate_01_entry import external_boundaries
+        from agent_workload_characterization.runners import smoke_launcher
+        profile = office_profile.VOLCANO_PROFILE
+        route = office_profile.configured_route(profile)
+        with tempfile.TemporaryDirectory(prefix='volcano-profile-report-') as tmp, \
+                patch.dict(os.environ, {}, clear=False), \
+                external_boundaries(self), \
+                patch.object(smoke_launcher, 'load_credentials',
+                             return_value=(route['api_base'], 'synthetic')):
+            root = Path(tmp)
+            office_profile.freeze(root, profile=profile)
+            office_profile.record_explicit_approval(root, profile=profile)
+            plan = office_profile.plan_mode(root, profile=profile)
+            self.assertEqual(office_profile.execute(root, plan, profile=profile), 0)
+            report = json.loads((root / profile.report_rel / 'run-report.json').read_text())
+            self.assertEqual(report['collection'], profile.collection)
+            self.assertEqual(report['summary']['collection'], profile.collection)
+
+    def test_probe_schema_accepts_finish_action_without_network(self):
+        import json
+        from document_tools_agent import AgentAction
+        parsed = AgentAction.model_validate(json.loads(
+            '{"thought":"probe","action":"finish","tool_name":null,'
+            '"arguments":{},"final_message":"protocol probe"}'))
+        self.assertEqual(parsed.action, "finish")
+
+    def test_office_approval_is_new_collection_scoped_and_exclusive(self):
+        plan = {"ready_for_approval": True, "identity_sha256": "a" * 64}
+        with tempfile.TemporaryDirectory(prefix="volcano-office-approval-") as tmp:
+            root = Path(tmp)
+            with patch.object(office_profile, "plan_mode", return_value=plan):
+                result = office_profile.record_explicit_approval(
+                    root, profile=office_profile.VOLCANO_PROFILE)
+            approval = __import__("json").loads(
+                (root / result["approval_path"]).read_text())
+        self.assertEqual(approval["identity_sha256"], "a" * 64)
+        self.assertNotIn("entry_invocation", approval)
+        with self.assertRaises(ValueError):
+            office_profile.record_explicit_approval(
+                profile=office_profile.OFFICIAL_PROFILE)
+
+    def test_assistant_approval_is_new_collection_scoped_and_exclusive(self):
+        plan = {"ready_for_approval": True, "identity_sha256": "b" * 64,
+                "identity": {"budgets": {"total_wall_s": 480}}}
+        with tempfile.TemporaryDirectory(prefix="volcano-assistant-approval-") as tmp:
+            root = Path(tmp)
+            with patch.object(assistant_entry, "plan_mode", return_value=plan):
+                result = assistant_entry.record_explicit_approval(
+                    root, profile=assistant_entry.VOLCANO_PROFILE)
+            approval = __import__("json").loads(
+                (root / result["approval_path"]).read_text())
+        self.assertEqual(approval["identity_sha256"], "b" * 64)
+        self.assertTrue(approval["accept_unknown_cost_no_hard_cap"])
+        self.assertNotIn("entry_invocation", approval)
+        with self.assertRaises(ValueError):
+            assistant_entry.record_explicit_approval(
+                profile=assistant_entry.PILOT_01_PROFILE)
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -22,6 +22,7 @@ from harbor.llms.lite_llm import LiteLLM
 from harbor.llms.base import LLMResponse
 from harbor.models.metric.usage_info import UsageInfo
 from agent_workload_characterization.runners.docops_environment import DocOpsDockerEnvironment
+from agent_workload_characterization.collectors.resource_sampler import CounterSnapshot
 
 
 def approve(root, **changes):
@@ -60,6 +61,39 @@ def external_boundaries(test, *, cleanup='ok', removal='removed', image_after=Tr
         return env
 
     class Runtime(FakeRuntime):
+        def __init__(self):
+            super().__init__()
+            self.scan_counts = Counter()
+            self.timeline = []
+            self.counter_reads = 0
+
+        def read_counters(self, handle, t):
+            self.counter_reads += 1
+            n = self.counter_reads
+            return CounterSnapshot(scope='agent_container', scope_kind='agent_container',
+                t_monotonic_ns=t, cpu_usage_usec=n * 100_000,
+                mem_current_bytes=n * 1024, mem_peak_bytes=n * 2048,
+                io_read_bytes=n * 10, io_write_bytes=n * 20,
+                read_status={'cpu.stat': 'ok', 'io.stat': 'ok'})
+
+        def execute(self, handle, command, timeout_s=30, *, output_limit=100_000):
+            test.assertIn('# AWC_TASK_DIRECTORY_SCAN', command)
+            test.assertLessEqual(timeout_s, 3.0)
+            self.timeline.append('scan')
+            self.scan_counts[handle.container_id] += 1
+            count = self.scan_counts[handle.container_id]
+            return {'returncode': 0, 'timed_out': False, 'output': json.dumps({
+                'clock_domain': 'container_kernel_monotonic',
+                't_monotonic_ns': count,
+                'entries': [{'role': 'task_workspace_and_submission',
+                    'scope': 'agent_container:/root/submission',
+                    'ownership': 'task_run_private',
+                    'path': '/root/submission', 'size_basis': 'apparent_file_size_bytes',
+                    'status': 'complete', 'bytes': 100 if count % 2 else 130,
+                    'observed_subtotal_bytes': 100 if count % 2 else 130,
+                    'files_seen': 1, 'symlinks_skipped': 0,
+                    'scan_started_monotonic_ns': count, 'scan_wall_ns': 1}]})}
+
         def verify_removal(self, handle, timeout_s=30):
             self.removal_calls += 1
             transport.order.append('verify_removal')
@@ -68,6 +102,7 @@ def external_boundaries(test, *, cleanup='ok', removal='removed', image_after=Tr
     runtime = Runtime()
 
     async def call(llm, *, logging_path=None, **kw):
+        runtime.timeline.append('model')
         key = Path(logging_path).parent
         calls[str(key)] += 1
         test.assertNotIn('stop', kw)
@@ -202,9 +237,23 @@ class Repeat02Tests(unittest.TestCase):
                 rd=root/entry.RAW_REL/row['run_id']
                 summary=json.loads((rd/'summary.json').read_text())
                 assert_archive(self,root,summary)
+                measurement=json.loads((rd/'measurement.json').read_text())
+                self.assertTrue(any(i['metrics']['cpu']['status'] == 'valid'
+                                    for i in measurement['resource_intervals']['container']))
                 manifest=json.loads((rd/'manifest.json').read_text())
                 self.assertTrue({'environment.json','measurement.json','summary.json','agent/events.jsonl'}
                                 <= {r['path'] for r in manifest['outputs']})
+                self.assertIn('supplemental_measurements.json',
+                              {r['path'] for r in manifest['outputs']})
+                supplement=json.loads((rd/'supplemental_measurements.json').read_text())
+                self.assertEqual(supplement['network']['scope_kind'],
+                                 'network_namespace_shared')
+                roles={r['role'] for r in supplement['disk_footprint']['paths']}
+                self.assertEqual(roles, {'attempt_output','shared_task_cache'})
+                workspace=supplement['container_disk_footprints']['task_workspace_submission']['footprint']
+                self.assertEqual(workspace['paths'][0]['delta_bytes'], 30)
+                self.assertEqual(workspace['paths'][0]['before']['status'], 'complete')
+                self.assertEqual(workspace['paths'][0]['after']['status'], 'complete')
                 self.assertTrue(summary['samples'])
                 self.assertTrue(summary['events'])
                 self.assertEqual(row['measurement']['call_timing_status'], 'complete')
@@ -214,6 +263,7 @@ class Repeat02Tests(unittest.TestCase):
                     self.assertEqual(entry.office.file_record(root/record['path'],Path(record['path'])),record)
                 self.assertNotIn(str(relative),[r['path'] for r in m['outputs']])
             self.assertFalse(entry.plan_mode(root)['ready_for_execution'])
+            self.assertEqual(runtime.timeline, ['scan','model','model','scan'] * 9)
         self.assertFalse(root.exists())
 
     def test_cleanup_failure_stops_remaining_and_keeps_failed_archive(self):

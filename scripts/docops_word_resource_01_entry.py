@@ -328,10 +328,11 @@ class JsonActionLLM:
 def build_agent(logs_dir: Path, config: dict | None = None):
     from agent_workload_characterization.runners.docops_word_agent import DocOpsWordAgent
     config = config or run_config({})
+    route = (config or {}).get('model_route', {})
     agent = DocOpsWordAgent(
         logs_dir=logs_dir,
-        model_name=MODEL_REQUEST_ID,
-        api_base=API_BASE,
+        model_name=route.get('request_model', MODEL_REQUEST_ID),
+        api_base=route.get('api_base', API_BASE),
         max_steps=config['max_steps'],
         max_tokens=config['max_tokens'],
         thinking_mode=None,
@@ -381,6 +382,8 @@ class Sampler(threading.Thread):
             row = {'t_monotonic_ns': t, 'clock_domain': 'system_monotonic', 'role': role}
             try:
                 row['container'] = self.runtime.read_counters(self.handle, t).to_dict()
+                row['container'].update(container_id=self.handle.container_id,
+                                        cgroup_version=self.handle.cgroup_version)
             except Exception as e:
                 row['container_error'] = type(e).__name__
             try:
@@ -426,7 +429,7 @@ def classify_agent_termination(trial, agent_status: str) -> str:
         return 'completed_transcript_unreadable'
 
 
-async def run_attempt(collection_root: Path, plan: dict) -> dict:
+async def _run_attempt_inner(collection_root: Path, plan: dict) -> dict:
     from harbor.models.task.task import Task
     from harbor.models.trial.paths import TrialPaths
     from harbor.models.agent.context import AgentContext
@@ -468,19 +471,52 @@ async def run_attempt(collection_root: Path, plan: dict) -> dict:
          'identity_sha256': plan['identity_sha256'],
          'task_key': config['task_key'], 'round': config['round'],
          'started_at_monotonic_ns': time.monotonic_ns()}, indent=1))
-    ev('attempt_started', run_id=plan['run_id'])
-
-    task = Task(task_dir)
-    trial = TrialPaths(trial_dir=run_dir)
-    trial.mkdir()
-    env = build_environment(plan['run_id'], trial, config)
-
     outcome = {'phases': {}, 'infra_failures': []}
+    supplement = None
+    supplement_start_attempted = False
+    supplement_stop_attempted = False
+    supplement_start_error = None
+    task = trial = env = runtime = None
     measured_agent = None
     sampler = None
     handle = None
-    runtime = build_runtime(config)
     cid = cname = None
+    init_failure = None
+    init_stage = 'collector_initialization'
+    try:
+        from agent_workload_characterization.collectors.execution_measurement import (
+            CONTRACT_VERSION, RunSupplement, container_directory_footprint_snapshot,
+            office_resource_rate_intervals)
+        supplement = RunSupplement(run_dir, interval_s=config['sample_interval_s'],
+            disk_specs=[
+                {'path': str(run_dir), 'role': 'attempt_output',
+                 'scope': 'host_visible_trial_and_archive', 'ownership': 'run_scoped'},
+                {'path': None, 'role': 'shared_task_cache', 'scope': 'host_and_container',
+                 'ownership': 'shared_unassigned', 'unavailable_status': 'unsupported',
+                 'reason': 'no_task_exclusive_cache_path_registered'}])
+        supplement_start_attempted = True
+        try:
+            supplement.start()
+        except Exception as exc:  # partial startup still requires stop()
+            supplement_start_error = type(exc).__name__
+        ev('attempt_started', run_id=plan['run_id'])
+
+        init_stage = 'task_initialization'
+        task = Task(task_dir)
+        init_stage = 'trial_paths_initialization'
+        trial = TrialPaths(trial_dir=run_dir)
+        trial.mkdir()
+        init_stage = 'environment_initialization'
+        env = build_environment(plan['run_id'], trial, config)
+        init_stage = 'runtime_initialization'
+        runtime = build_runtime(config)
+    except Exception as exc:
+        init_failure = {'stage': init_stage, 'error_type': type(exc).__name__}
+        outcome['infra_failures'].append('initialization:' + type(exc).__name__)
+        outcome['phases']['initialization'] = {
+            'status': 'initialization_error', **init_failure}
+
+    measured_agent = None
 
     def finish_phase(name, **kw):
         outcome['phases'][name] = kw
@@ -489,6 +525,8 @@ async def run_attempt(collection_root: Path, plan: dict) -> dict:
     # EVERYTHING from Harbor start onward is inside try/finally so that startup
     # exceptions still run cleanup and produce summary/manifest.
     try:
+        if init_failure is not None:
+            raise RuntimeError('initialization failed')
         ev('harbor_start_begin')
         try:
             await asyncio.wait_for(env.start(force_build=False),
@@ -511,7 +549,7 @@ async def run_attempt(collection_root: Path, plan: dict) -> dict:
         handle = ContainerHandle(container_id=cid,
                                  spec=ContainerSpec(run_id=plan['run_id'],
                                                     scope='agent_container',
-                                                    image=config['image_ref'], network='none'))
+                                                    image=config['image_ref'], cwd='/', network='none'))
         runtime._resolve_cgroup(handle)
         ev('cgroup_resolved', version=handle.cgroup_version, dir=str(handle.cgroup_dir))
 
@@ -525,16 +563,30 @@ async def run_attempt(collection_root: Path, plan: dict) -> dict:
         # official setup: uploads the document-tools runtime and creates the
         # submission dir; budgeted like any other work phase
         ev('agent_setup_begin')
+        task_disk_spec = [{'path': '/root/submission',
+            'role': 'task_workspace_and_submission',
+            'scope': 'agent_container:/root/submission',
+            'ownership': 'task_run_private'}]
+        task_disk_baseline = None
+        task_disk_final = None
         try:
             await asyncio.wait_for(agent.setup(env), timeout=remaining_to(config['setup_budget_s']))
             ev('agent_setup_done')
+            # setup creates the fixed submission directory; this is the
+            # baseline immediately before the Agent can write task output.
+            task_disk_baseline = container_directory_footprint_snapshot(
+                runtime, handle, task_disk_spec,
+                timeout_s=min(3.0, remaining_to(3.0)))
+            supplement.record_container_disk_boundary(
+                'task_workspace_submission', 'before_agent', task_disk_baseline)
         except Exception as e:
             outcome['infra_failures'].append('agent_setup:' + type(e).__name__)
             finish_phase('agent', status='agent_setup_error',
                          error_type=type(e).__name__, detail=str(e)[:200])
             agent = None
         if agent is not None:
-            ev('agent_begin', model=MODEL_REQUEST_ID)
+            ev('agent_begin', model=config.get('model_route', {}).get(
+                'request_model', MODEL_REQUEST_ID))
             agent_t = remaining_to(config['agent_budget_s'])
             try:
                 await asyncio.wait_for(agent.run(task.instruction, env, ctx),
@@ -552,6 +604,11 @@ async def run_attempt(collection_root: Path, plan: dict) -> dict:
             except Exception as e:
                 finish_phase('agent', status='agent_error',
                              error_type=type(e).__name__, detail=str(e)[:200])
+            task_disk_final = container_directory_footprint_snapshot(
+                runtime, handle, task_disk_spec,
+                timeout_s=min(3.0, remaining_to(3.0)))
+            supplement.record_container_disk_boundary(
+                'task_workspace_submission', 'after_agent', task_disk_final)
             ev('agent_end')
 
             ev('verifier_begin')
@@ -573,14 +630,21 @@ async def run_attempt(collection_root: Path, plan: dict) -> dict:
                 outcome['infra_failures'].append('verifier:' + type(e).__name__)
             ev('verifier_end')
     except Exception as e:
-        outcome['infra_failures'].append('startup_or_run:' + type(e).__name__)
-        finish_phase('run', status='startup_or_run_error',
-                     error_type=type(e).__name__, detail=str(e)[:200])
+        if init_failure is None:
+            outcome['infra_failures'].append('startup_or_run:' + type(e).__name__)
+            finish_phase('run', status='startup_or_run_error',
+                         error_type=type(e).__name__, detail=str(e)[:200])
     finally:
         # cleanup ALWAYS runs, deadline-bounded, and archive happens regardless
         if sampler is not None:
             sampler.stop_event.set()
-            sampler.join(timeout=10)
+            if sampler.ident is not None:
+                try:
+                    sampler.join(timeout=10)
+                except Exception as e:
+                    outcome['infra_failures'].append('sampler_join:' + type(e).__name__)
+            elif not sampler.is_alive():
+                outcome['infra_failures'].append('sampler_start_unconfirmed')
         ev('sampling_stopped', rows=len(sampler.rows) if sampler else 0)
         if sampler is not None and sampler.is_alive():
             outcome['infra_failures'].append('sampler_stop_unconfirmed')
@@ -595,11 +659,14 @@ async def run_attempt(collection_root: Path, plan: dict) -> dict:
                 outcome['infra_failures'].append('harbor_stop:' + stop_err)
             ev('harbor_stop_done', stop_error=stop_err)
         if handle is not None:
-            removal = runtime.verify_removal(
-                handle, timeout_s=cleanup_remaining_to(30.0))
-            ev('removal_verified', result=removal)
-            if removal != 'removed':
-                outcome['infra_failures'].append('removal:' + removal)
+            try:
+                removal = runtime.verify_removal(
+                    handle, timeout_s=cleanup_remaining_to(30.0))
+                ev('removal_verified', result=removal)
+                if removal != 'removed':
+                    outcome['infra_failures'].append('removal:' + removal)
+            except Exception as e:
+                outcome['infra_failures'].append('removal:' + type(e).__name__)
         # Project stop(delete=True) retains images while deleting compose
         # containers/volumes/orphans. Observe the tag afterward; absence alone
         # does not establish who deleted it. NEVER rebuild/re-pull here.
@@ -621,6 +688,26 @@ async def run_attempt(collection_root: Path, plan: dict) -> dict:
             outcome['image_tag_after_stop'] = 'unknown:' + tag_query_error
         elif tag_after is None:
             outcome['image_tag_after_stop'] = 'not_present'
+
+        supplemental_measurements = {'schema': 'run-supplement-v1', 'status': 'not_started',
+                                     'failure': None, 'start_error': supplement_start_error}
+        if supplement is not None and supplement_start_attempted and not supplement_stop_attempted:
+            supplement_stop_attempted = True
+            try:
+                supplemental_measurements = supplement.stop()
+                if supplement_start_error:
+                    supplemental_measurements['status'] = 'partial'
+                    supplemental_measurements['start_error'] = supplement_start_error
+            except Exception as e:
+                supplemental_measurements = {'schema': 'run-supplement-v1', 'status': 'partial',
+                    'measurement_contract_version': CONTRACT_VERSION,
+                    'failure': type(e).__name__, 'start_error': supplement_start_error}
+                outcome['infra_failures'].append('supplement_stop:' + type(e).__name__)
+        try:
+            (run_dir / 'supplemental_measurements.json').write_text(
+                json.dumps(supplemental_measurements, ensure_ascii=False, indent=1) + '\n')
+        except Exception as e:
+            outcome['infra_failures'].append('supplemental_archive:' + type(e).__name__)
 
         # ---- archive: final wall adjudicated AFTER all archiving work ----
         ev('archive_begin')
@@ -647,18 +734,27 @@ async def run_attempt(collection_root: Path, plan: dict) -> dict:
         with (sampler.lock if sampler else threading.Lock()):
             samples = list(sampler.rows) if sampler else []
         from agent_workload_characterization.collectors.execution_measurement import (
-            environment_snapshot, measurement_report, sample_quality)
+            environment_snapshot, measurement_report, office_resource_rate_intervals,
+            sample_quality)
+        events_path = (trial.agent_dir / 'events.jsonl' if trial is not None
+                       else run_dir / 'agent' / 'events.jsonl')
         measurement = measurement_report(
-            trial.agent_dir / 'events.jsonl',
+            events_path,
             expected_requests=getattr(measured_agent, 'request_count', None),
             expected_tools=getattr(measured_agent, 'tool_count', None))
         measurement['resource_sampling'] = sample_quality(samples, config['sample_interval_s'])
+        measurement['resource_intervals'] = office_resource_rate_intervals(
+            samples, container_id=cid)
+        measurement['supplemental_measurements'] = 'supplemental_measurements.json'
         measurement['collector'] = {
             'read_wall_ns': sampler.read_wall_ns if sampler else None,
             'scope': 'shared_host_process',
             'note': 'read wall cost only; not CPU or full instrumentation overhead'}
         (run_dir / 'measurement.json').write_text(json.dumps(measurement, indent=1))
-        (run_dir / 'environment.json').write_text(json.dumps(environment_snapshot(), indent=1))
+        try:
+            (run_dir / 'environment.json').write_text(json.dumps(environment_snapshot(), indent=1))
+        except Exception as e:
+            outcome['infra_failures'].append('environment_archive:' + type(e).__name__)
         ev('archive_done')
         # FINAL wall: measured after the archive events are collected and before
         # the summary/attempt/manifest writes, so archiving time is included in
@@ -693,7 +789,8 @@ async def run_attempt(collection_root: Path, plan: dict) -> dict:
             summary['within_total_budget'] = wall <= config['total_wall_s']
             sp.write_text(json.dumps(summary, indent=1, ensure_ascii=False))
             ap.write_text(json.dumps(
-                {'run_id': plan['run_id'], 'wall_s': round(wall, 2),
+                {'run_id': plan['run_id'], 'status': ('failed' if outcome['infra_failures'] else 'completed'),
+                 'wall_s': round(wall, 2),
                  'within_total_budget': wall <= config['total_wall_s'],
                  'infra_failures': outcome['infra_failures'],
                  'phases': {k: v.get('status') for k, v in outcome['phases'].items()}},
@@ -719,6 +816,53 @@ async def run_attempt(collection_root: Path, plan: dict) -> dict:
                 e_['sha256'] = sha256_file(f_)
         (run_dir / 'manifest.json').write_text(json.dumps(manifest, indent=1))
     return summary
+
+
+async def run_attempt(collection_root: Path, plan: dict) -> dict:
+    """Keep a post-ATTEMPT_STARTED failure report even if archive code itself fails."""
+    root = Path(collection_root)
+    config = run_config(plan)
+    run_dir = root / 'data/raw/generated' / config['collection'] / plan['run_id']
+    try:
+        return await _run_attempt_inner(root, plan)
+    except Exception as exc:
+        started = run_dir / 'ATTEMPT_STARTED.json'
+        if not started.is_file():
+            raise
+        failure = {'schema': 'docops-word-resource-01-run-v2',
+            'run_id': plan['run_id'], 'collection': config['collection'],
+            'task_key': config['task_key'], 'round': config['round'],
+            'identity_sha256': plan.get('identity_sha256'),
+            'outcome': {'phases': {'initialization': {
+                'status': 'initialization_or_archive_error',
+                'error_type': type(exc).__name__}},
+                'infra_failures': ['initialization_or_archive:' + type(exc).__name__,
+                                   'archive_failure:' + type(exc).__name__]},
+            'wall_s': None, 'within_total_budget': None,
+            'events': [], 'samples': [], 'measurement': None,
+            'archive_status': 'partial_failure_record'}
+        (run_dir / 'summary.json').write_text(
+            json.dumps(failure, ensure_ascii=False, indent=1) + '\n')
+        marker = {'run_id': plan['run_id'], 'status': 'failed',
+                  'identity_sha256': plan.get('identity_sha256'),
+                  'failure_stage': 'initialization_or_archive',
+                  'error_type': type(exc).__name__}
+        (run_dir / 'ATTEMPT_COMPLETED.json').write_text(
+            json.dumps(marker, ensure_ascii=False, indent=1) + '\n')
+        outputs = []
+        for path in sorted(run_dir.rglob('*')):
+            if path.is_file() and path.name != 'manifest.json':
+                data = path.read_bytes()
+                outputs.append({'path': path.relative_to(run_dir).as_posix(),
+                                'bytes': len(data),
+                                'sha256': hashlib.sha256(data).hexdigest()})
+        manifest = {'schema': 'docops-resource-run-manifest-v2',
+                    'run_id': plan['run_id'],
+                    'identity_sha256': plan.get('identity_sha256'),
+                    'outputs': outputs, 'archive_status': 'partial_failure_record'}
+        (run_dir / 'manifest.json').write_text(
+            json.dumps(manifest, ensure_ascii=False, indent=1) + '\n')
+        return failure
 
 
 def plan_mode(collection_root: Path) -> dict:

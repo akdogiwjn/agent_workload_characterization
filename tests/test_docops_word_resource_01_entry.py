@@ -13,7 +13,9 @@ import os
 os.environ['LITELLM_LOCAL_MODEL_COST_MAP'] = 'True'
 import sys
 import tempfile
+import hashlib
 from pathlib import Path
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
@@ -314,6 +316,137 @@ def test_startup_failure_still_cleans_and_archives():
         assert (rd / 'ATTEMPT_COMPLETED.json').exists()
         disk = json.loads((rd / 'summary.json').read_text())
         assert disk['events'][-1]['phase'] == 'archive_done'
+
+
+class CountingSupplement:
+    def __init__(self, *, start_error=None, stop_error=None):
+        self.start_error = start_error
+        self.stop_error = stop_error
+        self.start_calls = 0
+        self.stop_calls = 0
+
+    def start(self):
+        self.start_calls += 1
+        if self.start_error:
+            raise RuntimeError('partial collector start')
+
+    def stop(self):
+        self.stop_calls += 1
+        if self.stop_error:
+            raise RuntimeError('collector stop')
+        return {'schema': 'run-supplement-v1', 'status': 'observed', 'failures': []}
+
+
+def _counting_supplement_patch(*, start_error=None, stop_error=None):
+    holder = {}
+    from agent_workload_characterization.collectors import execution_measurement
+
+    def construct(*args, **kwargs):
+        item = CountingSupplement(start_error=start_error, stop_error=stop_error)
+        holder['item'] = item
+        return item
+
+    return holder, patch.object(execution_measurement, 'RunSupplement', construct)
+
+
+def _assert_failure_archive(tmp, run_id='20260101T000000Z-test'):
+    rd = run_dir_of(tmp, run_id)
+    summary = json.loads((rd / 'summary.json').read_text())
+    marker = json.loads((rd / 'ATTEMPT_COMPLETED.json').read_text())
+    manifest = json.loads((rd / 'manifest.json').read_text())
+    assert summary['outcome']['infra_failures']
+    assert marker['status'] == 'failed'
+    for item in manifest['outputs']:
+        data = (rd / item['path']).read_bytes()
+        assert item['bytes'] == len(data)
+        assert item['sha256'] == hashlib.sha256(data).hexdigest()
+    assert (rd / 'supplemental_measurements.json').is_file()
+    return summary
+
+
+def test_task_initialization_failure_stops_and_archives():
+    with tempfile.TemporaryDirectory() as tmp:
+        install_fakes()
+        shrink_budgets()
+        holder, supplement_patch = _counting_supplement_patch()
+        with supplement_patch, patch('harbor.models.task.task.Task',
+                                      side_effect=RuntimeError('task init')):
+            s = run_attempt(tmp)
+        assert holder['item'].start_calls == holder['item'].stop_calls == 1
+        assert s['outcome']['phases']['initialization']['stage'] == 'task_initialization'
+        archived = _assert_failure_archive(tmp)
+        assert 'agent' not in archived['outcome']['phases']
+
+
+def test_environment_and_runtime_initialization_failures_are_archived():
+    for stage, patch_target, side_effect in (
+            ('environment_initialization', 'build_environment', RuntimeError('env init')),
+            ('runtime_initialization', 'build_runtime', RuntimeError('runtime init'))):
+        with tempfile.TemporaryDirectory() as tmp:
+            env, _ = install_fakes()
+            shrink_budgets()
+            holder, supplement_patch = _counting_supplement_patch()
+            with supplement_patch, patch.object(entry, patch_target, side_effect=side_effect):
+                s = run_attempt(tmp)
+            assert s['outcome']['phases']['initialization']['stage'] == stage
+            assert holder['item'].stop_calls == 1
+            assert (env.stopped == [True]) == (stage == 'runtime_initialization')
+            _assert_failure_archive(tmp)
+
+
+def test_partial_collector_start_and_stop_failure_preserve_primary_error():
+    with tempfile.TemporaryDirectory() as tmp:
+        install_fakes()
+        shrink_budgets()
+        holder, supplement_patch = _counting_supplement_patch(
+            start_error=True, stop_error=True)
+        with supplement_patch, patch('harbor.models.task.task.Task',
+                                      side_effect=RuntimeError('task init')):
+            s = run_attempt(tmp)
+        assert holder['item'].start_calls == 1 and holder['item'].stop_calls == 1
+        assert s['outcome']['phases']['initialization']['error_type'] == 'RuntimeError'
+        assert 'initialization:RuntimeError' in s['outcome']['infra_failures']
+        assert 'supplement_stop:RuntimeError' in s['outcome']['infra_failures']
+        _assert_failure_archive(tmp)
+
+
+def test_normal_collector_stops_once_and_manifest_is_final():
+    with tempfile.TemporaryDirectory() as tmp:
+        install_fakes()
+        shrink_budgets()
+        holder, supplement_patch = _counting_supplement_patch()
+        with supplement_patch:
+            s = run_attempt(tmp)
+        assert holder['item'].stop_calls == 1
+        assert 'initialization' not in s['outcome']['phases']
+        if not s['outcome']['infra_failures']:
+            rd = run_dir_of(tmp)
+            mf = json.loads((rd / 'manifest.json').read_text())
+            for item in mf['outputs']:
+                raw = (rd / item['path']).read_bytes()
+                assert item['bytes'] == len(raw)
+                assert item['sha256'] == hashlib.sha256(raw).hexdigest()
+
+
+def test_archive_exception_keeps_minimal_failure_manifest():
+    from agent_workload_characterization.collectors import execution_measurement
+    with tempfile.TemporaryDirectory() as tmp:
+        env, _ = install_fakes()
+        shrink_budgets()
+        holder, supplement_patch = _counting_supplement_patch()
+        with supplement_patch, patch.object(execution_measurement, 'measurement_report',
+                                            side_effect=RuntimeError('archive failure')):
+            s = run_attempt(tmp)
+        rd = run_dir_of(tmp)
+        assert holder['item'].stop_calls == 1
+        assert env.stopped == [True]
+        assert s['archive_status'] == 'partial_failure_record'
+        assert json.loads((rd / 'ATTEMPT_COMPLETED.json').read_text())['status'] == 'failed'
+        mf = json.loads((rd / 'manifest.json').read_text())
+        for item in mf['outputs']:
+            data = (rd / item['path']).read_bytes()
+            assert item['bytes'] == len(data)
+            assert item['sha256'] == hashlib.sha256(data).hexdigest()
 
 
 def test_verifier_infra_error_separated():
@@ -748,7 +881,12 @@ if __name__ == '__main__':
     test_archive_wall_counts_on_normal_path_too()
     test_image_query_failure_never_skips_archive()
     test_json_action_llm_strips_stop()
+    test_task_initialization_failure_stops_and_archives()
+    test_environment_and_runtime_initialization_failures_are_archived()
+    test_partial_collector_start_and_stop_failure_preserve_primary_error()
+    test_normal_collector_stops_once_and_manifest_is_final()
+    test_archive_exception_keeps_minimal_failure_manifest()
     test_approval_is_not_an_attempt_and_main_runs_with_fakes()
     test_missing_invalid_stale_and_consumed_approval_refused_before_docker()
     test_approval_does_not_exempt_other_namespace_records()
-    print('all 20 entry tests passed')
+    print('all 25 entry tests passed')

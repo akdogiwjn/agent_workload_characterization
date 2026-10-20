@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="680" viewBox="0 0 1050 680">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font:13px sans-serif;fill:#243447}.axis{stroke:#aab2bb}</style>
+<text x="24" y="28">Coding / astropy__astropy-13398 / intended_profile_observation</text>
+<text x="24" y="49">Raw run points; only per-metric observed values; no zero-fill or cross-task pooling.</text>
+<text x="24" y="94">attempt_wall_s (n=3)</text>
+<path d="M260 105H940" class="axis"/>
+<path d="M481.73 105H765.07" stroke="#b45309" stroke-width="5"/>
+<path d="M646.80 97V113" stroke="#b45309" stroke-width="2"/>
+<circle cx="316.67" cy="105" r="5" fill="#165dbe"/>
+<text class="small" x="316.67" y="127" text-anchor="middle">145.97</text>
+<circle cx="646.80" cy="105" r="5" fill="#165dbe"/>
+<text class="small" x="646.80" y="127" text-anchor="middle">208.27</text>
+<circle cx="883.33" cy="105" r="5" fill="#165dbe"/>
+<text class="small" x="883.33" y="127" text-anchor="middle">252.9</text>
+<text x="956" y="109">median 208.27; IQR 53.46</text>
+<text x="24" y="180">task_result_scalar (n=2)</text>
+<path d="M260 191H940" class="axis"/>
+<path d="M600.00 191H600.00" stroke="#b45309" stroke-width="5"/>
+<path d="M600.00 183V199" stroke="#b45309" stroke-width="2"/>
+<circle cx="600.00" cy="191" r="5" fill="#165dbe"/>
+<text class="small" x="600.00" y="213" text-anchor="middle">0</text>
+<circle cx="600.00" cy="191" r="5" fill="#165dbe"/>
+<text class="small" x="600.00" y="213" text-anchor="middle">0</text>
+<text x="956" y="195">median 0; IQR 0</text>
+<text x="24" y="266">observed_cpu_s::agent_container (n=3)</text>
+<path d="M260 277H940" class="axis"/>
+<path d="M487.99 277H771.33" stroke="#b45309" stroke-width="5"/>
+<path d="M659.32 269V285" stroke="#b45309" stroke-width="2"/>
+<circle cx="316.67" cy="277" r="5" fill="#165dbe"/>
+<text class="small" x="316.67" y="299" text-anchor="middle">10.248</text>
+<circle cx="659.32" cy="277" r="5" fill="#165dbe"/>
+<text class="small" x="659.32" y="299" text-anchor="middle">13.915</text>
+<circle cx="883.33" cy="277" r="5" fill="#165dbe"/>
+<text class="small" x="883.33" y="299" text-anchor="middle">16.312</text>
+<text x="956" y="281">median 13.915; IQR 3.032</text>
+<text x="24" y="352">memory_sampled_peak_bytes::agent_container (n=3)</text>
+<path d="M260 363H940" class="axis"/>
+<path d="M565.24 363H848.57" stroke="#b45309" stroke-width="5"/>
+<path d="M813.82 355V371" stroke="#b45309" stroke-width="2"/>
+<circle cx="316.67" cy="363" r="5" fill="#165dbe"/>
+<text class="small" x="316.67" y="385" text-anchor="middle">3.2031e+07</text>
+<circle cx="813.82" cy="363" r="5" fill="#165dbe"/>
+<text class="small" x="813.82" y="385" text-anchor="middle">4.7321e+07</text>
+<circle cx="883.33" cy="363" r="5" fill="#165dbe"/>
+<text class="small" x="883.33" y="385" text-anchor="middle">4.9459e+07</text>
+<text x="956" y="367">median 4.7321e+07; IQR 8.7142e+06</text>
+<text x="24" y="438">logical_requests (n=3)</text>
+<path d="M260 449H940" class="axis"/>
+<path d="M600.00 449H600.00" stroke="#b45309" stroke-width="5"/>
+<path d="M600.00 441V457" stroke="#b45309" stroke-width="2"/>
+<circle cx="600.00" cy="449" r="5" fill="#165dbe"/>
+<text class="small" x="600.00" y="471" text-anchor="middle">30</text>
+<circle cx="600.00" cy="449" r="5" fill="#165dbe"/>
+<text class="small" x="600.00" y="471" text-anchor="middle">30</text>
+<circle cx="600.00" cy="449" r="5" fill="#165dbe"/>
+<text class="small" x="600.00" y="471" text-anchor="middle">30</text>
+<text x="956" y="453">median 30; IQR 0</text>
+<text x="24" y="524">agent_tools (n=3)</text>
+<path d="M260 535H940" class="axis"/>
+<path d="M426.85 535H710.19" stroke="#b45309" stroke-width="5"/>
+<path d="M537.04 527V543" stroke="#b45309" stroke-width="2"/>
+<circle cx="316.67" cy="535" r="5" fill="#165dbe"/>
+<text class="small" x="316.67" y="557" text-anchor="middle">48</text>
+<circle cx="537.04" cy="535" r="5" fill="#165dbe"/>
+<text class="small" x="537.04" y="557" text-anchor="middle">55</text>
+<circle cx="883.33" cy="535" r="5" fill="#165dbe"/>
+<text class="small" x="883.33" y="557" text-anchor="middle">66</text>
+<text x="956" y="539">median 55; IQR 9</text>
+</svg>

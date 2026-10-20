@@ -1,0 +1,1467 @@
+{
+  "schema": "office-scan-and-three-chain-validation-closeout-v1",
+  "closed_at_utc": "2026-10-16T14:54:24.071363+00:00",
+  "status": "three_single_attempts_completed_with_declared_limitations",
+  "executed": 3,
+  "not_executed": 0,
+  "repeated_attempts": 0,
+  "protocol_probes_this_turn": 0,
+  "gateway_and_models_unchanged": true,
+  "tests": {
+    "unique_passed": 38,
+    "new_scan_tests": 4,
+    "shared_measurement_passed": 26,
+    "cleanup_passed": 8,
+    "initial_fixture_assertion_error": 1,
+    "fixture_error_resolved": "argparse rejects old flag via SystemExit(2), not a returned integer; corrected test only",
+    "final_failed": 0,
+    "not_completed": 0
+  },
+  "no_model_check": {
+    "path": "env/docops-measurement-volcano-02/no-model-check.json",
+    "bytes": 2550,
+    "sha256": "3408406f2e2b382870d915fe6a650df156c5870248f47d5365cb80894b7f497d"
+  },
+  "no_model_check_result": {
+    "kind": "model_free_container_check",
+    "model_calls": 0,
+    "status": "passed",
+    "started_monotonic_ns": 1086534591461432,
+    "image_expected": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+    "image_before": {
+      "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+      "platform": "linux/arm64",
+      "returncode": 0
+    },
+    "container_id": "7a5378c38159d3d7d227cbb2538c3c4cfa4ba29d732453fba13f407f8a736cfb",
+    "python_check": {
+      "returncode": 0,
+      "output": "Python 3.12.14\n"
+    },
+    "before": {
+      "clock_domain": "container_kernel_monotonic",
+      "t_monotonic_ns": 1086534961475973,
+      "size_basis": "apparent_file_size_bytes; allocated blocks not measured",
+      "entries": [
+        {
+          "role": "task_workspace_and_submission",
+          "scope": "agent_container:/root/submission",
+          "ownership": "check_private",
+          "path": "/root/submission",
+          "size_basis": "apparent_file_size_bytes",
+          "status": "complete",
+          "bytes": 0,
+          "observed_subtotal_bytes": 0,
+          "files_seen": 0,
+          "symlinks_skipped": 0,
+          "scan_started_monotonic_ns": 1086534961423983,
+          "scan_wall_ns": 50650
+        }
+      ],
+      "diagnostics": {
+        "returncode": 0,
+        "timed_out": false,
+        "cwd": "/",
+        "error_summary": null
+      },
+      "status": "complete",
+      "read_wall_ns": 101149240
+    },
+    "after": {
+      "clock_domain": "container_kernel_monotonic",
+      "t_monotonic_ns": 1086535247569423,
+      "size_basis": "apparent_file_size_bytes; allocated blocks not measured",
+      "entries": [
+        {
+          "role": "task_workspace_and_submission",
+          "scope": "agent_container:/root/submission",
+          "ownership": "check_private",
+          "path": "/root/submission",
+          "size_basis": "apparent_file_size_bytes",
+          "status": "complete",
+          "bytes": 32768,
+          "observed_subtotal_bytes": 32768,
+          "files_seen": 1,
+          "symlinks_skipped": 0,
+          "scan_started_monotonic_ns": 1086535247505452,
+          "scan_wall_ns": 62601
+        }
+      ],
+      "diagnostics": {
+        "returncode": 0,
+        "timed_out": false,
+        "cwd": "/",
+        "error_summary": null
+      },
+      "status": "complete",
+      "read_wall_ns": 100886366
+    },
+    "growth_bytes": 32768,
+    "container_removal": "removed",
+    "image_after": {
+      "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+      "platform": "linux/arm64",
+      "returncode": 0
+    },
+    "wall_s": 0.7420166789088398,
+    "within_120s": true
+  },
+  "actual_changes": [
+    "Office ContainerSpec cwd explicitly /; global Coding default /testbed unchanged",
+    "scan failure diagnostics returncode/timed_out/cwd/redacted capped output",
+    "new Office02 profile and thin entry; shared execution lifecycle reused"
+  ],
+  "historical_cause_limit": "Incorrect Office cwd is a confirmed wiring defect; old Office01 failure has no full saved error output, so do not declare it the unique historical cause",
+  "live_plan_frozen_full_structure_comparison": "passed for all three under own interpreters; newly approved after necessary code changes; unexecuted old preparations preserved",
+  "runs": [
+    {
+      "chain": "Office",
+      "collection": "DOCOPS-MEASUREMENT-VOLCANO-02",
+      "run_id": "20261016T143948Z-excel001",
+      "identity_sha256": "15732b6a4202cf967895050f16c940d7d78f6508969f74539ad1a8a81763ec89",
+      "entry_returncode": 0,
+      "raw_dir": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001",
+      "report": "reports/resource/DOCOPS-MEASUREMENT-VOLCANO-02/run-report.json",
+      "logical_requests": 8,
+      "request_pairs": 8,
+      "pair_errors": [],
+      "formal_http_transmissions": null,
+      "formal_http_reason": "no HTTP transport hook; project-layer attempts are separate",
+      "cost": "unknown",
+      "network": {
+        "status": "observed",
+        "scope": "current process network namespace; shared by all processes in namespace",
+        "scope_kind": "network_namespace_shared",
+        "counter_basis": "kernel interface tx/rx bytes; not HTTP payload, TLS bytes, or PID-exclusive traffic",
+        "interval_target_s": 0.5,
+        "sample_count": 201,
+        "valid_metric_interval_count": 135600,
+        "metric_gap_count": 0,
+        "metric_gap_reasons": {},
+        "read_wall_ns": 2523623230,
+        "sampler_stopped": true,
+        "unsupported": {
+          "container_netns": "not observed by this host process sampler",
+          "per_pid_bytes": "not available from /proc/net/dev",
+          "http_application_bytes": "not instrumented"
+        }
+      },
+      "disk_footprint": {
+        "task_workspace": "observed",
+        "container_paths": {
+          "task_workspace_submission": [
+            {
+              "role": "task_workspace_and_submission",
+              "scope": "agent_container:/root/submission",
+              "before": {
+                "role": "task_workspace_and_submission",
+                "scope": "agent_container:/root/submission",
+                "ownership": "task_run_private",
+                "path": "/root/submission",
+                "size_basis": "apparent_file_size_bytes",
+                "status": "complete",
+                "bytes": 0,
+                "observed_subtotal_bytes": 0,
+                "files_seen": 0,
+                "symlinks_skipped": 0,
+                "scan_started_monotonic_ns": 1087200260243140,
+                "scan_wall_ns": 59221
+              },
+              "after": {
+                "role": "task_workspace_and_submission",
+                "scope": "agent_container:/root/submission",
+                "ownership": "task_run_private",
+                "path": "/root/submission",
+                "size_basis": "apparent_file_size_bytes",
+                "status": "complete",
+                "bytes": 6629,
+                "observed_subtotal_bytes": 6629,
+                "files_seen": 1,
+                "symlinks_skipped": 0,
+                "scan_started_monotonic_ns": 1087287172831536,
+                "scan_wall_ns": 78291
+              },
+              "delta_bytes": 6629,
+              "delta_status": "observed"
+            }
+          ]
+        },
+        "host_output_and_cache": [
+          {
+            "role": "attempt_output",
+            "scope": "host_visible_trial_and_archive",
+            "before": {
+              "role": "attempt_output",
+              "scope": "host_visible_trial_and_archive",
+              "ownership": "run_scoped",
+              "path": "/home/lcq/agent_workload_characterization/data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001",
+              "size_basis": "apparent_file_size_bytes",
+              "status": "complete",
+              "bytes": 300,
+              "observed_subtotal_bytes": 300,
+              "files_seen": 1,
+              "symlinks_skipped": 0,
+              "scan_started_monotonic_ns": 1087198929592975,
+              "scan_wall_ns": 52031
+            },
+            "after": {
+              "role": "attempt_output",
+              "scope": "host_visible_trial_and_archive",
+              "ownership": "run_scoped",
+              "path": "/home/lcq/agent_workload_characterization/data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001",
+              "size_basis": "apparent_file_size_bytes",
+              "status": "complete",
+              "bytes": 443160,
+              "observed_subtotal_bytes": 443160,
+              "files_seen": 17,
+              "symlinks_skipped": 0,
+              "scan_started_monotonic_ns": 1087298962115372,
+              "scan_wall_ns": 273674
+            },
+            "delta_bytes": 442860,
+            "delta_status": "observed"
+          },
+          {
+            "role": "shared_task_cache",
+            "scope": "host_and_container",
+            "before": {
+              "role": "shared_task_cache",
+              "scope": "host_and_container",
+              "ownership": "shared_unassigned",
+              "path": null,
+              "size_basis": "apparent_file_size_bytes",
+              "status": "unsupported",
+              "bytes": null,
+              "observed_subtotal_bytes": 0,
+              "files_seen": 0,
+              "symlinks_skipped": 0,
+              "scan_started_monotonic_ns": 1087198929647056,
+              "scan_wall_ns": 1960,
+              "reason": "no_task_exclusive_cache_path_registered"
+            },
+            "after": {
+              "role": "shared_task_cache",
+              "scope": "host_and_container",
+              "ownership": "shared_unassigned",
+              "path": null,
+              "size_basis": "apparent_file_size_bytes",
+              "status": "unsupported",
+              "bytes": null,
+              "observed_subtotal_bytes": 0,
+              "files_seen": 0,
+              "symlinks_skipped": 0,
+              "scan_started_monotonic_ns": 1087298962390576,
+              "scan_wall_ns": 3970,
+              "reason": "no_task_exclusive_cache_path_registered"
+            },
+            "delta_bytes": null,
+            "delta_status": "unavailable_or_partial"
+          }
+        ]
+      },
+      "supplement_aggregate_status": "partial",
+      "supplement_failures": [],
+      "archive_verified": true,
+      "archive_new_file_records": 22,
+      "task": "atomic__excel_001_budget_bucket_totals_seed",
+      "measurement_primary": "complete",
+      "measurement_gaps": [
+        "task-exclusive cache and API bytes unsupported"
+      ],
+      "task_result": {
+        "status": "completed",
+        "rewards": {
+          "reward": 1
+        },
+        "reward": 1,
+        "verifier_budget_s": 600
+      },
+      "termination": "finish",
+      "wall_s": 101.83,
+      "within_budget": true,
+      "infra": [],
+      "request_model": "openai/deepseek-v4-flash",
+      "response_models": {
+        "deepseek-v4-flash-ga-260731": 5,
+        "deepseek-v4-flash-0731": 3
+      },
+      "bootstrap": 2,
+      "autonomous_tools": 7,
+      "tool_pairs": 9,
+      "last_tool_return_saved": true,
+      "requests_after_finish": 0,
+      "sample_count": 179,
+      "sample_window_s": 88.532562685,
+      "container_cpu_core_s": 7.773932,
+      "memory_current_peak_bytes": 66785280,
+      "kernel_memory_peak_bytes": 78888960,
+      "shared_host_rss_peak_bytes": 182784000,
+      "io_read_delta_bytes": 0,
+      "io_write_delta_bytes": 40960,
+      "resource_intervals": {
+        "container": {
+          "cpu": {
+            "candidate": 178,
+            "valid": 178,
+            "gap_reasons": {}
+          },
+          "io_read": {
+            "candidate": 178,
+            "valid": 178,
+            "gap_reasons": {}
+          },
+          "io_write": {
+            "candidate": 178,
+            "valid": 178,
+            "gap_reasons": {}
+          }
+        },
+        "host_agent_process": {
+          "cpu": {
+            "candidate": 178,
+            "valid": 178,
+            "gap_reasons": {}
+          },
+          "proc_rchar": {
+            "candidate": 178,
+            "valid": 178,
+            "gap_reasons": {}
+          },
+          "proc_wchar": {
+            "candidate": 178,
+            "valid": 178,
+            "gap_reasons": {}
+          },
+          "proc_read_bytes": {
+            "candidate": 178,
+            "valid": 178,
+            "gap_reasons": {}
+          },
+          "proc_write_bytes": {
+            "candidate": 178,
+            "valid": 178,
+            "gap_reasons": {}
+          }
+        }
+      },
+      "cleanup": {
+        "sampling_stopped": {
+          "phase": "sampling_stopped",
+          "t_monotonic_ns": 1087288391802606,
+          "rows": 179
+        },
+        "removal_verified": {
+          "phase": "removal_verified",
+          "t_monotonic_ns": 1087298647717191,
+          "result": "removed"
+        },
+        "image_tag_after_stop": {
+          "phase": "image_tag_after_stop",
+          "t_monotonic_ns": 1087298661804566,
+          "present": true,
+          "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+          "query_error": null
+        }
+      },
+      "image_retained": true
+    },
+    {
+      "chain": "Coding",
+      "collection": "CODING-MEASUREMENT-VOLCANO-01",
+      "run_id": "20261016T144518Z-django16485-91776c",
+      "identity_sha256": "0930d98985a5a5974db684a05bbb39fb777f84c5bc453de959f09ed812ee914f",
+      "entry_returncode": 7,
+      "raw_dir": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c",
+      "report": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/run-report.json",
+      "logical_requests": 20,
+      "request_pairs": 20,
+      "pair_errors": [],
+      "formal_http_transmissions": null,
+      "formal_http_reason": "no HTTP transport hook; project-layer attempts are separate",
+      "cost": "unknown",
+      "network": {
+        "status": "observed",
+        "scope": "current process network namespace; shared by all processes in namespace",
+        "scope_kind": "network_namespace_shared",
+        "counter_basis": "kernel interface tx/rx bytes; not HTTP payload, TLS bytes, or PID-exclusive traffic",
+        "interval_target_s": 0.5,
+        "sample_count": 272,
+        "valid_metric_interval_count": 183738,
+        "metric_gap_count": 0,
+        "metric_gap_reasons": {},
+        "read_wall_ns": 3851032061,
+        "sampler_stopped": true,
+        "unsupported": {
+          "container_netns": "not observed by this host process sampler",
+          "per_pid_bytes": "not available from /proc/net/dev",
+          "http_application_bytes": "not instrumented"
+        }
+      },
+      "disk_footprint": {
+        "task_workspace": "observed",
+        "container_paths": {
+          "agent_workspace": [
+            {
+              "role": "task_workspace",
+              "scope": "agent_container:/testbed",
+              "before": {
+                "role": "task_workspace",
+                "scope": "agent_container:/testbed",
+                "ownership": "task_container",
+                "path": "/testbed",
+                "size_basis": "apparent_file_size_bytes",
+                "status": "complete",
+                "bytes": 332749843,
+                "observed_subtotal_bytes": 332749843,
+                "files_seen": 6679,
+                "symlinks_skipped": 4,
+                "scan_started_monotonic_ns": 1087529743381300,
+                "scan_wall_ns": 131313627
+              },
+              "after": {
+                "role": "task_workspace",
+                "scope": "agent_container:/testbed",
+                "ownership": "task_container",
+                "path": "/testbed",
+                "size_basis": "apparent_file_size_bytes",
+                "status": "complete",
+                "bytes": 337624112,
+                "observed_subtotal_bytes": 337624112,
+                "files_seen": 7088,
+                "symlinks_skipped": 4,
+                "scan_started_monotonic_ns": 1087650650122660,
+                "scan_wall_ns": 67581721
+              },
+              "delta_bytes": 4874269,
+              "delta_status": "observed"
+            }
+          ],
+          "verifier_workspace": [
+            {
+              "role": "verifier_workspace",
+              "scope": "verifier_container:/testbed",
+              "before": {
+                "role": "verifier_workspace",
+                "scope": "verifier_container:/testbed",
+                "ownership": "task_container",
+                "path": "/testbed",
+                "size_basis": "apparent_file_size_bytes",
+                "status": "complete",
+                "bytes": 332749843,
+                "observed_subtotal_bytes": 332749843,
+                "files_seen": 6679,
+                "symlinks_skipped": 4,
+                "scan_started_monotonic_ns": 1087651217229568,
+                "scan_wall_ns": 102970707
+              },
+              "after": {
+                "role": "verifier_workspace",
+                "scope": "verifier_container:/testbed",
+                "ownership": "task_container",
+                "path": "/testbed",
+                "size_basis": "apparent_file_size_bytes",
+                "status": "complete",
+                "bytes": 337364093,
+                "observed_subtotal_bytes": 337364093,
+                "files_seen": 7026,
+                "symlinks_skipped": 4,
+                "scan_started_monotonic_ns": 1087663984503650,
+                "scan_wall_ns": 70140225
+              },
+              "delta_bytes": 4614250,
+              "delta_status": "observed"
+            }
+          ]
+        },
+        "host_output_and_cache": [
+          {
+            "role": "attempt_output",
+            "scope": "host_visible_runner_output",
+            "before": {
+              "role": "attempt_output",
+              "scope": "host_visible_runner_output",
+              "ownership": "run_scoped",
+              "path": "/home/lcq/agent_workload_characterization/data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c",
+              "size_basis": "apparent_file_size_bytes",
+              "status": "complete",
+              "bytes": 424,
+              "observed_subtotal_bytes": 424,
+              "files_seen": 1,
+              "symlinks_skipped": 0,
+              "scan_started_monotonic_ns": 1087529098226872,
+              "scan_wall_ns": 58250
+            },
+            "after": {
+              "role": "attempt_output",
+              "scope": "host_visible_runner_output",
+              "ownership": "run_scoped",
+              "path": "/home/lcq/agent_workload_characterization/data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c",
+              "size_basis": "apparent_file_size_bytes",
+              "status": "complete",
+              "bytes": 650880,
+              "observed_subtotal_bytes": 650880,
+              "files_seen": 8,
+              "symlinks_skipped": 0,
+              "scan_started_monotonic_ns": 1087664731165969,
+              "scan_wall_ns": 172002
+            },
+            "delta_bytes": 650456,
+            "delta_status": "observed"
+          },
+          {
+            "role": "shared_task_cache",
+            "scope": "host",
+            "before": {
+              "role": "shared_task_cache",
+              "scope": "host",
+              "ownership": "shared_unassigned",
+              "path": null,
+              "size_basis": "apparent_file_size_bytes",
+              "status": "unsupported",
+              "bytes": null,
+              "observed_subtotal_bytes": 0,
+              "files_seen": 0,
+              "symlinks_skipped": 0,
+              "scan_started_monotonic_ns": 1087529098286282,
+              "scan_wall_ns": 2270,
+              "reason": "no_task_exclusive_cache_path_registered"
+            },
+            "after": {
+              "role": "shared_task_cache",
+              "scope": "host",
+              "ownership": "shared_unassigned",
+              "path": null,
+              "size_basis": "apparent_file_size_bytes",
+              "status": "unsupported",
+              "bytes": null,
+              "observed_subtotal_bytes": 0,
+              "files_seen": 0,
+              "symlinks_skipped": 0,
+              "scan_started_monotonic_ns": 1087664731339421,
+              "scan_wall_ns": 3791,
+              "reason": "no_task_exclusive_cache_path_registered"
+            },
+            "delta_bytes": null,
+            "delta_status": "unavailable_or_partial"
+          }
+        ]
+      },
+      "supplement_aggregate_status": "partial",
+      "supplement_failures": [],
+      "archive_verified": true,
+      "archive_new_file_records": 13,
+      "task": "django__django-16485",
+      "measurement_primary": "complete",
+      "measurement_gaps": [
+        "wrapper exit-code mapping expects complete, runner returns ok; actual rc7 retained",
+        "shared cache and API bytes unsupported",
+        "host final process_exited read is unavailable, not zero"
+      ],
+      "task_result": {
+        "resolved": true,
+        "evaluation_status": "ok"
+      },
+      "termination": "Submitted",
+      "execution_status": "ok",
+      "wall_s": 138.611690077,
+      "wall_scope": "runner budget clock through outcome; run-root span and scope windows separate",
+      "root_event_wall_s": 138.498343197,
+      "within_budget": true,
+      "infra": [],
+      "response_models": {
+        "deepseek-v4-flash-0731": 4,
+        "deepseek-v4-flash-ga-260731": 16
+      },
+      "bootstrap": 0,
+      "autonomous_tools": 30,
+      "tool_pairs": 30,
+      "tool_timing_note": "native mini_tool_events event_id pairing; command contents not reproduced",
+      "requests_after_finish": 0,
+      "resource_scopes": {
+        "20261016T144518Z-django16485-91776c-agent-sandbox": {
+          "scope": "20261016T144518Z-django16485-91776c-agent-sandbox",
+          "scope_kind": "agent_container",
+          "interval_target_s": 0.5,
+          "n_samples": 243,
+          "cpu_core_seconds": 14.268578,
+          "cpu_core_seconds_reason": null,
+          "cpu_evidence": "counter_boundary",
+          "wall_s": 121.308454583,
+          "avg_cores": 0.11762228815005923,
+          "avg_cores_note": "avg cores = cpu/wall; NOT an efficiency metric",
+          "n_samples_out_of_boundary": 0,
+          "memory_current_end_bytes": 390168576,
+          "memory_kernel_peak_bytes": 1042989056,
+          "memory_sampled_max_bytes": 816259072,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "memory_note": "current/kernel-peak/sampled-max are distinct; scope peaks are never summed into a run peak",
+          "io": {
+            "read_bytes": 374398976,
+            "write_bytes": 49152,
+            "evidence": "io.stat_boundary_delta",
+            "reason": null,
+            "cumulative_end": {
+              "read_bytes": 376266752,
+              "write_bytes": 49152,
+              "note": "cumulative counter value at final boundary (reference only; NOT the interval amount)"
+            }
+          },
+          "notes": [
+            "baseline_cpu_unreadable:None"
+          ]
+        },
+        "20261016T144518Z-django16485-91776c-verifier": {
+          "scope": "20261016T144518Z-django16485-91776c-verifier",
+          "scope_kind": "verifier_container",
+          "interval_target_s": 0.5,
+          "n_samples": 27,
+          "cpu_core_seconds": 3.560612,
+          "cpu_core_seconds_reason": null,
+          "cpu_evidence": "counter_boundary",
+          "wall_s": 13.091624098,
+          "avg_cores": 0.27197633947830446,
+          "avg_cores_note": "avg cores = cpu/wall; NOT an efficiency metric",
+          "n_samples_out_of_boundary": 0,
+          "memory_current_end_bytes": 17510400,
+          "memory_kernel_peak_bytes": 79851520,
+          "memory_sampled_max_bytes": 79110144,
+          "memory_peak_basis": "v1_max_usage_in_bytes",
+          "memory_note": "current/kernel-peak/sampled-max are distinct; scope peaks are never summed into a run peak",
+          "io": {
+            "read_bytes": 7303168,
+            "write_bytes": 1699840,
+            "evidence": "io.stat_boundary_delta",
+            "reason": null,
+            "cumulative_end": {
+              "read_bytes": 7303168,
+              "write_bytes": 1699840,
+              "note": "cumulative counter value at final boundary (reference only; NOT the interval amount)"
+            }
+          },
+          "notes": [
+            "baseline_cpu_unreadable:None"
+          ]
+        }
+      },
+      "resource_intervals": {
+        "20261016T144518Z-django16485-91776c-agent-sandbox": {
+          "cpu": {
+            "candidate": 244,
+            "valid": 244,
+            "gap_reasons": {}
+          },
+          "io_read": {
+            "candidate": 244,
+            "valid": 244,
+            "gap_reasons": {}
+          },
+          "io_write": {
+            "candidate": 244,
+            "valid": 244,
+            "gap_reasons": {}
+          }
+        },
+        "20261016T144518Z-django16485-91776c-verifier": {
+          "cpu": {
+            "candidate": 28,
+            "valid": 28,
+            "gap_reasons": {}
+          },
+          "io_read": {
+            "candidate": 28,
+            "valid": 28,
+            "gap_reasons": {}
+          },
+          "io_write": {
+            "candidate": 28,
+            "valid": 28,
+            "gap_reasons": {}
+          }
+        }
+      },
+      "shared_host_process": {
+        "scope": "host_mini_child",
+        "pid": 609327,
+        "starttime_ticks": 108752988,
+        "clk_tck": 100,
+        "page_size": 4096,
+        "n_snapshots": 597,
+        "n_readable": 596,
+        "cpu_seconds": 3.84,
+        "cpu_seconds_reason": null,
+        "cpu_basis": "utime+stime tick delta between first/last READABLE snapshots (interval, not lifetime)",
+        "rss_current_last_readable": 219705344,
+        "rss_sampled_max": 228921344,
+        "rss_note": "current/sampled-max distinct; kernel peak not read at process level; RSS never summed across processes",
+        "final_read_status": "process_exited",
+        "final_value_note": "a process_exited final read means the verified final is null; the last readable value is diagnostic only",
+        "collector": {
+          "read_count": 597,
+          "read_wall_ns_total": 88981857,
+          "read_wall_ns_mean": 149048.3366834171,
+          "note": "collector read cost measured separately from any workload metric; runner-process CPU/RSS is host_runner_process (includes collector), never double-counted as exclusive"
+        },
+        "coverage_gaps": [
+          "descendants (docker exec clients) not individually tracked; short-lived grandchildren may be missed",
+          "kernel-peak (VmHWM) not recorded at host scope this batch"
+        ]
+      },
+      "cleanup_status": "ok",
+      "archive_runner_status": "ok",
+      "wrapper_returncode_reason": "entry tests archive_status==complete but PilotOutcome archive_status success is ok; no rerun and no raw change",
+      "image_after_cleanup": {
+        "id": "sha256:bba60201758effbb3e4795367d470e3d0e00427f0e2e86636801b9f93df0b664",
+        "platform": "linux/arm64",
+        "actual_read_only_post_execution_inspect": true
+      },
+      "agent_last_tool_terminal_ns": 1087648733770247,
+      "agent_last_tool_terminal": {
+        "event": "error",
+        "exception_type": "Submitted"
+      },
+      "requests_after_agent_terminal": 0,
+      "last_tool_terminal_saved": true,
+      "last_tool_return_status": "Submitted control-flow exception, not a fabricated successful return",
+      "last_ordinary_tool_return_saved": true,
+      "native_tool_terminals": {
+        "closed": 29,
+        "error": 1
+      }
+    },
+    {
+      "chain": "Assistant",
+      "collection": "TOOLSANDBOX-MEASUREMENT-VOLCANO-01",
+      "run_id": "20261016T145056Z-tsbvolcano01",
+      "identity_sha256": "2d7b147e74c37cbaefbb997ff51f627be7691fb4397f8571aceb20c962c8fef9",
+      "entry_returncode": 0,
+      "raw_dir": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01",
+      "report": "reports/resource/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/run-report.json",
+      "logical_requests": 7,
+      "request_pairs": 7,
+      "pair_errors": [],
+      "formal_http_transmissions": null,
+      "formal_http_reason": "no HTTP transport hook; project-layer attempts are separate",
+      "cost": "unknown",
+      "network": {
+        "status": "observed",
+        "scope": "current process network namespace; shared by all processes in namespace",
+        "scope_kind": "network_namespace_shared",
+        "counter_basis": "kernel interface tx/rx bytes; not HTTP payload, TLS bytes, or PID-exclusive traffic",
+        "interval_target_s": 0.5,
+        "sample_count": 40,
+        "valid_metric_interval_count": 26442,
+        "metric_gap_count": 0,
+        "metric_gap_reasons": {},
+        "read_wall_ns": 474831763,
+        "sampler_stopped": true,
+        "unsupported": {
+          "container_netns": "not observed by this host process sampler",
+          "per_pid_bytes": "not available from /proc/net/dev",
+          "http_application_bytes": "not instrumented"
+        }
+      },
+      "disk_footprint": {
+        "task_workspace": "not_applicable",
+        "container_paths": {},
+        "host_output_and_cache": [
+          {
+            "role": "attempt_output",
+            "scope": "host_visible_worker_output",
+            "before": {
+              "role": "attempt_output",
+              "scope": "host_visible_worker_output",
+              "ownership": "run_scoped",
+              "path": "/home/lcq/agent_workload_characterization/data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01",
+              "size_basis": "apparent_file_size_bytes",
+              "status": "complete",
+              "bytes": 329,
+              "observed_subtotal_bytes": 329,
+              "files_seen": 1,
+              "symlinks_skipped": 0,
+              "scan_started_monotonic_ns": 1087866524368021,
+              "scan_wall_ns": 82441
+            },
+            "after": {
+              "role": "attempt_output",
+              "scope": "host_visible_worker_output",
+              "ownership": "run_scoped",
+              "path": "/home/lcq/agent_workload_characterization/data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01",
+              "size_basis": "apparent_file_size_bytes",
+              "status": "complete",
+              "bytes": 130837,
+              "observed_subtotal_bytes": 130837,
+              "files_seen": 13,
+              "symlinks_skipped": 0,
+              "scan_started_monotonic_ns": 1087885978803277,
+              "scan_wall_ns": 284904
+            },
+            "delta_bytes": 130508,
+            "delta_status": "observed"
+          },
+          {
+            "role": "shared_task_cache",
+            "scope": "host",
+            "before": {
+              "role": "shared_task_cache",
+              "scope": "host",
+              "ownership": "shared_unassigned",
+              "path": null,
+              "size_basis": "apparent_file_size_bytes",
+              "status": "unsupported",
+              "bytes": null,
+              "observed_subtotal_bytes": 0,
+              "files_seen": 0,
+              "symlinks_skipped": 0,
+              "scan_started_monotonic_ns": 1087866524451852,
+              "scan_wall_ns": 2440,
+              "reason": "no_task_exclusive_cache_path_registered"
+            },
+            "after": {
+              "role": "shared_task_cache",
+              "scope": "host",
+              "ownership": "shared_unassigned",
+              "path": null,
+              "size_basis": "apparent_file_size_bytes",
+              "status": "unsupported",
+              "bytes": null,
+              "observed_subtotal_bytes": 0,
+              "files_seen": 0,
+              "symlinks_skipped": 0,
+              "scan_started_monotonic_ns": 1087885979089841,
+              "scan_wall_ns": 3970,
+              "reason": "no_task_exclusive_cache_path_registered"
+            },
+            "delta_bytes": null,
+            "delta_status": "unavailable_or_partial"
+          }
+        ]
+      },
+      "supplement_aggregate_status": "partial",
+      "supplement_failures": [],
+      "archive_verified": true,
+      "archive_new_file_records": 15,
+      "task": "send_message_with_contact_content_cellular_off",
+      "measurement_primary": "complete",
+      "measurement_gaps": [
+        "task-exclusive cache and API bytes unsupported"
+      ],
+      "task_result": {
+        "milestone_mapping": {
+          "0": [
+            23,
+            1
+          ],
+          "1": [
+            17,
+            1
+          ],
+          "2": [
+            25,
+            1
+          ],
+          "3": [
+            26,
+            0.7937005097107789
+          ]
+        },
+        "minefield_mapping": {},
+        "milestone_similarity": 0.9484251274276947,
+        "minefield_similarity": 0,
+        "similarity": 0.9484251274276947,
+        "turn_count": 11
+      },
+      "termination": {
+        "conversation_active": false,
+        "user_end_conversation_executed": true,
+        "reason": "user_end_conversation"
+      },
+      "wall_s": 19.807992114,
+      "worker_window_wall_s": 19.793976911,
+      "within_budget": true,
+      "infra": null,
+      "request_roles": {
+        "agent": 6,
+        "user": 1
+      },
+      "response_models": {
+        "deepseek-v4-flash-0731": 2,
+        "deepseek-v4-flash-ga-260731": 5
+      },
+      "project_layer_attempts": 7,
+      "counts": {
+        "agent_logical_calls": 6,
+        "user_logical_calls": 1,
+        "tool_call_executions": 7,
+        "tool_batches": {
+          "started": 6,
+          "closed": 6,
+          "error": 0,
+          "unclosed": 0
+        },
+        "logical_tool_calls": {
+          "started": 6,
+          "closed": 5,
+          "error": 1,
+          "unclosed": 0
+        }
+      },
+      "tool_roles": {
+        "agent": 5,
+        "user": 1
+      },
+      "tool_errors": [
+        {
+          "name": "send_message_with_phone_number",
+          "error": "ConnectionError:<sanitized>"
+        }
+      ],
+      "tool_pairs": 6,
+      "batch_pairs": 6,
+      "last_tool_return_saved": true,
+      "requests_after_end_conversation": 0,
+      "system_setup_boundaries": 1,
+      "sample_count": 39,
+      "sample_window_s": 19.000092961,
+      "clk_tck": 100,
+      "shared_process_cpu_s": 609.08,
+      "rss_sampled_peak_bytes": 1494155264,
+      "process_io_deltas": {
+        "rchar": 42906340,
+        "wchar": 114365,
+        "read_bytes": 0,
+        "write_bytes": 118784
+      },
+      "resource_intervals": {
+        "cpu": {
+          "candidate": 38,
+          "valid": 38,
+          "gap_reasons": {}
+        },
+        "proc_rchar": {
+          "candidate": 38,
+          "valid": 38,
+          "gap_reasons": {}
+        },
+        "proc_wchar": {
+          "candidate": 38,
+          "valid": 38,
+          "gap_reasons": {}
+        },
+        "proc_read_bytes": {
+          "candidate": 38,
+          "valid": 38,
+          "gap_reasons": {}
+        },
+        "proc_write_bytes": {
+          "candidate": 38,
+          "valid": 38,
+          "gap_reasons": {}
+        }
+      },
+      "phases": {
+        "initialization": {
+          "wall_s": 6.849826154,
+          "shared_process_cpu_s": 301.99
+        },
+        "play": {
+          "wall_s": 10.413814511,
+          "shared_process_cpu_s": 58.56
+        },
+        "evaluate": {
+          "wall_s": 1.6721066,
+          "shared_process_cpu_s": 248.89
+        }
+      },
+      "cleanup": {
+        "pid": 614457,
+        "starttime_ticks": 108786655,
+        "returncode": 0,
+        "wait_reaped": true,
+        "original_process_gone": true,
+        "sampler_stopped": true,
+        "checked_monotonic_ns": 1087886353300663
+      }
+    }
+  ],
+  "manifest_verification": [
+    {
+      "manifest": {
+        "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/manifest.json",
+        "bytes": 25823,
+        "sha256": "4b1be98faeea78bb6b49fe4dadc18da65462cf9926d4397557f5701e6450cbf9"
+      },
+      "records_verified": 125,
+      "file_set_exact": true,
+      "status": "pass",
+      "bytes_basis": "verify registered bytes where present and SHA"
+    },
+    {
+      "manifest": {
+        "path": "reports/resource/DOCOPS-MEASUREMENT-VOLCANO-02/manifest.json",
+        "bytes": 1123,
+        "sha256": "9555227ea6fd66c5e10633233a58e811d14da2fa4e777848c105d520d54a1fbc"
+      },
+      "records_verified": 5,
+      "file_set_exact": false,
+      "status": "pass",
+      "bytes_basis": "verify registered bytes where present and SHA"
+    },
+    {
+      "manifest": {
+        "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/manifest.json",
+        "bytes": 1336,
+        "sha256": "a5e3bf1608539f1dbd7d118ea2969bbc4c3161be771e3eeb66ca4850c4a44efd"
+      },
+      "records_verified": 13,
+      "file_set_exact": true,
+      "status": "pass",
+      "bytes_basis": "Coding raw manifest registers SHA only; bytes separately read into closeout"
+    },
+    {
+      "manifest": {
+        "path": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/manifest.json",
+        "bytes": 1585,
+        "sha256": "5835ecdee67d8253cff22ab727c41d19f9450e1fe03e5313c240fc1efe064445"
+      },
+      "records_verified": 7,
+      "file_set_exact": false,
+      "status": "pass",
+      "bytes_basis": "verify registered bytes where present and SHA"
+    },
+    {
+      "manifest": {
+        "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/manifest.json",
+        "bytes": 2487,
+        "sha256": "95bb121cd88288f9a269b458e76ce887dd934f83cd2aa6a1134aed87776f803f"
+      },
+      "records_verified": 15,
+      "file_set_exact": true,
+      "status": "pass",
+      "bytes_basis": "verify registered bytes where present and SHA"
+    },
+    {
+      "manifest": {
+        "path": "reports/resource/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/manifest.json",
+        "bytes": 1126,
+        "sha256": "0b94a0baf5db44db44beb1b4ea2bf40064b63489c9ddc168c1b565a284d05784"
+      },
+      "records_verified": 5,
+      "file_set_exact": false,
+      "status": "pass",
+      "bytes_basis": "verify registered bytes where present and SHA"
+    }
+  ],
+  "history_protection": {
+    "record": {
+      "path": "env/docops-measurement-volcano-02/history-protection.json",
+      "bytes": 9948,
+      "sha256": "0db69fe87ec6a35619e8e5939491418a186796fade3ace527cab366474be128c"
+    },
+    "exact_files_verified": 41,
+    "source_snapshots_verified": 3,
+    "file_sets_unchanged": true
+  },
+  "modified_code": [
+    {
+      "path": "scripts/docops_word_resource_01_entry.py",
+      "bytes": 49695,
+      "sha256": "2867bfa00727d1d02ff6a98adcd233af4eab618dadf5ed48eeb1482df2dc503e"
+    },
+    {
+      "path": "scripts/docops_measurement_validate_01_entry.py",
+      "bytes": 20259,
+      "sha256": "5f2f468df54f7e5ada70b94672443e56c5400adfda719b6b2840a9a6d4e28aaa"
+    },
+    {
+      "path": "scripts/docops_measurement_volcano_02_entry.py",
+      "bytes": 258,
+      "sha256": "23ce9c1bf4402ce154ce4c473b83ddd50dec0319e8315d77f2b40576fd2f3c3b"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/execution_measurement.py",
+      "bytes": 47352,
+      "sha256": "fd5bf70fdbcc366f61426fcb7b5de1b5c2e3e15b78e56ef4cfe5fbeca7b83243"
+    },
+    {
+      "path": "tests/test_office_disk_scan_wiring.py",
+      "bytes": 6207,
+      "sha256": "caa199036022d2eb077452348fc558351a1ff37331e97a9a363360a19418ab89"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/check_disk_scan.py",
+      "bytes": 4380,
+      "sha256": "35ccbc7ae608983ae9024f1a2090e3f90f0466344d9e77f90742ed536915c1d6"
+    }
+  ],
+  "new_inputs_outputs": [
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/ATTEMPT_COMPLETED.json",
+      "bytes": 202,
+      "sha256": "a7b76d58bfc4fb28a9128aa7fd2fe832b8a5843adb8499de20c8a8318a9cfe64"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/ATTEMPT_STARTED.json",
+      "bytes": 300,
+      "sha256": "e56f50e4581f8f05f111bd004bcc97835a5f843f2fb81ee105397226bda7770f"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/document-tools-agent.txt",
+      "bytes": 3635,
+      "sha256": "ebad0388857f901e80ea79c24b7aeb159416212fc0693744e320f95e9545878e"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/events.jsonl",
+      "bytes": 31146,
+      "sha256": "75c6fcb84d2d248f932765cb6a5a2e70518de21ac74100b0c85731fb3f465305"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/llm_call_1.json",
+      "bytes": 34234,
+      "sha256": "4dbd647efdf57980718bd359c8914b2e0560e8c4a51bafeb3d22623566358adc"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/llm_call_2.json",
+      "bytes": 35072,
+      "sha256": "b36ab43fc7fb27b1fc3bc977afb0de94ea83449599c60d53a583a369a0373300"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/llm_call_3.json",
+      "bytes": 41503,
+      "sha256": "92f0d936f624ec4c7e00a7d0f07a6b364ec60303a44cbe1193e455e1b39f7c72"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/llm_call_4.json",
+      "bytes": 48012,
+      "sha256": "dba9654d2fa34ab4dfd47ad40b2842f3f598d01373eee20e96233e20af48b9b3"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/llm_call_5.json",
+      "bytes": 53008,
+      "sha256": "9aa0601c0539ed617b61b84754c7639115034b44b94fc4ffc12dcf4af16c8bb8"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/llm_call_6.json",
+      "bytes": 52246,
+      "sha256": "308ec1325cd1ddc643290dded743f7e3032533143e7884d15da449b4aeb36dfa"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/llm_call_7.json",
+      "bytes": 54322,
+      "sha256": "0e411fe443f7c4d140febb522ac3ff161b50a674920891c7c85b22d4554a7901"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/llm_call_8.json",
+      "bytes": 67127,
+      "sha256": "00b0e540eb5643eae2a66690b1b3b661ee5192f80b19963f2c8bc405cf6f5c00"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/environment.json",
+      "bytes": 4553,
+      "sha256": "b4d76e5b35731af0808570446b67baa034408e44a7e7773284dc578662788547"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/manifest.json",
+      "bytes": 25823,
+      "sha256": "4b1be98faeea78bb6b49fe4dadc18da65462cf9926d4397557f5701e6450cbf9"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/measurement.json",
+      "bytes": 384026,
+      "sha256": "19d0ec3ff55f510c7f056b94a6b28ae82f2cc93ab8c218429b42223bc4cf8dae"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/summary.json",
+      "bytes": 696222,
+      "sha256": "05dba9a04df3f0d1ed3f25303b4877bce4e0dca3bc8fc51db8fda6e042237dba"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/supplemental_measurements.json",
+      "bytes": 33102609,
+      "sha256": "e631d3eeca7d5fde904bf59ee276f0175463a738bfec066fca2da9fcb36c97c2"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/verifier/ctrf.json",
+      "bytes": 1018,
+      "sha256": "66dcffcf83b0f14fc474188fe07cc2588d8d8d8355e109d25cc25a077b0eee0f"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/verifier/original_task_description.txt",
+      "bytes": 1082,
+      "sha256": "506f5ee4d2d50c58cd9888f7cccc533cd93663a177802abf05d8389972780a38"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/verifier/reward.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/verifier/submission/excel_001_budget_bucket_totals_seed.xlsx",
+      "bytes": 6629,
+      "sha256": "8018fe7e17574433e95866f6f6a838db51b429fbe65ac18710365f9d2fd73054"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/verifier/task_metadata.json",
+      "bytes": 1823,
+      "sha256": "3cd03985af785be57928bd662a7e6c1d80bf284bbf405764121ee74a3ebfccca"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/verifier/test-stdout.txt",
+      "bytes": 649,
+      "sha256": "804524998c51032a02b63e5f9d88db2fb16f875deb359843b2c0314be5e2b31f"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/plan-identity.json",
+      "bytes": 35816,
+      "sha256": "0643070334be70ce33f12063988f15e89bb486b6e31109d1ae2470b0abdb962d"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/frozen-identity.json",
+      "bytes": 35816,
+      "sha256": "0643070334be70ce33f12063988f15e89bb486b6e31109d1ae2470b0abdb962d"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/preparation-manifest.json",
+      "bytes": 26260,
+      "sha256": "676a3c3704f8ebca850854b7a3d44753c4fff8ad834bd8d8766104ce71e13b63"
+    },
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VOLCANO-02/APPROVAL.json",
+      "bytes": 903,
+      "sha256": "0fbc51b8351b18cc364cd3c27bb303c84dba941fc4e2ce863f3f0a05f04f1f64"
+    },
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VOLCANO-02/manifest.json",
+      "bytes": 1123,
+      "sha256": "9555227ea6fd66c5e10633233a58e811d14da2fa4e777848c105d520d54a1fbc"
+    },
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VOLCANO-02/run-report.json",
+      "bytes": 889111,
+      "sha256": "ad4734a056cc1afc2b0eea24363ddf35d3c74eddd49790dc373745a58bf60e81"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/candidate.patch",
+      "bytes": 1143,
+      "sha256": "91f3c6430a19d961545d31e7474593b4572d9cf01aafd9783d9a7d69842fad02"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/environment.json",
+      "bytes": 6532,
+      "sha256": "e0494035e01e94068f6c55569adbcde32f12d2ea581d42e1c2854d9490b828c6"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/events.jsonl",
+      "bytes": 24351,
+      "sha256": "8de5a56ab9a3e11cdce7e577c1654e61c30be3f84be5854d455ecd176e3cca36"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/host_process.jsonl",
+      "bytes": 342201,
+      "sha256": "b6afaafa8e7f93c4d17b853f515f0a0ea147cea5afb666c75aa73f2238baee7f"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/manifest.json",
+      "bytes": 1336,
+      "sha256": "a5e3bf1608539f1dbd7d118ea2969bbc4c3161be771e3eeb66ca4850c4a44efd"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/measurement.json",
+      "bytes": 5433,
+      "sha256": "34a669fbe5c3715cf9eeab7b69f5b09bf6b92e777fdaa73e438adcab67cf5b1a"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/metadata.json",
+      "bytes": 1560,
+      "sha256": "6629b6b516aea8000b5d10d22142c658fc4f5c313c61817cc4897305ae07a3a1"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/mini_request_starts.jsonl",
+      "bytes": 1671,
+      "sha256": "79708485a6c217bb3f6958744ab60914fc063a320d4114d1879e5dd07a1f6e69"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/mini_status.jsonl",
+      "bytes": 10333,
+      "sha256": "eefe778d272480bc53d015b4cc51c6ae3ee99fc62cb202826691e49b635bce91"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/mini_tool_events.jsonl",
+      "bytes": 15718,
+      "sha256": "ffccc3729a1e991a1872f68e7391f7f7ab6b2a27667e2306e908f41aa280a285"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/mini_trajectory.json",
+      "bytes": 233999,
+      "sha256": "d343a2190c77d805f4fb17b0ad75ba451ce90acb2c479bfb1be0d1479ae14e65"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/samples.json",
+      "bytes": 476604,
+      "sha256": "c06345a5837948621dcbf7b75a98a18861e95aa379c28278bb179a91b6d50f08"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/supplemental_measurements.json",
+      "bytes": 55953094,
+      "sha256": "f53d3dcf3c759b5b5164a297968c35105f83146534731784dffbf7af25d4e71c"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/verifier/test_output.txt",
+      "bytes": 16498,
+      "sha256": "d54d931a9e0648e793bc7c902a85e86eebdea3792490e6bd2e3c5a3c5fdb0288"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/plan-identity.json",
+      "bytes": 8777,
+      "sha256": "76c6b9253844a16d4bf907d7b4c7fd0b83b8b3fcae7b977d7b694628f467b4b9"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/frozen-identity.json",
+      "bytes": 8777,
+      "sha256": "76c6b9253844a16d4bf907d7b4c7fd0b83b8b3fcae7b977d7b694628f467b4b9"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/preparation-manifest.json",
+      "bytes": 3487,
+      "sha256": "cc2c85fab6939cc15c61a6a32258bec3f5271e1760c981313e262c484f915115"
+    },
+    {
+      "path": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/APPROVAL.json",
+      "bytes": 860,
+      "sha256": "7717cfcb2c6f4cf156c0a71af7cbf73662ddfc29bfcc581646f54be7eedb7f1b"
+    },
+    {
+      "path": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/ATTEMPT_STARTED.json",
+      "bytes": 380,
+      "sha256": "ceebe2dc2561091474741b76f3b9126754379c0adeb75dba809cf8ff4678e5cf"
+    },
+    {
+      "path": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/manifest.json",
+      "bytes": 1585,
+      "sha256": "5835ecdee67d8253cff22ab727c41d19f9450e1fe03e5313c240fc1efe064445"
+    },
+    {
+      "path": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/run-report.json",
+      "bytes": 1255,
+      "sha256": "beb51b50c9a63571d021c694098029f208ade6addc208444f6fc410568f88a7f"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/ATTEMPT_COMPLETED.json",
+      "bytes": 522,
+      "sha256": "3defe03accf69e01d433c972f76b29c2dd684c2092ce42813de1581db2d4cd71"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/ATTEMPT_STARTED.json",
+      "bytes": 329,
+      "sha256": "d19336951dff06960c30d9f80896dfcddf8b30e2ab7d45f8e6f08a9702b7026e"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/boundaries.jsonl",
+      "bytes": 4819,
+      "sha256": "4f7713350a6494039e88f40cd1352221c3972f5aaaabd06503556338d92daacf"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/environment.json",
+      "bytes": 2662,
+      "sha256": "b69ee5d847d81dca153f91aa6621626bc870758710bc1e4f91df48617a8e8631"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/events.jsonl",
+      "bytes": 22142,
+      "sha256": "2f0a3d577509f61f88e3a650a999362e3d38d7372df006dc78b1282b2fbfefd0"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/job.json",
+      "bytes": 3069,
+      "sha256": "47127f9ae8fb0af5f891c6a4488adb762ca6972ece7f03ac60ad0a152002ab8d"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/manifest.json",
+      "bytes": 2487,
+      "sha256": "95bb121cd88288f9a269b458e76ce887dd934f83cd2aa6a1134aed87776f803f"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/official/trajectories/send_message_with_contact_content_cellular_off/conversation.json",
+      "bytes": 17858,
+      "sha256": "52d4e3534ffd5eb24c77dab6b49df2f017b828ea7975b81a53a9b8e56d51a6f0"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/official/trajectories/send_message_with_contact_content_cellular_off/execution_context.json",
+      "bytes": 36433,
+      "sha256": "ee016763423cf2dc52a9e0af919a2171866cb2561c20631bdd1c933d99db0f27"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/official/trajectories/send_message_with_contact_content_cellular_off/pretty_print.txt",
+      "bytes": 6738,
+      "sha256": "2298299cbab57c51acc948fe3c4e5d4e592c76096b4648b6f21a968bb7a8014e"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/result.json",
+      "bytes": 4111,
+      "sha256": "d2d0958cf4f5568fba65f5a5e5e809820d091659ed66ba3d8e3ccc1ace7f94ba"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/samples.jsonl",
+      "bytes": 16441,
+      "sha256": "da06d8658cbe572a4920e8f398a6b5753bbd3c5357bb22e5c4fa41706d8585dd"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/scenario_context.json",
+      "bytes": 15328,
+      "sha256": "a32c12fedb1aa93ce77cd8d4a20d0ac0b048b0e589dec28d713eb9bc492fa727"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/supplemental_measurements.json",
+      "bytes": 6489223,
+      "sha256": "5a7053c5681b5437bfe04e82a36a5ba9078138f803192f9f6c933aafbe568ac9"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/worker.stderr",
+      "bytes": 907,
+      "sha256": "9e70ae2d48a7c82034c29ec1fb76014b60b5aa4aa4e9d44cea843e76080ecd47"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/worker.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/plan-identity.json",
+      "bytes": 16536,
+      "sha256": "718241df50ed1b6d08e1a7045dd8e9bb5eb2918c12729f45bd24d937309ced6a"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/frozen-identity.json",
+      "bytes": 16536,
+      "sha256": "718241df50ed1b6d08e1a7045dd8e9bb5eb2918c12729f45bd24d937309ced6a"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/preparation-manifest.json",
+      "bytes": 3371,
+      "sha256": "3ae3d684c4677cd0d68b4f19085f3abafb94db4148375197a394ddce2f21ca42"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/APPROVAL.json",
+      "bytes": 1595,
+      "sha256": "f6e322da32ca3b9a2d748c24a0b6d1bb9ed683a0186a00c2f90341652681c57e"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/manifest.json",
+      "bytes": 1126,
+      "sha256": "0b94a0baf5db44db44beb1b4ea2bf40064b63489c9ddc168c1b565a284d05784"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/run-report.json",
+      "bytes": 60060,
+      "sha256": "8060be7b795e589ae751729ff111939143be7879818b7502c5b78dfb97f68033"
+    }
+  ],
+  "limitations": [
+    "Supplement aggregate remains partial because no task-exclusive cache path is registered; primary required network/disk observations separately assessed",
+    "Shared netns per-interface bytes only, not task/API traffic; no interface sums",
+    "Actual HTTP attempts and billing unknown; Assistant project attempts are not HTTP hook evidence",
+    "CPU/RSS/cgroup gauges are shared scopes; no exclusive per-tool claims",
+    "Assistant task state in memory not_applicable; no kernel RSS peak invented",
+    "Coding wrapper returned7 despite runner ok/archive hash pass; preserved, not rewritten",
+    "No HTML, no Git commit, no Gate change; CPU-02 and Replay paused"
+  ]
+}

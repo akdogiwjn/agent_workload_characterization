@@ -114,6 +114,8 @@ CODE_IDENTITY_PATHS = {
                                     / "collectors/host_process.py").resolve(),
     "collectors/resource_sampler.py": (Path(__file__).resolve().parents[1]
                                        / "collectors/resource_sampler.py").resolve(),
+    "collectors/execution_measurement.py": (Path(__file__).resolve().parents[1]
+                                             / "collectors/execution_measurement.py").resolve(),
     "analyzers/run_02_analysis.py": (Path(__file__).resolve().parents[1]
                                       / "analyzers/run_02_analysis.py").resolve(),
 }

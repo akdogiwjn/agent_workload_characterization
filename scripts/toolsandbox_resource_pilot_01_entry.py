@@ -20,8 +20,10 @@ from __future__ import annotations
 import argparse
 from collections import namedtuple
 import hashlib
+import importlib.metadata
 import json
 import os
+import platform
 import subprocess
 import sys
 import threading
@@ -33,8 +35,8 @@ ROOT = Path(__file__).resolve().parents[1]
 EntryProfile = namedtuple("EntryProfile", (
     "collection", "env_rel", "report_rel", "raw_rel", "approval_flag",
     "entry_script", "run_suffix", "source_copy_rel", "shared_entry_script",
-    "scenario_names", "batch_schedule", "batch_budget"),
-    defaults=(None, None, None, None))
+    "scenario_names", "batch_schedule", "batch_budget", "route"),
+    defaults=(None, None, None, None, None))
 
 
 PILOT_01_PROFILE = EntryProfile(
@@ -86,6 +88,48 @@ ROUTE = {
     "api_key_handling": "value is never read, logged or hashed by this entry; the worker reads it only in the real-route branch at execute time",
     "real_api_compatibility_verified": False,
 }
+
+
+def volcano_route() -> dict:
+    """Read only the selected provider's non-secret routing identity."""
+    from agent_workload_characterization.runners.smoke_launcher import (
+        DEFAULT_CONFIG, _strip_jsonc, PROVIDER_NAME, MODEL_KEY)
+    raw = DEFAULT_CONFIG.read_bytes()
+    try:
+        cfg = json.loads(raw)
+    except json.JSONDecodeError:
+        cfg = json.loads(_strip_jsonc(raw.decode("utf-8")))
+    provider = cfg["provider"][PROVIDER_NAME]
+    model = provider["models"][MODEL_KEY]
+    options = provider["options"]
+    if (model.get("name", "").strip().lower() != "deepseek-v4-flash"
+            or options.get("apiKey") != "{env:VOLCANO_API_KEY}"):
+        raise ValueError("configured Volcano provider/model/credential reference changed")
+    base = options.get("baseURL")
+    if not isinstance(base, str) or not base.startswith("https://"):
+        raise ValueError("configured Volcano API address is not HTTPS")
+    return {"provider": PROVIDER_NAME, "api_base": base,
+            "request_model_alias": "openai/deepseek-v4-flash",
+            "request_model_raw_client": MODEL_KEY,
+            "api_key_env": "VOLCANO_API_KEY",
+            "config_source": str(DEFAULT_CONFIG)}
+
+
+VOLCANO_PROFILE = EntryProfile(
+    collection="TOOLSANDBOX-MEASUREMENT-VOLCANO-01",
+    env_rel=Path("env/toolsandbox-measurement-volcano-01"),
+    report_rel=Path("reports/resource/TOOLSANDBOX-MEASUREMENT-VOLCANO-01"),
+    raw_rel=Path("data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01"),
+    approval_flag="--i-approve-the-toolsandbox-measurement-volcano-01",
+    entry_script="scripts/toolsandbox_measurement_volcano_01_entry.py",
+    run_suffix="tsbvolcano01",
+    source_copy_rel=Path("env/toolsandbox-resource-pilot-01/source"),
+    shared_entry_script="scripts/toolsandbox_resource_pilot_01_entry.py",
+    route=volcano_route())
+
+
+def route_for(profile: EntryProfile) -> dict:
+    return profile.route or ROUTE
 
 RETRY = {
     "sdk_max_retries": 0,
@@ -344,7 +388,7 @@ def build_identity(root: Path = ROOT, *, budgets: dict | None = None,
             "full_official_environment_claimed": False,
         },
         "code_and_runtime_files": code_files(root, profile=profile),
-        "route": ROUTE,
+        "route": route_for(profile),
         "retry": RETRY,
         "budgets": {**BUDGETS, **(budgets or {})},
         "batch": ({"run_count": sum(len(x) for x in profile.batch_schedule),
@@ -475,6 +519,37 @@ def verify_run_archive(run_dir: Path) -> tuple[bool, list[str]]:
     return not errors, errors
 
 
+def record_explicit_approval(root: Path = ROOT, *, profile: EntryProfile) -> dict:
+    """Record only the current, explicit approval for the isolated Volcano run."""
+    if profile.collection != "TOOLSANDBOX-MEASUREMENT-VOLCANO-01":
+        raise ValueError("approval recording is only enabled for the new Volcano collection")
+    plan = plan_mode(root, profile=profile)
+    if not plan["ready_for_approval"]:
+        raise ValueError("identity mismatch or occupied namespace; approval refused")
+    report_dir = root / profile.report_rel
+    report_dir.mkdir(parents=True, exist_ok=True)
+    path = report_dir / "APPROVAL.json"
+    approval = {
+        "schema": "toolsandbox-pilot-approval-v1",
+        "collection": profile.collection,
+        "user_approval": "approved",
+        "identity_sha256": plan["identity_sha256"],
+        "approved_at_utc": datetime.now(timezone.utc).isoformat(),
+        "approval_source": "explicit user authorization in the current request",
+        "accept_unknown_cost_no_hard_cap": True,
+        "scope": {"scenario": SCENARIO_NAME, "attempts": 1,
+                  "attempt_retry": 0, "budgets": plan["identity"]["budgets"],
+                  "route": {k: v for k, v in route_for(profile).items()
+                            if k != "config_source"},
+                  "actual_bill": "unknown", "hard_cost_cap": None}
+    }
+    with path.open("x") as stream:
+        json.dump(approval, stream, ensure_ascii=False, indent=2)
+        stream.write("\n")
+    return {"approval_path": str(path.relative_to(root)),
+            "identity_sha256": plan["identity_sha256"], "created": True}
+
+
 def wait_for_worker(proc, boundary_path: Path, budgets: dict, common_deadline_ns: int):
     """Parent-side hard stop; a blocked SDK/tool/evaluator cannot bypass this wait."""
     cursor = 0
@@ -539,9 +614,29 @@ def runtime_environment_record(pid: int, starttime_ticks: int) -> dict:
     except (OSError, ValueError):
         pass
     cg = Path("/sys/fs/cgroup") / (cgroup_path or "__unavailable__")
+    cpu_model = None
+    try:
+        for line in Path("/proc/cpuinfo").read_text(errors="replace").splitlines():
+            key, _, value = line.partition(":")
+            if key.strip() in ("model name", "CPU implementer", "CPU part"):
+                cpu_model = value.strip()
+                break
+    except OSError:
+        pass
+    dependency_versions = {}
+    for package in ("openai", "httpx", "httpcore", "polars"):
+        try:
+            dependency_versions[package] = {
+                "version": importlib.metadata.version(package), "status": "observed"}
+        except importlib.metadata.PackageNotFoundError:
+            dependency_versions[package] = {"version": None, "status": "not_installed"}
     return {
         "python_executable": str(VENV_PYTHON),
         "python_version": sys.version,
+        "architecture": platform.machine(),
+        "kernel_release": platform.release(),
+        "cpu_model": cpu_model,
+        "key_dependency_versions": dependency_versions,
         "pid": pid,
         "starttime_ticks": starttime_ticks,
         "sc_clk_tck": os.sysconf("SC_CLK_TCK"),
@@ -559,6 +654,104 @@ def runtime_environment_record(pid: int, starttime_ticks: int) -> dict:
     }
 
 
+def _archive_worker_initialization_failure(root: Path, run_dir: Path, run_id: str,
+        plan: dict, profile: EntryProfile, supplement, exc: Exception, *,
+        proc=None, stop=None, thread=None, stdout_f=None, stderr_f=None,
+        report_path: Path | None = None, outer_manifest_path: Path | None = None) -> int:
+    """Reap partial worker setup, stop observation, and seal a failed attempt."""
+    cleanup_errors = []
+    if stop is not None:
+        stop.set()
+    if thread is not None and thread.ident is not None:
+        thread.join(timeout=5)
+        if thread.is_alive():
+            cleanup_errors.append("sampler_stop_unconfirmed")
+    if proc is not None:
+        try:
+            if proc.poll() is None:
+                proc.terminate()
+                try:
+                    proc.wait(timeout=5)
+                except Exception:
+                    proc.kill()
+                    proc.wait(timeout=5)
+            else:
+                proc.wait(timeout=0)
+        except Exception as cleanup_exc:
+            cleanup_errors.append("worker_reap:" + type(cleanup_exc).__name__)
+    for stream in (stdout_f, stderr_f):
+        if stream is not None and not stream.closed:
+            try:
+                stream.close()
+            except Exception as cleanup_exc:
+                cleanup_errors.append("worker_log_close:" + type(cleanup_exc).__name__)
+    if supplement is None:
+        supplemental = {"schema": "run-supplement-v1", "status": "not_started"}
+    else:
+        try:
+            supplemental = supplement.stop()
+        except Exception as cleanup_exc:
+            supplemental = {"schema": "run-supplement-v1", "status": "partial",
+                            "failure": type(cleanup_exc).__name__}
+            cleanup_errors.append("supplement_stop:" + type(cleanup_exc).__name__)
+    try:
+        (run_dir / "supplemental_measurements.json").write_text(
+            json.dumps(supplemental, ensure_ascii=False, indent=1) + "\n")
+    except Exception as cleanup_exc:
+        cleanup_errors.append("supplement_archive:" + type(cleanup_exc).__name__)
+
+    marker = {"run_id": run_id, "identity_sha256": plan["identity_sha256"],
+              "status": "failed", "failure_stage": "worker_initialization",
+              "error_type": type(exc).__name__, "cleanup_errors": cleanup_errors,
+              "worker_reaped": (proc is None or proc.poll() is not None),
+              "sampler_stopped": (thread is None or not thread.is_alive())}
+    (run_dir / "ATTEMPT_COMPLETED.json").write_text(
+        json.dumps(marker, ensure_ascii=False, indent=1) + "\n")
+    files = [file_record(path, path.relative_to(run_dir))
+             for path in sorted(run_dir.rglob("*"))
+             if path.is_file() and path.name != "manifest.json"]
+    with (run_dir / "manifest.json").open("x") as stream:
+        json.dump({"schema": "toolsandbox-pilot-run-manifest-v1",
+                   "identity_sha256": plan["identity_sha256"], "run_id": run_id,
+                   "files": files, "archive_status": "partial_failure_record"},
+                  stream, ensure_ascii=False, indent=1)
+        stream.write("\n")
+    valid, errors = verify_run_archive(run_dir)
+    report = {"schema": "toolsandbox-pilot-run-report-v1",
+        "collection": profile.collection, "run_id": run_id,
+        "identity_sha256": plan["identity_sha256"], "scenario": None,
+        "worker_exit_code": getattr(proc, "returncode", None), "exit_code": 7,
+        "wall_s": None, "cleanup": marker, "evaluation": None,
+        "evaluation_status": "not_started",
+        "measurement": {"status": "partial", "reason": "worker_initialization_failed"},
+        "infra_failure": {"stage": "worker_initialization",
+                           "error_type": type(exc).__name__},
+        "archive_verification": {"valid": valid, "errors": errors},
+        "within_total_budget": None}
+    report_path = report_path or (root / profile.report_rel / "run-report.json")
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    with report_path.open("x") as stream:
+        json.dump(report, stream, ensure_ascii=False, indent=1)
+        stream.write("\n")
+    outer_manifest_path = outer_manifest_path or (root / profile.report_rel / "manifest.json")
+    outer_manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    inputs = []
+    for rel in (profile.report_rel / "APPROVAL.json",
+                profile.env_rel / "plan-identity.json",
+                profile.env_rel / "frozen-identity.json",
+                profile.raw_rel / run_id / "manifest.json"):
+        path = root / rel
+        if path.is_file():
+            inputs.append(file_record(path, rel))
+    with outer_manifest_path.open("x") as stream:
+        json.dump({"identity_sha256": plan["identity_sha256"], "run_id": run_id,
+                   "inputs": inputs,
+                   "outputs": [file_record(report_path, report_path.relative_to(root))]},
+                  stream, ensure_ascii=False, indent=1)
+        stream.write("\n")
+    return 7
+
+
 def execute(root: Path, plan: dict, *, transport: dict | None = None,
             profile: EntryProfile = PILOT_01_PROFILE,
             scenario_name: str | None = None, run_id: str | None = None,
@@ -573,11 +766,14 @@ def execute(root: Path, plan: dict, *, transport: dict | None = None,
     budgets = {**identity["budgets"], **(budgets_override or {})}
     scenario_name = scenario_name or (profile.scenario_names[0]
                                       if profile.scenario_names else SCENARIO_NAME)
+    route = route_for(profile)
     if transport is None:
+        if not os.environ.get(route["api_key_env"]):
+            raise ValueError("selected credential environment variable is missing")
         transport = {"kind": "openai_compatible",
-                     "base_url": ROUTE["api_base"],
-                     "model": ROUTE["request_model_raw_client"],
-                     "api_key_env": ROUTE["api_key_env"]}
+                     "base_url": route["api_base"],
+                     "model": route["request_model_raw_client"],
+                     "api_key_env": route["api_key_env"]}
     run_id = run_id or (datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + profile.run_suffix)
     run_dir = root / profile.raw_rel / run_id
     run_dir.mkdir(parents=True, exist_ok=False)
@@ -586,23 +782,51 @@ def execute(root: Path, plan: dict, *, transport: dict | None = None,
          "identity_sha256": plan["identity_sha256"],
          "scenario": scenario_name, "run_metadata": run_metadata,
          "started_at_utc": datetime.now(timezone.utc).isoformat()}, indent=1) + "\n")
-    job = {
-        "run_id": run_id, "run_dir": str(run_dir),
-        "scenario_name": scenario_name,
-        "run_metadata": run_metadata,
-        "source_root": str(root / identity["official_source"]["frozen_copy"]),
-        "source_manifest": str(root / identity["official_source"]["source_manifest"]),
-        "transport": transport,
-        "budgets": budgets, "retry": identity["retry"],
-        "known_nondeterminism": KNOWN_NONDETERMINISM,
-    }
-    job_path = run_dir / "job.json"
+    try:
+        from agent_workload_characterization.collectors.execution_measurement import (
+            CONTRACT_VERSION, RunSupplement, counter_rate_intervals)
+        supplement = RunSupplement(run_dir, interval_s=0.5, disk_specs=[
+            {"path": str(run_dir), "role": "attempt_output", "scope": "host_visible_worker_output",
+             "ownership": "run_scoped"},
+            {"path": None, "role": "shared_task_cache", "scope": "host",
+             "ownership": "shared_unassigned", "unavailable_status": "unsupported",
+             "reason": "no_task_exclusive_cache_path_registered"}],
+            task_workspace_status={"status": "not_applicable",
+                "reason": "official_scenario_state_is_held_in_worker_memory",
+                "visible_output": "host_visible_worker_output"})
+    except Exception as exc:
+        return _archive_worker_initialization_failure(root, run_dir, run_id,
+            plan, profile, None, exc, report_path=report_path,
+            outer_manifest_path=outer_manifest_path)
+    supplement_start_error = None
+    try:
+        supplement.start()
+    except Exception as exc:
+        supplement_start_error = type(exc).__name__
+    try:
+        job = {
+            "run_id": run_id, "run_dir": str(run_dir),
+            "scenario_name": scenario_name,
+            "run_metadata": run_metadata,
+            "source_root": str(root / identity["official_source"]["frozen_copy"]),
+            "source_manifest": str(root / identity["official_source"]["source_manifest"]),
+            "transport": transport,
+            "budgets": budgets, "retry": identity["retry"],
+            "known_nondeterminism": KNOWN_NONDETERMINISM,
+        }
+        job_path = run_dir / "job.json"
+        from agent_workload_characterization.collectors.host_process import (
+            HostProcessReader, read_starttime)
+    except Exception as exc:
+        return _archive_worker_initialization_failure(root, run_dir, run_id,
+            plan, profile, supplement, exc, report_path=report_path,
+            outer_manifest_path=outer_manifest_path)
 
-    from agent_workload_characterization.collectors.host_process import (
-        HostProcessReader, read_starttime)
-
+    proc = stdout_f = stderr_f = stop = thread = None
+    sample_rows = []
+    starttime = None
     spawn_ns = time.monotonic_ns()
-    work_deadline_s = (budgets["total_wall_s"] - budgets["cleanup_reserve_s"])
+    work_deadline_s = budgets["total_wall_s"] - budgets["cleanup_reserve_s"]
     common_deadline_ns = spawn_ns + int(work_deadline_s * 1e9)
     total_deadline_ns = spawn_ns + int(budgets["total_wall_s"] * 1e9)
     if batch_deadline_ns is not None:
@@ -611,26 +835,31 @@ def execute(root: Path, plan: dict, *, transport: dict | None = None,
     effective_work_deadline_s = (common_deadline_ns - spawn_ns) / 1e9
     job.update(parent_start_ns=spawn_ns, common_work_deadline_ns=common_deadline_ns,
                total_deadline_ns=total_deadline_ns)
-    job_path.write_text(json.dumps(job, ensure_ascii=False, indent=1) + "\n")
-    env = {"PATH": os.environ.get("PATH", ""), "PYTHONPATH": str(ROOT / "src"),
-           "HF_HUB_OFFLINE": "1", "TRANSFORMERS_OFFLINE": "1",
-           "HOME": os.environ.get("HOME", "")}
-    if transport["kind"] == "openai_compatible":
-        # No credential access at all for an offline fake execution.
-        env[ROUTE["api_key_env"]] = os.environ.get(ROUTE["api_key_env"], "")
-    stdout_f = open(run_dir / "worker.stdout", "w")
-    stderr_f = open(run_dir / "worker.stderr", "w")
-    proc = subprocess.Popen(
-        [str(VENV_PYTHON), "-B", "-m", "agent_workload_characterization.runners.toolsandbox_worker",
-         str(job_path)], cwd=str(ROOT), env=env, stdout=stdout_f, stderr=stderr_f)
-    starttime = read_starttime(proc.pid)
-    environment_path = run_dir / "environment.json"
-    environment_path.write_text(json.dumps(runtime_environment_record(proc.pid, starttime),
-                                           ensure_ascii=False, indent=1) + "\n")
-    reader = HostProcessReader(proc.pid, expected_starttime=starttime)
-    samples_path = run_dir / "samples.jsonl"
-    stop = threading.Event()
-    sample_rows = []
+    try:
+        job_path.write_text(json.dumps(job, ensure_ascii=False, indent=1) + "\n")
+        env = {"PATH": os.environ.get("PATH", ""), "PYTHONPATH": str(ROOT / "src"),
+               "HF_HUB_OFFLINE": "1", "TRANSFORMERS_OFFLINE": "1",
+               "HOME": os.environ.get("HOME", "")}
+        if transport["kind"] == "openai_compatible":
+            # No credential access at all for an offline fake execution.
+            env[route["api_key_env"]] = os.environ.get(route["api_key_env"], "")
+        stdout_f = open(run_dir / "worker.stdout", "w")
+        stderr_f = open(run_dir / "worker.stderr", "w")
+        proc = subprocess.Popen(
+            [str(VENV_PYTHON), "-B", "-m", "agent_workload_characterization.runners.toolsandbox_worker",
+             str(job_path)], cwd=str(ROOT), env=env, stdout=stdout_f, stderr=stderr_f)
+        starttime = read_starttime(proc.pid)
+        environment_path = run_dir / "environment.json"
+        environment_path.write_text(json.dumps(runtime_environment_record(proc.pid, starttime),
+                                               ensure_ascii=False, indent=1) + "\n")
+        reader = HostProcessReader(proc.pid, expected_starttime=starttime)
+        samples_path = run_dir / "samples.jsonl"
+        stop = threading.Event()
+    except Exception as exc:
+        return _archive_worker_initialization_failure(root, run_dir, run_id,
+            plan, profile, supplement, exc, proc=proc, stop=stop, thread=thread,
+            stdout_f=stdout_f, stderr_f=stderr_f, report_path=report_path,
+            outer_manifest_path=outer_manifest_path)
 
     def sampler():
         next_t = time.monotonic()
@@ -652,18 +881,54 @@ def execute(root: Path, plan: dict, *, transport: dict | None = None,
                 stop.wait(delay)
 
     thread = threading.Thread(target=sampler, daemon=True)
-    thread.start()
+    try:
+        thread.start()
+    except Exception as exc:
+        return _archive_worker_initialization_failure(root, run_dir, run_id,
+            plan, profile, supplement, exc, proc=proc, stop=stop, thread=thread,
+            stdout_f=stdout_f, stderr_f=stderr_f, report_path=report_path,
+            outer_manifest_path=outer_manifest_path)
     killed = False
     rc = None
+    timeout = None
+    phase_signals = []
+    wait_error = None
     try:
         rc, timeout, phase_signals = wait_for_worker(
             proc, run_dir / "boundaries.jsonl", budgets, common_deadline_ns)
         killed = timeout is not None
+    except Exception as exc:
+        wait_error = type(exc).__name__
+        killed = True
+        try:
+            if proc.poll() is None:
+                proc.terminate()
+                try:
+                    proc.wait(timeout=5)
+                except Exception:
+                    proc.kill()
+                    proc.wait(timeout=5)
+        except Exception:
+            pass
+        rc = proc.returncode
+        timeout = "worker_wait_error"
     finally:
         stop.set()
         thread.join(timeout=5)
         stdout_f.close()
         stderr_f.close()
+    try:
+        supplemental_measurements = supplement.stop()
+        if supplement_start_error:
+            supplemental_measurements["status"] = "partial"
+            supplemental_measurements["start_error"] = supplement_start_error
+    except Exception as exc:
+        supplemental_measurements = {"schema": "run-supplement-v1", "status": "partial",
+                                     "measurement_contract_version": CONTRACT_VERSION,
+                                     "failure": type(exc).__name__,
+                                     "start_error": supplement_start_error}
+    (run_dir / "supplemental_measurements.json").write_text(
+        json.dumps(supplemental_measurements, ensure_ascii=False, indent=1) + "\n")
     end_ns = time.monotonic_ns()
     remaining_starttime = read_starttime(proc.pid)
     cleanup = {"pid": proc.pid, "starttime_ticks": starttime, "returncode": proc.returncode,
@@ -680,7 +945,7 @@ def execute(root: Path, plan: dict, *, transport: dict | None = None,
     regressions = sum(1 for a, b in zip(sample_rows, sample_rows[1:])
                       if a["cpu_ticks"] is not None and b["cpu_ticks"] is not None
                       and b["cpu_ticks"] < a["cpu_ticks"])
-    exit_code = 4 if killed else (rc if rc is not None else 5)
+    exit_code = (7 if wait_error else (4 if killed else (rc if rc is not None else 5)))
     boundary_path = run_dir / "boundaries.jsonl"
     boundary_text = boundary_path.read_text() if boundary_path.is_file() else ""
     phases = [json.loads(line) for line in boundary_text.splitlines(keepends=True) if line.endswith("\n")]
@@ -693,12 +958,39 @@ def execute(root: Path, plan: dict, *, transport: dict | None = None,
     terminal_ids = {e["event_id"] for e in event_rows if e.get("status") in ("closed", "error", "unclosed")}
     censored_ids = [e["event_id"] for e in event_rows if e.get("status") == "open"
                     and e["event_id"] not in terminal_ids]
+    clk_tck = None
+    try:
+        clk_tck = json.loads(environment_path.read_text()).get("sc_clk_tck")
+    except (OSError, ValueError):
+        pass
+    host_intervals = counter_rate_intervals(sample_rows, {
+        "cpu": {"path": "cpu_ticks", "divisor": clk_tck, "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "identity_paths": ["pid", "starttime_ticks"],
+                "status_path": ("read_status", "stat")},
+        "proc_rchar": {"path": ("process_io", "rchar"), "unit": "bytes",
+                       "rate_unit": "bytes_per_second",
+                       "identity_paths": ["pid", "starttime_ticks"],
+                       "status_path": ("read_status", "io")},
+        "proc_wchar": {"path": ("process_io", "wchar"), "unit": "bytes",
+                       "rate_unit": "bytes_per_second",
+                       "identity_paths": ["pid", "starttime_ticks"],
+                       "status_path": ("read_status", "io")},
+        "proc_read_bytes": {"path": ("process_io", "read_bytes"), "unit": "bytes",
+                            "rate_unit": "bytes_per_second",
+                            "identity_paths": ["pid", "starttime_ticks"],
+                            "status_path": ("read_status", "io")},
+        "proc_write_bytes": {"path": ("process_io", "write_bytes"), "unit": "bytes",
+                             "rate_unit": "bytes_per_second",
+                             "identity_paths": ["pid", "starttime_ticks"],
+                             "status_path": ("read_status", "io")}})
     report = {
         "schema": "toolsandbox-pilot-run-report-v1",
         "collection": profile.collection, "run_id": run_id,
         "identity_sha256": plan["identity_sha256"], "scenario": scenario_name,
         "run_metadata": run_metadata,
         "worker_exit_code": rc, "killed_by_deadline": killed,
+        "worker_wait_error": wait_error,
         "exit_code": exit_code,
         "wall_s": (end_ns - spawn_ns) / 1e9,
         "work_deadline_s": effective_work_deadline_s,
@@ -720,7 +1012,9 @@ def execute(root: Path, plan: dict, *, transport: dict | None = None,
                           "max_gap_ns": max(gaps, default=None),
                           "nonpositive_gaps": sum(1 for g in gaps if g <= 0),
                           "cpu_counter_regressions": regressions,
-                          "scope": "worker process pid+starttime; shared scope, not per-tool"},
+                          "scope": "worker process pid+starttime; shared scope, not per-tool",
+                          "resource_intervals": host_intervals},
+        "supplemental_measurements": "supplemental_measurements.json",
         "worker_result": worker_result,
         "archive_verification": None,
         "actual_bill": "unknown",
@@ -775,6 +1069,8 @@ def main(argv=None, *, root: Path = ROOT,
                        help="freeze the official source copy and venv record; never overwrites")
     modes.add_argument("--freeze", action="store_true",
                        help="write candidate plan/frozen identity; never overwrites, never approves")
+    modes.add_argument("--record-approval", action="store_true",
+                       help="record current explicit Volcano authorization after freeze")
     modes.add_argument("--execute", action="store_true")
     parser.add_argument(profile.approval_flag, action="store_true", dest="approved")
     args = parser.parse_args(argv)
@@ -785,6 +1081,10 @@ def main(argv=None, *, root: Path = ROOT,
             return execute(root, plan_mode(root, profile=profile), profile=profile)
         if args.prepare_source:
             print(json.dumps(prepare_source(root, profile=profile), ensure_ascii=False, indent=2))
+            return 0
+        if args.record_approval:
+            print(json.dumps(record_explicit_approval(root, profile=profile),
+                             ensure_ascii=False, indent=2))
             return 0
         plan = freeze(root, profile=profile) if args.freeze else plan_mode(root, profile=profile)
         print(json.dumps(plan, ensure_ascii=False, indent=2))

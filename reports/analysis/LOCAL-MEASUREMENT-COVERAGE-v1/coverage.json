@@ -1,0 +1,4749 @@
+{
+  "schema": "local-measurement-coverage-v1",
+  "scope": "exactly the nine run IDs selected by each accepted report/batch summary; no directory discovery",
+  "collections": {
+    "P1-12-CODING-REPEAT-01": {
+      "runs": 9,
+      "run_ids": [
+        "20260928T121110Z-bc1dca",
+        "20260928T121318Z-11bacd",
+        "20260928T121548Z-ad0290",
+        "20260928T121728Z-d87dd3",
+        "20260928T122024Z-004fd1",
+        "20260928T122232Z-03d61c",
+        "20260928T122356Z-2bbb44",
+        "20260928T122542Z-8adc15",
+        "20260928T122716Z-441807"
+      ],
+      "sources": [
+        "cgroup v1/v2 evidence in samples.json",
+        "host_process.jsonl records"
+      ]
+    },
+    "DOCOPS-OFFICE-REPEAT-02": {
+      "runs": 9,
+      "run_ids": [
+        "20261011T104235Z-r0-excel001",
+        "20261011T104318Z-r0-ppt008",
+        "20261011T104344Z-r0-pdf004",
+        "20261011T104406Z-r1-ppt008",
+        "20261011T104431Z-r1-pdf004",
+        "20261011T104454Z-r1-excel001",
+        "20261011T104543Z-r2-pdf004",
+        "20261011T104605Z-r2-excel001",
+        "20261011T104641Z-r2-ppt008"
+      ],
+      "sources": [
+        "summary.json samples and phase events",
+        "environment.json",
+        "measurement.json"
+      ]
+    },
+    "TOOLSANDBOX-ASSISTANT-REPEAT-01": {
+      "runs": 9,
+      "run_ids": [
+        "20261012T135428Z-r0-a-tsbassistant01",
+        "20261012T135610Z-r1-a-tsbassistant01",
+        "20261012T135716Z-r2-a-tsbassistant01",
+        "20261012T135444Z-r0-b-tsbassistant01",
+        "20261012T135529Z-r1-b-tsbassistant01",
+        "20261012T135730Z-r2-b-tsbassistant01",
+        "20261012T135459Z-r0-c-tsbassistant01",
+        "20261012T135543Z-r1-c-tsbassistant01",
+        "20261012T135627Z-r2-c-tsbassistant01"
+      ],
+      "sources": [
+        "samples.jsonl",
+        "boundaries.jsonl",
+        "environment.json",
+        "result.json"
+      ]
+    }
+  },
+  "historical_metric_classification": [
+    {
+      "metric": "CPU cumulative and timestamps",
+      "coding": "A",
+      "office": "A",
+      "assistant": "A",
+      "basis": "cgroup CPU usec for Coding/Office; shared worker process ticks for Assistant; raw monotonic samples/boundaries"
+    },
+    {
+      "metric": "CPU interval average core",
+      "coding": "B",
+      "office": "B",
+      "assistant": "B",
+      "basis": "derivable from adjacent valid cumulative values, monotonic timestamps, and CLK_TCK where process ticks are used; gaps remain gaps"
+    },
+    {
+      "metric": "memory.current",
+      "coding": "A",
+      "office": "A",
+      "assistant": "E",
+      "basis": "container cgroup current values in Coding/Office; ToolSandbox has process RSS instead"
+    },
+    {
+      "metric": "process RSS",
+      "coding": "A",
+      "office": "A",
+      "assistant": "A",
+      "basis": "host process observations; shared runner/collector scope, not container kernel peak"
+    },
+    {
+      "metric": "kernel memory peak",
+      "coding": "A",
+      "office": "A",
+      "assistant": "D",
+      "basis": "cgroup peak counters in Coding/Office; no historical worker-process kernel peak for Assistant"
+    },
+    {
+      "metric": "disk I/O cumulative counters",
+      "coding": "A",
+      "office": "A",
+      "assistant": "A",
+      "basis": "cgroup block-service counters in Coding/Office; /proc/PID/io rchar/wchar/read_bytes/write_bytes in Assistant"
+    },
+    {
+      "metric": "disk I/O rates",
+      "coding": "B",
+      "office": "B",
+      "assistant": "B",
+      "basis": "adjacent counter differences and actual sample times support offline rates; units/scopes differ and are not combined"
+    },
+    {
+      "metric": "network tx/rx bytes",
+      "coding": "D",
+      "office": "D",
+      "assistant": "D",
+      "basis": "none of the selected historical run manifests contains saved network-interface or HTTP byte counters"
+    },
+    {
+      "metric": "task directory disk footprint before/after",
+      "coding": "D",
+      "office": "D",
+      "assistant": "D",
+      "basis": "no historical boundary scans; current directory size cannot reconstruct prior occupancy"
+    },
+    {
+      "metric": "attempt and lifecycle phase time",
+      "coding": "A",
+      "office": "A",
+      "assistant": "A",
+      "basis": "saved attempt wall and source-specific lifecycle/phase events; scope windows remain distinct"
+    },
+    {
+      "metric": "requests/tools/returns/bootstrap",
+      "coding": "A",
+      "office": "A",
+      "assistant": "A",
+      "basis": "saved source-native events and transcripts; transport attempts are only reported when independently observable"
+    },
+    {
+      "metric": "machine/runtime/limits",
+      "coding": "C",
+      "office": "C",
+      "assistant": "C",
+      "basis": "partial, source-specific environment, image and limit metadata; no single identical host/container snapshot across all runs"
+    }
+  ],
+  "runs": [
+    {
+      "collection": "P1-12-CODING-REPEAT-01",
+      "run_id": "20260928T121110Z-bc1dca",
+      "task": "astropy__astropy-13236",
+      "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121110Z-bc1dca",
+      "raw_manifest_verified": true,
+      "manifest_files": 9,
+      "attempt_wall_s": 128.121387866,
+      "scopes": {
+        "20260928T121110Z-bc1dca-agent-sandbox": {
+          "scope_kind": "agent_container",
+          "saved_samples": 223,
+          "cpu_usage_usec": {
+            "valid_points": 225,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 225,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 225,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 225,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 225
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 225,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 10
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 224,
+              "valid": 224,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 224,
+              "valid": 224,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 224,
+              "valid": 224,
+              "gaps": 0
+            }
+          }
+        },
+        "20260928T121110Z-bc1dca-verifier": {
+          "scope_kind": "verifier_container",
+          "saved_samples": 32,
+          "cpu_usage_usec": {
+            "valid_points": 34,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 34,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 34,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 34,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 34
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 34,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 4
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 33,
+              "valid": 33,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 33,
+              "valid": 33,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 33,
+              "valid": 33,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "host_process": {
+        "pid_starttime_identity": {
+          "pid": 619048,
+          "starttime_ticks": 340333071,
+          "identity_note": "pid + starttime (field 22 of /proc/<pid>/stat); a reused PID with a different starttime is reported as pid_reuse_detected, not accepted"
+        },
+        "records": 556,
+        "cpu_ticks": {
+          "valid_points": 555,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 1
+        },
+        "rss_bytes": {
+          "valid_points": 555,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 1
+        },
+        "proc_rchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 556,
+          "observed_zero_points": 0
+        },
+        "proc_wchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 556,
+          "observed_zero_points": 0
+        },
+        "proc_read_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 556,
+          "observed_zero_points": 0
+        },
+        "proc_write_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 556,
+          "observed_zero_points": 0
+        },
+        "clk_tck": 100,
+        "cpu_and_proc_io_rate_intervals": {
+          "cpu": {
+            "pairs": 555,
+            "valid": 554,
+            "gaps": 1
+          }
+        },
+        "proc_io_fields_saved": false,
+        "scope": "host process recorded by PID/starttime; shared runner/collector scope"
+      },
+      "identity_association": {
+        "traj_total": 47,
+        "traj_unique_ids": 47,
+        "traj_duplicate_ids": 0,
+        "hook_unique_ids": 47,
+        "hook_orphan_ids": 0,
+        "hash_mismatch": 0,
+        "length_mismatch": 0,
+        "missing_hash": 0,
+        "missing_length": 0,
+        "multi_terminal": 0,
+        "no_terminal": 0,
+        "no_open": 0,
+        "multi_open": 0,
+        "event_id_mismatch": 0,
+        "event_id_conflict": 0,
+        "missing_event_id": 0,
+        "t_start_mismatch": 0,
+        "invalid_times": 0,
+        "valid_linked": 47,
+        "rejected": 0
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "events.jsonl",
+        "metadata.json",
+        "mini_tool_events.jsonl",
+        "mini_trajectory.json"
+      ]
+    },
+    {
+      "collection": "P1-12-CODING-REPEAT-01",
+      "run_id": "20260928T121318Z-11bacd",
+      "task": "astropy__astropy-13398",
+      "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121318Z-11bacd",
+      "raw_manifest_verified": true,
+      "manifest_files": 9,
+      "attempt_wall_s": 149.726819928,
+      "scopes": {
+        "20260928T121318Z-11bacd-agent-sandbox": {
+          "scope_kind": "agent_container",
+          "saved_samples": 275,
+          "cpu_usage_usec": {
+            "valid_points": 277,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 277,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 277,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 277,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 277
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 277,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 11
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 276,
+              "valid": 276,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 276,
+              "valid": 276,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 276,
+              "valid": 276,
+              "gaps": 0
+            }
+          }
+        },
+        "20260928T121318Z-11bacd-verifier": {
+          "scope_kind": "verifier_container",
+          "saved_samples": 23,
+          "cpu_usage_usec": {
+            "valid_points": 25,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 25,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 25,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 25,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 25
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 25,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 1
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 24,
+              "valid": 24,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 24,
+              "valid": 24,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 24,
+              "valid": 24,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "host_process": {
+        "pid_starttime_identity": {
+          "pid": 622805,
+          "starttime_ticks": 340345892,
+          "identity_note": "pid + starttime (field 22 of /proc/<pid>/stat); a reused PID with a different starttime is reported as pid_reuse_detected, not accepted"
+        },
+        "records": 686,
+        "cpu_ticks": {
+          "valid_points": 685,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 1
+        },
+        "rss_bytes": {
+          "valid_points": 685,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 0
+        },
+        "proc_rchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 686,
+          "observed_zero_points": 0
+        },
+        "proc_wchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 686,
+          "observed_zero_points": 0
+        },
+        "proc_read_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 686,
+          "observed_zero_points": 0
+        },
+        "proc_write_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 686,
+          "observed_zero_points": 0
+        },
+        "clk_tck": 100,
+        "cpu_and_proc_io_rate_intervals": {
+          "cpu": {
+            "pairs": 685,
+            "valid": 684,
+            "gaps": 1
+          }
+        },
+        "proc_io_fields_saved": false,
+        "scope": "host process recorded by PID/starttime; shared runner/collector scope"
+      },
+      "identity_association": {
+        "traj_total": 51,
+        "traj_unique_ids": 51,
+        "traj_duplicate_ids": 0,
+        "hook_unique_ids": 51,
+        "hook_orphan_ids": 0,
+        "hash_mismatch": 0,
+        "length_mismatch": 0,
+        "missing_hash": 0,
+        "missing_length": 0,
+        "multi_terminal": 0,
+        "no_terminal": 0,
+        "no_open": 0,
+        "multi_open": 0,
+        "event_id_mismatch": 0,
+        "event_id_conflict": 0,
+        "missing_event_id": 0,
+        "t_start_mismatch": 0,
+        "invalid_times": 0,
+        "valid_linked": 51,
+        "rejected": 0
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "events.jsonl",
+        "metadata.json",
+        "mini_tool_events.jsonl",
+        "mini_trajectory.json"
+      ]
+    },
+    {
+      "collection": "P1-12-CODING-REPEAT-01",
+      "run_id": "20260928T121548Z-ad0290",
+      "task": "django__django-16485",
+      "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121548Z-ad0290",
+      "raw_manifest_verified": true,
+      "manifest_files": 9,
+      "attempt_wall_s": 99.821033403,
+      "scopes": {
+        "20260928T121548Z-ad0290-agent-sandbox": {
+          "scope_kind": "agent_container",
+          "saved_samples": 177,
+          "cpu_usage_usec": {
+            "valid_points": 179,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 179,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 179,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 179,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 179
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 179,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 10
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 178,
+              "valid": 178,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 178,
+              "valid": 178,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 178,
+              "valid": 178,
+              "gaps": 0
+            }
+          }
+        },
+        "20260928T121548Z-ad0290-verifier": {
+          "scope_kind": "verifier_container",
+          "saved_samples": 21,
+          "cpu_usage_usec": {
+            "valid_points": 23,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 23,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 23,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 23,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 23
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 23,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 1
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 22,
+              "valid": 22,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 22,
+              "valid": 22,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 22,
+              "valid": 22,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "host_process": {
+        "pid_starttime_identity": {
+          "pid": 627090,
+          "starttime_ticks": 340360878,
+          "identity_note": "pid + starttime (field 22 of /proc/<pid>/stat); a reused PID with a different starttime is reported as pid_reuse_detected, not accepted"
+        },
+        "records": 441,
+        "cpu_ticks": {
+          "valid_points": 440,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 1
+        },
+        "rss_bytes": {
+          "valid_points": 440,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 0
+        },
+        "proc_rchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 441,
+          "observed_zero_points": 0
+        },
+        "proc_wchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 441,
+          "observed_zero_points": 0
+        },
+        "proc_read_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 441,
+          "observed_zero_points": 0
+        },
+        "proc_write_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 441,
+          "observed_zero_points": 0
+        },
+        "clk_tck": 100,
+        "cpu_and_proc_io_rate_intervals": {
+          "cpu": {
+            "pairs": 440,
+            "valid": 439,
+            "gaps": 1
+          }
+        },
+        "proc_io_fields_saved": false,
+        "scope": "host process recorded by PID/starttime; shared runner/collector scope"
+      },
+      "identity_association": {
+        "traj_total": 25,
+        "traj_unique_ids": 25,
+        "traj_duplicate_ids": 0,
+        "hook_unique_ids": 25,
+        "hook_orphan_ids": 0,
+        "hash_mismatch": 0,
+        "length_mismatch": 0,
+        "missing_hash": 0,
+        "missing_length": 0,
+        "multi_terminal": 0,
+        "no_terminal": 0,
+        "no_open": 0,
+        "multi_open": 0,
+        "event_id_mismatch": 0,
+        "event_id_conflict": 0,
+        "missing_event_id": 0,
+        "t_start_mismatch": 0,
+        "invalid_times": 0,
+        "valid_linked": 25,
+        "rejected": 0
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "events.jsonl",
+        "metadata.json",
+        "mini_tool_events.jsonl",
+        "mini_trajectory.json"
+      ]
+    },
+    {
+      "collection": "P1-12-CODING-REPEAT-01",
+      "run_id": "20260928T121728Z-d87dd3",
+      "task": "astropy__astropy-13398",
+      "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T121728Z-d87dd3",
+      "raw_manifest_verified": true,
+      "manifest_files": 9,
+      "attempt_wall_s": 176.509461282,
+      "scopes": {
+        "20260928T121728Z-d87dd3-agent-sandbox": {
+          "scope_kind": "agent_container",
+          "saved_samples": 326,
+          "cpu_usage_usec": {
+            "valid_points": 328,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 328,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 328,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 328,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 328
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 328,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 10
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 327,
+              "valid": 327,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 327,
+              "valid": 327,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 327,
+              "valid": 327,
+              "gaps": 0
+            }
+          }
+        },
+        "20260928T121728Z-d87dd3-verifier": {
+          "scope_kind": "verifier_container",
+          "saved_samples": 27,
+          "cpu_usage_usec": {
+            "valid_points": 29,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 29,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 29,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 29,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 29
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 29,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 2
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 28,
+              "valid": 28,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 28,
+              "valid": 28,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 28,
+              "valid": 28,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "host_process": {
+        "pid_starttime_identity": {
+          "pid": 629728,
+          "starttime_ticks": 340370872,
+          "identity_note": "pid + starttime (field 22 of /proc/<pid>/stat); a reused PID with a different starttime is reported as pid_reuse_detected, not accepted"
+        },
+        "records": 812,
+        "cpu_ticks": {
+          "valid_points": 811,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 1
+        },
+        "rss_bytes": {
+          "valid_points": 811,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 0
+        },
+        "proc_rchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 812,
+          "observed_zero_points": 0
+        },
+        "proc_wchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 812,
+          "observed_zero_points": 0
+        },
+        "proc_read_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 812,
+          "observed_zero_points": 0
+        },
+        "proc_write_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 812,
+          "observed_zero_points": 0
+        },
+        "clk_tck": 100,
+        "cpu_and_proc_io_rate_intervals": {
+          "cpu": {
+            "pairs": 811,
+            "valid": 810,
+            "gaps": 1
+          }
+        },
+        "proc_io_fields_saved": false,
+        "scope": "host process recorded by PID/starttime; shared runner/collector scope"
+      },
+      "identity_association": {
+        "traj_total": 34,
+        "traj_unique_ids": 34,
+        "traj_duplicate_ids": 0,
+        "hook_unique_ids": 34,
+        "hook_orphan_ids": 0,
+        "hash_mismatch": 0,
+        "length_mismatch": 0,
+        "missing_hash": 0,
+        "missing_length": 0,
+        "multi_terminal": 0,
+        "no_terminal": 0,
+        "no_open": 0,
+        "multi_open": 0,
+        "event_id_mismatch": 0,
+        "event_id_conflict": 0,
+        "missing_event_id": 0,
+        "t_start_mismatch": 0,
+        "invalid_times": 0,
+        "valid_linked": 34,
+        "rejected": 0
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "events.jsonl",
+        "metadata.json",
+        "mini_tool_events.jsonl",
+        "mini_trajectory.json"
+      ]
+    },
+    {
+      "collection": "P1-12-CODING-REPEAT-01",
+      "run_id": "20260928T122024Z-004fd1",
+      "task": "astropy__astropy-13236",
+      "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122024Z-004fd1",
+      "raw_manifest_verified": true,
+      "manifest_files": 9,
+      "attempt_wall_s": 128.172263261,
+      "scopes": {
+        "20260928T122024Z-004fd1-agent-sandbox": {
+          "scope_kind": "agent_container",
+          "saved_samples": 222,
+          "cpu_usage_usec": {
+            "valid_points": 224,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 224,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 224,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 224,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 224
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 224,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 11
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 223,
+              "valid": 223,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 223,
+              "valid": 223,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 223,
+              "valid": 223,
+              "gaps": 0
+            }
+          }
+        },
+        "20260928T122024Z-004fd1-verifier": {
+          "scope_kind": "verifier_container",
+          "saved_samples": 33,
+          "cpu_usage_usec": {
+            "valid_points": 35,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 35,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 35,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 35,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 35
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 35,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 1
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 34,
+              "valid": 34,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 34,
+              "valid": 34,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 34,
+              "valid": 34,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "host_process": {
+        "pid_starttime_identity": {
+          "pid": 633312,
+          "starttime_ticks": 340388530,
+          "identity_note": "pid + starttime (field 22 of /proc/<pid>/stat); a reused PID with a different starttime is reported as pid_reuse_detected, not accepted"
+        },
+        "records": 554,
+        "cpu_ticks": {
+          "valid_points": 553,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 1
+        },
+        "rss_bytes": {
+          "valid_points": 553,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 0
+        },
+        "proc_rchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 554,
+          "observed_zero_points": 0
+        },
+        "proc_wchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 554,
+          "observed_zero_points": 0
+        },
+        "proc_read_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 554,
+          "observed_zero_points": 0
+        },
+        "proc_write_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 554,
+          "observed_zero_points": 0
+        },
+        "clk_tck": 100,
+        "cpu_and_proc_io_rate_intervals": {
+          "cpu": {
+            "pairs": 553,
+            "valid": 552,
+            "gaps": 1
+          }
+        },
+        "proc_io_fields_saved": false,
+        "scope": "host process recorded by PID/starttime; shared runner/collector scope"
+      },
+      "identity_association": {
+        "traj_total": 43,
+        "traj_unique_ids": 43,
+        "traj_duplicate_ids": 0,
+        "hook_unique_ids": 43,
+        "hook_orphan_ids": 0,
+        "hash_mismatch": 0,
+        "length_mismatch": 0,
+        "missing_hash": 0,
+        "missing_length": 0,
+        "multi_terminal": 0,
+        "no_terminal": 0,
+        "no_open": 0,
+        "multi_open": 0,
+        "event_id_mismatch": 0,
+        "event_id_conflict": 0,
+        "missing_event_id": 0,
+        "t_start_mismatch": 0,
+        "invalid_times": 0,
+        "valid_linked": 43,
+        "rejected": 0
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "events.jsonl",
+        "metadata.json",
+        "mini_tool_events.jsonl",
+        "mini_trajectory.json"
+      ]
+    },
+    {
+      "collection": "P1-12-CODING-REPEAT-01",
+      "run_id": "20260928T122232Z-03d61c",
+      "task": "django__django-16485",
+      "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122232Z-03d61c",
+      "raw_manifest_verified": true,
+      "manifest_files": 9,
+      "attempt_wall_s": 83.085595818,
+      "scopes": {
+        "20260928T122232Z-03d61c-agent-sandbox": {
+          "scope_kind": "agent_container",
+          "saved_samples": 143,
+          "cpu_usage_usec": {
+            "valid_points": 145,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 145,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 145,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 145,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 145
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 145,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 11
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 144,
+              "valid": 144,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 144,
+              "valid": 144,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 144,
+              "valid": 144,
+              "gaps": 0
+            }
+          }
+        },
+        "20260928T122232Z-03d61c-verifier": {
+          "scope_kind": "verifier_container",
+          "saved_samples": 22,
+          "cpu_usage_usec": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 24
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 1
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 23,
+              "valid": 23,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 23,
+              "valid": 23,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 23,
+              "valid": 23,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "host_process": {
+        "pid_starttime_identity": {
+          "pid": 636989,
+          "starttime_ticks": 340401358,
+          "identity_note": "pid + starttime (field 22 of /proc/<pid>/stat); a reused PID with a different starttime is reported as pid_reuse_detected, not accepted"
+        },
+        "records": 357,
+        "cpu_ticks": {
+          "valid_points": 356,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 1
+        },
+        "rss_bytes": {
+          "valid_points": 356,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 0
+        },
+        "proc_rchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 357,
+          "observed_zero_points": 0
+        },
+        "proc_wchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 357,
+          "observed_zero_points": 0
+        },
+        "proc_read_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 357,
+          "observed_zero_points": 0
+        },
+        "proc_write_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 357,
+          "observed_zero_points": 0
+        },
+        "clk_tck": 100,
+        "cpu_and_proc_io_rate_intervals": {
+          "cpu": {
+            "pairs": 356,
+            "valid": 355,
+            "gaps": 1
+          }
+        },
+        "proc_io_fields_saved": false,
+        "scope": "host process recorded by PID/starttime; shared runner/collector scope"
+      },
+      "identity_association": {
+        "traj_total": 25,
+        "traj_unique_ids": 25,
+        "traj_duplicate_ids": 0,
+        "hook_unique_ids": 25,
+        "hook_orphan_ids": 0,
+        "hash_mismatch": 0,
+        "length_mismatch": 0,
+        "missing_hash": 0,
+        "missing_length": 0,
+        "multi_terminal": 0,
+        "no_terminal": 0,
+        "no_open": 0,
+        "multi_open": 0,
+        "event_id_mismatch": 0,
+        "event_id_conflict": 0,
+        "missing_event_id": 0,
+        "t_start_mismatch": 0,
+        "invalid_times": 0,
+        "valid_linked": 25,
+        "rejected": 0
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "events.jsonl",
+        "metadata.json",
+        "mini_tool_events.jsonl",
+        "mini_trajectory.json"
+      ]
+    },
+    {
+      "collection": "P1-12-CODING-REPEAT-01",
+      "run_id": "20260928T122356Z-2bbb44",
+      "task": "django__django-16485",
+      "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122356Z-2bbb44",
+      "raw_manifest_verified": true,
+      "manifest_files": 9,
+      "attempt_wall_s": 106.65877902,
+      "scopes": {
+        "20260928T122356Z-2bbb44-agent-sandbox": {
+          "scope_kind": "agent_container",
+          "saved_samples": 190,
+          "cpu_usage_usec": {
+            "valid_points": 192,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 192,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 192,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 192,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 192
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 192,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 10
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 191,
+              "valid": 191,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 191,
+              "valid": 191,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 191,
+              "valid": 191,
+              "gaps": 0
+            }
+          }
+        },
+        "20260928T122356Z-2bbb44-verifier": {
+          "scope_kind": "verifier_container",
+          "saved_samples": 22,
+          "cpu_usage_usec": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 24
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 1
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 23,
+              "valid": 23,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 23,
+              "valid": 23,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 23,
+              "valid": 23,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "host_process": {
+        "pid_starttime_identity": {
+          "pid": 639399,
+          "starttime_ticks": 340409677,
+          "identity_note": "pid + starttime (field 22 of /proc/<pid>/stat); a reused PID with a different starttime is reported as pid_reuse_detected, not accepted"
+        },
+        "records": 474,
+        "cpu_ticks": {
+          "valid_points": 473,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 1
+        },
+        "rss_bytes": {
+          "valid_points": 473,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 0
+        },
+        "proc_rchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 474,
+          "observed_zero_points": 0
+        },
+        "proc_wchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 474,
+          "observed_zero_points": 0
+        },
+        "proc_read_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 474,
+          "observed_zero_points": 0
+        },
+        "proc_write_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 474,
+          "observed_zero_points": 0
+        },
+        "clk_tck": 100,
+        "cpu_and_proc_io_rate_intervals": {
+          "cpu": {
+            "pairs": 473,
+            "valid": 472,
+            "gaps": 1
+          }
+        },
+        "proc_io_fields_saved": false,
+        "scope": "host process recorded by PID/starttime; shared runner/collector scope"
+      },
+      "identity_association": {
+        "traj_total": 31,
+        "traj_unique_ids": 31,
+        "traj_duplicate_ids": 0,
+        "hook_unique_ids": 31,
+        "hook_orphan_ids": 0,
+        "hash_mismatch": 0,
+        "length_mismatch": 0,
+        "missing_hash": 0,
+        "missing_length": 0,
+        "multi_terminal": 0,
+        "no_terminal": 0,
+        "no_open": 0,
+        "multi_open": 0,
+        "event_id_mismatch": 0,
+        "event_id_conflict": 0,
+        "missing_event_id": 0,
+        "t_start_mismatch": 0,
+        "invalid_times": 0,
+        "valid_linked": 31,
+        "rejected": 0
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "events.jsonl",
+        "metadata.json",
+        "mini_tool_events.jsonl",
+        "mini_trajectory.json"
+      ]
+    },
+    {
+      "collection": "P1-12-CODING-REPEAT-01",
+      "run_id": "20260928T122542Z-8adc15",
+      "task": "astropy__astropy-13398",
+      "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122542Z-8adc15",
+      "raw_manifest_verified": true,
+      "manifest_files": 9,
+      "attempt_wall_s": 93.949509057,
+      "scopes": {
+        "20260928T122542Z-8adc15-agent-sandbox": {
+          "scope_kind": "agent_container",
+          "saved_samples": 164,
+          "cpu_usage_usec": {
+            "valid_points": 166,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 166,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 166,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 166,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 166
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 166,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 11
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 165,
+              "valid": 165,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 165,
+              "valid": 165,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 165,
+              "valid": 165,
+              "gaps": 0
+            }
+          }
+        },
+        "20260928T122542Z-8adc15-verifier": {
+          "scope_kind": "verifier_container",
+          "saved_samples": 24,
+          "cpu_usage_usec": {
+            "valid_points": 26,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 26,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 26,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 26,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 26
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 26,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 2
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 25,
+              "valid": 25,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 25,
+              "valid": 25,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 25,
+              "valid": 25,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "host_process": {
+        "pid_starttime_identity": {
+          "pid": 642158,
+          "starttime_ticks": 340420356,
+          "identity_note": "pid + starttime (field 22 of /proc/<pid>/stat); a reused PID with a different starttime is reported as pid_reuse_detected, not accepted"
+        },
+        "records": 408,
+        "cpu_ticks": {
+          "valid_points": 407,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 1
+        },
+        "rss_bytes": {
+          "valid_points": 407,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 0
+        },
+        "proc_rchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 408,
+          "observed_zero_points": 0
+        },
+        "proc_wchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 408,
+          "observed_zero_points": 0
+        },
+        "proc_read_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 408,
+          "observed_zero_points": 0
+        },
+        "proc_write_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 408,
+          "observed_zero_points": 0
+        },
+        "clk_tck": 100,
+        "cpu_and_proc_io_rate_intervals": {
+          "cpu": {
+            "pairs": 407,
+            "valid": 406,
+            "gaps": 1
+          }
+        },
+        "proc_io_fields_saved": false,
+        "scope": "host process recorded by PID/starttime; shared runner/collector scope"
+      },
+      "identity_association": {
+        "traj_total": 48,
+        "traj_unique_ids": 48,
+        "traj_duplicate_ids": 0,
+        "hook_unique_ids": 48,
+        "hook_orphan_ids": 0,
+        "hash_mismatch": 0,
+        "length_mismatch": 0,
+        "missing_hash": 0,
+        "missing_length": 0,
+        "multi_terminal": 0,
+        "no_terminal": 0,
+        "no_open": 0,
+        "multi_open": 0,
+        "event_id_mismatch": 0,
+        "event_id_conflict": 0,
+        "missing_event_id": 0,
+        "t_start_mismatch": 0,
+        "invalid_times": 0,
+        "valid_linked": 48,
+        "rejected": 0
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "events.jsonl",
+        "metadata.json",
+        "mini_tool_events.jsonl",
+        "mini_trajectory.json"
+      ]
+    },
+    {
+      "collection": "P1-12-CODING-REPEAT-01",
+      "run_id": "20260928T122716Z-441807",
+      "task": "astropy__astropy-13236",
+      "path": "data/raw/generated/P1-12-CODING-REPEAT-01/20260928T122716Z-441807",
+      "raw_manifest_verified": true,
+      "manifest_files": 9,
+      "attempt_wall_s": 111.764056273,
+      "scopes": {
+        "20260928T122716Z-441807-agent-sandbox": {
+          "scope_kind": "agent_container",
+          "saved_samples": 193,
+          "cpu_usage_usec": {
+            "valid_points": 195,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 195,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 195,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 195,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 195
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 195,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 10
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 194,
+              "valid": 194,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 194,
+              "valid": 194,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 194,
+              "valid": 194,
+              "gaps": 0
+            }
+          }
+        },
+        "20260928T122716Z-441807-verifier": {
+          "scope_kind": "verifier_container",
+          "saved_samples": 29,
+          "cpu_usage_usec": {
+            "valid_points": 31,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 31,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 31,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 31,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 31
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 31,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 1
+          },
+          "derivable_adjacent_rates": {
+            "cpu": {
+              "pairs": 30,
+              "valid": 30,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 30,
+              "valid": 30,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 30,
+              "valid": 30,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "host_process": {
+        "pid_starttime_identity": {
+          "pid": 645281,
+          "starttime_ticks": 340429764,
+          "identity_note": "pid + starttime (field 22 of /proc/<pid>/stat); a reused PID with a different starttime is reported as pid_reuse_detected, not accepted"
+        },
+        "records": 480,
+        "cpu_ticks": {
+          "valid_points": 479,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 1
+        },
+        "rss_bytes": {
+          "valid_points": 479,
+          "missing_or_invalid_points": 1,
+          "observed_zero_points": 0
+        },
+        "proc_rchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 480,
+          "observed_zero_points": 0
+        },
+        "proc_wchar": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 480,
+          "observed_zero_points": 0
+        },
+        "proc_read_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 480,
+          "observed_zero_points": 0
+        },
+        "proc_write_bytes": {
+          "valid_points": 0,
+          "missing_or_invalid_points": 480,
+          "observed_zero_points": 0
+        },
+        "clk_tck": 100,
+        "cpu_and_proc_io_rate_intervals": {
+          "cpu": {
+            "pairs": 479,
+            "valid": 478,
+            "gaps": 1
+          }
+        },
+        "proc_io_fields_saved": false,
+        "scope": "host process recorded by PID/starttime; shared runner/collector scope"
+      },
+      "identity_association": {
+        "traj_total": 44,
+        "traj_unique_ids": 44,
+        "traj_duplicate_ids": 0,
+        "hook_unique_ids": 44,
+        "hook_orphan_ids": 0,
+        "hash_mismatch": 0,
+        "length_mismatch": 0,
+        "missing_hash": 0,
+        "missing_length": 0,
+        "multi_terminal": 0,
+        "no_terminal": 0,
+        "no_open": 0,
+        "multi_open": 0,
+        "event_id_mismatch": 0,
+        "event_id_conflict": 0,
+        "missing_event_id": 0,
+        "t_start_mismatch": 0,
+        "invalid_times": 0,
+        "valid_linked": 44,
+        "rejected": 0
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "events.jsonl",
+        "metadata.json",
+        "mini_tool_events.jsonl",
+        "mini_trajectory.json"
+      ]
+    },
+    {
+      "collection": "DOCOPS-OFFICE-REPEAT-02",
+      "run_id": "20261011T104235Z-r0-excel001",
+      "task": "atomic__excel_001_budget_bucket_totals_seed",
+      "round": 0,
+      "path": "20261011T104235Z-r0-excel001",
+      "identity_sha256": "0886c0b0d64ae20813f518e0c0392d370d98f5a8479737bccabdd5016c539bf1",
+      "raw_manifest_verified": true,
+      "manifest_files": 20,
+      "attempt_wall_s": 42.97,
+      "sample_points": 66,
+      "scopes": {
+        "agent_container": {
+          "saved_samples": 66,
+          "cpu_usage_usec": {
+            "valid_points": 66,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 66,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 66,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 66,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 66
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 66,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 44
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 66,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 66,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 66,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 66,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 66,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 66
+            },
+            "write_bytes": {
+              "valid_points": 66,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 65,
+              "valid": 65,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 65,
+              "valid": 65,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 65,
+              "valid": 65,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 65,
+              "valid": 0,
+              "gaps": 65
+            },
+            "proc_rchar": {
+              "pairs": 65,
+              "valid": 65,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 65,
+              "valid": 65,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 65,
+              "valid": 65,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 65,
+              "valid": 65,
+              "gaps": 0
+            }
+          }
+        },
+        "verifier_container": {
+          "saved_samples": 0,
+          "cpu_usage_usec": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "write_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_rchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "clk_tck": null,
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "agent/events.jsonl",
+        "environment.json",
+        "measurement.json",
+        "summary.json"
+      ]
+    },
+    {
+      "collection": "DOCOPS-OFFICE-REPEAT-02",
+      "run_id": "20261011T104318Z-r0-ppt008",
+      "task": "atomic__ppt_008_bullet_editing_seed",
+      "round": 0,
+      "path": "20261011T104318Z-r0-ppt008",
+      "identity_sha256": "0886c0b0d64ae20813f518e0c0392d370d98f5a8479737bccabdd5016c539bf1",
+      "raw_manifest_verified": true,
+      "manifest_files": 18,
+      "attempt_wall_s": 25.27,
+      "sample_points": 30,
+      "scopes": {
+        "agent_container": {
+          "saved_samples": 30,
+          "cpu_usage_usec": {
+            "valid_points": 30,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 30,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 30,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 30,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 30
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 30,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 20
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 30,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 30,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 30,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 30,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 30,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 30
+            },
+            "write_bytes": {
+              "valid_points": 30,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 29,
+              "valid": 29,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 29,
+              "valid": 29,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 29,
+              "valid": 29,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 29,
+              "valid": 0,
+              "gaps": 29
+            },
+            "proc_rchar": {
+              "pairs": 29,
+              "valid": 29,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 29,
+              "valid": 29,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 29,
+              "valid": 29,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 29,
+              "valid": 29,
+              "gaps": 0
+            }
+          }
+        },
+        "verifier_container": {
+          "saved_samples": 0,
+          "cpu_usage_usec": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "write_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_rchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "clk_tck": null,
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "agent/events.jsonl",
+        "environment.json",
+        "measurement.json",
+        "summary.json"
+      ]
+    },
+    {
+      "collection": "DOCOPS-OFFICE-REPEAT-02",
+      "run_id": "20261011T104344Z-r0-pdf004",
+      "task": "atomic__pdf_004_audit_pages_reorder_seed",
+      "round": 0,
+      "path": "20261011T104344Z-r0-pdf004",
+      "identity_sha256": "0886c0b0d64ae20813f518e0c0392d370d98f5a8479737bccabdd5016c539bf1",
+      "raw_manifest_verified": true,
+      "manifest_files": 17,
+      "attempt_wall_s": 21.5,
+      "sample_points": 22,
+      "scopes": {
+        "agent_container": {
+          "saved_samples": 22,
+          "cpu_usage_usec": {
+            "valid_points": 22,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 22,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 22,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 22,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 22
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 22,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 13
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 22,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 22,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 22,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 22,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 22,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 22
+            },
+            "write_bytes": {
+              "valid_points": 22,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 21,
+              "valid": 21,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 21,
+              "valid": 21,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 21,
+              "valid": 21,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 21,
+              "valid": 0,
+              "gaps": 21
+            },
+            "proc_rchar": {
+              "pairs": 21,
+              "valid": 21,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 21,
+              "valid": 21,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 21,
+              "valid": 21,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 21,
+              "valid": 21,
+              "gaps": 0
+            }
+          }
+        },
+        "verifier_container": {
+          "saved_samples": 0,
+          "cpu_usage_usec": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "write_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_rchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "clk_tck": null,
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "agent/events.jsonl",
+        "environment.json",
+        "measurement.json",
+        "summary.json"
+      ]
+    },
+    {
+      "collection": "DOCOPS-OFFICE-REPEAT-02",
+      "run_id": "20261011T104406Z-r1-ppt008",
+      "task": "atomic__ppt_008_bullet_editing_seed",
+      "round": 1,
+      "path": "20261011T104406Z-r1-ppt008",
+      "identity_sha256": "0886c0b0d64ae20813f518e0c0392d370d98f5a8479737bccabdd5016c539bf1",
+      "raw_manifest_verified": true,
+      "manifest_files": 18,
+      "attempt_wall_s": 24.64,
+      "sample_points": 29,
+      "scopes": {
+        "agent_container": {
+          "saved_samples": 29,
+          "cpu_usage_usec": {
+            "valid_points": 29,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 29,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 29,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 29,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 29
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 29,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 19
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 29,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 29,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 29,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 29,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 29,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 29
+            },
+            "write_bytes": {
+              "valid_points": 29,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 28,
+              "valid": 28,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 28,
+              "valid": 28,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 28,
+              "valid": 28,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 28,
+              "valid": 0,
+              "gaps": 28
+            },
+            "proc_rchar": {
+              "pairs": 28,
+              "valid": 28,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 28,
+              "valid": 28,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 28,
+              "valid": 28,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 28,
+              "valid": 28,
+              "gaps": 0
+            }
+          }
+        },
+        "verifier_container": {
+          "saved_samples": 0,
+          "cpu_usage_usec": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "write_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_rchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "clk_tck": null,
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "agent/events.jsonl",
+        "environment.json",
+        "measurement.json",
+        "summary.json"
+      ]
+    },
+    {
+      "collection": "DOCOPS-OFFICE-REPEAT-02",
+      "run_id": "20261011T104431Z-r1-pdf004",
+      "task": "atomic__pdf_004_audit_pages_reorder_seed",
+      "round": 1,
+      "path": "20261011T104431Z-r1-pdf004",
+      "identity_sha256": "0886c0b0d64ae20813f518e0c0392d370d98f5a8479737bccabdd5016c539bf1",
+      "raw_manifest_verified": true,
+      "manifest_files": 17,
+      "attempt_wall_s": 22.05,
+      "sample_points": 24,
+      "scopes": {
+        "agent_container": {
+          "saved_samples": 24,
+          "cpu_usage_usec": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 24
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 14
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 24,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 24,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 24,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 24,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 24
+            },
+            "write_bytes": {
+              "valid_points": 24,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 23,
+              "valid": 23,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 23,
+              "valid": 23,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 23,
+              "valid": 23,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 23,
+              "valid": 0,
+              "gaps": 23
+            },
+            "proc_rchar": {
+              "pairs": 23,
+              "valid": 23,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 23,
+              "valid": 23,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 23,
+              "valid": 23,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 23,
+              "valid": 23,
+              "gaps": 0
+            }
+          }
+        },
+        "verifier_container": {
+          "saved_samples": 0,
+          "cpu_usage_usec": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "write_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_rchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "clk_tck": null,
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "agent/events.jsonl",
+        "environment.json",
+        "measurement.json",
+        "summary.json"
+      ]
+    },
+    {
+      "collection": "DOCOPS-OFFICE-REPEAT-02",
+      "run_id": "20261011T104454Z-r1-excel001",
+      "task": "atomic__excel_001_budget_bucket_totals_seed",
+      "round": 1,
+      "path": "20261011T104454Z-r1-excel001",
+      "identity_sha256": "0886c0b0d64ae20813f518e0c0392d370d98f5a8479737bccabdd5016c539bf1",
+      "raw_manifest_verified": true,
+      "manifest_files": 19,
+      "attempt_wall_s": 49.05,
+      "sample_points": 78,
+      "scopes": {
+        "agent_container": {
+          "saved_samples": 78,
+          "cpu_usage_usec": {
+            "valid_points": 78,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 78,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 78,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 78,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 78
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 78,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 61
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 78,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 78,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 78,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 78,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 78,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 78
+            },
+            "write_bytes": {
+              "valid_points": 78,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 77,
+              "valid": 77,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 77,
+              "valid": 77,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 77,
+              "valid": 77,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 77,
+              "valid": 0,
+              "gaps": 77
+            },
+            "proc_rchar": {
+              "pairs": 77,
+              "valid": 77,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 77,
+              "valid": 77,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 77,
+              "valid": 77,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 77,
+              "valid": 77,
+              "gaps": 0
+            }
+          }
+        },
+        "verifier_container": {
+          "saved_samples": 0,
+          "cpu_usage_usec": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "write_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_rchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "clk_tck": null,
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "agent/events.jsonl",
+        "environment.json",
+        "measurement.json",
+        "summary.json"
+      ]
+    },
+    {
+      "collection": "DOCOPS-OFFICE-REPEAT-02",
+      "run_id": "20261011T104543Z-r2-pdf004",
+      "task": "atomic__pdf_004_audit_pages_reorder_seed",
+      "round": 2,
+      "path": "20261011T104543Z-r2-pdf004",
+      "identity_sha256": "0886c0b0d64ae20813f518e0c0392d370d98f5a8479737bccabdd5016c539bf1",
+      "raw_manifest_verified": true,
+      "manifest_files": 17,
+      "attempt_wall_s": 21.16,
+      "sample_points": 22,
+      "scopes": {
+        "agent_container": {
+          "saved_samples": 22,
+          "cpu_usage_usec": {
+            "valid_points": 22,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 22,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 22,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 22,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 22
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 22,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 13
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 22,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 22,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 22,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 22,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 22,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 22
+            },
+            "write_bytes": {
+              "valid_points": 22,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 21,
+              "valid": 21,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 21,
+              "valid": 21,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 21,
+              "valid": 21,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 21,
+              "valid": 0,
+              "gaps": 21
+            },
+            "proc_rchar": {
+              "pairs": 21,
+              "valid": 21,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 21,
+              "valid": 21,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 21,
+              "valid": 21,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 21,
+              "valid": 21,
+              "gaps": 0
+            }
+          }
+        },
+        "verifier_container": {
+          "saved_samples": 0,
+          "cpu_usage_usec": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "write_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_rchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "clk_tck": null,
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "agent/events.jsonl",
+        "environment.json",
+        "measurement.json",
+        "summary.json"
+      ]
+    },
+    {
+      "collection": "DOCOPS-OFFICE-REPEAT-02",
+      "run_id": "20261011T104605Z-r2-excel001",
+      "task": "atomic__excel_001_budget_bucket_totals_seed",
+      "round": 2,
+      "path": "20261011T104605Z-r2-excel001",
+      "identity_sha256": "0886c0b0d64ae20813f518e0c0392d370d98f5a8479737bccabdd5016c539bf1",
+      "raw_manifest_verified": true,
+      "manifest_files": 19,
+      "attempt_wall_s": 35.95,
+      "sample_points": 52,
+      "scopes": {
+        "agent_container": {
+          "saved_samples": 52,
+          "cpu_usage_usec": {
+            "valid_points": 52,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 52,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 52,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 52,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 52
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 52,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 33
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 52,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 52,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 52,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 52,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 52,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 52
+            },
+            "write_bytes": {
+              "valid_points": 52,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 51,
+              "valid": 51,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 51,
+              "valid": 51,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 51,
+              "valid": 51,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 51,
+              "valid": 0,
+              "gaps": 51
+            },
+            "proc_rchar": {
+              "pairs": 51,
+              "valid": 51,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 51,
+              "valid": 51,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 51,
+              "valid": 51,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 51,
+              "valid": 51,
+              "gaps": 0
+            }
+          }
+        },
+        "verifier_container": {
+          "saved_samples": 0,
+          "cpu_usage_usec": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "write_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_rchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "clk_tck": null,
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "agent/events.jsonl",
+        "environment.json",
+        "measurement.json",
+        "summary.json"
+      ]
+    },
+    {
+      "collection": "DOCOPS-OFFICE-REPEAT-02",
+      "run_id": "20261011T104641Z-r2-ppt008",
+      "task": "atomic__ppt_008_bullet_editing_seed",
+      "round": 2,
+      "path": "20261011T104641Z-r2-ppt008",
+      "identity_sha256": "0886c0b0d64ae20813f518e0c0392d370d98f5a8479737bccabdd5016c539bf1",
+      "raw_manifest_verified": true,
+      "manifest_files": 18,
+      "attempt_wall_s": 25.88,
+      "sample_points": 31,
+      "scopes": {
+        "agent_container": {
+          "saved_samples": 31,
+          "cpu_usage_usec": {
+            "valid_points": 31,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 31,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 31,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 31,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 31
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 31,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 22
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 31,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 31,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 31,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 31,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 31,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 31
+            },
+            "write_bytes": {
+              "valid_points": 31,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 30,
+              "valid": 30,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 30,
+              "valid": 30,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 30,
+              "valid": 30,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 30,
+              "valid": 0,
+              "gaps": 30
+            },
+            "proc_rchar": {
+              "pairs": 30,
+              "valid": 30,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 30,
+              "valid": 30,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 30,
+              "valid": 30,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 30,
+              "valid": 30,
+              "gaps": 0
+            }
+          }
+        },
+        "verifier_container": {
+          "saved_samples": 0,
+          "cpu_usage_usec": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "memory_current_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "kernel_memory_peak_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_read_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "cgroup_io_write_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_cpu_ticks": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "host_process_rss_bytes": {
+            "valid_points": 0,
+            "missing_or_invalid_points": 0,
+            "observed_zero_points": 0
+          },
+          "proc_io_fields": {
+            "rchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "wchar": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "read_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            },
+            "write_bytes": {
+              "valid_points": 0,
+              "missing_or_invalid_points": 0,
+              "observed_zero_points": 0
+            }
+          },
+          "derivable_cgroup_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_read": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "io_write": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          },
+          "derivable_host_process_rates": {
+            "cpu": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_rchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_wchar": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_read_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            },
+            "proc_write_bytes": {
+              "pairs": 0,
+              "valid": 0,
+              "gaps": 0
+            }
+          }
+        }
+      },
+      "clk_tck": null,
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "agent/events.jsonl",
+        "environment.json",
+        "measurement.json",
+        "summary.json"
+      ]
+    },
+    {
+      "collection": "TOOLSANDBOX-ASSISTANT-REPEAT-01",
+      "run_id": "20261012T135428Z-r0-a-tsbassistant01",
+      "task": "send_message_with_contact_content_cellular_off",
+      "round": 0,
+      "path": "20261012T135428Z-r0-a-tsbassistant01",
+      "identity_sha256": "1643e0c8c6158734ce7186d24afd5ce36d5a40718d930e7eea2a507f0b32149b",
+      "raw_manifest_verified": true,
+      "manifest_files": 14,
+      "attempt_wall_s": 15.275002731,
+      "worker_window_wall_s": 15.251238462,
+      "sample_points": 31,
+      "scope": "one shared worker process (Agent/User/tools/evaluator)",
+      "cpu_ticks": {
+        "valid_points": 31,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 1
+      },
+      "rss_bytes": {
+        "valid_points": 31,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "thread_points": {
+        "valid_points": 31,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "clk_tck": 100,
+      "proc_io": {
+        "rchar": {
+          "valid_points": 31,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 0
+        },
+        "wchar": {
+          "valid_points": 31,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        },
+        "read_bytes": {
+          "valid_points": 31,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 31
+        },
+        "write_bytes": {
+          "valid_points": 31,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        }
+      },
+      "derivable_adjacent_rates": {
+        "cpu": {
+          "pairs": 30,
+          "valid": 30,
+          "gaps": 0
+        },
+        "proc_rchar": {
+          "pairs": 30,
+          "valid": 30,
+          "gaps": 0
+        },
+        "proc_wchar": {
+          "pairs": 30,
+          "valid": 30,
+          "gaps": 0
+        },
+        "proc_read_bytes": {
+          "pairs": 30,
+          "valid": 30,
+          "gaps": 0
+        },
+        "proc_write_bytes": {
+          "pairs": 30,
+          "valid": 30,
+          "gaps": 0
+        }
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "boundaries.jsonl",
+        "events.jsonl",
+        "result.json"
+      ]
+    },
+    {
+      "collection": "TOOLSANDBOX-ASSISTANT-REPEAT-01",
+      "run_id": "20261012T135610Z-r1-a-tsbassistant01",
+      "task": "send_message_with_contact_content_cellular_off",
+      "round": 1,
+      "path": "20261012T135610Z-r1-a-tsbassistant01",
+      "identity_sha256": "1643e0c8c6158734ce7186d24afd5ce36d5a40718d930e7eea2a507f0b32149b",
+      "raw_manifest_verified": true,
+      "manifest_files": 14,
+      "attempt_wall_s": 16.778466306,
+      "worker_window_wall_s": 16.774993259,
+      "sample_points": 34,
+      "scope": "one shared worker process (Agent/User/tools/evaluator)",
+      "cpu_ticks": {
+        "valid_points": 34,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 1
+      },
+      "rss_bytes": {
+        "valid_points": 34,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "thread_points": {
+        "valid_points": 34,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "clk_tck": 100,
+      "proc_io": {
+        "rchar": {
+          "valid_points": 34,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 0
+        },
+        "wchar": {
+          "valid_points": 34,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        },
+        "read_bytes": {
+          "valid_points": 34,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 34
+        },
+        "write_bytes": {
+          "valid_points": 34,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        }
+      },
+      "derivable_adjacent_rates": {
+        "cpu": {
+          "pairs": 33,
+          "valid": 33,
+          "gaps": 0
+        },
+        "proc_rchar": {
+          "pairs": 33,
+          "valid": 33,
+          "gaps": 0
+        },
+        "proc_wchar": {
+          "pairs": 33,
+          "valid": 33,
+          "gaps": 0
+        },
+        "proc_read_bytes": {
+          "pairs": 33,
+          "valid": 33,
+          "gaps": 0
+        },
+        "proc_write_bytes": {
+          "pairs": 33,
+          "valid": 33,
+          "gaps": 0
+        }
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "boundaries.jsonl",
+        "events.jsonl",
+        "result.json"
+      ]
+    },
+    {
+      "collection": "TOOLSANDBOX-ASSISTANT-REPEAT-01",
+      "run_id": "20261012T135716Z-r2-a-tsbassistant01",
+      "task": "send_message_with_contact_content_cellular_off",
+      "round": 2,
+      "path": "20261012T135716Z-r2-a-tsbassistant01",
+      "identity_sha256": "1643e0c8c6158734ce7186d24afd5ce36d5a40718d930e7eea2a507f0b32149b",
+      "raw_manifest_verified": true,
+      "manifest_files": 14,
+      "attempt_wall_s": 14.19209188,
+      "worker_window_wall_s": 14.188562163,
+      "sample_points": 29,
+      "scope": "one shared worker process (Agent/User/tools/evaluator)",
+      "cpu_ticks": {
+        "valid_points": 29,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 1
+      },
+      "rss_bytes": {
+        "valid_points": 29,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "thread_points": {
+        "valid_points": 29,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "clk_tck": 100,
+      "proc_io": {
+        "rchar": {
+          "valid_points": 29,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 0
+        },
+        "wchar": {
+          "valid_points": 29,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        },
+        "read_bytes": {
+          "valid_points": 29,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 29
+        },
+        "write_bytes": {
+          "valid_points": 29,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        }
+      },
+      "derivable_adjacent_rates": {
+        "cpu": {
+          "pairs": 28,
+          "valid": 28,
+          "gaps": 0
+        },
+        "proc_rchar": {
+          "pairs": 28,
+          "valid": 28,
+          "gaps": 0
+        },
+        "proc_wchar": {
+          "pairs": 28,
+          "valid": 28,
+          "gaps": 0
+        },
+        "proc_read_bytes": {
+          "pairs": 28,
+          "valid": 28,
+          "gaps": 0
+        },
+        "proc_write_bytes": {
+          "pairs": 28,
+          "valid": 28,
+          "gaps": 0
+        }
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "boundaries.jsonl",
+        "events.jsonl",
+        "result.json"
+      ]
+    },
+    {
+      "collection": "TOOLSANDBOX-ASSISTANT-REPEAT-01",
+      "run_id": "20261012T135444Z-r0-b-tsbassistant01",
+      "task": "add_reminder_content_and_week_delta_and_time",
+      "round": 0,
+      "path": "20261012T135444Z-r0-b-tsbassistant01",
+      "identity_sha256": "1643e0c8c6158734ce7186d24afd5ce36d5a40718d930e7eea2a507f0b32149b",
+      "raw_manifest_verified": true,
+      "manifest_files": 14,
+      "attempt_wall_s": 14.901895625,
+      "worker_window_wall_s": 14.898346937,
+      "sample_points": 30,
+      "scope": "one shared worker process (Agent/User/tools/evaluator)",
+      "cpu_ticks": {
+        "valid_points": 30,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 1
+      },
+      "rss_bytes": {
+        "valid_points": 30,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "thread_points": {
+        "valid_points": 30,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "clk_tck": 100,
+      "proc_io": {
+        "rchar": {
+          "valid_points": 30,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 0
+        },
+        "wchar": {
+          "valid_points": 30,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        },
+        "read_bytes": {
+          "valid_points": 30,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 30
+        },
+        "write_bytes": {
+          "valid_points": 30,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        }
+      },
+      "derivable_adjacent_rates": {
+        "cpu": {
+          "pairs": 29,
+          "valid": 29,
+          "gaps": 0
+        },
+        "proc_rchar": {
+          "pairs": 29,
+          "valid": 29,
+          "gaps": 0
+        },
+        "proc_wchar": {
+          "pairs": 29,
+          "valid": 29,
+          "gaps": 0
+        },
+        "proc_read_bytes": {
+          "pairs": 29,
+          "valid": 29,
+          "gaps": 0
+        },
+        "proc_write_bytes": {
+          "pairs": 29,
+          "valid": 29,
+          "gaps": 0
+        }
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "boundaries.jsonl",
+        "events.jsonl",
+        "result.json"
+      ]
+    },
+    {
+      "collection": "TOOLSANDBOX-ASSISTANT-REPEAT-01",
+      "run_id": "20261012T135529Z-r1-b-tsbassistant01",
+      "task": "add_reminder_content_and_week_delta_and_time",
+      "round": 1,
+      "path": "20261012T135529Z-r1-b-tsbassistant01",
+      "identity_sha256": "1643e0c8c6158734ce7186d24afd5ce36d5a40718d930e7eea2a507f0b32149b",
+      "raw_manifest_verified": true,
+      "manifest_files": 14,
+      "attempt_wall_s": 14.206141949,
+      "worker_window_wall_s": 14.202791774,
+      "sample_points": 29,
+      "scope": "one shared worker process (Agent/User/tools/evaluator)",
+      "cpu_ticks": {
+        "valid_points": 29,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 1
+      },
+      "rss_bytes": {
+        "valid_points": 29,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "thread_points": {
+        "valid_points": 29,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "clk_tck": 100,
+      "proc_io": {
+        "rchar": {
+          "valid_points": 29,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 0
+        },
+        "wchar": {
+          "valid_points": 29,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        },
+        "read_bytes": {
+          "valid_points": 29,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 29
+        },
+        "write_bytes": {
+          "valid_points": 29,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        }
+      },
+      "derivable_adjacent_rates": {
+        "cpu": {
+          "pairs": 28,
+          "valid": 28,
+          "gaps": 0
+        },
+        "proc_rchar": {
+          "pairs": 28,
+          "valid": 28,
+          "gaps": 0
+        },
+        "proc_wchar": {
+          "pairs": 28,
+          "valid": 28,
+          "gaps": 0
+        },
+        "proc_read_bytes": {
+          "pairs": 28,
+          "valid": 28,
+          "gaps": 0
+        },
+        "proc_write_bytes": {
+          "pairs": 28,
+          "valid": 28,
+          "gaps": 0
+        }
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "boundaries.jsonl",
+        "events.jsonl",
+        "result.json"
+      ]
+    },
+    {
+      "collection": "TOOLSANDBOX-ASSISTANT-REPEAT-01",
+      "run_id": "20261012T135730Z-r2-b-tsbassistant01",
+      "task": "add_reminder_content_and_week_delta_and_time",
+      "round": 2,
+      "path": "20261012T135730Z-r2-b-tsbassistant01",
+      "identity_sha256": "1643e0c8c6158734ce7186d24afd5ce36d5a40718d930e7eea2a507f0b32149b",
+      "raw_manifest_verified": true,
+      "manifest_files": 14,
+      "attempt_wall_s": 14.366460025,
+      "worker_window_wall_s": 14.362959188,
+      "sample_points": 29,
+      "scope": "one shared worker process (Agent/User/tools/evaluator)",
+      "cpu_ticks": {
+        "valid_points": 29,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 1
+      },
+      "rss_bytes": {
+        "valid_points": 29,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "thread_points": {
+        "valid_points": 29,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "clk_tck": 100,
+      "proc_io": {
+        "rchar": {
+          "valid_points": 29,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 0
+        },
+        "wchar": {
+          "valid_points": 29,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        },
+        "read_bytes": {
+          "valid_points": 29,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 29
+        },
+        "write_bytes": {
+          "valid_points": 29,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        }
+      },
+      "derivable_adjacent_rates": {
+        "cpu": {
+          "pairs": 28,
+          "valid": 28,
+          "gaps": 0
+        },
+        "proc_rchar": {
+          "pairs": 28,
+          "valid": 28,
+          "gaps": 0
+        },
+        "proc_wchar": {
+          "pairs": 28,
+          "valid": 28,
+          "gaps": 0
+        },
+        "proc_read_bytes": {
+          "pairs": 28,
+          "valid": 28,
+          "gaps": 0
+        },
+        "proc_write_bytes": {
+          "pairs": 28,
+          "valid": 28,
+          "gaps": 0
+        }
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "boundaries.jsonl",
+        "events.jsonl",
+        "result.json"
+      ]
+    },
+    {
+      "collection": "TOOLSANDBOX-ASSISTANT-REPEAT-01",
+      "run_id": "20261012T135459Z-r0-c-tsbassistant01",
+      "task": "modify_contact_with_message_recency_multiple_user_turn",
+      "round": 0,
+      "path": "20261012T135459Z-r0-c-tsbassistant01",
+      "identity_sha256": "1643e0c8c6158734ce7186d24afd5ce36d5a40718d930e7eea2a507f0b32149b",
+      "raw_manifest_verified": true,
+      "manifest_files": 14,
+      "attempt_wall_s": 30.344633141,
+      "worker_window_wall_s": 30.340537046,
+      "sample_points": 61,
+      "scope": "one shared worker process (Agent/User/tools/evaluator)",
+      "cpu_ticks": {
+        "valid_points": 61,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 1
+      },
+      "rss_bytes": {
+        "valid_points": 61,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "thread_points": {
+        "valid_points": 61,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "clk_tck": 100,
+      "proc_io": {
+        "rchar": {
+          "valid_points": 61,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 0
+        },
+        "wchar": {
+          "valid_points": 61,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        },
+        "read_bytes": {
+          "valid_points": 61,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 61
+        },
+        "write_bytes": {
+          "valid_points": 61,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        }
+      },
+      "derivable_adjacent_rates": {
+        "cpu": {
+          "pairs": 60,
+          "valid": 60,
+          "gaps": 0
+        },
+        "proc_rchar": {
+          "pairs": 60,
+          "valid": 60,
+          "gaps": 0
+        },
+        "proc_wchar": {
+          "pairs": 60,
+          "valid": 60,
+          "gaps": 0
+        },
+        "proc_read_bytes": {
+          "pairs": 60,
+          "valid": 60,
+          "gaps": 0
+        },
+        "proc_write_bytes": {
+          "pairs": 60,
+          "valid": 60,
+          "gaps": 0
+        }
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "boundaries.jsonl",
+        "events.jsonl",
+        "result.json"
+      ]
+    },
+    {
+      "collection": "TOOLSANDBOX-ASSISTANT-REPEAT-01",
+      "run_id": "20261012T135543Z-r1-c-tsbassistant01",
+      "task": "modify_contact_with_message_recency_multiple_user_turn",
+      "round": 1,
+      "path": "20261012T135543Z-r1-c-tsbassistant01",
+      "identity_sha256": "1643e0c8c6158734ce7186d24afd5ce36d5a40718d930e7eea2a507f0b32149b",
+      "raw_manifest_verified": true,
+      "manifest_files": 14,
+      "attempt_wall_s": 26.97095524,
+      "worker_window_wall_s": 26.966966836,
+      "sample_points": 54,
+      "scope": "one shared worker process (Agent/User/tools/evaluator)",
+      "cpu_ticks": {
+        "valid_points": 54,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 1
+      },
+      "rss_bytes": {
+        "valid_points": 54,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "thread_points": {
+        "valid_points": 54,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "clk_tck": 100,
+      "proc_io": {
+        "rchar": {
+          "valid_points": 54,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 0
+        },
+        "wchar": {
+          "valid_points": 54,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        },
+        "read_bytes": {
+          "valid_points": 54,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 54
+        },
+        "write_bytes": {
+          "valid_points": 54,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        }
+      },
+      "derivable_adjacent_rates": {
+        "cpu": {
+          "pairs": 53,
+          "valid": 53,
+          "gaps": 0
+        },
+        "proc_rchar": {
+          "pairs": 53,
+          "valid": 53,
+          "gaps": 0
+        },
+        "proc_wchar": {
+          "pairs": 53,
+          "valid": 53,
+          "gaps": 0
+        },
+        "proc_read_bytes": {
+          "pairs": 53,
+          "valid": 53,
+          "gaps": 0
+        },
+        "proc_write_bytes": {
+          "pairs": 53,
+          "valid": 53,
+          "gaps": 0
+        }
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "boundaries.jsonl",
+        "events.jsonl",
+        "result.json"
+      ]
+    },
+    {
+      "collection": "TOOLSANDBOX-ASSISTANT-REPEAT-01",
+      "run_id": "20261012T135627Z-r2-c-tsbassistant01",
+      "task": "modify_contact_with_message_recency_multiple_user_turn",
+      "round": 2,
+      "path": "20261012T135627Z-r2-c-tsbassistant01",
+      "identity_sha256": "1643e0c8c6158734ce7186d24afd5ce36d5a40718d930e7eea2a507f0b32149b",
+      "raw_manifest_verified": true,
+      "manifest_files": 14,
+      "attempt_wall_s": 49.302069275,
+      "worker_window_wall_s": 49.297907679,
+      "sample_points": 99,
+      "scope": "one shared worker process (Agent/User/tools/evaluator)",
+      "cpu_ticks": {
+        "valid_points": 99,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 1
+      },
+      "rss_bytes": {
+        "valid_points": 99,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "thread_points": {
+        "valid_points": 99,
+        "missing_or_invalid_points": 0,
+        "observed_zero_points": 0
+      },
+      "clk_tck": 100,
+      "proc_io": {
+        "rchar": {
+          "valid_points": 99,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 0
+        },
+        "wchar": {
+          "valid_points": 99,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        },
+        "read_bytes": {
+          "valid_points": 99,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 99
+        },
+        "write_bytes": {
+          "valid_points": 99,
+          "missing_or_invalid_points": 0,
+          "observed_zero_points": 1
+        }
+      },
+      "derivable_adjacent_rates": {
+        "cpu": {
+          "pairs": 98,
+          "valid": 98,
+          "gaps": 0
+        },
+        "proc_rchar": {
+          "pairs": 98,
+          "valid": 98,
+          "gaps": 0
+        },
+        "proc_wchar": {
+          "pairs": 98,
+          "valid": 98,
+          "gaps": 0
+        },
+        "proc_read_bytes": {
+          "pairs": 98,
+          "valid": 98,
+          "gaps": 0
+        },
+        "proc_write_bytes": {
+          "pairs": 98,
+          "valid": 98,
+          "gaps": 0
+        }
+      },
+      "historical_network_counters": "not_found_in_selected_resource_files",
+      "historical_disk_footprint_boundaries": "not_found_in_selected_resource_files",
+      "selected_resource_key_scan": {
+        "network_counter_keys": [],
+        "directory_footprint_keys": []
+      },
+      "phase_and_behavior_sources": [
+        "boundaries.jsonl",
+        "events.jsonl",
+        "result.json"
+      ]
+    }
+  ],
+  "limitations": [
+    "Historical data are not rewritten.",
+    "A means present as saved raw observation; B means derivable offline, not a newly measured value.",
+    "cgroup block-service bytes, /proc I/O bytes, process RSS, memory.current and kernel peak are distinct scopes/semantics.",
+    "No task-exclusive network byte or HTTP/TLS application payload measurement exists historically.",
+    "Disk footprint history is absent; no current-size backfill is valid.",
+    "Current collection code is not evidence that historical runs used these fields."
+  ]
+}

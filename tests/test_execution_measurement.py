@@ -9,7 +9,10 @@ from types import SimpleNamespace
 from unittest.mock import patch
 
 from agent_workload_characterization.collectors.execution_measurement import (
-    MeasuredLLM, environment_snapshot, measurement_report, sample_quality, span_coverage)
+    MeasuredLLM, RunSupplement, counter_rate_intervals, directory_footprint_snapshot,
+    disk_footprint_report, environment_snapshot, measurement_report,
+    network_rate_intervals, read_network_namespace, sample_quality, span_coverage,
+    office_resource_rate_intervals, container_directory_footprint_snapshot)
 from agent_workload_characterization.collectors.semantic_recorder import SemanticRecorder, SystemClock
 from agent_workload_characterization.collectors.resource_sampler import ResourceSampler, CounterSnapshot
 from agent_workload_characterization.collectors.host_process import HostProcessReader
@@ -155,6 +158,321 @@ class MeasurementTests(unittest.TestCase):
         self.assertNotIn('DEEPSEEK_API_KEY', json.dumps(result))
         self.assertIn('python', result)
         self.assertEqual(result['cache_initial_state']['reason'], 'not_controlled')
+
+    def test_counter_intervals_compute_core_and_io_rates_and_preserve_gaps(self):
+        rows = [
+            {'t_monotonic_ns': 1_000_000_000, 'scope': 's', 'cpu': 0, 'read': 0, 'read_status': 'ok'},
+            {'t_monotonic_ns': 1_500_000_000, 'scope': 's', 'cpu': 500_000, 'read': 100, 'read_status': 'ok'},
+            {'t_monotonic_ns': 1_500_000_000, 'scope': 's', 'cpu': 600_000, 'read': 200, 'read_status': 'ok'},
+            {'t_monotonic_ns': 2_000_000_000, 'scope': 's', 'cpu': 100, 'read': 10, 'read_status': 'ok'},
+            {'t_monotonic_ns': 2_500_000_000, 'scope': 's', 'cpu': None, 'read': 20, 'read_status': 'ok'},
+        ]
+        intervals = counter_rate_intervals(rows, {
+            'cpu': {'path': 'cpu', 'divisor': 1_000_000, 'unit': 'cpu_seconds',
+                    'identity_paths': ['scope'], 'status_path': 'read_status'},
+            'read': {'path': 'read', 'unit': 'bytes', 'identity_paths': ['scope'],
+                     'status_path': 'read_status'}})
+        self.assertEqual(intervals[0]['metrics']['cpu']['rate_per_s'], 1.0)
+        self.assertEqual(intervals[0]['metrics']['read']['rate_per_s'], 200.0)
+        self.assertEqual(intervals[1]['metrics']['cpu']['reason'], 'nonpositive_or_invalid_time_delta')
+        self.assertEqual(intervals[2]['metrics']['cpu']['reason'], 'counter_decreased')
+        self.assertEqual(intervals[3]['metrics']['cpu']['reason'], 'counter_missing_or_invalid')
+
+    def test_counter_interval_nested_reader_status_accepts_real_cgroup_status(self):
+        rows = [
+            {'t_monotonic_ns': 1_000_000_000, 'cpu_usage_usec': 0,
+             'scope': 's', 'read_status': {'cpuacct.usage': 'ok_ns_converted_to_usec'}},
+            {'t_monotonic_ns': 2_000_000_000, 'cpu_usage_usec': 250_000,
+             'scope': 's', 'read_status': {'cpuacct.usage': 'ok_ns_converted_to_usec'}},
+        ]
+        interval = counter_rate_intervals(rows, {
+            'cpu': {'path': 'cpu_usage_usec', 'divisor': 1_000_000,
+                    'unit': 'cpu_seconds', 'rate_unit': 'average_core',
+                    'identity_paths': ['scope'],
+                    'status_paths': [('read_status', 'cpu.stat'),
+                                     ('read_status', 'cpuacct.usage')]}})[0]
+        self.assertEqual(interval['metrics']['cpu']['status'], 'valid')
+        self.assertEqual(interval['metrics']['cpu']['rate_per_s'], 0.25)
+
+    def test_counter_interval_does_not_join_different_resource_scopes(self):
+        rows = [
+            {'t_monotonic_ns': 1_000_000_000, 'scope': 'agent', 'cpu': 10},
+            {'t_monotonic_ns': 2_000_000_000, 'scope': 'verifier', 'cpu': 20},
+        ]
+        interval = counter_rate_intervals(rows, {
+            'cpu': {'path': 'cpu', 'unit': 'cpu_seconds', 'scope_path': 'scope'}})[0]
+        self.assertEqual(interval['metrics']['cpu']['status'], 'gap')
+        self.assertEqual(interval['metrics']['cpu']['reason'], 'scope_identity_changed')
+
+    def test_counter_interval_checks_both_endpoint_status_and_identity(self):
+        def row(t, status, *, pid=7, start=100, cpu=0, io=0):
+            return {'t_monotonic_ns': t, 'pid': pid, 'start': start,
+                    'cpu': cpu, 'io': io, 'read_status': status}
+        spec = {'cpu': {'path': 'cpu', 'unit': 'ticks',
+                        'identity_paths': ['pid', 'start'],
+                        'status_path': 'read_status'},
+                'io': {'path': 'io', 'unit': 'bytes',
+                       'identity_paths': ['pid', 'start'],
+                       'status_path': 'read_status'}}
+        for left_status, right_status in (('permission_denied', 'ok'),
+                                           ('ok', 'permission_denied'),
+                                           ('permission_denied', 'permission_denied')):
+            got = counter_rate_intervals([row(1, left_status), row(2, right_status)], spec)[0]
+            self.assertEqual(got['metrics']['cpu']['status'], 'gap')
+        valid = counter_rate_intervals([row(1, 'ok', cpu=1), row(2, 'ok', cpu=2)], spec)[0]
+        self.assertEqual(valid['metrics']['cpu']['delta'], 1)
+        self.assertEqual(valid['metrics']['io']['delta'], 0)
+        changed = counter_rate_intervals([row(1, 'ok'), row(2, 'ok', start=101)], spec)[0]
+        self.assertEqual(changed['metrics']['cpu']['reason'], 'scope_identity_changed')
+        missing = counter_rate_intervals([row(1, 'ok'),
+            {'t_monotonic_ns': 2, 'read_status': 'ok', 'cpu': 1, 'io': 1}], spec)[0]
+        self.assertEqual(missing['metrics']['cpu']['reason'], 'scope_identity_missing')
+
+    def test_counter_interval_keeps_metric_gaps_independent_and_does_not_bridge_missing_reads(self):
+        rows = [
+            {'t_monotonic_ns': 1_000_000_000, 'pid': 9, 'start': 30,
+             'cpu': 0, 'io': 0, 'status': {'cpu': 'ok', 'io': 'permission_denied'}},
+            {'t_monotonic_ns': 2_000_000_000, 'pid': 9, 'start': 30,
+             'cpu': 1_000_000, 'io': 10, 'status': {'cpu': 'ok', 'io': 'ok'}},
+            {'t_monotonic_ns': 3_000_000_000, 'pid': 9, 'start': 30,
+             'cpu': 2_000_000, 'io': 20, 'status': {'cpu': 'permission_denied', 'io': 'ok'}},
+            {'t_monotonic_ns': 4_000_000_000, 'pid': 9, 'start': 30,
+             'cpu': 3_000_000, 'io': 30, 'status': {'cpu': 'ok', 'io': 'ok'}},
+        ]
+        intervals = counter_rate_intervals(rows, {
+            'cpu': {'path': 'cpu', 'divisor': 1_000_000, 'unit': 'cpu_seconds',
+                    'rate_unit': 'average_core', 'identity_paths': ['pid', 'start'],
+                    'status_path': ('status', 'cpu')},
+            'io': {'path': 'io', 'unit': 'bytes', 'identity_paths': ['pid', 'start'],
+                   'status_path': ('status', 'io')}})
+        self.assertEqual(intervals[0]['metrics']['cpu']['status'], 'valid')
+        self.assertEqual(intervals[0]['metrics']['io']['reason'], 'reader_status_left:permission_denied')
+        self.assertEqual(intervals[1]['metrics']['cpu']['reason'], 'reader_status_right:permission_denied')
+        self.assertEqual(intervals[1]['metrics']['io']['status'], 'valid')
+        self.assertEqual(intervals[2]['metrics']['cpu']['status'], 'gap')
+        self.assertEqual(intervals[2]['metrics']['io']['status'], 'valid')
+
+    def test_counter_interval_rejects_bool_negative_counter_and_negative_timestamp(self):
+        spec = {'cpu': {'path': 'cpu', 'divisor': 100, 'unit': 'cpu_seconds',
+                        'identity_paths': ['scope'], 'status_path': 'status'}}
+        def pair(left, right):
+            return counter_rate_intervals([left, right], spec)[0]['metrics']['cpu']
+        base = {'t_monotonic_ns': 1, 'scope': 's', 'cpu': 0, 'status': 'ok'}
+        self.assertEqual(pair(base, {**base, 't_monotonic_ns': 2, 'cpu': True})['reason'],
+                         'counter_missing_or_invalid')
+        self.assertEqual(pair({**base, 'cpu': -1}, {**base, 't_monotonic_ns': 2})['reason'],
+                         'negative_counter')
+        self.assertEqual(pair({**base, 't_monotonic_ns': -1},
+                              {**base, 't_monotonic_ns': 2})['reason'],
+                         'nonpositive_or_invalid_time_delta')
+
+    def test_office_nested_sample_projection_uses_nested_status_identity_and_clk_tck(self):
+        def sample(t, cpu_usec, io_read, ticks, rchar, *, cstatus='ok_summed_devices',
+                   hstatus='ok', container='cid', pid=17, start=123, clk=100):
+            return {'t_monotonic_ns': t,
+                'container': {'scope_kind': 'agent_container', 'container_id': container,
+                    'cpu_usage_usec': cpu_usec, 'io_read_bytes': io_read,
+                    'io_write_bytes': io_read * 2,
+                    'read_status': {'cpu.stat': 'ok', 'io.stat': cstatus}},
+                'host_agent': {'pid': pid, 'starttime_ticks': start, 'clk_tck': clk,
+                    'cpu_ticks': ticks, 'process_io': {'rchar': rchar, 'wchar': rchar * 2,
+                        'read_bytes': rchar * 3, 'write_bytes': rchar * 4},
+                    'read_status': {'stat': hstatus, 'io': hstatus}}}
+        rows = [sample(1_000_000_000, 100, 50, 100, 100),
+                sample(2_000_000_000, 1_000_100, 550, 125, 400)]
+        projected = office_resource_rate_intervals(rows, container_id='cid')
+        c = projected['container'][0]['metrics']
+        h = projected['host_agent_process'][0]['metrics']
+        self.assertEqual(c['cpu']['rate_per_s'], 1.0)
+        self.assertEqual(c['io_read']['rate_per_s'], 500.0)
+        self.assertEqual(c['io_write']['rate_per_s'], 1000.0)
+        self.assertEqual(h['cpu']['rate_per_s'], .25)
+        self.assertEqual(h['proc_rchar']['rate_per_s'], 300.0)
+        bad = [rows[0], sample(2_000_000_000, 1_000_100, 550, 125, 400,
+                               cstatus='not_found', hstatus='permission_denied')]
+        broken = office_resource_rate_intervals(bad, container_id='cid')
+        self.assertEqual(broken['container'][0]['metrics']['io_read']['status'], 'gap')
+        self.assertEqual(broken['container'][0]['metrics']['cpu']['status'], 'valid')
+        self.assertEqual(broken['host_agent_process'][0]['metrics']['cpu']['status'], 'gap')
+
+    def test_office_projection_breaks_on_container_identity_and_unknown_clk_tck(self):
+        base = {'t_monotonic_ns': 1_000_000_000,
+            'container': {'cpu_usage_usec': 0, 'io_read_bytes': 0, 'io_write_bytes': 0,
+                          'read_status': {'cpu.stat':'ok','io.stat':'ok'}},
+            'host_agent': {'pid': 1, 'starttime_ticks': 2, 'cpu_ticks': 10,
+                'clk_tck': None, 'process_io': {'rchar': 0, 'wchar': 0,
+                'read_bytes': 0, 'write_bytes': 0},
+                'read_status': {'stat':'ok','io':'ok'}}}
+        nxt = json.loads(json.dumps(base)); nxt['t_monotonic_ns'] += 1_000_000_000
+        nxt['container']['cpu_usage_usec'] = 1_000_000
+        result = office_resource_rate_intervals([base, nxt], container_id=None)
+        self.assertEqual(result['container'][0]['metrics']['cpu']['reason'], 'scope_identity_missing')
+        self.assertEqual(result['host_agent_process'][0]['metrics']['cpu']['reason'],
+                         'unit_conversion_unavailable')
+
+    def test_office_projection_detects_container_identity_change_in_nested_rows(self):
+        def row(t, cid, cpu):
+            return {'t_monotonic_ns': t, 'container': {'container_id': cid,
+                    'cpu_usage_usec': cpu, 'read_status': {'cpu.stat': 'ok'}},
+                    'host_agent': {'pid': 1, 'starttime_ticks': 5, 'clk_tck': 100,
+                        'cpu_ticks': 10, 'process_io': {},
+                        'read_status': {'stat': 'ok', 'io': 'ok'}}}
+        result = office_resource_rate_intervals([row(1, 'container-a', 0),
+                                                 row(2, 'container-b', 1_000_000)],
+                                                container_id='fallback')
+        self.assertEqual(result['container'][0]['metrics']['cpu']['reason'],
+                         'scope_identity_changed')
+
+    def test_container_disk_snapshot_uses_runtime_execute_and_bounded_timeout(self):
+        class Runtime:
+            def execute(self, handle, command, timeout_s, *, output_limit):
+                self.command, self.timeout_s = command, timeout_s
+                self.assert_output_limit = output_limit
+                payload = {'clock_domain': 'container_kernel_monotonic',
+                    't_monotonic_ns': 10, 'entries': [{'role':'task_workspace',
+                     'scope':'agent:/testbed', 'path':'/testbed', 'status':'complete',
+                     'bytes':12, 'observed_subtotal_bytes':12, 'scan_wall_ns':3}]}
+                return {'returncode':0, 'output':json.dumps(payload)}
+        runtime = Runtime()
+        result = container_directory_footprint_snapshot(runtime, object(),
+            [{'path':'/testbed','role':'task_workspace','scope':'agent:/testbed'}],
+            timeout_s=.25)
+        self.assertEqual(result['entries'][0]['bytes'], 12)
+        self.assertEqual(runtime.timeout_s, .25)
+        self.assertIn('/testbed', runtime.command)
+        class TimedOutRuntime:
+            def execute(self, handle, command, timeout_s, *, output_limit):
+                return {'returncode': 124, 'timed_out': True, 'output': ''}
+        failed = container_directory_footprint_snapshot(TimedOutRuntime(), object(),
+            [{'path': '/testbed', 'role': 'task_workspace', 'scope': 'agent:/testbed'}],
+            timeout_s=.1)
+        self.assertEqual(failed['status'], 'partial')
+        self.assertEqual(failed['entries'][0]['role'], 'task_workspace')
+        self.assertIsNone(failed['entries'][0]['bytes'])
+
+    def test_network_namespace_projection_and_unsupported_source_are_explicit(self):
+        fixture = self.root / 'proc'
+        (fixture / 'self/net').mkdir(parents=True)
+        (fixture / 'self/ns').mkdir(parents=True)
+        (fixture / 'self/net/dev').write_text(
+            'Inter-| Receive | Transmit\n face |bytes packets errs drop fifo frame compressed multicast|bytes packets errs drop fifo colls carrier compressed\n'
+            ' eth0: 100 1 0 0 0 0 0 0 250 1 0 0 0 0 0 0\n')
+        (fixture / 'self/ns/net').symlink_to('net:[42]')
+        # readlink() is patched because a fixture symlink cannot reproduce a kernel netns link.
+        with patch('os.readlink', return_value='net:[42]'):
+            snap = read_network_namespace(fixture, t_monotonic_ns=10)
+        self.assertEqual(snap['scope_kind'], 'network_namespace_shared')
+        self.assertEqual(snap['interfaces']['eth0'], {'rx_bytes': 100, 'tx_bytes': 250})
+        rate = network_rate_intervals([
+            snap,
+            {**snap, 't_monotonic_ns': 1_000_000_010,
+             'interfaces': {'eth0': {'rx_bytes': 300, 'tx_bytes': 450}}}])[0]
+        self.assertEqual(rate['metrics']['rx_bytes']['bytes_per_s'], 200.0)
+        self.assertEqual(rate['metrics']['tx_bytes']['bytes_per_s'], 200.0)
+        gap = network_rate_intervals([snap, {**snap, 't_monotonic_ns': 20,
+             'interfaces': {'eth0': {'rx_bytes': 1, 'tx_bytes': 450}}}])[0]
+        self.assertEqual(gap['metrics']['rx_bytes']['reason'], 'counter_decreased')
+        namespace_gap = network_rate_intervals([snap, {**snap, 't_monotonic_ns': 20,
+             'namespace_id': 'net:[43]'}])[0]
+        self.assertEqual(namespace_gap['metrics']['rx_bytes']['reason'],
+                         'network_namespace_identity_missing_or_changed')
+        missing_namespace = network_rate_intervals([
+            {**snap, 'namespace_id': None}, {**snap, 't_monotonic_ns': 20,
+             'namespace_id': None}])[0]
+        self.assertIsNone(missing_namespace['metrics']['rx_bytes']['bytes_per_s'])
+        changed_interface = network_rate_intervals([
+            snap, {**snap, 't_monotonic_ns': 1_000_000_010,
+                   'interfaces': {'veth0': {'rx_bytes': 200, 'tx_bytes': 300}}}])[0]
+        self.assertEqual(changed_interface['metrics']['rx_bytes']['reason'],
+                         'interface_or_counter_missing')
+        failed_read = network_rate_intervals([
+            snap, {**snap, 't_monotonic_ns': 1_000_000_010,
+                   'read_status': 'PermissionError'}])[0]
+        self.assertEqual(failed_read['metrics']['rx_bytes']['reason'],
+                         'network_counter_read_unavailable')
+
+    def test_disk_footprint_overlap_symlink_disappearance_and_growth(self):
+        root = self.root / 'out'
+        nested = root / 'nested'
+        nested.mkdir(parents=True)
+        (root / 'a.bin').write_bytes(b'abc')
+        (nested / 'b.bin').write_bytes(b'12345')
+        link = self.root / 'out-link'
+        link.symlink_to(root, target_is_directory=True)
+        specs = [
+            {'path': str(root), 'role': 'output', 'scope': 'run', 'ownership': 'run_scoped'},
+            {'path': str(nested), 'role': 'nested', 'scope': 'run'},
+            {'path': str(link), 'role': 'link', 'scope': 'run'},
+            {'path': None, 'role': 'workspace', 'scope': 'container',
+             'unavailable_status': 'unsupported', 'reason': 'not_host_visible'},
+        ]
+        before = directory_footprint_snapshot(specs)
+        self.assertEqual(next(x for x in before['entries'] if x['role'] == 'output')['bytes'], 8)
+        self.assertEqual(next(x for x in before['entries'] if x['role'] == 'nested')['status'],
+                         'overlapping_path_excluded')
+        self.assertEqual(next(x for x in before['entries'] if x['role'] == 'link')['status'],
+                         'symlink_not_followed')
+        self.assertEqual(next(x for x in before['entries'] if x['role'] == 'workspace')['status'],
+                         'unsupported')
+        (root / 'a.bin').write_bytes(b'abcdefgh')
+        after = directory_footprint_snapshot(specs)
+        report = disk_footprint_report(before, after)
+        self.assertEqual(next(x for x in report['paths'] if x['role'] == 'output')['delta_bytes'], 5)
+
+    def test_disk_scan_disappearance_is_partial_not_zero(self):
+        root = self.root / 'changing'
+        root.mkdir()
+        gone = root / 'gone.bin'
+        gone.write_bytes(b'disappears')
+        real_scandir = os.scandir
+        def disappearing_scandir(path):
+            rows = list(real_scandir(path))
+            if Path(path) == root:
+                gone.unlink()
+            return rows
+        with patch('agent_workload_characterization.collectors.execution_measurement.os.scandir',
+                   side_effect=disappearing_scandir):
+            row = directory_footprint_snapshot([{'path': str(root), 'role': 'out', 'scope': 'run'}])['entries'][0]
+        self.assertEqual(row['status'], 'partial')
+        self.assertIsNone(row['bytes'])
+        self.assertIn('file_disappeared_during_scan', row['errors'])
+
+    def test_disk_scan_permission_and_deadline_are_partial_not_zero(self):
+        root = self.root / 'restricted'
+        root.mkdir()
+        with patch('agent_workload_characterization.collectors.execution_measurement.os.scandir',
+                   side_effect=PermissionError()):
+            denied = directory_footprint_snapshot([{'path': str(root), 'role': 'workspace',
+                                                       'scope': 'container'}])['entries'][0]
+        self.assertEqual(denied['status'], 'partial')
+        self.assertIsNone(denied['bytes'])
+        expired = directory_footprint_snapshot([{'path': str(root), 'role': 'workspace',
+                                                   'scope': 'container'}], timeout_s=0)['entries'][0]
+        self.assertEqual(expired['status'], 'partial')
+        self.assertIn('scan_timeout', expired['errors'])
+
+    def test_run_supplement_stops_and_returns_raw_and_derived_network_data(self):
+        root = self.root / 'run'
+        root.mkdir()
+        value = {'rx': 0, 'tx': 0}
+        def fake_reader(*, t_monotonic_ns):
+            value['rx'] += 10
+            value['tx'] += 20
+            return {'scope': 'current_process_network_namespace',
+                    'scope_kind': 'network_namespace_shared', 'namespace_id': 'net:[test]',
+                    't_monotonic_ns': t_monotonic_ns,
+                    'interfaces': {'eth-test': {'rx_bytes': value['rx'], 'tx_bytes': value['tx']}},
+                    'read_status': 'observed'}
+        supplement = RunSupplement(root, interval_s=10, network_reader=fake_reader)
+        supplement.start()
+        (root / 'output.bin').write_bytes(b'x')
+        result = supplement.stop()
+        self.assertEqual(result['disk_footprint']['paths'][0]['delta_bytes'], 1)
+        self.assertGreaterEqual(result['network']['sample_count'], 2)
+        self.assertEqual(result['network']['scope_kind'], 'network_namespace_shared')
+        self.assertTrue(result['network']['intervals'])
+        self.assertEqual(result['api_transport_bytes']['status'], 'unsupported')
+        self.assertEqual(result['measurement_contract_version'], 'real-run-measurement-v3')
 
 
 if __name__ == '__main__':

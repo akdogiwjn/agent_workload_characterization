@@ -1,0 +1,5692 @@
+{
+  "collection": "LOCAL-THREE-CLASS-COMPLETE-02",
+  "run_id": "20261017T042308Z-05-r0-office",
+  "identity_sha256": "8a17109cf441e3ae68e3f9820babe5685467657cbcafb56d765dd1158dc4942d",
+  "summary": {
+    "schema": "docops-word-resource-01-run-v2",
+    "run_id": "20261017T042308Z-05-r0-office",
+    "collection": "LOCAL-THREE-CLASS-COMPLETE-02",
+    "task_key": "atomic__pdf_004_audit_pages_reorder_seed",
+    "round": 0,
+    "max_steps": 40,
+    "identity_sha256": "8a17109cf441e3ae68e3f9820babe5685467657cbcafb56d765dd1158dc4942d",
+    "task_image": {
+      "reference": "docops-office-repeat-01:pdf004",
+      "expected_id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87"
+    },
+    "outcome": {
+      "phases": {
+        "agent": {
+          "status": "finish",
+          "n_input_tokens": 9634,
+          "n_output_tokens": 714,
+          "n_cache_tokens": 4096,
+          "cost_usd": 0.0,
+          "agent_budget_s": 1200.0
+        },
+        "verifier": {
+          "status": "completed",
+          "rewards": {
+            "reward": 1.0
+          },
+          "reward": 1.0,
+          "verifier_budget_s": 600.0
+        }
+      },
+      "infra_failures": []
+    },
+    "wall_s": 28.88,
+    "within_total_budget": true,
+    "container": {
+      "id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+      "name": "20261017t042308z-05-r0-office-main-1",
+      "compose_project": "20261017t042308z-05-r0-office",
+      "cgroup_version": "v1"
+    },
+    "events": [
+      {
+        "phase": "attempt_started",
+        "t_monotonic_ns": 1136599558045248,
+        "run_id": "20261017T042308Z-05-r0-office"
+      },
+      {
+        "phase": "harbor_start_begin",
+        "t_monotonic_ns": 1136599560729018
+      },
+      {
+        "phase": "harbor_start_done",
+        "t_monotonic_ns": 1136600434308222
+      },
+      {
+        "phase": "container_identified",
+        "t_monotonic_ns": 1136600447772252,
+        "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+        "container_name": "20261017t042308z-05-r0-office-main-1",
+        "compose_project": "20261017t042308z-05-r0-office"
+      },
+      {
+        "phase": "cgroup_resolved",
+        "t_monotonic_ns": 1136600460781374,
+        "version": "v1",
+        "dir": "/sys/fs/cgroup/cpu,cpuacct/docker/918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0"
+      },
+      {
+        "phase": "agent_setup_begin",
+        "t_monotonic_ns": 1136602346172306,
+        "shared_resource_boundary": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136602345868522,
+          "cpu_usage_usec": 38130,
+          "mem_current_bytes": 1323008,
+          "mem_peak_bytes": 6819840,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0"
+        }
+      },
+      {
+        "phase": "agent_setup_done",
+        "t_monotonic_ns": 1136602706596005,
+        "shared_resource_boundary": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136602706286070,
+          "cpu_usage_usec": 61655,
+          "mem_current_bytes": 2342912,
+          "mem_peak_bytes": 6819840,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0"
+        }
+      },
+      {
+        "phase": "agent_begin",
+        "t_monotonic_ns": 1136602808063095,
+        "model": "openai/deepseek-v4-flash",
+        "shared_resource_boundary": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136602807770710,
+          "cpu_usage_usec": 95255,
+          "mem_current_bytes": 1945600,
+          "mem_peak_bytes": 6819840,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0"
+        }
+      },
+      {
+        "phase": "phase_agent",
+        "t_monotonic_ns": 1136616261641165,
+        "status": "finish",
+        "n_input_tokens": 9634,
+        "n_output_tokens": 714,
+        "n_cache_tokens": 4096,
+        "cost_usd": 0.0,
+        "agent_budget_s": 1200.0
+      },
+      {
+        "phase": "agent_end",
+        "t_monotonic_ns": 1136616413165915,
+        "shared_resource_boundary": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136616412848371,
+          "cpu_usage_usec": 3395806,
+          "mem_current_bytes": 17764352,
+          "mem_peak_bytes": 74457088,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0"
+        }
+      },
+      {
+        "phase": "verifier_begin",
+        "t_monotonic_ns": 1136616413340258,
+        "shared_resource_boundary": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136616413167155,
+          "cpu_usage_usec": 3395806,
+          "mem_current_bytes": 17764352,
+          "mem_peak_bytes": 74457088,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0"
+        }
+      },
+      {
+        "phase": "phase_verifier",
+        "t_monotonic_ns": 1136617581057551,
+        "status": "completed",
+        "rewards": {
+          "reward": 1.0
+        },
+        "reward": 1.0,
+        "verifier_budget_s": 600.0
+      },
+      {
+        "phase": "verifier_end",
+        "t_monotonic_ns": 1136617581342995,
+        "shared_resource_boundary": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136617581060731,
+          "cpu_usage_usec": 4374962,
+          "mem_current_bytes": 23588864,
+          "mem_peak_bytes": 83329024,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0"
+        }
+      },
+      {
+        "phase": "sampling_stopped",
+        "t_monotonic_ns": 1136617581803212,
+        "rows": 37
+      },
+      {
+        "phase": "harbor_stop_begin",
+        "t_monotonic_ns": 1136617581804882,
+        "delete": true
+      },
+      {
+        "phase": "harbor_stop_done",
+        "t_monotonic_ns": 1136627806413237,
+        "stop_error": null
+      },
+      {
+        "phase": "removal_verified",
+        "t_monotonic_ns": 1136627820557146,
+        "result": "removed"
+      },
+      {
+        "phase": "image_tag_after_stop",
+        "t_monotonic_ns": 1136627833778472,
+        "present": true,
+        "id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+        "query_error": null
+      },
+      {
+        "phase": "archive_begin",
+        "t_monotonic_ns": 1136628299619609
+      },
+      {
+        "phase": "call_log_credential_fingerprints_removed",
+        "t_monotonic_ns": 1136628302298268,
+        "count": 4
+      },
+      {
+        "phase": "archive_done",
+        "t_monotonic_ns": 1136628408155623
+      }
+    ],
+    "call_log_credential_fingerprint_fields_removed": 4,
+    "samples": [
+      {
+        "t_monotonic_ns": 1136600462283186,
+        "clock_domain": "system_monotonic",
+        "role": "boundary_start",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136600462283186,
+          "cpu_usage_usec": 38130,
+          "mem_current_bytes": 1339392,
+          "mem_peak_bytes": 6819840,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136600462283186,
+          "cpu_ticks": 25,
+          "rss_bytes": 41209856,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 21,
+          "system_ticks": 4,
+          "minor_faults": 7617,
+          "major_faults": 0,
+          "threads": 3,
+          "process_io": {
+            "rchar": 35555753,
+            "wchar": 9976,
+            "read_bytes": 0,
+            "write_bytes": 4096
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 52,
+            "nonvoluntary_ctxt_switches": 7
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 1385041
+      },
+      {
+        "t_monotonic_ns": 1136600463673397,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136600463673397,
+          "cpu_usage_usec": 38130,
+          "mem_current_bytes": 1339392,
+          "mem_peak_bytes": 6819840,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136600463673397,
+          "cpu_ticks": 25,
+          "rss_bytes": 41209856,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 21,
+          "system_ticks": 4,
+          "minor_faults": 7680,
+          "major_faults": 0,
+          "threads": 3,
+          "process_io": {
+            "rchar": 35585466,
+            "wchar": 9976,
+            "read_bytes": 0,
+            "write_bytes": 4096
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 79,
+            "nonvoluntary_ctxt_switches": 7
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 4473966
+      },
+      {
+        "t_monotonic_ns": 1136600970984106,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136600970984106,
+          "cpu_usage_usec": 38130,
+          "mem_current_bytes": 1339392,
+          "mem_peak_bytes": 6819840,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136600970984106,
+          "cpu_ticks": 76,
+          "rss_bytes": 81141760,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 68,
+          "system_ticks": 8,
+          "minor_faults": 18003,
+          "major_faults": 0,
+          "threads": 3,
+          "process_io": {
+            "rchar": 43718751,
+            "wchar": 9976,
+            "read_bytes": 0,
+            "write_bytes": 4096
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 116,
+            "nonvoluntary_ctxt_switches": 22
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 2981364
+      },
+      {
+        "t_monotonic_ns": 1136601475989022,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136601475989022,
+          "cpu_usage_usec": 38130,
+          "mem_current_bytes": 1323008,
+          "mem_peak_bytes": 6819840,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136601475989022,
+          "cpu_ticks": 128,
+          "rss_bytes": 123908096,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 116,
+          "system_ticks": 12,
+          "minor_faults": 35555,
+          "major_faults": 0,
+          "threads": 3,
+          "process_io": {
+            "rchar": 46552604,
+            "wchar": 9976,
+            "read_bytes": 0,
+            "write_bytes": 4096
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 157,
+            "nonvoluntary_ctxt_switches": 33
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 1160457
+      },
+      {
+        "t_monotonic_ns": 1136601977248702,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136601977248702,
+          "cpu_usage_usec": 38130,
+          "mem_current_bytes": 1323008,
+          "mem_peak_bytes": 6819840,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136601977248702,
+          "cpu_ticks": 179,
+          "rss_bytes": 146976768,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 157,
+          "system_ticks": 22,
+          "minor_faults": 63526,
+          "major_faults": 0,
+          "threads": 3,
+          "process_io": {
+            "rchar": 49965546,
+            "wchar": 9976,
+            "read_bytes": 0,
+            "write_bytes": 4096
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 192,
+            "nonvoluntary_ctxt_switches": 61
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 3386801
+      },
+      {
+        "t_monotonic_ns": 1136602480722196,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136602480722196,
+          "cpu_usage_usec": 38130,
+          "mem_current_bytes": 1323008,
+          "mem_peak_bytes": 6819840,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136602480722196,
+          "cpu_ticks": 217,
+          "rss_bytes": 163753984,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 191,
+          "system_ticks": 26,
+          "minor_faults": 72208,
+          "major_faults": 0,
+          "threads": 3,
+          "process_io": {
+            "rchar": 55692493,
+            "wchar": 51939,
+            "read_bytes": 0,
+            "write_bytes": 4096
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 211,
+            "nonvoluntary_ctxt_switches": 77
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 505227
+      },
+      {
+        "t_monotonic_ns": 1136602981319256,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136602981319256,
+          "cpu_usage_usec": 175753,
+          "mem_current_bytes": 13639680,
+          "mem_peak_bytes": 13639680,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136602981319256,
+          "cpu_ticks": 218,
+          "rss_bytes": 163753984,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 191,
+          "system_ticks": 27,
+          "minor_faults": 72229,
+          "major_faults": 0,
+          "threads": 3,
+          "process_io": {
+            "rchar": 55820789,
+            "wchar": 67648,
+            "read_bytes": 0,
+            "write_bytes": 8192
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 224,
+            "nonvoluntary_ctxt_switches": 77
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 504548
+      },
+      {
+        "t_monotonic_ns": 1136603481913627,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136603481913627,
+          "cpu_usage_usec": 658413,
+          "mem_current_bytes": 33378304,
+          "mem_peak_bytes": 33378304,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136603481913627,
+          "cpu_ticks": 219,
+          "rss_bytes": 163753984,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 191,
+          "system_ticks": 28,
+          "minor_faults": 72254,
+          "major_faults": 0,
+          "threads": 3,
+          "process_io": {
+            "rchar": 55893542,
+            "wchar": 73371,
+            "read_bytes": 0,
+            "write_bytes": 8192
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 227,
+            "nonvoluntary_ctxt_switches": 77
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 477497
+      },
+      {
+        "t_monotonic_ns": 1136603982469637,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136603982469637,
+          "cpu_usage_usec": 1043646,
+          "mem_current_bytes": 62746624,
+          "mem_peak_bytes": 62746624,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136603982469637,
+          "cpu_ticks": 221,
+          "rss_bytes": 163753984,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 192,
+          "system_ticks": 29,
+          "minor_faults": 72284,
+          "major_faults": 0,
+          "threads": 3,
+          "process_io": {
+            "rchar": 55938743,
+            "wchar": 73371,
+            "read_bytes": 0,
+            "write_bytes": 8192
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 228,
+            "nonvoluntary_ctxt_switches": 77
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 376225
+      },
+      {
+        "t_monotonic_ns": 1136604482926525,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136604482926525,
+          "cpu_usage_usec": 1079296,
+          "mem_current_bytes": 9420800,
+          "mem_peak_bytes": 62746624,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136604482926525,
+          "cpu_ticks": 225,
+          "rss_bytes": 165851136,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 195,
+          "system_ticks": 30,
+          "minor_faults": 73449,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 56222183,
+            "wchar": 77740,
+            "read_bytes": 0,
+            "write_bytes": 12288
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 238,
+            "nonvoluntary_ctxt_switches": 77
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 417406
+      },
+      {
+        "t_monotonic_ns": 1136604983422084,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136604983422084,
+          "cpu_usage_usec": 1079296,
+          "mem_current_bytes": 8904704,
+          "mem_peak_bytes": 62746624,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136604983422084,
+          "cpu_ticks": 225,
+          "rss_bytes": 165851136,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 195,
+          "system_ticks": 30,
+          "minor_faults": 73490,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 56266561,
+            "wchar": 77740,
+            "read_bytes": 0,
+            "write_bytes": 12288
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 238,
+            "nonvoluntary_ctxt_switches": 77
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 377736
+      },
+      {
+        "t_monotonic_ns": 1136605483877533,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136605483877533,
+          "cpu_usage_usec": 1079296,
+          "mem_current_bytes": 8904704,
+          "mem_peak_bytes": 62746624,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136605483877533,
+          "cpu_ticks": 227,
+          "rss_bytes": 165851136,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 196,
+          "system_ticks": 31,
+          "minor_faults": 73520,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 56310939,
+            "wchar": 77740,
+            "read_bytes": 0,
+            "write_bytes": 12288
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 238,
+            "nonvoluntary_ctxt_switches": 77
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 404396
+      },
+      {
+        "t_monotonic_ns": 1136605984359381,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136605984359381,
+          "cpu_usage_usec": 1079296,
+          "mem_current_bytes": 8392704,
+          "mem_peak_bytes": 62746624,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136605984359381,
+          "cpu_ticks": 228,
+          "rss_bytes": 165851136,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 196,
+          "system_ticks": 32,
+          "minor_faults": 73548,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 56355317,
+            "wchar": 77740,
+            "read_bytes": 0,
+            "write_bytes": 12288
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 238,
+            "nonvoluntary_ctxt_switches": 77
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 386176
+      },
+      {
+        "t_monotonic_ns": 1136606484818080,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136606484818080,
+          "cpu_usage_usec": 1079296,
+          "mem_current_bytes": 8392704,
+          "mem_peak_bytes": 62746624,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136606484818080,
+          "cpu_ticks": 229,
+          "rss_bytes": 165851136,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 196,
+          "system_ticks": 33,
+          "minor_faults": 73577,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 56399695,
+            "wchar": 77740,
+            "read_bytes": 0,
+            "write_bytes": 12288
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 238,
+            "nonvoluntary_ctxt_switches": 77
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 346705
+      },
+      {
+        "t_monotonic_ns": 1136606985250778,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136606985250778,
+          "cpu_usage_usec": 1449807,
+          "mem_current_bytes": 41246720,
+          "mem_peak_bytes": 62746624,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136606985250778,
+          "cpu_ticks": 232,
+          "rss_bytes": 167948288,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 198,
+          "system_ticks": 34,
+          "minor_faults": 73872,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 56522687,
+            "wchar": 112219,
+            "read_bytes": 0,
+            "write_bytes": 49152
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 240,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 462907
+      },
+      {
+        "t_monotonic_ns": 1136607485792658,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136607485792658,
+          "cpu_usage_usec": 1687501,
+          "mem_current_bytes": 70467584,
+          "mem_peak_bytes": 70467584,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136607485792658,
+          "cpu_ticks": 233,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 198,
+          "system_ticks": 35,
+          "minor_faults": 73912,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 56567170,
+            "wchar": 112219,
+            "read_bytes": 0,
+            "write_bytes": 49152
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 241,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 354155
+      },
+      {
+        "t_monotonic_ns": 1136607986228636,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136607986228636,
+          "cpu_usage_usec": 1765775,
+          "mem_current_bytes": 18694144,
+          "mem_peak_bytes": 70467584,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136607986228636,
+          "cpu_ticks": 234,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 198,
+          "system_ticks": 36,
+          "minor_faults": 73959,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 56637060,
+            "wchar": 115938,
+            "read_bytes": 0,
+            "write_bytes": 53248
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 244,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 406016
+      },
+      {
+        "t_monotonic_ns": 1136608486714475,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136608486714475,
+          "cpu_usage_usec": 1765775,
+          "mem_current_bytes": 18694144,
+          "mem_peak_bytes": 70467584,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136608486714475,
+          "cpu_ticks": 234,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 198,
+          "system_ticks": 36,
+          "minor_faults": 73991,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 56681440,
+            "wchar": 115938,
+            "read_bytes": 0,
+            "write_bytes": 53248
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 244,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 386206
+      },
+      {
+        "t_monotonic_ns": 1136608987174364,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136608987174364,
+          "cpu_usage_usec": 1765775,
+          "mem_current_bytes": 17661952,
+          "mem_peak_bytes": 70467584,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136608987174364,
+          "cpu_ticks": 235,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 198,
+          "system_ticks": 37,
+          "minor_faults": 74019,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 56725820,
+            "wchar": 115938,
+            "read_bytes": 0,
+            "write_bytes": 53248
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 244,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 353885
+      },
+      {
+        "t_monotonic_ns": 1136609487617562,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136609487617562,
+          "cpu_usage_usec": 1765775,
+          "mem_current_bytes": 17661952,
+          "mem_peak_bytes": 70467584,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136609487617562,
+          "cpu_ticks": 236,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 198,
+          "system_ticks": 38,
+          "minor_faults": 74048,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 56770200,
+            "wchar": 115938,
+            "read_bytes": 0,
+            "write_bytes": 53248
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 244,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 531688
+      },
+      {
+        "t_monotonic_ns": 1136609988238663,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136609988238663,
+          "cpu_usage_usec": 1765775,
+          "mem_current_bytes": 17145856,
+          "mem_peak_bytes": 70467584,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136609988238663,
+          "cpu_ticks": 237,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 198,
+          "system_ticks": 39,
+          "minor_faults": 74077,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 56814580,
+            "wchar": 115938,
+            "read_bytes": 0,
+            "write_bytes": 53248
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 244,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 457246
+      },
+      {
+        "t_monotonic_ns": 1136610488771792,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136610488771792,
+          "cpu_usage_usec": 1765775,
+          "mem_current_bytes": 16629760,
+          "mem_peak_bytes": 70467584,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136610488771792,
+          "cpu_ticks": 239,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 199,
+          "system_ticks": 40,
+          "minor_faults": 74105,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 56858960,
+            "wchar": 115938,
+            "read_bytes": 0,
+            "write_bytes": 53248
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 244,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 376366
+      },
+      {
+        "t_monotonic_ns": 1136610989238531,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136610989238531,
+          "cpu_usage_usec": 2160949,
+          "mem_current_bytes": 40083456,
+          "mem_peak_bytes": 70467584,
+          "io_read_bytes": 0,
+          "io_write_bytes": 0,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136610989238531,
+          "cpu_ticks": 240,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 199,
+          "system_ticks": 41,
+          "minor_faults": 74157,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 56903873,
+            "wchar": 153675,
+            "read_bytes": 0,
+            "write_bytes": 94208
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 246,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 488887
+      },
+      {
+        "t_monotonic_ns": 1136611491467886,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136611491467886,
+          "cpu_usage_usec": 2510873,
+          "mem_current_bytes": 17797120,
+          "mem_peak_bytes": 70467584,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136611491467886,
+          "cpu_ticks": 241,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 199,
+          "system_ticks": 42,
+          "minor_faults": 74184,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 56973931,
+            "wchar": 157336,
+            "read_bytes": 0,
+            "write_bytes": 94208
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 252,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 492727
+      },
+      {
+        "t_monotonic_ns": 1136611992035716,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136611992035716,
+          "cpu_usage_usec": 2510873,
+          "mem_current_bytes": 16502784,
+          "mem_peak_bytes": 70467584,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136611992035716,
+          "cpu_ticks": 243,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 200,
+          "system_ticks": 43,
+          "minor_faults": 74210,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 57018401,
+            "wchar": 157336,
+            "read_bytes": 0,
+            "write_bytes": 94208
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 252,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 414446
+      },
+      {
+        "t_monotonic_ns": 1136612492523425,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136612492523425,
+          "cpu_usage_usec": 2510873,
+          "mem_current_bytes": 16248832,
+          "mem_peak_bytes": 70467584,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136612492523425,
+          "cpu_ticks": 244,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 200,
+          "system_ticks": 44,
+          "minor_faults": 74240,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 57062871,
+            "wchar": 157336,
+            "read_bytes": 0,
+            "write_bytes": 94208
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 252,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 372555
+      },
+      {
+        "t_monotonic_ns": 1136612992968383,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136612992968383,
+          "cpu_usage_usec": 2510873,
+          "mem_current_bytes": 15998976,
+          "mem_peak_bytes": 70467584,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136612992968383,
+          "cpu_ticks": 245,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 200,
+          "system_ticks": 45,
+          "minor_faults": 74267,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 57107341,
+            "wchar": 157336,
+            "read_bytes": 0,
+            "write_bytes": 94208
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 252,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 370195
+      },
+      {
+        "t_monotonic_ns": 1136613493410361,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136613493410361,
+          "cpu_usage_usec": 2510873,
+          "mem_current_bytes": 15998976,
+          "mem_peak_bytes": 70467584,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136613493410361,
+          "cpu_ticks": 245,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 200,
+          "system_ticks": 45,
+          "minor_faults": 74296,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 57151811,
+            "wchar": 157336,
+            "read_bytes": 0,
+            "write_bytes": 94208
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 252,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 354866
+      },
+      {
+        "t_monotonic_ns": 1136613993848879,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136613993848879,
+          "cpu_usage_usec": 2934468,
+          "mem_current_bytes": 41562112,
+          "mem_peak_bytes": 70467584,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136613993848879,
+          "cpu_ticks": 246,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 200,
+          "system_ticks": 46,
+          "minor_faults": 74337,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 57197402,
+            "wchar": 196809,
+            "read_bytes": 0,
+            "write_bytes": 139264
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 254,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 465187
+      },
+      {
+        "t_monotonic_ns": 1136614494386019,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136614494386019,
+          "cpu_usage_usec": 3174240,
+          "mem_current_bytes": 59867136,
+          "mem_peak_bytes": 70467584,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136614494386019,
+          "cpu_ticks": 247,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 200,
+          "system_ticks": 47,
+          "minor_faults": 74364,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 57241873,
+            "wchar": 196809,
+            "read_bytes": 0,
+            "write_bytes": 139264
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 254,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 502038
+      },
+      {
+        "t_monotonic_ns": 1136614994961779,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136614994961779,
+          "cpu_usage_usec": 3363492,
+          "mem_current_bytes": 19623936,
+          "mem_peak_bytes": 74457088,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136614994961779,
+          "cpu_ticks": 249,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 201,
+          "system_ticks": 48,
+          "minor_faults": 74397,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 57313430,
+            "wchar": 201189,
+            "read_bytes": 0,
+            "write_bytes": 139264
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 258,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 398736
+      },
+      {
+        "t_monotonic_ns": 1136615495452968,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136615495452968,
+          "cpu_usage_usec": 3363492,
+          "mem_current_bytes": 19623936,
+          "mem_peak_bytes": 74457088,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136615495452968,
+          "cpu_ticks": 250,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 201,
+          "system_ticks": 49,
+          "minor_faults": 74424,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 57357901,
+            "wchar": 201189,
+            "read_bytes": 0,
+            "write_bytes": 139264
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 258,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 535018
+      },
+      {
+        "t_monotonic_ns": 1136615996061559,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136615996061559,
+          "cpu_usage_usec": 3363492,
+          "mem_current_bytes": 19107840,
+          "mem_peak_bytes": 74457088,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136615996061559,
+          "cpu_ticks": 251,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 201,
+          "system_ticks": 50,
+          "minor_faults": 74452,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 57402372,
+            "wchar": 201189,
+            "read_bytes": 0,
+            "write_bytes": 139264
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 258,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 399996
+      },
+      {
+        "t_monotonic_ns": 1136616496542978,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136616496542978,
+          "cpu_usage_usec": 3395806,
+          "mem_current_bytes": 17518592,
+          "mem_peak_bytes": 74457088,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136616496542978,
+          "cpu_ticks": 253,
+          "rss_bytes": 170045440,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 202,
+          "system_ticks": 51,
+          "minor_faults": 74493,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 57509535,
+            "wchar": 276045,
+            "read_bytes": 0,
+            "write_bytes": 192512
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 271,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 491317
+      },
+      {
+        "t_monotonic_ns": 1136616997117368,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136616997117368,
+          "cpu_usage_usec": 3962747,
+          "mem_current_bytes": 58986496,
+          "mem_peak_bytes": 74457088,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136616997117368,
+          "cpu_ticks": 254,
+          "rss_bytes": 172142592,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 202,
+          "system_ticks": 52,
+          "minor_faults": 74521,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 57579205,
+            "wchar": 278001,
+            "read_bytes": 0,
+            "write_bytes": 192512
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 273,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 496477
+      },
+      {
+        "t_monotonic_ns": 1136617497685268,
+        "clock_domain": "system_monotonic",
+        "role": "sample",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136617497685268,
+          "cpu_usage_usec": 4269452,
+          "mem_current_bytes": 83329024,
+          "mem_peak_bytes": 83329024,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136617497685268,
+          "cpu_ticks": 255,
+          "rss_bytes": 172142592,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 202,
+          "system_ticks": 53,
+          "minor_faults": 74548,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 57623677,
+            "wchar": 278001,
+            "read_bytes": 0,
+            "write_bytes": 192512
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 273,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 412946
+      },
+      {
+        "t_monotonic_ns": 1136617581375865,
+        "clock_domain": "system_monotonic",
+        "role": "boundary_end",
+        "container": {
+          "scope": "agent_container",
+          "scope_kind": "agent_container",
+          "t_monotonic_ns": 1136617581375865,
+          "cpu_usage_usec": 4374962,
+          "mem_current_bytes": 23588864,
+          "mem_peak_bytes": 83329024,
+          "io_read_bytes": 0,
+          "io_write_bytes": 4096,
+          "read_status": {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          "container_id": "918295e0b8be245b1210028fa68e5d3fcb974231031a16f50ab3fee6f1616dd0",
+          "cgroup_version": "v1"
+        },
+        "host_agent": {
+          "pid": 1044480,
+          "starttime_ticks": 113659931,
+          "t_monotonic_ns": 1136617581375865,
+          "cpu_ticks": 256,
+          "rss_bytes": 172142592,
+          "read_status": {
+            "stat": "ok",
+            "io": "ok",
+            "status": "ok"
+          },
+          "user_ticks": 202,
+          "system_ticks": 54,
+          "minor_faults": 74576,
+          "major_faults": 0,
+          "threads": 4,
+          "process_io": {
+            "rchar": 57693508,
+            "wchar": 280057,
+            "read_bytes": 0,
+            "write_bytes": 192512
+          },
+          "context_switches": {
+            "voluntary_ctxt_switches": 274,
+            "nonvoluntary_ctxt_switches": 78
+          },
+          "clk_tck": 100,
+          "page_size": 4096,
+          "scope": "shared_host_agent_and_collector_process"
+        },
+        "read_wall_ns": 387896
+      }
+    ],
+    "measurement": {
+      "contract": {
+        "version": "real-run-measurement-v3",
+        "required": [
+          "identity_and_configuration",
+          "environment_snapshot",
+          "lifecycle_and_cleanup",
+          "logical_requests_and_usage",
+          "tool_and_bootstrap_spans",
+          "resource_scope_and_boundaries",
+          "sampling_quality_and_read_cost",
+          "independent_outcomes",
+          "archive_hashes_and_coverage",
+          "network_namespace_counters",
+          "task_output_footprint_boundaries"
+        ],
+        "explicit_unavailable": [
+          "actual_transport_attempts_without_transport_hook",
+          "remote_cpu_memory",
+          "task_exclusive_network_bytes",
+          "http_application_bytes",
+          "exclusive_tool_cpu",
+          "pmu_and_function_hotspots",
+          "uncontrolled_cache_state"
+        ],
+        "timing": "same-host system_monotonic; client logical call includes retries",
+        "io": "cgroup block service bytes are not application/filesystem bytes",
+        "network": "process network namespace interface counters are shared scope; not PID, HTTP payload, or TLS-inclusive bytes",
+        "disk_footprint": "explicit host-output and task-container directory boundaries use apparent file sizes; shared caches remain unavailable; ToolSandbox scenario state is in-memory",
+        "missing": "null plus reason; observed zero is preserved"
+      },
+      "call_timing_status": "complete",
+      "request_usage_observed": 4,
+      "request_usage_missing_or_unreturned": 0,
+      "expected_requests": 4,
+      "expected_tools_including_bootstrap": 5,
+      "semantic_spans": {
+        "status": "verified",
+        "spans": {
+          "tool_call": {
+            "started": 5,
+            "timed": 5,
+            "error_terminal": 0,
+            "usage_observed": 0,
+            "bootstrap": 2
+          },
+          "llm_request": {
+            "started": 4,
+            "timed": 4,
+            "error_terminal": 0,
+            "usage_observed": 4
+          }
+        },
+        "errors": [],
+        "scope": "saved events; must also compare expected runtime/trajectory counts"
+      },
+      "tool_spans": {
+        "status": "verified",
+        "spans": {
+          "tool_call": {
+            "started": 5,
+            "timed": 5,
+            "error_terminal": 0,
+            "usage_observed": 0,
+            "bootstrap": 2
+          },
+          "llm_request": {
+            "started": 4,
+            "timed": 4,
+            "error_terminal": 0,
+            "usage_observed": 4
+          }
+        },
+        "errors": [],
+        "scope": "saved events; must also compare expected runtime/trajectory counts"
+      },
+      "gaps": [],
+      "transport_attempts": {
+        "value": null,
+        "reason": "transport_hook_not_installed"
+      },
+      "exclusive_tool_cpu": {
+        "value": null,
+        "reason": "shared_scope_window_only"
+      },
+      "billing": {
+        "value": null,
+        "reason": "no_bill_evidence"
+      },
+      "resource_sampling": {
+        "status": "complete",
+        "rows": 37,
+        "interval_target_s": 0.5,
+        "boundaries": [
+          "boundary_start",
+          "boundary_end"
+        ],
+        "missing": {},
+        "counter_regressions": {},
+        "gaps_ns": [
+          1390211,
+          507310709,
+          505004916,
+          501259680,
+          503473494,
+          500597060,
+          500594371,
+          500556010,
+          500456888,
+          500495559,
+          500455449,
+          500481848,
+          500458699,
+          500432698,
+          500541880,
+          500435978,
+          500485839,
+          500459889,
+          500443198,
+          500621101,
+          500533129,
+          500466739,
+          502229355,
+          500567830,
+          500487709,
+          500444958,
+          500441978,
+          500438518,
+          500537140,
+          500575760,
+          500491189,
+          500608591,
+          500481419,
+          500574390,
+          500567900,
+          83690597
+        ],
+        "nonpositive_gaps": 0,
+        "max_gap_ns": 507310709,
+        "read_statuses": [
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          },
+          {
+            "cpuacct.usage": "ok_ns_converted_to_usec",
+            "memory.usage_in_bytes": "ok",
+            "memory.max_usage_in_bytes": "ok",
+            "blkio.io_service_bytes_recursive": "not_found",
+            "blkio.io_service_bytes": "not_found",
+            "blkio.throttle.io_service_bytes_recursive": "ok",
+            "io": "ok_summed_devices:blkio.throttle.io_service_bytes_recursive"
+          }
+        ],
+        "scope": "shared container; optional I/O availability reported separately"
+      },
+      "resource_intervals": {
+        "container": [
+          {
+            "t_start_ns": 1136600462283186,
+            "t_end_ns": 1136600463673397,
+            "delta_wall_s": 0.001390211,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136600463673397,
+            "t_end_ns": 1136600970984106,
+            "delta_wall_s": 0.507310709,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136600970984106,
+            "t_end_ns": 1136601475989022,
+            "delta_wall_s": 0.505004916,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136601475989022,
+            "t_end_ns": 1136601977248702,
+            "delta_wall_s": 0.50125968,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136601977248702,
+            "t_end_ns": 1136602480722196,
+            "delta_wall_s": 0.503473494,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136602480722196,
+            "t_end_ns": 1136602981319256,
+            "delta_wall_s": 0.50059706,
+            "metrics": {
+              "cpu": {
+                "delta": 0.137623,
+                "rate_per_s": 0.27491771525785624,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136602981319256,
+            "t_end_ns": 1136603481913627,
+            "delta_wall_s": 0.500594371,
+            "metrics": {
+              "cpu": {
+                "delta": 0.48266,
+                "rate_per_s": 0.9641738460538941,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136603481913627,
+            "t_end_ns": 1136603982469637,
+            "delta_wall_s": 0.50055601,
+            "metrics": {
+              "cpu": {
+                "delta": 0.385233,
+                "rate_per_s": 0.7696101780897605,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136603982469637,
+            "t_end_ns": 1136604482926525,
+            "delta_wall_s": 0.500456888,
+            "metrics": {
+              "cpu": {
+                "delta": 0.03565,
+                "rate_per_s": 0.07123490725139146,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136604482926525,
+            "t_end_ns": 1136604983422084,
+            "delta_wall_s": 0.500495559,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136604983422084,
+            "t_end_ns": 1136605483877533,
+            "delta_wall_s": 0.500455449,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136605483877533,
+            "t_end_ns": 1136605984359381,
+            "delta_wall_s": 0.500481848,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136605984359381,
+            "t_end_ns": 1136606484818080,
+            "delta_wall_s": 0.500458699,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136606484818080,
+            "t_end_ns": 1136606985250778,
+            "delta_wall_s": 0.500432698,
+            "metrics": {
+              "cpu": {
+                "delta": 0.370511,
+                "rate_per_s": 0.7403812770044055,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136606985250778,
+            "t_end_ns": 1136607485792658,
+            "delta_wall_s": 0.50054188,
+            "metrics": {
+              "cpu": {
+                "delta": 0.237694,
+                "rate_per_s": 0.4748733512568419,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136607485792658,
+            "t_end_ns": 1136607986228636,
+            "delta_wall_s": 0.500435978,
+            "metrics": {
+              "cpu": {
+                "delta": 0.078274,
+                "rate_per_s": 0.1564116159530001,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136607986228636,
+            "t_end_ns": 1136608486714475,
+            "delta_wall_s": 0.500485839,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136608486714475,
+            "t_end_ns": 1136608987174364,
+            "delta_wall_s": 0.500459889,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136608987174364,
+            "t_end_ns": 1136609487617562,
+            "delta_wall_s": 0.500443198,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136609487617562,
+            "t_end_ns": 1136609988238663,
+            "delta_wall_s": 0.500621101,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136609988238663,
+            "t_end_ns": 1136610488771792,
+            "delta_wall_s": 0.500533129,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136610488771792,
+            "t_end_ns": 1136610989238531,
+            "delta_wall_s": 0.500466739,
+            "metrics": {
+              "cpu": {
+                "delta": 0.395174,
+                "rate_per_s": 0.7896109155817446,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136610989238531,
+            "t_end_ns": 1136611491467886,
+            "delta_wall_s": 0.502229355,
+            "metrics": {
+              "cpu": {
+                "delta": 0.349924,
+                "rate_per_s": 0.6967414320096842,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 4096.0,
+                "rate_per_s": 8155.636382504961,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136611491467886,
+            "t_end_ns": 1136611992035716,
+            "delta_wall_s": 0.50056783,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136611992035716,
+            "t_end_ns": 1136612492523425,
+            "delta_wall_s": 0.500487709,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136612492523425,
+            "t_end_ns": 1136612992968383,
+            "delta_wall_s": 0.500444958,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136612992968383,
+            "t_end_ns": 1136613493410361,
+            "delta_wall_s": 0.500441978,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136613493410361,
+            "t_end_ns": 1136613993848879,
+            "delta_wall_s": 0.500438518,
+            "metrics": {
+              "cpu": {
+                "delta": 0.423595,
+                "rate_per_s": 0.8464476349520321,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136613993848879,
+            "t_end_ns": 1136614494386019,
+            "delta_wall_s": 0.50053714,
+            "metrics": {
+              "cpu": {
+                "delta": 0.239772,
+                "rate_per_s": 0.47902938830872765,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136614494386019,
+            "t_end_ns": 1136614994961779,
+            "delta_wall_s": 0.50057576,
+            "metrics": {
+              "cpu": {
+                "delta": 0.189252,
+                "rate_per_s": 0.3780686463923063,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136614994961779,
+            "t_end_ns": 1136615495452968,
+            "delta_wall_s": 0.500491189,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136615495452968,
+            "t_end_ns": 1136615996061559,
+            "delta_wall_s": 0.500608591,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136615996061559,
+            "t_end_ns": 1136616496542978,
+            "delta_wall_s": 0.500481419,
+            "metrics": {
+              "cpu": {
+                "delta": 0.032314,
+                "rate_per_s": 0.0645658335619449,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136616496542978,
+            "t_end_ns": 1136616997117368,
+            "delta_wall_s": 0.50057439,
+            "metrics": {
+              "cpu": {
+                "delta": 0.566941,
+                "rate_per_s": 1.132580913697962,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136616997117368,
+            "t_end_ns": 1136617497685268,
+            "delta_wall_s": 0.5005679,
+            "metrics": {
+              "cpu": {
+                "delta": 0.306705,
+                "rate_per_s": 0.6127140793486758,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136617497685268,
+            "t_end_ns": 1136617581375865,
+            "delta_wall_s": 0.083690597,
+            "metrics": {
+              "cpu": {
+                "delta": 0.10551,
+                "rate_per_s": 1.2607151075765417,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "io_read": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "io_write": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          }
+        ],
+        "host_agent_process": [
+          {
+            "t_start_ns": 1136600462283186,
+            "t_end_ns": 1136600463673397,
+            "delta_wall_s": 0.001390211,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 29713.0,
+                "rate_per_s": 21373014.599942025,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136600463673397,
+            "t_end_ns": 1136600970984106,
+            "delta_wall_s": 0.507310709,
+            "metrics": {
+              "cpu": {
+                "delta": 0.51,
+                "rate_per_s": 1.005301072798761,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 8133285.0,
+                "rate_per_s": 16032157.129172686,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136600970984106,
+            "t_end_ns": 1136601475989022,
+            "delta_wall_s": 0.505004916,
+            "metrics": {
+              "cpu": {
+                "delta": 0.52,
+                "rate_per_s": 1.029692946593019,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 2833853.0,
+                "rate_per_s": 5611535.472656666,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136601475989022,
+            "t_end_ns": 1136601977248702,
+            "delta_wall_s": 0.50125968,
+            "metrics": {
+              "cpu": {
+                "delta": 0.51,
+                "rate_per_s": 1.0174367106486601,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 3412942.0,
+                "rate_per_s": 6808730.357087568,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136601977248702,
+            "t_end_ns": 1136602480722196,
+            "delta_wall_s": 0.503473494,
+            "metrics": {
+              "cpu": {
+                "delta": 0.38,
+                "rate_per_s": 0.7547567141637849,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 5726947.0,
+                "rate_per_s": 11374872.894500382,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 41963.0,
+                "rate_per_s": 83346.989464355,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136602480722196,
+            "t_end_ns": 1136602981319256,
+            "delta_wall_s": 0.50059706,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.01997614608443765,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 128296.0,
+                "rate_per_s": 256285.96380490126,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 15709.0,
+                "rate_per_s": 31380.527884043106,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 4096.0,
+                "rate_per_s": 8182.229436185661,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136602981319256,
+            "t_end_ns": 1136603481913627,
+            "delta_wall_s": 0.500594371,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.019976253388594333,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 72753.0,
+                "rate_per_s": 145333.23627804036,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 5723.0,
+                "rate_per_s": 11432.409814292538,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136603481913627,
+            "t_end_ns": 1136603982469637,
+            "delta_wall_s": 0.50055601,
+            "metrics": {
+              "cpu": {
+                "delta": 0.02,
+                "rate_per_s": 0.039955568608595865,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 45201.0,
+                "rate_per_s": 90301.58283385709,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136603982469637,
+            "t_end_ns": 1136604482926525,
+            "delta_wall_s": 0.500456888,
+            "metrics": {
+              "cpu": {
+                "delta": 0.04,
+                "rate_per_s": 0.07992696465794273,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 283440.0,
+                "rate_per_s": 566362.4715661821,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 4369.0,
+                "rate_per_s": 8730.022714763794,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 4096.0,
+                "rate_per_s": 8184.5211809733355,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136604482926525,
+            "t_end_ns": 1136604983422084,
+            "delta_wall_s": 0.500495559,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44378.0,
+                "rate_per_s": 88668.11943080598,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136604983422084,
+            "t_end_ns": 1136605483877533,
+            "delta_wall_s": 0.500455449,
+            "metrics": {
+              "cpu": {
+                "delta": 0.02,
+                "rate_per_s": 0.039963597239202,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44378.0,
+                "rate_per_s": 88675.22591406532,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136605483877533,
+            "t_end_ns": 1136605984359381,
+            "delta_wall_s": 0.500481848,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.019980744636316963,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44378.0,
+                "rate_per_s": 88670.54854704741,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136605984359381,
+            "t_end_ns": 1136606484818080,
+            "delta_wall_s": 0.500458699,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.01998166885695397,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44378.0,
+                "rate_per_s": 88674.65005339033,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136606484818080,
+            "t_end_ns": 1136606985250778,
+            "delta_wall_s": 0.500432698,
+            "metrics": {
+              "cpu": {
+                "delta": 0.03,
+                "rate_per_s": 0.059948121135761596,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 122992.0,
+                "rate_per_s": 245771.31049098633,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 34479.0,
+                "rate_per_s": 68898.37562133081,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 36864.0,
+                "rate_per_s": 73664.25125162385,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136606985250778,
+            "t_end_ns": 1136607485792658,
+            "delta_wall_s": 0.50054188,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.019978348265284017,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44483.0,
+                "rate_per_s": 88869.6865884629,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136607485792658,
+            "t_end_ns": 1136607986228636,
+            "delta_wall_s": 0.500435978,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.019982576072897783,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 69890.0,
+                "rate_per_s": 139658.2241734826,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 3719.0,
+                "rate_per_s": 7431.520041510686,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 4096.0,
+                "rate_per_s": 8184.8631594589315,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136607986228636,
+            "t_end_ns": 1136608486714475,
+            "delta_wall_s": 0.500485839,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44380.0,
+                "rate_per_s": 88673.83758284518,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136608486714475,
+            "t_end_ns": 1136608987174364,
+            "delta_wall_s": 0.500459889,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.019981621344283197,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44380.0,
+                "rate_per_s": 88678.43552592883,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136608987174364,
+            "t_end_ns": 1136609487617562,
+            "delta_wall_s": 0.500443198,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.019982287780040922,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44380.0,
+                "rate_per_s": 88681.3931678216,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136609487617562,
+            "t_end_ns": 1136609988238663,
+            "delta_wall_s": 0.500621101,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.01997518678302775,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44380.0,
+                "rate_per_s": 88649.87894307714,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136609988238663,
+            "t_end_ns": 1136610488771792,
+            "delta_wall_s": 0.500533129,
+            "metrics": {
+              "cpu": {
+                "delta": 0.02,
+                "rate_per_s": 0.03995739510780714,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44380.0,
+                "rate_per_s": 88665.45974422403,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136610488771792,
+            "t_end_ns": 1136610989238531,
+            "delta_wall_s": 0.500466739,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.019981347851370398,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44913.0,
+                "rate_per_s": 89742.22760485986,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 37737.0,
+                "rate_per_s": 75403.61238671647,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 40960.0,
+                "rate_per_s": 81843.60079921315,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136610989238531,
+            "t_end_ns": 1136611491467886,
+            "delta_wall_s": 0.502229355,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.019911221636975004,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 70058.0,
+                "rate_per_s": 139494.03654431948,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 3661.0,
+                "rate_per_s": 7289.498241296549,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136611491467886,
+            "t_end_ns": 1136611992035716,
+            "delta_wall_s": 0.50056783,
+            "metrics": {
+              "cpu": {
+                "delta": 0.02,
+                "rate_per_s": 0.03995462513042438,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44470.0,
+                "rate_per_s": 88839.1089774986,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136611992035716,
+            "t_end_ns": 1136612492523425,
+            "delta_wall_s": 0.500487709,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.019980510650262545,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44470.0,
+                "rate_per_s": 88853.33086171754,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136612492523425,
+            "t_end_ns": 1136612992968383,
+            "delta_wall_s": 0.500444958,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.019982217504926885,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44470.0,
+                "rate_per_s": 88860.92124440987,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136612992968383,
+            "t_end_ns": 1136613493410361,
+            "delta_wall_s": 0.500441978,
+            "metrics": {
+              "cpu": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44470.0,
+                "rate_per_s": 88861.45038776104,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136613493410361,
+            "t_end_ns": 1136613993848879,
+            "delta_wall_s": 0.500438518,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.01998247465036254,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 45591.0,
+                "rate_per_s": 91102.10017846787,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 39473.0,
+                "rate_per_s": 78876.82218737606,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 45056.0,
+                "rate_per_s": 90033.03778467348,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136613993848879,
+            "t_end_ns": 1136614494386019,
+            "delta_wall_s": 0.50053714,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.019978537456780927,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44471.0,
+                "rate_per_s": 88846.55392405046,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136614494386019,
+            "t_end_ns": 1136614994961779,
+            "delta_wall_s": 0.50057576,
+            "metrics": {
+              "cpu": {
+                "delta": 0.02,
+                "rate_per_s": 0.03995399217892612,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 71557.0,
+                "rate_per_s": 142949.39091737082,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 4380.0,
+                "rate_per_s": 8749.92428718482,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136614994961779,
+            "t_end_ns": 1136615495452968,
+            "delta_wall_s": 0.500491189,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.019980371722388104,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44471.0,
+                "rate_per_s": 88854.71108663213,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136615495452968,
+            "t_end_ns": 1136615996061559,
+            "delta_wall_s": 0.500608591,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.019975685954618388,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44471.0,
+                "rate_per_s": 88833.87300878343,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136615996061559,
+            "t_end_ns": 1136616496542978,
+            "delta_wall_s": 0.500481419,
+            "metrics": {
+              "cpu": {
+                "delta": 0.02,
+                "rate_per_s": 0.039961523526610684,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 107163.0,
+                "rate_per_s": 214119.83728410906,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 74856.0,
+                "rate_per_s": 149567.99025539847,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 53248.0,
+                "rate_per_s": 106393.5602372483,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136616496542978,
+            "t_end_ns": 1136616997117368,
+            "delta_wall_s": 0.50057439,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.019977050763623765,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 69670.0,
+                "rate_per_s": 139180.11267016677,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 1956.0,
+                "rate_per_s": 3907.511129364808,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136616997117368,
+            "t_end_ns": 1136617497685268,
+            "delta_wall_s": 0.5005679,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.019977309771561463,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 44472.0,
+                "rate_per_s": 88843.09201608814,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          },
+          {
+            "t_start_ns": 1136617497685268,
+            "t_end_ns": 1136617581375865,
+            "delta_wall_s": 0.083690597,
+            "metrics": {
+              "cpu": {
+                "delta": 0.01,
+                "rate_per_s": 0.11948773647773119,
+                "unit": "cpu_seconds",
+                "rate_unit": "average_core",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_rchar": {
+                "delta": 69831.0,
+                "rate_per_s": 834394.8125976446,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_wchar": {
+                "delta": 2056.0,
+                "rate_per_s": 24566.67861982153,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_read_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              },
+              "proc_write_bytes": {
+                "delta": 0.0,
+                "rate_per_s": 0.0,
+                "unit": "bytes",
+                "rate_unit": "bytes_per_second",
+                "status": "valid",
+                "reason": null
+              }
+            }
+          }
+        ]
+      },
+      "supplemental_measurements": "supplemental_measurements.json",
+      "collector": {
+        "read_wall_ns": 31384245,
+        "scope": "shared_host_process",
+        "note": "read wall cost only; not CPU or full instrumentation overhead"
+      }
+    }
+  },
+  "exit_code": 0,
+  "removal_verified": "removed",
+  "image_retention_verified": true
+}

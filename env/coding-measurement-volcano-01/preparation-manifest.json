@@ -1,0 +1,94 @@
+{
+  "schema": "coding-measurement-preparation-manifest-v1",
+  "identity_sha256": "0930d98985a5a5974db684a05bbb39fb777f84c5bc453de959f09ed812ee914f",
+  "inputs": [
+    {
+      "path": "scripts/coding_measurement_volcano_01_entry.py",
+      "bytes": 13778,
+      "sha256": "7e06fc612b26c3a5f464f63395687d297227686f33d662c17ae744af54458f48"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/c_entry.py",
+      "bytes": 17319,
+      "sha256": "d0ec3fe167ae53a7cf7d888e8b9d80b21f8816a902ba3fb96d337a7ab8efca07"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/coding_pilot.py",
+      "bytes": 65139,
+      "sha256": "9bbd8f66cec76c3676cc3305a1959644afe85a25867cc33734eb9e00a86be16b"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/mini_agent_adapter.py",
+      "bytes": 51126,
+      "sha256": "78d2e76d353aced360f6c1a01c65afd9689917397113a3c4cbfed8646a06f2ed"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/container_runtime.py",
+      "bytes": 36616,
+      "sha256": "a2608e5549da73581c3a1b036080d64fa641eefe8e4bdf3cf429bc5a55ac1d83"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/tool_event_env.py",
+      "bytes": 3657,
+      "sha256": "0de111c16411b30255b47328912395773330c0b9e6f844f7a62b68dd293e967b"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/host_process.py",
+      "bytes": 9999,
+      "sha256": "7b05e9d89bfbbdb1ff6a246230770470992c2a5dbccb68fef81965c62d4e8c1e"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/resource_sampler.py",
+      "bytes": 29341,
+      "sha256": "ef83348c308ff9b910f9eaeac11eaa75f87668fa58ea3e24e10aa15388898bda"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/execution_measurement.py",
+      "bytes": 47352,
+      "sha256": "fd5bf70fdbcc366f61426fcb7b5de1b5c2e3e15b78e56ef4cfe5fbeca7b83243"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/smoke_launcher.py",
+      "bytes": 12215,
+      "sha256": "ee3daf7fd19a68ae6da5bba5d4330af067db454157b7627de203db577f6602fb"
+    },
+    {
+      "path": "workload_catalog/coding_pilot.yaml",
+      "bytes": 8083,
+      "sha256": "aee38eaca781df014117c4af14ce6df4fce91e2808dde09b03271b1e94902f83"
+    },
+    {
+      "path": "data/raw/public/swebench_verified/78f471bf655a3137b2e8a75af1501690ec009ec3/django__django-16485/record.json",
+      "bytes": 4424,
+      "sha256": "762de270d1ce06ab23104a35322098178624865c886d7b0ddadf9044d8fec46a"
+    },
+    {
+      "path": "docs/trace_contract.md",
+      "bytes": 24702,
+      "sha256": "05ed40a9c2bb426ca9545bc90536a3f20f4cc62d8c5adadd3e2a81c35f09df7d"
+    },
+    {
+      "path": ".venvs/mini-swe-agent-2.4.6-env01/bin/python",
+      "bytes": 67632,
+      "sha256": "e22abd8ede94ba8df9d737497b53a8840c2d78525ea2c666c81ff414c3df01ec"
+    },
+    {
+      "path": ".venvs/swebench-eval-02e7a74/bin/python",
+      "bytes": 67632,
+      "sha256": "e22abd8ede94ba8df9d737497b53a8840c2d78525ea2c666c81ff414c3df01ec"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "env/coding-measurement-volcano-01/plan-identity.json",
+      "bytes": 8777,
+      "sha256": "76c6b9253844a16d4bf907d7b4c7fd0b83b8b3fcae7b977d7b694628f467b4b9"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/frozen-identity.json",
+      "bytes": 8777,
+      "sha256": "76c6b9253844a16d4bf907d7b4c7fd0b83b8b3fcae7b977d7b694628f467b4b9"
+    }
+  ],
+  "execution_authorized": false
+}

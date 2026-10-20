@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="680" viewBox="0 0 1050 680">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font:13px sans-serif;fill:#243447}.axis{stroke:#aab2bb}</style>
+<text x="24" y="28">Assistant / modify_contact_with_message_recency_multiple_user_turn / intended_profile_observation</text>
+<text x="24" y="49">Raw run points; only per-metric observed values; no zero-fill or cross-task pooling.</text>
+<text x="24" y="94">attempt_wall_s (n=3)</text>
+<path d="M260 105H940" class="axis"/>
+<path d="M491.78 105H775.11" stroke="#b45309" stroke-width="5"/>
+<path d="M666.89 97V113" stroke="#b45309" stroke-width="2"/>
+<circle cx="316.67" cy="105" r="5" fill="#165dbe"/>
+<text class="small" x="316.67" y="127" text-anchor="middle">39.707</text>
+<circle cx="666.89" cy="105" r="5" fill="#165dbe"/>
+<text class="small" x="666.89" y="127" text-anchor="middle">42.708</text>
+<circle cx="883.33" cy="105" r="5" fill="#165dbe"/>
+<text class="small" x="883.33" y="127" text-anchor="middle">44.562</text>
+<text x="956" y="109">median 42.708; IQR 2.4275</text>
+<text x="24" y="180">task_result_scalar (n=3)</text>
+<path d="M260 191H940" class="axis"/>
+<path d="M316.67 191H600.00" stroke="#b45309" stroke-width="5"/>
+<path d="M316.67 183V199" stroke="#b45309" stroke-width="2"/>
+<circle cx="316.67" cy="191" r="5" fill="#165dbe"/>
+<text class="small" x="316.67" y="213" text-anchor="middle">0.97472</text>
+<circle cx="316.67" cy="191" r="5" fill="#165dbe"/>
+<text class="small" x="316.67" y="213" text-anchor="middle">0.97472</text>
+<circle cx="883.33" cy="191" r="5" fill="#165dbe"/>
+<text class="small" x="883.33" y="213" text-anchor="middle">0.99677</text>
+<text x="956" y="195">median 0.97472; IQR 0.011029</text>
+<text x="24" y="266">observed_cpu_s::worker (n=3)</text>
+<path d="M260 277H940" class="axis"/>
+<path d="M582.78 277H866.12" stroke="#b45309" stroke-width="5"/>
+<path d="M848.90 269V285" stroke="#b45309" stroke-width="2"/>
+<circle cx="316.67" cy="277" r="5" fill="#165dbe"/>
+<text class="small" x="316.67" y="299" text-anchor="middle">1121</text>
+<circle cx="848.90" cy="277" r="5" fill="#165dbe"/>
+<text class="small" x="848.90" y="299" text-anchor="middle">1454.9</text>
+<circle cx="883.33" cy="277" r="5" fill="#165dbe"/>
+<text class="small" x="883.33" y="299" text-anchor="middle">1476.5</text>
+<text x="956" y="281">median 1454.9; IQR 177.8</text>
+<text x="24" y="352">memory_sampled_peak_bytes::worker (n=3)</text>
+<path d="M260 363H940" class="axis"/>
+<path d="M521.44 363H804.77" stroke="#b45309" stroke-width="5"/>
+<path d="M726.21 355V371" stroke="#b45309" stroke-width="2"/>
+<circle cx="316.67" cy="363" r="5" fill="#165dbe"/>
+<text class="small" x="316.67" y="385" text-anchor="middle">1.6674e+09</text>
+<circle cx="726.21" cy="363" r="5" fill="#165dbe"/>
+<text class="small" x="726.21" y="385" text-anchor="middle">1.7709e+09</text>
+<circle cx="883.33" cy="363" r="5" fill="#165dbe"/>
+<text class="small" x="883.33" y="385" text-anchor="middle">1.8106e+09</text>
+<text x="956" y="367">median 1.7709e+09; IQR 7.161e+07</text>
+<text x="24" y="438">logical_requests (n=3)</text>
+<path d="M260 449H940" class="axis"/>
+<path d="M316.67 449H600.00" stroke="#b45309" stroke-width="5"/>
+<path d="M316.67 441V457" stroke="#b45309" stroke-width="2"/>
+<circle cx="316.67" cy="449" r="5" fill="#165dbe"/>
+<text class="small" x="316.67" y="471" text-anchor="middle">8</text>
+<circle cx="316.67" cy="449" r="5" fill="#165dbe"/>
+<text class="small" x="316.67" y="471" text-anchor="middle">8</text>
+<circle cx="883.33" cy="449" r="5" fill="#165dbe"/>
+<text class="small" x="883.33" y="471" text-anchor="middle">9</text>
+<text x="956" y="453">median 8; IQR 0.5</text>
+<text x="24" y="524">agent_tools (n=3)</text>
+<path d="M260 535H940" class="axis"/>
+<path d="M600.00 535H883.33" stroke="#b45309" stroke-width="5"/>
+<path d="M883.33 527V543" stroke="#b45309" stroke-width="2"/>
+<circle cx="316.67" cy="535" r="5" fill="#165dbe"/>
+<text class="small" x="316.67" y="557" text-anchor="middle">6</text>
+<circle cx="883.33" cy="535" r="5" fill="#165dbe"/>
+<text class="small" x="883.33" y="557" text-anchor="middle">7</text>
+<circle cx="883.33" cy="535" r="5" fill="#165dbe"/>
+<text class="small" x="883.33" y="557" text-anchor="middle">7</text>
+<text x="956" y="539">median 7; IQR 0.5</text>
+</svg>

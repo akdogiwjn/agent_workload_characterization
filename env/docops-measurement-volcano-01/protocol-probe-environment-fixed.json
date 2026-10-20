@@ -1,0 +1,120 @@
+{
+  "schema": "volcano-protocol-probe-v2",
+  "probe": "office",
+  "status": "passed",
+  "stage": "complete",
+  "stages": [
+    {
+      "name": "route_and_credentials",
+      "t_monotonic_ns": 1084996150524648
+    },
+    {
+      "name": "agent_construction",
+      "t_monotonic_ns": 1084996160457295
+    },
+    {
+      "name": "LLM.call",
+      "t_monotonic_ns": 1084996264800858
+    },
+    {
+      "name": "sdk_response_converted",
+      "t_monotonic_ns": 1084997794218674
+    },
+    {
+      "name": "harbor_response_converted",
+      "t_monotonic_ns": 1084997794721131
+    },
+    {
+      "name": "agent_action_parse",
+      "t_monotonic_ns": 1084997794933864
+    },
+    {
+      "name": "client_close",
+      "t_monotonic_ns": 1084997795150077
+    },
+    {
+      "name": "complete",
+      "t_monotonic_ns": 1084997796936432
+    }
+  ],
+  "parse_status": "complete",
+  "log_directory": "env/docops-measurement-volcano-01/probe-log",
+  "send_observation": {
+    "boundary": "http_client_single_request_transport_dispatch",
+    "covered_clients": [
+      "httpx.Client",
+      "httpx.AsyncClient",
+      "httpx2.Client",
+      "httpx2.AsyncClient"
+    ],
+    "boundary_entries": 1,
+    "forwarded_attempts": 1,
+    "blocked_attempts": 0,
+    "responses_received": 1,
+    "remote_service_receipt": "unknown",
+    "wrappers_restored": true
+  },
+  "timeout_s": 30,
+  "max_tokens": 1024,
+  "business_tools_executed": 0,
+  "clients_closed": true,
+  "environment": {
+    "probe": "office",
+    "sys_executable": "/home/lcq/agent_workload_characterization/.venvs/docops-pilot-01/bin/python",
+    "python_version": "3.12.14",
+    "versions": {
+      "openai": "3.26.0",
+      "httpx": "0.28.1",
+      "httpx2": "2.13.1",
+      "litellm": "1.83.0",
+      "harbor": "0.4.0"
+    },
+    "module_files": {
+      "openai": "/home/lcq/agent_workload_characterization/.venvs/docops-pilot-01/lib/python3.12/site-packages/openai/__init__.py",
+      "httpx": "/home/lcq/agent_workload_characterization/.venvs/docops-pilot-01/lib/python3.12/site-packages/httpx/__init__.py",
+      "httpx2": "/home/lcq/agent_workload_characterization/.venvs/docops-pilot-01/lib/python3.12/site-packages/httpx2/__init__.py",
+      "litellm": "/home/lcq/agent_workload_characterization/.venvs/docops-pilot-01/lib/python3.12/site-packages/litellm/__init__.py",
+      "harbor.llms.lite_llm": "/home/lcq/agent_workload_characterization/.venvs/docops-pilot-01/lib/python3.12/site-packages/harbor/llms/lite_llm.py"
+    }
+  },
+  "api_base": "https://st8tp3ajl0df3n8b8l8qu.apigateway-cn-beijing.volceapi.com/v1",
+  "request_model": "openai/deepseek-v4-flash",
+  "retry_policy": {
+    "framework_attempts": 1,
+    "sdk_max_retries": 0
+  },
+  "shared_retry_unchanged_during_probe": true,
+  "response_evidence": {
+    "response_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "content": "{\"thought\":\"protocol probe\",\"action\":\"finish\",\"tool_name\":null,\"arguments\":{},\"final_message\":\"protocol probe\"}",
+    "usage": {
+      "completion_tokens": 47,
+      "prompt_tokens": 113,
+      "total_tokens": 160,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 20,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": null,
+        "video_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": null
+      }
+    }
+  },
+  "recorder_action": "finish",
+  "parsed_action": "finish",
+  "cached_sdk_clients_closed": 1,
+  "shared_retry_restored": true,
+  "retry_instance_binding_restored": true,
+  "wall_s": 3.47682228195481
+}

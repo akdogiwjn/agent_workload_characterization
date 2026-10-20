@@ -1,0 +1,232 @@
+{
+  "collection": "LOCAL-THREE-CLASS-REPEAT-01",
+  "identity_sha256": "460c9c28e4799d864ff2aa3a2bf7cf2e272fa095eabb917f4bec4f1b45893b22",
+  "status": "stopped_partial_no_resume",
+  "attempts_started": 1,
+  "archived_batch_counts": {
+    "executed": 0,
+    "failed": 1,
+    "not_executed": 26
+  },
+  "independent_raw_acceptance": "file set, SHA, identity, request/tool pairing, cleanup and image retention verified for the one started run",
+  "stop_reason": "Coding fixed Astropy images missing before execution; first Office completed, but batch key_measurements used host_agent instead of host_agent_process; KeyError stopped all remaining slots",
+  "formal_entry_returncode": 7,
+  "run_entry_returncode": 0,
+  "run_id": "20261016T182559Z-09-r0-office",
+  "task_result": {
+    "status": "completed",
+    "rewards": {
+      "reward": 1.0
+    },
+    "reward": 1.0,
+    "verifier_budget_s": 600.0
+  },
+  "termination": "finish",
+  "infra": [],
+  "observed_metrics": {
+    "attempt_wall_s": 207.26,
+    "logical_requests": 12,
+    "agent_requests": 12,
+    "user_requests": 0,
+    "agent_tools": 11,
+    "bootstrap_tools": 2,
+    "user_tools": 0,
+    "tool_errors": 0,
+    "request_union_s": 176.110305851,
+    "tool_union_s": 12.133632142,
+    "main_scope_cpu_s": 12.00025,
+    "main_scope_sample_window_s": 192.1104221,
+    "memory_sampled_peak_bytes": 67846144,
+    "kernel_memory_peak_bytes": 78622720,
+    "io_read_bytes_bytes": 0.0,
+    "io_write_bytes_bytes": 102400.0,
+    "setup_wall_s": 0.357853672,
+    "setup_cpu_s": 0.024321,
+    "Agent_wall_s": 188.458713702,
+    "Agent_cpu_s": 10.832046,
+    "verifier_wall_s": 1.311861852,
+    "verifier_cpu_s": 1.110649,
+    "cleanup_wall_s": 10.25239342,
+    "cleanup_cpu_s": null,
+    "archive markers only_wall_s": 0.169453604,
+    "archive markers only_cpu_s": null
+  },
+  "sampling": [
+    {
+      "scope": "container",
+      "saved_points_including_boundaries": 386,
+      "sample_window_s": 192.1104221,
+      "metric_quality": {
+        "cpu": {
+          "candidate": 385,
+          "valid": 385,
+          "gap": 0,
+          "gap_reasons": {},
+          "observed_valid_delta_sum": 12.00025,
+          "full_window_delta": 12.00025,
+          "unit": "CPU-s"
+        },
+        "io_read_bytes": {
+          "candidate": 385,
+          "valid": 385,
+          "gap": 0,
+          "gap_reasons": {},
+          "observed_valid_delta_sum": 0.0,
+          "full_window_delta": 0.0,
+          "unit": "bytes"
+        },
+        "io_write_bytes": {
+          "candidate": 385,
+          "valid": 385,
+          "gap": 0,
+          "gap_reasons": {},
+          "observed_valid_delta_sum": 102400.0,
+          "full_window_delta": 102400.0,
+          "unit": "bytes"
+        }
+      },
+      "memory_sampled_peak_bytes": 67846144,
+      "kernel_memory_peak_bytes": 78622720
+    },
+    {
+      "scope": "host_agent",
+      "saved_points_including_boundaries": 386,
+      "sample_window_s": 192.1104221,
+      "metric_quality": {
+        "cpu": {
+          "candidate": 385,
+          "valid": 385,
+          "gap": 0,
+          "gap_reasons": {},
+          "observed_valid_delta_sum": 7.0600000000000005,
+          "full_window_delta": 7.0600000000000005,
+          "unit": "CPU-s"
+        },
+        "read_bytes": {
+          "candidate": 385,
+          "valid": 385,
+          "gap": 0,
+          "gap_reasons": {},
+          "observed_valid_delta_sum": 0.0,
+          "full_window_delta": 0.0,
+          "unit": "bytes"
+        },
+        "write_bytes": {
+          "candidate": 385,
+          "valid": 385,
+          "gap": 0,
+          "gap_reasons": {},
+          "observed_valid_delta_sum": 872448.0,
+          "full_window_delta": 872448.0,
+          "unit": "bytes"
+        },
+        "rchar": {
+          "candidate": 385,
+          "valid": 385,
+          "gap": 0,
+          "gap_reasons": {},
+          "observed_valid_delta_sum": 37942432.0,
+          "full_window_delta": 37942432.0,
+          "unit": "bytes"
+        },
+        "wchar": {
+          "candidate": 385,
+          "valid": 385,
+          "gap": 0,
+          "gap_reasons": {},
+          "observed_valid_delta_sum": 919668.0,
+          "full_window_delta": 919668.0,
+          "unit": "bytes"
+        }
+      },
+      "memory_sampled_peak_bytes": 207237120,
+      "kernel_memory_peak_bytes": null
+    }
+  ],
+  "network_scope": "shared network namespace per interface; not PID/task/API-exclusive",
+  "directory_footprint": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/directory_footprint.csv",
+  "not_executed": 26,
+  "retry_attempts": 0,
+  "new_api_probe_sends": 0,
+  "post_stop_changes": "Only offline acceptance key fix and analysis changes; exact frozen execution source retained; no refreeze, resume, or extra request",
+  "tests": {
+    "final_distinct_discovered_or_function_selected": 32,
+    "final_executed": 32,
+    "final_passed": 32,
+    "final_failed": 0,
+    "final_not_completed": 0,
+    "groups": {
+      "batch_plus_docops_cleanup_unittest": 15,
+      "coding_lifecycle_unittest": 3,
+      "assistant_real_fake_functions": 3,
+      "analysis_and_plot_unittest": 11
+    },
+    "development_failures": "Office temporary fixture failed twice while diagnosing a too-short deadline versus the fixed 300s reserve, then corrected; formal acceptance KeyError exposed missing production-shape coverage, independently documented",
+    "analysis_local_fix": "A symlink lookup in analysis input bookkeeping failed before output, then was fixed with an interpreter-symlink fixture; no execution change"
+  },
+  "history_protection": {
+    "directories": 30,
+    "files": 884,
+    "result": "unchanged"
+  },
+  "execution_code_drift": [
+    {
+      "path": "scripts/local_three_class_repeat_01_entry.py",
+      "execution": {
+        "path": "scripts/local_three_class_repeat_01_entry.py",
+        "bytes": 25774,
+        "sha256": "25c55fc06ca15a3a3a4252b81bacb7fdb9d91820392b560019d2995830ee27ea"
+      },
+      "current": {
+        "path": "scripts/local_three_class_repeat_01_entry.py",
+        "bytes": 25782,
+        "sha256": "190efb8634455c530894124e74adf9e454ca4d4b26b4c82890ddbbc15fd54085"
+      },
+      "snapshot": "env/local-three-class-repeat-01/source-before/local_three_class_repeat_01_entry.frozen.py",
+      "reason": "offline acceptance-key fix after batch stopped; no resume/refreeze"
+    }
+  ],
+  "analysis_manifest": {
+    "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/manifest.json",
+    "bytes": 264003,
+    "sha256": "3bcab58c3467863bf27ee2058cb79f3a1ca5d1df4959ce98e3336ae6e3a2ad87"
+  },
+  "batch_manifest": {
+    "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01/manifest.json",
+    "bytes": 2216,
+    "sha256": "bdeea91a852714ce338d351012d790ed3be2640ba0484e79575673d2465b4269"
+  },
+  "raw_manifest": {
+    "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/manifest.json",
+    "bytes": 25617,
+    "sha256": "52da4209f67de07f99ed86361767351dfc51ebe85680535054068394a8286e0c"
+  },
+  "snapshots": [
+    {
+      "path": "env/local-three-class-repeat-01/source-before/coding_measurement_volcano_01_entry.py",
+      "bytes": 13778,
+      "sha256": "7e06fc612b26c3a5f464f63395687d297227686f33d662c17ae744af54458f48"
+    },
+    {
+      "path": "env/local-three-class-repeat-01/source-before/local_three_class_repeat_01_entry.frozen.py",
+      "bytes": 25774,
+      "sha256": "25c55fc06ca15a3a3a4252b81bacb7fdb9d91820392b560019d2995830ee27ea"
+    },
+    {
+      "path": "env/local-three-class-repeat-01/source-before/volcano_three_chain_characterization.py",
+      "bytes": 53542,
+      "sha256": "aa47ba4ec1fec9cb3196ca5825bdddb8a86ad390c8190a898badb11ecadb91a3"
+    }
+  ],
+  "browser_rendering": "not performed; 11 SVG XML documents and 11 local links checked; only one real run resource chart",
+  "hash_readback": {
+    "analysis_inputs": 1136,
+    "analysis_outputs": 18,
+    "raw_outputs": 26,
+    "raw_inputs_linked_to_frozen": 98
+  },
+  "html_updated": false,
+  "git_committed": false,
+  "gates_changed": false,
+  "cpu02_replay": "paused"
+}

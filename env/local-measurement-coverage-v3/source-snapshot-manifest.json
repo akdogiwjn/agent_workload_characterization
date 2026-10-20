@@ -1,0 +1,27 @@
+{
+  "schema": "source-snapshot-manifest-v1",
+  "purpose": "Exact pre-edit source snapshots for paths bound by LOCAL-MEASUREMENT-COVERAGE-v2; historical reports and manifests were not rewritten.",
+  "files": [
+    {
+      "path": "env/local-measurement-coverage-v3/source-before-edit/coding_pilot.py",
+      "bytes": 64564,
+      "sha256": "6e932491a05648899cf7b910b7f0834f9dda9697f9718314138856b79f64ce60"
+    },
+    {
+      "path": "env/local-measurement-coverage-v3/source-before-edit/docops_word_resource_01_entry.py",
+      "bytes": 44677,
+      "sha256": "86e5829c68eb840c2af04c0090986c7f44f49ad7616642ff3a818b5877b4e5e7"
+    },
+    {
+      "path": "env/local-measurement-coverage-v3/source-before-edit/local_measurement_coverage.py",
+      "bytes": 36257,
+      "sha256": "7cf4cf29dd9a517b96d2c5eef4a726dd98449ef2fd15fe9ff4c60be18a4e837b"
+    },
+    {
+      "path": "env/local-measurement-coverage-v3/source-before-edit/toolsandbox_resource_pilot_01_entry.py",
+      "bytes": 48011,
+      "sha256": "849510f6aead8acde026f4e7e2d77c8d6a94c41e4a960023cde2996e82680ccb"
+    }
+  ],
+  "historical_v1_v2_outputs_modified": false
+}

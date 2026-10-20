@@ -1,0 +1,107 @@
+{
+  "schema": "volcano-protocol-probe-v2",
+  "probe": "assistant",
+  "status": "passed",
+  "stage": "complete",
+  "stages": [
+    {
+      "name": "route_and_credentials",
+      "t_monotonic_ns": 1085007474123053
+    },
+    {
+      "name": "client_construction",
+      "t_monotonic_ns": 1085007489369613
+    },
+    {
+      "name": "SDK.create",
+      "t_monotonic_ns": 1085007542466298
+    },
+    {
+      "name": "sdk_response_converted",
+      "t_monotonic_ns": 1085008866316622
+    },
+    {
+      "name": "tool_call_parse",
+      "t_monotonic_ns": 1085008867161683
+    },
+    {
+      "name": "client_close",
+      "t_monotonic_ns": 1085008867405737
+    },
+    {
+      "name": "complete",
+      "t_monotonic_ns": 1085008867730621
+    }
+  ],
+  "parse_status": "complete",
+  "log_directory": "env/toolsandbox-measurement-volcano-01/probe-log",
+  "send_observation": {
+    "boundary": "http_client_single_request_transport_dispatch",
+    "covered_clients": [
+      "httpx.Client",
+      "httpx.AsyncClient"
+    ],
+    "boundary_entries": 1,
+    "forwarded_attempts": 1,
+    "blocked_attempts": 0,
+    "responses_received": 1,
+    "remote_service_receipt": "unknown",
+    "wrappers_restored": true
+  },
+  "timeout_s": 30,
+  "max_tokens": 1024,
+  "business_tools_executed": 0,
+  "clients_closed": true,
+  "environment": {
+    "probe": "assistant",
+    "sys_executable": "/home/lcq/agent_workload_characterization/.venvs/toolsandbox-pilot-01/bin/python",
+    "python_version": "3.11.6",
+    "versions": {
+      "openai": "1.17.0",
+      "httpx": "0.27.2",
+      "httpx2": null,
+      "litellm": null,
+      "harbor": null
+    },
+    "module_files": {
+      "openai": "/home/lcq/agent_workload_characterization/.venvs/toolsandbox-pilot-01/lib64/python3.11/site-packages/openai/__init__.py",
+      "httpx": "/home/lcq/agent_workload_characterization/.venvs/toolsandbox-pilot-01/lib64/python3.11/site-packages/httpx/__init__.py"
+    }
+  },
+  "api_base": "https://st8tp3ajl0df3n8b8l8qu.apigateway-cn-beijing.volceapi.com/v1",
+  "request_model": "deepseek-v4-flash",
+  "retry_policy": {
+    "sdk_max_retries": 0,
+    "framework_attempts": 1
+  },
+  "response_evidence": {
+    "response_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "tool_calls",
+    "usage": {
+      "completion_tokens": 73,
+      "prompt_tokens": 374,
+      "total_tokens": 447,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 27
+      }
+    },
+    "tool_calls": [
+      {
+        "id": "call_zfmrmaimf5c4y3fel9vilb12",
+        "name": "probe_noop",
+        "arguments": "{\"ok\": true}"
+      }
+    ]
+  },
+  "tool_call": {
+    "id": "call_zfmrmaimf5c4y3fel9vilb12",
+    "function_name": "probe_noop",
+    "arguments": {
+      "ok": true
+    }
+  },
+  "wall_s": 1.679405610077083
+}

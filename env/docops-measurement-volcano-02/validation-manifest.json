@@ -1,0 +1,304 @@
+{
+  "schema": "three-chain-limited-validation-manifest-v1",
+  "inputs": [
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/environment.json",
+      "bytes": 6532,
+      "sha256": "e0494035e01e94068f6c55569adbcde32f12d2ea581d42e1c2854d9490b828c6"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/events.jsonl",
+      "bytes": 24351,
+      "sha256": "8de5a56ab9a3e11cdce7e577c1654e61c30be3f84be5854d455ecd176e3cca36"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/host_process.jsonl",
+      "bytes": 342201,
+      "sha256": "b6afaafa8e7f93c4d17b853f515f0a0ea147cea5afb666c75aa73f2238baee7f"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/manifest.json",
+      "bytes": 1336,
+      "sha256": "a5e3bf1608539f1dbd7d118ea2969bbc4c3161be771e3eeb66ca4850c4a44efd"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/measurement.json",
+      "bytes": 5433,
+      "sha256": "34a669fbe5c3715cf9eeab7b69f5b09bf6b92e777fdaa73e438adcab67cf5b1a"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/metadata.json",
+      "bytes": 1560,
+      "sha256": "6629b6b516aea8000b5d10d22142c658fc4f5c313c61817cc4897305ae07a3a1"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/mini_request_starts.jsonl",
+      "bytes": 1671,
+      "sha256": "79708485a6c217bb3f6958744ab60914fc063a320d4114d1879e5dd07a1f6e69"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/mini_status.jsonl",
+      "bytes": 10333,
+      "sha256": "eefe778d272480bc53d015b4cc51c6ae3ee99fc62cb202826691e49b635bce91"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/mini_tool_events.jsonl",
+      "bytes": 15718,
+      "sha256": "ffccc3729a1e991a1872f68e7391f7f7ab6b2a27667e2306e908f41aa280a285"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/mini_trajectory.json",
+      "bytes": 233999,
+      "sha256": "d343a2190c77d805f4fb17b0ad75ba451ce90acb2c479bfb1be0d1479ae14e65"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/samples.json",
+      "bytes": 476604,
+      "sha256": "c06345a5837948621dcbf7b75a98a18861e95aa379c28278bb179a91b6d50f08"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/supplemental_measurements.json",
+      "bytes": 55953094,
+      "sha256": "f53d3dcf3c759b5b5164a297968c35105f83146534731784dffbf7af25d4e71c"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/agent/events.jsonl",
+      "bytes": 31146,
+      "sha256": "75c6fcb84d2d248f932765cb6a5a2e70518de21ac74100b0c85731fb3f465305"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/environment.json",
+      "bytes": 4553,
+      "sha256": "b4d76e5b35731af0808570446b67baa034408e44a7e7773284dc578662788547"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/manifest.json",
+      "bytes": 25823,
+      "sha256": "4b1be98faeea78bb6b49fe4dadc18da65462cf9926d4397557f5701e6450cbf9"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/measurement.json",
+      "bytes": 384026,
+      "sha256": "19d0ec3ff55f510c7f056b94a6b28ae82f2cc93ab8c218429b42223bc4cf8dae"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/summary.json",
+      "bytes": 696222,
+      "sha256": "05dba9a04df3f0d1ed3f25303b4877bce4e0dca3bc8fc51db8fda6e042237dba"
+    },
+    {
+      "path": "data/raw/generated/DOCOPS-MEASUREMENT-VOLCANO-02/20261016T143948Z-excel001/supplemental_measurements.json",
+      "bytes": 33102609,
+      "sha256": "e631d3eeca7d5fde904bf59ee276f0175463a738bfec066fca2da9fcb36c97c2"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/boundaries.jsonl",
+      "bytes": 4819,
+      "sha256": "4f7713350a6494039e88f40cd1352221c3972f5aaaabd06503556338d92daacf"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/environment.json",
+      "bytes": 2662,
+      "sha256": "b69ee5d847d81dca153f91aa6621626bc870758710bc1e4f91df48617a8e8631"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/events.jsonl",
+      "bytes": 22142,
+      "sha256": "2f0a3d577509f61f88e3a650a999362e3d38d7372df006dc78b1282b2fbfefd0"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/manifest.json",
+      "bytes": 2487,
+      "sha256": "95bb121cd88288f9a269b458e76ce887dd934f83cd2aa6a1134aed87776f803f"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/result.json",
+      "bytes": 4111,
+      "sha256": "d2d0958cf4f5568fba65f5a5e5e809820d091659ed66ba3d8e3ccc1ace7f94ba"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/samples.jsonl",
+      "bytes": 16441,
+      "sha256": "da06d8658cbe572a4920e8f398a6b5753bbd3c5357bb22e5c4fa41706d8585dd"
+    },
+    {
+      "path": "data/raw/generated/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/20261016T145056Z-tsbvolcano01/supplemental_measurements.json",
+      "bytes": 6489223,
+      "sha256": "5a7053c5681b5437bfe04e82a36a5ba9078138f803192f9f6c933aafbe568ac9"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/frozen-identity.json",
+      "bytes": 8777,
+      "sha256": "76c6b9253844a16d4bf907d7b4c7fd0b83b8b3fcae7b977d7b694628f467b4b9"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/plan-identity.json",
+      "bytes": 8777,
+      "sha256": "76c6b9253844a16d4bf907d7b4c7fd0b83b8b3fcae7b977d7b694628f467b4b9"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/pre-scan-fix-identity/frozen-identity.json",
+      "bytes": 8777,
+      "sha256": "045f0c2d32fe6be648c97d432edd670847c41086e20ed7ffe0592f4e0e985258"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/pre-scan-fix-identity/plan-identity.json",
+      "bytes": 8777,
+      "sha256": "045f0c2d32fe6be648c97d432edd670847c41086e20ed7ffe0592f4e0e985258"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/pre-scan-fix-identity/preparation-manifest.json",
+      "bytes": 3487,
+      "sha256": "e92013e3432968773129c930c8659cd84c86516c394969ac57a5146fa1e1d04b"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/preparation-manifest.json",
+      "bytes": 3487,
+      "sha256": "cc2c85fab6939cc15c61a6a32258bec3f5271e1760c981313e262c484f915115"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/check_disk_scan.py",
+      "bytes": 4380,
+      "sha256": "35ccbc7ae608983ae9024f1a2090e3f90f0466344d9e77f90742ed536915c1d6"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/frozen-identity.json",
+      "bytes": 35816,
+      "sha256": "0643070334be70ce33f12063988f15e89bb486b6e31109d1ae2470b0abdb962d"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/history-protection.json",
+      "bytes": 9948,
+      "sha256": "0db69fe87ec6a35619e8e5939491418a186796fade3ace527cab366474be128c"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/no-model-check.json",
+      "bytes": 2550,
+      "sha256": "3408406f2e2b382870d915fe6a650df156c5870248f47d5365cb80894b7f497d"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/plan-identity.json",
+      "bytes": 35816,
+      "sha256": "0643070334be70ce33f12063988f15e89bb486b6e31109d1ae2470b0abdb962d"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/preparation-manifest.json",
+      "bytes": 26260,
+      "sha256": "676a3c3704f8ebca850854b7a3d44753c4fff8ad834bd8d8766104ce71e13b63"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/frozen-identity.json",
+      "bytes": 16536,
+      "sha256": "718241df50ed1b6d08e1a7045dd8e9bb5eb2918c12729f45bd24d937309ced6a"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/plan-identity.json",
+      "bytes": 16536,
+      "sha256": "718241df50ed1b6d08e1a7045dd8e9bb5eb2918c12729f45bd24d937309ced6a"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/pre-scan-fix-identity/frozen-identity.json",
+      "bytes": 16536,
+      "sha256": "1e7f5c5c3e44f0055a9093ca8d2826bb8310fc7f22a5d8476b50ffbd110e89a6"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/pre-scan-fix-identity/plan-identity.json",
+      "bytes": 16536,
+      "sha256": "1e7f5c5c3e44f0055a9093ca8d2826bb8310fc7f22a5d8476b50ffbd110e89a6"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/pre-scan-fix-identity/preparation-manifest.json",
+      "bytes": 3371,
+      "sha256": "412b3ecb6d3d53881d7d5b8a878f8112f5152365b15b2160fec7cb4866c4dc0e"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/preparation-manifest.json",
+      "bytes": 3371,
+      "sha256": "3ae3d684c4677cd0d68b4f19085f3abafb94db4148375197a394ddce2f21ca42"
+    },
+    {
+      "path": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/APPROVAL.json",
+      "bytes": 860,
+      "sha256": "7717cfcb2c6f4cf156c0a71af7cbf73662ddfc29bfcc581646f54be7eedb7f1b"
+    },
+    {
+      "path": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/manifest.json",
+      "bytes": 1585,
+      "sha256": "5835ecdee67d8253cff22ab727c41d19f9450e1fe03e5313c240fc1efe064445"
+    },
+    {
+      "path": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/run-report.json",
+      "bytes": 1255,
+      "sha256": "beb51b50c9a63571d021c694098029f208ade6addc208444f6fc410568f88a7f"
+    },
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VOLCANO-02/APPROVAL.json",
+      "bytes": 903,
+      "sha256": "0fbc51b8351b18cc364cd3c27bb303c84dba941fc4e2ce863f3f0a05f04f1f64"
+    },
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VOLCANO-02/manifest.json",
+      "bytes": 1123,
+      "sha256": "9555227ea6fd66c5e10633233a58e811d14da2fa4e777848c105d520d54a1fbc"
+    },
+    {
+      "path": "reports/resource/DOCOPS-MEASUREMENT-VOLCANO-02/run-report.json",
+      "bytes": 889111,
+      "sha256": "ad4734a056cc1afc2b0eea24363ddf35d3c74eddd49790dc373745a58bf60e81"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/APPROVAL.json",
+      "bytes": 1595,
+      "sha256": "f6e322da32ca3b9a2d748c24a0b6d1bb9ed683a0186a00c2f90341652681c57e"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/manifest.json",
+      "bytes": 1126,
+      "sha256": "0b94a0baf5db44db44beb1b4ea2bf40064b63489c9ddc168c1b565a284d05784"
+    },
+    {
+      "path": "reports/resource/TOOLSANDBOX-MEASUREMENT-VOLCANO-01/run-report.json",
+      "bytes": 60060,
+      "sha256": "8060be7b795e589ae751729ff111939143be7879818b7502c5b78dfb97f68033"
+    },
+    {
+      "path": "scripts/docops_measurement_validate_01_entry.py",
+      "bytes": 20259,
+      "sha256": "5f2f468df54f7e5ada70b94672443e56c5400adfda719b6b2840a9a6d4e28aaa"
+    },
+    {
+      "path": "scripts/docops_measurement_volcano_02_entry.py",
+      "bytes": 258,
+      "sha256": "23ce9c1bf4402ce154ce4c473b83ddd50dec0319e8315d77f2b40576fd2f3c3b"
+    },
+    {
+      "path": "scripts/docops_word_resource_01_entry.py",
+      "bytes": 49695,
+      "sha256": "2867bfa00727d1d02ff6a98adcd233af4eab618dadf5ed48eeb1482df2dc503e"
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/execution_measurement.py",
+      "bytes": 47352,
+      "sha256": "fd5bf70fdbcc366f61426fcb7b5de1b5c2e3e15b78e56ef4cfe5fbeca7b83243"
+    },
+    {
+      "path": "tests/test_office_disk_scan_wiring.py",
+      "bytes": 6207,
+      "sha256": "caa199036022d2eb077452348fc558351a1ff37331e97a9a363360a19418ab89"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "env/docops-measurement-volcano-02/validation-closeout.json",
+      "bytes": 57002,
+      "sha256": "20818f0172b22d51f59a48da4ee55f10892d92fec7b31d1df07a47c53f6a1ddf"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/validation-summary.md",
+      "bytes": 4653,
+      "sha256": "3b7a362fb78f4bb4d9284daf1ebd548ff5660500591ca17d57bc5f8b035052e5"
+    }
+  ],
+  "excludes_self": true,
+  "no_history_rewrite": true
+}

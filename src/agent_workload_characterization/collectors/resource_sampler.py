@@ -451,6 +451,31 @@ class ScopeSamples:
         """FULL raw evidence for archiving: boundary snapshots, every gauge
         sample with its timestamp, sampling gaps and notes. Summaries are
         derived views; this is what makes them checkable afterwards."""
+        raw_rows = [snap.to_dict() for snap in
+                    ([self.boundary_start] if self.boundary_start else [])
+                    + self.samples
+                    + ([self.boundary_end] if self.boundary_end else [])]
+        for row in raw_rows:
+            row.setdefault("scope_id", self.scope)
+            row.setdefault("scope_kind", self.scope_kind)
+        from .execution_measurement import counter_rate_intervals
+        intervals = counter_rate_intervals(raw_rows, {
+            "cpu": {"path": "cpu_usage_usec", "divisor": 1_000_000,
+                    "unit": "cpu_seconds", "rate_unit": "average_core",
+                    "identity_paths": ["scope_id", "scope_kind"],
+                    "status_paths": [("read_status", "cpu.stat"),
+                                     ("read_status", "cpuacct.usage")]},
+            "io_read": {"path": "io_read_bytes", "unit": "bytes",
+                        "rate_unit": "bytes_per_second",
+                        "identity_paths": ["scope_id", "scope_kind"],
+                        "status_paths": [("read_status", "io.stat"),
+                                         ("read_status", "io")]},
+            "io_write": {"path": "io_write_bytes", "unit": "bytes",
+                         "rate_unit": "bytes_per_second",
+                         "identity_paths": ["scope_id", "scope_kind"],
+                         "status_paths": [("read_status", "io.stat"),
+                                          ("read_status", "io")]},
+        })
         return {
             "scope": self.scope,
             "scope_kind": self.scope_kind,
@@ -460,6 +485,7 @@ class ScopeSamples:
             "boundary_end": (self.boundary_end.to_dict()
                              if self.boundary_end else None),
             "samples": [snap.to_dict() for snap in self.samples],
+            "intervals": intervals,
             "sample_gaps_ns": list(self.sample_gaps_ns),
             "notes": list(self.notes),
         }

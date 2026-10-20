@@ -1,0 +1,34 @@
+{
+  "schema": "toolsandbox-pilot-approval-v1",
+  "collection": "TOOLSANDBOX-MEASUREMENT-VOLCANO-01",
+  "user_approval": "approved",
+  "identity_sha256": "2d7b147e74c37cbaefbb997ff51f627be7691fb4397f8571aceb20c962c8fef9",
+  "approved_at_utc": "2026-10-16T14:48:39.928565+00:00",
+  "approval_source": "explicit user authorization in the current request",
+  "accept_unknown_cost_no_hard_cap": true,
+  "scope": {
+    "scenario": "send_message_with_contact_content_cellular_off",
+    "attempts": 1,
+    "attempt_retry": 0,
+    "budgets": {
+      "agent_logical_calls": 20,
+      "user_logical_calls": 20,
+      "play_s": 300.0,
+      "evaluate_s": 60.0,
+      "total_wall_s": 480.0,
+      "cleanup_reserve_s": 120.0,
+      "max_messages": 30,
+      "max_messages_note": "official Scenario.max_messages is a SANDBOX message-index threshold, not a strict model-request or tool-call cap; one scheduling round may append several messages. The official default 30 is kept and the actual message increment is recorded",
+      "max_tokens": "not set (official model_inference omits it; provider default applies). No hard token guarantee is claimed; the budget is enforced by logical-call caps, the shared work deadline and the parent kill"
+    },
+    "route": {
+      "provider": "火山AI网关",
+      "api_base": "https://st8tp3ajl0df3n8b8l8qu.apigateway-cn-beijing.volceapi.com/v1",
+      "request_model_alias": "openai/deepseek-v4-flash",
+      "request_model_raw_client": "deepseek-v4-flash",
+      "api_key_env": "VOLCANO_API_KEY"
+    },
+    "actual_bill": "unknown",
+    "hard_cost_cap": null
+  }
+}

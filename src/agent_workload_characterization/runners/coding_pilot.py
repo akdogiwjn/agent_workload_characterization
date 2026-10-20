@@ -37,7 +37,9 @@ from typing import Any
 from ..collectors.resource_sampler import (CounterSnapshot, ResourceSampler,
                                            ScopeReader)
 from ..collectors.semantic_recorder import Clock, SemanticRecorder, SystemClock
-from ..collectors.execution_measurement import environment_snapshot, measurement_report
+from ..collectors.execution_measurement import (
+    CONTRACT_VERSION, RunSupplement, container_directory_footprint_snapshot,
+    environment_snapshot, measurement_report)
 from .container_runtime import (ContainerHandle, ContainerRuntime,
                                 ContainerSpec, RuntimeError_)
 from .report_writer import _catalog_protected_roots
@@ -775,7 +777,8 @@ class CodingPilotRunner:
                  agent_container_cpu: str | None = None,
                  agent_container_mem: str | None = None,
                  verifier_container_cpu: str | None = None,
-                 verifier_container_mem: str | None = None):
+                 verifier_container_mem: str | None = None,
+                 execution_identity_sha256: str | None = None):
         self.project_root = project_root.resolve(strict=True)
         self.collection = collection
         self.harness = harness
@@ -798,17 +801,27 @@ class CodingPilotRunner:
         self.agent_container_mem = agent_container_mem
         self.verifier_container_cpu = verifier_container_cpu
         self.verifier_container_mem = verifier_container_mem
+        self.execution_identity_sha256 = execution_identity_sha256
         self._watchdog = WallWatchdog()
 
     # -- public entry -------------------------------------------------------
 
-    def run(self) -> PilotOutcome:
-        run_id = f"{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}-{uuid.uuid4().hex[:6]}"
+    def run(self, run_id: str | None = None) -> PilotOutcome:
+        run_id = run_id or f"{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}-{uuid.uuid4().hex[:6]}"
         attempt_id = f"{run_id}-a1"
         run_dir = guard_run_dir(self.project_root,
                                 Path("data/raw/generated") / self.collection / run_id,
                                 self.collection)
         run_dir.mkdir(parents=True)
+        supplement = RunSupplement(run_dir, interval_s=self.interval_s,
+            disk_specs=[
+                {"path": str(run_dir), "role": "attempt_output",
+                 "scope": "host_visible_runner_output", "ownership": "run_scoped"},
+                {"path": None, "role": "shared_task_cache", "scope": "host",
+                 "ownership": "shared_unassigned",
+                 "unavailable_status": "unsupported",
+                 "reason": "no_task_exclusive_cache_path_registered"},
+            ])
         recorder = SemanticRecorder(
             run_dir, self.clock, run_id=run_id, attempt_id=attempt_id,
             task_id=self.task.instance_id if self.task else "unknown",
@@ -835,6 +848,7 @@ class CodingPilotRunner:
         try:
             recorder.begin_run()
             budget.start()
+            supplement.start(disk_timeout_s=min(5.0, budget.remaining_s()))
             (run_dir / 'environment.json').write_text(json.dumps(environment_snapshot(), indent=2))
             if self.host_runtime_reader is not None:
                 sampler.register(host_scope, "host_agent_runtime",
@@ -856,9 +870,21 @@ class CodingPilotRunner:
                                                      agent_scope, "agent_container"))
                 sampler.start(agent_scope)
                 sampler.start_background_sampling()
+                task_workspace_spec = [{"path": "/testbed", "role": "task_workspace",
+                    "scope": "agent_container:/testbed", "ownership": "task_container"}]
+                task_workspace_before = container_directory_footprint_snapshot(
+                    self.runtime, agent_handle, task_workspace_spec,
+                    timeout_s=min(5.0, budget.remaining_s()))
+                supplement.record_container_disk_boundary("agent_workspace", "before_agent",
+                                                          task_workspace_before)
                 agent_result = self._run_execution(recorder, budget,
                                                    agent_handle, run_dir)
                 execution_status = agent_result.status
+                task_workspace_after = container_directory_footprint_snapshot(
+                    self.runtime, agent_handle, task_workspace_spec,
+                    timeout_s=min(5.0, budget.remaining_s()))
+                supplement.record_container_disk_boundary("agent_workspace", "after_agent",
+                                                          task_workspace_after)
                 sampler.stop(agent_scope)  # BEFORE teardown
                 # The verifier is a distinct sequential phase.  The agent
                 # container must be removed and verified before verifier
@@ -895,6 +921,13 @@ class CodingPilotRunner:
                                             verifier_scope,
                                             "verifier_container"))
                     sampler.start(verifier_scope)
+                    verifier_workspace_spec = [{"path": "/testbed", "role": "verifier_workspace",
+                        "scope": "verifier_container:/testbed", "ownership": "task_container"}]
+                    verifier_workspace_before = container_directory_footprint_snapshot(
+                        self.runtime, verifier_handle, verifier_workspace_spec,
+                        timeout_s=min(5.0, budget.remaining_s()))
+                    supplement.record_container_disk_boundary("verifier_workspace", "before_verifier",
+                                                              verifier_workspace_before)
                     vev = recorder.begin("verifier", {"status": "starting",
                                                       "resolved": None})
                     recorder.end(vev, attrs={"status": "phase_begin",
@@ -911,6 +944,11 @@ class CodingPilotRunner:
                             "observed": exc.observed,
                             "detail": "verifier wall exceeded"})
                     finally:
+                        verifier_workspace_after = container_directory_footprint_snapshot(
+                            self.runtime, verifier_handle, verifier_workspace_spec,
+                            timeout_s=min(5.0, budget.remaining_s()))
+                        supplement.record_container_disk_boundary("verifier_workspace", "after_verifier",
+                                                                  verifier_workspace_after)
                         sampler.stop(verifier_scope)  # BEFORE teardown
                     self._stop_and_verify_container(verifier_handle, recorder,
                                                     budget=budget, phase="verifier")
@@ -924,7 +962,7 @@ class CodingPilotRunner:
             # archive phase --------------------------------------------------
             archive_status = self._archive(
                 run_dir, recorder, sampler, budget, agent_result,
-                verifier_result, execution_status, evaluation_status)
+                verifier_result, execution_status, evaluation_status, supplement)
         except RuntimeError_ as exc:
             execution_status = "infra_failure"
             if self.host_runtime_reader is not None:
@@ -936,7 +974,7 @@ class CodingPilotRunner:
                                      "detail": f"error:{type(exc).__name__}"})
             archive_status = self._archive(
                 run_dir, recorder, sampler, budget, agent_result,
-                verifier_result, execution_status, evaluation_status)
+                verifier_result, execution_status, evaluation_status, supplement)
         except Exception as exc:  # noqa: BLE001 — preserve unexpected phase failures
             # Lazy evaluator imports and other unexpected phase errors must
             # still enter the archive/finally path. Keep execution success
@@ -953,13 +991,19 @@ class CodingPilotRunner:
                                      "detail": detail})
             archive_status = self._archive(
                 run_dir, recorder, sampler, budget, agent_result,
-                verifier_result, execution_status, evaluation_status)
+                verifier_result, execution_status, evaluation_status, supplement)
         finally:
             # stop the sampling thread FIRST, then tear down containers:
             # boundary reads already happened, but a stray sample must never
             # race a container removal
-            artifact_monitor.stop()
-            sampler.stop_background_sampling()
+            try:
+                artifact_monitor.stop()
+            except Exception as exc:  # noqa: BLE001
+                cleanup_errors.append(f"artifact_monitor:{type(exc).__name__}")
+            try:
+                sampler.stop_background_sampling()
+            except Exception as exc:  # noqa: BLE001
+                cleanup_errors.append(f"sampler_stop:{type(exc).__name__}")
             for handle in (agent_handle, verifier_handle):
                 if handle is not None:
                     try:
@@ -1119,7 +1163,8 @@ class CodingPilotRunner:
                  sampler: ResourceSampler, budget: BudgetTracker,
                  agent_result: AgentResult | None,
                  verifier_result: VerifierResult | None,
-                 execution_status: str, evaluation_status: str) -> str:
+                 execution_status: str, evaluation_status: str,
+                 supplement: RunSupplement) -> str:
         """Persist everything; never executes candidate code on the host.
 
         Soft artifact budgeting: every write is accounted BEFORE it happens;
@@ -1147,6 +1192,16 @@ class CodingPilotRunner:
             return True
 
         try:
+            try:
+                supplemental_data = supplement.stop(
+                    disk_timeout_s=min(2.0, budget.remaining_s()))
+            except Exception as exc:  # collector errors must not bypass existing cleanup/archive
+                supplemental_data = {"schema": "run-supplement-v1", "status": "partial",
+                                     "measurement_contract_version": CONTRACT_VERSION,
+                                     "failure": type(exc).__name__}
+            _write_accounted(run_dir / "supplemental_measurements.json",
+                             (json.dumps(supplemental_data, ensure_ascii=False, indent=2) + "\n").encode("utf-8"),
+                             optional=False)
             if agent_result is not None and agent_result.candidate_patch:
                 _write_accounted(run_dir / "candidate.patch",
                                  agent_result.candidate_patch.encode("utf-8"),
@@ -1217,7 +1272,8 @@ class CodingPilotRunner:
             already = {run_dir / "candidate.patch",
                        run_dir / "events.jsonl",
                        run_dir / "measurement.json",
-                       run_dir / "samples.json"}
+                       run_dir / "samples.json",
+                       run_dir / "supplemental_measurements.json"}
             for p in sorted(run_dir.rglob("*")):
                 if p.is_file() and p not in already:
                     budget.account_artifact_bytes(p.stat().st_size)
@@ -1225,6 +1281,7 @@ class CodingPilotRunner:
             meta = {
                 "run_id": recorder.run_id,
                 "attempt_id": recorder.attempt_id,
+                "identity_sha256": self.execution_identity_sha256,
                 "task_id": recorder.task_id,
                 "source_type": self.source_type,
                 "execution_status": execution_status,
@@ -1271,7 +1328,7 @@ class CodingPilotRunner:
             if budget.artifact_exceeded:
                 return "budget_exceeded"
             return "ok"
-        except (OSError, TypeError, ValueError) as exc:
+        except Exception as exc:  # noqa: BLE001 — archive failure must not bypass cleanup
             # the recorder may already be sealed here — failures are recorded
             # as a sidecar file, never by rewriting sealed events
             try:

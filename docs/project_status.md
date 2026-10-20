@@ -3,13 +3,14 @@
 事实源为 [project_state.json](../project_state.json)。本页提供解释与定位，不重复审批、不提供执行命令。研究目标见[当前范围](current_scope.md)，当前工作见[短任务入口](current_task.md#current-task)；旧方法与任务库只按需查阅。
 
 <!-- PROJECT_STATE:START -->
-当前状态由 [2026-10-16 状态真源](../project_state.json)统一登记；这是进度记录，不是执行授权。
+当前状态由 [2026-10-20 状态真源](../project_state.json)统一登记；这是进度记录，不是执行授权。
 
 - 当前范围：本地单任务CPU、内存、磁盘I/O与占用、网络、时长、工具/软件统计和过程图；模型用量、阶段/错误、环境和采样质量一并记录。GPU、热点/PMU/微架构/优化不必交，Replay/并发仅可选。
 - 公开操作和软件汇总v3已完成限定分析：SWE-rebench 9,435轨迹，SWE-bench 19,876对象/41组；OSWorld 755模型×任务/108任务，H-EPM 414轨迹，AgentX/Applied为宏观证据。部分语义和软件运行身份未知，来源不混算分母。
-- 本地主设计：Coding、Office、Assistant各3任务×3重复，共27run/9任务设计。已有CPU/内存0.5s目标采样、有限I/O、阶段与调用统计；任务容器/共享进程不等于整机或工具独占测量。
-- 待补：scope明确的网络收发、任务目录/输出/缓存占用、I/O速率图及完整四面板；最新Assistant与软件成果待最后统一更新HTML。旧run不倒填缺项，Video/GUI覆盖限制保留。
-- 当前入口：docs/current_scope.md（目标）、docs/project_status.md（证据）、docs/current_task.md（工作）。77份历史文档已本机归档，5处旧报告链接已修复；HTML临时生成通过但来源版本标为PARTIAL。data保留配置/清单，原始大数据留本机；未授权实验或提交。
+- 本地三个既有批次的27个显式run已完成字段与manifest盘点；历史区间覆盖v3按CPU、cgroup I/O及可用/proc I/O分列候选/有效/gap，网络字节和任务目录边界占用没有观测，未回填。
+- 新口径三链各一次已完成：Office目录扫描cwd修正后0→6629B；Coding Agent/verifier目录分别增长4874269/4614250B；Assistant场景内存状态N/A。主项采集和归档通过，cache仍unsupported导致supplement aggregate partial；共享netns不是任务/API专属字节。
+- 火山三链各n=1限定离线分析完成：3张独立四面板资源SVG、作图CSV和目录占用表已生成。请求Office8、Coding20、Assistant Agent/User6/1；原生工具、Submitted控制流与业务错误分别统计。Coding宿主末次process_exited保留gap；共享netns不代表API字节，不合并旧27次。报告：reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/summary.md。
+- LOCAL-THREE-CLASS-COMPLETE-02已顺序执行12/12次，identity 8a17109cf441e3ae68e3f9820babe5685467657cbcafb56d765dd1158dc4942d；合并原有效样本后27个固定task×round槽位各n=3，累计35次启动含8个永久排除的旧Office错路由attempt。v3独立复核及资源图已生成；7/7固定镜像批后身份匹配，raw归档哈希回读通过。n=3不代表类别总体，HTTP次数/费用unknown。报告：reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/summary.md。
 - G1仅登记小闭环通过；G2/G3-R未通过，CPU-02/Replay继续暂停。状态、建议、旧批准和旧execute命令都不是新授权。
 <!-- PROJECT_STATE:END -->
 
@@ -17,6 +18,7 @@
 
 | 已有证据 | 可以支持 | 不能支持 | 入口 |
 | --- | --- | --- | --- |
+| LOCAL-THREE-CLASS-REPEAT-01：原批+续批累计35次启动，27个预定task×round槽位现均有3点 | 原有效Excel1、Coding5、Assistant9加Complete-02的Coding4/Office8；新批12/12执行、清理/归档/适用测量验收通过，7个固定镜像批后只读身份匹配 | 旧Office错路由8次永久保留并排除预期路由任务结果；n=3仅是固定任务重复，不代表类别总体；共享netns不是任务/API专属，HTTP次数与费用unknown | [v3合并分析](../reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/summary.md)、[历史v2](../reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/summary.md) |
 | 公开操作与工具集：SWE-rebench全9,435条、SWE-bench登记19,876对象逐文件分流、OSWorld、H-EPM | 文件定位/检索/查看/修改/构建/测试等来源内比例、工具频次与出现轨迹数、声明应用与业务场景切片 | 部分/歧义记录、明确执行次数、耗时/资源或生产总体分布 | [操作总结](../reports/analysis/PUBLIC-TRACE-OPERATIONS-v3/summary.md)、[场景工具表](../reports/analysis/PUBLIC-TRACE-OPERATIONS-v3/toolkits.md) |
 | AgentX与Applied宏观请求/派生模板 | 来源内请求、多轮与subagent形态 | 具体工具集、真实Office API或CPU开销 | [宏观分析](../reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.md) |
 | RUN-01/RUN-02、G1 机制补证 | 登记 scope 的资源与生命周期可观测性 | 独占 Tool CPU、完整应用 I/O | [G1 裁定](history_index.md#docs-g1_consolidated_review-md) |
@@ -43,15 +45,19 @@
 | 连续采样 | Coding 的 `ResourceSampler`、DocOps `Sampler`、ToolSandbox worker 监测均已有生产接线；三类主要 run 目标间隔 0.5s，保留真实 monotonic 时间戳 | 容器/指定进程，不是整机统一监测；单次过程中的多次采样不等于重复执行很多次任务 |
 | CPU | cgroup 累计 CPU、worker `/proc` ticks；差分可得到区间平均核心数。现有 HTML 可展示 Coding/DocOps CPU 曲线 | Assistant 最新九次尚未进入 HTML；不是每个工具独占 CPU，不要求热点 |
 | 内存 | cgroup current/内核 peak、宿主/worker RSS；样本中有随时间变化的读数 | RSS/current/peak 不能相加；现有 HTML 已展示 Coding/DocOps，Assistant 待统一接入 |
-| 磁盘 I/O | DocOps 保存 cgroup blkio 读写累计值，Assistant 保存 `/proc/io` 的 read_bytes/write_bytes 与 rchar/wchar | 新图表还没有 I/O 速率面板；Coding 旧批按实际字段与缺读状态判断。块设备服务字节不是完整文件系统流量，rchar/wchar 不是磁盘实际字节 |
-| 磁盘占用（必统计） | 历史镜像、归档文件大小等局部记录各保留原语义 | 尚无统一的逐任务工作目录/输出/缓存起止占用与增长汇总；整机空闲或镜像大小不能替代。占用与I/O分开，目录扫描不强制按0.5s执行 |
-| 网络通信 | 有逻辑请求/工具事件、客户端请求窗口及 usage；它们能描述请求行为 | **没有统一的 rx/tx 字节连续采样与速率图**；请求次数、token、客户端耗时不能替代网络字节或 RTT。LLM API 在宿主发出时，禁网任务容器不能覆盖该通信 |
-| 时长与工具统计 | 已有 attempt wall、阶段边界、调用计数、软件工具集、任务结果/终止/错误分列及任务内重复统计 | 客户端延迟不是纯推理或网络时间；可靠边界缺失的旧数据不补造 |
+| 磁盘 I/O | Coding/Office cgroup累计值、Assistant `/proc/io`字段；新代码投影CPU及I/O有效相邻区间速率 | 新测量报告含差分与gap；cgroup block-service、proc read/write_bytes及rchar/wchar语义不同，不等于完整文件系统流量；HTML速率面板仍未更新 |
+| 磁盘占用（必统计） | 旧批无历史起止边界，见[历史覆盖表v3](../reports/analysis/LOCAL-MEASUREMENT-COVERAGE-v3/summary.md)；Complete-02真实测得Coding `/testbed`、Office `/root/submission` 的前后 apparent bytes/增长，Assistant任务状态为not_applicable | 宿主run输出目录单列；共享cache仍unsupported；边界扫描不是最终归档大小，历史缺失不回填 |
+| 网络通信 | Complete-02 12次真实运行均保存共享netns逐接口累计tx/rx及区间速率；固定研究槽位曲线和完整机器可读记录见[v3](../reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/summary.md) | 不是PID、任务或API专属；不跨接口求和；HTTP正文/TLS/链路字节、实际HTTP次数与账单仍unknown |
+| 时长与工具统计 | 27个固定task×round槽位各有3点；attempt wall、请求/工具、任务结果、终止与清理分列，原始点及median/IQR见[v3](../reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/summary.md) | 固定任务小样本，不是类别总体；请求区间不是思考时间，缺失阶段边界不补造 |
 | 汇总图表 | [HTML v5](../reports/html/PROJECT-RESULTS-v5/index.html)有单 run CPU/内存图、调用时间线及部分三次重复原始点/median/IQR | 未形成 CPU/内存/I/O/网络四面板完整总览，未纳入最新 Assistant；按用户约定最后统一更新，本轮未生成 HTML |
 
 采样源：[cgroup reader/sampler](../src/agent_workload_characterization/collectors/resource_sampler.py)、[进程 reader](../src/agent_workload_characterization/collectors/host_process.py)、[DocOps 生产采样](../scripts/docops_word_resource_01_entry.py)、[ToolSandbox 生产采样](../scripts/toolsandbox_resource_pilot_01_entry.py)、[图表生成器](../scripts/generate_project_results_html.py)。本轮静态读取实现并抽查既有产物字段，不运行 Docker、模型、采样器或重做历史测量。
 
-补充记录也已纳入当前目标：模型请求/客户端耗时/输入输出cache token及有证据的重试；生命周期阶段；评分、终止、工具错误、超时与可观测OOM；进程线程、user/system CPU、切换与缺页等可得字段；环境/软件/资源限制；采样覆盖、缺读与实际可得开销。磁盘占用为必统计项，GPU暂不统计。详见[采样契约§11](trace_contract.md#11-当前目标的连续采样与图表要求2026-10-16)。这些多已有部分实现，但不能笼统标全部complete；真实HTTP次数、TTFT、OOM和完整进程树等未观测项仍保持unknown。本次只补文档要求，没有新增采集实现。
+补充记录也已纳入当前目标：模型请求/客户端耗时/输入输出cache token及有证据的重试；生命周期阶段；评分、终止、工具错误、超时与可观测OOM；进程线程、user/system CPU、切换与缺页等可得字段；环境/软件/资源限制；采样覆盖、缺读与实际可得开销。磁盘占用为必统计项，GPU暂不统计。详见[采样契约§11](trace_contract.md#11-当前目标的连续采样与图表要求2026-10-16)。Complete-02 已按新冻结身份完成 Coding4、Office8，并与既有15个有效观察形成27个固定任务槽位；旧8次Office错路由仍作为失败路径保留、不计入预期路由的任务样本。共享cache仍unsupported；HTTP次数及任务/API专属网络字节仍unknown。
+
+### 历史字段与新采集接线
+
+[历史覆盖报告v3](../reports/analysis/LOCAL-MEASUREMENT-COVERAGE-v3/summary.md)分析先前三个批次显式引用的27个run并回读raw manifest；这些旧run的网络和任务目录边界缺失不回填。后续 Complete-02 的12个新run完成后，按固定任务与配置比较并独立复核，生成[三类合并v3](../reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/summary.md)。v2的Office路由错配及Coding no_candidate验收错误继续保留原历史语义；8个错路由attempt排除于预期路由的27个任务观察之外。
 
 ### AgentCgroup 方法实际采用到哪里
 
@@ -64,9 +70,9 @@
 
 ### 当前需要补齐的项目
 
-1. 明确任务 scope 与宿主 API 所在位置，补网络观测；整机网卡流量若使用，只能作带干扰说明的宿主背景，不冒充任务专属。
-2. 复用已有有效 I/O 和 CPU/内存序列，补齐四面板时间对齐总览与 Assistant 数据接入；历史网络没有采集就显示 unavailable，不能靠公开 trace 或 token 倒填。
-3. 保留类别范围与质量限制：Video 本地资源、GUI/VM 子域尚未实测；已有 27 run 是九个固定任务设计，不是总体代表性。是否扩类别另行决定，不借本次目标调整自动运行。
+1. 本轮新口径正式样本及v3合并复核已完成；不自动延伸实验授权，也不将固定任务n=3解释为类别代表性。
+2. 尚未实现的是任务/API专属网络字节与共享cache归属。若以后需要，应另行评估透明的客户端正文计量接口；正文bytes也不等于TLS/链路字节。
+3. HTML四指标总览仍未更新；本轮只生成独立分析包，历史raw不改写。共享netns不替代API流量，CPU不作单工具独占归因。
 
 [总体覆盖v3](../reports/analysis/PROJECT-characterization-synthesis-v3/summary.md)及[类别/RQ/指标表](../reports/analysis/PROJECT-characterization-synthesis-v3/evidence_matrix.json)保留2026-10-12旧目标时点；公开操作/软件统计v3已完成限定分析。下一步优先服务当前采样/展示缺口，不再把热点、PMU或并发缺失列作必补。本轮只更新目标和能力核查，不实现网络采集、不新增实验、不重冻结旧身份；CPU-02/Replay继续暂停。
 

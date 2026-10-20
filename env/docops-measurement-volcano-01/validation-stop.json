@@ -1,0 +1,33 @@
+{
+  "schema": "volcano-three-chain-validation-stop-v1",
+  "stopped_at_utc": "2026-10-16T12:29:18Z",
+  "stop_reason": "office_json_action_protocol_probe_failed",
+  "protocol_probe": {
+    "path": "env/docops-measurement-volcano-01/protocol-probe.json",
+    "bytes": 107,
+    "sha256": "8b281ca5e0d34d6c772c1b48b720ec4112f77a2ca1c819aa5122381f07aa9d8d",
+    "status": "failed",
+    "error_type": "TypeError",
+    "actual_http_send_count": "unknown_not_persisted_on_exception",
+    "retry": "not_repeated"
+  },
+  "downstream": {
+    "assistant_protocol_probe": "not_attempted_due_stop_condition",
+    "office_formal_attempt": "not_started",
+    "coding_formal_attempt": "not_started",
+    "assistant_formal_attempt": "not_started",
+    "formal_approvals_created": false
+  },
+  "identities_frozen_but_not_approved": {
+    "DOCOPS-MEASUREMENT-VOLCANO-01": "8910f2519db78161fbac9a1d26f329b3a95e2e49daaa3118397be47aaaf9cf27",
+    "CODING-MEASUREMENT-VOLCANO-01": "94854d53746d3ce190a7d99a5efc2eaa6046fc801592aca9c3a772fc95f8c764",
+    "TOOLSANDBOX-MEASUREMENT-VOLCANO-01": "2a79b7710ec6d699628ad35d08993e5b1cd1cf77e3733f58e958e843737d029b"
+  },
+  "namespace_check": {
+    "reports_and_raw_empty": true,
+    "docker_containers_started": false
+  },
+  "credentials": "secret value, fingerprint, and authorization headers were not recorded",
+  "historical_evidence_modified": false,
+  "git_commit": false
+}

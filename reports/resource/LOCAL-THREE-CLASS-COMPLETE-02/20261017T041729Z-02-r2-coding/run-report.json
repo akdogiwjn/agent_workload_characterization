@@ -1,0 +1,34 @@
+{
+  "run_id": "20261017T041729Z-02-r2-coding",
+  "attempt_id": "20261017T041729Z-02-r2-coding-a1",
+  "execution_status": "ok",
+  "evaluation_status": "ok",
+  "archive_status": "ok",
+  "run_dir": "/home/lcq/agent_workload_characterization/data/raw/generated/LOCAL-THREE-CLASS-COMPLETE-02/20261017T041729Z-02-r2-coding",
+  "resolved": true,
+  "budget_usage": {
+    "requests": 18,
+    "steps": 17,
+    "output_tokens": 9191,
+    "artifact_bytes": 58564925,
+    "artifact_exceeded": false,
+    "elapsed_s": 16.452820829,
+    "elapsed_total_s": 142.181369293,
+    "phase": "evaluation",
+    "exceeded": null
+  },
+  "source_type": "benchmark_real",
+  "cleanup_status": "ok",
+  "cleanup_errors": [],
+  "identity_sha256": "8a17109cf441e3ae68e3f9820babe5685467657cbcafb56d765dd1158dc4942d",
+  "route": {
+    "provider": "火山AI网关",
+    "api_base": "https://st8tp3ajl0df3n8b8l8qu.apigateway-cn-beijing.volceapi.com/v1",
+    "request_model": "openai/deepseek-v4-flash",
+    "credential_env": "VOLCANO_API_KEY",
+    "config_source": "/home/lcq/.config/opencode/opencode.json"
+  },
+  "task": "django__django-16485",
+  "round": 2,
+  "sequence": 2
+}

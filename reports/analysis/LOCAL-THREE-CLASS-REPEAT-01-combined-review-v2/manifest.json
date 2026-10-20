@@ -1,0 +1,3250 @@
+{
+  "analysis_code": [
+    {
+      "bytes": 50718,
+      "path": "scripts/local_three_class_repeat_01_combined_review.py",
+      "sha256": "2b5a52142df469ad97d952eff4cc626bd6cc72fe7921b39015d273026d17be29"
+    },
+    {
+      "bytes": 6578,
+      "path": "tests/test_local_three_class_repeat_01_combined_review.py",
+      "sha256": "69450757309539b5f7a65c36f0a0c541a081d1c684b889876370c3700dd7ab43"
+    },
+    {
+      "bytes": 53617,
+      "path": "scripts/volcano_three_chain_characterization.py",
+      "sha256": "1e374a07185b1f22e1bdf40331dbea96d57d0b069fbf9a2f7efab0d54f00071f"
+    },
+    {
+      "bytes": 57155,
+      "path": "scripts/toolsandbox_resource_pilot_02_review.py",
+      "sha256": "6a8c5426e54425754af14eefc8645a56ad3f1b499a4634f0d4409f62b057361b"
+    },
+    {
+      "bytes": 49695,
+      "path": "scripts/docops_word_resource_01_entry.py",
+      "sha256": "2867bfa00727d1d02ff6a98adcd233af4eab618dadf5ed48eeb1482df2dc503e"
+    },
+    {
+      "bytes": 63993,
+      "path": "scripts/local_three_class_repeat_01_continuation_01_entry.py",
+      "sha256": "865eaf8f0d35fda03a44b41cd812c2980d4cdc27eeeabbe7af5435ce507ca8cb"
+    },
+    {
+      "bytes": 47352,
+      "path": "src/agent_workload_characterization/collectors/execution_measurement.py",
+      "sha256": "fd5bf70fdbcc366f61426fcb7b5de1b5c2e3e15b78e56ef4cfe5fbeca7b83243"
+    },
+    {
+      "bytes": 20084,
+      "path": "src/agent_workload_characterization/analyzers/public_operations.py",
+      "sha256": "5f92088f6c360316d30f0e7ad9cfff75856947be00d604b5c85be4ee3a230d76"
+    }
+  ],
+  "input_records": [
+    {
+      "bytes": 1143,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/candidate.patch",
+      "sha256": "91f3c6430a19d961545d31e7474593b4572d9cf01aafd9783d9a7d69842fad02"
+    },
+    {
+      "bytes": 6532,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/environment.json",
+      "sha256": "e0494035e01e94068f6c55569adbcde32f12d2ea581d42e1c2854d9490b828c6"
+    },
+    {
+      "bytes": 30435,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/events.jsonl",
+      "sha256": "c6da364c9d8ec1f6f20a51f08c8a77202b7d7718194b39e444ddeba6050036e5"
+    },
+    {
+      "bytes": 416046,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/host_process.jsonl",
+      "sha256": "547fde689a44d527197cc2c4e96474c9244674118728980ff63b83a01e562201"
+    },
+    {
+      "bytes": 1336,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/manifest.json",
+      "sha256": "ab14479bb5524869259345f8a53299ebaec06466af3c5d641ae131c049e3af13"
+    },
+    {
+      "bytes": 5395,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/measurement.json",
+      "sha256": "9e2618c4d436fb8043b4a69d60affcbbeca65ac5d3205f4d0032a1a0ac041b8e"
+    },
+    {
+      "bytes": 1549,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/metadata.json",
+      "sha256": "7e4068fc3c7fee7654631381a4b745c1bf4f969cf6a1eb5055a1bf0f64e202c5"
+    },
+    {
+      "bytes": 2175,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/mini_request_starts.jsonl",
+      "sha256": "b013f5b03e6075854e224fd6f46e535da2950c5d0b6f2b0f00153806b4d59ed9"
+    },
+    {
+      "bytes": 13457,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/mini_status.jsonl",
+      "sha256": "16c85d8aa6fed94d65bebbd9dd6f0215bd38715fcaa9ea01281bc90762993f9f"
+    },
+    {
+      "bytes": 17821,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/mini_tool_events.jsonl",
+      "sha256": "74df4caa2da68a14e1ceae34666aa5e1afbca63acff03a7db919557d019daf63"
+    },
+    {
+      "bytes": 261142,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/mini_trajectory.json",
+      "sha256": "5ce1489313c448b28ea0fd7cf8ba55441bcdcfefdb13cd502c37f8fe02b24ebd"
+    },
+    {
+      "bytes": 555104,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/samples.json",
+      "sha256": "9b1ec644cc955552b9f870b719631bd19fdd3d6037a25f1243771242748db29b"
+    },
+    {
+      "bytes": 65868629,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/supplemental_measurements.json",
+      "sha256": "3d9653bc4a21ea47c77cbb47e1e71a7c7cc2b5fa23558de8f9ba039907322716"
+    },
+    {
+      "bytes": 16498,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/verifier/test_output.txt",
+      "sha256": "60a93ddec058e927dd70cf79deec8cb26db9dd6b260279c421bdcefdfbb98929"
+    },
+    {
+      "bytes": 820,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/candidate.patch",
+      "sha256": "97c1d8d2f91e068d0212bc5cd839bc24e0cea6df1e4dbc597be6fa346a692d30"
+    },
+    {
+      "bytes": 6532,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/environment.json",
+      "sha256": "e0494035e01e94068f6c55569adbcde32f12d2ea581d42e1c2854d9490b828c6"
+    },
+    {
+      "bytes": 34510,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/events.jsonl",
+      "sha256": "1ace61396653d9790fc78e649e7d70ed2cb45012726b78e8e99dceb9e4a220cc"
+    },
+    {
+      "bytes": 398989,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/host_process.jsonl",
+      "sha256": "0bf310c873983c6d69343330a425abed68ff70b46417b8a76a04523b3080a924"
+    },
+    {
+      "bytes": 1336,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/manifest.json",
+      "sha256": "4bb5fe4c6275d54797006f8c56b15041894399d2a4490b35f7e1cd40e79db8bf"
+    },
+    {
+      "bytes": 5398,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/measurement.json",
+      "sha256": "e3d9ca50ca82a8b9c4df9e48dfddbc4943b2c8e3bae5fe1d7fc02a375d5654d6"
+    },
+    {
+      "bytes": 1552,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/metadata.json",
+      "sha256": "9a1d4896208c5b0dab9e6cd30b3be55fc64f1e5fe0b5b92f8a36ed074cc8eda9"
+    },
+    {
+      "bytes": 2511,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/mini_request_starts.jsonl",
+      "sha256": "5f405955a625c115cf0f3090707fdf1fa30c3adffbe56b9ebb91a80348fd3ad6"
+    },
+    {
+      "bytes": 15525,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/mini_status.jsonl",
+      "sha256": "c0d059a6e529090056a7181e763480cf9acaa7da35fe0dd8ebe4bc9bcd0fc4cb"
+    },
+    {
+      "bytes": 21538,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/mini_tool_events.jsonl",
+      "sha256": "29202e2c975515a69fd728dfe03af5b3b3ec512a46c3308df52bb89e03aee5e8"
+    },
+    {
+      "bytes": 285552,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/mini_trajectory.json",
+      "sha256": "cbb334613912b6a65148f6e2d74b94314d6656e8ce2f2da530a3cdcb83474e38"
+    },
+    {
+      "bytes": 546189,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/samples.json",
+      "sha256": "396051eea86ec5c4b18be5950d85bcd594ebd98cfe557dfbfb8a8a7aed701590"
+    },
+    {
+      "bytes": 64841382,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/supplemental_measurements.json",
+      "sha256": "5d6db45799c62b651931957930d23d3cfcf8ba06406eb39cf310cc3503b80386"
+    },
+    {
+      "bytes": 79023,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/verifier/test_output.txt",
+      "sha256": "87b5e76409e1ef97a6b1b8d35227266185664e404f26dc60282332c74d3c139a"
+    },
+    {
+      "bytes": 7923,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/candidate.patch",
+      "sha256": "7af1548a5d9905e569bbea945745768ae0371e0de1972cb37c7d7597beca6f4a"
+    },
+    {
+      "bytes": 6532,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/environment.json",
+      "sha256": "e0494035e01e94068f6c55569adbcde32f12d2ea581d42e1c2854d9490b828c6"
+    },
+    {
+      "bytes": 34550,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/events.jsonl",
+      "sha256": "6039b6af499a0327d176e92c58d6ee0d8e0183fa3d6277ce51dd5e494ac5f666"
+    },
+    {
+      "bytes": 540014,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/host_process.jsonl",
+      "sha256": "51637250943349156fea91479ed01a39c8e0960233c81cdb7e2839fa18169cd4"
+    },
+    {
+      "bytes": 1336,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/manifest.json",
+      "sha256": "9dd88fccb26b7615912af98bc185d7d59ecbc225000de8e1049ef0fb2d4a7758"
+    },
+    {
+      "bytes": 5367,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/measurement.json",
+      "sha256": "f5a2820ee1e5700ef4f7332f8525cb2104571718d56dcfb0ae64262c8a898981"
+    },
+    {
+      "bytes": 1554,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/metadata.json",
+      "sha256": "7e044e2e9fec65f1a3742beb2766df9cac43f140f21801375cd85ca46e7daf3f"
+    },
+    {
+      "bytes": 2511,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/mini_request_starts.jsonl",
+      "sha256": "15659b03c549f6c45206766d491e99f5c56c7e9a56ad37639b5f6d846867f565"
+    },
+    {
+      "bytes": 15567,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/mini_status.jsonl",
+      "sha256": "ce1b4d9e4a43889eb84387b9cdf5286ae237a46cb2da2b8adce6db7f1aa87794"
+    },
+    {
+      "bytes": 34682,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/mini_tool_events.jsonl",
+      "sha256": "cd9e56416dafb73ee8f7c393ef0714367bddaa61ee7e2c74055e224b7075549d"
+    },
+    {
+      "bytes": 615159,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/mini_trajectory.json",
+      "sha256": "968da6e9a014af542a88de3fe644942101b729b3742a30b1a9351799c020b9c8"
+    },
+    {
+      "bytes": 703584,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/samples.json",
+      "sha256": "73a88e8547d4881aac66f06b58a82fd8098fe7d2ee91e37e5eb9b7d5620f1186"
+    },
+    {
+      "bytes": 83814661,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/supplemental_measurements.json",
+      "sha256": "78dc3f63156dbc0b37c8802d7fe8cadd7c5e8939db75c2d46251e1702ba193bd"
+    },
+    {
+      "bytes": 28311,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/verifier/test_output.txt",
+      "sha256": "2b897ab1cf25212783e317c463cd77ab442abb1f901ebff9a57d7d59c222a415"
+    },
+    {
+      "bytes": 820,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/candidate.patch",
+      "sha256": "97c1d8d2f91e068d0212bc5cd839bc24e0cea6df1e4dbc597be6fa346a692d30"
+    },
+    {
+      "bytes": 6532,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/environment.json",
+      "sha256": "e0494035e01e94068f6c55569adbcde32f12d2ea581d42e1c2854d9490b828c6"
+    },
+    {
+      "bytes": 34506,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/events.jsonl",
+      "sha256": "db10f3a221477b65772b8000b5152adf7b117ed11ee08ce96ea76167a9faf18d"
+    },
+    {
+      "bytes": 442998,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/host_process.jsonl",
+      "sha256": "732f4638657e5562eafda874e1c54459f86534e4efbbbaca924597b728ac86c8"
+    },
+    {
+      "bytes": 1336,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/manifest.json",
+      "sha256": "e2171bccaf5f5f9dc8121a9b962c4bf28f07243f2a4ff9b65ce4d9bfce5a4d35"
+    },
+    {
+      "bytes": 5385,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/measurement.json",
+      "sha256": "2b2b274d97676b8b799d7dea49f935f116d498bc4267a30aceb31e56f60ab9ec"
+    },
+    {
+      "bytes": 1552,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/metadata.json",
+      "sha256": "e600871f16f44b1df098267743f384f373ed5dc4179b52558188ed563e8dc71b"
+    },
+    {
+      "bytes": 2511,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/mini_request_starts.jsonl",
+      "sha256": "d60064d08ed9d15b5871edfc72501d67d73c0550691cc501f1ef51255d040eaf"
+    },
+    {
+      "bytes": 15523,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/mini_status.jsonl",
+      "sha256": "6df93be991bb6f83a538007c0d6f4858362a4a21f24dba172dfe1861b8513023"
+    },
+    {
+      "bytes": 25742,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/mini_tool_events.jsonl",
+      "sha256": "bd4bd29a5e1741638c7054cacf54ef475be281d3986352c6b2b86ef1fb172699"
+    },
+    {
+      "bytes": 296847,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/mini_trajectory.json",
+      "sha256": "a0ce0403551751ec02cbcbb381ed79e69abdf72d02809bce54cc0a7dc4058c45"
+    },
+    {
+      "bytes": 598354,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/samples.json",
+      "sha256": "f2decec53133e6858e718ab200909039cd882949f419e3aa17373ab2b114e9f7"
+    },
+    {
+      "bytes": 71233898,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/supplemental_measurements.json",
+      "sha256": "ebe6f8d42894cf302cbc7fec48393a67da95fbf3d50885ff1ae03a1fff2ab720"
+    },
+    {
+      "bytes": 79023,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/verifier/test_output.txt",
+      "sha256": "0cd3dc78aac60ad5b4c5a5e4173da29934fd385ecb61a8e3375e3f00df047e54"
+    },
+    {
+      "bytes": 6532,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024449Z-04-r1-coding/environment.json",
+      "sha256": "e0494035e01e94068f6c55569adbcde32f12d2ea581d42e1c2854d9490b828c6"
+    },
+    {
+      "bytes": 32657,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024449Z-04-r1-coding/events.jsonl",
+      "sha256": "49aa23eb399c7da8899e8ffef48d4320acd0ca983c4768775414f8bb07eb41c3"
+    },
+    {
+      "bytes": 404926,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024449Z-04-r1-coding/host_process.jsonl",
+      "sha256": "af0b029a25617e0a919a875465a9cdd53e084e97290be5910b3068321562aa73"
+    },
+    {
+      "bytes": 1145,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024449Z-04-r1-coding/manifest.json",
+      "sha256": "655cea1d59738972f1ddf8328ed58f388f0039b5b78cf621eb67a6d7e18061e4"
+    },
+    {
+      "bytes": 4157,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024449Z-04-r1-coding/measurement.json",
+      "sha256": "069821b9e21a4116a2f23a44ee30a0ee7df564975f96a8c7faffea2d94474242"
+    },
+    {
+      "bytes": 1567,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024449Z-04-r1-coding/metadata.json",
+      "sha256": "6b18cf1f51a9cf56afa3db58c93b0c4f60836a813551912280656e150e501b10"
+    },
+    {
+      "bytes": 2511,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024449Z-04-r1-coding/mini_request_starts.jsonl",
+      "sha256": "77e8ea1f8ef7d0644f5f3957131332b0d2d23550f7d6ba86ea990835dcb4f8af"
+    },
+    {
+      "bytes": 15577,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024449Z-04-r1-coding/mini_status.jsonl",
+      "sha256": "064e2bd56284926e167be1b7e296986df902e0122bd5f261ea8d269360e23800"
+    },
+    {
+      "bytes": 25228,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024449Z-04-r1-coding/mini_tool_events.jsonl",
+      "sha256": "2f5f313279a99b26039d912dc54ef8a9e0270705c48c4098ee9f9bf2a663c728"
+    },
+    {
+      "bytes": 631205,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024449Z-04-r1-coding/mini_trajectory.json",
+      "sha256": "4a1003b38a811b5ddbf52dde242a0174deaf59f36572c4ef5a1345090823c308"
+    },
+    {
+      "bytes": 493055,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024449Z-04-r1-coding/samples.json",
+      "sha256": "1c98467ed613d55a963da21f9d73922bc877d1e6b05d7ce06d15622ca2f8a721"
+    },
+    {
+      "bytes": 59050395,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024449Z-04-r1-coding/supplemental_measurements.json",
+      "sha256": "9234e88a7828915da0f1edbb2dc0c231a6dab0268c1404d17552b09bb7d3e2c6"
+    },
+    {
+      "bytes": 210,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/ATTEMPT_COMPLETED.json",
+      "sha256": "19e27e37d7e60aa4713d43b2d1a08f270c2eed6c7c4f002b45aa0a3f4cbe9f0f"
+    },
+    {
+      "bytes": 307,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/ATTEMPT_STARTED.json",
+      "sha256": "bdb2a92c82f75dea8b6126e05469acf1ca32f4f46163586c1d3d501f1430a3b6"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/agent/document-tools-agent.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 5961,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/agent/events.jsonl",
+      "sha256": "5a9b08da810d8568d8ceb2abe01f48612b440056952d41f8205449137a41ee17"
+    },
+    {
+      "bytes": 4553,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/environment.json",
+      "sha256": "b4d76e5b35731af0808570446b67baa034408e44a7e7773284dc578662788547"
+    },
+    {
+      "bytes": 24400,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/manifest.json",
+      "sha256": "855c2be8782955d3a79386f9fcbeead877b8a3604266d60c2d58d34934cdadce"
+    },
+    {
+      "bytes": 63460,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/measurement.json",
+      "sha256": "be8280f4c9c1849f00233b098628d46dd225db1ad243eac8c5d5cf0e9e51f675"
+    },
+    {
+      "bytes": 121195,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/summary.json",
+      "sha256": "850b3f9b2d48a469b124d63700610dc617307be93ee39cfc230dfd69ab342371"
+    },
+    {
+      "bytes": 8319714,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/supplemental_measurements.json",
+      "sha256": "07d1766b21794b26dd3d95e64ea7d1a497c43efac4bcf251fe2a2031636a25d5"
+    },
+    {
+      "bytes": 2142,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/verifier/ctrf.json",
+      "sha256": "fa84b55a4e6e62feab55668a92615aee48a0ba5a0204cc33594a0b1f037c9c93"
+    },
+    {
+      "bytes": 1005,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/verifier/original_task_description.txt",
+      "sha256": "74fa566781a671812e9ba9b422c486f38a8f7eb21b29d15060aae448bca6f153"
+    },
+    {
+      "bytes": 2,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/verifier/reward.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "bytes": 1659,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/verifier/task_metadata.json",
+      "sha256": "164605b95801dee37c7d185ad9da1f326493168ac379c441eaa0c90f2ffe11b3"
+    },
+    {
+      "bytes": 1704,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/verifier/test-stdout.txt",
+      "sha256": "d498d50bbb0623685a9080eb1dc331b8de03c0e7d65976d70d1a4026bf970da3"
+    },
+    {
+      "bytes": 210,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/ATTEMPT_COMPLETED.json",
+      "sha256": "f9b6775b914a6fe050559e7fb8406e3dec565582f9f274bd39f85c32364971c9"
+    },
+    {
+      "bytes": 312,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/ATTEMPT_STARTED.json",
+      "sha256": "18b22f554c28da1a3d6b00cee91fdd2acc5509c9ef6da7546c5476512259ac7a"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/agent/document-tools-agent.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 5972,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/agent/events.jsonl",
+      "sha256": "ea6115f439bd6221facc4659b08f70a1364292dec4c5ce0347e98ffee1ef2bf3"
+    },
+    {
+      "bytes": 4553,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/environment.json",
+      "sha256": "b4d76e5b35731af0808570446b67baa034408e44a7e7773284dc578662788547"
+    },
+    {
+      "bytes": 10965,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/manifest.json",
+      "sha256": "ad945530f9773b30244a9f128e753d18d7647b3e32aac56cb65605c94b2487aa"
+    },
+    {
+      "bytes": 65681,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/measurement.json",
+      "sha256": "c9a529ae07ae2c28a9500d6b6b0bda6251683e5dd194e39e6748751134267c52"
+    },
+    {
+      "bytes": 125118,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/summary.json",
+      "sha256": "26491aedd653edf7384237d9710c2acf00a3dc74c559bed7789fa2951094beac"
+    },
+    {
+      "bytes": 8486387,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/supplemental_measurements.json",
+      "sha256": "2c222f19a99ff3fbcfc3576f887b77e00a5aeb8fef19cabb06f90de549823485"
+    },
+    {
+      "bytes": 2151,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/verifier/ctrf.json",
+      "sha256": "772a27bf0ed461e5eff903118b53982d0aca48f3af1d3b3770d314bcc3eb4d6c"
+    },
+    {
+      "bytes": 875,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/verifier/original_task_description.txt",
+      "sha256": "004acf1c6d737750ccbbe8a7ed953fd7dd8daf0390a7271b8fbc0b8c9b81d2c6"
+    },
+    {
+      "bytes": 2,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/verifier/reward.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "bytes": 1580,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/verifier/task_metadata.json",
+      "sha256": "2b190f61dbea97549036cc4facc9d443ba6d6ea2a08c10880509d4a7e09d8c79"
+    },
+    {
+      "bytes": 1713,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/verifier/test-stdout.txt",
+      "sha256": "9a833307fec41102a1cd2561f397c395746a4cfd90d066dfb939392391c10d7f"
+    },
+    {
+      "bytes": 210,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/ATTEMPT_COMPLETED.json",
+      "sha256": "f4af20e13dd91877618ccce5299d1f86d188ab27aadd054d6996cc01ecbd02c4"
+    },
+    {
+      "bytes": 307,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/ATTEMPT_STARTED.json",
+      "sha256": "419c4c0c7b1b2f3104024d46c16334fd1cbbe74b57efe66d56bf4e11b50cd996"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/agent/document-tools-agent.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 5962,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/agent/events.jsonl",
+      "sha256": "1336a30beeea327cd7be3629c47cc707e8581c5b49bc9a296e507f9740a5cc76"
+    },
+    {
+      "bytes": 4553,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/environment.json",
+      "sha256": "b4d76e5b35731af0808570446b67baa034408e44a7e7773284dc578662788547"
+    },
+    {
+      "bytes": 24400,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/manifest.json",
+      "sha256": "11afaa83a10e21117f1ec2fb5f11506c936bbfe2c55bc67131b4beaa1151b32a"
+    },
+    {
+      "bytes": 65656,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/measurement.json",
+      "sha256": "0836cdf0ca0636b54e43b5183e4d952974b743d1518f9c94289a7d59b4438387"
+    },
+    {
+      "bytes": 125095,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/summary.json",
+      "sha256": "3d10060fec26e1d681da6e60372d135a954542239074c33965e58cbe5ad87dc0"
+    },
+    {
+      "bytes": 8486314,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/supplemental_measurements.json",
+      "sha256": "6c2706f483204c5bbf5a320fcecf7fcbfc66c950cdded550b35e4758b39d778d"
+    },
+    {
+      "bytes": 2142,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/verifier/ctrf.json",
+      "sha256": "ce3145726b0c93ddf3dafa308f5bd706d7459746bf758ba8722638e4188379c0"
+    },
+    {
+      "bytes": 1005,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/verifier/original_task_description.txt",
+      "sha256": "74fa566781a671812e9ba9b422c486f38a8f7eb21b29d15060aae448bca6f153"
+    },
+    {
+      "bytes": 2,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/verifier/reward.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "bytes": 1659,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/verifier/task_metadata.json",
+      "sha256": "164605b95801dee37c7d185ad9da1f326493168ac379c441eaa0c90f2ffe11b3"
+    },
+    {
+      "bytes": 1704,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/verifier/test-stdout.txt",
+      "sha256": "b865b68aa78b8a1e01da11c54a40577b285e8056c168989c207cb64f6ce1b63f"
+    },
+    {
+      "bytes": 210,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/ATTEMPT_COMPLETED.json",
+      "sha256": "8492e0d562f9815fa17b46b08a0cd31dc11e780d65f7258ff524c6e1a96741f0"
+    },
+    {
+      "bytes": 312,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/ATTEMPT_STARTED.json",
+      "sha256": "629b24cc7d90bfee1f58ccfb0a06240e3a711c8d52c0ac04c4451e68be241058"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/agent/document-tools-agent.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 5972,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/agent/events.jsonl",
+      "sha256": "c2922a9383b04b92332577a5f45230ed6bee484a7b73e7ba7b9c32fa7d2c424b"
+    },
+    {
+      "bytes": 4553,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/environment.json",
+      "sha256": "b4d76e5b35731af0808570446b67baa034408e44a7e7773284dc578662788547"
+    },
+    {
+      "bytes": 10965,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/manifest.json",
+      "sha256": "36d3522c0657228cfff04bdfd86142078a5833c48be4e75635cecb947ed9b152"
+    },
+    {
+      "bytes": 65634,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/measurement.json",
+      "sha256": "80e0cdc70eabadcadd9e1276865b6f1ea914bcd8db77dd5f89cf5f241a5018dd"
+    },
+    {
+      "bytes": 125073,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/summary.json",
+      "sha256": "197fb8dd0f1dd44f468ff861250ddb48f955f55c58efa51d26bd8c5c10c75b63"
+    },
+    {
+      "bytes": 8320417,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/supplemental_measurements.json",
+      "sha256": "b3c309a36ecc878ebebc84f83663b8876bb8799b05fed633ed239053e5d5b161"
+    },
+    {
+      "bytes": 2151,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/verifier/ctrf.json",
+      "sha256": "b89d6fa61871326c76b9cd8727f0fcb221346eabaa27f52c33c9c20f1d9c1494"
+    },
+    {
+      "bytes": 875,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/verifier/original_task_description.txt",
+      "sha256": "004acf1c6d737750ccbbe8a7ed953fd7dd8daf0390a7271b8fbc0b8c9b81d2c6"
+    },
+    {
+      "bytes": 2,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/verifier/reward.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "bytes": 1580,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/verifier/task_metadata.json",
+      "sha256": "2b190f61dbea97549036cc4facc9d443ba6d6ea2a08c10880509d4a7e09d8c79"
+    },
+    {
+      "bytes": 1713,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/verifier/test-stdout.txt",
+      "sha256": "1dfe92fc40bd74c278b567986413104c1fec1d34ae9d83761b7d2590a2502732"
+    },
+    {
+      "bytes": 209,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/ATTEMPT_COMPLETED.json",
+      "sha256": "844e126345562c7b055b6b0ff47f570bda56845e238348c0930cc0653b7187ad"
+    },
+    {
+      "bytes": 315,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/ATTEMPT_STARTED.json",
+      "sha256": "b22a6cabf498803f84e15225b68632cd82f4d02d8ba323277d1f6535e1c805a0"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/agent/document-tools-agent.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 5979,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/agent/events.jsonl",
+      "sha256": "70af3875f2abdb6151bceda63d2f4a9f93a1c2fb2f42ca2c4494a13150c6fa2b"
+    },
+    {
+      "bytes": 4553,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/environment.json",
+      "sha256": "b4d76e5b35731af0808570446b67baa034408e44a7e7773284dc578662788547"
+    },
+    {
+      "bytes": 23878,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/manifest.json",
+      "sha256": "aa7b9c88699f667f30351d2ac6f636de504f8147b221caa5eca168f232db5664"
+    },
+    {
+      "bytes": 63446,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/measurement.json",
+      "sha256": "8092753297bcd32a04e75ca0a8911d9a50527f4771a2512805db9ac2811b4f1e"
+    },
+    {
+      "bytes": 121208,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/summary.json",
+      "sha256": "78b1651d0a45cfe5e2e5ea50ed50b1381ece9ad2602366cdefe156a0a8843826"
+    },
+    {
+      "bytes": 8321175,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/supplemental_measurements.json",
+      "sha256": "9297fdf8404a200965bd503b6702c16b4b09bf1c7721bc295c50a089830658fa"
+    },
+    {
+      "bytes": 2174,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/verifier/ctrf.json",
+      "sha256": "5f3bc786af867360d540e17d807492466cfc9dce943667ea233d4222ad9395b3"
+    },
+    {
+      "bytes": 1082,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/verifier/original_task_description.txt",
+      "sha256": "506f5ee4d2d50c58cd9888f7cccc533cd93663a177802abf05d8389972780a38"
+    },
+    {
+      "bytes": 2,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/verifier/reward.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "bytes": 1823,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/verifier/task_metadata.json",
+      "sha256": "3cd03985af785be57928bd662a7e6c1d80bf284bbf405764121ee74a3ebfccca"
+    },
+    {
+      "bytes": 1736,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/verifier/test-stdout.txt",
+      "sha256": "a1a76d4786437a3587523e0a8dee2b7dc708b9579bde31fc64d250aa4caa14f2"
+    },
+    {
+      "bytes": 210,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/ATTEMPT_COMPLETED.json",
+      "sha256": "71dd75fe61fc1656a44a021e35d8a896d389301d26f3a157ac40d1983fd505ba"
+    },
+    {
+      "bytes": 312,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/ATTEMPT_STARTED.json",
+      "sha256": "369b569b7ea1e8790145fb904bb816548bfac3a0a1a678a4b94b034bd8c83bae"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/agent/document-tools-agent.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 5971,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/agent/events.jsonl",
+      "sha256": "4f359d97126253f5e350b4e64bceef41fbfe7b95a37b81eeab4ba91bb7ad9e19"
+    },
+    {
+      "bytes": 4553,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/environment.json",
+      "sha256": "b4d76e5b35731af0808570446b67baa034408e44a7e7773284dc578662788547"
+    },
+    {
+      "bytes": 10965,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/manifest.json",
+      "sha256": "83e9359b016309c335459d94659363cb0acbb6164f7cc9a6c854d0aff123117e"
+    },
+    {
+      "bytes": 63427,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/measurement.json",
+      "sha256": "3b66836e3e19cfe63715c0d86827afcd63311e1cf64278c56ca376847ca3e74e"
+    },
+    {
+      "bytes": 121154,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/summary.json",
+      "sha256": "83532db2dd34bbbf45e94bfbb53cf896aaa6b3103851b23de789f862ee15c6cf"
+    },
+    {
+      "bytes": 8321661,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/supplemental_measurements.json",
+      "sha256": "2f151b5f443850e17047296f9412fa7a8d688ac27fc023e925afa7cf9a4f13d4"
+    },
+    {
+      "bytes": 2151,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/verifier/ctrf.json",
+      "sha256": "9ef58f92981bb7d9e1b14943f8224cb76f2fca2662cb3b243bd8ae24237db305"
+    },
+    {
+      "bytes": 875,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/verifier/original_task_description.txt",
+      "sha256": "004acf1c6d737750ccbbe8a7ed953fd7dd8daf0390a7271b8fbc0b8c9b81d2c6"
+    },
+    {
+      "bytes": 2,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/verifier/reward.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "bytes": 1580,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/verifier/task_metadata.json",
+      "sha256": "2b190f61dbea97549036cc4facc9d443ba6d6ea2a08c10880509d4a7e09d8c79"
+    },
+    {
+      "bytes": 1713,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/verifier/test-stdout.txt",
+      "sha256": "f446bb226ab30922aadeb930973c416f001161bb6c9f3f4373e98fdca255a9fe"
+    },
+    {
+      "bytes": 210,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/ATTEMPT_COMPLETED.json",
+      "sha256": "3d2805cdaf8ef893d4aec6521a1660c26060074207738e2d222087204f986d4f"
+    },
+    {
+      "bytes": 315,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/ATTEMPT_STARTED.json",
+      "sha256": "2e9d9205e9a52df4091997fc4ea0d5e476da7fff1c954a456bfeb844c9efd7de"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/agent/document-tools-agent.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 5978,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/agent/events.jsonl",
+      "sha256": "fce3deee24bb550d740b777e3c5c0a0afc416f42a68d6a99e9d9278843ce3295"
+    },
+    {
+      "bytes": 4553,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/environment.json",
+      "sha256": "b4d76e5b35731af0808570446b67baa034408e44a7e7773284dc578662788547"
+    },
+    {
+      "bytes": 23878,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/manifest.json",
+      "sha256": "e7f38e7f7bc2c706d52ffa34fdd79feb74aad11ce6920b88d798d5a5bd5fbba3"
+    },
+    {
+      "bytes": 65692,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/measurement.json",
+      "sha256": "b304d7e2782ac19d98559f1830202a2ef3178d7fa1ca0e126c483dbfc9676c18"
+    },
+    {
+      "bytes": 125120,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/summary.json",
+      "sha256": "2e9c0f91884b26fd2f0121c9590d10fa4679906fde4d47ff46324cdb56a0c2d1"
+    },
+    {
+      "bytes": 8486103,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/supplemental_measurements.json",
+      "sha256": "f6ffabc6aa676abe2b49c81a5e0e0ecc6d1858f7f21a7d354a8d2c263ee0b258"
+    },
+    {
+      "bytes": 2174,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/verifier/ctrf.json",
+      "sha256": "33ccd9dcda932497dd2eb5c2d3da6f75ee29ce209f7f7202ed3e03b21a71816d"
+    },
+    {
+      "bytes": 1082,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/verifier/original_task_description.txt",
+      "sha256": "506f5ee4d2d50c58cd9888f7cccc533cd93663a177802abf05d8389972780a38"
+    },
+    {
+      "bytes": 2,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/verifier/reward.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "bytes": 1823,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/verifier/task_metadata.json",
+      "sha256": "3cd03985af785be57928bd662a7e6c1d80bf284bbf405764121ee74a3ebfccca"
+    },
+    {
+      "bytes": 1736,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/verifier/test-stdout.txt",
+      "sha256": "499bb73c78dea527f07acb3a09b2e2f87ce023366b941232fbb69e32f042db21"
+    },
+    {
+      "bytes": 210,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/ATTEMPT_COMPLETED.json",
+      "sha256": "b57adc06e9687ddbc057227c5f342c8a3dbcbcf128cb0c4acaae98c529ffcdcc"
+    },
+    {
+      "bytes": 307,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/ATTEMPT_STARTED.json",
+      "sha256": "92286f10bd57915a1122e47cc86b9bab53cec9d11b6282157c623f3caaceaf95"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/agent/document-tools-agent.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 5962,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/agent/events.jsonl",
+      "sha256": "fd4d0417537ee17655b1cf6935cd06c6cf36ddd38ac80b3c65cdee17dedad228"
+    },
+    {
+      "bytes": 4553,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/environment.json",
+      "sha256": "b4d76e5b35731af0808570446b67baa034408e44a7e7773284dc578662788547"
+    },
+    {
+      "bytes": 24400,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/manifest.json",
+      "sha256": "bb0e139892d7fef93ce7dceec4f35614d5d9c8be496f002b49b9d91921f7e424"
+    },
+    {
+      "bytes": 63451,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/measurement.json",
+      "sha256": "91150dfc6adef74fc1f5c65715e88d3b56328b192e223c8d837098eded43c39c"
+    },
+    {
+      "bytes": 121190,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/summary.json",
+      "sha256": "b5b1576e9549cbe585fa0931a283cd981b2dbd9c052f475b57953ff16c62c5e6"
+    },
+    {
+      "bytes": 8320608,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/supplemental_measurements.json",
+      "sha256": "e7acfd5538ed95882b149e3880dfe933a68079f283e50a51b70fa027a5e45cdc"
+    },
+    {
+      "bytes": 2142,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/verifier/ctrf.json",
+      "sha256": "8105f0c030b8d0f2ae5f1c3612ae72493ff3a8bdb0006d1114a7c07ceb45b0fe"
+    },
+    {
+      "bytes": 1005,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/verifier/original_task_description.txt",
+      "sha256": "74fa566781a671812e9ba9b422c486f38a8f7eb21b29d15060aae448bca6f153"
+    },
+    {
+      "bytes": 2,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/verifier/reward.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "bytes": 1659,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/verifier/task_metadata.json",
+      "sha256": "164605b95801dee37c7d185ad9da1f326493168ac379c441eaa0c90f2ffe11b3"
+    },
+    {
+      "bytes": 1704,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/verifier/test-stdout.txt",
+      "sha256": "b865b68aa78b8a1e01da11c54a40577b285e8056c168989c207cb64f6ce1b63f"
+    },
+    {
+      "bytes": 524,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/ATTEMPT_COMPLETED.json",
+      "sha256": "dee60e46e0657c6438d659242c86e02dccca3f93e93bb59dc9ad9a0212bdafd6"
+    },
+    {
+      "bytes": 483,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/ATTEMPT_STARTED.json",
+      "sha256": "2319695a6f1a973ef967513dc5d699f7a7a588e90507ef208da2319e372b3aa4"
+    },
+    {
+      "bytes": 4821,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/boundaries.jsonl",
+      "sha256": "b594faa3fdba6885cdcfc96e48d3adf1a219c31b879bdb0a23fe65bb63e30443"
+    },
+    {
+      "bytes": 2662,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/environment.json",
+      "sha256": "c1af1ef2384b7c322404c045cb3c9bba0a7f8fea2019ee06d63b0535cdd796b1"
+    },
+    {
+      "bytes": 18733,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/events.jsonl",
+      "sha256": "5cec4543f7e43f68bad2e54d3dca7928b34c89f0505bf4bee5f75e87b4799e52"
+    },
+    {
+      "bytes": 3235,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/job.json",
+      "sha256": "926253fa4453eb135d9496aab3be5cf8a2cebdfdb19eb08b0c65a7721ae4287a"
+    },
+    {
+      "bytes": 2490,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/manifest.json",
+      "sha256": "26e6ed5fcdc1b36de9d1e19eb2be4f0a8c0b475be2476c32ce779a1df9210139"
+    },
+    {
+      "bytes": 17319,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/official/trajectories/send_message_with_contact_content_cellular_off/conversation.json",
+      "sha256": "53456471f3d715294458736ac8296c1a8fc9fec53a6affdde72631b413b8fa9a"
+    },
+    {
+      "bytes": 34890,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/official/trajectories/send_message_with_contact_content_cellular_off/execution_context.json",
+      "sha256": "51ecbeb8c6b171c0b0a0c87ec6c518e5b1a10d01bf6310932f635a096501a073"
+    },
+    {
+      "bytes": 6738,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/official/trajectories/send_message_with_contact_content_cellular_off/pretty_print.txt",
+      "sha256": "2f1ca65a9e194798a67a0f2f661e5bb876586175bcf652c66fced7ed0b415ca2"
+    },
+    {
+      "bytes": 4112,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/result.json",
+      "sha256": "e821664c435ba2a02b1b7bba19a0fa49fa8d810f1772d1e83bb1a56ee7a5a6c5"
+    },
+    {
+      "bytes": 15595,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/samples.jsonl",
+      "sha256": "03dd6e703c08a518c03e75fcb071266b5f1b2d0511c508f1af2a3503bb869b63"
+    },
+    {
+      "bytes": 15328,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/scenario_context.json",
+      "sha256": "5b7e8d8db9dd51115fe345e2b5e47d178461adc74fc4f5f3d99a0803d7bc3e82"
+    },
+    {
+      "bytes": 6158866,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/supplemental_measurements.json",
+      "sha256": "492b4bed19be7af367eb7f8cf66c770e1c7fe21c95db899e7ed4a1f96a824b1c"
+    },
+    {
+      "bytes": 803,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/worker.stderr",
+      "sha256": "b42102b76ae535948841d6cb9cd8c0f3a9fe92d9cb04481dda0515736f8fffe7"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/worker.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 525,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/ATTEMPT_COMPLETED.json",
+      "sha256": "ee49d7c5a2d381efe6d5fcde846229e3b45b718cba6711c0317825b5928cf84d"
+    },
+    {
+      "bytes": 479,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/ATTEMPT_STARTED.json",
+      "sha256": "29fd5b31e6a20e32aac085938ff4d9c7017340d02a62684213a7f973e620f78a"
+    },
+    {
+      "bytes": 4821,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/boundaries.jsonl",
+      "sha256": "82e126b19814e44ba958b1d1ae445220115d7453abe0b6e4767b8ea1fceb3e0c"
+    },
+    {
+      "bytes": 2662,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/environment.json",
+      "sha256": "996fb78b97171b8b86fbf48461af43d6fda04a93384739d060f87a969c2c1d51"
+    },
+    {
+      "bytes": 18706,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/events.jsonl",
+      "sha256": "f8c702d3d8e2f51dd38318b986e4c033ea760f833066f4fb8963f49e009f336e"
+    },
+    {
+      "bytes": 3231,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/job.json",
+      "sha256": "6885b3114c5a6c0d0c260a3c2e6588c0a5cc13e8e79720e45f6578e983458750"
+    },
+    {
+      "bytes": 2483,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/manifest.json",
+      "sha256": "e59432ed7d2c22b39411942fc88f3b66f2265517918ac8cf16697b54bcdb706d"
+    },
+    {
+      "bytes": 9266,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/official/trajectories/add_reminder_content_and_week_delta_and_time/conversation.json",
+      "sha256": "59c40acfe22169684ff9f17410d5349b8ce291ddbd862755a6606ca8c6fc6fa0"
+    },
+    {
+      "bytes": 31809,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/official/trajectories/add_reminder_content_and_week_delta_and_time/execution_context.json",
+      "sha256": "b781f8cb428fa3f2b01716516f9ed4344d94fb5b2a55642d0c64741ece676175"
+    },
+    {
+      "bytes": 6738,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/official/trajectories/add_reminder_content_and_week_delta_and_time/pretty_print.txt",
+      "sha256": "7438203267cb56bbfae193e44ba032b3c0969d6dcc3b5384560d8f210a50ee74"
+    },
+    {
+      "bytes": 4002,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/result.json",
+      "sha256": "1c11be31acbfb7d1c607653561dabdfd21f9c9ebd7f7ac225579cc4664058adf"
+    },
+    {
+      "bytes": 15591,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/samples.jsonl",
+      "sha256": "a88329e129b996b6deb4cdff2326c0969564e010a1c6cbd0c2f6d41bf45d0f96"
+    },
+    {
+      "bytes": 11936,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/scenario_context.json",
+      "sha256": "370ae79ae8457d1ee51266c4215982883816fb17ab51323fcac3e8bbd3b1f1db"
+    },
+    {
+      "bytes": 6158499,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/supplemental_measurements.json",
+      "sha256": "b93f7a4c6202ced5b3ee7f16823955c18b952d4f29585ac2e1c75b7f7475ebe0"
+    },
+    {
+      "bytes": 787,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/worker.stderr",
+      "sha256": "30156c5118caf97d59b2d4b93976b17feadd8af27357298a1f98fc3ab89770eb"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/worker.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 525,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/ATTEMPT_COMPLETED.json",
+      "sha256": "20290f55cb9d826a2cca6b33129c3f8080a2bd9f8cb69f4d63930cf35da73060"
+    },
+    {
+      "bytes": 499,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/ATTEMPT_STARTED.json",
+      "sha256": "0c252cb00b02ea01404d6c3f9cb978db9510cba4dfd3656ff32c09f11358aaab"
+    },
+    {
+      "bytes": 4829,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/boundaries.jsonl",
+      "sha256": "05ada91e8e3815c513f808f26460f42090ed7ead5801ac86fc2108e498753535"
+    },
+    {
+      "bytes": 2662,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/environment.json",
+      "sha256": "f7787a1d7fc518aad1d9fc727ec082275e1ff8e05a35bcefcc2e01047601e656"
+    },
+    {
+      "bytes": 22568,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/events.jsonl",
+      "sha256": "b61587ec6c0d2cf687933c35ae51faf88e98f8fec3ae48529b15e0538c7f3cd2"
+    },
+    {
+      "bytes": 3251,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/job.json",
+      "sha256": "62e10900f0e81333a4a7379f0ac7201b8dd92fe9a4ad21f6239ac768c5d093ef"
+    },
+    {
+      "bytes": 2516,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/manifest.json",
+      "sha256": "d1b3b3d96d5125276a763c3a82d65d2014ebebd90879dc3d6bced660eca7693a"
+    },
+    {
+      "bytes": 25005,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/conversation.json",
+      "sha256": "5530f82b38c16c8c4a73d8f6a6186d47b2865f7559cf159884f9bf6b0f4a6025"
+    },
+    {
+      "bytes": 44819,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/execution_context.json",
+      "sha256": "8fc5ff41018aeed7c24e804f58406f5b4ab0a969539d3d9f6c4070cd05a03132"
+    },
+    {
+      "bytes": 6496,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/pretty_print.txt",
+      "sha256": "a354b4bf1250ad5fa812212df6d6286ab6b4b08b30cc656543b2bb87b00d0095"
+    },
+    {
+      "bytes": 4154,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/result.json",
+      "sha256": "e94dba786df1f7041723308e3491d02119b582d66b00892e03bca943353bf200"
+    },
+    {
+      "bytes": 37214,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/samples.jsonl",
+      "sha256": "405997ee01567f4c9285162e048267470d4bb74ea136d7a9253d830b0edc0b5c"
+    },
+    {
+      "bytes": 19673,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/scenario_context.json",
+      "sha256": "3d987296994bef0672ac2ca7d45983084a6a0dba7fd9ea508b98974554abc031"
+    },
+    {
+      "bytes": 14601381,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/supplemental_measurements.json",
+      "sha256": "b822f40d47b975fd0f6679a243668979554e61eafdd6d155876c36ce67ac71ed"
+    },
+    {
+      "bytes": 1309,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/worker.stderr",
+      "sha256": "b088116b68eaeb116d79323361daf6ef16674dff64488d7b3ab8a8d645f9d895"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/worker.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 525,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/ATTEMPT_COMPLETED.json",
+      "sha256": "0ac5ef7e8b33e736f4907bd06608112c45cc0fbf24470b55b01d7b90b1c94528"
+    },
+    {
+      "bytes": 479,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/ATTEMPT_STARTED.json",
+      "sha256": "5b3680d9aefaaca2c3ae62e140474d244b58b97494a284b9f7b4cd926c933dd4"
+    },
+    {
+      "bytes": 4819,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/boundaries.jsonl",
+      "sha256": "522968bfb99ed13acb246a89f81c27d067c573749f4c780a13abd9b51842be10"
+    },
+    {
+      "bytes": 2662,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/environment.json",
+      "sha256": "1b487a73745db5fa43d2e5715c4f7bc3b23aa8f7967e64eecc19c7da82484f42"
+    },
+    {
+      "bytes": 18708,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/events.jsonl",
+      "sha256": "b115322ddf81d967ad3cadcdc49e355bb01bd90371b6b2741b3329b5a5fc65c0"
+    },
+    {
+      "bytes": 3231,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/job.json",
+      "sha256": "301e29fc09300b39f409dbea5220697edc387a7833f7ebfbb93f8865a2d9396f"
+    },
+    {
+      "bytes": 2483,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/manifest.json",
+      "sha256": "db519c261f9f59d39a85ece8ff8013339c4e03977a91ff8b96d26049af99afb9"
+    },
+    {
+      "bytes": 9281,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/official/trajectories/add_reminder_content_and_week_delta_and_time/conversation.json",
+      "sha256": "f5e9645b534cd67fe7ad78be0fdd919a0a7988d07012671b597e5a6f06645940"
+    },
+    {
+      "bytes": 31823,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/official/trajectories/add_reminder_content_and_week_delta_and_time/execution_context.json",
+      "sha256": "ec4810fedcbba175e15b07d2ffc090333a5b16b59e73ac8a910dc850920adcf1"
+    },
+    {
+      "bytes": 6738,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/official/trajectories/add_reminder_content_and_week_delta_and_time/pretty_print.txt",
+      "sha256": "dad94e6a9910cf773326411dea72ba96cef145a1a9b42c46d0e96a8cfa4d2ea3"
+    },
+    {
+      "bytes": 4002,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/result.json",
+      "sha256": "dfe78f97de630ffe19ac62e2faeaefa77a8c52bdcaee719798a7edf7ff8fa591"
+    },
+    {
+      "bytes": 17707,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/samples.jsonl",
+      "sha256": "c022372c2dbee3001984dbac3da9c07804b288042fd88689da10541b46b577d5"
+    },
+    {
+      "bytes": 11936,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/scenario_context.json",
+      "sha256": "c83197fd0ba798a9513b4527ae9381a9d457f453d8cba802ca9d7c4a6fc824ab"
+    },
+    {
+      "bytes": 6986241,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/supplemental_measurements.json",
+      "sha256": "c328804eedf9cd493e31820a038589bdfe0a7dda364f0ed852cb1473bc8804ea"
+    },
+    {
+      "bytes": 787,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/worker.stderr",
+      "sha256": "9cd28412b407e01e96bef597a240f9db00d42b44bac5d77c79b2ef7a6d6b99b2"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/worker.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 525,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/ATTEMPT_COMPLETED.json",
+      "sha256": "f8e469b2bdc23e543e6d7284ed08e2f754070be02a69d3b77c4f8b1bdf0c23cf"
+    },
+    {
+      "bytes": 499,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/ATTEMPT_STARTED.json",
+      "sha256": "4c63899eba6655dda3ab6ddbbbc7c321eef6d4a1664120554441ef95e50b273a"
+    },
+    {
+      "bytes": 4829,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/boundaries.jsonl",
+      "sha256": "99b26129964db2f2b0011a43e2a38bc3a4a470276bd6cceebd73f35f8cc4da34"
+    },
+    {
+      "bytes": 2662,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/environment.json",
+      "sha256": "7ea0408cf87df97f9370a5b9baf6676edd764ea6edec28bf066e6232254e9635"
+    },
+    {
+      "bytes": 23418,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/events.jsonl",
+      "sha256": "7d397ee36c29473f0551ccea31cac0764b796878a65e9a98661301412af10ce6"
+    },
+    {
+      "bytes": 3251,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/job.json",
+      "sha256": "0f71d619c95694246a5c431c10abf2408b4b9dc2f76ec338a3c8d629ec2d9576"
+    },
+    {
+      "bytes": 2516,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/manifest.json",
+      "sha256": "ba3fbf5fe1bb782e1013c3fc4dcee95597656e09944c0de967f0c01531ea1b33"
+    },
+    {
+      "bytes": 25530,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/conversation.json",
+      "sha256": "9ed43c45febbab75bb7ab3d35ac636d140d14de5fa656bc2113a7b7121fabe69"
+    },
+    {
+      "bytes": 46615,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/execution_context.json",
+      "sha256": "50c666d119d45cf7cc5f65be46dcd01aa84640720fc8869fb7d149a06b8f6f1c"
+    },
+    {
+      "bytes": 6615,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/pretty_print.txt",
+      "sha256": "75ec7c8fb9e1bc8580a1e6e4322906bdd2f58df70256eeed81b1148499a53e19"
+    },
+    {
+      "bytes": 4154,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/result.json",
+      "sha256": "08fe50a5693e35d422a7d6e5f05bec2fdf9722e14cb08bd624369587dd9e708e"
+    },
+    {
+      "bytes": 33015,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/samples.jsonl",
+      "sha256": "56d87ef8daea71dcd3be035c2d7fc961e8abacbb55aeb4decfb4668690c34ecb"
+    },
+    {
+      "bytes": 19673,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/scenario_context.json",
+      "sha256": "99b7dde7186eff08440481f54f432c908559d601c58275ca1d4e20123250a82d"
+    },
+    {
+      "bytes": 12946903,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/supplemental_measurements.json",
+      "sha256": "bf532bc19017ccd67d5715d2f1692a057ce576c198512e68588869c4fd987f12"
+    },
+    {
+      "bytes": 1309,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/worker.stderr",
+      "sha256": "f30cfe2ff517c91c573609caecf73164c7b083d6558edeada5794423bbbcb887"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/worker.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 525,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/ATTEMPT_COMPLETED.json",
+      "sha256": "d722626d377e9c850984d1f35b32b02e9673ef604acc96e77d073e4d38b1091f"
+    },
+    {
+      "bytes": 483,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/ATTEMPT_STARTED.json",
+      "sha256": "cab20be28b7640f0f9d32f13bce160fdbcf99d885c93e4d1143442e6e0a763ca"
+    },
+    {
+      "bytes": 4820,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/boundaries.jsonl",
+      "sha256": "3d3edf17c263c2ab2482122f223d74921f49ece121f3a7fe37293ae843ac1157"
+    },
+    {
+      "bytes": 2662,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/environment.json",
+      "sha256": "e68652fb4004996fcce51a817d8eac61ffc34331afe9b2d04d6f407796d0d14d"
+    },
+    {
+      "bytes": 22155,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/events.jsonl",
+      "sha256": "56630b67dc8cb16aed8d385c4dc0754ab6ecbdb26e9da6892042943f07e63afc"
+    },
+    {
+      "bytes": 3235,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/job.json",
+      "sha256": "4b0dc5d8e608209e699a5ddfe4d6b284905b0ebff9b6cf6062282e67254df582"
+    },
+    {
+      "bytes": 2490,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/manifest.json",
+      "sha256": "53f856da7424f4d7460762650058d9ca15563c3d4443aabeace68902523d8f9c"
+    },
+    {
+      "bytes": 17857,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/official/trajectories/send_message_with_contact_content_cellular_off/conversation.json",
+      "sha256": "ad9ef41f57a789463052892bcb86ed486a1a5d5d583bc608305f80563d0fafb6"
+    },
+    {
+      "bytes": 36432,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/official/trajectories/send_message_with_contact_content_cellular_off/execution_context.json",
+      "sha256": "eeba349664ea9a0a4a4a7ca72eda88ac20529b00f30d416159c1128266c315a1"
+    },
+    {
+      "bytes": 6738,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/official/trajectories/send_message_with_contact_content_cellular_off/pretty_print.txt",
+      "sha256": "77004057eb66a5a58f643fc9d6d1e05c2648adba81d18dd679d1ca60aeb757f3"
+    },
+    {
+      "bytes": 4114,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/result.json",
+      "sha256": "a3fba881e5ef6f2d2ca4fd718e6e5f1079166fe72c04ebce729444c683fc785e"
+    },
+    {
+      "bytes": 17289,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/samples.jsonl",
+      "sha256": "78850ae7a203306753f8ca573adab430c9792c872dffee8aae1bcf496fbfc142"
+    },
+    {
+      "bytes": 15329,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/scenario_context.json",
+      "sha256": "b58e3ea0f2917af45628f2a6ee9243b3727e80199085bbda72183c160486a48c"
+    },
+    {
+      "bytes": 6821231,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/supplemental_measurements.json",
+      "sha256": "5b60e4ba593f557f53ed468f21242cd775d81144496f06d452dec799bf1678d1"
+    },
+    {
+      "bytes": 907,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/worker.stderr",
+      "sha256": "9cc6b835b4f1e2f8f51b85bf936806c5acbe5bda632437d0633b78bba23e864e"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/worker.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 525,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/ATTEMPT_COMPLETED.json",
+      "sha256": "cdec502c26267cf0725083dfeac3c817bec81b29eaad896b0d41196a4d144a97"
+    },
+    {
+      "bytes": 499,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/ATTEMPT_STARTED.json",
+      "sha256": "0c15bdf27e630a22ed011e89a94b58da70a3c47bd21dacee832d534bdaaf87b2"
+    },
+    {
+      "bytes": 4829,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/boundaries.jsonl",
+      "sha256": "be4b82891311f7287fb4ac23f72bae80d41526b3083b1811285f4bc5ff56ce1b"
+    },
+    {
+      "bytes": 2662,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/environment.json",
+      "sha256": "5461edbff4c37ceef9b9ea623b1ad29b1f3e822dcdaac3e6f4d44947ff850d75"
+    },
+    {
+      "bytes": 25900,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/events.jsonl",
+      "sha256": "deaf6b252c64ac5ec287363f7f0e510096112d15839503086d9fb485a53a34a7"
+    },
+    {
+      "bytes": 3251,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/job.json",
+      "sha256": "99e7b5a0197f13e326a50093c1726393b73241c60e224f561852bd4397a70521"
+    },
+    {
+      "bytes": 2516,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/manifest.json",
+      "sha256": "525753ba277d600ee3a642986ba39a75ad29615555f62c750e7097f9129ca6a1"
+    },
+    {
+      "bytes": 25639,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/conversation.json",
+      "sha256": "c117d65b5511250d327e4763900270da8030b05a48979d4b17560a91e8160101"
+    },
+    {
+      "bytes": 47070,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/execution_context.json",
+      "sha256": "f687c2f5114bee6e18c93f76d6a6e0b4e17c48f7509c4cbc5afd847bd946e846"
+    },
+    {
+      "bytes": 6615,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/official/trajectories/modify_contact_with_message_recency_multiple_user_turn/pretty_print.txt",
+      "sha256": "0c1015b5d13f9fd322d6ba038e0f0972e59c21f74bfeb1f0a687af24eae80e09"
+    },
+    {
+      "bytes": 4154,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/result.json",
+      "sha256": "21f7522e306dd118bea3cdee455d4ee62baa638fd937371b6177e20f63c0db51"
+    },
+    {
+      "bytes": 35555,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/samples.jsonl",
+      "sha256": "aa9bf8f553206c3f1c937eb7ef89ab051761cfc34df1ab6cd42c7f353254ab37"
+    },
+    {
+      "bytes": 19672,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/scenario_context.json",
+      "sha256": "0cc29dc52a81e44f5469b63cac7dadc29e02146fa83cf1cc5b519bc68189cebd"
+    },
+    {
+      "bytes": 13939754,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/supplemental_measurements.json",
+      "sha256": "c0706b837614be5b69c240147e2a14a4639f9c832214c604f6711f7941092e36"
+    },
+    {
+      "bytes": 1314,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/worker.stderr",
+      "sha256": "0d53ea743afc29f99784a72dca6f355a196f433f79f1e15ff3f002a225318585"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/worker.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 524,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/ATTEMPT_COMPLETED.json",
+      "sha256": "ce1cc6be2623906fe847b075b8b64387b419c387fd138a2e0bb44f19a561cb1f"
+    },
+    {
+      "bytes": 483,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/ATTEMPT_STARTED.json",
+      "sha256": "6481acda696a70b4c5a7abcaefd3adaa09248c26db725a0fb1267cf60a519b90"
+    },
+    {
+      "bytes": 4818,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/boundaries.jsonl",
+      "sha256": "963b76b2e88bbfcfd891b706723ab01d45401155a91995887edacb3389a5923f"
+    },
+    {
+      "bytes": 2662,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/environment.json",
+      "sha256": "7048bb25102a9e305c54f38df2e73126dfdb719697c42f1961cc2d3f5081b7b5"
+    },
+    {
+      "bytes": 22134,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/events.jsonl",
+      "sha256": "4b46de2324bb688b14b631b2844805738d3f6bbda17d2a0c855ec99f726b8258"
+    },
+    {
+      "bytes": 3235,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/job.json",
+      "sha256": "a095ac3443bb75201720126742dbe566562dbcf5070647aa402c5d244cffcbfa"
+    },
+    {
+      "bytes": 2490,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/manifest.json",
+      "sha256": "f23b83faa3ce28f5b4e373e13073f6d3d9b5470c5994a1780e3a6ecf67febfbb"
+    },
+    {
+      "bytes": 17877,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/official/trajectories/send_message_with_contact_content_cellular_off/conversation.json",
+      "sha256": "ae022d58b749d045370b91548e5214fea234ae306b1131021ab518d956fe284a"
+    },
+    {
+      "bytes": 36452,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/official/trajectories/send_message_with_contact_content_cellular_off/execution_context.json",
+      "sha256": "fcb23a80ad69698adf8d3303c61608c08ef77fc1eb36f7d6509822f957a00174"
+    },
+    {
+      "bytes": 6738,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/official/trajectories/send_message_with_contact_content_cellular_off/pretty_print.txt",
+      "sha256": "a6f701308718c989d1aca715cae0e7d03d716f33898d941573f5dc8532d8e8d1"
+    },
+    {
+      "bytes": 4114,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/result.json",
+      "sha256": "1f60059cc49e2285c2c056ba2bc47aef7e2fa608d332db063c5e094f001d39ce"
+    },
+    {
+      "bytes": 18559,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/samples.jsonl",
+      "sha256": "3f0b882a698395af91ce6029fc749933252bc8a80995782e96ed2e53ca1f8b8a"
+    },
+    {
+      "bytes": 15329,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/scenario_context.json",
+      "sha256": "6396554590cbac8438d67c9118749017e773afd55189bb544fbce168507932e0"
+    },
+    {
+      "bytes": 7317102,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/supplemental_measurements.json",
+      "sha256": "78691ea76fbc5aed4db2da54d6806a7bda44d9ae18e985948f6f3decdb8f6553"
+    },
+    {
+      "bytes": 907,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/worker.stderr",
+      "sha256": "00fb13f1e320e56c0c906b088195827f6da801608838a9f28a6128263565f768"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/worker.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 525,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/ATTEMPT_COMPLETED.json",
+      "sha256": "5f701a8dd68cab24bc0494d621451421e1e5c9a86833815a64e41ef52443e966"
+    },
+    {
+      "bytes": 479,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/ATTEMPT_STARTED.json",
+      "sha256": "cc77fb372e669b137555fe612a290d1e5379743a3b9aea1d80690e5b35d09d3c"
+    },
+    {
+      "bytes": 4820,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/boundaries.jsonl",
+      "sha256": "8f5ee2679882142de6d5bf9e947cd1fe9adde461e1d01f2edba52454e20c0e8e"
+    },
+    {
+      "bytes": 2662,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/environment.json",
+      "sha256": "c94651da3153e51449316e86aa23804fe16c564e12cda70efe7e31e441085e94"
+    },
+    {
+      "bytes": 22064,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/events.jsonl",
+      "sha256": "9f5fb3f471de0aee49ec2d62791518adbae5948df8fa53ab5004afb502d86ac5"
+    },
+    {
+      "bytes": 3231,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/job.json",
+      "sha256": "a42a1ed901f8237cd86e313f0c65a698d9261a18386d8d38830e274f9721e49e"
+    },
+    {
+      "bytes": 2484,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/manifest.json",
+      "sha256": "b316eb846f5215cb1ad2f3de6ff1f1282620c2eaceeb63811ada70316c610fff"
+    },
+    {
+      "bytes": 10024,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/official/trajectories/add_reminder_content_and_week_delta_and_time/conversation.json",
+      "sha256": "6a90dd71ea93b50bdc4aa6b998468452fa8cf1ba06766aeb54bec2727b904d4b"
+    },
+    {
+      "bytes": 33785,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/official/trajectories/add_reminder_content_and_week_delta_and_time/execution_context.json",
+      "sha256": "2355749a19b05420dc1be6b134c65f6caa13dafda34c395f0d9731dc14cbc21c"
+    },
+    {
+      "bytes": 6738,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/official/trajectories/add_reminder_content_and_week_delta_and_time/pretty_print.txt",
+      "sha256": "3735f6599df0b7b435eac6ab4d487634f7f3d3b53cdb754c212830a46fca3c89"
+    },
+    {
+      "bytes": 4003,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/result.json",
+      "sha256": "2bef46e7660e93880f3ea4ebbf7c177eab743c4d3ad5682c03ec17cd74cbfb0a"
+    },
+    {
+      "bytes": 18554,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/samples.jsonl",
+      "sha256": "5a375b3676bb471c35fcf6c045db29895f4ed446cdd4c3761730291330a3865b"
+    },
+    {
+      "bytes": 11933,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/scenario_context.json",
+      "sha256": "55622c17b63ef235a85fb525978fe531e86b0a771c3935c03f8f424b3a64472c"
+    },
+    {
+      "bytes": 7317110,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/supplemental_measurements.json",
+      "sha256": "5b6f36638d134cfd0232482878d4d3a3b66a8100af657108c83515dade68ff2b"
+    },
+    {
+      "bytes": 889,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/worker.stderr",
+      "sha256": "05bc3cfd1940f0024803137999e9786c67ed58a0c37180bd9d86196f8d2e8a10"
+    },
+    {
+      "bytes": 0,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/worker.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 206,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/ATTEMPT_COMPLETED.json",
+      "sha256": "f98ca2f30216419fee4ecaade8fb4c0123af1eb44d824e65b3c879c42dfe7326"
+    },
+    {
+      "bytes": 299,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/ATTEMPT_STARTED.json",
+      "sha256": "5ce8b3e539209b9aec0a29e7c0b4db90a26ec6e53da8a77f919a335cc29edb4b"
+    },
+    {
+      "bytes": 5693,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/agent/document-tools-agent.txt",
+      "sha256": "f846fbce001a692753f7b96eb49ed76b9ec9b450a58672124a34248acc75a39a"
+    },
+    {
+      "bytes": 45266,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/agent/events.jsonl",
+      "sha256": "07fb59ecd4ab124ac3fcad96022c352aea3b6588c40eccfb07c8fa26fd539916"
+    },
+    {
+      "bytes": 34157,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/agent/llm_call_1.json",
+      "sha256": "e4c678b7352e47ae086730b9dd15acc70f8eab386cea695f43e521dacaa6540b"
+    },
+    {
+      "bytes": 62153,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/agent/llm_call_10.json",
+      "sha256": "c4e6570c64a394d18f7ca88b2cbb93122a8435e2072fdb8ab58da6515d2c19b8"
+    },
+    {
+      "bytes": 76578,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/agent/llm_call_11.json",
+      "sha256": "26e2e270840e18e8af8c0f9ed35f6fe1ceaa5711f60f0f21ba9a226e78525c5f"
+    },
+    {
+      "bytes": 73727,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/agent/llm_call_12.json",
+      "sha256": "127e95f3c3dde1ba0c801be880ce3b53bb4a2c2524ccd8b66d8f856628e28eff"
+    },
+    {
+      "bytes": 44602,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/agent/llm_call_2.json",
+      "sha256": "7e7b509249648557ad14144b209d7aad0a4fe5deb2f295e040e1a363eaa0bbd8"
+    },
+    {
+      "bytes": 49265,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/agent/llm_call_3.json",
+      "sha256": "b10665b18e06b3d2ca76c54a8d57c39a1fac5d000ed7765edc1a7719d8827791"
+    },
+    {
+      "bytes": 53563,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/agent/llm_call_4.json",
+      "sha256": "150feb51fee44cfeb2b7c31b31c90c42a1dbd1fc98f1927925f1debefbc1f38c"
+    },
+    {
+      "bytes": 51013,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/agent/llm_call_5.json",
+      "sha256": "0bfcbdb1ac6fc74f458a89f92665fe5b5955cfb18082945e57388a3bdddf3609"
+    },
+    {
+      "bytes": 53183,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/agent/llm_call_6.json",
+      "sha256": "c7c1d3ecb0f05f77cf19a244e42dc6d4753b6411827ebafbeff5641e38d43dfc"
+    },
+    {
+      "bytes": 64224,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/agent/llm_call_7.json",
+      "sha256": "1c3375668dc39d172820e3556c8c90bd3222fb12407cd2ffd3cc566fd16cf313"
+    },
+    {
+      "bytes": 60723,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/agent/llm_call_8.json",
+      "sha256": "537909f764ada9a209adae5b8453f302a54a123dfcee68d4b58d3adc01fdbf33"
+    },
+    {
+      "bytes": 60105,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/agent/llm_call_9.json",
+      "sha256": "f9510a1b45209e60b6eb68aebe247461ea1d8afdd4ecfc74aa2b252216b37a37"
+    },
+    {
+      "bytes": 4553,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/environment.json",
+      "sha256": "b4d76e5b35731af0808570446b67baa034408e44a7e7773284dc578662788547"
+    },
+    {
+      "bytes": 25617,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/manifest.json",
+      "sha256": "52da4209f67de07f99ed86361767351dfc51ebe85680535054068394a8286e0c"
+    },
+    {
+      "bytes": 825388,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/measurement.json",
+      "sha256": "18142fded8ea3728e7ebc7215b60034e91e8e38e6fc920038efb0bc2ed2c6c28"
+    },
+    {
+      "bytes": 1488953,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/summary.json",
+      "sha256": "a89831377596a5a5d7096fc9539d35e68a1af841e64a6a1213cd66d30c777b14"
+    },
+    {
+      "bytes": 67424804,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/supplemental_measurements.json",
+      "sha256": "33bed9bfb970ea67fe3f104b407353dc42dce862a808b09d9853ab52b7a8c140"
+    },
+    {
+      "bytes": 1018,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/verifier/ctrf.json",
+      "sha256": "eb5a0194b0d2d95ca122dab3d40eb9f8ed668d2fcde3a7067aa68a3786a6e248"
+    },
+    {
+      "bytes": 1082,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/verifier/original_task_description.txt",
+      "sha256": "506f5ee4d2d50c58cd9888f7cccc533cd93663a177802abf05d8389972780a38"
+    },
+    {
+      "bytes": 2,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/verifier/reward.txt",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "bytes": 6632,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/verifier/submission/excel_001_budget_bucket_totals_seed.xlsx",
+      "sha256": "270c356d74fbb477064ced547f5c7eaf94f9c7c1ac26863cad266437b4903956"
+    },
+    {
+      "bytes": 1823,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/verifier/task_metadata.json",
+      "sha256": "3cd03985af785be57928bd662a7e6c1d80bf284bbf405764121ee74a3ebfccca"
+    },
+    {
+      "bytes": 649,
+      "path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/verifier/test-stdout.txt",
+      "sha256": "0892d6a7aceb05b8c276faac1132f972e79bf303cb6e810081f6d5297a5f6192"
+    },
+    {
+      "bytes": 141345,
+      "path": "env/local-three-class-repeat-01-continuation-01/frozen-identity.json",
+      "sha256": "730d15b825819d265d6e371ab752c2c240186765bb813221c64be428f26f9082"
+    },
+    {
+      "bytes": 141345,
+      "path": "env/local-three-class-repeat-01-continuation-01/plan-identity.json",
+      "sha256": "730d15b825819d265d6e371ab752c2c240186765bb813221c64be428f26f9082"
+    },
+    {
+      "bytes": 15471,
+      "path": "env/local-three-class-repeat-01-continuation-01/protected-before.json",
+      "sha256": "df2dd6f85503b5979b4f554c79ce3fd2c4deed4ef2559dbdf32d19a32845c886"
+    },
+    {
+      "bytes": 45702,
+      "path": "env/local-three-class-repeat-01-offline-repair/source-before/scripts__local_three_class_repeat_01_combined_review.py",
+      "sha256": "307b5e1cf1736952d163456d8658bba4cdb40c9df42c64361dbd1aca0c7552df"
+    },
+    {
+      "bytes": 60405,
+      "path": "env/local-three-class-repeat-01-offline-repair/source-before/scripts__local_three_class_repeat_01_continuation_01_entry.py",
+      "sha256": "ea36c28df33012cf97480670e2ec5bba6cd585b779fd8e02abf5c1fdddda0d59"
+    },
+    {
+      "bytes": 3363,
+      "path": "env/local-three-class-repeat-01-offline-repair/source-before/tests__test_local_three_class_repeat_01_combined_review.py",
+      "sha256": "85e73597a5b0ae319dc92a9184e831f3050ac908e2fed9799a6604105c0a7b70"
+    },
+    {
+      "bytes": 819,
+      "path": "env/local-three-class-repeat-01/assistant-current-freeze.txt",
+      "sha256": "de5ecf241ad89d6de7cf01f0fc75f4a4730c2ea623b7e0d9f354ea4cf3f01b59"
+    },
+    {
+      "bytes": 3415,
+      "path": "env/local-three-class-repeat-01/closeout-manifest.json",
+      "sha256": "148d6c087c6f76a099280d2b5b00fdc3fd245336a047e24e5f46591a0ad9c27e"
+    },
+    {
+      "bytes": 8083,
+      "path": "env/local-three-class-repeat-01/closeout.json",
+      "sha256": "a0c124193d6075453cb2ce98604bd855758a235f7d819f5f5463cf4879d69f11"
+    },
+    {
+      "bytes": 1433,
+      "path": "env/local-three-class-repeat-01/coding-current-freeze.txt",
+      "sha256": "b5c9d1f12aa98e5ff791b02fad21034a6522f82c0629789d4b641e5657bf1598"
+    },
+    {
+      "bytes": 144838,
+      "path": "env/local-three-class-repeat-01/frozen-identity.json",
+      "sha256": "746f652c3025e6e0855a16210c92f77af623d9345fc790fd59f5e7cd016ee129"
+    },
+    {
+      "bytes": 199942,
+      "path": "env/local-three-class-repeat-01/history-before.json",
+      "sha256": "f2c0668c21b739ff271af13829b1c685bd33f067fd55a667bca254408b0c455e"
+    },
+    {
+      "bytes": 1126,
+      "path": "env/local-three-class-repeat-01/office-current-freeze.txt",
+      "sha256": "e2d552bbb1bcc8757a4d75f0f1dc0fc5c48f5275f2bda4f57ed257c8cdb73721"
+    },
+    {
+      "bytes": 144838,
+      "path": "env/local-three-class-repeat-01/plan-identity.json",
+      "sha256": "746f652c3025e6e0855a16210c92f77af623d9345fc790fd59f5e7cd016ee129"
+    },
+    {
+      "bytes": 71010,
+      "path": "env/local-three-class-repeat-01/preparation-manifest.json",
+      "sha256": "df4cf95743da4fc2b09b4d7e6d060f5b791ecf2ff917308d0470e3fbade0b4e0"
+    },
+    {
+      "bytes": 13778,
+      "path": "env/local-three-class-repeat-01/source-before/coding_measurement_volcano_01_entry.py",
+      "sha256": "7e06fc612b26c3a5f464f63395687d297227686f33d662c17ae744af54458f48"
+    },
+    {
+      "bytes": 25774,
+      "path": "env/local-three-class-repeat-01/source-before/local_three_class_repeat_01_entry.frozen.py",
+      "sha256": "25c55fc06ca15a3a3a4252b81bacb7fdb9d91820392b560019d2995830ee27ea"
+    },
+    {
+      "bytes": 53542,
+      "path": "env/local-three-class-repeat-01/source-before/volcano_three_chain_characterization.py",
+      "sha256": "aa47ba4ec1fec9cb3196ca5825bdddb8a86ad390c8190a898badb11ecadb91a3"
+    },
+    {
+      "bytes": 12491,
+      "path": "env/local-three-class-repeat-01/source-manifest.json",
+      "sha256": "a62c964a859fdb32602b0348c66ecc192ae7092bb2bc60fa2a9800afc929e708"
+    },
+    {
+      "bytes": 819,
+      "path": "env/local-three-class-repeat-01/venv-freeze.txt",
+      "sha256": "de5ecf241ad89d6de7cf01f0fc75f4a4730c2ea623b7e0d9f354ea4cf3f01b59"
+    },
+    {
+      "bytes": 682,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/directory_footprint.csv",
+      "sha256": "3f9c0e3838fc0c6cbeab0b30d514a02ab046ae98c7427ae8a5f7483480ed1640"
+    },
+    {
+      "bytes": 624193,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/figures/20261016T182559Z-09-r0-office.svg",
+      "sha256": "ede277ce3751026ddc9ebfc3188a56e3f5a6ef51572176921b8ca6424607184d"
+    },
+    {
+      "bytes": 845,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/figures/task-0-points.svg",
+      "sha256": "773fb7387b55a8c0b9d98946ad11db292b61c6896414be8496934594d7e30aec"
+    },
+    {
+      "bytes": 847,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/figures/task-1-points.svg",
+      "sha256": "0ca0d63777aa5bc01deb8f593e40f8a57f7ceb0551263784b6866c50864c09eb"
+    },
+    {
+      "bytes": 847,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/figures/task-2-points.svg",
+      "sha256": "346799b475e4accb46882172f0fb13c3f72a5771f7735738f3902c266b600ea7"
+    },
+    {
+      "bytes": 1504,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/figures/task-3-points.svg",
+      "sha256": "dcb7727d8abb1e551a0fc328fb4660b75f1a062dd6c7e71548ca40054ae94b04"
+    },
+    {
+      "bytes": 914981,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/figures/task-3-small-multiples.svg",
+      "sha256": "095e93a13a371941ba421dd030a89b2c343c32e0f0b1dc6bd8bb6741d51aa899"
+    },
+    {
+      "bytes": 860,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/figures/task-4-points.svg",
+      "sha256": "e4216a10323238bc0ac64c0bad7ccc9c116b511dce9710f8d41b5f7f8fb73522"
+    },
+    {
+      "bytes": 865,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/figures/task-5-points.svg",
+      "sha256": "4972af19e93593e1bfba68417dd1e11cbacc030de7be7100cb83bd159dbf4c11"
+    },
+    {
+      "bytes": 871,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/figures/task-6-points.svg",
+      "sha256": "769a19bc879598e562fdcfa49a94e8c090c02082b0f52452853e0d165c93fb89"
+    },
+    {
+      "bytes": 869,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/figures/task-7-points.svg",
+      "sha256": "edc57bceabd1aebe853baf92eaa6d19c10ea1ce3baba8a70b6953829687bd802"
+    },
+    {
+      "bytes": 879,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/figures/task-8-points.svg",
+      "sha256": "9b280897c34fc36dafdc44a29d9624061053a6620a2a6121d1aabf6a6fe59cd4"
+    },
+    {
+      "bytes": 264003,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/manifest.json",
+      "sha256": "3bcab58c3467863bf27ee2058cb79f3a1ca5d1df4959ce98e3336ae6e3a2ad87"
+    },
+    {
+      "bytes": 2429,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/operation_toolkits.csv",
+      "sha256": "6986a2b2e6ee20ef87c1cd0adc035b8f3989c36cb0eb89ebe49d25ae6bcda331"
+    },
+    {
+      "bytes": 117915,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/per_run.jsonl",
+      "sha256": "697c8c0ca78295d0e556d2c0fb63aa17ec82c237d55627d6e69303eef3c18d86"
+    },
+    {
+      "bytes": 1917853,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/series/20261016T182559Z-09-r0-office.csv",
+      "sha256": "0d7a7a20e219909d08f3466a2b7db88afefa4e6fd44da298ef2229a781e85ab8"
+    },
+    {
+      "bytes": 234331,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/summary.json",
+      "sha256": "0c3b8a3394a21e526d5ed017893ccaf95f33befa1e147d1a1e07560d9b32aace"
+    },
+    {
+      "bytes": 5141,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/summary.md",
+      "sha256": "7896f1a7aa7bce50c798123c5098ceaabf3e0de52899feea9de3f4135b72061c"
+    },
+    {
+      "bytes": 2879,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/task_statistics.csv",
+      "sha256": "c0698f3a4f2c646e6a1b7f8511d5db96946bb70176b4f0fcc8d98cae1e4afdcf"
+    },
+    {
+      "bytes": 15198,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/directory_footprint.csv",
+      "sha256": "cbeb35d61cf94a7301ada05827df3bf14b89f896a08fc091dd6098a58fdfba47"
+    },
+    {
+      "bytes": 624285,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261016T182559Z-09-r0-office.svg",
+      "sha256": "a30d73d93ef95fa6e72f682dc8713136f728b19c203592d0b5d69636e46e9964"
+    },
+    {
+      "bytes": 743414,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T023247Z-00-r0-coding.svg",
+      "sha256": "d57e93eed95c3131a6486d985d1a87da2d917b7a7ac327e4f48fdedb549ce3c7"
+    },
+    {
+      "bytes": 720634,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T023534Z-01-r0-coding.svg",
+      "sha256": "7acb9348be1dfff8afbe195bbbf3129715eb4d37db0dc9fed1c646c92c9350e4"
+    },
+    {
+      "bytes": 954229,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T023817Z-02-r0-coding.svg",
+      "sha256": "b4dc492777e44495024ad2cda7db62380033ddc6aa9822c8c9b6c09484c807c8"
+    },
+    {
+      "bytes": 795693,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T024149Z-03-r1-coding.svg",
+      "sha256": "d0e31d2586840226f770cc054679ab72b7ce82854637bfc7d040e39cbae44c13"
+    },
+    {
+      "bytes": 697459,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T024449Z-04-r1-coding.svg",
+      "sha256": "489e9c8973d849b32cee301bef1e6df48f7840c10e887d63e6f6cccc854b8b77"
+    },
+    {
+      "bytes": 67474,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T024718Z-09-r0-office.svg",
+      "sha256": "bb15adfa2e62b8421099ca1c262fa8d193e95393861eeb03aeaefe90c9f996c3"
+    },
+    {
+      "bytes": 69037,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T024744Z-10-r0-office.svg",
+      "sha256": "fbb80f601ea817d2e23b92ddd6aae5e1a1e0f95ea542b7a82ebd7c4495be9bd5"
+    },
+    {
+      "bytes": 69036,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T024811Z-11-r1-office.svg",
+      "sha256": "d663ce3b8bef3e58c0b3c81d022a661f361c9de70e1aa8a46b9d22c9dba2205a"
+    },
+    {
+      "bytes": 68441,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T024837Z-12-r1-office.svg",
+      "sha256": "2cc6360c9c286798f479f2a2741f90ad13d6b8ce5d293fa5fca627a022c024e4"
+    },
+    {
+      "bytes": 67472,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T024904Z-13-r1-office.svg",
+      "sha256": "ef98f34639550bb48e56864fb78f072484fb8ce8c0ac0fdd9185164f0716d297"
+    },
+    {
+      "bytes": 67477,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T024930Z-14-r2-office.svg",
+      "sha256": "5c9a776a082618bf7124c03ea37a27b72b1bb81a6bffa36159b1422aeb97485c"
+    },
+    {
+      "bytes": 69033,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T024956Z-15-r2-office.svg",
+      "sha256": "7f75922794b22723f729d44d8289201d5c866f5e687c61bd91f9785f58341033"
+    },
+    {
+      "bytes": 67477,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T025023Z-16-r2-office.svg",
+      "sha256": "2640606fea29035601fb7b4445f8276fb10eeb3df6dfc25530d615b883a5649e"
+    },
+    {
+      "bytes": 53144,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T025049Z-17-r0-assistant.svg",
+      "sha256": "1a1f4e1b6beb75a63dc9766c1f452aced92b0809d8f01df6b836646c836e8c6b"
+    },
+    {
+      "bytes": 53175,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T025108Z-18-r0-assistant.svg",
+      "sha256": "ab359076146e25e1ecc2097898ffba7b6241cd55e1fe4e4d7345554a2ec0fb57"
+    },
+    {
+      "bytes": 113199,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T025127Z-19-r0-assistant.svg",
+      "sha256": "b205355b57a19e462770452bc061eef25f6d0d909a4c12f7d33ccf1f4bde61ca"
+    },
+    {
+      "bytes": 59057,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T025213Z-20-r1-assistant.svg",
+      "sha256": "0069eae258d9fc578755a57e835f18680c596f01f1f6536ae9a80180cc2b7e02"
+    },
+    {
+      "bytes": 101400,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T025234Z-21-r1-assistant.svg",
+      "sha256": "8bee02c4e47f9d8a28e5f97d0ebf336c89c5ca6641998138ba8919d5f7500461"
+    },
+    {
+      "bytes": 57874,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T025315Z-22-r1-assistant.svg",
+      "sha256": "45d24cf63ed09d2f2814132c77f8f2b8101d0bca43d58176c9aa7de8845ac17f"
+    },
+    {
+      "bytes": 108471,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T025336Z-23-r2-assistant.svg",
+      "sha256": "f1a4f1c4b1018b00f684fb2e27aa89158072bc0bc23e574066bed399fd527123"
+    },
+    {
+      "bytes": 61395,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T025420Z-24-r2-assistant.svg",
+      "sha256": "a39e9e9f036e6c1acb5f423fc76bde273a3e7b1a6238caf8a244280e9f1cfebc"
+    },
+    {
+      "bytes": 61407,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/20261017T025442Z-25-r2-assistant.svg",
+      "sha256": "79c826c09a918c4064ca9d2cf23c47585025ff3bb52dd2dea15ba7e34aae81ae"
+    },
+    {
+      "bytes": 4302,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/task-points-Assistant-add_reminder_content_and_week_delta_and_time-continuation_frozen_profile.svg",
+      "sha256": "c7e3ca698026438615620dbdaf94d227bd3150e5ef8f56bfd59bf4c5a4a8021c"
+    },
+    {
+      "bytes": 4342,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/task-points-Assistant-modify_contact_with_message_recency_multiple_user_turn-continuation_frozen_profile.svg",
+      "sha256": "1bdaef814e97b612ccf49f405d57d6f625fb9b333a7d5064ab4ebb4f823ee969"
+    },
+    {
+      "bytes": 4337,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/task-points-Assistant-send_message_with_contact_content_cellular_off-continuation_frozen_profile.svg",
+      "sha256": "3d476315119548b1c82ccfe297546d9e94cedf607f738bb8ebff9f069fb45181"
+    },
+    {
+      "bytes": 3340,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/task-points-Coding-astropy__astropy-13236-continuation_frozen_profile.svg",
+      "sha256": "70e2e756b79b0a0e0a09224e7af802cc58a971a438639ff4af55ede11bf55cb8"
+    },
+    {
+      "bytes": 553,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/task-points-Coding-astropy__astropy-13236-planned_not_executed.svg",
+      "sha256": "dab3af2a0868e30d91e67aed581f873cd7576c4dc20b399395708417f676e8ac"
+    },
+    {
+      "bytes": 3220,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/task-points-Coding-astropy__astropy-13398-continuation_frozen_profile.svg",
+      "sha256": "acba4aed1c7e0c80ac0d23b0bb4d2efbfd50d4ef3194ba2d56e9d68deb1ceb22"
+    },
+    {
+      "bytes": 553,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/task-points-Coding-astropy__astropy-13398-planned_not_executed.svg",
+      "sha256": "a82a52891925b56dc9cb51d16775321595deaef33b8c19f8dad57e089be4ed5e"
+    },
+    {
+      "bytes": 2843,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/task-points-Coding-django__django-16485-continuation_frozen_profile.svg",
+      "sha256": "d098375b4f7fba69bb6464d24de3d8a1b5893b49f12c608ff420e657077b4f28"
+    },
+    {
+      "bytes": 551,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/task-points-Coding-django__django-16485-planned_not_executed.svg",
+      "sha256": "1acff1943b08a4741d3f8852acfe53ad2e5b934d3d5579c6f34a98024e51b1c4"
+    },
+    {
+      "bytes": 3561,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/task-points-Office-atomic__excel_001_budget_bucket_totals_seed-continuation_Office_route_mismatch.svg",
+      "sha256": "7a72154bbc975a000cc54e8aa91bb1e5e4902efd0d411efdb0e461d13f124b42"
+    },
+    {
+      "bytes": 2800,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/task-points-Office-atomic__excel_001_budget_bucket_totals_seed-historical_original_DeepSeek_identity.svg",
+      "sha256": "6efc297505a8ec1d6f2ed5ac1a1329f1ffd7e7e1136c8fff79e539803a095683"
+    },
+    {
+      "bytes": 4303,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/task-points-Office-atomic__pdf_004_audit_pages_reorder_seed-continuation_Office_route_mismatch.svg",
+      "sha256": "0056dc48706b7e9cc1372382ad796540b9aa319b2f19a35cea850ebe7d071b2d"
+    },
+    {
+      "bytes": 4297,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/figures/task-points-Office-atomic__ppt_008_bullet_editing_seed-continuation_Office_route_mismatch.svg",
+      "sha256": "b65503d6d20d0708acdb7a9e9a2805764acb38f140f504b37e0a0b7db50d85fe"
+    },
+    {
+      "bytes": 142349,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/manifest.json",
+      "sha256": "77a0fac08d0fc61b2341d5fa3432aadc29950dec2ac2924f9185e28bd4ddbcf2"
+    },
+    {
+      "bytes": 2681881,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/per_run.jsonl",
+      "sha256": "c498580377a7bb2570ae6f23c947bec692283ecd7da306198a29d8758bd8e054"
+    },
+    {
+      "bytes": 1561288,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261016T182559Z-09-r0-office.csv",
+      "sha256": "36dd6674a2e24cda7b084d8c8464af57a22cd110ba7f6c42c6485db135f5c55d"
+    },
+    {
+      "bytes": 2021996,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T023247Z-00-r0-coding.csv",
+      "sha256": "92e3cbd30beffb4aee184ade0d221d6e683a3fc8c47003e1f22c9a74527c9df6"
+    },
+    {
+      "bytes": 1965559,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T023534Z-01-r0-coding.csv",
+      "sha256": "67be474964e8da196b112ad632520a750d4cfd4108ed05971e58cfb6025a78c6"
+    },
+    {
+      "bytes": 2597817,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T023817Z-02-r0-coding.csv",
+      "sha256": "6a98458d9a3d6741fc07ab4e3337f1d7e9adb9871ecea8df200714fa47becb13"
+    },
+    {
+      "bytes": 2168861,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T024149Z-03-r1-coding.csv",
+      "sha256": "2ff920b58988875aa7407592682e0439e61c5bc3001dcdfbb3a3a85b795695aa"
+    },
+    {
+      "bytes": 1889445,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T024449Z-04-r1-coding.csv",
+      "sha256": "cdeeb4d6e6f7df5df9994385ee9d9936ddae19c131344b07f4e17c047c2b3c74"
+    },
+    {
+      "bytes": 153760,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T024718Z-09-r0-office.csv",
+      "sha256": "7e3cc0f0ae75c9b13251234d50773d0bd053e407fd25c0ea44a1d754620d4b85"
+    },
+    {
+      "bytes": 158422,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T024744Z-10-r0-office.csv",
+      "sha256": "03ff9bbd62ae1ce79a8d6632629ede56e9cdda0108284cba7e069872713f89a2"
+    },
+    {
+      "bytes": 158307,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T024811Z-11-r1-office.csv",
+      "sha256": "21bbe828e98bc2f8215a7677a209a37461c03693c29f2a56aece9e9fbab0c619"
+    },
+    {
+      "bytes": 156640,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T024837Z-12-r1-office.csv",
+      "sha256": "dd98fe0142f5159290164e44a7173dc4d25ef86469c7d6696ded979757e159a1"
+    },
+    {
+      "bytes": 154275,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T024904Z-13-r1-office.csv",
+      "sha256": "c1a8c351b511fba26b47cf480d29363cd1198b133f3aa84903cb03df1f62a290"
+    },
+    {
+      "bytes": 154977,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T024930Z-14-r2-office.csv",
+      "sha256": "11410fd8c8aa255d3f021404ab6f1f4ea9a4ef2e86adaf275d202f11ebc1c339"
+    },
+    {
+      "bytes": 158666,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T024956Z-15-r2-office.csv",
+      "sha256": "0640ce3404b58d8ae66176a58c08409a07d27744e181aad33e0cabf633f7eba7"
+    },
+    {
+      "bytes": 154088,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T025023Z-16-r2-office.csv",
+      "sha256": "600191e8dd50e8481e3e3034c8b1faa32d1cb65d2d04533a74a47dba2f1818f6"
+    },
+    {
+      "bytes": 114372,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T025049Z-17-r0-assistant.csv",
+      "sha256": "02e4c88afc2189d2d76d958e03e57e6073035b9aa393919b2d26ab7527aba6d6"
+    },
+    {
+      "bytes": 114091,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T025108Z-18-r0-assistant.csv",
+      "sha256": "6f9cc694c92c0cca2240b790e2a59c8100ef93038084c0585b19c461e236e5b8"
+    },
+    {
+      "bytes": 271198,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T025127Z-19-r0-assistant.csv",
+      "sha256": "924193bb4a609104923662500a3fb488cfe31a19354c107167ee0a3e7610292d"
+    },
+    {
+      "bytes": 129344,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T025213Z-20-r1-assistant.csv",
+      "sha256": "0b2887218bb93408fe97033b4da949daa115b55382413383676947a9e21e8e06"
+    },
+    {
+      "bytes": 241492,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T025234Z-21-r1-assistant.csv",
+      "sha256": "43b923152d90fe2f36dd705537f365f6722b109978888add1fcc529177176b8e"
+    },
+    {
+      "bytes": 126963,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T025315Z-22-r1-assistant.csv",
+      "sha256": "ada3e6f8d37bdf2e54773591fbe5c4adfe864158858425df9c8401a041487a2c"
+    },
+    {
+      "bytes": 259561,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T025336Z-23-r2-assistant.csv",
+      "sha256": "a0b8103c81feca1c692a6b9aa378803b64852e0674bbd9d1324e4ca5e619d59e"
+    },
+    {
+      "bytes": 135744,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T025420Z-24-r2-assistant.csv",
+      "sha256": "c7b200d19ebf9d6c7b403597977b35b870ed2b72c390a98a11cf952bfbdb992a"
+    },
+    {
+      "bytes": 135311,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/series/20261017T025442Z-25-r2-assistant.csv",
+      "sha256": "5c01dc6b037feb8cab31fb7e857afa8814409685b16787fdc04b5e0422d7c325"
+    },
+    {
+      "bytes": 337770,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/summary.json",
+      "sha256": "d41e202582d1112769bba364e0f3905d49d30312a2438b5b5e0603e4957192d8"
+    },
+    {
+      "bytes": 18337,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/summary.md",
+      "sha256": "6f74176f4b3e7a37f057f7f7a24afa5a5e41e21274e96ba12ce7b69cd4fcf301"
+    },
+    {
+      "bytes": 129302,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/task_statistics.csv",
+      "sha256": "d1482a3f7477ef3a18d8dee351d66268339f5ba4506849af732597981038ed47"
+    },
+    {
+      "bytes": 67923,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/tool_operations.csv",
+      "sha256": "95460edd5d56e371a554e532f2833f2feac8cf89d36ba2177c208b019a959283"
+    },
+    {
+      "bytes": 331,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/ATTEMPT_STARTED.json",
+      "sha256": "795c1204d631ac2ec52cd639f5c2f8a3e0a810d1299e1e082bbc72543aef292a"
+    },
+    {
+      "bytes": 37976,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/VALIDATION.json",
+      "sha256": "9e0b14b31ac7b20810d40207d16cc06f1f0803adf00e9d2d27c61b998b3b89cc"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/entry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1156,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023247Z-00-r0-coding/run-report.json",
+      "sha256": "9c2f863e9cbd98751c7cac734722418dc881972bc95d51e28a3e45d1d82a8437"
+    },
+    {
+      "bytes": 333,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/ATTEMPT_STARTED.json",
+      "sha256": "5ade09147d81d99e87dcb9c623dc05928de47a6bdae1c09c9380034709ddee01"
+    },
+    {
+      "bytes": 37978,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/VALIDATION.json",
+      "sha256": "98817bbe9aafd421bafcb5b05d197cb2816ba6acd93efcdf95e519630ee49db7"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/entry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1158,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023534Z-01-r0-coding/run-report.json",
+      "sha256": "99561ac69ff5c1bab9071e6a842b3d32ed437d35e30be0014253ace558133d79"
+    },
+    {
+      "bytes": 333,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/ATTEMPT_STARTED.json",
+      "sha256": "282db51940f9ebdc9ceda7a8dc25883ecda6196a6bbf2921e8419b96e644dc72"
+    },
+    {
+      "bytes": 37979,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/VALIDATION.json",
+      "sha256": "8c9ac8ce40377e78c1ed4aa872898d42e8771b163db7eb3e5e575240be677996"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/entry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1160,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T023817Z-02-r0-coding/run-report.json",
+      "sha256": "63ca396fc4649ce2251e1c54fc72cd063070b7b2384dc5784238a7470d8b9d04"
+    },
+    {
+      "bytes": 333,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/ATTEMPT_STARTED.json",
+      "sha256": "d0b05e9f44f970ac8f2327f1c04b616656e63713e0f834f428b7c0aa72f0628c"
+    },
+    {
+      "bytes": 37978,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/VALIDATION.json",
+      "sha256": "2a59c4c9abfed09d1d6c096ea25f44257f0c7d06a2d97c77d4971a27c86356da"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/entry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1158,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024149Z-03-r1-coding/run-report.json",
+      "sha256": "f2f1cc4ab41b547a47e4cec1fc4e4115f2631ca0942f8e1971fbb750e5e5db99"
+    },
+    {
+      "bytes": 333,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024449Z-04-r1-coding/ATTEMPT_STARTED.json",
+      "sha256": "4bd075c763adf0c555a81da6d02605ff097c2b1d4fd57da894f9792e0ba3add2"
+    },
+    {
+      "bytes": 37689,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024449Z-04-r1-coding/VALIDATION.json",
+      "sha256": "32094644e7a9393dd928ed3d81f0d9a056246b2e4ea76098f3409a383617c755"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024449Z-04-r1-coding/entry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1173,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024449Z-04-r1-coding/run-report.json",
+      "sha256": "7a79106ea55baf40a251f9f9f07d475da49a8736c80b3fd44a0b27393862c26a"
+    },
+    {
+      "bytes": 347,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/ATTEMPT_STARTED.json",
+      "sha256": "9329af8194c15e300b6b1ed8256bb8ab9e532940303e51eeb22298e0a3d92043"
+    },
+    {
+      "bytes": 37935,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/VALIDATION.json",
+      "sha256": "f6d123619a26cec2976642571a36ece56424f76f9c3bc114bd9dd6dd44945928"
+    },
+    {
+      "bytes": 492,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/entry.log",
+      "sha256": "c5d25280c1f27fe99b295c053123a89bfc1576c8d29e5c4f4b6d81e9fa4c301e"
+    },
+    {
+      "bytes": 153837,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024718Z-09-r0-office/run-report.json",
+      "sha256": "ff049ffc7674ebdfa028e1f9ada58c85039ac9e470fa563f7504b4916adbfeb5"
+    },
+    {
+      "bytes": 353,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/ATTEMPT_STARTED.json",
+      "sha256": "95822b242124e8eb0f5b5569104798dd492d3b92765b35f025ff35a4b93bf94d"
+    },
+    {
+      "bytes": 37942,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/VALIDATION.json",
+      "sha256": "83b5a046ed2bdf2b6d4d10ad53084867dc1fed6ad9e70cf0257ad1567b09ba2d"
+    },
+    {
+      "bytes": 492,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/entry.log",
+      "sha256": "c5d25280c1f27fe99b295c053123a89bfc1576c8d29e5c4f4b6d81e9fa4c301e"
+    },
+    {
+      "bytes": 158827,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024744Z-10-r0-office/run-report.json",
+      "sha256": "ff3dd43f23758dc0d8968e356a6df15cf75881d7a6bf1d0209d729e40ecf4f0d"
+    },
+    {
+      "bytes": 348,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/ATTEMPT_STARTED.json",
+      "sha256": "8ecd506a911f6d0e4f457a1d13d37e9baaa1e6a382ea9fe499b8194601939852"
+    },
+    {
+      "bytes": 37937,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/VALIDATION.json",
+      "sha256": "748166253a78c056a659a28e4e4994e225c9014816cbbb432387585221552c96"
+    },
+    {
+      "bytes": 492,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/entry.log",
+      "sha256": "c5d25280c1f27fe99b295c053123a89bfc1576c8d29e5c4f4b6d81e9fa4c301e"
+    },
+    {
+      "bytes": 158804,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024811Z-11-r1-office/run-report.json",
+      "sha256": "a7990d158a08110f268e1bec07b4a3c510bf13afc7744003708c45f1911cd076"
+    },
+    {
+      "bytes": 353,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/ATTEMPT_STARTED.json",
+      "sha256": "5ff1d4e9f209b6fdb74c023d4fb15eee785f54ba4fa7fd597572a0408e8c7aaf"
+    },
+    {
+      "bytes": 37941,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/VALIDATION.json",
+      "sha256": "7a9aa861c6448c3425c74c1574c68b246b290b29c456c10e7320649f42cc19fd"
+    },
+    {
+      "bytes": 492,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/entry.log",
+      "sha256": "c5d25280c1f27fe99b295c053123a89bfc1576c8d29e5c4f4b6d81e9fa4c301e"
+    },
+    {
+      "bytes": 158782,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024837Z-12-r1-office/run-report.json",
+      "sha256": "a4b8fcfd86551c3edbd4805b92584e95b512500a9f842588128150554874c728"
+    },
+    {
+      "bytes": 356,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/ATTEMPT_STARTED.json",
+      "sha256": "cf26764b95f4251c0d2088e5d872c8b9198d944523150deeed1e7808ce0a9956"
+    },
+    {
+      "bytes": 37945,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/VALIDATION.json",
+      "sha256": "011942cdecb66f6de0544b44302dadd1820717dcc371293c24187e02420d6bc3"
+    },
+    {
+      "bytes": 492,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/entry.log",
+      "sha256": "c5d25280c1f27fe99b295c053123a89bfc1576c8d29e5c4f4b6d81e9fa4c301e"
+    },
+    {
+      "bytes": 153850,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024904Z-13-r1-office/run-report.json",
+      "sha256": "1808328396fcaf0e3f53cd257dc2c989c1e2785bb1b2986ab9029efdb63aefe7"
+    },
+    {
+      "bytes": 353,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/ATTEMPT_STARTED.json",
+      "sha256": "4798476c92a8c5b8cc71f70b770a7d6c0262d5fa7629af04afc8245c1fe667c6"
+    },
+    {
+      "bytes": 37941,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/VALIDATION.json",
+      "sha256": "76d372c4b42ff7552d6ed25575755cb98f3c08c034b8957ba6a319624b19acb6"
+    },
+    {
+      "bytes": 492,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/entry.log",
+      "sha256": "c5d25280c1f27fe99b295c053123a89bfc1576c8d29e5c4f4b6d81e9fa4c301e"
+    },
+    {
+      "bytes": 153796,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024930Z-14-r2-office/run-report.json",
+      "sha256": "9acd5d0ebf68d540c8cdf927e99e03114b79fb007d76a8fa6ed21c991ff10706"
+    },
+    {
+      "bytes": 356,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/ATTEMPT_STARTED.json",
+      "sha256": "38f92f7b3be11062686c168420f1ee53d910da51ecf0b4d9e9e5411b0b1a73cb"
+    },
+    {
+      "bytes": 37945,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/VALIDATION.json",
+      "sha256": "5da682b4a0c8a6daa0ed38b8589ea131422b9a3c689f701e8d05e10d5cf613b0"
+    },
+    {
+      "bytes": 492,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/entry.log",
+      "sha256": "c5d25280c1f27fe99b295c053123a89bfc1576c8d29e5c4f4b6d81e9fa4c301e"
+    },
+    {
+      "bytes": 158829,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T024956Z-15-r2-office/run-report.json",
+      "sha256": "3b02a80df2a83f0549c648638052d4e63627a4a90e9848aa0b88f55429862186"
+    },
+    {
+      "bytes": 348,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/ATTEMPT_STARTED.json",
+      "sha256": "882a18a9608c54f6d304bcd215128741de1218e17a8b55b115faa5f98f10b636"
+    },
+    {
+      "bytes": 37937,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/VALIDATION.json",
+      "sha256": "127a7d56294662daafc79ab8ec35f2de24dd716ecfbaf074afb066ab32a1c412"
+    },
+    {
+      "bytes": 492,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/entry.log",
+      "sha256": "c5d25280c1f27fe99b295c053123a89bfc1576c8d29e5c4f4b6d81e9fa4c301e"
+    },
+    {
+      "bytes": 153832,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025023Z-16-r2-office/run-report.json",
+      "sha256": "e58456cd8fd7a5371247ab88e3ab1d9b4ac75b7f522d401358c67a4888896b48"
+    },
+    {
+      "bytes": 365,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/ATTEMPT_STARTED.json",
+      "sha256": "bb435452d2639d1fc33f3eddf3ef9356d372497b9579fb73f765370186f59056"
+    },
+    {
+      "bytes": 37262,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/VALIDATION.json",
+      "sha256": "e74f25f7af8651ddd700d6c5a3a5256520d083352289e3df304ae3ee328d7002"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/entry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1212,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/outer-manifest.json",
+      "sha256": "d03c07ff9996e6c929979ed72e49bfbd114533f88d2e0e0c118e49c6214443d0"
+    },
+    {
+      "bytes": 58007,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025049Z-17-r0-assistant/run-report.json",
+      "sha256": "5d17d464c877388e952d4a1e50ea606a1a413d8f6c72cc17cd0351f213f11630"
+    },
+    {
+      "bytes": 363,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/ATTEMPT_STARTED.json",
+      "sha256": "d8e4a7b97fa4cb53d3ac923915ea75b6fbfef66ac45855518ffc3a71e39c60c8"
+    },
+    {
+      "bytes": 37124,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/VALIDATION.json",
+      "sha256": "385e092e3ee56d36f6ac117d8bd00899911a1ade84125e5a517a9df4838043c2"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/entry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1212,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/outer-manifest.json",
+      "sha256": "e3b1857bfdae6307f7998f86108ddd2cfee4a97eeb40bc88bb7dfadb31c06553"
+    },
+    {
+      "bytes": 57911,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025108Z-18-r0-assistant/run-report.json",
+      "sha256": "599c731f389cd71c7a490629fbe640ccc7b7b2fea26d8dd5994e7154517a1ee5"
+    },
+    {
+      "bytes": 373,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/ATTEMPT_STARTED.json",
+      "sha256": "9fa75185d1041691d5d5cb401cf96289d7c80046fe1013a895cad5a94c4d4a11"
+    },
+    {
+      "bytes": 37996,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/VALIDATION.json",
+      "sha256": "5be6a9c8cfed66a90f2a990d98049d07f6c40f006fd5e749f349baf1a37ec56d"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/entry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1213,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/outer-manifest.json",
+      "sha256": "004560da7207a80ee56b722b56e0b5ff9fd8fb8b5ca541d80aeb2d985594c7d4"
+    },
+    {
+      "bytes": 112161,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025127Z-19-r0-assistant/run-report.json",
+      "sha256": "2a8f9732da55aaa8ed9eb87cc2b4bcaa36a8c2e5cc26a159207c11379a69a604"
+    },
+    {
+      "bytes": 363,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/ATTEMPT_STARTED.json",
+      "sha256": "660a3571f9e8b744802ae28313daab56bc019a973b48a2b99a3c53edf31aade9"
+    },
+    {
+      "bytes": 37125,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/VALIDATION.json",
+      "sha256": "70f91921ff29d8eb0136f76a9bfdbbd7cc693d064245878353cea60cac063072"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/entry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1212,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/outer-manifest.json",
+      "sha256": "94ee9b0a6c4e39a5fe828f6630a56a922b69a1bdc59c1f58f723be67c06bcc9b"
+    },
+    {
+      "bytes": 63024,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025213Z-20-r1-assistant/run-report.json",
+      "sha256": "ad3da82679e5d480922e6fb17d8e5b11e65ab19dc0251c0f965252302863f8dd"
+    },
+    {
+      "bytes": 373,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/ATTEMPT_STARTED.json",
+      "sha256": "9a82bdbaa2a7f4680abac1bbb207957ee94ac734b745b5e53d1d488657421afd"
+    },
+    {
+      "bytes": 37996,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/VALIDATION.json",
+      "sha256": "fa362435a6daab693d85ca4fcde268a44448467fd904faf344a11b19c6f3f584"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/entry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1213,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/outer-manifest.json",
+      "sha256": "20354f324cacaf280dd7ca068b3f8a8b06610dfc22ca4c03b8976ef247676704"
+    },
+    {
+      "bytes": 101644,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025234Z-21-r1-assistant/run-report.json",
+      "sha256": "a42893f3f86efc76c65084e0569205be549fac6e3016ea39986cf4de76cb3cc2"
+    },
+    {
+      "bytes": 365,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/ATTEMPT_STARTED.json",
+      "sha256": "83b023ea7d554e9325bd8d87630e6c37d3ba60fea409964807f11e4311c9f732"
+    },
+    {
+      "bytes": 37264,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/VALIDATION.json",
+      "sha256": "a79c795af3375010ab3d21c609f67d734093f65b00facd3d2fcb5f8aae24ae21"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/entry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1212,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/outer-manifest.json",
+      "sha256": "19e5e0ea4c221ce9e28396cd1ed4a0390fa3d7a68e2638bec95ee1a33e056f28"
+    },
+    {
+      "bytes": 62388,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025315Z-22-r1-assistant/run-report.json",
+      "sha256": "9a2d597dc7ffcacc619b9678a0943ee02518d17ee38f78279aa872ce61c29762"
+    },
+    {
+      "bytes": 373,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/ATTEMPT_STARTED.json",
+      "sha256": "1a107105a091fb06efc7ebf5463e5bb6723b52cc70f7a63df3d6280f283c5cc3"
+    },
+    {
+      "bytes": 37996,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/VALIDATION.json",
+      "sha256": "2faa7d7da7d7dafb8bbb753cfc5a0882a1de20af06e4ed9c186240e8b82bd9b5"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/entry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1213,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/outer-manifest.json",
+      "sha256": "06e9a5a9cbe7527dd41305b1809e6f0da593418c691353b8a3e8d530e390bdde"
+    },
+    {
+      "bytes": 107996,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025336Z-23-r2-assistant/run-report.json",
+      "sha256": "a94d8146b2fded049adf6036b057b6df489ce71cebfc4f3908328ccd6240176a"
+    },
+    {
+      "bytes": 365,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/ATTEMPT_STARTED.json",
+      "sha256": "ac9db07bd101ad22d75c57088031f56a7e29ba8e9bb590bf6cac0c9e5ccf2df6"
+    },
+    {
+      "bytes": 37265,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/VALIDATION.json",
+      "sha256": "500d053da5bbea41df4caf78b524423667a02d213a4b2561bb4559342aa46e5e"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/entry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1212,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/outer-manifest.json",
+      "sha256": "36d83331f9667a6e57978a0baec9f7c4d000b1ffeb1749935d10a0e3b4fca865"
+    },
+    {
+      "bytes": 65551,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025420Z-24-r2-assistant/run-report.json",
+      "sha256": "6da32400577dce5cce94d173cc69c8b698cc410b58261876cfb2165681e27ec9"
+    },
+    {
+      "bytes": 363,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/ATTEMPT_STARTED.json",
+      "sha256": "f602a45908b1fce1f77dee2041db5ddb7befc3ccfa7a340bda84e0357dabf2c0"
+    },
+    {
+      "bytes": 37125,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/VALIDATION.json",
+      "sha256": "2c9362df59bd4955e983fdab6bfe3af48e6c6edb21af9d88779277b2903a4512"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/entry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1212,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/outer-manifest.json",
+      "sha256": "164ecf6a864243e813be54ace110d9e310e41217ed2e2918662a813b0980844b"
+    },
+    {
+      "bytes": 65156,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/20261017T025442Z-25-r2-assistant/run-report.json",
+      "sha256": "5975c2bea8ffeabacbd51f79c0b94dc4971f486466ffe50a970311766917843b"
+    },
+    {
+      "bytes": 4723,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/APPROVAL.json",
+      "sha256": "fbef40cf9417be80770dc564660580269f512dc22828df07b152cbb2b56a84b7"
+    },
+    {
+      "bytes": 537,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/ATTEMPT_COMPLETED.json",
+      "sha256": "d55557526411c0d8f5435ac5ea71727385d1b562b2d4ce1c6b5ad06921fdba77"
+    },
+    {
+      "bytes": 337,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/ATTEMPT_STARTED.json",
+      "sha256": "a721fae09f94f1fe6eedc810c5a619cb761a1d81f78cfef14c6a6aa1b995dda6"
+    },
+    {
+      "bytes": 988855,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/batch-summary.json",
+      "sha256": "edc82c15a57bdeb12f109a6049524e1b29a2ee4bf48396d8845a96dfdc9f5df2"
+    },
+    {
+      "bytes": 30260,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/manifest.json",
+      "sha256": "c0704f1f8f4b888cd8d1208f8fa7451ba64dff81011f48dd4c8e69c92958341f"
+    },
+    {
+      "bytes": 270,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/ATTEMPT_STARTED.json",
+      "sha256": "e80a42858a1696c4138f543bcfeb0cd9e675a3c0a2b41c054b1e4f12cc05837a"
+    },
+    {
+      "bytes": 588,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/VALIDATION.json",
+      "sha256": "ca7a6a4b695bae8a51a6d894ed6023b0da9db156213483ef63596368963332c5"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/entry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1902531,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/run-report.json",
+      "sha256": "e5a54de58277987d6d7400e0381768d691e0f1f06badad92cd6c168a0a2fe58f"
+    },
+    {
+      "bytes": 3957,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01/APPROVAL.json",
+      "sha256": "9c108729f2d8c287b863a022940e6e17decc3fa052875c5bbd3f36e7bb157574"
+    },
+    {
+      "bytes": 644,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01/ATTEMPT_COMPLETED.json",
+      "sha256": "b992d89b5ba293fd383d2b9f30c8fb586c61416491717ba093880b993a1a6fdf"
+    },
+    {
+      "bytes": 268,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01/ATTEMPT_STARTED.json",
+      "sha256": "675038602087bd0f65a4d61b39c28ad5ffe7063eec222bbac711f36e4c0b004c"
+    },
+    {
+      "bytes": 9264,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01/batch-summary.json",
+      "sha256": "6529306a51e9e9e59cd0303cfdb45074258cb491f2f06d600a3daddd51f07529"
+    },
+    {
+      "bytes": 2216,
+      "path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01/manifest.json",
+      "sha256": "bdeea91a852714ce338d351012d790ed3be2640ba0484e79575673d2465b4269"
+    },
+    {
+      "bytes": 49695,
+      "path": "scripts/docops_word_resource_01_entry.py",
+      "sha256": "2867bfa00727d1d02ff6a98adcd233af4eab618dadf5ed48eeb1482df2dc503e"
+    },
+    {
+      "bytes": 50718,
+      "path": "scripts/local_three_class_repeat_01_combined_review.py",
+      "sha256": "2b5a52142df469ad97d952eff4cc626bd6cc72fe7921b39015d273026d17be29"
+    },
+    {
+      "bytes": 63993,
+      "path": "scripts/local_three_class_repeat_01_continuation_01_entry.py",
+      "sha256": "865eaf8f0d35fda03a44b41cd812c2980d4cdc27eeeabbe7af5435ce507ca8cb"
+    },
+    {
+      "bytes": 57155,
+      "path": "scripts/toolsandbox_resource_pilot_02_review.py",
+      "sha256": "6a8c5426e54425754af14eefc8645a56ad3f1b499a4634f0d4409f62b057361b"
+    },
+    {
+      "bytes": 53617,
+      "path": "scripts/volcano_three_chain_characterization.py",
+      "sha256": "1e374a07185b1f22e1bdf40331dbea96d57d0b069fbf9a2f7efab0d54f00071f"
+    },
+    {
+      "bytes": 20084,
+      "path": "src/agent_workload_characterization/analyzers/public_operations.py",
+      "sha256": "5f92088f6c360316d30f0e7ad9cfff75856947be00d604b5c85be4ee3a230d76"
+    },
+    {
+      "bytes": 47352,
+      "path": "src/agent_workload_characterization/collectors/execution_measurement.py",
+      "sha256": "fd5bf70fdbcc366f61426fcb7b5de1b5c2e3e15b78e56ef4cfe5fbeca7b83243"
+    },
+    {
+      "bytes": 6578,
+      "path": "tests/test_local_three_class_repeat_01_combined_review.py",
+      "sha256": "69450757309539b5f7a65c36f0a0c541a081d1c684b889876370c3700dd7ab43"
+    }
+  ],
+  "manifest_note": "manifest.json intentionally not self-hashed; input records include exact raw and report files read after validating source manifests; v1 remains immutable; changed source originals are preserved under env/local-three-class-repeat-01-offline-repair/source-before",
+  "outputs": [
+    {
+      "bytes": 15198,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/directory_footprint.csv",
+      "sha256": "cbeb35d61cf94a7301ada05827df3bf14b89f896a08fc091dd6098a58fdfba47"
+    },
+    {
+      "bytes": 624285,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261016T182559Z-09-r0-office.svg",
+      "sha256": "a30d73d93ef95fa6e72f682dc8713136f728b19c203592d0b5d69636e46e9964"
+    },
+    {
+      "bytes": 743414,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T023247Z-00-r0-coding.svg",
+      "sha256": "d57e93eed95c3131a6486d985d1a87da2d917b7a7ac327e4f48fdedb549ce3c7"
+    },
+    {
+      "bytes": 720634,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T023534Z-01-r0-coding.svg",
+      "sha256": "7acb9348be1dfff8afbe195bbbf3129715eb4d37db0dc9fed1c646c92c9350e4"
+    },
+    {
+      "bytes": 954229,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T023817Z-02-r0-coding.svg",
+      "sha256": "b4dc492777e44495024ad2cda7db62380033ddc6aa9822c8c9b6c09484c807c8"
+    },
+    {
+      "bytes": 795693,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T024149Z-03-r1-coding.svg",
+      "sha256": "d0e31d2586840226f770cc054679ab72b7ce82854637bfc7d040e39cbae44c13"
+    },
+    {
+      "bytes": 697459,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T024449Z-04-r1-coding.svg",
+      "sha256": "489e9c8973d849b32cee301bef1e6df48f7840c10e887d63e6f6cccc854b8b77"
+    },
+    {
+      "bytes": 67474,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T024718Z-09-r0-office.svg",
+      "sha256": "bb15adfa2e62b8421099ca1c262fa8d193e95393861eeb03aeaefe90c9f996c3"
+    },
+    {
+      "bytes": 69037,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T024744Z-10-r0-office.svg",
+      "sha256": "fbb80f601ea817d2e23b92ddd6aae5e1a1e0f95ea542b7a82ebd7c4495be9bd5"
+    },
+    {
+      "bytes": 69036,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T024811Z-11-r1-office.svg",
+      "sha256": "d663ce3b8bef3e58c0b3c81d022a661f361c9de70e1aa8a46b9d22c9dba2205a"
+    },
+    {
+      "bytes": 68441,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T024837Z-12-r1-office.svg",
+      "sha256": "2cc6360c9c286798f479f2a2741f90ad13d6b8ce5d293fa5fca627a022c024e4"
+    },
+    {
+      "bytes": 67472,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T024904Z-13-r1-office.svg",
+      "sha256": "ef98f34639550bb48e56864fb78f072484fb8ce8c0ac0fdd9185164f0716d297"
+    },
+    {
+      "bytes": 67477,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T024930Z-14-r2-office.svg",
+      "sha256": "5c9a776a082618bf7124c03ea37a27b72b1bb81a6bffa36159b1422aeb97485c"
+    },
+    {
+      "bytes": 69033,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T024956Z-15-r2-office.svg",
+      "sha256": "7f75922794b22723f729d44d8289201d5c866f5e687c61bd91f9785f58341033"
+    },
+    {
+      "bytes": 67477,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T025023Z-16-r2-office.svg",
+      "sha256": "2640606fea29035601fb7b4445f8276fb10eeb3df6dfc25530d615b883a5649e"
+    },
+    {
+      "bytes": 53144,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T025049Z-17-r0-assistant.svg",
+      "sha256": "1a1f4e1b6beb75a63dc9766c1f452aced92b0809d8f01df6b836646c836e8c6b"
+    },
+    {
+      "bytes": 53175,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T025108Z-18-r0-assistant.svg",
+      "sha256": "ab359076146e25e1ecc2097898ffba7b6241cd55e1fe4e4d7345554a2ec0fb57"
+    },
+    {
+      "bytes": 113199,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T025127Z-19-r0-assistant.svg",
+      "sha256": "b205355b57a19e462770452bc061eef25f6d0d909a4c12f7d33ccf1f4bde61ca"
+    },
+    {
+      "bytes": 59057,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T025213Z-20-r1-assistant.svg",
+      "sha256": "0069eae258d9fc578755a57e835f18680c596f01f1f6536ae9a80180cc2b7e02"
+    },
+    {
+      "bytes": 101400,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T025234Z-21-r1-assistant.svg",
+      "sha256": "8bee02c4e47f9d8a28e5f97d0ebf336c89c5ca6641998138ba8919d5f7500461"
+    },
+    {
+      "bytes": 57874,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T025315Z-22-r1-assistant.svg",
+      "sha256": "45d24cf63ed09d2f2814132c77f8f2b8101d0bca43d58176c9aa7de8845ac17f"
+    },
+    {
+      "bytes": 108471,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T025336Z-23-r2-assistant.svg",
+      "sha256": "f1a4f1c4b1018b00f684fb2e27aa89158072bc0bc23e574066bed399fd527123"
+    },
+    {
+      "bytes": 61395,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T025420Z-24-r2-assistant.svg",
+      "sha256": "a39e9e9f036e6c1acb5f423fc76bde273a3e7b1a6238caf8a244280e9f1cfebc"
+    },
+    {
+      "bytes": 61407,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/20261017T025442Z-25-r2-assistant.svg",
+      "sha256": "79c826c09a918c4064ca9d2cf23c47585025ff3bb52dd2dea15ba7e34aae81ae"
+    },
+    {
+      "bytes": 4302,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/task-points-Assistant-add_reminder_content_and_week_delta_and_time-continuation_frozen_profile.svg",
+      "sha256": "c7e3ca698026438615620dbdaf94d227bd3150e5ef8f56bfd59bf4c5a4a8021c"
+    },
+    {
+      "bytes": 4342,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/task-points-Assistant-modify_contact_with_message_recency_multiple_user_turn-continuation_frozen_profile.svg",
+      "sha256": "1bdaef814e97b612ccf49f405d57d6f625fb9b333a7d5064ab4ebb4f823ee969"
+    },
+    {
+      "bytes": 4337,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/task-points-Assistant-send_message_with_contact_content_cellular_off-continuation_frozen_profile.svg",
+      "sha256": "3d476315119548b1c82ccfe297546d9e94cedf607f738bb8ebff9f069fb45181"
+    },
+    {
+      "bytes": 3554,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/task-points-Coding-astropy__astropy-13236-continuation_frozen_profile.svg",
+      "sha256": "04081a869eb2819183c2686f10850b85935ed71545759df9396de9add92af454"
+    },
+    {
+      "bytes": 553,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/task-points-Coding-astropy__astropy-13236-planned_not_executed.svg",
+      "sha256": "dab3af2a0868e30d91e67aed581f873cd7576c4dc20b399395708417f676e8ac"
+    },
+    {
+      "bytes": 3434,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/task-points-Coding-astropy__astropy-13398-continuation_frozen_profile.svg",
+      "sha256": "ce09c7908cdba3a9f1f4acc24f3f227a23120febff3428a7ae5e6ed5aee87236"
+    },
+    {
+      "bytes": 553,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/task-points-Coding-astropy__astropy-13398-planned_not_executed.svg",
+      "sha256": "a82a52891925b56dc9cb51d16775321595deaef33b8c19f8dad57e089be4ed5e"
+    },
+    {
+      "bytes": 2787,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/task-points-Coding-django__django-16485-continuation_frozen_profile.svg",
+      "sha256": "9c758c2f7f01e7d49cc01d264319b9efa91a2e478ec1a0f268ee0d38969b5776"
+    },
+    {
+      "bytes": 551,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/task-points-Coding-django__django-16485-planned_not_executed.svg",
+      "sha256": "1acff1943b08a4741d3f8852acfe53ad2e5b934d3d5579c6f34a98024e51b1c4"
+    },
+    {
+      "bytes": 3561,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/task-points-Office-atomic__excel_001_budget_bucket_totals_seed-continuation_Office_route_mismatch.svg",
+      "sha256": "7a72154bbc975a000cc54e8aa91bb1e5e4902efd0d411efdb0e461d13f124b42"
+    },
+    {
+      "bytes": 2799,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/task-points-Office-atomic__excel_001_budget_bucket_totals_seed-historical_original_Volcano_identity.svg",
+      "sha256": "a7590801eef377845e4a3158dec3a1e59ef83d57da375d72f5672a2fbd3ace9f"
+    },
+    {
+      "bytes": 4303,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/task-points-Office-atomic__pdf_004_audit_pages_reorder_seed-continuation_Office_route_mismatch.svg",
+      "sha256": "0056dc48706b7e9cc1372382ad796540b9aa319b2f19a35cea850ebe7d071b2d"
+    },
+    {
+      "bytes": 4297,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/figures/task-points-Office-atomic__ppt_008_bullet_editing_seed-continuation_Office_route_mismatch.svg",
+      "sha256": "b65503d6d20d0708acdb7a9e9a2805764acb38f140f504b37e0a0b7db50d85fe"
+    },
+    {
+      "bytes": 2684296,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/per_run.jsonl",
+      "sha256": "1890cbadb9f93e12af70932c20efd972f0dc9bc2e26d61b49a78c5ff69c9450b"
+    },
+    {
+      "bytes": 1561288,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261016T182559Z-09-r0-office.csv",
+      "sha256": "36dd6674a2e24cda7b084d8c8464af57a22cd110ba7f6c42c6485db135f5c55d"
+    },
+    {
+      "bytes": 2021996,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T023247Z-00-r0-coding.csv",
+      "sha256": "92e3cbd30beffb4aee184ade0d221d6e683a3fc8c47003e1f22c9a74527c9df6"
+    },
+    {
+      "bytes": 1965559,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T023534Z-01-r0-coding.csv",
+      "sha256": "67be474964e8da196b112ad632520a750d4cfd4108ed05971e58cfb6025a78c6"
+    },
+    {
+      "bytes": 2597817,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T023817Z-02-r0-coding.csv",
+      "sha256": "6a98458d9a3d6741fc07ab4e3337f1d7e9adb9871ecea8df200714fa47becb13"
+    },
+    {
+      "bytes": 2168861,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T024149Z-03-r1-coding.csv",
+      "sha256": "2ff920b58988875aa7407592682e0439e61c5bc3001dcdfbb3a3a85b795695aa"
+    },
+    {
+      "bytes": 1889445,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T024449Z-04-r1-coding.csv",
+      "sha256": "cdeeb4d6e6f7df5df9994385ee9d9936ddae19c131344b07f4e17c047c2b3c74"
+    },
+    {
+      "bytes": 153760,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T024718Z-09-r0-office.csv",
+      "sha256": "7e3cc0f0ae75c9b13251234d50773d0bd053e407fd25c0ea44a1d754620d4b85"
+    },
+    {
+      "bytes": 158422,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T024744Z-10-r0-office.csv",
+      "sha256": "03ff9bbd62ae1ce79a8d6632629ede56e9cdda0108284cba7e069872713f89a2"
+    },
+    {
+      "bytes": 158307,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T024811Z-11-r1-office.csv",
+      "sha256": "21bbe828e98bc2f8215a7677a209a37461c03693c29f2a56aece9e9fbab0c619"
+    },
+    {
+      "bytes": 156640,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T024837Z-12-r1-office.csv",
+      "sha256": "dd98fe0142f5159290164e44a7173dc4d25ef86469c7d6696ded979757e159a1"
+    },
+    {
+      "bytes": 154275,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T024904Z-13-r1-office.csv",
+      "sha256": "c1a8c351b511fba26b47cf480d29363cd1198b133f3aa84903cb03df1f62a290"
+    },
+    {
+      "bytes": 154977,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T024930Z-14-r2-office.csv",
+      "sha256": "11410fd8c8aa255d3f021404ab6f1f4ea9a4ef2e86adaf275d202f11ebc1c339"
+    },
+    {
+      "bytes": 158666,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T024956Z-15-r2-office.csv",
+      "sha256": "0640ce3404b58d8ae66176a58c08409a07d27744e181aad33e0cabf633f7eba7"
+    },
+    {
+      "bytes": 154088,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T025023Z-16-r2-office.csv",
+      "sha256": "600191e8dd50e8481e3e3034c8b1faa32d1cb65d2d04533a74a47dba2f1818f6"
+    },
+    {
+      "bytes": 114372,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T025049Z-17-r0-assistant.csv",
+      "sha256": "02e4c88afc2189d2d76d958e03e57e6073035b9aa393919b2d26ab7527aba6d6"
+    },
+    {
+      "bytes": 114091,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T025108Z-18-r0-assistant.csv",
+      "sha256": "6f9cc694c92c0cca2240b790e2a59c8100ef93038084c0585b19c461e236e5b8"
+    },
+    {
+      "bytes": 271198,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T025127Z-19-r0-assistant.csv",
+      "sha256": "924193bb4a609104923662500a3fb488cfe31a19354c107167ee0a3e7610292d"
+    },
+    {
+      "bytes": 129344,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T025213Z-20-r1-assistant.csv",
+      "sha256": "0b2887218bb93408fe97033b4da949daa115b55382413383676947a9e21e8e06"
+    },
+    {
+      "bytes": 241492,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T025234Z-21-r1-assistant.csv",
+      "sha256": "43b923152d90fe2f36dd705537f365f6722b109978888add1fcc529177176b8e"
+    },
+    {
+      "bytes": 126963,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T025315Z-22-r1-assistant.csv",
+      "sha256": "ada3e6f8d37bdf2e54773591fbe5c4adfe864158858425df9c8401a041487a2c"
+    },
+    {
+      "bytes": 259561,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T025336Z-23-r2-assistant.csv",
+      "sha256": "a0b8103c81feca1c692a6b9aa378803b64852e0674bbd9d1324e4ca5e619d59e"
+    },
+    {
+      "bytes": 135744,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T025420Z-24-r2-assistant.csv",
+      "sha256": "c7b200d19ebf9d6c7b403597977b35b870ed2b72c390a98a11cf952bfbdb992a"
+    },
+    {
+      "bytes": 135311,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/series/20261017T025442Z-25-r2-assistant.csv",
+      "sha256": "5c01dc6b037feb8cab31fb7e857afa8814409685b16787fdc04b5e0422d7c325"
+    },
+    {
+      "bytes": 324960,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/summary.json",
+      "sha256": "b653380d5d39a1fd7af4e6706b25c32d659dd90411632aa701c323cd684af658"
+    },
+    {
+      "bytes": 19126,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/summary.md",
+      "sha256": "d3d257dafa172db72b4f984191a9d9d998d6daabec4efa90db301a76c0ef814c"
+    },
+    {
+      "bytes": 123404,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/task_statistics.csv",
+      "sha256": "0053cc8da30a6d5a1e4ff39d7a8265f39ed1f1be9d91f4c0164f1a6b8656466a"
+    },
+    {
+      "bytes": 67910,
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/tool_operations.csv",
+      "sha256": "546f527d8d11f1bbcbbd503537f0f7cf7c7bf0093ea4ef51abab595f96eb70af"
+    }
+  ],
+  "schema": "local-three-class-repeat-01-combined-review-manifest-v1"
+}

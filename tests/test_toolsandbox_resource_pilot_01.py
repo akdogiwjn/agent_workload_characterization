@@ -13,10 +13,12 @@ import hashlib
 import importlib.util
 import json
 import os
+import shutil
 import sys
 import tempfile
 import time
 import traceback
+from unittest import mock
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -68,28 +70,48 @@ def standard_agent_script():
     ]
 
 
-def prepare_root(tmp, budgets=None):
+def prepare_root(tmp, budgets=None, profile=None):
     """Fresh temp root with source prepared, frozen identity and approval."""
     root = Path(tmp)
-    entry.prepare_source(root)
-    entry.freeze(root, budgets=budgets)
-    plan = entry.plan_mode(root, budgets=budgets)
-    approval = {"schema": "toolsandbox-pilot-approval-v1", "collection": entry.COLLECTION,
+    profile = profile or entry.PILOT_01_PROFILE
+    if profile.shared_entry_script is not None:
+        source_origin = ROOT / entry.PILOT_01_PROFILE.source_copy_rel
+        source_manifest = ROOT / entry.PILOT_01_PROFILE.env_rel / "source-manifest.json"
+        shutil.copytree(source_origin, root / profile.source_copy_rel)
+        manifest_copy = root / entry.PILOT_01_PROFILE.env_rel / "source-manifest.json"
+        manifest_copy.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(source_manifest, manifest_copy)
+    entry.prepare_source(root, profile=profile)
+    entry.freeze(root, budgets=budgets, profile=profile)
+    plan = entry.plan_mode(root, budgets=budgets, profile=profile)
+    approval = {"schema": "toolsandbox-pilot-approval-v1", "collection": profile.collection,
                 "user_approval": "approved", "identity_sha256": plan["identity_sha256"],
                 "accept_unknown_cost_no_hard_cap": True}
-    (root / entry.REPORT_REL / "APPROVAL.json").parent.mkdir(parents=True, exist_ok=True)
-    (root / entry.REPORT_REL / "APPROVAL.json").write_text(json.dumps(approval))
-    plan = entry.plan_mode(root, budgets=budgets)
-    assert plan["ready_for_execution"] is True
+    approval_path = root / profile.report_rel / "APPROVAL.json"
+    approval_path.parent.mkdir(parents=True, exist_ok=True)
+    approval_path.write_text(json.dumps(approval))
+    plan = entry.plan_mode(root, budgets=budgets, profile=profile)
+    if not budgets or all(value > 0 for value in budgets.values()):
+        assert plan["ready_for_execution"] is True
     return root
 
 
-def run_fake(root, transport):
-    saved = json.loads((root / entry.ENV_REL / "plan-identity.json").read_text())
-    plan = entry.plan_mode(root, budgets=saved["identity"]["budgets"])
-    rc = entry.execute(root, plan, transport=transport)
-    report = json.loads((root / entry.REPORT_REL / "run-report.json").read_text())
-    run_dir = root / entry.RAW_REL / report["run_id"]
+def minimal_initialized_attempt(root, profile=None):
+    profile = profile or entry.PILOT_01_PROFILE
+    plan = {"ready_for_execution": True, "identity_sha256": "a" * 64,
+            "identity": {"budgets": {**entry.BUDGETS}, "retry": {},
+                "official_source": {"frozen_copy": "source",
+                                    "source_manifest": "env/source-manifest.json"}}}
+    return root, plan, profile
+
+
+def run_fake(root, transport, profile=None):
+    profile = profile or entry.PILOT_01_PROFILE
+    saved = json.loads((root / profile.env_rel / "plan-identity.json").read_text())
+    plan = entry.plan_mode(root, budgets=saved["identity"]["budgets"], profile=profile)
+    rc = entry.execute(root, plan, transport=transport, profile=profile)
+    report = json.loads((root / profile.report_rel / "run-report.json").read_text())
+    run_dir = root / profile.raw_rel / report["run_id"]
     return rc, report, run_dir
 
 
@@ -228,6 +250,16 @@ def test_full_fake_run_lifecycle_and_counts():
         assert report["evaluation_status"] == "completed"
         assert report["cleanup"]["wait_reaped"] and report["cleanup"]["original_process_gone"]
         assert report["cleanup"]["sampler_stopped"] and report["within_total_budget"]
+        supplement_path = run_dir / "supplemental_measurements.json"
+        assert supplement_path.is_file()
+        supplement = json.loads(supplement_path.read_text())
+        assert supplement["network"]["scope_kind"] == "network_namespace_shared"
+        assert supplement["disk_footprint"]["paths"][0]["role"] == "attempt_output"
+        assert supplement["task_workspace"]["status"] == "not_applicable"
+        assert supplement["task_workspace"]["visible_output"] == "host_visible_worker_output"
+        assert "supplemental_measurements.json" in {
+            row["path"] for row in json.loads((run_dir / "manifest.json").read_text())["files"]}
+        assert report["host_sampling"]["resource_intervals"]
         edges = {p["phase"]: p for p in report["budget_phase_report"]["phases"]}
         assert edges["play_end"]["phase_end_ns"] < edges["evaluate_begin"]["phase_start_ns"]
         assert edges["worker_start"]["t_monotonic_ns"] >= report["parent_start_ns"]
@@ -545,6 +577,17 @@ def test_pilot02_profile_isolated_and_plan_identity_is_collection_specific():
             assert "identity/approval/namespace gate" in str(exc)
 
 
+def test_runtime_environment_record_saves_host_and_key_dependency_identity():
+    record = entry.runtime_environment_record(os.getpid(), 1)
+    assert record["architecture"]
+    assert record["kernel_release"]
+    assert record["python_version"]
+    assert "cpu_model" in record
+    assert set(record["key_dependency_versions"]) == {"openai", "httpx", "httpcore", "polars"}
+    assert all(item["status"] in ("observed", "not_installed")
+               for item in record["key_dependency_versions"].values())
+
+
 def test_references_and_real_namespace_unchanged():
     before = tree_hash(ORIGIN)
     real_env = ROOT / entry.ENV_REL
@@ -570,6 +613,84 @@ def test_references_and_real_namespace_unchanged():
         frozen_file = real_env / "source" / rec["path"]
         assert origin_file.read_bytes() == frozen_file.read_bytes() == origin_file.read_bytes()
         assert hashlib.sha256(frozen_file.read_bytes()).hexdigest() == rec["sha256"]
+
+
+def test_pilot02_real_execute_path_archives_shared_capture():
+    profile = entry.PILOT_02_PROFILE
+    with tempfile.TemporaryDirectory() as tmp:
+        root = prepare_root(tmp, budgets={"total_wall_s": 60., "cleanup_reserve_s": 5.,
+                                          "play_s": 30., "evaluate_s": 20.}, profile=profile)
+        rc, report, run_dir = run_fake(root, fake_transport(standard_agent_script()), profile=profile)
+        assert rc == 0
+        assert report["cleanup"]["wait_reaped"] and report["cleanup"]["sampler_stopped"]
+        assert report["supplemental_measurements"] == "supplemental_measurements.json"
+        environment = json.loads((run_dir / "environment.json").read_text())
+        assert environment["architecture"] and environment["kernel_release"]
+        assert set(environment["key_dependency_versions"]) == {
+            "openai", "httpx", "httpcore", "polars"}
+        supplement = json.loads((run_dir / "supplemental_measurements.json").read_text())
+        assert supplement["network"]["scope_kind"] == "network_namespace_shared"
+        assert supplement["disk_footprint"]["paths"][0]["role"] == "attempt_output"
+        assert supplement["task_workspace"]["status"] == "not_applicable"
+        manifest = json.loads((run_dir / "manifest.json").read_text())
+        assert "supplemental_measurements.json" in {row["path"] for row in manifest["files"]}
+
+
+def test_worker_popen_failure_stops_supplement_and_archives_partial_attempt():
+    with tempfile.TemporaryDirectory() as tmp:
+        root, plan, profile = minimal_initialized_attempt(Path(tmp))
+        with mock.patch.object(entry.subprocess, "Popen", side_effect=OSError("spawn")):
+            rc = entry.execute(root, plan, transport=fake_transport(standard_agent_script()),
+                               run_id="popen-fails", profile=profile)
+        run_dir = root / profile.raw_rel / "popen-fails"
+        assert rc == 7
+        assert (run_dir / "ATTEMPT_STARTED.json").is_file()
+        assert (run_dir / "ATTEMPT_COMPLETED.json").is_file()
+        assert (run_dir / "supplemental_measurements.json").is_file()
+        assert entry.verify_run_archive(run_dir) == (True, [])
+        report = json.loads((root / profile.report_rel /
+                             "run-report.json").read_text())
+        assert report["evaluation_status"] == "not_started"
+        assert report["infra_failure"]["error_type"] == "OSError"
+
+
+def test_environment_write_failure_reaps_spawned_worker_and_archives():
+    class FakeProc:
+        pid = 987654
+
+        def __init__(self):
+            self.returncode = None
+            self.terminated = 0
+            self.waited = 0
+
+        def poll(self):
+            return self.returncode
+
+        def terminate(self):
+            self.terminated += 1
+
+        def wait(self, timeout=None):
+            self.waited += 1
+            self.returncode = -15
+            return self.returncode
+
+        def kill(self):
+            self.returncode = -9
+
+    with tempfile.TemporaryDirectory() as tmp:
+        root, plan, profile = minimal_initialized_attempt(Path(tmp))
+        proc = FakeProc()
+        with mock.patch.object(entry.subprocess, "Popen", return_value=proc), \
+             mock.patch.object(entry, "runtime_environment_record",
+                               side_effect=OSError("environment write")):
+            rc = entry.execute(root, plan, transport=fake_transport(standard_agent_script()),
+                               run_id="environment-write-fails", profile=profile)
+        run_dir = root / profile.raw_rel / "environment-write-fails"
+        assert rc == 7 and proc.terminated == 1 and proc.waited >= 1
+        marker = json.loads((run_dir / "ATTEMPT_COMPLETED.json").read_text())
+        assert marker["status"] == "failed" and marker["worker_reaped"]
+        assert (run_dir / "supplemental_measurements.json").is_file()
+        assert entry.verify_run_archive(run_dir) == (True, [])
 
 
 def main():

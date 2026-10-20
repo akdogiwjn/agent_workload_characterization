@@ -1,7 +1,138 @@
 {
   "schema": "awc-project-state-v1",
-  "updated_at": "2026-10-16",
+  "updated_at": "2026-10-20",
   "execution_authorization": "none_this_state_is_not_an_approval",
+  "local_three_class_repeat_01": {
+    "status": "stopped_after_one_excel_due_batch_acceptance_key_error",
+    "identity_sha256": "460c9c28e4799d864ff2aa3a2bf7cf2e272fa095eabb917f4bec4f1b45893b22",
+    "planned_slots": 27,
+    "attempts_started": 1,
+    "archived_batch_counts": {
+      "executed": 0,
+      "failed": 1,
+      "not_executed": 26
+    },
+    "not_executed": 26,
+    "report": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/summary.md",
+    "closeout": "env/local-three-class-repeat-01/closeout.json",
+    "run_id": "20261016T182559Z-09-r0-office",
+    "official_reward": 1,
+    "agent_termination": "finish",
+    "raw_archive_independently_verified": true,
+    "runtime_cleanup_verified": true,
+    "image_retained": true,
+    "coding_class": "not_executed_required_Astropy_images_missing_no_offline_recovery",
+    "repeats_completed": false,
+    "post_stop_offline_key_fix": true,
+    "frozen_execution_source_preserved": true,
+    "resume_authorized": false,
+    "final_directed_tests_passed": 32,
+    "historical_protected_files": 884,
+    "analysis_input_records": 1136,
+    "analysis_output_records": 18,
+    "network": "shared netns only",
+    "cache": "unsupported",
+    "actual_http_attempts": "unknown",
+    "cost": "unknown",
+    "html_updated": false,
+    "gates_unchanged": true
+  },
+  "local_three_class_repeat_01_continuation_01": {
+    "status": "completed_with_coding_stop_and_office_route_mismatch",
+    "identity_sha256": "ad6db92924e5adaf507a81370ebb0bc245ad6be57433d5ca6159813f6e5615af",
+    "plan_and_frozen_identity_match": true,
+    "planned_continuation_slots": 26,
+    "attempts_started": 22,
+    "not_executed": 4,
+    "original_run_preserved_and_counted_separately": "20261016T182559Z-09-r0-office",
+    "new_run_counts": {
+      "Coding": 5,
+      "Office": 8,
+      "Assistant": 9
+    },
+    "batch_wall_s": 1338.1413915299345,
+    "class_stops": {
+      "Coding": "critical_measurement_gap"
+    },
+    "global_stop": null,
+    "cleanup_confirmed": 22,
+    "archives_verified": 22,
+    "measurement_partial": 1,
+    "office_route_mismatch": "all 8 continuation Office configs omit model_route; bound production builder falls back to API_BASE; failed attempts retained and not treated as Volcano task results",
+    "coding_stop_run_id": "20261017T024449Z-04-r1-coding",
+    "analysis": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/summary.md",
+    "analysis_manifest": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/manifest.json",
+    "analysis_input_records": 575,
+    "analysis_output_records": 65,
+    "analysis_run_records": 23,
+    "analysis_tests_passed": 7,
+    "historical_protection_snapshot_files_checked": 69,
+    "actual_http_attempts": "unknown",
+    "cost": "unknown",
+    "html_updated": false,
+    "git_committed": false,
+    "gates_unchanged": true,
+    "cpu_02_replay_unchanged": true,
+    "historical_analysis": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/summary.md",
+    "historical_analysis_manifest": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v1/manifest.json",
+    "offline_repair": {
+      "status": "implemented_and_offline_verified_not_executed",
+      "record": "env/local-three-class-repeat-01-offline-repair/repair-manifest.json",
+      "tests_passed": 26,
+      "corrections": [
+        "Office per-run model_route propagated and validated before client construction and credential reads",
+        "BadRequestError conservatively stops further requests",
+        "no_candidate + explicit verifier not_run/no start => verifier CPU/workspace not_applicable; archived partial/stop preserved",
+        "Coding repeat metrics aggregate stable scope roles, not run-specific IDs",
+        "historical Excel explicitly uses Volcano route; prior DeepSeek label corrected"
+      ],
+      "verifier_reassessment": {
+        "run_id": "20261017T024449Z-04-r1-coding",
+        "archived_status": "partial",
+        "independent_status": "complete_in_observed_applicable_scopes",
+        "verifier": "not_applicable_no_candidate_not_run"
+      },
+      "historical_identities_refrozen": false,
+      "live_validation": false
+    }
+  },
+  "local_three_class_complete_02": {
+    "status": "completed_12_attempts_independent_acceptance_and_v3_analysis",
+    "collection": "LOCAL-THREE-CLASS-COMPLETE-02",
+    "identity_sha256": "8a17109cf441e3ae68e3f9820babe5685467657cbcafb56d765dd1158dc4942d",
+    "plan_and_frozen_identity_match": true,
+    "attempts_started": 12,
+    "executed": 12,
+    "not_executed": 0,
+    "acceptance_errors": 0,
+    "infra_failed": 0,
+    "measurement_partial": 0,
+    "cleanup_unconfirmed": 0,
+    "archive_unverified": 0,
+    "batch_wall_s": 1374.0075470150914,
+    "within_9h_batch_limit": true,
+    "task_repeat_counts": {
+      "Coding": {"django__django-16485": 3, "astropy__astropy-13398": 3, "astropy__astropy-13236": 3},
+      "Office": {"atomic__excel_001_budget_bucket_totals_seed": 3, "atomic__ppt_008_bullet_editing_seed": 3, "atomic__pdf_004_audit_pages_reorder_seed": 3},
+      "Assistant": {"send_message_with_contact_content_cellular_off": 3, "add_reminder_content_and_week_delta_and_time": 3, "modify_contact_with_message_recency_multiple_user_turn": 3}
+    },
+    "cumulative_started_runs": 35,
+    "intended_task_round_slots": 27,
+    "historical_office_route_mismatch_excluded": 8,
+    "postrun_images_verified": "7/7 full ID, linux/arm64, and applicable registry digest",
+    "analysis": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/summary.md",
+    "analysis_manifest": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/manifest.json",
+    "analysis_input_records": 1132,
+    "analysis_code_files": 4,
+    "analysis_output_records": 90,
+    "analysis_output_readback": "bytes/SHA-256 verified; manifest omits self-hash",
+    "v1_v2_and_historical_raw_preserved": true,
+    "html_updated": false,
+    "git_committed": false,
+    "gates_unchanged": true,
+    "cpu_02_replay_unchanged": true,
+    "execution_authorization": false
+  },
   "research_scope": {
     "effective_date": "2026-10-16",
     "decision_source": "explicit user request: focus on sampled CPU/memory/disk IO/network, task wall and tool statistics; no function-hotspot requirement",
@@ -25,7 +156,7 @@
       "actual_sampling_intervals_coverage_missing_reads_resets_and_collector_overhead"
     ],
     "disk_footprint_policy": "Required per-task workspace/output/cache footprint at start and end plus growth; identify path scope and apparent versus allocated bytes, shared-path deduplication and unavailable fields; distinct from disk IO and whole-host free capacity; no blanket disk scans or cache deletion",
-    "supporting_record_policy": "Record existing observable fields and explicit unavailable reasons; this scope update does not implement missing collection, claim complete coverage, or require TTFT/profiling/privileged probes",
+    "supporting_record_policy": "Three Volcano single-chain runs and the 12-run Complete-02 batch verified primary counters/rates, shared netns and task directory boundaries (Assistant in-memory N/A); unsupported cache/API bytes remain explicit; no whole-machine or exclusive-tool attribution",
     "not_required": [
       "gpu_usage_for_current_scope",
       "function_or_binary_hotspots",
@@ -41,11 +172,10 @@
     "current_main_sampling_interval_s": 0.5,
     "existing_scope": "task containers or a selected shared worker/host process; not unified whole-machine monitoring",
     "pending_capabilities": [
-      "network_rx_tx_bytes_sampling_with_explicit_scope",
-      "disk_io_rate_panels_from_valid_saved_counters",
-      "per_task_disk_footprint_collection_and_summary_coverage",
-      "latest_assistant_curves_in_final_html",
-      "aligned_four_metric_task_overview"
+      "task_exclusive_network_or_http_application_bytes",
+      "disk_io_rate_panels_and_final_html_update",
+      "aligned_four_metric_task_overview",
+      "task_exclusive_cache_footprint"
     ],
     "agentcgroup_reuse": "integer-ns interval union and parts of tool classification adapted; resource readers are project-owned cgroup/proc implementations, not direct reuse of upstream podman ResourceMonitor; per-tool cgroup scheduler not integrated",
     "historical_rq_reports_and_gate_verdicts": "preserved at original scope; new requirements do not mark any gate passed",
@@ -464,7 +594,7 @@
     "real_run_measurement_contract": {
       "status": "offline_implemented_not_real_validated",
       "contract": "docs/trace_contract.md",
-      "contract_version": "real-run-measurement-v1",
+      "contract_version": "real-run-measurement-v2",
       "historical_evidence_modified": false,
       "experiment_executed": false
     },
@@ -1003,25 +1133,63 @@
     "gates_unchanged": true
   },
   "current_work": {
-    "id": "PROJECT-CLEANUP-01",
-    "phase": "archive_link_and_reader_repair_complete",
-    "scope": "all 77 historical Markdown documents locally archived; seven current documents retained; current navigation/readers rewired; immutable reports keep original logical paths and hashes",
+    "id": "LOCAL-THREE-CLASS-REPEAT-01-OFFLINE-REPAIR",
+    "phase": "offline_repaired_and_reanalyzed_no_new_attempts",
+    "scope": "Offline route propagation/guards, verifier applicability, scope-role aggregation and historical route-label corrections; no API/Docker/attempts",
     "review_report": "docs/current_task.md",
     "execution_allowed": false,
     "ready": false,
+    "historical_coverage_report": "reports/analysis/LOCAL-MEASUREMENT-COVERAGE-v3/",
+    "combined_review": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/",
+    "live_validation_status": "Assistant 9 complete; Coding 5 launches with one intentionally skipped verifier misclassified by historical acceptance; Office 8 route-mismatch failures retained; fixes offline only",
+    "additional_runs_authorized": false,
+    "v2_bound_source_snapshot_manifest": "env/local-measurement-coverage-v3/source-snapshot-manifest.json",
+    "historical_runs_checked": 27,
+    "offline_tests_passed": null,
+    "targeted_offline_regressions_passed": true,
+    "offline_test_results": {
+      "office_word_entry_direct_function_suite": "25 passed",
+      "execution_measurement_and_office_repeat02": "34 passed",
+      "coding_archive_cleanup_regressions": "3 passed",
+      "local_measurement_coverage": "6 passed",
+      "toolsandbox_lifecycle_deadline_regressions": "3 passed",
+      "toolsandbox_pilot01_function_sweep": "9 passed; interrupted during test_no_phase_budget_refuses_phase_before_model_or_evaluator after about 6 minutes; 10 later tests not started; no assertion failures observed",
+      "toolsandbox_unittest_discovery": "0 discovered; not counted as tests",
+      "toolsandbox_full_pilot01_sweep": "not completed; function-style suite has expensive fake lifecycle cases; this run was stopped after 9 passing cases and one in-progress case, so no full-suite verdict",
+      "toolsandbox_nine_run_assistant_fake_batch": "not completed: prior 180s timeout; exercises nine fresh sequential worker lifecycles; no evidence establishes thread contention as cause",
+      "prior_reported_pilot01_13_of_16_failures": "unreconciled: exact test names/assertions were not preserved in available workspace evidence"
+    },
+    "historical_rate_interval_coverage": "per-run derived and reported separately for CPU, cgroup io_read/io_write and available /proc I/O counters; Coding historical host /proc I/O fields are explicitly not_recorded; combined interval counts are not called CPU coverage",
+    "capture_status": {
+      "code_wired": true,
+      "offline_fake_validation": true,
+      "live_per_chain_validation": "Existing samples retained; no_candidate verifier is not applicable, not a live sampling failure; Office route fix not yet executed",
+      "task_disk_paths": {
+        "coding": "/testbed",
+        "office": "/root/submission",
+        "assistant_task_state": "not_applicable_in_memory; visible host run output measured separately",
+        "shared_cache": "unsupported"
+      },
+      "disk_scan_runtime_dependency": "container python3; not verified in a real container",
+      "network": "per-interface shared network namespace cumulative tx/rx; not PID- or API-exclusive; HTTP body bytes unsupported",
+      "historical_rates": "recomputed from selected raw samples with nested reader states and identity checks; no historical files rewritten"
+    },
+    "live_measurement_validated": "partial; 22 continuation attempts retained, but intended three-chain profile not fully validated",
     "deleted_files": 0,
     "moved_evidence_paths": 0,
     "production_code_changed": true,
     "html_updated": false,
     "gates_unchanged": true,
     "cpu_02_replay_unchanged": true,
-    "next_proposed_task": "network and task-disk-footprint measurement wiring preparation; not started or authorized",
+    "next_proposed_task": "Review corrected evidence and credential-misrouting risk before any separately approved future attempt; no automatic reruns",
     "moved_files": 237,
     "moved_historical_documents": 77,
-    "execution_logic_changed": false,
+    "execution_logic_changed": true,
     "historical_reports_rewritten": true,
     "historical_report_revision_scope": "G0 reading navigation only: five links plus explicit provenance note; original bytes preserved separately",
-    "temporary_html_generation_test_passed": true
+    "temporary_html_generation_test_passed": true,
+    "historical_measurement_evidence_modified": false,
+    "real_runs_started": 22
   },
   "toolsandbox_assistant_repeat_01_preparation": {
     "status": "completed_nine_sequential_runs_and_limited_acceptance",
@@ -1114,12 +1282,77 @@
     "status_field": "historical_plan_snapshot_not_current_status",
     "modify_for_status_sync": false
   },
+  "volcano_gateway_three_chain_validation": {
+    "status": "stopped_after_office_critical_disk_measurement_gap",
+    "closeout": "env/docops-measurement-volcano-01/validation-closeout.json",
+    "route": {
+      "provider": "火山AI网关",
+      "request_model": "openai/deepseek-v4-flash",
+      "credential_environment_name": "VOLCANO_API_KEY",
+      "credential_value_or_fingerprint_recorded": false
+    },
+    "final_identities": {
+      "office": "5bf20f90530a546412c1825dcffdba1acd5c8c94bd7a248642f2144509f0187f",
+      "coding": "94854d53746d3ce190a7d99a5efc2eaa6046fc801592aca9c3a772fc95f8c764",
+      "assistant": "2a79b7710ec6d699628ad35d08993e5b1cd1cf77e3733f58e958e843737d029b"
+    },
+    "historical_probe_stop_record": "env/docops-measurement-volcano-01/validation-stop.json",
+    "historical_probe_sends": "unknown; unchanged; fresh explicit one-send authorization used for each new protocol check",
+    "protocol_probes": [
+      {
+        "probe": "office",
+        "status": "passed",
+        "forwarded_attempts": 1,
+        "responses_received": 1,
+        "evidence": "env/docops-measurement-volcano-01/protocol-probe-environment-fixed.json"
+      },
+      {
+        "probe": "assistant",
+        "status": "passed",
+        "forwarded_attempts": 1,
+        "responses_received": 1,
+        "evidence": "env/toolsandbox-measurement-volcano-01/protocol-probe-environment-fixed.json"
+      }
+    ],
+    "formal_attempts": 1,
+    "formal_approvals_created": 1,
+    "office": {
+      "run_id": "20261016T140640Z-excel001",
+      "exit_code": 0,
+      "measurement": "partial",
+      "reward": 1,
+      "termination": "finish",
+      "logical_requests": 7,
+      "autonomous_tools": 6,
+      "bootstrap_tools": 2,
+      "task_workspace_disk": "both scans failed; bytes null; critical gap",
+      "container_removed": true,
+      "image_retained": true,
+      "archive_valid": true
+    },
+    "coding": "not_executed_due_upstream_critical_measurement_gap; no approval or attempt",
+    "assistant": "not_executed_due_upstream_critical_measurement_gap; no approval or attempt",
+    "offline_tests": {
+      "probe_environment_tests": 15,
+      "route_namespace_profile_tests": 7,
+      "shared_office_entry_tests": 25,
+      "total_passed": 47,
+      "failed": 0,
+      "not_completed_in_final_selected_suite": 0,
+      "diagnostic_timeouts_not_counted_as_tests": "sandbox diagnostic children bounded and reaped; not successful test runs"
+    },
+    "stop_reason": "Office /root/submission before_agent and after_agent scans returned container_scan_command_failed; no downstream attempt permitted",
+    "gates_unchanged": true,
+    "cpu_02_replay_unchanged": true,
+    "state_file_is_not_an_execution_approval": true
+  },
   "public_summary": [
     "当前范围：本地单任务CPU、内存、磁盘I/O与占用、网络、时长、工具/软件统计和过程图；模型用量、阶段/错误、环境和采样质量一并记录。GPU、热点/PMU/微架构/优化不必交，Replay/并发仅可选。",
     "公开操作和软件汇总v3已完成限定分析：SWE-rebench 9,435轨迹，SWE-bench 19,876对象/41组；OSWorld 755模型×任务/108任务，H-EPM 414轨迹，AgentX/Applied为宏观证据。部分语义和软件运行身份未知，来源不混算分母。",
-    "本地主设计：Coding、Office、Assistant各3任务×3重复，共27run/9任务设计。已有CPU/内存0.5s目标采样、有限I/O、阶段与调用统计；任务容器/共享进程不等于整机或工具独占测量。",
-    "待补：scope明确的网络收发、任务目录/输出/缓存占用、I/O速率图及完整四面板；最新Assistant与软件成果待最后统一更新HTML。旧run不倒填缺项，Video/GUI覆盖限制保留。",
-    "当前入口：docs/current_scope.md（目标）、docs/project_status.md（证据）、docs/current_task.md（工作）。77份历史文档已本机归档，5处旧报告链接已修复；HTML临时生成通过但来源版本标为PARTIAL。data保留配置/清单，原始大数据留本机；未授权实验或提交。",
+    "本地三个既有批次的27个显式run已完成字段与manifest盘点；历史区间覆盖v3按CPU、cgroup I/O及可用/proc I/O分列候选/有效/gap，网络字节和任务目录边界占用没有观测，未回填。",
+    "新口径三链各一次已完成：Office目录扫描cwd修正后0→6629B；Coding Agent/verifier目录分别增长4874269/4614250B；Assistant场景内存状态N/A。主项采集和归档通过，cache仍unsupported导致supplement aggregate partial；共享netns不是任务/API专属字节。",
+    "火山三链各n=1限定离线分析完成：3张独立四面板资源SVG、作图CSV和目录占用表已生成。请求Office8、Coding20、Assistant Agent/User6/1；原生工具、Submitted控制流与业务错误分别统计。Coding宿主末次process_exited保留gap；共享netns不代表API字节，不合并旧27次。报告：reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/summary.md。",
+    "LOCAL-THREE-CLASS-COMPLETE-02已顺序执行12/12次，identity 8a17109cf441e3ae68e3f9820babe5685467657cbcafb56d765dd1158dc4942d；合并原有效样本后27个固定task×round槽位各n=3，累计35次启动含8个永久排除的旧Office错路由attempt。v3独立复核及资源图已生成；7/7固定镜像批后身份匹配，raw归档哈希回读通过。n=3不代表类别总体，HTTP次数/费用unknown。报告：reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/summary.md。",
     "G1仅登记小闭环通过；G2/G3-R未通过，CPU-02/Replay继续暂停。状态、建议、旧批准和旧execute命令都不是新授权。"
   ],
   "html_reading_pack": {
@@ -1176,6 +1409,38 @@
     }
   },
   "evidence": [
+    {
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/manifest.json",
+      "sha256": "9cc937002012f65145bd44308292a89a8343cef432d3cb9a6722005b80f05c7b",
+      "role": "independent 12-run acceptance and 27-slot combined analysis; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/summary.md",
+      "sha256": "5ec458dcb5d2ce29a71e21350b3f8ee7651e170718802e1e32f93462b791d548",
+      "role": "combined resource and task-level descriptive report; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/manifest.json",
+      "sha256": "adca48eb33642306afdcaa7c8f199af19d72fe74e0dd27830640903298ada6f4",
+      "role": "offline correction and reanalysis evidence; not execution authorization"
+    },
+    {
+      "path": "env/local-three-class-repeat-01-offline-repair/repair-manifest.json",
+      "sha256": "3e7253368f7114c5e3599c900c450f909a4f5860d256257c82144ffce3bfe069",
+      "role": "offline correction and reanalysis evidence; not execution authorization"
+    },
+    {
+      "path": "env/local-three-class-repeat-01/closeout.json",
+      "bytes": 8083,
+      "sha256": "a0c124193d6075453cb2ce98604bd855758a235f7d819f5f5463cf4879d69f11",
+      "role": "LOCAL batch stop/independent acceptance and limited one-run analysis; not execution approval"
+    },
+    {
+      "path": "reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/manifest.json",
+      "bytes": 264003,
+      "sha256": "3bcab58c3467863bf27ee2058cb79f3a1ca5d1df4959ce98e3336ae6e3a2ad87",
+      "role": "LOCAL batch stop/independent acceptance and limited one-run analysis; not execution approval"
+    },
     {
       "path": "local_archive/20261016-repair/before-edit/reports/quality/g0_review.md",
       "sha256": "932e44869acb76077d8fe2d62a54941d9206fff9005121e7c2dea76ec63febf4",
@@ -1392,9 +1657,9 @@
       "sha256": "2f7a08cfc5bbbaf2afd916b63f68a6592a6cf50d3fb2d7894b4991d3d381f841"
     },
     {
-      "path": "src/agent_workload_characterization/collectors/execution_measurement.py",
-      "sha256": "e520938f431e34e0b7f8d9c6e996c82dbf7e5beb48554f355fd8d656a7bc0df6",
-      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
+      "path": "env/docops-measurement-volcano-02/source-before-scan-fix/execution_measurement.py",
+      "sha256": "fe553e543cedd4f127ee990bd909c2b661cdaa7735652eb6be301aeb31cb6849",
+      "role": "Preserved previous preparation/source bytes before authorized scan wiring update; not current execution identity"
     },
     {
       "path": "src/agent_workload_characterization/collectors/semantic_recorder.py",
@@ -1408,7 +1673,7 @@
     },
     {
       "path": "src/agent_workload_characterization/collectors/resource_sampler.py",
-      "sha256": "3576a38eb71379ce2771ea096b0b9cade9c06c5f8f772e11b9c162f5cee2af4b",
+      "sha256": "ef83348c308ff9b910f9eaeac11eaa75f87668fa58ea3e24e10aa15388898bda",
       "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
     },
     {
@@ -1418,8 +1683,8 @@
     },
     {
       "path": "src/agent_workload_characterization/runners/coding_pilot.py",
-      "sha256": "5d63e1911a5c34d3fc1e4edcfe603ff42907fa8e87d255546c6cb4f42715796b",
-      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
+      "sha256": "9bbd8f66cec76c3676cc3305a1959644afe85a25867cc33734eb9e00a86be16b",
+      "role": "current offline implementation source; not an execution approval"
     },
     {
       "path": "src/agent_workload_characterization/runners/mini_agent_adapter.py",
@@ -1427,18 +1692,18 @@
       "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
     },
     {
-      "path": "scripts/docops_word_resource_01_entry.py",
-      "sha256": "5b5d84f3f1bd7640b51773bd20ff696990d1b006b15e7ff3e2932994788c0014",
-      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
+      "path": "env/docops-measurement-volcano-02/source-before-scan-fix/docops_word_resource_01_entry.py",
+      "sha256": "cd3162218853bcced80420f54b50bc7634970c75f26196e13ebe7a932651311a",
+      "role": "Preserved previous preparation/source bytes before authorized scan wiring update; not current execution identity"
     },
     {
       "path": "tests/test_execution_measurement.py",
-      "sha256": "a2af5ad5b6b0c1347ff93b3946b32fc6b97f6e4be4fa85ff6a7c5dd8ac480953",
+      "sha256": "600a3652dd81234530c4f5e904132c43de7734927776d698062dbcdd1ad2dc03",
       "role": "current shared measurement regression includes ToolSandbox batch root-close case; historical identities remain in their manifests; not an execution approval"
     },
     {
       "path": "docs/trace_contract.md",
-      "sha256": "2371dad5cfc12ca7837958703cd41575ce34b6dee4ff2907508ed0c4185c0886",
+      "sha256": "05ed40a9c2bb426ca9545bc90536a3f20f4cc62d8c5adadd3e2a81c35f09df7d",
       "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
     },
     {
@@ -1454,12 +1719,12 @@
     {
       "path": "tests/test_docops_word_resource_01_entry.py",
       "role": "REAL-RUN-MEASUREMENT-01 offline implementation; no execution authorization",
-      "sha256": "741d9e0b2618a07ba2d21b42586f8eff3b88e97a1b229fd7f94725a4ea07132c"
+      "sha256": "1e278574bfb8e8ca55ead85fc545601fa490344fe8608d41c0a7707f6f24e447"
     },
     {
       "path": "tests/test_coding_pilot.py",
       "role": "REAL-RUN-MEASUREMENT-01 offline implementation; no execution authorization",
-      "sha256": "f01ab5036091d97b30e9b96d125bff8953100ffc5d0948a7d7a9998fd0f94cbb"
+      "sha256": "597dc64bd40d568fb0ea68990646b88e1755e421195875fd15a5c7ffe8751363"
     },
     {
       "path": "tests/test_p1_12_finish_protocol.py",
@@ -1477,9 +1742,9 @@
       "sha256": "ba8cd7a222b0cfe94e2a8a5abd87dc991fa387fbf039cc0c1e92174fd6693ae6"
     },
     {
-      "path": "scripts/docops_measurement_validate_01_entry.py",
-      "role": "Fixed single Excel measurement entry; prepared only, execution awaits independent approval",
-      "sha256": "d1a9bdb8dafebf580f7c4e599896c280caf2f8a0d3252aa77811ce0d1391459b"
+      "path": "env/docops-measurement-volcano-01/probe-environment-repair-source/docops_measurement_validate_01_entry.py",
+      "role": "Preserved previous single-entry bytes; current script has collection reporting fix bound to new Office identity",
+      "sha256": "9488ea482914fbdd3583ded83af1af913f0eecaa546ccfd809d5579a3e807a92"
     },
     {
       "path": "tests/test_docops_measurement_validate_01_entry.py",
@@ -1532,7 +1797,7 @@
     },
     {
       "path": "tests/test_docops_office_repeat_02_entry.py",
-      "sha256": "054095532c6a80fab971358c63e540e30d2d02ca98495598ff0203adce09951c"
+      "sha256": "a5b1d80ebaadb6e8ab67cbe81a37e58a9a775ca0da3024a89d19478bd7c7c5b7"
     },
     {
       "path": "env/docops-office-repeat-02/image-preparation.json",
@@ -1640,7 +1905,7 @@
     },
     {
       "path": "scripts/toolsandbox_resource_pilot_01_entry.py",
-      "sha256": "4b0da9fa829f0e0a0de1e4ac6f888426a86c0fedfb99cbf864fff35d7b694d63"
+      "sha256": "4d0dd271889256acb83a276433b9ce91de11aa6b973009c7e0a542d116adda33"
     },
     {
       "path": "src/agent_workload_characterization/runners/toolsandbox_worker.py",
@@ -1648,7 +1913,7 @@
     },
     {
       "path": "tests/test_toolsandbox_resource_pilot_01.py",
-      "sha256": "01754aad391ec93da293ec82592461d45f9d932e7d98d5972132777f4e712298"
+      "sha256": "e98df87a3d1688bbc104cc3dec84d3b9e79d50f3d631ad54d462ca5688b216e4"
     },
     {
       "path": "env/toolsandbox-resource-pilot-01/plan-identity.json",
@@ -1893,7 +2158,7 @@
     },
     {
       "path": "docs/current_task.md",
-      "sha256": "712db958363cca13e867dc6fef820ec9840533436caf338f3753ccc85cff122d",
+      "sha256": "3b85046b6e0c299ba4ee6110bab3663064f01fa5ba114c3e4320f42944314420",
       "role": "current documentation entry; not execution authorization"
     },
     {
@@ -1923,7 +2188,7 @@
     },
     {
       "path": "tests/test_repository_hygiene.py",
-      "sha256": "b876b117282f2378f84b0cadaeab94cf9b9e99fbce95b31036f03d99cd17b4bf",
+      "sha256": "bc765969f00886cb30f299bcb3f1b6d8b88453664fbdcbb01541e915cf04904f",
       "role": "repository publication/navigation policy; not execution authorization"
     },
     {
@@ -1933,8 +2198,128 @@
     },
     {
       "path": ".gitignore",
-      "sha256": "059c373709c4b8281259c192ebd7ae176ab6d6c6891cdbf08a340b8b702e6d32",
+      "sha256": "a516babb32d2944ba7ccfbbbb6290a5e4a33ef2b9c44207ad83adc511e7ffe4a",
       "role": "repository publication/navigation policy; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/LOCAL-MEASUREMENT-COVERAGE-v3/summary.md",
+      "sha256": "ceec5977d5f3ca2656367d97c900845b3e80da2ab852f93780b0fbabaab386b5",
+      "role": "offline historical per-metric interval coverage; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/LOCAL-MEASUREMENT-COVERAGE-v3/manifest.json",
+      "sha256": "986977ce98e522aad33bebeafb1e29d095702b48b6202ae705aecdd28800f78b",
+      "role": "offline report input/output hashes; manifest does not self-hash"
+    },
+    {
+      "path": "env/local-measurement-coverage-v3/source-snapshot-manifest.json",
+      "sha256": "f01ad1baac64fb30ac6b78569c9f215fb08928bead1a83262bb0740ca06df14f",
+      "role": "pre-edit source snapshots bound by the historical v2 report"
+    },
+    {
+      "path": "scripts/local_measurement_coverage.py",
+      "sha256": "e5f33bbc59cd15871809c8e5a7c82d93b70e1d3c976e5e42e8751951cb77d070",
+      "role": "offline per-metric historical coverage analyzer"
+    },
+    {
+      "path": "tests/test_local_measurement_coverage.py",
+      "sha256": "c85d03b6a674cdc06d5f9b6d8401991575831361a30d461596619e9ad860be8b",
+      "role": "offline regression: I/O coverage changes do not alter CPU coverage"
+    },
+    {
+      "path": "env/docops-measurement-volcano-01/protocol-probe.json",
+      "sha256": "8b281ca5e0d34d6c772c1b48b720ec4112f77a2ca1c819aa5122381f07aa9d8d",
+      "role": "sanitized Office protocol probe failure; actual send count unknown"
+    },
+    {
+      "path": "env/docops-measurement-volcano-01/validation-stop.json",
+      "sha256": "14fd773696ea11d119591cbc3d074c52a5210ad8cc37643c4392b02397d5ec0e",
+      "role": "stop evidence; no formal attempts or approvals"
+    },
+    {
+      "path": "env/docops-measurement-volcano-01/probe-repair-offline.json",
+      "sha256": "3c590a48539e960ba6b22cea3368da59d375bb8f7b2896efe8a886834c0e6358",
+      "role": "offline probe repair, test status and unknown synthetic-test send evidence"
+    },
+    {
+      "path": "env/docops-measurement-volcano-01/pre-environment-repair-identity/frozen-identity.json",
+      "sha256": "c19bbe2a0d18b183f34ce15d930dd383aa3086fb8b9a1de6e500c1cc9416aa35",
+      "role": "preserved old unapproved preparation identity; superseded only for profile collection report fix"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/pre-scan-fix-identity/frozen-identity.json",
+      "sha256": "045f0c2d32fe6be648c97d432edd670847c41086e20ed7ffe0592f4e0e985258",
+      "role": "Preserved previous preparation/source bytes before authorized scan wiring update; not current execution identity"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/pre-scan-fix-identity/frozen-identity.json",
+      "sha256": "1e7f5c5c3e44f0055a9093ca8d2826bb8310fc7f22a5d8476b50ffbd110e89a6",
+      "role": "Preserved previous preparation/source bytes before authorized scan wiring update; not current execution identity"
+    },
+    {
+      "path": "env/docops-measurement-volcano-01/validation-closeout.json",
+      "sha256": "a60990b5d585da6594f06119ad496f624dc6235f82e541c74d2e4151fb4a67fe",
+      "role": "this authorization closeout; Office measurement partial and downstream not executed"
+    },
+    {
+      "path": "env/docops-measurement-volcano-01/frozen-identity.json",
+      "sha256": "f81fd02ff352a84b6bf6be88353c92d170f898b2aea00ccc6c947ee966c66363",
+      "role": "final Office identity bound to current approval and consumed single attempt"
+    },
+    {
+      "path": "env/docops-measurement-volcano-01/protocol-probe-environment-fixed.json",
+      "sha256": "64035b03c47fb615e35b8c3c310521c179578593b86bddd627252bcdfba39272",
+      "role": "Office protocol: one forwarding attempt, received and parsed"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/protocol-probe-environment-fixed.json",
+      "sha256": "ae59106ed57848c38e1a01b72db7c309bb6da2f7e25bf43a547e92d0d7a9bd1a",
+      "role": "Assistant protocol: one forwarding attempt, received and parsed"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/validation-closeout.json",
+      "sha256": "20818f0172b22d51f59a48da4ee55f10892d92fec7b31d1df07a47c53f6a1ddf",
+      "role": "Current limited three-chain single-attempt validation, not an execution approval"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/validation-summary.md",
+      "sha256": "3b7a362fb78f4bb4d9284daf1ebd548ff5660500591ca17d57bc5f8b035052e5",
+      "role": "Current limited three-chain single-attempt validation, not an execution approval"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/validation-manifest.json",
+      "sha256": "aca12d8bebc10428bdd21b7ed5a446b9fd7dbbfabca71ebbda4ec17161a5491f",
+      "role": "Current limited three-chain single-attempt validation, not an execution approval"
+    },
+    {
+      "path": "env/docops-measurement-volcano-02/frozen-identity.json",
+      "sha256": "0643070334be70ce33f12063988f15e89bb486b6e31109d1ae2470b0abdb962d",
+      "role": "Current limited three-chain single-attempt validation, not an execution approval"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/frozen-identity.json",
+      "sha256": "76c6b9253844a16d4bf907d7b4c7fd0b83b8b3fcae7b977d7b694628f467b4b9",
+      "role": "Current limited three-chain single-attempt validation, not an execution approval"
+    },
+    {
+      "path": "env/toolsandbox-measurement-volcano-01/frozen-identity.json",
+      "sha256": "718241df50ed1b6d08e1a7045dd8e9bb5eb2918c12729f45bd24d937309ced6a",
+      "role": "Current limited three-chain single-attempt validation, not an execution approval"
+    },
+    {
+      "path": "reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/summary.md",
+      "sha256": "1178fec984947a2b53316dca73ec13aad0205e97022ec9cf7f4a79e48f182cda",
+      "role": "New offline three-chain limited characterization; not an execution approval"
+    },
+    {
+      "path": "reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/summary.json",
+      "sha256": "433727c9bbd4735dd67e1c3c4c0f107e3c359ea2dc81167fe859c223cd2698e0",
+      "role": "New offline three-chain limited characterization; not an execution approval"
+    },
+    {
+      "path": "reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/manifest.json",
+      "sha256": "b33a06b5176fb4aacbde5185b80d1dffda9596989ab08bb8c92c7729e04eff24",
+      "role": "New offline three-chain limited characterization; not an execution approval"
     }
   ],
   "planned_api_route": {
@@ -2087,5 +2472,190 @@
       "data/catalog/README.md"
     ],
     "repair_manifest": "local_archive/20261016-repair/manifest.json"
+  },
+  "office_disk_scan_three_chain_validation": {
+    "status": "three_single_attempts_completed_with_declared_limitations",
+    "summary": "env/docops-measurement-volcano-02/validation-summary.md",
+    "closeout": "env/docops-measurement-volcano-02/validation-closeout.json",
+    "manifest": "env/docops-measurement-volcano-02/validation-manifest.json",
+    "executed": 3,
+    "not_executed": 0,
+    "reruns": 0,
+    "gateway_probes_this_turn": 0,
+    "gateway_models_dependencies_unchanged": true,
+    "tests": {
+      "unique_passed": 38,
+      "new_scan_tests": 4,
+      "shared_measurement_passed": 26,
+      "cleanup_passed": 8,
+      "initial_fixture_assertion_error": 1,
+      "fixture_error_resolved": "argparse rejects old flag via SystemExit(2), not a returned integer; corrected test only",
+      "final_failed": 0,
+      "not_completed": 0
+    },
+    "no_model_check": {
+      "attempts": 1,
+      "status": "passed",
+      "growth_bytes": 32768,
+      "cleanup_confirmed": true,
+      "model_calls": 0
+    },
+    "runs": [
+      {
+        "chain": "Office",
+        "collection": "DOCOPS-MEASUREMENT-VOLCANO-02",
+        "run_id": "20261016T143948Z-excel001",
+        "identity_sha256": "15732b6a4202cf967895050f16c940d7d78f6508969f74539ad1a8a81763ec89",
+        "entry_returncode": 0,
+        "measurement_primary": "complete",
+        "supplement_aggregate_status": "partial",
+        "task_result": {
+          "status": "completed",
+          "rewards": {
+            "reward": 1
+          },
+          "reward": 1,
+          "verifier_budget_s": 600
+        },
+        "termination": "finish",
+        "archive_verified": true
+      },
+      {
+        "chain": "Coding",
+        "collection": "CODING-MEASUREMENT-VOLCANO-01",
+        "run_id": "20261016T144518Z-django16485-91776c",
+        "identity_sha256": "0930d98985a5a5974db684a05bbb39fb777f84c5bc453de959f09ed812ee914f",
+        "entry_returncode": 7,
+        "measurement_primary": "complete",
+        "supplement_aggregate_status": "partial",
+        "task_result": {
+          "resolved": true,
+          "evaluation_status": "ok"
+        },
+        "termination": "Submitted",
+        "archive_verified": true
+      },
+      {
+        "chain": "Assistant",
+        "collection": "TOOLSANDBOX-MEASUREMENT-VOLCANO-01",
+        "run_id": "20261016T145056Z-tsbvolcano01",
+        "identity_sha256": "2d7b147e74c37cbaefbb997ff51f627be7691fb4397f8571aceb20c962c8fef9",
+        "entry_returncode": 0,
+        "measurement_primary": "complete",
+        "supplement_aggregate_status": "partial",
+        "task_result": {
+          "milestone_mapping": {
+            "0": [
+              23,
+              1
+            ],
+            "1": [
+              17,
+              1
+            ],
+            "2": [
+              25,
+              1
+            ],
+            "3": [
+              26,
+              0.7937005097107789
+            ]
+          },
+          "minefield_mapping": {},
+          "milestone_similarity": 0.9484251274276947,
+          "minefield_similarity": 0,
+          "similarity": 0.9484251274276947,
+          "turn_count": 11
+        },
+        "termination": {
+          "conversation_active": false,
+          "user_end_conversation_executed": true,
+          "reason": "user_end_conversation"
+        },
+        "archive_verified": true
+      }
+    ],
+    "coding_entry_rc7": "runner archive_status success is ok, entry erroneously expects complete; actual archives hash/file-set verified; original exit code and evidence retained, no rerun",
+    "cache": "unsupported; no task-exclusive cache path registered",
+    "network": "shared netns per-interface only; not task/API-exclusive bytes",
+    "formal_http_attempts": "unknown; Assistant project-layer attempts separately observed",
+    "gates_unchanged": true,
+    "cpu02_replay_paused": true,
+    "state_is_not_approval": true
+  },
+  "volcano_three_chain_characterization": {
+    "status": "complete_limited_offline_analysis",
+    "report": "reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/summary.md",
+    "manifest": "reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/manifest.json",
+    "runs": [
+      {
+        "chain": "Office",
+        "run_id": "20261016T143948Z-excel001",
+        "n": 1,
+        "logical_requests": 8,
+        "tools_by_role": {
+          "bootstrap": 2,
+          "agent": 7
+        },
+        "entry_returncode": 0,
+        "figure": "reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/figures/office.svg",
+        "sampling_gaps": {
+          "container": {},
+          "host_agent": {}
+        }
+      },
+      {
+        "chain": "Coding",
+        "run_id": "20261016T144518Z-django16485-91776c",
+        "n": 1,
+        "logical_requests": 20,
+        "tools_by_role": {
+          "agent": 30
+        },
+        "entry_returncode": 7,
+        "figure": "reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/figures/coding.svg",
+        "sampling_gaps": {
+          "20261016T144518Z-django16485-91776c-agent-sandbox": {},
+          "20261016T144518Z-django16485-91776c-verifier": {},
+          "host_mini_child": {
+            "cpu": 1,
+            "read_bytes": 1,
+            "write_bytes": 1,
+            "rchar": 1,
+            "wchar": 1
+          }
+        }
+      },
+      {
+        "chain": "Assistant",
+        "run_id": "20261016T145056Z-tsbvolcano01",
+        "n": 1,
+        "logical_requests": 7,
+        "tools_by_role": {
+          "agent": 5,
+          "user": 1
+        },
+        "entry_returncode": 0,
+        "figure": "reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/figures/assistant.svg",
+        "sampling_gaps": {
+          "worker": {}
+        }
+      }
+    ],
+    "scope": "three exact single runs; no old-repeat merge, no cross-class ranking or causal attribution",
+    "test_discovered": 8,
+    "test_executed": 8,
+    "test_passed": 8,
+    "test_failed": 0,
+    "test_not_completed": 0,
+    "input_records": 192,
+    "output_records": 10,
+    "browser_render_check": "not performed; no installed renderer; SVG XML/data paths/local links validated",
+    "network": "shared netns only; deterministic maximum3 non-lo interfaces for display, never an API-egress claim",
+    "coding_rc7": "preserved; entry success-status mismatch, archived files verified; not runtime repair",
+    "historical_inputs_modified": false,
+    "html_updated": false,
+    "gates_unchanged": true
   }
 }

@@ -1,0 +1,310 @@
+{
+  "collection": "LOCAL-THREE-CLASS-REPEAT-01",
+  "identity_sha256": "460c9c28e4799d864ff2aa3a2bf7cf2e272fa095eabb917f4bec4f1b45893b22",
+  "wall_s": 208.93585415999405,
+  "within_batch_budget": true,
+  "class_stops": {
+    "Coding": {
+      "reason": "required_fixed_image_missing_no_registered_local_recovery",
+      "missing_tasks": [
+        "astropy__astropy-13236",
+        "astropy__astropy-13398"
+      ],
+      "policy": "all nine class slots not_executed; no pull or substitution"
+    }
+  },
+  "global_stop": "acceptance_or_cleanup_unconfirmed:KeyError",
+  "runs": [
+    {
+      "sequence": 0,
+      "chain": "Coding",
+      "round": 0,
+      "task": "django__django-16485",
+      "status": "not_executed",
+      "reason": {
+        "reason": "required_fixed_image_missing_no_registered_local_recovery",
+        "missing_tasks": [
+          "astropy__astropy-13236",
+          "astropy__astropy-13398"
+        ],
+        "policy": "all nine class slots not_executed; no pull or substitution"
+      }
+    },
+    {
+      "sequence": 1,
+      "chain": "Coding",
+      "round": 0,
+      "task": "astropy__astropy-13236",
+      "status": "not_executed",
+      "reason": {
+        "reason": "required_fixed_image_missing_no_registered_local_recovery",
+        "missing_tasks": [
+          "astropy__astropy-13236",
+          "astropy__astropy-13398"
+        ],
+        "policy": "all nine class slots not_executed; no pull or substitution"
+      }
+    },
+    {
+      "sequence": 2,
+      "chain": "Coding",
+      "round": 0,
+      "task": "astropy__astropy-13398",
+      "status": "not_executed",
+      "reason": {
+        "reason": "required_fixed_image_missing_no_registered_local_recovery",
+        "missing_tasks": [
+          "astropy__astropy-13236",
+          "astropy__astropy-13398"
+        ],
+        "policy": "all nine class slots not_executed; no pull or substitution"
+      }
+    },
+    {
+      "sequence": 3,
+      "chain": "Coding",
+      "round": 1,
+      "task": "astropy__astropy-13236",
+      "status": "not_executed",
+      "reason": {
+        "reason": "required_fixed_image_missing_no_registered_local_recovery",
+        "missing_tasks": [
+          "astropy__astropy-13236",
+          "astropy__astropy-13398"
+        ],
+        "policy": "all nine class slots not_executed; no pull or substitution"
+      }
+    },
+    {
+      "sequence": 4,
+      "chain": "Coding",
+      "round": 1,
+      "task": "astropy__astropy-13398",
+      "status": "not_executed",
+      "reason": {
+        "reason": "required_fixed_image_missing_no_registered_local_recovery",
+        "missing_tasks": [
+          "astropy__astropy-13236",
+          "astropy__astropy-13398"
+        ],
+        "policy": "all nine class slots not_executed; no pull or substitution"
+      }
+    },
+    {
+      "sequence": 5,
+      "chain": "Coding",
+      "round": 1,
+      "task": "django__django-16485",
+      "status": "not_executed",
+      "reason": {
+        "reason": "required_fixed_image_missing_no_registered_local_recovery",
+        "missing_tasks": [
+          "astropy__astropy-13236",
+          "astropy__astropy-13398"
+        ],
+        "policy": "all nine class slots not_executed; no pull or substitution"
+      }
+    },
+    {
+      "sequence": 6,
+      "chain": "Coding",
+      "round": 2,
+      "task": "astropy__astropy-13398",
+      "status": "not_executed",
+      "reason": {
+        "reason": "required_fixed_image_missing_no_registered_local_recovery",
+        "missing_tasks": [
+          "astropy__astropy-13236",
+          "astropy__astropy-13398"
+        ],
+        "policy": "all nine class slots not_executed; no pull or substitution"
+      }
+    },
+    {
+      "sequence": 7,
+      "chain": "Coding",
+      "round": 2,
+      "task": "django__django-16485",
+      "status": "not_executed",
+      "reason": {
+        "reason": "required_fixed_image_missing_no_registered_local_recovery",
+        "missing_tasks": [
+          "astropy__astropy-13236",
+          "astropy__astropy-13398"
+        ],
+        "policy": "all nine class slots not_executed; no pull or substitution"
+      }
+    },
+    {
+      "sequence": 8,
+      "chain": "Coding",
+      "round": 2,
+      "task": "astropy__astropy-13236",
+      "status": "not_executed",
+      "reason": {
+        "reason": "required_fixed_image_missing_no_registered_local_recovery",
+        "missing_tasks": [
+          "astropy__astropy-13236",
+          "astropy__astropy-13398"
+        ],
+        "policy": "all nine class slots not_executed; no pull or substitution"
+      }
+    },
+    {
+      "sequence": 9,
+      "chain": "Office",
+      "round": 0,
+      "task": "atomic__excel_001_budget_bucket_totals_seed",
+      "run_id": "20261016T182559Z-09-r0-office",
+      "identity_sha256": "460c9c28e4799d864ff2aa3a2bf7cf2e272fa095eabb917f4bec4f1b45893b22",
+      "returncode": 0,
+      "parent_wall_s": 208.00761975580826,
+      "report_path": "reports/resource/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office/run-report.json",
+      "raw_path": "data/raw/generated/LOCAL-THREE-CLASS-REPEAT-01/20261016T182559Z-09-r0-office",
+      "status": "failed",
+      "archive_verified": false,
+      "error_type": "KeyError"
+    },
+    {
+      "sequence": 10,
+      "chain": "Office",
+      "round": 0,
+      "task": "atomic__ppt_008_bullet_editing_seed",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    },
+    {
+      "sequence": 11,
+      "chain": "Office",
+      "round": 0,
+      "task": "atomic__pdf_004_audit_pages_reorder_seed",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    },
+    {
+      "sequence": 12,
+      "chain": "Office",
+      "round": 1,
+      "task": "atomic__ppt_008_bullet_editing_seed",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    },
+    {
+      "sequence": 13,
+      "chain": "Office",
+      "round": 1,
+      "task": "atomic__pdf_004_audit_pages_reorder_seed",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    },
+    {
+      "sequence": 14,
+      "chain": "Office",
+      "round": 1,
+      "task": "atomic__excel_001_budget_bucket_totals_seed",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    },
+    {
+      "sequence": 15,
+      "chain": "Office",
+      "round": 2,
+      "task": "atomic__pdf_004_audit_pages_reorder_seed",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    },
+    {
+      "sequence": 16,
+      "chain": "Office",
+      "round": 2,
+      "task": "atomic__excel_001_budget_bucket_totals_seed",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    },
+    {
+      "sequence": 17,
+      "chain": "Office",
+      "round": 2,
+      "task": "atomic__ppt_008_bullet_editing_seed",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    },
+    {
+      "sequence": 18,
+      "chain": "Assistant",
+      "round": 0,
+      "task": "send_message_with_contact_content_cellular_off",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    },
+    {
+      "sequence": 19,
+      "chain": "Assistant",
+      "round": 0,
+      "task": "add_reminder_content_and_week_delta_and_time",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    },
+    {
+      "sequence": 20,
+      "chain": "Assistant",
+      "round": 0,
+      "task": "modify_contact_with_message_recency_multiple_user_turn",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    },
+    {
+      "sequence": 21,
+      "chain": "Assistant",
+      "round": 1,
+      "task": "add_reminder_content_and_week_delta_and_time",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    },
+    {
+      "sequence": 22,
+      "chain": "Assistant",
+      "round": 1,
+      "task": "modify_contact_with_message_recency_multiple_user_turn",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    },
+    {
+      "sequence": 23,
+      "chain": "Assistant",
+      "round": 1,
+      "task": "send_message_with_contact_content_cellular_off",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    },
+    {
+      "sequence": 24,
+      "chain": "Assistant",
+      "round": 2,
+      "task": "modify_contact_with_message_recency_multiple_user_turn",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    },
+    {
+      "sequence": 25,
+      "chain": "Assistant",
+      "round": 2,
+      "task": "send_message_with_contact_content_cellular_off",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    },
+    {
+      "sequence": 26,
+      "chain": "Assistant",
+      "round": 2,
+      "task": "add_reminder_content_and_week_delta_and_time",
+      "status": "not_executed",
+      "reason": "acceptance_or_cleanup_unconfirmed:KeyError"
+    }
+  ],
+  "counts": {
+    "executed": 0,
+    "failed": 1,
+    "not_executed": 26
+  }
+}

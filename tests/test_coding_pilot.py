@@ -319,6 +319,26 @@ class EndToEndPathTests(PilotTestBase):
 
     def test_success_full_path(self):
         runner = self.make_runner(host_reader=_reader_pair()["host"])
+        runtime = runner.runtime
+        scan_counts = {}
+        scan_log = []
+        original_execute = runtime.execute
+        def bounded_scan(handle, command, timeout_s, **kwargs):
+            if "# AWC_TASK_DIRECTORY_SCAN" in command:
+                count = scan_counts.get(handle.container_id, 0) + 1
+                scan_counts[handle.container_id] = count
+                scan_log.append((handle.spec.scope, count, timeout_s))
+                value = 100 if count == 1 else 140
+                return {"returncode": 0, "timed_out": False, "output": json.dumps({
+                    "clock_domain": "container_kernel_monotonic", "t_monotonic_ns": count,
+                    "entries": [{"role": "task_workspace", "scope": f"{handle.spec.scope}_container:/testbed",
+                        "ownership": "task_container", "path": "/testbed",
+                        "size_basis": "apparent_file_size_bytes", "status": "complete",
+                        "bytes": value, "observed_subtotal_bytes": value,
+                        "files_seen": 1, "symlinks_skipped": 0,
+                        "scan_started_monotonic_ns": count, "scan_wall_ns": 1}]})}
+            return original_execute(handle, command, timeout_s, **kwargs)
+        runtime.execute = bounded_scan
         outcome = runner.run()
         self.assertEqual(outcome.execution_status, "ok")
         self.assertEqual(outcome.evaluation_status, "ok")
@@ -327,15 +347,47 @@ class EndToEndPathTests(PilotTestBase):
         self.assertEqual(outcome.source_type, "synthetic")
         run_dir = Path(outcome.run_dir)
         for name in ("events.jsonl", "samples.json", "metadata.json",
-                     "manifest.json", "candidate.patch", "measurement.json", "environment.json"):
+                     "manifest.json", "candidate.patch", "measurement.json", "environment.json",
+                     "supplemental_measurements.json"):
             self.assertTrue((run_dir / name).is_file(), name)
         manifest = json.loads((run_dir / "manifest.json").read_text())
         self.assertIn("candidate.patch", manifest["files"])
         self.assertIn('measurement.json', manifest['files'])
+        self.assertIn('supplemental_measurements.json', manifest['files'])
+        supplement = json.loads((run_dir / 'supplemental_measurements.json').read_text())
+        self.assertIn(supplement['network']['scope_kind'], ('network_namespace_shared',))
+        self.assertEqual(supplement['disk_footprint']['paths'][0]['role'], 'attempt_output')
+        self.assertEqual(len(scan_log), 4)
+        self.assertTrue(all(timeout <= 5.0 for _, _, timeout in scan_log))
+        self.assertEqual(supplement['task_workspace']['status'], 'observed')
+        self.assertEqual(supplement['task_workspace']['scopes']['agent_workspace']['footprint']
+                         ['paths'][0]['delta_bytes'], 40)
+        self.assertEqual(supplement['task_workspace']['scopes']['verifier_workspace']['footprint']
+                         ['paths'][0]['delta_bytes'], 40)
         measured = json.loads((run_dir / 'measurement.json').read_text())
         self.assertEqual(measured['call_timing_status'], 'complete')
         self.assertEqual(measured['expected_requests'], outcome.budget_usage['requests'])
         self.assertGreater(measured['collector']['total_reads'], 0)
+
+    def test_task_disk_scan_error_is_partial_and_cleanup_still_runs(self):
+        runner = self.make_runner(host_reader=_reader_pair()["host"])
+        runtime = runner.runtime
+        original_execute = runtime.execute
+        def fail_only_disk_scan(handle, command, timeout_s, **kwargs):
+            if "# AWC_TASK_DIRECTORY_SCAN" in command:
+                raise PermissionError("synthetic scan boundary failure")
+            return original_execute(handle, command, timeout_s, **kwargs)
+        runtime.execute = fail_only_disk_scan
+        outcome = runner.run()
+        self.assertEqual(outcome.execution_status, "ok")
+        self.assertEqual(outcome.archive_status, "ok")
+        self.assertEqual(runtime.containers, {})
+        supplement = json.loads((Path(outcome.run_dir) /
+                                 'supplemental_measurements.json').read_text())
+        self.assertEqual(supplement['task_workspace']['status'], 'partial')
+        for footprint in supplement['task_workspace']['scopes'].values():
+            self.assertEqual(footprint['footprint']['status'], 'partial')
+            self.assertIsNone(footprint['footprint']['paths'][0]['delta_bytes'])
 
     def test_agent_error_path(self):
         script = {"steps": [{"model": {"error": "RuntimeError: boom"}}],
@@ -391,6 +443,16 @@ class EndToEndPathTests(PilotTestBase):
         self.assertEqual(outcome.execution_status, "infra_failure")
         self.assertEqual(outcome.evaluation_status, "not_run")
 
+    def test_measurement_start_failure_still_runs_container_cleanup(self):
+        runner = self.make_runner()
+        with mock.patch('agent_workload_characterization.collectors.execution_measurement.directory_footprint_snapshot',
+                        side_effect=PermissionError('synthetic unreadable scope')):
+            outcome = runner.run()
+        self.assertEqual(outcome.archive_status, 'ok')
+        self.assertEqual(len(runner.runtime.cleanup_calls), 1)
+        supplemental = json.loads((Path(outcome.run_dir) / 'supplemental_measurements.json').read_text())
+        self.assertEqual(supplemental['status'], 'partial')
+
     def test_archive_failure_preserves_events(self):
         runner = self.make_runner()
         with mock.patch.object(
@@ -399,6 +461,24 @@ class EndToEndPathTests(PilotTestBase):
             outcome = runner.run()
         self.assertEqual(outcome.archive_status, "failed")
         self.assertTrue((Path(outcome.run_dir) / "events.jsonl").is_file())
+
+    def test_candidate_archive_write_failure_still_stops_supplement_and_cleans(self):
+        runner = self.make_runner()
+        original = Path.write_bytes
+
+        def fail_candidate(path, data):
+            if path.name == "candidate.patch":
+                raise OSError("synthetic archive boundary failure")
+            return original(path, data)
+
+        with mock.patch.object(Path, "write_bytes", fail_candidate):
+            outcome = runner.run()
+        run_dir = Path(outcome.run_dir)
+        self.assertEqual(outcome.archive_status, "failed")
+        self.assertTrue((run_dir / "supplemental_measurements.json").is_file())
+        supplement = json.loads((run_dir / "supplemental_measurements.json").read_text())
+        self.assertIn(supplement["status"], ("observed", "partial"))
+        self.assertEqual(len(runner.runtime.cleanup_calls), 1)
 
 
 # ---------------------------------------------------------------------------

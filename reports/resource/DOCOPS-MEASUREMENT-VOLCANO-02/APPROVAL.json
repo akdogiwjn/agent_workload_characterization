@@ -1,0 +1,27 @@
+{
+  "schema": "docops-single-run-approval-v1",
+  "collection": "DOCOPS-MEASUREMENT-VOLCANO-02",
+  "user_approval": "approved",
+  "identity_sha256": "15732b6a4202cf967895050f16c940d7d78f6508969f74539ad1a8a81763ec89",
+  "approved_at_utc": "2026-10-16T14:29:37.384497+00:00",
+  "approval_source": "explicit user authorization in the current request",
+  "accept_unknown_cost_no_hard_cap": true,
+  "scope": {
+    "task": "atomic__excel_001_budget_bucket_totals_seed",
+    "attempts": 1,
+    "attempt_retry": 0,
+    "max_steps": 40,
+    "max_tokens_per_request": 32768,
+    "agent_wall_s": 1200,
+    "verifier_wall_s": 600,
+    "total_wall_s": 2700,
+    "cleanup_archive_reserve_s": 300,
+    "cpu": 1,
+    "memory_bytes": 4294967296,
+    "container_network": "none",
+    "sample_interval_s": 0.5,
+    "framework_attempts_per_logical_call_max": 3,
+    "actual_bill": "unknown",
+    "hard_cost_cap": null
+  }
+}

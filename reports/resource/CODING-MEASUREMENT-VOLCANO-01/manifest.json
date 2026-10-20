@@ -1,0 +1,43 @@
+{
+  "schema": "coding-measurement-volcano-manifest-v1",
+  "identity_sha256": "0930d98985a5a5974db684a05bbb39fb777f84c5bc453de959f09ed812ee914f",
+  "inputs": [
+    {
+      "path": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/APPROVAL.json",
+      "bytes": 860,
+      "sha256": "7717cfcb2c6f4cf156c0a71af7cbf73662ddfc29bfcc581646f54be7eedb7f1b"
+    },
+    {
+      "path": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/ATTEMPT_STARTED.json",
+      "bytes": 380,
+      "sha256": "ceebe2dc2561091474741b76f3b9126754379c0adeb75dba809cf8ff4678e5cf"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/plan-identity.json",
+      "bytes": 8777,
+      "sha256": "76c6b9253844a16d4bf907d7b4c7fd0b83b8b3fcae7b977d7b694628f467b4b9"
+    },
+    {
+      "path": "env/coding-measurement-volcano-01/frozen-identity.json",
+      "bytes": 8777,
+      "sha256": "76c6b9253844a16d4bf907d7b4c7fd0b83b8b3fcae7b977d7b694628f467b4b9"
+    },
+    {
+      "path": "data/raw/generated/CODING-MEASUREMENT-VOLCANO-01/20261016T144518Z-django16485-91776c/manifest.json",
+      "bytes": 1336,
+      "sha256": "a5e3bf1608539f1dbd7d118ea2969bbc4c3161be771e3eeb66ca4850c4a44efd"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/run-report.json",
+      "bytes": 1255,
+      "sha256": "beb51b50c9a63571d021c694098029f208ade6addc208444f6fc410568f88a7f"
+    },
+    {
+      "path": "reports/resource/CODING-MEASUREMENT-VOLCANO-01/ATTEMPT_STARTED.json",
+      "bytes": 380,
+      "sha256": "ceebe2dc2561091474741b76f3b9126754379c0adeb75dba809cf8ff4678e5cf"
+    }
+  ]
+}

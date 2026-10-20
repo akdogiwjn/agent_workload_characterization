@@ -206,7 +206,9 @@ def load_fixed_record() -> dict:
 
 
 def build_c_runner(*, authorized: bool, credentials: dict | None = None,
-                   clock=None):
+                   clock=None, collection: str = COLLECTION,
+                   model_name: str = MODEL_NAME,
+                   credentials_env: tuple[str, str] = (USER_API_BASE_ENV, USER_API_KEY_ENV)):
     """Assemble the full C runner from the fixed identities.
 
     `authorized` flips ONLY the component execution switches; in plan
@@ -228,7 +230,7 @@ def build_c_runner(*, authorized: bool, credentials: dict | None = None,
     bundled = MiniSweAgentHarness.load_bundled_config(MINI_VENV_PY)
     mini_config = {
         "agent": dict(bundled.get("agent") or {}),
-        "model": {"model_name": MODEL_NAME,
+        "model": {"model_name": model_name,
                   "model_kwargs": {
                       k: v for k, v in (bundled.get("model", {})
                                         .get("model_kwargs") or {}).items()
@@ -255,7 +257,7 @@ def build_c_runner(*, authorized: bool, credentials: dict | None = None,
         record_locator=str(RECORD_PATH))
 
     runner = CodingPilotRunner(
-        project_root=PROJECT_ROOT, collection=COLLECTION,
+        project_root=PROJECT_ROOT, collection=collection,
         harness=harness, verifier=verifier, runtime=runtime,
         clock=clock, limits=limits, task=task,
         verifier_spec=verifier_spec, image=TARGET_IMAGE,
@@ -263,12 +265,12 @@ def build_c_runner(*, authorized: bool, credentials: dict | None = None,
         **container_limits)
 
     identity = {
-        "collection": COLLECTION,
+        "collection": collection,
         "task": {"instance_id": record["instance_id"],
                  "record_sha256": RECORD_SHA256,
                  "base_commit": record.get("base_commit")},
         "image": TARGET_IMAGE,
-        "model": MODEL_NAME,
+        "model": model_name,
         "harness": "mini-SWE-agent 2.4.6 (subprocess via "
                    f"{_disp(MINI_VENV_PY)})",
         "verifier": ("SwebenchVerifierRunner (official chain, fixed "
@@ -276,8 +278,8 @@ def build_c_runner(*, authorized: bool, credentials: dict | None = None,
         "budget": limits.to_dict(),
         "container_limits": container_limits,
         "credentials_env": {
-            "user_api_base_env": USER_API_BASE_ENV,
-            "user_api_key_env": USER_API_KEY_ENV,
+            "user_api_base_env": credentials_env[0],
+            "user_api_key_env": credentials_env[1],
             "child_sdk_env": [SDK_BASE_ENV, SDK_KEY_ENV],
             "note": "values are read from the environment at execution "
                     "time, kept in memory only, and injected into the "

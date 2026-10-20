@@ -1,0 +1,79 @@
+{
+  "checked_after_batch": true,
+  "endpoint": "unix:///var/run/docker.sock",
+  "image_count": 7,
+  "records": [
+    {
+      "chain": "Coding",
+      "expected_id": "sha256:bba60201758effbb3e4795367d470e3d0e00427f0e2e86636801b9f93df0b664",
+      "observed_id": "sha256:bba60201758effbb3e4795367d470e3d0e00427f0e2e86636801b9f93df0b664",
+      "platform": "linux/arm64",
+      "reference": "swebench/sweb.eval.arm64.django_1776_django-16485@sha256:19d403c243c2857e7cb9cf5af8ce3f1cb6d87be91c5254e1de00040e6db3b7d2",
+      "registry_digest_match": true,
+      "status": "verified",
+      "task": "django__django-16485"
+    },
+    {
+      "chain": "Coding",
+      "expected_id": "sha256:55adab20ce3beba93ae8e85a09cd184662f154bd091dc7e8e195dbcbff45afac",
+      "observed_id": "sha256:55adab20ce3beba93ae8e85a09cd184662f154bd091dc7e8e195dbcbff45afac",
+      "platform": "linux/arm64",
+      "reference": "swebench/sweb.eval.arm64.astropy_1776_astropy-13236@sha256:e7512a4ee3451cdd949098a496fb68f8488a4970ef00ab3d96ed40a5fb1a2011",
+      "registry_digest_match": true,
+      "status": "verified",
+      "task": "astropy__astropy-13236"
+    },
+    {
+      "chain": "Coding",
+      "expected_id": "sha256:16b4fee7c64b3a0c501c2e25402197cd8aeb870b33d49a6e034ddc3c2eb79a3c",
+      "observed_id": "sha256:16b4fee7c64b3a0c501c2e25402197cd8aeb870b33d49a6e034ddc3c2eb79a3c",
+      "platform": "linux/arm64",
+      "reference": "swebench/sweb.eval.arm64.astropy_1776_astropy-13398@sha256:4475e9bab862169dc0622cc9686f6a6e53232dc7beba244b525ec2af4fef6a4a",
+      "registry_digest_match": true,
+      "status": "verified",
+      "task": "astropy__astropy-13398"
+    },
+    {
+      "chain": "Office",
+      "expected_id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+      "observed_id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+      "platform": "linux/arm64",
+      "reference": "docops-office-repeat-01:excel001",
+      "registry_digest_match": null,
+      "status": "verified",
+      "task": "atomic__excel_001_budget_bucket_totals_seed"
+    },
+    {
+      "chain": "Office",
+      "expected_id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+      "observed_id": "sha256:3d39ef14301cac220ff0fabce972d36dbad8df404924b11203a20973daa635ec",
+      "platform": "linux/arm64",
+      "reference": "docops-office-repeat-01:ppt008",
+      "registry_digest_match": null,
+      "status": "verified",
+      "task": "atomic__ppt_008_bullet_editing_seed"
+    },
+    {
+      "chain": "Office",
+      "expected_id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+      "observed_id": "sha256:c4104dcf89ba5c0d78860c56f245e0e512185390d3ecdbf262b208a6b8118f87",
+      "platform": "linux/arm64",
+      "reference": "docops-office-repeat-01:pdf004",
+      "registry_digest_match": null,
+      "status": "verified",
+      "task": "atomic__pdf_004_audit_pages_reorder_seed"
+    },
+    {
+      "chain": "Office",
+      "expected_id": "sha256:062bf50871c0e9d7d4a175643343746f27c785732596252d7ebe9ae0c08fe9b1",
+      "observed_id": "sha256:062bf50871c0e9d7d4a175643343746f27c785732596252d7ebe9ae0c08fe9b1",
+      "platform": "linux/arm64",
+      "reference": "harbor-claude-code-base:2.1.114",
+      "registry_digest_match": null,
+      "status": "verified",
+      "task": "base"
+    }
+  ],
+  "scope_note": "read-only image identity inspection; no image was pulled, rebuilt, or removed",
+  "verified_count": 7
+}

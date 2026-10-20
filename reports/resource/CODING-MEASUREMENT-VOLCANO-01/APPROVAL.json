@@ -1,0 +1,25 @@
+{
+  "schema": "coding-single-run-approval-v1",
+  "collection": "CODING-MEASUREMENT-VOLCANO-01",
+  "identity_sha256": "0930d98985a5a5974db684a05bbb39fb777f84c5bc453de959f09ed812ee914f",
+  "user_approval": "approved",
+  "approval_source": "explicit user authorization in current request",
+  "approved_at_utc": "2026-10-16T14:45:18.555155+00:00",
+  "accept_unknown_cost_no_hard_cap": true,
+  "scope": {
+    "task": "django__django-16485",
+    "attempts": 1,
+    "attempt_retry": 0,
+    "budget": {
+      "max_model_requests": 30,
+      "max_steps": 30,
+      "max_output_tokens_per_request": 4096,
+      "agent_wall_s": 1500.0,
+      "verifier_wall_s": 300.0,
+      "total_wall_s": 1800.0,
+      "max_new_artifact_bytes": 5368709120
+    },
+    "framework_retry_policy": "existing catalog policy; no added retry",
+    "cost": "unknown; no hard cap accepted"
+  }
+}

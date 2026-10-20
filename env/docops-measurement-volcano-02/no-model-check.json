@@ -1,0 +1,84 @@
+{
+  "kind": "model_free_container_check",
+  "model_calls": 0,
+  "status": "passed",
+  "started_monotonic_ns": 1086534591461432,
+  "image_expected": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+  "image_before": {
+    "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+    "platform": "linux/arm64",
+    "returncode": 0
+  },
+  "container_id": "7a5378c38159d3d7d227cbb2538c3c4cfa4ba29d732453fba13f407f8a736cfb",
+  "python_check": {
+    "returncode": 0,
+    "output": "Python 3.12.14\n"
+  },
+  "before": {
+    "clock_domain": "container_kernel_monotonic",
+    "t_monotonic_ns": 1086534961475973,
+    "size_basis": "apparent_file_size_bytes; allocated blocks not measured",
+    "entries": [
+      {
+        "role": "task_workspace_and_submission",
+        "scope": "agent_container:/root/submission",
+        "ownership": "check_private",
+        "path": "/root/submission",
+        "size_basis": "apparent_file_size_bytes",
+        "status": "complete",
+        "bytes": 0,
+        "observed_subtotal_bytes": 0,
+        "files_seen": 0,
+        "symlinks_skipped": 0,
+        "scan_started_monotonic_ns": 1086534961423983,
+        "scan_wall_ns": 50650
+      }
+    ],
+    "diagnostics": {
+      "returncode": 0,
+      "timed_out": false,
+      "cwd": "/",
+      "error_summary": null
+    },
+    "status": "complete",
+    "read_wall_ns": 101149240
+  },
+  "after": {
+    "clock_domain": "container_kernel_monotonic",
+    "t_monotonic_ns": 1086535247569423,
+    "size_basis": "apparent_file_size_bytes; allocated blocks not measured",
+    "entries": [
+      {
+        "role": "task_workspace_and_submission",
+        "scope": "agent_container:/root/submission",
+        "ownership": "check_private",
+        "path": "/root/submission",
+        "size_basis": "apparent_file_size_bytes",
+        "status": "complete",
+        "bytes": 32768,
+        "observed_subtotal_bytes": 32768,
+        "files_seen": 1,
+        "symlinks_skipped": 0,
+        "scan_started_monotonic_ns": 1086535247505452,
+        "scan_wall_ns": 62601
+      }
+    ],
+    "diagnostics": {
+      "returncode": 0,
+      "timed_out": false,
+      "cwd": "/",
+      "error_summary": null
+    },
+    "status": "complete",
+    "read_wall_ns": 100886366
+  },
+  "growth_bytes": 32768,
+  "container_removal": "removed",
+  "image_after": {
+    "id": "sha256:b3d27df054cc4efdf9b9034a60e24aa8adfe2b22c5c9ee59ddeac3b7ad873b99",
+    "platform": "linux/arm64",
+    "returncode": 0
+  },
+  "wall_s": 0.7420166789088398,
+  "within_120s": true
+}
