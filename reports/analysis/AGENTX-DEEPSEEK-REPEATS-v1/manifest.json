@@ -1,0 +1,204 @@
+{
+  "schema": "agentx-repeats-artifacts-v1",
+  "inputs": [
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/env/agentx-deepseek-repeats-01/plan.json",
+      "bytes": 86138,
+      "sha256": "623b1d11d09f97b388fb984eb0ddb9a40d8cd088434ad82ea3722020c1ad9302"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_pilot_20261023/reports/analysis/AGENTX-DEEPSEEK-CLIENT-v1/manifest.json",
+      "bytes": 7873,
+      "sha256": "93f7d2248fc8b28021509153acfa5f2593b223879a9321f1ee4e7f52eb47de4c"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_branches_20261023/reports/analysis/AGENTX-DEEPSEEK-BRANCHES-v1/manifest.json",
+      "bytes": 9965,
+      "sha256": "73d4e8461986acc5fc8774451ee2132d3d028dc190d05eb8bc2fff1097a5d9c8"
+    }
+  ],
+  "code": [
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/scripts/agentx_deepseek_repeat_analysis.py",
+      "bytes": 27280,
+      "sha256": "6a86b9d1e354fdd15369d3d1d54f327744d802926059e4e0b3a809ae14955108"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/scripts/agentx_deepseek_repeats.py",
+      "bytes": 10825,
+      "sha256": "7682844483485a5fe2883adfe7200055f468e9c900881255a7a0ef05e4d84dfd"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/scripts/agentx_deepseek_pilot.py",
+      "bytes": 18404,
+      "sha256": "37ab41df77b6fd097c71d407b8643a048e961fb2b206c81e8df898a4b79f0f33"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/scripts/agentx_deepseek_branches.py",
+      "bytes": 7967,
+      "sha256": "cb6ac6834971f7fdbe1e1667db6b520825afe2275a42e61427ab6b33a083c237"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/scripts/agentx_deepseek_branch_prepare.py",
+      "bytes": 9332,
+      "sha256": "e9fbe7f1756caf68257f3bdcb2e72ca5e645e6fcdf7f50933b530ef79bab19dc"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/AgentX重复实测_汇报版_7页.pptx",
+      "bytes": 2272197,
+      "sha256": "03d4066c55df645fe5d03544fef33c3ebe2773fa4c9b961502568fe844d48842"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/client_resources.csv",
+      "bytes": 184621,
+      "sha256": "629513217df8d060255ba319b6537b6e3f35f140772a0ce1d1c7ea9b16cb64bd"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/dependency_audit.csv",
+      "bytes": 17251,
+      "sha256": "6d0e1357d4c1ff5406465f7107383e20bf4a421ca5d1fc48407ac4e0a108a725"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/figures/01-overview.png",
+      "bytes": 388285,
+      "sha256": "15c57d7d744bd9108ddac130b9b886aad413eccc9a5879911880d0a07d8c1040"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/figures/01-overview.svg",
+      "bytes": 23400,
+      "sha256": "6232525ee4445dfe4d6efdc52f58505271cf0c8b631ce024628dcf8a1cd59d2f"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/figures/02-first-content.png",
+      "bytes": 296388,
+      "sha256": "4ffdf4a0e35396eb48ff46fffe3fd07205adc38bd24f60957244be3bdd0045c3"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/figures/02-first-content.svg",
+      "bytes": 14345,
+      "sha256": "df9c35cf5069cab07a886f0b4a43205d95b3f13a4e3dc18e9e3d234905bbb367"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/figures/03-wall-range.png",
+      "bytes": 245400,
+      "sha256": "c287c5f3bd1fc9dcc576e03b58f0d4611c3198343eb62a71c8c6dc836fd7c8c0"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/figures/03-wall-range.svg",
+      "bytes": 13251,
+      "sha256": "b3bff177e215d6daecde908dcf19373754bf71debad6c2821bb89d1d9d19b1a5"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/figures/04-client-resources.png",
+      "bytes": 329165,
+      "sha256": "702fdda0150e7bd7cce48f8a8bfa83ba144f6449d3341620b8a6e3df3df8fc6d"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/figures/04-client-resources.svg",
+      "bytes": 22742,
+      "sha256": "57da30710d409f4e23863bbc748f60a9dd58d0dd04e09e3fcf2060207db90932"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/figures/05-output-coverage.png",
+      "bytes": 360500,
+      "sha256": "efaeabef312473c6c8990c59e1c9d39f8ed719b96711bd6f9394564e14b6f821"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/figures/05-output-coverage.svg",
+      "bytes": 14394,
+      "sha256": "6bd7636b8c20e067b9d1bfbf92a959334c0c18ee2b4bd71fcec1f711ff6aa6f4"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/figures/06-cache.png",
+      "bytes": 291667,
+      "sha256": "f933caefa22a5206ad221a97f94897bdae5484b68434337a3b207e266a819abf"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/figures/06-cache.svg",
+      "bytes": 13552,
+      "sha256": "b30a9acb830d18f1715d9aa17efce84fe31574ed25b89f6bea6035e70d3f12b1"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/figures/07-paired-requests.png",
+      "bytes": 644421,
+      "sha256": "0b2782d683c02ace0470e035fddaf249a6226e7f5f99a81a7cb90787c3f0a44e"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/figures/07-paired-requests.svg",
+      "bytes": 51375,
+      "sha256": "2aaaa39cc7175e9e201713faedeb9f8076e62402ec9cc513deb28e35c984f94d"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/local-evidence-manifest.json",
+      "bytes": 169253,
+      "sha256": "1a96f8ac46c844b752e375129fd485a270fffa185a1c42006c6711ea97e9ba54"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/paired_changes.csv",
+      "bytes": 22174,
+      "sha256": "3de9117e4d924dccfa2b14d6032c5fc7a3c981380e45f52f9c4e2409a5de1a4d"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/plot_data/request_first_content.csv",
+      "bytes": 59023,
+      "sha256": "92273b95b3bf617a5031abf20c1415719fe38add97caec92acf1c3c23a6cce21"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/plot_data/run_metrics.csv",
+      "bytes": 3404,
+      "sha256": "e613edc9e3f364e4a96fdd3042475e7167585e4d36634bae85b2d9b3732b9cfa"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/plot_data/run_ranges.csv",
+      "bytes": 2455,
+      "sha256": "28298c152d3d5f5ca0779c2ad75fdf2ed34b62699b89534887fdb9d9820f2558"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/probes.csv",
+      "bytes": 230,
+      "sha256": "394a14baccd0b4b7d14ad738cefc19d310f5d1f073ada0cf0dbe2947ee4d8773"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/request_metrics.csv",
+      "bytes": 59023,
+      "sha256": "92273b95b3bf617a5031abf20c1415719fe38add97caec92acf1c3c23a6cce21"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/request_verification.csv",
+      "bytes": 30528,
+      "sha256": "409f275eb129c5c98c16ad2f31d13469a8dde01550c7131bc56dfcf8f20c7244"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/run_metrics.csv",
+      "bytes": 3404,
+      "sha256": "e613edc9e3f364e4a96fdd3042475e7167585e4d36634bae85b2d9b3732b9cfa"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/run_ranges.csv",
+      "bytes": 2455,
+      "sha256": "28298c152d3d5f5ca0779c2ad75fdf2ed34b62699b89534887fdb9d9820f2558"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/slides.json",
+      "bytes": 690,
+      "sha256": "dd6850473393c1ce907845eed459bd82813606ae5dbf2aca8186aaae675d33ec"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/summary.json",
+      "bytes": 16600,
+      "sha256": "4442287f0b66d54dd8f1a4e565ebeba9ef5a62980249538c687fe56563b31516"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/summary.md",
+      "bytes": 5674,
+      "sha256": "f95ee43ee5e3e9a352db95eea7150c7203f32df677d17963bd121ab97b5ee601"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/verification.json",
+      "bytes": 4299,
+      "sha256": "8b97d182d082b4d3b65f87c7b259c73b83350bf861f27bab3413a5cdfd56903e"
+    }
+  ]
+}
