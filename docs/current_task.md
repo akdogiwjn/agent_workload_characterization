@@ -2,7 +2,11 @@
 
 <a id="current-task"></a>
 
-更新：2026-10-17。目标见[当前范围](current_scope.md)，进度见[项目总览](project_status.md)，事实源为[project_state.json](../project_state.json)。
+更新：2026-10-23。目标见[当前范围](current_scope.md)，进度见[项目总览](project_status.md)，事实源为[project_state.json](../project_state.json)。
+
+## 已完成专项：AgentX DeepSeek客户端重复测量
+
+[最终报告](../reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/summary.md)：Full全量分析为393会话、98,827请求；所选5个会话各执行3次，共117个唯一源请求、351次正式客户端执行。只测客户端，未执行原始业务工具，原始长输出负载未完整复现。相关证据已做[同机独立备份](agentx_evidence_backup_20261023.md)。上述边界如实保留，不作为待补跑项。
 
 ## 当前任务：LOCAL-THREE-CLASS-REPEAT-01（12次补齐及v3合并复核完成）
 

@@ -26,13 +26,15 @@ GPU、热点/PMU、微架构和优化不是当前必交。旧方法文档与任�
 - 火山三链各n=1限定离线分析完成：3张独立四面板资源SVG、作图CSV和目录占用表已生成。请求Office8、Coding20、Assistant Agent/User6/1；原生工具、Submitted控制流与业务错误分别统计。Coding宿主末次process_exited保留gap；共享netns不代表API字节，不合并旧27次。报告：reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/summary.md。
 - LOCAL-THREE-CLASS-COMPLETE-02已顺序执行12/12次，identity 8a17109cf441e3ae68e3f9820babe5685467657cbcafb56d765dd1158dc4942d；合并原有效样本后27个固定task×round槽位各n=3，累计35次启动含8个永久排除的旧Office错路由attempt。v3独立复核及资源图已生成；7/7固定镜像批后身份匹配，raw归档哈希回读通过。n=3不代表类别总体，HTTP次数/费用unknown。报告：reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/summary.md。
 - G1仅登记小闭环通过；G2/G3-R未通过，CPU-02/Replay继续暂停。状态、建议、旧批准和旧execute命令都不是新授权。
-- AgentX深入分析第1步完成：Full/256k同393会话、98,827/68,266请求；上下文演化、已完成历史前缀潜力、容量简化模型、请求重叠、筛选影响及时间局部性已分析，生成10张4K PNG/SVG、作图CSV和10页PPT。20项测试与216次真实请求穷举核对通过；模拟潜力不当作缓存命中/硬件并发，本地回放尚未开始。
+- AgentX深入分析第1步完成：Full/256k同393会话、98,827/68,266请求；上下文演化、已完成历史前缀潜力、容量简化模型、请求重叠、筛选影响及时间局部性已分析，生成10张4K PNG/SVG、作图CSV和10页PPT。20项测试与216次真实请求穷举核对通过；模拟潜力不当作缓存命中/硬件并发。后续本地mock回放与DeepSeek客户端重复测量见AgentX五类重复实测报告。
 - 状态防丢失保护完成：独立worktree规则、自动快照、协作锁和读取时SHA256校验已接入，33项状态/AgentX测试通过。本次远程检查点继续排除视频修改；完整恢复状态保留本机，Git HEAD不能代替完整本地状态。
+- AgentX后续客户端测量收尾：Full全量分析为393会话/98,827请求；所选5会话各执行3次，为117个唯一源请求、351次正式客户端执行。仅测客户端，未执行原始业务工具，原始长输出负载未完整复现；这三项为证据边界，不是待补跑任务。
 <!-- PROJECT_STATE:END -->
 
 ## 主要成果
 
 - AgentX深入分析：[第一步发现与10页PPT](reports/analysis/AGENTX-DEEP-ANALYSIS-v1/findings.md)，全393会话的上下文、前缀复用、子代理时序和256k影响；提供10张4K PNG/SVG及作图CSV。
+- AgentX DeepSeek客户端测量已收尾：[五类各三次报告](reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/summary.md)：Full全量分析393会话/98,827请求；另选5会话各执行3次，共117个唯一源请求、351次正式客户端执行。未执行原始业务工具，原始长输出负载未完整复现；[原始证据同机独立备份索引](docs/agentx_evidence_backup_20261023.md)。
 
 - [公开数据集收尾总表](reports/analysis/PUBLIC-DATASET-CLOSEOUT-20261023/summary.md)：最新分析、来源缺口、文件保存与非视频清理核查；64,062项哈希核对及79项测试通过。
 - SWE-bench：[逐任务评价补全与复核](reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/summary.md)，另补20,098份评价/预测等文件；原8,730个未列项逐项核查，KGCompass任务身份更正。[此前下载与覆盖复核](reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/findings.md)保留。

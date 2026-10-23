@@ -1,6 +1,6 @@
 # 历史资料索引与迁移说明
 
-更新：2026-10-16。本页用于查历史，不是当前规范或执行授权。当前目标见[current_scope.md](current_scope.md)，进度见[project_status.md](project_status.md)。
+更新：2026-10-23。本页用于查历史，不是当前规范或执行授权。当前目标见[current_scope.md](current_scope.md)，进度见[project_status.md](project_status.md)。
 
 ## 迁移范围
 
@@ -20,6 +20,11 @@
 python3 -B scripts/audit_document_archive.py --resolve docs/g1_consolidated_review.md
 ```
 核验某份manifest时追加`--sha256 原登记的完整SHA256`。不匹配会报错；迁移前已有的版本漂移仍为漂移，不能当作迁移成功修复。
+
+## 新近完成的专项报告
+
+- AgentX Full全量分析与DeepSeek客户端重复测量：[五类各三次报告](../reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/summary.md)，Full为393会话/98,827请求；所选5会话各3次，共117个唯一源请求/351次正式执行。仅客户端测量，未执行原始业务工具，原始长输出负载未完整复现。
+- 其原始输入、请求、SSE、资源样本与冻结配置：[同机独立备份索引](agentx_evidence_backup_20261023.md)。归档本体在仓库外，不是异地备份。
 
 ## 原路径到本机归档
 
