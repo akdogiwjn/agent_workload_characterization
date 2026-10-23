@@ -1,0 +1,47 @@
+{
+  "schema": "project-state-recovery-v1",
+  "status": "RECOVERED_AND_VERIFIED",
+  "snapshot_path": "/tmp/public-closeout-index-content-20261023/before-local-update/project_state.json",
+  "snapshot_sha256": "74d57e04e6b477addf1a2fbe2d0840f37f8b0a957e7274486a3f532cba7e8a1d",
+  "incident_state_sha256": "fad338c1b7ef040190085073c9a4078ed3dc402019b9181affdabdb1c4f2ca0f",
+  "durable_backup_directory": "local_archive/20261023-project-state-recovery/fad338c1b7ef",
+  "exactly_restored_missing_top_level_nodes": [
+    "video_use_env_01",
+    "video_use_api_review_01",
+    "video_use_volcano_capability_01",
+    "video_use_volcano_capability_02",
+    "video_use_volcano_vision_01",
+    "video_use_codex_bailian_integration_01",
+    "elevenlabs_credential_registration",
+    "avb_material_download_exp_disfluency_interview_3_task01",
+    "video_use_edit_pilot_01",
+    "video_use_edit_pilot_02",
+    "video_use_edit_pilot_03",
+    "video_use_edit_pilot_03_boundary_review_v1",
+    "video_use_edit_pilot_04",
+    "documentation_refresh_20261021",
+    "openstoryline_env_01",
+    "openstoryline_paraformer_en_diagnosis_01",
+    "openstoryline_asr_adapter_01",
+    "openstoryline_edit_pilot_01",
+    "openstoryline_mcp_request_gated_candidate_01",
+    "openstoryline_edit_pilot_02_closeout_repair_01"
+  ],
+  "exactly_restored_missing_node_count": 20,
+  "backup_only_changed_current_navigation_paths": [
+    ".gitignore",
+    "README.md",
+    "docs/README.md",
+    "docs/project_status.md"
+  ],
+  "preserved_new_current_nodes": [
+    "_recovery_note_2026_10_23",
+    "bailian_generation_smoke_01"
+  ],
+  "agentx_deep_node_rebuilt_from_intact_artifacts": true,
+  "original_video_report_or_raw_files_changed": false,
+  "all_evidence_hashes_checked": 471,
+  "new_execution_authorization": false,
+  "recovered_state_sha256": "69dff44956467e52a0c18ad3e9a93bc7d93f181653bcbbbd558ed18e5fd53b7a",
+  "project_state_checker": "PASS"
+}

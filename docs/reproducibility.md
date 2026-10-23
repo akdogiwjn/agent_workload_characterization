@@ -27,6 +27,8 @@
 
 ## 状态维护
 
+并发修改须遵守根目录[AGENTS.md](../AGENTS.md)及[状态防丢失流程](project_state_protection.md)：不同对话使用独立worktree；状态通过`python3 -B -m scripts.update_project_state`自动快照、校验读取时SHA256并合并更新。禁止用整文件Git回滚清除未知的未提交状态。
+
 `project_state.json` 是日常进度唯一真源，不被任何 runner 用作批准记录。
 其 evidence 保留来源哈希，公开摘要只由README、文档索引和项目总览三个当前页面的PROJECT_STATE块展示；归档旧文档不再跟随当前状态更新。
 修改状态时同步对应块；运行 `python3 -B scripts/check_project_state.py` 检查漂移和证据哈希。

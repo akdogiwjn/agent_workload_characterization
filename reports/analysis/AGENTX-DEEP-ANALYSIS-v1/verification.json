@@ -1,0 +1,52 @@
+{
+  "schema": "agentx-deep-verification-v1",
+  "status": "PASS_WITH_SOURCE_AND_MODEL_LIMITS",
+  "manifest_records_verified": 44,
+  "request_ledgers_checked": {
+    "full": 98827,
+    "256k": 68266
+  },
+  "old_per_session_request_counts_checked": 786,
+  "real_session_exhaustive_prefix_oracle_checks": 216,
+  "real_session_oracle_sample": [
+    {
+      "trace_id": "006c98de37d819e95b0840e25426bb7ca99d",
+      "source_line": 2,
+      "requests": 33
+    },
+    {
+      "trace_id": "00ca01c4aaeccee751ae6285beb54dea262f",
+      "source_line": 3,
+      "requests": 35
+    },
+    {
+      "trace_id": "04dba6fe621301a1d01fd63b8d02c9645c48",
+      "source_line": 8,
+      "requests": 25
+    },
+    {
+      "trace_id": "05c249572509162371b7b82339674db64b5d",
+      "source_line": 9,
+      "requests": 36
+    },
+    {
+      "trace_id": "05f72f78a037cfa5cd4e4541960a574701d9",
+      "source_line": 10,
+      "requests": 52
+    },
+    {
+      "trace_id": "0bcd99353218b9a386b1c4aec13d77abecdb",
+      "source_line": 21,
+      "requests": 35
+    }
+  ],
+  "pptx_slide_count": 9,
+  "pptx_xml_and_media_relationships": "PASS",
+  "png_and_svg_pairs": 9,
+  "png_dimensions": [
+    3840,
+    2160
+  ],
+  "directed_tests_passed": 17,
+  "model_or_tool_replay_executed": false
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "agentx-deep-replay-feasibility-v1",
+  "date": "2026-10-23",
+  "status": "feasible_with_distinct_replay_scopes_and_environment_gaps",
+  "local_inputs": [
+    {
+      "path": "reports/analysis/AGENTX-FULL-MACRO-v1/summary.md",
+      "bytes": 4720,
+      "sha256": "9147a36b19fa4fc1dd6e8099f49dbb79002fd056bf01111d2e69f2d9a92b03f8"
+    },
+    {
+      "path": "reports/analysis/AGENTX-FULL-MACRO-v1/manifest.json",
+      "bytes": 3764,
+      "sha256": "f7873f60dd773c996b716bf1dcc362dc87beaa5da8cabe239babd9f26186fb04"
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/AGENTX-FULL-20261022/manifest.json",
+      "bytes": 2590,
+      "sha256": "ded645223f94b04ff6926e2b49ddf051264a08516ce23d4e96a927eabaae37ca"
+    },
+    {
+      "path": "references/repos/agentcgroup/aiperf/docs/tutorials/weka-trace.md",
+      "bytes": 27883,
+      "sha256": "58e7d97e0954320a7bb6531c0007a5ec0d870fd7184aa58b74388bba9a0dd200"
+    },
+    {
+      "path": "references/repos/agentcgroup/aiperf/docs/tutorials/agentx-mvp.md",
+      "bytes": 42749,
+      "sha256": "b260790ae7a440f3550debb2b8ec7617cec3ec00c2b1959a468297691174467f"
+    },
+    {
+      "path": "references/repos/agentcgroup/aiperf/tests/aiperf_mock_server/README.md",
+      "bytes": 34849,
+      "sha256": "5f881f900ac525e60c4cf5b5b5bf921388d5ed586993542713364182195bcd66"
+    }
+  ],
+  "web_sources": [
+    {
+      "url": "https://inferencex.semianalysis.com/agentx/methodology",
+      "checked_date": "2026-10-23"
+    },
+    {
+      "url": "https://inferencex.semianalysis.com/agentx/quickstart",
+      "checked_date": "2026-10-23"
+    },
+    {
+      "url": "https://github.com/SemiAnalysisAI/agentx-harness",
+      "checked_date": "2026-10-23"
+    },
+    {
+      "url": "https://github.com/ai-dynamo/aiperf/blob/main/docs/tutorials/weka-trace.md",
+      "checked_date": "2026-10-23"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "reports/analysis/AGENTX-DEEP-REPLAY-feasibility-v1/summary.md",
+      "bytes": 5794,
+      "sha256": "d9295c2f069376a715933df92d703cd8d4155acb43cf46a8935f5050fb46c16b"
+    }
+  ],
+  "benchmark_executed": false,
+  "model_calls": 0,
+  "dependencies_installed": false,
+  "video_files_modified": false
+}

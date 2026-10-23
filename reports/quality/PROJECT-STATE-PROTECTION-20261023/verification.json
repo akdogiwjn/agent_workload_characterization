@@ -1,0 +1,18 @@
+{
+  "schema": "project-state-protection-verification-v1",
+  "date": "2026-10-23",
+  "status": "PASS",
+  "state_protection_and_existing_state_tests_passed": 13,
+  "agentx_deep_tests_passed": 20,
+  "total_directed_tests_passed": 33,
+  "automatic_before_write_snapshots": true,
+  "stale_sha256_rejected": true,
+  "cooperative_lock": true,
+  "external_change_detected_before_write": true,
+  "unrelated_dictionary_entries_preserved": true,
+  "execution_authorization_replacement_rejected": true,
+  "arbitrary_git_commands_hard_blocked": false,
+  "publication_scope": "AgentX, recovery records and state protection only; no video source/report/environment changes or full video-state increment",
+  "full_recovered_snapshot": "local_archive/20261023-project-state-recovery/fad338c1b7ef/recovered-verified.json",
+  "new_model_or_benchmark_execution": false
+}

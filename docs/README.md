@@ -15,6 +15,8 @@
 - 火山三链各n=1限定离线分析完成：3张独立四面板资源SVG、作图CSV和目录占用表已生成。请求Office8、Coding20、Assistant Agent/User6/1；原生工具、Submitted控制流与业务错误分别统计。Coding宿主末次process_exited保留gap；共享netns不代表API字节，不合并旧27次。报告：reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/summary.md。
 - LOCAL-THREE-CLASS-COMPLETE-02已顺序执行12/12次，identity 8a17109cf441e3ae68e3f9820babe5685467657cbcafb56d765dd1158dc4942d；合并原有效样本后27个固定task×round槽位各n=3，累计35次启动含8个永久排除的旧Office错路由attempt。v3独立复核及资源图已生成；7/7固定镜像批后身份匹配，raw归档哈希回读通过。n=3不代表类别总体，HTTP次数/费用unknown。报告：reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/summary.md。
 - G1仅登记小闭环通过；G2/G3-R未通过，CPU-02/Replay继续暂停。状态、建议、旧批准和旧execute命令都不是新授权。
+- AgentX深入分析第1步完成：Full/256k同393会话、98,827/68,266请求；上下文演化、已完成历史前缀潜力、容量简化模型、请求重叠、筛选影响及时间局部性已分析，生成10张4K PNG/SVG、作图CSV和10页PPT。20项测试与216次真实请求穷举核对通过；模拟潜力不当作缓存命中/硬件并发，本地回放尚未开始。
+- 状态防丢失保护完成：独立worktree规则、自动快照、协作锁和读取时SHA256校验已接入，33项状态/AgentX测试通过。本次远程检查点继续排除视频修改；完整恢复状态保留本机，Git HEAD不能代替完整本地状态。
 <!-- PROJECT_STATE:END -->
 
 ## 当前入口
@@ -26,6 +28,7 @@
 | 当前工作、下一建议和授权边界 | [current_task](current_task.md) |
 | 采样字段与统计语义 | [trace_contract](trace_contract.md#11-当前目标的连续采样与图表要求2026-10-16) |
 | 环境、身份和状态维护 | [reproducibility](reproducibility.md) |
+| 并发工作与状态保护 | [自动快照、版本校验与独立worktree](project_state_protection.md) |
 | 数据与原始证据保护 | [data_management](data_management.md) |
 
 ## 成果入口
@@ -45,6 +48,7 @@
 | 本地历史测量字段与新采集接线 | [覆盖盘点v2](../reports/analysis/LOCAL-MEASUREMENT-COVERAGE-v2/summary.md)（v1保留） |
 | OSWorld | [命令解析与行为v4](../reports/analysis/OSWORLD-task-behavior-v4/findings.md)、[未知项审查](../reports/analysis/OSWORLD-task-behavior-v4/remaining_unknown_review.md)；[任务与原生层v3](../reports/analysis/OSWORLD-task-behavior-v3/summary.md) |
 | AgentX/Applied | [AgentX Full与256k对照](../reports/analysis/AGENTX-FULL-MACRO-v1/summary.md)；[既有256k/Applied宏观分析](../reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.md) |
+| AgentX深入分析第1步 | [发现与10页PPT](../reports/analysis/AGENTX-DEEP-ANALYSIS-v1/findings.md)、[逐页讲解](../reports/analysis/AGENTX-DEEP-ANALYSIS-v1/presentation_notes.md)；10张4K PNG/SVG、CSV，尚未运行本地回放 |
 | 离线HTML | [v5](../reports/html/PROJECT-RESULTS-v5/index.html)，最新成果最后统一更新 |
 
 ## 历史只按需查询

@@ -1433,6 +1433,96 @@
       "video_changes_included": false,
       "historical_html_and_synthesis_refreshed": false,
       "raw_and_ignored_derived_data_retained_locally": true
+    },
+    "agentx_deep_analysis_step1_v1": {
+      "status": "complete_with_explicit_source_and_model_limits",
+      "report": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/findings.md",
+      "detailed_report": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/summary.md",
+      "summary": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/summary.json",
+      "locality_summary": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/locality_summary.json",
+      "manifest": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/manifest.json",
+      "locality_manifest": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/locality-manifest.json",
+      "review_manifest": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/review-manifest.json",
+      "verification": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/final-verification.json",
+      "presentation": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/AgentX深入分析_汇报版_10页.pptx",
+      "slide_notes": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/presentation_notes.md",
+      "reproduction_commands": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/commands.md",
+      "full_sessions": 393,
+      "full_requests": 98827,
+      "capped_sessions": 393,
+      "capped_requests": 68266,
+      "figures": 10,
+      "pptx_slides": 10,
+      "png_dimensions": [
+        3840,
+        2160
+      ],
+      "formats": [
+        "PNG",
+        "SVG",
+        "CSV",
+        "PPTX"
+      ],
+      "pptx_charts": "embedded PNG, titles editable; companion SVG and CSV for changes",
+      "findings": {
+        "full_history_prefix_potential_input_weighted_pct": 98.26878303880748,
+        "same_agent_history_prefix_potential_input_weighted_pct": 97.89575081627625,
+        "cross_agent_additional_potential_input_weighted_pct": 0.3730322225312272,
+        "sessions_affected_by_256k": 176,
+        "cap_main_adjacencies_bridged": 369,
+        "sessions_with_main_context_drop_candidates": 229,
+        "main_context_drop_candidates": 931,
+        "top_1pct_sessions_count": 4,
+        "top_1pct_sessions_input_share_pct": 17.43521724181138,
+        "top_10pct_sessions_count": 40,
+        "top_10pct_sessions_input_share_pct": 63.49374547766696
+      },
+      "request_ledgers_checked": {
+        "full": 98827,
+        "256k": 68266
+      },
+      "real_session_exhaustive_prefix_oracle_checks": 216,
+      "real_session_oracle_sample_count": 6,
+      "directed_tests_passed": 20,
+      "offline_analysis_only": true,
+      "model_or_tool_or_mock_replay_executed": false,
+      "current_scope": "step 1 only; future mock and model replay not started",
+      "scope_limits": [
+        "prefix potential is not actual cache hits",
+        "capacity model is latest-completed prefix retention per session/model, not physical shared KV cache",
+        "API intervals are not CPU/GPU concurrency",
+        "no original business content, tool execution, task outcome or resource evidence"
+      ],
+      "old_raw_and_reports_preserved": true,
+      "html_updated": false,
+      "video_files_modified": false,
+      "gates_cpu02_replay_unchanged": true,
+      "state_entry_recovery": "reconstructed from intact analysis artifacts; not claimed byte-for-byte recovery of the lost state node"
+    },
+    "project_state_write_protection_20261023": {
+      "status": "complete",
+      "instructions": "AGENTS.md",
+      "guide": "docs/project_state_protection.md",
+      "writer": "scripts/update_project_state.py",
+      "tests": "tests/test_update_project_state.py",
+      "report": "reports/quality/PROJECT-STATE-PROTECTION-20261023/summary.md",
+      "verification": "reports/quality/PROJECT-STATE-PROTECTION-20261023/verification.json",
+      "state_tests_passed": 13,
+      "all_directed_tests_passed": 33,
+      "automatic_before_write_snapshot": true,
+      "expected_sha256_required": true,
+      "cooperative_lock": true,
+      "new_execution_authorization": false
+    },
+    "project_state_recovery_checkpoint_20261023": {
+      "status": "recovered_locally_and_verified",
+      "report": "reports/quality/PROJECT-STATE-RECOVERY-20261023/summary.md",
+      "verification": "reports/quality/PROJECT-STATE-RECOVERY-20261023/verification.json",
+      "exact_missing_top_level_entries_recovered": 20,
+      "agentx_node_rebuilt_from_saved_artifacts": true,
+      "full_snapshot_retained_locally": "local_archive/20261023-project-state-recovery/fad338c1b7ef/recovered-verified.json",
+      "remote_checkpoint_scope": "non-video increment only, per user request; full recovered state is retained locally",
+      "new_execution_authorization": false
     }
   },
   "docops_office_repeat_01": {
@@ -1735,7 +1825,9 @@
     "新口径三链各一次已完成：Office目录扫描cwd修正后0→6629B；Coding Agent/verifier目录分别增长4874269/4614250B；Assistant场景内存状态N/A。主项采集和归档通过，cache仍unsupported导致supplement aggregate partial；共享netns不是任务/API专属字节。",
     "火山三链各n=1限定离线分析完成：3张独立四面板资源SVG、作图CSV和目录占用表已生成。请求Office8、Coding20、Assistant Agent/User6/1；原生工具、Submitted控制流与业务错误分别统计。Coding宿主末次process_exited保留gap；共享netns不代表API字节，不合并旧27次。报告：reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/summary.md。",
     "LOCAL-THREE-CLASS-COMPLETE-02已顺序执行12/12次，identity 8a17109cf441e3ae68e3f9820babe5685467657cbcafb56d765dd1158dc4942d；合并原有效样本后27个固定task×round槽位各n=3，累计35次启动含8个永久排除的旧Office错路由attempt。v3独立复核及资源图已生成；7/7固定镜像批后身份匹配，raw归档哈希回读通过。n=3不代表类别总体，HTTP次数/费用unknown。报告：reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/summary.md。",
-    "G1仅登记小闭环通过；G2/G3-R未通过，CPU-02/Replay继续暂停。状态、建议、旧批准和旧execute命令都不是新授权。"
+    "G1仅登记小闭环通过；G2/G3-R未通过，CPU-02/Replay继续暂停。状态、建议、旧批准和旧execute命令都不是新授权。",
+    "AgentX深入分析第1步完成：Full/256k同393会话、98,827/68,266请求；上下文演化、已完成历史前缀潜力、容量简化模型、请求重叠、筛选影响及时间局部性已分析，生成10张4K PNG/SVG、作图CSV和10页PPT。20项测试与216次真实请求穷举核对通过；模拟潜力不当作缓存命中/硬件并发，本地回放尚未开始。",
+    "状态防丢失保护完成：独立worktree规则、自动快照、协作锁和读取时SHA256校验已接入，33项状态/AgentX测试通过。本次远程检查点继续排除视频修改；完整恢复状态保留本机，Git HEAD不能代替完整本地状态。"
   ],
   "html_reading_pack": {
     "status": "generated_revised_offline_static_reading_pack",
@@ -2090,8 +2182,9 @@
     },
     {
       "path": "docs/reproducibility.md",
-      "sha256": "845c6ffb068d0d447a58d74dbd7ad5a03063671a06a1830f52cff4e49e9a95d7",
-      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval"
+      "sha256": "93e33f684fbeb9660a459c5b59d05757b882b332366196e4f4dde58e5307f41c",
+      "role": "REAL-RUN-MEASUREMENT-01 offline implementation; not an execution approval",
+      "bytes": 4722
     },
     {
       "path": "tests/test_docops_word_format_adapter.py",
@@ -2580,9 +2673,9 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 3342,
-      "sha256": "d9a569b859d716489eadc81a2ce46a4210a1a535bc8d9d618752b3f610190fae",
-      "role": "Public dataset analysis closeout; non-video navigation, verification or publication policy"
+      "bytes": 3572,
+      "sha256": "5932df72a2ed5c40ebcefbd6f575f049ba1113aaf71dc571267033792e02954f",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
     },
     {
       "path": "reports/analysis/LOCAL-MEASUREMENT-COVERAGE-v3/summary.md",
@@ -3282,21 +3375,183 @@
     },
     {
       "path": "README.md",
-      "bytes": 8057,
-      "sha256": "ca9f88878285ec56ab9842030a09e93654bfd8aed44b71cf83f2aae92e284a11",
-      "role": "Public dataset analysis navigation and status; non-video increment only"
+      "bytes": 9126,
+      "sha256": "da888426f2c6b9f4a5a9d596d7c0add12dfe2339719b9b8173c043ceaef97891",
+      "role": "AgentX and shared-state protection navigation; non-video increment only"
     },
     {
       "path": "docs/README.md",
-      "bytes": 7799,
-      "sha256": "886c41e70ce90f7525e0e297a950e297b3f8b812ed57209565cc5f896ee60643",
-      "role": "Public dataset analysis navigation and status; non-video increment only"
+      "bytes": 8809,
+      "sha256": "5dc802241faafcd4b7f88d2950b72752dc2d0849842d54fff04e72326d6c905c",
+      "role": "AgentX and shared-state protection navigation; non-video increment only"
     },
     {
       "path": "docs/project_status.md",
-      "bytes": 18446,
-      "sha256": "517212df220719923d531b7c3db9220890b2094c5f732a2571d727cb20dcd26a",
-      "role": "Public dataset analysis navigation and status; non-video increment only"
+      "bytes": 19452,
+      "sha256": "a3539b085d49e12da1c93a574e2c2839bce5c445c191f80b9d0974f1b031e702",
+      "role": "AgentX and shared-state protection navigation; non-video increment only"
+    },
+    {
+      "path": "scripts/agentx_deep_analysis.py",
+      "bytes": 20329,
+      "sha256": "d5d6b59dd7934559eb2e3c25a839ee0a26cd68346a13bdff24d58a79395c3c55",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "scripts/agentx_deep_presentation.py",
+      "bytes": 31560,
+      "sha256": "b8442e1c3a122262eb9af0546d2f959afbd9c53dc2ee19ae78015bdd3b62e644",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "scripts/agentx_deep_locality.py",
+      "bytes": 10806,
+      "sha256": "bacf28fbfce4cddc1457f5b5af49749acfffcd247bee47c550a949208804c024",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "scripts/agentx_deep_verify.py",
+      "bytes": 9140,
+      "sha256": "5d7eeac6d1af9d5f83a5295c4f57423bf94b57f4aca45c4384fb3717c6de8142",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "tests/test_agentx_deep_analysis.py",
+      "bytes": 9194,
+      "sha256": "87d15d4536dba7fdb14162a6a1e656b6f542103c46812eec64438c6ad0b1a786",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "tests/test_agentx_deep_locality.py",
+      "bytes": 1017,
+      "sha256": "94645934a3dc6fcb32bd98488ac40e54a3d5540b9facfe5c458cc41b56bf5d95",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/verification.json",
+      "bytes": 1259,
+      "sha256": "27eb9710ca6dfb4884ab079787e503678dffaca070f14c0f1b5902953fdba576",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/summary.json",
+      "bytes": 7945,
+      "sha256": "b99cc4f3114e4c29c57df351a36eb35e6e8034c7dc8ae627d0ec1c2b88c7b304",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/slide_notes.md",
+      "bytes": 2185,
+      "sha256": "5172820de8f95b855474fe10665dffffa75bc0b0e0eff6979f34eead21a3343c",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/AgentX深入分析_汇报版.pptx",
+      "bytes": 3009518,
+      "sha256": "95a5017dbbd2ade98339c2bf1c292b230d7108502ccb589b0b17a6bf465a7059",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/manifest.json",
+      "bytes": 9229,
+      "sha256": "b68b79e646371a109b18a2beecfab59ae9bb88019a1c4f5bc202c9c751b68735",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/presentation_notes.md",
+      "bytes": 2571,
+      "sha256": "400a6ee8cdf686cc526deeb96cf673fc67afde1c000fa5259ed56eaa555a39ab",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/AgentX深入分析_汇报版_10页.pptx",
+      "bytes": 3405546,
+      "sha256": "fe903c03bf98cf959e22542751d925fbf59b0adbe84ad8a343bfa686d8261570",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/summary.md",
+      "bytes": 4847,
+      "sha256": "b6b020be64e3099ec831ff0a193a726e0748e58bde06137ba4fa7a0dbe9f516a",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/case_selection.json",
+      "bytes": 2994,
+      "sha256": "2e302afb7844b961a923c26126731dd6f552156a6b8641f0eda77295b081d605",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/commands.md",
+      "bytes": 2308,
+      "sha256": "9c4ef218047ce7c1433504042a1af18df5c44907590daf201478b5001b401585",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/locality_summary.json",
+      "bytes": 3398,
+      "sha256": "e82094760e6e53b4136ec44431f9ce6cb38ba85f6d7536cae442f8e6d28dd2c5",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/review-manifest.json",
+      "bytes": 1892,
+      "sha256": "3b489b6dded8ec6150c82e14f44cfc52171c62df742396b2865918b397106e78",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/findings.md",
+      "bytes": 2769,
+      "sha256": "cddfde0586f09aa316479248226d5ff385346f4d0cc7e85e61690629f21274e7",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/final-verification.json",
+      "bytes": 1511,
+      "sha256": "4ffca322fff1c6fb5fd6d9575e17fb5a42aba81acee43c5b9d81bc2f2b9b6408",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/locality-manifest.json",
+      "bytes": 2993,
+      "sha256": "f33fb45227369f7a259360068f95d7b0638c6cddbb866d720fcda60a40a3a19e",
+      "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
+    },
+    {
+      "path": "AGENTS.md",
+      "role": "explicit current-state evidence update",
+      "bytes": 2925,
+      "sha256": "b002ee5e945bdca2f75e985a0d18f591d9177628100c5d059b93405b2f43e23a"
+    },
+    {
+      "path": "docs/project_state_protection.md",
+      "role": "explicit current-state evidence update",
+      "bytes": 3481,
+      "sha256": "e88cdce910c0f2912d5d79d272c44269b84dac794429a7e7974ecda1f8f1a808"
+    },
+    {
+      "path": "scripts/update_project_state.py",
+      "role": "explicit current-state evidence update",
+      "bytes": 7782,
+      "sha256": "d7e45ffca5c0660bc37b1be2d671f10233b3fe1c244b52875b4f51b91a3e456c"
+    },
+    {
+      "path": "tests/test_update_project_state.py",
+      "role": "explicit current-state evidence update",
+      "bytes": 5560,
+      "sha256": "b525b70e9ffbf2e7e1c02f827bc02833e1855960acc071ab5ff3be6ae20150d8"
+    },
+    {
+      "path": "reports/quality/PROJECT-STATE-PROTECTION-20261023/summary.md",
+      "role": "explicit current-state evidence update",
+      "bytes": 1188,
+      "sha256": "fa96a7f75a9a0917e156328692b89796d2269ca5d5a959f3f4470b0f2feaa375"
+    },
+    {
+      "path": "reports/quality/PROJECT-STATE-PROTECTION-20261023/verification.json",
+      "role": "explicit current-state evidence update",
+      "bytes": 851,
+      "sha256": "a245f0fb3bb2a64315e7b31a9c0b09ad0f7cc131670e82eadc9f607949df143f"
     }
   ],
   "planned_api_route": {

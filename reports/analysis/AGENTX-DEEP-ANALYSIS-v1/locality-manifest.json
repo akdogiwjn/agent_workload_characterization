@@ -1,0 +1,81 @@
+{
+  "schema": "agentx-deep-locality-manifest-v1",
+  "inputs": [
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/manifest.json",
+      "bytes": 9229,
+      "sha256": "b68b79e646371a109b18a2beecfab59ae9bb88019a1c4f5bc202c9c751b68735"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/verification.json",
+      "bytes": 1259,
+      "sha256": "27eb9710ca6dfb4884ab079787e503678dffaca070f14c0f1b5902953fdba576"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/full_request_metrics.jsonl",
+      "bytes": 65426305,
+      "sha256": "3e8978fcd2e2ef2d011afb5fac6e172b5c58f21062b5748be24240ef45419ede"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/256k_request_metrics.jsonl",
+      "bytes": 45552761,
+      "sha256": "e52814919101ad1789a179c4a589c4babfe39b6dc6ec38ec8f4efd07c5c4962a"
+    }
+  ],
+  "code_and_tests": [
+    {
+      "path": "/home/lcq/agent_workload_characterization/scripts/agentx_deep_locality.py",
+      "bytes": 10806,
+      "sha256": "bacf28fbfce4cddc1457f5b5af49749acfffcd247bee47c550a949208804c024"
+    },
+    {
+      "path": "tests/test_agentx_deep_locality.py",
+      "bytes": 1017,
+      "sha256": "94645934a3dc6fcb32bd98488ac40e54a3d5540b9facfe5c458cc41b56bf5d95"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/locality_summary.json",
+      "bytes": 3398,
+      "sha256": "e82094760e6e53b4136ec44431f9ce6cb38ba85f6d7536cae442f8e6d28dd2c5"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/AgentX深入分析_汇报版_10页.pptx",
+      "bytes": 3405546,
+      "sha256": "fe903c03bf98cf959e22542751d925fbf59b0adbe84ad8a343bfa686d8261570"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/findings.md",
+      "bytes": 2769,
+      "sha256": "cddfde0586f09aa316479248226d5ff385346f4d0cc7e85e61690629f21274e7"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/presentation_notes.md",
+      "bytes": 2571,
+      "sha256": "400a6ee8cdf686cc526deeb96cf673fc67afde1c000fa5259ed56eaa555a39ab"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/10_prefix_reuse_gap.png",
+      "bytes": 433304,
+      "sha256": "6f50c92c0bf8e53b8a343845c2adb24f02200b3ec88ad4cfd8e09acff6051be3"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/10_prefix_reuse_gap.svg",
+      "bytes": 328161,
+      "sha256": "82125da8038b5e2ccdf222c51976e0029035e2498b26f2563c5ee83730482de7"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/plot_data/10_prefix_reuse_gap.csv",
+      "bytes": 67146,
+      "sha256": "7b1fd0799c743dbb8b53715b9c16144b3b2bafb3aa635f513072e596170d364e"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/plot_data/10_prefix_gap_limits.csv",
+      "bytes": 2625,
+      "sha256": "a547d91b0e3cbdf5b5920d868b98000ca2b735a17f03089c88a45f975b697a64"
+    }
+  ],
+  "base_outputs_unchanged": true,
+  "pair_partition_preserved": true
+}

@@ -1,0 +1,232 @@
+{
+  "schema": "agentx-deep-analysis-manifest-v1",
+  "inputs": [
+    {
+      "path": "reports/analysis/AGENTX-FULL-MACRO-v1/manifest.json",
+      "bytes": 3764,
+      "sha256": "f7873f60dd773c996b716bf1dcc362dc87beaa5da8cabe239babd9f26186fb04"
+    },
+    {
+      "path": "reports/analysis/AGENTX-FULL-MACRO-v1/summary.json",
+      "bytes": 14270,
+      "sha256": "93500e6847eb61c2f050ce486a19914d634251774dad4b2b48a2e72ee7b8ff5e"
+    },
+    {
+      "path": "data/raw/public/agentx_full/23f152f6f0f9399a85901b89a6458def0ef16729/traces.jsonl",
+      "bytes": 1847151435,
+      "sha256": "29b6a19e751ff5230771519aab755f80a0f43a4ba9cf96b72d3a6a437ec99276"
+    },
+    {
+      "path": "data/raw/public/agentx/8fecd2fc56694469f758f0afbbb6335ad3043740/traces.jsonl",
+      "bytes": 568864747,
+      "sha256": "e39cd2ff3eba21d4a3664be51da743ac3d2149a1933898cafc7bfeac8147eeef"
+    }
+  ],
+  "analysis_code_and_tests": [
+    {
+      "path": "/home/lcq/agent_workload_characterization/scripts/agentx_deep_analysis.py",
+      "bytes": 20329,
+      "sha256": "d5d6b59dd7934559eb2e3c25a839ee0a26cd68346a13bdff24d58a79395c3c55"
+    },
+    {
+      "path": "scripts/agentx_deep_presentation.py",
+      "bytes": 31560,
+      "sha256": "b8442e1c3a122262eb9af0546d2f959afbd9c53dc2ee19ae78015bdd3b62e644"
+    },
+    {
+      "path": "tests/test_agentx_deep_analysis.py",
+      "bytes": 9194,
+      "sha256": "87d15d4536dba7fdb14162a6a1e656b6f542103c46812eec64438c6ad0b1a786"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/256k_request_metrics.jsonl",
+      "bytes": 45552761,
+      "sha256": "e52814919101ad1789a179c4a589c4babfe39b6dc6ec38ec8f4efd07c5c4962a"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/AgentX深入分析_汇报版.pptx",
+      "bytes": 3009518,
+      "sha256": "95a5017dbbd2ade98339c2bf1c292b230d7108502ccb589b0b17a6bf465a7059"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/case_selection.json",
+      "bytes": 2994,
+      "sha256": "2e302afb7844b961a923c26126731dd6f552156a6b8641f0eda77295b081d605"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/01_context_progress.png",
+      "bytes": 402473,
+      "sha256": "cbab950dd918a98951bce626698c530f224ff04d78c60c8132667988161747a1"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/01_context_progress.svg",
+      "bytes": 15807,
+      "sha256": "5dc72c10d20d354a33c8a29bad757ba794198c8a00d73cf2cfc81ca6d6f468cc"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/02_input_ecdf.png",
+      "bytes": 382217,
+      "sha256": "186d1adf40f9a9ee791aca56827fc7cec285bf53fb9797392875538eff8af80a"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/02_input_ecdf.svg",
+      "bytes": 374050,
+      "sha256": "666b6837b7ff63d90f8f07bbc4797eed1a21b630dfb10a7e1c482e3017b11581"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/03_prefix_potential.png",
+      "bytes": 317709,
+      "sha256": "c76646f69438bdc763211a7e445a03686122c860cc94962a51e0717cf95a9d1e"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/03_prefix_potential.svg",
+      "bytes": 88106,
+      "sha256": "0e19eaf9029083980e7da05e29149d287c397f6134f051e9466b164502e92bda"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/04_prefix_budget_model.png",
+      "bytes": 468590,
+      "sha256": "bd0cf8c642d66c60277f417cf01e336a7848cc0ed2f6e4b45042c31ce1320da3"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/04_prefix_budget_model.svg",
+      "bytes": 18922,
+      "sha256": "cbf1f71283ca78468ad9d82724b86e574750430b794d06676c7df87947aec85e"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/05_request_overlap.png",
+      "bytes": 275259,
+      "sha256": "c3b4b3c6f9251efb955d6209be4025ecd0dc918d0ab8d674854210102b439553"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/05_request_overlap.svg",
+      "bytes": 13322,
+      "sha256": "b7f6cc91772bcfbb5c03eea5b98f823c4f1636a4047534ec68a621eb5b40a5ad"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/06_cap_retention.png",
+      "bytes": 313116,
+      "sha256": "cfcb6e443c184f3d6c3a0ce2b52defb9fe6e6462cc3ce43d3cd5714428a1cb0d"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/06_cap_retention.svg",
+      "bytes": 12469,
+      "sha256": "c309d0285d9117ba226a3d1b0eab7b1acbdb5501943ef36d669e0770b8a974db"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/07_session_concentration.png",
+      "bytes": 362317,
+      "sha256": "8c305c6d203973ed6387c1efb5187af38c642df8cb38fcf8bb0497f920c7bcfb"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/07_session_concentration.svg",
+      "bytes": 13877,
+      "sha256": "d47b77058abca45880f0e844e17dfd0848b33cef7287189ba068c51c684be3c7"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/08_case_context.png",
+      "bytes": 564276,
+      "sha256": "6d121105ff098c3d3a86712fafb3773b52fa941755e234744d3a5cced369cae6"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/08_case_context.svg",
+      "bytes": 16243,
+      "sha256": "6bf266249f092744257a681a4abb1f6af17fb01b09312ae73bc4eb7796cd0b29"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/09_case_overlap.png",
+      "bytes": 265825,
+      "sha256": "353165b4dcccb00fea71aee4eeb4a7612ecdabfd5a03662f008af9be6241d5d3"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/figures/09_case_overlap.svg",
+      "bytes": 44998,
+      "sha256": "b1338343ffa17be492ea1463f886c333942e05878e56a84de1801fe5a0da716b"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/full_request_metrics.jsonl",
+      "bytes": 65426305,
+      "sha256": "3e8978fcd2e2ef2d011afb5fac6e172b5c58f21062b5748be24240ef45419ede"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/group_clock_audit.csv",
+      "bytes": 462581,
+      "sha256": "887d1745018196e0f4a3ed1f0daf3d63de66c69e30301d22fab6f9b2425f1af7"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/per_session.csv",
+      "bytes": 151941,
+      "sha256": "99bc49a235b2abe483d427c0e7efdfaa5d7ff4e767c4da29901dfb94fcb7f7f1"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/plot_data/01_context_progress.csv",
+      "bytes": 1652,
+      "sha256": "86a951992a13f42313995755b950f603901abb798bfab263e76a6b3ebf3139f4"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/plot_data/02_input_ecdf.csv",
+      "bytes": 52641,
+      "sha256": "4726af6505b758c218c918e34b8cad1e1e2e19028266f8834c88eb5590ee6e83"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/plot_data/03_prefix_potential_ecdf.csv",
+      "bytes": 27003,
+      "sha256": "4003a2a627837fe5a276f25f92cf2ccfe2bd9304b91aed1baafcf50447bd6846"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/plot_data/04_prefix_budget_model.csv",
+      "bytes": 1516,
+      "sha256": "4424b22ececf6ee6247cd7e11eb408089eda9e04af11a90dbde0024d7210df29"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/plot_data/05_request_overlap_ecdf.csv",
+      "bytes": 19875,
+      "sha256": "7f08e29657ad718c0cd954445c97abf8e174d798962c3ce76e58cbddd5a2babd"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/plot_data/06_cap_retention.csv",
+      "bytes": 333,
+      "sha256": "016c872a14aed7990e1a630e2bd530b153d6dfad05d9cdf76c6560618b24c8cc"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/plot_data/07_session_concentration.csv",
+      "bytes": 33638,
+      "sha256": "72286f8f450e6b7f06db06c531c0ba1afbb0004c89bd5113e6b5a531c0edd013"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/plot_data/08_case_context.csv",
+      "bytes": 18558,
+      "sha256": "2d54171691ce090dbf9f195934882bb612f0852e91e3a89026f5c0ab1c63014f"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/plot_data/09_case_overlap.csv",
+      "bytes": 32875,
+      "sha256": "b676c9e1d0a54e97f4fd92fd6663ee84aa94f745a6c2ebe99a74733e57c8d7cc"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/plot_data/context_progress_per_session.csv",
+      "bytes": 846647,
+      "sha256": "e10267b015aa3d30424621b2db20a74e5bb7b465326bdfe6b349a3ad99a84780"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/slide_notes.md",
+      "bytes": 2185,
+      "sha256": "5172820de8f95b855474fe10665dffffa75bc0b0e0eff6979f34eead21a3343c"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/summary.json",
+      "bytes": 7945,
+      "sha256": "b99cc4f3114e4c29c57df351a36eb35e6e8034c7dc8ae627d0ec1c2b88c7b304"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/summary.md",
+      "bytes": 4847,
+      "sha256": "b6b020be64e3099ec831ff0a193a726e0748e58bde06137ba4fa7a0dbe9f516a"
+    }
+  ],
+  "input_hashes_rechecked_before_analysis": true,
+  "historical_files_modified": false,
+  "model_or_tool_requests_executed": false
+}

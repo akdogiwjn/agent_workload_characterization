@@ -1,0 +1,108 @@
+{
+  "schema": "agentx-adjacent-prefix-locality-v1",
+  "date": "2026-10-23",
+  "variants": {
+    "full": {
+      "request_partition": {
+        "first_in_native_stream": 2090,
+        "adjacent_predecessor_not_completed": 5724,
+        "eligible_completed_adjacent_prefix_pair": 83614,
+        "no_nonempty_shared_prefix": 4094,
+        "adjacent_model_changed": 3305
+      },
+      "eligible_pair_gap_s": {
+        "all": {
+          "n": 83614,
+          "missing_or_invalid": 0,
+          "min": 0.003999999999990678,
+          "q1": 1.6829999999999927,
+          "median": 3.4810000000043146,
+          "q3": 7.8677499999976135,
+          "p95": 183.30470000000022,
+          "max": 491921.512,
+          "iqr": 6.184749999997621
+        },
+        "main": {
+          "n": 53537,
+          "missing_or_invalid": 0,
+          "min": 0.1230000000000473,
+          "q1": 2.581000000000131,
+          "median": 5.176999999996042,
+          "q3": 13.865999999999985,
+          "p95": 256.69700000000006,
+          "max": 491921.512,
+          "iqr": 11.284999999999854
+        },
+        "subagent": {
+          "n": 30077,
+          "missing_or_invalid": 0,
+          "min": 0.003999999999990678,
+          "q1": 1.036999999996624,
+          "median": 1.7700000000002092,
+          "q3": 3.283999999985099,
+          "p95": 15.902599999998323,
+          "max": 78189.497,
+          "iqr": 2.246999999988475
+        }
+      },
+      "eligible_adjacent_shared_tokens": {
+        "main": 17180471168,
+        "all": 20502510080,
+        "subagent": 3322038912
+      }
+    },
+    "256k": {
+      "request_partition": {
+        "first_in_native_stream": 2090,
+        "adjacent_predecessor_not_completed": 5326,
+        "eligible_completed_adjacent_prefix_pair": 53881,
+        "no_nonempty_shared_prefix": 3829,
+        "adjacent_model_changed": 3140
+      },
+      "eligible_pair_gap_s": {
+        "all": {
+          "n": 53881,
+          "missing_or_invalid": 0,
+          "min": 0.003999999999990678,
+          "q1": 1.2599999999983993,
+          "median": 2.0790000000015425,
+          "q3": 3.84,
+          "p95": 146.54200000000037,
+          "max": 491921.512,
+          "iqr": 2.5800000000016006
+        },
+        "main": {
+          "n": 25851,
+          "missing_or_invalid": 0,
+          "min": 0.1230000000000473,
+          "q1": 1.679999999993015,
+          "median": 2.541000000011991,
+          "q3": 7.785499999998336,
+          "p95": 240.09849999999778,
+          "max": 491921.512,
+          "iqr": 6.105500000005321
+        },
+        "subagent": {
+          "n": 28030,
+          "missing_or_invalid": 0,
+          "min": 0.003999999999990678,
+          "q1": 0.994250000003376,
+          "median": 1.635999999998603,
+          "q3": 2.868000000001757,
+          "p95": 14.782750000000014,
+          "max": 9526.498,
+          "iqr": 1.873749999998381
+        }
+      },
+      "eligible_adjacent_shared_tokens": {
+        "main": 3666935872,
+        "all": 6244470912,
+        "subagent": 2577535040
+      }
+    }
+  },
+  "pair_selection": "native same-agent adjacency; same model; nonempty shared prefix; predecessor end<=current start",
+  "time_distance": "current source t minus predecessor source end; not tool time or LRU stack distance",
+  "final_presentation": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/AgentX深入分析_汇报版_10页.pptx",
+  "model_or_tool_calls": 0
+}

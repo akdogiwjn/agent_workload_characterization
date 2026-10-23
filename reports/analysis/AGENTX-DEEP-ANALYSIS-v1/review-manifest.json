@@ -1,0 +1,56 @@
+{
+  "schema": "agentx-deep-closeout-review-v1",
+  "date": "2026-10-23",
+  "inputs": [
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/manifest.json",
+      "bytes": 9229,
+      "sha256": "b68b79e646371a109b18a2beecfab59ae9bb88019a1c4f5bc202c9c751b68735"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/locality-manifest.json",
+      "bytes": 2993,
+      "sha256": "f33fb45227369f7a259360068f95d7b0638c6cddbb866d720fcda60a40a3a19e"
+    }
+  ],
+  "verification_code": {
+    "path": "scripts/agentx_deep_verify.py",
+    "bytes": 9140,
+    "sha256": "5d7eeac6d1af9d5f83a5295c4f57423bf94b57f4aca45c4384fb3717c6de8142"
+  },
+  "outputs": [
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/verification.json",
+      "bytes": 1259,
+      "sha256": "27eb9710ca6dfb4884ab079787e503678dffaca070f14c0f1b5902953fdba576"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/final-verification.json",
+      "bytes": 1511,
+      "sha256": "4ffca322fff1c6fb5fd6d9575e17fb5a42aba81acee43c5b9d81bc2f2b9b6408"
+    },
+    {
+      "path": "reports/analysis/AGENTX-DEEP-ANALYSIS-v1/commands.md",
+      "bytes": 2308,
+      "sha256": "9c4ef218047ce7c1433504042a1af18df5c44907590daf201478b5001b401585"
+    }
+  ],
+  "visual_review": {
+    "all_10_pngs_contact_sheet_inspected": true,
+    "context_capacity_cap_charts_inspected_at_larger_scale": true,
+    "unclipped_labels_and_legends": true,
+    "powerpoint_application_rendering_tested": false
+  },
+  "status": "PASS_WITH_EXPLICIT_SOURCE_AND_MODEL_LIMITS",
+  "model_or_tool_calls": 0,
+  "rendering_environment": {
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.2",
+    "Pillow": "11.3.0",
+    "chinese_font": {
+      "path": "/usr/share/fonts/google-droid-fonts/DroidSansFallback.ttf",
+      "bytes": 3451900,
+      "sha256": "21b96a0377f067833a93af3082eb28d4ffab7a8cd46bfd513286f1d64b7b0949"
+    }
+  }
+}
