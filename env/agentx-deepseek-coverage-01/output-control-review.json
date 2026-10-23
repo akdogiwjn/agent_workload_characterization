@@ -1,0 +1,46 @@
+{
+  "checked_on_shanghai_date": "2026-10-23",
+  "endpoint": "https://api.deepseek.com/v1/chat/completions",
+  "model": "deepseek-flash",
+  "thinking": "disabled",
+  "sources": [
+    "https://api-docs.deepseek.com/api/create-chat-completion/",
+    "https://api-docs.deepseek.com/quick_start/pricing/"
+  ],
+  "documented_max_tokens_semantics": "upper bound",
+  "min_tokens_documented_in_checked_schema": false,
+  "ignore_eos_documented_in_checked_schema": false,
+  "trials": [
+    {
+      "probe": "control",
+      "request_fields": "{\"max_tokens\": 64}",
+      "status": "completed",
+      "http_status": 200,
+      "requested_max_tokens": 64,
+      "actual_completion_tokens": 1,
+      "finish_reason": "stop",
+      "conclusion": "normal_stop_below_probe_target"
+    },
+    {
+      "probe": "min_tokens",
+      "request_fields": "{\"max_tokens\": 64, \"min_tokens\": 64}",
+      "status": "completed",
+      "http_status": 200,
+      "requested_max_tokens": 64,
+      "actual_completion_tokens": 1,
+      "finish_reason": "stop",
+      "conclusion": "normal_stop_below_probe_target"
+    },
+    {
+      "probe": "ignore_eos",
+      "request_fields": "{\"ignore_eos\": true, \"max_tokens\": 64}",
+      "status": "completed",
+      "http_status": 200,
+      "requested_max_tokens": 64,
+      "actual_completion_tokens": 1,
+      "finish_reason": "stop",
+      "conclusion": "normal_stop_below_probe_target"
+    }
+  ],
+  "conclusion": "All three received HTTP 200, generated one token and stopped normally; these fields do not guarantee minimum generation on the tested route. No general future support claim; no parameter added to profile payloads."
+}

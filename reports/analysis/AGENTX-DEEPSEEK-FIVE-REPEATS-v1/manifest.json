@@ -1,0 +1,324 @@
+{
+  "schema": "agentx-five-repeats-artifacts-v1",
+  "inputs": [
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/env/agentx-deepseek-five-repeats-01/plan.json",
+      "bytes": 117940,
+      "sha256": "6d794294afce45d54ac3d286e7fc4230886f859bb6e4d431b22ae8bd2f2f0f0c"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEP-ANALYSIS-v1/summary.json",
+      "bytes": 7945,
+      "sha256": "b99cc4f3114e4c29c57df351a36eb35e6e8034c7dc8ae627d0ec1c2b88c7b304"
+    },
+    {
+      "path": "/home/lcq/agentx_replay_smoke_20261023/data/raw/agentx-replay-smoke-01/source_requests.jsonl",
+      "bytes": 1384533,
+      "sha256": "a0676b15b992e46bf06436e1a1d37e812b6e7229721c263c62cf623ea4e8aa2a"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_coverage_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-CASES-v1/manifest.json",
+      "bytes": 11761,
+      "sha256": "ac56bb6f1b9075bbe6ccc91fd7645845dd5ea3fb7dbdacdb1c6055cbf0399e3b"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1/manifest.json",
+      "bytes": 9492,
+      "sha256": "cfe5cf16890c9b151244e3479c4778ba0c1e687a24359159ef5d5e22da4a54bb"
+    }
+  ],
+  "code": [
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/scripts/agentx_deepseek_five_repeat_analysis.py",
+      "bytes": 22971,
+      "sha256": "d8f6ce1f2173fd48caba7db8889e338738b43ffbc97b56aabcc307a835d525ff"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/scripts/agentx_deepseek_five_presentation.py",
+      "bytes": 14261,
+      "sha256": "370038be46853ca4c2daba1db17e9433762c760d44f72484bf450e5b9b4f2d55"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/scripts/agentx_deepseek_repeat_analysis.py",
+      "bytes": 27280,
+      "sha256": "6a86b9d1e354fdd15369d3d1d54f327744d802926059e4e0b3a809ae14955108"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/scripts/agentx_deepseek_coverage_analysis.py",
+      "bytes": 23664,
+      "sha256": "9ca0e6da77dd28b63a872ee8e068210831a09a6c74867b70f4e78dad7e990ea0"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/scripts/agentx_deepseek_branch_analysis.py",
+      "bytes": 21616,
+      "sha256": "64b0fe77c5fbe625be2a43aab4ebee1d89d6d0481b7cd2ed3cd927780ee5ad2b"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/scripts/agentx_deepseek_analysis.py",
+      "bytes": 18825,
+      "sha256": "cfc6f73711fcc74ff6663515baea124e3c118a091a0c487a371cfde4655cf85b"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/scripts/agentx_deep_presentation.py",
+      "bytes": 31560,
+      "sha256": "b8442e1c3a122262eb9af0546d2f959afbd9c53dc2ee19ae78015bdd3b62e644"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/scripts/agentx_deepseek_finish_repeats.py",
+      "bytes": 10538,
+      "sha256": "30c99e6b3896c5b46f58fa374059565011f332579f47746172cdf987c21036e0"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/scripts/agentx_deepseek_pilot.py",
+      "bytes": 18404,
+      "sha256": "37ab41df77b6fd097c71d407b8643a048e961fb2b206c81e8df898a4b79f0f33"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/scripts/agentx_deepseek_branches.py",
+      "bytes": 7967,
+      "sha256": "cb6ac6834971f7fdbe1e1667db6b520825afe2275a42e61427ab6b33a083c237"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/scripts/agentx_deepseek_branch_prepare.py",
+      "bytes": 9332,
+      "sha256": "e9fbe7f1756caf68257f3bdcb2e72ca5e645e6fcdf7f50933b530ef79bab19dc"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/AgentX全量分析与五类重复实测_汇报版_12页.pptx",
+      "bytes": 3168809,
+      "sha256": "a7098c5790c5961ed17560f235851997e267e73420e247524ad792b99d4bf18e"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/client_resources.csv",
+      "bytes": 453333,
+      "sha256": "b8840603f569e50c03d4fbf82f8e7c90220a2bf5af83091618153d14aef4d369"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/dependency_audit.csv",
+      "bytes": 43726,
+      "sha256": "ba001eaa2b5c5cce394434e1404dc82043107826a28aeb38a8ab0f521bbaf182"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/01-scope.png",
+      "bytes": 279450,
+      "sha256": "47560fe1450d5d3de16b27bcd0c37de1978186fef1c2a6503ba1f012985ba940"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/01-scope.svg",
+      "bytes": 10389,
+      "sha256": "b9c1ccdfb76a32c5fb2b275fd945d7c4ca9150cda82f282cedf2ddc72f2f73bd"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/02-source-composition.png",
+      "bytes": 218171,
+      "sha256": "f094b18cc584a6c1f6d16082c8a48a531b36df663d6ba61610f86fff1d8ecd44"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/02-source-composition.svg",
+      "bytes": 11615,
+      "sha256": "66c45ff0585dfa433e564d4d65605dd45ca74c7e5f6bde6079cdfb8ab92d6f10"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/03-source-prefix.png",
+      "bytes": 249828,
+      "sha256": "07541289676ef1657f30793380509b7b239c5b8d9fe0baa4492d75e51c964d5e"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/03-source-prefix.svg",
+      "bytes": 8954,
+      "sha256": "f8ae7bf6348fe9823095c22139c6f82b90bb76fbf41031a116ec3a4b72465d5e"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/04-five-ranges.png",
+      "bytes": 279199,
+      "sha256": "aa11fbe40bc87e580fbf5d9db2c476a420d089c4c8b8f03f0eedf0a97754cfa9"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/04-five-ranges.svg",
+      "bytes": 17118,
+      "sha256": "abd4879a5705c520e6435ad85cbe3b98611e90b6ee0f3e5d73348cc996172209"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/05-wall.png",
+      "bytes": 330765,
+      "sha256": "3fbd2e84a4fa755a36d76084feca3f133eda082cedc064dc6efeb5b7e411f689"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/05-wall.svg",
+      "bytes": 19369,
+      "sha256": "5fc199a2fbc1a6f75ea0c540feea8e1acc19ca4ec3571046424961fea04f089f"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/06-first-content.png",
+      "bytes": 342746,
+      "sha256": "d1e172d1067203d54b3cbec9aa562c98eab1f718cb183c087672f71ac6e2f374"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/06-first-content.svg",
+      "bytes": 28509,
+      "sha256": "98ae065f84092a0c6875ea9ecb9b469de10f998c0d8465fc7e4155d4700ea7e6"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/07-client-resources.png",
+      "bytes": 389780,
+      "sha256": "26b655ac982689f40018b010a07ff3641b9c8037d488f788205877f5cf3e697c"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/07-client-resources.svg",
+      "bytes": 33032,
+      "sha256": "9a029bcd79c639260c4b162768a226c29b55ed59b5dd16c0e8b88acd898af506"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/08-output.png",
+      "bytes": 368769,
+      "sha256": "33183004cbcc304a520bee2fc29795725636288bac20cb23ba5fa0e20a707ee2"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/08-output.svg",
+      "bytes": 17863,
+      "sha256": "8a50ba05305a9cfc8779c1478308c06fbe7bf163854d9c1da577e52d3b3d7e4e"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/09-cache.png",
+      "bytes": 316252,
+      "sha256": "94d3f9ec738484f101bda1b22975abf7e9373a0762971900b8c9ba5c05865042"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/09-cache.svg",
+      "bytes": 17549,
+      "sha256": "5c21839d670eae10347a4bba527e80e551dd6428d5b8af857ace7849d500065c"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/10-inflight.png",
+      "bytes": 236634,
+      "sha256": "9c4e9ca9b35abe0b0535afa87c1f905967e5885ffcbb011b5dfc3a7de3966ccd"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/10-inflight.svg",
+      "bytes": 15757,
+      "sha256": "dd44941ecd09017a8f186d345d7cdeb0f70169bcd5039781f730d3bf295715cb"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/11-natural-stop.png",
+      "bytes": 272960,
+      "sha256": "978a780f6861f2763a689213b836a8851331e2301e9848d8babb2d5f385fca7c"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/11-natural-stop.svg",
+      "bytes": 21439,
+      "sha256": "3bd352c37b164bea1c5bf1735652fbc55c22334aeabe095d5487b679687da1ef"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/12-boundaries.png",
+      "bytes": 380764,
+      "sha256": "5fa9d1cb7b4f4a8257d170058af14009c2bb319c317df893bafce0d34388a3a7"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/figures/12-boundaries.svg",
+      "bytes": 9891,
+      "sha256": "41fbb7e4267c406ee236b577dd7330a52d84ad9812972ee06c77a9f6a0b3005b"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/inflight_profiles.csv",
+      "bytes": 22275,
+      "sha256": "933fa225005176b67c9c197b0cec392da91b855edfbba1d4fe62ebaeea329e0e"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/local-evidence-manifest.json",
+      "bytes": 237350,
+      "sha256": "7fa83c44ee94aa5f366f8918ee15ac253d2ba9090e81c6e1f1f83a6e0fbbc207"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/paired_changes.csv",
+      "bytes": 52358,
+      "sha256": "64fd9db286bef8b298f058240633a201ed527660576a2b60442c3c8aa251f277"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/plot_data/case_ranges.csv",
+      "bytes": 837,
+      "sha256": "e5bb76a2cac1959f19701ddd912ec9a7c058ecab4820fc2829ae896ef82f7760"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/plot_data/evidence_scope.csv",
+      "bytes": 246,
+      "sha256": "81ecc3164f15da22c5e25c1ecf413b70ab9e3264b62c8ef49af45180dc7a7657"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/plot_data/long_request_example.csv",
+      "bytes": 1890,
+      "sha256": "50d9f42d31a01f7c0a57bacad8d0a26367cf1fea710feb79e7db255787fee98b"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/plot_data/run_metrics.csv",
+      "bytes": 7188,
+      "sha256": "73d5bf0f65f25b7993c0cef99c783f78cd5e6df9feb577d5971f565f46ad0104"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/plot_data/run_ranges.csv",
+      "bytes": 6011,
+      "sha256": "8f5923291a789098a545a98d94a87feda5e16b573896a120ad79d88f6eabd027"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/plot_data/source_prefix_potential.csv",
+      "bytes": 148,
+      "sha256": "f3ffb79cf684b15de00fa347dc0e5adeae6004cee78b141f306d93b99935ac77"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/plot_data/source_request_composition.csv",
+      "bytes": 94,
+      "sha256": "317dce8d030adad8de6ddc58674be56412466fe984bad4047a36fb48de886b47"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/presentation_notes.md",
+      "bytes": 2974,
+      "sha256": "c17f011ffb68b1f7e117eacd0d9cee855003b616854140a4a4d6e59369dfaf3f"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/probes.csv",
+      "bytes": 312,
+      "sha256": "d1eb24cab565a27d17c55d4ca6d6bdce989558ee12f99096ad0ebe6d911f31b4"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/request_metrics.csv",
+      "bytes": 152001,
+      "sha256": "3ed9e96ea8420e2e126609f133c84d037f85254a7e96f2428b7ea2b61a6b5663"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/request_verification.csv",
+      "bytes": 70974,
+      "sha256": "26443b9e7646de1bf774e01f7f1fa2cbc804d5b87b8020a3651d7d9822bbdeba"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/run_metrics.csv",
+      "bytes": 7188,
+      "sha256": "73d5bf0f65f25b7993c0cef99c783f78cd5e6df9feb577d5971f565f46ad0104"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/run_ranges.csv",
+      "bytes": 6011,
+      "sha256": "8f5923291a789098a545a98d94a87feda5e16b573896a120ad79d88f6eabd027"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/slides.json",
+      "bytes": 1378,
+      "sha256": "dd5b5a5d8233c6c9a24f3c7d02dd99e0deef779856775312aad43e3f4812c423"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/summary.json",
+      "bytes": 38105,
+      "sha256": "da098c2b7ba6dcf8ad29c879cab410c3849ee4b750a6156271f8a6ccf9d90a93"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/summary.md",
+      "bytes": 7418,
+      "sha256": "8a5604ab02edf0d4f3c4f8320cfea896f15b46a88c4ec6a077fc44b8a0d3789e"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/verification.json",
+      "bytes": 4336,
+      "sha256": "588b0da9094400e1984735015074a689c569529a311f5d642e1e481f59a5af7d"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+case,actual_output_tokens,source_output_limit_tokens,output_to_target_pct,finish_length,finish_stop
+baseline,6400,6409,99.85957247620533,19,1
+single_subagent,3568,3949,90.35198784502406,19,2
+multiple_subagents,14937,231817,6.4434446136392065,22,8

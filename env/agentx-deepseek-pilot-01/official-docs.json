@@ -1,0 +1,37 @@
+{
+  "checked_on_shanghai_date": "2026-10-23",
+  "sources": [
+    {
+      "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "observed_fields": {
+        "request_model": "deepseek-flash",
+        "declared_model_version": "DeepSeek-V4.1-Flash-1017",
+        "declared_context": "1M",
+        "peak_usd_per_million_tokens": {
+          "input_cache_hit": 0.006,
+          "input_cache_miss": 0.3,
+          "output": 1.2
+        }
+      }
+    },
+    {
+      "url": "https://api-docs.deepseek.com/guides/thinking_mode/",
+      "observed_fields": {
+        "default_thinking": "enabled",
+        "explicit_disable": {
+          "thinking": {
+            "type": "disabled"
+          }
+        }
+      }
+    },
+    {
+      "url": "https://api-docs.deepseek.com/api/create-chat-completion/",
+      "observed_fields": {
+        "max_output_parameter": "max_tokens",
+        "stream_usage": "final chunk before [DONE]; supports usage with non-empty choices"
+      }
+    }
+  ],
+  "immutable_server_model_identity_verified": false
+}
