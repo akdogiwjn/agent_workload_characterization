@@ -1,0 +1,23 @@
+{
+  "schema": "swebench-empty-report-companion-check-v1",
+  "files": [
+    {
+      "path": "data/raw/public/swebench_instance_results/SWEBENCH-INSTANCE-RESULTS-20261023/verified/20250120_Bracket/logs/sympy__sympy-20428/test_output.txt",
+      "bytes": 39,
+      "sha256": "9a286270da414a0a8e961db13500d77f2a24fd4d25a822fbd2cd3867694753d1",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/verified/20250120_Bracket/logs/sympy__sympy-20428/test_output.txt",
+      "listing_entry": {
+        "key": "verified/20250120_Bracket/logs/sympy__sympy-20428/test_output.txt",
+        "bytes": 39,
+        "etag": "b463757ae654314ab5e559f1a2c2d183",
+        "last_modified": "2026-01-06T06:26:19.000Z"
+      },
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-INSTANCE-RESULTS-20261023/source_metadata/bracket-sympy-test-output.headers",
+        "bytes": 453,
+        "sha256": "13733304e9fe0e0ce63cb9075a5c3d297aebb168cff934a26a582285c1e225f1"
+      }
+    }
+  ],
+  "reason": "inspect the only nonempty test_output accompanying the 75 empty reports"
+}

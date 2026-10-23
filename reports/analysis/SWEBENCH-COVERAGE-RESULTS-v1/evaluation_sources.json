@@ -1,0 +1,1290 @@
+{
+  "20240402_sweagent_claude3opus": {
+    "group": "20240402_sweagent_claude3opus",
+    "split": "verified",
+    "submission": "20240402_sweagent_claude3opus",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20240402_sweagent_claude3opus/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 41,
+        "unique_instances": 41,
+        "duplicate_entries": 0
+      },
+      "generated": {
+        "entries": 455,
+        "unique_instances": 455,
+        "duplicate_entries": 0
+      },
+      "with_logs": {
+        "entries": 455,
+        "unique_instances": 455,
+        "duplicate_entries": 0
+      },
+      "install_fail": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "reset_failed": {
+        "entries": 1,
+        "unique_instances": 1,
+        "duplicate_entries": 0
+      },
+      "no_apply": {
+        "entries": 40,
+        "unique_instances": 40,
+        "duplicate_entries": 0
+      },
+      "applied": {
+        "entries": 386,
+        "unique_instances": 386,
+        "duplicate_entries": 0
+      },
+      "test_errored": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "test_timeout": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 79,
+        "unique_instances": 79,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20240402_sweagent_claude3opus/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": true
+  },
+  "20240402_sweagent_gpt4": {
+    "group": "20240402_sweagent_gpt4",
+    "split": "verified",
+    "submission": "20240402_sweagent_gpt4",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20240402_sweagent_gpt4/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 30,
+        "unique_instances": 26,
+        "duplicate_entries": 4
+      },
+      "generated": {
+        "entries": 472,
+        "unique_instances": 472,
+        "duplicate_entries": 0
+      },
+      "with_logs": {
+        "entries": 472,
+        "unique_instances": 472,
+        "duplicate_entries": 0
+      },
+      "install_fail": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "reset_failed": {
+        "entries": 1,
+        "unique_instances": 1,
+        "duplicate_entries": 0
+      },
+      "no_apply": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "applied": {
+        "entries": 466,
+        "unique_instances": 466,
+        "duplicate_entries": 0
+      },
+      "test_errored": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "test_timeout": {
+        "entries": 1,
+        "unique_instances": 1,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 112,
+        "unique_instances": 112,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20240402_sweagent_gpt4/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": true
+  },
+  "20240612_MASAI_gpt4o": {
+    "group": "20240612_MASAI_gpt4o",
+    "split": "verified",
+    "submission": "20240612_MASAI_gpt4o",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20240612_MASAI_gpt4o/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 22,
+        "unique_instances": 22,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 4,
+        "unique_instances": 4,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 163,
+        "unique_instances": 163,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20240612_MASAI_gpt4o/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20240620_sweagent_claude3.5sonnet": {
+    "group": "20240620_sweagent_claude3.5sonnet",
+    "split": "verified",
+    "submission": "20240620_sweagent_claude3.5sonnet",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20240620_sweagent_claude3.5sonnet/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 11,
+        "unique_instances": 11,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 3,
+        "unique_instances": 3,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 168,
+        "unique_instances": 168,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20240620_sweagent_claude3.5sonnet/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": true
+  },
+  "20240721_amazon-q-developer-agent-20240719-dev": {
+    "group": "20240721_amazon-q-developer-agent-20240719-dev",
+    "split": "verified",
+    "submission": "20240721_amazon-q-developer-agent-20240719-dev",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20240721_amazon-q-developer-agent-20240719-dev/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 1,
+        "unique_instances": 1,
+        "duplicate_entries": 0
+      },
+      "generated": {
+        "entries": 499,
+        "unique_instances": 499,
+        "duplicate_entries": 0
+      },
+      "with_logs": {
+        "entries": 499,
+        "unique_instances": 499,
+        "duplicate_entries": 0
+      },
+      "install_fail": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "reset_failed": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "no_apply": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "applied": {
+        "entries": 499,
+        "unique_instances": 499,
+        "duplicate_entries": 0
+      },
+      "test_errored": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "test_timeout": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 194,
+        "unique_instances": 194,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20240721_amazon-q-developer-agent-20240719-dev/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20240728_sweagent_gpt4o": {
+    "group": "20240728_sweagent_gpt4o",
+    "split": "verified",
+    "submission": "20240728_sweagent_gpt4o",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20240728_sweagent_gpt4o/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 50,
+        "unique_instances": 50,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 3,
+        "unique_instances": 3,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 116,
+        "unique_instances": 116,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20240728_sweagent_gpt4o/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": true
+  },
+  "20240918_lingma-agent_lingma-swe-gpt-72b": {
+    "group": "20240918_lingma-agent_lingma-swe-gpt-72b",
+    "split": "verified",
+    "submission": "20240918_lingma-agent_lingma-swe-gpt-72b",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20240918_lingma-agent_lingma-swe-gpt-72b/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 15,
+        "unique_instances": 15,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 2,
+        "unique_instances": 2,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 125,
+        "unique_instances": 125,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20240918_lingma-agent_lingma-swe-gpt-72b/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20240918_lingma-agent_lingma-swe-gpt-7b": {
+    "group": "20240918_lingma-agent_lingma-swe-gpt-7b",
+    "split": "verified",
+    "submission": "20240918_lingma-agent_lingma-swe-gpt-7b",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20240918_lingma-agent_lingma-swe-gpt-7b/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 39,
+        "unique_instances": 39,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 2,
+        "unique_instances": 2,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 51,
+        "unique_instances": 51,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20240918_lingma-agent_lingma-swe-gpt-7b/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20240920_solver": {
+    "group": "20240920_solver",
+    "split": "verified",
+    "submission": "20240920_solver",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20240920_solver/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 4,
+        "unique_instances": 4,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 218,
+        "unique_instances": 218,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20240920_solver/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20240924_solver": {
+    "group": "20240924_solver",
+    "split": "verified",
+    "submission": "20240924_solver",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20240924_solver/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 2,
+        "unique_instances": 2,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 227,
+        "unique_instances": 227,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20240924_solver/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20241002_lingma-agent_lingma-swe-gpt-72b": {
+    "group": "20241002_lingma-agent_lingma-swe-gpt-72b",
+    "split": "verified",
+    "submission": "20241002_lingma-agent_lingma-swe-gpt-72b",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20241002_lingma-agent_lingma-swe-gpt-72b/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 8,
+        "unique_instances": 8,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 1,
+        "unique_instances": 1,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 144,
+        "unique_instances": 144,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20241002_lingma-agent_lingma-swe-gpt-72b/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20241002_lingma-agent_lingma-swe-gpt-7b": {
+    "group": "20241002_lingma-agent_lingma-swe-gpt-7b",
+    "split": "verified",
+    "submission": "20241002_lingma-agent_lingma-swe-gpt-7b",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20241002_lingma-agent_lingma-swe-gpt-7b/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 86,
+        "unique_instances": 86,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 2,
+        "unique_instances": 2,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 91,
+        "unique_instances": 91,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20241002_lingma-agent_lingma-swe-gpt-7b/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20241007_nfactorial": {
+    "group": "20241007_nfactorial",
+    "split": "verified",
+    "submission": "20241007_nfactorial",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20241007_nfactorial/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 22,
+        "unique_instances": 22,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 158,
+        "unique_instances": 158,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20241007_nfactorial/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20241028_solver": {
+    "group": "20241028_solver",
+    "split": "verified",
+    "submission": "20241028_solver",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20241028_solver/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 1,
+        "unique_instances": 1,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 250,
+        "unique_instances": 250,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20241028_solver/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20241108_devlo": {
+    "group": "20241108_devlo",
+    "split": "verified",
+    "submission": "20241108_devlo",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20241108_devlo/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 271,
+        "unique_instances": 271,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20241108_devlo/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20241125_enginelabs": {
+    "group": "20241125_enginelabs",
+    "split": "verified",
+    "submission": "20241125_enginelabs",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20241125_enginelabs/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 8,
+        "unique_instances": 8,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 259,
+        "unique_instances": 259,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20241125_enginelabs/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20241125_marscode-agent-dev": {
+    "group": "20241125_marscode-agent-dev",
+    "split": "verified",
+    "submission": "20241125_marscode-agent-dev",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20241125_marscode-agent-dev/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 2,
+        "unique_instances": 2,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 250,
+        "unique_instances": 250,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20241125_marscode-agent-dev/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20241128_SWE-Fixer_Qwen2.5-7b-retriever_Qwen2.5-72b-editor_20241128": {
+    "group": "20241128_SWE-Fixer_Qwen2.5-7b-retriever_Qwen2.5-72b-editor_20241128",
+    "split": "verified",
+    "submission": "20241128_SWE-Fixer_Qwen2.5-7b-retriever_Qwen2.5-72b-editor_20241128",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20241128_SWE-Fixer_Qwen2.5-7b-retriever_Qwen2.5-72b-editor_20241128/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 2,
+        "unique_instances": 2,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 151,
+        "unique_instances": 151,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20241128_SWE-Fixer_Qwen2.5-7b-retriever_Qwen2.5-72b-editor_20241128/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20241212_epam-ai-run-claude-3-5-sonnet": {
+    "group": "20241212_epam-ai-run-claude-3-5-sonnet",
+    "split": "verified",
+    "submission": "20241212_epam-ai-run-claude-3-5-sonnet",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20241212_epam-ai-run-claude-3-5-sonnet/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 9,
+        "unique_instances": 9,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 277,
+        "unique_instances": 277,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20241212_epam-ai-run-claude-3-5-sonnet/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20241212_google_jules_gemini_2.0_flash_experimental": {
+    "group": "20241212_google_jules_gemini_2.0_flash_experimental",
+    "split": "verified",
+    "submission": "20241212_google_jules_gemini_2.0_flash_experimental",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20241212_google_jules_gemini_2.0_flash_experimental/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 261,
+        "unique_instances": 261,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20241212_google_jules_gemini_2.0_flash_experimental/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20241213_devlo": {
+    "group": "20241213_devlo",
+    "split": "verified",
+    "submission": "20241213_devlo",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20241213_devlo/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 291,
+        "unique_instances": 291,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20241213_devlo/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20250110_learn_by_interact_claude3.5": {
+    "group": "20250110_learn_by_interact_claude3.5",
+    "split": "verified",
+    "submission": "20250110_learn_by_interact_claude3.5",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20250110_learn_by_interact_claude3.5/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 90,
+        "unique_instances": 90,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 301,
+        "unique_instances": 301,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20250110_learn_by_interact_claude3.5/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20250112_ugaiforge": {
+    "group": "20250112_ugaiforge",
+    "split": "verified",
+    "submission": "20250112_ugaiforge",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20250112_ugaiforge/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 7,
+        "unique_instances": 7,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 208,
+        "unique_instances": 208,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20250112_ugaiforge/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20250118_codeshellagent_gemini_2.0_flash_experimental": {
+    "group": "20250118_codeshellagent_gemini_2.0_flash_experimental",
+    "split": "verified",
+    "submission": "20250118_codeshellagent_gemini_2.0_flash_experimental",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20250118_codeshellagent_gemini_2.0_flash_experimental/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 13,
+        "unique_instances": 13,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 1,
+        "unique_instances": 1,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 221,
+        "unique_instances": 221,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "evaluation/verified/20250118_codeshellagent_gemini_2.0_flash_experimental/trajs",
+    "asset_matches_exact_namespace": false,
+    "source_checked_tag": false
+  },
+  "20250120_Bracket": {
+    "group": "20250120_Bracket",
+    "split": "verified",
+    "submission": "20250120_Bracket",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20250120_Bracket/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 17,
+        "unique_instances": 17,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 266,
+        "unique_instances": 266,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20250120_Bracket/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20250203_openhands_4x_scaled": {
+    "group": "20250203_openhands_4x_scaled",
+    "split": "verified",
+    "submission": "20250203_openhands_4x_scaled",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20250203_openhands_4x_scaled/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 2,
+        "unique_instances": 2,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 304,
+        "unique_instances": 304,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20250203_openhands_4x_scaled/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": true
+  },
+  "20250214_agentless_lite_o3_mini": {
+    "group": "20250214_agentless_lite_o3_mini",
+    "split": "verified",
+    "submission": "20250214_agentless_lite_o3_mini",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20250214_agentless_lite_o3_mini/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 10,
+        "unique_instances": 10,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 212,
+        "unique_instances": 212,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20250214_agentless_lite_o3_mini/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": true
+  },
+  "20250306_SWE-Fixer_Qwen2.5-7b-retriever_Qwen2.5-72b-editor": {
+    "group": "20250306_SWE-Fixer_Qwen2.5-7b-retriever_Qwen2.5-72b-editor",
+    "split": "verified",
+    "submission": "20250306_SWE-Fixer_Qwen2.5-7b-retriever_Qwen2.5-72b-editor",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20250306_SWE-Fixer_Qwen2.5-7b-retriever_Qwen2.5-72b-editor/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 19,
+        "unique_instances": 19,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 164,
+        "unique_instances": 164,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20250306_SWE-Fixer_Qwen2.5-7b-retriever_Qwen2.5-72b-editor/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": true
+  },
+  "20250522_tools_claude-4-opus": {
+    "group": "20250522_tools_claude-4-opus",
+    "split": "verified",
+    "submission": "20250522_tools_claude-4-opus",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20250522_tools_claude-4-opus/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 366,
+        "unique_instances": 366,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20250522_tools_claude-4-opus/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20250615_agentless_mindlink": {
+    "group": "20250615_agentless_mindlink",
+    "split": "verified",
+    "submission": "20250615_agentless_mindlink",
+    "available": false,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "fields": {},
+    "problems": [],
+    "missing_reason": "no results.json in fixed local index registration"
+  },
+  "20250616_Skywork-SWE-32B": {
+    "group": "20250616_Skywork-SWE-32B",
+    "split": "verified",
+    "submission": "20250616_Skywork-SWE-32B",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20250616_Skywork-SWE-32B/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 9,
+        "unique_instances": 9,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 1,
+        "unique_instances": 1,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 190,
+        "unique_instances": 190,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20250616_Skywork-SWE-32B/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": true
+  },
+  "20250623_warp": {
+    "group": "20250623_warp",
+    "split": "verified",
+    "submission": "20250623_warp",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20250623_warp/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 3,
+        "unique_instances": 3,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 3,
+        "unique_instances": 3,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 355,
+        "unique_instances": 355,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20250623_warp/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20250806_SWE-Exp_DeepSeek-V3": {
+    "group": "20250806_SWE-Exp_DeepSeek-V3",
+    "split": "verified",
+    "submission": "20250806_SWE-Exp_DeepSeek-V3",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20250806_SWE-Exp_DeepSeek-V3/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 32,
+        "unique_instances": 32,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 210,
+        "unique_instances": 210,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": []
+  },
+  "20251014_Lingxi_kimi_k2": {
+    "group": "20251014_Lingxi_kimi_k2",
+    "split": "verified",
+    "submission": "20251014_Lingxi_kimi_k2",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20251014_Lingxi_kimi_k2/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 1,
+        "unique_instances": 1,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 356,
+        "unique_instances": 356,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20251014_Lingxi_kimi_k2/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "20251103_SalesforceAIResearch_SAGE_OpenHands": {
+    "group": "20251103_SalesforceAIResearch_SAGE_OpenHands",
+    "split": "verified",
+    "submission": "20251103_SalesforceAIResearch_SAGE_OpenHands",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/verified/20251103_SalesforceAIResearch_SAGE_OpenHands/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 2,
+        "unique_instances": 2,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 1,
+        "unique_instances": 1,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 369,
+        "unique_instances": 369,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/verified/20251103_SalesforceAIResearch_SAGE_OpenHands/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "lite/20240617_moatless_gpt4o": {
+    "group": "lite/20240617_moatless_gpt4o",
+    "split": "lite",
+    "submission": "20240617_moatless_gpt4o",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/lite/20240617_moatless_gpt4o/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 11,
+        "unique_instances": 11,
+        "duplicate_entries": 0
+      },
+      "generated": {
+        "entries": 289,
+        "unique_instances": 289,
+        "duplicate_entries": 0
+      },
+      "with_logs": {
+        "entries": 289,
+        "unique_instances": 289,
+        "duplicate_entries": 0
+      },
+      "install_fail": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "reset_failed": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "no_apply": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "applied": {
+        "entries": 289,
+        "unique_instances": 289,
+        "duplicate_entries": 0
+      },
+      "test_errored": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "test_timeout": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 74,
+        "unique_instances": 74,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/lite/20240617_moatless_gpt4o/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": true
+  },
+  "lite/20240806_SuperCoder2.0": {
+    "group": "lite/20240806_SuperCoder2.0",
+    "split": "lite",
+    "submission": "20240806_SuperCoder2.0",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/lite/20240806_SuperCoder2.0/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 2,
+        "unique_instances": 2,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 24,
+        "unique_instances": 24,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 102,
+        "unique_instances": 102,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/lite/20240806_SuperCoder2.0/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "lite/20241127_globant_codefixer_agent": {
+    "group": "lite/20241127_globant_codefixer_agent",
+    "split": "lite",
+    "submission": "20241127_globant_codefixer_agent",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/lite/20241127_globant_codefixer_agent/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 15,
+        "unique_instances": 15,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 145,
+        "unique_instances": 145,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/lite/20241127_globant_codefixer_agent/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "lite/20250619_KGCompass_claude-3.5-sonnet-20241022": {
+    "group": "lite/20250619_KGCompass_claude-3.5-sonnet-20241022",
+    "split": "lite",
+    "submission": "20250619_KGCompass_claude-3.5-sonnet-20241022",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/lite/20250619_KGCompass_claude-3.5-sonnet-20241022/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 9,
+        "unique_instances": 9,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 0,
+        "unique_instances": 0,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 138,
+        "unique_instances": 138,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/lite/20250619_KGCompass_claude-3.5-sonnet-20241022/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  },
+  "lite/20251009_MAYA_claude-sonnet-4-5-20250929": {
+    "group": "lite/20251009_MAYA_claude-sonnet-4-5-20250929",
+    "split": "lite",
+    "submission": "20251009_MAYA_claude-sonnet-4-5-20250929",
+    "available": false,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "fields": {},
+    "problems": [],
+    "missing_reason": "no results.json in fixed local index registration"
+  },
+  "test/20251219_sonar-foundation-agent_claude-opus-4-5": {
+    "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+    "split": "test",
+    "submission": "20251219_sonar-foundation-agent_claude-opus-4-5",
+    "available": true,
+    "binding": "exact split/submission directory; instance-ID membership; attempt/patch identity unverified",
+    "path": "data/raw/public/swebench_public_traces/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/experiments/evaluation/test/20251219_sonar-foundation-agent_claude-opus-4-5/results/results.json",
+    "fields": {
+      "no_generation": {
+        "entries": 18,
+        "unique_instances": 18,
+        "duplicate_entries": 0
+      },
+      "no_logs": {
+        "entries": 1,
+        "unique_instances": 1,
+        "duplicate_entries": 0
+      },
+      "resolved": {
+        "entries": 1207,
+        "unique_instances": 1207,
+        "duplicate_entries": 0
+      }
+    },
+    "problems": [],
+    "metadata_trajectory_asset": "s3://swe-bench-submissions/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs",
+    "asset_matches_exact_namespace": true,
+    "source_checked_tag": false
+  }
+}

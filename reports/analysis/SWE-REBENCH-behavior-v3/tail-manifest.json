@@ -1,0 +1,159 @@
+{
+  "schema": "swe-rebench-tail-audit-manifest-v3",
+  "inputs": [
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/manifest.json",
+      "bytes": 27036,
+      "sha256": "3f0f4d6fde99cbb3abea916e95ae91940ad79b5bd1325a454c3a95124a298307"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/review-manifest.json",
+      "bytes": 29016,
+      "sha256": "78c7c599079831cc5a06de5586d3c9716b983f7f5f068a600c6ba901a53b8b42"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/evaluation_exit_cross_tab.csv",
+      "bytes": 1448,
+      "sha256": "77a34402309622834031c3a40909c649ae7837b8d30b59f91a6712ab378f56f3"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/operation_result_strata.csv",
+      "bytes": 21713,
+      "sha256": "ae2e75434db521af8f0d68016a113d9602efe14104cd7d5c72f9bb7001b699e0"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/participant_protocol.csv",
+      "bytes": 1235,
+      "sha256": "3c87a0cd6109138a18825f0b58cab1d3aa4b3d309b6a99868cbe2d0c087652f3"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/per_trajectory.jsonl",
+      "bytes": 15276863,
+      "sha256": "1989f2c7fdff35536f5d022f655251c806ad64d6b1f16376c058f487c9947e06"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/protocol_evidence.jsonl",
+      "bytes": 9914501,
+      "sha256": "97679b0691582febf6b65016456eaca5bdd69dde67ee85ab3c266986222fb445"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/summary.json",
+      "bytes": 21126,
+      "sha256": "4ff159a2ac34a3f3d3485fce0ec71473472071e012effe5be55c9a01b32c2775"
+    },
+    {
+      "path": "scripts/swe_rebench_review_v3.py",
+      "bytes": 16522,
+      "sha256": "44a4a8df80e405b72ca43adf403747d2c3f5c03c323388a2a931d387c4017862"
+    },
+    {
+      "path": "tests/test_swe_rebench_review_v3.py",
+      "bytes": 2649,
+      "sha256": "3f4a854f4a3b20fdfff25562cfa9e04f9bdb3890d99f3b400f63e1242a8d6725"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/reviewed_summary.json",
+      "bytes": 27273,
+      "sha256": "7ffe065f6671bc2a065f4ecbdb0cde40371f76d7286492808a9a16c367ee101f"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/reviewed_per_trajectory.jsonl",
+      "bytes": 19300669,
+      "sha256": "275f4d908d46dd4dabf499d9de6c5c51d05a0cdc0b9158afc8dbda899ca3f24f"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/protocol_detail_evidence.jsonl",
+      "bytes": 9462559,
+      "sha256": "517a1cca1f6c5fb7651032284c98f241a271acd4f52dc47a135087995371c9ba"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/participant_protocol_details.csv",
+      "bytes": 692,
+      "sha256": "fe7cd3691cb0556e28466d2b32629cd4cc2072673a408db8233028f43afd83df"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/operations_by_evidence_scope.csv",
+      "bytes": 397,
+      "sha256": "a23591ba7c26b5001f5d9da94879953a4dca681bd356b3d80e7154f536bb3c0c"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/summary.md",
+      "bytes": 5272,
+      "sha256": "5041ab202041e2761714309ae51c2019b624d436b3f96f7b6489fc067a94ad71"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/verification.json",
+      "bytes": 846,
+      "sha256": "1fdcc0c2cfd8bfe3ef66a293da8615d424f7ef666900c8d4e0ef72323446c4ba"
+    },
+    {
+      "path": "scripts/swe_rebench_protocol_details.py",
+      "bytes": 17075,
+      "sha256": "4c7cda7e09cbd42ca2699b4a5e6f27f30dc208dde84a242c131bb4488416c033"
+    },
+    {
+      "path": "tests/test_swe_rebench_protocol_details.py",
+      "bytes": 1676,
+      "sha256": "03727b2dae2b7301f354bc8e5668d2b0a0749e54a2bcdbd803a595f7f51f1592"
+    },
+    {
+      "path": "data/raw/public/swe_rebench_nonofficial/cdae27cdd16673f0c682871ad55d325f24cc7020/trajectories/gpt-5.6-luna/run_1.jsonl.gz",
+      "bytes": 3486490,
+      "sha256": "5a89fb76fd73141ff8e5345ee44d0e547762fa0dab5e8b44684c9fcef72694b3"
+    },
+    {
+      "path": "data/raw/public/swe_rebench_nonofficial/cdae27cdd16673f0c682871ad55d325f24cc7020/trajectories/gpt-5.6-sol/run_0.jsonl.gz",
+      "bytes": 4873658,
+      "sha256": "6adeae6904ab6942830e584b9ad5e590421bb03d042f9564203b05b2bdd252d9"
+    },
+    {
+      "path": "data/raw/public/swe_rebench_nonofficial/cdae27cdd16673f0c682871ad55d325f24cc7020/trajectories/gpt-5.6-sol/run_1.jsonl.gz",
+      "bytes": 5057914,
+      "sha256": "6e620662e76b91279c03acee70cd7cdfe0610a90f65d592e532f76409639b884"
+    },
+    {
+      "path": "data/raw/public/swe_rebench_nonofficial/cdae27cdd16673f0c682871ad55d325f24cc7020/trajectories/gpt-5.6-sol/run_2.jsonl.gz",
+      "bytes": 5113050,
+      "sha256": "493ca1e72afe5bfb84f1f8c1daf05f536be9282ec32d4f3628fe665595496709"
+    },
+    {
+      "path": "data/raw/public/swe_rebench_nonofficial/cdae27cdd16673f0c682871ad55d325f24cc7020/trajectories/gpt-5.6-sol/run_4.jsonl.gz",
+      "bytes": 5273476,
+      "sha256": "6f7e416f49558ca68a21eb5217e6e2a8ba6101e3abc55d3cde2ed10cf8aa0ecc"
+    },
+    {
+      "path": "data/raw/public/swe_rebench_nonofficial/cdae27cdd16673f0c682871ad55d325f24cc7020/trajectories/mimo-v2.5-pro/run_0.jsonl.gz",
+      "bytes": 5823873,
+      "sha256": "30c45d46dd89b983a3fb40662b0b6fa2db1d6f1dddb47bf79d4aaab7e8ccc591"
+    }
+  ],
+  "analysis_code": [
+    {
+      "path": "scripts/swe_rebench_tail_audit.py",
+      "bytes": 8710,
+      "sha256": "2610e1502c6e7107a4d4d16921f1747ad16bc40ea47ac7516e5e3b4726d81a89"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/submit_tail_audit.json",
+      "bytes": 8508,
+      "sha256": "5391800a26cb60542d00958e5f0f11f08210c84cd46557973ce09280918c82c2"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/findings.md",
+      "bytes": 2828,
+      "sha256": "c86dae2196a2ede7c7e6432e3f25b79679b4f0a22363654fbd049de4019abadc"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/protocol_accounting.png",
+      "bytes": 53599,
+      "sha256": "3aad923fa4986363c58fadd24a801af3182efb6d2d727520a93a23a2595f4d14"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/final-verification.json",
+      "bytes": 660,
+      "sha256": "fde57cc14310da570fece124b681208124d046798fa97f66b22de6a8868dee68"
+    }
+  ]
+}

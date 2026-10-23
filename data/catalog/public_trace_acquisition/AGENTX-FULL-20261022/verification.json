@@ -1,0 +1,161 @@
+{
+  "status": "PASS",
+  "manifest_checks": [
+    {
+      "kind": "inputs",
+      "path": "data/raw/public/agentx_full/23f152f6f0f9399a85901b89a6458def0ef16729/README.md",
+      "matches": true
+    },
+    {
+      "kind": "inputs",
+      "path": "data/raw/public/agentx_full/23f152f6f0f9399a85901b89a6458def0ef16729/stats.txt",
+      "matches": true
+    },
+    {
+      "kind": "inputs",
+      "path": "data/raw/public/agentx_full/23f152f6f0f9399a85901b89a6458def0ef16729/traces.jsonl",
+      "matches": true
+    },
+    {
+      "kind": "inputs",
+      "path": "data/catalog/public_trace_acquisition/AGENTX-FULL-20261022/source_metadata/hf-api.json",
+      "matches": true
+    },
+    {
+      "kind": "inputs",
+      "path": "data/raw/public/agentx/8fecd2fc56694469f758f0afbbb6335ad3043740/traces.jsonl",
+      "matches": true
+    },
+    {
+      "kind": "inputs",
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/manifest.json",
+      "matches": true
+    },
+    {
+      "kind": "inputs",
+      "path": "data/catalog/public_trace_acquisition/AGENTX-FULL-20261022/manifest.json",
+      "matches": true
+    },
+    {
+      "kind": "inputs",
+      "path": "data/raw/public/agentx/8fecd2fc56694469f758f0afbbb6335ad3043740/stats.txt",
+      "matches": true
+    },
+    {
+      "kind": "inputs",
+      "path": "data/raw/public/agentx/8fecd2fc56694469f758f0afbbb6335ad3043740/README.md",
+      "matches": true
+    },
+    {
+      "kind": "outputs",
+      "path": "reports/analysis/AGENTX-FULL-MACRO-v1/comparison.json",
+      "matches": true
+    },
+    {
+      "kind": "outputs",
+      "path": "reports/analysis/AGENTX-FULL-MACRO-v1/full-vs-256k.png",
+      "matches": true
+    },
+    {
+      "kind": "outputs",
+      "path": "reports/analysis/AGENTX-FULL-MACRO-v1/full-vs-256k.svg",
+      "matches": true
+    },
+    {
+      "kind": "outputs",
+      "path": "reports/analysis/AGENTX-FULL-MACRO-v1/per_trace.jsonl",
+      "matches": true
+    },
+    {
+      "kind": "outputs",
+      "path": "reports/analysis/AGENTX-FULL-MACRO-v1/per_trace_comparison.csv",
+      "matches": true
+    },
+    {
+      "kind": "outputs",
+      "path": "reports/analysis/AGENTX-FULL-MACRO-v1/summary.json",
+      "matches": true
+    },
+    {
+      "kind": "outputs",
+      "path": "reports/analysis/AGENTX-FULL-MACRO-v1/summary.md",
+      "matches": true
+    },
+    {
+      "kind": "analyzer",
+      "path": "/home/lcq/agent_workload_characterization/scripts/agentx_full_macro.py",
+      "matches": true
+    },
+    {
+      "kind": "tests",
+      "path": "tests/test_agentx_full_macro.py",
+      "matches": true
+    },
+    {
+      "kind": "historical_output_preserved",
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.json",
+      "matches": true
+    },
+    {
+      "kind": "historical_output_preserved",
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.md",
+      "matches": true
+    },
+    {
+      "kind": "historical_output_preserved",
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/per_trace.jsonl",
+      "matches": true
+    },
+    {
+      "kind": "historical_output_preserved",
+      "path": "reports/analysis/AGENTX-APPLIED-MACRO-v1/per_template.jsonl",
+      "matches": true
+    }
+  ],
+  "per_trace_readback": {
+    "full": {
+      "rows": 393,
+      "unique_ids": 393,
+      "requests_sum": 98827
+    },
+    "256k": {
+      "rows": 393,
+      "unique_ids": 393,
+      "requests_sum": 68266
+    }
+  },
+  "directed_tests": {
+    "command": "python3 -B -m unittest tests.test_agentx_full_macro -v",
+    "passed": 8,
+    "failed": 0
+  },
+  "source_stats_checks": {
+    "full_passed": 7,
+    "256k_passed": 7
+  },
+  "project_state_check": {
+    "status": "PASS",
+    "errors": [],
+    "note": "Current document hashes synchronized after navigation updates; historical manifests unchanged."
+  },
+  "previous_current_document_evidence": [
+    {
+      "path": "README.md",
+      "bytes": 5453,
+      "sha256": "3bec0c98345072912d03dd19ce4453d3920028af5fd497249167e53ca3950659",
+      "role": "OpenStoryline confirmation-flow repair and real short-task partial gate evidence"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 5577,
+      "sha256": "b4fc6eb162c0931be3cd42892f8c0f81d3fbc825ac380801afaed3f5c25db30a",
+      "role": "OpenStoryline confirmation-flow repair and real short-task partial gate evidence"
+    },
+    {
+      "path": "docs/project_status.md",
+      "bytes": 8945,
+      "sha256": "5ac9c41493936a48d28e4574d7216dd20770d8a4ea7cb293aef1db2ae7571596",
+      "role": "OpenStoryline confirmation-flow repair and real short-task partial gate evidence"
+    }
+  ]
+}

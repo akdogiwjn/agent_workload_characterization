@@ -1,0 +1,2023 @@
+{
+  "schema": "swebench-coverage-results-v1",
+  "created_at_utc": "2026-10-22T16:35:51.227316+00:00",
+  "status": "PASS_WITH_SOURCE_LIMITS",
+  "index_commit": "40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+  "original_objects": 19876,
+  "new_objects": 147,
+  "objects": 20023,
+  "groups": 41,
+  "group_instance_keys": 19514,
+  "old_independent_task_keys": 2506,
+  "independent_task_keys": 2594,
+  "new_task_keys": 88,
+  "evaluation_groups_available": 39,
+  "evaluation_groups_missing": [
+    "20250615_agentless_mindlink",
+    "lite/20251009_MAYA_claude-sonnet-4-5-20250929"
+  ],
+  "evaluation_status_instance_counts": {
+    "listed_other_saved_fields": 1747,
+    "listed_resolved": 8371,
+    "not_listed_in_saved_fields": 8730,
+    "evaluation_file_missing": 666
+  },
+  "coverage_status_counts": {
+    "actions_extracted": 12656,
+    "process_partial_or_ambiguous": 6054,
+    "companion_artifact": 1313
+  },
+  "negative_objects_rechecked": 7367,
+  "negative_recheck_changes": 0,
+  "negative_reason_counts": {
+    "assistant_action_narration_without_observation_or_execution_protocol": 500,
+    "assistant_text_mentions_search_apis_but_no_native_action_or_result_id": 1993,
+    "thought_response_or_retrieval_text_without_explicit_operation_request": 1000,
+    "known_metadata_retrieval_or_prediction_output_not_execution_log": 9,
+    "search_result_or_solution_report_without_operation_invocation_parameters": 1000,
+    "empty_saved_json_list_no_trajectory_or_action_records": 3,
+    "setup_indexing_and_problem_log_without_saved_agent_action_boundary": 483,
+    "saved_context_contains_no_assistant_action_message": 111,
+    "llm_request_response_log_has_no_nonnull_tool_call_record": 866,
+    "messages_saved_without_machine_action_protocol": 1,
+    "saved_process_nodes_not_tool_invocation_records": 500,
+    "empty_message_context_no_saved_agent_action": 1,
+    "planning_and_candidate_file_stages_not_execution_events": 300,
+    "retrieval_or_location_candidate_output_without_invocation": 300,
+    "multi_agent_response_stages_without_tool_execution_records": 300
+  },
+  "sonar_cumulative_objects": 2294,
+  "groups_summary": {
+    "20240402_sweagent_claude3opus": {
+      "objects": 443,
+      "unique_instance_keys": 443,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 443
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_other_saved_fields": 376,
+        "listed_resolved": 67
+      },
+      "saved_result_memberships": {
+        "applied": 344,
+        "generated": 406,
+        "with_logs": 406,
+        "resolved": 67,
+        "no_apply": 36,
+        "no_generation": 37,
+        "reset_failed": 1
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20240402_sweagent_gpt4": {
+      "objects": 496,
+      "unique_instance_keys": 496,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 496
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_other_saved_fields": 383,
+        "listed_resolved": 112,
+        "not_listed_in_saved_fields": 1
+      },
+      "saved_result_memberships": {
+        "applied": 466,
+        "generated": 472,
+        "with_logs": 472,
+        "resolved": 112,
+        "no_generation": 26,
+        "test_timeout": 1,
+        "reset_failed": 1
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20240612_MASAI_gpt4o": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 500
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "not_listed_in_saved_fields": 311,
+        "listed_resolved": 163,
+        "listed_other_saved_fields": 26
+      },
+      "saved_result_memberships": {
+        "resolved": 163,
+        "no_generation": 22,
+        "no_logs": 4
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20240620_sweagent_claude3.5sonnet": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 500
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "not_listed_in_saved_fields": 318,
+        "listed_resolved": 168,
+        "listed_other_saved_fields": 14
+      },
+      "saved_result_memberships": {
+        "resolved": 168,
+        "no_generation": 11,
+        "no_logs": 3
+      },
+      "native_termination_labels": {
+        "submitted": 408,
+        "submitted (exit_cost)": 84,
+        "exit_cost": 6,
+        "None": 2
+      },
+      "saved_last_transition": {}
+    },
+    "20240721_amazon-q-developer-agent-20240719-dev": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 500,
+      "coverage_status_counts": {
+        "process_partial_or_ambiguous": 500
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_other_saved_fields": 306,
+        "listed_resolved": 194
+      },
+      "saved_result_memberships": {
+        "applied": 499,
+        "generated": 499,
+        "with_logs": 499,
+        "resolved": 194,
+        "no_generation": 1
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20240728_sweagent_gpt4o": {
+      "objects": 465,
+      "unique_instance_keys": 465,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 465
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "not_listed_in_saved_fields": 331,
+        "listed_resolved": 116,
+        "listed_other_saved_fields": 18
+      },
+      "saved_result_memberships": {
+        "resolved": 116,
+        "no_generation": 15,
+        "no_logs": 3
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20240918_lingma-agent_lingma-swe-gpt-72b": {
+      "objects": 499,
+      "unique_instance_keys": 499,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 499,
+      "coverage_status_counts": {
+        "process_partial_or_ambiguous": 499
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "not_listed_in_saved_fields": 358,
+        "listed_resolved": 125,
+        "listed_other_saved_fields": 16
+      },
+      "saved_result_memberships": {
+        "resolved": 125,
+        "no_generation": 14,
+        "no_logs": 2
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20240918_lingma-agent_lingma-swe-gpt-7b": {
+      "objects": 496,
+      "unique_instance_keys": 496,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 496,
+      "coverage_status_counts": {
+        "process_partial_or_ambiguous": 496
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "not_listed_in_saved_fields": 408,
+        "listed_other_saved_fields": 37,
+        "listed_resolved": 51
+      },
+      "saved_result_memberships": {
+        "no_generation": 35,
+        "resolved": 51,
+        "no_logs": 2
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20240920_solver": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 500
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 218,
+        "not_listed_in_saved_fields": 278,
+        "listed_other_saved_fields": 4
+      },
+      "saved_result_memberships": {
+        "resolved": 218,
+        "no_generation": 4
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20240924_solver": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 500
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "not_listed_in_saved_fields": 271,
+        "listed_resolved": 227,
+        "listed_other_saved_fields": 2
+      },
+      "saved_result_memberships": {
+        "resolved": 227,
+        "no_generation": 2
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20241002_lingma-agent_lingma-swe-gpt-72b": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 500,
+      "coverage_status_counts": {
+        "process_partial_or_ambiguous": 500
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "not_listed_in_saved_fields": 347,
+        "listed_resolved": 144,
+        "listed_other_saved_fields": 9
+      },
+      "saved_result_memberships": {
+        "resolved": 144,
+        "no_generation": 8,
+        "no_logs": 1
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20241002_lingma-agent_lingma-swe-gpt-7b": {
+      "objects": 498,
+      "unique_instance_keys": 498,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 498,
+      "coverage_status_counts": {
+        "process_partial_or_ambiguous": 498
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "not_listed_in_saved_fields": 321,
+        "listed_other_saved_fields": 86,
+        "listed_resolved": 91
+      },
+      "saved_result_memberships": {
+        "no_generation": 84,
+        "resolved": 91,
+        "no_logs": 2
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20241007_nfactorial": {
+      "objects": 478,
+      "unique_instance_keys": 478,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 478
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "not_listed_in_saved_fields": 320,
+        "listed_resolved": 158
+      },
+      "saved_result_memberships": {
+        "resolved": 158
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20241028_solver": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 500
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 250,
+        "not_listed_in_saved_fields": 249,
+        "listed_other_saved_fields": 1
+      },
+      "saved_result_memberships": {
+        "resolved": 250,
+        "no_generation": 1
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20241108_devlo": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 500,
+      "coverage_status_counts": {
+        "process_partial_or_ambiguous": 500
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 271,
+        "not_listed_in_saved_fields": 229
+      },
+      "saved_result_memberships": {
+        "resolved": 271
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20241125_enginelabs": {
+      "objects": 499,
+      "unique_instance_keys": 499,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 499
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 259,
+        "not_listed_in_saved_fields": 233,
+        "listed_other_saved_fields": 7
+      },
+      "saved_result_memberships": {
+        "resolved": 259,
+        "no_generation": 7
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20241125_marscode-agent-dev": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 500
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 250,
+        "not_listed_in_saved_fields": 248,
+        "listed_other_saved_fields": 2
+      },
+      "saved_result_memberships": {
+        "resolved": 250,
+        "no_generation": 2
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20241128_SWE-Fixer_Qwen2.5-7b-retriever_Qwen2.5-72b-editor_20241128": {
+      "objects": 2,
+      "unique_instance_keys": 0,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "companion_artifact": 2
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {},
+      "saved_result_memberships": {},
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20241212_epam-ai-run-claude-3-5-sonnet": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 500
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 277,
+        "not_listed_in_saved_fields": 214,
+        "listed_other_saved_fields": 9
+      },
+      "saved_result_memberships": {
+        "resolved": 277,
+        "no_generation": 9
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20241212_google_jules_gemini_2.0_flash_experimental": {
+      "objects": 1001,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 500,
+      "coverage_status_counts": {
+        "companion_artifact": 1001
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 261,
+        "not_listed_in_saved_fields": 239
+      },
+      "saved_result_memberships": {
+        "resolved": 261
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20241213_devlo": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 500,
+      "coverage_status_counts": {
+        "process_partial_or_ambiguous": 500
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 291,
+        "not_listed_in_saved_fields": 209
+      },
+      "saved_result_memberships": {
+        "resolved": 291
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20250110_learn_by_interact_claude3.5": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 500
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 301,
+        "listed_other_saved_fields": 90,
+        "not_listed_in_saved_fields": 109
+      },
+      "saved_result_memberships": {
+        "resolved": 301,
+        "no_logs": 90
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20250112_ugaiforge": {
+      "objects": 4,
+      "unique_instance_keys": 0,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "companion_artifact": 4
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {},
+      "saved_result_memberships": {},
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20250118_codeshellagent_gemini_2.0_flash_experimental": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 3,
+      "coverage_status_counts": {
+        "actions_extracted": 497,
+        "companion_artifact": 3
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 221,
+        "not_listed_in_saved_fields": 265,
+        "listed_other_saved_fields": 14
+      },
+      "saved_result_memberships": {
+        "resolved": 221,
+        "no_generation": 13,
+        "no_logs": 1
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20250120_Bracket": {
+      "objects": 483,
+      "unique_instance_keys": 483,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 483,
+      "coverage_status_counts": {
+        "process_partial_or_ambiguous": 483
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 266,
+        "not_listed_in_saved_fields": 217
+      },
+      "saved_result_memberships": {
+        "resolved": 266
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20250203_openhands_4x_scaled": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 111,
+      "coverage_status_counts": {
+        "actions_extracted": 389,
+        "process_partial_or_ambiguous": 111
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 304,
+        "not_listed_in_saved_fields": 194,
+        "listed_other_saved_fields": 2
+      },
+      "saved_result_memberships": {
+        "resolved": 304,
+        "no_logs": 2
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20250214_agentless_lite_o3_mini": {
+      "objects": 501,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 500,
+      "coverage_status_counts": {
+        "process_partial_or_ambiguous": 500,
+        "companion_artifact": 1
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "not_listed_in_saved_fields": 278,
+        "listed_resolved": 212,
+        "listed_other_saved_fields": 10
+      },
+      "saved_result_memberships": {
+        "resolved": 212,
+        "no_generation": 10
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20250306_SWE-Fixer_Qwen2.5-7b-retriever_Qwen2.5-72b-editor": {
+      "objects": 1,
+      "unique_instance_keys": 0,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "companion_artifact": 1
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {},
+      "saved_result_memberships": {},
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20250522_tools_claude-4-opus": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 500
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 366,
+        "not_listed_in_saved_fields": 134
+      },
+      "saved_result_memberships": {
+        "resolved": 366
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20250615_agentless_mindlink": {
+      "objects": 366,
+      "unique_instance_keys": 366,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 366,
+      "coverage_status_counts": {
+        "process_partial_or_ambiguous": 366
+      },
+      "evaluation_available": false,
+      "evaluation_status_instances": {
+        "evaluation_file_missing": 366
+      },
+      "saved_result_memberships": {},
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20250616_Skywork-SWE-32B": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 1,
+      "coverage_status_counts": {
+        "actions_extracted": 499,
+        "process_partial_or_ambiguous": 1
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_other_saved_fields": 10,
+        "not_listed_in_saved_fields": 300,
+        "listed_resolved": 190
+      },
+      "saved_result_memberships": {
+        "no_generation": 9,
+        "resolved": 190,
+        "no_logs": 1
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20250623_warp": {
+      "objects": 497,
+      "unique_instance_keys": 497,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 497
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 355,
+        "not_listed_in_saved_fields": 139,
+        "listed_other_saved_fields": 3
+      },
+      "saved_result_memberships": {
+        "resolved": 355,
+        "no_logs": 3
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20250806_SWE-Exp_DeepSeek-V3": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "process_partial_or_ambiguous": 500
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "not_listed_in_saved_fields": 258,
+        "listed_resolved": 210,
+        "listed_other_saved_fields": 32
+      },
+      "saved_result_memberships": {
+        "resolved": 210,
+        "no_generation": 32
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20251014_Lingxi_kimi_k2": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 500
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 356,
+        "not_listed_in_saved_fields": 143,
+        "listed_other_saved_fields": 1
+      },
+      "saved_result_memberships": {
+        "resolved": 356,
+        "no_generation": 1
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "20251103_SalesforceAIResearch_SAGE_OpenHands": {
+      "objects": 500,
+      "unique_instance_keys": 500,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 1,
+      "coverage_status_counts": {
+        "actions_extracted": 499,
+        "companion_artifact": 1
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 369,
+        "not_listed_in_saved_fields": 128,
+        "listed_other_saved_fields": 3
+      },
+      "saved_result_memberships": {
+        "resolved": 369,
+        "no_generation": 2,
+        "no_logs": 1
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "lite/20240617_moatless_gpt4o": {
+      "objects": 300,
+      "unique_instance_keys": 300,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 300
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_other_saved_fields": 226,
+        "listed_resolved": 74
+      },
+      "saved_result_memberships": {
+        "applied": 289,
+        "generated": 289,
+        "with_logs": 289,
+        "resolved": 74,
+        "no_generation": 11
+      },
+      "native_termination_labels": {
+        "None": 300
+      },
+      "saved_last_transition": {
+        "Finished": 274,
+        "Rejected": 11,
+        "ClarifyCodeChange": 4,
+        "SearchCode": 3,
+        "PlanToCode": 5,
+        "EditCode": 3
+      }
+    },
+    "lite/20240806_SuperCoder2.0": {
+      "objects": 300,
+      "unique_instance_keys": 300,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 300,
+      "coverage_status_counts": {
+        "process_partial_or_ambiguous": 300
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "not_listed_in_saved_fields": 172,
+        "listed_resolved": 102,
+        "listed_other_saved_fields": 26
+      },
+      "saved_result_memberships": {
+        "resolved": 102,
+        "no_generation": 2,
+        "no_logs": 24
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "lite/20241127_globant_codefixer_agent": {
+      "objects": 300,
+      "unique_instance_keys": 300,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 300
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "listed_resolved": 145,
+        "not_listed_in_saved_fields": 140,
+        "listed_other_saved_fields": 15
+      },
+      "saved_result_memberships": {
+        "resolved": 145,
+        "no_generation": 15
+      },
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "lite/20250619_KGCompass_claude-3.5-sonnet-20241022": {
+      "objects": 300,
+      "unique_instance_keys": 300,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 300,
+      "coverage_status_counts": {
+        "companion_artifact": 300
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "not_listed_in_saved_fields": 300
+      },
+      "saved_result_memberships": {},
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "lite/20251009_MAYA_claude-sonnet-4-5-20250929": {
+      "objects": 300,
+      "unique_instance_keys": 300,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 300,
+      "coverage_status_counts": {
+        "process_partial_or_ambiguous": 300
+      },
+      "evaluation_available": false,
+      "evaluation_status_instances": {
+        "evaluation_file_missing": 300
+      },
+      "saved_result_memberships": {},
+      "native_termination_labels": {},
+      "saved_last_transition": {}
+    },
+    "test/20251219_sonar-foundation-agent_claude-opus-4-5": {
+      "objects": 2294,
+      "unique_instance_keys": 2294,
+      "multiple_objects_per_instance": 0,
+      "instances_without_behavior_rows": 0,
+      "coverage_status_counts": {
+        "actions_extracted": 2294
+      },
+      "evaluation_available": true,
+      "evaluation_status_instances": {
+        "not_listed_in_saved_fields": 1068,
+        "listed_other_saved_fields": 19,
+        "listed_resolved": 1207
+      },
+      "saved_result_memberships": {
+        "no_generation": 18,
+        "resolved": 1207,
+        "no_logs": 1
+      },
+      "native_termination_labels": {
+        "None": 2294
+      },
+      "saved_last_transition": {}
+    }
+  },
+  "behavior_strata": [
+    {
+      "group": "20240402_sweagent_claude3opus",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 376,
+        "min": 4,
+        "median": 21.0,
+        "q1": 16.0,
+        "q3": 24.0,
+        "iqr": 8.0,
+        "max": 28
+      }
+    },
+    {
+      "group": "20240402_sweagent_claude3opus",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 67,
+        "min": 4,
+        "median": 14.0,
+        "q1": 10.0,
+        "q3": 18.0,
+        "iqr": 8.0,
+        "max": 24
+      }
+    },
+    {
+      "group": "20240402_sweagent_gpt4",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 383,
+        "min": 4,
+        "median": 24.0,
+        "q1": 14.0,
+        "q3": 32.0,
+        "iqr": 18.0,
+        "max": 40
+      }
+    },
+    {
+      "group": "20240402_sweagent_gpt4",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 112,
+        "min": 4,
+        "median": 11.0,
+        "q1": 9.0,
+        "q3": 18.0,
+        "iqr": 9.0,
+        "max": 39
+      }
+    },
+    {
+      "group": "20240402_sweagent_gpt4",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 32,
+        "median": 32.0,
+        "q1": 32.0,
+        "q3": 32.0,
+        "iqr": 0.0,
+        "max": 32
+      }
+    },
+    {
+      "group": "20240612_MASAI_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 26,
+        "min": 18,
+        "median": 44.0,
+        "q1": 35.25,
+        "q3": 53.75,
+        "iqr": 18.5,
+        "max": 130
+      }
+    },
+    {
+      "group": "20240612_MASAI_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 163,
+        "min": 17,
+        "median": 41.0,
+        "q1": 28.5,
+        "q3": 48.5,
+        "iqr": 20.0,
+        "max": 118
+      }
+    },
+    {
+      "group": "20240612_MASAI_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 311,
+        "min": 16,
+        "median": 46.0,
+        "q1": 33.0,
+        "q3": 57.5,
+        "iqr": 24.5,
+        "max": 142
+      }
+    },
+    {
+      "group": "20240620_sweagent_claude3.5sonnet",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 14,
+        "min": 7,
+        "median": 30.0,
+        "q1": 20.5,
+        "q3": 62.0,
+        "iqr": 41.5,
+        "max": 82
+      }
+    },
+    {
+      "group": "20240620_sweagent_claude3.5sonnet",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 168,
+        "min": 5,
+        "median": 19.0,
+        "q1": 13.0,
+        "q3": 32.25,
+        "iqr": 19.25,
+        "max": 86
+      }
+    },
+    {
+      "group": "20240620_sweagent_claude3.5sonnet",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 318,
+        "min": 5,
+        "median": 33.0,
+        "q1": 19.0,
+        "q3": 56.0,
+        "iqr": 37.0,
+        "max": 84
+      }
+    },
+    {
+      "group": "20240728_sweagent_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 18,
+        "min": 8,
+        "median": 53.5,
+        "q1": 30.0,
+        "q3": 67.25,
+        "iqr": 37.25,
+        "max": 73
+      }
+    },
+    {
+      "group": "20240728_sweagent_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 116,
+        "min": 8,
+        "median": 17.0,
+        "q1": 11.0,
+        "q3": 44.25,
+        "iqr": 33.25,
+        "max": 78
+      }
+    },
+    {
+      "group": "20240728_sweagent_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 331,
+        "min": 5,
+        "median": 52.0,
+        "q1": 18.0,
+        "q3": 61.0,
+        "iqr": 43.0,
+        "max": 75
+      }
+    },
+    {
+      "group": "20240920_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 4,
+        "min": 2,
+        "median": 3.5,
+        "q1": 2.75,
+        "q3": 4.5,
+        "iqr": 1.75,
+        "max": 6
+      }
+    },
+    {
+      "group": "20240920_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 218,
+        "min": 2,
+        "median": 6.0,
+        "q1": 5.0,
+        "q3": 9.0,
+        "iqr": 4.0,
+        "max": 37
+      }
+    },
+    {
+      "group": "20240920_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 278,
+        "min": 1,
+        "median": 8.0,
+        "q1": 5.0,
+        "q3": 16.0,
+        "iqr": 11.0,
+        "max": 44
+      }
+    },
+    {
+      "group": "20240920_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 4,
+        "min": 1,
+        "median": 1.5,
+        "q1": 1.0,
+        "q3": 2.25,
+        "iqr": 1.25,
+        "max": 3
+      }
+    },
+    {
+      "group": "20240920_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 218,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 4
+      }
+    },
+    {
+      "group": "20240920_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 278,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 4
+      }
+    },
+    {
+      "group": "20240924_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 2,
+        "min": 9,
+        "median": 10.0,
+        "q1": 9.5,
+        "q3": 10.5,
+        "iqr": 1.0,
+        "max": 11
+      }
+    },
+    {
+      "group": "20240924_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 227,
+        "min": 2,
+        "median": 6.0,
+        "q1": 5.0,
+        "q3": 10.0,
+        "iqr": 5.0,
+        "max": 43
+      }
+    },
+    {
+      "group": "20240924_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 271,
+        "min": 2,
+        "median": 8.0,
+        "q1": 5.0,
+        "q3": 14.0,
+        "iqr": 9.0,
+        "max": 46
+      }
+    },
+    {
+      "group": "20240924_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 2,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 1
+      }
+    },
+    {
+      "group": "20240924_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 227,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 6
+      }
+    },
+    {
+      "group": "20240924_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 271,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 5
+      }
+    },
+    {
+      "group": "20241007_nfactorial",
+      "unit_kind": "saved_shell_invocation",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 158,
+        "min": 1,
+        "median": 9.5,
+        "q1": 7.0,
+        "q3": 13.0,
+        "iqr": 6.0,
+        "max": 28
+      }
+    },
+    {
+      "group": "20241007_nfactorial",
+      "unit_kind": "saved_shell_invocation",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 320,
+        "min": 1,
+        "median": 11.0,
+        "q1": 8.0,
+        "q3": 15.0,
+        "iqr": 7.0,
+        "max": 31
+      }
+    },
+    {
+      "group": "20241028_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 5,
+        "median": 5.0,
+        "q1": 5.0,
+        "q3": 5.0,
+        "iqr": 0.0,
+        "max": 5
+      }
+    },
+    {
+      "group": "20241028_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 250,
+        "min": 3,
+        "median": 7.5,
+        "q1": 6.0,
+        "q3": 11.0,
+        "iqr": 5.0,
+        "max": 43
+      }
+    },
+    {
+      "group": "20241028_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 249,
+        "min": 3,
+        "median": 11.0,
+        "q1": 8.0,
+        "q3": 17.0,
+        "iqr": 9.0,
+        "max": 47
+      }
+    },
+    {
+      "group": "20241028_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 1
+      }
+    },
+    {
+      "group": "20241028_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 250,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 3
+      }
+    },
+    {
+      "group": "20241028_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 249,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 8
+      }
+    },
+    {
+      "group": "20241125_enginelabs",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 7,
+        "min": 12,
+        "median": 16.0,
+        "q1": 14.5,
+        "q3": 24.5,
+        "iqr": 10.0,
+        "max": 32
+      }
+    },
+    {
+      "group": "20241125_enginelabs",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 259,
+        "min": 4,
+        "median": 14.0,
+        "q1": 10.0,
+        "q3": 20.0,
+        "iqr": 10.0,
+        "max": 38
+      }
+    },
+    {
+      "group": "20241125_enginelabs",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 233,
+        "min": 6,
+        "median": 18.0,
+        "q1": 12.0,
+        "q3": 31.0,
+        "iqr": 19.0,
+        "max": 42
+      }
+    },
+    {
+      "group": "20241125_marscode-agent-dev",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 2,
+        "min": 282,
+        "median": 287.0,
+        "q1": 284.5,
+        "q3": 289.5,
+        "iqr": 5.0,
+        "max": 292
+      }
+    },
+    {
+      "group": "20241125_marscode-agent-dev",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 250,
+        "min": 6,
+        "median": 23.0,
+        "q1": 16.0,
+        "q3": 29.75,
+        "iqr": 13.75,
+        "max": 81
+      }
+    },
+    {
+      "group": "20241125_marscode-agent-dev",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 248,
+        "min": 10,
+        "median": 28.0,
+        "q1": 22.0,
+        "q3": 38.0,
+        "iqr": 16.0,
+        "max": 97
+      }
+    },
+    {
+      "group": "20241212_epam-ai-run-claude-3-5-sonnet",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 9,
+        "min": 12,
+        "median": 21.0,
+        "q1": 19.0,
+        "q3": 41.0,
+        "iqr": 22.0,
+        "max": 49
+      }
+    },
+    {
+      "group": "20241212_epam-ai-run-claude-3-5-sonnet",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 277,
+        "min": 5,
+        "median": 14.0,
+        "q1": 10.0,
+        "q3": 21.0,
+        "iqr": 11.0,
+        "max": 49
+      }
+    },
+    {
+      "group": "20241212_epam-ai-run-claude-3-5-sonnet",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 214,
+        "min": 6,
+        "median": 21.0,
+        "q1": 13.0,
+        "q3": 36.0,
+        "iqr": 23.0,
+        "max": 49
+      }
+    },
+    {
+      "group": "20250110_learn_by_interact_claude3.5",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 90,
+        "min": 7,
+        "median": 13.0,
+        "q1": 11.0,
+        "q3": 16.75,
+        "iqr": 5.75,
+        "max": 145
+      }
+    },
+    {
+      "group": "20250110_learn_by_interact_claude3.5",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 301,
+        "min": 6,
+        "median": 15.0,
+        "q1": 13.0,
+        "q3": 21.0,
+        "iqr": 8.0,
+        "max": 164
+      }
+    },
+    {
+      "group": "20250110_learn_by_interact_claude3.5",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 109,
+        "min": 4,
+        "median": 27.0,
+        "q1": 15.0,
+        "q3": 55.0,
+        "iqr": 40.0,
+        "max": 161
+      }
+    },
+    {
+      "group": "20250118_codeshellagent_gemini_2.0_flash_experimental",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 11,
+        "min": 4,
+        "median": 9.0,
+        "q1": 8.5,
+        "q3": 14.5,
+        "iqr": 6.0,
+        "max": 26
+      }
+    },
+    {
+      "group": "20250118_codeshellagent_gemini_2.0_flash_experimental",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 221,
+        "min": 2,
+        "median": 8.0,
+        "q1": 5.0,
+        "q3": 12.0,
+        "iqr": 7.0,
+        "max": 48
+      }
+    },
+    {
+      "group": "20250118_codeshellagent_gemini_2.0_flash_experimental",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 265,
+        "min": 2,
+        "median": 9.0,
+        "q1": 7.0,
+        "q3": 17.0,
+        "iqr": 10.0,
+        "max": 39
+      }
+    },
+    {
+      "group": "20250203_openhands_4x_scaled",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 15,
+        "median": 15.0,
+        "q1": 15.0,
+        "q3": 15.0,
+        "iqr": 0.0,
+        "max": 15
+      }
+    },
+    {
+      "group": "20250203_openhands_4x_scaled",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 247,
+        "min": 1,
+        "median": 14.0,
+        "q1": 10.0,
+        "q3": 20.0,
+        "iqr": 10.0,
+        "max": 82
+      }
+    },
+    {
+      "group": "20250203_openhands_4x_scaled",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 141,
+        "min": 3,
+        "median": 19.0,
+        "q1": 14.0,
+        "q3": 28.0,
+        "iqr": 14.0,
+        "max": 99
+      }
+    },
+    {
+      "group": "20250522_tools_claude-4-opus",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 366,
+        "min": 20,
+        "median": 40.0,
+        "q1": 31.0,
+        "q3": 52.0,
+        "iqr": 21.0,
+        "max": 127
+      }
+    },
+    {
+      "group": "20250522_tools_claude-4-opus",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 134,
+        "min": 24,
+        "median": 52.0,
+        "q1": 42.25,
+        "q3": 70.75,
+        "iqr": 28.5,
+        "max": 135
+      }
+    },
+    {
+      "group": "20250616_Skywork-SWE-32B",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 9,
+        "min": 2,
+        "median": 10.0,
+        "q1": 8.0,
+        "q3": 17.0,
+        "iqr": 9.0,
+        "max": 33
+      }
+    },
+    {
+      "group": "20250616_Skywork-SWE-32B",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 190,
+        "min": 2,
+        "median": 12.0,
+        "q1": 8.0,
+        "q3": 17.0,
+        "iqr": 9.0,
+        "max": 41
+      }
+    },
+    {
+      "group": "20250616_Skywork-SWE-32B",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 300,
+        "min": 1,
+        "median": 14.0,
+        "q1": 9.0,
+        "q3": 20.0,
+        "iqr": 11.0,
+        "max": 59
+      }
+    },
+    {
+      "group": "20250623_warp",
+      "unit_kind": "saved_shell_invocation",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 3,
+        "min": 7,
+        "median": 18.0,
+        "q1": 12.5,
+        "q3": 21.0,
+        "iqr": 8.5,
+        "max": 24
+      }
+    },
+    {
+      "group": "20250623_warp",
+      "unit_kind": "saved_shell_invocation",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 355,
+        "min": 7,
+        "median": 19.0,
+        "q1": 15.0,
+        "q3": 23.0,
+        "iqr": 8.0,
+        "max": 41
+      }
+    },
+    {
+      "group": "20250623_warp",
+      "unit_kind": "saved_shell_invocation",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 139,
+        "min": 10,
+        "median": 22.0,
+        "q1": 16.0,
+        "q3": 26.5,
+        "iqr": 10.5,
+        "max": 101
+      }
+    },
+    {
+      "group": "20250806_SWE-Exp_DeepSeek-V3",
+      "unit_kind": "saved_process_node",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 32,
+        "min": 3,
+        "median": 6.5,
+        "q1": 5.75,
+        "q3": 9.0,
+        "iqr": 3.25,
+        "max": 17
+      }
+    },
+    {
+      "group": "20250806_SWE-Exp_DeepSeek-V3",
+      "unit_kind": "saved_process_node",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 210,
+        "min": 3,
+        "median": 4.0,
+        "q1": 3.0,
+        "q3": 5.0,
+        "iqr": 2.0,
+        "max": 19
+      }
+    },
+    {
+      "group": "20250806_SWE-Exp_DeepSeek-V3",
+      "unit_kind": "saved_process_node",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 258,
+        "min": 1,
+        "median": 6.0,
+        "q1": 4.0,
+        "q3": 9.0,
+        "iqr": 5.0,
+        "max": 19
+      }
+    },
+    {
+      "group": "20251014_Lingxi_kimi_k2",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 181,
+        "median": 181.0,
+        "q1": 181.0,
+        "q3": 181.0,
+        "iqr": 0.0,
+        "max": 181
+      }
+    },
+    {
+      "group": "20251014_Lingxi_kimi_k2",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 356,
+        "min": 44,
+        "median": 106.0,
+        "q1": 83.0,
+        "q3": 134.25,
+        "iqr": 51.25,
+        "max": 331
+      }
+    },
+    {
+      "group": "20251014_Lingxi_kimi_k2",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 143,
+        "min": 36,
+        "median": 125.0,
+        "q1": 95.0,
+        "q3": 165.0,
+        "iqr": 70.0,
+        "max": 468
+      }
+    },
+    {
+      "group": "20251103_SalesforceAIResearch_SAGE_OpenHands",
+      "unit_kind": "saved_tool_call",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 2,
+        "min": 23,
+        "median": 25.0,
+        "q1": 24.0,
+        "q3": 26.0,
+        "iqr": 2.0,
+        "max": 27
+      }
+    },
+    {
+      "group": "20251103_SalesforceAIResearch_SAGE_OpenHands",
+      "unit_kind": "saved_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 369,
+        "min": 8,
+        "median": 26.0,
+        "q1": 19.0,
+        "q3": 36.0,
+        "iqr": 17.0,
+        "max": 132
+      }
+    },
+    {
+      "group": "20251103_SalesforceAIResearch_SAGE_OpenHands",
+      "unit_kind": "saved_tool_call",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 128,
+        "min": 9,
+        "median": 30.0,
+        "q1": 23.0,
+        "q3": 43.25,
+        "iqr": 20.25,
+        "max": 89
+      }
+    },
+    {
+      "group": "lite/20240617_moatless_gpt4o",
+      "unit_kind": "saved_transition",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 226,
+        "min": 1,
+        "median": 10.0,
+        "q1": 7.0,
+        "q3": 12.0,
+        "iqr": 5.0,
+        "max": 21
+      }
+    },
+    {
+      "group": "lite/20240617_moatless_gpt4o",
+      "unit_kind": "saved_transition",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 74,
+        "min": 5,
+        "median": 8.0,
+        "q1": 6.0,
+        "q3": 10.75,
+        "iqr": 4.75,
+        "max": 22
+      }
+    },
+    {
+      "group": "lite/20241127_globant_codefixer_agent",
+      "unit_kind": "saved_tool_call",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 15,
+        "min": 6,
+        "median": 22.0,
+        "q1": 19.0,
+        "q3": 25.0,
+        "iqr": 6.0,
+        "max": 34
+      }
+    },
+    {
+      "group": "lite/20241127_globant_codefixer_agent",
+      "unit_kind": "saved_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 145,
+        "min": 4,
+        "median": 7.0,
+        "q1": 6.0,
+        "q3": 10.0,
+        "iqr": 4.0,
+        "max": 19
+      }
+    },
+    {
+      "group": "lite/20241127_globant_codefixer_agent",
+      "unit_kind": "saved_tool_call",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 140,
+        "min": 5,
+        "median": 9.0,
+        "q1": 8.0,
+        "q3": 12.0,
+        "iqr": 4.0,
+        "max": 33
+      }
+    },
+    {
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_other_saved_fields",
+      "saved_units_per_instance": {
+        "n": 19,
+        "min": 19,
+        "median": 140.0,
+        "q1": 121.5,
+        "q3": 150.0,
+        "iqr": 28.5,
+        "max": 150
+      }
+    },
+    {
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "listed_resolved",
+      "saved_units_per_instance": {
+        "n": 1207,
+        "min": 12,
+        "median": 55.0,
+        "q1": 41.0,
+        "q3": 72.0,
+        "iqr": 31.0,
+        "max": 150
+      }
+    },
+    {
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "not_listed_in_saved_fields",
+      "saved_units_per_instance": {
+        "n": 1068,
+        "min": 15,
+        "median": 69.0,
+        "q1": 52.0,
+        "q3": 87.0,
+        "iqr": 35.0,
+        "max": 150
+      }
+    }
+  ],
+  "multiple_behavior_rows_excluded": [],
+  "subset90_evaluation_counts": {
+    "20240620_sweagent_claude3.5sonnet": {
+      "not_listed_in_saved_fields": 20,
+      "listed_resolved": 10
+    },
+    "lite/20240617_moatless_gpt4o": {
+      "listed_other_saved_fields": 20,
+      "listed_resolved": 10
+    },
+    "test/20251219_sonar-foundation-agent_claude-opus-4-5": {
+      "not_listed_in_saved_fields": 21,
+      "listed_other_saved_fields": 1,
+      "listed_resolved": 8
+    }
+  },
+  "rules": {
+    "join": "exact split+submission+instance_id; object copies not independent attempts; patch/run identity not proven",
+    "membership": "positive published membership only; absence from resolved never means failed",
+    "strata": "within submission and saved unit_kind; one source row per instance/kind required; no cross-group ranking",
+    "termination": "info.exit_status separate from explicit submit, final saved transition and evaluation",
+    "coverage": "old positive rows reused; every old object SHA verified; all non-action objects re-parsed with frozen v3 protocol; new 147 freshly parsed",
+    "source": "fixed Git metadata, mutable S3 payloads; new ETag checks live data, not historical immutable identity"
+  },
+  "remaining_limits": [
+    "unattempted public submission groups outside these 41",
+    "no original CPU/memory/IO data",
+    "missing result publications for two groups",
+    "unlisted result IDs remain unknown",
+    "no attempt/patch-level alignment",
+    "saved order not execution order; tool results without IDs not position-paired"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "osworld-v4-findings-manifest-v1",
+  "inputs": [
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/manifest.json",
+      "bytes": 522922,
+      "sha256": "9c925d3b923678f72e6f022d7efd38206a2b9057041c1de2e48a562ec9832cb6"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/summary.json",
+      "bytes": 22859,
+      "sha256": "57a1ed47f4687ded0b5b54fef59df2a108956a92bfbe826dd4c098c7195f5c5a"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/per_trajectory.jsonl",
+      "bytes": 5812671,
+      "sha256": "125f1303a831b8ac8bb004bc194eabec86a19fc7d4ce60f6d099d007211768a4"
+    }
+  ],
+  "renderer": {
+    "path": "scripts/osworld_v4_findings.py",
+    "bytes": 8285,
+    "sha256": "9011f117cb25daf9cf48b811dc89df5dc52512993640ef16a0effee8a6b3954a"
+  },
+  "outputs": [
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/findings.md",
+      "bytes": 5323,
+      "sha256": "61826f409a488cc534c7706b13db44d687fdaa64326f0daa7f3203b8422addd8"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/static_categories.csv",
+      "bytes": 2244,
+      "sha256": "e4457d506dd97f5e781e340b2ffadc3d9ff865c45dd721e5e472c8333804e0b6"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/static_transitions.csv",
+      "bytes": 5939,
+      "sha256": "0851de4da33b8f54f3a1969465f875d2c727b7d1eecd86e22051b8196b616248"
+    }
+  ],
+  "manifest_self_hash_excluded": true,
+  "no_raw_reparse_or_execution": true
+}

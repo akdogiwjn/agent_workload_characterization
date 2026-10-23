@@ -1,0 +1,2177 @@
+{
+  "schema": "swebench-instance-results-analysis-v1",
+  "created_at_utc": "2026-10-22T21:42:16.829200+00:00",
+  "acquisition_counts": {
+    "legacy_evaluation_log": 1716,
+    "instance_report": 18306,
+    "predictions": 36,
+    "evaluation_diagnostic": 39
+  },
+  "acquisition_bytes": 510938578,
+  "groups": {
+    "20240402_sweagent_claude3opus": {
+      "trace_instance_keys": 443,
+      "outcomes": {
+        "legacy_completed_not_resolved": 277,
+        "resolved": 67,
+        "evaluation_stage_failure": 37,
+        "no_public_result_artifact": 25,
+        "no_generation": 37
+      },
+      "downloaded_reports": 0,
+      "downloaded_legacy_logs": 455,
+      "predictions_available": true,
+      "prediction_instances": 496,
+      "report_parser_statuses": {},
+      "conflicting_instances": 0
+    },
+    "20240402_sweagent_gpt4": {
+      "trace_instance_keys": 496,
+      "outcomes": {
+        "legacy_completed_not_resolved": 350,
+        "resolved": 112,
+        "no_generation": 26,
+        "no_public_result_artifact": 6,
+        "evaluation_stage_failure": 2
+      },
+      "downloaded_reports": 0,
+      "downloaded_legacy_logs": 472,
+      "predictions_available": true,
+      "prediction_instances": 495,
+      "report_parser_statuses": {},
+      "conflicting_instances": 0
+    },
+    "20240612_MASAI_gpt4o": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "unresolved": 310,
+        "resolved": 160,
+        "no_generation": 22,
+        "conflicting_published_results": 3,
+        "evaluation_logs_missing": 4,
+        "no_public_result_artifact": 1
+      },
+      "downloaded_reports": 473,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 473
+      },
+      "conflicting_instances": 3
+    },
+    "20240620_sweagent_claude3.5sonnet": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "unresolved": 317,
+        "resolved": 168,
+        "no_generation": 11,
+        "evaluation_stage_failure": 3,
+        "no_public_result_artifact": 1
+      },
+      "downloaded_reports": 485,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": false,
+      "prediction_instances": 0,
+      "report_parser_statuses": {
+        "explicit_instance_report": 485
+      },
+      "conflicting_instances": 0
+    },
+    "20240721_amazon-q-developer-agent-20240719-dev": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "legacy_completed_not_resolved": 305,
+        "resolved": 194,
+        "no_generation": 1
+      },
+      "downloaded_reports": 0,
+      "downloaded_legacy_logs": 500,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {},
+      "conflicting_instances": 0
+    },
+    "20240728_sweagent_gpt4o": {
+      "trace_instance_keys": 465,
+      "outcomes": {
+        "unresolved": 330,
+        "resolved": 116,
+        "no_generation": 15,
+        "evaluation_stage_failure": 3,
+        "no_public_result_artifact": 1
+      },
+      "downloaded_reports": 446,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 465,
+      "report_parser_statuses": {
+        "explicit_instance_report": 446
+      },
+      "conflicting_instances": 0
+    },
+    "20240918_lingma-agent_lingma-swe-gpt-72b": {
+      "trace_instance_keys": 499,
+      "outcomes": {
+        "unresolved": 356,
+        "resolved": 125,
+        "no_generation": 14,
+        "evaluation_logs_missing": 2,
+        "no_public_result_artifact": 2
+      },
+      "downloaded_reports": 481,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 499,
+      "report_parser_statuses": {
+        "explicit_instance_report": 481
+      },
+      "conflicting_instances": 0
+    },
+    "20240918_lingma-agent_lingma-swe-gpt-7b": {
+      "trace_instance_keys": 496,
+      "outcomes": {
+        "unresolved": 407,
+        "no_generation": 35,
+        "resolved": 51,
+        "evaluation_logs_missing": 2,
+        "no_public_result_artifact": 1
+      },
+      "downloaded_reports": 458,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 496,
+      "report_parser_statuses": {
+        "explicit_instance_report": 458
+      },
+      "conflicting_instances": 0
+    },
+    "20240920_solver": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "resolved": 218,
+        "unresolved": 277,
+        "no_public_result_artifact": 1,
+        "no_generation": 4
+      },
+      "downloaded_reports": 495,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 495
+      },
+      "conflicting_instances": 0
+    },
+    "20240924_solver": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "unresolved": 271,
+        "resolved": 227,
+        "no_generation": 2
+      },
+      "downloaded_reports": 498,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 498
+      },
+      "conflicting_instances": 0
+    },
+    "20241002_lingma-agent_lingma-swe-gpt-72b": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "unresolved": 345,
+        "resolved": 144,
+        "no_generation": 8,
+        "evaluation_stage_failure": 1,
+        "no_public_result_artifact": 2
+      },
+      "downloaded_reports": 489,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 489
+      },
+      "conflicting_instances": 0
+    },
+    "20241002_lingma-agent_lingma-swe-gpt-7b": {
+      "trace_instance_keys": 498,
+      "outcomes": {
+        "unresolved": 321,
+        "no_generation": 84,
+        "resolved": 91,
+        "evaluation_stage_failure": 2
+      },
+      "downloaded_reports": 412,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 498,
+      "report_parser_statuses": {
+        "explicit_instance_report": 412
+      },
+      "conflicting_instances": 0
+    },
+    "20241007_nfactorial": {
+      "trace_instance_keys": 478,
+      "outcomes": {
+        "unresolved": 320,
+        "resolved": 158
+      },
+      "downloaded_reports": 478,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 478,
+      "report_parser_statuses": {
+        "explicit_instance_report": 478
+      },
+      "conflicting_instances": 0
+    },
+    "20241028_solver": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "resolved": 250,
+        "unresolved": 247,
+        "no_generation": 1,
+        "no_public_result_artifact": 2
+      },
+      "downloaded_reports": 497,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 497
+      },
+      "conflicting_instances": 0
+    },
+    "20241108_devlo": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "resolved": 271,
+        "unresolved": 229
+      },
+      "downloaded_reports": 500,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 500
+      },
+      "conflicting_instances": 0
+    },
+    "20241125_enginelabs": {
+      "trace_instance_keys": 499,
+      "outcomes": {
+        "resolved": 259,
+        "unresolved": 233,
+        "no_generation": 7
+      },
+      "downloaded_reports": 492,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 499,
+      "report_parser_statuses": {
+        "explicit_instance_report": 492
+      },
+      "conflicting_instances": 0
+    },
+    "20241125_marscode-agent-dev": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "resolved": 250,
+        "unresolved": 248,
+        "no_generation": 2
+      },
+      "downloaded_reports": 498,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 498
+      },
+      "conflicting_instances": 0
+    },
+    "20241128_SWE-Fixer_Qwen2.5-7b-retriever_Qwen2.5-72b-editor_20241128": {
+      "trace_instance_keys": 0,
+      "outcomes": {},
+      "downloaded_reports": 496,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 496
+      },
+      "conflicting_instances": 0
+    },
+    "20241212_epam-ai-run-claude-3-5-sonnet": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "resolved": 277,
+        "unresolved": 214,
+        "no_generation": 9
+      },
+      "downloaded_reports": 491,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 491
+      },
+      "conflicting_instances": 0
+    },
+    "20241212_google_jules_gemini_2.0_flash_experimental": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "resolved": 261,
+        "unresolved": 239
+      },
+      "downloaded_reports": 500,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 500
+      },
+      "conflicting_instances": 0
+    },
+    "20241213_devlo": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "resolved": 291,
+        "unresolved": 209
+      },
+      "downloaded_reports": 500,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 500
+      },
+      "conflicting_instances": 0
+    },
+    "20250110_learn_by_interact_claude3.5": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "resolved": 300,
+        "empty_prediction": 81,
+        "unresolved": 109,
+        "conflicting_published_results": 1,
+        "evaluation_logs_missing": 9
+      },
+      "downloaded_reports": 410,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 410
+      },
+      "conflicting_instances": 1
+    },
+    "20250112_ugaiforge": {
+      "trace_instance_keys": 0,
+      "outcomes": {},
+      "downloaded_reports": 492,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 492
+      },
+      "conflicting_instances": 0
+    },
+    "20250118_codeshellagent_gemini_2.0_flash_experimental": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "resolved": 221,
+        "unresolved": 265,
+        "no_generation": 13,
+        "evaluation_logs_missing": 1
+      },
+      "downloaded_reports": 486,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 486
+      },
+      "conflicting_instances": 0
+    },
+    "20250120_Bracket": {
+      "trace_instance_keys": 483,
+      "outcomes": {
+        "resolved": 266,
+        "unresolved": 142,
+        "invalid_instance_report": 75
+      },
+      "downloaded_reports": 483,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 483,
+      "report_parser_statuses": {
+        "explicit_instance_report": 408,
+        "invalid_report_json": 75
+      },
+      "conflicting_instances": 0
+    },
+    "20250203_openhands_4x_scaled": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "resolved": 304,
+        "unresolved": 194,
+        "evaluation_logs_missing": 2
+      },
+      "downloaded_reports": 498,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 498
+      },
+      "conflicting_instances": 0
+    },
+    "20250214_agentless_lite_o3_mini": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "unresolved": 277,
+        "resolved": 212,
+        "no_generation": 10,
+        "no_public_result_artifact": 1
+      },
+      "downloaded_reports": 489,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 490,
+      "report_parser_statuses": {
+        "explicit_instance_report": 489
+      },
+      "conflicting_instances": 0
+    },
+    "20250306_SWE-Fixer_Qwen2.5-7b-retriever_Qwen2.5-72b-editor": {
+      "trace_instance_keys": 0,
+      "outcomes": {},
+      "downloaded_reports": 481,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 481,
+      "report_parser_statuses": {
+        "explicit_instance_report": 481
+      },
+      "conflicting_instances": 0
+    },
+    "20250522_tools_claude-4-opus": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "resolved": 366,
+        "unresolved": 134
+      },
+      "downloaded_reports": 500,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": false,
+      "prediction_instances": 0,
+      "report_parser_statuses": {
+        "explicit_instance_report": 500
+      },
+      "conflicting_instances": 0
+    },
+    "20250615_agentless_mindlink": {
+      "trace_instance_keys": 366,
+      "outcomes": {
+        "no_public_result_artifact": 366
+      },
+      "downloaded_reports": 0,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": false,
+      "prediction_instances": 0,
+      "report_parser_statuses": {},
+      "conflicting_instances": 0
+    },
+    "20250616_Skywork-SWE-32B": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "no_generation": 9,
+        "unresolved": 299,
+        "resolved": 190,
+        "evaluation_logs_missing": 1,
+        "no_public_result_artifact": 1
+      },
+      "downloaded_reports": 489,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": false,
+      "prediction_instances": 0,
+      "report_parser_statuses": {
+        "explicit_instance_report": 489
+      },
+      "conflicting_instances": 0
+    },
+    "20250623_warp": {
+      "trace_instance_keys": 497,
+      "outcomes": {
+        "resolved": 355,
+        "unresolved": 138,
+        "evaluation_logs_missing": 3,
+        "conflicting_published_results": 1
+      },
+      "downloaded_reports": 494,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": false,
+      "prediction_instances": 0,
+      "report_parser_statuses": {
+        "explicit_instance_report": 494
+      },
+      "conflicting_instances": 1
+    },
+    "20250806_SWE-Exp_DeepSeek-V3": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "unresolved": 257,
+        "resolved": 210,
+        "no_generation": 32,
+        "no_public_result_artifact": 1
+      },
+      "downloaded_reports": 467,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 467
+      },
+      "conflicting_instances": 0
+    },
+    "20251014_Lingxi_kimi_k2": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "resolved": 356,
+        "unresolved": 143,
+        "no_generation": 1
+      },
+      "downloaded_reports": 499,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 499
+      },
+      "conflicting_instances": 0
+    },
+    "20251103_SalesforceAIResearch_SAGE_OpenHands": {
+      "trace_instance_keys": 500,
+      "outcomes": {
+        "resolved": 370,
+        "unresolved": 127,
+        "no_generation": 2,
+        "evaluation_logs_missing": 1
+      },
+      "downloaded_reports": 497,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 500,
+      "report_parser_statuses": {
+        "explicit_instance_report": 497
+      },
+      "conflicting_instances": 0
+    },
+    "lite/20240617_moatless_gpt4o": {
+      "trace_instance_keys": 300,
+      "outcomes": {
+        "legacy_completed_not_resolved": 215,
+        "resolved": 74,
+        "no_generation": 11
+      },
+      "downloaded_reports": 0,
+      "downloaded_legacy_logs": 289,
+      "predictions_available": true,
+      "prediction_instances": 300,
+      "report_parser_statuses": {},
+      "conflicting_instances": 0
+    },
+    "lite/20240806_SuperCoder2.0": {
+      "trace_instance_keys": 300,
+      "outcomes": {
+        "unresolved": 171,
+        "resolved": 102,
+        "no_generation": 2,
+        "evaluation_stage_failure": 24,
+        "no_public_result_artifact": 1
+      },
+      "downloaded_reports": 273,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 300,
+      "report_parser_statuses": {
+        "explicit_instance_report": 273
+      },
+      "conflicting_instances": 0
+    },
+    "lite/20241127_globant_codefixer_agent": {
+      "trace_instance_keys": 300,
+      "outcomes": {
+        "resolved": 145,
+        "unresolved": 140,
+        "no_generation": 15
+      },
+      "downloaded_reports": 285,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 286,
+      "report_parser_statuses": {
+        "explicit_instance_report": 285
+      },
+      "conflicting_instances": 0
+    },
+    "lite/20250619_KGCompass_claude-3.5-sonnet-20241022": {
+      "trace_instance_keys": 300,
+      "outcomes": {
+        "resolved": 138,
+        "unresolved": 153,
+        "no_generation": 9
+      },
+      "downloaded_reports": 291,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 291,
+      "report_parser_statuses": {
+        "explicit_instance_report": 291
+      },
+      "conflicting_instances": 0
+    },
+    "lite/20251009_MAYA_claude-sonnet-4-5-20250929": {
+      "trace_instance_keys": 300,
+      "outcomes": {
+        "resolved": 155,
+        "no_public_result_artifact": 78,
+        "unresolved": 67
+      },
+      "downloaded_reports": 222,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 300,
+      "report_parser_statuses": {
+        "explicit_instance_report": 222
+      },
+      "conflicting_instances": 0
+    },
+    "test/20251219_sonar-foundation-agent_claude-opus-4-5": {
+      "trace_instance_keys": 2294,
+      "outcomes": {
+        "unresolved": 1054,
+        "no_generation": 18,
+        "resolved": 1207,
+        "no_public_result_artifact": 14,
+        "evaluation_logs_missing": 1
+      },
+      "downloaded_reports": 2261,
+      "downloaded_legacy_logs": 0,
+      "predictions_available": true,
+      "prediction_instances": 2286,
+      "report_parser_statuses": {
+        "explicit_instance_report": 2261
+      },
+      "conflicting_instances": 0
+    }
+  },
+  "trace_group_instance_keys": 19514,
+  "distinct_canonical_task_ids": 2294,
+  "outcomes": {
+    "legacy_completed_not_resolved": 1147,
+    "resolved": 8661,
+    "evaluation_stage_failure": 72,
+    "no_public_result_artifact": 504,
+    "no_generation": 400,
+    "unresolved": 8543,
+    "conflicting_published_results": 5,
+    "evaluation_logs_missing": 26,
+    "empty_prediction": 81,
+    "invalid_instance_report": 75
+  },
+  "previous_8730_now": {
+    "no_public_result_artifact": 30,
+    "unresolved": 8476,
+    "invalid_instance_report": 75,
+    "resolved": 140,
+    "no_generation": 9
+  },
+  "previous_666_missing_summary_now": {
+    "no_public_result_artifact": 444,
+    "resolved": 155,
+    "unresolved": 67
+  },
+  "previous_1747_other_fields_now": {
+    "legacy_completed_not_resolved": 1147,
+    "evaluation_stage_failure": 72,
+    "no_public_result_artifact": 30,
+    "no_generation": 391,
+    "evaluation_logs_missing": 26,
+    "empty_prediction": 81
+  },
+  "native_task_id_corrections": 300,
+  "conflicting_instances": 5,
+  "native_patch_prediction_comparison": {
+    "patch_comparison_unavailable": 2805,
+    "exact_patch_bytes_match": 289
+  },
+  "behavior_strata": [
+    {
+      "group": "20240402_sweagent_claude3opus",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "evaluation_stage_failure",
+      "saved_units_per_instance": {
+        "n": 37,
+        "min": 8,
+        "median": 24.0,
+        "q1": 22.0,
+        "q3": 25.0,
+        "iqr": 3.0,
+        "max": 27
+      }
+    },
+    {
+      "group": "20240402_sweagent_claude3opus",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "legacy_completed_not_resolved",
+      "saved_units_per_instance": {
+        "n": 277,
+        "min": 5,
+        "median": 21.0,
+        "q1": 17.0,
+        "q3": 23.0,
+        "iqr": 6.0,
+        "max": 28
+      }
+    },
+    {
+      "group": "20240402_sweagent_claude3opus",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 37,
+        "min": 4,
+        "median": 18.0,
+        "q1": 11.0,
+        "q3": 22.0,
+        "iqr": 11.0,
+        "max": 27
+      }
+    },
+    {
+      "group": "20240402_sweagent_claude3opus",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_public_result_artifact",
+      "saved_units_per_instance": {
+        "n": 25,
+        "min": 6,
+        "median": 17.0,
+        "q1": 11.0,
+        "q3": 20.0,
+        "iqr": 9.0,
+        "max": 24
+      }
+    },
+    {
+      "group": "20240402_sweagent_claude3opus",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 67,
+        "min": 4,
+        "median": 14.0,
+        "q1": 10.0,
+        "q3": 18.0,
+        "iqr": 8.0,
+        "max": 24
+      }
+    },
+    {
+      "group": "20240402_sweagent_gpt4",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "evaluation_stage_failure",
+      "saved_units_per_instance": {
+        "n": 2,
+        "min": 29,
+        "median": 31.0,
+        "q1": 30.0,
+        "q3": 32.0,
+        "iqr": 2.0,
+        "max": 33
+      }
+    },
+    {
+      "group": "20240402_sweagent_gpt4",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "legacy_completed_not_resolved",
+      "saved_units_per_instance": {
+        "n": 350,
+        "min": 4,
+        "median": 24.0,
+        "q1": 14.0,
+        "q3": 32.0,
+        "iqr": 18.0,
+        "max": 40
+      }
+    },
+    {
+      "group": "20240402_sweagent_gpt4",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 26,
+        "min": 7,
+        "median": 21.5,
+        "q1": 14.0,
+        "q3": 30.75,
+        "iqr": 16.75,
+        "max": 39
+      }
+    },
+    {
+      "group": "20240402_sweagent_gpt4",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_public_result_artifact",
+      "saved_units_per_instance": {
+        "n": 6,
+        "min": 10,
+        "median": 18.0,
+        "q1": 13.5,
+        "q3": 24.75,
+        "iqr": 11.25,
+        "max": 32
+      }
+    },
+    {
+      "group": "20240402_sweagent_gpt4",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 112,
+        "min": 4,
+        "median": 11.0,
+        "q1": 9.0,
+        "q3": 18.0,
+        "iqr": 9.0,
+        "max": 39
+      }
+    },
+    {
+      "group": "20240612_MASAI_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "conflicting_published_results",
+      "saved_units_per_instance": {
+        "n": 3,
+        "min": 59,
+        "median": 68.0,
+        "q1": 63.5,
+        "q3": 79.0,
+        "iqr": 15.5,
+        "max": 90
+      }
+    },
+    {
+      "group": "20240612_MASAI_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "evaluation_logs_missing",
+      "saved_units_per_instance": {
+        "n": 4,
+        "min": 41,
+        "median": 61.0,
+        "q1": 51.5,
+        "q3": 68.0,
+        "iqr": 16.5,
+        "max": 71
+      }
+    },
+    {
+      "group": "20240612_MASAI_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 22,
+        "min": 18,
+        "median": 42.5,
+        "q1": 31.75,
+        "q3": 48.25,
+        "iqr": 16.5,
+        "max": 130
+      }
+    },
+    {
+      "group": "20240612_MASAI_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_public_result_artifact",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 79,
+        "median": 79.0,
+        "q1": 79.0,
+        "q3": 79.0,
+        "iqr": 0.0,
+        "max": 79
+      }
+    },
+    {
+      "group": "20240612_MASAI_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 160,
+        "min": 17,
+        "median": 41.0,
+        "q1": 28.0,
+        "q3": 48.0,
+        "iqr": 20.0,
+        "max": 118
+      }
+    },
+    {
+      "group": "20240612_MASAI_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 310,
+        "min": 16,
+        "median": 46.0,
+        "q1": 33.0,
+        "q3": 57.0,
+        "iqr": 24.0,
+        "max": 142
+      }
+    },
+    {
+      "group": "20240620_sweagent_claude3.5sonnet",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "evaluation_stage_failure",
+      "saved_units_per_instance": {
+        "n": 3,
+        "min": 13,
+        "median": 20.0,
+        "q1": 16.5,
+        "q3": 46.0,
+        "iqr": 29.5,
+        "max": 72
+      }
+    },
+    {
+      "group": "20240620_sweagent_claude3.5sonnet",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 11,
+        "min": 7,
+        "median": 36.0,
+        "q1": 23.0,
+        "q3": 60.0,
+        "iqr": 37.0,
+        "max": 82
+      }
+    },
+    {
+      "group": "20240620_sweagent_claude3.5sonnet",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_public_result_artifact",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 13,
+        "median": 13.0,
+        "q1": 13.0,
+        "q3": 13.0,
+        "iqr": 0.0,
+        "max": 13
+      }
+    },
+    {
+      "group": "20240620_sweagent_claude3.5sonnet",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 168,
+        "min": 5,
+        "median": 19.0,
+        "q1": 13.0,
+        "q3": 32.25,
+        "iqr": 19.25,
+        "max": 86
+      }
+    },
+    {
+      "group": "20240620_sweagent_claude3.5sonnet",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 317,
+        "min": 5,
+        "median": 33.0,
+        "q1": 19.0,
+        "q3": 56.0,
+        "iqr": 37.0,
+        "max": 84
+      }
+    },
+    {
+      "group": "20240728_sweagent_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "evaluation_stage_failure",
+      "saved_units_per_instance": {
+        "n": 3,
+        "min": 29,
+        "median": 61.0,
+        "q1": 45.0,
+        "q3": 66.5,
+        "iqr": 21.5,
+        "max": 72
+      }
+    },
+    {
+      "group": "20240728_sweagent_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 15,
+        "min": 8,
+        "median": 53.0,
+        "q1": 29.0,
+        "q3": 66.5,
+        "iqr": 37.5,
+        "max": 73
+      }
+    },
+    {
+      "group": "20240728_sweagent_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_public_result_artifact",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 12,
+        "median": 12.0,
+        "q1": 12.0,
+        "q3": 12.0,
+        "iqr": 0.0,
+        "max": 12
+      }
+    },
+    {
+      "group": "20240728_sweagent_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 116,
+        "min": 8,
+        "median": 17.0,
+        "q1": 11.0,
+        "q3": 44.25,
+        "iqr": 33.25,
+        "max": 78
+      }
+    },
+    {
+      "group": "20240728_sweagent_gpt4o",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 330,
+        "min": 5,
+        "median": 52.0,
+        "q1": 18.0,
+        "q3": 61.0,
+        "iqr": 43.0,
+        "max": 75
+      }
+    },
+    {
+      "group": "20240920_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 4,
+        "min": 2,
+        "median": 3.5,
+        "q1": 2.75,
+        "q3": 4.5,
+        "iqr": 1.75,
+        "max": 6
+      }
+    },
+    {
+      "group": "20240920_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "no_public_result_artifact",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 12,
+        "median": 12.0,
+        "q1": 12.0,
+        "q3": 12.0,
+        "iqr": 0.0,
+        "max": 12
+      }
+    },
+    {
+      "group": "20240920_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 218,
+        "min": 2,
+        "median": 6.0,
+        "q1": 5.0,
+        "q3": 9.0,
+        "iqr": 4.0,
+        "max": 37
+      }
+    },
+    {
+      "group": "20240920_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 277,
+        "min": 1,
+        "median": 8.0,
+        "q1": 5.0,
+        "q3": 16.0,
+        "iqr": 11.0,
+        "max": 44
+      }
+    },
+    {
+      "group": "20240920_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 4,
+        "min": 1,
+        "median": 1.5,
+        "q1": 1.0,
+        "q3": 2.25,
+        "iqr": 1.25,
+        "max": 3
+      }
+    },
+    {
+      "group": "20240920_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "no_public_result_artifact",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 1
+      }
+    },
+    {
+      "group": "20240920_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 218,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 4
+      }
+    },
+    {
+      "group": "20240920_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 277,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 4
+      }
+    },
+    {
+      "group": "20240924_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 2,
+        "min": 9,
+        "median": 10.0,
+        "q1": 9.5,
+        "q3": 10.5,
+        "iqr": 1.0,
+        "max": 11
+      }
+    },
+    {
+      "group": "20240924_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 227,
+        "min": 2,
+        "median": 6.0,
+        "q1": 5.0,
+        "q3": 10.0,
+        "iqr": 5.0,
+        "max": 43
+      }
+    },
+    {
+      "group": "20240924_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 271,
+        "min": 2,
+        "median": 8.0,
+        "q1": 5.0,
+        "q3": 14.0,
+        "iqr": 9.0,
+        "max": 46
+      }
+    },
+    {
+      "group": "20240924_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 2,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 1
+      }
+    },
+    {
+      "group": "20240924_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 227,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 6
+      }
+    },
+    {
+      "group": "20240924_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 271,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 5
+      }
+    },
+    {
+      "group": "20241007_nfactorial",
+      "unit_kind": "saved_shell_invocation",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 158,
+        "min": 1,
+        "median": 9.5,
+        "q1": 7.0,
+        "q3": 13.0,
+        "iqr": 6.0,
+        "max": 28
+      }
+    },
+    {
+      "group": "20241007_nfactorial",
+      "unit_kind": "saved_shell_invocation",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 320,
+        "min": 1,
+        "median": 11.0,
+        "q1": 8.0,
+        "q3": 15.0,
+        "iqr": 7.0,
+        "max": 31
+      }
+    },
+    {
+      "group": "20241028_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 5,
+        "median": 5.0,
+        "q1": 5.0,
+        "q3": 5.0,
+        "iqr": 0.0,
+        "max": 5
+      }
+    },
+    {
+      "group": "20241028_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "no_public_result_artifact",
+      "saved_units_per_instance": {
+        "n": 2,
+        "min": 8,
+        "median": 9.5,
+        "q1": 8.75,
+        "q3": 10.25,
+        "iqr": 1.5,
+        "max": 11
+      }
+    },
+    {
+      "group": "20241028_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 250,
+        "min": 3,
+        "median": 7.5,
+        "q1": 6.0,
+        "q3": 11.0,
+        "iqr": 5.0,
+        "max": 43
+      }
+    },
+    {
+      "group": "20241028_solver",
+      "unit_kind": "saved_operation_event",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 247,
+        "min": 3,
+        "median": 11.0,
+        "q1": 8.0,
+        "q3": 17.0,
+        "iqr": 9.0,
+        "max": 47
+      }
+    },
+    {
+      "group": "20241028_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 1
+      }
+    },
+    {
+      "group": "20241028_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "no_public_result_artifact",
+      "saved_units_per_instance": {
+        "n": 2,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 1
+      }
+    },
+    {
+      "group": "20241028_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 250,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 3
+      }
+    },
+    {
+      "group": "20241028_solver",
+      "unit_kind": "saved_retrieval_event",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 247,
+        "min": 1,
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "max": 8
+      }
+    },
+    {
+      "group": "20241125_enginelabs",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 7,
+        "min": 12,
+        "median": 16.0,
+        "q1": 14.5,
+        "q3": 24.5,
+        "iqr": 10.0,
+        "max": 32
+      }
+    },
+    {
+      "group": "20241125_enginelabs",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 259,
+        "min": 4,
+        "median": 14.0,
+        "q1": 10.0,
+        "q3": 20.0,
+        "iqr": 10.0,
+        "max": 38
+      }
+    },
+    {
+      "group": "20241125_enginelabs",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 233,
+        "min": 6,
+        "median": 18.0,
+        "q1": 12.0,
+        "q3": 31.0,
+        "iqr": 19.0,
+        "max": 42
+      }
+    },
+    {
+      "group": "20241125_marscode-agent-dev",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 2,
+        "min": 282,
+        "median": 287.0,
+        "q1": 284.5,
+        "q3": 289.5,
+        "iqr": 5.0,
+        "max": 292
+      }
+    },
+    {
+      "group": "20241125_marscode-agent-dev",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 250,
+        "min": 6,
+        "median": 23.0,
+        "q1": 16.0,
+        "q3": 29.75,
+        "iqr": 13.75,
+        "max": 81
+      }
+    },
+    {
+      "group": "20241125_marscode-agent-dev",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 248,
+        "min": 10,
+        "median": 28.0,
+        "q1": 22.0,
+        "q3": 38.0,
+        "iqr": 16.0,
+        "max": 97
+      }
+    },
+    {
+      "group": "20241212_epam-ai-run-claude-3-5-sonnet",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 9,
+        "min": 12,
+        "median": 21.0,
+        "q1": 19.0,
+        "q3": 41.0,
+        "iqr": 22.0,
+        "max": 49
+      }
+    },
+    {
+      "group": "20241212_epam-ai-run-claude-3-5-sonnet",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 277,
+        "min": 5,
+        "median": 14.0,
+        "q1": 10.0,
+        "q3": 21.0,
+        "iqr": 11.0,
+        "max": 49
+      }
+    },
+    {
+      "group": "20241212_epam-ai-run-claude-3-5-sonnet",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 214,
+        "min": 6,
+        "median": 21.0,
+        "q1": 13.0,
+        "q3": 36.0,
+        "iqr": 23.0,
+        "max": 49
+      }
+    },
+    {
+      "group": "20250110_learn_by_interact_claude3.5",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "conflicting_published_results",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 67,
+        "median": 67.0,
+        "q1": 67.0,
+        "q3": 67.0,
+        "iqr": 0.0,
+        "max": 67
+      }
+    },
+    {
+      "group": "20250110_learn_by_interact_claude3.5",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "empty_prediction",
+      "saved_units_per_instance": {
+        "n": 81,
+        "min": 7,
+        "median": 13.0,
+        "q1": 10.0,
+        "q3": 15.0,
+        "iqr": 5.0,
+        "max": 75
+      }
+    },
+    {
+      "group": "20250110_learn_by_interact_claude3.5",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "evaluation_logs_missing",
+      "saved_units_per_instance": {
+        "n": 9,
+        "min": 13,
+        "median": 41.0,
+        "q1": 25.0,
+        "q3": 45.0,
+        "iqr": 20.0,
+        "max": 145
+      }
+    },
+    {
+      "group": "20250110_learn_by_interact_claude3.5",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 300,
+        "min": 6,
+        "median": 15.0,
+        "q1": 13.0,
+        "q3": 21.0,
+        "iqr": 8.0,
+        "max": 164
+      }
+    },
+    {
+      "group": "20250110_learn_by_interact_claude3.5",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 109,
+        "min": 4,
+        "median": 27.0,
+        "q1": 15.0,
+        "q3": 55.0,
+        "iqr": 40.0,
+        "max": 161
+      }
+    },
+    {
+      "group": "20250118_codeshellagent_gemini_2.0_flash_experimental",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "evaluation_logs_missing",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 9,
+        "median": 9.0,
+        "q1": 9.0,
+        "q3": 9.0,
+        "iqr": 0.0,
+        "max": 9
+      }
+    },
+    {
+      "group": "20250118_codeshellagent_gemini_2.0_flash_experimental",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 10,
+        "min": 4,
+        "median": 9.0,
+        "q1": 8.25,
+        "q3": 14.75,
+        "iqr": 6.5,
+        "max": 26
+      }
+    },
+    {
+      "group": "20250118_codeshellagent_gemini_2.0_flash_experimental",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 221,
+        "min": 2,
+        "median": 8.0,
+        "q1": 5.0,
+        "q3": 12.0,
+        "iqr": 7.0,
+        "max": 48
+      }
+    },
+    {
+      "group": "20250118_codeshellagent_gemini_2.0_flash_experimental",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 265,
+        "min": 2,
+        "median": 9.0,
+        "q1": 7.0,
+        "q3": 17.0,
+        "iqr": 10.0,
+        "max": 39
+      }
+    },
+    {
+      "group": "20250203_openhands_4x_scaled",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "evaluation_logs_missing",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 15,
+        "median": 15.0,
+        "q1": 15.0,
+        "q3": 15.0,
+        "iqr": 0.0,
+        "max": 15
+      }
+    },
+    {
+      "group": "20250203_openhands_4x_scaled",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 247,
+        "min": 1,
+        "median": 14.0,
+        "q1": 10.0,
+        "q3": 20.0,
+        "iqr": 10.0,
+        "max": 82
+      }
+    },
+    {
+      "group": "20250203_openhands_4x_scaled",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 141,
+        "min": 3,
+        "median": 19.0,
+        "q1": 14.0,
+        "q3": 28.0,
+        "iqr": 14.0,
+        "max": 99
+      }
+    },
+    {
+      "group": "20250522_tools_claude-4-opus",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 366,
+        "min": 20,
+        "median": 40.0,
+        "q1": 31.0,
+        "q3": 52.0,
+        "iqr": 21.0,
+        "max": 127
+      }
+    },
+    {
+      "group": "20250522_tools_claude-4-opus",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 134,
+        "min": 24,
+        "median": 52.0,
+        "q1": 42.25,
+        "q3": 70.75,
+        "iqr": 28.5,
+        "max": 135
+      }
+    },
+    {
+      "group": "20250616_Skywork-SWE-32B",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "evaluation_logs_missing",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 8,
+        "median": 8.0,
+        "q1": 8.0,
+        "q3": 8.0,
+        "iqr": 0.0,
+        "max": 8
+      }
+    },
+    {
+      "group": "20250616_Skywork-SWE-32B",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 8,
+        "min": 2,
+        "median": 10.0,
+        "q1": 8.25,
+        "q3": 18.25,
+        "iqr": 10.0,
+        "max": 33
+      }
+    },
+    {
+      "group": "20250616_Skywork-SWE-32B",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_public_result_artifact",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 8,
+        "median": 8.0,
+        "q1": 8.0,
+        "q3": 8.0,
+        "iqr": 0.0,
+        "max": 8
+      }
+    },
+    {
+      "group": "20250616_Skywork-SWE-32B",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 190,
+        "min": 2,
+        "median": 12.0,
+        "q1": 8.0,
+        "q3": 17.0,
+        "iqr": 9.0,
+        "max": 41
+      }
+    },
+    {
+      "group": "20250616_Skywork-SWE-32B",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 299,
+        "min": 1,
+        "median": 14.0,
+        "q1": 9.0,
+        "q3": 20.0,
+        "iqr": 11.0,
+        "max": 59
+      }
+    },
+    {
+      "group": "20250623_warp",
+      "unit_kind": "saved_shell_invocation",
+      "saved_result_stratum": "conflicting_published_results",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 25,
+        "median": 25.0,
+        "q1": 25.0,
+        "q3": 25.0,
+        "iqr": 0.0,
+        "max": 25
+      }
+    },
+    {
+      "group": "20250623_warp",
+      "unit_kind": "saved_shell_invocation",
+      "saved_result_stratum": "evaluation_logs_missing",
+      "saved_units_per_instance": {
+        "n": 3,
+        "min": 7,
+        "median": 18.0,
+        "q1": 12.5,
+        "q3": 21.0,
+        "iqr": 8.5,
+        "max": 24
+      }
+    },
+    {
+      "group": "20250623_warp",
+      "unit_kind": "saved_shell_invocation",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 355,
+        "min": 7,
+        "median": 19.0,
+        "q1": 15.0,
+        "q3": 23.0,
+        "iqr": 8.0,
+        "max": 41
+      }
+    },
+    {
+      "group": "20250623_warp",
+      "unit_kind": "saved_shell_invocation",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 138,
+        "min": 10,
+        "median": 22.0,
+        "q1": 16.0,
+        "q3": 26.75,
+        "iqr": 10.75,
+        "max": 101
+      }
+    },
+    {
+      "group": "20250806_SWE-Exp_DeepSeek-V3",
+      "unit_kind": "saved_process_node",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 32,
+        "min": 3,
+        "median": 6.5,
+        "q1": 5.75,
+        "q3": 9.0,
+        "iqr": 3.25,
+        "max": 17
+      }
+    },
+    {
+      "group": "20250806_SWE-Exp_DeepSeek-V3",
+      "unit_kind": "saved_process_node",
+      "saved_result_stratum": "no_public_result_artifact",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 10,
+        "median": 10.0,
+        "q1": 10.0,
+        "q3": 10.0,
+        "iqr": 0.0,
+        "max": 10
+      }
+    },
+    {
+      "group": "20250806_SWE-Exp_DeepSeek-V3",
+      "unit_kind": "saved_process_node",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 210,
+        "min": 3,
+        "median": 4.0,
+        "q1": 3.0,
+        "q3": 5.0,
+        "iqr": 2.0,
+        "max": 19
+      }
+    },
+    {
+      "group": "20250806_SWE-Exp_DeepSeek-V3",
+      "unit_kind": "saved_process_node",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 257,
+        "min": 1,
+        "median": 6.0,
+        "q1": 4.0,
+        "q3": 9.0,
+        "iqr": 5.0,
+        "max": 19
+      }
+    },
+    {
+      "group": "20251014_Lingxi_kimi_k2",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 181,
+        "median": 181.0,
+        "q1": 181.0,
+        "q3": 181.0,
+        "iqr": 0.0,
+        "max": 181
+      }
+    },
+    {
+      "group": "20251014_Lingxi_kimi_k2",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 356,
+        "min": 44,
+        "median": 106.0,
+        "q1": 83.0,
+        "q3": 134.25,
+        "iqr": 51.25,
+        "max": 331
+      }
+    },
+    {
+      "group": "20251014_Lingxi_kimi_k2",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 143,
+        "min": 36,
+        "median": 125.0,
+        "q1": 95.0,
+        "q3": 165.0,
+        "iqr": 70.0,
+        "max": 468
+      }
+    },
+    {
+      "group": "20251103_SalesforceAIResearch_SAGE_OpenHands",
+      "unit_kind": "saved_tool_call",
+      "saved_result_stratum": "evaluation_logs_missing",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 27,
+        "median": 27.0,
+        "q1": 27.0,
+        "q3": 27.0,
+        "iqr": 0.0,
+        "max": 27
+      }
+    },
+    {
+      "group": "20251103_SalesforceAIResearch_SAGE_OpenHands",
+      "unit_kind": "saved_tool_call",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 23,
+        "median": 23.0,
+        "q1": 23.0,
+        "q3": 23.0,
+        "iqr": 0.0,
+        "max": 23
+      }
+    },
+    {
+      "group": "20251103_SalesforceAIResearch_SAGE_OpenHands",
+      "unit_kind": "saved_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 370,
+        "min": 8,
+        "median": 26.0,
+        "q1": 19.0,
+        "q3": 36.0,
+        "iqr": 17.0,
+        "max": 132
+      }
+    },
+    {
+      "group": "20251103_SalesforceAIResearch_SAGE_OpenHands",
+      "unit_kind": "saved_tool_call",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 127,
+        "min": 9,
+        "median": 30.0,
+        "q1": 23.0,
+        "q3": 43.5,
+        "iqr": 20.5,
+        "max": 89
+      }
+    },
+    {
+      "group": "lite/20240617_moatless_gpt4o",
+      "unit_kind": "saved_transition",
+      "saved_result_stratum": "legacy_completed_not_resolved",
+      "saved_units_per_instance": {
+        "n": 215,
+        "min": 6,
+        "median": 10.0,
+        "q1": 7.5,
+        "q3": 12.0,
+        "iqr": 4.5,
+        "max": 21
+      }
+    },
+    {
+      "group": "lite/20240617_moatless_gpt4o",
+      "unit_kind": "saved_transition",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 11,
+        "min": 1,
+        "median": 15.0,
+        "q1": 4.0,
+        "q3": 15.0,
+        "iqr": 11.0,
+        "max": 20
+      }
+    },
+    {
+      "group": "lite/20240617_moatless_gpt4o",
+      "unit_kind": "saved_transition",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 74,
+        "min": 5,
+        "median": 8.0,
+        "q1": 6.0,
+        "q3": 10.75,
+        "iqr": 4.75,
+        "max": 22
+      }
+    },
+    {
+      "group": "lite/20241127_globant_codefixer_agent",
+      "unit_kind": "saved_tool_call",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 15,
+        "min": 6,
+        "median": 22.0,
+        "q1": 19.0,
+        "q3": 25.0,
+        "iqr": 6.0,
+        "max": 34
+      }
+    },
+    {
+      "group": "lite/20241127_globant_codefixer_agent",
+      "unit_kind": "saved_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 145,
+        "min": 4,
+        "median": 7.0,
+        "q1": 6.0,
+        "q3": 10.0,
+        "iqr": 4.0,
+        "max": 19
+      }
+    },
+    {
+      "group": "lite/20241127_globant_codefixer_agent",
+      "unit_kind": "saved_tool_call",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 140,
+        "min": 5,
+        "median": 9.0,
+        "q1": 8.0,
+        "q3": 12.0,
+        "iqr": 4.0,
+        "max": 33
+      }
+    },
+    {
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "evaluation_logs_missing",
+      "saved_units_per_instance": {
+        "n": 1,
+        "min": 121,
+        "median": 121.0,
+        "q1": 121.0,
+        "q3": 121.0,
+        "iqr": 0.0,
+        "max": 121
+      }
+    },
+    {
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_generation",
+      "saved_units_per_instance": {
+        "n": 18,
+        "min": 19,
+        "median": 142.0,
+        "q1": 123.75,
+        "q3": 150.0,
+        "iqr": 26.25,
+        "max": 150
+      }
+    },
+    {
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "no_public_result_artifact",
+      "saved_units_per_instance": {
+        "n": 14,
+        "min": 35,
+        "median": 58.0,
+        "q1": 42.25,
+        "q3": 72.25,
+        "iqr": 30.0,
+        "max": 128
+      }
+    },
+    {
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "resolved",
+      "saved_units_per_instance": {
+        "n": 1207,
+        "min": 12,
+        "median": 55.0,
+        "q1": 41.0,
+        "q3": 72.0,
+        "iqr": 31.0,
+        "max": 150
+      }
+    },
+    {
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "unit_kind": "saved_action_or_tool_call",
+      "saved_result_stratum": "unresolved",
+      "saved_units_per_instance": {
+        "n": 1054,
+        "min": 15,
+        "median": 69.0,
+        "q1": 53.0,
+        "q3": 87.75,
+        "iqr": 34.75,
+        "max": 150
+      }
+    }
+  ],
+  "multiple_behavior_rows_excluded": [],
+  "source_result_boundary": "publisher reports and stages; no grading or benchmark rerun; exact attempt identity not presumed",
+  "legacy_boundary": "legacy not-resolved inference requires completed test log plus explicit published applied/with_logs cohort",
+  "old_raw_and_reports_preserved": true,
+  "agent_or_verifier_executed": false
+}

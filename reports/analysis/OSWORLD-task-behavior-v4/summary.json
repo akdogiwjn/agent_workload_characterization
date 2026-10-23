@@ -1,0 +1,827 @@
+{
+  "schema": "osworld-task-behavior.v4",
+  "created_at_utc": "2026-10-22T16:10:59.006131+00:00",
+  "status": "PASS_WITH_EXPLICIT_UNKNOWNS",
+  "scope": "same frozen 755 model-task records; no new downloads or task execution",
+  "baseline": "reports/analysis/OSWORLD-task-behavior-v3",
+  "input_provenance": {
+    "trajectory_revision": "01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f",
+    "task_revision_or_cache_commit": "e7996f4cc850be108e510bd8433c63ee7b8303dd",
+    "models": [
+      "MiniMax-M3",
+      "claude-opus-4-7",
+      "claude-sonnet-4-6-max",
+      "claude-sonnet-4-6-medium",
+      "gpt-5.5",
+      "gpt-5.6",
+      "qwen3.7"
+    ],
+    "trajectory_count": 755,
+    "task_semantics_count": 108,
+    "task_errors": [],
+    "inventory_summary": {
+      "total_files": 6177,
+      "total_bytes": 847596719,
+      "data_file_count": 2058,
+      "data_bytes": 787052044,
+      "cache_file_count": 4119,
+      "cache_bytes": 60544675,
+      "models": 7,
+      "model_names": [
+        "MiniMax-M3",
+        "claude-opus-4-7",
+        "claude-sonnet-4-6-max",
+        "claude-sonnet-4-6-medium",
+        "gpt-5.5",
+        "gpt-5.6",
+        "qwen3.7"
+      ],
+      "task_dir_count_total": 755,
+      "unique_task_keys": 108,
+      "task_key_union": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "010",
+        "011",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018",
+        "019",
+        "020",
+        "021",
+        "022",
+        "023",
+        "024",
+        "025",
+        "026",
+        "027",
+        "028",
+        "029",
+        "030",
+        "031",
+        "032",
+        "033",
+        "034",
+        "035",
+        "036",
+        "037",
+        "038",
+        "039",
+        "040",
+        "041",
+        "042",
+        "043",
+        "044",
+        "045",
+        "046",
+        "047",
+        "048",
+        "049",
+        "050",
+        "051",
+        "052",
+        "053",
+        "054",
+        "055",
+        "056",
+        "057",
+        "058",
+        "059",
+        "060",
+        "061",
+        "062",
+        "063",
+        "064",
+        "065",
+        "066",
+        "067",
+        "068",
+        "069",
+        "070",
+        "071",
+        "072",
+        "073",
+        "074",
+        "075",
+        "076",
+        "077",
+        "078",
+        "079",
+        "080",
+        "081",
+        "082",
+        "083",
+        "084",
+        "085",
+        "086",
+        "087",
+        "088",
+        "089",
+        "090",
+        "091",
+        "092",
+        "093",
+        "094",
+        "095",
+        "096",
+        "097",
+        "098",
+        "099",
+        "100",
+        "101",
+        "102",
+        "103",
+        "104",
+        "105",
+        "106",
+        "107",
+        "108"
+      ],
+      "task_key_model_counts": {
+        "001": 7,
+        "002": 7,
+        "003": 7,
+        "004": 7,
+        "005": 7,
+        "006": 7,
+        "007": 7,
+        "008": 7,
+        "009": 7,
+        "010": 7,
+        "011": 7,
+        "012": 7,
+        "013": 7,
+        "014": 7,
+        "015": 7,
+        "016": 7,
+        "017": 7,
+        "018": 7,
+        "019": 7,
+        "020": 7,
+        "021": 7,
+        "022": 7,
+        "023": 7,
+        "024": 7,
+        "025": 7,
+        "026": 7,
+        "027": 7,
+        "028": 7,
+        "029": 7,
+        "030": 7,
+        "031": 7,
+        "032": 7,
+        "033": 7,
+        "034": 7,
+        "035": 7,
+        "036": 7,
+        "037": 7,
+        "038": 7,
+        "039": 7,
+        "040": 7,
+        "041": 7,
+        "042": 7,
+        "043": 7,
+        "044": 7,
+        "045": 7,
+        "046": 7,
+        "047": 7,
+        "048": 6,
+        "049": 7,
+        "050": 7,
+        "051": 7,
+        "052": 7,
+        "053": 7,
+        "054": 7,
+        "055": 7,
+        "056": 7,
+        "057": 7,
+        "058": 7,
+        "059": 7,
+        "060": 7,
+        "061": 7,
+        "062": 7,
+        "063": 7,
+        "064": 7,
+        "065": 7,
+        "066": 7,
+        "067": 7,
+        "068": 7,
+        "069": 7,
+        "070": 7,
+        "071": 7,
+        "072": 7,
+        "073": 7,
+        "074": 7,
+        "075": 7,
+        "076": 7,
+        "077": 7,
+        "078": 7,
+        "079": 7,
+        "080": 7,
+        "081": 7,
+        "082": 7,
+        "083": 7,
+        "084": 7,
+        "085": 7,
+        "086": 7,
+        "087": 7,
+        "088": 7,
+        "089": 7,
+        "090": 7,
+        "091": 7,
+        "092": 7,
+        "093": 7,
+        "094": 7,
+        "095": 7,
+        "096": 7,
+        "097": 7,
+        "098": 7,
+        "099": 7,
+        "100": 7,
+        "101": 7,
+        "102": 7,
+        "103": 7,
+        "104": 7,
+        "105": 7,
+        "106": 7,
+        "107": 7,
+        "108": 7
+      },
+      "trajectory_count": 755,
+      "result_file_counts": {
+        "result.json": 185,
+        "result.txt": 754,
+        "checkpoint_results.json": 364
+      },
+      "cache_metadata_count": 2058,
+      "cache_revision_counts": {
+        "01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f": 2058
+      },
+      "cache_revision_match_counts": {
+        "True": 2058
+      },
+      "result_parse_signatures": {
+        "result.json": [
+          {
+            "signature": {
+              "keys": [
+                "safety",
+                "score"
+              ],
+              "parse_status": "valid",
+              "score_type": "float",
+              "top_type": "dict"
+            },
+            "count": 119
+          },
+          {
+            "signature": {
+              "keys": [
+                "partial_scores",
+                "score"
+              ],
+              "parse_status": "valid",
+              "score_type": "float",
+              "top_type": "dict"
+            },
+            "count": 54
+          },
+          {
+            "signature": {
+              "keys": [
+                "evaluation_error",
+                "metrics",
+                "partial_scores",
+                "score",
+                "warnings"
+              ],
+              "parse_status": "valid",
+              "score_type": "float",
+              "top_type": "dict"
+            },
+            "count": 12
+          }
+        ],
+        "result.txt": [
+          {
+            "signature": {
+              "line_count": 1,
+              "nonempty_line_count": 1,
+              "numeric_line_count": 1,
+              "parse_status": "read"
+            },
+            "count": 754
+          }
+        ],
+        "checkpoint_results.json": [
+          {
+            "signature": {
+              "entry_count": 2,
+              "entry_key_union": [
+                "cache_dir",
+                "mode",
+                "model_eval_raw_dir",
+                "result_json",
+                "result_txt",
+                "score",
+                "status",
+                "step",
+                "timestamp"
+              ],
+              "parse_status": "valid",
+              "top_type": "list"
+            },
+            "count": 162
+          },
+          {
+            "signature": {
+              "entry_count": 1,
+              "entry_key_union": [
+                "mode",
+                "reason",
+                "status",
+                "step",
+                "timestamp"
+              ],
+              "parse_status": "valid",
+              "top_type": "list"
+            },
+            "count": 57
+          },
+          {
+            "signature": {
+              "entry_count": 2,
+              "entry_key_union": [
+                "mode",
+                "reason",
+                "status",
+                "step",
+                "timestamp"
+              ],
+              "parse_status": "valid",
+              "top_type": "list"
+            },
+            "count": 44
+          },
+          {
+            "signature": {
+              "entry_count": 1,
+              "entry_key_union": [
+                "cache_dir",
+                "mode",
+                "model_eval_raw_dir",
+                "result_json",
+                "result_txt",
+                "score",
+                "status",
+                "step",
+                "timestamp"
+              ],
+              "parse_status": "valid",
+              "top_type": "list"
+            },
+            "count": 101
+          }
+        ]
+      },
+      "source_revision_asserted_by_user": "01cb84fcd5fb8ee415e7e065d7aaf3ec8f95fe1f",
+      "cache_revision_matches_user_request": true,
+      "upstream_file_manifest_available_locally": false
+    },
+    "inventory_completeness": "PASS",
+    "task_revision_binding": "inventory/cache evidence only; historical execution binding unknown",
+    "task_version_evidence": {
+      "status": "local_cache_evidence",
+      "path": "data/raw/public/osworld2_tasks/v2026.06.24/.cache/huggingface/trees/e7996f4cc850be108e510bd8433c63ee7b8303dd.json",
+      "expected_revision": "e7996f4cc850be108e510bd8433c63ee7b8303dd",
+      "sha256": "9c76453f6bb27d69367e6e2b5a20987ca3927b17ed106a924692bb5e40beca29",
+      "historical_execution_binding": "unknown"
+    }
+  },
+  "models": {
+    "MiniMax-M3": {
+      "trajectories": 108,
+      "record_count": 35282,
+      "command_record_count": 35282,
+      "command_missing_count": 0,
+      "source_call_syntax_count": 3241101,
+      "supported_static_call_count": 3241101,
+      "v3_supported_static_call_count": 3241101,
+      "v3_known_command_records": 35169,
+      "invalid_json_lines": 0,
+      "command_status_counts": {
+        "known": 35169,
+        "unknown": 113
+      },
+      "static_category_counts": {
+        "click": 9236,
+        "pointer": 636,
+        "scroll": 1867,
+        "text_or_key": 3225612,
+        "wait": 3750
+      },
+      "static_call_names": {
+        "pyautogui.click": 8496,
+        "pyautogui.doubleClick": 341,
+        "pyautogui.dragTo": 226,
+        "pyautogui.hscroll": 20,
+        "pyautogui.keyDown": 12796,
+        "pyautogui.keyUp": 12792,
+        "pyautogui.mouseDown": 16,
+        "pyautogui.mouseUp": 14,
+        "pyautogui.moveTo": 380,
+        "pyautogui.press": 3200024,
+        "pyautogui.rightClick": 102,
+        "pyautogui.scroll": 1847,
+        "pyautogui.sleep": 3750,
+        "pyautogui.tripleClick": 297
+      },
+      "unknown_statement_reasons": {
+        "syntax_error": 1,
+        "unsupported_Expr": 112
+      },
+      "metadata_statements": {},
+      "saved_protocol_batch_id_groups": {},
+      "saved_protocol_nonnull_action_fields": {},
+      "v3_known_command_ratio": 0.9967972337169094,
+      "v4_commands_with_identified_call_ratio": 0.9967972337169094
+    },
+    "claude-opus-4-7": {
+      "trajectories": 108,
+      "record_count": 34382,
+      "command_record_count": 34278,
+      "command_missing_count": 104,
+      "source_call_syntax_count": 3001637,
+      "supported_static_call_count": 39057,
+      "v3_supported_static_call_count": 39053,
+      "v3_known_command_records": 26853,
+      "invalid_json_lines": 0,
+      "command_status_counts": {
+        "known": 26857,
+        "unknown": 7421
+      },
+      "static_category_counts": {
+        "click": 12749,
+        "pointer": 1680,
+        "scroll": 2123,
+        "text_or_key": 18949,
+        "wait": 3556
+      },
+      "static_call_names": {
+        "pyautogui.click": 11193,
+        "pyautogui.doubleClick": 666,
+        "pyautogui.dragTo": 655,
+        "pyautogui.hscroll": 29,
+        "pyautogui.keyDown": 9488,
+        "pyautogui.keyUp": 9461,
+        "pyautogui.middleClick": 4,
+        "pyautogui.mouseDown": 35,
+        "pyautogui.mouseUp": 35,
+        "pyautogui.moveTo": 955,
+        "pyautogui.rightClick": 176,
+        "pyautogui.scroll": 2094,
+        "pyautogui.sleep": 3556,
+        "pyautogui.tripleClick": 710
+      },
+      "unknown_statement_reasons": {
+        "unsupported_Expr": 18,
+        "unsupported_Try": 7403,
+        "unsupported_assignment": 14806
+      },
+      "metadata_statements": {},
+      "saved_protocol_batch_id_groups": {},
+      "saved_protocol_nonnull_action_fields": {
+        "name": 34260,
+        "input": 34260,
+        "id": 34260,
+        "action_type": 34363,
+        "command": 34260,
+        "raw_response": 34363
+      },
+      "v3_known_command_ratio": 0.7833887624715561,
+      "v4_commands_with_identified_call_ratio": 0.7835054553941303
+    },
+    "claude-sonnet-4-6-max": {
+      "trajectories": 108,
+      "record_count": 27347,
+      "command_record_count": 27249,
+      "command_missing_count": 98,
+      "source_call_syntax_count": 3219096,
+      "supported_static_call_count": 27186,
+      "v3_supported_static_call_count": 27184,
+      "v3_known_command_records": 20321,
+      "invalid_json_lines": 0,
+      "command_status_counts": {
+        "known": 20323,
+        "unknown": 6926
+      },
+      "static_category_counts": {
+        "click": 9973,
+        "pointer": 585,
+        "scroll": 2549,
+        "text_or_key": 10574,
+        "wait": 3505
+      },
+      "static_call_names": {
+        "pyautogui.click": 9175,
+        "pyautogui.doubleClick": 210,
+        "pyautogui.dragTo": 153,
+        "pyautogui.hscroll": 52,
+        "pyautogui.keyDown": 5287,
+        "pyautogui.keyUp": 5287,
+        "pyautogui.middleClick": 2,
+        "pyautogui.mouseDown": 48,
+        "pyautogui.mouseUp": 48,
+        "pyautogui.moveTo": 336,
+        "pyautogui.rightClick": 158,
+        "pyautogui.scroll": 2497,
+        "pyautogui.sleep": 3505,
+        "pyautogui.tripleClick": 428
+      },
+      "unknown_statement_reasons": {
+        "unsupported_Expr": 46,
+        "unsupported_Try": 6880,
+        "unsupported_assignment": 13760
+      },
+      "metadata_statements": {},
+      "saved_protocol_batch_id_groups": {},
+      "saved_protocol_nonnull_action_fields": {
+        "name": 27203,
+        "input": 27203,
+        "id": 27203,
+        "action_type": 27301,
+        "command": 27203,
+        "raw_response": 27301
+      },
+      "v3_known_command_ratio": 0.7457521376931263,
+      "v4_commands_with_identified_call_ratio": 0.745825534882014
+    },
+    "claude-sonnet-4-6-medium": {
+      "trajectories": 108,
+      "record_count": 31281,
+      "command_record_count": 31192,
+      "command_missing_count": 89,
+      "source_call_syntax_count": 3977626,
+      "supported_static_call_count": 31708,
+      "v3_supported_static_call_count": 31706,
+      "v3_known_command_records": 23300,
+      "invalid_json_lines": 0,
+      "command_status_counts": {
+        "known": 23302,
+        "unknown": 7890
+      },
+      "static_category_counts": {
+        "click": 10990,
+        "pointer": 597,
+        "scroll": 3099,
+        "text_or_key": 13406,
+        "wait": 3616
+      },
+      "static_call_names": {
+        "pyautogui.click": 10119,
+        "pyautogui.doubleClick": 218,
+        "pyautogui.dragTo": 192,
+        "pyautogui.hscroll": 50,
+        "pyautogui.keyDown": 6704,
+        "pyautogui.keyUp": 6702,
+        "pyautogui.middleClick": 2,
+        "pyautogui.mouseDown": 12,
+        "pyautogui.mouseUp": 14,
+        "pyautogui.moveTo": 379,
+        "pyautogui.rightClick": 146,
+        "pyautogui.scroll": 3049,
+        "pyautogui.sleep": 3616,
+        "pyautogui.tripleClick": 505
+      },
+      "unknown_statement_reasons": {
+        "unsupported_Expr": 2,
+        "unsupported_Try": 7888,
+        "unsupported_assignment": 15776
+      },
+      "metadata_statements": {},
+      "saved_protocol_batch_id_groups": {},
+      "saved_protocol_nonnull_action_fields": {
+        "name": 31190,
+        "input": 31190,
+        "id": 31190,
+        "action_type": 31279,
+        "command": 31190,
+        "raw_response": 31279
+      },
+      "v3_known_command_ratio": 0.746986406770967,
+      "v4_commands_with_identified_call_ratio": 0.74705052577584
+    },
+    "gpt-5.5": {
+      "trajectories": 108,
+      "record_count": 16391,
+      "command_record_count": 16282,
+      "command_missing_count": 109,
+      "source_call_syntax_count": 115247,
+      "supported_static_call_count": 114995,
+      "v3_supported_static_call_count": 0,
+      "v3_known_command_records": 0,
+      "invalid_json_lines": 0,
+      "command_status_counts": {
+        "known": 16053,
+        "partial": 126,
+        "unknown": 103
+      },
+      "static_category_counts": {
+        "click": 3006,
+        "clipboard": 126,
+        "pointer": 3967,
+        "scroll": 230,
+        "text_or_key": 104385,
+        "wait": 3281
+      },
+      "static_call_names": {
+        "pyautogui.click": 2927,
+        "pyautogui.doubleClick": 79,
+        "pyautogui.dragTo": 605,
+        "pyautogui.hotkey": 3741,
+        "pyautogui.moveTo": 3362,
+        "pyautogui.press": 50754,
+        "pyautogui.scroll": 230,
+        "pyautogui.typewrite": 49890,
+        "pyperclip.copy": 126,
+        "time.sleep": 3281
+      },
+      "unknown_statement_reasons": {
+        "unsupported_Expr": 103,
+        "unsupported_assignment": 126,
+        "unsupported_import": 126
+      },
+      "metadata_statements": {
+        "known_import": 16053
+      },
+      "saved_protocol_batch_id_groups": {
+        "saved_call_id_groups": 10069,
+        "records_in_call_id_groups": 16179,
+        "complete_batch_groups": 10069,
+        "duplicate_batch_index_records": 0,
+        "size_conflict_groups": 0,
+        "invalid_index_groups": 0,
+        "last_flag_issue_groups": 0
+      },
+      "saved_protocol_nonnull_action_fields": {
+        "action_space": 16179,
+        "action_type": 16288,
+        "action": 16179,
+        "command": 16179,
+        "call_id": 16179,
+        "batch_index": 16179,
+        "batch_size": 16179,
+        "batch_last": 16179,
+        "raw_response": 109
+      },
+      "v3_known_command_ratio": 0.0,
+      "v4_commands_with_identified_call_ratio": 0.9936739958236089
+    },
+    "gpt-5.6": {
+      "trajectories": 107,
+      "record_count": 34991,
+      "command_record_count": 34884,
+      "command_missing_count": 107,
+      "source_call_syntax_count": 101581,
+      "supported_static_call_count": 101247,
+      "v3_supported_static_call_count": 0,
+      "v3_known_command_records": 0,
+      "invalid_json_lines": 0,
+      "command_status_counts": {
+        "known": 34716,
+        "partial": 167,
+        "unknown": 1
+      },
+      "static_category_counts": {
+        "click": 6488,
+        "clipboard": 167,
+        "pointer": 7931,
+        "scroll": 343,
+        "text_or_key": 74895,
+        "wait": 11423
+      },
+      "static_call_names": {
+        "pyautogui.click": 6174,
+        "pyautogui.doubleClick": 314,
+        "pyautogui.dragTo": 1055,
+        "pyautogui.hotkey": 9597,
+        "pyautogui.moveTo": 6876,
+        "pyautogui.press": 31531,
+        "pyautogui.scroll": 343,
+        "pyautogui.typewrite": 33767,
+        "pyperclip.copy": 167,
+        "time.sleep": 11423
+      },
+      "unknown_statement_reasons": {
+        "unsupported_Expr": 1,
+        "unsupported_assignment": 167,
+        "unsupported_import": 167
+      },
+      "metadata_statements": {
+        "known_import": 34716
+      },
+      "saved_protocol_batch_id_groups": {
+        "saved_call_id_groups": 11307,
+        "records_in_call_id_groups": 34883,
+        "complete_batch_groups": 11293,
+        "duplicate_batch_index_records": 0,
+        "size_conflict_groups": 0,
+        "invalid_index_groups": 0,
+        "last_flag_issue_groups": 0,
+        "incomplete_or_ambiguous_groups": 14
+      },
+      "saved_protocol_nonnull_action_fields": {
+        "action_space": 34883,
+        "action_type": 34990,
+        "action": 34883,
+        "command": 34883,
+        "call_id": 34883,
+        "batch_index": 34883,
+        "batch_size": 34883,
+        "batch_last": 34883,
+        "raw_response": 107
+      },
+      "v3_known_command_ratio": 0.0,
+      "v4_commands_with_identified_call_ratio": 0.9999713335626649
+    },
+    "qwen3.7": {
+      "trajectories": 108,
+      "record_count": 21991,
+      "command_record_count": 21883,
+      "command_missing_count": 108,
+      "source_call_syntax_count": 237411,
+      "supported_static_call_count": 237411,
+      "v3_supported_static_call_count": 13128,
+      "v3_known_command_records": 13128,
+      "invalid_json_lines": 0,
+      "command_status_counts": {
+        "known": 17516,
+        "unknown": 4367
+      },
+      "static_category_counts": {
+        "click": 6336,
+        "pointer": 1754,
+        "screenshot": 367,
+        "scroll": 1166,
+        "text_or_key": 227788
+      },
+      "static_call_names": {
+        "pyautogui.click": 5659,
+        "pyautogui.doubleClick": 258,
+        "pyautogui.dragTo": 263,
+        "pyautogui.hotkey": 855,
+        "pyautogui.keyDown": 26,
+        "pyautogui.keyUp": 24,
+        "pyautogui.mouseDown": 2,
+        "pyautogui.mouseUp": 2,
+        "pyautogui.moveTo": 1487,
+        "pyautogui.press": 124216,
+        "pyautogui.rightClick": 88,
+        "pyautogui.screenshot": 367,
+        "pyautogui.scroll": 1166,
+        "pyautogui.tripleClick": 331,
+        "pyautogui.typewrite": 102667
+      },
+      "unknown_statement_reasons": {
+        "unsupported_Expr": 4367
+      },
+      "metadata_statements": {},
+      "saved_protocol_batch_id_groups": {},
+      "saved_protocol_nonnull_action_fields": {},
+      "v3_known_command_ratio": 0.5999177443677741,
+      "v4_commands_with_identified_call_ratio": 0.800438696705205
+    }
+  },
+  "trajectory_count": 755,
+  "command_record_count": 201050,
+  "invalid_json_lines": 0,
+  "native_v3_counts_preserved": true,
+  "rules": {
+    "accepted": "top-level direct calls to explicit whitelist; known imports/aliases and literal declarations recognized without execution",
+    "unknown": "unsupported imports, assignments, control flow, functions, dynamic calls and nested-call arguments become ordered boundaries; no loop expansion",
+    "binding": "pyautogui is a documented per-command predefined name; time/pyperclip/aliases require explicit import; rebinding invalidates aliases",
+    "ordering": "saved record/source order only; unknown segments break transitions; no reconstruction of true execution or concurrency",
+    "native": "v3 native records unchanged; computer_call wrapper is not converted into a fictitious native click record",
+    "coverage": "v3 requires complete command recognition; v4 separately reports whole known, partial, unknown, metadata-only; percentages are not identical metrics",
+    "batch": "call_id/batch_index/batch_size/batch_last are scoped to one model-task; duplicate or inconsistent groups remain ambiguous; no deduplication or HTTP count inference"
+  },
+  "remaining_unknowns": [
+    "historical task version binding",
+    "runtime foreground application",
+    "actual action execution/duration",
+    "CPU/memory/IO/network",
+    "unknown branches/imports/dataflow and clipboard decode assignments"
+  ],
+  "usage_and_task_semantics": "reuse frozen v3 evidence; no new API usage, model ranking or task-result reinterpretation"
+}

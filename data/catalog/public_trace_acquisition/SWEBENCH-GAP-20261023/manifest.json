@@ -1,0 +1,2517 @@
+{
+  "schema": "swebench-gap-acquisition-v1",
+  "created_at_utc": "2026-10-22T16:33:18.191751+00:00",
+  "index_commit": "40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+  "plan": {
+    "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/plan.json",
+    "bytes": 142790,
+    "sha256": "eec29db16a48ba56c522182dfa708b57bd01745d661216432fc54f57e27be97d"
+  },
+  "files": [
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-17845.json",
+      "bytes": 488308,
+      "sha256": "cdbbc97331981147802e1ce4fe7c3ea7b122f85fcce6ef2b3a87f32cd41dba47",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-17845.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-17845.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-17845",
+      "http_status": 200,
+      "expected_listing_bytes": 488308,
+      "etag_md5": "61cd792190754d0300828aa55ba618f4",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-17845.json.headers",
+        "bytes": 463,
+        "sha256": "aa69b64372a8c149a00b163f3615e6844781170c446f74390ef5a3db938d0d14"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18116.json",
+      "bytes": 580326,
+      "sha256": "7adcff1160e8d875d0ad01337173b49ce11fd83cb2c4ce91cf3d1cf8d2ddda32",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18116.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18116.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18116",
+      "http_status": 200,
+      "expected_listing_bytes": 580326,
+      "etag_md5": "2d8031e48a7599fcadaafaa797e6a63b",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18116.json.headers",
+        "bytes": 463,
+        "sha256": "c1e72a0c22a47236ef945287b15ac788b908c2a8940e6c9704f03aaec4f7189f"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18130.json",
+      "bytes": 198310,
+      "sha256": "5fcc72080f17450e3e38c2d703ab7b70b814773391306cf6cc9c8287597dd58a",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18130.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18130.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18130",
+      "http_status": 200,
+      "expected_listing_bytes": 198310,
+      "etag_md5": "04fe7547bb7b266fcfc56a68ede9a838",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18130.json.headers",
+        "bytes": 424,
+        "sha256": "aa6e2fed369d2b7f930045638264c13934fc18ad7717c5d335e47453996cdc71"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18137.json",
+      "bytes": 227340,
+      "sha256": "a6e3388fde11a2eecb592777d29afbcacff482b75dcd0de497cb3350db8ae1b0",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18137.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18137.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18137",
+      "http_status": 200,
+      "expected_listing_bytes": 227340,
+      "etag_md5": "aece7a5800d17c7d42c77c79510af280",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18137.json.headers",
+        "bytes": 463,
+        "sha256": "35b361d9d3ed7960fb032101cd625a5f08aa10e2ee291c8fcec5cbe4cf1b34f4"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18168.json",
+      "bytes": 219118,
+      "sha256": "06a90cc8b58b7f95b37efbb6133508181cc3b03a70846de0c60ec9af4eaa7c78",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18168.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18168.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18168",
+      "http_status": 200,
+      "expected_listing_bytes": 219118,
+      "etag_md5": "e7740f25de70b479a185b776a97ebdce",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18168.json.headers",
+        "bytes": 463,
+        "sha256": "9f60b34cdf6933e155d9e286bb68c286316c59e30e33d04648224c549cb600c2"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18189.json",
+      "bytes": 132460,
+      "sha256": "d0764e01e500360cd32d1bd288475780ca3f940af2e7ad5db1abe61fc701c698",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18189.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18189.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18189",
+      "http_status": 200,
+      "expected_listing_bytes": 132460,
+      "etag_md5": "94c2bf89dc164a60ba672fb2b9a9a077",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18189.json.headers",
+        "bytes": 424,
+        "sha256": "153f3810cb79f669031e9fb71e3a944cd818633ffce9441e76bfc07a152c961d"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18191.json",
+      "bytes": 150807,
+      "sha256": "dfc3b379bc7d07cf9d62f7b4a7a088c1daa238fd3360d85e05269128d4b0a90b",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18191.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18191.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18191",
+      "http_status": 200,
+      "expected_listing_bytes": 150807,
+      "etag_md5": "9294838d0b0c108681a1a0d2ac8ba083",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18191.json.headers",
+        "bytes": 424,
+        "sha256": "8db47b9cc2448f6e990b51e04d5962c7450539c2a44b6cb2ecb3b73f78cbd9d2"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18198.json",
+      "bytes": 347156,
+      "sha256": "92aa89fab89146b0ce5a99cb1c68a6fff13386cf0586c980440b2fa6d0382ee6",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18198.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18198.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18198",
+      "http_status": 200,
+      "expected_listing_bytes": 347156,
+      "etag_md5": "721e85a8f3528e0f68f8b19315a5ad78",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18198.json.headers",
+        "bytes": 424,
+        "sha256": "dc3a6b0399d30e85d8942383eaa52861e8e1a01ade2f0a1932b8fe28c9bfcfa6"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18199.json",
+      "bytes": 163021,
+      "sha256": "fc538bb25d8f78419450c749bfccc975c3ff8e8f16e39d67babe8458b5db7780",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18199.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18199.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18199",
+      "http_status": 200,
+      "expected_listing_bytes": 163021,
+      "etag_md5": "37dfdee0a0de4dc137ca1ec9aa484b5e",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18199.json.headers",
+        "bytes": 424,
+        "sha256": "30ad3659f188327bbb7f85b2e1b3bd6c6e79821df947c72498f4c05a9cf1fae6"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18200.json",
+      "bytes": 244617,
+      "sha256": "c732c18e48a95735025a780a74ff61fe380db26bec84ada07f35462469aa12f2",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18200.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18200.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18200",
+      "http_status": 200,
+      "expected_listing_bytes": 244617,
+      "etag_md5": "abbb9bfc0bd9ec29c83fee097bd754c6",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18200.json.headers",
+        "bytes": 424,
+        "sha256": "cbdfc57f75edc2214c293c83214794ea8153708d360ee4bbf6d67785750b42f4"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18211.json",
+      "bytes": 261741,
+      "sha256": "98ea3d0f9e717c6f99d47b0012bb3465c2307cc2950517abb22999697fcda084",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18211.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18211.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18211",
+      "http_status": 200,
+      "expected_listing_bytes": 261741,
+      "etag_md5": "d8a8149063206db646ca08b7bba0bb49",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18211.json.headers",
+        "bytes": 424,
+        "sha256": "3a6758499ecd6c5abfed8dc4637bf28b9738ef0794bb03d3277044e6484cb453"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18256.json",
+      "bytes": 243830,
+      "sha256": "928a3209d61412769492f038074633ef41c75b4fbfcc15b0c01b1f89a53b62af",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18256.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18256.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18256",
+      "http_status": 200,
+      "expected_listing_bytes": 243830,
+      "etag_md5": "e2b6d76991fff08505ecd2e3d8c41187",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18256.json.headers",
+        "bytes": 424,
+        "sha256": "c9aa71be9c6a7747aee280345e62be93e2e68d92a699325c4dcdbf57260042d7"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18273.json",
+      "bytes": 373774,
+      "sha256": "698945b18100496884de8aec841858e3d748f9d0510c6d3f17981c44feee36d0",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18273.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18273.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18273",
+      "http_status": 200,
+      "expected_listing_bytes": 373774,
+      "etag_md5": "99fba611541cd17b0f1c713e0b4fcbfa",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18273.json.headers",
+        "bytes": 424,
+        "sha256": "985394c3a29567ea9ab88a895e2acf5d62ad66aeaf9b7b3ab67cfdedb998426c"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18351.json",
+      "bytes": 455736,
+      "sha256": "f76ca100c9473a3e3cbbe90ea5b3369f04db695aba3ea6c64f3c97378af2a891",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18351.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18351.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18351",
+      "http_status": 200,
+      "expected_listing_bytes": 455736,
+      "etag_md5": "8c53771f8a287daec33376d3f88fe614",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18351.json.headers",
+        "bytes": 424,
+        "sha256": "4657e2fb87012fbdb5478245ef3e463fcda85566a9ecb4e67e81690834d23dd9"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18477.json",
+      "bytes": 504875,
+      "sha256": "f0b1f4103f1d443e3ed6799b076c685c50e08f2e950d2a70d832c22bd3df930f",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18477.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18477.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18477",
+      "http_status": 200,
+      "expected_listing_bytes": 504875,
+      "etag_md5": "da7ea5329e398dabcfa958c292bb6ca4",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18477.json.headers",
+        "bytes": 424,
+        "sha256": "53569489727030201b3053d8580a40abc53621afe7b6caba865a676bc4dd7bd9"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18478.json",
+      "bytes": 199066,
+      "sha256": "16333cae749c5e455a685365f341e2e65886467f427a1c9b23e286e5011d4966",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18478.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18478.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18478",
+      "http_status": 200,
+      "expected_listing_bytes": 199066,
+      "etag_md5": "f47adc3ae9401c197a0482237effb406",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18478.json.headers",
+        "bytes": 424,
+        "sha256": "2771d0c7ddc6beb6069c97bec5920ffb883da85962bd23bd7469f76ff2819847"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18532.json",
+      "bytes": 363673,
+      "sha256": "33530caa13f967e1da28b3a51adaf7fdaa2376227fe993ee3a34f52484292247",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18532.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18532.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18532",
+      "http_status": 200,
+      "expected_listing_bytes": 363673,
+      "etag_md5": "54886147cd28a2b9e870ab6d80f8b3b1",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18532.json.headers",
+        "bytes": 424,
+        "sha256": "5b23ddf796a59f66f482c82af9a175992e3dccf15c9c20d8789e8aa37cca581e"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18587.json",
+      "bytes": 390219,
+      "sha256": "b27184075f35eb15b33f4cba9aac60a6e5136843c5661dcdac996078e3d1b36f",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18587.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18587.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18587",
+      "http_status": 200,
+      "expected_listing_bytes": 390219,
+      "etag_md5": "283312f8e85c3932c73f2917fbd6788f",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18587.json.headers",
+        "bytes": 424,
+        "sha256": "31c1e096450e8cff7726169da1e36c319651a733a2cd1614ea071746246e5590"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18605.json",
+      "bytes": 272256,
+      "sha256": "75105ccc70db0de62b00627a7f74f4b0274cf41b24f829ba9f4ac73d52abde9d",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18605.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18605.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18605",
+      "http_status": 200,
+      "expected_listing_bytes": 272256,
+      "etag_md5": "fb80eab4942b44a744ec483fb57a5d43",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18605.json.headers",
+        "bytes": 424,
+        "sha256": "dd3eaa9a10c6e12ef071c9694649aee43af6a58d2b9bf9fdf1b58c343e950fa0"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18621.json",
+      "bytes": 152980,
+      "sha256": "a6eb216deaa946004335134b4e11892c41ff9fa6a3fbf3b89e1f139f686382da",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18621.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18621.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18621",
+      "http_status": 200,
+      "expected_listing_bytes": 152980,
+      "etag_md5": "1a5515d5b08e8eb1110c8103d9689c94",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18621.json.headers",
+        "bytes": 424,
+        "sha256": "02f4cbeafc19c583cba04dcf38bb6b9fec09462f4ae8ef2855cd3d13fb18da39"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18630.json",
+      "bytes": 193961,
+      "sha256": "4cfb2ef797a62b78759a42bc39317223ad6fbd42f486ebb329ca23a2390e7052",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18630.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18630.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18630",
+      "http_status": 200,
+      "expected_listing_bytes": 193961,
+      "etag_md5": "8cca1842b1a511ce75ab6cc991278ab0",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18630.json.headers",
+        "bytes": 424,
+        "sha256": "cf5aad4546050ecae8c1b755880c6e4124c85f6487d356c4c07a29ce140f7902"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18633.json",
+      "bytes": 246060,
+      "sha256": "4bea243e86cab9a5469e124b5bbbb475a23f7325afe0adc596d4e0d45539c1b5",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18633.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18633.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18633",
+      "http_status": 200,
+      "expected_listing_bytes": 246060,
+      "etag_md5": "53a244873193178705bb82c4005d5118",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18633.json.headers",
+        "bytes": 424,
+        "sha256": "f109884cab72567eb7773e62f14241eba1316e875830e8e958389132a7091078"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18650.json",
+      "bytes": 473542,
+      "sha256": "0354d5d2f78073a4a44920beae73df98f2606ab949f6edd35ec979a6d8315e5f",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18650.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18650.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18650",
+      "http_status": 200,
+      "expected_listing_bytes": 473542,
+      "etag_md5": "1ca3a26dfac50001118e4dfc5e0811f4",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18650.json.headers",
+        "bytes": 424,
+        "sha256": "fa0ee78395a2c16a8b319ba02b8a035fca6134b20944f25378549eb4661a961f"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18667.json",
+      "bytes": 308425,
+      "sha256": "4e1f8a222f1a477aa36a7cf49bc838fea624d22ef76812272f53843d1740a7d2",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18667.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18667.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18667",
+      "http_status": 200,
+      "expected_listing_bytes": 308425,
+      "etag_md5": "1edaca8f8ae6f3f18843de50cad9e957",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18667.json.headers",
+        "bytes": 424,
+        "sha256": "bb7049716f41b04b16338d3632d2343ec61f79c3adb947c84a44d672034b8d99"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18698.json",
+      "bytes": 418795,
+      "sha256": "0e2946c062bb78602aff23391e9657cdec5748a42b8acdfeed1b37cc6e777da4",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18698.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18698.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18698",
+      "http_status": 200,
+      "expected_listing_bytes": 418795,
+      "etag_md5": "6ed2e7cf2ff214178ff75f0abec9950b",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18698.json.headers",
+        "bytes": 424,
+        "sha256": "7dce5b39027ffed0ea0575afcf20e443e3b75440b97e18ac2815433c5e1c0512"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18728.json",
+      "bytes": 481723,
+      "sha256": "3f3fa41e97386b269fc021ea025053a67cf58297c68c72d1d5967751d4663ec0",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18728.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18728.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18728",
+      "http_status": 200,
+      "expected_listing_bytes": 481723,
+      "etag_md5": "92a25fa9771767515145fe6d344e0a7f",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18728.json.headers",
+        "bytes": 424,
+        "sha256": "05a29d2313049ef2cbf04b3424b0305ec08b2e3dc5ddc654ef22832fd4b282a0"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18744.json",
+      "bytes": 233705,
+      "sha256": "bd393a51eeccdbf13935f6814f5e757cd151bb8f5e9eadc27eebf1c50422bf75",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18744.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18744.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18744",
+      "http_status": 200,
+      "expected_listing_bytes": 233705,
+      "etag_md5": "f36eb2752a2a6272a688f8f8a5a7d907",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18744.json.headers",
+        "bytes": 424,
+        "sha256": "570a79f18634e014a4bf1cf48088d3ceaa841f13b116205c3c44aa17f7275df0"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18763.json",
+      "bytes": 153293,
+      "sha256": "f79af7acd47b6b28914b927ee1db75b5fb4e3bac316c4845837a2acd966de648",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18763.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18763.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18763",
+      "http_status": 200,
+      "expected_listing_bytes": 153293,
+      "etag_md5": "91be621021fbed646b49011ffbe8a84d",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18763.json.headers",
+        "bytes": 424,
+        "sha256": "e21e642505f90d8a80793ce081c2e5427e286e37763ce212baec7c230c257f1e"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18765.json",
+      "bytes": 395163,
+      "sha256": "a7cc113a58b21eea42dfbeaa7131c1c8faff3ca2e2f3fa255cb3228d6b8d39f2",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18765.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18765.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18765",
+      "http_status": 200,
+      "expected_listing_bytes": 395163,
+      "etag_md5": "9ee7f2aeae4c594ec9c2e8fd7255d3b2",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18765.json.headers",
+        "bytes": 424,
+        "sha256": "96a5d99ca4638c2d6b770e0e48dab58cbef3f51bcb029f98b5917c7af88282d6"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18810.json",
+      "bytes": 103163,
+      "sha256": "83666dee73880a67fcf960707eb6a7271da5084ad1094469eb38f1d897077f6a",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18810.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18810.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18810",
+      "http_status": 200,
+      "expected_listing_bytes": 103163,
+      "etag_md5": "f058d591e3f847db579d15b34f75c3fa",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18810.json.headers",
+        "bytes": 424,
+        "sha256": "4205c7d46b6e80d5123d9bd06ddd777cd5da1134f59f6d79f15e334ac77461c3"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18835.json",
+      "bytes": 151150,
+      "sha256": "b72de6390fa8511074abf1e3bca267dd45f462dd7749a10c61cedf752a3ff32d",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18835.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18835.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18835",
+      "http_status": 200,
+      "expected_listing_bytes": 151150,
+      "etag_md5": "87f1c95165121e7084c90d3e7d0d8bde",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18835.json.headers",
+        "bytes": 424,
+        "sha256": "09e95dd6d08f378831e51bf778fdb0df8a690217a0d9bfdd1276601f270bc120"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18903.json",
+      "bytes": 188565,
+      "sha256": "7e1b218788baf062431e902537de6a6f0dc3acd07e6fe4d8857f2e22bdce59a2",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18903.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18903.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18903",
+      "http_status": 200,
+      "expected_listing_bytes": 188565,
+      "etag_md5": "3827dea26a4b2e1af8483057f59f0fe3",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18903.json.headers",
+        "bytes": 424,
+        "sha256": "9a32e244e815bfa7157ac4fda6b0f80ebb992c8e1763e99c89796ba4d79fbe87"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18908.json",
+      "bytes": 379768,
+      "sha256": "a5355e85a6a156ffa40b6f098b88a2dd073404bd154ebe283a4e44ceeae4848c",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18908.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18908.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18908",
+      "http_status": 200,
+      "expected_listing_bytes": 379768,
+      "etag_md5": "732eb25ce5365cfe8270973d2e41338c",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18908.json.headers",
+        "bytes": 424,
+        "sha256": "2baae318cfeef5f364f451f092d4df373c1810b04cb417c8406113c9d6fff1fa"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18922.json",
+      "bytes": 428848,
+      "sha256": "ae01d5689674ed0ac3569c3200096928663d0e1cd767d84bb911f68fb04644cb",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18922.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18922.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18922",
+      "http_status": 200,
+      "expected_listing_bytes": 428848,
+      "etag_md5": "d31d7c593d998c54a16d8b1bca5752c0",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18922.json.headers",
+        "bytes": 424,
+        "sha256": "84120101658c166af20f836cee4f2b9f54d86b67ff58ba86a4795501b9fbbd1f"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18961.json",
+      "bytes": 88761,
+      "sha256": "f4a63dd767b2857927ece1e618f9c9b8d980f187e7da5938101af0f510041a9d",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18961.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-18961.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-18961",
+      "http_status": 200,
+      "expected_listing_bytes": 88761,
+      "etag_md5": "71d96dd3585dd2bba79bb136a3496495",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-18961.json.headers",
+        "bytes": 423,
+        "sha256": "0df04b39b689c9ff7e6508eed6bd956334c607873d7a10077fec847f5d84feb9"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19007.json",
+      "bytes": 306256,
+      "sha256": "7f8fe20cc352788ed65b624c0dc64db4f11e67f6467db4e7650ea3cbfd03a861",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19007.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19007.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19007",
+      "http_status": 200,
+      "expected_listing_bytes": 306256,
+      "etag_md5": "d92a66def2344258c05ee14a7db973f3",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19007.json.headers",
+        "bytes": 424,
+        "sha256": "e63585832d553476863be04b9eeb5cbdb07c3b46bde51096725638d4c1bb4750"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19016.json",
+      "bytes": 419412,
+      "sha256": "84b3a81ba0b2dfcd28acf9692c083a173ca08c0a376434035b1511c86914023a",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19016.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19016.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19016",
+      "http_status": 200,
+      "expected_listing_bytes": 419412,
+      "etag_md5": "ad52ffc3598e6159670f4d8ef47c4b5a",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19016.json.headers",
+        "bytes": 424,
+        "sha256": "16d6e6c91a640af568b06bb909b163c974a9e4695a22ffb6f44f8b14188b7966"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19040.json",
+      "bytes": 468745,
+      "sha256": "fae73a4cc8f49c946507bc64427fbcaa42ea0b5fb3cc6c5ac8ad762de4ce4ff3",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19040.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19040.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19040",
+      "http_status": 200,
+      "expected_listing_bytes": 468745,
+      "etag_md5": "ff864aaad508ddddc7710e3ae007f81d",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19040.json.headers",
+        "bytes": 424,
+        "sha256": "0b8a37286cbe21c6b06fa5d107d5f87a0d066d5afb5b4008dbc3ad536dbc1a3e"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19091.json",
+      "bytes": 614009,
+      "sha256": "ed339612f1cd629246b74320563aaa596f0e57a28cc2387f544c7b8cb3b2d8dd",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19091.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19091.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19091",
+      "http_status": 200,
+      "expected_listing_bytes": 614009,
+      "etag_md5": "ca31e2fa63424ede1366b7db2ec55938",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19091.json.headers",
+        "bytes": 424,
+        "sha256": "b6c05fce35bcedaade2dc3244a30fa5f1eddde1459f5396c793bf0eb2a9f0f00"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19093.json",
+      "bytes": 192196,
+      "sha256": "b4b974099307411d1e59f557377981c2baddfc0e85fb32813693858d6e76feec",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19093.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19093.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19093",
+      "http_status": 200,
+      "expected_listing_bytes": 192196,
+      "etag_md5": "eb87884e51954287e07ecd2919c74edf",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19093.json.headers",
+        "bytes": 424,
+        "sha256": "a3426d22843212b7a6bbbb43be1747199d284be21a3d4e4acebe9035819b1a5c"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19110.json",
+      "bytes": 82519,
+      "sha256": "1125836ebfe13ac7b27a4001312d022ff2fac1a4f486cf16b3d13943937efcbb",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19110.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19110.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19110",
+      "http_status": 200,
+      "expected_listing_bytes": 82519,
+      "etag_md5": "bdb882ecc5b938404ae9c25d81f9dd37",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19110.json.headers",
+        "bytes": 423,
+        "sha256": "ecf43611d2cb7540b6305fc993be39332f8e16d1b3398a666eb037a0eea7e2d8"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19182.json",
+      "bytes": 476889,
+      "sha256": "681214d20cfc70a33ada7f4420191125cbcabb2e3d6cbd5c28e53ab98d920633",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19182.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19182.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19182",
+      "http_status": 200,
+      "expected_listing_bytes": 476889,
+      "etag_md5": "1364cdb62d4a02704facac5a32e11e43",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19182.json.headers",
+        "bytes": 424,
+        "sha256": "f713a147eda3c264cff5870f6b027dadad1da6a426fcb6d335d7af8fe04fe995"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19201.json",
+      "bytes": 336597,
+      "sha256": "9529d5554ec980ce0cc3d9ab25d21cceb5f6c1b5a7e839b332dc0326a1cbc045",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19201.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19201.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19201",
+      "http_status": 200,
+      "expected_listing_bytes": 336597,
+      "etag_md5": "1fd4b64cbfe731aa6c3f7f1ecdcdbcac",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19201.json.headers",
+        "bytes": 424,
+        "sha256": "13ea801aae4784ccf70d72bce7617c5fe2b426597a8c7946f01f03bea67adcb1"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19254.json",
+      "bytes": 557588,
+      "sha256": "b35ba4078bbf7f333384a81ed87bd05519d3e7973802d6455fa75222a041029b",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19254.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19254.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19254",
+      "http_status": 200,
+      "expected_listing_bytes": 557588,
+      "etag_md5": "a48b51c77abf252214338dacff3be187",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19254.json.headers",
+        "bytes": 424,
+        "sha256": "e35d0504cfe796ed6766d1ecebe13aa64ab886a2efa76c8f23dc577965092cc4"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19346.json",
+      "bytes": 161310,
+      "sha256": "e00659361392755f199f6f0c25b7d8dcfd6409f648a73c30a93327f6a2ef2051",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19346.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19346.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19346",
+      "http_status": 200,
+      "expected_listing_bytes": 161310,
+      "etag_md5": "b4eb2c62e741affe174b5abe16398b64",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19346.json.headers",
+        "bytes": 424,
+        "sha256": "214d14e44ab0e16717619699de4680895c6985155789d9be22772f35d6d7dfa6"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19487.json",
+      "bytes": 165461,
+      "sha256": "71755f3c588f5ff5992365b35b1cb9895cc4d9c86c0ab93fcbbd04b03be6fe9f",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19487.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19487.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19487",
+      "http_status": 200,
+      "expected_listing_bytes": 165461,
+      "etag_md5": "a5bb806c1b4d1d2d4fde1c9dad462ff1",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19487.json.headers",
+        "bytes": 424,
+        "sha256": "d95049546f4b4dd0268f63a306b044aaddece6c40d2812dcfa49ed90581684ff"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19495.json",
+      "bytes": 360366,
+      "sha256": "cff787c3a1068a74bef850ea5d4e4263c55b0550a8c117da5c36b5e30a92dd85",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19495.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19495.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19495",
+      "http_status": 200,
+      "expected_listing_bytes": 360366,
+      "etag_md5": "35a0faf73319e7815e28a4aa94ebf47a",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19495.json.headers",
+        "bytes": 424,
+        "sha256": "015ed692f3a35fc3d71bafd5d77996172f510e6d43ec3b1747b54fbe56418ed2"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19601.json",
+      "bytes": 103878,
+      "sha256": "8a347a6bb1505b574ed552fb25be7506d817440dc392194ee4d4fa54e7569f0c",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19601.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19601.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19601",
+      "http_status": 200,
+      "expected_listing_bytes": 103878,
+      "etag_md5": "3b594d9ddb610c3bfbaf1e29f4b11ab2",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19601.json.headers",
+        "bytes": 424,
+        "sha256": "000965aabdb445ff7c62956f4ef95e335854f66ce38aff817ec0c85c9a9bc248"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19637.json",
+      "bytes": 109109,
+      "sha256": "50ecdae339d588ac506cac414458d032d82adaa16dc9640d109bb08c37d2e37f",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19637.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19637.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19637",
+      "http_status": 200,
+      "expected_listing_bytes": 109109,
+      "etag_md5": "1166b01e8997b5f9e0a53157fb4e4e42",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19637.json.headers",
+        "bytes": 424,
+        "sha256": "ad99bb26ef45c9bbb3c0ccd16512619f7c688066d0ef5fa1aff173c8367e7ec2"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19713.json",
+      "bytes": 279192,
+      "sha256": "6c52453645bac971f0b0f0125469c62f24184f506497081591b64bc2998a2b87",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19713.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19713.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19713",
+      "http_status": 200,
+      "expected_listing_bytes": 279192,
+      "etag_md5": "1e112fe58b19e8a6c18fafb794759c53",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19713.json.headers",
+        "bytes": 424,
+        "sha256": "e75cde0f9bae50edfcd9fd8263c33216fd52f10c724b4b732f1fc33b6ac2f6bf"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19783.json",
+      "bytes": 242879,
+      "sha256": "b5fe02f1cf068bab3207f55393eb3ed6005d64adab5d36213a164ace201c0960",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19783.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19783.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19783",
+      "http_status": 200,
+      "expected_listing_bytes": 242879,
+      "etag_md5": "c9de11b1641d482790b731612ab905a2",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19783.json.headers",
+        "bytes": 424,
+        "sha256": "e152b989f4eb05194f7f9400850389981a60fdc0f8d76a98e9165aed63d641ba"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19885.json",
+      "bytes": 514168,
+      "sha256": "0a20d0c0bfad232c5b967a26ab8db43ec7d50c9a20284fb225731a1ff01b03e6",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19885.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19885.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19885",
+      "http_status": 200,
+      "expected_listing_bytes": 514168,
+      "etag_md5": "3fdfc3902e3e0d431120409230a45408",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19885.json.headers",
+        "bytes": 424,
+        "sha256": "b569588b6ea66e7bae31fa74ee218e6120c2f2a07e6ae64e67b96f35b95349af"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19954.json",
+      "bytes": 123621,
+      "sha256": "6bf09416cfecca521050f0709b99e71dde4366a0110058378731295c3f74c02f",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19954.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-19954.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-19954",
+      "http_status": 200,
+      "expected_listing_bytes": 123621,
+      "etag_md5": "0be8415015afeb3ddc5cc44344e32b82",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-19954.json.headers",
+        "bytes": 424,
+        "sha256": "acb5491b3904574c84d0097e6e6c4202da7e5a3c2e7364c9f7cf64ffcd0ccc81"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20049.json",
+      "bytes": 307612,
+      "sha256": "59167913f40b0347d7c7dc24454c65f12b2898f66472c0cabd204dd593544345",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20049.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20049.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20049",
+      "http_status": 200,
+      "expected_listing_bytes": 307612,
+      "etag_md5": "c20178cf5d0a4567270f52de176264ec",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20049.json.headers",
+        "bytes": 424,
+        "sha256": "d6f435db2e6371d5eb96fbca08ad3dc683b18b3f8751b3d3f9463aef2e1313df"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20115.json",
+      "bytes": 322269,
+      "sha256": "0d4ce1b49c62985e6b43e51014e8b0b96f71c8dec2d832c8f78e5cf1faee114f",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20115.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20115.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20115",
+      "http_status": 200,
+      "expected_listing_bytes": 322269,
+      "etag_md5": "0a5ff477e6904bf1c5598e747fcdf903",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20115.json.headers",
+        "bytes": 424,
+        "sha256": "99506bc0376b72bf7766914a729b9eecc4ecf568e57629e118a26107dffa96f8"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20131.json",
+      "bytes": 484730,
+      "sha256": "5447f6ce9e77331b0bc996c397bfc38ef0bfac9c9f81df091daae2f9ce01162a",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20131.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20131.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20131",
+      "http_status": 200,
+      "expected_listing_bytes": 484730,
+      "etag_md5": "3ef9eee2f72695717d8fdc6ae2aa39ba",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20131.json.headers",
+        "bytes": 424,
+        "sha256": "8c463de826bd09b08ac25a429b35489ed3c4d5b1f6d7b6883b9e790db1ae2cdf"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20134.json",
+      "bytes": 289660,
+      "sha256": "f5fbf4e5f348d511e1c0e3cff663fa2d25d04eb39237fb6516f74f0cd188ccaf",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20134.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20134.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20134",
+      "http_status": 200,
+      "expected_listing_bytes": 289660,
+      "etag_md5": "ac573c3b023b84578e99fb34f053d9ff",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20134.json.headers",
+        "bytes": 424,
+        "sha256": "22801e1652bb69f6fc2ffac100f7f223578ac484c0dd8c237d4f5ae4123aa40a"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20139.json",
+      "bytes": 385096,
+      "sha256": "c9c5b3987e900e9afc0b537e3745fc404bb2ab9949588a2878cae7f1ae2c4d95",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20139.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20139.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20139",
+      "http_status": 200,
+      "expected_listing_bytes": 385096,
+      "etag_md5": "5ff9fe3d1bfc3cda0e9bf73ac58d53b7",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20139.json.headers",
+        "bytes": 424,
+        "sha256": "75dea34b1d82b2b4854775cfcda8f3b90d7198526eb8b259400d6e202318c1b4"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20154.json",
+      "bytes": 182663,
+      "sha256": "04ae0e43134a09338bad48a042d5bf3f5e6ff4460342c650cb3510004a8939bc",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20154.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20154.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20154",
+      "http_status": 200,
+      "expected_listing_bytes": 182663,
+      "etag_md5": "837f65a2af645c49a7b005a66829d5d2",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20154.json.headers",
+        "bytes": 424,
+        "sha256": "a04cce1f759ea211e2e892239b3c5045e4e3ff3dcea89ef4ff1d99fbad3da5f7"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20169.json",
+      "bytes": 173678,
+      "sha256": "f89f66b245dd5aea4c83d3be015b53b20caf53df41ca806683a437754d2515d7",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20169.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20169.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20169",
+      "http_status": 200,
+      "expected_listing_bytes": 173678,
+      "etag_md5": "992ab95fce1758e82c4a47a93e92d06f",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20169.json.headers",
+        "bytes": 424,
+        "sha256": "b0b591a48c145d62556f8d8e02adc4be152df87c23ba608df56ef2cfa21a7ea7"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20212.json",
+      "bytes": 149071,
+      "sha256": "27487e6434950021004cabe1df1f4859d98b7af173200e6018e48066f4984ee8",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20212.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20212.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20212",
+      "http_status": 200,
+      "expected_listing_bytes": 149071,
+      "etag_md5": "5f7c156dba4ccf40446cba10848c9ee4",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20212.json.headers",
+        "bytes": 424,
+        "sha256": "b3ec14613cffa0ef2472fdd091b69fccbebe03e29644c055bafef70f51d2c07b"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20264.json",
+      "bytes": 278915,
+      "sha256": "516964bd0d49fb9fa6935425ab4d6b8efabba60069e8aad2d22900045ec09b8a",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20264.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20264.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20264",
+      "http_status": 200,
+      "expected_listing_bytes": 278915,
+      "etag_md5": "b5bd053b291f170f1411e0c15b17e330",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20264.json.headers",
+        "bytes": 424,
+        "sha256": "2e6c21bd264c04039fb670364443b7f93dd582bd824b5c0473c54dbf64520aa3"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20322.json",
+      "bytes": 375133,
+      "sha256": "108d2aa741aca834e48dd1240f16d544f3cd9fb81abf18b2d0efa3ef39cabd13",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20322.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20322.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20322",
+      "http_status": 200,
+      "expected_listing_bytes": 375133,
+      "etag_md5": "830dbcce522ac2c07a5b8e0ce1e26f16",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20322.json.headers",
+        "bytes": 424,
+        "sha256": "d4f1a598fcef1aa45e611fe8ebd584fc920bf3b6e55795492200e9743d8bedba"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20428.json",
+      "bytes": 278041,
+      "sha256": "9c2823dd216ba12248b318613fc707fac2b3fa8d02cf97f5fc85760bf3ffd995",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20428.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20428.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20428",
+      "http_status": 200,
+      "expected_listing_bytes": 278041,
+      "etag_md5": "7b9021f894c409f4c0d919c02f193c0a",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20428.json.headers",
+        "bytes": 424,
+        "sha256": "6dc8c5fd31f1ecc0a1a6cfb25c9fa8ab3d36137728ec1acfaa4e3ff04c8bd742"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20438.json",
+      "bytes": 324008,
+      "sha256": "faf4903134e52175c23a79ecf4188fab10debf85d1703f45464157e90d4be862",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20438.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20438.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20438",
+      "http_status": 200,
+      "expected_listing_bytes": 324008,
+      "etag_md5": "303afe6a9e3dfcbaed73d534ba64c596",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20438.json.headers",
+        "bytes": 424,
+        "sha256": "32eec8c5c2c1b5e2a6a1ee105277c1d5e02db8c7e6b31f50a392fe1cda7a5a82"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20442.json",
+      "bytes": 130680,
+      "sha256": "a1742b4024097eb71ab7569fbbce38c1fb6df2b9862a9d6a0fb959ecc46de8f7",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20442.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20442.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20442",
+      "http_status": 200,
+      "expected_listing_bytes": 130680,
+      "etag_md5": "52c227815f1e7ffd3a40d11cd9b6e8f1",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20442.json.headers",
+        "bytes": 424,
+        "sha256": "11a3948fcf812163ef584c8e4dbc92777c190b571dec4e0e1f0eed7647a0d10c"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20476.json",
+      "bytes": 223879,
+      "sha256": "2499d5ef3a8df4801bb3718a9c2092da53e83953b4cdc332a12f7d69cd74527d",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20476.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20476.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20476",
+      "http_status": 200,
+      "expected_listing_bytes": 223879,
+      "etag_md5": "c11e5f72ff313ae1963a37f2c5469313",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20476.json.headers",
+        "bytes": 424,
+        "sha256": "1fc6e7497076376e2121b44603175e22f22f7cdaad7f4ddcd3e87671de6d93a8"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20565.json",
+      "bytes": 231441,
+      "sha256": "f291b198f87e9f6458b86aa5f72c5a3ddf0a83df199424648a0d1d3b84bdf90e",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20565.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20565.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20565",
+      "http_status": 200,
+      "expected_listing_bytes": 231441,
+      "etag_md5": "da7d85b9731f80210d91cc8f55bc555b",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20565.json.headers",
+        "bytes": 424,
+        "sha256": "9457c0b4d7bafb73822e1bc1bd45a76201ddb2418a380654d4a4a5995766d6cc"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20590.json",
+      "bytes": 145460,
+      "sha256": "bddd67f295a8742259af0582d0824c8034359abac38a26033460daeb1fdcd3c3",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20590.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20590.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20590",
+      "http_status": 200,
+      "expected_listing_bytes": 145460,
+      "etag_md5": "310b0d7501d04c23f94851529825ac85",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20590.json.headers",
+        "bytes": 424,
+        "sha256": "275bfe12fde21e57462ac3dfa12677154d3adea30ee7c8238ae053b7edf9b818"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20639.json",
+      "bytes": 219272,
+      "sha256": "bf204564397e2af1428a8691a347d7da99fb89e261da547532c0d57bd183a8c0",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20639.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20639.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20639",
+      "http_status": 200,
+      "expected_listing_bytes": 219272,
+      "etag_md5": "6731d7b76a30d560cff0fcb7b4f0ce30",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20639.json.headers",
+        "bytes": 424,
+        "sha256": "1044cd4b54985f1e791a0132d29ca6f5b18ce4a6e88a03ed362d5d0890d0c851"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20691.json",
+      "bytes": 232143,
+      "sha256": "51e7d5da851a2095559afc93fe6c4fa9123d3643e0d3449f4c2fbb47b0ef94d3",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20691.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20691.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20691",
+      "http_status": 200,
+      "expected_listing_bytes": 232143,
+      "etag_md5": "ff2b4407541cf3e97309f16d68d80cf9",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20691.json.headers",
+        "bytes": 424,
+        "sha256": "b6b2205a43abba19acc90453019866cb313585adf67824236620388d80091b6a"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20741.json",
+      "bytes": 310842,
+      "sha256": "c0c86bb8712fc21fbf3a8cc273e6014008850c50112b650963508b29effc5d18",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20741.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20741.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20741",
+      "http_status": 200,
+      "expected_listing_bytes": 310842,
+      "etag_md5": "4ddd13fc9a19f80e4397d14ca9b1fcec",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20741.json.headers",
+        "bytes": 424,
+        "sha256": "f0f22ff277adb4e1c3d24fc56a8fb69848931a0d2abc532b47bf8ab0b20c6748"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20801.json",
+      "bytes": 220340,
+      "sha256": "3c7c737c666bcda4ab421310a50046634c3ecce0797b45d278eaba1f64d9b6df",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20801.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20801.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20801",
+      "http_status": 200,
+      "expected_listing_bytes": 220340,
+      "etag_md5": "ba6783e4458d076ca9baf59dfae63e1c",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20801.json.headers",
+        "bytes": 424,
+        "sha256": "5545a7cff6b2bdc131a3c745f305403c9c385a6ff6afa30bf7bffca78fe28a0a"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20916.json",
+      "bytes": 178998,
+      "sha256": "55ebdf8147c865663c8dcb876ac60af2875fd89722b58f1f506b8ed0caeee42d",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20916.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-20916.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-20916",
+      "http_status": 200,
+      "expected_listing_bytes": 178998,
+      "etag_md5": "dd9ca757b91248181f0fe100954ed9e9",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-20916.json.headers",
+        "bytes": 424,
+        "sha256": "9cc42641f109bdf7586cb68fdfffe8f2211f01a5b286dd67e99c71090bdf2888"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21055.json",
+      "bytes": 161741,
+      "sha256": "56012c06bdc7f90641b42c4f79be33cfd9c72e527509937d325c552784234ad0",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21055.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21055.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21055",
+      "http_status": 200,
+      "expected_listing_bytes": 161741,
+      "etag_md5": "74ccb7d87f58f10838879c8848701a5f",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21055.json.headers",
+        "bytes": 424,
+        "sha256": "6e13b5722afe791459fd02191c6a8dc8a65652b60c4cb1f95343c26a4994c3f8"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21101.json",
+      "bytes": 186269,
+      "sha256": "7b8722fb94cb9e4073400f0fee03e8bd15347d6a3cbd59f7f4a2b6d293e82c0b",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21101.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21101.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21101",
+      "http_status": 200,
+      "expected_listing_bytes": 186269,
+      "etag_md5": "d2e19c664c62fb470e5a9caaf51aae9b",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21101.json.headers",
+        "bytes": 424,
+        "sha256": "1d5587f83a59100a1c3317508a7eb7dac79519d6c289b054a4833eb4605ef417"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21171.json",
+      "bytes": 91783,
+      "sha256": "b64575e94ea0c830bb3c8aadb6255cf64162553b3a7c619e1edf6a7c87fc1ee4",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21171.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21171.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21171",
+      "http_status": 200,
+      "expected_listing_bytes": 91783,
+      "etag_md5": "2db15c28aab2a04b81a8a6397839ea2f",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21171.json.headers",
+        "bytes": 423,
+        "sha256": "4be01e11436376118f8a24c2a647918c9246a68fb580f3e206386b7a91b8f259"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21208.json",
+      "bytes": 303036,
+      "sha256": "91a09d43352caaef2731c074bedf4e9770b1a7d926c17a94d7e97e7a33789b8b",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21208.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21208.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21208",
+      "http_status": 200,
+      "expected_listing_bytes": 303036,
+      "etag_md5": "4a44c9225394b7c26db5058e7147f375",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21208.json.headers",
+        "bytes": 424,
+        "sha256": "48502474f3a1dd6bcfef6f0e9d0aff7ea53be5fdd91805849f794190b683a9a1"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21259.json",
+      "bytes": 250622,
+      "sha256": "321c62263afeb03ff7538c82d1b621d7f916b46c673687770d16891ac40850dd",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21259.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21259.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21259",
+      "http_status": 200,
+      "expected_listing_bytes": 250622,
+      "etag_md5": "a560c6e665e97d3a64253910a28b7a85",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21259.json.headers",
+        "bytes": 424,
+        "sha256": "b24f9fc19dd6b2bed0f5f86697d7de480676abb4fd89d32ef1b0396767fff28d"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21260.json",
+      "bytes": 419515,
+      "sha256": "a39ad6d2be90caf0d84004bce3b6959e67a28aecd1b444b09b129aa9c074e942",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21260.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21260.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21260",
+      "http_status": 200,
+      "expected_listing_bytes": 419515,
+      "etag_md5": "67f85b1b607406edffd9316437001334",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21260.json.headers",
+        "bytes": 424,
+        "sha256": "1e82d4b1239080b5334bb515a8d5504304e459504a9782f5be3b716fc14547e9"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21271.json",
+      "bytes": 340119,
+      "sha256": "243b4109aba280e61b0b427f46da30d282c5a07e2fc73ce9e2a8a951a7882a10",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21271.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21271.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21271",
+      "http_status": 200,
+      "expected_listing_bytes": 340119,
+      "etag_md5": "047335bd4fcf6dd0de60710983d07055",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21271.json.headers",
+        "bytes": 424,
+        "sha256": "a3d807ba503d305493daf77dc8e1d256081f81a0a343d1ba3199c27c9195c155"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21286.json",
+      "bytes": 265691,
+      "sha256": "86c23b29e30720a72d1170dbeb9c651e17d51ec4f66b263642c48f8cba04e904",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21286.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21286.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21286",
+      "http_status": 200,
+      "expected_listing_bytes": 265691,
+      "etag_md5": "aded2f17e3cd451bd43479d89b0f1f87",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21286.json.headers",
+        "bytes": 424,
+        "sha256": "a222da8946d57e7eec53845e927ec387adaa7cc43a4beb62af1d930fd2cc072d"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21313.json",
+      "bytes": 161799,
+      "sha256": "e590660d32750a7f4283eb484980e7d588b4a1148dec9b8353a76cde34218d11",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21313.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21313.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21313",
+      "http_status": 200,
+      "expected_listing_bytes": 161799,
+      "etag_md5": "647b6820d79656e55d5903e606832851",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21313.json.headers",
+        "bytes": 424,
+        "sha256": "51f9b78790a772779eec76c91bfe4839650dc81fa0121d39e729f8b2b1088ed5"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21370.json",
+      "bytes": 377446,
+      "sha256": "10f02e2394eb9a411d8127d278c942e1b22cc26affa268efc9ff78fa945ab793",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21370.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21370.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21370",
+      "http_status": 200,
+      "expected_listing_bytes": 377446,
+      "etag_md5": "7a4da2525c66f7fb1420699b938ff1fe",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21370.json.headers",
+        "bytes": 424,
+        "sha256": "52dfdae392f44028b567d3d7b94e45b5549f1056c508f198965360df4e1bfad8"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21379.json",
+      "bytes": 221959,
+      "sha256": "8816e18b30b8c451aa8789c7f31654b007029bac79c5dd558fbc384a95d78b1a",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21379.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21379.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21379",
+      "http_status": 200,
+      "expected_listing_bytes": 221959,
+      "etag_md5": "ee3eb4d108e34f9d49a7284f9e7d1d65",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21379.json.headers",
+        "bytes": 424,
+        "sha256": "414db2b5c381d4ab6b7e1d526717d5ebf14272c470d068fec71eb5d6f70e0ae9"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21432.json",
+      "bytes": 342419,
+      "sha256": "0c03ae910faec86e3e6029db98b5381c3da16a7d8eabb35775921d753e7b420e",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21432.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21432.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21432",
+      "http_status": 200,
+      "expected_listing_bytes": 342419,
+      "etag_md5": "091cfef523f286309dc923c529dcfbab",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21432.json.headers",
+        "bytes": 424,
+        "sha256": "3a9c07d2703abffe9a23ec9cad7ff4d791f68a45e9e3e19de5795bd628bbaa3c"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21436.json",
+      "bytes": 443726,
+      "sha256": "c5ad2e23d564e29498d43cf921c9837ba6df657e215c88dfc317138d9feb911f",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21436.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21436.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21436",
+      "http_status": 200,
+      "expected_listing_bytes": 443726,
+      "etag_md5": "cb4a6e00e4217c65088151f0c05629cb",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21436.json.headers",
+        "bytes": 424,
+        "sha256": "ea571d01a3abb37dff88e5ab4498edc34a4ff0df28313ee98a41cc0cb2e72aec"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21476.json",
+      "bytes": 273019,
+      "sha256": "9864206150a4f8cdf0aeb47b9cd0175cf545fd48468bf04bf865ea7943eabaa1",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21476.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21476.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21476",
+      "http_status": 200,
+      "expected_listing_bytes": 273019,
+      "etag_md5": "144e42a6a0253845569ff943c9256eff",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21476.json.headers",
+        "bytes": 424,
+        "sha256": "8847a7a07920393ea9254e90938f90e5a10192535c8af3cf6cd13c934081627f"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21527.json",
+      "bytes": 325560,
+      "sha256": "9bc2c7f89553092eec326527dc42a1f2cc1a2042aab678b004aa658790785e30",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21527.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21527.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21527",
+      "http_status": 200,
+      "expected_listing_bytes": 325560,
+      "etag_md5": "bbd631093255ec9afe9c631f6c27d197",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21527.json.headers",
+        "bytes": 424,
+        "sha256": "e575550e33d5feec69d160a6841fec64b4f17ff455a8c2b33208126c6ad2d649"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21567.json",
+      "bytes": 170457,
+      "sha256": "5e7482c0816504afc11df7d3341190259790ef839e0d6b05b50eaf4459927fb3",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21567.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21567.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21567",
+      "http_status": 200,
+      "expected_listing_bytes": 170457,
+      "etag_md5": "1439cd61e82cf2095fc6716488f29474",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21567.json.headers",
+        "bytes": 424,
+        "sha256": "41f9631505251b31d1f6ed1eba0d6563d9ce747668280e987c19641b6162ae86"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21586.json",
+      "bytes": 279232,
+      "sha256": "ef9cd8d25fa6fd384bf0a8aa8f48740f1fd253d386f411370c7d8f51f73f18df",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21586.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21586.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21586",
+      "http_status": 200,
+      "expected_listing_bytes": 279232,
+      "etag_md5": "a3801fb2a218ecd302fed2b569aaa166",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21586.json.headers",
+        "bytes": 424,
+        "sha256": "9044ec34254bbef0f816d80327752ed4733a772d2a7a0d9010a287fdb4cef5a5"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21596.json",
+      "bytes": 295028,
+      "sha256": "f310c45265adca5d415ceda1c5bfed9b1dc98304a4e91ee98c18672a1255db0b",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21596.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21596.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21596",
+      "http_status": 200,
+      "expected_listing_bytes": 295028,
+      "etag_md5": "a5a283d69b2345de1804dd26766c398b",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21596.json.headers",
+        "bytes": 424,
+        "sha256": "a2eb4ff2fdf64c9de4d8ae35801663687c28faa7ad5d58b7de3f45adfddd639d"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21612.json",
+      "bytes": 296678,
+      "sha256": "fbb317e03c4999eecd521aa59248b60ebde0ccb62bb5b6e466adb0867fcbcbe0",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21612.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21612.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21612",
+      "http_status": 200,
+      "expected_listing_bytes": 296678,
+      "etag_md5": "812132671c66505036973378b3fdf7f3",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21612.json.headers",
+        "bytes": 424,
+        "sha256": "bad8d6250c770749c8fe88a7475a8b373d3871d466addfaa71fc1606413317d8"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21614.json",
+      "bytes": 125877,
+      "sha256": "c5eea877871bdea22a053f7ac22501f5fc5f0c739e0077a0f9541979169d4512",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21614.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21614.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21614",
+      "http_status": 200,
+      "expected_listing_bytes": 125877,
+      "etag_md5": "12db79eee2b64c742c1d98bee40d7c6d",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21614.json.headers",
+        "bytes": 424,
+        "sha256": "c24ef44a224cb1e691c282a7711d5a490272706f35fb8e1226d4a49e67e5f3c6"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21627.json",
+      "bytes": 313617,
+      "sha256": "4505ce004b66156b4444976dc39dc01e7ca65db2724b43bc7115e27d918f0e03",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21627.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21627.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21627",
+      "http_status": 200,
+      "expected_listing_bytes": 313617,
+      "etag_md5": "9fa15d998db2c2e3989555b3f8220670",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21627.json.headers",
+        "bytes": 424,
+        "sha256": "d590e5cd5403d8a47049a378bf030a66b12bcc1590d130f41d0ee3f2f006430a"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21769.json",
+      "bytes": 119971,
+      "sha256": "b8178f1cd996688a47413bea560052017b31b1cfb4e00f87a1f27cbcdf117690",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21769.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21769.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21769",
+      "http_status": 200,
+      "expected_listing_bytes": 119971,
+      "etag_md5": "1f7e113c967d7f3704ed4179893d40b1",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21769.json.headers",
+        "bytes": 424,
+        "sha256": "9c0654e0fa8a8d4115e92b93c7a6d98bdd32f2f3ce2637f21e0765b0b8f81222"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21806.json",
+      "bytes": 170390,
+      "sha256": "6a7b378814c31954ef5be8b8e829396d4166b23f9ebfd52a908adf2e96c4c6c2",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21806.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21806.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21806",
+      "http_status": 200,
+      "expected_listing_bytes": 170390,
+      "etag_md5": "8237ec899b0cada9784b09863d8a5fed",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21806.json.headers",
+        "bytes": 424,
+        "sha256": "7f63918039909aef4b2d803cee3576d05f6d722bb266fa5ed9c49ebcb953e72d"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21847.json",
+      "bytes": 143471,
+      "sha256": "d5a25588b6dbcfe7a3d17ddbf2c5e8fb299c7d0f6c51aa172e4511f40e862fee",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21847.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21847.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21847",
+      "http_status": 200,
+      "expected_listing_bytes": 143471,
+      "etag_md5": "8a64268b2680c6509535bb5f6dbacb62",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21847.json.headers",
+        "bytes": 424,
+        "sha256": "b6c56477d2ff31b73d0c8352a59ac9434da04202a6cbc9b9f8e53ba87fd2cbf0"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21849.json",
+      "bytes": 124359,
+      "sha256": "8350bd7fa7038ea01ec53fd0708527fc0fe571dd105a1f60f31e98773768e10c",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21849.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21849.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21849",
+      "http_status": 200,
+      "expected_listing_bytes": 124359,
+      "etag_md5": "863d49324b67caf3e8782f39520ffd6d",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21849.json.headers",
+        "bytes": 424,
+        "sha256": "1e6dd15f36b1d00174f04e2addca1f21792da2a3d4aa01e960d39722d16f7c7d"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21864.json",
+      "bytes": 52059,
+      "sha256": "c10fa3a8572f1a1a9e6790c44243f3296d1b6a12d71269e958955a40281bcebe",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21864.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21864.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21864",
+      "http_status": 200,
+      "expected_listing_bytes": 52059,
+      "etag_md5": "c5628c8762883159d9153965f335efa1",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21864.json.headers",
+        "bytes": 423,
+        "sha256": "8a091bd9504196350babd861166d2178335cb3502d59d8b851575c61ac236f31"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21930.json",
+      "bytes": 269620,
+      "sha256": "330a25e55e6ecaf48f2a470d3ed189cbf070f57341e4e3f022be0371cf8c2a15",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21930.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21930.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21930",
+      "http_status": 200,
+      "expected_listing_bytes": 269620,
+      "etag_md5": "68feb99aa30b8807aed6af3fd142b18c",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21930.json.headers",
+        "bytes": 424,
+        "sha256": "e86b7aff9bbd160af5f7c32f7b893daecd27420f57b9895e2ed26c1dd1e5eb54"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21931.json",
+      "bytes": 317471,
+      "sha256": "1f92e18c226ecc0947c69446b8b7250baff6ef307801ea2d4b065567aff758f9",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21931.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21931.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21931",
+      "http_status": 200,
+      "expected_listing_bytes": 317471,
+      "etag_md5": "6b66880d1212a4a754387416f3be419b",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21931.json.headers",
+        "bytes": 424,
+        "sha256": "f4cae5b11bcf59590c819105896c316661d0e65346e7efccf248c187dc273131"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21932.json",
+      "bytes": 266075,
+      "sha256": "cbce273a0ae5c7699009321702b3f635dd8f0d4b9d6c63387bad273866654e39",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21932.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21932.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21932",
+      "http_status": 200,
+      "expected_listing_bytes": 266075,
+      "etag_md5": "c138d14d1dca72f5f65c2d3f7a3c8e6b",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21932.json.headers",
+        "bytes": 424,
+        "sha256": "a1f5959aae8d9103d66ce02297b6b2e7e4a0f83726521473abf6009f386cf37a"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21952.json",
+      "bytes": 347333,
+      "sha256": "d80ad96d4813666e543cd0107fb95639c63489f1231dc4646568052417a63055",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21952.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-21952.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-21952",
+      "http_status": 200,
+      "expected_listing_bytes": 347333,
+      "etag_md5": "d68415af6eac616baa28326ba59fe870",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-21952.json.headers",
+        "bytes": 424,
+        "sha256": "7611828d1f183136f26116ee187ce0319708e7085bb54ee0cb5d56bdc67125e2"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22005.json",
+      "bytes": 238688,
+      "sha256": "2435af2b072306c7b2419cbd4bf49b2eb502970df1a1b09e7ab19824eb284cf5",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22005.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22005.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-22005",
+      "http_status": 200,
+      "expected_listing_bytes": 238688,
+      "etag_md5": "0de63a2e4e1454f4e51af0565cb46944",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-22005.json.headers",
+        "bytes": 424,
+        "sha256": "aabbe7d5e1c3f0d0813c92a646166077958855ba1b20cfa0a93c23e60cedb762"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22080.json",
+      "bytes": 519324,
+      "sha256": "73b56a4a85f069f0698bb970fc7df056de17ce528957d9e1c6ef4731619ce9ea",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22080.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22080.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-22080",
+      "http_status": 200,
+      "expected_listing_bytes": 519324,
+      "etag_md5": "655feaa01d5d35a3d4ac2c0e22e49416",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-22080.json.headers",
+        "bytes": 424,
+        "sha256": "bd678a1c29d97239c5ed33acf98ede024d19ee8f23327a4e938716f71f244ad4"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22098.json",
+      "bytes": 374740,
+      "sha256": "423ef48360c93d6de1ee93719b7aa7af70eadb4a9c7d4a8dee69b5618993ae46",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22098.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22098.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-22098",
+      "http_status": 200,
+      "expected_listing_bytes": 374740,
+      "etag_md5": "aca8d046965c756d64590d2ea281523d",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-22098.json.headers",
+        "bytes": 424,
+        "sha256": "188b5ef778b91157c09d901959ca8a779cc88c313a193497ab9d542cc1724128"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22236.json",
+      "bytes": 228448,
+      "sha256": "20fafc9972c007f4efd8e84c75b6a42778052a80fdf6cbcede637ac96ca4d419",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22236.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22236.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-22236",
+      "http_status": 200,
+      "expected_listing_bytes": 228448,
+      "etag_md5": "22158d3b705dacf06fa24e7b6e78211d",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-22236.json.headers",
+        "bytes": 424,
+        "sha256": "d79f6ec4ecd31c410a7f2158ac646577989cd675c470ae14b9044269aff88a10"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22383.json",
+      "bytes": 226939,
+      "sha256": "a48966256e8a18304f7bbbf9cc229311db279249f13308bd21b63c9a00411d8d",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22383.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22383.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-22383",
+      "http_status": 200,
+      "expected_listing_bytes": 226939,
+      "etag_md5": "3fd62e28fe769007a3eac344a2873d1c",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-22383.json.headers",
+        "bytes": 424,
+        "sha256": "eac98cf8412d9e70a747ccb2743be5746685a0830da3ad1a534f859dbf69832b"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22402.json",
+      "bytes": 469814,
+      "sha256": "9bf2955a20c2a1bc54af153bffdead3c54edd42f033d61492bfa62cbcf3f4eba",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22402.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22402.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-22402",
+      "http_status": 200,
+      "expected_listing_bytes": 469814,
+      "etag_md5": "d93ae838d541206a8286c4f34a4ed3cd",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-22402.json.headers",
+        "bytes": 424,
+        "sha256": "318195a1d70d111b3875f8599de82b9ae1215b324493fad9cdb671df8360eb70"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22456.json",
+      "bytes": 576187,
+      "sha256": "0d0fb0140bf3194fb52284a7c789b013c0fad4b2a22d3e888134fd18b657765b",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22456.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22456.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-22456",
+      "http_status": 200,
+      "expected_listing_bytes": 576187,
+      "etag_md5": "cdb9f886384e70f48af8e530d28bfccf",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-22456.json.headers",
+        "bytes": 424,
+        "sha256": "7fff59bdea3283f10780509aa89cf6bed49d6545f2bd2dea9ff7879df3ac85b9"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22706.json",
+      "bytes": 166812,
+      "sha256": "b83736aca50161bd1957cdaf239f721f77d7926bb161ec49adc571065f38a9ee",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22706.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22706.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-22706",
+      "http_status": 200,
+      "expected_listing_bytes": 166812,
+      "etag_md5": "65d3e539914ddcf8b32118a45f995ee9",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-22706.json.headers",
+        "bytes": 424,
+        "sha256": "51eadf58930ac02cccd7339b26bd0a1ed2d7cb57972f2b5eb4880893a7c0063f"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22714.json",
+      "bytes": 270231,
+      "sha256": "83e0d9123833c4903e86e94623edc017cc2d270aed0c331629d55d0664852812",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22714.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22714.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-22714",
+      "http_status": 200,
+      "expected_listing_bytes": 270231,
+      "etag_md5": "1538cd4760397e948bef155cf814971e",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-22714.json.headers",
+        "bytes": 424,
+        "sha256": "ffe6249f3620d1245bfff46201506352b6e2140ba1e9d973451600571b6e9dd5"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22740.json",
+      "bytes": 308617,
+      "sha256": "9053d275bd3547764c3715ecdff6a2df428c1bf5057d27ddf09fec8e4a32cd87",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22740.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22740.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-22740",
+      "http_status": 200,
+      "expected_listing_bytes": 308617,
+      "etag_md5": "52c43f09497ebee30171d650cb3c36ab",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-22740.json.headers",
+        "bytes": 424,
+        "sha256": "6738b48efa10838d77db18a0e69ea076533a1a0d48ca548ed158b6224c9ac2eb"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22773.json",
+      "bytes": 99801,
+      "sha256": "6e95f4b41d34d7de5d9a0b3b07e7c061e671b71eb3801eff1f2e542c25f49f0a",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22773.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22773.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-22773",
+      "http_status": 200,
+      "expected_listing_bytes": 99801,
+      "etag_md5": "e80ce4f728d079705ab04c286fec2c7a",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-22773.json.headers",
+        "bytes": 423,
+        "sha256": "7f8fb7c5eaedb094db620919d3d4e8ee30b5b0781e374079b39f606cb4a8640f"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22840.json",
+      "bytes": 269184,
+      "sha256": "ca045e1ac45e8ee8e403463d9b6add51ea107fee1eadc58ed01d51715a16af48",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22840.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22840.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-22840",
+      "http_status": 200,
+      "expected_listing_bytes": 269184,
+      "etag_md5": "0fe53025e1281fe4586227b858d37e48",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-22840.json.headers",
+        "bytes": 424,
+        "sha256": "0b5b894c1042e0a9b543689e95f1aba0717d67c29c3c880dce8f065ae826abe3"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22914.json",
+      "bytes": 175380,
+      "sha256": "90c743cdf22722d88fd80145eb4f87c3c623384f0231ab48a06410f6c6db075d",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22914.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22914.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-22914",
+      "http_status": 200,
+      "expected_listing_bytes": 175380,
+      "etag_md5": "49dbe5f11c6bf6c5cec9ec4d4894b3ad",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-22914.json.headers",
+        "bytes": 424,
+        "sha256": "10200d89d1e8ba8af23a218fb25f28b9e5c567c5be8d4db672b65332ecbef2ad"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22934.json",
+      "bytes": 238766,
+      "sha256": "ea79c687d411d41fc8cd957be0228cb7891c68ebec678f20b0fdb494b44d7c55",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22934.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22934.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-22934",
+      "http_status": 200,
+      "expected_listing_bytes": 238766,
+      "etag_md5": "706d46446d020136b979cf1b9d89f6e0",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-22934.json.headers",
+        "bytes": 424,
+        "sha256": "f25b523f5c0c3499860b26fcf18e2a0cad574dc3f22448a989a930a0258b5aea"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22969.json",
+      "bytes": 243684,
+      "sha256": "04edb3068fdde05eff8d7bd5e3c30b57532aff6b4aedbf137fe302a7616513bf",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22969.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-22969.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-22969",
+      "http_status": 200,
+      "expected_listing_bytes": 243684,
+      "etag_md5": "73e90c9f8ab253b4133ec8b38eca96a2",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-22969.json.headers",
+        "bytes": 424,
+        "sha256": "9fe9b27dd6df5edc62018a522b9b4cf2d6432a8fe68fbf1606af9d4216273b70"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23021.json",
+      "bytes": 232169,
+      "sha256": "69ad49b4116407689b1d459346b097af09a9c158323eececfb68f8cf07621a1a",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23021.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23021.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-23021",
+      "http_status": 200,
+      "expected_listing_bytes": 232169,
+      "etag_md5": "17d4908260f3e56c1ab875fc231f0bc6",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-23021.json.headers",
+        "bytes": 424,
+        "sha256": "6666dbbecc7843ad3e775b28719fc11896f234c544b24052306ca1fb4801a938"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23117.json",
+      "bytes": 257762,
+      "sha256": "f50942c6f564f7455a24058584b9b5285529ae8a208a72ffa2d08bcf82d2af75",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23117.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23117.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-23117",
+      "http_status": 200,
+      "expected_listing_bytes": 257762,
+      "etag_md5": "a8b887f764dac7b08f68fa91a7b0e77e",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-23117.json.headers",
+        "bytes": 424,
+        "sha256": "60509d6a260b910cda34575266c0d0ea52842aa5a53b0eb0aa10c2ff46b38c33"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23141.json",
+      "bytes": 231157,
+      "sha256": "88afd51c05849be9872e04a4226213a780b84b15b55d68391e3ee847c8281e2b",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23141.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23141.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-23141",
+      "http_status": 200,
+      "expected_listing_bytes": 231157,
+      "etag_md5": "e64148df2c9551d81cc747c1314c8b99",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-23141.json.headers",
+        "bytes": 424,
+        "sha256": "524bd02802e99bad07efc7e91950410e08c2ad173506b27da8219b5b2e993859"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23191.json",
+      "bytes": 435880,
+      "sha256": "02692f2c4b122d41965353b7b8752d5a0d28f9cab428f23b5bec8c7b530692c6",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23191.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23191.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-23191",
+      "http_status": 200,
+      "expected_listing_bytes": 435880,
+      "etag_md5": "14f96ade46ff901077bf7258cffb971e",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-23191.json.headers",
+        "bytes": 424,
+        "sha256": "62a9056b42cb857b0480db610c9a1b757961e2be7472940b389d92c0576d0245"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23262.json",
+      "bytes": 206399,
+      "sha256": "c93e0017dc46ede7dc57cbea8b08d7ca4b0cd4d75f388c65534160a6e0ea1c02",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23262.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23262.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-23262",
+      "http_status": 200,
+      "expected_listing_bytes": 206399,
+      "etag_md5": "9539f64c46302d0d9b3718d6bd15dc66",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-23262.json.headers",
+        "bytes": 424,
+        "sha256": "9e3c66bec89acbdfc998b91eba676fbefbbd9643128bf1c076dcf8b969daa3c3"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23296.json",
+      "bytes": 211520,
+      "sha256": "fb6f9550dedcd2758d168890b21cb197efe058432bf9e5d34bc76795901b0ee4",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23296.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23296.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-23296",
+      "http_status": 200,
+      "expected_listing_bytes": 211520,
+      "etag_md5": "7e67c755d65318df65f6343eb4dc6dd7",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-23296.json.headers",
+        "bytes": 424,
+        "sha256": "6cd70c25f2e743ccdc59cdbe6c15f0afd615e45dc306b452ad990542ef6f5a5f"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23413.json",
+      "bytes": 476728,
+      "sha256": "3af05bf43af8e0b5ee0f3e12b20c42fff86a9bb37e37b5bea4244852d0ab948b",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23413.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23413.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-23413",
+      "http_status": 200,
+      "expected_listing_bytes": 476728,
+      "etag_md5": "b877d41e122ae1ed1bb3a4320ebd5c6d",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-23413.json.headers",
+        "bytes": 424,
+        "sha256": "41e0c9a83e8ef538953457fd5c4fb7ac8a43fee29e8844c41992a2fd043d5e56"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23534.json",
+      "bytes": 131354,
+      "sha256": "edb3dfa55e459b82ab07cd47bc06398ad6ed5db3d3e6630903b25828b65b410e",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23534.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23534.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-23534",
+      "http_status": 200,
+      "expected_listing_bytes": 131354,
+      "etag_md5": "b373f6e45ab829afa153709c3b752015",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-23534.json.headers",
+        "bytes": 424,
+        "sha256": "664ed8d7f31ad655408643aeef70817847cc18822c0585156045edf219ae47b3"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23560.json",
+      "bytes": 368469,
+      "sha256": "56bc698dc1c0f93712ad06ab4bb06624d2ca206d096fcf83016093b2d2d5495c",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23560.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23560.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-23560",
+      "http_status": 200,
+      "expected_listing_bytes": 368469,
+      "etag_md5": "72aa861d602bf6c7cae43517f3f0b42f",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-23560.json.headers",
+        "bytes": 424,
+        "sha256": "e6bae1f285db3217ffb432245fa3ce7da9da3de26aee571ed7aa8ea1d78f72cd"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23729.json",
+      "bytes": 361872,
+      "sha256": "c701bc1b48befcd86e42cfefa944a89e94016d42e83b93f9296827a3c91254d3",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23729.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23729.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-23729",
+      "http_status": 200,
+      "expected_listing_bytes": 361872,
+      "etag_md5": "8f7ec072de7b1bd3a3ff3d267924321d",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-23729.json.headers",
+        "bytes": 424,
+        "sha256": "afcbc116e1f83804e0188b046ea25f85320a65df14fcfd5ae507f969a8a2b659"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23808.json",
+      "bytes": 174703,
+      "sha256": "5d518a031995ce73922e84077cb1b974eb2efe419fbfb3ea5a08bcda75d3a8f8",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23808.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23808.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-23808",
+      "http_status": 200,
+      "expected_listing_bytes": 174703,
+      "etag_md5": "dc83e8cf8fc2b38557afda89197ae384",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-23808.json.headers",
+        "bytes": 424,
+        "sha256": "9398c3eee386717f2d3dffabb82c373564abbb77336d8001186f5482e2aa665d"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23824.json",
+      "bytes": 125572,
+      "sha256": "4b1322e0cbd71563391a6f21bd7191edde080e7e1cf91910b05d5ad6d1977a14",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23824.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23824.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-23824",
+      "http_status": 200,
+      "expected_listing_bytes": 125572,
+      "etag_md5": "164b5cb46405c9727fddf08a2c847495",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-23824.json.headers",
+        "bytes": 424,
+        "sha256": "45e68652140da755bb69f82cc4b4f5a0596a317122cb19bbf4747e011f482937"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23950.json",
+      "bytes": 216911,
+      "sha256": "01065dc195105b9730b69160cec74664b4581e239d7e872725aa9df444cca357",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23950.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-23950.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-23950",
+      "http_status": 200,
+      "expected_listing_bytes": 216911,
+      "etag_md5": "014150e788daa52dd60db75da3fcd065",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-23950.json.headers",
+        "bytes": 424,
+        "sha256": "6e606d2a183b6269aa7519f402284ebe9dcabc7a3d30f439f12d35683ff1aee1"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24066.json",
+      "bytes": 249896,
+      "sha256": "d03df6b437910667eb64ff3a811a2a483fb39fbebe1d5a32745a0e5299753250",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24066.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24066.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-24066",
+      "http_status": 200,
+      "expected_listing_bytes": 249896,
+      "etag_md5": "c7832407d89d89f2eba286e75e74e3d0",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-24066.json.headers",
+        "bytes": 424,
+        "sha256": "7885cf6a1345411b3423b9ace5d975a25db419e356ba0023635123238611af31"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24102.json",
+      "bytes": 180331,
+      "sha256": "15f9d048131e179784828a2190b8cea28517c6d10539b970a24b4f047512ca18",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24102.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24102.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-24102",
+      "http_status": 200,
+      "expected_listing_bytes": 180331,
+      "etag_md5": "a4c8fc176812e39a6fae659a963fb4ac",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-24102.json.headers",
+        "bytes": 424,
+        "sha256": "0321e6d2f8378fb1517d7e88025aa93c79627114ccf0336c9a3b5ca6d002dee2"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24152.json",
+      "bytes": 110659,
+      "sha256": "449863cf91ac56bd0fabca667e0954fb71412fb4bf4c58431a254180cfcf070b",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24152.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24152.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-24152",
+      "http_status": 200,
+      "expected_listing_bytes": 110659,
+      "etag_md5": "520b998c3a7011d17e0e27fcdd28932c",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-24152.json.headers",
+        "bytes": 424,
+        "sha256": "3a56e6fa30cf2a5b092692bf4268735f95fb02105c21ae5ea12f77b27d9d25aa"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24213.json",
+      "bytes": 153144,
+      "sha256": "561d190d0c60da414d853e943a3050ef2d47394add5f14acd79bc590fff7db89",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24213.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24213.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-24213",
+      "http_status": 200,
+      "expected_listing_bytes": 153144,
+      "etag_md5": "92b3f333b83826dcbbd2baf7e7ce2ef7",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-24213.json.headers",
+        "bytes": 424,
+        "sha256": "48f5e82ee91ca349d470e822a13e3367e26fada028ff70f2b3694b17ff2ae5bc"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24325.json",
+      "bytes": 327363,
+      "sha256": "672b1cd60293a7a541fd1da6f6a7db3ef3e1970c933491e92ce7ac3a0f230212",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24325.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24325.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-24325",
+      "http_status": 200,
+      "expected_listing_bytes": 327363,
+      "etag_md5": "36b1c38121edcc05c5c9910024575d75",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-24325.json.headers",
+        "bytes": 424,
+        "sha256": "8294edb4cb00ebfb5a16847661c0fcd3ba585c74f25c9fa4e531fdfa48bc7e02"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24353.json",
+      "bytes": 274444,
+      "sha256": "8570b61e8289539e0e7b845e8fcb5dc832670c19177961766f933fb9a84240db",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24353.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24353.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-24353",
+      "http_status": 200,
+      "expected_listing_bytes": 274444,
+      "etag_md5": "f614b6d6664079469388a69bde09632c",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-24353.json.headers",
+        "bytes": 424,
+        "sha256": "619f21bce0da5301089c8a64df4943c3c142b0bf487b375fb6585e2aaaefb854"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24370.json",
+      "bytes": 137265,
+      "sha256": "38ca459bbbb453a02297bae8140f07882bcdc0ca99901077a6a81aa0d483926c",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24370.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24370.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-24370",
+      "http_status": 200,
+      "expected_listing_bytes": 137265,
+      "etag_md5": "72823ee3be44b0f96c739786571f513d",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-24370.json.headers",
+        "bytes": 424,
+        "sha256": "a122a913b3e14572f73368851c5130f5f8155779659208f8450b1a62d7868da6"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24443.json",
+      "bytes": 244542,
+      "sha256": "2be4dcb900ca05cd1168fa75cd569450a171f0dfb068b798c51745db62423f3f",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24443.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24443.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-24443",
+      "http_status": 200,
+      "expected_listing_bytes": 244542,
+      "etag_md5": "93a3112d459a9da9f38502d1e22c8c62",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-24443.json.headers",
+        "bytes": 424,
+        "sha256": "82361ee36006502bc771a570a0cff159bc95e72217bb9a813575b6e1e9465cac"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24455.json",
+      "bytes": 184857,
+      "sha256": "c754e26d0d7eed50e69d15e30d4a1a3440f912480271ee34aec1b0ab00be9258",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24455.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24455.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-24455",
+      "http_status": 200,
+      "expected_listing_bytes": 184857,
+      "etag_md5": "ebec6265127508c24ad601c3f6089173",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-24455.json.headers",
+        "bytes": 424,
+        "sha256": "e636ec35b4ba94a4d930683ea5516d67fd8db47b03610a21e99ebedea96eb55e"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24539.json",
+      "bytes": 64735,
+      "sha256": "90a0cf4b3591f3ad7f5ee2e9e5eff372a4195b75f4236af365018da7cd2ce8fb",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24539.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24539.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-24539",
+      "http_status": 200,
+      "expected_listing_bytes": 64735,
+      "etag_md5": "44ddc95dc044e1489b6a46b2819a40c6",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-24539.json.headers",
+        "bytes": 423,
+        "sha256": "ad813d76936f3090518a5e47658bb9cf91010d2c6e2877b3059a2079e98c2159"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24562.json",
+      "bytes": 165971,
+      "sha256": "d7b6f30c015f3e6c6d67051ee9c21923118f88ff888f93b64d79cbfe429e322c",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24562.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24562.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-24562",
+      "http_status": 200,
+      "expected_listing_bytes": 165971,
+      "etag_md5": "1b942b56d7e1c85cbfad6417226c543a",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-24562.json.headers",
+        "bytes": 424,
+        "sha256": "ccb50d6c10a5e58ea069f2c4aa991826413197c12cbcd07d01310d369431171e"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24638.json",
+      "bytes": 217718,
+      "sha256": "8e1fea8744b2959d9bc59d19954df58bfe61f0f3fa4b202f16953daec3a7f59a",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24638.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24638.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-24638",
+      "http_status": 200,
+      "expected_listing_bytes": 217718,
+      "etag_md5": "41fd4cf9114ae2a4d6bc894430f64aef",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-24638.json.headers",
+        "bytes": 424,
+        "sha256": "cb13ca4959533d968b16a9132763977ce100c3d3af43936c6dada5269dace306"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24661.json",
+      "bytes": 243212,
+      "sha256": "bea7f3ed978388df7fead4addf0e0b29b97a87515008aee8728721c372e26c6e",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24661.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24661.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-24661",
+      "http_status": 200,
+      "expected_listing_bytes": 243212,
+      "etag_md5": "4d4b9c4946fbf8c9f29a2ad92f08e411",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-24661.json.headers",
+        "bytes": 424,
+        "sha256": "bc2e4dea50d98655f523e1dff839784e97c408b3050a3db70e55fe50b1a2cef6"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24723.json",
+      "bytes": 213106,
+      "sha256": "20dabdcd17edceef63889d7e252c03ac428b19b536fcdee283097e351753117c",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24723.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24723.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-24723",
+      "http_status": 200,
+      "expected_listing_bytes": 213106,
+      "etag_md5": "9fac89cc8e7c4af753d55e783edc9c17",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-24723.json.headers",
+        "bytes": 424,
+        "sha256": "88524a919cb995a9bf689830298ed3597fd662d36c6b555e9774701672172ed1"
+      }
+    },
+    {
+      "path": "data/raw/public/swebench_gap/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/SWEBENCH-GAP-20261023/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24909.json",
+      "bytes": 144230,
+      "sha256": "56865b4479b3464c543f8e18c8490fc2d1f319b37184e8da0080ab9245e1763c",
+      "source": "https://swe-bench-submissions.s3.amazonaws.com/test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24909.json",
+      "s3_key": "test/20251219_sonar-foundation-agent_claude-opus-4-5/trajs/sympy__sympy-24909.json",
+      "group": "test/20251219_sonar-foundation-agent_claude-opus-4-5",
+      "task": "sympy__sympy-24909",
+      "http_status": 200,
+      "expected_listing_bytes": 144230,
+      "etag_md5": "0995f7622539dd923900768404be4810",
+      "headers": {
+        "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/source_metadata/http/sympy__sympy-24909.json.headers",
+        "bytes": 424,
+        "sha256": "3adc00836f6b5b2ee210a87465cd35f81889022a09ddb3c653e97214e6d590e2"
+      }
+    }
+  ],
+  "count": 147,
+  "bytes": 39377587,
+  "verification": "HTTP 200, old listing bytes, live single-part S3 ETag MD5, local SHA256, JSON parse",
+  "source_boundary": "Git metadata pinned; public S3 objects are mutable. Live ETag is not a historical upstream SHA256.",
+  "old_raw_unchanged": true,
+  "agent_or_benchmark_executed": false
+}

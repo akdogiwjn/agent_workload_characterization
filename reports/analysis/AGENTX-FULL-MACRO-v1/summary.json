@@ -1,0 +1,563 @@
+{
+  "schema": "agentx-full-macro-v1",
+  "created_at_utc": "2026-10-22T15:46:01.281845+00:00",
+  "status": "PASS",
+  "full": {
+    "trace_count": 393,
+    "main_request_count": 56798,
+    "subagent_inner_request_count": 42029,
+    "total_model_request_count": 98827,
+    "subagent_group_count": 1697,
+    "sessions_with_subagents": 175,
+    "total_input_tokens_reconstructed": 21635381376,
+    "total_output_tokens": 106474498,
+    "input_missing_or_invalid": 0,
+    "output_missing_or_invalid": 0,
+    "requests_above_256k_input_plus_output": 30561,
+    "requests_at_256k_input_plus_output": 0,
+    "models_as_saved": {
+      "claude-opus-4-8": 62108,
+      "claude-haiku-4-5-20251001": 7973,
+      "claude-fable-5": 16192,
+      "claude-opus-4-7": 6419,
+      "claude-opus-4-6": 5452,
+      "claude-sonnet-4-6": 576,
+      "claude-sonnet-4-5": 107
+    },
+    "request_types": {
+      "s": 56432,
+      "n": 42395
+    },
+    "request_field_presence": {
+      "t": 98827,
+      "model": 98827,
+      "in": 98827,
+      "out": 98827,
+      "hash_ids": 98827,
+      "api_time": 98827,
+      "type": 98827,
+      "ttft": 56432,
+      "think_time": 98434
+    },
+    "group_field_presence": {
+      "t": 1697,
+      "type": 1697,
+      "agent_id": 1697,
+      "subagent_type": 1697,
+      "duration_ms": 1697,
+      "total_tokens": 1697,
+      "tool_use_count": 1697,
+      "status": 1697,
+      "models": 1697
+    },
+    "group_nonnull_fields": {
+      "t": 1697,
+      "type": 1697,
+      "agent_id": 1697,
+      "subagent_type": 1697,
+      "duration_ms": 1697,
+      "total_tokens": 1697,
+      "status": 1697,
+      "models": 1697
+    },
+    "group_status_as_saved": {
+      "completed": 1697
+    },
+    "group_field_distributions": {
+      "duration_ms": {
+        "n": 1697,
+        "missing_or_invalid": 0,
+        "min": 2704,
+        "q1": 68510.0,
+        "median": 136141.0,
+        "q3": 290505.0,
+        "p95": 1195541.3999999969,
+        "max": 85251873,
+        "iqr": 221995.0
+      },
+      "total_tokens": {
+        "n": 1697,
+        "missing_or_invalid": 0,
+        "min": 27648,
+        "q1": 315099.0,
+        "median": 706873.0,
+        "q3": 1650543.0,
+        "p95": 7041685.399999998,
+        "max": 202208209,
+        "iqr": 1335444.0
+      },
+      "tool_use_count": {
+        "n": 0,
+        "missing_or_invalid": 1697,
+        "min": null,
+        "q1": null,
+        "median": null,
+        "q3": null,
+        "p95": null,
+        "max": null,
+        "iqr": null
+      }
+    },
+    "per_session_group_count": {
+      "n": 393,
+      "missing_or_invalid": 0,
+      "min": 0,
+      "q1": 0.0,
+      "median": 0.0,
+      "q3": 3.0,
+      "p95": 19.0,
+      "max": 153,
+      "iqr": 3.0
+    },
+    "request_distributions": {
+      "in": {
+        "n": 98827,
+        "missing_or_invalid": 0,
+        "min": 128,
+        "q1": 64768.0,
+        "median": 142016.0,
+        "q3": 310464.0,
+        "p95": 682880.0,
+        "max": 989824,
+        "iqr": 245696.0
+      },
+      "out": {
+        "n": 98827,
+        "missing_or_invalid": 0,
+        "min": 0,
+        "q1": 192.0,
+        "median": 444.0,
+        "q3": 1105.0,
+        "p95": 4298.0,
+        "max": 59903,
+        "iqr": 913.0
+      },
+      "api_time": {
+        "n": 98827,
+        "missing_or_invalid": 0,
+        "min": 0.656,
+        "q1": 3.712,
+        "median": 6.652,
+        "q3": 13.797,
+        "p95": 40.78389999999998,
+        "max": 720.213,
+        "iqr": 10.085
+      },
+      "ttft": {
+        "n": 56432,
+        "missing_or_invalid": 42395,
+        "min": 0.438,
+        "q1": 1.869,
+        "median": 2.636,
+        "q3": 4.193,
+        "p95": 9.703899999999994,
+        "max": 116.482,
+        "iqr": 2.324
+      },
+      "think_time": {
+        "n": 98434,
+        "missing_or_invalid": 393,
+        "min": 0.0,
+        "q1": 0.0,
+        "median": 2.2840000000001055,
+        "q3": 6.229000000000042,
+        "p95": 161.3722000000108,
+        "max": 491921.512,
+        "iqr": 6.229000000000042
+      }
+    },
+    "per_session_request_count": {
+      "n": 393,
+      "missing_or_invalid": 0,
+      "min": 20,
+      "q1": 40.0,
+      "median": 86.0,
+      "q3": 233.0,
+      "p95": 976.9999999999983,
+      "max": 4114,
+      "iqr": 193.0
+    },
+    "main_stream_observed_span_s": {
+      "n": 393,
+      "missing_or_invalid": 0,
+      "min": 5.911,
+      "q1": 2567.4640000000004,
+      "median": 10135.177,
+      "q3": 55672.875,
+      "p95": 314710.3449999999,
+      "max": 917243.082,
+      "iqr": 53105.411
+    },
+    "recorded_adjacent_stream_gap_s": {
+      "n": 96737,
+      "missing_or_invalid": 0,
+      "min": -384.36599999999453,
+      "q1": 1.2870000000000346,
+      "median": 2.94800000000032,
+      "q3": 7.080000000001746,
+      "p95": 181.1849999999982,
+      "max": 491921.512,
+      "iqr": 5.793000000001712
+    },
+    "negative_gap_pairs": 6409,
+    "hash_input_check": {
+      "checked": 98827,
+      "mismatches": 0
+    },
+    "same_stream_prefix": {
+      "adjacent_comparisons": 96737,
+      "shared_prefix_blocks_sum": 323588385,
+      "shared_blocks_per_pair": {
+        "n": 96737,
+        "missing_or_invalid": 0,
+        "min": 0,
+        "q1": 917.0,
+        "median": 2185.0,
+        "q3": 4827.0,
+        "p95": 10641.0,
+        "max": 15442,
+        "iqr": 3910.0
+      }
+    },
+    "errors": []
+  },
+  "capped_256k": {
+    "trace_count": 393,
+    "main_request_count": 28444,
+    "subagent_inner_request_count": 39822,
+    "total_model_request_count": 68266,
+    "subagent_group_count": 1697,
+    "sessions_with_subagents": 175,
+    "total_input_tokens_reconstructed": 6891228864,
+    "total_output_tokens": 58728807,
+    "input_missing_or_invalid": 0,
+    "output_missing_or_invalid": 0,
+    "requests_above_256k_input_plus_output": 0,
+    "requests_at_256k_input_plus_output": 0,
+    "models_as_saved": {
+      "claude-opus-4-8": 35904,
+      "claude-haiku-4-5-20251001": 7973,
+      "claude-fable-5": 12176,
+      "claude-opus-4-7": 6080,
+      "claude-opus-4-6": 5450,
+      "claude-sonnet-4-6": 576,
+      "claude-sonnet-4-5": 107
+    },
+    "request_types": {
+      "s": 28173,
+      "n": 40093
+    },
+    "request_field_presence": {
+      "t": 68266,
+      "model": 68266,
+      "in": 68266,
+      "out": 68266,
+      "hash_ids": 68266,
+      "api_time": 68266,
+      "type": 68266,
+      "ttft": 28173,
+      "think_time": 67875
+    },
+    "group_field_presence": {
+      "t": 1697,
+      "type": 1697,
+      "agent_id": 1697,
+      "subagent_type": 1697,
+      "duration_ms": 1697,
+      "total_tokens": 1697,
+      "tool_use_count": 1697,
+      "status": 1697,
+      "models": 1697
+    },
+    "group_nonnull_fields": {
+      "t": 1697,
+      "type": 1697,
+      "agent_id": 1697,
+      "subagent_type": 1697,
+      "duration_ms": 1697,
+      "total_tokens": 1697,
+      "status": 1697,
+      "models": 1697
+    },
+    "group_status_as_saved": {
+      "completed": 1697
+    },
+    "group_field_distributions": {
+      "duration_ms": {
+        "n": 1697,
+        "missing_or_invalid": 0,
+        "min": 2704,
+        "q1": 68876.0,
+        "median": 136024.0,
+        "q3": 285112.0,
+        "p95": 1107890.7999999996,
+        "max": 84974254,
+        "iqr": 216236.0
+      },
+      "total_tokens": {
+        "n": 1697,
+        "missing_or_invalid": 0,
+        "min": 27648,
+        "q1": 315099.0,
+        "median": 706585.0,
+        "q3": 1625186.0,
+        "p95": 5881417.999999987,
+        "max": 129265924,
+        "iqr": 1310087.0
+      },
+      "tool_use_count": {
+        "n": 0,
+        "missing_or_invalid": 1697,
+        "min": null,
+        "q1": null,
+        "median": null,
+        "q3": null,
+        "p95": null,
+        "max": null,
+        "iqr": null
+      }
+    },
+    "per_session_group_count": {
+      "n": 393,
+      "missing_or_invalid": 0,
+      "min": 0,
+      "q1": 0.0,
+      "median": 0.0,
+      "q3": 3.0,
+      "p95": 19.0,
+      "max": 153,
+      "iqr": 3.0
+    },
+    "request_distributions": {
+      "in": {
+        "n": 68266,
+        "missing_or_invalid": 0,
+        "min": 128,
+        "q1": 47360.0,
+        "median": 88768.0,
+        "q3": 148800.0,
+        "p95": 228224.0,
+        "max": 255808,
+        "iqr": 101440.0
+      },
+      "out": {
+        "n": 68266,
+        "missing_or_invalid": 0,
+        "min": 0,
+        "q1": 172.0,
+        "median": 376.0,
+        "q3": 849.0,
+        "p95": 3262.75,
+        "max": 59903,
+        "iqr": 677.0
+      },
+      "api_time": {
+        "n": 68266,
+        "missing_or_invalid": 0,
+        "min": 0.656,
+        "q1": 3.249,
+        "median": 5.683,
+        "q3": 11.38975,
+        "p95": 33.627250000000004,
+        "max": 720.213,
+        "iqr": 8.140749999999999
+      },
+      "ttft": {
+        "n": 28173,
+        "missing_or_invalid": 40093,
+        "min": 0.438,
+        "q1": 1.57,
+        "median": 2.191,
+        "q3": 3.731,
+        "p95": 7.467999999999989,
+        "max": 96.986,
+        "iqr": 2.1609999999999996
+      },
+      "think_time": {
+        "n": 67875,
+        "missing_or_invalid": 391,
+        "min": 0.0,
+        "q1": 0.0,
+        "median": 1.171999999999997,
+        "q3": 2.634999999999877,
+        "p95": 71.18219999999963,
+        "max": 491921.512,
+        "iqr": 2.634999999999877
+      }
+    },
+    "per_session_request_count": {
+      "n": 393,
+      "missing_or_invalid": 0,
+      "min": 7,
+      "q1": 38.0,
+      "median": 70.0,
+      "q3": 144.0,
+      "p95": 744.5999999999998,
+      "max": 3551,
+      "iqr": 106.0
+    },
+    "main_stream_observed_span_s": {
+      "n": 393,
+      "missing_or_invalid": 0,
+      "min": 5.911,
+      "q1": 2006.1029999999998,
+      "median": 5821.494,
+      "q3": 29755.342,
+      "p95": 243712.88759999967,
+      "max": 917243.082,
+      "iqr": 27749.239
+    },
+    "recorded_adjacent_stream_gap_s": {
+      "n": 66176,
+      "missing_or_invalid": 0,
+      "min": -384.36599999999453,
+      "q1": 0.9210000000239233,
+      "median": 1.8220000000292202,
+      "q3": 3.4082500000022264,
+      "p95": 120.8722499999999,
+      "max": 491921.512,
+      "iqr": 2.487249999978303
+    },
+    "negative_gap_pairs": 5964,
+    "hash_input_check": {
+      "checked": 68266,
+      "mismatches": 0
+    },
+    "same_stream_prefix": {
+      "adjacent_comparisons": 66176,
+      "shared_prefix_blocks_sum": 98469393,
+      "shared_blocks_per_pair": {
+        "n": 66176,
+        "missing_or_invalid": 0,
+        "min": 0,
+        "q1": 617.0,
+        "median": 1332.0,
+        "q3": 2300.0,
+        "p95": 3540.0,
+        "max": 3996,
+        "iqr": 1683.0
+      }
+    },
+    "errors": []
+  },
+  "source_declared_validation": {
+    "full": [
+      {
+        "field": "traces",
+        "declared": 393,
+        "observed": 393,
+        "matches": true
+      },
+      {
+        "field": "main_turns",
+        "declared": 56798,
+        "observed": 56798,
+        "matches": true
+      },
+      {
+        "field": "subagent_groups",
+        "declared": 1697,
+        "observed": 1697,
+        "matches": true
+      },
+      {
+        "field": "subagent_inner_requests",
+        "declared": 42029,
+        "observed": 42029,
+        "matches": true
+      },
+      {
+        "field": "total_model_requests",
+        "declared": 98827,
+        "observed": 98827,
+        "matches": true
+      },
+      {
+        "field": "total_input_tokens",
+        "declared": 21635381376,
+        "observed": 21635381376,
+        "matches": true
+      },
+      {
+        "field": "total_output_tokens",
+        "declared": 106474498,
+        "observed": 106474498,
+        "matches": true
+      }
+    ],
+    "capped_256k": [
+      {
+        "field": "traces",
+        "declared": 393,
+        "observed": 393,
+        "matches": true
+      },
+      {
+        "field": "main_turns",
+        "declared": 28444,
+        "observed": 28444,
+        "matches": true
+      },
+      {
+        "field": "subagent_groups",
+        "declared": 1697,
+        "observed": 1697,
+        "matches": true
+      },
+      {
+        "field": "subagent_inner_requests",
+        "declared": 39822,
+        "observed": 39822,
+        "matches": true
+      },
+      {
+        "field": "total_model_requests",
+        "declared": 68266,
+        "observed": 68266,
+        "matches": true
+      },
+      {
+        "field": "total_input_tokens",
+        "declared": 6891228864,
+        "observed": 6891228864,
+        "matches": true
+      },
+      {
+        "field": "total_output_tokens",
+        "declared": 58728807,
+        "observed": 58728807,
+        "matches": true
+      }
+    ]
+  },
+  "cap_rule_count_matches": true,
+  "cross_variant_validation": "PASS",
+  "comparison": {
+    "match_rule": "same session + native agent path + SHA256(all request fields except t); multiplicity preserved",
+    "timestamp_rule": "unique payload matches only; check uniform per-session offset to 1e-6 seconds; ambiguous pairs not assigned",
+    "shared_session_ids": 393,
+    "full_only_session_ids": [],
+    "capped_only_session_ids": [],
+    "matched_payloads": 68266,
+    "full_only_payloads": 30561,
+    "capped_only_payloads": 0,
+    "sessions_with_uniform_offset": 393,
+    "sessions_with_nonzero_offset": 2
+  },
+  "semantics": {
+    "in": "reconstructed 64-token hash-block count, not exact tokenizer count or billing",
+    "time": "source-relative t; union/gap computed inside individual session+agent stream only; no cross-session/parent-child time union",
+    "gaps": "adjacent saved request interval gaps; not identified tool latency or thinking time; negative values retained",
+    "matching": "same session + native agent path + SHA256(all request fields except t); multiplicity preserved",
+    "prefix": "adjacent saved requests inside the same session+agent stream only; shared hash blocks are not measured cache hits or savings",
+    "group_fields": "saved duration_ms/total_tokens/tool_use_count; distributions only, not added to leaf request totals or interpreted as business execution",
+    "unknowns": [
+      "business tool names/arguments/results",
+      "task outcome",
+      "local CPU/memory/IO/network",
+      "billable cost",
+      "provider inference time"
+    ],
+    "cohort": "same selected opt-in sessions; overlapping variants, not independent populations or all production sessions"
+  }
+}

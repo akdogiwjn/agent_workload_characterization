@@ -1,6 +1,6 @@
 {
   "schema": "awc-project-state-v1",
-  "updated_at": "2026-10-20",
+  "updated_at": "2026-10-23",
   "execution_authorization": "none_this_state_is_not_an_approval",
   "local_three_class_repeat_01": {
     "status": "stopped_after_one_excel_due_batch_acceptance_key_error",
@@ -112,9 +112,21 @@
     "batch_wall_s": 1374.0075470150914,
     "within_9h_batch_limit": true,
     "task_repeat_counts": {
-      "Coding": {"django__django-16485": 3, "astropy__astropy-13398": 3, "astropy__astropy-13236": 3},
-      "Office": {"atomic__excel_001_budget_bucket_totals_seed": 3, "atomic__ppt_008_bullet_editing_seed": 3, "atomic__pdf_004_audit_pages_reorder_seed": 3},
-      "Assistant": {"send_message_with_contact_content_cellular_off": 3, "add_reminder_content_and_week_delta_and_time": 3, "modify_contact_with_message_recency_multiple_user_turn": 3}
+      "Coding": {
+        "django__django-16485": 3,
+        "astropy__astropy-13398": 3,
+        "astropy__astropy-13236": 3
+      },
+      "Office": {
+        "atomic__excel_001_budget_bucket_totals_seed": 3,
+        "atomic__ppt_008_bullet_editing_seed": 3,
+        "atomic__pdf_004_audit_pages_reorder_seed": 3
+      },
+      "Assistant": {
+        "send_message_with_contact_content_cellular_off": 3,
+        "add_reminder_content_and_week_delta_and_time": 3,
+        "modify_contact_with_message_recency_multiple_user_turn": 3
+      }
     },
     "cumulative_started_runs": 35,
     "intended_task_round_slots": 27,
@@ -1054,6 +1066,373 @@
       "html_updated": false,
       "gates_unchanged": true,
       "cpu_02_replay_unchanged": true
+    },
+    "agentx_full_macro_analysis": {
+      "status": "offline_full_corpus_macro_and_256k_comparison_complete",
+      "report": "reports/analysis/AGENTX-FULL-MACRO-v1/summary.md",
+      "manifest": "reports/analysis/AGENTX-FULL-MACRO-v1/manifest.json",
+      "acquisition": "data/catalog/public_trace_acquisition/AGENTX-FULL-20261022/manifest.json",
+      "source": "published_filtered_proxy_request_flow_not_original_business_tool_logs",
+      "dataset_id": "semianalysisai/cc-traces-weka-062126",
+      "revision": "23f152f6f0f9399a85901b89a6458def0ef16729",
+      "trace_count": 393,
+      "model_request_count": 98827,
+      "main_requests": 56798,
+      "subagent_requests": 42029,
+      "subagent_groups": 1697,
+      "same_session_ids_as_256k": 393,
+      "matched_request_payloads": 68266,
+      "full_only_request_payloads": 30561,
+      "capped_only_request_payloads": 0,
+      "cap_rule_count_matches": true,
+      "source_declared_stats_checks_passed": 14,
+      "directed_tests_passed": 8,
+      "business_tool_details": "unavailable; no original arguments/results; group tool_use_count nonnull 0/1697",
+      "resource_evidence": false,
+      "analysis_only": true,
+      "agent_or_model_executed": false,
+      "historical_reports_preserved": true,
+      "gates_cpu02_replay_unchanged": true,
+      "html_updated": false
+    },
+    "osworld_task_behavior_analysis_v4": {
+      "status": "offline_command_static_parsing_v4_complete_with_explicit_unknowns",
+      "report": "reports/analysis/OSWORLD-task-behavior-v4/summary.md",
+      "findings": "reports/analysis/OSWORLD-task-behavior-v4/findings.md",
+      "remaining_unknown_review": "reports/analysis/OSWORLD-task-behavior-v4/remaining_unknown_review.md",
+      "manifest": "reports/analysis/OSWORLD-task-behavior-v4/manifest.json",
+      "findings_manifest": "reports/analysis/OSWORLD-task-behavior-v4/findings-manifest.json",
+      "review_manifest": "reports/analysis/OSWORLD-task-behavior-v4/review-manifest.json",
+      "verification": "reports/analysis/OSWORLD-task-behavior-v4/verification.json",
+      "trajectory_count": 755,
+      "task_semantics_count": 108,
+      "model_count": 7,
+      "command_record_count": 201050,
+      "v3_supported_source_calls": 3352172,
+      "v4_supported_source_calls": 3792705,
+      "gpt_55_source_calls": 114995,
+      "gpt_56_source_calls": 101247,
+      "qwen_source_calls": 237411,
+      "native_v3_counts_and_sequences_preserved": true,
+      "result_reward_done_preserved": true,
+      "batch_protocol_gpt_56_incomplete_or_ambiguous_groups": 14,
+      "unknown_source_markers_not_counted_as_gui_calls": {
+        "MiniMax-M3": {
+          "DONE": 82,
+          "ASK_USER": 26,
+          "FAIL": 4
+        },
+        "claude-opus-4-7": {
+          "ASK_USER": 18
+        },
+        "claude-sonnet-4-6-max": {
+          "ASK_USER": 46
+        },
+        "claude-sonnet-4-6-medium": {
+          "ASK_USER": 2
+        },
+        "gpt-5.5": {
+          "ASK_USER": 103
+        },
+        "gpt-5.6": {
+          "ASK_USER": 1
+        },
+        "qwen3.7": {
+          "DONE": 92,
+          "WAIT": 4265,
+          "ASK_USER": 9,
+          "FAIL": 1
+        }
+      },
+      "directed_tests_passed": 15,
+      "frozen_evidence_checks_passed": 2309,
+      "remaining_limits": [
+        "unsupported control flow/assignment remains boundary",
+        "native and command-source denominators separate",
+        "no execution/duration/resource claims",
+        "historical task version binding unknown"
+      ],
+      "analysis_code": [
+        "scripts/osworld_static_actions_v4.py",
+        "scripts/osworld_task_behavior_v4.py",
+        "scripts/osworld_v4_findings.py"
+      ],
+      "offline_only": true,
+      "agent_or_model_executed": false,
+      "raw_and_v1_v2_v3_preserved": true,
+      "html_updated": false,
+      "swebench_next_item_started": false,
+      "gates_cpu02_replay_unchanged": true
+    },
+    "swebench_coverage_results_analysis": {
+      "status": "fixed_sonar_gap_completed_coverage_rechecked_publication_instance_results_linked_with_source_limits",
+      "report": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/summary.md",
+      "findings": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/findings.md",
+      "manifest": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/manifest.json",
+      "findings_manifest": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/findings-manifest.json",
+      "verification": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/verification.json",
+      "acquisition_manifest": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/manifest.json",
+      "original_objects": 19876,
+      "new_objects": 147,
+      "objects": 20023,
+      "submission_groups": 41,
+      "sonar_cumulative_objects": 2294,
+      "sonar_fixed_listing_exact_task_and_size_set_verified": true,
+      "new_payload_bytes": 39377587,
+      "distinct_task_ids_before": 2506,
+      "distinct_task_ids_after": 2594,
+      "group_instance_keys": 19514,
+      "coverage_status_counts": {
+        "actions_extracted": 12656,
+        "process_partial_or_ambiguous": 6054,
+        "companion_artifact": 1313
+      },
+      "nonaction_objects_rechecked_with_frozen_parser": 7367,
+      "nonaction_classification_changes": 0,
+      "evaluation_groups_available": 39,
+      "evaluation_groups_missing_in_fixed_local_index": [
+        "20250615_agentless_mindlink",
+        "lite/20251009_MAYA_claude-sonnet-4-5-20250929"
+      ],
+      "evaluation_status_instance_counts": {
+        "listed_other_saved_fields": 1747,
+        "listed_resolved": 8371,
+        "not_listed_in_saved_fields": 8730,
+        "evaluation_file_missing": 666
+      },
+      "original_subset_selection_preserved": true,
+      "original_subset_links": 90,
+      "behavior_strata": 77,
+      "noninstance_objects_not_forcibly_joined": 509,
+      "instances_without_behavior_rows_not_filled_zero": 6358,
+      "published_duplicate_result_entries_preserved_and_membership_deduplicated": 4,
+      "directed_tests_passed": 11,
+      "distinct_evidence_files_verified": 20282,
+      "historical_report_outputs_verified": 13,
+      "remaining_limits": [
+        "unattempted public submission groups outside these 41",
+        "no original CPU/memory/IO data",
+        "missing result publications for two groups",
+        "unlisted result IDs remain unknown",
+        "no attempt/patch-level alignment",
+        "saved order not execution order; tool results without IDs not position-paired"
+      ],
+      "analysis_code": [
+        "scripts/swebench_coverage_results.py",
+        "scripts/swebench_coverage_findings.py"
+      ],
+      "source_boundary": "fixed Git metadata; S3 mutable, live ETag does not establish historical object SHA256",
+      "evaluation_boundary": "publication split/submission/instance membership only; exact attempt/patch unverified; nonmembership never failed",
+      "download_and_offline_analysis_only": true,
+      "agent_or_model_or_verifier_executed": false,
+      "old_raw_and_reports_preserved": true,
+      "html_updated": false,
+      "hepm_next_item_started": false,
+      "gates_cpu02_replay_unchanged": true
+    },
+    "swebench_instance_evaluation_analysis": {
+      "status": "all_registered_public_log_namespaces_exhausted_available_instance_results_acquired_analyzed_source_gaps_documented",
+      "supersedes_current_result_linking_entry": "swebench_coverage_results_analysis",
+      "report": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/summary.md",
+      "summary": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/reviewed_summary.json",
+      "analysis_manifest": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/manifest.json",
+      "review_manifest": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/review-manifest.json",
+      "verification": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/verification.json",
+      "remaining_source_gaps": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/remaining_source_gaps.csv",
+      "conflicting_results": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/conflicting_results.csv",
+      "acquisition_manifest": "data/catalog/public_trace_acquisition/SWEBENCH-INSTANCE-RESULTS-20261023/manifest.json",
+      "additional_source_manifest": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/additional-source-manifest.json",
+      "submission_groups": 41,
+      "complete_log_listing_pages": 81,
+      "groups_with_available_evaluation_artifacts": 40,
+      "new_evaluation_and_companion_files": 20098,
+      "new_payload_bytes": 510938617,
+      "instance_report_files": 18306,
+      "legacy_evaluation_logs": 1716,
+      "prediction_files": 36,
+      "diagnostic_logs": 39,
+      "additional_nonempty_test_output_files": 1,
+      "raw_zero_byte_report_files": 75,
+      "registered_trace_objects_unchanged": 20023,
+      "trace_group_instance_keys": 19514,
+      "distinct_task_ids_corrected": 2294,
+      "kgcompass_native_task_id_corrections": 300,
+      "outcomes": {
+        "legacy_completed_not_resolved": 1147,
+        "resolved": 8661,
+        "evaluation_stage_failure": 103,
+        "no_generation": 400,
+        "prediction_record_absent": 1,
+        "unresolved": 8543,
+        "conflicting_published_results": 5,
+        "evaluation_logs_missing": 26,
+        "prediction_present_result_missing": 105,
+        "public_evaluation_artifacts_absent": 368,
+        "empty_prediction": 81,
+        "invalid_instance_report": 74
+      },
+      "original_8730_cohort_now": {
+        "prediction_record_absent": 1,
+        "unresolved": 8476,
+        "prediction_present_result_missing": 27,
+        "public_evaluation_artifacts_absent": 2,
+        "invalid_instance_report": 74,
+        "evaluation_stage_failure": 1,
+        "resolved": 140,
+        "no_generation": 9
+      },
+      "original_two_missing_summary_groups_now": {
+        "public_evaluation_artifacts_absent": 366,
+        "resolved": 155,
+        "prediction_present_result_missing": 78,
+        "unresolved": 67
+      },
+      "maya": {
+        "resolved": 155,
+        "prediction_present_result_missing": 78,
+        "unresolved": 67
+      },
+      "mindlink": {
+        "public_evaluation_artifacts_absent": 366
+      },
+      "source_conflicts": 5,
+      "native_patch_prediction_comparison": {
+        "patch_comparison_unavailable": 2805,
+        "exact_patch_bytes_match": 289
+      },
+      "original_subset90_selection_preserved": true,
+      "behavior_strata": 103,
+      "directed_tests_passed": 18,
+      "distinct_evidence_files_verified": 40820,
+      "previous_report_outputs_verified": 22,
+      "analysis_code": [
+        "scripts/swebench_instance_results.py",
+        "scripts/swebench_instance_result_review.py"
+      ],
+      "remaining_limits": [
+        "74 empty reports and 30 absent reports in original 8730 cohort",
+        "MAYA 78 result files absent; Mindlink 366 have no public evaluation artifacts in registered namespace",
+        "5 explicit summary/report conflicts",
+        "fixed Git metadata and current mutable S3 not one immutable historical snapshot",
+        "exact attempt and patch identity not universally established; no resource evidence"
+      ],
+      "download_and_offline_analysis_only": true,
+      "agent_model_patch_benchmark_or_verifier_executed": false,
+      "old_raw_and_reports_preserved": true,
+      "html_updated": false,
+      "hepm_next_item_started": false,
+      "gates_cpu02_replay_unchanged": true
+    },
+    "toolsandbox_hepm_behavior_review_v3": {
+      "status": "registered_offline_tool_behavior_and_source_evidence_review_complete",
+      "report": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v3/summary.md",
+      "summary": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v3/summary.json",
+      "manifest": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v3/manifest.json",
+      "verification": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v3/verification.json",
+      "recovered_identities": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v3/recovered_tool_identities.csv",
+      "trajectory_count": 414,
+      "groups": 2,
+      "calls": 2021,
+      "paired_returns": 2021,
+      "tool_execution_errors": 304,
+      "native_request_ast_bindings": 2021,
+      "clean_tool_trace_agreements": 1717,
+      "unknown_native_identities_recovered": 24,
+      "activity_only_native_identities_recovered": 2,
+      "remaining_unknown_agent_tool_identities": 0,
+      "declared_native_tools": 35,
+      "observed_agent_native_tools": 33,
+      "user_end_request_trajectories": 406,
+      "user_end_result_trajectories": 402,
+      "user_end_requests_without_saved_results": 4,
+      "no_user_end_request": 8,
+      "saved_active_trajectories": 12,
+      "agent_end_calls": 0,
+      "agent_termination_reason": "not recorded; saved state/request/return evidence is complete as available",
+      "input_and_code_files_verified": 841,
+      "directed_tests_passed": 8,
+      "analysis_code": "scripts/toolsandbox_hepm_review_v3.py",
+      "tests": "tests/test_toolsandbox_hepm_review_v3.py",
+      "remaining_source_limits": [
+        "two different source git_sha values and local changes; no graph causal comparison",
+        "no universal agent termination reason, timing, token usage or resource data"
+      ],
+      "dataset_code_agent_model_benchmark_or_verifier_executed": false,
+      "old_raw_and_v1_v2_preserved": true,
+      "swebench_previous_task_complete": true,
+      "html_updated": false,
+      "gates_cpu02_replay_unchanged": true
+    },
+    "swe_rebench_behavior_review_v3": {
+      "status": "selected_corpus_integrity_protocol_behavior_and_source_result_review_complete",
+      "report": "reports/analysis/SWE-REBENCH-behavior-v3/findings.md",
+      "detailed_report": "reports/analysis/SWE-REBENCH-behavior-v3/summary.md",
+      "summary": "reports/analysis/SWE-REBENCH-behavior-v3/reviewed_summary.json",
+      "analysis_manifest": "reports/analysis/SWE-REBENCH-behavior-v3/manifest.json",
+      "protocol_manifest": "reports/analysis/SWE-REBENCH-behavior-v3/review-manifest.json",
+      "tail_audit_manifest": "reports/analysis/SWE-REBENCH-behavior-v3/tail-manifest.json",
+      "verification": "reports/analysis/SWE-REBENCH-behavior-v3/final-verification.json",
+      "source": "third_party_normalized_corpus_without_patches",
+      "revision": "cdae27cdd16673f0c682871ad55d325f24cc7020",
+      "shards": 85,
+      "trajectories": 9435,
+      "tasks": 111,
+      "participants": 17,
+      "runs_per_participant": 5,
+      "compressed_and_decompressed_hashes_verified": true,
+      "saved_tool_call_events": 598148,
+      "saved_tool_result_events": 616980,
+      "unique_id_call_result_pairs": 589061,
+      "no_id_reports_of_no_tool_invocation": 27059,
+      "no_id_batch_extraction_errors": 860,
+      "candidate_ids_in_batch_extraction_errors": 1875,
+      "classified_submit_source_requests_without_return": 7201,
+      "complex_last_request_submit_text_and_exit_field_audited": 11,
+      "call_and_result_difference_fully_accounted": true,
+      "new_position_based_execution_pairs": 0,
+      "junie_trajectories": 555,
+      "junie_standard_tool_call_events": 0,
+      "junie_saved_agent_steps": 31449,
+      "junie_source_usage_tool_call_counts_equal_saved_steps": 555,
+      "evaluation_status_counts": {
+        "resolved": 4751,
+        "failed": 4683,
+        "skipped": 1
+      },
+      "evaluation_internal_consistency_issues": 0,
+      "operation_semantics": "reuse frozen PUBLIC-TRACE-OPERATIONS-v3; requests with unique-ID results also reported separately",
+      "source_truncated_results": 4092,
+      "source_omitted_cache_results": 32,
+      "source_patches_included": false,
+      "directed_tests_passed": 12,
+      "analysis_code": [
+        "scripts/swe_rebench_review_v3.py",
+        "scripts/swe_rebench_protocol_details.py",
+        "scripts/swe_rebench_tail_audit.py"
+      ],
+      "remaining_source_limits": [
+        "normalized saved requests and errors do not universally prove execution",
+        "Junie agent_step summaries do not provide native call/return IDs",
+        "no patches, local resource sampling, reliable tool duration or billing evidence"
+      ],
+      "old_raw_v1_v2_and_public_operations_v3_preserved": true,
+      "dataset_agent_model_command_or_benchmark_executed": false,
+      "html_updated": false,
+      "gates_cpu02_replay_unchanged": true
+    },
+    "public_dataset_closeout_20261023": {
+      "status": "complete_with_explicit_source_limits",
+      "report": "reports/analysis/PUBLIC-DATASET-CLOSEOUT-20261023/summary.md",
+      "verification": "reports/analysis/PUBLIC-DATASET-CLOSEOUT-20261023/verification.json",
+      "manifest": "reports/analysis/PUBLIC-DATASET-CLOSEOUT-20261023/manifest.json",
+      "unique_path_hash_checks": 64062,
+      "manifest_record_checks": 166322,
+      "directed_and_related_regression_tests_passed": 79,
+      "partial_download_files_found": 0,
+      "project_files_deleted": 0,
+      "video_changes_included": false,
+      "historical_html_and_synthesis_refreshed": false,
+      "raw_and_ignored_derived_data_retained_locally": true
     }
   },
   "docops_office_repeat_01": {
@@ -1348,7 +1727,10 @@
   },
   "public_summary": [
     "当前范围：本地单任务CPU、内存、磁盘I/O与占用、网络、时长、工具/软件统计和过程图；模型用量、阶段/错误、环境和采样质量一并记录。GPU、热点/PMU/微架构/优化不必交，Replay/并发仅可选。",
-    "公开操作和软件汇总v3已完成限定分析：SWE-rebench 9,435轨迹，SWE-bench 19,876对象/41组；OSWorld 755模型×任务/108任务，H-EPM 414轨迹，AgentX/Applied为宏观证据。部分语义和软件运行身份未知，来源不混算分母。",
+    "公开trace已完成限定操作/软件汇总v3：SWE-rebench 9,435轨迹、SWE-bench现登记20,023对象/41组（原v3为19,876，后补147）、OSWorld 755模型×任务记录/108任务（命令解析扩展至v4，原生/源码分层）、H-EPM 414轨迹；AgentX Full/256k及Applied提供宏观证据：AgentX两版同393会话，98,827/68,266请求，仍无业务工具明细或本地资源。未穷尽语义解析，不混合来源分母或把软件声明当实际启动。",
+    "SWE-bench逐任务评价补全：轨迹登记仍20,023对象/41组，另下载20,098份评价/配套文件，40/41组有公开评价产物。原8,730个未列项补出8,476未解决、140已解决、9未生成、1超时，余74空报告/30缺报告；MAYA补出222项，Mindlink同名公开来源仍缺366项评价。5个结果冲突单列；KGCompass更正300个任务身份，跨组去重实际2,294任务。仍无资源证据。",
+    "H-EPM/ToolSandbox复核v3完成：414轨迹、2,021次调用/返回，按保存请求静态核实全部原生工具身份，原24次未知及2次仅有活动分类的调用均补出确切名称。406条有用户侧结束请求，402条有返回，4条仅保存请求、8条无请求；Agent终止原因及资源等未记录。两组不同源码且均有local changes，只作描述比较。",
+    "SWE-rebench复核v3完成：85分片、9,435轨迹/111任务/17 participant完整核验；598,148请求/616,980结果的差额按589,061唯一ID配对、27,059未调用报告、860提取错误及其1,875候选、7,201提交分支请求与11复杂提交末尾请求核清。Junie 555轨迹的31,449步骤摘要另列，不当作零工具行为；任务失败不等于分析未完成，仍无本地资源证据。",
     "本地三个既有批次的27个显式run已完成字段与manifest盘点；历史区间覆盖v3按CPU、cgroup I/O及可用/proc I/O分列候选/有效/gap，网络字节和任务目录边界占用没有观测，未回填。",
     "新口径三链各一次已完成：Office目录扫描cwd修正后0→6629B；Coding Agent/verifier目录分别增长4874269/4614250B；Assistant场景内存状态N/A。主项采集和归档通过，cache仍unsupported导致supplement aggregate partial；共享netns不是任务/API专属字节。",
     "火山三链各n=1限定离线分析完成：3张独立四面板资源SVG、作图CSV和目录占用表已生成。请求Office8、Coding20、Assistant Agent/User6/1；原生工具、Submitted控制流与业务错误分别统计。Coding宿主末次process_exited保留gap；共享netns不代表API字节，不合并旧27次。报告：reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/summary.md。",
@@ -2198,8 +2580,9 @@
     },
     {
       "path": ".gitignore",
-      "sha256": "a516babb32d2944ba7ccfbbbb6290a5e4a33ef2b9c44207ad83adc511e7ffe4a",
-      "role": "repository publication/navigation policy; not execution authorization"
+      "bytes": 3342,
+      "sha256": "d9a569b859d716489eadc81a2ce46a4210a1a535bc8d9d618752b3f610190fae",
+      "role": "Public dataset analysis closeout; non-video navigation, verification or publication policy"
     },
     {
       "path": "reports/analysis/LOCAL-MEASUREMENT-COVERAGE-v3/summary.md",
@@ -2320,6 +2703,600 @@
       "path": "reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/manifest.json",
       "sha256": "b33a06b5176fb4aacbde5185b80d1dffda9596989ab08bb8c92c7729e04eff24",
       "role": "New offline three-chain limited characterization; not an execution approval"
+    },
+    {
+      "path": "reports/analysis/AGENTX-FULL-MACRO-v1/summary.md",
+      "sha256": "9147a36b19fa4fc1dd6e8099f49dbb79002fd056bf01111d2e69f2d9a92b03f8",
+      "role": "agentx_full_macro_analysis_20261022"
+    },
+    {
+      "path": "reports/analysis/AGENTX-FULL-MACRO-v1/summary.json",
+      "sha256": "93500e6847eb61c2f050ce486a19914d634251774dad4b2b48a2e72ee7b8ff5e",
+      "role": "agentx_full_macro_analysis_20261022"
+    },
+    {
+      "path": "reports/analysis/AGENTX-FULL-MACRO-v1/manifest.json",
+      "sha256": "f7873f60dd773c996b716bf1dcc362dc87beaa5da8cabe239babd9f26186fb04",
+      "role": "agentx_full_macro_analysis_20261022"
+    },
+    {
+      "path": "scripts/agentx_full_macro.py",
+      "sha256": "c5fcdf63d378460b28f96360d3fed247618ba7f28c4f35d64408a0e8410279c8",
+      "role": "agentx_full_macro_analysis_20261022"
+    },
+    {
+      "path": "tests/test_agentx_full_macro.py",
+      "sha256": "2156b458e8c2e6e723479aba27e57b7f1ed25bc340835aa792be10805bbdd484",
+      "role": "agentx_full_macro_analysis_20261022"
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/AGENTX-FULL-20261022/manifest.json",
+      "sha256": "ded645223f94b04ff6926e2b49ddf051264a08516ce23d4e96a927eabaae37ca",
+      "role": "agentx_full_macro_analysis_20261022"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/summary.md",
+      "bytes": 3627,
+      "sha256": "7a53da43dc4e9258da2aa64193354a6d2973a29ba9bcabd9f2203224695438fb",
+      "role": "OSWorld v4 offline command parsing/behavior analysis"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/summary.json",
+      "bytes": 22859,
+      "sha256": "57a1ed47f4687ded0b5b54fef59df2a108956a92bfbe826dd4c098c7195f5c5a",
+      "role": "OSWorld v4 offline command parsing/behavior analysis"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/manifest.json",
+      "bytes": 522922,
+      "sha256": "9c925d3b923678f72e6f022d7efd38206a2b9057041c1de2e48a562ec9832cb6",
+      "role": "OSWorld v4 offline command parsing/behavior analysis"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/findings.md",
+      "bytes": 5323,
+      "sha256": "61826f409a488cc534c7706b13db44d687fdaa64326f0daa7f3203b8422addd8",
+      "role": "OSWorld v4 offline command parsing/behavior analysis"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/findings-manifest.json",
+      "bytes": 1499,
+      "sha256": "faa56827a5e851a93aa008d75f3becd216afc5313dfc832f4bbd5fde2b402c94",
+      "role": "OSWorld v4 offline command parsing/behavior analysis"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/remaining_unknown_review.md",
+      "bytes": 1288,
+      "sha256": "59d862ad3517a76797c2b0e0bb5fbf6cf1ced1b93458ecec70a1b880be7500bf",
+      "role": "OSWorld v4 offline command parsing/behavior analysis"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/review-manifest.json",
+      "bytes": 1249,
+      "sha256": "6a60c439f129ed3220c2f7bc1bce52e9faa0d92300c88210cd8d9470399f67b8",
+      "role": "OSWorld v4 offline command parsing/behavior analysis"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/verification.json",
+      "bytes": 436356,
+      "sha256": "9eecd77eb034c5d4bdf645dfa49a37023ebb890a973132a5c3de1b4c3b2f5a8b",
+      "role": "OSWorld v4 offline command parsing/behavior analysis"
+    },
+    {
+      "path": "scripts/osworld_static_actions_v4.py",
+      "bytes": 10259,
+      "sha256": "bf49630bb58d04a6ce5ffd9a406513db89499417cc4aa6cfa0a071078b27302a",
+      "role": "OSWorld v4 offline command parsing/behavior analysis"
+    },
+    {
+      "path": "scripts/osworld_task_behavior_v4.py",
+      "bytes": 22072,
+      "sha256": "7d9fe43605947dd30c7e22d0ef3c7f5003d710ef3021c7dadab4fc6f264a661a",
+      "role": "OSWorld v4 offline command parsing/behavior analysis"
+    },
+    {
+      "path": "scripts/osworld_v4_findings.py",
+      "bytes": 8285,
+      "sha256": "9011f117cb25daf9cf48b811dc89df5dc52512993640ef16a0effee8a6b3954a",
+      "role": "OSWorld v4 offline command parsing/behavior analysis"
+    },
+    {
+      "path": "tests/test_osworld_task_behavior_v4.py",
+      "bytes": 11268,
+      "sha256": "6c9d8b921d7e6ecba8b22116d765d7f07b74848d6720b23b2ecd6f92927b2e74",
+      "role": "OSWorld v4 offline command parsing/behavior analysis"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/summary.md",
+      "bytes": 3571,
+      "sha256": "d7bd92b8123bbe9c7d46d0f14e07e17a999952b74f132f2f3e9a53347eda4b91",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/summary.json",
+      "bytes": 55989,
+      "sha256": "0c2b0b77c040e42b52f2422508b1f008ed4e2bb3226bd0027b2d356e83c2e638",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/findings.md",
+      "bytes": 6279,
+      "sha256": "5d809f25d91a81f245d54bf89cd3885c2959441daa32a819ade09c495f06128d",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/manifest.json",
+      "bytes": 5974147,
+      "sha256": "b2b404fc4d39d2f6ef004c4fd1ba4eaa45cdbcfc59df3fe85205bf4503489922",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/findings-manifest.json",
+      "bytes": 6013808,
+      "sha256": "ac7c2735886bc7c0cd07448ef24beb2a47e9f605db79be5f2e3a9da190c99498",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/verification.json",
+      "bytes": 637,
+      "sha256": "2c9ff123c283cdc0ad66b4bb7ea006ce5f59036cfd093e3ee530a9aaedc07e13",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/coverage_results.csv",
+      "bytes": 2747,
+      "sha256": "c754fdaf3457aff6a4824ff868f6903ad9a00fb0fa987b3ad5cc123d66ef4f50",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/subset90_links.jsonl",
+      "bytes": 57896,
+      "sha256": "3b96c14be6d0b1e8a2b2b0b646336d1e0da14ea627ee7b4c3e4ba296f4fbea23",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/behavior_strata.csv",
+      "bytes": 7973,
+      "sha256": "75f56f7509b6815de719d83d0477945ebddc8d99f164ef5a329cc255aa1f9b87",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/native_result_cross_tabs.csv",
+      "bytes": 1920,
+      "sha256": "05d5775f8e9aaad60b7e2387311499995c5663f30f83dd6419515f9cab723c2c",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/negative_coverage_by_group.csv",
+      "bytes": 3130,
+      "sha256": "e7b5506d7cf68fe009c0bf387b908328bdc45fcddac1de1bbfdc227f67fe566f",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/evaluation_sources.json",
+      "bytes": 45105,
+      "sha256": "2815fc1389fb8b6834f3b2f4a78a4f2958740905820c16a9a614799762aa6f73",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/plan.json",
+      "bytes": 142790,
+      "sha256": "eec29db16a48ba56c522182dfa708b57bd01745d661216432fc54f57e27be97d",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/manifest.json",
+      "bytes": 155939,
+      "sha256": "a2e15935e5a51694bcea7f06ea2093b0f7c207a7811d3f953c2a2b09329b63dd",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/summary.md",
+      "bytes": 1530,
+      "sha256": "3329d5a0905e4246e1cb869541d38ffd47f64f416f9a5081de1a4715aa2bd56c",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/commands.md",
+      "bytes": 1600,
+      "sha256": "47aae962fb184fa14eee60303c3f8ff36fbe65db83aa70983219e23604c1e0f1",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "scripts/swebench_coverage_results.py",
+      "bytes": 30291,
+      "sha256": "6e2026ed1a8cf6c2900bd3615e6c6fcfdfd961cc10c16404f65fe1c970f44f28",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "scripts/swebench_coverage_findings.py",
+      "bytes": 13672,
+      "sha256": "e38b0d826802d026f0da7bc37768c53076b7a59541113b809952120e99c827d1",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "tests/test_swebench_coverage_results.py",
+      "bytes": 11160,
+      "sha256": "f517f91a6244214d1254b071de19e15a6d96078bab843c5025f772cdfaae0ba6",
+      "role": "SWE-bench fixed-gap acquisition and offline coverage/publication-instance result analysis; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/summary.md",
+      "bytes": 5887,
+      "sha256": "28b6fe8a6556422c029972cd8fbb90dea9505a3d4e84e8c9e1e32134d6b85a0b",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/summary.json",
+      "bytes": 55805,
+      "sha256": "31d4db140b7231df9eeb8595b6e1ae17b58590ffb253121d0d338003f78c3772",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/reviewed_summary.json",
+      "bytes": 62169,
+      "sha256": "4ff8ffd57b67ec288c351590b2a23476fd0c040d1b60a640343ed10021e9c68b",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/manifest.json",
+      "bytes": 12508321,
+      "sha256": "9f762f79c1d2d5421b5d9a5a948b6dccc90356dbb477ef8b7f19aae2f367cecd",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/review-manifest.json",
+      "bytes": 12514793,
+      "sha256": "349d88b0190f5a3612552d187aa6139b0eb2839e3cf4005c852014157e907b4d",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/verification.json",
+      "bytes": 728,
+      "sha256": "ca48d1841e89489fd761e8885676d50bae041ed797f0488ed0ed86fde983b662",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/additional-source-manifest.json",
+      "bytes": 1090,
+      "sha256": "6cdd402a0c4a863552e34ef63da6527066acf36f284e913de764ade05388582d",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/remaining_source_gaps.csv",
+      "bytes": 86576,
+      "sha256": "bcbb412cd22d201f4938320dab46bb92858f1045fb61f606be5d75e56a76e583",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/conflicting_results.csv",
+      "bytes": 1090,
+      "sha256": "d36c763c5e437c93cd386c5288d81fc3847b8c6b6916d7e0a2b0a0ea686a6320",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/reviewed_group_outcomes.csv",
+      "bytes": 2988,
+      "sha256": "621cfb1cec7554b93041d3ffa839edeb621d21afbd5ff44942a4784857564c34",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/reviewed_result_recovery.csv",
+      "bytes": 1013,
+      "sha256": "bf3ca0d18d6cf10a501fbc5eb9860ad3e616acc134697b36c7a5a66192e734b4",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/reviewed_behavior_strata.csv",
+      "bytes": 9419,
+      "sha256": "b387ddc9688032eea4f3ff1c89d5001a4c3305e6ca9c61030369309d07a97a77",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/reviewed_subset90_links.jsonl",
+      "bytes": 80941,
+      "sha256": "06c93b1330c979c2d16d8cb0e6dc475f3f8ff2b433307726e2ba02e2065063b5",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/report_schema_review.json",
+      "bytes": 23175,
+      "sha256": "2f86246fcdd93f927392de187072fb13ba26deafb7ce4a205235bfdea9fd732d",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/result_recovery.png",
+      "bytes": 65943,
+      "sha256": "b4e0087d1c9b9abf17aee1fbf78d7b573e3153652751dc011f79ff7f14eeceee",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/SWEBENCH-INSTANCE-RESULTS-20261023/discovery.json",
+      "bytes": 6658116,
+      "sha256": "a7a189cb9e58571b0db0264220975f19e132e22539dfe817e43f4375bee8fb4f",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/SWEBENCH-INSTANCE-RESULTS-20261023/plan.json",
+      "bytes": 17983969,
+      "sha256": "8724ad1a8bd68b2ae85d0592d7967077ecc5d9764ec4967670d7122e6fb4b301",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/SWEBENCH-INSTANCE-RESULTS-20261023/supplement-plan.json",
+      "bytes": 34482,
+      "sha256": "09c405419dbbbe8797953e41e1c9c11ca799881d084cf602453b3ffdc10d8364",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/SWEBENCH-INSTANCE-RESULTS-20261023/manifest.json",
+      "bytes": 27377442,
+      "sha256": "23339e333cc2dd37d7fcfe7de1de30cea2368e29ff98dd6a48e8abc17cf35be5",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/SWEBENCH-INSTANCE-RESULTS-20261023/summary.md",
+      "bytes": 2187,
+      "sha256": "9f4af45905227486aea2b56b2e5c09d80a0c7bcf6a8cae0b1f39e6c2eccbf9c0",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/SWEBENCH-INSTANCE-RESULTS-20261023/commands.md",
+      "bytes": 2105,
+      "sha256": "8399d395feb3ae36d887870ccf2d01118cf0da5b622642eab0d24e8190ae3f0b",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "scripts/swebench_instance_results.py",
+      "bytes": 32224,
+      "sha256": "ffe745489d765aa4d246e086599639186a1f58ac1b31a910355bcfe251bb494c",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "scripts/swebench_instance_result_review.py",
+      "bytes": 19960,
+      "sha256": "9e06a4469eeec64fc7896c0184332746f68f31b182071e9c8b02e5ea4f7e5bc0",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "tests/test_swebench_instance_results.py",
+      "bytes": 4599,
+      "sha256": "205783630eb52656ab3559ff9b114fc5c2145467696120f6ecbb46b30afbdbd5",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "tests/test_swebench_instance_result_review.py",
+      "bytes": 2126,
+      "sha256": "a711cf102dfa5cd59f21f420440f9e0a3fc5bb84bd872e1635b03f49ca986f59",
+      "role": "SWE-bench public per-instance evaluation acquisition, recovery and explicit source-gap review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v3/summary.md",
+      "bytes": 3850,
+      "sha256": "eef6fcf9ab478fe0096fa43830006f81c9ab71f39984467affe79a6f530c14fa",
+      "role": "H-EPM/ToolSandbox offline native request and termination evidence review; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v3/summary.json",
+      "bytes": 13923,
+      "sha256": "cc6e2110c6902ec16ed4f19ad5a6773f922dedc8af1129f6c0c4ec8a8fd1f1fb",
+      "role": "H-EPM/ToolSandbox offline native request and termination evidence review; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v3/manifest.json",
+      "bytes": 349752,
+      "sha256": "f5ce9387204842098b349bf45b7cb7536bfdb2ef5a70a9af42c1157a5e26ab89",
+      "role": "H-EPM/ToolSandbox offline native request and termination evidence review; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v3/verification.json",
+      "bytes": 615,
+      "sha256": "0b8506b4ae12c6371bf6233d75fda7d3e109e1bbcf10fd1eb5f944f59f12e782",
+      "role": "H-EPM/ToolSandbox offline native request and termination evidence review; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v3/recovered_tool_identities.csv",
+      "bytes": 7410,
+      "sha256": "59bc11a61b2ddcf4138f30967c9b155fddf77274ecd807d9ae4db6c6b6819d49",
+      "role": "H-EPM/ToolSandbox offline native request and termination evidence review; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v3/activity_counts.csv",
+      "bytes": 2012,
+      "sha256": "b7f15a99a757f63a8b28f48721bfb6fba4b0f46652badfed698be441958b2525",
+      "role": "H-EPM/ToolSandbox offline native request and termination evidence review; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v3/termination_records.jsonl",
+      "bytes": 334184,
+      "sha256": "4219e09f80358df45974a4aaf5dcb58588fd113b7d426b4dfb7b8240ae9f8989",
+      "role": "H-EPM/ToolSandbox offline native request and termination evidence review; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v3/call_records.jsonl",
+      "bytes": 1977707,
+      "sha256": "83c241b9a70cf2b5f9196a0562c8f580d96de58392a73d25d08ab4dde19b6f0a",
+      "role": "H-EPM/ToolSandbox offline native request and termination evidence review; no execution authorization"
+    },
+    {
+      "path": "scripts/toolsandbox_hepm_review_v3.py",
+      "bytes": 21209,
+      "sha256": "49cb3e656962b302e87619c245122b1114e53a8c0183f21794a40ff8d8df787f",
+      "role": "H-EPM/ToolSandbox offline native request and termination evidence review; no execution authorization"
+    },
+    {
+      "path": "tests/test_toolsandbox_hepm_review_v3.py",
+      "bytes": 2291,
+      "sha256": "93ebf20e50bb4a6014ac9eee45fe40c86afed9689f5aa5250e658e91c142171c",
+      "role": "H-EPM/ToolSandbox offline native request and termination evidence review; no execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/findings.md",
+      "bytes": 2828,
+      "sha256": "c86dae2196a2ede7c7e6432e3f25b79679b4f0a22363654fbd049de4019abadc",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/summary.md",
+      "bytes": 5272,
+      "sha256": "5041ab202041e2761714309ae51c2019b624d436b3f96f7b6489fc067a94ad71",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/summary.json",
+      "bytes": 21126,
+      "sha256": "4ff159a2ac34a3f3d3485fce0ec71473472071e012effe5be55c9a01b32c2775",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/reviewed_summary.json",
+      "bytes": 27273,
+      "sha256": "7ffe065f6671bc2a065f4ecbdb0cde40371f76d7286492808a9a16c367ee101f",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/manifest.json",
+      "bytes": 27036,
+      "sha256": "3f0f4d6fde99cbb3abea916e95ae91940ad79b5bd1325a454c3a95124a298307",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/review-manifest.json",
+      "bytes": 29016,
+      "sha256": "78c7c599079831cc5a06de5586d3c9716b983f7f5f068a600c6ba901a53b8b42",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/tail-manifest.json",
+      "bytes": 6302,
+      "sha256": "5d449738fc8f1155d3c5d6aeee5e63e8fb9f68df249b00e9f0f0bee479c1c091",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/verification.json",
+      "bytes": 846,
+      "sha256": "1fdcc0c2cfd8bfe3ef66a293da8615d424f7ef666900c8d4e0ef72323446c4ba",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/final-verification.json",
+      "bytes": 660,
+      "sha256": "fde57cc14310da570fece124b681208124d046798fa97f66b22de6a8868dee68",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/submit_tail_audit.json",
+      "bytes": 8508,
+      "sha256": "5391800a26cb60542d00958e5f0f11f08210c84cd46557973ce09280918c82c2",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/participant_protocol.csv",
+      "bytes": 1235,
+      "sha256": "3c87a0cd6109138a18825f0b58cab1d3aa4b3d309b6a99868cbe2d0c087652f3",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/participant_protocol_details.csv",
+      "bytes": 692,
+      "sha256": "fe7cd3691cb0556e28466d2b32629cd4cc2072673a408db8233028f43afd83df",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/evaluation_exit_cross_tab.csv",
+      "bytes": 1448,
+      "sha256": "77a34402309622834031c3a40909c649ae7837b8d30b59f91a6712ab378f56f3",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/operation_result_strata.csv",
+      "bytes": 21713,
+      "sha256": "ae2e75434db521af8f0d68016a113d9602efe14104cd7d5c72f9bb7001b699e0",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/operations_by_evidence_scope.csv",
+      "bytes": 397,
+      "sha256": "a23591ba7c26b5001f5d9da94879953a4dca681bd356b3d80e7154f536bb3c0c",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/protocol_accounting.png",
+      "bytes": 53599,
+      "sha256": "3aad923fa4986363c58fadd24a801af3182efb6d2d727520a93a23a2595f4d14",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "scripts/swe_rebench_review_v3.py",
+      "bytes": 16522,
+      "sha256": "44a4a8df80e405b72ca43adf403747d2c3f5c03c323388a2a931d387c4017862",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "scripts/swe_rebench_protocol_details.py",
+      "bytes": 17075,
+      "sha256": "4c7cda7e09cbd42ca2699b4a5e6f27f30dc208dde84a242c131bb4488416c033",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "scripts/swe_rebench_tail_audit.py",
+      "bytes": 8710,
+      "sha256": "2610e1502c6e7107a4d4d16921f1747ad16bc40ea47ac7516e5e3b4726d81a89",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "tests/test_swe_rebench_review_v3.py",
+      "bytes": 2649,
+      "sha256": "3f4a854f4a3b20fdfff25562cfa9e04f9bdb3890d99f3b400f63e1242a8d6725",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "tests/test_swe_rebench_protocol_details.py",
+      "bytes": 1676,
+      "sha256": "03727b2dae2b7301f354bc8e5668d2b0a0749e54a2bcdbd803a595f7f51f1592",
+      "role": "SWE-rebench offline protocol, operation and source-result evidence review; not execution authorization"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-DATASET-CLOSEOUT-20261023/audit_snapshot.py",
+      "bytes": 3024,
+      "sha256": "fe0a8132baf210fc99b7f52fa94463eb2eb03e7ca3832e6f60f484e85f1c49cd",
+      "role": "Public dataset analysis closeout; non-video navigation, verification or publication policy"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-DATASET-CLOSEOUT-20261023/manifest.json",
+      "bytes": 4021,
+      "sha256": "be2c832a57311175f41658679f498657e0f50924ae0ee825c4eea38671f50471",
+      "role": "Public dataset analysis closeout; non-video navigation, verification or publication policy"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-DATASET-CLOSEOUT-20261023/summary.md",
+      "bytes": 3719,
+      "sha256": "8897335355ae8f39e2951da2e358ff7934dd465898a3c43343260776a6fb3d08",
+      "role": "Public dataset analysis closeout; non-video navigation, verification or publication policy"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-DATASET-CLOSEOUT-20261023/verification.json",
+      "bytes": 1624,
+      "sha256": "49bb18757bb0097e63d948db80b19a8def5132d644edd49c067d9995ff6ed4f6",
+      "role": "Public dataset analysis closeout; non-video navigation, verification or publication policy"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8057,
+      "sha256": "ca9f88878285ec56ab9842030a09e93654bfd8aed44b71cf83f2aae92e284a11",
+      "role": "Public dataset analysis navigation and status; non-video increment only"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 7799,
+      "sha256": "886c41e70ce90f7525e0e297a950e297b3f8b812ed57209565cc5f896ee60643",
+      "role": "Public dataset analysis navigation and status; non-video increment only"
+    },
+    {
+      "path": "docs/project_status.md",
+      "bytes": 18446,
+      "sha256": "517212df220719923d531b7c3db9220890b2094c5f732a2571d727cb20dcd26a",
+      "role": "Public dataset analysis navigation and status; non-video increment only"
     }
   ],
   "planned_api_route": {

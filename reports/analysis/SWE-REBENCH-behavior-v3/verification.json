@@ -1,0 +1,27 @@
+{
+  "status": "PASS_WITH_EXPLICIT_SOURCE_LIMITS",
+  "verified_distinct_input_files": 110,
+  "shards": 85,
+  "trajectories": 9435,
+  "tasks": 111,
+  "participants": 17,
+  "unique_id_pairs": 589061,
+  "call_events": 598148,
+  "result_events": 616980,
+  "protocol_detail_totals": {
+    "error_candidate_ids_absent_from_call_events": 0,
+    "multiple_extracted_calls_harness_error": 860,
+    "candidate_id_named_in_extraction_error": 1875,
+    "submit_source_branch_without_return": 7201,
+    "explicit_no_tool_invocation": 27059,
+    "unexplained_request_without_return": 11
+  },
+  "junie_agent_steps": 31449,
+  "junie_count_crosschecks": 555,
+  "evaluation_consistency_issues": 0,
+  "truncated_results": 4092,
+  "omitted_cache_results": 32,
+  "directed_tests_passed": 12,
+  "old_raw_and_reports_preserved": true,
+  "dataset_code_executed": false
+}

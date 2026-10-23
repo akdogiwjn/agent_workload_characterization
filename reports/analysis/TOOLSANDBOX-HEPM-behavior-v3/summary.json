@@ -1,0 +1,497 @@
+{
+  "schema": "toolsandbox-hepm-native-request-review-v3",
+  "trajectories": 414,
+  "calls": 2021,
+  "paired_returns": 2021,
+  "tool_errors": 304,
+  "supported_request_patterns": 2021,
+  "clean_tool_trace_cross_checks": 1717,
+  "former_unknown_activity_calls_recovered": 24,
+  "former_activity_only_native_names_recovered": 2,
+  "remaining_unknown_native_identities": 0,
+  "groups": {
+    "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_False_11_24_2025_09_02_55-7": {
+      "trajectories": 207,
+      "calls": 1029,
+      "errors": 157,
+      "native_name_counts": {
+        "add_contact": 4,
+        "summarize_the_task": 207,
+        "datetime_info_to_timestamp": 53,
+        "add_reminder": 27,
+        "get_current_timestamp": 86,
+        "timestamp_to_datetime_info": 56,
+        "shift_timestamp": 24,
+        "search_location_around_lat_lon": 36,
+        "get_location_service_status": 28,
+        "set_location_service_status": 34,
+        "get_low_battery_mode_status": 26,
+        "set_low_battery_mode_status": 30,
+        "get_wifi_status": 40,
+        "get_cellular_service_status": 17,
+        "set_cellular_service_status": 15,
+        "convert_currency": 6,
+        "search_lat_lon": 4,
+        "get_current_location": 11,
+        "set_wifi_status": 44,
+        "search_holiday": 26,
+        "timestamp_diff": 18,
+        "seconds_to_hours_minutes_seconds": 1,
+        "calculate_lat_lon_distance": 3,
+        "search_stock": 7,
+        "search_weather_around_lat_lon": 16,
+        "search_messages": 44,
+        "search_contacts": 38,
+        "modify_contact": 37,
+        "search_reminder": 54,
+        "modify_reminder": 6,
+        "remove_contact": 16,
+        "remove_reminder": 3,
+        "send_message_with_phone_number": 12
+      },
+      "activity_counts": {
+        "contact": 95,
+        "harness_summary": 207,
+        "datetime": 238,
+        "reminder": 90,
+        "location": 54,
+        "settings": 234,
+        "web_api_search": 39,
+        "weather": 16,
+        "messaging": 56
+      },
+      "activity_stats_all_trajectories": {
+        "contact": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 5.0
+        },
+        "datetime": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 2.0,
+          "iqr": 2.0,
+          "max": 5.0
+        },
+        "harness_summary": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 1.0,
+          "median": 1.0,
+          "q3": 1.0,
+          "iqr": 0.0,
+          "max": 3.0
+        },
+        "location": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 5.0
+        },
+        "messaging": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 3.0
+        },
+        "reminder": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 1.0,
+          "iqr": 1.0,
+          "max": 4.0
+        },
+        "settings": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 10.0
+        },
+        "weather": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 2.0
+        },
+        "web_api_search": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 2.0
+        }
+      },
+      "calls_per_trajectory": {
+        "n": 207,
+        "missing": 0,
+        "min": 0.0,
+        "q1": 3.0,
+        "median": 5.0,
+        "q3": 7.0,
+        "iqr": 4.0,
+        "max": 13.0
+      },
+      "saved_final_active_counts": {
+        "False": 201,
+        "True": 6
+      },
+      "user_end_request_trajectories": 202,
+      "user_end_result_trajectories": 201,
+      "agent_end_calls": 0,
+      "same_activity_transitions": 360,
+      "cross_activity_transitions": 463,
+      "unknown_activity_boundaries": 0
+    },
+    "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_True_05_19_2026_06_52_36": {
+      "trajectories": 207,
+      "calls": 992,
+      "errors": 147,
+      "native_name_counts": {
+        "summarize_the_task": 206,
+        "add_contact": 3,
+        "datetime_info_to_timestamp": 42,
+        "add_reminder": 28,
+        "get_current_timestamp": 86,
+        "timestamp_to_datetime_info": 39,
+        "shift_timestamp": 30,
+        "search_location_around_lat_lon": 26,
+        "get_location_service_status": 27,
+        "get_current_location": 11,
+        "modify_reminder": 7,
+        "get_cellular_service_status": 16,
+        "set_cellular_service_status": 18,
+        "convert_currency": 6,
+        "get_wifi_status": 33,
+        "search_lat_lon": 6,
+        "set_wifi_status": 41,
+        "set_location_service_status": 33,
+        "get_low_battery_mode_status": 30,
+        "set_low_battery_mode_status": 27,
+        "search_holiday": 27,
+        "timestamp_diff": 23,
+        "calculate_lat_lon_distance": 3,
+        "search_stock": 8,
+        "search_weather_around_lat_lon": 21,
+        "search_messages": 40,
+        "search_contacts": 35,
+        "modify_contact": 38,
+        "search_reminder": 52,
+        "remove_contact": 17,
+        "remove_reminder": 2,
+        "send_message_with_phone_number": 11
+      },
+      "activity_counts": {
+        "harness_summary": 206,
+        "contact": 93,
+        "datetime": 220,
+        "reminder": 89,
+        "location": 46,
+        "settings": 225,
+        "web_api_search": 41,
+        "weather": 21,
+        "messaging": 51
+      },
+      "activity_stats_all_trajectories": {
+        "contact": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 5.0
+        },
+        "datetime": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 2.0,
+          "iqr": 2.0,
+          "max": 6.0
+        },
+        "harness_summary": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 1.0,
+          "median": 1.0,
+          "q3": 1.0,
+          "iqr": 0.0,
+          "max": 2.0
+        },
+        "location": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 4.0
+        },
+        "messaging": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 3.0
+        },
+        "reminder": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 1.0,
+          "iqr": 1.0,
+          "max": 5.0
+        },
+        "settings": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 11.0
+        },
+        "weather": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 3.0
+        },
+        "web_api_search": {
+          "n": 207,
+          "missing": 0,
+          "min": 0.0,
+          "q1": 0.0,
+          "median": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "max": 3.0
+        }
+      },
+      "calls_per_trajectory": {
+        "n": 207,
+        "missing": 0,
+        "min": 0.0,
+        "q1": 3.0,
+        "median": 5.0,
+        "q3": 6.0,
+        "iqr": 3.0,
+        "max": 14.0
+      },
+      "saved_final_active_counts": {
+        "False": 201,
+        "True": 6
+      },
+      "user_end_request_trajectories": 204,
+      "user_end_result_trajectories": 201,
+      "agent_end_calls": 0,
+      "same_activity_transitions": 321,
+      "cross_activity_transitions": 468,
+      "unknown_activity_boundaries": 0
+    }
+  },
+  "source_run_metadata": {
+    "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_False_11_24_2025_09_02_55-7": {
+      "category_aggregated_results": {
+        "INSUFFICIENT_INFORMATION": {
+          "similarity": 0.5502279135245867,
+          "turn_count": 13.951219512195122
+        },
+        "TOOL_DESCRIPTION_SCRAMBLED": {
+          "similarity": 0.718270972633816,
+          "turn_count": 13.26086956521739
+        },
+        "ALL_CATEGORIES": {
+          "similarity": 0.7045583587506911,
+          "turn_count": 13.217391304347826
+        },
+        "CANONICALIZATION": {
+          "similarity": 0.688245389731539,
+          "turn_count": 14.359223300970873
+        },
+        "MULTIPLE_TOOL_CALL": {
+          "similarity": 0.7968609026214504,
+          "turn_count": 14.430656934306569
+        },
+        "SINGLE_USER_TURN": {
+          "similarity": 0.7309483122410668,
+          "turn_count": 12.40495867768595
+        },
+        "NO_DISTRACTION_TOOLS": {
+          "similarity": 0.7852255767814253,
+          "turn_count": 12.625
+        },
+        "TOOL_NAME_SCRAMBLED": {
+          "similarity": 0.6887795539656671,
+          "turn_count": 12.68
+        },
+        "TEN_DISTRACTION_TOOLS": {
+          "similarity": 0.6674640731937639,
+          "turn_count": 15.551724137931034
+        },
+        "STATE_DEPENDENCY": {
+          "similarity": 0.6794619183402304,
+          "turn_count": 19.289473684210527
+        },
+        "MULTIPLE_USER_TURN": {
+          "similarity": 0.7742108894603532,
+          "turn_count": 14.733333333333333
+        },
+        "ARG_TYPE_SCRAMBLED": {
+          "similarity": 0.7126435034191898,
+          "turn_count": 13.19047619047619
+        },
+        "ALL_TOOLS_AVAILABLE": {
+          "similarity": 0.635844933336493,
+          "turn_count": 13.925925925925926
+        },
+        "SINGLE_TOOL_CALL": {
+          "similarity": 0.4866997292326321,
+          "turn_count": 6.448275862068965
+        },
+        "ARG_DESCRIPTION_SCRAMBLED": {
+          "similarity": 0.7298580368405493,
+          "turn_count": 12.8
+        },
+        "THREE_DISTRACTION_TOOLS": {
+          "similarity": 0.7127942237393388,
+          "turn_count": 11.727272727272727
+        }
+      },
+      "split": "test",
+      "split_seed": 42,
+      "split_ratio": 0.8,
+      "git_sha": "4f7fffb17fe1fdfd969350b5ab081fcfec130585 + local changes"
+    },
+    "H-EPM_GPT_4_1_user_gpt-4.1_summary_on_split_test_graph_True_05_19_2026_06_52_36": {
+      "category_aggregated_results": {
+        "INSUFFICIENT_INFORMATION": {
+          "similarity": 0.5736402290315158,
+          "turn_count": 13.170731707317072
+        },
+        "TOOL_DESCRIPTION_SCRAMBLED": {
+          "similarity": 0.7064048317763924,
+          "turn_count": 13.434782608695652
+        },
+        "ALL_CATEGORIES": {
+          "similarity": 0.6976594509111356,
+          "turn_count": 12.821256038647343
+        },
+        "CANONICALIZATION": {
+          "similarity": 0.6701468708211259,
+          "turn_count": 13.912621359223301
+        },
+        "MULTIPLE_TOOL_CALL": {
+          "similarity": 0.7777085044961618,
+          "turn_count": 14.05109489051095
+        },
+        "SINGLE_USER_TURN": {
+          "similarity": 0.7157543395067196,
+          "turn_count": 12.0
+        },
+        "NO_DISTRACTION_TOOLS": {
+          "similarity": 0.7778451199461914,
+          "turn_count": 11.916666666666666
+        },
+        "TOOL_NAME_SCRAMBLED": {
+          "similarity": 0.7548323455329756,
+          "turn_count": 11.68
+        },
+        "TEN_DISTRACTION_TOOLS": {
+          "similarity": 0.6743108284925001,
+          "turn_count": 14.172413793103448
+        },
+        "STATE_DEPENDENCY": {
+          "similarity": 0.705272158363478,
+          "turn_count": 19.526315789473685
+        },
+        "MULTIPLE_USER_TURN": {
+          "similarity": 0.7619995970666636,
+          "turn_count": 14.71111111111111
+        },
+        "ARG_TYPE_SCRAMBLED": {
+          "similarity": 0.731622439568547,
+          "turn_count": 13.571428571428571
+        },
+        "ALL_TOOLS_AVAILABLE": {
+          "similarity": 0.59744406077346,
+          "turn_count": 12.62962962962963
+        },
+        "SINGLE_TOOL_CALL": {
+          "similarity": 0.49483420111512844,
+          "turn_count": 6.517241379310345
+        },
+        "ARG_DESCRIPTION_SCRAMBLED": {
+          "similarity": 0.6358560557879138,
+          "turn_count": 12.64
+        },
+        "THREE_DISTRACTION_TOOLS": {
+          "similarity": 0.7176553756942972,
+          "turn_count": 12.545454545454545
+        }
+      },
+      "split": "test",
+      "split_seed": 42,
+      "split_ratio": 0.8,
+      "git_sha": "75cf0c9bb12a87f60c95fb1407e1ab431869a42f + local changes"
+    }
+  },
+  "user_end_trajectories": 406,
+  "user_end_result_trajectories": 402,
+  "user_end_request_without_saved_result_trajectories": 4,
+  "no_user_end_request_trajectories": 8,
+  "observed_agent_native_tools": 33,
+  "saved_active_trajectories": 12,
+  "agent_end_calls": 0,
+  "agent_termination_reason": "not recorded; saved inactive state and user end event are separate facts",
+  "comparison_boundary": "two source versions, both local changes; descriptive only, no graph causal inference",
+  "source_code_executed": false,
+  "agent_model_benchmark_or_verifier_executed": false,
+  "old_raw_and_v1_v2_preserved": true
+}

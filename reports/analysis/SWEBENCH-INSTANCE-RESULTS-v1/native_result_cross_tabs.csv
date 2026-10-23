@@ -1,0 +1,28 @@
+group,native_value,evaluation_status,instances
+20240620_sweagent_claude3.5sonnet,None,no_generation,2
+20240620_sweagent_claude3.5sonnet,exit_cost,no_generation,6
+20240620_sweagent_claude3.5sonnet,submitted,evaluation_stage_failure,2
+20240620_sweagent_claude3.5sonnet,submitted,no_generation,3
+20240620_sweagent_claude3.5sonnet,submitted,no_public_result_artifact,1
+20240620_sweagent_claude3.5sonnet,submitted,resolved,158
+20240620_sweagent_claude3.5sonnet,submitted,unresolved,244
+20240620_sweagent_claude3.5sonnet,submitted (exit_cost),evaluation_stage_failure,1
+20240620_sweagent_claude3.5sonnet,submitted (exit_cost),resolved,10
+20240620_sweagent_claude3.5sonnet,submitted (exit_cost),unresolved,73
+lite/20240617_moatless_gpt4o,ClarifyCodeChange,legacy_completed_not_resolved,4
+lite/20240617_moatless_gpt4o,EditCode,legacy_completed_not_resolved,2
+lite/20240617_moatless_gpt4o,EditCode,no_generation,1
+lite/20240617_moatless_gpt4o,Finished,legacy_completed_not_resolved,201
+lite/20240617_moatless_gpt4o,Finished,no_generation,1
+lite/20240617_moatless_gpt4o,Finished,resolved,72
+lite/20240617_moatless_gpt4o,PlanToCode,legacy_completed_not_resolved,4
+lite/20240617_moatless_gpt4o,PlanToCode,resolved,1
+lite/20240617_moatless_gpt4o,Rejected,legacy_completed_not_resolved,4
+lite/20240617_moatless_gpt4o,Rejected,no_generation,6
+lite/20240617_moatless_gpt4o,Rejected,resolved,1
+lite/20240617_moatless_gpt4o,SearchCode,no_generation,3
+test/20251219_sonar-foundation-agent_claude-opus-4-5,None,evaluation_logs_missing,1
+test/20251219_sonar-foundation-agent_claude-opus-4-5,None,no_generation,18
+test/20251219_sonar-foundation-agent_claude-opus-4-5,None,no_public_result_artifact,14
+test/20251219_sonar-foundation-agent_claude-opus-4-5,None,resolved,1207
+test/20251219_sonar-foundation-agent_claude-opus-4-5,None,unresolved,1054

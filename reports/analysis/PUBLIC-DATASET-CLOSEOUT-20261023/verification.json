@@ -1,0 +1,30 @@
+{
+  "schema": "public-analysis-closeout-verification-v1",
+  "date": "2026-10-23",
+  "status": "PASS",
+  "manifest_record_counts": {
+    "reports/analysis/AGENTX-FULL-MACRO-v1/manifest.json": 18,
+    "reports/analysis/OSWORLD-task-behavior-v4/findings-manifest.json": 7,
+    "reports/analysis/OSWORLD-task-behavior-v4/manifest.json": 2309,
+    "reports/analysis/OSWORLD-task-behavior-v4/review-manifest.json": 5,
+    "reports/analysis/SWE-REBENCH-behavior-v3/manifest.json": 111,
+    "reports/analysis/SWE-REBENCH-behavior-v3/review-manifest.json": 121,
+    "reports/analysis/SWE-REBENCH-behavior-v3/tail-manifest.json": 30,
+    "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/findings-manifest.json": 20288,
+    "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/manifest.json": 20123,
+    "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/additional-source-manifest.json": 2,
+    "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/manifest.json": 40802,
+    "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/review-manifest.json": 40834,
+    "reports/analysis/TOOLSANDBOX-HEPM-behavior-v3/manifest.json": 851,
+    "data/catalog/public_trace_acquisition/AGENTX-FULL-20261022/manifest.json": 4,
+    "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/manifest.json": 295,
+    "data/catalog/public_trace_acquisition/SWEBENCH-INSTANCE-RESULTS-20261023/manifest.json": 40522
+  },
+  "manifest_record_checks": 166322,
+  "unique_path_hash_checks": 64062,
+  "bytes_hashed": 7161245618,
+  "errors": [],
+  "download_or_report_partial_files": [],
+  "directed_and_related_regression_tests_passed": 79,
+  "video_files_in_audit_scope": false
+}

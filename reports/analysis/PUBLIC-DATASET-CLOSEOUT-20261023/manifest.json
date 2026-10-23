@@ -1,0 +1,104 @@
+{
+  "schema": "public-dataset-closeout-manifest-v1",
+  "date": "2026-10-23",
+  "inputs": [
+    {
+      "path": "reports/analysis/AGENTX-FULL-MACRO-v1/manifest.json",
+      "bytes": 3764,
+      "sha256": "f7873f60dd773c996b716bf1dcc362dc87beaa5da8cabe239babd9f26186fb04"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/findings-manifest.json",
+      "bytes": 1499,
+      "sha256": "faa56827a5e851a93aa008d75f3becd216afc5313dfc832f4bbd5fde2b402c94"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/manifest.json",
+      "bytes": 522922,
+      "sha256": "9c925d3b923678f72e6f022d7efd38206a2b9057041c1de2e48a562ec9832cb6"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/review-manifest.json",
+      "bytes": 1249,
+      "sha256": "6a60c439f129ed3220c2f7bc1bce52e9faa0d92300c88210cd8d9470399f67b8"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/manifest.json",
+      "bytes": 27036,
+      "sha256": "3f0f4d6fde99cbb3abea916e95ae91940ad79b5bd1325a454c3a95124a298307"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/review-manifest.json",
+      "bytes": 29016,
+      "sha256": "78c7c599079831cc5a06de5586d3c9716b983f7f5f068a600c6ba901a53b8b42"
+    },
+    {
+      "path": "reports/analysis/SWE-REBENCH-behavior-v3/tail-manifest.json",
+      "bytes": 6302,
+      "sha256": "5d449738fc8f1155d3c5d6aeee5e63e8fb9f68df249b00e9f0f0bee479c1c091"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/findings-manifest.json",
+      "bytes": 6013808,
+      "sha256": "ac7c2735886bc7c0cd07448ef24beb2a47e9f605db79be5f2e3a9da190c99498"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/manifest.json",
+      "bytes": 5974147,
+      "sha256": "b2b404fc4d39d2f6ef004c4fd1ba4eaa45cdbcfc59df3fe85205bf4503489922"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/additional-source-manifest.json",
+      "bytes": 1090,
+      "sha256": "6cdd402a0c4a863552e34ef63da6527066acf36f284e913de764ade05388582d"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/manifest.json",
+      "bytes": 12508321,
+      "sha256": "9f762f79c1d2d5421b5d9a5a948b6dccc90356dbb477ef8b7f19aae2f367cecd"
+    },
+    {
+      "path": "reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/review-manifest.json",
+      "bytes": 12514793,
+      "sha256": "349d88b0190f5a3612552d187aa6139b0eb2839e3cf4005c852014157e907b4d"
+    },
+    {
+      "path": "reports/analysis/TOOLSANDBOX-HEPM-behavior-v3/manifest.json",
+      "bytes": 349752,
+      "sha256": "f5ce9387204842098b349bf45b7cb7536bfdb2ef5a70a9af42c1157a5e26ab89"
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/AGENTX-FULL-20261022/manifest.json",
+      "bytes": 2590,
+      "sha256": "ded645223f94b04ff6926e2b49ddf051264a08516ce23d4e96a927eabaae37ca"
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/SWEBENCH-GAP-20261023/manifest.json",
+      "bytes": 155939,
+      "sha256": "a2e15935e5a51694bcea7f06ea2093b0f7c207a7811d3f953c2a2b09329b63dd"
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/SWEBENCH-INSTANCE-RESULTS-20261023/manifest.json",
+      "bytes": 27377442,
+      "sha256": "23339e333cc2dd37d7fcfe7de1de30cea2368e29ff98dd6a48e8abc17cf35be5"
+    }
+  ],
+  "audit_code": {
+    "path": "reports/analysis/PUBLIC-DATASET-CLOSEOUT-20261023/audit_snapshot.py",
+    "bytes": 3024,
+    "sha256": "fe0a8132baf210fc99b7f52fa94463eb2eb03e7ca3832e6f60f484e85f1c49cd"
+  },
+  "outputs": [
+    {
+      "path": "reports/analysis/PUBLIC-DATASET-CLOSEOUT-20261023/summary.md",
+      "bytes": 3719,
+      "sha256": "8897335355ae8f39e2951da2e358ff7934dd465898a3c43343260776a6fb3d08"
+    },
+    {
+      "path": "reports/analysis/PUBLIC-DATASET-CLOSEOUT-20261023/verification.json",
+      "bytes": 1624,
+      "sha256": "49bb18757bb0097e63d948db80b19a8def5132d644edd49c067d9995ff6ed4f6"
+    }
+  ],
+  "scope": "offline non-video verification; no deletion, benchmark execution or rescoring"
+}

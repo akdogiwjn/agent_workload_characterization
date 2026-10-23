@@ -1,0 +1,884 @@
+{
+  "schema": "swe-rebench-protocol-and-operation-review-v3",
+  "source": "third_party_normalized_corpus_without_patches",
+  "scope": {
+    "shards": 85,
+    "trajectories": 9435,
+    "tasks": 111,
+    "participants": 17,
+    "runs_per_participant": 5
+  },
+  "protocol_totals": {
+    "unique_id_pairs": 589061,
+    "orphan_return_ids": 0,
+    "call_entries": 598148,
+    "return_entries": 616980,
+    "events": 1680514,
+    "trajectories": 9435,
+    "agent_step_events": 31449,
+    "other_request_without_saved_return": 3269,
+    "submit_request_without_saved_return": 5818,
+    "unidentified_result_without_id": 867,
+    "explicit_tool_not_invoked": 27052
+  },
+  "participant_protocol": {
+    "claude-code": {
+      "unique_id_pairs": 31200,
+      "orphan_return_ids": 0,
+      "call_entries": 31200,
+      "return_entries": 31200,
+      "trajectories": 555,
+      "agent_step_events": 0,
+      "trajectories_with_standard_calls": 555,
+      "trajectories_with_agent_steps": 0
+    },
+    "codex": {
+      "unique_id_pairs": 11262,
+      "orphan_return_ids": 0,
+      "call_entries": 11262,
+      "return_entries": 11262,
+      "trajectories": 555,
+      "agent_step_events": 0,
+      "trajectories_with_standard_calls": 555,
+      "trajectories_with_agent_steps": 0
+    },
+    "cursor": {
+      "unique_id_pairs": 36436,
+      "orphan_return_ids": 0,
+      "call_entries": 36436,
+      "return_entries": 36436,
+      "trajectories": 555,
+      "agent_step_events": 0,
+      "trajectories_with_standard_calls": 555,
+      "trajectories_with_agent_steps": 0
+    },
+    "deepseek-v4-pro": {
+      "unique_id_pairs": 38962,
+      "other_request_without_saved_return": 521,
+      "submit_request_without_saved_return": 494,
+      "unidentified_result_without_id": 198,
+      "orphan_return_ids": 0,
+      "call_entries": 39977,
+      "return_entries": 39227,
+      "trajectories": 555,
+      "agent_step_events": 0,
+      "trajectories_with_standard_calls": 555,
+      "trajectories_with_agent_steps": 0,
+      "explicit_tool_not_invoked": 67
+    },
+    "fable-5": {
+      "unique_id_pairs": 28073,
+      "submit_request_without_saved_return": 514,
+      "orphan_return_ids": 0,
+      "call_entries": 28628,
+      "return_entries": 28073,
+      "trajectories": 555,
+      "agent_step_events": 0,
+      "trajectories_with_standard_calls": 555,
+      "trajectories_with_agent_steps": 0,
+      "other_request_without_saved_return": 41
+    },
+    "glm-5.2": {
+      "other_request_without_saved_return": 1276,
+      "unique_id_pairs": 51123,
+      "unidentified_result_without_id": 557,
+      "orphan_return_ids": 0,
+      "call_entries": 52863,
+      "return_entries": 51717,
+      "trajectories": 555,
+      "agent_step_events": 0,
+      "trajectories_with_standard_calls": 555,
+      "trajectories_with_agent_steps": 0,
+      "submit_request_without_saved_return": 464,
+      "explicit_tool_not_invoked": 37
+    },
+    "gpt-5.6-luna": {
+      "unique_id_pairs": 8724,
+      "submit_request_without_saved_return": 287,
+      "orphan_return_ids": 0,
+      "call_entries": 9279,
+      "return_entries": 8782,
+      "trajectories": 555,
+      "agent_step_events": 0,
+      "trajectories_with_standard_calls": 555,
+      "trajectories_with_agent_steps": 0,
+      "other_request_without_saved_return": 268,
+      "explicit_tool_not_invoked": 58
+    },
+    "gpt-5.6-sol": {
+      "unique_id_pairs": 9659,
+      "submit_request_without_saved_return": 416,
+      "orphan_return_ids": 0,
+      "call_entries": 10214,
+      "return_entries": 9659,
+      "trajectories": 555,
+      "agent_step_events": 0,
+      "trajectories_with_standard_calls": 555,
+      "trajectories_with_agent_steps": 0,
+      "other_request_without_saved_return": 139
+    },
+    "grok-4.5": {
+      "unique_id_pairs": 25736,
+      "submit_request_without_saved_return": 516,
+      "orphan_return_ids": 0,
+      "call_entries": 26293,
+      "return_entries": 25741,
+      "trajectories": 555,
+      "agent_step_events": 0,
+      "trajectories_with_standard_calls": 555,
+      "trajectories_with_agent_steps": 0,
+      "other_request_without_saved_return": 41,
+      "unidentified_result_without_id": 1,
+      "explicit_tool_not_invoked": 4
+    },
+    "junie": {
+      "orphan_return_ids": 0,
+      "call_entries": 0,
+      "return_entries": 0,
+      "trajectories": 555,
+      "agent_step_events": 31449,
+      "trajectories_with_standard_calls": 0,
+      "trajectories_with_agent_steps": 555
+    },
+    "mimo-v2.5-pro": {
+      "unique_id_pairs": 43455,
+      "submit_request_without_saved_return": 523,
+      "orphan_return_ids": 0,
+      "call_entries": 44236,
+      "return_entries": 43616,
+      "trajectories": 555,
+      "agent_step_events": 0,
+      "trajectories_with_standard_calls": 555,
+      "trajectories_with_agent_steps": 0,
+      "other_request_without_saved_return": 258,
+      "unidentified_result_without_id": 103,
+      "explicit_tool_not_invoked": 58
+    },
+    "minimax-m3": {
+      "unique_id_pairs": 99678,
+      "other_request_without_saved_return": 104,
+      "explicit_tool_not_invoked": 893,
+      "orphan_return_ids": 0,
+      "call_entries": 100235,
+      "return_entries": 100572,
+      "trajectories": 555,
+      "agent_step_events": 0,
+      "trajectories_with_standard_calls": 555,
+      "trajectories_with_agent_steps": 0,
+      "submit_request_without_saved_return": 453,
+      "unidentified_result_without_id": 1
+    },
+    "opus-5": {
+      "unique_id_pairs": 35364,
+      "other_request_without_saved_return": 317,
+      "orphan_return_ids": 0,
+      "call_entries": 35919,
+      "return_entries": 35371,
+      "trajectories": 555,
+      "agent_step_events": 0,
+      "trajectories_with_standard_calls": 555,
+      "trajectories_with_agent_steps": 0,
+      "submit_request_without_saved_return": 238,
+      "unidentified_result_without_id": 7
+    },
+    "qwen3.5-35b-a3b": {
+      "unique_id_pairs": 48636,
+      "submit_request_without_saved_return": 508,
+      "explicit_tool_not_invoked": 22170,
+      "orphan_return_ids": 0,
+      "call_entries": 49191,
+      "return_entries": 70806,
+      "trajectories": 555,
+      "agent_step_events": 0,
+      "trajectories_with_standard_calls": 555,
+      "trajectories_with_agent_steps": 0,
+      "other_request_without_saved_return": 47
+    },
+    "qwen3.6-27b": {
+      "unique_id_pairs": 40500,
+      "submit_request_without_saved_return": 476,
+      "orphan_return_ids": 0,
+      "call_entries": 41055,
+      "return_entries": 42097,
+      "trajectories": 555,
+      "agent_step_events": 0,
+      "trajectories_with_standard_calls": 555,
+      "trajectories_with_agent_steps": 0,
+      "explicit_tool_not_invoked": 1597,
+      "other_request_without_saved_return": 79
+    },
+    "qwen3.6-35b-a3b": {
+      "unique_id_pairs": 39880,
+      "submit_request_without_saved_return": 488,
+      "explicit_tool_not_invoked": 2163,
+      "orphan_return_ids": 0,
+      "call_entries": 40432,
+      "return_entries": 42043,
+      "trajectories": 555,
+      "agent_step_events": 0,
+      "trajectories_with_standard_calls": 555,
+      "trajectories_with_agent_steps": 0,
+      "other_request_without_saved_return": 64
+    },
+    "sonnet-5": {
+      "unique_id_pairs": 40373,
+      "submit_request_without_saved_return": 441,
+      "orphan_return_ids": 0,
+      "call_entries": 40928,
+      "return_entries": 40378,
+      "trajectories": 555,
+      "agent_step_events": 0,
+      "trajectories_with_standard_calls": 555,
+      "trajectories_with_agent_steps": 0,
+      "other_request_without_saved_return": 114,
+      "explicit_tool_not_invoked": 5
+    }
+  },
+  "operation_counts_reused_from_frozen_v3": {
+    "content_search": 58155,
+    "file_locate": 16318,
+    "file_view": 161306,
+    "edit_write": 42886,
+    "mixed": 200103,
+    "partial": 55074,
+    "unknown": 17999,
+    "vcs": 21618,
+    "script_execute": 6237,
+    "other": 2771,
+    "file_manage": 2155,
+    "build": 793,
+    "navigate": 84,
+    "environment": 786,
+    "test": 3762,
+    "submit": 8101
+  },
+  "operation_presence_counts": {
+    "content_search": 167761,
+    "file_locate": 54400,
+    "file_view": 372786,
+    "edit_write": 78567,
+    "test": 53790,
+    "navigate": 178504,
+    "build": 11660,
+    "unknown": 73073,
+    "script_execute": 21118,
+    "other": 50451,
+    "vcs": 48827,
+    "file_manage": 13519,
+    "environment": 6158,
+    "submit": 8590
+  },
+  "source_normalization_totals": {
+    "truncated_tool_results": 4092,
+    "cache_tool_results_omitted": 32
+  },
+  "event_field_inventory": {
+    "prompt": {
+      "completeness": 9435,
+      "invocation": 9435,
+      "messages": 9435,
+      "seq": 9435,
+      "type": 9435,
+      "unavailable": 9435
+    },
+    "tool_call": {
+      "input": 598148,
+      "seq": 598148,
+      "tool": 598148,
+      "tool_call_id": 598148,
+      "type": 598148
+    },
+    "tool_result": {
+      "content": 532941,
+      "seq": 616980,
+      "status": 616980,
+      "tool_call_id": 589061,
+      "type": 616980,
+      "content_bytes_original": 4092,
+      "content_format": 4092,
+      "content_sha256": 4092,
+      "omitted_reason": 4092,
+      "truncated": 4092,
+      "exit_code": 32961,
+      "duration_ms": 538082,
+      "error": 57091
+    },
+    "assistant_message": {
+      "content": 386921,
+      "seq": 386921,
+      "type": 386921,
+      "duration_ms": 375380
+    },
+    "final_message": {
+      "content": 8184,
+      "seq": 8184,
+      "type": 8184,
+      "duration_ms": 5808,
+      "elapsed_ms": 555
+    },
+    "file_change": {
+      "changes": 2242,
+      "seq": 2242,
+      "status": 2242,
+      "type": 2242
+    },
+    "assistant_analysis": {
+      "content": 27155,
+      "seq": 27155,
+      "type": 27155,
+      "visibility": 27155,
+      "elapsed_ms": 8194
+    },
+    "agent_step": {
+      "content": 30815,
+      "elapsed_ms": 31449,
+      "name": 31449,
+      "seq": 31449,
+      "type": 31449
+    }
+  },
+  "event_duration_field_inventory": {
+    "deepseek-v4-pro": {
+      "assistant_message:duration_ms:finite_nonnegative": 39134,
+      "tool_result:duration_ms:finite_nonnegative": 39227,
+      "final_message:duration_ms:finite_nonnegative": 494
+    },
+    "fable-5": {
+      "tool_result:duration_ms:finite_nonnegative": 28073,
+      "assistant_message:duration_ms:finite_nonnegative": 2280,
+      "final_message:duration_ms:finite_nonnegative": 503
+    },
+    "glm-5.2": {
+      "assistant_message:duration_ms:finite_nonnegative": 33171,
+      "tool_result:duration_ms:finite_nonnegative": 51717,
+      "final_message:duration_ms:finite_nonnegative": 464
+    },
+    "gpt-5.6-luna": {
+      "assistant_message:duration_ms:finite_nonnegative": 2618,
+      "tool_result:duration_ms:finite_nonnegative": 8782,
+      "final_message:duration_ms:finite_nonnegative": 287
+    },
+    "gpt-5.6-sol": {
+      "assistant_message:duration_ms:finite_nonnegative": 9760,
+      "tool_result:duration_ms:finite_nonnegative": 9659,
+      "final_message:duration_ms:finite_nonnegative": 416
+    },
+    "grok-4.5": {
+      "assistant_message:duration_ms:finite_nonnegative": 25780,
+      "tool_result:duration_ms:finite_nonnegative": 25741,
+      "final_message:duration_ms:finite_nonnegative": 516
+    },
+    "junie": {
+      "assistant_analysis:elapsed_ms:finite_nonnegative": 8194,
+      "agent_step:elapsed_ms:finite_nonnegative": 31449,
+      "final_message:elapsed_ms:finite_nonnegative": 555
+    },
+    "mimo-v2.5-pro": {
+      "assistant_message:duration_ms:finite_nonnegative": 43646,
+      "tool_result:duration_ms:finite_nonnegative": 43616,
+      "final_message:duration_ms:finite_nonnegative": 524
+    },
+    "minimax-m3": {
+      "assistant_message:duration_ms:finite_nonnegative": 53036,
+      "tool_result:duration_ms:finite_nonnegative": 100572,
+      "final_message:duration_ms:finite_nonnegative": 453
+    },
+    "opus-5": {
+      "tool_result:duration_ms:finite_nonnegative": 35371,
+      "assistant_message:duration_ms:finite_nonnegative": 2918,
+      "final_message:duration_ms:finite_nonnegative": 238
+    },
+    "qwen3.5-35b-a3b": {
+      "assistant_message:duration_ms:finite_nonnegative": 70206,
+      "tool_result:duration_ms:finite_nonnegative": 70806,
+      "final_message:duration_ms:finite_nonnegative": 508
+    },
+    "qwen3.6-27b": {
+      "assistant_message:duration_ms:finite_nonnegative": 38834,
+      "tool_result:duration_ms:finite_nonnegative": 42097,
+      "final_message:duration_ms:finite_nonnegative": 476
+    },
+    "qwen3.6-35b-a3b": {
+      "assistant_message:duration_ms:finite_nonnegative": 41900,
+      "tool_result:duration_ms:finite_nonnegative": 42043,
+      "final_message:duration_ms:finite_nonnegative": 488
+    },
+    "sonnet-5": {
+      "tool_result:duration_ms:finite_nonnegative": 40378,
+      "assistant_message:duration_ms:finite_nonnegative": 12097,
+      "final_message:duration_ms:finite_nonnegative": 441
+    }
+  },
+  "source_usage_field_inventory": {
+    "claude-code": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 550,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:finite_nonnegative": 550,
+      "cost_usd:finite_nonnegative": 550,
+      "steps:null_or_absent": 5,
+      "wall_time_seconds:null_or_absent": 5,
+      "cost_usd:null_or_absent": 5
+    },
+    "codex": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 555,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:null_or_absent": 555,
+      "cost_usd:null_or_absent": 555
+    },
+    "cursor": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 555,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:finite_nonnegative": 555,
+      "cost_usd:null_or_absent": 555
+    },
+    "deepseek-v4-pro": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 555,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:finite_nonnegative": 555,
+      "cost_usd:null_or_absent": 555
+    },
+    "fable-5": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 555,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:finite_nonnegative": 555,
+      "cost_usd:null_or_absent": 555
+    },
+    "glm-5.2": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 555,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:finite_nonnegative": 555,
+      "cost_usd:null_or_absent": 555
+    },
+    "gpt-5.6-luna": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 555,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:finite_nonnegative": 555,
+      "cost_usd:null_or_absent": 555
+    },
+    "gpt-5.6-sol": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 555,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:finite_nonnegative": 555,
+      "cost_usd:null_or_absent": 555
+    },
+    "grok-4.5": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 555,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:finite_nonnegative": 555,
+      "cost_usd:null_or_absent": 555
+    },
+    "junie": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 555,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:finite_nonnegative": 554,
+      "cost_usd:finite_nonnegative": 554,
+      "wall_time_seconds:null_or_absent": 1,
+      "cost_usd:null_or_absent": 1
+    },
+    "mimo-v2.5-pro": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 555,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:finite_nonnegative": 555,
+      "cost_usd:null_or_absent": 555
+    },
+    "minimax-m3": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 555,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:finite_nonnegative": 555,
+      "cost_usd:null_or_absent": 555
+    },
+    "opus-5": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 555,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:finite_nonnegative": 555,
+      "cost_usd:null_or_absent": 555
+    },
+    "qwen3.5-35b-a3b": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 555,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:finite_nonnegative": 555,
+      "cost_usd:null_or_absent": 555
+    },
+    "qwen3.6-27b": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 555,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:finite_nonnegative": 555,
+      "cost_usd:null_or_absent": 555
+    },
+    "qwen3.6-35b-a3b": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 555,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:finite_nonnegative": 555,
+      "cost_usd:null_or_absent": 555
+    },
+    "sonnet-5": {
+      "model_calls:finite_nonnegative": 555,
+      "steps:finite_nonnegative": 555,
+      "tool_calls:finite_nonnegative": 555,
+      "wall_time_seconds:finite_nonnegative": 555,
+      "cost_usd:null_or_absent": 555
+    }
+  },
+  "agent_step_caption_prefixes": {
+    "junie": {
+      "Found": 5528,
+      "Opened": 10275,
+      "find": 272,
+      "ls": 1495,
+      "Edited": 4044,
+      "./mvnw": 137,
+      "git": 549,
+      "#": 874,
+      "python3": 100,
+      "rg": 210,
+      "go": 175,
+      "cd": 1713,
+      "Searched": 360,
+      "wc": 97,
+      "pytest": 17,
+      "grep": 2448,
+      "Web": 76,
+      "Fetch": 119,
+      "npx": 43,
+      "rm": 35,
+      "cargo": 500,
+      "target/release/perry": 16,
+      "which": 56,
+      "mkdir": 43,
+      "Read": 108,
+      "openspec": 7,
+      ".venv/bin/python": 9,
+      "Discovering": 10,
+      "export": 59,
+      "head": 130,
+      "source": 40,
+      "./scripts/dev_setup.sh": 5,
+      "curl": 149,
+      "javap": 2,
+      "mvn": 14,
+      "./gradlew": 84,
+      "cat": 199,
+      "CARGO_PROFILE_DEV_OPT_LEVEL=1": 52,
+      "uvx": 9,
+      "rustup": 12,
+      "discover_tools()": 1,
+      "pnpm": 279,
+      "gh": 60,
+      "PLAYWRIGHT_PROJECT=pages-router": 2,
+      "vp": 26,
+      "./node_modules/.bin/vp": 7,
+      "sed": 156,
+      "GOMAXPROCS=1": 16,
+      "GOMAXPROCS=2": 30,
+      "OXC=$(ls": 1,
+      "Open": 28,
+      "tail": 25,
+      "The": 5,
+      "npm": 44,
+      "uv": 256,
+      "java": 5,
+      "CGO_ENABLED=1": 10,
+      "gofmt": 31,
+      "jar_path=$(find": 1,
+      "sleep": 4,
+      "ulimit": 3,
+      "awk": 3,
+      "python": 116,
+      "CGO_ENABLED=0": 24,
+      "cp": 7,
+      "scripts/golden.sh": 2,
+      "echo": 3,
+      "just": 2,
+      "PYRIGHT_PYTHON_IGNORE_WARNINGS=1": 5,
+      "UPDATE_EXPECT=1": 1,
+      "node": 38,
+      "scripts/diff.sh": 4,
+      "make": 38,
+      "pip": 1,
+      "Listed": 2,
+      "kill": 8,
+      "tmpdir=$(mktemp": 2,
+      "command": 9,
+      "test": 8,
+      "NODE_ENV=production": 1,
+      "./scripts/build.sh": 1,
+      "(command": 1,
+      "GOPROXY=https://proxy.golang.org,direct": 1,
+      "GOLANGCI_LINT_CACHE=/docker-agent/.cache/lint": 2,
+      "./target/debug/fallow": 2,
+      "/tmp/workload.test": 1,
+      "/tmp/multikueue.test": 2,
+      "perl": 6,
+      "ruby": 1,
+      "/tmp/tsgo": 2,
+      "hereby": 1,
+      "for": 3,
+      "ast-grep": 4,
+      "pwd": 2,
+      "pkill": 3,
+      "Failed": 2,
+      "apt-cache": 3,
+      "apt-get": 3,
+      "clang": 1,
+      ".venv/bin/ruff": 2,
+      "jar": 2,
+      "ps": 3,
+      "PLAYWRIGHT_PROJECT=app-router": 5,
+      "/tmp/api_v1.test": 2,
+      "type": 1,
+      "task": 1,
+      "mv": 5,
+      "true": 1,
+      "/tmp/multikueue2.test": 2,
+      "/tmp/pyscn": 2,
+      "diff": 4,
+      "tmp=$(mktemp": 1,
+      "yarn": 14,
+      "./node_modules/.bin/jest": 3,
+      "./target/debug/tursodb": 3,
+      "./target/release/test-runner": 6,
+      "INSTA_UPDATE=1": 2,
+      "RUSTDOCFLAGS=\"-D": 1,
+      "ruff": 1,
+      "ll=$(ls": 1,
+      "sudo": 2,
+      "PERRY_LLVM_CLANG=$(which": 1,
+      "GREMLIN=$(find": 1,
+      "csplit": 1,
+      "set": 1,
+      "rustfmt": 2,
+      "pwd;": 1,
+      "rmdir": 1,
+      "INSTA_UPDATE=always": 1
+    }
+  },
+  "evaluation_status_counts": {
+    "resolved": 4751,
+    "failed": 4683,
+    "skipped": 1
+  },
+  "agent_exit_status_counts": {
+    "submitted": 2220,
+    "submit": 7212,
+    "agent/agent_proxy/inference_server/prompt_too_long": 3
+  },
+  "evaluation_identity_or_consistency_issues": [],
+  "rules": {
+    "association": "unique ID only; no positional reconstruction; non-invocation reports kept separate",
+    "submit": "explicit submission request is intent, not proof of normal exit or successful task",
+    "junie": "agent_step captions are preserved process evidence, not reconstructed native tool invocations",
+    "semantics": "reuse frozen PUBLIC-TRACE-OPERATIONS-v3, no fresh reinterpretation of shell text",
+    "timing": "duration_ms/elapsed_ms and source usage are metadata, not resources or measured tool wall time"
+  },
+  "old_raw_and_reports_preserved": true,
+  "agent_model_command_or_benchmark_executed": false,
+  "protocol_details": {
+    "error_candidate_ids_absent_from_call_events": 0,
+    "multiple_extracted_calls_harness_error": 860,
+    "candidate_id_named_in_extraction_error": 1875,
+    "submit_source_branch_without_return": 7201,
+    "explicit_no_tool_invocation": 27059,
+    "unexplained_request_without_return": 11
+  },
+  "participant_protocol_details": {
+    "claude-code": {
+      "error_candidate_ids_absent_from_call_events": 0
+    },
+    "codex": {
+      "error_candidate_ids_absent_from_call_events": 0
+    },
+    "cursor": {
+      "error_candidate_ids_absent_from_call_events": 0
+    },
+    "deepseek-v4-pro": {
+      "multiple_extracted_calls_harness_error": 198,
+      "candidate_id_named_in_extraction_error": 460,
+      "submit_source_branch_without_return": 555,
+      "error_candidate_ids_absent_from_call_events": 0,
+      "explicit_no_tool_invocation": 67
+    },
+    "fable-5": {
+      "submit_source_branch_without_return": 555,
+      "error_candidate_ids_absent_from_call_events": 0
+    },
+    "glm-5.2": {
+      "multiple_extracted_calls_harness_error": 557,
+      "candidate_id_named_in_extraction_error": 1185,
+      "submit_source_branch_without_return": 555,
+      "error_candidate_ids_absent_from_call_events": 0,
+      "explicit_no_tool_invocation": 37
+    },
+    "gpt-5.6-luna": {
+      "submit_source_branch_without_return": 554,
+      "error_candidate_ids_absent_from_call_events": 0,
+      "explicit_no_tool_invocation": 58,
+      "unexplained_request_without_return": 1
+    },
+    "gpt-5.6-sol": {
+      "submit_source_branch_without_return": 546,
+      "error_candidate_ids_absent_from_call_events": 0,
+      "unexplained_request_without_return": 9
+    },
+    "grok-4.5": {
+      "submit_source_branch_without_return": 555,
+      "error_candidate_ids_absent_from_call_events": 0,
+      "multiple_extracted_calls_harness_error": 1,
+      "candidate_id_named_in_extraction_error": 2,
+      "explicit_no_tool_invocation": 4
+    },
+    "junie": {
+      "error_candidate_ids_absent_from_call_events": 0
+    },
+    "mimo-v2.5-pro": {
+      "submit_source_branch_without_return": 554,
+      "error_candidate_ids_absent_from_call_events": 0,
+      "multiple_extracted_calls_harness_error": 103,
+      "candidate_id_named_in_extraction_error": 226,
+      "explicit_no_tool_invocation": 58,
+      "unexplained_request_without_return": 1
+    },
+    "minimax-m3": {
+      "explicit_no_tool_invocation": 893,
+      "submit_source_branch_without_return": 555,
+      "error_candidate_ids_absent_from_call_events": 0,
+      "multiple_extracted_calls_harness_error": 1,
+      "candidate_id_named_in_extraction_error": 2
+    },
+    "opus-5": {
+      "submit_source_branch_without_return": 555,
+      "error_candidate_ids_absent_from_call_events": 0,
+      "explicit_no_tool_invocation": 7
+    },
+    "qwen3.5-35b-a3b": {
+      "explicit_no_tool_invocation": 22170,
+      "submit_source_branch_without_return": 555,
+      "error_candidate_ids_absent_from_call_events": 0
+    },
+    "qwen3.6-27b": {
+      "submit_source_branch_without_return": 555,
+      "error_candidate_ids_absent_from_call_events": 0,
+      "explicit_no_tool_invocation": 1597
+    },
+    "qwen3.6-35b-a3b": {
+      "explicit_no_tool_invocation": 2163,
+      "submit_source_branch_without_return": 552,
+      "error_candidate_ids_absent_from_call_events": 0
+    },
+    "sonnet-5": {
+      "submit_source_branch_without_return": 555,
+      "error_candidate_ids_absent_from_call_events": 0,
+      "explicit_no_tool_invocation": 5
+    }
+  },
+  "linked_response_operation_counts": {
+    "content_search": 57970,
+    "file_locate": 15924,
+    "file_view": 160755,
+    "edit_write": 42880,
+    "mixed": 199163,
+    "partial": 54972,
+    "unknown": 17874,
+    "vcs": 21566,
+    "script_execute": 6231,
+    "other": 2761,
+    "file_manage": 2155,
+    "build": 793,
+    "navigate": 84,
+    "environment": 786,
+    "test": 3762,
+    "submit": 1385
+  },
+  "linked_response_operation_presence_counts": {
+    "content_search": 167314,
+    "file_locate": 53689,
+    "file_view": 371706,
+    "edit_write": 78552,
+    "test": 53774,
+    "navigate": 177200,
+    "build": 11651,
+    "unknown": 72846,
+    "script_execute": 21097,
+    "other": 50361,
+    "vcs": 48309,
+    "file_manage": 13489,
+    "environment": 6153,
+    "submit": 1389
+  },
+  "junie_agent_step_count": 31449,
+  "junie_reported_tool_call_count": 31449,
+  "junie_step_vs_usage_count_consistency": 555,
+  "unexplained_requests": [
+    {
+      "trajectory_id": "gpt-5.6-luna__run-1__marimo-team__marimo-9766",
+      "event_index": 35,
+      "tool": "bash_terminal"
+    },
+    {
+      "trajectory_id": "gpt-5.6-sol__run-0__fathah__hermes-desktop-268",
+      "event_index": 56,
+      "tool": "bash_terminal"
+    },
+    {
+      "trajectory_id": "gpt-5.6-sol__run-0__langchain4j__langchain4j-5328",
+      "event_index": 77,
+      "tool": "bash_terminal"
+    },
+    {
+      "trajectory_id": "gpt-5.6-sol__run-1__gleam-lang__gleam-5797",
+      "event_index": 68,
+      "tool": "bash_terminal"
+    },
+    {
+      "trajectory_id": "gpt-5.6-sol__run-2__stablyai__orca-4331",
+      "event_index": 35,
+      "tool": "bash_terminal"
+    },
+    {
+      "trajectory_id": "gpt-5.6-sol__run-2__woodpecker-ci__woodpecker-6623",
+      "event_index": 44,
+      "tool": "bash_terminal"
+    },
+    {
+      "trajectory_id": "gpt-5.6-sol__run-4__facebook__lexical-8676",
+      "event_index": 74,
+      "tool": "bash_terminal"
+    },
+    {
+      "trajectory_id": "gpt-5.6-sol__run-4__marimo-team__marimo-9754",
+      "event_index": 59,
+      "tool": "bash_terminal"
+    },
+    {
+      "trajectory_id": "gpt-5.6-sol__run-4__mui__base-ui-4849",
+      "event_index": 95,
+      "tool": "bash_terminal"
+    },
+    {
+      "trajectory_id": "gpt-5.6-sol__run-4__ueberdosis__tiptap-7896",
+      "event_index": 62,
+      "tool": "bash_terminal"
+    },
+    {
+      "trajectory_id": "mimo-v2.5-pro__run-0__marimo-team__marimo-9766",
+      "event_index": 220,
+      "tool": "b_terminal"
+    }
+  ],
+  "review_boundary": "harness-error candidate membership is not an execution return; submit source branch is not proof of execution or normal termination"
+}

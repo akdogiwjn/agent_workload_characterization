@@ -1,0 +1,34 @@
+{
+  "schema": "osworld-v4-extra-review-manifest-v1",
+  "inputs": [
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/manifest.json",
+      "bytes": 522922,
+      "sha256": "9c925d3b923678f72e6f022d7efd38206a2b9057041c1de2e48a562ec9832cb6"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/findings-manifest.json",
+      "bytes": 1499,
+      "sha256": "faa56827a5e851a93aa008d75f3becd216afc5313dfc832f4bbd5fde2b402c94"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/command_records.jsonl",
+      "bytes": 75134838,
+      "sha256": "db3b122c60ad530163c984fb8289fc5294e350690c5e3fa7dcecdb04b4d2f761"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/verification.json",
+      "bytes": 436356,
+      "sha256": "9eecd77eb034c5d4bdf645dfa49a37023ebb890a973132a5c3de1b4c3b2f5a8b"
+    },
+    {
+      "path": "reports/analysis/OSWORLD-task-behavior-v4/remaining_unknown_review.md",
+      "bytes": 1288,
+      "sha256": "59d862ad3517a76797c2b0e0bb5fbf6cf1ced1b93458ecec70a1b880be7500bf"
+    }
+  ],
+  "rule": "SHA256(command UTF-8) exact match to literal DONE/ASK_USER/FAIL/WAIT; no execution or task-result interpretation",
+  "manifest_self_hash_excluded": true
+}

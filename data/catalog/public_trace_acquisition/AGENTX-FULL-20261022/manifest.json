@@ -1,0 +1,66 @@
+{
+  "schema": "awc-public-acquisition-agentx-full-v1",
+  "dataset_id": "semianalysisai/cc-traces-weka-062126",
+  "revision": "23f152f6f0f9399a85901b89a6458def0ef16729",
+  "snapshot_name": "AgentX v1.0 Full",
+  "downloaded_at_utc": "2026-10-22T15:44:04.353543+00:00",
+  "url": "https://huggingface.co/datasets/semianalysisai/cc-traces-weka-062126",
+  "api_metadata_url": "https://huggingface.co/api/datasets/semianalysisai/cc-traces-weka-062126?blobs=true",
+  "license": "apache-2.0",
+  "license_evidence": "dataset card declaration",
+  "gated": false,
+  "private": false,
+  "selected_files": [
+    "README.md",
+    "stats.txt",
+    "traces.jsonl"
+  ],
+  "scope": "complete fixed-revision JSONL corpus and metadata; upstream plot images and .gitattributes intentionally omitted",
+  "verification": "JSONL upstream LFS SHA-256 + bytes; small files git-blob SHA-1 + bytes; local SHA-256 for all files",
+  "files": [
+    {
+      "path": "data/raw/public/agentx_full/23f152f6f0f9399a85901b89a6458def0ef16729/README.md",
+      "bytes": 3577,
+      "sha256": "c5358865e47321e50b89e7c04168cb3e7601307c48541149462bc217853e9fcf",
+      "upstream": {
+        "rfilename": "README.md",
+        "blobId": "43f4a625a90e113d079dacb5f8235a4c7d9f6979",
+        "size": 3577
+      }
+    },
+    {
+      "path": "data/raw/public/agentx_full/23f152f6f0f9399a85901b89a6458def0ef16729/stats.txt",
+      "bytes": 237,
+      "sha256": "c939ba2930d56525331b331cf9419e0ccd4ced9481d3856ef191e92a1b8945a9",
+      "upstream": {
+        "rfilename": "stats.txt",
+        "blobId": "3f27b960b286b730b906cadd14e19a1f87800b1e",
+        "size": 237
+      }
+    },
+    {
+      "path": "data/raw/public/agentx_full/23f152f6f0f9399a85901b89a6458def0ef16729/traces.jsonl",
+      "bytes": 1847151435,
+      "sha256": "29b6a19e751ff5230771519aab755f80a0f43a4ba9cf96b72d3a6a437ec99276",
+      "upstream": {
+        "rfilename": "traces.jsonl",
+        "blobId": "39dbf23a21d1f597abab0e0c40624c918bbcfeb6",
+        "size": 1847151435,
+        "lfs": {
+          "sha256": "29b6a19e751ff5230771519aab755f80a0f43a4ba9cf96b72d3a6a437ec99276",
+          "size": 1847151435,
+          "pointerSize": 135
+        }
+      }
+    },
+    {
+      "path": "data/catalog/public_trace_acquisition/AGENTX-FULL-20261022/source_metadata/hf-api.json",
+      "bytes": 3105,
+      "sha256": "1cb95d29e1d55ff070b04c9fef7463347e832bd02a75a7435977b4247eaf8867",
+      "role": "public_upstream_metadata"
+    }
+  ],
+  "methodology_url": "https://inferencex.semianalysis.com/agentx/methodology",
+  "analysis_only": true,
+  "agent_or_model_execution": false
+}

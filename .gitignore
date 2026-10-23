@@ -61,6 +61,18 @@ data/raw/software/env01/
 /reports/**/per_trajectory.jsonl
 /reports/**/per_template.jsonl
 /reports/analysis/OSWORLD-MINIMAX-M3-behavior-v*/summary.json
+# OSWorld v4逐command审计明细留本机；摘要、图表及manifest可发布
+/reports/analysis/OSWORLD-task-behavior-v4/command_records.jsonl
+# SWE-bench补充分析的大型逐对象/实例派生明细保留本机
+/reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/object_links.jsonl
+/reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/per_instance.jsonl
+/reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/negative_coverage_review.jsonl
+/reports/analysis/SWEBENCH-COVERAGE-RESULTS-v1/new_behavior_rows.jsonl
+/reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/per_instance.jsonl
+/reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/reviewed_per_instance.jsonl
+/reports/analysis/SWE-REBENCH-behavior-v3/reviewed_per_trajectory.jsonl
+/reports/analysis/SWE-REBENCH-behavior-v3/protocol_evidence.jsonl
+/reports/analysis/SWE-REBENCH-behavior-v3/protocol_detail_evidence.jsonl
 /reports/analysis/PUBLIC-TRACE-OPERATIONS-*/coverage.json
 /reports/analysis/PUBLIC-TRACE-OPERATIONS-*/summary.json
 /reports/analysis/PUBLIC-TRACE-OPERATIONS-*/toolkits.json

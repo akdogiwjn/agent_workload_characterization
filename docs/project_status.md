@@ -3,10 +3,13 @@
 事实源为 [project_state.json](../project_state.json)。本页提供解释与定位，不重复审批、不提供执行命令。研究目标见[当前范围](current_scope.md)，当前工作见[短任务入口](current_task.md#current-task)；旧方法与任务库只按需查阅。
 
 <!-- PROJECT_STATE:START -->
-当前状态由 [2026-10-20 状态真源](../project_state.json)统一登记；这是进度记录，不是执行授权。
+当前状态由 [2026-10-23 状态真源](../project_state.json)统一登记；这是进度记录，不是执行授权。
 
 - 当前范围：本地单任务CPU、内存、磁盘I/O与占用、网络、时长、工具/软件统计和过程图；模型用量、阶段/错误、环境和采样质量一并记录。GPU、热点/PMU/微架构/优化不必交，Replay/并发仅可选。
-- 公开操作和软件汇总v3已完成限定分析：SWE-rebench 9,435轨迹，SWE-bench 19,876对象/41组；OSWorld 755模型×任务/108任务，H-EPM 414轨迹，AgentX/Applied为宏观证据。部分语义和软件运行身份未知，来源不混算分母。
+- 公开trace已完成限定操作/软件汇总v3：SWE-rebench 9,435轨迹、SWE-bench现登记20,023对象/41组（原v3为19,876，后补147）、OSWorld 755模型×任务记录/108任务（命令解析扩展至v4，原生/源码分层）、H-EPM 414轨迹；AgentX Full/256k及Applied提供宏观证据：AgentX两版同393会话，98,827/68,266请求，仍无业务工具明细或本地资源。未穷尽语义解析，不混合来源分母或把软件声明当实际启动。
+- SWE-bench逐任务评价补全：轨迹登记仍20,023对象/41组，另下载20,098份评价/配套文件，40/41组有公开评价产物。原8,730个未列项补出8,476未解决、140已解决、9未生成、1超时，余74空报告/30缺报告；MAYA补出222项，Mindlink同名公开来源仍缺366项评价。5个结果冲突单列；KGCompass更正300个任务身份，跨组去重实际2,294任务。仍无资源证据。
+- H-EPM/ToolSandbox复核v3完成：414轨迹、2,021次调用/返回，按保存请求静态核实全部原生工具身份，原24次未知及2次仅有活动分类的调用均补出确切名称。406条有用户侧结束请求，402条有返回，4条仅保存请求、8条无请求；Agent终止原因及资源等未记录。两组不同源码且均有local changes，只作描述比较。
+- SWE-rebench复核v3完成：85分片、9,435轨迹/111任务/17 participant完整核验；598,148请求/616,980结果的差额按589,061唯一ID配对、27,059未调用报告、860提取错误及其1,875候选、7,201提交分支请求与11复杂提交末尾请求核清。Junie 555轨迹的31,449步骤摘要另列，不当作零工具行为；任务失败不等于分析未完成，仍无本地资源证据。
 - 本地三个既有批次的27个显式run已完成字段与manifest盘点；历史区间覆盖v3按CPU、cgroup I/O及可用/proc I/O分列候选/有效/gap，网络字节和任务目录边界占用没有观测，未回填。
 - 新口径三链各一次已完成：Office目录扫描cwd修正后0→6629B；Coding Agent/verifier目录分别增长4874269/4614250B；Assistant场景内存状态N/A。主项采集和归档通过，cache仍unsupported导致supplement aggregate partial；共享netns不是任务/API专属字节。
 - 火山三链各n=1限定离线分析完成：3张独立四面板资源SVG、作图CSV和目录占用表已生成。请求Office8、Coding20、Assistant Agent/User6/1；原生工具、Submitted控制流与业务错误分别统计。Coding宿主末次process_exited保留gap；共享netns不代表API字节，不合并旧27次。报告：reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/summary.md。
@@ -14,13 +17,18 @@
 - G1仅登记小闭环通过；G2/G3-R未通过，CPU-02/Replay继续暂停。状态、建议、旧批准和旧execute命令都不是新授权。
 <!-- PROJECT_STATE:END -->
 
+公开数据集最新进展、来源边界及保存核查见[收尾总表](../reports/analysis/PUBLIC-DATASET-CLOSEOUT-20261023/summary.md)。已核验64,062项文件哈希并通过79项测试；历史HTML与综合报告未统一重制。
+
 ## 证据应如何使用
 
 | 已有证据 | 可以支持 | 不能支持 | 入口 |
 | --- | --- | --- | --- |
 | LOCAL-THREE-CLASS-REPEAT-01：原批+续批累计35次启动，27个预定task×round槽位现均有3点 | 原有效Excel1、Coding5、Assistant9加Complete-02的Coding4/Office8；新批12/12执行、清理/归档/适用测量验收通过，7个固定镜像批后只读身份匹配 | 旧Office错路由8次永久保留并排除预期路由任务结果；n=3仅是固定任务重复，不代表类别总体；共享netns不是任务/API专属，HTTP次数与费用unknown | [v3合并分析](../reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/summary.md)、[历史v2](../reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/summary.md) |
-| 公开操作与工具集：SWE-rebench全9,435条、SWE-bench登记19,876对象逐文件分流、OSWorld、H-EPM | 文件定位/检索/查看/修改/构建/测试等来源内比例、工具频次与出现轨迹数、声明应用与业务场景切片 | 部分/歧义记录、明确执行次数、耗时/资源或生产总体分布 | [操作总结](../reports/analysis/PUBLIC-TRACE-OPERATIONS-v3/summary.md)、[场景工具表](../reports/analysis/PUBLIC-TRACE-OPERATIONS-v3/toolkits.md) |
-| AgentX与Applied宏观请求/派生模板 | 来源内请求、多轮与subagent形态 | 具体工具集、真实Office API或CPU开销 | [宏观分析](../reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.md) |
+| 公开Coding | SWE-rebench、SWE-bench操作/工具统计；SWE-bench另补147个Sonar对象和20,098份评价/配套文件，40/41组有公开评价产物，原8,730个未列项逐项核查 | 74个空报告、30个缺报告及两组剩余来源缺口均列证据；5个结果冲突不擅自判定。KGCompass身份更正，仍不等同完整语义/资源覆盖。 | [逐任务评价](../reports/analysis/SWEBENCH-INSTANCE-RESULTS-v1/summary.md)、[操作v3](../reports/analysis/PUBLIC-TRACE-OPERATIONS-v3/summary.md)、[软件v3](../reports/analysis/PUBLIC-TRACE-SOFTWARE-TOOLKITS-v3/summary.md) |
+| SWE-rebench复核 | 85分片/9,435轨迹完整核验；589,061对唯一ID结果，候选提取错误、未调用报告、提交请求分列；Junie 31,449步骤摘要另列 | 调用/返回数量差额已解释，不当作缺下载；步骤与请求不冒充实际执行次数，无资源采样证据。 | [复核v3](../reports/analysis/SWE-REBENCH-behavior-v3/findings.md) |
+| 公开Computer/Office | OSWorld命令解析扩展至v4，全755条、201,050条command重算；原生动作、结果及usage保留v3证据 | 原生与源码分层；剩余控制流未知与保存标记分列；无实际GUI执行/应用/资源证明。 | [行为v4](../reports/analysis/OSWORLD-task-behavior-v4/findings.md)、[原生/任务v3](../reports/analysis/OSWORLD-task-behavior-v3/summary.md) |
+| 公开Assistant | H-EPM两组414轨迹、2,021次调用/返回；v3静态核实全部原生身份，24未知及2活动分类调用补出确切工具名 | 用户侧406个结束请求中402个有返回，Agent终止原因仍未记录；不同源码版本仅描述比较，无资源证据。 | [H-EPM v3](../reports/analysis/TOOLSANDBOX-HEPM-behavior-v3/summary.md)、[历史v2](../reports/analysis/TOOLSANDBOX-HEPM-behavior-v2/summary.md) |
+| 宏观请求/模板 | AgentX Full/256k同393会话，98,827/68,266请求；Applied Compute工作负载模板 | Full与256k重叠，不能合并分母；不足以统计真实业务软件或本地资源。 | [Full对照](../reports/analysis/AGENTX-FULL-MACRO-v1/summary.md)、[既有宏观分析](../reports/analysis/AGENTX-APPLIED-MACRO-v1/summary.md) |
 | RUN-01/RUN-02、G1 机制补证 | 登记 scope 的资源与生命周期可观测性 | 独占 Tool CPU、完整应用 I/O | [G1 裁定](history_index.md#docs-g1_consolidated_review-md) |
 | P1-12 三任务各三次，6 true / 2 false / 1 未评估 | 缺陷版本、固定预算下的结果与资源描述；9/9 LimitsExceeded | 正常完成成本、修复后性能基线 | [分析](../reports/analysis/P1-12-review-v1/summary.md)、[结束缺陷](../reports/analysis/P1-12-finish-protocol-review-v1/summary.md) |
 | CODING-REPEAT-01 九次封存重复 | Agent/verifier分离scope的资源、区间与重复描述 | 因果解释、Tool独占CPU、思考时间、账单或Coding类别代表性 | [特征化 v3](../reports/analysis/P1-12-CODING-REPEAT-01-characterization-v3/summary.md) |
