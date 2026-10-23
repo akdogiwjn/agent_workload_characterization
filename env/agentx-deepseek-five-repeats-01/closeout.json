@@ -1,0 +1,61 @@
+{
+  "task_checks": "PASS",
+  "tests_passed": 60,
+  "new_http_requests": 140,
+  "new_formal_executions": 134,
+  "cumulative_unique_sources": 117,
+  "cumulative_formal_executions": 351,
+  "session_execution_instances": 15,
+  "replicates_per_case": 3,
+  "all_dependency_edges_verified": 345,
+  "owned_worker_pids_absent": true,
+  "artifact_and_raw_manifest_hashes_rechecked": true,
+  "global_state_check": "FAIL_36_INHERITED_MISSING_IGNORED_FILES",
+  "project_state_equal_to_base": true,
+  "shared_worktree_files_mutated": false,
+  "video_changes_included": false,
+  "raw_evidence_in_git": false,
+  "task_state_patch_applied": false,
+  "report_manifest": {
+    "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/manifest.json",
+    "bytes": 15816,
+    "sha256": "270fc8143bd1ae9c519ead9939afc52998bac71e993165a551c0b8a03c50cf30"
+  },
+  "env_artifacts": [
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/env/agentx-deepseek-five-repeats-01/README.md",
+      "bytes": 3956,
+      "sha256": "9fd369cffbc66ba349e67409c10494224b3de94277dc99bfe582897291159654"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/env/agentx-deepseek-five-repeats-01/plan.json",
+      "bytes": 117940,
+      "sha256": "6d794294afce45d54ac3d286e7fc4230886f859bb6e4d431b22ae8bd2f2f0f0c"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/env/agentx-deepseek-five-repeats-01/project-state-check.json",
+      "bytes": 3617,
+      "sha256": "5cc545a755a5611885d20960be5d5ca377b9aad01df419e3f66418a519e1267b"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/env/agentx-deepseek-five-repeats-01/project-state-patch.json",
+      "bytes": 1084,
+      "sha256": "0dec924b7fe19e26eeb87733adbae7aac0b7407fe3c54b953bbbb98f183353e7"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/env/agentx-deepseek-five-repeats-01/requirements-lock.txt",
+      "bytes": 2331,
+      "sha256": "88eb3c70389c12bdac2ee3aafdfba7e57ed031e359f4209118421bd5225966f1"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/env/agentx-deepseek-five-repeats-01/status.json",
+      "bytes": 986,
+      "sha256": "8c63da891bdd3860e4d46f2f322a81890aa98ed6c4d263f2bdabe88d1b6a84d0"
+    },
+    {
+      "path": "/home/lcq/agentx_deepseek_five_repeats_20261023/env/agentx-deepseek-five-repeats-01/test-results.txt",
+      "bytes": 9830,
+      "sha256": "270d4f16e2897efdc56c28fdbba33dbb9c8e489aa8bc6dc0be2bd976e22d108f"
+    }
+  ]
+}
