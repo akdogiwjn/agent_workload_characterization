@@ -1,0 +1,6 @@
+case,source_output_tokens,actual_output_tokens,output_to_source_pct,finish_length,finish_stop
+baseline,6409,6400,99.85957247620533,19,1
+single_subagent,3949,3568,90.35198784502406,19,2
+multiple_subagents,231817,14937,6.4434446136392065,22,8
+serial_intervals,4266,4266,100.0,20,0
+long_context,25393,15988,62.96223368644902,22,4

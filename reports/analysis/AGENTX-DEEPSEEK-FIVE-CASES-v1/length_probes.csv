@@ -1,0 +1,4 @@
+probe,request_fields,status,http_status,requested_max_tokens,actual_completion_tokens,finish_reason,conclusion
+control,"{""max_tokens"": 64}",completed,200,64,1,stop,normal_stop_below_probe_target
+min_tokens,"{""max_tokens"": 64, ""min_tokens"": 64}",completed,200,64,1,stop,normal_stop_below_probe_target
+ignore_eos,"{""ignore_eos"": true, ""max_tokens"": 64}",completed,200,64,1,stop,normal_stop_below_probe_target
