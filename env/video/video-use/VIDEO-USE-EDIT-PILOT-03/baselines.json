@@ -1,0 +1,25 @@
+{
+  "schema": "video-use-edit-pilot-03-baselines-v1",
+  "files": {
+    "upstream_render": {
+      "path": "env/video/video-use/source/helpers/render.py",
+      "bytes": 29462,
+      "sha256": "6bbde45ad5929c7c94fa068996f81e0c44b55a9c9dedcf716fc24c071a5c8dd7"
+    },
+    "upstream_timeline_view": {
+      "path": "env/video/video-use/source/helpers/timeline_view.py",
+      "bytes": 13748,
+      "sha256": "69aee88e4204f86127740cca9de6a6eaa75a558df1bb07745dd62f69a3c2e9cf"
+    },
+    "upstream_skill": {
+      "path": "env/video/video-use/source/SKILL.md",
+      "bytes": 26098,
+      "sha256": "d3bbeb19bc0e81e197d74806fba15e0a5f5694a0cdf33f0a2348bffe8472a27b"
+    },
+    "official_judge": {
+      "path": "references/repos/agentic-vbench/tasks/agentic_vbench_repair/exp-disfluency-interview-3-task01/steps/solve/tests/judge.py",
+      "bytes": 26105,
+      "sha256": "cb5486bac019b19321f516ec15ee9253fe6c02024543449864517fbfd67ec96d"
+    }
+  }
+}

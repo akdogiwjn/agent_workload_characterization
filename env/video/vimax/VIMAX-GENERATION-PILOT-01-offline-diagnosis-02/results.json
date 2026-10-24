@@ -1,0 +1,60 @@
+{
+  "schema": "vimax-offline-diagnosis-results-v1",
+  "task": "VIMAX-GENERATION-PILOT-01-offline-diagnosis-02",
+  "date": "2026-10-23",
+  "status": "offline_code_repair_and_image_regressions_passed_real_planning_unverified",
+  "execution": {
+    "real_model_calls": 0,
+    "real_image_or_video_calls": 0,
+    "credentials_read": false,
+    "agent_generation_task_run": false,
+    "attempt_created": false,
+    "dependency_changes": false,
+    "reference_repository_modified": false
+  },
+  "repairs": {
+    "control_exception_propagation": true,
+    "tenacity_and_manual_retries_fail_fast_for_budget_deadline_cancellation": true,
+    "json_trailing_comma_scanner_ignores_string_and_escape_content": true,
+    "partial_revision_does_not_clear_same_stage_failure_budget": true,
+    "structured_response_diagnostics_linked_and_redacted": true
+  },
+  "validation": {
+    "base_regressions": 8,
+    "new_regressions": 6,
+    "total": 14,
+    "passed": 14,
+    "failed": 0,
+    "return_code": 0,
+    "network": "none",
+    "container_read_only": true,
+    "container_auto_removed": true,
+    "remaining_matching_containers": 0,
+    "final_log": "tests-v5-final-14.log"
+  },
+  "image": {
+    "tag": "vimax-task-bailian:arm64-v5-offline-fixes-03",
+    "id": "sha256:5a17b33eac7fb18d9eea4131cea6aa2b7cafb48171539bb4930a6edd3760b193",
+    "platform": "linux/arm64",
+    "base_tag": "vimax-task-bailian:arm64-v4",
+    "base_id": "sha256:7c634c46a829e2d22ee901023b70a6bdb2e5bd06d7b334b0f8a8150a3daa39be",
+    "build_network": "none",
+    "pull": false,
+    "dependencies_changed": false,
+    "adapter_python_files": 72,
+    "host_image_source_hashes_match": true,
+    "source_tree_sha256": "d5c38905f93c049e168b59b2df46c30d8718708e495de6771c2d8e2affd778a7",
+    "retained": true
+  },
+  "historical_execution": {
+    "raw_or_report_modified": false,
+    "historical_response_replayed": false,
+    "historical_real_planning_result_changed": false
+  },
+  "unverified": [
+    "real model planning schema compliance and stability",
+    "real endpoint finish_reason and usage field availability",
+    "actual HTTP transport count",
+    "service bill"
+  ]
+}

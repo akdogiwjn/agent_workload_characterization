@@ -1,0 +1,17 @@
+{
+ "task_id": "VIMAX-MEDIA-ENTRY-REPAIR-01-CSA",
+ "network": "none",
+ "work_seconds": 2400.0,
+ "closeout_seconds": 300.0,
+ "entry_command": [
+  "sh",
+  "-c",
+  "python3 /opt/run/fake_media_server.py & until python3 -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8666/health', timeout=2)\" 2>/dev/null; do sleep 2; done; exec python3 /opt/run/generation_entry.py"
+ ],
+ "extra_mounts": [
+  "type=bind,source=/home/lcq/agent_workload_characterization/env/video/vimax/VIMAX-MEDIA-ENTRY-REPAIR-01/fake_media_server.py,target=/opt/run/fake_media_server.py,readonly"
+ ],
+ "add_hosts": [
+  "ws-fake.cn-beijing.maas.aliyuncs.com:127.0.0.1"
+ ]
+}

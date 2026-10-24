@@ -1,0 +1,1477 @@
+{
+ "schema": "video-use-env01-no-model-validation-v1",
+ "task": "VIDEO-USE-ENV-01",
+ "executed_at": "2026-10-21T02:16:47Z",
+ "upstream_commit": "43cfc566833548093455c9d4a46bd69913b7e552",
+ "purpose": "infrastructure validation only; not an agent experiment, not a real workload sample, not full video-use verification",
+ "images_before": [
+  {
+   "reference": "video-common-base:arm64-v1",
+   "present": true,
+   "image_id": "sha256:d414b4270fec6ec2dd245982a522099d8941d8cd114ccd5ec2c6730815f3a706",
+   "architecture": "arm64",
+   "os": "linux"
+  },
+  {
+   "reference": "video-use-task:arm64-v1",
+   "present": true,
+   "image_id": "sha256:d14e6415db40eaecccb6540defc0c686df5dfde47801a1c692f4df5d5b187887",
+   "architecture": "arm64",
+   "os": "linux"
+  }
+ ],
+ "sampling": {
+  "interval_target_s": 0.5,
+  "path": "DockerCliRuntime.read_counters -> CgroupV1FileReader (host reads task container cgroup)",
+  "clock": "host time.monotonic_ns; container kernel monotonic for disk scans"
+ },
+ "network_scope": "task containers run with --network none; no task or API traffic exists and none is claimed; host shared-netns background is not attributed to any task",
+ "success_case": {
+  "run_id": "env01-20261021T021647Z-ok",
+  "container_id": "41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+  "cgroup_version": "v1",
+  "cgroup_dir": "/sys/fs/cgroup/cpu,cpuacct/docker/41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+  "image": "video-use-task:arm64-v1",
+  "commands": [
+   {
+    "name": "synth:mkdir_task_dirs",
+    "t_start_monotonic_ns": 1474618797287290,
+    "t_end_monotonic_ns": 1474618848381258,
+    "duration_s": 0.051093968,
+    "returncode": 0,
+    "timed_out": false,
+    "termination": null,
+    "output_excerpt": "",
+    "output_bytes_total": 0
+   },
+   {
+    "name": "synth:clip_a.mp4",
+    "t_start_monotonic_ns": 1474618848394948,
+    "t_end_monotonic_ns": 1474619099715690,
+    "duration_s": 0.251320742,
+    "returncode": 0,
+    "timed_out": false,
+    "termination": null,
+    "output_excerpt": "",
+    "output_bytes_total": 0
+   },
+   {
+    "name": "synth:clip_b.mp4",
+    "t_start_monotonic_ns": 1474619099726350,
+    "t_end_monotonic_ns": 1474619351119003,
+    "duration_s": 0.251392653,
+    "returncode": 0,
+    "timed_out": false,
+    "termination": null,
+    "output_excerpt": "",
+    "output_bytes_total": 0
+   },
+   {
+    "name": "write_edl",
+    "t_start_monotonic_ns": 1474619351207445,
+    "t_end_monotonic_ns": 1474619502444340,
+    "duration_s": 0.151236895,
+    "returncode": 0,
+    "timed_out": false,
+    "termination": null,
+    "output_excerpt": "",
+    "output_bytes_total": 0
+   },
+   {
+    "name": "render_edl",
+    "t_start_monotonic_ns": 1474619604221880,
+    "t_end_monotonic_ns": 1474621908160652,
+    "duration_s": 2.303938772,
+    "returncode": 0,
+    "timed_out": false,
+    "termination": null,
+    "output_excerpt": ": 4548 kb/s\n  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 4418 kb/s, 24 fps, 24 tbr, 12288 tbn (default)\n      Metadata:\n        handler_name    : VideoHandler\n        vendor_id       : [0][0][0][0]\n        encoder         : Lavc61.19.101 libx264\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 139 kb/s (default)\n      Metadata:\n        handler_name    : SoundHandler\n        vendor_id       : [0][0][0][0]\nStream mapping:\n  Stream #0:0 -> #0:0 (copy)\n  Stream #0:1 -> #0:1 (copy)\nOutput #0, mp4, to '/task/edit/final.prenorm.mp4':\n  Metadata:\n    major_brand     : isom\n    minor_version   : 512\n    compatible_brands: isomiso2avc1mp41\n    encoder         : Lavf61.7.103\n  Stream #0:0(und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 4418 kb/s, 24 fps, 24 tbr, 12288 tbn (default)\n      Metadata:\n        handler_name    : VideoHandler\n        vendor_id       : [0][0][0][0]\n        encoder         : Lavc61.19.101 libx264\n  Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 139 kb/s (default)\n      Metadata:\n        handler_name    : SoundHandler\n        vendor_id       : [0][0][0][0]\nPress [q] to stop, [?] for help\n[out#0/mp4 @ 0xaaaae81dca90] video:2966KiB audio:94KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.169669%\nframe=  132 fps=0.0 q=-1.0 Lsize=    3065KiB time=00:00:05.43 bitrate=4618.3kbits/s speed=3e+03x    \nextracting 2 segment(s) → clips_graded/  @ 24/1 fps (from source)\n  [00] clip_a.mp4     0.50-   3.00  ( 2.50s)  synthetic_open\n  [01] clip_b.mp4     1.00-   4.00  ( 3.00s)  synthetic_close\nconcat → base.mp4\nloudness normalization → social-ready (-14 LUFS / -1 dBTP / LRA 11)\n  loudnorm pass 1: measuring final.prenorm.mp4\n    measured: I=-21.74 LUFS  TP=-17.82  LRA=0.20\n  loudnorm pass 2: normalizing → final.mp4\n\ndone: /task/edit/final.mp4 (3.0 MB)\n",
+    "output_bytes_total": 4155
+   },
+   {
+    "name": "ffprobe_final",
+    "t_start_monotonic_ns": 1474622114622582,
+    "t_end_monotonic_ns": 1474622265872358,
+    "duration_s": 0.151249776,
+    "returncode": 0,
+    "timed_out": false,
+    "termination": null,
+    "output_excerpt": "{\n    \"programs\": [\n\n    ],\n    \"stream_groups\": [\n\n    ],\n    \"streams\": [\n        {\n            \"codec_name\": \"h264\",\n            \"codec_type\": \"video\",\n            \"width\": 1920,\n            \"height\": 1080,\n            \"avg_frame_rate\": \"24/1\"\n        },\n        {\n            \"codec_name\": \"aac\",\n            \"codec_type\": \"audio\",\n            \"avg_frame_rate\": \"0/0\"\n        }\n    ],\n    \"format\": {\n        \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n        \"duration\": \"5.529000\",\n        \"size\": \"3136233\"\n    }\n}\n",
+    "output_bytes_total": 521
+   },
+   {
+    "name": "hash_artifacts",
+    "t_start_monotonic_ns": 1474622265932049,
+    "t_end_monotonic_ns": 1474622366942668,
+    "duration_s": 0.101010619,
+    "returncode": 0,
+    "timed_out": false,
+    "termination": null,
+    "output_excerpt": "092adcbf37df6f39b8e660c584ebd3ca34c6d9e4fdddfb21f48313f5f99a1bb3  /task/sources/clip_a.mp4\nf5afc1b68bcce1f6941fe5a06420811376fac8456017059717b8084719d5df7f  /task/sources/clip_b.mp4\n5376a5d39db8d8d0d56e4bf68d96ff8a77a43a62d55e9f8afd3ad6fc96b171fa  /task/edit/final.mp4\n",
+    "output_bytes_total": 269
+   }
+  ],
+  "container_init_pid": 903898,
+  "disk_before": {
+   "clock_domain": "container_kernel_monotonic",
+   "t_monotonic_ns": 1474618774826259,
+   "size_basis": "apparent_file_size_bytes; allocated blocks not measured",
+   "entries": [
+    {
+     "role": "skill_source_copy",
+     "scope": "video_use_task_container",
+     "ownership": "image_content",
+     "path": "/opt/video-use",
+     "size_basis": "apparent_file_size_bytes",
+     "status": "complete",
+     "bytes": 773993,
+     "observed_subtotal_bytes": 773993,
+     "files_seen": 36,
+     "symlinks_skipped": 0,
+     "scan_started_monotonic_ns": 1474618774079878,
+     "scan_wall_ns": 707790
+    },
+    {
+     "role": "container_user_cache",
+     "scope": "video_use_task_container",
+     "ownership": "shared_cache",
+     "path": "/root/.cache",
+     "size_basis": "apparent_file_size_bytes",
+     "status": "path_missing",
+     "bytes": null,
+     "observed_subtotal_bytes": 0,
+     "files_seen": 0,
+     "symlinks_skipped": 0,
+     "scan_started_monotonic_ns": 1474618774788708,
+     "scan_wall_ns": 18680
+    },
+    {
+     "role": "task_output_edit",
+     "scope": "video_use_task_container",
+     "ownership": "task_scoped",
+     "path": "/task/edit",
+     "size_basis": "apparent_file_size_bytes",
+     "status": "path_missing",
+     "bytes": null,
+     "observed_subtotal_bytes": 0,
+     "files_seen": 0,
+     "symlinks_skipped": 0,
+     "scan_started_monotonic_ns": 1474618774808168,
+     "scan_wall_ns": 8931
+    },
+    {
+     "role": "task_input_sources",
+     "scope": "video_use_task_container",
+     "ownership": "task_scoped",
+     "path": "/task/sources",
+     "size_basis": "apparent_file_size_bytes",
+     "status": "path_missing",
+     "bytes": null,
+     "observed_subtotal_bytes": 0,
+     "files_seen": 0,
+     "symlinks_skipped": 0,
+     "scan_started_monotonic_ns": 1474618774817629,
+     "scan_wall_ns": 7780
+    }
+   ],
+   "diagnostics": {
+    "returncode": 0,
+    "timed_out": false,
+    "cwd": "/task",
+    "error_summary": null
+   },
+   "status": "partial",
+   "read_wall_ns": 151531570
+  },
+  "membership_observations": [
+   {
+    "t_monotonic_ns": 1474619604282731,
+    "cgroup_dir": "/sys/fs/cgroup/cpu,cpuacct/docker/41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+    "status": {
+     "cgroup.procs": "ok",
+     "tasks": "ok"
+    },
+    "pid_count": 1,
+    "comm_by_pid": {
+     "903898": "sleep"
+    },
+    "ffmpeg_pids": []
+   },
+   {
+    "t_monotonic_ns": 1474619905177630,
+    "cgroup_dir": "/sys/fs/cgroup/cpu,cpuacct/docker/41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+    "status": {
+     "cgroup.procs": "ok",
+     "tasks": "ok"
+    },
+    "pid_count": 3,
+    "comm_by_pid": {
+     "903898": "sleep",
+     "904340": "python",
+     "904350": "ffprobe"
+    },
+    "ffmpeg_pids": []
+   },
+   {
+    "t_monotonic_ns": 1474620205430420,
+    "cgroup_dir": "/sys/fs/cgroup/cpu,cpuacct/docker/41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+    "status": {
+     "cgroup.procs": "ok",
+     "tasks": "ok"
+    },
+    "pid_count": 95,
+    "comm_by_pid": {
+     "903898": "sleep",
+     "904340": "python",
+     "904351": "ffmpeg",
+     "904352": "av:h264:df0",
+     "904353": "av:h264:df1",
+     "904354": "av:h264:df2",
+     "904355": "av:h264:df3",
+     "904356": "av:h264:df4",
+     "904357": "av:h264:df5",
+     "904358": "av:h264:df6",
+     "904359": "av:h264:df7",
+     "904360": "av:h264:df8",
+     "904361": "av:h264:df9",
+     "904362": "av:h264:df10",
+     "904363": "av:h264:df11",
+     "904364": "av:h264:df12",
+     "904365": "av:h264:df13",
+     "904366": "av:h264:df14",
+     "904367": "av:h264:df15",
+     "904368": "enc0:0:libx264",
+     "904369": "enc0:1:aac",
+     "904370": "vf#0:0",
+     "904372": "dec0:0:h264",
+     "904374": "dmx0:mov,mp4,m4",
+     "904390": "vf#0:0",
+     "904391": "vf#0:0",
+     "904392": "vf#0:0",
+     "904393": "vf#0:0",
+     "904394": "vf#0:0",
+     "904395": "vf#0:0",
+     "904396": "vf#0:0",
+     "904397": "vf#0:0",
+     "904398": "vf#0:0",
+     "904399": "vf#0:0",
+     "904400": "vf#0:0",
+     "904401": "vf#0:0",
+     "904402": "vf#0:0",
+     "904403": "vf#0:0",
+     "904404": "vf#0:0",
+     "904405": "vf#0:0",
+     "904406": "vf#0:0",
+     "904407": "vf#0:0",
+     "904408": "vf#0:0",
+     "904409": "vf#0:0",
+     "904410": "vf#0:0",
+     "904411": "vf#0:0",
+     "904412": "vf#0:0",
+     "904413": "vf#0:0",
+     "904414": "vf#0:0",
+     "904415": "vf#0:0",
+     "904416": "vf#0:0",
+     "904417": "vf#0:0",
+     "904418": "vf#0:0",
+     "904419": "vf#0:0",
+     "904420": "vf#0:0",
+     "904421": "vf#0:0",
+     "904422": "vf#0:0",
+     "904423": "vf#0:0",
+     "904424": "vf#0:0",
+     "904425": "vf#0:0",
+     "904426": "vf#0:0",
+     "904427": "vf#0:0",
+     "904428": "vf#0:0",
+     "904429": "vf#0:0",
+     "904430": "vf#0:0",
+     "904431": "vf#0:0",
+     "904432": "vf#0:0",
+     "904433": "vf#0:0",
+     "904434": "vf#0:0",
+     "904435": "vf#0:0",
+     "904436": "vf#0:0",
+     "904437": "vf#0:0",
+     "904438": "vf#0:0",
+     "904439": "vf#0:0",
+     "904440": "vf#0:0",
+     "904441": "vf#0:0",
+     "904442": "vf#0:0",
+     "904443": "vf#0:0",
+     "904444": "vf#0:0",
+     "904445": "vf#0:0",
+     "904446": "vf#0:0",
+     "904447": "vf#0:0",
+     "904448": "vf#0:0",
+     "904449": "vf#0:0",
+     "904450": "vf#0:0",
+     "904451": "vf#0:0",
+     "904452": "vf#0:0",
+     "904453": "vf#0:0",
+     "904454": "vf#0:0",
+     "904455": "vf#0:0",
+     "904456": "vf#0:0",
+     "904457": "vf#0:0",
+     "904458": "vf#0:0",
+     "904459": "vf#0:0",
+     "904460": "mux0:mp4"
+    },
+    "ffmpeg_pids": [
+     "904351"
+    ]
+   },
+   {
+    "t_monotonic_ns": 1474620507627277,
+    "cgroup_dir": "/sys/fs/cgroup/cpu,cpuacct/docker/41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+    "status": {
+     "cgroup.procs": "ok",
+     "tasks": "ok"
+    },
+    "pid_count": 3,
+    "comm_by_pid": {
+     "903898": "sleep",
+     "904340": "python",
+     "904461": "ffprobe"
+    },
+    "ffmpeg_pids": []
+   },
+   {
+    "t_monotonic_ns": 1474620807871457,
+    "cgroup_dir": "/sys/fs/cgroup/cpu,cpuacct/docker/41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+    "status": {
+     "cgroup.procs": "ok",
+     "tasks": "ok"
+    },
+    "pid_count": 112,
+    "comm_by_pid": {
+     "903898": "sleep",
+     "904340": "python",
+     "904463": "ffmpeg",
+     "904464": "av:h264:df0",
+     "904465": "av:h264:df1",
+     "904466": "av:h264:df2",
+     "904467": "av:h264:df3",
+     "904468": "av:h264:df4",
+     "904469": "av:h264:df5",
+     "904470": "av:h264:df6",
+     "904471": "av:h264:df7",
+     "904472": "av:h264:df8",
+     "904473": "av:h264:df9",
+     "904474": "av:h264:df10",
+     "904475": "av:h264:df11",
+     "904476": "av:h264:df12",
+     "904477": "av:h264:df13",
+     "904478": "av:h264:df14",
+     "904479": "av:h264:df15",
+     "904480": "enc0:0:libx264",
+     "904481": "enc0:1:aac",
+     "904482": "vf#0:0",
+     "904483": "af#0:1",
+     "904484": "dec0:0:h264",
+     "904485": "dec0:1:aac",
+     "904486": "dmx0:mov,mp4,m4",
+     "904487": "af#0:1",
+     "904488": "af#0:1",
+     "904489": "af#0:1",
+     "904490": "af#0:1",
+     "904491": "af#0:1",
+     "904492": "af#0:1",
+     "904493": "af#0:1",
+     "904494": "af#0:1",
+     "904495": "af#0:1",
+     "904496": "af#0:1",
+     "904497": "af#0:1",
+     "904498": "af#0:1",
+     "904499": "af#0:1",
+     "904500": "af#0:1",
+     "904501": "af#0:1",
+     "904502": "vf#0:0",
+     "904503": "vf#0:0",
+     "904504": "vf#0:0",
+     "904505": "vf#0:0",
+     "904506": "vf#0:0",
+     "904507": "vf#0:0",
+     "904508": "vf#0:0",
+     "904509": "vf#0:0",
+     "904510": "vf#0:0",
+     "904511": "vf#0:0",
+     "904512": "vf#0:0",
+     "904513": "vf#0:0",
+     "904514": "vf#0:0",
+     "904515": "vf#0:0",
+     "904516": "vf#0:0",
+     "904517": "vf#0:0",
+     "904518": "vf#0:0",
+     "904519": "vf#0:0",
+     "904520": "vf#0:0",
+     "904521": "vf#0:0",
+     "904522": "vf#0:0",
+     "904523": "vf#0:0",
+     "904524": "vf#0:0",
+     "904525": "vf#0:0",
+     "904526": "vf#0:0",
+     "904527": "vf#0:0",
+     "904528": "vf#0:0",
+     "904529": "vf#0:0",
+     "904530": "vf#0:0",
+     "904531": "vf#0:0",
+     "904532": "vf#0:0",
+     "904533": "vf#0:0",
+     "904534": "vf#0:0",
+     "904535": "vf#0:0",
+     "904536": "vf#0:0",
+     "904537": "vf#0:0",
+     "904538": "vf#0:0",
+     "904539": "vf#0:0",
+     "904540": "vf#0:0",
+     "904541": "vf#0:0",
+     "904542": "vf#0:0",
+     "904543": "vf#0:0",
+     "904544": "vf#0:0",
+     "904545": "vf#0:0",
+     "904546": "vf#0:0",
+     "904547": "vf#0:0",
+     "904548": "vf#0:0",
+     "904549": "vf#0:0",
+     "904550": "vf#0:0",
+     "904551": "vf#0:0",
+     "904552": "vf#0:0",
+     "904553": "vf#0:0",
+     "904554": "vf#0:0",
+     "904555": "vf#0:0",
+     "904556": "vf#0:0",
+     "904557": "vf#0:0",
+     "904558": "vf#0:0",
+     "904559": "vf#0:0",
+     "904560": "vf#0:0",
+     "904561": "vf#0:0",
+     "904562": "vf#0:0",
+     "904563": "vf#0:0",
+     "904564": "vf#0:0",
+     "904565": "vf#0:0",
+     "904566": "vf#0:0",
+     "904567": "vf#0:0",
+     "904568": "vf#0:0",
+     "904569": "vf#0:0",
+     "904570": "vf#0:0",
+     "904571": "vf#0:0",
+     "904572": "mux0:mp4"
+    },
+    "ffmpeg_pids": [
+     "904463"
+    ]
+   },
+   {
+    "t_monotonic_ns": 1474621110774624,
+    "cgroup_dir": "/sys/fs/cgroup/cpu,cpuacct/docker/41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+    "status": {
+     "cgroup.procs": "ok",
+     "tasks": "ok"
+    },
+    "pid_count": 3,
+    "comm_by_pid": {
+     "903898": "sleep",
+     "904340": "python",
+     "904573": "ffmpeg"
+    },
+    "ffmpeg_pids": [
+     "904573"
+    ]
+   },
+   {
+    "t_monotonic_ns": 1474621410989783,
+    "cgroup_dir": "/sys/fs/cgroup/cpu,cpuacct/docker/41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+    "status": {
+     "cgroup.procs": "ok",
+     "tasks": "ok"
+    },
+    "pid_count": 23,
+    "comm_by_pid": {
+     "903898": "sleep",
+     "904340": "python",
+     "904579": "ffmpeg",
+     "904580": "enc0:0:pcm_s16l",
+     "904581": "af#0:0",
+     "904582": "dec0:1:aac",
+     "904583": "dmx0:mov,mp4,m4",
+     "904584": "af#0:0",
+     "904585": "af#0:0",
+     "904586": "af#0:0",
+     "904587": "af#0:0",
+     "904588": "af#0:0",
+     "904589": "af#0:0",
+     "904590": "af#0:0",
+     "904591": "af#0:0",
+     "904592": "af#0:0",
+     "904593": "af#0:0",
+     "904594": "af#0:0",
+     "904595": "af#0:0",
+     "904596": "af#0:0",
+     "904597": "af#0:0",
+     "904598": "af#0:0",
+     "904599": "mux0:null"
+    },
+    "ffmpeg_pids": [
+     "904579"
+    ]
+   },
+   {
+    "t_monotonic_ns": 1474621711620858,
+    "cgroup_dir": "/sys/fs/cgroup/cpu,cpuacct/docker/41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+    "status": {
+     "cgroup.procs": "ok",
+     "tasks": "ok"
+    },
+    "pid_count": 23,
+    "comm_by_pid": {
+     "903898": "sleep",
+     "904340": "python",
+     "904600": "ffmpeg",
+     "904601": "enc0:1:aac",
+     "904602": "af#0:1",
+     "904603": "dec0:1:aac",
+     "904604": "dmx0:mov,mp4,m4",
+     "904605": "af#0:1",
+     "904606": "af#0:1",
+     "904607": "af#0:1",
+     "904608": "af#0:1",
+     "904609": "af#0:1",
+     "904610": "af#0:1",
+     "904611": "af#0:1",
+     "904612": "af#0:1",
+     "904613": "af#0:1",
+     "904614": "af#0:1",
+     "904615": "af#0:1",
+     "904616": "af#0:1",
+     "904617": "af#0:1",
+     "904618": "af#0:1",
+     "904619": "af#0:1",
+     "904620": "mux0:mp4"
+    },
+    "ffmpeg_pids": [
+     "904600"
+    ]
+   },
+   {
+    "t_monotonic_ns": 1474622012314665,
+    "cgroup_dir": "/sys/fs/cgroup/cpu,cpuacct/docker/41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+    "status": {
+     "cgroup.procs": "ok",
+     "tasks": "ok"
+    },
+    "pid_count": 1,
+    "comm_by_pid": {
+     "903898": "sleep"
+    },
+    "ffmpeg_pids": []
+   }
+  ],
+  "membership_ffmpeg_seen": true,
+  "membership_non_init_task_processes": [
+   "af#0:0",
+   "af#0:1",
+   "av:h264:df0",
+   "av:h264:df1",
+   "av:h264:df10",
+   "av:h264:df11",
+   "av:h264:df12",
+   "av:h264:df13",
+   "av:h264:df14",
+   "av:h264:df15",
+   "av:h264:df2",
+   "av:h264:df3",
+   "av:h264:df4",
+   "av:h264:df5",
+   "av:h264:df6",
+   "av:h264:df7",
+   "av:h264:df8",
+   "av:h264:df9",
+   "dec0:0:h264",
+   "dec0:1:aac",
+   "dmx0:mov,mp4,m4",
+   "enc0:0:libx264",
+   "enc0:0:pcm_s16l",
+   "enc0:1:aac",
+   "ffmpeg",
+   "ffprobe",
+   "mux0:mp4",
+   "mux0:null",
+   "python",
+   "vf#0:0"
+  ],
+  "sampler_rows": [
+   {
+    "t_monotonic_ns": 1474619603859095,
+    "clock_domain": "system_monotonic",
+    "role": "boundary_start",
+    "container": {
+     "scope": "video_use_task",
+     "scope_kind": "agent_container",
+     "t_monotonic_ns": 1474619603859095,
+     "cpu_usage_usec": 881510,
+     "mem_current_bytes": 6787072,
+     "mem_peak_bytes": 57901056,
+     "io_read_bytes": 0,
+     "io_write_bytes": 0,
+     "read_status": {
+      "cpuacct.usage": "ok_ns_converted_to_usec",
+      "memory.usage_in_bytes": "ok",
+      "memory.max_usage_in_bytes": "ok",
+      "blkio.io_service_bytes_recursive": "not_found",
+      "blkio.io_service_bytes": "not_found",
+      "blkio.throttle.io_service_bytes_recursive": "ok",
+      "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+     },
+     "container_id": "41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+     "cgroup_version": "v1"
+    }
+   },
+   {
+    "t_monotonic_ns": 1474620105376174,
+    "clock_domain": "system_monotonic",
+    "role": "sample",
+    "container": {
+     "scope": "video_use_task",
+     "scope_kind": "agent_container",
+     "t_monotonic_ns": 1474620105376174,
+     "cpu_usage_usec": 1442314,
+     "mem_current_bytes": 245641216,
+     "mem_peak_bytes": 245641216,
+     "io_read_bytes": 0,
+     "io_write_bytes": 0,
+     "read_status": {
+      "cpuacct.usage": "ok_ns_converted_to_usec",
+      "memory.usage_in_bytes": "ok",
+      "memory.max_usage_in_bytes": "ok",
+      "blkio.io_service_bytes_recursive": "not_found",
+      "blkio.io_service_bytes": "not_found",
+      "blkio.throttle.io_service_bytes_recursive": "ok",
+      "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+     },
+     "container_id": "41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+     "cgroup_version": "v1"
+    }
+   },
+   {
+    "t_monotonic_ns": 1474620605738486,
+    "clock_domain": "system_monotonic",
+    "role": "sample",
+    "container": {
+     "scope": "video_use_task",
+     "scope_kind": "agent_container",
+     "t_monotonic_ns": 1474620605738486,
+     "cpu_usage_usec": 5011678,
+     "mem_current_bytes": 23044096,
+     "mem_peak_bytes": 951312384,
+     "io_read_bytes": 0,
+     "io_write_bytes": 0,
+     "read_status": {
+      "cpuacct.usage": "ok_ns_converted_to_usec",
+      "memory.usage_in_bytes": "ok",
+      "memory.max_usage_in_bytes": "ok",
+      "blkio.io_service_bytes_recursive": "not_found",
+      "blkio.io_service_bytes": "not_found",
+      "blkio.throttle.io_service_bytes_recursive": "ok",
+      "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+     },
+     "container_id": "41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+     "cgroup_version": "v1"
+    }
+   },
+   {
+    "t_monotonic_ns": 1474621106115719,
+    "clock_domain": "system_monotonic",
+    "role": "sample",
+    "container": {
+     "scope": "video_use_task",
+     "scope_kind": "agent_container",
+     "t_monotonic_ns": 1474621106115719,
+     "cpu_usage_usec": 9597229,
+     "mem_current_bytes": 56184832,
+     "mem_peak_bytes": 1037635584,
+     "io_read_bytes": 0,
+     "io_write_bytes": 0,
+     "read_status": {
+      "cpuacct.usage": "ok_ns_converted_to_usec",
+      "memory.usage_in_bytes": "ok",
+      "memory.max_usage_in_bytes": "ok",
+      "blkio.io_service_bytes_recursive": "not_found",
+      "blkio.io_service_bytes": "not_found",
+      "blkio.throttle.io_service_bytes_recursive": "ok",
+      "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+     },
+     "container_id": "41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+     "cgroup_version": "v1"
+    }
+   },
+   {
+    "t_monotonic_ns": 1474621606460791,
+    "clock_domain": "system_monotonic",
+    "role": "sample",
+    "container": {
+     "scope": "video_use_task",
+     "scope_kind": "agent_container",
+     "t_monotonic_ns": 1474621606460791,
+     "cpu_usage_usec": 10110966,
+     "mem_current_bytes": 48533504,
+     "mem_peak_bytes": 1037635584,
+     "io_read_bytes": 0,
+     "io_write_bytes": 0,
+     "read_status": {
+      "cpuacct.usage": "ok_ns_converted_to_usec",
+      "memory.usage_in_bytes": "ok",
+      "memory.max_usage_in_bytes": "ok",
+      "blkio.io_service_bytes_recursive": "not_found",
+      "blkio.io_service_bytes": "not_found",
+      "blkio.throttle.io_service_bytes_recursive": "ok",
+      "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+     },
+     "container_id": "41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+     "cgroup_version": "v1"
+    }
+   },
+   {
+    "t_monotonic_ns": 1474622012539508,
+    "clock_domain": "system_monotonic",
+    "role": "boundary_end",
+    "container": {
+     "scope": "video_use_task",
+     "scope_kind": "agent_container",
+     "t_monotonic_ns": 1474622012539508,
+     "cpu_usage_usec": 10382345,
+     "mem_current_bytes": 18886656,
+     "mem_peak_bytes": 1037635584,
+     "io_read_bytes": 0,
+     "io_write_bytes": 0,
+     "read_status": {
+      "cpuacct.usage": "ok_ns_converted_to_usec",
+      "memory.usage_in_bytes": "ok",
+      "memory.max_usage_in_bytes": "ok",
+      "blkio.io_service_bytes_recursive": "not_found",
+      "blkio.io_service_bytes": "not_found",
+      "blkio.throttle.io_service_bytes_recursive": "ok",
+      "io": "ok_no_records_real_zero:blkio.throttle.io_service_bytes_recursive"
+     },
+     "container_id": "41e66825e4f72f8ca587ab889003e33978eab795a6cdf4954a3e0dce4d91920a",
+     "cgroup_version": "v1"
+    }
+   }
+  ],
+  "rate_summary": {
+   "cpu": {
+    "interval_count": 5,
+    "valid": 5,
+    "gap": 0,
+    "total_delta": 9.500835,
+    "unit": "core_s",
+    "gap_reasons": []
+   },
+   "io_read": {
+    "interval_count": 5,
+    "valid": 5,
+    "gap": 0,
+    "total_delta": 0.0,
+    "unit": "bytes",
+    "gap_reasons": []
+   },
+   "io_write": {
+    "interval_count": 5,
+    "valid": 5,
+    "gap": 0,
+    "total_delta": 0.0,
+    "unit": "bytes",
+    "gap_reasons": []
+   }
+  },
+  "mem_gauge_summary": {
+   "samples_with_current": 6,
+   "max_sampled_current_bytes": 245641216,
+   "kernel_peak_bytes_max": 1037635584,
+   "note": "cgroup v1 memory.usage_in_bytes gauge and memory.max_usage_in_bytes kernel peak; different bases, never summed"
+  },
+  "render_footprint": {
+   "status": "partial",
+   "size_basis": "apparent_file_size_bytes; allocated size not measured",
+   "before": {
+    "clock_domain": "container_kernel_monotonic",
+    "t_monotonic_ns": 1474619557976369,
+    "size_basis": "apparent_file_size_bytes; allocated blocks not measured",
+    "entries": [
+     {
+      "role": "skill_source_copy",
+      "scope": "video_use_task_container",
+      "ownership": "image_content",
+      "path": "/opt/video-use",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 773993,
+      "observed_subtotal_bytes": 773993,
+      "files_seen": 36,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474619557485233,
+      "scan_wall_ns": 400245
+     },
+     {
+      "role": "container_user_cache",
+      "scope": "video_use_task_container",
+      "ownership": "shared_cache",
+      "path": "/root/.cache",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "path_missing",
+      "bytes": null,
+      "observed_subtotal_bytes": 0,
+      "files_seen": 0,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474619557886508,
+      "scan_wall_ns": 11240
+     },
+     {
+      "role": "task_output_edit",
+      "scope": "video_use_task_container",
+      "ownership": "task_scoped",
+      "path": "/task/edit",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 288,
+      "observed_subtotal_bytes": 288,
+      "files_seen": 1,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474619557898458,
+      "scan_wall_ns": 42271
+     },
+     {
+      "role": "task_input_sources",
+      "scope": "video_use_task_container",
+      "ownership": "task_scoped",
+      "path": "/task/sources",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 1934121,
+      "observed_subtotal_bytes": 1934121,
+      "files_seen": 2,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474619557941189,
+      "scan_wall_ns": 34330
+     }
+    ],
+    "diagnostics": {
+     "returncode": 0,
+     "timed_out": false,
+     "cwd": "/task",
+     "error_summary": null
+    },
+    "status": "partial",
+    "read_wall_ns": 101263823
+   },
+   "after": {
+    "clock_domain": "container_kernel_monotonic",
+    "t_monotonic_ns": 1474622105995153,
+    "size_basis": "apparent_file_size_bytes; allocated blocks not measured",
+    "entries": [
+     {
+      "role": "skill_source_copy",
+      "scope": "video_use_task_container",
+      "ownership": "image_content",
+      "path": "/opt/video-use",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 787989,
+      "observed_subtotal_bytes": 787989,
+      "files_seen": 37,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474622105424015,
+      "scan_wall_ns": 466726
+     },
+     {
+      "role": "container_user_cache",
+      "scope": "video_use_task_container",
+      "ownership": "shared_cache",
+      "path": "/root/.cache",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "path_missing",
+      "bytes": null,
+      "observed_subtotal_bytes": 0,
+      "files_seen": 0,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474622105891841,
+      "scan_wall_ns": 11450
+     },
+     {
+      "role": "task_output_edit",
+      "scope": "video_use_task_container",
+      "ownership": "task_scoped",
+      "path": "/task/edit",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 9415968,
+      "observed_subtotal_bytes": 9415968,
+      "files_seen": 5,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474622105903981,
+      "scan_wall_ns": 57351
+     },
+     {
+      "role": "task_input_sources",
+      "scope": "video_use_task_container",
+      "ownership": "task_scoped",
+      "path": "/task/sources",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 1934121,
+      "observed_subtotal_bytes": 1934121,
+      "files_seen": 2,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474622105961812,
+      "scan_wall_ns": 32321
+     }
+    ],
+    "diagnostics": {
+     "returncode": 0,
+     "timed_out": false,
+     "cwd": "/task",
+     "error_summary": null
+    },
+    "status": "partial",
+    "read_wall_ns": 101402655
+   },
+   "paths": [
+    {
+     "role": "container_user_cache",
+     "scope": "video_use_task_container",
+     "before": {
+      "role": "container_user_cache",
+      "scope": "video_use_task_container",
+      "ownership": "shared_cache",
+      "path": "/root/.cache",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "path_missing",
+      "bytes": null,
+      "observed_subtotal_bytes": 0,
+      "files_seen": 0,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474619557886508,
+      "scan_wall_ns": 11240
+     },
+     "after": {
+      "role": "container_user_cache",
+      "scope": "video_use_task_container",
+      "ownership": "shared_cache",
+      "path": "/root/.cache",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "path_missing",
+      "bytes": null,
+      "observed_subtotal_bytes": 0,
+      "files_seen": 0,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474622105891841,
+      "scan_wall_ns": 11450
+     },
+     "delta_bytes": null,
+     "delta_status": "unavailable_or_partial"
+    },
+    {
+     "role": "skill_source_copy",
+     "scope": "video_use_task_container",
+     "before": {
+      "role": "skill_source_copy",
+      "scope": "video_use_task_container",
+      "ownership": "image_content",
+      "path": "/opt/video-use",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 773993,
+      "observed_subtotal_bytes": 773993,
+      "files_seen": 36,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474619557485233,
+      "scan_wall_ns": 400245
+     },
+     "after": {
+      "role": "skill_source_copy",
+      "scope": "video_use_task_container",
+      "ownership": "image_content",
+      "path": "/opt/video-use",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 787989,
+      "observed_subtotal_bytes": 787989,
+      "files_seen": 37,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474622105424015,
+      "scan_wall_ns": 466726
+     },
+     "delta_bytes": 13996,
+     "delta_status": "observed"
+    },
+    {
+     "role": "task_input_sources",
+     "scope": "video_use_task_container",
+     "before": {
+      "role": "task_input_sources",
+      "scope": "video_use_task_container",
+      "ownership": "task_scoped",
+      "path": "/task/sources",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 1934121,
+      "observed_subtotal_bytes": 1934121,
+      "files_seen": 2,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474619557941189,
+      "scan_wall_ns": 34330
+     },
+     "after": {
+      "role": "task_input_sources",
+      "scope": "video_use_task_container",
+      "ownership": "task_scoped",
+      "path": "/task/sources",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 1934121,
+      "observed_subtotal_bytes": 1934121,
+      "files_seen": 2,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474622105961812,
+      "scan_wall_ns": 32321
+     },
+     "delta_bytes": 0,
+     "delta_status": "observed"
+    },
+    {
+     "role": "task_output_edit",
+     "scope": "video_use_task_container",
+     "before": {
+      "role": "task_output_edit",
+      "scope": "video_use_task_container",
+      "ownership": "task_scoped",
+      "path": "/task/edit",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 288,
+      "observed_subtotal_bytes": 288,
+      "files_seen": 1,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474619557898458,
+      "scan_wall_ns": 42271
+     },
+     "after": {
+      "role": "task_output_edit",
+      "scope": "video_use_task_container",
+      "ownership": "task_scoped",
+      "path": "/task/edit",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 9415968,
+      "observed_subtotal_bytes": 9415968,
+      "files_seen": 5,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474622105903981,
+      "scan_wall_ns": 57351
+     },
+     "delta_bytes": 9415680,
+     "delta_status": "observed"
+    }
+   ],
+   "limitations": [
+    "shared caches are not inferred as task-owned",
+    "directory scans are boundary-only, not periodic",
+    "the stop scan precedes later archive/report writes; measured size is not the final manifest byte total"
+   ]
+  },
+  "overall_footprint": {
+   "status": "partial",
+   "size_basis": "apparent_file_size_bytes; allocated size not measured",
+   "before": {
+    "clock_domain": "container_kernel_monotonic",
+    "t_monotonic_ns": 1474618774826259,
+    "size_basis": "apparent_file_size_bytes; allocated blocks not measured",
+    "entries": [
+     {
+      "role": "skill_source_copy",
+      "scope": "video_use_task_container",
+      "ownership": "image_content",
+      "path": "/opt/video-use",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 773993,
+      "observed_subtotal_bytes": 773993,
+      "files_seen": 36,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474618774079878,
+      "scan_wall_ns": 707790
+     },
+     {
+      "role": "container_user_cache",
+      "scope": "video_use_task_container",
+      "ownership": "shared_cache",
+      "path": "/root/.cache",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "path_missing",
+      "bytes": null,
+      "observed_subtotal_bytes": 0,
+      "files_seen": 0,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474618774788708,
+      "scan_wall_ns": 18680
+     },
+     {
+      "role": "task_output_edit",
+      "scope": "video_use_task_container",
+      "ownership": "task_scoped",
+      "path": "/task/edit",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "path_missing",
+      "bytes": null,
+      "observed_subtotal_bytes": 0,
+      "files_seen": 0,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474618774808168,
+      "scan_wall_ns": 8931
+     },
+     {
+      "role": "task_input_sources",
+      "scope": "video_use_task_container",
+      "ownership": "task_scoped",
+      "path": "/task/sources",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "path_missing",
+      "bytes": null,
+      "observed_subtotal_bytes": 0,
+      "files_seen": 0,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474618774817629,
+      "scan_wall_ns": 7780
+     }
+    ],
+    "diagnostics": {
+     "returncode": 0,
+     "timed_out": false,
+     "cwd": "/task",
+     "error_summary": null
+    },
+    "status": "partial",
+    "read_wall_ns": 151531570
+   },
+   "after": {
+    "clock_domain": "container_kernel_monotonic",
+    "t_monotonic_ns": 1474622105995153,
+    "size_basis": "apparent_file_size_bytes; allocated blocks not measured",
+    "entries": [
+     {
+      "role": "skill_source_copy",
+      "scope": "video_use_task_container",
+      "ownership": "image_content",
+      "path": "/opt/video-use",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 787989,
+      "observed_subtotal_bytes": 787989,
+      "files_seen": 37,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474622105424015,
+      "scan_wall_ns": 466726
+     },
+     {
+      "role": "container_user_cache",
+      "scope": "video_use_task_container",
+      "ownership": "shared_cache",
+      "path": "/root/.cache",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "path_missing",
+      "bytes": null,
+      "observed_subtotal_bytes": 0,
+      "files_seen": 0,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474622105891841,
+      "scan_wall_ns": 11450
+     },
+     {
+      "role": "task_output_edit",
+      "scope": "video_use_task_container",
+      "ownership": "task_scoped",
+      "path": "/task/edit",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 9415968,
+      "observed_subtotal_bytes": 9415968,
+      "files_seen": 5,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474622105903981,
+      "scan_wall_ns": 57351
+     },
+     {
+      "role": "task_input_sources",
+      "scope": "video_use_task_container",
+      "ownership": "task_scoped",
+      "path": "/task/sources",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 1934121,
+      "observed_subtotal_bytes": 1934121,
+      "files_seen": 2,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474622105961812,
+      "scan_wall_ns": 32321
+     }
+    ],
+    "diagnostics": {
+     "returncode": 0,
+     "timed_out": false,
+     "cwd": "/task",
+     "error_summary": null
+    },
+    "status": "partial",
+    "read_wall_ns": 101402655
+   },
+   "paths": [
+    {
+     "role": "container_user_cache",
+     "scope": "video_use_task_container",
+     "before": {
+      "role": "container_user_cache",
+      "scope": "video_use_task_container",
+      "ownership": "shared_cache",
+      "path": "/root/.cache",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "path_missing",
+      "bytes": null,
+      "observed_subtotal_bytes": 0,
+      "files_seen": 0,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474618774788708,
+      "scan_wall_ns": 18680
+     },
+     "after": {
+      "role": "container_user_cache",
+      "scope": "video_use_task_container",
+      "ownership": "shared_cache",
+      "path": "/root/.cache",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "path_missing",
+      "bytes": null,
+      "observed_subtotal_bytes": 0,
+      "files_seen": 0,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474622105891841,
+      "scan_wall_ns": 11450
+     },
+     "delta_bytes": null,
+     "delta_status": "unavailable_or_partial"
+    },
+    {
+     "role": "skill_source_copy",
+     "scope": "video_use_task_container",
+     "before": {
+      "role": "skill_source_copy",
+      "scope": "video_use_task_container",
+      "ownership": "image_content",
+      "path": "/opt/video-use",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 773993,
+      "observed_subtotal_bytes": 773993,
+      "files_seen": 36,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474618774079878,
+      "scan_wall_ns": 707790
+     },
+     "after": {
+      "role": "skill_source_copy",
+      "scope": "video_use_task_container",
+      "ownership": "image_content",
+      "path": "/opt/video-use",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 787989,
+      "observed_subtotal_bytes": 787989,
+      "files_seen": 37,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474622105424015,
+      "scan_wall_ns": 466726
+     },
+     "delta_bytes": 13996,
+     "delta_status": "observed"
+    },
+    {
+     "role": "task_input_sources",
+     "scope": "video_use_task_container",
+     "before": {
+      "role": "task_input_sources",
+      "scope": "video_use_task_container",
+      "ownership": "task_scoped",
+      "path": "/task/sources",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "path_missing",
+      "bytes": null,
+      "observed_subtotal_bytes": 0,
+      "files_seen": 0,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474618774817629,
+      "scan_wall_ns": 7780
+     },
+     "after": {
+      "role": "task_input_sources",
+      "scope": "video_use_task_container",
+      "ownership": "task_scoped",
+      "path": "/task/sources",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 1934121,
+      "observed_subtotal_bytes": 1934121,
+      "files_seen": 2,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474622105961812,
+      "scan_wall_ns": 32321
+     },
+     "delta_bytes": null,
+     "delta_status": "unavailable_or_partial"
+    },
+    {
+     "role": "task_output_edit",
+     "scope": "video_use_task_container",
+     "before": {
+      "role": "task_output_edit",
+      "scope": "video_use_task_container",
+      "ownership": "task_scoped",
+      "path": "/task/edit",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "path_missing",
+      "bytes": null,
+      "observed_subtotal_bytes": 0,
+      "files_seen": 0,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474618774808168,
+      "scan_wall_ns": 8931
+     },
+     "after": {
+      "role": "task_output_edit",
+      "scope": "video_use_task_container",
+      "ownership": "task_scoped",
+      "path": "/task/edit",
+      "size_basis": "apparent_file_size_bytes",
+      "status": "complete",
+      "bytes": 9415968,
+      "observed_subtotal_bytes": 9415968,
+      "files_seen": 5,
+      "symlinks_skipped": 0,
+      "scan_started_monotonic_ns": 1474622105903981,
+      "scan_wall_ns": 57351
+     },
+     "delta_bytes": null,
+     "delta_status": "unavailable_or_partial"
+    }
+   ],
+   "limitations": [
+    "shared caches are not inferred as task-owned",
+    "directory scans are boundary-only, not periodic",
+    "the stop scan precedes later archive/report writes; measured size is not the final manifest byte total"
+   ]
+  },
+  "ffprobe": {
+   "raw": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+     {
+      "codec_name": "h264",
+      "codec_type": "video",
+      "width": 1920,
+      "height": 1080,
+      "avg_frame_rate": "24/1"
+     },
+     {
+      "codec_name": "aac",
+      "codec_type": "audio",
+      "avg_frame_rate": "0/0"
+     }
+    ],
+    "format": {
+     "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+     "duration": "5.529000",
+     "size": "3136233"
+    }
+   },
+   "validation": {
+    "ok": true,
+    "problems": [],
+    "observed_duration_s": 5.529,
+    "expected_duration_s": 5.5
+   }
+  },
+  "artifact_hashes": {
+   "/task/sources/clip_a.mp4": "092adcbf37df6f39b8e660c584ebd3ca34c6d9e4fdddfb21f48313f5f99a1bb3",
+   "/task/sources/clip_b.mp4": "f5afc1b68bcce1f6941fe5a06420811376fac8456017059717b8084719d5df7f",
+   "/task/edit/final.mp4": "5376a5d39db8d8d0d56e4bf68d96ff8a77a43a62d55e9f8afd3ad6fc96b171fa"
+  },
+  "status": "render_complete",
+  "termination": null,
+  "removal_verification": "removed"
+ },
+ "timeout_case": {
+  "run_id": "env01-20261021T021647Z-to",
+  "container_id": "3415caa8accd7a6350718ad2ed481b5e61effbfa10c3f07e94bc1eb87bee0606",
+  "image": "video-use-task:arm64-v1",
+  "commands": [
+   {
+    "name": "timeout_encode",
+    "t_start_monotonic_ns": 1474622661942205,
+    "t_end_monotonic_ns": 1474626672172318,
+    "duration_s": 4.010230113,
+    "returncode": 124,
+    "timed_out": true,
+    "termination": {
+     "confirmed": false,
+     "method": "budget_exhausted_before_stop",
+     "container_alive": null,
+     "error": "step_share_deadline_expired"
+    },
+    "output_excerpt": "",
+    "output_bytes_total": 0
+   }
+  ],
+  "timed_out": true,
+  "termination_from_exec": {
+   "confirmed": false,
+   "method": "budget_exhausted_before_stop",
+   "container_alive": null,
+   "error": "step_share_deadline_expired"
+  },
+  "termination_explicit": {
+   "confirmed": true,
+   "method": "docker_stop",
+   "container_alive": false,
+   "rc": 0
+  },
+  "status": "timeout_counterexample_executed",
+  "removal_verification": "removed"
+ },
+ "cleanup": {
+  "images_after": [
+   {
+    "reference": "video-common-base:arm64-v1",
+    "present": true,
+    "image_id": "sha256:d414b4270fec6ec2dd245982a522099d8941d8cd114ccd5ec2c6730815f3a706",
+    "architecture": "arm64",
+    "os": "linux"
+   },
+   {
+    "reference": "video-use-task:arm64-v1",
+    "present": true,
+    "image_id": "sha256:d14e6415db40eaecccb6540defc0c686df5dfde47801a1c692f4df5d5b187887",
+    "architecture": "arm64",
+    "os": "linux"
+   }
+  ],
+  "images_retained": true,
+  "note": "containers are deleted per case; images retained by design"
+ },
+ "not_tested": [
+  "ElevenLabs Scribe transcription (transcribe.py) — requires a real API key; none read, none called",
+  "visual self-eval chain (timeline_view PNG quality assertions) — not run",
+  "Codex CLI inside the task container and model routing — CLI not installed this round",
+  "real footage / full video-use workflow — synthetic clips only",
+  "yt-dlp, animation engines (HyperFrames/Remotion/Manim), browser stack — not installed"
+ ],
+ "overall": "pass"
+}

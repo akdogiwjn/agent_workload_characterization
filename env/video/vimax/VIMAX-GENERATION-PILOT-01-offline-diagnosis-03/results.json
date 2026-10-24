@@ -1,0 +1,65 @@
+{
+  "schema": "vimax-callback-repair-results-v1",
+  "date": "2026-10-23",
+  "status": "offline_callback_repair_passed_real_planning_unverified",
+  "real_api_calls": 0,
+  "credentials_read": false,
+  "formal_attempt_created": false,
+  "image_generation_or_video_generation_run": false,
+  "langchain_core_version": "0.3.86",
+  "dispatch_flags_verified_by_real_dispatch": {
+    "raise_error": true,
+    "run_inline": true
+  },
+  "pre_send_gate": {
+    "atomic_reservation_and_open_persistence": true,
+    "cap_zero_mock_sends": 0,
+    "expired_deadline_mock_sends": 0,
+    "ledger_write_failure_mock_sends": 0,
+    "two_concurrent_calls_one_slot_max_sends": 1,
+    "ledger_write_failure_nonrecoverable_in_agent_loop": true,
+    "sdk_max_retries": 0,
+    "unconfigured_ledger_path_mock_sends": 0
+  },
+  "correlation": {
+    "request_to_parse_success_and_error": "response metadata on exact generation/message",
+    "shared_current_or_contextvar_required": false,
+    "concurrent_interleaved_ids_match": true,
+    "sequential_error_then_success_stale_id": false,
+    "missing_response_records_error": true,
+    "cancelled_call_right_censored_and_map_cleared": true,
+    "ledger_file_persistence_verified": true
+  },
+  "tests": {
+    "previous_regressions": 14,
+    "new_callback_integration": 10,
+    "final_image_run": 24,
+    "passed": 24,
+    "failed": 0,
+    "exit_code": 0,
+    "log": "tests-final-image-v2.log"
+  },
+  "image": {
+    "base_tag": "vimax-task-bailian:arm64-v5-offline-fixes-03",
+    "base_id": "sha256:5a17b33eac7fb18d9eea4131cea6aa2b7cafb48171539bb4930a6edd3760b193",
+    "tag": "vimax-task-bailian:arm64-v5-callback-fixes-02",
+    "id": "sha256:f079f9479f8587207e1d3167c8ad8d759f81a2b25ad79a6a23f03514ee5c0533",
+    "platform": "linux/arm64",
+    "host_image_source_files": 88,
+    "image_source_files": 88,
+    "source_hashes_exact_match": true,
+    "network_disabled_build": true,
+    "dependencies_changed": false,
+    "host_source_files": 88,
+    "superseded_candidate": {
+      "tag": "vimax-task-bailian:arm64-v5-callback-fixes-01",
+      "id": "sha256:dfb088ab5b4b118b1b6b8800112427b672dbf7652ba5663dd1d6bf04aceb74d9",
+      "tests_before_no_path_gate": 23
+    },
+    "source_comparison": "source-hash-comparison-final.json"
+  },
+  "real_model_planning_verified": false,
+  "actual_http_count": null,
+  "billing": null,
+  "execution_authorized": false
+}

@@ -1,0 +1,14 @@
+{
+ "VIMAX_LLM_BASE_URL": "http://ws-fake.cn-beijing.maas.aliyuncs.com:8666/compatible-mode/v1",
+ "VIMAX_IMAGE_BASE_URL": "http://ws-fake.cn-beijing.maas.aliyuncs.com:8666/compatible-mode/v1",
+ "VIMAX_VIDEO_BASE_URL": "http://ws-fake.cn-beijing.maas.aliyuncs.com:8666",
+ "VIMAX_BAILIAN_VIDEO_POLL_INTERVAL_SECONDS": "1",
+ "FAKE_PORT": "8666",
+ "FAKE_MEDIA_DIR": "/tmp/fake-media",
+ "FAKE_STATS_PATH": "/workspace/attempt/fake-stats.json",
+ "VIMAX_LLM_API_KEY": "fake-offline-key",
+ "VIMAX_IMAGE_API_KEY": "fake-offline-key",
+ "VIMAX_VIDEO_API_KEY": "fake-offline-key",
+ "FAKE_PUBLIC_HOST": "ws-fake.cn-beijing.maas.aliyuncs.com:8666",
+ "IMAGEIO_FFMPEG_EXE": "/usr/bin/ffmpeg"
+}

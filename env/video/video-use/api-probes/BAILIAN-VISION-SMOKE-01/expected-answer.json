@@ -1,0 +1,22 @@
+{
+ "task": "BAILIAN-VISION-SMOKE-01",
+ "red_circles": 3,
+ "blue_squares": 3,
+ "red_side": "left",
+ "image": {
+  "path": "neutral-test.png",
+  "sha256": "d73293ba7f30e15d825f4037ed2a7106521d2a6e0fdab713437d6b1889abb166",
+  "bytes": 1925,
+  "size_px": [
+   512,
+   256
+  ]
+ },
+ "question": "请说明图片中两类图形的颜色、形状、各自数量和左右位置。",
+ "judgement_rules_fixed_pre_send": {
+  "PASS": "red count, blue count, red-side location and color/shape binding all correct; extra words never fail vision",
+  "FAIL": "a clearly parsed fact is wrong, or the model states it cannot process the image",
+  "UNKNOWN": "ambiguous/unparseable, no final answer, incomplete, timeout, auth or transport failure — recorded distinctly, never lumped as vision failure"
+ },
+ "note": "not sent to the model; never modified after the send"
+}

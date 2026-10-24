@@ -1,0 +1,27 @@
+{
+  "schema": "vimax-prechange-snapshot-scope-v1",
+  "task": "VIMAX-GENERATION-PILOT-01-offline-diagnosis-02",
+  "exact_workspace_snapshots": "snapshots/pre-change-snapshot.json lists the 7 source files copied before edits began",
+  "v4_image_snapshot": {
+    "image_tag": "vimax-task-bailian:arm64-v4",
+    "image_id": "sha256:7c634c46a829e2d22ee901023b70a6bdb2e5bd06d7b334b0f8a8150a3daa39be",
+    "network": "none",
+    "archive": "prechange-v4-unmodified-modules.tar",
+    "modules": [
+      "agent_runtime/request_ledger.py",
+      "agents/best_image_selector.py",
+      "agents/camera_image_generator.py",
+      "agents/character_extractor.py",
+      "agents/event_extractor.py",
+      "agents/global_information_planner.py",
+      "agents/reference_image_selector.py",
+      "agents/scene_extractor.py",
+      "agents/script_enhancer.py",
+      "agents/script_planner.py",
+      "agents/screenwriter.py",
+      "pipelines/script2video_pipeline.py",
+      "utils/retry.py"
+    ],
+  "note": "The seven files in the exact workspace snapshot take precedence where they overlap historical v4 source."
+  }
+}

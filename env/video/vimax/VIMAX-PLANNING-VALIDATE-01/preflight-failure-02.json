@@ -1,0 +1,11 @@
+{
+  "step": "planning_entry_network_none_self_check",
+  "result": "failed_before_any_model_request",
+  "cause": "the image's non-root UID could not create SessionIndex under a root-owned /workspace tmpfs",
+  "evidence": "PermissionError [Errno 13] creating /workspace/.vimax",
+  "credential_access": false,
+  "network": "none",
+  "api_requests": 0,
+  "repair": "run only the isolated self-check container as root; the actual task container remains the invoking host UID/GID",
+  "historical_files_modified": false
+}

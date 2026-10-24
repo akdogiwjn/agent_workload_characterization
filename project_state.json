@@ -2097,7 +2097,8 @@
     "G1仅登记小闭环通过；G2/G3-R未通过，CPU-02/Replay继续暂停。状态、建议、旧批准和旧execute命令都不是新授权。",
     "AgentX深入分析第1步完成：Full/256k同393会话、98,827/68,266请求；上下文演化、已完成历史前缀潜力、容量简化模型、请求重叠、筛选影响及时间局部性已分析，生成10张4K PNG/SVG、作图CSV和10页PPT。20项测试与216次真实请求穷举核对通过；模拟潜力不当作缓存命中/硬件并发。后续本地mock回放与DeepSeek客户端重复测量见AgentX五类重复实测报告。",
     "AgentX后续客户端测量收尾：Full全量分析为393会话/98,827请求；所选5会话各执行3次，为117个唯一源请求、351次正式客户端执行。仅测客户端，未执行原始业务工具，原始长输出负载未完整复现；这三项为证据边界，不是待补跑任务。",
-    "2026-10-25视频代码与文档远程检查点：合并远程AgentX收尾与状态工具更新，保存四仓库运行/观测代码、122项限定离线回归及小型配置报告；上游适配差异另存文本补丁。模型、媒体、raw轨迹/采样、安装包及local_archive留本机；本次无新执行授权。"
+    "2026-10-25视频代码与文档远程检查点：合并远程AgentX收尾与状态工具更新，保存四仓库运行/观测代码、122项限定离线回归及小型配置报告；上游适配差异另存文本补丁。模型、媒体、raw轨迹/采样、安装包及local_archive留本机；本次无新执行授权。",
+    "2026-10-25按用户偏好统一原目录main工作流：本地main已安全对齐远程合并检查点；后续默认在原目录提交和非强制推送，不自动创建分支/worktree，多对话协调文件并串行Git操作。模型、媒体、原始运行证据和本机归档继续留本地；历史分支不自动删除。"
   ],
   "html_reading_pack": {
     "status": "generated_revised_offline_static_reading_pack",
@@ -2155,8 +2156,8 @@
   "evidence": [
     {
       "path": ".gitignore",
-      "bytes": 4730,
-      "sha256": "8b97e1160d8686cd626c3c5d6e33e79ca6726c84582e17541178a8930dd6ce62",
+      "bytes": 5761,
+      "sha256": "c360e7e8ea3c9288ad4bcb915ea2741916a4fcba8be0b3844baf3da7f2ae615d",
       "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
     },
     {
@@ -3585,20 +3586,20 @@
     },
     {
       "path": "README.md",
-      "bytes": 21815,
-      "sha256": "f73a520ba72b25f3ee41c232c00f7ef7dd9aa9ff7b637a2cad78048d0f7b891d",
+      "bytes": 22148,
+      "sha256": "ae46b13e59127a32f0a041840a12510c4cd1cd7d0abc02b8e42c7dfab81c354f",
       "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
     },
     {
       "path": "docs/README.md",
-      "bytes": 22906,
-      "sha256": "c07aa8bedea93d4933fab57ff43c9cbe61524f43600751211e30c9a94190599b",
+      "bytes": 23239,
+      "sha256": "e55c3447a8e2eec71033bc4730acedf52cd89d4a65ad85de05ed79eaf39b826e",
       "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
     },
     {
       "path": "docs/project_status.md",
-      "bytes": 25342,
-      "sha256": "a8d309679fd8e0880d67114c2abe4b1a3615f597a4280f4fd695797c3907bba8",
+      "bytes": 25675,
+      "sha256": "eafe719871bc9d745f1f3d0690fc37e1669d565ca7125381d23866fda7361d29",
       "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
     },
     {
@@ -4595,8 +4596,8 @@
     {
       "path": "AGENTS.md",
       "role": "explicit current-state evidence update",
-      "bytes": 2925,
-      "sha256": "b002ee5e945bdca2f75e985a0d18f591d9177628100c5d059b93405b2f43e23a"
+      "bytes": 3597,
+      "sha256": "2da1b7c4928859f99b0a6a37f19585f106a8e8a4f9092b95003e9a76d01b616a"
     },
     {
       "path": "docs/project_state_protection.md",
@@ -5015,8 +5016,8 @@
     {
       "path": "docs/video_publication_checkpoint_20261025.md",
       "role": "explicit current-state evidence update",
-      "bytes": 2162,
-      "sha256": "1ec2e4c580c5c177c6636a9b11350b4a44872faf431b517177ccfd34c875742b"
+      "bytes": 2471,
+      "sha256": "e0246a6d492ffd11eda2cc3d87ffb81f5d7a4bbf88c85e0cf13cd4d57882f53e"
     },
     {
       "path": ".gitattributes",
@@ -7641,5 +7642,16 @@
     ],
     "execution_authorized": false,
     "validation_scope": "offline checks and local evidence overlay; missing raw evidence remains local"
+  },
+  "repository_workflow": {
+    "default_directory": "/home/lcq/agent_workload_characterization",
+    "default_branch": "main",
+    "automatic_branch_or_worktree_creation": false,
+    "extra_branch_requires_explicit_user_request": true,
+    "git_operations": "serialize commit, sync and push; preserve concurrent edits and snapshot before reconciliation",
+    "remote_sync_scope": "published tracked code/docs/small configuration; models, media, runtime evidence and archives remain local",
+    "existing_other_conversation_worktrees": "preserve; do not delete automatically",
+    "user_preference_date": "2026-10-25",
+    "execution_authorized": false
   }
 }

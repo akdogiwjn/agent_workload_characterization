@@ -1,0 +1,11 @@
+{
+  "step": "planning_entry_network_none_self_check",
+  "result": "failed_before_any_model_request",
+  "cause": "container root filesystem was read-only and the first self-check did not mount a writable temporary /workspace for SessionIndex initialization",
+  "evidence": "OSError [Errno 30] while creating /workspace/.vimax",
+  "credential_access": false,
+  "network": "none",
+  "api_requests": 0,
+  "repair": "self-check now supplies an isolated writable tmpfs at /workspace; production workspace remains a dedicated bind mount",
+  "historical_files_modified": false
+}

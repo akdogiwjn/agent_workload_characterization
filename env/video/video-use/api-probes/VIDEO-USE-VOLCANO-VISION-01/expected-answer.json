@@ -1,0 +1,31 @@
+{
+ "task": "VIDEO-USE-VOLCANO-VISION-01",
+ "left": {
+  "color": "blue",
+  "shape": "square",
+  "count": 2
+ },
+ "right": {
+  "color": "red",
+  "shape": "circle",
+  "count": 1
+ },
+ "red_side": "right",
+ "image": {
+  "path": "neutral-test.png",
+  "sha256": "fbf76de8ca42b2ffc4335d3f3ac1a98f884de6ca5d3fac33510560eede76b642",
+  "bytes": 1344,
+  "size_px": [
+   512,
+   256
+  ]
+ },
+ "question": "Look at the image. It shows shapes on a white background split into a left side and a right side. Answer using exactly these three lines:\nleft side: <count> <color> <shape>s\nright side: <count> <color> <shape>s\nred shapes are on the <left/right> side\nUse color words red or blue, shape words circle or circle(s), square or square(s), and replace <count> with the number.",
+ "judgement_rules_fixed_pre_send": {
+  "PASS": "left/right color+shape+count and red-side location all correct; extra words never fail vision",
+  "FAIL": "a clearly parsed fact is wrong, or the model states it cannot process the image",
+  "UNKNOWN": "ambiguous/unparseable answer, or transport/HTTP/protocol failure (not attributed to vision)",
+  "format": "judged separately as format_ok; a bare 'I can see images' claim or HTTP 200 never counts"
+ },
+ "note": "not sent to the model; never modified after the send"
+}

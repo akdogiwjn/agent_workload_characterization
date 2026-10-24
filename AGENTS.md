@@ -1,4 +1,4 @@
-# Shared workspace and project-state protection
+# Main-branch workflow and project-state protection
 
 This repository may be used by several conversations concurrently. Preserve
 changes that do not belong to the current task, including uncommitted state.
@@ -6,10 +6,19 @@ changes that do not belong to the current task, including uncommitted state.
 ## Before editing
 
 - Read `git status --short` and the current `project_state.json`.
-- For parallel tasks, use separate Git worktrees and branches. Do not move,
-  reset, or clean another conversation's existing worktree. Ignored raw data,
-  credentials and archives are not copied by Git; use existing read-only data
-  locations deliberately, never copy credentials into a worktree or commit.
+- The user's default is to work in this original repository on `main` and
+  keep local `main` synchronized with remote `main` for published files.
+  Do not automatically create additional branches or worktrees. Use one only
+  when the user explicitly requests or approves it. Existing worktrees and
+  branches belonging to other conversations must not be removed or altered.
+- With multiple conversations, keep file ownership explicit, coordinate
+  overlapping edits, and serialize Git index/ref mutations and push operations.
+  Keep using the cooperative state lock below. Before synchronizing `main`,
+  inspect local changes, retain a recoverable snapshot, and preserve newer
+  local work while merging remote updates; never blindly overwrite it.
+- Ignored raw data, credentials, archives, models and runtime payloads stay
+  local. Published code, documentation and small configuration/manifest files
+  use normal commits and non-forced pushes on `main`.
 - Update only the files and state entries needed by the user's task. Preserve
   any exclusions the user gave, including exclusions for video-related work.
 
@@ -42,10 +51,11 @@ entries. The execution-authorization field must never be changed by the helper.
 Do not refresh historical evidence hashes merely to make validation pass.
 
 The lock is cooperative: arbitrary editors and Git commands can bypass it.
-Separate worktrees, automatic snapshots, scoped changes and frequent reviewed
-commits are all needed. A Git push backs up committed files only, not ignored
-raw data, credentials or local archives. State-only checkpoints may retain
-local evidence references; state clearly what the remote repository contains.
+Coordinated edits, automatic snapshots, scoped changes and frequent reviewed
+commits protect the shared `main` workflow. A Git push backs up committed files
+only, not ignored raw data, credentials or local archives. State-only
+checkpoints may retain local evidence references; state clearly what the
+remote repository contains.
 
 ## Commit scope
 

@@ -1,0 +1,50 @@
+{
+  "schema": "video-use-pilot03-synthetic-validation-result-v1",
+  "container_id": "3ab81bbd1ce24fe35a134edf51653cf2b9d542b8737ab040ea3e64e497511394",
+  "container_name": "awc-video-use-pilot03-synthetic-v6-20261021",
+  "image": "video-use-task:arm64-codex-bailian-v6",
+  "image_id": "sha256:1a48c7b00da789ec99722ebb2be6e1df72aec9d37cc2a64e83c82e89ecf700c5",
+  "network": "none",
+  "cpu_limit": 2,
+  "memory_limit_bytes": 4294967296,
+  "timeout_s": 300,
+  "result": "pass",
+  "container_removed": true,
+  "codex_version": "0.163.0",
+  "cases": [
+    {
+      "input": [
+        854,
+        480
+      ],
+      "input_fps": "25/1",
+      "output": [
+        854,
+        480
+      ],
+      "output_fps": "25/1",
+      "audio": "present",
+      "ffprobe_decode": "pass",
+      "near_end_screenshot": "pass",
+      "duration_s": 3.261016,
+      "expected_s": 3.2
+    },
+    {
+      "input": [
+        640,
+        360
+      ],
+      "input_fps": "30000/1001",
+      "output": [
+        640,
+        360
+      ],
+      "output_fps": "30000/1001",
+      "audio": "present",
+      "ffprobe_decode": "pass",
+      "near_end_screenshot": "pass",
+      "duration_s": 3.2242,
+      "expected_s": 3.2
+    }
+  ]
+}

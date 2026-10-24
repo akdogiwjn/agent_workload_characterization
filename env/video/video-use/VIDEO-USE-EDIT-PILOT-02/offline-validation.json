@@ -1,0 +1,108 @@
+{
+  "schema": "video-use-edit-pilot-02-offline-validation-v1",
+  "scope": "offline interpreter wiring and synthetic renderer check only",
+  "network": "all Docker validation containers used --network=none; mock unit tests block socket.connect",
+  "credentials_read": false,
+  "api_requests": {
+    "ElevenLabs": 0,
+    "Bailian": 0
+  },
+  "codex_sessions": 0,
+  "official_verifier_runs": 0,
+  "pre_fix_reproduction": {
+    "image": "video-use-task:arm64-codex-bailian-v1",
+    "image_id": "sha256:a46db2143d8aa69a299b419152c6ca036e09f619d3f771aeace64e08ed729402",
+    "container_command": [
+      "/bin/bash",
+      "-c",
+      "...; /bin/bash -lc ..."
+    ],
+    "ordinary_shell": {
+      "command_v_python3": "/opt/video-use-venv/bin/python3",
+      "sys_prefix": "/opt/video-use-venv",
+      "requests_import": "pass"
+    },
+    "login_shell": {
+      "command_v_python3": "/usr/local/bin/python3",
+      "sys_prefix": "/usr/local",
+      "requests_import": "ModuleNotFoundError: No module named requests"
+    },
+    "cause": "/etc/profile resets PATH to system directories after Docker ENV PATH was set"
+  },
+  "fixed_image": {
+    "tag": "video-use-task:arm64-codex-bailian-v2",
+    "image_id": "sha256:faf015927f9a71c820c82abc11d1a996037d7d684e6e149f2787908ad422c20f",
+    "platform": "linux/arm64",
+    "parent_id": "sha256:a46db2143d8aa69a299b419152c6ca036e09f619d3f771aeace64e08ed729402",
+    "diff": [
+      "Docker ENV PATH remains venv-first for ordinary shells",
+      "append venv-first export to /etc/profile after its PATH reset"
+    ],
+    "ordinary_shell": {
+      "command_v_python3": "/opt/video-use-venv/bin/python3",
+      "sys_executable": "/opt/video-use-venv/bin/python3",
+      "sys_prefix": "/opt/video-use-venv"
+    },
+    "login_shell": {
+      "command_v_python3": "/opt/video-use-venv/bin/python3",
+      "sys_executable": "/opt/video-use-venv/bin/python3",
+      "sys_prefix": "/opt/video-use-venv"
+    },
+    "module_origins": {
+      "requests": "/opt/video-use-venv/lib/python3.12/site-packages/requests/__init__.py",
+      "numpy": "/opt/video-use-venv/lib/python3.12/site-packages/numpy/__init__.py",
+      "PIL": "/opt/video-use-venv/lib/python3.12/site-packages/PIL/__init__.py",
+      "librosa": "/opt/video-use-venv/lib/python3.12/site-packages/librosa/__init__.py",
+      "matplotlib": "/opt/video-use-venv/lib/python3.12/site-packages/matplotlib/__init__.py"
+    },
+    "official_helper_checks": {
+      "cwd": "/opt/video-use",
+      "commands": [
+        "python3 helpers/transcribe.py --help",
+        "python3 helpers/render.py --help"
+      ],
+      "result": "both returned 0; no API call"
+    },
+    "codex_tool_shell_boundary": {
+      "argv_shape": [
+        "bash",
+        "-lc",
+        "<tool command>"
+      ],
+      "equivalent_test": "/bin/bash -lc from /workspace; python3 resolves to the venv and imports all five modules",
+      "live_codex_session": "not run; offline shell-boundary equivalence only"
+    },
+    "synthetic_render": {
+      "source": "temporary lavfi test pattern and sine audio",
+      "command": "python3 helpers/render.py <synthetic-edl> -o <temporary-output.mp4> --draft --no-subtitles",
+      "result": "returncode 0",
+      "ffprobe": {
+        "duration_s": "1.536000",
+        "video": "h264 1280x720",
+        "audio": "aac"
+      },
+      "classification": "environment check only; not an editing sample"
+    },
+    "cleanup": {
+      "named_container_id": "36894db247c18869917e64edf7484c710a2d1680ad36b4df8ce2ca132050b71a",
+      "removed": true,
+      "verification": "docker inspect awc-video-use-pilot02-offline-cleanup returned No such object",
+      "image_retained": true
+    }
+  },
+  "unit_tests": {
+    "pilot01": {
+      "passed": 11,
+      "failed": 0
+    },
+    "pilot02": {
+      "passed": 7,
+      "failed": 0
+    },
+    "network_mock_guard": "socket.socket.connect blocked in PILOT-02 tests"
+  },
+  "limitations": [
+    "No real Codex tool call against v2; only the identical bash -lc execution boundary was checked offline.",
+    "No source footage, API, credentials, or verifier used."
+  ]
+}

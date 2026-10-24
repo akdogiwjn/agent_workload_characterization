@@ -1,0 +1,28 @@
+{
+ "schema": "video-use-env01-model-route-v1",
+ "task": "VIDEO-USE-ENV-01",
+ "status": "not_configured_no_model_calls_authorized",
+ "contract": {
+  "required_fields": {
+   "api_base": "explicit endpoint URL; no default and no cross-provider fallback",
+   "model": "explicit model identifier; no default",
+   "api_key_env": "NAME of the environment variable holding the credential; the credential VALUE must never appear in route files, traces or logs"
+  },
+  "reject_when_missing": "the runner must raise before creating any client; no provider default, no fallback to another vendor, no silent retry against a different endpoint",
+  "credential_handling": "value is read from the named env var at runtime only; never logged; never hashed into reports (no key-derived values retained)"
+ },
+ "current_values": {
+  "api_base": null,
+  "model": null,
+  "api_key_env": null
+ },
+ "candidate_not_verified": {
+  "note": "火山网关 OpenAI 兼容端点是历史验证过的文本路由候选,但不能假定适用于 Codex CLI 的容器内运行;须在单独授权的真实短任务前显式验证",
+  "verification_pending": [
+   "Codex CLI 在本任务镜像容器内的安装与执行(本轮镜像未含 CLI)",
+   "所选端点对 Codex CLI 请求协议(含工具调用)的实际兼容性",
+   "model 标识在所选端点上的可用性"
+  ]
+ },
+ "history_note": "Office 错路由事件的教训:路由必须在客户端创建前显式校验并传入;见 docs/current_task.md LOCAL-THREE-CLASS-REPEAT-01 v2 记录"
+}

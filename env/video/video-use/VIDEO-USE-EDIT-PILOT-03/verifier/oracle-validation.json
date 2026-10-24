@@ -1,0 +1,30 @@
+{
+  "schema": "video-use-pilot03-official-oracle-validation-v1",
+  "scope": "isolated official scorer chain validation; oracle is not an Agent result",
+  "source_sha256": "a9bce74a50b5380d7c1aa1d9980f1d159e8633fbff00986504a363a3d18525bb",
+  "official_judge_sha256": "cb5486bac019b19321f516ec15ee9253fe6c02024543449864517fbfd67ec96d",
+  "verifier_executable": "/home/lcq/.venvs/video-use-pilot03-verifier/bin/python",
+  "wrapper_process_returncode": 0,
+  "official_judge_returncode": 0,
+  "evaluation_status": "complete",
+  "evaluation_complete": true,
+  "oracle_score_not_agent": 1.0,
+  "checks": {
+    "cut_ranges": "evaluated",
+    "duration": "evaluated",
+    "ssim": "evaluated",
+    "audio_xcorr": "evaluated"
+  },
+  "versions": {
+    "python": "3.11.6",
+    "executable": "/home/lcq/.venvs/video-use-pilot03-verifier/bin/python",
+    "prefix": "/home/lcq/.venvs/video-use-pilot03-verifier",
+    "numpy": "2.2.6",
+    "scipy": "1.17.1",
+    "scikit_image": "0.25.2",
+    "ffmpeg": "ffmpeg version 6.1.1 Copyright (c) 2000-2023 the FFmpeg developers",
+    "ffprobe": "ffprobe version 6.1.1 Copyright (c) 2007-2023 the FFmpeg developers"
+  },
+  "oracle_video_retained": false,
+  "golden_or_oracle_exposed_to_agent": false
+}

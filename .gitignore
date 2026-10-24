@@ -142,3 +142,33 @@ data/raw/software/env01/
 !/env/video/videoweaver/build/requirements.txt
 !/env/video/videoweaver/build/codex-config.toml
 !/env/video/videoweaver/build/image-manifest.json
+
+# Historical runtime/diagnostic payloads remain local even when individually small.
+# Already-versioned code and summaries in these trees remain versioned.
+/env/video/**/evidence/
+/env/video/**/preparation/
+/env/video/**/runs/
+/env/video/**/attempt-*/
+/env/video/**/execution-*/
+/env/video/**/preflight-*/
+/env/video/**/staged-planning/
+/env/video/**/snapshots-before/
+/env/video/**/APPROVAL*.json
+/env/video/**/approval.json
+/env/video/**/ATTEMPT-STARTED
+/env/video/**/verification*.json
+/env/video/**/counts*.json
+/env/video/**/revision-*.json
+/env/video/**/d-task-id.json
+/env/video/**/gt-cuts.json
+/reports/**/source-snapshot/
+/reports/**/snapshots/
+/env/video/**/*.before
+/env/video/**/before-*.json
+/env/video/**/pre-timer-fix-*/
+/env/video/**/run-record.json
+/env/video/**/project-state-patch.json
+/env/video/**/state-update-patch.json
+/env/video/**/*-state-update.json
+# This historical report embeds a large raw recovery record; summary/SVG remain published.
+/reports/resource/OPENSTORYLINE-EDIT-PILOT-02/run-report.json

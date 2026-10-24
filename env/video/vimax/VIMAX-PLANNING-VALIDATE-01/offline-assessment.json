@@ -1,0 +1,181 @@
+{
+  "task": "VIMAX-PLANNING-VALIDATE-01",
+  "run_id": "vimax-planning-validate-01-20261023T165522Z-49dbcb23",
+  "identity": "../identity-01.json",
+  "approval": "../APPROVAL-01.json",
+  "attempts_started": 1,
+  "retry": 0,
+  "result": "planning_contract_failed_before_media",
+  "scoring": "not_applicable; no media or official scoring was authorized",
+  "session": {
+    "session_id": "20261023-170240-planning-validation-01",
+    "planning_mode": "script",
+    "idea_supplied": false,
+    "registered_script_sha256": "e1a54955657bafb7ac00aeb748ee1c6dde9e719bfb5c3cff19f388bc6ab3181d",
+    "session_script_sha256": "a9e3c3d8db4ca4d24407ee7f598a62668d6af3f5134d1ad4a975ddb44f55209f",
+    "exact_match": false,
+    "difference": "Two U+2019 typographic apostrophes became U+0027 straight apostrophes; no other diff lines observed."
+  },
+  "native_agent": {
+    "agent_returncode": 0,
+    "container_returncode": "0",
+    "done_events": 1,
+    "error_events": 1,
+    "termination": "agent_completed",
+    "repeated_failure_stop": "The same planning tool parameters failed twice; AgentLoop stopped further recovery."
+  },
+  "tools": {
+    "vimax_narrative_planning_calls": 2,
+    "planning_tool_results": "both failed",
+    "other_tool_calls": [
+      {
+        "name": "read_file",
+        "ok": true
+      }
+    ],
+    "render_tool_registered": false,
+    "run_shell_registered": false,
+    "media_tool_calls": 0,
+    "media_files": []
+  },
+  "planning_error": {
+    "stage": "plan_script",
+    "kind": "structured_output",
+    "saved_error": "RetryError wrapping OutputParserException",
+    "response_to_parse_error_request_id": "unknown; the tool-stage error record has no request ID, so no request is inferred"
+  },
+  "partial_artifacts": {
+    "characters_json": "present; one CharacterInScene passed image-side Pydantic validation",
+    "script_txt": "present",
+    "storyboard": "missing",
+    "shot_descriptions": "missing",
+    "camera_tree": "missing",
+    "media": "none"
+  },
+  "model_requests": {
+    "logical_requests": 8,
+    "outer_agent_requests": 3,
+    "inner_langchain_requests": 5,
+    "project_attempt_records": 3,
+    "all_request_ids_closed": true,
+    "total_observed_tokens": 59294,
+    "soft_threshold": 250000,
+    "http_exchange_count": "unknown",
+    "outer_response_model": "qwen3.7-plus",
+    "inner_response_model": "unknown_not_persisted",
+    "raw_structured_response_evidence": [
+      {
+        "request_id": "req-c73eadd6f623",
+        "response_text_chars": 3436,
+        "saved_copy_truncated": false,
+        "finish_reason": "length",
+        "completion_tokens": 4096,
+        "total_tokens": 7693,
+        "reasoning_tokens": 3252,
+        "json_parseable": false
+      },
+      {
+        "request_id": "req-522cab51c92b",
+        "response_text_chars": 0,
+        "saved_copy_truncated": false,
+        "finish_reason": "length",
+        "completion_tokens": 4096,
+        "total_tokens": 7693,
+        "reasoning_tokens": 4096,
+        "json_parseable": false
+      },
+      {
+        "request_id": "req-caed09334b02",
+        "response_text_chars": 0,
+        "saved_copy_truncated": false,
+        "finish_reason": "length",
+        "completion_tokens": 4096,
+        "total_tokens": 7693,
+        "reasoning_tokens": 4096,
+        "json_parseable": false
+      },
+      {
+        "request_id": "req-d0806982b8c1",
+        "response_text_chars": 0,
+        "saved_copy_truncated": false,
+        "finish_reason": "length",
+        "completion_tokens": 4096,
+        "total_tokens": 7693,
+        "reasoning_tokens": 4096,
+        "json_parseable": false
+      }
+    ],
+    "request_response_ids_present": true,
+    "parse_error_diagnostic_request_id": "unknown"
+  },
+  "timing": {
+    "attempt_wall_s": 389.4491561751347,
+    "work_deadline_s": 1800,
+    "closeout_reserve_s": 120,
+    "deadline_reached": false,
+    "sampling_window_s": 388.587925996
+  },
+  "resources": {
+    "scope": "vimax-planning-validate-01-20261023T165522Z-49dbcb23",
+    "scope_kind": "agent_container",
+    "interval_target_s": 0.5,
+    "n_samples": 777,
+    "cpu_core_seconds": 5.928255,
+    "cpu_core_seconds_reason": null,
+    "cpu_evidence": "counter_boundary",
+    "wall_s": 388.587925996,
+    "avg_cores": 0.015255890889571858,
+    "avg_cores_note": "avg cores = cpu/wall; NOT an efficiency metric",
+    "n_samples_out_of_boundary": 0,
+    "memory_current_end_bytes": 121020416,
+    "memory_kernel_peak_bytes": 126787584,
+    "memory_sampled_max_bytes": 125292544,
+    "memory_peak_basis": "v1_max_usage_in_bytes",
+    "memory_note": "current/kernel-peak/sampled-max are distinct; scope peaks are never summed into a run peak",
+    "io": {
+      "read_bytes": 0,
+      "write_bytes": 139264,
+      "evidence": "io.stat_boundary_delta",
+      "reason": null,
+      "cumulative_end": {
+        "read_bytes": 0,
+        "write_bytes": 139264,
+        "note": "cumulative counter value at final boundary (reference only; NOT the interval amount)"
+      }
+    },
+    "notes": [
+      "baseline_cpu_unreadable:None"
+    ]
+  },
+  "network": {
+    "scope": "container netns, per-interface; not API-attributed",
+    "samples": 196,
+    "successful_reads": 196,
+    "intervals": 195,
+    "gaps": 0,
+    "median_interval_s": 1.997,
+    "interfaces": [
+      "eth0",
+      "lo"
+    ]
+  },
+  "cleanup": {
+    "cleanup_errors": [],
+    "container_removed_verified": true,
+    "image_retained": true
+  },
+  "limits": {
+    "single_request_outer_output_tokens": 8192,
+    "internal_node_output_tokens": 4096,
+    "sdk_retries": 0,
+    "image_video_generations": 0,
+    "total_tokens_gate": "soft threshold on returned usage; no overshoot occurred"
+  },
+  "known_gaps": [
+    "Planning parser exception is not correlated to a specific request ID in the persisted parse diagnostic.",
+    "Inner response model name is not persisted.",
+    "Actual HTTP exchange count and billing remain unknown.",
+    "Session script is not byte-identical due the two apostrophe substitutions.",
+    "Shot semantic order and camera tree cannot be evaluated because storyboard and camera artifacts are absent."
+  ]
+}

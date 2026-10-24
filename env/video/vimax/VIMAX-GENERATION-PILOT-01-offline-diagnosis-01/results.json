@@ -1,0 +1,108 @@
+{
+  "schema": "vimax-offline-diagnosis-v1",
+  "task": "VIMAX-GENERATION-PILOT-01-offline-diagnosis-01",
+  "as_of": "2026-10-23",
+  "status": "offline_code_repair_and_targeted_regressions_passed_real_planning_unverified",
+  "execution": {
+    "real_api_calls": 0,
+    "credentials_read": false,
+    "agent_task_runs": 0,
+    "new_attempts": 0,
+    "image_video_generation_requests": 0,
+    "official_evaluation": "not_started_no_submission",
+    "reference_repository_modified": false
+  },
+  "historical_run": {
+    "image": "vimax-task-bailian:arm64-v4",
+    "image_id": "sha256:7c634c46a829e2d22ee901023b70a6bdb2e5bd06d7b334b0f8a8150a3daa39be",
+    "llm_logical_starts": 80,
+    "outer_agent_starts": 27,
+    "inner_langchain_starts": 53,
+    "closed_requests": 68,
+    "unclosed_inner_starts": 12,
+    "project_attempt_records": 27,
+    "project_attempts_overlap_logical_requests": true,
+    "saved_closed_usage_tokens": 933898,
+    "saved_inner_closed_requests": 41,
+    "inner_responses_at_4096_completion_tokens": 29,
+    "inner_saved_reasoning_tokens": 132549,
+    "internal_output_limit_tokens": 4096,
+    "outer_default_output_limit_tokens": 8192,
+    "finish_reason_saved": false,
+    "raw_model_response_content_saved": false,
+    "actual_http_requests": null,
+    "actual_cost": null,
+    "media_generated": false,
+    "submission": null,
+    "reward": null,
+    "run_record_code_hashes_match_v4_source_snapshot": true
+  },
+  "findings": {
+    "confirmed": [
+      "script source was stored in the session idea field; a later tool call without source resumed the Idea2Video path",
+      "script pipeline progress reported a three-shot intermediate plan; later stored storyboard was revised to eight",
+      "idea workflow artifacts show eight script entries, four shots in scene_0, and eight in scene_1",
+      "camera_parent_items cardinality is per camera; scene_0 had four camera indices for four shot descriptions; a later saved scene_0 camera_tree has four entries",
+      "write_json received JSON strings although the public schema requires an object or array; validation rejected before filesystem access",
+      "run_shell was disabled; all five saved attempts were blocked before command execution",
+      "revision attempts included an is-a-directory target, a missing shot-description target, and malformed JSON",
+      "v4 planning code allowed three storyboard structured-output attempts; outer AgentLoop allowed up to 50 tool rounds"
+    ],
+    "candidate": [
+      "29 completed internal responses reached the 4096 completion-token setting, so truncation is plausible but not proven"
+    ],
+    "unknown": [
+      "the actual raw content/JSON wrapper for historical OutputParserException and Invalid json output events",
+      "historical finish_reason, including whether any response ended with length",
+      "whether SDK response extraction or provider-side formatting contributed",
+      "whether historical got-1 camera-tree response was truncated or simply structurally incomplete",
+      "per-error attribution of all 53 inner logical requests",
+      "outcomes and usage for twelve unclosed inner requests",
+      "historical HTTP exchange count and bill"
+    ]
+  },
+  "repair": {
+    "files": [
+      "env/video/vimax/adapter-src/agent_runtime/session_index.py",
+      "env/video/vimax/adapter-src/agent_runtime/vimax_adapters.py",
+      "env/video/vimax/adapter-src/agent_runtime/loop.py",
+      "env/video/vimax/adapter-src/agent_runtime/tools.py",
+      "env/video/vimax/adapter-src/agent_runtime/prompts.py",
+      "env/video/vimax/adapter-src/agents/storyboard_artist.py",
+      "env/video/vimax/adapter-src/utils/robust_json_parser.py"
+    ],
+    "new_image_built": false,
+    "new_image_id": null,
+    "v4_contains_repair": false,
+    "next_real_run_requires_repaired_source_identity": true,
+    "budget_increased": false
+  },
+  "validation": {
+    "offline_container_image_id": "sha256:7c634c46a829e2d22ee901023b70a6bdb2e5bd06d7b334b0f8a8150a3daa39be",
+    "network": "none",
+    "container_auto_removed": true,
+    "source_mount_read_only": true,
+    "targeted_tests": 8,
+    "targeted_tests_passed": 8,
+    "targeted_tests_failed": 0,
+    "production_agent_loop_and_tool_registry_exercised": true,
+    "same_session_failure_guard_across_turns_tested": true,
+    "historical_model_response_replayed": false,
+    "synthetic_counterexamples_labeled": true,
+    "modified_python_sources_compiled": 7,
+    "historical_raw_manifest_files_checked": 41,
+    "historical_raw_manifest_files_unchanged": true,
+    "focused_historical_hashes_checked": 4,
+    "focused_historical_hashes_unchanged": true
+  },
+  "next_validation_recommendation": {
+    "authorization_required": true,
+    "scope": "fresh script-mode native Agent planning only; no image or video generation",
+    "logical_request_cap": 20,
+    "inner_output_cap_tokens": 4096,
+    "outer_output_cap_tokens": 8192,
+    "wall_seconds_cap": 600,
+    "stop_after_same_stage_structured_failure_count": 2,
+    "real_model_plan_success_claimed": false
+  }
+}
