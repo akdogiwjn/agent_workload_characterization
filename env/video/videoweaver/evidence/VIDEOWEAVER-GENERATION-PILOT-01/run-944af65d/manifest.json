@@ -1,0 +1,113 @@
+{
+  "schema": "videoweaver-generation-pilot-01-run-manifest-v1",
+  "run_id": "videoweaver-generation-pilot-01-20261024T104827Z-944af65d",
+  "task": "VIDEOWEAVER-GENERATION-PILOT-01",
+  "inputs": {
+    "case_task_txt": "6dc4a37b75503464b02512b10b8e9f642aa3a406aba720ebad69d187a9895c77",
+    "story_source": "references/repos/ViMax/vimax_benchmark/photographer_urban_timelapses_typeA.json"
+  },
+  "code_config": {
+    "host_runner.py": "ed3ab6e261a44d1aaf78fc931d19caeab4bccbf3d416e9f8223f43a7081d8f14",
+    "gateway.py": "1e7a43dad997f8693479624940f387c4883bb7cf97cd1e98f279bd62acd5ceeb",
+    "production-codex-config.toml": "95ff91fab73c4aad605c858e47816e56dabedbe757505e4b652990350ece976e",
+    "live-config.json": "742e0e6fb2ec9bf67a7d89d651b8ae555254d9b595b371ef557f7b421544c819"
+  },
+  "image": {
+    "tag": "videoweaver-task-bailian:arm64-v1",
+    "image_id": "sha256:60cf9b9fe2317a7b92cdba48f70cb74c77321642ddb75e3c64ccbb84e92062d8"
+  },
+  "media": {
+    "images": [
+      {
+        "shot": 1,
+        "first_frame_sha256": "39dd172ad23bf47bec15eda35eb211b60bef1001b1d75d3317daae623e12c294"
+      },
+      {
+        "shot": 2,
+        "first_frame_sha256": "64ddc50b066a0b5a883960ad0fa7fcb4ed4a8616afcde3a3c1ae49cc7caefcd5"
+      },
+      {
+        "shot": 3,
+        "first_frame_sha256": "4fa2ebdc985b0786b01a23c099e6200f70643eb1c3a73541dcac93eb19ab4427"
+      },
+      {
+        "shot": 4,
+        "first_frame_sha256": "b69f12a248fa3bfaae098bafe903c9d0b8abb28c4c2d2f1e988d40ea624d5aa4"
+      },
+      {
+        "shot": 5,
+        "first_frame_sha256": "5eac4ea003c9d3098a152da7be896a1ef654a33d2d8c55538762b1955110915a"
+      },
+      {
+        "shot": 6,
+        "first_frame_sha256": "e5f7298769de6f4715a757003fb4720d9d3c8454d4f8ad21c88966c86b2e8004"
+      },
+      {
+        "shot": 7,
+        "first_frame_sha256": "7456ed9f1d9e37230f72b4960203965140b6914459914c06e7f9122f8e9829a6"
+      },
+      {
+        "shot": 8,
+        "first_frame_sha256": "2b11a411c2cfa525c4df908bf6916e3625f0f7c0f246fae2a0b44c7ffe754fbc"
+      }
+    ],
+    "videos": [
+      {
+        "shot": 1,
+        "task_id": "3c7ebfe5-666b-4c42-940c-386e9fc7415c",
+        "sha256": "5e467a1e5073d0b5ce99735b32dd5446288ef4306d429223986c80622854dde7"
+      },
+      {
+        "shot": 2,
+        "task_id": "a9120ac8-dbac-4cac-84e1-ac63bd968795",
+        "sha256": "ee4d25fe58dce745a86d34addc7c88d33fdd9fa6d46cc4b56a97e70ffb5f5100"
+      },
+      {
+        "shot": 3,
+        "task_id": "62e72830-c35c-4bf5-aec7-dcdf54822df6",
+        "sha256": "a2eda89a95bef1aa466f97d407530ec8c4c570c57ed96d5d5278de1320ba114d"
+      },
+      {
+        "shot": 4,
+        "task_id": "f08ed0bd-9a63-4997-8380-e620e8f765c6",
+        "sha256": "0e69b3354e3601a2fa8c0c2dee3d64b4d68f4535d86ab32a6fe2272085febc0a"
+      },
+      {
+        "shot": 5,
+        "task_id": "335423cf-28bb-4b11-99ae-a1c675273118",
+        "sha256": "c6fb3fbc561b68621e4ac4e2d8a74bf33aad70c159494488dd7e7c34ba455ea0"
+      },
+      {
+        "shot": 6,
+        "task_id": "3905c4f6-ac9e-4ac4-96f7-bb8d0fa6d6b8",
+        "sha256": "35cad2fefaae12cd7f4625e090a8e7f255ea16732000df364d62cea8894cc007"
+      },
+      {
+        "shot": 7,
+        "task_id": "0f76b768-1554-4e7f-9047-2435e96e0ff5",
+        "sha256": "08055d533fda28f494252dd88ebb5449a18f0c00e4f88a2f832f6555739a6991"
+      },
+      {
+        "shot": 8,
+        "task_id": "f97ac1b8-eb95-4424-a85a-ff2c94c29141",
+        "sha256": "74eb09d9b8262a97e65ef892748c8ce7ca3a3815f642ce360f951da10f131b57"
+      }
+    ],
+    "final.mp4": "NOT PRODUCED"
+  },
+  "ledger_counters": {
+    "llm_calls": 80,
+    "image_creates": 8,
+    "video_creates": 8,
+    "video_polls": 64,
+    "media_downloads": 16,
+    "forward_attempts": 176
+  },
+  "ledger_status": "budget_exhausted:llm_calls",
+  "run_report": {
+    "path": "env/video/videoweaver/evidence/VIDEOWEAVER-GENERATION-PILOT-01/run-944af65d/run-report.json",
+    "sha256": "e7988d5b0cbdf8dbfd2251738dcce117135ee1319d7185e53a3c132014ec6979"
+  },
+  "credentials": "runtime-only injected into gateway process env; not echoed/persisted/hashed/archived",
+  "bill": "unknown (no vendor statement)"
+}

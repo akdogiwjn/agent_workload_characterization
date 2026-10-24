@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="880" viewBox="0 0 1100 880">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:sans-serif;fill:#263238}.title{font-size:18px;font-weight:bold}.label{font-size:12px}</style>
+<text x="70" y="28" class="title">CPU cumulative (core-seconds)</text>
+<path d="M70 197 H1050 M70 50 V197" stroke="#90a4ae" fill="none"/>
+<polyline points="70.0,197.0 1040.0,57.0" fill="none" stroke="#1565c0" stroke-width="2"/>
+<text x="820" y="29" class="label" fill="#1565c0">CPU</text>
+<text x="70" y="248" class="title">Memory current (MiB); kernel peak separate</text>
+<path d="M70 417 H1050 M70 270 V417" stroke="#90a4ae" fill="none"/>
+<polyline points="70.0,417.0 1040.0,277.0" fill="none" stroke="#1565c0" stroke-width="2"/>
+<text x="820" y="249" class="label" fill="#1565c0">current</text>
+<text x="70" y="468" class="title">cgroup disk I/O cumulative (MiB)</text>
+<path d="M70 637 H1050 M70 490 V637" stroke="#90a4ae" fill="none"/>
+<polyline points="70.0,637.0 1040.0,637.0" fill="none" stroke="#1565c0" stroke-width="2"/>
+<text x="820" y="469" class="label" fill="#1565c0">read</text>
+<polyline points="70.0,637.0 1040.0,637.0" fill="none" stroke="#d84315" stroke-width="2"/>
+<text x="900" y="469" class="label" fill="#d84315">write</text>
+<text x="70" y="688" class="title">container netns per-interface (KiB/s)</text>
+<path d="M70 857 H1050 M70 710 V857" stroke="#90a4ae" fill="none"/>
+<polyline points="70.0,857.0" fill="none" stroke="#1565c0" stroke-width="2"/>
+<text x="820" y="689" class="label" fill="#1565c0">lo RX</text>
+<polyline points="70.0,857.0" fill="none" stroke="#d84315" stroke-width="2"/>
+<text x="900" y="689" class="label" fill="#d84315">lo TX</text>
+<polyline points="70.0,857.0" fill="none" stroke="#2e7d32" stroke-width="2"/>
+<text x="980" y="689" class="label" fill="#2e7d32">eth0 RX</text>
+<polyline points="70.0,857.0" fill="none" stroke="#7b1fa2" stroke-width="2"/>
+<text x="1060" y="689" class="label" fill="#7b1fa2">eth0 TX</text>
+</svg>

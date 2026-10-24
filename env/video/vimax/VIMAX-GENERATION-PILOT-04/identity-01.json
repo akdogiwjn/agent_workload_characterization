@@ -1,0 +1,65 @@
+{
+  "task": "VIMAX-GENERATION-PILOT-04",
+  "attempt": 1,
+  "retry": 0,
+  "created_utc": "2026-10-24T05:43:34.825475+00:00",
+  "image": {
+    "tag": "vimax-task-bailian:arm64-v7-capability-planning-01",
+    "id": "sha256:a97ea6076fbcd456ada0d0e1267ebf50058daa52698e0996cffaf66da1f176f3",
+    "platform": "linux/arm64"
+  },
+  "code": {
+    "host_runner_sha256": "a7408459469588b91f6f41b2768944425137bd2a0bd0a5cf7289793c327906b6",
+    "generation_entry_sha256": "3b037f65c7b48e460acde565af9acbc4df738d7d145064170644a4a734da209e",
+    "matches_repair01_manifest": true,
+    "adapter_src": "89-file hash match with image verified in REPAIR-01"
+  },
+  "planning": {
+    "source": "VIMAX-PLANNING-VALIDATE-03 staged plan (immutable source map verified this round)",
+    "identity_sha256": "7d1f3ce8d4ad081b56e4031f93a21d93f894eef1cc759ae0ab0339eda14e26a2",
+    "script_sha256": "447e4d88ccd76f9cb4a206f799993620a3c832238dd873c9ae9e905c2452b59a",
+    "cameras": 8,
+    "transitions": 7,
+    "shots": 8
+  },
+  "config": {
+    "task_id": "VIMAX-GENERATION-PILOT-04",
+    "network": "bridge",
+    "session_id": "generation-pilot-04-media-01",
+    "work_seconds": 5400.0,
+    "closeout_seconds": 300.0,
+    "handshake_timeout_s": 45.0
+  },
+  "models": {
+    "language_vision": "qwen3.7-plus",
+    "image": "qwen-image-3.0",
+    "video": "wan2.6-i2v-flash",
+    "region": "cn-beijing",
+    "workspace": "registered, value not retained",
+    "fallback": "disabled"
+  },
+  "budget": {
+    "video_creates": 15,
+    "image_generations": 40,
+    "llm_calls": 80,
+    "llm_attempts": 80,
+    "video_polls_per_task": 120,
+    "video_polls_global": 1800,
+    "media_downloads": 80,
+    "single_request_output_tokens": 8192,
+    "observed_total_tokens_soft": 500000,
+    "work_deadline_s": 5400,
+    "closeout_s": 300,
+    "sdk_retries": 0
+  },
+  "resources": {
+    "cpus": 8,
+    "cpuset": "0-7",
+    "memory": "8g",
+    "pids_limit": 512,
+    "cgroup_period_target_s": 0.5,
+    "netns_period_s": 2.0
+  },
+  "approval_source": "user prompt 2026-10-24 (one formal attempt, retry=0)",
+  "credentials": "read at runtime from registered file; never printed/stored/hashed"
+}

@@ -1,0 +1,806 @@
+{
+  "task": "VIMAX-PLANNING-VALIDATE-03",
+  "files": [
+    {
+      "path": "APPROVAL-01.json",
+      "bytes": 4436,
+      "sha256": "3804206daa1657357b07cb4687906e6b55c96aba767b9f1b5b5390792f975929"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 612,
+      "sha256": "e05bfa150489ce63695f03f38220574efbb51b73f623cfc753f266196f08be64"
+    },
+    {
+      "path": "adapter-src/.gitignore",
+      "bytes": 408,
+      "sha256": "bb646febb44d5f2fa0ff30f36709ba3d35eac0294fdc03cfad98488d343443f7"
+    },
+    {
+      "path": "adapter-src/ADAPTATION-DIFF.md",
+      "bytes": 5799,
+      "sha256": "ec2a94ba147f14ab3602cddc78be9e3eb5e5c7dd555bb2fc6b4c5cc3f638f9be"
+    },
+    {
+      "path": "adapter-src/Communication.md",
+      "bytes": 234,
+      "sha256": "062474ca19a86ad595bbd8a398fd3599fde7e9e04720c4fc64a1188636a4da91"
+    },
+    {
+      "path": "adapter-src/LICENSE",
+      "bytes": 1056,
+      "sha256": "06dcddbb6908a0c6dd4a9e8ec822eea41d5a460a53089fecccc8a68049e99241"
+    },
+    {
+      "path": "adapter-src/README_ZH.md",
+      "bytes": 12777,
+      "sha256": "82782be25b32ab1b8366576abdf4a0513fe1ad2d8d8a4fe95ec83ffb8615d7a9"
+    },
+    {
+      "path": "adapter-src/agent_runtime/__init__.py",
+      "bytes": 599,
+      "sha256": "24a1e6bc9d1050f1e5b66b926e6b433ada7d8bcdcc5a428becd7e637df56cdb4"
+    },
+    {
+      "path": "adapter-src/agent_runtime/config.py",
+      "bytes": 5734,
+      "sha256": "806bfa76510b0caf031ad7c54ba35ab539e0bf45386f601dc67d5f1397c1f58e"
+    },
+    {
+      "path": "adapter-src/agent_runtime/context_compactor.py",
+      "bytes": 12206,
+      "sha256": "c914f2dfd364483764161799ebceeaa632a456774d76dd086ce0e08efb4d6947"
+    },
+    {
+      "path": "adapter-src/agent_runtime/image_tools.py",
+      "bytes": 6443,
+      "sha256": "7dcf785e0ac48171a7a47f91882eef5db2ef9e2c18afc4bc403e261b3afdaccd"
+    },
+    {
+      "path": "adapter-src/agent_runtime/llm.py",
+      "bytes": 8583,
+      "sha256": "b2b33917ccd5c438d8fa292dd17ca147e48db119b968d9afac2f9308e2b399ca"
+    },
+    {
+      "path": "adapter-src/agent_runtime/loop.py",
+      "bytes": 13731,
+      "sha256": "8e413d60d4745b947557214709e7706a415be25888b3c637eb58b3b660a1acc7"
+    },
+    {
+      "path": "adapter-src/agent_runtime/models.py",
+      "bytes": 1866,
+      "sha256": "0a6bd18c2d40750ed4254cfa03606e2821137d57bc87d4debf29e6185e244792"
+    },
+    {
+      "path": "adapter-src/agent_runtime/prompts.py",
+      "bytes": 6363,
+      "sha256": "a4352d843ba8e72f0793d3d4748f5831c7dc4f504a294f1894b2ae46f6260bd3"
+    },
+    {
+      "path": "adapter-src/agent_runtime/request_ledger.py",
+      "bytes": 13638,
+      "sha256": "690e95634640661406209bee9b640b2106210505474a16f4c9c66a783f991132"
+    },
+    {
+      "path": "adapter-src/agent_runtime/session_index.py",
+      "bytes": 17850,
+      "sha256": "b892ecfb661ad5774dd9909d001cbb5cca5b6011b2e493ede391c78aa41c0e65"
+    },
+    {
+      "path": "adapter-src/agent_runtime/tool_executor.py",
+      "bytes": 2418,
+      "sha256": "382fd4c642e92a653126150e1b204dbcc10410a36eac68a298b286dae5e9d614"
+    },
+    {
+      "path": "adapter-src/agent_runtime/tools.py",
+      "bytes": 22815,
+      "sha256": "648a02f9d0b234e6ef0f017ef793f85fae555f73807daa44f439a109ee3f6b6b"
+    },
+    {
+      "path": "adapter-src/agent_runtime/vimax_adapters.py",
+      "bytes": 71848,
+      "sha256": "e9c97e4858e1f180c105efca6c7b9213029d61d61239086479aee98baa728da7"
+    },
+    {
+      "path": "adapter-src/agents/__init__.py",
+      "bytes": 505,
+      "sha256": "a24f1563e81f6dbc375c1d77cea285125566b12b52b3c7e3463ad1eeab998c72"
+    },
+    {
+      "path": "adapter-src/agents/best_image_selector.py",
+      "bytes": 9209,
+      "sha256": "ef6fbba32b3c6326f820084917442db7d9a5c58d96aac76c5b1b05f6042b9899"
+    },
+    {
+      "path": "adapter-src/agents/camera_image_generator.py",
+      "bytes": 14768,
+      "sha256": "1e09b66e3f46538c9f4c200277615a4ad78e74e146781f17452119e9d10b5cb5"
+    },
+    {
+      "path": "adapter-src/agents/character_extractor.py",
+      "bytes": 4331,
+      "sha256": "c76cb7260dbc58ec6586509aae3a0995beade6ae801e7c0398c49b9bfb790630"
+    },
+    {
+      "path": "adapter-src/agents/character_portraits_generator.py",
+      "bytes": 3432,
+      "sha256": "3b933c455710041d2d28e43e14bc081682d739516c5ba3235140341401f6a752"
+    },
+    {
+      "path": "adapter-src/agents/event_extractor.py",
+      "bytes": 6701,
+      "sha256": "2671fd7770a45347c3b5c40cbf12320506c4576f9fab65ada1a6eef699c1cb67"
+    },
+    {
+      "path": "adapter-src/agents/global_information_planner.py",
+      "bytes": 18190,
+      "sha256": "91889033142a8b0cb02413d28244af4971b9577b97874f80e105ab039a50a194"
+    },
+    {
+      "path": "adapter-src/agents/novel_compressor.py",
+      "bytes": 7732,
+      "sha256": "ba56b4f60facbbba4db726df32dbe0891b61bc9cae12fd36c767d32c63e973c8"
+    },
+    {
+      "path": "adapter-src/agents/reference_image_selector.py",
+      "bytes": 15762,
+      "sha256": "7618ce74da21781926859422677c7870fb7a6a4e65d8df53fb02bc00e6046813"
+    },
+    {
+      "path": "adapter-src/agents/scene_extractor.py",
+      "bytes": 5400,
+      "sha256": "2fcd56a820be7d5e3219f17c035ad9e2f70023941dc12a1e41c3725c3bf0cc45"
+    },
+    {
+      "path": "adapter-src/agents/screenwriter.py",
+      "bytes": 10328,
+      "sha256": "49df4cbd964756027327dfa4da38931d64032eff8e8d28b0fdc7cea0f2484c57"
+    },
+    {
+      "path": "adapter-src/agents/script_enhancer.py",
+      "bytes": 5688,
+      "sha256": "ecfb1de74f8b3c979c1a386a6f8504379b1df7ba21f1cbfcdea28a08e8eb675c"
+    },
+    {
+      "path": "adapter-src/agents/script_planner.py",
+      "bytes": 26177,
+      "sha256": "e2713a73794c5547bf35f45304e7e0d2de7dcdc8dd69d882f7928bfff4116ebe"
+    },
+    {
+      "path": "adapter-src/agents/storyboard_artist.py",
+      "bytes": 20328,
+      "sha256": "2adc1ce31db452e948dc2579c4177ced1d6cc59c6579db1e38d1de4ef5bae73d"
+    },
+    {
+      "path": "adapter-src/configs/agent.example.yaml",
+      "bytes": 951,
+      "sha256": "9987818d7c0c77054c45fb3634b1c43dc2fda575f131d210834b67d93ee610df"
+    },
+    {
+      "path": "adapter-src/configs/idea2video.yaml",
+      "bytes": 979,
+      "sha256": "59da52dad5d7950f8f5e385417a24e8c6cb9d481b2b2246ae7a51ce3a8ca4c1c"
+    },
+    {
+      "path": "adapter-src/configs/idea2video_minimax.yaml",
+      "bytes": 971,
+      "sha256": "0509b857abf556fe5e1127cdcc26ed0bef5cc6732727dce0aba470b9dfc324d5"
+    },
+    {
+      "path": "adapter-src/configs/script2video.yaml",
+      "bytes": 981,
+      "sha256": "b7cc831b809be9543bd6441b873324618f923c1c19770dadde529046f0f6e933"
+    },
+    {
+      "path": "adapter-src/configs/script2video_minimax.yaml",
+      "bytes": 972,
+      "sha256": "fd4a3b6423f7365386bc714808de539521f868e3230dc3adbc76e447e48c46a1"
+    },
+    {
+      "path": "adapter-src/interfaces/__init__.py",
+      "bytes": 550,
+      "sha256": "4ea05caf8e77a1cbf3042d2a39f6c9adad502e17b3bb700d5f66efb5aa73140d"
+    },
+    {
+      "path": "adapter-src/interfaces/camera.py",
+      "bytes": 1524,
+      "sha256": "f0437866738372d035fd828c8d5a7975af77b926a4bc1f1d12e1f6d9626734f9"
+    },
+    {
+      "path": "adapter-src/interfaces/character.py",
+      "bytes": 4157,
+      "sha256": "cd2138c2d96df3087c2e556b3f4c97d2acac7ca87dd8b62acf8c21d86cff8865"
+    },
+    {
+      "path": "adapter-src/interfaces/environment.py",
+      "bytes": 1142,
+      "sha256": "13a08c5ca1d7940e23dfa78852c8ce4014a76db55dbe8544758a8083a22780c9"
+    },
+    {
+      "path": "adapter-src/interfaces/event.py",
+      "bytes": 1967,
+      "sha256": "adacf6cff81a72297db0abd058e1bc3dcd9d01b98d3cea93b9d8dcb3b7b04641"
+    },
+    {
+      "path": "adapter-src/interfaces/frame.py",
+      "bytes": 727,
+      "sha256": "e9c0cd5c1ea29c6cf9c6eae10390c7e6be398b3c039c9d2864f0a0f7fdd3a4f3"
+    },
+    {
+      "path": "adapter-src/interfaces/image_output.py",
+      "bytes": 1564,
+      "sha256": "9ed4591847921f6a837b5d35c76d5d3ecd4f5986d04a0e3e970a10ebde9bcf25"
+    },
+    {
+      "path": "adapter-src/interfaces/scene.py",
+      "bytes": 2412,
+      "sha256": "f6a4b7fe635e3afb5fbaf574b1dadb218086c7a0287d5e79349dfdfa5614247e"
+    },
+    {
+      "path": "adapter-src/interfaces/shot_description.py",
+      "bytes": 11841,
+      "sha256": "75da1f27b871d59de092e77db5d89079bcb9842af38ba643979d60446090a0d0"
+    },
+    {
+      "path": "adapter-src/interfaces/video_output.py",
+      "bytes": 1045,
+      "sha256": "a3a415112f4d79755a85df3ab8f3ec14f74732dce5c3cc81200bd3671fddea6e"
+    },
+    {
+      "path": "adapter-src/main_agent.py",
+      "bytes": 6639,
+      "sha256": "65ce2dd4d6c5f400c500f749abc9d6d2bd3d9bb70f09b7ebb14266179df6c1f0"
+    },
+    {
+      "path": "adapter-src/main_idea2video.py",
+      "bytes": 951,
+      "sha256": "cd50074c666b1a7badbe4f1b18ba28ff3e7bcfb1bc4d8ec2297915a1186e2f1c"
+    },
+    {
+      "path": "adapter-src/main_script2video.py",
+      "bytes": 1630,
+      "sha256": "e37c6cd8cd2b31418094ebe9f21825410254a6f93149eeeb27a9e133213c87a4"
+    },
+    {
+      "path": "adapter-src/pipelines/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "adapter-src/pipelines/idea2video_pipeline.py",
+      "bytes": 12107,
+      "sha256": "33f0c329e9b30584a68cf2d5a3603666e130e20422f05964e64ca896b540e174"
+    },
+    {
+      "path": "adapter-src/pipelines/novel2movie_pipeline.py",
+      "bytes": 55151,
+      "sha256": "284a22f759cbe09cd9fc95d84d27769cc62ee766de5a7f49d07de53d78731955"
+    },
+    {
+      "path": "adapter-src/pipelines/script2video_pipeline.py",
+      "bytes": 56012,
+      "sha256": "218667c15d17f28cc16801caf540df8213c515057fcf5b8f151a39b1349fcc4a"
+    },
+    {
+      "path": "adapter-src/prompts/agent.md",
+      "bytes": 296,
+      "sha256": "e2481dfb9c4b71feac848e8e68ed08a9aaf5de4d0670868d8983853581110dd2"
+    },
+    {
+      "path": "adapter-src/prompts/workflow.md",
+      "bytes": 5410,
+      "sha256": "9bf3cf83db78420d80fec5e9a52779db5c0399ab1b3fa962c60830a7232f4142"
+    },
+    {
+      "path": "adapter-src/pyproject.toml",
+      "bytes": 994,
+      "sha256": "2f887c78d7c48f206dd8220e8116e831ca6309252df561a2eadfd9833509cbc6"
+    },
+    {
+      "path": "adapter-src/readme.md",
+      "bytes": 15908,
+      "sha256": "72c7e43a10bdb3e08799dfdf79ee3afb530bfdb5957e4d72b7a1f580c7f317d0"
+    },
+    {
+      "path": "adapter-src/tools/__init__.py",
+      "bytes": 1461,
+      "sha256": "000fabdd56ade0937587a95ca880cc3ad19f5466e3a7754ed75172048886f4cd"
+    },
+    {
+      "path": "adapter-src/tools/image_generator_bailian_api.py",
+      "bytes": 16774,
+      "sha256": "5f642205864dc32495aba0a92c02a0f273d0bb1c58e93ed4c5c86a7f2c65e715"
+    },
+    {
+      "path": "adapter-src/tools/image_generator_doubao_seedream_yunwu_api.py",
+      "bytes": 2342,
+      "sha256": "ff31534e0ddb70a9e547a43851f221adf60b4f260a78f11b973cf464329f1ff4"
+    },
+    {
+      "path": "adapter-src/tools/image_generator_nanobanana_google_api.py",
+      "bytes": 3397,
+      "sha256": "1edf6ec585dbdd3b0b83bf53452ca9ce4889d5787b91e56534086cbe7f5f109f"
+    },
+    {
+      "path": "adapter-src/tools/image_generator_nanobanana_yunwu_api.py",
+      "bytes": 2690,
+      "sha256": "275f174f3b2d1d9ac08010fc18b1b3848c374d4e93bb592e91a5195c7a22722e"
+    },
+    {
+      "path": "adapter-src/tools/image_generator_openrouter_api.py",
+      "bytes": 7254,
+      "sha256": "3939c2125c2cd5f438942f5cd60f768be90b7f1b104982084a4319698d1ef1e8"
+    },
+    {
+      "path": "adapter-src/tools/image_orientation.py",
+      "bytes": 1657,
+      "sha256": "3e787ab324883bb0a2b98bd9cfbbe2e88c61db4144499123690ede5169042852"
+    },
+    {
+      "path": "adapter-src/tools/image_response.py",
+      "bytes": 1104,
+      "sha256": "c2a926ef5cff544562444e10bc5f85f536dba520ce2f7ae5be3b876ad5d63a3f"
+    },
+    {
+      "path": "adapter-src/tools/protocols.py",
+      "bytes": 1002,
+      "sha256": "c5b34ca89c1a4662114b1c458cc68043822225544100ae2d04cecefeccae9811"
+    },
+    {
+      "path": "adapter-src/tools/render_backend.py",
+      "bytes": 2129,
+      "sha256": "6fe07d2b0076c84f3c1687b7bb260a28c638272e249d30622c45bdd99655cf06"
+    },
+    {
+      "path": "adapter-src/tools/reranker_bge_silicon_api.py",
+      "bytes": 2261,
+      "sha256": "86d4c98420f15042c5aa8552d349ec2bd905121900da42c98fbfb94c8b7b1f48"
+    },
+    {
+      "path": "adapter-src/tools/video_generator_bailian_api.py",
+      "bytes": 20994,
+      "sha256": "2451ceaa6e2f1669092f6a1207712677f83fef1e803b05f31f011cf7699d817d"
+    },
+    {
+      "path": "adapter-src/tools/video_generator_doubao_seedance_yunwu_api.py",
+      "bytes": 8186,
+      "sha256": "e8f0c97e9fba952dd2ca7dc2e1d9a280c29b992810a04009e84dc3c7c47ab0ae"
+    },
+    {
+      "path": "adapter-src/tools/video_generator_omni_yunwu_api.py",
+      "bytes": 8705,
+      "sha256": "6e4a5b80aa9d9bfe28046e2f10db36dad7e714de9435c8203750285d4508c9f6"
+    },
+    {
+      "path": "adapter-src/tools/video_generator_openrouter_api.py",
+      "bytes": 8813,
+      "sha256": "49f741bfd3dd3cf24624f9320dadbb77849d7969f0d1c84a01e9341cbd20ce93"
+    },
+    {
+      "path": "adapter-src/tools/video_generator_veo_google_api.py",
+      "bytes": 4962,
+      "sha256": "cb5257aae306c8ba7e147d356316573699112760c4f97d7e6b685862a5172ee7"
+    },
+    {
+      "path": "adapter-src/tools/video_generator_veo_yunwu_api.py",
+      "bytes": 8248,
+      "sha256": "afcf71726758da72d148ffaa3ad12328a72c1835305a054dd27f6ae9a913b324"
+    },
+    {
+      "path": "adapter-src/utils/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "adapter-src/utils/control_exceptions.py",
+      "bytes": 2260,
+      "sha256": "b4540b0d1f3257bf753f4d883d9afe0b8dc4a015d3ced1910471d3e86e58c0ca"
+    },
+    {
+      "path": "adapter-src/utils/image.py",
+      "bytes": 1640,
+      "sha256": "43cdd055051225374f3c4330b6e84aaabfa251d84cee1b9fcf3d488cf5a95c20"
+    },
+    {
+      "path": "adapter-src/utils/image_selection.py",
+      "bytes": 863,
+      "sha256": "044fca574736573637a1ada02dafa06b6c0595f662277bebeb7307d43d899665"
+    },
+    {
+      "path": "adapter-src/utils/provider_presets.py",
+      "bytes": 3395,
+      "sha256": "d7397093ed92856a1d130caedfcd7a2f86ba85d0852f1a62c3011148d6ea14de"
+    },
+    {
+      "path": "adapter-src/utils/rate_limiter.py",
+      "bytes": 4191,
+      "sha256": "8b006bf214a859f8f1829a7f670f0c06de07163d405edd7302d9be90ab0eb6ae"
+    },
+    {
+      "path": "adapter-src/utils/retry.py",
+      "bytes": 1479,
+      "sha256": "8a14d4e4bf6a3569792bc2e4bdaf5464039b8b8679e6ed39802d214a49307b55"
+    },
+    {
+      "path": "adapter-src/utils/robust_json_parser.py",
+      "bytes": 8152,
+      "sha256": "6ecda9fb73585c468364d18d4973cb4585d0c8514cd47aa0f2abd2f56379f267"
+    },
+    {
+      "path": "adapter-src/utils/text.py",
+      "bytes": 583,
+      "sha256": "756e82401a8c0b0850dbd47ff9a51dc3c30b1591fad3d1e8bade7aa02767bb43"
+    },
+    {
+      "path": "adapter-src/utils/timer.py",
+      "bytes": 1832,
+      "sha256": "c7089e1bf30c95d7cba3fa01cdf116d38aaab69f028c6fb58caed079473f2214"
+    },
+    {
+      "path": "adapter-src/utils/video.py",
+      "bytes": 1424,
+      "sha256": "88b807d45caf1dae0602379942473f0bf484a2e1d8cb02afd4f9b2a120979c10"
+    },
+    {
+      "path": "adapter-src/utils/video_generation_capabilities.py",
+      "bytes": 2733,
+      "sha256": "7448e0afacec65d32f4f085f4facb8d43b5833b9ce615395861a86f224e92bc3"
+    },
+    {
+      "path": "adapter-src/uv.lock",
+      "bytes": 299077,
+      "sha256": "bbd4cd23dbb0aff7b9a7a05cba9f833dc35833faf4a2def715327e2c7f97a4c1"
+    },
+    {
+      "path": "adapter-src/vimax",
+      "bytes": 2849,
+      "sha256": "cc27cb4b0dae3d192e0a20c3bf92bdeb7069371c8dfda0bcca06409624d9b314"
+    },
+    {
+      "path": "execution-01/ATTEMPT-STARTED",
+      "bytes": 26,
+      "sha256": "a09c05b3f6e5ffd58761f71579063393b3a5b19917566711a5f773e3dc9e64f9"
+    },
+    {
+      "path": "execution-01/closeout-summary.md",
+      "bytes": 4476,
+      "sha256": "52784846efa761427c4b99cf058da416a30c323027fd4685d4e79fd0e1d0c748"
+    },
+    {
+      "path": "execution-01/directory-after.json",
+      "bytes": 481,
+      "sha256": "6b5790c0edcbd39715f36b23a5f4baa6da030c5a6ee3ae0ce4d1d682b1ed8d74"
+    },
+    {
+      "path": "execution-01/directory-before.json",
+      "bytes": 474,
+      "sha256": "ebded16d221b00e1090db2e890687a6ba2542c8af4187a8430f9db4761c01c6c"
+    },
+    {
+      "path": "execution-01/netns-intervals.jsonl",
+      "bytes": 9931,
+      "sha256": "d33d61bf3648f1cef0522152a0478538100d5c8ba1205ad4340ea337c42bb538"
+    },
+    {
+      "path": "execution-01/netns-samples.jsonl",
+      "bytes": 6963,
+      "sha256": "370ba65f6bf79f51ed63c062155d938134956abe921fbfcc3177610a9449c714"
+    },
+    {
+      "path": "execution-01/preflight.json",
+      "bytes": 3240,
+      "sha256": "d7c4a5d8955f6aa420499e88109e8e70fbbf8e8ea1fee95c615375b6d3ed9d91"
+    },
+    {
+      "path": "execution-01/resource-evidence.json",
+      "bytes": 224533,
+      "sha256": "0d86267c57e92271090858bf1ff0a72113a2d3792f7262b3afe45033542a077d"
+    },
+    {
+      "path": "execution-01/resource-samples.jsonl",
+      "bytes": 81394,
+      "sha256": "85b8b1d9c615acdde703d95619837d8ca0b9ebbe9b713ee9d45f49ad29339d8a"
+    },
+    {
+      "path": "execution-01/run-record.json",
+      "bytes": 4677,
+      "sha256": "701501f1ce3f463a25b5927982288c8698135036471ff6706cbf0897e4097a29"
+    },
+    {
+      "path": "execution-01/run-report.json",
+      "bytes": 18664,
+      "sha256": "ecf5c22b9a05eb5b7e40566c688efac1febe966b8fedba5faa52c2cfc4f56089"
+    },
+    {
+      "path": "execution-01/workspace/.vimax/logs/loop_history.jsonl",
+      "bytes": 6117,
+      "sha256": "76ee21720c0cb55e7c9c9115a9f578d1522170374a02fd053aae5c83b2734ae1"
+    },
+    {
+      "path": "execution-01/workspace/.vimax/logs/tool_calls.jsonl",
+      "bytes": 887,
+      "sha256": "3cfe0379d53c75329a6dadc6f4bf52a929cdc9d2fefdcd296761d850f51e3818"
+    },
+    {
+      "path": "execution-01/workspace/.vimax/memory.md",
+      "bytes": 19,
+      "sha256": "3f03af84c1db614021d8ed85816694aa06a7adb8d77255f6d6dc34ab6e45e5fa"
+    },
+    {
+      "path": "execution-01/workspace/.vimax/sessions.json",
+      "bytes": 10634,
+      "sha256": "0cfd0330c4ce2fb87e6fbd202a18bb471b559b39e57ed94bd7eec1e2c99fce11"
+    },
+    {
+      "path": "execution-01/workspace/.vimax/sessions.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "execution-01/workspace/.working_dir/planning-validation-03/script2video/camera_tree.json",
+      "bytes": 4347,
+      "sha256": "4ca1b5142dab55281bad08bbde11f558e8b040006119586271314161025d559a"
+    },
+    {
+      "path": "execution-01/workspace/.working_dir/planning-validation-03/script2video/characters.json",
+      "bytes": 716,
+      "sha256": "83dd8b6e03367dacfb1034721633a0569d802800d26758ed364b0fc00dfb796e"
+    },
+    {
+      "path": "execution-01/workspace/.working_dir/planning-validation-03/script2video/script.txt",
+      "bytes": 8105,
+      "sha256": "447e4d88ccd76f9cb4a206f799993620a3c832238dd873c9ae9e905c2452b59a"
+    },
+    {
+      "path": "execution-01/workspace/.working_dir/planning-validation-03/script2video/shots/0/shot_description.json",
+      "bytes": 2564,
+      "sha256": "fe800dee2e03c6f7ae7fac7c42dee3d663bef5b894817937902f7dc5cc910a6f"
+    },
+    {
+      "path": "execution-01/workspace/.working_dir/planning-validation-03/script2video/shots/1/shot_description.json",
+      "bytes": 2349,
+      "sha256": "1b72ffa7e5106f01d686799b2a42f3a2879d70cea37820000aef54e5ca1c0042"
+    },
+    {
+      "path": "execution-01/workspace/.working_dir/planning-validation-03/script2video/shots/2/shot_description.json",
+      "bytes": 2535,
+      "sha256": "d9203d4592bf69fe7f2b7263a4fddbcbc89df4cb85d932f28feda1f281b3502e"
+    },
+    {
+      "path": "execution-01/workspace/.working_dir/planning-validation-03/script2video/shots/3/shot_description.json",
+      "bytes": 2783,
+      "sha256": "5c0a5b21351e928104a08f6fc0d49ec32d0510ee42341288e9e1f137d7c48277"
+    },
+    {
+      "path": "execution-01/workspace/.working_dir/planning-validation-03/script2video/shots/4/shot_description.json",
+      "bytes": 2571,
+      "sha256": "c7fcbed91589448ec14beea2d6f8fea2b46b1cc07c17a305aabf31de52e2ac28"
+    },
+    {
+      "path": "execution-01/workspace/.working_dir/planning-validation-03/script2video/shots/5/shot_description.json",
+      "bytes": 2281,
+      "sha256": "4edd9cb5e48c4ebdb2243ff5266dac1dd7dc1136615c7fea195271a551675b2a"
+    },
+    {
+      "path": "execution-01/workspace/.working_dir/planning-validation-03/script2video/shots/6/shot_description.json",
+      "bytes": 2524,
+      "sha256": "1e1480d339c882fcd13f5685a7d9d3af0215c03a46bdd5a487716ec935823307"
+    },
+    {
+      "path": "execution-01/workspace/.working_dir/planning-validation-03/script2video/shots/7/shot_description.json",
+      "bytes": 2648,
+      "sha256": "40d7003b9ee030239b5aff2c8189642afaf315d59d9d0dc6af8e029fa143ea9e"
+    },
+    {
+      "path": "execution-01/workspace/.working_dir/planning-validation-03/script2video/storyboard.json",
+      "bytes": 6318,
+      "sha256": "77d4c9745fe4e67b259812ee7700defa506e9d197cbebd159302002d4c1c5e3d"
+    },
+    {
+      "path": "execution-01/workspace/attempt/COMPLETE",
+      "bytes": 80,
+      "sha256": "9d6726d560b87285f7325ab04cb12970ba3d09c8649ce32986776807ea786b31"
+    },
+    {
+      "path": "execution-01/workspace/attempt/agent-events.jsonl",
+      "bytes": 21984,
+      "sha256": "b1ec2a50e5c594c591b6446834881be3b5c8119efb1d16a9c2e2e6ef42cc095f"
+    },
+    {
+      "path": "execution-01/workspace/attempt/ledger-state.json",
+      "bytes": 669,
+      "sha256": "f807c64003c6f6b5f26953996dc19ebe5040edc31036734799827c2e77ec937f"
+    },
+    {
+      "path": "execution-01/workspace/attempt/model-events.jsonl",
+      "bytes": 39538,
+      "sha256": "f9ed4d06a9158a3fcb26cec1a8ff707a18cdf1d190019d29f32b706ed94aa0e3"
+    },
+    {
+      "path": "execution-01/workspace/attempt/model-events.jsonl.state",
+      "bytes": 630,
+      "sha256": "0053c2c26e4dd491b8dc9b6f1d21fe8cdffecdba21b681b1320068336f0ed90e"
+    },
+    {
+      "path": "execution-01/workspace/attempt/plan-check.json",
+      "bytes": 1144,
+      "sha256": "28a82190bd926079e1724056450cf28bf10a6add429f034310ce2e5f21adbbc7"
+    },
+    {
+      "path": "execution-01/workspace/attempt/session-initialized.json",
+      "bytes": 382,
+      "sha256": "499fd60a5e0b6dbbfd293bbca8e806b7c42753c1e377315be3e4f3c4251ceaab"
+    },
+    {
+      "path": "execution-01/workspace/attempt/tool-policy.json",
+      "bytes": 465,
+      "sha256": "12abca24b61c7ec80dfd6526a219cb05980c0d2cb7e50fc5c4750079cd4a334f"
+    },
+    {
+      "path": "execution-01/workspace/registered-script.txt",
+      "bytes": 8105,
+      "sha256": "447e4d88ccd76f9cb4a206f799993620a3c832238dd873c9ae9e905c2452b59a"
+    },
+    {
+      "path": "execution-01/workspace/task-input.txt",
+      "bytes": 355,
+      "sha256": "b7c6c6b3e229c5bfabf5dafbb2aedebe04597fa65853f957ca6adbe681cf405b"
+    },
+    {
+      "path": "execution-01/workspace/task-requirements.txt",
+      "bytes": 935,
+      "sha256": "3f5f9b5c82a5b19c41bd436f019b4d7b5b85be7586d57b261de5d95c902bd947"
+    },
+    {
+      "path": "execution-01/workspace/task-style.txt",
+      "bytes": 64,
+      "sha256": "d191c02a499b31ea3080a43ada9709249288ec047a74e95b831a08bf7884743e"
+    },
+    {
+      "path": "freeze_identity.py",
+      "bytes": 11374,
+      "sha256": "1a2bd5e260d5b483e55c1f3782e7951b918379e2175713472dd773a62dce7243"
+    },
+    {
+      "path": "host_runner.py",
+      "bytes": 44512,
+      "sha256": "836c0a450ea223ed0be19622305572f750a0ecd088fc5076658fafe106540bb0"
+    },
+    {
+      "path": "identity-01.json",
+      "bytes": 14610,
+      "sha256": "7d1f3ce8d4ad081b56e4031f93a21d93f894eef1cc759ae0ab0339eda14e26a2"
+    },
+    {
+      "path": "plan_verifier.py",
+      "bytes": 9906,
+      "sha256": "3cb5c7b43831bf67c9bee7b50a5277274a7f42216dbcc24420be12d3afee265b"
+    },
+    {
+      "path": "planning_entry.py",
+      "bytes": 13355,
+      "sha256": "1e1e73d8ee99dbf51e67c8066aba3948fe7709fe73b7aba61ff64f798eeeb1ed"
+    },
+    {
+      "path": "postrun_audit.py",
+      "bytes": 6087,
+      "sha256": "f3bc78eb9557469bcb303ceb5f2d4034fc72ab4d53407c6f46888b539c169574"
+    },
+    {
+      "path": "preflight-03/preflight.json",
+      "bytes": 3240,
+      "sha256": "d7c4a5d8955f6aa420499e88109e8e70fbbf8e8ea1fee95c615375b6d3ed9d91"
+    },
+    {
+      "path": "preflight-03/workspace/registered-script.txt",
+      "bytes": 8105,
+      "sha256": "447e4d88ccd76f9cb4a206f799993620a3c832238dd873c9ae9e905c2452b59a"
+    },
+    {
+      "path": "preflight-03/workspace/task-input.txt",
+      "bytes": 355,
+      "sha256": "b7c6c6b3e229c5bfabf5dafbb2aedebe04597fa65853f957ca6adbe681cf405b"
+    },
+    {
+      "path": "preflight-03/workspace/task-requirements.txt",
+      "bytes": 935,
+      "sha256": "3f5f9b5c82a5b19c41bd436f019b4d7b5b85be7586d57b261de5d95c902bd947"
+    },
+    {
+      "path": "preflight-03/workspace/task-style.txt",
+      "bytes": 64,
+      "sha256": "d191c02a499b31ea3080a43ada9709249288ec047a74e95b831a08bf7884743e"
+    },
+    {
+      "path": "preparation-01/offline-tests-final.log",
+      "bytes": 9014,
+      "sha256": "dbf8c2e9d191c6e6649ade6cbce56994090cf65ccfed892c0d5a69fa7624f3e6"
+    },
+    {
+      "path": "preparation-01/project-state-patch.json",
+      "bytes": 2036,
+      "sha256": "0c7d4261882462473a6d40c8e3c555dd2d7abd03a40f457d27f8bcec792c30b5"
+    },
+    {
+      "path": "preparation-01/snapshot-manifest.json",
+      "bytes": 3204,
+      "sha256": "77d1627604c56ad83fa645f25d9728a5082ed00477e547934937c0f743707d73"
+    },
+    {
+      "path": "preparation-01/snapshots-before/docs/current_task.md",
+      "bytes": 36699,
+      "sha256": "060967f429f5694a84cf476631eba4db08bc609c84fc9728b1538e6265e286c8"
+    },
+    {
+      "path": "preparation-01/snapshots-before/docs/vimax_execution_preparation.md",
+      "bytes": 30333,
+      "sha256": "59635f9aa51273696318ea6593a3abf1a35656008f93579b866eab9a69230456"
+    },
+    {
+      "path": "preparation-01/snapshots-before/env/video/vimax/VIMAX-PLANNING-VALIDATE-02/host_runner.py",
+      "bytes": 42715,
+      "sha256": "1f87c42cdd1dd33d8cdf6356bd033f419a5ad88d55608f9c78c9e6ed4249c03f"
+    },
+    {
+      "path": "preparation-01/snapshots-before/env/video/vimax/VIMAX-PLANNING-VALIDATE-02/plan_verifier.py",
+      "bytes": 9537,
+      "sha256": "18f21c443318727f726905416b0f0f4ddac1d35de5beb3f788ce3ac875064af6"
+    },
+    {
+      "path": "preparation-01/snapshots-before/env/video/vimax/VIMAX-PLANNING-VALIDATE-02/planning_entry.py",
+      "bytes": 12235,
+      "sha256": "8361d53aa0ba0c92045d34964b5c568d98d1c4cde2f0e3238cdfb5801f811be6"
+    },
+    {
+      "path": "preparation-01/snapshots-before/env/video/vimax/VIMAX-PLANNING-VALIDATE-02/postrun_audit.py",
+      "bytes": 5804,
+      "sha256": "3fc50a9f153b12fd8d23572ba85f82b78d1630a435e0aad915237ca2df1b3081"
+    },
+    {
+      "path": "preparation-01/snapshots-before/env/video/vimax/VIMAX-PLANNING-VALIDATE-02/test_planning_configuration.py",
+      "bytes": 13319,
+      "sha256": "69c7256f7b6458d4bbebf069ca2cf5fd5b393a91a49b74bbfdc15176f182c45a"
+    },
+    {
+      "path": "preparation-01/snapshots-before/env/video/vimax/adapter-src/agent_runtime/tools.py",
+      "bytes": 22815,
+      "sha256": "648a02f9d0b234e6ef0f017ef793f85fae555f73807daa44f439a109ee3f6b6b"
+    },
+    {
+      "path": "preparation-01/snapshots-before/env/video/vimax/adapter-src/agent_runtime/vimax_adapters.py",
+      "bytes": 71099,
+      "sha256": "2839365babc3a70bfeb02be57600af98d078abf1cd87b8d4490b5b7a03c9db2b"
+    },
+    {
+      "path": "preparation-01/snapshots-before/env/video/vimax/adapter-src/agents/camera_image_generator.py",
+      "bytes": 14115,
+      "sha256": "e1ae72482019c7e2c6c98755e801d4a835d4ebe8e203193e45d446246ad0f22b"
+    },
+    {
+      "path": "preparation-01/snapshots-before/env/video/vimax/adapter-src/agents/storyboard_artist.py",
+      "bytes": 19431,
+      "sha256": "67eb0f91c17415c22c93a089744eb932b8f4aa5990c188441831e1bc9b2c5f49"
+    },
+    {
+      "path": "preparation-01/snapshots-before/env/video/vimax/adapter-src/interfaces/shot_description.py",
+      "bytes": 11841,
+      "sha256": "75da1f27b871d59de092e77db5d89079bcb9842af38ba643979d60446090a0d0"
+    },
+    {
+      "path": "preparation-01/snapshots-before/env/video/vimax/adapter-src/pipelines/script2video_pipeline.py",
+      "bytes": 55379,
+      "sha256": "c5c836778e06ac10501b016aa5b1d4e25c974df13d2edc9f61fee7fa737f4220"
+    },
+    {
+      "path": "preparation-01/snapshots-before/env/video/vimax/adapter-src/tools/video_generator_bailian_api.py",
+      "bytes": 20994,
+      "sha256": "2451ceaa6e2f1669092f6a1207712677f83fef1e803b05f31f011cf7699d817d"
+    },
+    {
+      "path": "preparation-01/test_video_capability_planning.py",
+      "bytes": 8515,
+      "sha256": "cb32e35adf9b01dc14084f562e530e923a69d5487eafb637b297631cc6414ae1"
+    }
+  ],
+  "self_hash": "omitted"
+}

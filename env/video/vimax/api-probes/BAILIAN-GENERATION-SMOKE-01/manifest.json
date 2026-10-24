@@ -1,0 +1,49 @@
+{
+ "task": "BAILIAN-GENERATION-SMOKE-01",
+ "note": "manifest does not self-hash; .part temporaries excluded",
+ "inputs": {
+  "plan": "plan.json",
+  "probe_code": "probe.py (revised post-run; see summary.md)",
+  "offline_tests": "test_probe_offline.py",
+  "execution_time_manifest": "manifest-execution.json (probe.py hash at execution time)",
+  "credential": {
+   "file": "/home/lcq/.config/agent-workload-characterization/bailian.env",
+   "env": "DASHSCOPE_API_KEY",
+   "value_stored": false
+  }
+ },
+ "files": {
+  "__pycache__/probe.cpython-311.pyc": {
+   "bytes": 68416,
+   "sha256": "83a063c34e06fe96bbe4fc4a1e55bf9024a70c31f7b231c13442596ed4293549"
+  },
+  "counts.json": {
+   "bytes": 433,
+   "sha256": "b84556d2ae5a04e464a9918e14d6cdbfe6911e986fe8e72c8099ce06544a1ae6"
+  },
+  "manifest-execution.json": {
+   "bytes": 1116,
+   "sha256": "88344f883812dbb4589712c3d636d04ec297abb959906046e21bf922eb2aa274"
+  },
+  "plan.json": {
+   "bytes": 12918,
+   "sha256": "614a8388a85754ef6d6336dd9e91647bb9493651a918bbf756d8c251dab3b02e"
+  },
+  "probe.py": {
+   "bytes": 50771,
+   "sha256": "5a4942cbfdb8e2fa8cfd79bc370813050bdd82d86eddb0439447f0d202b58dbd"
+  },
+  "summary.md": {
+   "bytes": 7549,
+   "sha256": "5c81d5d65e2f46c070ee46b7da6c41716c27028e2b6fe4cab8acebc5bdf0db00"
+  },
+  "test_probe_offline.py": {
+   "bytes": 20067,
+   "sha256": "6fed8f9edee96a0d2c947ca60084348b89adb6785ff5b5a76e7ccbc974c443cf"
+  },
+  "verification.json": {
+   "bytes": 2991,
+   "sha256": "c575b2e3b47fc67dd6157fce3b006710b500db48ee3a1c56488c42b86e12fbbb"
+  }
+ }
+}

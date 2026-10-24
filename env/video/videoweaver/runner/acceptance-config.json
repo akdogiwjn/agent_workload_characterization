@@ -1,0 +1,8 @@
+{
+  "task_id": "VIDEO-WEAVER-ACCEPTANCE-01",
+  "exp_id": "videoweaver-acceptance-01",
+  "work_seconds": 600,
+  "cpuset_cpus": "0-7",
+  "pids_limit": 4096,
+  "budget": {"deadline_seconds": 600, "max_llm_calls": 40, "max_image_creates": 20, "max_video_creates": 20, "max_media_downloads": 40}
+}

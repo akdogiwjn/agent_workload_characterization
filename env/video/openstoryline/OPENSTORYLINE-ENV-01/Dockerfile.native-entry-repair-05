@@ -1,0 +1,7 @@
+FROM openstoryline-task:arm64-asr-adapted-v13-formal-entry-audio-budget
+COPY source/ /opt/openstoryline/
+RUN python3 -m compileall -q /opt/openstoryline \
+    && test -f /opt/openstoryline/offline_fake_model.py \
+    && test -f /opt/openstoryline/tests/test_native_entry_repair.py \
+    && test -f /opt/openstoryline/tests/test_request_budget.py \
+    && test -f /opt/openstoryline/tests/test_formal_entry_wiring.py

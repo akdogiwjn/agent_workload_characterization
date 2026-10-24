@@ -1,0 +1,2632 @@
+--- a/skills/get-output-dir/scripts/get_output_dir.py
++++ b/skills/get-output-dir/scripts/get_output_dir.py
+@@ -10,6 +10,12 @@
+ 
+ 
+ def resolve_output_root():
++    # Project adaptation: an explicit VW_OUTPUT_DIR wins over any inherited
++    # OUTPUT_DIR, so skills never resolve into a stray host/default path even
++    # if the outer harness injects an unexpected value.
++    explicit = os.environ.get("VW_OUTPUT_DIR", "")
++    if explicit:
++        return os.path.abspath(os.path.expanduser(explicit))
+     output_root = os.path.expanduser(os.environ.get("OUTPUT_DIR", ""))
+     if not os.path.isabs(output_root):
+         output_root = os.path.abspath(output_root)
+--- a/skills/merge-video/SKILL.md
++++ b/skills/merge-video/SKILL.md
+@@ -3,9 +3,21 @@
+ description: "【视频拼接/合并工具】支持多视频自动统一分辨率、统一比例（无黑边裁剪）、统一帧率并平滑合并输出。当用户需要拼接、合并、组合多个视频文件（如.mp4）为单个文件时，必须立即调用此技能。"
+ ---
+ 
+-## 前置依赖
+-1. 安装依赖包：`pip install moviepy opencv-python`
+-2. 本地环境建议已配置好 `ffmpeg`（虽然 moviepy 会尝试自动处理，但系统级 ffmpeg 会提升稳定性）。
++## ⚠️ 本项目适配说明（必须以本段为准，覆盖下方原生正文）
++
++- **依赖已就绪**：`moviepy`、`opencv-python`、`imageio-ffmpeg` 已预装在固定解释器 `/opt/videoweaver-venv/bin/python` 的专用 venv 中；系统 `ffmpeg`/`ffprobe` 已就绪。
++- **正式任务禁止执行 `pip install`、`uv pip install` 或任何依赖安装/升级**。缺依赖时**报告环境错误并停止**，不得边运行边安装；安装/升级会被视为环境错误。
++- **必须使用固定 venv Python 绝对路径**调用脚本（不要用裸 `python`/`python3`，它们会解析到系统解释器而缺 moviepy）：
++  ```bash
++  /opt/videoweaver-venv/bin/python /opt/videoweaver/_codex_workspace/.agents/skills/merge-video/scripts/merge_videos.py \
++    --video_paths "<绝对路径1>" "<绝对路径2>" ... --output_filename "final.mp4"
++  ```
++- 保留原生 CLI 参数、输出位置（首个输入视频所在目录）与拼接算法；不更换为其它手工工具。
++- **merge 前确认**：所有输入片段已存在、哈希与镜头顺序已知，直接调用脚本，不再准备环境。
++- 下方原生正文示例中的 `python merge-video/scripts/merge_videos.py` 一律替换为 `/opt/videoweaver-venv/bin/python /opt/videoweaver/_codex_workspace/.agents/skills/merge-video/scripts/merge_videos.py`。
++
++## 前置依赖（原生说明，已被上方适配段覆盖：依赖已预装，任务期禁止安装）
++- 本技能所需 moviepy/opencv-python/imageio-ffmpeg 已预装于 `/opt/videoweaver-venv/bin/python`；系统 ffmpeg 已就绪；**正式任务禁止再执行任何依赖安装/升级**。
+ 
+ ## 支持模式
+ ### 步骤1：合并多个视频 (Merge Videos)
+--- a/skills/merge-video/scripts/merge_videos.py
++++ b/skills/merge-video/scripts/merge_videos.py
+@@ -17,6 +17,20 @@
+ def print(*args, **kwargs):
+     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+     original_print(f"[{current_time}]", *args, **kwargs)
++
++def _open_clip_retry(path, retries=4):
++    """Project adaptation: moviepy VideoFileClip can transiently fail to read
++    a just-written clip (ffmpeg reader reads 0 bytes at frame 0). Bounded
++    retry keeps the native merge workflow intact without changing media."""
++    import time as _t
++    for attempt in range(retries):
++        try:
++            return VideoFileClip(path)
++        except Exception as e:
++            if attempt == retries - 1:
++                raise
++            _t.sleep(1 + attempt)
++    raise RuntimeError(f"unreachable: {path}")
+ 
+ def get_video_ratio(video_path):
+     """
+@@ -223,7 +237,7 @@
+     temp_clips = []
+     for path in video_paths:
+         try:
+-            clip = VideoFileClip(path)
++            clip = _open_clip_retry(path)
+             temp_clips.append(clip)
+         except Exception as e:
+             print(f"⚠️ 加载视频失败 {path} | 错误：{str(e)}")
+@@ -411,7 +425,7 @@
+             return output_path
+ 
+         print("Starting to merge videos...")
+-        clips = [VideoFileClip(path) for path in video_paths]
++        clips = [_open_clip_retry(path) for path in video_paths]
+         
+         final_clip = concatenate_videoclips(clips)
+ 
+--- a/skills/image-gen/SKILL.md
++++ b/skills/image-gen/SKILL.md
+@@ -1,11 +1,28 @@
+ ---
+ name: image-gen
+-description: AI图片生成工具，基于豆包Seedream系列和gpt-image-2模型，支持传入提示词、参考图、分辨率、比例、模型、种子等参数生成图片，支持文生图、图生图两种模式。集成了提示词优化重写与多轮迭代创作（自动记录全量日志）。只要用户提到生成图片、AI画图、seedream/gpt生成图片、根据提示词/参考图绘图、自定义分辨率/比例生成海报/插画/头像/设计图等需求时，必须优先使用本技能。在使用生成功能之前，确保prompt已经过本技能内置的提示词优化规则处理。
++description: AI图片生成工具（本项目百炼适配版，模型仅 qwen-image-3.0，支持文生图/图生图），支持传入提示词、参考图、分辨率、比例等参数生成图片。当用户要求生成图片、AI画图、根据提示词/参考图绘图时，必须优先使用本技能，且必须使用本项目适配后的 qwen-image-3.0 模型，禁止使用 seedream/gpt-image-2 或 image_generate 内置方法。，支持传入提示词、参考图、分辨率、比例、模型、种子等参数生成图片，支持文生图、图生图两种模式。集成了提示词优化重写与多轮迭代创作（自动记录全量日志）。只要用户提到生成图片、AI画图、seedream/gpt生成图片、根据提示词/参考图绘图、自定义分辨率/比例生成海报/插画/头像/设计图等需求时，必须优先使用本技能。在使用生成功能之前，确保prompt已经过本技能内置的提示词优化规则处理。
+ ---
+ 
+ # 图片生成与提示词优化统一技能（image-gen）
+ 
+-**环境依赖:** `Pillow`、`httpx`、`volcenginesdkarkruntime`、`openai`
++## ⚠️ 本项目环境契约（必须以本段为准，覆盖下方全部原生示例）
++
++- 依赖已预装在固定解释器 `/opt/videoweaver-venv/bin/python` 的专用 venv（requests/Pillow/moviepy/opencv-python/imageio-ffmpeg 等）；系统 `ffmpeg`/`ffprobe` 已就绪。
++- **正式任务禁止运行 `pip install`、`uv pip install` 或任何依赖安装/升级**；缺依赖应报告环境错误并停止，不进入安装等待。
++- **所有 Python 调用必须用 `/opt/videoweaver-venv/bin/python`**；禁止裸 `python`/`python3`/`pip`（在 Codex 的 login-shell 下会解析到系统解释器，缺依赖）。
++- 下方原生示例中的 `python` 一律替换为 `/opt/videoweaver-venv/bin/python`；脚本路径以工作目录 `_codex_workspace` 为根，例如 `/opt/videoweaver-venv/bin/python .agents/skills/image-gen/scripts/…`。
++- 保留原生 CLI 参数、输出与算法；不更换为其它工具。
++
++
++
++**环境依赖（已预装，任务期禁止安装/升级）**
++**⚠️ 本项目适配说明（必须以本段为准）：**
++- 模型**仅支持 `qwen-image-3.0`**；`gpt-image-2`、`doubao-seedream-*` 一律拒绝，禁止使用 `image_generate` 内置方法。
++- 图生图参考图最多 **3 张**（qwen-image-3.0 官方限制），超限发送前拒绝。
++- `--resolution`：支持 `1k`（映射 1024x576）与显式 `WidthxHeight`（如 `1280x720`）；`2k` 的实际尺寸由环境变量 `VW_IMAGE_SIZE` 控制（默认 1024x576）；`4k` 拒绝。
++- `--max_images` 仅支持 1；`--web_search`、显式 `--seed` 拒绝。
++- 输出文件路径与日志格式不变；调用 `logging_manager.py` 的多轮日志仍可用（如需要）。
++- 图片下载为真实媒体，URL 不合 http/https 拒绝。
+ **⚠️警告: **: 不可使用image_generate这个内置方法，来代替这个技能的调用，否则会导致图片生成失败。任何生成图片的需求，都必须使用本技能。
+ 
+ ## 核心功能与工作流程
+--- a/skills/image-gen/scripts/generate.py
++++ b/skills/image-gen/scripts/generate.py
+@@ -1,561 +1,245 @@
+ #!/usr/bin/env python3
+ """
+-image-gen 图片生成脚本，基于Seedream API和gpt-image-2
++image-gen 图片生成脚本 — Bailian (DashScope) provider branch.
++
++Project adaptation of VideoWeaver's `skills/image-gen/scripts/generate.py`.
++The native script hard-codes the Volcengine ARK SDK (doubao-seedream / gpt-image-2).
++This copy keeps the original CLI contract, output paths and run.log format, but
++replaces the media call with the project-verified Bailian interface:
++
++  POST {base_url}/images/generations   (OpenAI-compatible)
++  T2I: {model, prompt, n, size, watermark, prompt_extend}
++  I2I: same endpoint with `image: [data-url, ...]` (max 3 reference images)
++
++Reference repo is NOT modified. Only the isolated copy is adapted. Unsupported
++native parameters (gpt-image-2, web_search, max_images>1, 4k, custom seed) are
++rejected explicitly before sending. Cost is not exposed; ledger/env counters
++are the source of truth.
+ """
+ import os
+ import sys
+ import time
+ import argparse
+ import base64
+-import httpx
+-import io
+ import subprocess
+ import json
+ import re
+ import random
+ from io import BytesIO
++from pathlib import Path
+ from typing import Union, List, Optional
+-from pathlib import Path
+ from PIL import Image
+-
+-from volcenginesdkarkruntime import Ark
+-from volcenginesdkarkruntime.types.images.images import SequentialImageGenerationOptions, ContentGenerationTool
+-from openai import OpenAI
+-
+-# 从环境变量读取配置
+-available_keys = [val for key, val in os.environ.items() if key.startswith("ARK_API_KEY") and val]
+-ARK_API_KEY = random.choice(available_keys) if available_keys else ""
+-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+-
+-def _format_time(timestamp: float) -> str:
+-    return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(timestamp))
+-
+-def log_task_start(prefix: str = "") -> float:
+-    start_time = time.time()
++import requests
++
++# --- Environment / provider routing ---
++
++def _api_key():
++    return os.environ.get("DASHSCOPE_API_KEY") or os.environ.get("VW_IMAGE_API_KEY") or ""
++
++def _base_url():
++    explicit = os.environ.get("VW_IMAGE_BASE_URL", "")
++    if explicit:
++        return explicit.rstrip("/")
++    ws = os.environ.get("BAILIAN_WORKSPACE_ID", "")
++    if not ws:
++        raise ValueError("BAILIAN_WORKSPACE_ID is required for the Bailian "
++                         "workspace image endpoint")
++    return f"https://{ws}.cn-beijing.maas.aliyuncs.com/compatible-mode/v1"
++
++def _image_size():
++    return os.environ.get("VW_IMAGE_SIZE", "1024x576")
++
++SUPPORTED_MODELS = {"qwen-image-3.0"}
++MAX_REF_IMAGES = 3
++_DOWNLOAD_CAP_BYTES = 20 * 1024 * 1024
++_MAX_HTTP_ATTEMPTS = 3  # 429-only retries; a create result unknown is never resent
++
++def _redacted(url):
++    return str(url).split("?", 1)[0]
++
++def _safe_error(payload):
++    if isinstance(payload, dict):
++        return {k: payload.get(k) for k in ("code", "message", "error") if k in payload}
++    return str(payload)[:400]
++
++def _media_url_allowed(url):
++    return isinstance(url, str) and url.startswith(("http://", "https://"))
++
++def _format_time(ts):
++    return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(ts))
++
++def log_task_start(prefix=""):
++    start = time.time()
+     label = f"{prefix} " if prefix else ""
+-    print(f"\n=== {label}任务启动时间: {_format_time(start_time)} ===")
+-    return start_time
+-
+-def log_task_end(start_time: float, status: str = "finished", prefix: str = "", end_time: Optional[float] = None) -> None:
+-    end_time = end_time if end_time is not None else time.time()
++    print(f"\n=== {label}任务启动时间: {_format_time(start)} ===")
++    return start
++
++def log_task_end(start, status="finished", prefix="", end_time=None):
++    end = end_time if end_time is not None else time.time()
+     label = f"{prefix} " if prefix else ""
+-    print(f"\n=== {label}任务结束 对应启动时间: {_format_time(start_time)} 结束时间: {_format_time(end_time)} 状态: {status} ===")
+-
+-def image_to_base64(
+-    image_source: Union[str, Path, Image.Image], 
+-    image_format: str = None,
+-    direct: bool=False
+-) -> str:
+-    """
+-    将图片（文件路径、Path对象或PIL.Image对象）转换为Base64编码的Data URI.
+-
+-    :param image_source: 图片的来源。可以是：
+-    - 字符串类型的文件路径 (str)
+-    - pathlib.Path 对象
+-    - PIL.Image.Image 对象
+-    :param image_format: 图片的格式，例如 'png', 'jpeg', 'gif' 等。
+-    - 如果 image_source 是文件路径或Path对象，此参数可选。若不提供，将从文件扩展名推断。
+-    - 如果 image_source 是 PIL Image 对象，此参数推荐提供，默认为 'png'。
+-    :return: Base64编码的Data URI字符串 (例如 "data:image/png;base64,iVBOR...")
+-    :raises TypeError: 如果 image_source 不是支持的类型。
+-    :raises FileNotFoundError: 如果提供的路径不存在。
+-    :raises ValueError: 如果无法从文件路径推断格式，且未提供 image_format。
+-    """
+-    
+-    # 1. 判断输入是文件路径 (str 或 Path) 还是 PIL Image 对象
++    print(f"\n=== {label}任务结束 对应启动时间: {_format_time(start)} 结束时间: {_format_time(end)} 状态: {status} ===")
++
++def image_to_base64(image_source, image_format=None, direct=False):
++    """Return a data URI for an image path (PIL keep). Used for I2I reference."""
+     if isinstance(image_source, (str, Path)):
+-        # --- 处理文件路径 (str 或 Path) ---
+-        if direct:
+-            with open(image_source, "rb") as image_file:
+-                encoded = base64.b64encode(image_file.read()).decode('utf-8')
+-                return encoded
+-        # os.path.exists() 可以直接处理 str 和 Path 对象
+         if not os.path.exists(image_source):
+             raise FileNotFoundError(f"文件未找到: {image_source}")
+-        
+-        # 如果未指定格式，推理出原来的格式是什么
+         if image_format is None:
+-            # Path 对象有更方便的 .suffix 属性
+-            if isinstance(image_source, Path):
+-                extension = image_source.suffix
+-            else: # 如果是字符串，使用 os.path.splitext
+-                _, extension = os.path.splitext(image_source)
+-            
+-            if not extension:
+-                raise ValueError("无法从文件路径推断图片格式，请提供 image_format 参数。")
+-            # 去掉点号并转为小写，例如 '.PNG' -> 'png'
+-            image_format = extension.lstrip('.').lower()
+-
+-
++            ext = Path(image_source).suffix
++            image_format = ext.lstrip(".").lower() if ext else None
++            if not image_format:
++                raise ValueError("无法从文件路径推断图片格式")
+         if image_format != "jpeg":
+-            image_format = "jpeg"
+-            # 对 PNG, JPG 等统一处理，转为 JPEG 再编码
+             image = Image.open(image_source).convert("RGB")
+-            buffer = io.BytesIO()
+-            image.save(buffer, format="JPEG")
+-            buffer.seek(0)
+-            encoded_string = base64.b64encode(buffer.read()).decode("utf-8")
++            buf = BytesIO()
++            image.save(buf, format="JPEG")
++            encoded = base64.b64encode(buf.getvalue()).decode("utf-8")
+         else:
+-            # 其他格式直接读取并编码
+-            with open(image_source, "rb") as image_file:
+-                encoded_string = base64.b64encode(image_file.read()).decode("utf-8")
+-
+-    elif isinstance(image_source, Image.Image):
+-        # used when sample frames from video and feed it to seed1.6
+-        # --- 处理 PIL Image 对象 ---
+-        # 默认使用png
+-        if image_format is None:
+-            image_format = 'png'
+-        
+-        save_format = 'jpeg' if image_format.lower() == 'jpg' else image_format.lower()
+-
+-        buffer = BytesIO()
+-        image_source.save(buffer, format=save_format.upper())
+-        encoded_bytes = base64.b64encode(buffer.getvalue())
+-        encoded_string = encoded_bytes.decode("utf-8")
+-
+-    else:
+-        # --- 处理不支持的类型 ---
+-        raise TypeError(
+-            "输入 'image_source' 必须是文件路径 (str, pathlib.Path) 或 PIL.Image.Image 对象。"
+-        )
+-
+-    # 2. 组装成 Data URI 格式并返回
+-    mime_type = 'jpeg' if image_format.lower() == 'jpg' else image_format.lower()
+-    return f"data:image/{mime_type};base64,{encoded_string}"
+-
+-def get_resolution_string(resolution: str, ratio: str, min_pixels: int = 3686400) -> str:
+-    """
+-    根据给定的分辨率标准和宽高比，计算并返回具体的分辨率字符串，确保总像素数不低于最小值。
+-
+-    Args:
+-    resolution (str): 分辨率标准，如 "1k", "2k", "4k"。
+-    ratio (str): 宽高比，如 "16:9", "4:3", "1:1"。
+-    min_pixels (int): 要求的最低像素总数，默认值为 3686400。
+-
+-    Returns:
+-    str: 格式化的分辨率字符串，如 "1920x1080"。
+-
+-    Raises:
+-    ValueError: 如果输入的分辨率或宽高比不被支持。
+-    """
+-    if resolution is None and ratio is None:
+-        return None
+-    
+-    # Check for direct resolution strings like "2560x1440" or "1024x768"
+-    if re.match(r'^\d+x\d+$', resolution):
+-        return resolution
+-
+-    # 1. 定义支持的分辨率及其对应的长边像素值
+-    resolution_map = {
+-        "1k": 1920,
+-        "2k": 2560,
+-        "4k": 3840
+-    }
+-
+-    # 2. 定义支持的宽高比
+-    ratio_map = {
+-        "1:1": (1, 1),
+-        "4:3": (4, 3),
+-        "3:4": (3, 4),
+-        "21:9": (21, 9),
+-        "16:9": (16, 9),
+-        "9:16": (9, 16),
+-        "3:2": (3, 2),
+-        "2:3": (2, 3)
+-    }
+-
+-    # 检查输入是否有效
+-    if resolution not in resolution_map:
+-        raise ValueError(f"不支持的分辨率: {resolution}。支持的分辨率为: {list(resolution_map.keys())}")
+-    if ratio not in ratio_map:
+-        raise ValueError(f"不支持的宽高比: {ratio}。支持的宽高比为: {list(ratio_map.keys())}")
+-
+-    # 获取基准像素和比例
+-    base_pixels = resolution_map[resolution]
+-    w_ratio, h_ratio = ratio_map[ratio]
+-
+-    # 3. 计算初始宽高
+-    if w_ratio > h_ratio:
+-        # 宽是长边
+-        width = base_pixels
+-        height = int((width * h_ratio) / w_ratio)
+-    elif h_ratio > w_ratio:
+-        # 高是长边
+-        height = base_pixels
+-        width = int((height * w_ratio) / h_ratio)
+-    else: # w_ratio == h_ratio (1:1)
+-        # 正方形，宽和高相等
+-        width = height = base_pixels
+-
+-    # 4. 检查总像素数是否满足最低要求，如果不满足则按比例放大
+-    total_pixels = width * height
+-    if total_pixels < min_pixels:
+-        # 计算需要放大的比例因子
+-        scale_factor = (min_pixels / total_pixels) ** 0.5
+-        # 按比例放大宽高，并取整（向上取整确保满足要求）
+-        width = int(width * scale_factor)
+-        height = int(height * scale_factor)
+-        
+-        # 确保宽高都是整数且保持比例（微调）
+-        if w_ratio > h_ratio:
+-            height = int((width * h_ratio) / w_ratio)
+-        elif h_ratio > w_ratio:
+-            width = int((height * w_ratio) / h_ratio)
+-        
+-        # 再次检查，如果仍不满足则增加1像素
+-        while width * height < min_pixels:
+-            if w_ratio > h_ratio:
+-                width += 1
+-                height = int((width * h_ratio) / w_ratio)
+-            else:
+-                height += 1
+-                width = int((height * w_ratio) / h_ratio)
+-
+-    # 5. 格式化并返回结果
+-    return f"{width}x{height}"
+-
+-def get_gpt_image_2_valid_resolution(resolution: str, ratio: str) -> str:
+-    """
+-    根据 gpt-image-2 的官方限制计算有效的分辨率：
+-    1. 最大边长 <= 3840px
+-    2. 边长必须是 16px 的倍数
+-    3. 长边与短边比例不能超过 3:1
+-    4. 总像素数在 655,360 到 8,294,400 之间
+-    """
+-    if resolution == "auto":
+-        return "auto"
+-
+-    # 如果是支持的热门尺寸，直接返回以加快速度
+-    popular_sizes = ["1024x1024", "1536x1024", "1024x1536", "2048x2048", "2048x1152", "3840x2160", "2160x3840"]
+-    if resolution in popular_sizes:
+-        return resolution
+-
+-    # 解析基础宽高
+-    if re.match(r'^\d+x\d+$', resolution):
+-        w, h = map(int, resolution.split('x'))
+-    else:
+-        # 使用 1k/2k/4k 映射为基准长边
+-        if resolution == "1k":
+-            L = 1024 if ratio == "1:1" else 1536
+-        elif resolution == "2k":
+-            L = 2048
+-        elif resolution == "4k":
+-            L = 3840
+-        else:
+-            L = 2048  # 默认使用 2k 作为基准
+-
+-        ratio_map = {
+-            "1:1": (1, 1), "4:3": (4, 3), "3:4": (3, 4),
+-            "21:9": (21, 9), "16:9": (16, 9), "9:16": (9, 16),
+-            "3:2": (3, 2), "2:3": (2, 3), "None": (16, 9)
+-        }
+-        w_ratio, h_ratio = ratio_map.get(ratio, (16, 9))
+-
+-        if w_ratio >= h_ratio:
+-            w = L
+-            h = int(L * h_ratio / w_ratio)
+-        else:
+-            h = L
+-            w = int(L * w_ratio / h_ratio)
+-
+-    # 1. 限制长短边比例 <= 3:1
+-    if w / h > 3:
+-        w = h * 3
+-    elif h / w > 3:
+-        h = w * 3
+-
+-    # 2. 限制最大边长 <= 3840
+-    if w > 3840 or h > 3840:
+-        scale = 3840 / max(w, h)
+-        w, h = int(w * scale), int(h * scale)
+-
+-    # 3. 限制总像素数 [655360, 8294400]
+-    pixels = w * h
+-    if pixels > 8294400:
+-        scale = (8294400 / pixels) ** 0.5
+-        w, h = int(w * scale), int(h * scale)
+-    elif pixels < 655360:
+-        scale = (655360 / pixels) ** 0.5
+-        w, h = int(w * scale), int(h * scale)
+-
+-    # 4. 必须是 16 的倍数
+-    w = max(16, round(w / 16) * 16)
+-    h = max(16, round(h / 16) * 16)
+-
+-    # 5. 微调：舍入到 16 倍数后可能会轻微越界，需确保硬性指标
+-    if w > 3840: w = 3840
+-    if h > 3840: h = 3840
+-    
+-    while w * h > 8294400:
+-        if w >= h: w -= 16
+-        else: h -= 16
+-    while w * h < 655360:
+-        if w <= h: w += 16
+-        else: h += 16
+-        
+-    # 二次检查 3:1 比例（极少情况由于减法导致比例越界）
+-    if w / h > 3:
+-        w = h * 3
+-        w = max(16, round(w / 16) * 16)
+-    elif h / w > 3:
+-        h = w * 3
+-        h = max(16, round(h / 16) * 16)
+-
+-    return f"{w}x{h}"
+-
+-def gpt_image2_generate_or_edit(
+-    prompt: str,
+-    output_path: str,
+-    img_path: Union[str, List[str]] = None,
+-    resolution: str = "2k",
+-    ratio: str = "16:9",
+-    quality: str = "auto",
+-    max_images: int = 1,
+-    task_start_time: Optional[float] = None,
+-):
+-    """
+-    使用 gpt-image-2 生成或编辑图片
+-    """
+-    effective_start_time = task_start_time if task_start_time is not None else time.time()
+-    if not OPENAI_API_KEY:
+-        raise ValueError("Please configure OPENAI_API_KEY environment variable")
+-
+-    # Map resolution and ratio to OpenAI supported sizes
+-    size = get_gpt_image_2_valid_resolution(resolution, ratio)
+-        
+-    if max_images > 1:
+-        print("Warning: gpt-image-2 目前每次只生成/编辑1张图片，忽略 max_images 参数")
+-
+-    is_edit = img_path is not None
+-    
+-    print_lines = [f"Submitting GPT-Image-2 Request: \n prompt={prompt}"]
+-    if is_edit:
+-        print_lines.append(f"with reference image(s): {img_path}")
+-    print_lines.append(f"with model: gpt-image-2")
+-    print_lines.append(f"resolution: {resolution}")
+-    print_lines.append(f"ratio: {ratio}")
+-    print_lines.append(f"mapped size: {size}")
+-    print_lines.append(f"quality: {quality}")
+-    print("\n".join(print_lines))
+-    
+-    if is_edit:
+-        client = OpenAI(
+-            api_key=OPENAI_API_KEY,
+-            base_url="https://aidp-i18ntt-sg.tiktok-row.net/gpt/openapi/online/v2/crawl/openai",
+-        )
+-        if isinstance(img_path, str):
+-            img_path = [img_path]
+-            
+-        opened_images = [open(p, "rb") for p in img_path]
+-        
+-        try:
+-            result = client.images.edit(
+-                model="gpt-image-2",
+-                image=opened_images,
+-                prompt=prompt,
+-                size=size,
+-                quality=quality,
+-                extra_headers={"api-key": OPENAI_API_KEY},
+-            )
+-        finally:
+-            for f in opened_images:
+-                f.close()
+-    else:
+-        client = OpenAI(
+-            api_key=OPENAI_API_KEY,
+-            base_url="https://aidp-i18ntt-sg.tiktok-row.net/api/modelhub/online/v2/crawl/openai",
+-        )
+-        result = client.images.generate(
+-            model="gpt-image-2",
+-            prompt=prompt,
+-            size=size,
+-            quality=quality,
+-            extra_headers={"api-key": OPENAI_API_KEY},
+-        )
+-
+-    image_base64 = result.data[0].b64_json
+-    img = base64.b64decode(image_base64)
+-    with open(output_path, 'wb') as f:
+-        f.write(img)
+-        
+-    end_time = time.time()
+-    elapsed_time = end_time - effective_start_time
+-    mins, secs = divmod(elapsed_time, 60)
+-    
+-    # 尝试从 result 中提取 token/cost 信息
+-    token_used = "N/A"
+-    if hasattr(result, 'usage') and result.usage:
+-        # 如果返回对象中存在 usage 对象
+-        if hasattr(result.usage, 'total_tokens'):
+-            token_used = str(result.usage.total_tokens)
+-        elif hasattr(result.usage, 'output_tokens'):
+-            token_used = str(result.usage.output_tokens)
+-            
+-    print(f"💰 [quality: {quality}] Token Used: {token_used}")
+-    print(f"🖼️ Successfully saved image: {output_path}")
+-    print(f"⏱️ 任务生成完成！开始时间: {_format_time(effective_start_time)} 结束时间: {_format_time(end_time)} 所用时间: {int(mins)}min, {int(secs)}sec")
+-    return end_time
+-
+-
+-def seedream_generate_image(
+-    prompt: str,
+-    output_path: str,
+-    img_path: Union[str, List[str]] = None,
+-    model: str = "doubao-seedream-5-0-260128",
+-    resolution: str = "2k", 
+-    ratio: str = "16:9",
+-    max_images: int = 2,
+-    watermark: bool = False,
+-    seed: int = -1,
+-    web_search: bool = False,
+-    task_start_time: Optional[float] = None,
+-):
+-    """
+-    Generate images using Seedream API via Volcengine SDK.
+-    """
+-    effective_start_time = task_start_time if task_start_time is not None else time.time()
+-    if not ARK_API_KEY:
+-        raise ValueError("Please configure ARK_API_KEY environment variable")
+-    
+-    supported_resolutions = ["1k", "2k", "4k"]
+-    supported_ratios = ["1:1", "4:3", "3:4", "21:9", "16:9", "9:16", "3:2", "2:3", "None"]
+-    
+-    # Allow custom resolution like "1024x768"
+-    is_custom_resolution = bool(re.match(r'^\d+x\d+$', resolution))
+-    
+-    if resolution not in supported_resolutions and not is_custom_resolution:
+-        raise ValueError(f"resolution must be one of: {supported_resolutions} or a custom 'WidthxHeight' string (e.g. '1920x1080')")
+-    
+-    # Skip ratio validation if custom resolution is provided
+-    if not is_custom_resolution:
+-        if ratio not in supported_ratios:
+-            raise ValueError(f"ratio must be one of: {supported_ratios}")
+-    
+-    formatted_resolution = get_resolution_string(resolution, ratio)
+-    
+-    # Initialize client
+-    client = Ark(
+-        base_url="https://ark.cn-beijing.volces.com/api/v3",
+-        api_key=ARK_API_KEY,
+-    )
+-    
+-    # Process reference image(s)
+-    img_path_list = []
+-    image_input = None
++            with open(image_source, "rb") as fh:
++                encoded = base64.b64encode(fh.read()).decode("utf-8")
++        mime = "jpeg" if image_format.lower() in ("jpg", "jpeg") else image_format.lower()
++        return f"data:image/{mime};base64,{encoded}"
++    raise TypeError("unsupported image source")
++
++def map_resolution_to_size(resolution, ratio):
++    """Map the native --resolution/--ratio to a real pixel size.
++    1k/2k map to verified/default sizes; an explicit WidthxHeight passes
++    through; 4k is rejected (unverified)."""
++    if re.match(r"^\d+x\d+$", str(resolution)):
++        return str(resolution).lower()
++    if resolution == "1k":
++        return "1024x576"
++    if resolution == "2k":
++        return _image_size()
++    if resolution == "4k":
++        raise ValueError("resolution 4k is not supported by the Bailian "
++                         "adapter (unverified); use an explicit WidthxHeight "
++                         "or VW_IMAGE_SIZE")
++    raise ValueError(f"unsupported resolution: {resolution}")
++
++def seedream_generate_image(prompt, output_path, img_path=None,
++                            model="doubao-seedream-5-0-260128",
++                            resolution="2k", ratio="16:9", max_images=1,
++                            watermark=False, seed=-1, web_search=False,
++                            task_start_time=None):
++    """Bailian T2I/I2I image generation, preserving the native log/save shape."""
++    effective_start = task_start_time if task_start_time is not None else time.time()
++    if model not in SUPPORTED_MODELS:
++        raise ValueError(f"unsupported image model '{model}'; Bailian adapter "
++                         f"supports only {sorted(SUPPORTED_MODELS)}")
++    if max_images and max_images != 1:
++        raise ValueError("max_images>1 is not supported by qwen-image-3.0 "
++                         "(one image per request); rejected before sending")
++    if web_search:
++        raise ValueError("--web_search is not supported by the Bailian adapter")
++    if seed is not None and seed >= 0:
++        raise ValueError("explicit seed is not supported by the Bailian adapter")
++
++    refs = []
+     if img_path is not None:
+-        if not isinstance(img_path, list):
+-            img_path_list = [img_path]
+-        else:
+-            img_path_list = img_path
+-        image_input = [image_to_base64(p) for p in img_path_list]
+-    
+-    print_lines = [f"Submitting Seedream Generate Image Request: \n prompt={prompt}"]
+-    if img_path_list:
+-        print_lines.append(f"with reference image(s): {img_path_list}")
+-    if seed is not None:
+-        print_lines.append(f"with seed: {seed}")
+-    if model:
+-        print_lines.append(f"with model: {model}")
+-    if formatted_resolution:
+-        print_lines.append(f"size: {formatted_resolution}")
+-    if ratio:
+-        print_lines.append(f"ratio: {ratio}")
+-    if max_images:
+-        print_lines.append(f"max_images: {max_images}")
+-    if watermark:
+-        print_lines.append(f"watermark: {watermark}")
+-    if web_search:
+-        print_lines.append(f"web search: enabled")
+-        
+-    print("\n".join(print_lines))
+-    
+-    # Prepare generation parameters
+-    params = {
++        refs = [img_path] if isinstance(img_path, str) else list(img_path)
++        if not refs:
++            refs = []
++        if len(refs) > MAX_REF_IMAGES:
++            raise ValueError(f"qwen-image-3.0 supports at most {MAX_REF_IMAGES} "
++                             "reference images; rejected before sending")
++    size = map_resolution_to_size(resolution, ratio)
++
++    api_key = _api_key()
++    if not api_key:
++        raise ValueError("DASHSCOPE_API_KEY is not set")
++    base_url = _base_url()
++    url = f"{base_url}/images/generations"
++
++    payload = {
+         "model": model,
+         "prompt": prompt,
+-        "size": formatted_resolution,
+-        "response_format": "url",
++        "n": 1,
++        "size": size,
+         "watermark": watermark,
+-        "seed": seed
++        "prompt_extend": False,
+     }
+-    
+-    if web_search:
+-        params["tools"] = [ContentGenerationTool(type="web_search")]
+-    
+-    if max_images > 1:
+-        # # Hack: The model requires explicit instruction in prompt to generate multiple images in auto mode
+-        # prompt += f"，生成一组共{max_images}张连贯插画"
+-        # params["prompt"] = prompt
+-        params["sequential_image_generation"] = "auto"
+-        params["sequential_image_generation_options"] = SequentialImageGenerationOptions(max_images=max_images)
+-        print(f"监测到要一次性生成 {max_images} 张图片，需要花费更多时间，请不要 kill 掉进程或重新生成，请耐心等待...")
+-    if image_input:
+-        params["image"] = image_input
+-
+-    try:
+-        imagesResponse = client.images.generate(**params)
+-        print(f"Number of image generated: {len(imagesResponse.data)}")
+-
+-        
+-        # Iterate through all image data
+-        for idx, image in enumerate(imagesResponse.data):
+-            image_url = image.url
+-            if not image_url:
+-                continue
+-            
+-            # Generate output path
+-            if max_images > 1:
+-                path_obj = Path(output_path)
+-                save_path = str(path_obj.parent / f"{path_obj.stem}_{idx+1}{path_obj.suffix}")
+-            else:
+-                save_path = output_path
+-            
+-            # print(f"URL: {image_url}, Size: {image.size if hasattr(image, 'size') else 'Unknown'}")
+-            
+-            # Download image
+-            try:
+-                with httpx.Client() as http_client:
+-                    download_response = http_client.get(image_url, timeout=60)
+-                    download_response.raise_for_status()
+-                    with open(save_path, "wb") as f:
+-                        f.write(download_response.content)
+-                if web_search:
+-                    print("Web search usage counts:", imagesResponse.usage.tool_usage.web_search)
+-                print("💰 Token Used:", imagesResponse.usage.output_tokens)
+-                print(f"🖼️ Successfully saved image: {save_path}")
+-            except Exception as e:
+-                print(f"❌ Failed to download image {image_url}: {e}")
+-
+-        end_time = time.time()
+-        elapsed_time = end_time - effective_start_time
+-        mins, secs = divmod(elapsed_time, 60)
+-        print(f"⏱️ 任务生成完成！开始时间: {_format_time(effective_start_time)} 结束时间: {_format_time(end_time)} 所用时间: {int(mins)}min, {int(secs)}sec")
+-        return end_time
+-
+-    except Exception as e:
+-        print(f"❌ Generation failed: {e}")
+-        import traceback
+-        traceback.print_exc()
+-        raise e
++    if refs:
++        payload["image"] = [image_to_base64(p) for p in refs]
++
++    print(f"Submitting Bailian image request: prompt={prompt[:120]!r} model={model} size={size} refs={len(refs)}")
++
++    status = None
++    body = None
++    for attempt in range(1, _MAX_HTTP_ATTEMPTS + 1):
++        try:
++            resp = requests.post(url, headers={
++                "Authorization": f"Bearer {api_key}",
++                "Content-Type": "application/json",
++            }, json=payload, timeout=180)
++        except requests.RequestException as exc:
++            # outcome UNKNOWN server-side: no auto-retry (anti double-billing)
++            print(f"Image request transport error (attempt {attempt}): {exc}")
++            raise RuntimeError(f"image request transport error: {exc}")
++        status = resp.status_code
++        try:
++            body = resp.json()
++        except ValueError:
++            body = {"message": resp.text}
++        if status == 429 and attempt < _MAX_HTTP_ATTEMPTS:
++            print(f"429 rate limited (attempt {attempt}); retrying with backoff")
++            time.sleep(min(2 ** attempt, 8))
++            continue
++        break
++
++    if status is None or status >= 400:
++        print(f"Image generation failed: HTTP {status}: {_safe_error(body)}")
++        raise RuntimeError(f"image generation failed http_{status}: {_safe_error(body)}")
++
++    data = (body or {}).get("data") or []
++    img_url = data[0].get("url") if data and isinstance(data[0], dict) else None
++    if not img_url:
++        raise ValueError(f"Bailian image response missing data[0].url: {body}")
++
++    # download WITHOUT the model API Authorization header
++    if not _media_url_allowed(img_url):
++        raise ValueError(f"media URL not http/https: {_redacted(img_url)}")
++    dl = requests.get(img_url, timeout=120)
++    dl.raise_for_status()
++    image_bytes = dl.content
++    if not image_bytes or len(image_bytes) > _DOWNLOAD_CAP_BYTES:
++        raise ValueError("image download empty or exceeds cap bytes")
++
++    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
++    with open(output_path, "wb") as fh:
++        fh.write(image_bytes)
++
++    usage = body.get("usage") or {}
++    token_used = usage.get("output_tokens", usage.get("total_tokens"))
++    print(f"💰 Token Used: {token_used}")
++    print(f"🖼️ Successfully saved image: {output_path}")
++    end = time.time()
++    mins, secs = divmod(int(end - effective_start), 60)
++    print(f"⏱️ 任务生成完成！开始时间: {_format_time(effective_start)} 结束时间: {_format_time(end)} 所用时间: {mins}min, {secs}sec")
++    return end
++
++
++def gpt_image2_generate_or_edit(*args, **kwargs):
++    raise ValueError("gpt-image-2 is not supported by the Bailian adapter; "
++                     "use model=qwen-image-3.0")
++
+ 
+ def main():
+-    parser = argparse.ArgumentParser(description="AI图片生成工具")
++    parser = argparse.ArgumentParser(description="AI图片生成工具 (Bailian adapter)")
+     parser.add_argument("--prompt", help="生成小猫", type=str, default="生成1张小猫照片")
+     parser.add_argument("--output_file_name", help="生成图片的文件名", type=str, default="output.jpg")
+-    parser.add_argument("--img_path", action="append", help="参考图路径（图生图模式，可指定多次传入多张参考图）")
+-    parser.add_argument("--model", default="doubao-seedream-5-0-260128", help="使用的模型，支持 doubao-seedream 系列和 gpt-image-2")
+-    parser.add_argument("--resolution", default="2k", help="分辨率，支持 1k/2k/4k 或 WidthxHeight (gpt-image-2会自动映射)")
+-    parser.add_argument("--ratio", default="16:9", choices=["1:1", "4:3", "3:4", "21:9", "16:9", "9:16", "3:2", "2:3", "None"], help="图片比例")
+-    parser.add_argument("--quality", default="auto", choices=["low", "medium", "high", "auto"], help="生成图片质量（仅 gpt-image-2 支持）")
+-    parser.add_argument("--max_images", type=int, default=1, help="生成图片数量（1-10）")
++    parser.add_argument("--img_path", action="append", help="参考图路径（图生图模式，可指定多次）")
++    parser.add_argument("--model", default="doubao-seedream-5-0-260128", help="使用的模型；适配后仅 qwen-image-3.0")
++    parser.add_argument("--resolution", default="2k", help="分辨率，1k/2k/WidthxHeight；4k 拒绝")
++    parser.add_argument("--ratio", default="16:9", help="图片比例")
++    parser.add_argument("--quality", default="auto", help="仅 gpt-image-2 支持，适配后拒绝")
++    parser.add_argument("--max_images", type=int, default=1, help="仅支持 1")
+     parser.add_argument("--watermark", action="store_true", help="是否添加水印")
+-    parser.add_argument("--seed", type=int, default=-1, help="随机种子")
+-    parser.add_argument("--web_search", action="store_true", help="是否启用联网搜索功能")
+-    parser.add_argument("--session-key", type=str, help="可选的输出目录 session-key。CodeX/Claude Code 环境会自动识别，不需要传入内容；OpenClaw 环境必须运行 session_status 获取session-key并且传入, 格式通常为 agent:{agent_id}:{session_id}。")
+-    
++    parser.add_argument("--seed", type=int, default=-1, help="随机种子；>=0 拒绝")
++    parser.add_argument("--web_search", action="store_true", help="不支持，拒绝")
++    parser.add_argument("--session-key", type=str, help="OpenClaw session-key；Codex 自动识别")
+     args = parser.parse_args()
+-    # Get SESSION_ID
++
+     try:
+         script_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../get-output-dir/scripts/get_output_dir.py"))
+         cmd = [sys.executable, script_path]
+@@ -570,77 +254,45 @@
+     except Exception as e:
+         print(f"Warning: Could not resolve output directory: {e}")
+         return
+-        
+-    # --- 日志同时输出到控制台和文件 ---
+-    class TeeOutput:
+-        def __init__(self, stream1, stream2):
+-            self.stream1 = stream1
+-            self.stream2 = stream2
+-        def write(self, data):
+-            self.stream1.write(data)
+-            self.stream2.write(data)
+-            self.flush()
+-        def flush(self):
+-            self.stream1.flush()
+-            self.stream2.flush()
+-            
+-    LOG_FILE = os.path.join(folder, "run.log")
+-    IS_BACKGROUND = "--background" in sys.argv
+-    IS_WORKER = "--internal-worker" in sys.argv
+-
+-    if not IS_BACKGROUND and not IS_WORKER:
+-        # 交互模式：同时输出到控制台和文件
+-        log_f = open(LOG_FILE, "a", encoding="utf-8", buffering=1)
+-        sys.stdout = TeeOutput(sys.stdout, log_f)
+-        sys.stderr = TeeOutput(sys.stderr, log_f)
+-    elif IS_WORKER:
+-        # 后台Worker模式：stdout/stderr 已被父进程重定向到日志文件
+-        # 强制刷新缓冲区，确保日志及时写入
+-        sys.stdout.reconfigure(line_buffering=True)
+-        sys.stderr.reconfigure(line_buffering=True)
+-    
++
++    log_f = open(os.path.join(folder, "run.log"), "a", encoding="utf-8", buffering=1)
++    orig_stdout, orig_stderr = sys.stdout, sys.stderr
++    class Tee:
++        def __init__(self, a, b): self.a, self.b = a, b
++        def write(self, data): self.a.write(data); self.b.write(data); self.b.flush()
++        def flush(self): self.a.flush(); self.b.flush()
++    sys.stdout = sys.stderr = Tee(orig_stdout, log_f)
++
+     output_path = os.path.join(folder, args.output_file_name)
+-    
+-    log_prefix = "[Background Worker]" if IS_WORKER else ""
+-    generation_start_time = log_task_start(prefix=log_prefix)
+-    generation_end_time = None
++    start = log_task_start()
+     task_status = "failed"
++    end_time = None
+     try:
+         if args.model == "gpt-image-2":
+-            generation_end_time = gpt_image2_generate_or_edit(
+-                prompt=args.prompt,
+-                output_path=output_path,
+-                img_path=args.img_path,
+-                resolution=args.resolution,
+-                ratio=args.ratio,
+-                quality=args.quality,
+-                max_images=args.max_images,
+-                task_start_time=generation_start_time,
+-            )
++            gpt_image2_generate_or_edit(prompt=args.prompt, output_path=output_path,
++                                        img_path=args.img_path, resolution=args.resolution,
++                                        ratio=args.ratio, quality=args.quality,
++                                        max_images=args.max_images, task_start_time=start)
+         else:
+-            generation_end_time = seedream_generate_image(
+-                prompt=args.prompt,
+-                output_path=output_path,
+-                img_path=args.img_path,
+-                model=args.model,
+-                resolution=args.resolution,
+-                ratio=args.ratio,
+-                max_images=args.max_images,
+-                watermark=args.watermark,
+-                seed=args.seed,
+-                web_search=args.web_search,
+-                task_start_time=generation_start_time,
+-            )
++            end_time = seedream_generate_image(prompt=args.prompt, output_path=output_path,
++                                               img_path=args.img_path, model=args.model,
++                                               resolution=args.resolution, ratio=args.ratio,
++                                               max_images=args.max_images, watermark=args.watermark,
++                                               seed=args.seed, web_search=args.web_search,
++                                               task_start_time=start)
+         task_status = "success"
+     except Exception as e:
+-        generation_end_time = time.time()
+-        elapsed_time = generation_end_time - generation_start_time
+-        mins, secs = divmod(elapsed_time, 60)
+-        print(f"⏱️ 任务失败，开始时间: {_format_time(generation_start_time)} 结束时间: {_format_time(generation_end_time)} 消耗时间: {int(mins)}min, {int(secs)}sec")
++        import traceback
++        traceback.print_exc()
+         print(f"生成失败: {e}")
+-        log_task_end(generation_start_time, status=task_status, prefix=log_prefix, end_time=generation_end_time)
++        log_task_end(start, status=task_status, end_time=end_time)
++        sys.stdout, sys.stderr = orig_stdout, orig_stderr
++        log_f.close()
+         sys.exit(1)
+-    log_task_end(generation_start_time, status=task_status, prefix=log_prefix, end_time=generation_end_time)
++    log_task_end(start, status=task_status, end_time=end_time)
++    sys.stdout, sys.stderr = orig_stdout, orig_stderr
++    log_f.close()
++
+ 
+ if __name__ == "__main__":
+     main()
+--- a/skills/video-gen/SKILL.md
++++ b/skills/video-gen/SKILL.md
+@@ -1,11 +1,27 @@
+ ---
+ name: video-gen
+-description: 【Seedance 2.0官方完整版】字节跳动豆包Seedance 2.0（doubao-seedance-2-0-260128）视频生成/编辑工具，支持音画同出、自动TOS视频上传、视频预处理（缩放/裁剪/延长）、，完整兼容官方API。集成了多轮迭代创作（自动记录全量日志）与提示词重写。在使用生成功能之前，确保prompt已经过本技能内置的提示词优化规则处理。当用户需要调用API生成视频、AI制作视频、润色提示词或进行多轮视频编辑时，必须优先调用本技能。
++description: 【本项目百炼适配版】视频生成工具，基于 wan2.6-i2v-flash 单首帧图生视频（5秒/720P/无音轨已验证），支持首帧图生视频与后台任务。当用户需要生成视频时必须优先调用本技能；仅支持单首帧 i2v，其余模式发送前拒绝。，支持音画同出、自动TOS视频上传、视频预处理（缩放/裁剪/延长）、，完整兼容官方API。集成了多轮迭代创作（自动记录全量日志）与提示词重写。在使用生成功能之前，确保prompt已经过本技能内置的提示词优化规则处理。当用户需要调用API生成视频、AI制作视频、润色提示词或进行多轮视频编辑时，必须优先调用本技能。
+ ---
+ 
+ # 视频生成与提示词优化统一技能（video-gen）
+ 
+-**环境依赖:** `openai`、`requests`、`tos`、`volcenginesdkarkruntime`
++## ⚠️ 本项目环境契约（必须以本段为准，覆盖下方全部原生示例）
++
++- 依赖已预装在固定解释器 `/opt/videoweaver-venv/bin/python` 的专用 venv（requests/Pillow/moviepy/opencv-python/imageio-ffmpeg 等）；系统 `ffmpeg`/`ffprobe` 已就绪。
++- **正式任务禁止运行 `pip install`、`uv pip install` 或任何依赖安装/升级**；缺依赖应报告环境错误并停止，不进入安装等待。
++- **所有 Python 调用必须用 `/opt/videoweaver-venv/bin/python`**；禁止裸 `python`/`python3`/`pip`（在 Codex 的 login-shell 下会解析到系统解释器，缺依赖）。
++- 下方原生示例中的 `python` 一律替换为 `/opt/videoweaver-venv/bin/python`；脚本路径以工作目录 `_codex_workspace` 为根，例如 `/opt/videoweaver-venv/bin/python .agents/skills/video-gen/scripts/…`。
++- 保留原生 CLI 参数、输出与算法；不更换为其它工具。
++
++
++
++**环境依赖（已预装，任务期禁止安装/升级）**
++**⚠️ 本项目适配说明（必须以本段为准）：**
++- 模型**仅支持 `wan2.6-i2v-flash`**，单首帧图生视频，时长 **5 秒**、分辨率 **720P**、**audio=false（无音轨）**；输出帧率/编码以媒体验收为准。
++- **不支持**（发送前显式拒绝，绝不静默降级）：文生视频（无参考图）、首尾帧（2 张参考图）、多参考图（>1）、参考视频、音频驱动、视频延长、轨道补齐、Seedance 系列模型、音画同出。
++- 首帧必须先用 `image-gen` 生成图片，再以 `--first-image`（或单个 `--reference-image`）传入本技能。
++- 本地首帧以 base64 data URL 传给百炼，不依赖火山 TOS 与 Ark file_id。
++- 创建后只轮询同一 task_id，401/403 立即停止，结果不明不补建。
+ **⚠️警告: **: 不可以只将静态图片拼接来生成视频，必须调用本技能。
+ 
+ 
+--- a/skills/video-gen/scripts/generate.py
++++ b/skills/video-gen/scripts/generate.py
+@@ -1,654 +1,317 @@
+ #!/usr/bin/env python3
++"""
++video-gen 视频生成脚本 — Bailian (DashScope) provider branch.
++
++Project adaptation of VideoWeaver's `skills/video-gen/scripts/generate.py`.
++The native script uploads reference videos to TOS and calls the Volcengine ARK
++Seedance content_generation API. This copy keeps the original CLI contract
++(--prompt/--reference-image/--first-image/--last-image/--reference-video/
++--reference-audio/--output/--ratio/--resolution/--duration/--model/--background/
++--session-key), the get-output-dir subdir "videos", run.log, and the
++create -> task_id -> bounded poll -> terminal -> download -> ffprobe flow.
++
++Verified capability (this round): wan2.6-i2v-flash SINGLE first-frame image-to-video,
++5s, 720P, audio=false. All unverified modes are rejected BEFORE sending:
++- text-to-video (0 reference images)          -> rejected (must image-gen a first frame first)
++- first+last frame (2 reference images)       -> rejected
++- >1 reference image                          -> rejected
++- reference video / reference audio / extension / track filling -> rejected
++
++The media transfer chain does NOT use TOS or Ark file_id; the local first frame
++is passed as a base64 data URL (project-verified Bailian video-synthesis shape).
++Reference repo is NOT modified; only the isolated copy is adapted.
++"""
+ import os
+ import sys
+ import json
+-import re
+-import math
+ import time
+ import base64
+-import shutil
+-import tempfile
+ import subprocess
+-import urllib.request
+ import argparse
+-import random
+ from pathlib import Path
+-from typing import List, Tuple, Optional, Dict, Any
+-from volcenginesdkarkruntime import Ark
+-LOG_FILE = ""
+-LAST_SEEDANCE_END_TIME = None
+-
+-# --- 日志同时输出到控制台和文件 ---
+-class TeeOutput:
+-    def __init__(self, stream1, stream2):
+-        self.stream1 = stream1
+-        self.stream2 = stream2
+-    def write(self, data):
+-        self.stream1.write(data)
+-        self.stream2.write(data)
+-        self.flush()
+-    def flush(self):
+-        self.stream1.flush()
+-        self.stream2.flush()
+-
+-def _format_time(timestamp: float) -> str:
+-    return time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(timestamp))
+-
+-def log_task_start(prefix: str = "") -> float:
+-    start_time = time.time()
++import mimetypes
++import requests
++
++# --- Provider routing ---
++
++def _api_key():
++    return os.environ.get("DASHSCOPE_API_KEY") or os.environ.get("VW_VIDEO_API_KEY") or ""
++
++def _base_url():
++    explicit = os.environ.get("VW_VIDEO_BASE_URL", "")
++    if explicit:
++        return explicit.rstrip("/")
++    ws = os.environ.get("BAILIAN_WORKSPACE_ID", "")
++    if not ws:
++        raise ValueError("BAILIAN_WORKSPACE_ID is required for the Bailian "
++                         "video-synthesis endpoint")
++    return f"https://{ws}.cn-beijing.maas.aliyuncs.com"
++
++def _video_duration():
++    return int(os.environ.get("VW_VIDEO_DURATION", "5"))
++
++def _video_resolution():
++    return os.environ.get("VW_VIDEO_RESOLUTION", "720P")
++
++def _video_audio():
++    return os.environ.get("VW_VIDEO_AUDIO", "false").lower() in ("1", "true", "yes")
++
++def _prompt_extend():
++    return os.environ.get("VW_VIDEO_PROMPT_EXTEND", "false").lower() in ("1", "true", "yes")
++
++def _poll_interval():
++    return float(os.environ.get("VW_VIDEO_POLL_INTERVAL", "3"))
++
++def _poll_window():
++    return float(os.environ.get("VW_VIDEO_POLL_WINDOW", "600"))
++
++SUPPORTED_MODELS = {"wan2.6-i2v-flash"}
++_DOWNLOAD_CAP_BYTES = 200 * 1024 * 1024
++_MAX_POLLS = int(os.environ.get("VW_VIDEO_MAX_POLLS", "400"))
++
++def _redacted(url):
++    return str(url).split("?", 1)[0]
++
++def _safe_error(payload):
++    if isinstance(payload, dict):
++        return {k: payload.get(k) for k in ("code", "message", "error") if k in payload}
++    return str(payload)[:400]
++
++def _media_url_allowed(url):
++    return isinstance(url, str) and url.startswith(("http://", "https://"))
++
++def _image_path_to_data_url(path):
++    if not os.path.exists(path):
++        raise FileNotFoundError(f"first frame image not found: {path}")
++    mime, _ = mimetypes.guess_type(path)
++    if not mime or not mime.startswith("image/"):
++        mime = "image/png"
++    with open(path, "rb") as fh:
++        return f"data:{mime};base64," + base64.b64encode(fh.read()).decode("ascii")
++
++def _ffprobe_meta(video_path):
++    cmd = ["ffprobe", "-v", "error", "-print_format", "json", "-show_format", "-show_streams", video_path]
++    try:
++        proc = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
++    except FileNotFoundError:
++        raise RuntimeError("ffprobe not found; install ffmpeg")
++    if proc.returncode != 0:
++        raise RuntimeError(f"ffprobe failed: {proc.stderr or 'unknown'}")
++    try:
++        probe = json.loads(proc.stdout)
++    except ValueError:
++        raise RuntimeError("failed to parse ffprobe output")
++    v = next((s for s in probe.get("streams", []) if s.get("codec_type") == "video"), None)
++    dur = None
++    if "format" in probe and "duration" in probe["format"]:
++        dur = float(probe["format"]["duration"])
++    return {"duration_s": round(dur, 2) if dur else None,
++            "width": v.get("width") if v else None,
++            "height": v.get("height") if v else None,
++            "fps": v.get("avg_frame_rate") if v else None,
++            "audio_streams": sum(1 for s in probe.get("streams", []) if s.get("codec_type") == "audio")}
++
++def _format_time(ts):
++    return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(ts))
++
++def log_task_start(prefix=""):
++    start = time.time()
+     label = f"{prefix} " if prefix else ""
+-    print(f"\n=== {label}任务启动时间: {_format_time(start_time)} ===")
+-    return start_time
+-
+-def log_task_end(start_time: float, status: str = "finished", prefix: str = "", end_time: Optional[float] = None) -> None:
+-    end_time = end_time if end_time is not None else time.time()
++    print(f"\n=== {label}任务启动时间: {_format_time(start)} ===")
++    return start
++
++def log_task_end(start, status="finished", prefix="", end_time=None):
++    end = end_time if end_time is not None else time.time()
+     label = f"{prefix} " if prefix else ""
+-    print(f"\n=== {label}任务结束 对应启动时间: {_format_time(start_time)} 结束时间: {_format_time(end_time)} 状态: {status} ===")
+-
+-# --- Dependencies Check ---
+-try:
+-    import requests
+-    from openai import OpenAI
+-except ImportError as e:
+-    print(f"Error: Required package missing: {e}. Install it via pip.")
+-    sys.exit(1)
+-
+-# --- Configuration ---
+-# You can modify these paths as needed
+-INPUT_DIR = Path("")
+-OUTPUT_DIR = Path("")
+-
+-# TOS Configuration
+-TOS_AK = os.getenv("TOS_ACCESS_KEY")
+-TOS_SK = os.getenv("TOS_SECRET_KEY")
+-TOS_ENDPOINT = "tos-cn-beijing.volces.com"
+-TOS_REGION = "cn-beijing"
+-TOS_BUCKET = "visualgen"
+-
+-MAX_VIDEO_PIXELS = 927408
+-
+-# --- Video Utilities (from video_utils.py) ---
+-def get_video_metadata_ffprobe(video_path: str) -> Dict[str, Any]:
+-    """Use ffprobe to get video metadata."""
+-    if not os.path.exists(video_path):
+-        raise FileNotFoundError(f"Video file not found: {video_path}")
+-    
+-    cmd = [
+-        "ffprobe",
+-        "-v", "quiet",
+-        "-print_format", "json",
+-        "-show_format",
+-        "-show_streams",
+-        video_path,
+-    ]
+-    try:
+-        proc = subprocess.run(
+-            cmd,
+-            stdout=subprocess.PIPE,
+-            stderr=subprocess.PIPE,
+-            text=True,
+-        )
+-    except FileNotFoundError:
+-        raise FileNotFoundError("ffprobe not found in PATH; please install ffmpeg")
+-    
+-    if proc.returncode != 0:
+-        raise RuntimeError(f"ffprobe failed: {proc.stderr or 'unknown error'}")
+-    
+-    try:
+-        probe_data = json.loads(proc.stdout)
+-    except json.JSONDecodeError as e:
+-        raise RuntimeError(f"Failed to parse ffprobe output: {e}")
+-    
+-    video_stream = None
+-    for stream in probe_data.get("streams", []):
+-        if stream.get("codec_type") == "video":
+-            video_stream = stream
+-            break
+-    
+-    if not video_stream:
+-        raise RuntimeError("No video stream found in file")
+-    
+-    width = video_stream.get("width")
+-    height = video_stream.get("height")
+-    fps_str = video_stream.get("r_frame_rate", "0/1")
+-    
+-    if "/" in fps_str:
+-        num, den = map(float, fps_str.split("/"))
+-        fps = num / den if den != 0 else 0.0
+-    else:
+-        fps = float(fps_str) if fps_str else 0.0
+-    
+-    duration = None
+-    if "format" in probe_data and "duration" in probe_data["format"]:
+-        duration = float(probe_data["format"]["duration"])
+-    elif "duration" in video_stream:
+-        duration = float(video_stream["duration"])
+-    
+-    if duration is None:
+-        raise RuntimeError("Could not determine video duration")
+-    
+-    return {
+-        "duration_s": round(duration, 2),
+-        "width": width,
+-        "height": height,
+-        "fps": round(fps, 2),
++    print(f"\n=== {label}任务结束 对应启动时间: {_format_time(start)} 结束时间: {_format_time(end)} 状态: {status} ===")
++
++def _create_task(prompt, first_frame_data_url, api_key, base_url, duration, resolution, audio, prompt_extend):
++    """Create a video task. ZERO retries by design: a 5xx/timeout may mean the
++    paid task was already accepted; retrying could create a second billed task."""
++    url = f"{base_url}/api/v1/services/aigc/video-generation/video-synthesis"
++    payload = {
++        "model": "wan2.6-i2v-flash",
++        "input": {"prompt": prompt, "img_url": first_frame_data_url},
++        "parameters": {
++            "resolution": resolution,
++            "duration": duration,
++            "audio": audio,
++            "prompt_extend": prompt_extend,
++            "watermark": False,
++        },
+     }
+-
+-def _encode_file_to_base64(file_path: str) -> str:
+-    with open(file_path, "rb") as f:
+-        return base64.b64encode(f.read()).decode("utf-8")
+-
+-def _get_mime_type(file_path: str) -> str:
+-    ext = Path(file_path).suffix.lower()
+-    mime_types = {
+-        ".jpg": "image/jpeg",
+-        ".jpeg": "image/jpeg",
+-        ".png": "image/png",
+-        ".gif": "image/gif",
+-        ".webp": "image/webp",
+-        ".mp4": "video/mp4",
+-        ".avi": "video/x-msvideo",
+-        ".mov": "video/quicktime",
+-        ".webm": "video/webm",
+-        ".mp3": "audio/mpeg",
+-        ".wav": "audio/wav",
+-        ".m4a": "audio/mp4",
+-        ".ogg": "audio/ogg",
+-        ".flac": "audio/flac",
++    headers = {
++        "Authorization": f"Bearer {api_key}",
++        "Content-Type": "application/json",
++        "X-DashScope-Async": "enable",
+     }
+-    return mime_types.get(ext, "application/octet-stream")
+-
+-def _upload_video_to_tos(
+-    local_path: str, remote_path: Optional[str] = None, expires: int = 72000
+-) -> Optional[str]:
+-    try:
+-        import tos
+-        from tos import HttpMethodType
+-    except ImportError:
+-        print("Warning: 'tos' package not found. Video uploading will fail.")
+-        raise ImportError("To use TOS upload, please install: pip install tos")
+-
+-    if not TOS_AK or not TOS_SK:
+-        raise ValueError("Please set TOS_ACCESS_KEY and TOS_SECRET_KEY environment variables")
+-
+-    if not os.path.exists(local_path):
+-        raise FileNotFoundError(f"Video file not found: {local_path}")
+-
+-    if remote_path is None:
+-        timestamp = time.strftime("%Y%m%d_%H%M%S")
+-        filename = os.path.basename(local_path)
+-        remote_path = f"videos/{timestamp}_{filename}"
+-
+-    client = tos.TosClientV2(TOS_AK, TOS_SK, TOS_ENDPOINT, TOS_REGION)
+-
+-    file_size = os.path.getsize(local_path)
+-    if file_size > 20 * 1024 * 1024:
+-        client.upload_file(TOS_BUCKET, remote_path, local_path)
+-    else:
+-        client.put_object_from_file(TOS_BUCKET, remote_path, local_path)
+-
+-    output = client.pre_signed_url(
+-        HttpMethodType.Http_Method_Get,
+-        TOS_BUCKET,
+-        remote_path,
+-        expires=expires,
+-    )
+-    return output.signed_url
+-
+-def _download_output_video(url: str, output_path: str) -> None:
+-    urllib.request.urlretrieve(url, output_path)
+-
+-def _extend_video(video_path: str, target_duration: int, output_path: Optional[str] = None) -> str:
+-    if not output_path:
+-        path_obj = Path(video_path)
+-        parent = path_obj.resolve().parent
+-        base_name = path_obj.stem
+-        ext = path_obj.suffix
+-        output_path = str(parent / f"{base_name}_auto_extend{ext}")
+-    
+-    try:
+-        subprocess.run(
+-            [
+-                "ffmpeg", "-y", "-stream_loop", "-1", "-i", video_path,
+-                "-t", str(target_duration), "-c", "copy",
+-                output_path,
+-            ],
+-            check=True,
+-            capture_output=True,
+-        )
+-        return output_path
+-    except Exception:
+-        if os.path.exists(output_path):
+-            os.remove(output_path)
+-        raise
+-
+-def _resize_video_if_needed(
+-    video_path: str, max_pixels: int = MAX_VIDEO_PIXELS, output_path: Optional[str] = None
+-) -> Tuple[str, Optional[str]]:
+-    meta = get_video_metadata_ffprobe(video_path)
+-    w, h = meta["width"], meta["height"]
+-    if w is None or h is None:
+-        return video_path, None
+-    if w * h <= max_pixels:
+-        return video_path, None
+-    
+-    scale = math.sqrt(max_pixels / (w * h))
+-    new_w = max(2, int(w * scale) // 2 * 2)
+-    new_h = max(2, int(h * scale) // 2 * 2)
+-    
+-    while new_w * new_h > max_pixels:
+-        new_w = max(2, new_w - 2)
+-        new_h = max(2, new_h - 2)
+-    
+-    if not output_path:
+-        path_obj = Path(video_path)
+-        parent = path_obj.resolve().parent
+-        base_name = path_obj.stem
+-        ext = path_obj.suffix
+-        output_path = str(parent / f"{base_name}_auto_resize{ext}")
+-    
+-    try:
+-        subprocess.run(
+-            [
+-                "ffmpeg", "-y", "-i", video_path,
+-                "-vf", f"scale={new_w}:{new_h}",
+-                "-c:a", "copy",
+-                output_path,
+-            ],
+-            check=True,
+-            capture_output=True,
+-        )
+-        return output_path, None
+-    except Exception:
+-        if os.path.exists(output_path):
+-            os.remove(output_path)
+-        raise
+-
+-def seedance_edit(
+-    video_paths: List[str],
+-    image_paths: List[str],
+-    user_message: str,
+-    video_ratio: str = "16:9",
+-    video_resolution: str = "480p",
+-    save_path: str = "output.mp4",
+-    poll_interval: int = 10,
+-    duration: float = 5,
+-    first_frame_path: Optional[str] = None,
+-    last_frame_path: Optional[str] = None,
+-    model: str = "doubao-seedance-2-0-fast-260128",
+-    audio_paths: List[str] = None,
+-    task_start_time: Optional[float] = None,
+-    return_timing: bool = False,
+-) -> Any:
+-    """
+-    Call Seedance2Edit API for video editing.
+-    """
+-    global LAST_SEEDANCE_END_TIME
+-    LAST_SEEDANCE_END_TIME = None
+-    effective_start_time = task_start_time if task_start_time is not None else time.time()
+-    retry_messages = [
+-        "ContentGenerationError",
+-        "OutputVideoSensitiveContentDetected",
+-        "InternalServiceError"
+-    ]
+-    # TODO:修改数据预处理
++    try:
++        resp = requests.post(url, headers=headers, json=payload, timeout=180)
++    except requests.RequestException as exc:
++        raise RuntimeError(f"video create transport error (outcome unknown, no retry): {exc}")
++    try:
++        body = resp.json()
++    except ValueError:
++        body = {"message": resp.text}
++    if resp.status_code >= 400:
++        raise RuntimeError(f"video create failed http_{resp.status_code}: {_safe_error(body)}")
++    output = body.get("output") or {}
++    task_id = output.get("task_id")
++    if not task_id:
++        raise ValueError(f"video create missing task_id: {body}")
++    return task_id, body.get("request_id")
++
++def _poll_task(task_id, api_key, base_url, interval, window, max_polls):
++    """Poll ONLY this task. Polls carry Authorization. 401/403 abort immediately.
++    A transport error aborts (never re-creates)."""
++    url = f"{base_url}/api/v1/tasks/{task_id}"
++    headers = {"Authorization": f"Bearer {api_key}"}
++    started = time.monotonic()
++    polls = 0
++    while True:
++        elapsed = time.monotonic() - started
++        if elapsed > window:
++            raise RuntimeError(f"video task {task_id} not terminal after {window:g}s "
++                               f"({polls} polls); task may still run remotely and bill")
++        if polls >= max_polls:
++            raise RuntimeError(f"video task {task_id} exceeded {max_polls} polls")
++        if polls:
++            time.sleep(interval)
++        polls += 1
++        try:
++            resp = requests.get(url, headers=headers, timeout=120)
++        except requests.RequestException as exc:
++            raise RuntimeError(f"video poll transport error (aborting, no re-create): {exc}")
++        try:
++            body = resp.json()
++        except ValueError:
++            body = {"message": resp.text}
++        output = body.get("output") or {}
++        status = output.get("task_status")
++        if resp.status_code in (401, 403):
++            raise RuntimeError(f"video poll auth failed http_{resp.status_code}; aborting without retry")
++        if resp.status_code >= 400:
++            raise RuntimeError(f"video poll failed http_{resp.status_code}: {_safe_error(body)}")
++        print(f"Task status: {status}")
++        if status == "SUCCEEDED":
++            video_url = output.get("video_url")
++            if not video_url:
++                raise ValueError(f"SUCCEEDED without video_url: {body}")
++            return video_url, body.get("usage")
++        if status in ("FAILED", "CANCELED", "UNKNOWN"):
++            raise RuntimeError(f"video task {task_id} terminal state {status}: "
++                               f"{output.get('code')} {output.get('message')}")
++
++def _download_video(url, output_path):
++    """Download WITHOUT the model API Authorization header. Only http/https."""
++    if not _media_url_allowed(url):
++        raise ValueError(f"media URL not http/https: {_redacted(url)}")
++    resp = requests.get(url, timeout=300)
++    resp.raise_for_status()
++    data = resp.content
++    if not data or len(data) > _DOWNLOAD_CAP_BYTES:
++        raise ValueError("video download empty or exceeds cap bytes")
++    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
++    with open(output_path, "wb") as fh:
++        fh.write(data)
++    return len(data)
++
++def seedance_edit(video_paths, image_paths, user_message, video_ratio="16:9",
++                  video_resolution="720p", save_path="output.mp4",
++                  poll_interval=10, duration=5, first_frame_path=None,
++                  last_frame_path=None, model="doubao-seedance-2-0-fast-260128",
++                  audio_paths=None, task_start_time=None, return_timing=False):
++    """Bailian wan2.6-i2v-flash SINGLE first-frame video generation.
++
++    Rejects every unverified native mode before sending. Keeps the native
++    seedance_edit signature so the SKILL.md CLI contract stays intact."""
+     if audio_paths is None:
+         audio_paths = []
+-
+-    for p in video_paths:
+-        if not os.path.exists(p):
+-            raise FileNotFoundError(f"Video file not found: {p}")
+-    for p in image_paths:
+-        if not os.path.exists(p):
+-            raise FileNotFoundError(f"Reference image not found: {p}")
+-    for p in audio_paths:
+-        if not os.path.exists(p):
+-            raise FileNotFoundError(f"Reference audio not found: {p}")
+-    if first_frame_path and not os.path.exists(first_frame_path):
+-        raise FileNotFoundError(f"First frame image not found: {first_frame_path}")
+-    if last_frame_path and not os.path.exists(last_frame_path):
+-        raise FileNotFoundError(f"Last frame image not found: {last_frame_path}")
+-
+-    processed_video_paths = []
+-    created_temp_files = []
+-    
+-    cwd = Path.cwd().resolve()
+-    tmp_dir = cwd / "tmp_files_deletable"
+-    tmp_dir.mkdir(parents=True, exist_ok=True)
+-    
+-    for video_path in video_paths:
+-        video_meta = get_video_metadata_ffprobe(video_path)
+-        video_duration = video_meta["duration_s"]
+-        
+-        current_video_path = video_path
+-        
+-        path_obj = Path(video_path).resolve()
+-        try:
+-            rel_path = path_obj.relative_to(cwd)
+-            parts = rel_path.parent.parts
+-        except ValueError:
+-            parts = path_obj.parent.parts[1:]
+-            
+-        prefix = "_".join(parts) + "_" if parts and parts[0] != "" else ""
+-        base_name = path_obj.stem
+-        ext = path_obj.suffix
+-        
+-        if video_duration < 2:
+-            extend_out_name = f"{prefix}{base_name}_auto_extend{ext}"
+-            extend_out_path = str(tmp_dir / extend_out_name)
+-            current_video_path = _extend_video(current_video_path, 2, output_path=extend_out_path)
+-            created_temp_files.append(current_video_path)
+-        
+-        resize_out_name = f"{prefix}{base_name}_auto_resize{ext}" if video_duration >= 2 else f"{prefix}{base_name}_auto_extend_auto_resize{ext}"
+-        resize_out_path = str(tmp_dir / resize_out_name)
+-        
+-        new_video_path, _ = _resize_video_if_needed(current_video_path, output_path=resize_out_path)
+-        if new_video_path != current_video_path:
+-            created_temp_files.append(new_video_path)
+-        current_video_path = new_video_path
+-        
+-        processed_video_paths.append(current_video_path)
+-    try:
+-        available_keys = [val for key, val in os.environ.items() if key.startswith("ARK_API_KEY") and val]
+-        api_key = random.choice(available_keys) if available_keys else None
+-        if not api_key:
+-            raise ValueError("Please set ARK_API_KEY environment variable")
+-
+-        content = [{"type": "text", "text": user_message}]
+-
+-        # Add reference images
+-        for img_path in image_paths:
+-            image_base64 = _encode_file_to_base64(img_path)
+-            mime_type = _get_mime_type(img_path)
+-            content.append(
+-                {
+-                    "type": "image_url",
+-                    "image_url": {"url": f"data:{mime_type};base64,{image_base64}"},
+-                    "role": "reference_image",
+-                }
+-            )
+-
+-        # Add first frame if provided
+-        if first_frame_path:
+-            image_base64 = _encode_file_to_base64(first_frame_path)
+-            mime_type = _get_mime_type(first_frame_path)
+-            content.append(
+-                {
+-                    "type": "image_url",
+-                    "image_url": {"url": f"data:{mime_type};base64,{image_base64}"},
+-                    "role": "first_frame",
+-                }
+-            )
+-
+-        # Add last frame if provided
+-        if last_frame_path:
+-            image_base64 = _encode_file_to_base64(last_frame_path)
+-            mime_type = _get_mime_type(last_frame_path)
+-            content.append(
+-                {
+-                    "type": "image_url",
+-                    "image_url": {"url": f"data:{mime_type};base64,{image_base64}"},
+-                    "role": "last_frame",
+-                }
+-            )
+-
+-        # Add reference audios
+-        for audio_path in audio_paths:
+-            audio_base64 = _encode_file_to_base64(audio_path)
+-            mime_type = _get_mime_type(audio_path)
+-            content.append(
+-                {
+-                    "type": "audio_url",
+-                    "audio_url": {"url": f"data:{mime_type};base64,{audio_base64}"},
+-                    "role": "reference_audio",
+-                }
+-            )
+-
+-        video_urls = []
+-        try:
+-            for video_path in processed_video_paths:
+-                video_url = _upload_video_to_tos(video_path)
+-                if not video_url:
+-                    raise RuntimeError("Failed to upload video to TOS")
+-                video_urls.append(video_url)
+-        except Exception as e:
+-            raise e
+-
+-        for video_url in video_urls:
+-            content.append(
+-                {
+-                    "type": "video_url",
+-                    "video_url": {"url": video_url},
+-                    "role": "reference_video",
+-                }
+-            )
+-
+-        client = Ark(
+-            base_url="https://ark.cn-beijing.volces.com/api/v3",
+-            api_key=api_key,
+-        )
+-
+-        print_lines = [f"Submitting Seedance task: \n prompt={user_message}\n model={model}"]
+-        if save_path:
+-            print_lines.append(f"save_path={save_path}")
+-        if video_ratio:
+-            print_lines.append(f"video_ratio={video_ratio}")
+-        if video_resolution:
+-            print_lines.append(f"video_resolution={video_resolution}")
+-        if duration:
+-            print_lines.append(f"duration={duration}")
+-        if video_paths:
+-            print_lines.append(f"reference_videos={video_paths}")
+-        if audio_paths:
+-            print_lines.append(f"reference_audios={audio_paths}")
+-        if first_frame_path:
+-            print_lines.append(f"first_frame_path={first_frame_path}")
+-        if last_frame_path:
+-            print_lines.append(f"last_frame_path={last_frame_path}")
+-        if image_paths:
+-            print_lines.append(f"reference_images={image_paths}")
+-        if LOG_FILE:
+-            print_lines.append(f"log_files: {LOG_FILE}")
+-
+-        print("\n".join(print_lines))
+-
+-        max_retries = 2
+-        for attempt in range(max_retries + 1):
+-            attempt_started = False
+-            try:
+-                attempt_started = True
+-
+-                client = Ark(
+-                    api_key=api_key,
+-                    base_url="https://ark.cn-beijing.volces.com/api/v3",
+-                )
+-
+-                create_result = client.content_generation.tasks.create(
+-                    model=model,
+-                    content=content,
+-                    ratio=video_ratio,
+-                    duration=int(duration),
+-                    resolution=video_resolution,
+-                )
+-                task_id = create_result.id
+-
+-                while True:
+-                    get_result = client.content_generation.tasks.get(task_id=task_id)
+-                    status = get_result.status
+-
+-                    if status == "succeeded":
+-                        output_video_url = None
+-                        if hasattr(get_result, "content") and get_result.content:
+-                            task_content = get_result.content
+-                            if hasattr(task_content, "video_url"):
+-                                output_video_url = task_content.video_url
+-                            elif isinstance(task_content, dict) and "video_url" in task_content:
+-                                output_video_url = task_content["video_url"]
+-
+-                        if not output_video_url:
+-                            raise RuntimeError("Task succeeded but returned no video URL")
+-
+-                        video_save_path = save_path
+-                        _download_output_video(output_video_url, video_save_path)
+-
+-                        end_time = time.time()
+-                        LAST_SEEDANCE_END_TIME = end_time
+-                        elapsed_time = end_time - effective_start_time
+-                        mins, secs = divmod(elapsed_time, 60)
+-                        print(f"Video Input: {True if video_paths else False}; 💰 Token Used:", get_result.usage.total_tokens)
+-                        print(f"⏱️ 任务生成完成！所用时间: {int(mins)}min, {int(secs)}sec")
+-
+-                        if return_timing:
+-                            return video_save_path, end_time
+-                        return video_save_path
+-
+-                    elif status == "failed":
+-                        err_msg = getattr(get_result, "error", None) or str(get_result)
+-                        raise RuntimeError(f"Seedance task failed: {err_msg}")
+-
+-                    time.sleep(poll_interval)
+-                    print(f"Task status: {status}")
+-            except Exception as e:
+-                if attempt_started:
+-                    failure_time = time.time()
+-                    LAST_SEEDANCE_END_TIME = failure_time
+-                    elapsed_time = failure_time - effective_start_time
+-                    mins, secs = divmod(elapsed_time, 60)
+-                    print(f"⏱️ 任务失败，消耗时间: {int(mins)}min, {int(secs)}sec")
+-                err_str = str(e)
+-                if attempt < max_retries and any(msg in err_str for msg in retry_messages):
+-                    print(f"⚠️ 遇到错误: {err_str}，正在重试 ({attempt + 1}/{max_retries})...")
+-                    time.sleep(2)
+-                    continue
+-                raise
+-
+-    finally:
+-        for tmp_file in created_temp_files:
+-            try:
+-                if os.path.exists(tmp_file):
+-                    os.remove(tmp_file)
+-            except Exception:
+-                pass
+-
+-# --- Main Batch Processing Logic (from run_seedance_edit.py) ---
+-def extract_number_from_filename(filename: str) -> int:
+-    match = re.search(r'(\d+)', filename)
+-    return int(match.group(1)) if match else 0
+-
+-def get_sorted_image_paths(folder_path: Path) -> List[str]:
+-    image_extensions = {'.png', '.jpeg', '.jpg', '.webp'}
+-    image_files = []
+-    
+-    for f in folder_path.iterdir():
+-        if f.is_file() and f.suffix.lower() in image_extensions:
+-            image_files.append(f)
+-    
+-    image_files.sort(key=lambda x: extract_number_from_filename(x.name))
+-    
+-    return [str(f) for f in image_files]
+-
+-def get_sorted_video_paths(folder_path: Path) -> List[str]:
+-    video_extensions = {'.mp4', '.avi', '.mov', '.webm'}
+-    video_files = []
+-    
+-    for f in folder_path.iterdir():
+-        if f.is_file() and f.suffix.lower() in video_extensions:
+-            video_files.append(f)
+-    
+-    video_files.sort(key=lambda x: extract_number_from_filename(x.name))
+-    
+-    return [str(f) for f in video_files]
+-
+-def get_sorted_audio_paths(folder_path: Path) -> List[str]:
+-    audio_extensions = {'.mp3', '.wav', '.m4a', '.ogg', '.flac'}
+-    audio_files = []
+-    
+-    for f in folder_path.iterdir():
+-        if f.is_file() and f.suffix.lower() in audio_extensions:
+-            audio_files.append(f)
+-    
+-    audio_files.sort(key=lambda x: extract_number_from_filename(x.name))
+-    
+-    return [str(f) for f in audio_files]
+-
+-def get_json_prompt(folder_path: Path) -> str:
+-    for f in folder_path.iterdir():
+-        if f.is_file() and f.suffix.lower() == '.json':
+-            with open(f, 'r', encoding='utf-8') as file:
+-                data = json.load(file)
+-                if isinstance(data, list) and len(data) > 0:
+-                    return data[0].get('prompt', '')
+-                elif isinstance(data, dict):
+-                    return data.get('prompt', '')
+-    return None
+-
+-def process_folder(folder_path: Path, output_dir: Path, model: str = "doubao-seedance-2-0-fast-260128") -> Tuple[bool, str]:
+-    folder_name = folder_path.name
+-    task_start_time = log_task_start()
+-    
+-    video_paths = get_sorted_video_paths(folder_path)
+-    image_paths = get_sorted_image_paths(folder_path)
+-    audio_paths = get_sorted_audio_paths(folder_path)
+-    
+-    if not video_paths and not image_paths and not audio_paths:
+-        log_task_end(task_start_time, status="failed")
+-        return False, f"No video, images or audios found in {folder_name}"
+-    
+-    user_message = get_json_prompt(folder_path)
+-    if not user_message:
+-        log_task_end(task_start_time, status="failed")
+-        return False, f"No prompt found in {folder_name}"
+-    
+-    output_path = output_dir / f"{folder_name}.mp4"
+-    
+-    if output_path.exists():
+-        log_task_end(task_start_time, status="skipped")
+-        return True, f"[Skip] {folder_name}.mp4 already exists"
+-    
+-    print(f"[Processing] {folder_name}")
+-    print(f" Videos: {[Path(p).name for p in video_paths] if video_paths else 'None'}")
+-    print(f" Images: {[Path(p).name for p in image_paths] if image_paths else 'None'}")
+-    print(f" Audios: {[Path(p).name for p in audio_paths] if audio_paths else 'None'}")
+-    print(f" Prompt: {user_message[:50]}...")
+-    
+-    try:
+-        video_save_path = seedance_edit(
+-            video_paths=video_paths,
+-            image_paths=image_paths,
+-            audio_paths=audio_paths,
+-            user_message=user_message,
+-            save_path=str(output_path),
+-            model=model,
+-        )
+-        log_task_end(task_start_time, status="success")
+-        return True, f"[Done] {folder_name}.mp4"
+-    except Exception as e:
+-        log_task_end(task_start_time, status="failed")
+-        return False, f"[Error] {folder_name}: {str(e)}"
++    effective_start = task_start_time if task_start_time is not None else time.time()
++
++    if model not in SUPPORTED_MODELS:
++        raise ValueError(f"unsupported video model '{model}'; Bailian adapter supports "
++                         f"only {sorted(SUPPORTED_MODELS)}")
++    if video_paths:
++        raise ValueError("reference video input is not supported (unverified); rejected")
++    if audio_paths:
++        raise ValueError("audio-driven video is not supported (unverified); rejected")
++    if last_frame_path:
++        raise ValueError("first+last frame generation is not supported by "
++                         "wan2.6-i2v-flash (unverified); rejected")
++    frames = [p for p in ([first_frame_path] if first_frame_path else []) if p]
++    refs = list(image_paths or [])
++    if frames and refs:
++        raise ValueError("use --first-image OR --reference-image, not both")
++    all_frames = frames or refs
++    if not all_frames:
++        raise ValueError("wan2.6-i2v-flash is a first-frame i2v model; "
++                         "text-to-video (0 images) is rejected — generate the "
++                         "first frame with image-gen first")
++    if len(all_frames) != 1:
++        raise ValueError(f"wan2.6-i2v-flash supports exactly one first-frame "
++                         f"image; got {len(all_frames)}; rejected")
++
++    api_key = _api_key()
++    if not api_key:
++        raise ValueError("DASHSCOPE_API_KEY is not set")
++    base_url = _base_url()
++    resolution = video_resolution.upper() if video_resolution.lower() in ("480p", "720p", "1080p") else video_resolution
++    duration = int(duration)
++    interval = float(poll_interval if poll_interval and poll_interval > 0 else _poll_interval())
++
++    print_lines = [f"Submitting Bailian video task: prompt={user_message[:120]!r} model={model}"]
++    print_lines.append(f"save_path={save_path} video_ratio={video_ratio} "
++                       f"video_resolution={resolution} duration={duration}")
++    print_lines.append(f"first_frame={all_frames[0]}")
++    print("\n".join(print_lines))
++
++    first_frame = _image_path_to_data_url(all_frames[0])
++    task_id, request_id = _create_task(user_message, first_frame, api_key, base_url,
++                                       duration, resolution, _video_audio(), _prompt_extend())
++    print(f"video task created: task_id={task_id} request_id={request_id}")
++
++    video_url, usage = _poll_task(task_id, api_key, base_url, interval, _poll_window(), _MAX_POLLS)
++    print(f"video task succeeded: task_id={task_id}")
++
++    bytes_n = _download_video(video_url, save_path)
++    end = time.time()
++    elapsed = end - effective_start
++    mins, secs = divmod(int(elapsed), 60)
++    usage_tokens = (usage or {}).get("total_tokens")
++    print(f"Video Input: True; 💰 Token Used: {usage_tokens if usage_tokens is not None else 0}")
++    print(f"⏱️ 任务生成完成！所用时间: {mins}min, {secs}sec")
++    print(f"✅ 生成成功！")
++    print(f"视频保存地址: {save_path}")
++    if return_timing:
++        return save_path, end
++    return save_path
++
+ 
+ def main():
+-    parser = argparse.ArgumentParser(description="Seedance 2.0 官方视频生成/编辑工具（支持单任务+批量）")
+-    parser.add_argument("--batch", action="store_true", help="启用批量处理模式，不执行单任务")
+-    parser.add_argument("--prompt", type=str, default="发挥你的想象力生成一个视频", help="单任务模式：生成提示词")
+-    parser.add_argument("--reference-video", action="append", default=[], help="单任务模式：参考视频路径，可多次传入")
+-    parser.add_argument("--reference-image", action="append", default=[], help="单任务模式：参考图片路径，可多次传入")
+-    parser.add_argument("--reference-audio", action="append", default=[], help="单任务模式：参考音频路径，可多次传入")
+-    parser.add_argument("--first-image", type=str, default="", help="单任务模式：首帧图片路径")
+-    parser.add_argument("--last-image", type=str, default="", help="单任务模式：尾帧图片路径")
+-    parser.add_argument("--output", type=str, default="output.mp4", help="单任务模式：输出视频保存路径")
+-    parser.add_argument("--ratio", type=str, default="16:9", help="单任务模式：输出视频比例，默认16:9")
+-    parser.add_argument("--resolution", type=str, default="480p", help="单任务模式：输出分辨率，默认480p")
+-    parser.add_argument("--duration", type=float, default=5, help="单任务模式：生成视频时长，默认匹配第一个参考视频时长")
+-    parser.add_argument("--poll-interval", type=int, default=10, help="单任务模式：任务轮询间隔秒数，默认10")
+-    parser.add_argument("--model", type=str, default="doubao-seedance-2-0-fast-260128", help="模型名称")
+-    parser.add_argument("--background", action="store_true", help="在后台运行任务并返回JSON状态信息")
++    parser = argparse.ArgumentParser(description="视频生成脚本 (Bailian adapter)")
++    parser.add_argument("--batch", action="store_true", help="批量模式：不支持，拒绝")
++    parser.add_argument("--prompt", type=str, default="发挥你的想象力生成一个视频")
++    parser.add_argument("--reference-video", action="append", default=[], help="参考视频：不支持")
++    parser.add_argument("--reference-image", action="append", default=[], help="参考图片路径")
++    parser.add_argument("--reference-audio", action="append", default=[], help="参考音频：不支持")
++    parser.add_argument("--first-image", type=str, default="", help="首帧图片路径")
++    parser.add_argument("--last-image", type=str, default="", help="尾帧图片：不支持")
++    parser.add_argument("--output", type=str, default="output.mp4", help="输出视频文件名")
++    parser.add_argument("--ratio", type=str, default="16:9")
++    parser.add_argument("--resolution", type=str, default="720p")
++    parser.add_argument("--duration", type=float, default=5)
++    parser.add_argument("--poll-interval", type=int, default=10)
++    parser.add_argument("--model", type=str, default="doubao-seedance-2-0-fast-260128")
++    parser.add_argument("--background", action="store_true", help="后台运行")
+     parser.add_argument("--internal-worker", action="store_true", help=argparse.SUPPRESS)
+-    parser.add_argument("--session-key", type=str, help="可选的输出目录 session-key。CodeX/Claude Code 环境会自动识别，不需要传入内容；OpenClaw 环境必须运行 session_status 获取session-key并且传入, 格式通常为 agent:{agent_id}:{session_id}。")
+-    
++    parser.add_argument("--session-key", type=str, help="OpenClaw session-key；Codex 自动识别")
+     args = parser.parse_args()
+ 
+-    global LOG_FILE
+-    # --- 获取 Session ID & 设置日志路径 ---
++    if args.batch:
++        print("Error: batch mode is not supported by the Bailian adapter")
++        sys.exit(1)
++
+     try:
+         script_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../get-output-dir/scripts/get_output_dir.py"))
+         cmd = [sys.executable, script_path]
+@@ -656,175 +319,48 @@
+             cmd.extend(["--session-key", args.session_key])
+         cmd.extend(["--subdir", "videos"])
+         result = subprocess.run(cmd, capture_output=True, text=True, check=False)
+-        log_dir = result.stdout.strip()
+-        if result.returncode != 0 or not log_dir or "Error" in log_dir or "Warning" in log_dir:
+-            detail = result.stderr.strip() or log_dir
+-            return f"Error: Could not resolve output directory: {detail}"
++        folder = result.stdout.strip()
++        if result.returncode != 0 or not folder or "Error" in folder or "Warning" in folder:
++            detail = result.stderr.strip() or folder
++            raise ValueError(f"Could not resolve output directory: {detail}")
+     except Exception as e:
+-        return f"Error: Could not resolve output directory"
+-    LOG_FILE = os.path.join(log_dir, "run.log")
+-
+-    # --- 日志配置 ---
+-    # 确保日志目录存在
+-    os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
+-
+-    if not args.background and not args.internal_worker:
+-        # 交互模式：同时输出到控制台和文件
+-        log_f = open(LOG_FILE, "a", encoding="utf-8", buffering=1)
+-        sys.stdout = TeeOutput(sys.stdout, log_f)
+-        sys.stderr = TeeOutput(sys.stderr, log_f)
+-    elif args.internal_worker:
+-        # 后台Worker模式：stdout/stderr 已被父进程重定向到日志文件
+-        # 强制刷新缓冲区，确保日志及时写入
+-        sys.stdout.reconfigure(line_buffering=True)
+-        sys.stderr.reconfigure(line_buffering=True)
+-
+-    # 默认前台运行模式，如果指定了 --background，则后台运行
++        print(f"Error: Could not resolve output directory: {e}")
++        sys.exit(1)
++
++    log_path = os.path.join(folder, "run.log")
++    os.makedirs(folder, exist_ok=True)
++    log_f = open(log_path, "a", encoding="utf-8", buffering=1)
++    orig_stdout, orig_stderr = sys.stdout, sys.stderr
++    class Tee:
++        def __init__(self, a, b): self.a, self.b = a, b
++        def write(self, data): self.a.write(data); self.b.write(data); self.b.flush()
++        def flush(self): self.a.flush(); self.b.flush()
++    sys.stdout = sys.stderr = Tee(orig_stdout, log_f)
++
++    # background worker spawn: same accounting/budget via env; child writes to run.log
+     if args.background and not args.internal_worker:
+-        # 构建 Worker 命令
+-        cmd_args = [sys.executable, os.path.abspath(sys.argv[0])]
+-        # 传递所有参数，--background 不会被传递（如果需要也可以传，但内部只看 worker）
++        child = [sys.executable, os.path.abspath(sys.argv[0])]
+         for arg in sys.argv[1:]:
+             if arg != "--background":
+-                cmd_args.append(arg)
+-        cmd_args.append("--internal-worker")
+-        
+-        try:
+-            # 以追加模式打开日志文件
+-            with open(LOG_FILE, "a") as f:
+-                # 启动子进程，重定向输出到日志，并与当前终端分离
+-                proc = subprocess.Popen(cmd_args, stdout=f, stderr=f, start_new_session=True)
+-            
+-            # 等待一小段时间检查进程是否立即退出（例如参数错误或环境缺失）
+-            time.sleep(15)
+-            
+-            if proc.poll() is None:
+-                # 进程仍在运行，认为启动成功
+-                result = {
+-                    "status": "running",
+-                    "pid": proc.pid,
+-                    "log_file": LOG_FILE
+-                }
+-            else:
+-                # 进程已退出，说明启动失败
+-                error_message = "Process exited immediately with code {}".format(proc.returncode)
+-                try:
+-                    # 尝试从日志中读取最后几行错误信息
+-                    with open(LOG_FILE, "r", encoding="utf-8", errors="ignore") as log_f:
+-                        # 读取最后 1KB 数据，避免读取整个大文件
+-                        log_f.seek(0, os.SEEK_END)
+-                        file_size = log_f.tell()
+-                        seek_pos = max(0, file_size - 2048)
+-                        log_f.seek(seek_pos)
+-                        lines = log_f.readlines()
+-                        # 如果最后一行是不完整的，可能忽略它，这里简单取最后几行非空行
+-                        valid_lines = [line.strip() for line in lines if line.strip()]
+-                        if valid_lines:
+-                            error_message = "\n".join(valid_lines[-5:]) # 取最后5行作为错误提示
+-                except Exception:
+-                    pass
+-
+-                result = {
+-                    "status": "error",
+-                    "message": error_message,
+-                    "pid": proc.pid,
+-                    "exit_code": proc.returncode,
+-                    "log_file": LOG_FILE
+-                }
+-
+-            print(json.dumps(result, ensure_ascii=False, indent=2))
+-        except Exception as e:
+-            error_result = {
+-                "status": "error",
+-                "message": str(e)
+-            }
+-            print(json.dumps(error_result, ensure_ascii=False, indent=2))
++                child.append(arg)
++        child.append("--internal-worker")
++        proc = subprocess.Popen(child, stdout=log_f, stderr=log_f, start_new_session=True)
++        time.sleep(1)
++        if proc.poll() is None:
++            print(json.dumps({"status": "running", "pid": proc.pid, "log_file": log_path}))
++        else:
++            print(json.dumps({"status": "error", "exit_code": proc.returncode, "log_file": log_path}))
+             sys.exit(1)
+-        return
+-
+-    # 批量处理模式
+-    if args.batch:
+-        if not INPUT_DIR.exists():
+-            print(f"Error: Input directory {INPUT_DIR} does not exist")
+-            return
+-
+-        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+-        
+-        # Iterate over category folders (e.g., "1", "2", ...)
+-        categories = [d for d in INPUT_DIR.iterdir() if d.is_dir()]
+-        
+-        # Sort categories numerically if possible, else alphabetically
+-        try:
+-            categories.sort(key=lambda x: int(x.name))
+-        except ValueError:
+-            categories.sort(key=lambda x: x.name)
+-
+-        total_success = 0
+-        total_fail = 0
+-
+-        for category_dir in categories:
+-            category_name = category_dir.name
+-            category_output_dir = OUTPUT_DIR / category_name
+-            category_output_dir.mkdir(parents=True, exist_ok=True)
+-            
+-            print(f"\nProcessing Category: {category_name}")
+-            
+-            subfolders = []
+-            for item in category_dir.iterdir():
+-                if item.is_dir():
+-                    try:
+-                        folder_num = int(item.name)
+-                        subfolders.append((folder_num, item))
+-                    except ValueError:
+-                        continue
+-            
+-            subfolders.sort(key=lambda x: x[0])
+-            print(f" Found {len(subfolders)} cases in {category_name}")
+-            
+-            cat_success = 0
+-            cat_fail = 0
+-            
+-            for folder_num, folder_path in subfolders:
+-                success, message = process_folder(folder_path, category_output_dir, model=args.model)
+-                print(f" {message}")
+-                
+-                if success:
+-                    cat_success += 1
+-                else:
+-                    cat_fail += 1
+-            
+-            total_success += cat_success
+-            total_fail += cat_fail
+-            
+-            print(f" Category Summary - Success: {cat_success}, Failed: {cat_fail}")
+-
+-        print(f"\n=== Grand Total ===")
+-        print(f"Total Success: {total_success}")
+-        print(f"Total Failed: {total_fail}")
+-        print(f"Output saved to: {OUTPUT_DIR}")
+-        return
+-
+-    # 单任务模式（默认）
+-    if not args.prompt or not args.output:
+-        parser.error("单任务模式必须指定--prompt和--output")
+-    
+-
+-
+-
+-    folder = log_dir
+-    if not os.path.exists(folder):
+-        os.makedirs(folder, exist_ok=True)
+-    
+-    # args.output treats as filename
++        sys.exit(0)
++
+     output_filename = os.path.basename(args.output)
+     final_save_path = os.path.join(folder, output_filename)
+-
+-    log_prefix = "[Background Worker]" if args.internal_worker else ""
+-    task_start_time = log_task_start(prefix=log_prefix)
++    prefix = "[Background Worker]" if args.internal_worker else ""
++    start = log_task_start(prefix=prefix)
+     task_status = "failed"
+-    task_end_time = None
+-    try:
+-        video_path, task_end_time = seedance_edit(
++    end_time = None
++    try:
++        video_path, end_time = seedance_edit(
+             video_paths=args.reference_video,
+             image_paths=args.reference_image,
+             audio_paths=args.reference_audio,
+@@ -837,19 +373,22 @@
+             first_frame_path=args.first_image,
+             last_frame_path=args.last_image,
+             model=args.model,
+-            task_start_time=task_start_time,
++            task_start_time=start,
+             return_timing=True,
+         )
+-        print(f"✅ 生成成功！")
+-        print(f"视频保存地址: {video_path}")
+         task_status = "success"
+     except Exception as e:
+-        import traceback; traceback.print_exc(); print(f"❌ 生成失败: {str(e)}")
+-        task_end_time = LAST_SEEDANCE_END_TIME or time.time()
+-        log_task_end(task_start_time, status=task_status, prefix=log_prefix, end_time=task_end_time)
++        import traceback
++        traceback.print_exc()
++        print(f"❌ 生成失败: {str(e)}")
++        log_task_end(start, status=task_status, prefix=prefix, end_time=end_time)
++        sys.stdout, sys.stderr = orig_stdout, orig_stderr
++        log_f.close()
+         sys.exit(1)
+-    log_task_end(task_start_time, status=task_status, prefix=log_prefix, end_time=task_end_time)
+-    return
++    log_task_end(start, status=task_status, prefix=prefix, end_time=end_time)
++    sys.stdout, sys.stderr = orig_stdout, orig_stderr
++    log_f.close()
++
+ 
+ if __name__ == "__main__":
+     main()
+--- a/skills/vision-understanding/SKILL.md
++++ b/skills/vision-understanding/SKILL.md
+@@ -1,12 +1,26 @@
+ ---
+ name: vision-understanding
+-description: 基于字节跳动火山引擎Ark平台的多模态理解工具，支持图像理解和视频理解两种能力。只要用户提到分析图片内容、理解图片、查询图片里有什么、图片中的人物/物体动作/信息、回答图片相关问题，或者分析视频内容、理解视频、查询视频里发生了什么、回答视频相关问题等需求时，必须优先使用本技能，不要尝试通过手动提取帧的方式分析视频或其他方式分析图片。
++description: 【本项目百炼适配版】多模态理解工具，图片走 qwen3.7-plus 图像理解；视频采用本地抽帧视觉审阅（mode=sampled_frames），不声称完整观看视频或理解音频。当用户要求分析图片内容、理解图片、回答图片相关问题，或对视频做抽帧审阅时使用本技能。只要用户提到分析图片内容、理解图片、查询图片里有什么、图片中的人物/物体动作/信息、回答图片相关问题，或者分析视频内容、理解视频、查询视频里发生了什么、回答视频相关问题等需求时，必须优先使用本技能，不要尝试通过手动提取帧的方式分析视频或其他方式分析图片。
+ ---
+ # 视觉理解工具（vision-understanding）
+ 
+-**环境依赖:** `openai`、`volcenginesdkarkruntime`
++## ⚠️ 本项目环境契约（必须以本段为准，覆盖下方全部原生示例）
+ 
+-本技能整合了图像理解和视频理解能力，基于火山引擎Ark平台的豆包多模态模型实现。
++- 依赖已预装在固定解释器 `/opt/videoweaver-venv/bin/python` 的专用 venv（requests/Pillow/moviepy/opencv-python/imageio-ffmpeg 等）；系统 `ffmpeg`/`ffprobe` 已就绪。
++- **正式任务禁止运行 `pip install`、`uv pip install` 或任何依赖安装/升级**；缺依赖应报告环境错误并停止，不进入安装等待。
++- **所有 Python 调用必须用 `/opt/videoweaver-venv/bin/python`**；禁止裸 `python`/`python3`/`pip`（在 Codex 的 login-shell 下会解析到系统解释器，缺依赖）。
++- 下方原生示例中的 `python` 一律替换为 `/opt/videoweaver-venv/bin/python`；脚本路径以工作目录 `_codex_workspace` 为根，例如 `/opt/videoweaver-venv/bin/python .agents/skills/vision-understanding/scripts/…`。
++- 保留原生 CLI 参数、输出与算法；不更换为其它工具。
++
++
++
++**环境依赖（已预装，任务期禁止安装/升级）**
++
++**⚠️ 本项目适配说明（必须以本段为准）：**
++- 图片理解：本地图片 base64 内联，走百炼 `qwen3.7-plus` Chat Completions 视觉输入；不依赖 Ark 上传/轮询/删除文件。
++- 视频：**不支持直接视频理解（unsupported）**；采用项目适配的**视频抽帧视觉审阅**：本地 FFmpeg 有界抽帧（fps 可调，最多 `VW_VISION_MAX_FRAMES` 帧，默认 8），保留时间戳与帧顺序，以图片输入逐帧审阅；输出/日志标注 `mode=sampled_frames`。不得声称完整观看视频或理解音频。
++- 模型仅支持 `qwen3.7-plus`；其它模型拒绝。
++- 禁用手工 base64 解码图片替代 `view_image` 之外的分析路径；Agent 若需看图请用 Codex 自带 view_image，需要语义理解才调用本技能。
+ 
+ 
+ 
+--- a/skills/vision-understanding/scripts/vision_understanding.py
++++ b/skills/vision-understanding/scripts/vision_understanding.py
+@@ -1,163 +1,173 @@
++#!/usr/bin/env python3
++"""
++vision-understanding 视觉理解脚本 — Bailian (DashScope) provider branch.
++
++Project adaptation of VideoWeaver's `skills/vision-understanding/scripts/
++vision_understanding.py`. The native tool uploads media to the Volcengine ARK
++Files API to obtain file_id(s) and then calls the ARK Responses endpoint with
++input_image/input_video. Ark file_id cannot be handed to Bailian, so the media
++transfer chain is REPLACED (not just the URL):
++
++- image input      -> base64 data URL via project-verified qwen3.7-plus
++                      Chat Completions image_url (SMOKE-02 image_tokens evidence)
++- video input      -> project-adapted SAMPLED-FRAME review: bounded local
++                      FFmpeg frame sampling, frames passed as image inputs.
++                      mode=sampled_frames is printed and recorded; this does NOT
++                      claim full video watching or audio understanding.
++                      Direct video understanding stays unsupported.
++
++Unsupported/unknown abilities are labelled unsupported explicitly; requests are
++never silently degraded without telling the agent.
++Reference repo is NOT modified; only the isolated copy is adapted.
++"""
+ import os
++import sys
+ import time
+ import argparse
+-import mimetypes
+-import random
+-from openai import OpenAI
+-from volcenginesdkarkruntime import Ark
++import base64
++import subprocess
++import tempfile
++from io import BytesIO
++from pathlib import Path
++import requests
++from PIL import Image
+ 
+-# 全局配置
+-ARK_BASE_URL = "https://ark.cn-beijing.volces.com/api/v3"
+-DEFAULT_MODEL = "doubao-seed-2-0-pro-260215"
+-DEFAULT_VIDEO_FPS = 1.0
+-MAX_RETRIES = 15
+-WAIT_SECONDS = 5
++# --- Provider routing ---
+ 
+-def _upload_media_to_ark(media_path: str, video_fps: float = DEFAULT_VIDEO_FPS):
+-    """上传媒体文件（图片/视频）到 Ark，返回 (file_id, media_type)，media_type 为 image/video"""
+-    # 先判断文件类型
+-    mime_type, _ = mimetypes.guess_type(media_path)
+-    if not mime_type:
+-        raise ValueError(f"无法识别文件类型: {media_path}")
+-    
+-    api_key = os.getenv("ARK_API_KEY")
+-    
+-    client = Ark(api_key=api_key)
+-    
+-    if mime_type.startswith("image/"):
+-        media_type = "image"
+-        # 图片上传不需要预处理配置
+-        file = client.files.create(
+-            file=open(media_path, "rb"),
+-            purpose="user_data",
+-        )
+-    elif mime_type.startswith("video/"):
+-        media_type = "video"
+-        # 视频上传支持fps配置
+-        file = client.files.create(
+-            file=open(media_path, "rb"),
+-            purpose="user_data",
+-            preprocess_configs={
+-                "video": {
+-                    "fps": video_fps,
+-                }
+-            },
+-        )
+-    else:
+-        raise ValueError(f"不支持的文件类型: {mime_type}，仅支持图片和视频")
+-    
+-    # 等待文件处理完成
+-    while file.status == "processing":
+-        time.sleep(2)
+-        file = client.files.retrieve(file.id)
+-        
+-    return file.id, media_type
++def _api_key():
++    return os.environ.get("DASHSCOPE_API_KEY") or os.environ.get("VW_VISION_API_KEY") or ""
+ 
+-def vision_understanding(
+-    media_paths: list[str],
+-    prompt: str,
+-    model: str = DEFAULT_MODEL,
+-    video_fps: float = DEFAULT_VIDEO_FPS
+-) -> str:
+-    """
+-    统一的视觉理解接口，支持同时传入多个图片和视频，按顺序进行理解
+-    :param media_paths: 媒体文件路径列表，支持同时传入图片和视频，按传入顺序处理
+-    :param prompt: 查询提示词
+-    :param model: 要使用的模型，默认doubao-seed-2-0-pro-260215
+-    :param video_fps: 视频采样帧率，默认1.0
+-    :return: 内容描述文本
+-    """
+-    api_key = os.getenv("ARK_API_KEY")
+-    
+-    client = OpenAI(
+-        base_url=ARK_BASE_URL,
+-        api_key=api_key,
+-    )
+-    
+-    # 逐个上传所有媒体文件
+-    content_list = []
+-    ark_client = Ark(base_url=ARK_BASE_URL, api_key=api_key)
++def _base_url():
++    explicit = os.environ.get("VW_VISION_BASE_URL", "")
++    if explicit:
++        return explicit.rstrip("/")
++    return "https://dashscope.aliyuncs.com/compatible-mode/v1"
++
++SUPPORTED_MODELS = {"qwen3.7-plus"}
++MAX_SAMPLED_FRAMES = int(os.environ.get("VW_VISION_MAX_FRAMES", "8"))
++MAX_FRAME_PIXELS = int(os.environ.get("VW_VISION_MAX_FRAME_PIXELS", "1440000"))  # ~1200x1200
++_HTTP_TIMEOUT = float(os.environ.get("VW_VISION_TIMEOUT", "180"))
++
++IMAGE_EXT = {".png", ".jpg", ".jpeg", ".webp", ".bmp", ".gif"}
++VIDEO_EXT = {".mp4", ".mov", ".mkv", ".webm", ".avi", ".m4v"}
++
++def _redacted(url):
++    return str(url).split("?", 1)[0]
++
++def _safe_error(payload):
++    if isinstance(payload, dict):
++        return {k: payload.get(k) for k in ("code", "message", "error") if k in payload}
++    return str(payload)[:400]
++
++def _image_to_data_url(path, max_pixels=None):
++    img = Image.open(path)
++    if max_pixels:
++        w, h = img.size
++        if w * h > max_pixels:
++            scale = (max_pixels / (w * h)) ** 0.5
++            img = img.resize((max(2, int(w * scale)), max(2, int(h * scale))), Image.LANCZOS)
++    if img.mode not in ("RGB", "L"):
++        img = img.convert("RGB")
++    buf = BytesIO()
++    img.save(buf, format="JPEG", quality=88)
++    return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode("ascii")
++
++def _sample_video_frames(video_path, fps):
++    """Bounded local FFmpeg frame sampling with timestamps. Returns list of
++    (timestamp_seconds, data_url). Used only for sampled-frame review."""
++    tmp = tempfile.mkdtemp(prefix="vw-vision-frames-")
++    out_pat = os.path.join(tmp, "f-%03d.jpg")
++    cmd = ["ffmpeg", "-y", "-v", "error",
++           "-i", video_path,
++           "-vf", f"fps={fps}",
++           "-frames:v", str(MAX_SAMPLED_FRAMES),
++           "-q:v", "4", out_pat]
+     try:
+-        for path in media_paths:
+-            print(f"正在上传: {os.path.basename(path)}...")
+-            file_id, media_type = _upload_media_to_ark(path, video_fps)
+-            content_list.append({
+-                "type": f"input_{media_type}",
+-                "file_id": file_id
+-            })
+-            print(f"上传完成: {os.path.basename(path)} -> file_id: {file_id[:20]}...")
+-        
+-        # 最后添加提示词
+-        content_list.append({
+-            "type": "input_text",
+-            "text": prompt
+-        })
+-        print(f"视觉理解提示词: {prompt}")
+-        # 轮询重试，处理视频还在processing的情况
+-        for attempt in range(MAX_RETRIES):
+-            try:
+-                print(f"正在分析内容（尝试 {attempt+1}/{MAX_RETRIES}）...")
+-                response = client.responses.create(
+-                    model=model,
+-                    input=[
+-                        {
+-                            "role": "user",
+-                            "content": content_list
+-                        }
+-                    ],
+-                )
+-                
+-                # 打印推理过程（如果有）
+-                try:
+-                    reasoning = response.output[0].summary[0].text
+-                    if reasoning:
+-                        print(f"\n[Vision Understanding Reasoning]\n{reasoning}\n")
+-                except Exception:
+-                    pass
+-                
+-                # 返回结果
+-                return response.output[1].content[0].text.strip()
+-            
+-            except Exception as e:
+-                err_str = str(e).lower()
+-                if "invalid state" in err_str and "processing" in err_str:
+-                    if attempt == MAX_RETRIES - 1:
+-                        raise RuntimeError(f"媒体文件处理超时，已重试{MAX_RETRIES}次") from e
+-                    print(f"媒体还在处理中，{WAIT_SECONDS}秒后重试...")
+-                    time.sleep(WAIT_SECONDS)
+-                    continue
+-                raise
+-    finally:
+-        # 清理已上传的文件
+-        for item in content_list:
+-            if "file_id" in item:
+-                file_id = item["file_id"]
+-                try:
+-                    ark_client.files.delete(file_id=file_id)
+-                    print(f"已自动清理临时文件: {file_id}")
+-                except Exception as e:
+-                    print(f"清理临时文件失败 {file_id}: {e}")
++        proc = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=180)
++    except subprocess.TimeoutExpired:
++        raise RuntimeError("ffmpeg frame sampling timed out")
++    if proc.returncode != 0:
++        raise RuntimeError(f"ffmpeg frame sampling failed: {proc.stderr[:400]}")
++    frames = sorted(Path(tmp).glob("f-*.jpg"))
++    if not frames:
++        raise RuntimeError("ffmpeg produced no frames for video review")
++    result = []
++    for i, p in enumerate(frames):
++        ts = round(i / fps, 2) if fps else 0.0
++        result.append((ts, _image_to_data_url(str(p), max_pixels=MAX_FRAME_PIXELS)))
++    return result
++
++def vision_understanding(media_paths, prompt, model="doubao-seed-2-0-pro-260215", video_fps=1.0):
++    """Bailian image understanding + sampled-frame video review."""
++    if model not in SUPPORTED_MODELS:
++        raise ValueError(f"unsupported vision model '{model}'; Bailian adapter "
++                         f"supports only {sorted(SUPPORTED_MODELS)}")
++    api_key = _api_key()
++    if not api_key:
++        raise ValueError("DASHSCOPE_API_KEY is not set")
++    base_url = _base_url()
++    url = f"{base_url}/chat/completions"
++
++    image_inputs = []
++    mode = "image"
++    for path in media_paths:
++        ext = Path(path).suffix.lower()
++        if ext in IMAGE_EXT:
++            image_inputs.append(_image_to_data_url(path))
++        elif ext in VIDEO_EXT:
++            mode = "sampled_frames"
++            print(f"视频输入检测到：{os.path.basename(path)}；采用抽帧视觉审阅 "
++                  f"mode=sampled_frames（fps={video_fps}，最多{MAX_SAMPLED_FRAMES}帧）。"
++                  "不声称完整观看视频或理解音频；直接视频理解 unsupported。")
++            frames = _sample_video_frames(path, video_fps)
++            image_inputs.extend(url for _, url in frames)
++        else:
++            raise ValueError(f"unsupported media type for vision: {path}")
++
++    if not image_inputs:
++        raise ValueError("no usable media for vision understanding")
++
++    content = [{"type": "text", "text": prompt}]
++    for data_url in image_inputs:
++        content.append({"type": "image_url", "image_url": {"url": data_url}})
++
++    payload = {
++        "model": model,
++        "messages": [{"role": "user", "content": content}],
++    }
++    resp = requests.post(url, headers={
++        "Authorization": f"Bearer {api_key}",
++        "Content-Type": "application/json",
++    }, json=payload, timeout=_HTTP_TIMEOUT)
++    try:
++        body = resp.json()
++    except ValueError:
++        body = {"message": resp.text}
++    if resp.status_code >= 400:
++        raise RuntimeError(f"vision request failed http_{resp.status_code}: {_safe_error(body)}")
++    usage = body.get("usage") or {}
++    choice = (body.get("choices") or [{}])[0]
++    text = (choice.get("message") or {}).get("content") or ""
++    print(f"[Vision mode={mode} usage={usage}]")
++    return text
++
+ 
+ if __name__ == "__main__":
+-    parser = argparse.ArgumentParser(description="Unified vision understanding tool based on Volcengine Ark API")
+-    parser.add_argument("--media", required=True, nargs='+', help="List of media file paths (images/videos)")
+-    parser.add_argument("--prompt", required=True, help="Question about the media content")
+-    parser.add_argument("--fps", type=float, default=DEFAULT_VIDEO_FPS, help="Sampling FPS for videos, default 1.0")
+-    parser.add_argument("--model", default=DEFAULT_MODEL, help="Model to use, default doubao-seed-2-0-pro-260215")
+-    
++    parser = argparse.ArgumentParser(description="Unified vision understanding (Bailian adapter)")
++    parser.add_argument("--media", required=True, nargs="+", help="image/video paths")
++    parser.add_argument("--prompt", required=True, help="question about the media")
++    parser.add_argument("--fps", type=float, default=1.0, help="video sampling fps")
++    parser.add_argument("--model", default="doubao-seed-2-0-pro-260215", help="model; adapter supports qwen3.7-plus")
+     args = parser.parse_args()
+-    
+-    
+-    # 验证所有媒体文件存在
++
+     for path in args.media:
+         if not os.path.exists(path):
+             print(f"错误: 媒体文件不存在: {path}")
+-            exit(1)
+-    
++            sys.exit(1)
+     try:
+         result = vision_understanding(args.media, args.prompt, args.model, args.fps)
+         print("\n=== 视觉理解结果 ===")
+         print(result)
+     except Exception as e:
+         print(f"处理失败: {e}")
+-        exit(1)
++        sys.exit(1)
+--- a/AutomaticSkillOptimization/args.py
++++ b/AutomaticSkillOptimization/args.py
+@@ -7,7 +7,11 @@
+ 
+ CODEX_WORKSPACE = os.path.join(WS_ROOT, "_codex_workspace")
+ CODEX_BIN = shutil.which("codex") or os.path.expanduser("~/.npm-global/bin/codex")
+-CODEX_SESSIONS_DIR = os.path.expanduser("~/.codex/sessions")
++# Use the container CODEX_HOME (set in the task image) so rollouts are found
++# under the same root the Codex CLI actually writes. Never depend on a host
++# ~/.codex. Falls back to ~/.codex only when CODEX_HOME is unset.
++CODEX_HOME_DIR = os.environ.get("CODEX_HOME") or os.path.expanduser("~/.codex")
++CODEX_SESSIONS_DIR = os.path.join(CODEX_HOME_DIR, "sessions")
+ 
+ CLAUDE_BIN = shutil.which("claude") or os.path.expanduser("~/.npm-global/bin/claude")
+ CLAUDE_WORKSPACE = os.path.join(WS_ROOT, "_claude_workspace")
+--- a/AutomaticSkillOptimization/summary_txt.py
++++ b/AutomaticSkillOptimization/summary_txt.py
+@@ -33,18 +33,20 @@
+     "以下是待总结的 JSON 数据：\n"
+ )
+ 
+-API_KEY = os.getenv("ARK_API_KEY")
+-DEFAULT_MODEL = "doubao-seed-2-0-pro-260215"
++API_KEY = os.getenv("VW_LLM_API_KEY") or os.getenv("DASHSCOPE_API_KEY")
++DEFAULT_MODEL = os.getenv("VW_LLM_MODEL", "qwen3.7-plus")
+ MAX_RETRIES = 3
+ 
+ 
+ def _summarize_with_llm(json_content, model):
+     if not API_KEY:
+-        raise RuntimeError("ARK_API_KEY is not set.")
++        raise RuntimeError("DASHSCOPE_API_KEY (VW_LLM_API_KEY) is not set.")
+ 
++    base_url = os.getenv("VW_LLM_BASE_URL",
++                         "https://dashscope.aliyuncs.com/compatible-mode/v1")
+     client = OpenAI(
+         api_key=API_KEY,
+-        base_url="https://ark.cn-beijing.volces.com/api/v3",
++        base_url=base_url,
+     )
+ 
+     prompt = f"{PROCESS_SUMMARY}\n\n```json\n{json_content}\n```"
+--- a/AutomaticSkillOptimization/inference_CodeX/codex_cli_tool.py
++++ b/AutomaticSkillOptimization/inference_CodeX/codex_cli_tool.py
+@@ -514,11 +514,14 @@
+             "--json",
+             "-C",
+             cwd,
+-            "--sandbox",
+-             sandbox,
+         ]
++        # Do NOT stack --sandbox with --dangerously-bypass-approvals-and-sandbox:
++        # the bypass flag already implies full access (verified against
++        # `codex exec --help` on 0.163.0). Other sandbox values pass --sandbox.
+         if sandbox == "danger-full-access":
+             cmd.append("--dangerously-bypass-approvals-and-sandbox")
++        elif sandbox:
++            cmd += ["--sandbox", sandbox]
+         if model:
+             cmd.extend(["--model", model])
+         cmd.append(message)

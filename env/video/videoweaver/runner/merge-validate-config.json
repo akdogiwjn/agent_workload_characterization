@@ -1,0 +1,27 @@
+{
+ "task_id": "VIDEOWEAVER-MERGE-VALIDATE-01",
+ "exp_id": "videoweaver-merge-validate-01",
+ "target_task": "merge_validate_01",
+ "case_id": "case-merge-01",
+ "case_dir": "env/video/videoweaver/case",
+ "merge_inputs_dir": "env/video/videoweaver/evidence/VIDEOWEAVER-MERGE-VALIDATE-01/inputs",
+ "work_seconds": 600,
+ "closeout_seconds": 120,
+ "cpuset_cpus": "0-7",
+ "pids_limit": 4096,
+ "judge_media": {
+  "image_creates": 0,
+  "video_creates": 0,
+  "media_downloads": 0
+ },
+ "budget": {
+  "max_llm_calls": 20,
+  "max_image_creates": 0,
+  "max_video_creates": 0,
+  "max_video_polls": 0,
+  "max_video_polls_per_task": 0,
+  "max_media_downloads": 0,
+  "deadline_seconds": 600,
+  "observed_output_tokens_soft": 500000
+ }
+}

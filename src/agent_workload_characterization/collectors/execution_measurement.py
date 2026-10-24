@@ -5,6 +5,8 @@ wraps the existing async LLM call, and checks saved observation coverage.
 """
 from __future__ import annotations
 
+import hashlib
+from .resource_sampler import to_stream_record
 import importlib.metadata
 import json
 import math
@@ -881,4 +883,553 @@ def sample_quality(rows: list[dict], interval_s: float) -> dict:
         'max_gap_ns': max(gaps, default=None),
         'read_statuses': [r.get('container', {}).get('read_status', {}) for r in rows],
         'scope': 'shared container; optional I/O availability reported separately',
+    }
+
+
+def _read_status_ok(rs, read_keys):
+    """Explicit known-good status check for one row's metric read keys.
+
+    Returns True if an explicit ok value is present, False if an explicit
+    non-ok value is present, None if no read key exists for this metric.
+    Other metrics' status keys are never consulted."""
+    _OK = {
+        "cpu.stat": {"ok"},
+        "cpuacct.usage": {"ok_ns_converted_to_usec"},
+        "memory.current": {"ok"},
+        "memory.usage_in_bytes": {"ok"},
+        "io.stat": {"ok", "ok_summed_devices"},
+        "io": {"ok_summed_devices"},  # cgroup v1; value may carry ":<filename>" suffix
+    }
+    found = None
+    for k in read_keys:
+        st = rs.get(k)
+        if st is None:
+            continue
+        ok_set = _OK.get(k, set())
+        if st in ok_set or (k == "io" and (
+                st.startswith("ok_summed_devices:")
+                or st.startswith("ok_no_records_real_zero:"))):
+            found = True if found is not False else True
+        else:
+            found = False  # an explicit non-ok value wins
+    return found
+
+
+def _metric_ok(v):
+    if v is None:
+        return True  # legitimate null
+    if isinstance(v, bool):
+        return False  # bool is not a number
+    if isinstance(v, (int, float)):
+        if isinstance(v, float) and (v != v or v in (float("inf"), float("-inf"))):
+            return False  # NaN / Infinity
+        if v < 0:
+            return False  # negative counter/gauge
+        return True
+    return False  # wrong type
+
+
+def _boundary_metric_row(bstart, bend, read_keys, field, counter_based):
+    """Per-metric validity of the two boundary counters for a boundary-only run."""
+    def _row_status(r):
+        rs = r.get("read_status") if isinstance(r, dict) else getattr(r, "read_status", None)
+        return rs if isinstance(rs, dict) else {}
+
+    if bstart is None or bend is None:
+        return {"passed": False, "status": "no_boundaries", "sampled": 0,
+                "read_ok": None, "reason": "no valid boundaries"}
+    if not (bend.t_monotonic_ns > bstart.t_monotonic_ns):
+        return {"passed": False, "status": "boundary_order_invalid",
+                "sampled": 0, "read_ok": None,
+                "reason": "boundary_end before boundary_start"}
+    for r in (bstart, bend):
+        rok = _read_status_ok(_row_status(r), read_keys)
+        if rok is False:
+            return {"passed": False, "status": "boundary_read_failed",
+                    "sampled": 0, "read_ok": False,
+                    "reason": "boundary read status failed for this metric"}
+        if rok is None:
+            return {"passed": False, "status": "boundary_status_missing",
+                    "sampled": 0, "read_ok": None,
+                    "reason": "boundary read status not present for this metric"}
+    a = getattr(bstart, field)
+    b = getattr(bend, field)
+    if not (_metric_ok(a) and _metric_ok(b)):
+        return {"passed": False, "status": "boundary_value_invalid",
+                "sampled": 0, "read_ok": True,
+                "reason": "boundary value null/negative/NaN for this metric"}
+    if a is None or b is None:
+        return {"passed": False, "status": "boundary_value_missing",
+                "sampled": 0, "read_ok": True,
+                "reason": "boundary value missing for this metric"}
+    if counter_based and b < a:
+        return {"passed": False, "status": "boundary_counter_regression",
+                "sampled": 0, "read_ok": True,
+                "reason": "boundary counter decreased (end < start)"}
+    return {"passed": True, "status": "boundary_only", "sampled": 0,
+            "missing": 0, "read_ok": True,
+            "reason": "no periodic samples; continuous-coverage limited to "
+                      "valid boundary window (not a complete curve)"}
+
+
+def assess_resource_quality(scope_samples=None, *, stream_rows=None,
+                            boundary_start=None, boundary_end=None,
+                            expected_scope=None, expected_scope_kind=None,
+                            interval_target_s: float = 0.5):
+    """Per-metric measurement-quality assessment (hardened v3).
+
+    - empty samples are no_samples unless valid boundaries are present
+      (boundary_only with per-metric validity required, never 'complete')
+    - partial missing, read failure and counter regression fail the metric
+    - read status is checked PER SAMPLE with explicit ok values; a failure is
+      retained, later success forms a new interval (never connected across)
+    - scope identity of samples, boundaries and expected scope are compared
+    - actual intervals are computed from timestamps; boundaries checked for
+      existence, order, value validity, scope and sample-in-window
+    """
+    if scope_samples is not None:
+        bstart = scope_samples.boundary_start
+        bend = scope_samples.boundary_end
+        rows = list(scope_samples.samples)
+        notes = list(getattr(scope_samples, "notes", []) or [])
+        if expected_scope is None:
+            expected_scope = getattr(scope_samples, "scope", None)
+        if expected_scope_kind is None:
+            expected_scope_kind = getattr(scope_samples, "scope_kind", None)
+    else:
+        bstart = boundary_start
+        bend = boundary_end
+        rows = list(stream_rows or [])
+        notes = []
+
+    def g(r, key):
+        return r.get(key) if isinstance(r, dict) else getattr(r, key, None)
+
+    def rs_of(r):
+        rs = g(r, "read_status") or {}
+        return rs if isinstance(rs, dict) else {}
+
+    def ident(r):
+        return (g(r, "scope"), g(r, "scope_kind"))
+
+    n = len(rows)
+    t_seq = [g(r, "t_monotonic_ns") for r in rows]
+    int_ok = all(isinstance(v, int) and not isinstance(v, bool) for v in t_seq)
+    order_ok = int_ok and all(t_seq[i] > t_seq[i - 1] for i in range(1, len(t_seq)))
+    gaps = []
+    if int_ok:
+        for i in range(1, len(t_seq)):
+            if t_seq[i] > t_seq[i - 1]:
+                gaps.append(t_seq[i] - t_seq[i - 1])
+    import statistics as _st
+    actual_interval_s = None
+    if gaps:
+        gs = [g / 1e9 for g in gaps]
+        actual_interval_s = round(_st.median(gs), 4) if len(gs) > 1 else round(gs[0], 4)
+    max_gap_ns = max(gaps) if gaps else None
+
+    b_ok = bstart is not None and bend is not None
+    b_order = False
+    coverage_s = None
+    out_of_window = 0
+    if b_ok:
+        b_order = bend.t_monotonic_ns > bstart.t_monotonic_ns
+        if b_order:
+            coverage_s = round((bend.t_monotonic_ns - bstart.t_monotonic_ns) / 1e9, 3)
+            out_of_window = sum(1 for r in rows if not int_ok or g(r, "t_monotonic_ns") is None
+                                or g(r, "t_monotonic_ns") < bstart.t_monotonic_ns
+                                or g(r, "t_monotonic_ns") > bend.t_monotonic_ns)
+        else:
+            out_of_window = None
+
+    sample_ids = {ident(r) for r in rows}
+    boundary_ids = set()
+    if bstart is not None:
+        boundary_ids.add(ident(bstart))
+    if bend is not None:
+        boundary_ids.add(ident(bend))
+    missing_identity = any(s is None or s[0] is None for s in (sample_ids | boundary_ids))
+    conflict = False
+    if (expected_scope is not None or expected_scope_kind is not None) and not missing_identity:
+        ids = (sample_ids | boundary_ids)
+        ids.discard((None, None))
+        if ids and ids - {(expected_scope, expected_scope_kind)}:
+            conflict = True
+
+    CPU_KEYS = ["cpu.stat", "cpuacct.usage"]
+    MEM_KEYS = ["memory.current", "memory.usage_in_bytes"]
+    IO_KEYS = ["io.stat", "io"]
+
+    def metric(sample_vals, read_keys, field, *, counter_based=True):
+        if n == 0:
+            if bstart is None or bend is None:
+                return {"passed": False, "status": "no_samples", "sampled": 0,
+                        "missing": 0, "read_ok": None,
+                        "reason": "empty sample set and no valid boundaries"}
+            return _boundary_metric_row(bstart, bend, read_keys, field, counter_based)
+        read_fail_idx = []
+        status_missing_idx = []
+        invalid_value_idx = []
+        ok_samples = []
+        for val, idx in sample_vals:
+            r = rows[idx]
+            rok = _read_status_ok(rs_of(r), read_keys)
+            if not _metric_ok(val):
+                invalid_value_idx.append(idx)
+            elif rok is False:
+                read_fail_idx.append(idx)
+            elif rok is None:
+                status_missing_idx.append(idx)
+            else:
+                ok_samples.append((val, idx))
+        vals = [v for v, _ in ok_samples]
+        missing = n - len(ok_samples) - len(read_fail_idx) - len(status_missing_idx) - len(invalid_value_idx)
+        reg = 0
+        if counter_based:
+            last_idx = None
+            last_val = None
+            for val, idx in ok_samples:
+                if last_idx is not None and idx - last_idx == 1:
+                    if last_val is not None and val < last_val:
+                        reg += 1
+                last_idx, last_val = idx, val
+        if read_fail_idx:
+            return {"passed": False, "status": "read_failed",
+                    "sampled": len(ok_samples), "read_fail_samples": read_fail_idx,
+                    "read_ok": False,
+                    "reason": f"read failure retained at samples {read_fail_idx[:5]} (not overwritten)"}
+        if invalid_value_idx:
+            return {"passed": False, "status": "invalid_value",
+                    "sampled": len(ok_samples), "invalid_value_samples": invalid_value_idx,
+                    "read_ok": None,
+                    "reason": f"invalid (bool/negative/NaN/wrong-type) value at samples {invalid_value_idx[:5]}"}
+        if status_missing_idx:
+            return {"passed": False, "status": "status_missing",
+                    "sampled": len(ok_samples), "status_missing_samples": status_missing_idx,
+                    "read_ok": None,
+                    "reason": f"metric read status absent at samples {status_missing_idx[:5]}"}
+        if reg > 0:
+            return {"passed": False, "status": "counter_regression",
+                    "sampled": len(vals), "missing": missing,
+                    "counter_regressions": reg, "read_ok": True,
+                    "reason": f"{reg} counter decreases (reset/regression)"}
+        if missing > 0:
+            return {"passed": False, "status": "partial_missing",
+                    "sampled": len(vals), "missing": missing,
+                    "read_ok": True,
+                    "reason": f"{missing}/{n} samples missing this metric"}
+        if not vals:
+            return {"passed": False, "status": "missing_all", "sampled": 0,
+                    "missing": n, "read_ok": True,
+                    "reason": "metric has no observed value in any sample"}
+        return {"passed": True, "status": "complete", "sampled": len(vals),
+                "missing": 0, "read_ok": True, "reason": None}
+
+    cpu_m = metric([(g(r, "cpu_usage_usec"), i) for i, r in enumerate(rows)
+                    if g(r, "cpu_usage_usec") is not None],
+                   CPU_KEYS, "cpu_usage_usec", counter_based=True)
+    mem_m = metric([(g(r, "mem_current_bytes"), i) for i, r in enumerate(rows)
+                    if g(r, "mem_current_bytes") is not None],
+                   MEM_KEYS, "mem_current_bytes", counter_based=False)
+    io_r_m = metric([(g(r, "io_read_bytes"), i) for i, r in enumerate(rows)
+                     if g(r, "io_read_bytes") is not None],
+                    IO_KEYS, "io_read_bytes", counter_based=True)
+    io_w_m = metric([(g(r, "io_write_bytes"), i) for i, r in enumerate(rows)
+                     if g(r, "io_write_bytes") is not None],
+                    IO_KEYS, "io_write_bytes", counter_based=True)
+
+    # boundary counter/metric validity (checked even when periodic samples exist)
+    def _boundary_metrics_ok():
+        if bstart is None or bend is None:
+            return False, {}
+        detail = {}
+        ok = True
+        for keys, field, cb in (
+            (CPU_KEYS, "cpu_usage_usec", True),
+            (MEM_KEYS, "mem_current_bytes", False),
+            (IO_KEYS, "io_read_bytes", True),
+            (IO_KEYS, "io_write_bytes", True)):
+            m = _boundary_metric_row(bstart, bend, keys, field, cb)
+            detail[field] = {"passed": m["passed"], "status": m["status"]}
+            if not m["passed"]:
+                ok = False
+        return ok, detail
+
+    b_metrics_ok, b_metrics_detail = _boundary_metrics_ok()
+
+    # continuous sampling coverage from the registered target interval and the
+    # actual boundary window
+    _iv = interval_target_s if interval_target_s and interval_target_s > 0 else 0.5
+    _window = coverage_s
+    _expected = 0
+    if _window is not None and _window >= _iv:
+        _expected = max(0, int(_window / _iv) - 1)
+    _span = 0.0
+    if n >= 2 and int_ok:
+        _span = (t_seq[-1] - t_seq[0]) / 1e9
+    elif n == 1 and int_ok:
+        _span = 0.0
+    _ratio = (_span / _window) if (_window and _window > 0) else None
+    _first_gap = _last_gap = None
+    if b_ok and b_order and n >= 1 and int_ok:
+        _first_gap = (t_seq[0] - bstart.t_monotonic_ns) / 1e9
+        _last_gap = (bend.t_monotonic_ns - t_seq[-1]) / 1e9
+    _max_gap_s = (max_gap_ns / 1e9) if max_gap_ns else 0.0
+    if n == 0:
+        if _window is not None and _window < _iv:
+            _cov_status = "boundary_only_limited"
+            _cov_passed = True
+            _cov_reason = (f"effective window {_window:.3f}s < target interval "
+                           f"{_iv:.3f}s; boundary acceptance only, continuous "
+                           "sampling limited")
+        else:
+            _cov_status = "missing_periodic_samples"
+            _cov_passed = False
+            _cov_reason = (f"window {_window}s target {_iv}s: 0 periodic "
+                           "samples (long task without coverage)")
+    else:
+        if _max_gap_s > _iv * 3:
+            _cov_status = "large_gap"
+            _cov_passed = False
+            _cov_reason = f"max gap {_max_gap_s:.2f}s > 3x interval {_iv:.2f}s"
+        elif _first_gap is not None and (_first_gap > _iv * 1.5 or _last_gap > _iv * 1.5):
+            _cov_status = "edge_gap"
+            _cov_passed = False
+            _cov_reason = f"first/last sample gap {_first_gap:.2f}/{_last_gap:.2f}s"
+        else:
+            _cov_status = "continuous"
+            _cov_passed = True
+            _cov_reason = None
+
+    return {
+        "schema": "measurement-quality-v3",
+        "scope_identity": {
+            "expected_scope": expected_scope,
+            "expected_scope_kind": expected_scope_kind,
+            "samples_scope": sorted({s for s, _ in sample_ids}),
+            "boundaries_scope": sorted({s for s, _ in boundary_ids}),
+            "missing": missing_identity,
+            "conflict": conflict,
+        },
+        "n_samples": n,
+        "cpu": {"read_keys": CPU_KEYS, **cpu_m},
+        "memory": {"read_keys": MEM_KEYS, **mem_m},
+        "io_read": {"read_keys": IO_KEYS, **io_r_m},
+        "io_write": {"read_keys": IO_KEYS, **io_w_m},
+        "timeline": {
+            "passed": order_ok and (max_gap_ns is None or max_gap_ns < 10 ** 12),
+            "status": "ok" if order_ok else "order_violation",
+            "order_ok": order_ok, "max_gap_ns": max_gap_ns,
+            "actual_median_interval_s": actual_interval_s,
+            "n_gaps": len(gaps),
+        },
+        "coverage": {
+            "passed": _cov_passed,
+            "status": _cov_status,
+            "reason": _cov_reason,
+            "interval_target_s": _iv,
+            "boundary_window_s": _window,
+            "expected_periodic_samples": _expected,
+            "actual_periodic_samples": n,
+            "sample_span_s": round(_span, 3),
+            "coverage_ratio": round(_ratio, 4) if _ratio is not None else None,
+            "first_sample_gap_s": _first_gap,
+            "last_sample_gap_s": _last_gap,
+            "max_gap_s": _max_gap_s,
+        },
+        "boundaries": {
+            "passed": b_ok and b_order and out_of_window == 0 and b_metrics_ok,
+            "status": ("present_ordered" if (b_ok and b_order and out_of_window == 0 and b_metrics_ok)
+                       else ("boundary_metrics_invalid" if (b_ok and b_order and out_of_window == 0 and not b_metrics_ok)
+                             else ("out_of_window" if (b_ok and b_order and out_of_window > 0)
+                                   else ("order_invalid" if (b_ok and not b_order) else "missing")))),
+            "present": b_ok, "order_ok": b_order,
+            "coverage_window_s": coverage_s, "samples_out_of_window": out_of_window,
+            "metrics_valid": b_metrics_ok, "metrics_detail": b_metrics_detail,
+        },
+        "notes": notes,
+    }
+
+
+def read_resource_stream(path):
+    """Read a resource-stream-v1 JSONL produced by the sampler stream sink.
+
+    Keeps every complete line; a trailing partial line (interrupted write) is
+    dropped from ``rows`` and reported as ``truncated_tail``. Lines that fail
+    JSON parse are reported as ``parse_errors`` (counted) but earlier complete
+    rows are preserved."""
+    try:
+        text = Path(path).read_text(encoding="utf-8")
+    except FileNotFoundError:
+        return {"rows": [], "truncated_tail": False, "parse_errors": 0,
+                "status": "missing"}
+    except OSError as exc:
+        return {"rows": [], "truncated_tail": False, "parse_errors": 0,
+                "status": f"error:{type(exc).__name__}"}
+    parts = text.split("\n")
+    truncated = False
+    if parts and parts[-1] == "":
+        parts = parts[:-1]
+    elif parts and parts[-1].strip() != "":
+        truncated = True  # final line was cut off mid-write
+        parts = parts[:-1]
+    rows = []
+    errors = 0
+    for line in parts:
+        if not line.strip():
+            continue
+        try:
+            rows.append(json.loads(line))
+        except json.JSONDecodeError:
+            errors += 1
+    return {"rows": rows, "truncated_tail": truncated, "parse_errors": errors,
+            "status": "ok" if not (truncated or errors) else "partial",
+            "line_count": len(parts)}
+
+
+
+def validate_resource_stream(path, *, expected_schema="resource-stream-v1"):
+    """Contract validation of a resource stream JSONL.
+
+    Every line must be an object with the EXPECTED schema and ALL required
+    fields present as keys (a field present with value null is legal and left
+    to the metric quality assessment; an absent key is an error). scope /
+    scope_kind must be strings, t_monotonic_ns a non-bool int, metric fields
+    legitimate null or finite non-negative numbers (never bool/negative/NaN),
+    and read_status a dict (or null). Missing/bad files are reported."""
+    _REQUIRED_FIELDS = ("schema", "scope", "scope_kind", "t_monotonic_ns",
+                        "cpu_usage_usec", "mem_current_bytes", "mem_peak_bytes",
+                        "io_read_bytes", "io_write_bytes", "read_status")
+    try:
+        text = Path(path).read_text(encoding="utf-8")
+    except FileNotFoundError:
+        return {"status": "missing", "rows": [], "valid_rows": [],
+                "invalid": [], "truncated_tail": False, "parse_errors": 0,
+                "line_count": 0, "valid_count": 0, "scopes_seen": [],
+                "kinds_seen": [], "schemas_seen": []}
+    except OSError as exc:
+        return {"status": f"error:{type(exc).__name__}", "rows": [],
+                "valid_rows": [], "invalid": [], "truncated_tail": False,
+                "parse_errors": 0, "line_count": 0, "valid_count": 0,
+                "scopes_seen": [], "kinds_seen": [], "schemas_seen": []}
+    parts = text.split("\n")
+    truncated = False
+    if parts and parts[-1] == "":
+        parts = parts[:-1]
+    elif parts and parts[-1].strip() != "":
+        truncated = True
+        parts = parts[:-1]
+    valid_rows = []
+    invalid = []
+    parse_errors = 0
+    line_no = 0
+    for raw in parts:
+        if not raw.strip():
+            continue
+        line_no += 1
+        try:
+            obj = json.loads(raw)
+        except json.JSONDecodeError:
+            parse_errors += 1
+            invalid.append({"line": line_no, "reason": "json_decode_error"})
+            continue
+        if not isinstance(obj, dict):
+            invalid.append({"line": line_no, "reason": "not_object"})
+            continue
+        problems = []
+        for fld in _REQUIRED_FIELDS:
+            if fld not in obj:
+                problems.append(f"{fld}_missing")
+        if obj.get("schema") != expected_schema:
+            problems.append("schema_mismatch")
+        if not isinstance(obj.get("scope"), str):
+            problems.append("scope_not_string")
+        if not isinstance(obj.get("scope_kind"), str):
+            problems.append("scope_kind_not_string")
+        t = obj.get("t_monotonic_ns")
+        if not isinstance(t, int) or isinstance(t, bool):
+            problems.append("timestamp_not_int")
+        for field in ("cpu_usage_usec", "mem_current_bytes", "mem_peak_bytes",
+                      "io_read_bytes", "io_write_bytes"):
+            if field not in obj:
+                continue  # already flagged *_missing
+            v = obj[field]
+            if v is None:
+                continue  # legal null; metric quality decides missing/valid
+            if isinstance(v, bool) or not isinstance(v, (int, float)):
+                problems.append(f"{field}_bad_type")
+                continue
+            if isinstance(v, float) and (v != v or v in (float("inf"), float("-inf"))):
+                problems.append(f"{field}_non_finite")
+                continue
+            if v < 0:
+                problems.append(f"{field}_negative")
+        rs = obj.get("read_status")
+        if rs is not None and not isinstance(rs, dict):
+            problems.append("read_status_not_dict")
+        if problems:
+            invalid.append({"line": line_no, "reason": ";".join(problems), "row": obj})
+        else:
+            valid_rows.append(obj)
+    scopes = sorted({r.get("scope") for r in valid_rows if isinstance(r.get("scope"), str)})
+    kinds = sorted({r.get("scope_kind") for r in valid_rows if isinstance(r.get("scope_kind"), str)})
+    schemas = sorted({r.get("schema") for r in valid_rows})
+    return {"status": "ok" if not (truncated or parse_errors or invalid) else "partial",
+            "rows": valid_rows + [x.get("row") for x in invalid if "row" in x],
+            "valid_rows": valid_rows, "invalid": invalid,
+            "truncated_tail": truncated, "parse_errors": parse_errors,
+            "line_count": len(parts), "valid_count": len(valid_rows),
+            "scopes_seen": scopes, "kinds_seen": kinds, "schemas_seen": schemas}
+
+
+def _normalize_sample_value(v):
+    if v is None:
+        return "null"
+    if isinstance(v, bool):
+        raise ValueError("bool is not a valid sample digest value")
+    if isinstance(v, (int, float)):
+        if isinstance(v, float) and (v != v or v in (float("inf"), float("-inf"))):
+            raise ValueError("NaN/Infinity is not a valid sample digest value")
+        if v < 0:
+            raise ValueError("negative is not a valid sample digest value")
+        return repr(v)
+    if isinstance(v, str):
+        return "str:" + v
+    raise ValueError("unsupported sample digest value type " + type(v).__name__)
+
+
+def normalize_sample_row(row):
+    # Stable, order-independent-per-field normalized serialization over the
+    # FULL stream record produced by to_stream_record (schema present).
+    # Missing key vs present-null distinguished; bool/negative/NaN/Infinity
+    # are rejected (raise), never hashed as placeholder text.
+    fields = ("schema", "scope", "scope_kind", "t_monotonic_ns",
+              "cpu_usage_usec", "mem_current_bytes", "mem_peak_bytes",
+              "io_read_bytes", "io_write_bytes", "read_status")
+    parts = []
+    for f in fields:
+        if f in row:
+            if f == "read_status" and isinstance(row[f], dict):
+                parts.append(f + "=" + json.dumps(row[f], sort_keys=True))
+            else:
+                parts.append(f + "=" + _normalize_sample_value(row[f]))
+        else:
+            parts.append(f + "=_missing")
+    return "|".join(parts)
+
+
+def sample_content_digest(rows):
+    # Content digest of periodic samples (full field set + order).
+    # Every row is first normalized through the SHARED to_stream_record so the
+    # in-memory CounterSnapshot objects and the parsed stream file produce the
+    # exact same normalized records (schema supplied by the same contract).
+    # Any value/timestamp/status/order change alters the digest.
+    recs = [to_stream_record(r) for r in rows]
+    lines = [normalize_sample_row(r) for r in recs]
+    return {
+        "schema": "sample-content-digest-v1",
+        "version": 2,
+        "n_samples": len(recs),
+        "algorithm": "sha256-normalized-v1",
+        "digest": hashlib.sha256("\n".join(lines).encode("utf-8")).hexdigest(),
     }

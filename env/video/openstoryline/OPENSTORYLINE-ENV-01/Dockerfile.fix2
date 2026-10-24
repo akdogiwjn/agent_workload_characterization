@@ -1,0 +1,3 @@
+FROM openstoryline-task:arm64-asr-adapted-v3
+COPY source/ /opt/openstoryline/
+RUN grep -q generate_artifact_id /opt/openstoryline/src/open_storyline/mcp/register_tools.py

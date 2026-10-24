@@ -1,0 +1,36 @@
+{
+  "schema": "videoweaver-env01-image-manifest-v1",
+  "task": "VIDEO-WEAVER-ENV-01",
+  "built_at_local": "2026-10-24",
+  "image": {
+    "tag": "videoweaver-task-bailian:arm64-v1",
+    "image_id": "sha256:60cf9b9fe2317a7b92cdba48f70cb74c77321642ddb75e3c64ccbb84e92062d8",
+    "architecture": "arm64",
+    "os": "linux",
+    "dockerfile": "env/video/videoweaver/build/Dockerfile"
+  },
+  "base": {
+    "tag": "video-common-base:arm64-v1",
+    "image_id": "sha256:d414b4270fec6ec2dd245982a522099d8941d8cd114ccd5ec2c6730815f3a706"
+  },
+  "python": {
+    "base": "3.12.15",
+    "venv": "/opt/videoweaver-venv",
+    "requirements": "env/video/videoweaver/build/requirements.txt"
+  },
+  "codex_cli": {
+    "version": "0.163.0",
+    "artifact_sha256": "a7261e65f4a96d8f4ca65a069c6cf2dc2c33defc341e48078acefda9461fffe4",
+    "container_path": "/usr/local/bin/codex",
+    "reused_local_tarball": true
+  },
+  "CODEX_HOME": "/opt/codex-home",
+  "source_manifest": "env/video/videoweaver/evidence/source-manifest.json",
+  "no_gpu": true,
+  "no_local_weights": true,
+  "credentials_baked": false,
+  "encoders_verified": [
+    "libx264",
+    "aac"
+  ]
+}

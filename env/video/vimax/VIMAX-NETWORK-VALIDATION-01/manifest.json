@@ -1,0 +1,369 @@
+{
+ "task": "VIMAX-NETWORK-VALIDATION-01",
+ "note": "manifest does not self-hash; workspace/agent-session contains container-uid files registered by readability",
+ "inputs": {
+  "image": "vimax-task-bailian:arm64-v1 sha256:045fe9cd4ad527bfcddc3ce703a767e0623b317b3e8ad070276e199f58b27be6",
+  "base_image": "video-common-base:arm64-v1 sha256:d414b4270fec6ec2dd245982a522099d8941d8cd114ccd5ec2c6730815f3a706",
+  "adapter_src_diff": "adapter-src/ADAPTATION-DIFF.md",
+  "runner_code": [
+   "runner/fake_bailian_server.py",
+   "runner/offline_validation.py",
+   "runner/vimax_bailian_runner.py"
+  ],
+  "requirements_from_lock": "vimax-task-image/requirements.txt"
+ },
+ "files": {
+  "image-freeze.txt": {
+   "bytes": 1360,
+   "sha256": "7e71cc4d91384cf724d80c69c23bd36d4212ba371e74a0d9a7daf3a2b5c90e56"
+  },
+  "run-record.json": {
+   "bytes": 4328,
+   "sha256": "6eefcbe71905e0a2af922f7a0c276588a0ea5219112e48f5144ba6c914cb381c"
+  },
+  "summary.md": {
+   "bytes": 9263,
+   "sha256": "d8548f6d52ff9bd39e0a67c13a0a0567a8fd4a36bf527b4f8fce116b922edad5"
+  },
+  "workspace/events/bailian-events.jsonl": {
+   "bytes": 3522,
+   "sha256": "708d3506f0939efd1c12abed9a481d61e4424e4590d6ef1905a34004a62a2ab4"
+  },
+  "workspace/validation/agent-events.jsonl": {
+   "bytes": 81734,
+   "sha256": "b7d770b1a5f407d544d3f748d86f85da671b83cca4d4edbb11fba9a066748f01"
+  },
+  "workspace/validation/agent-session/.vimax/logs/loop_history.jsonl": {
+   "bytes": 5907,
+   "sha256": "f0a6b3852f02fa504ca7a310f946a096f0945290af14545338fe8d44c7f5ae6f"
+  },
+  "workspace/validation/agent-session/.vimax/logs/tool_calls.jsonl": {
+   "bytes": 1696,
+   "sha256": "db1c4f0d176537ac41f602a6f4af10d9bfa53a945058ac5e178be571cd710363"
+  },
+  "workspace/validation/agent-session/.vimax/memory.md": {
+   "bytes": 19,
+   "sha256": "3f03af84c1db614021d8ed85816694aa06a7adb8d77255f6d6dc34ab6e45e5fa"
+  },
+  "workspace/validation/agent-session/.vimax/sessions.json": {
+   "bytes": 1771,
+   "sha256": "cfde27c5845a7560f8e619f4061d011479a2cc285d681d11ade4f2b3211e8d0b"
+  },
+  "workspace/validation/agent-session/.vimax/sessions.lock": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/render_events.jsonl": {
+   "bytes": 488,
+   "sha256": "f0ade7d78ce36592194643b129d98ec7e637209fa142dce5bfe9ae4fadb6d482"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/render_status.json": {
+   "bytes": 336,
+   "sha256": "4fe751f6a1c8ce1af138af4d0a25a94d4f177b3c8746923a88a8fa5e11d315ec"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/camera_tree.json": {
+   "bytes": 2002,
+   "sha256": "f5d720f13c7b7b9404b235ef84a316e766f34983d8e3ddd5db17ecf45d98b289"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/character_portraits/0_摄影师/back.png": {
+   "bytes": 8995,
+   "sha256": "e683cfcc9740efe04f3852d1ee5a5c46379e725c8828254bcb90cc19cdaf5342"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/character_portraits/0_摄影师/front.png": {
+   "bytes": 9061,
+   "sha256": "5ff355bed49ec637f6972eaf47cbc3156b3b563fae47aaea6125de31267c088b"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/character_portraits/0_摄影师/side.png": {
+   "bytes": 9099,
+   "sha256": "a0cbc39954d9f320be34cdc027e485aa35485c05b8253326bc17dcdf771b2027"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/character_portraits_registry.json": {
+   "bytes": 810,
+   "sha256": "95a5bb27c87fe8084d05467e4da0a88ff8e3953f6c032e013ae66f30fcd21cb3"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/characters.json": {
+   "bytes": 298,
+   "sha256": "8269aa812c2d092aa867093a978c8f71319dc0e46021f3004b50cffabd59a3d2"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/final_video.mp4": {
+   "bytes": 421115,
+   "sha256": "dfd5f8212c9fb9a96a3ae8cc1e00b39ada861776677b998f5c065948e03cdaa5"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/script.txt": {
+   "bytes": 85,
+   "sha256": "3c8a7fa1b9b7af13f9e9c855780ac2d1ab07ec47b7c41397ffb6c05b063cd949"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/0/first_frame.png": {
+   "bytes": 8903,
+   "sha256": "624ba78b8c6f1eb16d98ff8243ce719220dc756fb9658ee3d3425f7c23ea70d2"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/0/first_frame_candidates/candidate_0.png": {
+   "bytes": 8903,
+   "sha256": "624ba78b8c6f1eb16d98ff8243ce719220dc756fb9658ee3d3425f7c23ea70d2"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/0/first_frame_candidates/candidate_1.png": {
+   "bytes": 8863,
+   "sha256": "4e1f9d09376dae47900e293bce1247951d82829508b5ba7722d223a982da9639"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/0/first_frame_candidates/selection.json": {
+   "bytes": 529,
+   "sha256": "577458d87b5aac65c13a6f80e8f8e8df8b51b93084572a9d8f9131081450380d"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/0/first_frame_selector_output.json": {
+   "bytes": 382,
+   "sha256": "dff5dec700a8b2a7bc18b3155eacde49cd59f3a43fe20a3ee87d831e69601409"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/0/shot_description.json": {
+   "bytes": 788,
+   "sha256": "008a7e022a47c639283e96805fc02efa40aa1d3ddbcc629e679cff023590deea"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/0/video.mp4": {
+   "bytes": 34033,
+   "sha256": "421722a2ef3db8b52f488963275be067103c1b9610f176e81b58ea80115ab7d7"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/1/first_frame.png": {
+   "bytes": 9064,
+   "sha256": "658989e0ff1c8f02a4a7213fa4dde26c1b8325b4371e4758fb0d1f5019e9c330"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/1/first_frame_candidates/candidate_0.png": {
+   "bytes": 9064,
+   "sha256": "658989e0ff1c8f02a4a7213fa4dde26c1b8325b4371e4758fb0d1f5019e9c330"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/1/first_frame_candidates/candidate_1.png": {
+   "bytes": 9090,
+   "sha256": "ba343118d65d6991e96f7c5586ca9e426d8ff3ac7ce4389cdfa06bdc4a6c8898"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/1/first_frame_candidates/selection.json": {
+   "bytes": 529,
+   "sha256": "577458d87b5aac65c13a6f80e8f8e8df8b51b93084572a9d8f9131081450380d"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/1/first_frame_selector_output.json": {
+   "bytes": 382,
+   "sha256": "dff5dec700a8b2a7bc18b3155eacde49cd59f3a43fe20a3ee87d831e69601409"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/1/shot_description.json": {
+   "bytes": 788,
+   "sha256": "52fd37d77890a13a327b0f9b6e074fa016c77d88dfc68f41bc86ad62dfb4b666"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/1/video.mp4": {
+   "bytes": 44727,
+   "sha256": "2ce04345597991bf571c7107af613338c718044eaff6411a6c219b49958a2436"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/2/first_frame.png": {
+   "bytes": 9064,
+   "sha256": "658989e0ff1c8f02a4a7213fa4dde26c1b8325b4371e4758fb0d1f5019e9c330"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/2/first_frame_candidates/candidate_0.png": {
+   "bytes": 9064,
+   "sha256": "658989e0ff1c8f02a4a7213fa4dde26c1b8325b4371e4758fb0d1f5019e9c330"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/2/first_frame_candidates/candidate_1.png": {
+   "bytes": 9090,
+   "sha256": "ba343118d65d6991e96f7c5586ca9e426d8ff3ac7ce4389cdfa06bdc4a6c8898"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/2/first_frame_candidates/selection.json": {
+   "bytes": 529,
+   "sha256": "577458d87b5aac65c13a6f80e8f8e8df8b51b93084572a9d8f9131081450380d"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/2/first_frame_selector_output.json": {
+   "bytes": 382,
+   "sha256": "dff5dec700a8b2a7bc18b3155eacde49cd59f3a43fe20a3ee87d831e69601409"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/2/shot_description.json": {
+   "bytes": 788,
+   "sha256": "6f87ed8f140896bf49d330d8e4966e7b5e04e0c64e4dd5772bbcccf9172de5b6"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/2/video.mp4": {
+   "bytes": 56481,
+   "sha256": "59e677e50bc8a16cc1a08680d956296fc82802b1e382ae4fae5ce539768caae3"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/3/first_frame.png": {
+   "bytes": 9099,
+   "sha256": "a0cbc39954d9f320be34cdc027e485aa35485c05b8253326bc17dcdf771b2027"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/3/first_frame_candidates/candidate_0.png": {
+   "bytes": 9099,
+   "sha256": "a0cbc39954d9f320be34cdc027e485aa35485c05b8253326bc17dcdf771b2027"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/3/first_frame_candidates/candidate_1.png": {
+   "bytes": 8995,
+   "sha256": "e683cfcc9740efe04f3852d1ee5a5c46379e725c8828254bcb90cc19cdaf5342"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/3/first_frame_candidates/selection.json": {
+   "bytes": 529,
+   "sha256": "577458d87b5aac65c13a6f80e8f8e8df8b51b93084572a9d8f9131081450380d"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/3/first_frame_selector_output.json": {
+   "bytes": 382,
+   "sha256": "dff5dec700a8b2a7bc18b3155eacde49cd59f3a43fe20a3ee87d831e69601409"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/3/shot_description.json": {
+   "bytes": 788,
+   "sha256": "e135debfe86c56b7ceabe2b7689654ed0fe9602023eaa6015a15d0c0fffc5d6f"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/3/video.mp4": {
+   "bytes": 68699,
+   "sha256": "801532d57a544d758e119394b6e36a6b085725036fba2d943eecb59426f06248"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/4/first_frame.png": {
+   "bytes": 8992,
+   "sha256": "56eefa26c688a2baeecde5eb00005f0f2546398cffcb7e81586d27aa94dadd9e"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/4/first_frame_candidates/candidate_0.png": {
+   "bytes": 8992,
+   "sha256": "56eefa26c688a2baeecde5eb00005f0f2546398cffcb7e81586d27aa94dadd9e"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/4/first_frame_candidates/candidate_1.png": {
+   "bytes": 9061,
+   "sha256": "5ff355bed49ec637f6972eaf47cbc3156b3b563fae47aaea6125de31267c088b"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/4/first_frame_candidates/selection.json": {
+   "bytes": 529,
+   "sha256": "577458d87b5aac65c13a6f80e8f8e8df8b51b93084572a9d8f9131081450380d"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/4/first_frame_selector_output.json": {
+   "bytes": 382,
+   "sha256": "dff5dec700a8b2a7bc18b3155eacde49cd59f3a43fe20a3ee87d831e69601409"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/4/shot_description.json": {
+   "bytes": 788,
+   "sha256": "b3fb16a6557b3f2213b2edbe7470ab93cd217ca3f2f550e51d59ecfe3ab4fdfc"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/4/video.mp4": {
+   "bytes": 44896,
+   "sha256": "98f4dbbdba7c0c61e46d76b73a7b35dbe5aed546ded5db9c8fd270533f00ae9d"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/5/first_frame.png": {
+   "bytes": 8903,
+   "sha256": "624ba78b8c6f1eb16d98ff8243ce719220dc756fb9658ee3d3425f7c23ea70d2"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/5/first_frame_candidates/candidate_0.png": {
+   "bytes": 8903,
+   "sha256": "624ba78b8c6f1eb16d98ff8243ce719220dc756fb9658ee3d3425f7c23ea70d2"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/5/first_frame_candidates/candidate_1.png": {
+   "bytes": 8863,
+   "sha256": "4e1f9d09376dae47900e293bce1247951d82829508b5ba7722d223a982da9639"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/5/first_frame_candidates/selection.json": {
+   "bytes": 529,
+   "sha256": "577458d87b5aac65c13a6f80e8f8e8df8b51b93084572a9d8f9131081450380d"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/5/first_frame_selector_output.json": {
+   "bytes": 382,
+   "sha256": "dff5dec700a8b2a7bc18b3155eacde49cd59f3a43fe20a3ee87d831e69601409"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/5/shot_description.json": {
+   "bytes": 788,
+   "sha256": "f865e98a7e829cefe4ccfb24f1a816434aa4492c213ed23e7cf3ef694abd3387"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/5/video.mp4": {
+   "bytes": 45512,
+   "sha256": "7b6de854e801ab1c0f35c8cfa82982ee560d43cc987a0a854ef3e4d380442dd9"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/6/first_frame.png": {
+   "bytes": 8992,
+   "sha256": "56eefa26c688a2baeecde5eb00005f0f2546398cffcb7e81586d27aa94dadd9e"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/6/first_frame_candidates/candidate_0.png": {
+   "bytes": 8992,
+   "sha256": "56eefa26c688a2baeecde5eb00005f0f2546398cffcb7e81586d27aa94dadd9e"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/6/first_frame_candidates/candidate_1.png": {
+   "bytes": 9061,
+   "sha256": "5ff355bed49ec637f6972eaf47cbc3156b3b563fae47aaea6125de31267c088b"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/6/first_frame_candidates/selection.json": {
+   "bytes": 529,
+   "sha256": "577458d87b5aac65c13a6f80e8f8e8df8b51b93084572a9d8f9131081450380d"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/6/first_frame_selector_output.json": {
+   "bytes": 382,
+   "sha256": "dff5dec700a8b2a7bc18b3155eacde49cd59f3a43fe20a3ee87d831e69601409"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/6/shot_description.json": {
+   "bytes": 788,
+   "sha256": "c9bb8fb1c2643d15ee1abd6e7467f4772892324aa0c8fbda1a93a0ef8f13bf71"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/6/video.mp4": {
+   "bytes": 57230,
+   "sha256": "3115c2ddf03f01d4cb309b12cb20680ff6f59db6f2383b8ed7f22a91e1639060"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/7/first_frame.png": {
+   "bytes": 9099,
+   "sha256": "a0cbc39954d9f320be34cdc027e485aa35485c05b8253326bc17dcdf771b2027"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/7/first_frame_candidates/candidate_0.png": {
+   "bytes": 9099,
+   "sha256": "a0cbc39954d9f320be34cdc027e485aa35485c05b8253326bc17dcdf771b2027"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/7/first_frame_candidates/candidate_1.png": {
+   "bytes": 8995,
+   "sha256": "e683cfcc9740efe04f3852d1ee5a5c46379e725c8828254bcb90cc19cdaf5342"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/7/first_frame_candidates/selection.json": {
+   "bytes": 529,
+   "sha256": "577458d87b5aac65c13a6f80e8f8e8df8b51b93084572a9d8f9131081450380d"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/7/first_frame_selector_output.json": {
+   "bytes": 382,
+   "sha256": "dff5dec700a8b2a7bc18b3155eacde49cd59f3a43fe20a3ee87d831e69601409"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/7/shot_description.json": {
+   "bytes": 787,
+   "sha256": "ca72c302cc35bbddee4c7f3fc511ccc1363efa4378f77b0e05915fdf8247ffab"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/shots/7/video.mp4": {
+   "bytes": 57193,
+   "sha256": "243c26b5cd1cc8f7ad0551bdee777312b218f17d2f656c78ad47a19bed12fdbd"
+  },
+  "workspace/validation/agent-session/.working_dir/20261023-080113-validation-cold-start-01/script2video/storyboard.json": {
+   "bytes": 2105,
+   "sha256": "40e60c3ac385afe6129e2ddacddfde70102bab9a38e1d91180a62364963c3dde"
+  },
+  "workspace/validation/bailian-events.jsonl": {
+   "bytes": 24406,
+   "sha256": "5ae3cfd15dba5119ded1e2c1c7562feed4fa6b19241a6653227252edcb135760"
+  },
+  "workspace/validation/final-frames/seg-0.png": {
+   "bytes": 14394,
+   "sha256": "92af7e5e0bf2ca1e182260e2d3728a6880b895ca7acc88f70129e8e96ecee9ab"
+  },
+  "workspace/validation/final-frames/seg-1.png": {
+   "bytes": 18143,
+   "sha256": "3f82b7dc040f6ffa4d4b3e58ec81ea07418a7a7905e36694aee9004455e309a1"
+  },
+  "workspace/validation/final-frames/seg-2.png": {
+   "bytes": 20849,
+   "sha256": "b58baf097b03dde33ac646b64ecfdc6f517bea8fb79f188423b8d40820138486"
+  },
+  "workspace/validation/final-frames/seg-3.png": {
+   "bytes": 23315,
+   "sha256": "a7968c377d7f59a6351e7cab7644772808ea05522719476162949e79ad1f9125"
+  },
+  "workspace/validation/final-frames/seg-4.png": {
+   "bytes": 17920,
+   "sha256": "fa7e38b9b3bdfc1cb7087ed0ba700c0c79fa132aff98d884f62c911f28bd3a06"
+  },
+  "workspace/validation/final-frames/seg-5.png": {
+   "bytes": 18305,
+   "sha256": "2d9c8c290a0bd7ed77d2947a93218894febaa040e2333d2d798c25203902ce71"
+  },
+  "workspace/validation/final-frames/seg-6.png": {
+   "bytes": 21556,
+   "sha256": "e7c11f65a3ed0075835fb08bc09da40afa9e37a10a22c1a02a2dc77858bb549b"
+  },
+  "workspace/validation/final-frames/seg-7.png": {
+   "bytes": 19989,
+   "sha256": "268f7a98a930da59594c5499e5eb359c19bb5542887a03ac7ccc0b9c5f5d0974"
+  },
+  "workspace/validation/unit-events.jsonl": {
+   "bytes": 1273,
+   "sha256": "cb2a1ce4050094529f9fca93e4c7872bfaa87916e934c0d33a639e745e87a6e5"
+  },
+  "workspace/validation/validation-report.json": {
+   "bytes": 5125,
+   "sha256": "06c0623d80c8ebbc2e68bd373a8d0971d5ac13a250b45bfa751432aecd37cdac"
+  }
+ }
+}

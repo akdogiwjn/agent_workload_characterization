@@ -1,0 +1,404 @@
+{
+  "schema": "videoweaver-env01-source-manifest-v1",
+  "task": "VIDEO-WEAVER-ENV-01",
+  "reference_repo": "references/repos/VideoWeaver",
+  "reference_commit": "c809392fe6c2c8b22472049684aaefc650e31bde",
+  "isolated_copy": "env/video/videoweaver/source",
+  "reference_untouched": true,
+  "file_counts": {
+    "reference": 123,
+    "isolated": 123,
+    "changed": 8,
+    "added": 0,
+    "removed": 0
+  },
+  "excluded_from_compare": [
+    "__pycache__",
+    "*.pyc",
+    ".DS_Store",
+    ".git"
+  ],
+  "changed_files": [
+    "AutomaticSkillOptimization/args.py",
+    "AutomaticSkillOptimization/inference_CodeX/codex_cli_tool.py",
+    "skills/image-gen/SKILL.md",
+    "skills/image-gen/scripts/generate.py",
+    "skills/video-gen/SKILL.md",
+    "skills/video-gen/scripts/generate.py",
+    "skills/vision-understanding/SKILL.md",
+    "skills/vision-understanding/scripts/vision_understanding.py"
+  ],
+  "added_files": [],
+  "removed_files": [],
+  "files": {
+    "AutomaticSkillOptimization/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "AutomaticSkillOptimization/args.py": {
+      "sha256": "e5155d5ab09f364bf0ee5bf4f871b3f2ba45450e364163feb5f8b107be620bfb"
+    },
+    "AutomaticSkillOptimization/codex_claude_pipeline_utils.py": {
+      "sha256": "ae6cb69bfa2326efcb1b4aa732366e47b728b727f556623e2ee864fceebd4c4c"
+    },
+    "AutomaticSkillOptimization/configuration_files/claude/settings.json": {
+      "sha256": "0f40ba228d12470d5cc9fc635d8597cca0923e2405073105d2a87ab0c40f3bc3"
+    },
+    "AutomaticSkillOptimization/configuration_files/codex/.codex/config.toml": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "AutomaticSkillOptimization/configuration_files/codex/AGENTS.md": {
+      "sha256": "9e2793527ab958d84963937002bc4dfd308cc3e69b2aee688ae03be716101d84"
+    },
+    "AutomaticSkillOptimization/configuration_files/codex/config.toml": {
+      "sha256": "be4a8098707383c17a4ffacf1b9ddcc7a6f14b43c6a8ebe5c6069e99ca23aa18"
+    },
+    "AutomaticSkillOptimization/evaluation_ORM/__init__.py": {
+      "sha256": "697b6e80b00ba786ebaa75b523e4cd506adcda29032ba90d86d0830adf9a9a65"
+    },
+    "AutomaticSkillOptimization/evaluation_ORM/evaluate_OM.py": {
+      "sha256": "4e6ee889057e54dbbebbe7b2c6c58a2cb796feed4dee6c5826725b789a2d9537"
+    },
+    "AutomaticSkillOptimization/evaluation_PRM/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "AutomaticSkillOptimization/evaluation_PRM/evaluate_PM+FR.py": {
+      "sha256": "5c8456bb68801c793ae47c629221586bcd61ae10f91ba906d52a356a229a82f8"
+    },
+    "AutomaticSkillOptimization/evaluation_PRM/evaluation_utils.py": {
+      "sha256": "f10a2e139f030452a4e6105218778551c5520108247838fe733b2bb89f1a8009"
+    },
+    "AutomaticSkillOptimization/evaluation_PRM/execution_error_analysis.py": {
+      "sha256": "d310fed5c49263234a52bb796c66c1c02d2fe6694d933a038d6f1d163a294555"
+    },
+    "AutomaticSkillOptimization/evaluation_PRM/generate_summary.py": {
+      "sha256": "2d06bb71c639ed804a025cc74ac6c1a01ddf780d5f5e8f44706d4ceed37e3a8f"
+    },
+    "AutomaticSkillOptimization/inference_ClaudeCode/claude_cli_tools.py": {
+      "sha256": "7540e2319fd3d1996c2616e2293b9c34531aadc1f31813f1d9a6c36e510ab378"
+    },
+    "AutomaticSkillOptimization/inference_ClaudeCode/pipeline.py": {
+      "sha256": "b4542ce86a76c6ce9643654c8a7d34fb9f4ef5d7b74bf34d6c6bd8ad725a1cb7"
+    },
+    "AutomaticSkillOptimization/inference_ClaudeCode/running_utils.py": {
+      "sha256": "f8f8ab3e65aebec413da05f4af2457f80f0f132dfd4a154a87c704f0f8913a30"
+    },
+    "AutomaticSkillOptimization/inference_CodeX/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "AutomaticSkillOptimization/inference_CodeX/codex_cli_tool.py": {
+      "sha256": "d0f320245660eb46e830c6717a87bd281a56ae0c62922d5d90f4141e50cebfc9"
+    },
+    "AutomaticSkillOptimization/inference_CodeX/pipeline.py": {
+      "sha256": "b57469ec83d50a260921c64304edb8af5763e4ae8a53af8305a6a6d57c8a3fbc"
+    },
+    "AutomaticSkillOptimization/inference_CodeX/running_utils.py": {
+      "sha256": "301e894d0e7bd02c5481c5c4c56553d4d8016bca57e47b023a57fb654ce2e026"
+    },
+    "AutomaticSkillOptimization/inference_OpenClaw/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "AutomaticSkillOptimization/inference_OpenClaw/openclaw_sdk_tools.py": {
+      "sha256": "a4c9cbc619d9657a35a0269dbcaeeb39242bd91fae94b60b1389244ddb362253"
+    },
+    "AutomaticSkillOptimization/inference_OpenClaw/pipeline.py": {
+      "sha256": "5bd75a88e7c94bea5408539b44bbbfa568cd19ca0a66eb757fb74fae92a22f5c"
+    },
+    "AutomaticSkillOptimization/inference_OpenClaw/running_utils.py": {
+      "sha256": "b74f9240b1b18963444219d44acfcf458a53ec732dd4a57801b857cce82ed426"
+    },
+    "AutomaticSkillOptimization/optimize/CodeX_GPT_optimize_skill.py": {
+      "sha256": "95a141571009d7617ae97fc422bf628db1940974f82144666e4136da4eec710a"
+    },
+    "AutomaticSkillOptimization/optimize/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "AutomaticSkillOptimization/optimize/optimization_utils.py": {
+      "sha256": "04cdaf8f2308981633a0c36d16ec83a28a9589350e2d78080b436fc53bc1f51d"
+    },
+    "AutomaticSkillOptimization/prompts.py": {
+      "sha256": "25811f3fdf4654c38ab229cfa6f3a982893c5ea1161a35e9b7cc9a4de47030f2"
+    },
+    "AutomaticSkillOptimization/summary_txt.py": {
+      "sha256": "93c7224a15c09ec0a8024636c0e35b5299eaccdaac1a56c2e7574a0f73022390"
+    },
+    "AutomaticSkillOptimization/utils.py": {
+      "sha256": "0c98e5646bd4bda6d14800d545e131d9e586270dea55a2c9fc224549477e3b9c"
+    },
+    "OpenClaw_Setup.md": {
+      "sha256": "e7ddd14d71399e21a706b88bc6129d551684ab2a6a1e7b3a28fdb4a052b17b10"
+    },
+    "README.md": {
+      "sha256": "cea894b17d0657ef5ab3855124906d768fb93fc7f6c970e2ce9b0b9ce5a409c5"
+    },
+    "_claude_workspace/.claude/settings.json": {
+      "sha256": "34c253af219e93f27b1982e2f0c9f627b22511a167d74894beca53aa864910b0"
+    },
+    "_codex_workspace/.codex/config.toml": {
+      "sha256": "c7ba409abbcb09b85dcb445c953355037958e311200edbe5b8df7c40abd070f3"
+    },
+    "_codex_workspace/AGENTS.md": {
+      "sha256": "9e2793527ab958d84963937002bc4dfd308cc3e69b2aee688ae03be716101d84"
+    },
+    "asset/eval.pdf": {
+      "sha256": "87b918ce2112b6384bc7b0fc5c4af58804c68621765b6376d45251e709f9279d"
+    },
+    "asset/eval.png": {
+      "sha256": "2fd3ffa15fd02db35f58697fe1e9239d14c8854120cb02d26987c7e33ad5964c"
+    },
+    "asset/pipeline.pdf": {
+      "sha256": "a016081081a7a7751cdffd2412fa2432239084ab12a2e21802f29cf55efecba5"
+    },
+    "asset/pipeline.png": {
+      "sha256": "24317ef95387b9fc1dceeeb5ed49bbaa810c0dad6e22ae5404e7bc80a63b570c"
+    },
+    "dataset/README.md": {
+      "sha256": "a08ad12137b86ebbe513a740f990687349c9aac937bd997b67eec20a04a9634e"
+    },
+    "requirements.txt": {
+      "sha256": "f15e4b746b1aaaff7fc15699ae2ca5a20273497abfb58b9cd94450c05c2f58a3"
+    },
+    "skills/add-audio-track/SKILL.md": {
+      "sha256": "48d267e19a49efe36a63e46f81d5b9c1d293dadff9f6acdc92f48771ad249dc8"
+    },
+    "skills/add-audio-track/scripts/add_audio_track.py": {
+      "sha256": "74d47cd2152f18905a514e8feddfc13273e4fe2b7607ac347c0239ac068cdc97"
+    },
+    "skills/audio-gen/SKILL.md": {
+      "sha256": "87ba283a93ffb9f85fc3082f3d8b4e74841825e42128457fa388ae8b78d464ec"
+    },
+    "skills/audio-understanding/SKILL.md": {
+      "sha256": "97c863453ac38284140891d7f3898e2e083cdca5556d0f51f8d3d625852b1875"
+    },
+    "skills/audio-understanding/scripts/audio_understanding.py": {
+      "sha256": "5f00dd8f5ea2d9ed43b7dc2b48fbe389eb99b5ca584ffb8570f9ac18a012c2d1"
+    },
+    "skills/audio-vocal-separate/SKILL.md": {
+      "sha256": "4b44081109ef78672e2f2ce0ff9439940e0c9ba9943eb1699c8c7d0cf87b923b"
+    },
+    "skills/audio-vocal-separate/scripts/separate.py": {
+      "sha256": "1f7e5abba218f07b3c14b02994731f5fe6b5bd8a9e4ad938164944dd0cf86c83"
+    },
+    "skills/automatic-speech-recognition/SKILL.md": {
+      "sha256": "bc301ebc0f20b5b8222e5aff6bfc9d5b8b615529295542a36324cce2163a6f79"
+    },
+    "skills/automatic-speech-recognition/scripts/embed_subtitles.py": {
+      "sha256": "073bf672aac177605f4606eda55ed02f5f4c169656f2ea43a671bff4ea5efb4c"
+    },
+    "skills/automatic-speech-recognition/scripts/recognize.py": {
+      "sha256": "b568bd13c4107f924ec4e9f21e47b7d2d8f16506b8ba21054661964ac9932753"
+    },
+    "skills/change-fps/SKILL.md": {
+      "sha256": "07e0e2469fb16914e6fec54619592be22483a26a73bf1a62eadbbfff1c477e3a"
+    },
+    "skills/change-fps/scripts/change_fps.py": {
+      "sha256": "bdb1ce2994e107abc97b6dabff43341e85df170a5d0ffa2506f71d0b18cac527"
+    },
+    "skills/extract-video-frame/SKILL.md": {
+      "sha256": "e44a7a1e18a0672a70c33a156655c62a819fd7dec3e99ca207bc8ba7d3396526"
+    },
+    "skills/extract-video-frame/scripts/extract_frame.py": {
+      "sha256": "4c3f5143da1800e30c7d98efef68f67537ee4f8900b824e10c8bf5741f7c97c9"
+    },
+    "skills/get-image-metadata/SKILL.md": {
+      "sha256": "3dd8a7023c54df5713c237c19f885732f84d17d8c920c13b3789a4f7f729d3bd"
+    },
+    "skills/get-image-metadata/scripts/get_image_metadata.py": {
+      "sha256": "6e5ebc858c0ed5a4e7d58115e173eaa94ebce34fd907469724747778afbf55ef"
+    },
+    "skills/get-output-dir/SKILL.md": {
+      "sha256": "4bfe166658820acf9de0a6de3e070262d5d793a359e75bdb64db599ed70f77e5"
+    },
+    "skills/get-output-dir/scripts/get_output_dir.py": {
+      "sha256": "2c153ac9fb9d41266b7ca2a7b5b434f8506ef22b2d4771196af994798edf06e0"
+    },
+    "skills/get-video-metadata/SKILL.md": {
+      "sha256": "48166bb36b4fc0be7fe9a933ce178651793afa56ef538d1b0b98e1d2295f32ea"
+    },
+    "skills/get-video-metadata/scripts/get_metadata.py": {
+      "sha256": "c173b157db0a5d730077c241f6f645d22aae98186eb244a702b9bf5bca1c1b0d"
+    },
+    "skills/grid-generate/SKILL.md": {
+      "sha256": "1f4566f568c15897bc3a44f47edbfb44c213c31c2652006621daaa8fbd577730"
+    },
+    "skills/grid-generate/scripts/grid_generate.py": {
+      "sha256": "4014eb7bedec81d6afb96430ef9a51f29a5c768f4f09d8cdc0d85aba38e30841"
+    },
+    "skills/image-gen/SKILL.md": {
+      "sha256": "cc8b3613f810b20fa2add377fdad23919a00876ffc4bda0898e85f7717f9c7ab"
+    },
+    "skills/image-gen/evals/test_web_search.py": {
+      "sha256": "3a656ea4afc125a27328bba212f92841cec75ec79c8f149d2726eede09df4b17"
+    },
+    "skills/image-gen/scripts/generate.py": {
+      "sha256": "20cca8e33994a8219aa38915e4e277eb7fb7eb66d00adfd1adfa55f78e618cbe"
+    },
+    "skills/image-gen/scripts/logging_manager.py": {
+      "sha256": "57405b33f7f184fe9271b7eedae9de68a7ffe31489cef7350ea8a4021f345403"
+    },
+    "skills/merge-video/SKILL.md": {
+      "sha256": "18c34d19ff616d1cb22524b94acad5ecc7f9519e267b498a85ca724c0d7960c2"
+    },
+    "skills/merge-video/scripts/merge_videos.py": {
+      "sha256": "35c21af56611aa8768dfc55a4f256b6cd4e56ee8b35a2a0a4bec0b53a4545054"
+    },
+    "skills/output-eval/SKILL.md": {
+      "sha256": "38a193090dcb96a82d77a81ea53ad273dba0017e1ef80d80b13c9688d9cbb5ac"
+    },
+    "skills/output-eval/references/expertise.md": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "skills/output-eval/references/rubric_methods.md": {
+      "sha256": "0ff3684a1c37a96e6eaf38ae1764a65ab850b2ce65a13ac9f8cca55e46a7b5d6"
+    },
+    "skills/output-eval/scripts/build_grid.py": {
+      "sha256": "6bc55118750645693d19a3c2ae42f633ef5f3e0ab32223a6616f043fec064394"
+    },
+    "skills/output-eval/scripts/locate_final.py": {
+      "sha256": "86e87326c6875329950eef65687658c8fe06c88e1b94cc270fefa19aec5d9949"
+    },
+    "skills/pair-wise-skill-merge/SKILL.md": {
+      "sha256": "cd06639904e36c993f20496574d9753bd699c52dc26bf5dbf5d4b1ebf99b641a"
+    },
+    "skills/process-eval/SKILL.md": {
+      "sha256": "657535f286f976c7c78f3e108efdabd221f92df9dd670715a1a868b549a7a6a2"
+    },
+    "skills/process-eval/references/video_generation_expertise.md": {
+      "sha256": "072458e600b9700d700a83d0b2c6032d0f9319fd5c31e84a1df93deb105a0ad3"
+    },
+    "skills/process-eval/scripts/write_to_json.py": {
+      "sha256": "9f1cc3c73c18c000deeb609683bea53983500ba469197f5955f5c011acdbc37f"
+    },
+    "skills/replace-audio/SKILL.md": {
+      "sha256": "ba6089de78e9f440a29e4cb20c1a1b27199cc287cdb95fed43e732c2b19471f2"
+    },
+    "skills/replace-audio/scripts/replace_audio.py": {
+      "sha256": "0c5759471bdd7a48014a039f1c1d217886710e07c83be69f678e238d8dc8f883"
+    },
+    "skills/resize-image-resolution/SKILL.md": {
+      "sha256": "b4f9044cc7c12f34aabfa1a5f84b5e1c89805eba0bc107536d772b98bdf71ae1"
+    },
+    "skills/resize-image-resolution/scripts/resize_image_resolution.py": {
+      "sha256": "c348fec24a335e5a1b4865dd58b5cd6ed91fefe5d70c3a72809709eb17cf9ab2"
+    },
+    "skills/resize-video-resolution/SKILL.md": {
+      "sha256": "602a76ee3e5ed2d3a002a8680183331ae7cc86bb38bed7353b4042890cb9884e"
+    },
+    "skills/resize-video-resolution/scripts/resize_video_resolution.py": {
+      "sha256": "ae7b9d585889c27e47858622c1c5d2fc0a0d5164b2e7e829df62551973d8a0bd"
+    },
+    "skills/skill-creator/SKILL.md": {
+      "sha256": "ee4c089e67ba4457bfe8268a2e0d9c63bb5f5b5902523295c641a870f9cf5b35"
+    },
+    "skills/skill-creator/license.txt": {
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "skills/skill-creator/scripts/init_skill.py": {
+      "sha256": "bcd6b802c400a9e89319844c6c3d965855c8b0555e982eb72cd4accb7ee67e3e"
+    },
+    "skills/skill-creator/scripts/package_skill.py": {
+      "sha256": "a2d5b4502b5ec64ce4795c017e9106fa5467c300d8a67896e3a8dfe079513a1a"
+    },
+    "skills/skill-creator/scripts/quick_validate.py": {
+      "sha256": "3e3cdceba2daa893e260551c8c5f09937f94be1153307185c7fc7c24c0896750"
+    },
+    "skills/skill-creator/scripts/test_package_skill.py": {
+      "sha256": "fe43aa8fa0be3a694f3fb15681b7acd177083d61c25468549d79b926977c3180"
+    },
+    "skills/skill-creator/scripts/test_quick_validate.py": {
+      "sha256": "2be00c164cb61020637d0364dc8387a8085522b6bfff7606f734a5274046be44"
+    },
+    "skills/skill-optimizer/SKILL.md": {
+      "sha256": "4df24c4b8213ade4be6ef44ce5afb849461883a0bffc5eb86f0533dfa0d88c4d"
+    },
+    "skills/skill-optimizer/references/video_generation_expertise.md": {
+      "sha256": "072458e600b9700d700a83d0b2c6032d0f9319fd5c31e84a1df93deb105a0ad3"
+    },
+    "skills/split-audio/SKILL.md": {
+      "sha256": "80fd42a7125c5dc41bbb1806ad911bc208cb01af1627b2474b2d724af36a2f11"
+    },
+    "skills/split-audio/scripts/split_audio.py": {
+      "sha256": "b956967f20547ee5fe8525142a7ec6f7da5ea6581fb837a69ac8ffb6d72b40d9"
+    },
+    "skills/split-image/SKILL.md": {
+      "sha256": "411ea6e546400ee4d3d0dce6fd6ae4d68f0f3e6c29cf6197457c356f2eb33dba"
+    },
+    "skills/split-image/scripts/split_image.py": {
+      "sha256": "e3215faf6350ec3161a5330529cf1566792fee8c30f63bc0847ea86e8a2e250e"
+    },
+    "skills/task-tracker/SKILL.md": {
+      "sha256": "33f7d242df0d0a6337e8af87b4eeb5416ff6615a854cfbf9d61643796ada4468"
+    },
+    "skills/task-tracker/scripts/tracker_utils.py": {
+      "sha256": "720cd0880c3a8bbcff11ddc16697eb1894a08d06eb9b183d3f817f966456d763"
+    },
+    "skills/text-to-speech/SKILL.md": {
+      "sha256": "995f582c021d284b647d19ec3494274ddbb27ca0d4a1afd80535503cbf2dbf0b"
+    },
+    "skills/text-to-speech/references/voice_type_list.md": {
+      "sha256": "c6726203c0e317135d514f7137f1c3b3708a7bee24b759c9da8e98a16df3dac5"
+    },
+    "skills/text-to-speech/requirements.txt": {
+      "sha256": "252804c315dc8bd7a3ac9da4dd060f96ea7a5fb70fe1b0f7cc2a8e19dd012ed7"
+    },
+    "skills/text-to-speech/scripts/generate.py": {
+      "sha256": "1d338ca15d5cb9a9d6e210af3820f3b7b37cc054724ff550b8a7eafa66982501"
+    },
+    "skills/trim-audio/SKILL.md": {
+      "sha256": "d28311bd9643780357b7fe8e4ff1960d5774a182a38b66deb46e80446948a7dd"
+    },
+    "skills/trim-audio/scripts/trim_audio.py": {
+      "sha256": "28e74446903b43e662489df2c9180ce84bc869ef7f5045de8c248b20d2bbcfb3"
+    },
+    "skills/trim-video/SKILL.md": {
+      "sha256": "1aeb962e07b574439095529a545bd0319351a04d660a679202ab5ec867380c9f"
+    },
+    "skills/trim-video/scripts/trim_video.py": {
+      "sha256": "a2209a9101e7111daf424de191a05af414f4832072be8055ea9b260b2f2f33b7"
+    },
+    "skills/video-gen/SKILL.md": {
+      "sha256": "7c6d4b621e2d1bde863dff232c159a52be2c5e39d21493a3a7675d21a8ad7949"
+    },
+    "skills/video-gen/scripts/generate.py": {
+      "sha256": "c44807d70e2505cfa57873fc8a4cd77ea642d0dd5966ad3e864a7a136708950f"
+    },
+    "skills/video-gen/scripts/logging_manager.py": {
+      "sha256": "555a5f45c7eb5dc5f96a9635bd6e0aec46b8bcd3e478a74a7258016bb1f4932f"
+    },
+    "skills/video-shot-split/SKILL.md": {
+      "sha256": "60522b44885637694f45aee4953b7e1da98da31ea5ecd0dffc9482e80b7334b6"
+    },
+    "skills/video-shot-split/scripts/split.py": {
+      "sha256": "4275dc62072a3dd15930989631f90f8f32f6da4a3a45635fbc1644b86b812534"
+    },
+    "skills/video-skill-creator/SKILL.md": {
+      "sha256": "14e53bc3d9d1376a78e7a35d7a2fd093590a3979c5037172718724017d211665"
+    },
+    "skills/video-skill-creator/license.txt": {
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "skills/video-skill-creator/references/video_generation_expertise.md": {
+      "sha256": "072458e600b9700d700a83d0b2c6032d0f9319fd5c31e84a1df93deb105a0ad3"
+    },
+    "skills/video-skill-creator/scripts/init_skill.py": {
+      "sha256": "bcd6b802c400a9e89319844c6c3d965855c8b0555e982eb72cd4accb7ee67e3e"
+    },
+    "skills/video-skill-creator/scripts/package_skill.py": {
+      "sha256": "a2d5b4502b5ec64ce4795c017e9106fa5467c300d8a67896e3a8dfe079513a1a"
+    },
+    "skills/video-skill-creator/scripts/quick_validate.py": {
+      "sha256": "3e3cdceba2daa893e260551c8c5f09937f94be1153307185c7fc7c24c0896750"
+    },
+    "skills/video-skill-creator/scripts/test_package_skill.py": {
+      "sha256": "6b261a50fe632846e59e96b1c3e1f6787ffd534f7204d14bd7df8784873ac691"
+    },
+    "skills/video-skill-creator/scripts/test_quick_validate.py": {
+      "sha256": "2be00c164cb61020637d0364dc8387a8085522b6bfff7606f734a5274046be44"
+    },
+    "skills/vision-understanding/SKILL.md": {
+      "sha256": "942fc42c4d5df8726e60aa4e6bbc4591359d91c622438f6bc1df3c1e8090982d"
+    },
+    "skills/vision-understanding/scripts/vision_understanding.py": {
+      "sha256": "3d8a0b94eab2a0e4c55e6c44029a0789f96f43c866aef57bb3d9b85dcd69ff04"
+    }
+  }
+}

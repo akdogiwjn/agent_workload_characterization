@@ -1,0 +1,8 @@
+FROM openstoryline-task:arm64-asr-adapted-v2
+RUN /opt/openstoryline-venv/bin/python -m pip install --no-cache-dir \
+        -i https://pypi.tuna.tsinghua.edu.cn/simple \
+        "langgraph==1.1.5" "langgraph-checkpoint<5.0.0,>=2.1.0" \
+    && /opt/openstoryline-venv/bin/python -c \
+        "from langgraph.prebuilt import create_react_agent; print('langgraph prebuilt OK')" \
+    && /opt/openstoryline-venv/bin/python -c \
+        "import sys; sys.path.insert(0,'/opt/openstoryline/src'); sys.path.insert(0,'/opt/openstoryline'); import open_storyline.agent; print('open_storyline.agent imports OK')"

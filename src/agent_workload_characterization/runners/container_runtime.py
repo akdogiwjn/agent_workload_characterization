@@ -41,6 +41,7 @@ class ContainerSpec:
     cpu_limit: str | None = None     # e.g. "4"
     network: str = "none"            # default offline; any change needs gate C
     platform: str | None = None      # e.g. "linux/amd64" for emulated runs
+    mounts: list[str] = field(default_factory=list)  # Docker --mount specifications
     pull: str | None = None          # "never" -> --pull=never (forbid
                                      # any implicit image pull)
     storage_size: str | None = None  # e.g. "6g" writable-layer quota via
@@ -303,6 +304,10 @@ class DockerCliRuntime(ContainerRuntime):
             argv += ["--cpus", spec.cpu_limit]
         if spec.pull:
             argv += ["--pull", spec.pull]
+        for mount in spec.mounts:
+            if not mount or "\x00" in mount:
+                raise ValueError("container mount specifications must be non-empty strings")
+            argv += ["--mount", mount]
         if spec.storage_size:
             argv += ["--storage-opt", f"size={spec.storage_size}"]
         for key, value in sorted(spec.env.items()):

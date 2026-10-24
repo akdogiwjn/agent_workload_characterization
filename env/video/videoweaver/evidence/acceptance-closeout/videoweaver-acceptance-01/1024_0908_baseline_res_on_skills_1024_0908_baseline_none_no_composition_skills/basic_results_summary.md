@@ -1,0 +1,57 @@
+<table>
+  <thead>
+    <tr>
+      <th>数据集</th>
+      <th>duration</th>
+      <th>Relative Generation Time (RGT)</th>
+      <th>Vision Content Relative Generation Time</th>
+      <th>tool_call</th>
+      <th>video_gen_tokens</th>
+      <th>image_gen_tokens</th>
+      <th>backbone_total_tokens</th>
+      <th>cache_hit_rate</th>
+      <th>backbone_input_tokens</th>
+      <th>backbone_output_tokens</th>
+      <th>backbone_cacheRead_tokens</th>
+      <th>rgt_case_count</th>
+      <th>vision_content_rgt_case_count</th>
+      <th>case_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>photographer</td>
+      <td>28.66</td>
+      <td>0.72</td>
+      <td>0.42</td>
+      <td>17.00</td>
+      <td>0.00M</td>
+      <td>0.51K</td>
+      <td>0.02M</td>
+      <td>0.00</td>
+      <td>21.60K</td>
+      <td>3.24K</td>
+      <td>0.00M</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>All</td>
+      <td>28.66</td>
+      <td>0.72</td>
+      <td>0.42</td>
+      <td>17.00</td>
+      <td>0.00M</td>
+      <td>0.51K</td>
+      <td>0.02M</td>
+      <td>0.00</td>
+      <td>21.60K</td>
+      <td>3.24K</td>
+      <td>0.00M</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>

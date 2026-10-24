@@ -1,0 +1,18 @@
+# VIDEO-WEAVER production CODEX_HOME config (offline and live).
+# Codex connects to the LOCAL controlled forwarding gateway (127.0.0.1:8899);
+# the gateway holds the real upstream credential and enforces the pre-send
+# ledger. No default provider fallback. Retries disabled (verified values).
+model = "qwen3.7-plus"
+model_provider = "bailian"
+
+[shell_environment_policy]
+inherit = "all"
+set = { OUTPUT_DIR = "/opt/videoweaver/generate_materials" }
+
+[model_providers.bailian]
+name = "Bailian (DashScope compatible-mode via local gateway)"
+base_url = "http://127.0.0.1:8899/compatible-mode/v1"
+env_key = "VW_TASK_TOKEN"
+wire_api = "responses"
+request_max_retries = 0
+stream_max_retries = 0

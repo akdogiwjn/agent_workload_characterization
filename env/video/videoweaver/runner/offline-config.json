@@ -1,0 +1,8 @@
+{
+  "task_id": "VIDEO-WEAVER-OFFLINE-FULLCHAIN",
+  "exp_id": "videoweaver-offline-fullchain",
+  "work_seconds": 600,
+  "cpuset_cpus": "0-7",
+  "pids_limit": 4096,
+  "budget": {"max_llm_calls": 40, "max_image_creates": 20, "max_video_creates": 20, "max_video_polls": 400, "max_media_downloads": 40, "deadline_seconds": 600, "observed_output_tokens_soft": 500000}
+}

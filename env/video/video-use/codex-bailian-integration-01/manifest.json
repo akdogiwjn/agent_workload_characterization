@@ -1,0 +1,60 @@
+{
+ "schema": "codex-bailian-integration-01-manifest-v1",
+ "note": "manifest does not hash itself; build/ holds the official CLI tarball (identity in image-manifest.json)",
+ "top_level": {
+  "Dockerfile": {
+   "sha256": "939aff0d5b64f2b4636b4e8e8ce5f9f6bd96181c638ca82a94a947f548172f24",
+   "bytes": 1003
+  },
+  "config.toml": {
+   "sha256": "e45337f09268ccda9816544b3a0c4fc65095eae2b42a7ef525e512ebdf626128",
+   "bytes": 689
+  },
+  "expected-answer.json": {
+   "sha256": "1e3c979fa467d0a9a49e0836dd5b03cd7cc20acd1c6ad4cc9df8287b7762c866",
+   "bytes": 299
+  },
+  "image-manifest.json": {
+   "sha256": "e38f8fd513e7ee3e991ff20ff0d0bf34a5ad36e21e41f449107df600f23a9c52",
+   "bytes": 2054
+  },
+  "runner.py": {
+   "sha256": "7a54e7cdc174102395917015818edbab26b964159435f7d078d411acfac439d4",
+   "bytes": 22102
+  },
+  "summary.md": {
+   "sha256": "87814c87dee710effd62d0fa9eb372c36d032dfeb409aa43c75383ce89373ab6",
+   "bytes": 3216
+  },
+  "test_runner_offline.py": {
+   "sha256": "823e57ba83b68f835f835aec377347120e7b18509c2d2ab1719a2bd73843d795",
+   "bytes": 10904
+  },
+  "verification.json": {
+   "sha256": "fc44171eb884002c9a5264b9e8ff7b0046ccf9dc837eafd1fd7c231f72525034",
+   "bytes": 65271
+  }
+ },
+ "session_artifacts": {
+  "session-01/final_message.txt": {
+   "sha256": "e37e97c6434927d996f1cb4dc8693f46fcca82b04a9b24e956ba6a6ce67a794f",
+   "bytes": 149
+  },
+  "session-01/input/neutral-test.png": {
+   "sha256": "c052db7e473c448a2023724eb9c34a509f38c700c7a80729ecf1f8f7e54003c8",
+   "bytes": 1931
+  },
+  "session-01/output/receipt.json": {
+   "sha256": "d03ed19e822794fc228a72952c12b2ba1b35be7c78f1d7d1ea92600f0a5e9809",
+   "bytes": 90
+  },
+  "session-01/probe_input.py": {
+   "sha256": "b98fb394ab091a00757c4a2693924d09e067261be5264bf5ca1abef5b2142b42",
+   "bytes": 280
+  },
+  "session-01/rollouts/2026/10/21/rollout-2026-10-21T06-57-30-01a15d40-318d-7811-8a9e-c98ddb25f6b7.jsonl": {
+   "sha256": "8e75d2fd03764791834005cf0b2e196795067765b12f3d9dd24518fa8ca428af",
+   "bytes": 48867
+  }
+ }
+}

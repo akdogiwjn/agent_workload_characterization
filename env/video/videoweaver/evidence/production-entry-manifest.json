@@ -1,0 +1,20 @@
+{
+  "schema": "videoweaver-run2-production-entry-manifest-v1",
+  "date": "2026-10-24",
+  "image": {
+    "tag": "videoweaver-task-bailian:arm64-v1",
+    "image_id": "sha256:60cf9b9fe2317a7b92cdba48f70cb74c77321642ddb75e3c64ccbb84e92062d8",
+    "note": "image unchanged this round; gateway/fake/config are host-mounted so test image == production image"
+  },
+  "entry_files": {
+    "env/video/videoweaver/runner/host_runner.py": "26cd35df89041f46382b87dd5d21da55b18892b8acf1ca89511abb6bd2c56234",
+    "env/video/videoweaver/gateway/gateway.py": "e2468654990cecc9e1039d666ef73e88f8be97c0240e65ad7f4b7f719e70c0ad",
+    "env/video/videoweaver/fake/fake_responses.py": "a09471bc5d5f0cee113bd0587ab414073ace4682868cc8bf8f1fd318ba9eb330",
+    "env/video/videoweaver/runner/production-codex-config.toml": "95ff91fab73c4aad605c858e47816e56dabedbe757505e4b652990350ece976e"
+  },
+  "run_command_offline": "python3 -B env/video/videoweaver/runner/host_runner.py --mode offline --config env/video/videoweaver/runner/offline-config.json --out <unique-new-dir>",
+  "run_command_live_next": "(separate authorization) BAILIAN_WORKSPACE_ID=<ws> VW_UPSTREAM_API_KEY=<injected> python3 -B env/video/videoweaver/runner/host_runner.py --mode live --config env/video/videoweaver/runner/live-config.json --out <unique-new-dir>",
+  "ledger": "pre-send persistent ledger at <run>/ledger/ledger.json; counters llm_calls/image_creates/video_creates/video_polls/media_downloads; usage soft-threshold only; exhausted/deadline sets explicit status",
+  "budget_enforcement": "pre-send atomic charge in gateway; Codex/skills use local VW_TASK_TOKEN; upstream credential only in gateway; zero sends on budget0/write-failure/deadline",
+  "dir_protection": "unique new run root, exclusive create, refuse existing, guards against repo/data/home roots"
+}

@@ -1,0 +1,71 @@
+{
+  "schema": "video-use-edit-pilot-02-environment-plan-v1",
+  "task": {
+    "upstream_commit": "b2764ed4b2a4b5a1737026b63887b50bba62f793",
+    "instruction": "original task instruction; hash is in frozen identity",
+    "input_path": "data/workloads/video/editing/avb-disfluency-interview-3-v1/input/source.mp4"
+  },
+  "single_attempt": true,
+  "architecture": "linux/arm64",
+  "cpus": 2,
+  "memory_bytes": 4294967296,
+  "network": "bridge (shared; not API-specific)",
+  "sample_interval_s": 0.5,
+  "budgets_s": {
+    "total": 2700,
+    "agent_max": 1800,
+    "verifier_max": 600,
+    "cleanup_reserve": 300
+  },
+  "sampling_config": {
+    "interval_s": 0.5,
+    "container_scope": "agent container cgroup and its child processes",
+    "counters": [
+      "cumulative CPU and interval average cores",
+      "memory.current and kernel memory peak separately",
+      "cgroup disk I/O cumulative bytes and valid interval rates",
+      "per-interface bytes in the container network namespace"
+    ],
+    "network_scope": "shared bridge namespace; not API-specific",
+    "directory_boundaries": [
+      "mounted input",
+      "agent workspace",
+      "output"
+    ]
+  },
+  "python_wiring": {
+    "ordinary_shell": "Docker ENV PATH begins with /opt/video-use-venv/bin",
+    "login_shell": "/etc/profile restores venv PATH after its system PATH reset",
+    "codex_tools": "DockerCliRuntime executes bash -lc; login-shell equivalence validated offline"
+  },
+  "model_route": {
+    "provider": "bailian",
+    "model": "qwen3.7-plus",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "wire_api": "responses",
+    "api_key_env": "DASHSCOPE_API_KEY",
+    "request_max_retries": 0,
+    "stream_max_retries": 0
+  },
+  "asr": {
+    "helper": "official transcribe.py",
+    "model": "scribe_v1",
+    "max_client_posts": 1,
+    "retries": 0,
+    "cache": "transcripts/source.json; absent before call"
+  },
+  "image": {
+    "inspect": "sha256:faf015927f9a71c820c82abc11d1a996037d7d684e6e149f2787908ad422c20f arm64 linux",
+    "codex_version": "codex-cli 0.163.0"
+  },
+  "skill_commit": "43cfc566833548093455c9d4a46bd69913b7e552",
+  "approval": "current user instruction authorizes exactly one attempt after this timer-only fix",
+  "timer_start_fix": {
+    "entry": "scripts/video_use_edit_pilot_02.py",
+    "start": "time.monotonic_ns() immediately before shared runner.main()",
+    "prepared_at_monotonic_ns": "record-only; never loaded into the runtime budget clock",
+    "test": "tests/test_video_use_edit_pilot_02.py; stale/invalid saved clock cases"
+  },
+  "frozen_identity_sha256": "e1c71956167ba4d20d16021d4005a24a639d3ac44938978189a1bbc3d6d702f3",
+  "approval_record": "env/video/video-use/VIDEO-USE-EDIT-PILOT-02/APPROVAL.json"
+}

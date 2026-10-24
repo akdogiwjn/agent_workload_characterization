@@ -1,0 +1,39 @@
+{
+  "schema": "videoweaver-generation-pilot-01-identity-v1",
+  "run_id": "videoweaver-generation-pilot-01-20261024T104827Z-944af65d",
+  "task": "VIDEOWEAVER-GENERATION-PILOT-01",
+  "prior_preflight_fixes": [
+    "run-58dc50b4: gateway upstream path double-prefix -> HTTP 404 before any model acceptance; fixed (upstream roots)",
+    "run-ce40d6e0: credential value carried quotes -> dashscope 401 InvalidApiKey (auth rejected, not billed); fixed quote-stripping in read_credentials"
+  ],
+  "case": {
+    "task": "photographer_urban_timelapses",
+    "case_id": "case-photographer-urban-01",
+    "task_txt_sha256": "6dc4a37b75503464b02512b10b8e9f642aa3a406aba720ebad69d187a9895c77"
+  },
+  "image": {
+    "tag": "videoweaver-task-bailian:arm64-v1",
+    "image_id": "sha256:60cf9b9fe2317a7b92cdba48f70cb74c77321642ddb75e3c64ccbb84e92062d8"
+  },
+  "entry_files": {
+    "host_runner.py": "ed3ab6e261a44d1aaf78fc931d19caeab4bccbf3d416e9f8223f43a7081d8f14",
+    "gateway.py": "1e7a43dad997f8693479624940f387c4883bb7cf97cd1e98f279bd62acd5ceeb",
+    "production-codex-config.toml": "95ff91fab73c4aad605c858e47816e56dabedbe757505e4b652990350ece976e",
+    "live-config.json": "742e0e6fb2ec9bf67a7d89d651b8ae555254d9b595b371ef557f7b421544c819"
+  },
+  "mode": "live",
+  "authorized_budget": {
+    "max_llm_calls": 80,
+    "max_image_creates": 16,
+    "max_video_creates": 8,
+    "max_video_polls": 960,
+    "max_video_polls_per_task": 120,
+    "max_media_downloads": 48,
+    "deadline_seconds": 5400,
+    "observed_output_tokens_soft": 500000
+  },
+  "retry": 0,
+  "created_utc": "2026-10-24T10:48:27+00:00",
+  "execution_authorization": "one formal attempt, retry=0, within limits; not a provider hard cap",
+  "credential_handling": "runtime-only injection into gateway process env; never echoed/persisted/hashed/archived"
+}

@@ -1,0 +1,8 @@
+# Preserve registered source/patch/evidence bytes; do not reformat frozen files.
+env/video/** -whitespace
+*.patch -whitespace
+# CSV reports retain the line endings recorded by their manifests.
+*.csv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# These versioned entry scripts also serve as historical execution inputs.
+scripts/video_use_edit_pilot_01.py -whitespace
+scripts/video_use_edit_pilot_03_boundary_review.py -whitespace

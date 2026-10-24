@@ -1,0 +1,68 @@
+{
+  "schema": "video-use-edit-pilot-01-frozen-identity-v1",
+  "run_id": "20261021T0822Z-video-use-edit-01",
+  "task_commit": "b2764ed4b2a4b5a1737026b63887b50bba62f793",
+  "input": {
+    "bytes": 2017306,
+    "sha256": "a9bce74a50b5380d7c1aa1d9980f1d159e8633fbff00986504a363a3d18525bb"
+  },
+  "files": {
+    "scripts/video_use_edit_pilot_01.py": {
+      "bytes": 40775,
+      "sha256": "3f89f569390f35d163a9f5ae9c257f1083247923bbebf264ee4bccc70561591b"
+    },
+    "tests/test_video_use_edit_pilot_01.py": {
+      "bytes": 7713,
+      "sha256": "2b18afd6e1daea2d0c93a60dbceeebe3a0d9ed4cf59a909c35c059a46b9dd3af"
+    },
+    "env/video/video-use/codex-bailian-integration-01/config.toml": {
+      "bytes": 689,
+      "sha256": "e45337f09268ccda9816544b3a0c4fc65095eae2b42a7ef525e512ebdf626128"
+    },
+    "env/video/video-use/source/helpers/transcribe.py": {
+      "bytes": 8027,
+      "sha256": "5b61a5f92db9baf6e7f7f3ee88d0afaed8485e5f7b537a38e90f87ce8c76e58a"
+    },
+    "env/video/video-use/source-manifest.json": {
+      "bytes": 5868,
+      "sha256": "03d92a87903c1c0fb827832b7d469bb9a150f8ed7d2d2ec8f174f231c5421c12"
+    },
+    "references/repos/agentic-vbench/tasks/agentic_vbench_repair/exp-disfluency-interview-3-task01/steps/solve/instruction.md": {
+      "bytes": 1100,
+      "sha256": "89342bbad96c3d7e897545dd76ef1db2576398058d8a5b4b2d24aef1887df3cb"
+    },
+    "data/workloads/video/editing/avb-disfluency-interview-3-v1/input/source.mp4": {
+      "bytes": 2017306,
+      "sha256": "a9bce74a50b5380d7c1aa1d9980f1d159e8633fbff00986504a363a3d18525bb"
+    }
+  },
+  "image": {
+    "inspect": "sha256:a46db2143d8aa69a299b419152c6ca036e09f619d3f771aeace64e08ed729402 arm64 linux",
+    "codex_version": "codex-cli 0.163.0"
+  },
+  "model_route": {
+    "provider": "bailian",
+    "model": "qwen3.7-plus",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "wire_api": "responses",
+    "api_key_env": "DASHSCOPE_API_KEY",
+    "request_max_retries": 0,
+    "stream_max_retries": 0
+  },
+  "transcription": {
+    "helper": "official transcribe.py",
+    "model": "scribe_v1",
+    "max_client_posts": 1,
+    "cache": "transcripts/source.json; absent before call"
+  },
+  "limits_s": {
+    "total": 2700,
+    "agent_max": 1800,
+    "verifier_max": 600,
+    "cleanup_reserve": 300
+  },
+  "sampling_interval_s": 0.5,
+  "prepared_at_monotonic_ns": 1496858284557188,
+  "prepared_at_utc": "2026-10-21T08:27:27Z",
+  "approval": "user instruction explicitly authorizes one attempt and one independent verifier"
+}

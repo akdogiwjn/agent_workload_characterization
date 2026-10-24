@@ -1,0 +1,31 @@
+{
+ "schema": "bailian-vision-smoke-01-manifest-v1",
+ "task": "BAILIAN-VISION-SMOKE-01",
+ "note": "manifest does not hash itself; image and expected answer persisted before the single send; SSE terminal state and usage retained in full (no truncation)",
+ "files": {
+  "expected-answer.json": {
+   "sha256": "4358e1486dd1d461103045506a8a87b4a73af06c4493b3be3f7d6b0ff12396b9",
+   "bytes": 852
+  },
+  "neutral-test.png": {
+   "sha256": "d73293ba7f30e15d825f4037ed2a7106521d2a6e0fdab713437d6b1889abb166",
+   "bytes": 1925
+  },
+  "probe.py": {
+   "sha256": "f88396dfff55bf0cb57a677d06c6cc7346b9607bae9b74c9a2a949637c8a700d",
+   "bytes": 18821
+  },
+  "summary.md": {
+   "sha256": "737999d4566042b5432808e5ff33e1a1b269535ac55790443445a646db9a84c4",
+   "bytes": 2906
+  },
+  "test_probe_offline.py": {
+   "sha256": "8fa60767682c2c6e0f362a66461dadd1f361056a9c7f747d3b7216e757b3f876",
+   "bytes": 13687
+  },
+  "verification.json": {
+   "sha256": "72501a67c93c452d375b6fee504822dd1aa7c416cc6a89a678d8252d875360cd",
+   "bytes": 35099
+  }
+ }
+}

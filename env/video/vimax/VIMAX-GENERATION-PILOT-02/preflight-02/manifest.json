@@ -1,0 +1,42 @@
+{
+  "task": "VIMAX-GENERATION-PILOT-02",
+  "files": [
+    {
+      "path": "preflight-report.json",
+      "bytes": 6570,
+      "sha256": "37a55c4288a5c308184efeed649c701c47cea2645073a86050e1de759b1fc757"
+    },
+    {
+      "path": "summary.md",
+      "bytes": 827,
+      "sha256": "190dd8595069ebc8cb929a6e2686cce0dcb5f51dcf33bb239a3134e07ed86094"
+    },
+    {
+      "path": "snapshots-before/current_task.md",
+      "bytes": 38880,
+      "sha256": "4c9a9ea69830697cdba7bd68f485a0f2e2e69e60e1886e06244761eb5f3a40b0"
+    },
+    {
+      "path": "snapshots-before/generation_entry-as-run.py",
+      "bytes": 17413,
+      "sha256": "0d5816eb0064333ae88f61255cbb64b010b3565fe88ef4be0c9dffa829955a66"
+    },
+    {
+      "path": "snapshots-before/host_runner-as-run.py",
+      "bytes": 27874,
+      "sha256": "f61b4917f5c6f6bf5554754d3709ae81afce9c480f92fbe799a9ab7317799c46"
+    },
+    {
+      "path": "snapshots-before/project_state.json",
+      "bytes": 371028,
+      "sha256": "1b8fec064428a64d2100cd5e582cc1fc0be9ca701701348b3319a0e6ba4ff19a"
+    },
+    {
+      "path": "snapshots-before/vimax_execution_preparation.md",
+      "bytes": 36060,
+      "sha256": "45bbdf29e2b8f88ac36da320b5a5958f1e730b2b2ed0f2d6951596276761ff28"
+    }
+  ],
+  "self_hash": "omitted",
+  "scope": "preflight-02 report, summary and input snapshots; manifest omits itself"
+}

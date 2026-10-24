@@ -1,0 +1,6 @@
+FROM openstoryline-task:arm64-asr-adapted-v4
+COPY source/ /opt/openstoryline/
+RUN grep -q 'artifact_id = params.get' /opt/openstoryline/src/open_storyline/mcp/register_tools.py \
+    && test -f /opt/openstoryline/src/open_storyline/mcp/request_ledger.py \
+    && grep -q 'RequestRecorder' /opt/openstoryline/src/open_storyline/agent.py \
+    && bash -lc 'python3 -m compileall -q /opt/openstoryline'

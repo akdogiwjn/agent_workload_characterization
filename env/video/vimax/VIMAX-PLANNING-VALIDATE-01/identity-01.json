@@ -1,0 +1,109 @@
+{
+  "task_namespace": "VIMAX-PLANNING-VALIDATE-01",
+  "run_id": "vimax-planning-validate-01-20261023T165522Z-49dbcb23",
+  "attempt": 1,
+  "retry": 0,
+  "created_utc": "2026-10-23T16:55:22+00:00",
+  "status": "frozen_before_first_real_request",
+  "image": {
+    "id": "sha256:f079f9479f8587207e1d3167c8ad8d759f81a2b25ad79a6a23f03514ee5c0533",
+    "platform": "linux/arm64"
+  },
+  "image_dependency_identity": "dependency set bound by full image digest; no package changes",
+  "adapter_source_file_count": 88,
+  "adapter_source_tree_sha256": "fe36e27256d2bc2714ce19cc744e3d8bac494ad9723d0d7f81dfe81167b2d6c0",
+  "execution_code_sha256": {
+    "host_runner.py": "397b075e9044e3e551c9f4d8f72a4d84def55e44ed9e80c474cf638ecd644b3a",
+    "planning_entry.py": "28544edeb5700665fffe868357e809961a25a38cf8d945f360e1e92478298f52",
+    "plan_verifier.py": "e8b7300bb456f89dbdc62b1c6614465e11de6b6653059b9c03b2a2a75c53bb4b"
+  },
+  "task_source": {
+    "path": "references/repos/ViMax/vimax_benchmark/photographer_urban_timelapses_typeA.json",
+    "sha256": "aaf6545c1ef8a4a3ffef4e690b5f304fc67062dae42bbaf433a47d09da49719e",
+    "registered_script_sha256": "447e4d88ccd76f9cb4a206f799993620a3c832238dd873c9ae9e905c2452b59a",
+    "prompt_sha256": "7d17499c0a86b7a48636576e506184067be6b1bdd7ec1ecf6378da4e1e451792",
+    "shot_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "session": {
+    "name": "planning-validation-01",
+    "fresh": true,
+    "mode": "script"
+  },
+  "route": {
+    "region": "cn-beijing",
+    "model": "qwen3.7-plus",
+    "protocol": "OpenAI-compatible Chat Completions",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "credential_source": "/home/lcq/.config/agent-workload-characterization/bailian.env",
+    "credential_variable": "DASHSCOPE_API_KEY",
+    "credential_values_persisted": false
+  },
+  "budget": {
+    "logical_request_cap": 40,
+    "request_attempt_cap": 40,
+    "single_request_output_tokens": 8192,
+    "narrative_node_output_tokens": 4096,
+    "observed_total_tokens_soft_threshold": 250000,
+    "shared_work_deadline_s": 1800.0,
+    "closeout_reserve_s": 120.0,
+    "image_generations": 0,
+    "video_creates": 0,
+    "sdk_retries": 0
+  },
+  "tools": {
+    "allowed": [
+      "glob_files",
+      "list_files",
+      "memory_read",
+      "read_file",
+      "read_json",
+      "search_text",
+      "todo_read",
+      "vimax_narrative_planning"
+    ],
+    "blocked": [
+      "run_shell",
+      "write_json",
+      "vimax_render_video",
+      "vimax_novel_planning",
+      "view_image",
+      "memory_write",
+      "todo_write",
+      "sleep"
+    ],
+    "media_generations": 0
+  },
+  "resources": {
+    "container_cpu_limit": 8,
+    "memory_limit_bytes": 8589934592,
+    "cgroup_interval_target_s": 0.5,
+    "netns_interval_target_s": 2.0,
+    "network_mode": "bridge",
+    "network_scope": "container network namespace interfaces"
+  },
+  "lifecycle": {
+    "work_deadline_s": 1800,
+    "closeout_reserve_s": 120,
+    "attempts": 1,
+    "retry": 0,
+    "cleanup": "stop/kill, capture final cgroup boundary, remove and inspect absence"
+  },
+  "preflight": {
+    "record": "execution-01/preflight.json",
+    "passed": true,
+    "image_source_hashes_match": true,
+    "planning_entry_self_check": true,
+    "parent_kill_removal_check": true,
+    "credential_values_read": false,
+    "model_requests": 0
+  }
+}

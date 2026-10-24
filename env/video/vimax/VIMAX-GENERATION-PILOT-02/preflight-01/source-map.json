@@ -1,0 +1,129 @@
+{
+  "schema": "vimax-generation-pilot-02-planning-source-map-v1",
+  "purpose": "Preflight-only staged inputs; no generation attempt was started.",
+  "source_run_id": "vimax-planning-validate-03-20261024T014216Z-3d8d561a",
+  "source_identity_sha256": "7d1f3ce8d4ad081b56e4031f93a21d93f894eef1cc759ae0ab0339eda14e26a2",
+  "source_manifest": "env/video/vimax/VIMAX-PLANNING-VALIDATE-03/manifest.json",
+  "files": [
+    {
+      "source": "env/video/vimax/VIMAX-PLANNING-VALIDATE-03/execution-01/workspace/registered-script.txt",
+      "source_manifest_bytes": 8105,
+      "source_manifest_sha256": "447e4d88ccd76f9cb4a206f799993620a3c832238dd873c9ae9e905c2452b59a",
+      "staged": "env/video/vimax/VIMAX-GENERATION-PILOT-02/preflight-01/staged-planning/registered-script.txt",
+      "staged_bytes": 8105,
+      "staged_sha256": "447e4d88ccd76f9cb4a206f799993620a3c832238dd873c9ae9e905c2452b59a"
+    },
+    {
+      "source": "env/video/vimax/VIMAX-PLANNING-VALIDATE-03/execution-01/workspace/.vimax/sessions.json",
+      "source_manifest_bytes": 10634,
+      "source_manifest_sha256": "0cfd0330c4ce2fb87e6fbd202a18bb471b559b39e57ed94bd7eec1e2c99fce11",
+      "staged": "env/video/vimax/VIMAX-GENERATION-PILOT-02/preflight-01/staged-planning/.vimax/sessions.json",
+      "staged_bytes": 10634,
+      "staged_sha256": "0cfd0330c4ce2fb87e6fbd202a18bb471b559b39e57ed94bd7eec1e2c99fce11"
+    },
+    {
+      "source": "env/video/vimax/VIMAX-PLANNING-VALIDATE-03/execution-01/workspace/attempt/session-initialized.json",
+      "source_manifest_bytes": 382,
+      "source_manifest_sha256": "499fd60a5e0b6dbbfd293bbca8e806b7c42753c1e377315be3e4f3c4251ceaab",
+      "staged": "env/video/vimax/VIMAX-GENERATION-PILOT-02/preflight-01/staged-planning/attempt/session-initialized.json",
+      "staged_bytes": 382,
+      "staged_sha256": "499fd60a5e0b6dbbfd293bbca8e806b7c42753c1e377315be3e4f3c4251ceaab"
+    },
+    {
+      "source": "env/video/vimax/VIMAX-PLANNING-VALIDATE-03/execution-01/workspace/.working_dir/planning-validation-03/script2video/script.txt",
+      "source_manifest_bytes": 8105,
+      "source_manifest_sha256": "447e4d88ccd76f9cb4a206f799993620a3c832238dd873c9ae9e905c2452b59a",
+      "staged": "env/video/vimax/VIMAX-GENERATION-PILOT-02/preflight-01/staged-planning/.working_dir/planning-validation-03/script2video/script.txt",
+      "staged_bytes": 8105,
+      "staged_sha256": "447e4d88ccd76f9cb4a206f799993620a3c832238dd873c9ae9e905c2452b59a"
+    },
+    {
+      "source": "env/video/vimax/VIMAX-PLANNING-VALIDATE-03/execution-01/workspace/.working_dir/planning-validation-03/script2video/characters.json",
+      "source_manifest_bytes": 716,
+      "source_manifest_sha256": "83dd8b6e03367dacfb1034721633a0569d802800d26758ed364b0fc00dfb796e",
+      "staged": "env/video/vimax/VIMAX-GENERATION-PILOT-02/preflight-01/staged-planning/.working_dir/planning-validation-03/script2video/characters.json",
+      "staged_bytes": 716,
+      "staged_sha256": "83dd8b6e03367dacfb1034721633a0569d802800d26758ed364b0fc00dfb796e"
+    },
+    {
+      "source": "env/video/vimax/VIMAX-PLANNING-VALIDATE-03/execution-01/workspace/.working_dir/planning-validation-03/script2video/storyboard.json",
+      "source_manifest_bytes": 6318,
+      "source_manifest_sha256": "77d4c9745fe4e67b259812ee7700defa506e9d197cbebd159302002d4c1c5e3d",
+      "staged": "env/video/vimax/VIMAX-GENERATION-PILOT-02/preflight-01/staged-planning/.working_dir/planning-validation-03/script2video/storyboard.json",
+      "staged_bytes": 6318,
+      "staged_sha256": "77d4c9745fe4e67b259812ee7700defa506e9d197cbebd159302002d4c1c5e3d"
+    },
+    {
+      "source": "env/video/vimax/VIMAX-PLANNING-VALIDATE-03/execution-01/workspace/.working_dir/planning-validation-03/script2video/camera_tree.json",
+      "source_manifest_bytes": 4347,
+      "source_manifest_sha256": "4ca1b5142dab55281bad08bbde11f558e8b040006119586271314161025d559a",
+      "staged": "env/video/vimax/VIMAX-GENERATION-PILOT-02/preflight-01/staged-planning/.working_dir/planning-validation-03/script2video/camera_tree.json",
+      "staged_bytes": 4347,
+      "staged_sha256": "4ca1b5142dab55281bad08bbde11f558e8b040006119586271314161025d559a"
+    },
+    {
+      "source": "env/video/vimax/VIMAX-PLANNING-VALIDATE-03/execution-01/workspace/.working_dir/planning-validation-03/script2video/shots/0/shot_description.json",
+      "source_manifest_bytes": 2564,
+      "source_manifest_sha256": "fe800dee2e03c6f7ae7fac7c42dee3d663bef5b894817937902f7dc5cc910a6f",
+      "staged": "env/video/vimax/VIMAX-GENERATION-PILOT-02/preflight-01/staged-planning/.working_dir/planning-validation-03/script2video/shots/0/shot_description.json",
+      "staged_bytes": 2564,
+      "staged_sha256": "fe800dee2e03c6f7ae7fac7c42dee3d663bef5b894817937902f7dc5cc910a6f"
+    },
+    {
+      "source": "env/video/vimax/VIMAX-PLANNING-VALIDATE-03/execution-01/workspace/.working_dir/planning-validation-03/script2video/shots/1/shot_description.json",
+      "source_manifest_bytes": 2349,
+      "source_manifest_sha256": "1b72ffa7e5106f01d686799b2a42f3a2879d70cea37820000aef54e5ca1c0042",
+      "staged": "env/video/vimax/VIMAX-GENERATION-PILOT-02/preflight-01/staged-planning/.working_dir/planning-validation-03/script2video/shots/1/shot_description.json",
+      "staged_bytes": 2349,
+      "staged_sha256": "1b72ffa7e5106f01d686799b2a42f3a2879d70cea37820000aef54e5ca1c0042"
+    },
+    {
+      "source": "env/video/vimax/VIMAX-PLANNING-VALIDATE-03/execution-01/workspace/.working_dir/planning-validation-03/script2video/shots/2/shot_description.json",
+      "source_manifest_bytes": 2535,
+      "source_manifest_sha256": "d9203d4592bf69fe7f2b7263a4fddbcbc89df4cb85d932f28feda1f281b3502e",
+      "staged": "env/video/vimax/VIMAX-GENERATION-PILOT-02/preflight-01/staged-planning/.working_dir/planning-validation-03/script2video/shots/2/shot_description.json",
+      "staged_bytes": 2535,
+      "staged_sha256": "d9203d4592bf69fe7f2b7263a4fddbcbc89df4cb85d932f28feda1f281b3502e"
+    },
+    {
+      "source": "env/video/vimax/VIMAX-PLANNING-VALIDATE-03/execution-01/workspace/.working_dir/planning-validation-03/script2video/shots/3/shot_description.json",
+      "source_manifest_bytes": 2783,
+      "source_manifest_sha256": "5c0a5b21351e928104a08f6fc0d49ec32d0510ee42341288e9e1f137d7c48277",
+      "staged": "env/video/vimax/VIMAX-GENERATION-PILOT-02/preflight-01/staged-planning/.working_dir/planning-validation-03/script2video/shots/3/shot_description.json",
+      "staged_bytes": 2783,
+      "staged_sha256": "5c0a5b21351e928104a08f6fc0d49ec32d0510ee42341288e9e1f137d7c48277"
+    },
+    {
+      "source": "env/video/vimax/VIMAX-PLANNING-VALIDATE-03/execution-01/workspace/.working_dir/planning-validation-03/script2video/shots/4/shot_description.json",
+      "source_manifest_bytes": 2571,
+      "source_manifest_sha256": "c7fcbed91589448ec14beea2d6f8fea2b46b1cc07c17a305aabf31de52e2ac28",
+      "staged": "env/video/vimax/VIMAX-GENERATION-PILOT-02/preflight-01/staged-planning/.working_dir/planning-validation-03/script2video/shots/4/shot_description.json",
+      "staged_bytes": 2571,
+      "staged_sha256": "c7fcbed91589448ec14beea2d6f8fea2b46b1cc07c17a305aabf31de52e2ac28"
+    },
+    {
+      "source": "env/video/vimax/VIMAX-PLANNING-VALIDATE-03/execution-01/workspace/.working_dir/planning-validation-03/script2video/shots/5/shot_description.json",
+      "source_manifest_bytes": 2281,
+      "source_manifest_sha256": "4edd9cb5e48c4ebdb2243ff5266dac1dd7dc1136615c7fea195271a551675b2a",
+      "staged": "env/video/vimax/VIMAX-GENERATION-PILOT-02/preflight-01/staged-planning/.working_dir/planning-validation-03/script2video/shots/5/shot_description.json",
+      "staged_bytes": 2281,
+      "staged_sha256": "4edd9cb5e48c4ebdb2243ff5266dac1dd7dc1136615c7fea195271a551675b2a"
+    },
+    {
+      "source": "env/video/vimax/VIMAX-PLANNING-VALIDATE-03/execution-01/workspace/.working_dir/planning-validation-03/script2video/shots/6/shot_description.json",
+      "source_manifest_bytes": 2524,
+      "source_manifest_sha256": "1e1480d339c882fcd13f5685a7d9d3af0215c03a46bdd5a487716ec935823307",
+      "staged": "env/video/vimax/VIMAX-GENERATION-PILOT-02/preflight-01/staged-planning/.working_dir/planning-validation-03/script2video/shots/6/shot_description.json",
+      "staged_bytes": 2524,
+      "staged_sha256": "1e1480d339c882fcd13f5685a7d9d3af0215c03a46bdd5a487716ec935823307"
+    },
+    {
+      "source": "env/video/vimax/VIMAX-PLANNING-VALIDATE-03/execution-01/workspace/.working_dir/planning-validation-03/script2video/shots/7/shot_description.json",
+      "source_manifest_bytes": 2648,
+      "source_manifest_sha256": "40d7003b9ee030239b5aff2c8189642afaf315d59d9d0dc6af8e029fa143ea9e",
+      "staged": "env/video/vimax/VIMAX-GENERATION-PILOT-02/preflight-01/staged-planning/.working_dir/planning-validation-03/script2video/shots/7/shot_description.json",
+      "staged_bytes": 2648,
+      "staged_sha256": "40d7003b9ee030239b5aff2c8189642afaf315d59d9d0dc6af8e029fa143ea9e"
+    }
+  ]
+}

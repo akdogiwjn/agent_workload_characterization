@@ -1,0 +1,85 @@
+{
+  "schema": "video-use-edit-pilot-03-environment-plan-v1",
+  "task": {
+    "upstream_commit": "b2764ed4b2a4b5a1737026b63887b50bba62f793",
+    "instruction": "original task instruction; hash is in frozen identity",
+    "input_path": "data/workloads/video/editing/avb-disfluency-interview-3-v1/input/source.mp4"
+  },
+  "single_attempt": true,
+  "architecture": "linux/arm64",
+  "cpus": 2,
+  "memory_bytes": 4294967296,
+  "network": "bridge (shared; not API-specific)",
+  "sample_interval_s": 0.5,
+  "budgets_s": {
+    "total": 2700,
+    "agent_max": 1800,
+    "verifier_max": 600,
+    "cleanup_reserve": 300
+  },
+  "sampling_config": {
+    "interval_s": 0.5,
+    "container_scope": "agent container cgroup and its child processes",
+    "counters": [
+      "cumulative CPU and interval average cores",
+      "memory.current and kernel memory peak separately",
+      "cgroup disk I/O cumulative bytes and valid interval rates",
+      "per-interface bytes in the container network namespace"
+    ],
+    "network_scope": "shared bridge namespace; not API-specific",
+    "directory_boundaries": [
+      "mounted input",
+      "agent workspace",
+      "output"
+    ]
+  },
+  "python_wiring": {
+    "ordinary_shell": "Docker ENV PATH begins with /opt/video-use-venv/bin",
+    "login_shell": "/etc/profile restores venv PATH after its system PATH reset",
+    "codex_tools": "DockerCliRuntime executes bash -lc; login-shell equivalence validated offline"
+  },
+  "model_route": {
+    "provider": "bailian",
+    "model": "qwen3.7-plus",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "wire_api": "responses",
+    "api_key_env": "DASHSCOPE_API_KEY",
+    "request_max_retries": 0,
+    "stream_max_retries": 0
+  },
+  "asr": {
+    "helper": "official transcribe.py",
+    "model": "scribe_v1",
+    "max_client_posts": 1,
+    "retries": 0,
+    "cache": "transcripts/source.json; absent before call"
+  },
+  "image": {
+    "inspect": "sha256:1a48c7b00da789ec99722ebb2be6e1df72aec9d37cc2a64e83c82e89ecf700c5 arm64 linux",
+    "codex_version": "codex-cli 0.163.0"
+  },
+  "skill_commit": "43cfc566833548093455c9d4a46bd69913b7e552",
+  "approval": "separate explicit approval required; no APPROVAL/ATTEMPT/raw created",
+  "render_adaptation": {
+    "overlay": "project-owned derivative copied into /opt/video-use and exposed through the registered skill symlink",
+    "preserve_source_spec": "--preserve-source-spec disables hard-coded scaling and preserves the probed source rate",
+    "no_enhancements": "--no-grade --no-audio-fades --no-loudnorm --no-subtitles",
+    "production_command_contract": "native render.py in the task image; synthetic tests invoke this same file",
+    "timeline_boundary": "timeline_view probes duration/frame rate and clamps sample timestamps to valid frames"
+  },
+  "verifier": {
+    "judge": "unmodified official judge.py; hash-checked before invocation",
+    "python": "/home/lcq/.venvs/video-use-pilot03-verifier/bin/python",
+    "venv_prefix": "/home/lcq/.venvs/video-use-pilot03-verifier",
+    "dependencies": "/home/lcq/agent_workload_characterization/env/video/video-use/VIDEO-USE-EDIT-PILOT-03/verifier/requirements.lock",
+    "ffmpeg": "host ffmpeg/ffprobe; versions frozen in verifier-environment.json",
+    "status_model": "judge process rc, evaluation completeness/status, and task score are separate fields",
+    "oracle_validation": "one isolated official-golden oracle chain check; never exposed to Agent"
+  },
+  "prompt_constraints": {
+    "timestamp_semantics": "transcript timestamps are candidate regions only; Agent determines both cut boundaries",
+    "diagnostics_isolated": true,
+    "prior_scores_or_goldens_mounted": false
+  },
+  "future_approval_command": "python3 scripts/video_use_edit_pilot_03.py --execute --i-approve-video-use-edit-pilot-03"
+}

@@ -1,0 +1,60 @@
+{
+  "task": "BAILIAN-GENERATION-SMOKE-02",
+  "created_local": "2026-10-23",
+  "scope": "route-fixed standalone Bailian generation API smoke; new authorization independent of BAILIAN-GENERATION-SMOKE-01 (which is preserved untouched); not a ViMax Agent run, no image build, no formal 8-shot task",
+  "route_fix_vs_smoke_01": {
+    "image_gen_edit": "POST https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/compatible-mode/v1/images/generations (workspace-specific domain; legacy dashscope.com compatible-mode returned 404 empty for this path in SMOKE-01)",
+    "image_edit_protocol": "same /images/generations endpoint via `image` extension field (base64 data URL, single reference image); /images/edits and multipart are never used",
+    "chat": "POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions (registered, previously verified route; deliberately NOT migrated)",
+    "video": "POST https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis (native path, never appended to compatible-mode) + poll GET .../api/v1/tasks/{task_id}",
+    "workspace_id_source": "BAILIAN_WORKSPACE_ID variable in the registered credential file /home/lcq/.config/agent-workload-characterization/bailian.env; never guessed; if absent execute() blocks before any network action"
+  },
+  "credential": {
+    "env": "DASHSCOPE_API_KEY",
+    "file": "/home/lcq/.config/agent-workload-characterization/bailian.env",
+    "region": "cn-beijing (per registered-route evidence: BAILIAN-VISION-SMOKE-01 Responses and OpenStoryline Chat Completions both succeeded on the Beijing legacy domain with this key)",
+    "type_check": "standard Bailian API key, same registered source used by prior real calls; not a Coding-Plan/Token-Plan exclusive credential",
+    "value_stored": false
+  },
+  "operations_budget": {
+    "image_generation": 1,
+    "image_edit": 1,
+    "chat_vision_tool_call": 1,
+    "video_task_create": 1,
+    "counting_rule": "per actual send including failed sends",
+    "video_polls_max": 40,
+    "poll_interval_target_s": 10,
+    "overall_deadline_s": 1200,
+    "retries": "disabled at every layer (httpx retries=0, no SDK, no loop-level re-send)"
+  },
+  "doc_evidence_2026_10_23": [
+    "help.aliyun.com/zh/model-studio/qwen-image-generation-and-editing-api-reference (fetched this session: OpenAI-compat images/generations on workspace domain; image field I2I with 1-3 refs for qwen-image-3.0; base64 data URL input; size '1024x576' with letter x; response data[].url + usage input/output image tiers)",
+    "help.aliyun.com/zh/model-studio/legacy-image-to-video-api-reference (fetched this session: wan2.6-i2v-flash img_url first frame base64; resolution 720P/1080P default 1080P; duration [2,15] default 5; audio default true, audio=false explicit for silent; prompt_extend default true; X-DashScope-Async: enable; GET /api/v1/tasks/{task_id}; task/video_url valid 24h; input image w/h in [240,8000], <=20MB)"
+  ],
+  "price_estimate_beijing_list_cny": {
+    "A_image_gen": "1 output image @1k tier = 0.18",
+    "B_image_edit": "1 input (0.02) + 1 output (0.18) = 0.20",
+    "C_chat_vision": "~1-2k tokens, input 2/M output 8/M (0-256K tier, list) ~= 0.01",
+    "D_video": "5 s silent 720P @ 0.15/s = 0.75",
+    "total_if_all_run": 1.14,
+    "note": "list prices; 90-day Beijing free quotas (qwen-image-3.0 10 images, wan2.6-i2v-flash 50 s, qwen3.7-plus 1M tokens) may apply, remainder unknown from client; actual cost per billing center only"
+  },
+  "step_plans": {
+    "A": {"model": "qwen-image-3.0", "size": "1024x576", "n": 1,
+          "prompt": "白色背景，左侧一个红色圆形，右侧一个蓝色正方形，无文字，横向布局。",
+          "expected": {"left": "red circle", "right": "blue square",
+                       "background": "white"}},
+    "B": {"model": "qwen-image-3.0", "input": "A downloaded PNG via image field (base64)",
+          "prompt": "保持背景和左右布局，将左侧红色圆形改成绿色，右侧蓝色正方形不变。",
+          "expected": {"left": "green circle", "right": "blue square"}},
+    "C": {"model": "qwen3.7-plus", "input_image": "B downloaded PNG",
+          "tool": "report_shapes(left_color, left_shape, right_color, right_shape)",
+          "tool_choice": "forced function; enable_thinking=false (thinking mode does not support forced tool choice per docs)",
+          "not_retested": "tool result round-trip"},
+    "D": {"model": "wan2.6-i2v-flash", "first_frame": "B downloaded PNG (img_url)",
+          "prompt": "固定机位，左侧绿色圆形缓慢上下移动，右侧蓝色正方形保持静止；背景纯白；全程单镜头，无文字。",
+          "parameters": {"resolution": "720P", "duration": 5, "audio": false,
+                        "prompt_extend": false, "watermark": false}}
+  },
+  "verdict_rules": "same fixed pre-send rules as SMOKE-01 (plan.json there): PASS/FAIL/UNKNOWN per step, NOT_EXECUTED after a necessary-step failure; B separates api_call_ok from content_ok; D separates technical_ok from semantic_motion_ok; C cross-checks B's actual pixels so image-generation deviation is never counted as a vision error"
+}

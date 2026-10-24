@@ -1,0 +1,80 @@
+{
+ "schema": "video-use-env01-env-manifest-v1",
+ "task": "VIDEO-USE-ENV-01",
+ "built_at_local": "2026-10-21",
+ "image": {
+  "tag": "video-use-task:arm64-v1",
+  "image_id": "sha256:d14e6415db40eaecccb6540defc0c686df5dfde47801a1c692f4df5d5b187887",
+  "architecture": "arm64",
+  "os": "linux",
+  "created": "2026-10-21T02:10:34.371143191Z",
+  "size_reported": "1.17GB",
+  "dockerfile": "env/video/video-use/Dockerfile",
+  "base": {
+   "tag": "video-common-base:arm64-v1",
+   "image_id": "sha256:d414b4270fec6ec2dd245982a522099d8941d8cd114ccd5ec2c6730815f3a706",
+   "manifest": "env/video/base/base-image.json"
+  }
+ },
+ "upstream": {
+  "repo": "https://github.com/browser-use/video-use",
+  "commit": "43cfc566833548093455c9d4a46bd69913b7e552",
+  "staged_at": "env/video/video-use/source",
+  "source_manifest": "env/video/video-use/source-manifest.json",
+  "staged_file_count": 36,
+  "staged_bytes": 773993,
+  "excluded": [".git", ".env"],
+  "reference_repo_untouched": true
+ },
+ "python_environment": {
+  "kind": "isolated venv /opt/video-use-venv (not shared with other repos)",
+  "python": "3.12.15",
+  "install_mode": "pinned requirements-frozen.txt resolved via pip --dry-run --report on the base image (2026-10-21, aliyun pypi mirror)",
+  "requirements": "env/video/video-use/requirements-frozen.txt",
+  "package_count": 35,
+  "top_level_declared": {
+   "requests": "2.34.2",
+   "librosa": "1.0.0",
+   "matplotlib": "3.11.2",
+   "pillow": "13.0.0",
+   "numpy": "2.5.4"
+  },
+  "build_time_import_check": "python -c 'import requests, librosa, matplotlib, PIL, numpy' passed in-image"
+ },
+ "media_tools": {
+  "ffmpeg": "7.1.5-0+deb13u1 (from common base)",
+  "ffprobe": "7.1.5-0+deb13u1",
+  "encoders_verified_in_build": ["libx264", "aac"]
+ },
+ "skill_registration": {
+  "install_path": "/opt/video-use",
+  "claude_code_symlink": "/root/.claude/skills/video-use",
+  "codex_symlink": "/root/.codex/skills/video-use"
+ },
+ "outer_agent": {
+  "decision": "Codex CLI (project decision 2026-10-21): video-use 与 VideoWeaver 统一优先 Codex CLI;ViMax/OpenStoryline 使用各自自带 agent",
+  "installed_in_this_image": false,
+  "reason": "无模型轮不装 CLI;真实短任务另行批准时再安装并验证",
+  "launch_shape_future": "容器内 /task 工作目录运行 codex exec;技能经 /root/.codex/skills/video-use 发现;原生轨迹为 ~/.codex/sessions/ 下 rollout JSONL,后续再投影到项目事件格式",
+  "pending_verification": [
+   "容器内 Codex CLI 安装与执行(宿主机/本地 harbor 镜像内已有 CLI 不等于本任务镜像可用)",
+   "模型路由:显式 api_base/model/api_key_env,缺失即拒;不假定火山网关可用,见 model-route.json",
+   "rollout JSONL 与项目事件(请求/工具起止、monotonic 边界)的配对"
+  ]
+ },
+ "not_included": {
+  "credentials_or_env_files": true,
+  "host_global_configs": true,
+  "historical_project_data": true,
+  "animation_engines": "HyperFrames/Remotion/Manim not installed (not needed this round)",
+  "browser_stack": "none",
+  "yt_dlp": "not installed (optional upstream dep)",
+  "real_media": "no footage copied; validation uses runtime-generated synthetic clips"
+ },
+ "not_tested_this_round": [
+  "ElevenLabs Scribe 转写(transcribe.py 需真实 API key,未读取未调用)",
+  "视觉自检链 timeline_view 输出质量(librosa 波形路径与 PNG 合成未运行真实断言)",
+  "Codex CLI 容器内运行与模型路由",
+  "真实素材上的完整 video-use 工作流"
+ ]
+}

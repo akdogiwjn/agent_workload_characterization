@@ -1,0 +1,11 @@
+# Offline code-only repair layer over the locally registered v4 image.
+FROM vimax-task-bailian:arm64-v4
+
+COPY env/video/vimax/adapter-src/ /opt/vimax/src/
+RUN find /opt/vimax/src -name '__pycache__' -type d -prune -exec rm -rf {} + \
+    && cd /opt/vimax/src \
+    && python3 -c "import agent_runtime.vimax_adapters, agent_runtime.loop, agent_runtime.tools, utils.control_exceptions, utils.robust_json_parser"
+
+WORKDIR /workspace
+USER vimax
+CMD ["python3"]

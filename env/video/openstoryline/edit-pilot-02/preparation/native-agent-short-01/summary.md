@@ -1,0 +1,9 @@
+# OpenStoryline native short-task gate — 2026-10-22
+
+**Result: failed; stopped before the formal interview attempt.** This was the one newly authorized real LangChain Agent session, run with the v13 image and an isolated request ledger. It does not count as an official benchmark sample and was not scored.
+
+The 6-second registered synthetic source loaded successfully through the native MCP tool. `split_shots(mode=skip)` returned `clips: []`; native ASR then failed because the expected `split_shots` artifact had no usable clip list. Automatic `split_shots` retries also returned empty clips. A later LocalASR call returned `asr_infos: []`; a same-session `read_node_history` lookup for that returned artifact ID said the artifact was not found. The rough-cut node was called once but failed with a missing `asr` result before its node-model request. PlanTimelinePro and RenderVideo were not reached, and no submission video was produced. The Agent ended with `GraphRecursionError` at recursion limit 32.
+
+The isolated ledger recorded **18 logical requests** (LLM initialization 1, VLM initialization 1, top-level Agent 16), with **85,724 returned usage tokens**. This stayed within the new 20-request and 200,000 observed-token thresholds; per-request output limit was 8,192. Actual HTTP attempts remain unknown. Old preparation accounting remains unchanged at 11/12 requests and 37,503/32,768 observed tokens.
+
+The container was removed and verified absent; MCP child cleanup recorded `pid_alive=false`. No identity, formal APPROVAL, formal ATTEMPT, official judge, or reward was created. Credential material was not archived. See [`short-task-gate-review.json`](short-task-gate-review.json), [`run-report.json`](run-report.json), and [`output/model-requests.jsonl`](output/model-requests.jsonl).

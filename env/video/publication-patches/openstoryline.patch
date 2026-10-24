@@ -1,0 +1,3246 @@
+--- a/config.toml
++++ b/config.toml
+@@ -1,162 +1,111 @@
+-# ============= 开发者选项 / Developer Options ===============
+ [developer]
+-developer_mode = true
+-print_context = false # 在拦截器打印模型拿到的全部上下文，会很长 / Print full context in interceptor (output will be very long)
++developer_mode = false
++print_context = false
+ 
+-# ============= 项目路径 / Project Paths ======================
+ [project]
+-media_dir = "./outputs/media"
+-bgm_dir = "./resource/bgms"
+-outputs_dir = "./outputs"
++media_dir = "/workspace/input"
++bgm_dir = "/workspace/empty-bgm"
++outputs_dir = "/workspace/output"
+ 
+-# ============= 模型配置 for user / Model Config for User =============
+ [llm]
+-model = ""
+-base_url = ""
+-api_key = "" 
+-timeout = 30.0 # 单位：秒
++model = "qwen3.7-plus"
++base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
++api_key = ""
++timeout = 60.0
+ temperature = 0.1
+-max_retries = 2
++max_retries = 0
+ 
+ [vlm]
+-model = ""
+-base_url = ""
+-api_key = "" 
+-timeout = 20.0 # 单位：秒
++model = "qwen3.7-plus"
++base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
++api_key = ""
++timeout = 60.0
+ temperature = 0.1
+-max_retries = 2
++max_retries = 0
+ 
+-# ============= MCP Server 相关 / MCP Server Related =============
+ [local_mcp_server]
+ server_name = "storyline"
+-server_cache_dir = ".storyline/.server_cache"
+-server_transport = "streamable-http"  # server 和 host之间的传输方式 / Transport method between server and host
+-url_scheme = "http"  
+-connect_host = "127.0.0.1" # 不要改动 / Do not change
+-inline_media = "auto"      # 传输策略 / Transport policy: auto=根据 connect_host 自动选择 / auto-detect from connect_host; always=总是使用 base64 / always use base64; never=总是只用 path / always use path (e.g. Docker / LAN same-machine)
+-port = 8001                # 如果端口冲突，可以随便用一个有空的端口 / Use any available port if conflict occurs
+-path = "/mcp"              # 默认值，一般不用改 / Default value, usually unchanged
+-
+-json_response = true       # 建议用 True / Recommended: True
+-stateless_http = false     # 强烈建议用 False / Strongly recommended: False
++server_cache_dir = "/workspace/output/.server_cache"
++server_transport = "streamable-http"
++url_scheme = "http"
++connect_host = "127.0.0.1"
++inline_media = "never"
++port = 8001
++path = "/mcp"
++json_response = true
++stateless_http = false
+ timeout = 600
+-available_node_pkgs = [
+-    "open_storyline.nodes.core_nodes"
+-]
++available_node_pkgs = ["open_storyline.nodes.core_nodes"]
+ available_nodes = [
+-    "LoadMediaNode", "SearchMediaNode", "SplitShotsNode", "LocalASRNode", "SpeechRoughCutNode", "GenerateAITransitionNode", 
+-    "UnderstandClipsNode", "FilterClipsNode", "GroupClipsNode", "GenerateScriptNode", "ScriptTemplateRecomendation",
+-    "GenerateVoiceoverNode", "SelectBGMNode", "RecommendTransitionNode", "RecommendTextNode",
+-    "PlanTimelineProNode", "PlanTimelineAITransitionNode", "RenderVideoNode"
++  "LoadMediaNode", "SplitShotsNode", "LocalASRNode", "SpeechRoughCutNode",
++  "PlanTimelineProNode", "RecommendTransitionNode", "RecommendTextNode", "RenderVideoNode"
+ ]
+ 
+-# =========== skills ==========
+ [skills]
+-skill_dir = "./.storyline/skills"
++skill_dir = "/opt/openstoryline/.storyline/skills"
+ 
+-# =========== pexels ==========
+ [search_media]
+ pexels_api_key = ""
+ 
+-# ============= 镜头分割 / Shot Segmentation =============
+ [split_shots]
+-transnet_weights = ".storyline/models/transnetv2-pytorch-weights.pth"
++transnet_weights = "/opt/openstoryline/not-used-transnet-weights.pth"
+ transnet_device = "cpu"
+ 
+-# ============= 视频视觉理解 / Video Visual Understanding =============
+ [understand_clips]
+-sample_fps = 2.0                 # 每秒抽几帧 / Frames sampled per second
+-max_frames = 64                  # 单clip抽帧上限兜底，避免长视频爆 token / Max frames per clip limit to prevent token overflow
++sample_fps = 2.0
++max_frames = 64
+ 
+-# ============= 镜头分组 / Clip Grouping =============
+ [group_clips]
+-base_max_tokens = 4096           # group_clips 基础输出 token 预算 / Base output token budget for group_clips
+-tokens_per_clip = 48             # 每个 clip 额外 token 预算 / Extra output token budget per selected clip
+-max_tokens_cap = 16384           # token 预算上限 / Upper bound of output token budget
+-retry_token_step = 2048          # 每次重试增加的 token 预算 / Token increase per retry
+-max_parse_retries = 2            # JSON 解析失败时重试次数 / Retry count when JSON parsing fails
++base_max_tokens = 4096
++tokens_per_clip = 48
++max_tokens_cap = 16384
++retry_token_step = 2048
++max_parse_retries = 0
+ 
+-# ============= 文案模板 / Script Templates =============
+ [script_template]
+-script_template_dir = "./resource/script_templates"
+-script_template_info_path = "./resource/script_templates/meta.json"
++script_template_dir = "/opt/openstoryline/not-used-script-templates"
++script_template_info_path = "/opt/openstoryline/not-used-script-templates/meta.json"
+ 
+-# ============= 配音生成 / Voiceover Generation ===================
+ [generate_voiceover]
+-tts_provider_params_path = "./resource/tts/tts_providers.json"
++tts_provider_params_path = "/opt/openstoryline/not-used-tts.json"
++providers = {}
+ 
+-[generate_voiceover.providers.302]
+-base_url = ""
+-api_key = ""
++[generate_ai_transition]
++providers = {}
+ 
+-[generate_voiceover.providers.bytedance]
+-uid = ""
+-appid = ""
+-access_token = ""
+-
+-[generate_voiceover.providers.minimax]
+-base_url = ""
+-api_key = ""
+-
+-
+-# ============= AI 转场生成 / AI transition generation ===================
+-[generate_ai_transition]
+-
+-[generate_ai_transition.providers.dashscope] # 阿里通义万相 / Alibaba’s Tongyi Wanxiang (Wan) video model
+-model_name = ""
+-api_key = ""
+-
+-[generate_ai_transition.providers.minimax] # Minimax 海螺 / Hailuo
+-model_name = ""
+-api_key = ""
+-
+-
+-# ============= BGM选择 / BGM Selection ====================
+-# 主要是用于计算音乐特征的一些参数 / Mainly parameters for calculating music features
+ [select_bgm]
+ sample_rate = 22050
+-hop_length = 2048   # 每次分析窗口向前跳多少个采样点，越小越精细（但更慢） / Hop length samples; smaller = more precise but slower
+-frame_length = 2048 # 计算信号的均方根RMS的窗口大小。越大越稳定，但对瞬态不敏感 / Window size for RMS; larger = stable but less sensitive to transients
++hop_length = 2048
++frame_length = 2048
+ 
+-# ============= 字体推荐 / Font Recommendation ====================
+ [recommend_text]
+-font_info_path = "resource/fonts/font_info.json"
++font_info_path = "/opt/openstoryline/resource/fonts/font_info.json"
+ 
+-# ============= 时间线组织 / Timeline Organization ====================
+ [plan_timeline]
+-beat_type_max = 1 # 使用多强的鼓点，例如4/4中，鼓点类似1,2,1,3，其中1是最强的，3最弱 / Beat strength (e.g., in 4/4: 1=strongest, 3=weakest)
+-title_duration = 0 # 片头时长 (ms) / Intro duration (ms)
+-bgm_loop = true # 是否允许 bgm 循环 / Allow BGM loop
+-min_clip_duration = 1000
+-
+-estimate_text_min = 1500 # 在没有TTS的情况下，估计每段字幕至少上屏多久 / Min on-screen duration for subtitles without TTS
+-estimate_text_char_per_sec = 6.0 # 在没有TTS的情况下，估计每秒展示几个字 / Estimated characters per second without TTS
+-
+-image_default_duration = 3000 # 默认的图片播放时长 / Default image duration
+-group_margin_over_voiceover = 1000 # 在一个group中，画面比配音多出现多久 / Extra visual duration over voiceover in a group
++beat_type_max = 1
++title_duration = 0
++bgm_loop = false
++min_clip_duration = 500
++estimate_text_min = 1500
++estimate_text_char_per_sec = 6.0
++image_default_duration = 3000
++group_margin_over_voiceover = 1000
+ 
+ [plan_timeline_pro]
+-
+-min_single_text_duration = 200      # 单段文字最小时长 (ms) / min single text duration (ms)
+-max_text_duration        = 5000     # 单句文字最大时长 (ms) / max text sentence duration (ms)
+-img_default_duration     = 1500     # 默认图片时长 (ms) / default image duration (ms)
+-
+-min_group_margin = 1500             # 段落/组最小间距 (ms) / min paragraph/group margin (ms)
+-max_group_margin = 2000             # 段落/组最大间距 (ms) / max paragraph/group margin (ms)
+-
+-min_clip_duration = 1000            # 最小片段时长 (ms) / min clip duration (ms)
+-
+-tts_margin_mode = "random"          # random | avg | max | min
+-min_tts_margin  = 300               # 最小 TTS 间隔 (ms) / min TTS gap (ms)
+-max_tts_margin  = 400               # 最大 TTS 间隔 (ms) / max TTS gap (ms)
+-
+-text_tts_offset_mode = "random"     # random | avg | max | min
+-min_text_tts_offset  = 0            # 最小文字-TTS偏移 (ms) / min text–TTS offset (ms)
+-max_text_tts_offset  = 0            # 最大文字-TTS偏移 (ms) / max text–TTS offset (ms)
+-
+-long_short_text_duration = 3000     # 长/短文本阈值 (ms) / long/short text threshold (ms)
+-long_text_margin_rate   = 0.0       # 长文本起始边距率 / long text start margin rate
+-short_text_margin_rate  = 0.0       # 短文本起始边距率 / short text start margin rate
+-
+-text_duration_mode = "with_tts"     # with_tts | with_clip (随配音 | 随片段)
+-is_text_beats      = false          # 文字对齐音乐节拍 / align text with music beats
++min_single_text_duration = 200
++max_text_duration = 5000
++img_default_duration = 1500
++min_group_margin = 0
++max_group_margin = 0
++min_clip_duration = 1
++tts_margin_mode = "min"
++min_tts_margin = 0
++max_tts_margin = 0
++text_tts_offset_mode = "min"
++min_text_tts_offset = 0
++max_text_tts_offset = 0
++long_short_text_duration = 3000
++long_text_margin_rate = 0.0
++short_text_margin_rate = 0.0
++text_duration_mode = "with_clip"
++is_text_beats = false
+--- /dev/null
++++ b/config.upstream.toml
+@@ -0,0 +1,162 @@
++# ============= 开发者选项 / Developer Options ===============
++[developer]
++developer_mode = true
++print_context = false # 在拦截器打印模型拿到的全部上下文，会很长 / Print full context in interceptor (output will be very long)
++
++# ============= 项目路径 / Project Paths ======================
++[project]
++media_dir = "./outputs/media"
++bgm_dir = "./resource/bgms"
++outputs_dir = "./outputs"
++
++# ============= 模型配置 for user / Model Config for User =============
++[llm]
++model = ""
++base_url = ""
++api_key = "" 
++timeout = 30.0 # 单位：秒
++temperature = 0.1
++max_retries = 2
++
++[vlm]
++model = ""
++base_url = ""
++api_key = "" 
++timeout = 20.0 # 单位：秒
++temperature = 0.1
++max_retries = 2
++
++# ============= MCP Server 相关 / MCP Server Related =============
++[local_mcp_server]
++server_name = "storyline"
++server_cache_dir = ".storyline/.server_cache"
++server_transport = "streamable-http"  # server 和 host之间的传输方式 / Transport method between server and host
++url_scheme = "http"  
++connect_host = "127.0.0.1" # 不要改动 / Do not change
++inline_media = "auto"      # 传输策略 / Transport policy: auto=根据 connect_host 自动选择 / auto-detect from connect_host; always=总是使用 base64 / always use base64; never=总是只用 path / always use path (e.g. Docker / LAN same-machine)
++port = 8001                # 如果端口冲突，可以随便用一个有空的端口 / Use any available port if conflict occurs
++path = "/mcp"              # 默认值，一般不用改 / Default value, usually unchanged
++
++json_response = true       # 建议用 True / Recommended: True
++stateless_http = false     # 强烈建议用 False / Strongly recommended: False
++timeout = 600
++available_node_pkgs = [
++    "open_storyline.nodes.core_nodes"
++]
++available_nodes = [
++    "LoadMediaNode", "SearchMediaNode", "SplitShotsNode", "LocalASRNode", "SpeechRoughCutNode", "GenerateAITransitionNode", 
++    "UnderstandClipsNode", "FilterClipsNode", "GroupClipsNode", "GenerateScriptNode", "ScriptTemplateRecomendation",
++    "GenerateVoiceoverNode", "SelectBGMNode", "RecommendTransitionNode", "RecommendTextNode",
++    "PlanTimelineProNode", "PlanTimelineAITransitionNode", "RenderVideoNode"
++]
++
++# =========== skills ==========
++[skills]
++skill_dir = "./.storyline/skills"
++
++# =========== pexels ==========
++[search_media]
++pexels_api_key = ""
++
++# ============= 镜头分割 / Shot Segmentation =============
++[split_shots]
++transnet_weights = ".storyline/models/transnetv2-pytorch-weights.pth"
++transnet_device = "cpu"
++
++# ============= 视频视觉理解 / Video Visual Understanding =============
++[understand_clips]
++sample_fps = 2.0                 # 每秒抽几帧 / Frames sampled per second
++max_frames = 64                  # 单clip抽帧上限兜底，避免长视频爆 token / Max frames per clip limit to prevent token overflow
++
++# ============= 镜头分组 / Clip Grouping =============
++[group_clips]
++base_max_tokens = 4096           # group_clips 基础输出 token 预算 / Base output token budget for group_clips
++tokens_per_clip = 48             # 每个 clip 额外 token 预算 / Extra output token budget per selected clip
++max_tokens_cap = 16384           # token 预算上限 / Upper bound of output token budget
++retry_token_step = 2048          # 每次重试增加的 token 预算 / Token increase per retry
++max_parse_retries = 2            # JSON 解析失败时重试次数 / Retry count when JSON parsing fails
++
++# ============= 文案模板 / Script Templates =============
++[script_template]
++script_template_dir = "./resource/script_templates"
++script_template_info_path = "./resource/script_templates/meta.json"
++
++# ============= 配音生成 / Voiceover Generation ===================
++[generate_voiceover]
++tts_provider_params_path = "./resource/tts/tts_providers.json"
++
++[generate_voiceover.providers.302]
++base_url = ""
++api_key = ""
++
++[generate_voiceover.providers.bytedance]
++uid = ""
++appid = ""
++access_token = ""
++
++[generate_voiceover.providers.minimax]
++base_url = ""
++api_key = ""
++
++
++# ============= AI 转场生成 / AI transition generation ===================
++[generate_ai_transition]
++
++[generate_ai_transition.providers.dashscope] # 阿里通义万相 / Alibaba’s Tongyi Wanxiang (Wan) video model
++model_name = ""
++api_key = ""
++
++[generate_ai_transition.providers.minimax] # Minimax 海螺 / Hailuo
++model_name = ""
++api_key = ""
++
++
++# ============= BGM选择 / BGM Selection ====================
++# 主要是用于计算音乐特征的一些参数 / Mainly parameters for calculating music features
++[select_bgm]
++sample_rate = 22050
++hop_length = 2048   # 每次分析窗口向前跳多少个采样点，越小越精细（但更慢） / Hop length samples; smaller = more precise but slower
++frame_length = 2048 # 计算信号的均方根RMS的窗口大小。越大越稳定，但对瞬态不敏感 / Window size for RMS; larger = stable but less sensitive to transients
++
++# ============= 字体推荐 / Font Recommendation ====================
++[recommend_text]
++font_info_path = "resource/fonts/font_info.json"
++
++# ============= 时间线组织 / Timeline Organization ====================
++[plan_timeline]
++beat_type_max = 1 # 使用多强的鼓点，例如4/4中，鼓点类似1,2,1,3，其中1是最强的，3最弱 / Beat strength (e.g., in 4/4: 1=strongest, 3=weakest)
++title_duration = 0 # 片头时长 (ms) / Intro duration (ms)
++bgm_loop = true # 是否允许 bgm 循环 / Allow BGM loop
++min_clip_duration = 1000
++
++estimate_text_min = 1500 # 在没有TTS的情况下，估计每段字幕至少上屏多久 / Min on-screen duration for subtitles without TTS
++estimate_text_char_per_sec = 6.0 # 在没有TTS的情况下，估计每秒展示几个字 / Estimated characters per second without TTS
++
++image_default_duration = 3000 # 默认的图片播放时长 / Default image duration
++group_margin_over_voiceover = 1000 # 在一个group中，画面比配音多出现多久 / Extra visual duration over voiceover in a group
++
++[plan_timeline_pro]
++
++min_single_text_duration = 200      # 单段文字最小时长 (ms) / min single text duration (ms)
++max_text_duration        = 5000     # 单句文字最大时长 (ms) / max text sentence duration (ms)
++img_default_duration     = 1500     # 默认图片时长 (ms) / default image duration (ms)
++
++min_group_margin = 1500             # 段落/组最小间距 (ms) / min paragraph/group margin (ms)
++max_group_margin = 2000             # 段落/组最大间距 (ms) / max paragraph/group margin (ms)
++
++min_clip_duration = 1000            # 最小片段时长 (ms) / min clip duration (ms)
++
++tts_margin_mode = "random"          # random | avg | max | min
++min_tts_margin  = 300               # 最小 TTS 间隔 (ms) / min TTS gap (ms)
++max_tts_margin  = 400               # 最大 TTS 间隔 (ms) / max TTS gap (ms)
++
++text_tts_offset_mode = "random"     # random | avg | max | min
++min_text_tts_offset  = 0            # 最小文字-TTS偏移 (ms) / min text–TTS offset (ms)
++max_text_tts_offset  = 0            # 最大文字-TTS偏移 (ms) / max text–TTS offset (ms)
++
++long_short_text_duration = 3000     # 长/短文本阈值 (ms) / long/short text threshold (ms)
++long_text_margin_rate   = 0.0       # 长文本起始边距率 / long text start margin rate
++short_text_margin_rate  = 0.0       # 短文本起始边距率 / short text start margin rate
++
++text_duration_mode = "with_tts"     # with_tts | with_clip (随配音 | 随片段)
++is_text_beats      = false          # 文字对齐音乐节拍 / align text with music beats
+--- /dev/null
++++ b/offline_fake_model.py
+@@ -0,0 +1,251 @@
++"""Local OpenAI-compatible model boundary for offline production-entry checks.
++
++This module is inert unless the task entry receives an explicit offline test
++request and the container has OPENSTORYLINE_ENABLE_OFFLINE_FAKE_MODEL=1.
++It never reads credentials and accepts connections only on container loopback.
++"""
++from __future__ import annotations
++
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++import ast
++import json
++import re
++import threading
++import time
++import uuid
++from pathlib import Path
++from typing import Any
++
++
++TOOL_SEQUENCE = (
++    ("load_media", {}),
++    ("split_shots", {"mode": "skip"}),
++    ("local_asr", {}),
++    ("speech_rough_cut", {}),
++    ("plan_timeline_pro", {}),
++    ("render_video", {"include_video_audio": True, "video_volume_scale": 1.0,
++                      "output_max_dimension_px": 320}),
++)
++
++
++class OfflineFakeModel:
++    def __init__(self, output_dir: Path, tool_prefix: str, start_at: str = "load_media"):
++        self.output_dir = output_dir
++        self.tool_prefix = tool_prefix
++        target_names = [target for target, _args in TOOL_SEQUENCE]
++        if start_at not in target_names:
++            raise ValueError(f"offline fake-model start node is not registered: {start_at!r}")
++        self.start_index = target_names.index(start_at)
++        self.records_path = output_dir / "fake-model-requests.jsonl"
++        owner = self
++
++        class Handler(BaseHTTPRequestHandler):
++            def log_message(self, _format, *_args):
++                return
++
++            def do_POST(self):  # noqa: N802
++                if self.path != "/v1/chat/completions":
++                    self.send_error(404)
++                    return
++                try:
++                    length = int(self.headers.get("Content-Length", "0"))
++                    request = json.loads(self.rfile.read(length))
++                    response, action = owner.respond(request)
++                    owner.record(request, action, response)
++                    if request.get("stream"):
++                        chunks = owner.stream_chunks(response)
++                        body = ("".join("data: " + json.dumps(chunk, ensure_ascii=False) + "\n\n"
++                                        for chunk in chunks) + "data: [DONE]\n\n").encode("utf-8")
++                        content_type = "text/event-stream"
++                    else:
++                        body = json.dumps(response, ensure_ascii=False).encode("utf-8")
++                        content_type = "application/json"
++                    self.send_response(200)
++                    self.send_header("Content-Type", content_type)
++                    self.send_header("Content-Length", str(len(body)))
++                    self.end_headers()
++                    self.wfile.write(body)
++                except Exception as exc:  # keep the cause visible to the caller
++                    owner.record({}, "fake_boundary_error", {"error": f"{type(exc).__name__}: {exc}"})
++                    self.send_error(500, f"offline fake model failed: {type(exc).__name__}: {exc}")
++
++        self.server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
++        self.server.daemon_threads = True
++        self.thread = threading.Thread(target=self.server.serve_forever,
++                                       name="offline-fake-model", daemon=True)
++        self.base_url = f"http://127.0.0.1:{self.server.server_port}/v1"
++
++    def start(self) -> None:
++        self.thread.start()
++
++    def close(self) -> None:
++        self.server.shutdown()
++        self.server.server_close()
++        self.thread.join(timeout=5)
++
++    def _tool_name(self, target: str, request: dict[str, Any]) -> str:
++        names = set()
++        for tool in request.get("tools") or []:
++            function = tool.get("function") or {}
++            name = function.get("name")
++            if name:
++                names.add(str(name))
++        for candidate in (f"{self.tool_prefix}_{target}", target):
++            if candidate in names:
++                return candidate
++        raise RuntimeError(f"registered MCP tool not found by exact name: {target!r}")
++
++    def _next_tool_call(self, request: dict[str, Any]) -> tuple[dict[str, Any] | None, str]:
++        used = set()
++        queried_artifacts = set()
++        for message in request.get("messages") or []:
++            if message.get("role") != "assistant":
++                continue
++            for call in message.get("tool_calls") or []:
++                function = call.get("function") or {}
++                name = str(function.get("name", ""))
++                try:
++                    arguments = json.loads(function.get("arguments") or "{}")
++                except json.JSONDecodeError:
++                    arguments = {}
++                for target, _args in TOOL_SEQUENCE:
++                    if name in {f"{self.tool_prefix}_{target}", target}:
++                        used.add(target)
++                if name in {f"{self.tool_prefix}_read_node_history", "read_node_history"}:
++                    queried = arguments.get("query_artifact_id")
++                    if queried:
++                        queried_artifacts.add(str(queried))
++        for message in request.get("messages") or []:
++            if message.get("role") != "tool":
++                continue
++            for node_id, artifact_id in self._artifact_refs(message.get("content")):
++                if node_id not in {target for target, _args in TOOL_SEQUENCE}:
++                    continue
++                if artifact_id and str(artifact_id) not in queried_artifacts:
++                    call = {"id": f"offline-{uuid.uuid4().hex[:16]}", "type": "function",
++                            "function": {"name": self._tool_name("read_node_history", request),
++                                         "arguments": json.dumps(
++                                             {"query_artifact_id": str(artifact_id)},
++                                             ensure_ascii=False)}}
++                    return call, f"history_lookup:{node_id}"
++        for target, arguments in TOOL_SEQUENCE[self.start_index:]:
++            if target in used:
++                continue
++            tool_name = self._tool_name(target, request)
++            call = {"id": f"offline-{uuid.uuid4().hex[:16]}", "type": "function",
++                    "function": {"name": tool_name,
++                                 "arguments": json.dumps(arguments, ensure_ascii=False)}}
++            return call, f"agent_tool_call:{target}"
++        return None, "agent_complete"
++
++    @classmethod
++    def _artifact_refs(cls, value: Any):
++        if isinstance(value, str):
++            try:
++                value = json.loads(value)
++            except json.JSONDecodeError:
++                try:
++                    value = ast.literal_eval(value)
++                except (SyntaxError, ValueError):
++                    return []
++        if isinstance(value, dict):
++            if value.get("node_id") and value.get("artifact_id"):
++                return [(str(value["node_id"]), str(value["artifact_id"]))]
++            refs = []
++            for nested in value.values():
++                refs.extend(cls._artifact_refs(nested))
++            return refs
++        if isinstance(value, list):
++            refs = []
++            for nested in value:
++                refs.extend(cls._artifact_refs(nested))
++            return refs
++        return []
++
++    @staticmethod
++    def _rough_cut_response(request: dict[str, Any]) -> str:
++        for message in reversed(request.get("messages") or []):
++            if message.get("role") != "user":
++                continue
++            content = message.get("content")
++            if not isinstance(content, str) or "Current:" not in content:
++                continue
++            match = re.search(r"Current:\s*(\{.*?\})\s*(?:\n|$)", content, re.S)
++            if not match:
++                break
++            sentence = json.loads(match.group(1))
++            text = str(sentence.get("text", "")).strip()
++            start, end = int(sentence["start"]), int(sentence["end"])
++            if not text or end <= start:
++                raise RuntimeError("rough-cut prompt lacks a valid ASR sentence and interval")
++            # The fake boundary preserves each actual ASR sentence. It does not
++            # synthesize ASR data, MCP outputs, or node artifacts.
++            return json.dumps({"reason": "offline boundary fixture retains the ASR sentence",
++                               "res": [{"text": text, "start": start, "end": end}]},
++                              ensure_ascii=False)
++        return "ok"
++
++    def respond(self, request: dict[str, Any]) -> tuple[dict[str, Any], str]:
++        request_id = f"chatcmpl-offline-{uuid.uuid4().hex[:16]}"
++        model = "offline-fake-qwen3.7-plus"
++        message: dict[str, Any]
++        if request.get("tools"):
++            call, action = self._next_tool_call(request)
++            if call:
++                message = {"role": "assistant", "content": None, "tool_calls": [call]}
++                finish_reason = "tool_calls"
++            else:
++                message = {"role": "assistant", "content": "offline production-entry chain complete"}
++                finish_reason = "stop"
++        else:
++            text = self._rough_cut_response(request)
++            action = "node_sampling_response" if text != "ok" else "initialization_validation"
++            message = {"role": "assistant", "content": text}
++            finish_reason = "stop"
++        response = {"id": request_id, "object": "chat.completion", "created": int(time.time()),
++                    "model": model,
++                    "choices": [{"index": 0, "message": message,
++                                 "finish_reason": finish_reason}],
++                    "usage": {"prompt_tokens": 8, "completion_tokens": 4, "total_tokens": 12}}
++        return response, action
++
++    @staticmethod
++    def stream_chunks(response: dict[str, Any]) -> list[dict[str, Any]]:
++        choice = response["choices"][0]
++        message = choice["message"]
++        base = {"id": response["id"], "object": "chat.completion.chunk",
++                "created": response["created"], "model": response["model"]}
++        chunks = [{**base, "choices": [{"index": 0,
++                                         "delta": {"role": "assistant"},
++                                         "finish_reason": None}]}]
++        delta = {}
++        if message.get("tool_calls"):
++            delta["tool_calls"] = [
++                {"index": index, **call}
++                for index, call in enumerate(message["tool_calls"])
++            ]
++        elif message.get("content") is not None:
++            delta["content"] = message["content"]
++        if delta:
++            chunks.append({**base, "choices": [{"index": 0, "delta": delta,
++                                                "finish_reason": None}]})
++        chunks.append({**base, "choices": [{"index": 0, "delta": {},
++                                             "finish_reason": choice["finish_reason"]}],
++                       "usage": response.get("usage")})
++        return chunks
++
++    def record(self, request: dict[str, Any], action: str, response: dict[str, Any]) -> None:
++        row = {"event": "fake_model_exchange", "observed_monotonic_ns": time.monotonic_ns(),
++               "request_id": f"fake-{uuid.uuid4().hex}", "action": action,
++               "request_model": request.get("model"),
++               "output_limit": request.get("max_tokens"),
++               "response_id": response.get("id"), "response_model": response.get("model"),
++               "tool_names": [((t.get("function") or {}).get("name"))
++                              for t in request.get("tools") or []],
++               "messages": [{"role": m.get("role"), "content": m.get("content"),
++                             "tool_call_ids": [c.get("id") for c in m.get("tool_calls") or []]}
++                            for m in request.get("messages") or []]}
++        self.records_path.parent.mkdir(parents=True, exist_ok=True)
++        with self.records_path.open("a", encoding="utf-8") as stream:
++            stream.write(json.dumps(row, ensure_ascii=False, default=str) + "\n")
++            stream.flush()
+--- /dev/null
++++ b/openstoryline_mcp_server.py
+@@ -0,0 +1,23 @@
++"""Task-scoped launcher for the upstream FastMCP server."""
++from pathlib import Path
++import os
++import sys
++
++ROOT = Path(__file__).resolve().parent
++sys.path.insert(0, str(ROOT / "src"))
++os.environ.setdefault("OPENSTORYLINE_CONFIG", str(ROOT / "config.toml"))
++
++from open_storyline.config import default_config_path, load_settings  # noqa: E402
++from open_storyline.mcp.server import create_server  # noqa: E402
++
++
++def main() -> None:
++    cfg = load_settings(default_config_path())
++    server = create_server(cfg)
++    server.settings.host = cfg.local_mcp_server.connect_host
++    server.settings.port = cfg.local_mcp_server.port
++    server.run(transport=cfg.local_mcp_server.server_transport)
++
++
++if __name__ == "__main__":
++    main()
+--- /dev/null
++++ b/openstoryline_task_entry.py
+@@ -0,0 +1,473 @@
++"""One-request driver around the native OpenStoryline LangChain Agent.
++
++No default provider fallback. API keys are accepted only from runtime env and
++are never serialized. Full native LangChain messages are saved to the supplied
++output directory; the MCP service is a child of this same process/container.
++"""
++from __future__ import annotations
++
++import argparse
++import asyncio
++import hashlib
++import json
++import os
++import re
++import signal
++import subprocess
++import sys
++import time
++import uuid
++from pathlib import Path
++from typing import Any
++
++ROOT = Path(__file__).resolve().parent
++sys.path.insert(0, str(ROOT / "src"))
++os.environ.setdefault("OPENSTORYLINE_CONFIG", str(ROOT / "config.toml"))
++
++from langchain_core.messages import HumanMessage, SystemMessage  # noqa: E402
++from open_storyline.agent import ClientContext, build_agent  # noqa: E402
++from open_storyline.config import load_settings  # noqa: E402
++from open_storyline.confirmation_flow import (  # noqa: E402
++    complete_native_chain, confirmation_decision, confirmation_request,
++    continue_with_confirmation,
++)
++from open_storyline.mcp.hooks.node_interceptors import ToolInterceptor  # noqa: E402
++from open_storyline.nodes.node_manager import NodeManager  # noqa: E402
++from open_storyline.storage.agent_memory import ArtifactStore  # noqa: E402
++from open_storyline.mcp.request_ledger import RequestRecorder  # noqa: E402
++from open_storyline.utils.media_handler import scan_media_dir  # noqa: E402
++from open_storyline.utils.prompts import get_prompt  # noqa: E402
++
++MODEL = "qwen3.7-plus"
++BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
++API_KEY_ENV = "DASHSCOPE_API_KEY"
++FROZEN_MAX_REQUESTS = 60
++FROZEN_MAX_OBSERVED_TOKENS_SOFT_THRESHOLD = 1_000_000
++FROZEN_MAX_OUTPUT_TOKENS_PER_REQUEST = 32768
++_SECRET_RE = re.compile(r"(?i)(bearer\s+)[A-Za-z0-9._~+/-]+=*")
++
++
++def _json_safe(value: Any, secret: str) -> Any:
++    if isinstance(value, dict):
++        return {str(k): _json_safe(v, secret) for k, v in value.items()
++                if str(k).lower() not in {"api_key", "authorization", "headers", "credential"}}
++    if isinstance(value, (list, tuple)):
++        return [_json_safe(v, secret) for v in value]
++    if isinstance(value, bytes):
++        return value.decode("utf-8", "replace")
++    if isinstance(value, str):
++        text = value.replace(secret, "[REDACTED]") if secret else value
++        return _SECRET_RE.sub(r"\1[REDACTED]", text)
++    if value is None or isinstance(value, (bool, int, float)):
++        return value
++    if hasattr(value, "model_dump"):
++        return _json_safe(value.model_dump(mode="json"), secret)
++    if hasattr(value, "dict"):
++        return _json_safe(value.dict(), secret)
++    return str(value)
++
++
++def _message_record(message: Any, secret: str) -> dict[str, Any]:
++    if hasattr(message, "model_dump"):
++        data = message.model_dump(mode="json")
++    elif hasattr(message, "dict"):
++        data = message.dict()
++    else:
++        data = {"type": type(message).__name__, "content": getattr(message, "content", "")}
++    return _json_safe(data, secret)
++
++
++def configure_budget(request: dict[str, Any], output: Path) -> dict[str, Any]:
++    """Load three distinct budgets bound to the supplied frozen identity."""
++    budget = request.get("budget")
++    if not isinstance(budget, dict):
++        raise ValueError("request must contain an explicit budget object")
++    required = {"max_logical_requests", "max_observed_tokens_soft_threshold",
++                "max_output_tokens_per_request"}
++    missing = required - set(budget)
++    if missing:
++        raise ValueError(f"new budget identity is missing fields: {sorted(missing)}")
++    normalized = {key: int(budget[key]) for key in required}
++    if any(value <= 0 for value in normalized.values()):
++        raise ValueError("all budget values must be positive integers")
++    ceilings = {
++        "max_logical_requests": FROZEN_MAX_REQUESTS,
++        "max_observed_tokens_soft_threshold": FROZEN_MAX_OBSERVED_TOKENS_SOFT_THRESHOLD,
++        "max_output_tokens_per_request": FROZEN_MAX_OUTPUT_TOKENS_PER_REQUEST,
++    }
++    for key, value in normalized.items():
++        if value > ceilings[key]:
++            raise ValueError(f"{key} exceeds the frozen ceiling {ceilings[key]}")
++
++    identity = request.get("frozen_identity")
++    if not isinstance(identity, dict) or identity.get("budget") != normalized:
++        raise ValueError("request budget must exactly match the new frozen identity budget")
++    declared_sha = identity.get("identity_sha256")
++    identity_payload = {key: value for key, value in identity.items() if key != "identity_sha256"}
++    canonical = json.dumps(identity_payload, sort_keys=True, separators=(",", ":"),
++                           ensure_ascii=False).encode("utf-8")
++    actual_sha = hashlib.sha256(canonical).hexdigest()
++    if declared_sha != actual_sha:
++        raise ValueError("frozen identity SHA-256 does not match its contents")
++
++    ledger = output / "model-requests.jsonl"
++    budget_record = output / "budget.json"
++    if ledger.exists() or budget_record.exists():
++        raise RuntimeError("run output already has a budget ledger; refusing to reset or reuse it")
++
++    os.environ["OPENSTORYLINE_MAX_LOGICAL_REQUESTS"] = str(normalized["max_logical_requests"])
++    os.environ["OPENSTORYLINE_MAX_OBSERVED_TOKENS_SOFT_THRESHOLD"] = str(
++        normalized["max_observed_tokens_soft_threshold"])
++    os.environ["OPENSTORYLINE_MAX_OUTPUT_TOKENS_PER_REQUEST"] = str(
++        normalized["max_output_tokens_per_request"])
++    os.environ.pop("OPENSTORYLINE_BUDGET_EXHAUSTED", None)
++    record = {
++        "schema": "openstoryline-run-budget-v1",
++        "identity_sha256": actual_sha,
++        "max_logical_requests": normalized["max_logical_requests"],
++        "max_observed_tokens_soft_threshold": normalized["max_observed_tokens_soft_threshold"],
++        "max_output_tokens_per_request": normalized["max_output_tokens_per_request"],
++        "observed_token_semantics": "post-response soft threshold; an in-flight response can cross it",
++        "ledger_path": str(ledger),
++    }
++    with budget_record.open("x", encoding="utf-8") as stream:
++        json.dump(record, stream, ensure_ascii=False, indent=2)
++        stream.write("\n")
++        stream.flush()
++        os.fsync(stream.fileno())
++    return record
++
++
++async def _invoke_agent_with_durable_messages(agent: Any, payload: dict[str, Any],
++                                              context: Any, config: dict[str, Any],
++                                              output: Path, secret: str) -> dict[str, Any]:
++    """Persist every message as it appears in LangGraph value updates."""
++    events_path = output / "native-message-events.jsonl"
++    messages_path = output / "native-messages.json"
++    message_records: list[dict[str, Any]] = (
++        json.loads(messages_path.read_text(encoding="utf-8"))
++        if messages_path.is_file() else [])
++    latest_state: dict[str, Any] = {}
++    with events_path.open("a" if events_path.exists() else "x", encoding="utf-8") as events:
++        try:
++            async for state in agent.astream(payload, context=context, config=config,
++                                             stream_mode="values"):
++                latest_state = state if isinstance(state, dict) else {}
++                messages = latest_state.get("messages", [])
++                if len(messages) < len(message_records):
++                    raise RuntimeError("continued Agent state lost persisted message history")
++                while len(message_records) < len(messages):
++                    index = len(message_records)
++                    record = {"event": "message_observed", "index": index,
++                              "observed_monotonic_ns": time.monotonic_ns(),
++                              "message": _message_record(messages[index], secret)}
++                    message_records.append(record["message"])
++                    events.write(json.dumps(record, ensure_ascii=False) + "\n")
++                    events.flush()
++                    os.fsync(events.fileno())
++        finally:
++            with messages_path.open("w", encoding="utf-8") as stream:
++                json.dump(message_records, stream, ensure_ascii=False, indent=2)
++                stream.write("\n")
++                stream.flush()
++                os.fsync(stream.fileno())
++    return latest_state
++
++
++def _save_session_status(output: Path, status: str, **fields: Any) -> None:
++    row = {"status": status, "observed_monotonic_ns": time.monotonic_ns(), **fields}
++    path = output / "session-status.json"
++    temporary = output / ".session-status.tmp"
++    with temporary.open("w", encoding="utf-8") as stream:
++        json.dump(row, stream, ensure_ascii=False, indent=2)
++        stream.write("\n")
++        stream.flush()
++        os.fsync(stream.fileno())
++    os.replace(temporary, path)
++    with (output / "session-status-events.jsonl").open("a", encoding="utf-8") as stream:
++        stream.write(json.dumps(row, ensure_ascii=False) + "\n")
++        stream.flush()
++        os.fsync(stream.fileno())
++
++
++async def _wait_ready(proc: subprocess.Popen, timeout_s: float = 25.0) -> None:
++    import socket
++    deadline = time.monotonic() + timeout_s
++    while time.monotonic() < deadline:
++        if proc.poll() is not None:
++            raise RuntimeError(f"native MCP service exited early: rc={proc.returncode}")
++        try:
++            with socket.create_connection(("127.0.0.1", 8001), timeout=0.2):
++                return
++        except OSError:
++            await asyncio.sleep(0.2)
++    raise TimeoutError("native MCP service did not open its configured port")
++
++
++async def run_request(request_path: Path) -> int:
++    request = json.loads(request_path.read_text(encoding="utf-8"))
++    output = Path(request["output_dir"]).resolve()
++    output.mkdir(parents=True, exist_ok=True)
++    os.environ["OPENSTORYLINE_TRACE_DIR"] = str(output)
++    configure_budget(request, output)
++    instruction = str(request["instruction"])
++    if not instruction.strip():
++        raise ValueError("instruction must not be empty")
++    offline_fake = request.get("offline_fake_model") is True
++    if offline_fake:
++        if os.environ.get("OPENSTORYLINE_ENABLE_OFFLINE_FAKE_MODEL") != "1":
++            raise RuntimeError("offline fake-model request is not enabled by the isolated test container")
++        # A non-secret sentinel is sent only to the container-local HTTP
++        # boundary; the real credential variable is never read in this path.
++        secret = "offline-fake-model-boundary"
++    else:
++        secret = os.environ.get(API_KEY_ENV, "")
++        if not secret:
++            raise RuntimeError(f"required runtime credential variable missing: {API_KEY_ENV}")
++
++    os.environ["OPENSTORYLINE_CONFIG"] = str(ROOT / "config.toml")
++    cfg = load_settings(ROOT / "config.toml")
++    fake_model = None
++    model_base_url = BASE_URL
++    if offline_fake:
++        from offline_fake_model import OfflineFakeModel
++        fake_model = OfflineFakeModel(
++            output, str(cfg.local_mcp_server.server_name),
++            start_at=str(request.get("offline_fake_model_start_at", "load_media")))
++        model_base_url = fake_model.base_url
++    requested_session = request.get("session_id")
++    if requested_session is not None:
++        if not offline_fake:
++            raise ValueError("session_id reuse is available only in the isolated offline fixture")
++        existing_session_meta = Path(cfg.project.outputs_dir) / str(requested_session) / "meta.json"
++        if not existing_session_meta.is_file():
++            raise RuntimeError(f"cannot resume missing artifact session: {requested_session!r}")
++        session_id = str(requested_session)
++    else:
++        session_id = f"env01-{uuid.uuid4().hex}"
++    context_path = output / "agent-context.json"
++    with context_path.open("x", encoding="utf-8") as stream:
++        json.dump({"session_id": session_id, "requested_model": MODEL,
++                   "base_url": model_base_url,
++                   "credential_env": "none_offline_fake_model" if offline_fake else API_KEY_ENV,
++                   "model_boundary": "offline_fake" if offline_fake else "registered_provider",
++                   "started_monotonic_ns": time.monotonic_ns()}, stream, indent=2)
++        stream.write("\n")
++        stream.flush()
++        os.fsync(stream.fileno())
++    store = ArtifactStore(artifacts_dir=cfg.project.outputs_dir, session_id=session_id)
++    server_log = (output / "mcp-server.log").open("w", encoding="utf-8")
++    server_env = os.environ.copy()
++    # MCP tools call the client sampling callback; the service itself receives
++    # no API key. Remove it from the child environment as defense in depth.
++    server_env.pop(API_KEY_ENV, None)
++    mcp = subprocess.Popen(
++        [sys.executable, str(ROOT / "openstoryline_mcp_server.py")],
++        cwd="/workspace", env=server_env, stdout=server_log,
++        stderr=subprocess.STDOUT, start_new_session=True,
++    )
++    started_ns = time.monotonic_ns()
++    phase: dict[str, Any] = {"mcp_start_monotonic_ns": started_ns}
++    try:
++        if fake_model:
++            fake_model.start()
++        await _wait_ready(mcp)
++        phase["mcp_ready_monotonic_ns"] = time.monotonic_ns()
++        # Each validation is one direct Chat Completions request. ChatOpenAI
++        # uses the same explicit route and retries remain 0.
++        agent, node_manager = await build_agent(
++            cfg, session_id, store,
++            tool_interceptors=[
++                ToolInterceptor.inject_media_content_before,
++                ToolInterceptor.save_media_content_after,
++                ToolInterceptor.inject_tts_config,
++                ToolInterceptor.inject_ai_transition_config,
++                ToolInterceptor.inject_pexels_api_key,
++            ],
++            llm_override={"model": MODEL, "base_url": model_base_url, "api_key": secret,
++                          "max_retries": 0, "timeout": 60.0},
++            vlm_override={"model": MODEL, "base_url": model_base_url, "api_key": secret,
++                          "max_retries": 0, "timeout": 60.0},
++        )
++        phase["agent_initialized_monotonic_ns"] = time.monotonic_ns()
++        context = ClientContext(
++            cfg=cfg, session_id=session_id,
++            media_dir=str(cfg.project.media_dir), bgm_dir=str(cfg.project.bgm_dir),
++            outputs_dir=str(cfg.project.outputs_dir), node_manager=node_manager,
++            chat_model_key=MODEL, vlm_model_key=MODEL,
++            lang=str(request.get("lang", "zh")),
++        )
++        media_files = [p for p in Path(context.media_dir).iterdir() if p.is_file()]
++        media_stats = {
++            "Number of media carried in this message sent by the user": len(media_files),
++            "Total number of media sent by the user in all conversations": len(media_files),
++            "Total number of media in user's media library": scan_media_dir(context.media_dir),
++        }
++        upload_status = (
++            "【User media upload status】The following fields are used to determine "
++            "the nature of the media provided by the user: \n"
++            + json.dumps(media_stats, ensure_ascii=False)
++        )
++        payload = {"messages": [
++            SystemMessage(content=get_prompt("instruction.system", lang=context.lang)),
++            SystemMessage(content=upload_status),
++            HumanMessage(content=instruction),
++        ]}
++        config = {"configurable": {"thread_id": session_id},
++                  "recursion_limit": int(request.get("recursion_limit", 32)),
++                  "callbacks": [RequestRecorder("agent")]}
++        confirmation_limit = min(2, max(0, int(request.get("max_plan_confirmations", 2))))
++        confirmation_count = 0
++        _save_session_status(output, "planning", session_id=session_id,
++                             approval_source="user_pre_authorization_in_request")
++        while True:
++            result = await _invoke_agent_with_durable_messages(
++                agent, payload, context, config, output, secret)
++            messages = result.get("messages", [])
++            awaiting, plan_text = confirmation_request(messages)
++            if awaiting:
++                _save_session_status(
++                    output, "awaiting_confirmation", session_id=session_id,
++                    approval_source="user_pre_authorization_in_request",
++                    confirmations_sent=confirmation_count,
++                )
++                next_status, should_confirm, scope_reason = confirmation_decision(
++                    messages, confirmation_count, confirmation_limit)
++                if not should_confirm:
++                    final_status = {"status": "awaiting_confirmation",
++                                    "message_count": len(messages),
++                                    "confirmations_sent": confirmation_count,
++                                    "scope_check": scope_reason,
++                                    "plan_text": _json_safe(plan_text, secret)}
++                    (output / "agent-result.json").write_text(
++                        json.dumps(final_status, ensure_ascii=False, indent=2) + "\n",
++                        encoding="utf-8")
++                    return 0
++                confirmation_count += 1
++                _save_session_status(
++                    output, "executing", session_id=session_id,
++                    approval_source="user_pre_authorization_in_request",
++                    confirmation_message_index=len(messages),
++                    confirmations_sent=confirmation_count,
++                    scope_check=scope_reason,
++                )
++                confirmation = HumanMessage(content=(
++                    "我已在本次任务中预先授权刚才这份范围内剪辑计划。请按该计划继续执行。"
++                    "这条确认来自本次用户预授权，不代表用户曾现场点击界面确认。"
++                ))
++                payload = {"messages": continue_with_confirmation(messages, confirmation)}
++                continue
++
++            # A conversational stop is not a completed editing task. Require
++            # all native artifacts and successful MCP results before returning
++            # an execution-complete state to the host exporter.
++            required_nodes = {"load_media", "split_shots", "local_asr",
++                              "speech_rough_cut", "plan_timeline_pro", "render_video"}
++            latest = {node: store.get_latest_meta(node_id=node, session_id=session_id)
++                      for node in required_nodes}
++            events_file = output / "mcp-tool-events.jsonl"
++            events = []
++            if events_file.is_file():
++                events = [json.loads(line) for line in events_file.read_text(
++                    encoding="utf-8").splitlines() if line.strip()]
++            successful_nodes = {
++                row.get("node_id") for row in events
++                if row.get("event") == "tool_call_finished" and not row.get("is_error")
++            }
++            complete, missing = complete_native_chain(
++                {node for node, meta in latest.items() if meta is not None},
++                successful_nodes,
++            )
++            if not complete:
++                status = ("budget_exhausted" if
++                          os.environ.get("OPENSTORYLINE_BUDGET_EXHAUSTED") == "1"
++                          else "failed")
++                reason = "logical request or observed usage budget exhausted" if status == "budget_exhausted" else "Agent returned without the complete native render chain"
++                _save_session_status(output, status, session_id=session_id,
++                                     missing_nodes=missing, reason=reason,
++                                     confirmations_sent=confirmation_count)
++                (output / "agent-result.json").write_text(
++                    json.dumps({"status": status, "reason": reason,
++                                "missing_nodes": missing,
++                                "message_count": len(messages)}, indent=2) + "\n",
++                    encoding="utf-8")
++                return 2 if status == "failed" else 3
++            _save_session_status(output, "executing", session_id=session_id,
++                                 approval_source="user_pre_authorization_in_request",
++                                 confirmations_sent=confirmation_count,
++                                 render_artifact_id=latest["render_video"].artifact_id)
++            (output / "agent-result.json").write_text(
++                json.dumps({"status": "executing", "message_count": len(messages),
++                            "confirmations_sent": confirmation_count,
++                            "render_artifact_id": latest["render_video"].artifact_id,
++                            "submission_export_pending": True}, indent=2) + "\n",
++                encoding="utf-8")
++            break
++        phase["agent_finished_monotonic_ns"] = time.monotonic_ns()
++        return 0
++    except Exception as exc:
++        phase["failure_monotonic_ns"] = time.monotonic_ns()
++        phase["failure_type"] = type(exc).__name__
++        phase["failure"] = _json_safe(str(exc), secret)
++        failed_status = ("budget_exhausted" if
++                         os.environ.get("OPENSTORYLINE_BUDGET_EXHAUSTED") == "1"
++                         else "failed")
++        _save_session_status(output, failed_status, session_id=session_id,
++                             failure_type=type(exc).__name__,
++                             reason=_json_safe(str(exc), secret))
++        (output / "agent-result.json").write_text(
++            json.dumps({"status": failed_status, "error_type": type(exc).__name__,
++                        "error": _json_safe(str(exc), secret)}, indent=2) + "\n",
++            encoding="utf-8")
++        return 1
++    finally:
++        if mcp.poll() is None:
++            try:
++                os.killpg(mcp.pid, signal.SIGTERM)
++                mcp.wait(timeout=10)
++            except Exception:
++                try:
++                    os.killpg(mcp.pid, signal.SIGKILL)
++                    mcp.wait(timeout=5)
++                except Exception:
++                    pass
++        phase["mcp_exit_returncode"] = mcp.poll()
++        phase["mcp_cleanup_status"] = "stopped" if mcp.poll() is not None else "still_running"
++        server_log.flush()
++        server_log.close()
++        if fake_model:
++            fake_model.close()
++        (output / "mcp-cleanup.json").write_text(
++            json.dumps({"returncode": mcp.returncode, "pid_alive": mcp.poll() is None}, indent=2) + "\n",
++            encoding="utf-8")
++        (output / "phase-times.json").write_text(
++            json.dumps(phase, indent=2) + "\n", encoding="utf-8")
++
++
++def main() -> int:
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--request", type=Path, default=Path("/workspace/request.json"))
++    args = parser.parse_args()
++    try:
++        return asyncio.run(run_request(args.request))
++    except Exception as exc:
++        try:
++            request = json.loads(args.request.read_text(encoding="utf-8"))
++            output = Path(request["output_dir"]).resolve()
++            output.mkdir(parents=True, exist_ok=True)
++            secret = os.environ.get(API_KEY_ENV, "")
++            record = {"status": "entry_error", "error_type": type(exc).__name__,
++                      "error": _json_safe(str(exc), secret),
++                      "observed_monotonic_ns": time.monotonic_ns()}
++            with (output / "entry-error.json").open("x", encoding="utf-8") as stream:
++                json.dump(record, stream, ensure_ascii=False, indent=2)
++                stream.write("\n")
++                stream.flush()
++                os.fsync(stream.fileno())
++        except Exception:
++            pass
++        return 1
++
++
++if __name__ == "__main__":
++    raise SystemExit(main())
+--- /dev/null
++++ b/resource/fonts/font_info.json
+@@ -0,0 +1 @@
++[]
+--- a/.storyline/skills/speech_rough_cut_skill/SKILL.md
++++ b/.storyline/skills/speech_rough_cut_skill/SKILL.md
+@@ -1,21 +1,35 @@
+ ---
+ name: speech_rough_cut_skill
+-description: 【WORKFLOW SKILL】根据输入视频的音频信息进行口播粗剪。Rough cut based on audio information from the input video for narration.
++description: Interview speech rough cut using OpenStoryline native nodes.
+ ---
+ 
+-# 角色定义 (Role)
+-你是一个专业的“口播粗剪专家”。你具备深厚的影视视听语言知识，能够根据视频的音频信息（如ASR结果）进行合理的剪辑，提取出有价值的片段，去除冗余内容。
++# Interview cut workflow
+ 
+-# 任务目标 (Objective)
+-你的任务是根据输入的视频音频信息，自动进行口播粗剪，生成一个包含剪辑结果的 JSON 对象，供后续节点使用。需要依次调用以下几个工具：
+-1. 读取视频素材；
+-2. 执行split_shots节点但是使用“skip”参数跳过；
+-3. 使用asr节点完成文字的识别和文字时间戳打标；
+-4. 再用speech_rough_cut节点实现视频粗剪切分；
+-5. 推荐花字，不需要配音、背景音乐、转场、文案生成；
+-6. 生成时间线：is_speech_rough_cut=True；
+-7. 渲染：保留素材原声。
++Use the native nodes in this order:
++`load_media` → `split_shots(mode="skip")` → `local_asr` →
++`speech_rough_cut` → `plan_timeline_pro(is_speech_rough_cut=true)` →
++`render_video`.
+ 
+-# 注意事项 (Notes)
+-1. 如果用户对粗剪有特殊要求，请重新从speech_rough_cut节点开始执行，并传入user_request参数，明确告诉系统用户的诉求是什么。
+-2. 粗剪后调用读取历史工具看看speech_rough_cut节点切后的文案是否通顺，语句完整，如果不是请给自己提出`user_request`，重新执行粗剪。
+\ No newline at end of file
++ASR timestamps identify candidate regions; they are not exact cut boundaries.
++Distinguish normal speech, acknowledgements, restarted phrases and actual
++disfluencies. Keep semantic content and remove only the minimum requested
++material. Inspect both boundaries of each proposed deletion and base them on
++the available word timing and local media evidence. Do not delete a whole
++sentence just because one part is marked for removal.
++
++For this task use the native `gap_threshold=0` parameter on
++`speech_rough_cut`. This task-scoped parameter avoids the upstream default
++400 ms grouping from merging a short deleted gap back into a retained source
++range; it does not alter the node algorithm. Derive `cuts.json` from the final
++source intervals actually used by the rendered timeline.
++
++Set `is_speech_rough_cut=true` in `plan_timeline_pro`. Keep the input pixel
++dimensions and frame rate, and retain its original audio. Do not add titles,
++subtitles, voiceover, music, color changes or transitions. For `render_video`,
++set `include_video_audio=true` and give the input aspect ratio and longest
++dimension explicitly; do not rely on the default canvas size.
++
++After rendering, inspect parseability, dimensions, frame rate, audio stream,
++duration and cut continuity. A waveform or screenshot alone does not verify
++audio meaning. State when semantic audio judgment was unavailable, and do
++not expand a cut just to improve a score.
+--- /dev/null
++++ b/tests/test_confirmation_flow.py
+@@ -0,0 +1,97 @@
++from __future__ import annotations
++
++import unittest
++
++from open_storyline.confirmation_flow import (
++    complete_native_chain,
++    confirmation_decision,
++    confirmation_request,
++    continue_with_confirmation,
++    plan_is_preapproved,
++)
++
++
++IN_SCOPE_PLAN = """## 访谈剪辑计划
++1. `load_media` 读取输入视频
++2. `split_shots(mode=\"skip\")` 保持原始片段
++3. `local_asr` 识别语音
++4. `speech_rough_cut(gap_threshold=0)` 保留有效语句
++5. `plan_timeline_pro(is_speech_rough_cut=true)` 规划时间线
++6. `render_video(include_video_audio=true, video_volume_scale=1.0)` 渲染
++保持原声、分辨率和帧率；不要添加字幕、音乐、动画、调色或转场。
++请确认这个计划，我将开始执行剪辑流程。
++"""
++
++
++def messages(plan=IN_SCOPE_PLAN):
++    return [
++        {"type": "ai", "content": "Calling the workflow skill.",
++         "tool_calls": [{"name": "speech_rough_cut_skill"}]},
++        {"type": "tool", "name": "speech_rough_cut_skill", "content": "workflow"},
++        {"type": "ai", "content": plan},
++    ]
++
++
++class ConfirmationFlowTests(unittest.TestCase):
++    def test_plan_waits_for_confirmation_instead_of_becoming_complete(self):
++        awaiting, plan = confirmation_request(messages())
++        self.assertTrue(awaiting)
++        self.assertIn("render_video", plan)
++        self.assertEqual(confirmation_decision(messages(), 0, 2)[:2], ("executing", True))
++
++    def test_native_chinese_plan_aliases_match_required_tools(self):
++        native_plan = (
++            "剪辑计划：加载媒体；跳过镜头切分；本地ASR识别；语音粗剪；"
++            "规划时间线；渲染视频。保持原声、分辨率和帧率。"
++            "请确认这个计划是否符合需求？确认后开始执行。"
++        )
++        self.assertEqual(confirmation_decision(messages(native_plan), 0, 2)[:2],
++                         ("executing", True))
++
++    def test_confirmation_appends_to_full_history(self):
++        history = messages()
++        confirmation = {"type": "human", "content": "Preauthorized scope; continue."}
++        continued = continue_with_confirmation(history, confirmation)
++        self.assertEqual(continued[:-1], history)
++        self.assertIs(continued[-1], confirmation)
++
++    def test_out_of_scope_tool_is_not_auto_approved(self):
++        plan = IN_SCOPE_PLAN.replace("`render_video", "`pexels_search`\n6. `render_video")
++        allowed, _ = plan_is_preapproved(messages(plan))
++        self.assertFalse(allowed)
++        self.assertEqual(confirmation_decision(messages(plan), 0, 2)[:2],
++                         ("awaiting_confirmation", False))
++
++    def test_non_plan_clarification_is_not_auto_approved(self):
++        clarification = [{"type": "ai", "content": "Which audience should I target?"}]
++        self.assertEqual(confirmation_decision(clarification, 0, 2)[:2],
++                         ("executing", False))
++
++    def test_plan_plus_unrelated_clarification_is_not_auto_approved(self):
++        plan = IN_SCOPE_PLAN.replace(
++            "请确认这个计划，我将开始执行剪辑流程。",
++            "请确认这个计划；你希望我重点保留哪位说话人吗？",
++        )
++        self.assertEqual(confirmation_decision(messages(plan), 0, 2)[:2],
++                         ("awaiting_confirmation", False))
++
++    def test_confirmation_limit_prevents_loop(self):
++        self.assertEqual(confirmation_decision(messages(), 2, 2)[:2],
++                         ("awaiting_confirmation", False))
++
++    def test_model_claim_alone_never_passes_native_completion_gate(self):
++        complete, missing = complete_native_chain(set(), set())
++        self.assertFalse(complete)
++        self.assertIn("render_video", missing)
++
++    def test_completed_gate_requires_every_artifact_and_successful_tool(self):
++        nodes = {"load_media", "split_shots", "local_asr", "speech_rough_cut",
++                 "plan_timeline_pro", "render_video"}
++        self.assertEqual(complete_native_chain(nodes, nodes), (True, []))
++        complete, missing = complete_native_chain(nodes, nodes - {"render_video"})
++        self.assertFalse(complete)
++        self.assertEqual(missing, ["render_video"])
++
++
++if __name__ == "__main__":
++    unittest.main()
+--- /dev/null
++++ b/tests/test_formal_entry_wiring.py
+@@ -0,0 +1,152 @@
++from __future__ import annotations
++
++import asyncio
++import json
++import os
++import shutil
++import sys
++import tempfile
++import time
++import unittest
++from pathlib import Path
++
++SOURCE_ROOT = Path(__file__).resolve().parents[1]
++os.sys.path.insert(0, str(SOURCE_ROOT))
++os.sys.path.insert(0, str(SOURCE_ROOT / "src"))
++RUNTIME_ROOT = Path("/home/lcq/agent_workload_characterization/env/video/openstoryline/edit-pilot-02/runtime")
++sys.path.insert(0, str(RUNTIME_ROOT))
++sys.path.insert(0, "/home/lcq/agent_workload_characterization/src")
++
++import openstoryline_task_entry as driver
++import openstoryline_pilot_entry as entry
++from agent_workload_characterization.runners.container_runtime import DockerCliRuntime
++
++
++class Message:
++    type = "ai"
++
++    def __init__(self, content):
++        self.content = content
++
++
++class FakeAgent:
++    def __init__(self, fail=False):
++        self.fail = fail
++
++    async def astream(self, payload, **kwargs):
++        yield {"messages": [payload["messages"][0], Message("first response")]}
++        if self.fail:
++            raise RuntimeError("fixture failure")
++        yield {"messages": [payload["messages"][0], Message("first response"), Message("tool result")]}
++
++
++class FormalEntryWiringTests(unittest.TestCase):
++    def test_formal_state_paths_are_separate_from_preparation_records(self):
++        preparation = Path("/home/lcq/agent_workload_characterization/env/video/openstoryline/edit-pilot-02/preparation")
++        self.assertTrue(preparation.is_dir())
++        self.assertFalse(entry.PLAN_ROOT.exists())
++        self.assertNotEqual(entry.PLAN_ROOT, preparation.parent)
++
++    def test_directory_usage_helper_returns_measured_bytes(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            root = Path(tmp)
++            (root / "payload.bin").write_bytes(b"12345")
++            measured = entry._du(root)
++            self.assertIsInstance(measured, int)
++            self.assertGreaterEqual(measured, 5)
++
++    def test_short_task_can_use_its_own_read_only_input_directory(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            root = Path(tmp)
++            input_dir = root / "short-input"
++            output = root / "output"
++            project = root / "project"
++            input_dir.mkdir()
++            output.mkdir()
++            project.mkdir()
++            request = root / "request.json"
++            request.write_text("{}")
++            spec = entry.build_container_spec(
++                run_id="short-fixture", output_dir=output, request_path=request,
++                api_key="fixture-key", run_deadline=time.monotonic() + 60,
++                input_dir=input_dir)
++            argv = DockerCliRuntime().build_run_argv(spec, "fixture-container")
++            mounts = [argv[i + 1] for i, value in enumerate(argv[:-1]) if value == "--mount"]
++            self.assertTrue(any("src=" + str(input_dir.resolve()) in mount
++                                and "dst=/workspace/input,readonly" in mount
++                                for mount in mounts))
++
++    def test_formal_container_uses_shared_read_only_cache_mount_and_caps(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            root = Path(tmp)
++            output = root / "output"
++            project = root / "project"
++            output.mkdir()
++            project.mkdir()
++            request = root / "request.json"
++            request.write_text("{}")
++            spec = entry.build_container_spec(run_id="fixture-run", output_dir=output,
++                                              request_path=request, api_key="fixture-key",
++                                              run_deadline=time.monotonic() + 60)
++            argv = DockerCliRuntime().build_run_argv(spec, "fixture-container")
++            mounts = [argv[i + 1] for i, value in enumerate(argv[:-1]) if value == "--mount"]
++            self.assertTrue(any("src=" + str(entry.INPUT_DIR.resolve()) in x and "readonly" in x
++                                for x in mounts))
++            self.assertTrue(any("dst=/root/.cache/modelscope,readonly" in x for x in mounts))
++            self.assertTrue(any("dst=/workspace/request.json,readonly" in x for x in mounts))
++            self.assertIn("--network", argv)
++            self.assertEqual(argv[argv.index("--network") + 1], "bridge")
++            self.assertEqual(argv[argv.index("--cpus") + 1], "4")
++            self.assertEqual(argv[argv.index("--memory") + 1], "8g")
++            self.assertIn("--pull", argv)
++            self.assertEqual(argv[argv.index("--pull") + 1], "never")
++            self.assertIn("OPENSTORYLINE_ASR_MODEL_ROOT=/root/.cache/modelscope/models",
++                          spec.env and [f"{k}={v}" for k, v in spec.env.items()])
++
++    def test_cuts_export_uses_final_timeline_windows_and_preserves_agent_proposal(self):
++        project = Path("/home/lcq/agent_workload_characterization/env/video/openstoryline/edit-pilot-02/preparation/full-chain-05/output")
++        session = "offline-full-chain-dc10a6e09dbc46dda132c22d174f2345"
++        with tempfile.TemporaryDirectory() as tmp:
++            output = Path(tmp)
++            (output / session).mkdir()
++            for node_id in ("speech_rough_cut", "plan_timeline_pro"):
++                shutil.copytree(project / session / node_id, output / session / node_id)
++            (output / "agent-context.json").write_text(json.dumps({"session_id": session}))
++            (output / "cuts.json").write_text('{"cuts":[{"start_ms":1,"end_ms":2}]}')
++            report = entry.export_cuts_from_final_timeline(
++                output,
++                Path("/home/lcq/agent_workload_characterization/env/video/openstoryline/edit-pilot-02/preparation/full-chain-05/input/source.mp4"),
++            )
++            self.assertEqual(report["status"], "derived_from_final_timeline")
++            cuts = json.loads((output / "cuts.json").read_text())["cuts"]
++            self.assertEqual(cuts, [
++                {"start_ms": 0, "end_ms": 90,
++                 "reason": "outside_final_rendered_source_intervals"},
++                {"start_ms": 5910, "end_ms": 6000,
++                 "reason": "outside_final_rendered_source_intervals"},
++            ])
++            self.assertTrue((output / "cuts-agent-proposed.json").is_file())
++
++    def test_native_messages_are_durable_on_success_and_error(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            root = Path(tmp)
++            result = asyncio.run(driver._invoke_agent_with_durable_messages(
++                FakeAgent(), {"messages": [Message("user request")]}, None, {}, root, ""))
++            self.assertEqual(len(result["messages"]), 3)
++            records = json.loads((root / "native-messages.json").read_text())
++            self.assertEqual(len(records), 3)
++            events = [json.loads(line) for line in (root / "native-message-events.jsonl").read_text().splitlines()]
++            self.assertEqual(len(events), 3)
++
++        with tempfile.TemporaryDirectory() as tmp:
++            root = Path(tmp)
++            with self.assertRaisesRegex(RuntimeError, "fixture failure"):
++                asyncio.run(driver._invoke_agent_with_durable_messages(
++                    FakeAgent(fail=True), {"messages": [Message("user request")]}, None, {}, root, ""))
++            records = json.loads((root / "native-messages.json").read_text())
++            self.assertEqual(len(records), 2)
++            self.assertEqual(len((root / "native-message-events.jsonl").read_text().splitlines()), 2)
++
++
++if __name__ == "__main__":
++    unittest.main()
+--- /dev/null
++++ b/tests/test_native_entry_repair.py
+@@ -0,0 +1,176 @@
++from __future__ import annotations
++
++import asyncio
++import json
++import os
++from pathlib import Path
++import tempfile
++import unittest
++from types import SimpleNamespace
++from urllib.request import Request, urlopen
++from open_storyline.mcp.request_ledger import (begin_request, finish_request,
++                                               manual_request_scope, RequestRecorder)
++from open_storyline.nodes.node_manager import NodeManager
++from open_storyline.storage.agent_memory import ArtifactStore
++from offline_fake_model import OfflineFakeModel
++import openstoryline_task_entry as driver
++
++
++class NativeEntryRepairTests(unittest.TestCase):
++    def test_tool_name_mapping_is_exact_and_maps_the_public_prefix(self):
++        tool = SimpleNamespace(
++            name="storyline_load_media",
++            metadata={"_meta": {"node_id": "load_media", "node_kind": "load_media"}},
++        )
++        manager = NodeManager([tool])
++        self.assertEqual(manager.resolve_tool_id("storyline_load_media"), "load_media")
++        self.assertEqual(manager.resolve_tool_id("load_media"), "load_media")
++        self.assertIsNone(manager.resolve_tool_id("unrelated_load_media"))
++
++    def test_missing_upstream_artifact_fails_closed_without_a_saver(self):
++        from open_storyline.mcp import register_tools
++
++        with tempfile.TemporaryDirectory() as tmp:
++            cfg = SimpleNamespace(project=SimpleNamespace(outputs_dir=tmp))
++            meta = SimpleNamespace(
++                node_id="split_shots", name="split_shots", description="split",
++                require_prior_kind=["load_media"], default_require_prior_kind=["load_media"],
++            )
++
++            class Node:
++                input_schema = None
++
++                def __init__(self):
++                    self.meta = meta
++
++                async def __call__(self, *_args, **_kwargs):
++                    raise AssertionError("node must not execute without its prerequisite artifact")
++
++            class Request:
++                headers = {"X-Storyline-Session-Id": "session-without-saved-load-media"}
++
++                async def json(self):
++                    return {"params": {"arguments": {"mode": "skip"}}}
++
++            mcp_ctx = SimpleNamespace(request_context=SimpleNamespace(
++                request=Request(), lifespan_context=SimpleNamespace()))
++            wrapper, _ = register_tools.create_tool_wrapper(
++                Node(), None, cfg, {"load_media": "load_media"})
++            with self.assertRaisesRegex(RuntimeError, "missing prerequisite artifact.*load_media"):
++                asyncio.run(wrapper(mcp_ctx))
++
++    def test_optional_empty_recommendation_is_distinct_from_missing_required_media(self):
++        from open_storyline.mcp.register_tools import validate_prerequisite_payload
++
++        self.assertEqual(validate_prerequisite_payload(
++            node_id="render_video", session_id="session", kind="transition_rec",
++            artifact_id="transition-1", payload=[]), [])
++        with self.assertRaisesRegex(RuntimeError, "split_shots artifact has no clips"):
++            validate_prerequisite_payload(
++                node_id="speech_rough_cut", session_id="session", kind="split_shots",
++                artifact_id="split-1", payload={"clips": []})
++
++    def test_timeline_mode_follows_supplied_rough_cut_unless_explicit(self):
++        from open_storyline.mcp.register_tools import infer_plan_timeline_input_mode
++
++        payload = {"clips": [{"start": 0.0, "end": 1.0}]}
++        inferred = infer_plan_timeline_input_mode(
++            params={"speech_rough_cut": payload}, raw_arguments={})
++        self.assertIs(inferred["speech_rough_cut"], payload)
++        self.assertTrue(inferred["is_speech_rough_cut"])
++        explicit_false = infer_plan_timeline_input_mode(
++            params={"speech_rough_cut": payload, "is_speech_rough_cut": False},
++            raw_arguments={"is_speech_rough_cut": False})
++        self.assertFalse(explicit_false["is_speech_rough_cut"])
++        unrelated = infer_plan_timeline_input_mode(
++            params={"speech_rough_cut": None}, raw_arguments={})
++        self.assertNotIn("is_speech_rough_cut", unrelated)
++
++    def test_request_budget_blocks_before_the_fake_transport_send(self):
++        original = {name: os.environ.get(name) for name in (
++            "OPENSTORYLINE_TRACE_DIR", "OPENSTORYLINE_MAX_LOGICAL_REQUESTS",
++            "OPENSTORYLINE_MAX_OBSERVED_TOKENS_SOFT_THRESHOLD",
++            "OPENSTORYLINE_MAX_OUTPUT_TOKENS_PER_REQUEST", "OPENSTORYLINE_BUDGET_EXHAUSTED")}
++        try:
++            with tempfile.TemporaryDirectory() as tmp:
++                root = Path(tmp)
++                os.environ["OPENSTORYLINE_TRACE_DIR"] = str(root)
++                os.environ["OPENSTORYLINE_MAX_LOGICAL_REQUESTS"] = "1"
++                os.environ["OPENSTORYLINE_MAX_OBSERVED_TOKENS_SOFT_THRESHOLD"] = "1000"
++                os.environ["OPENSTORYLINE_MAX_OUTPUT_TOKENS_PER_REQUEST"] = "128"
++                os.environ.pop("OPENSTORYLINE_BUDGET_EXHAUSTED", None)
++                fake = OfflineFakeModel(root, "storyline")
++                fake.start()
++                try:
++                    attempt = begin_request(phase="test", model="offline-fake")
++                    request = Request(
++                        fake.base_url + "/chat/completions",
++                        data=json.dumps({"model": "offline-fake", "messages": [],
++                                         "max_tokens": 16}).encode(),
++                        headers={"Content-Type": "application/json"}, method="POST")
++                    with urlopen(request, timeout=5) as response:
++                        self.assertEqual(response.status, 200)
++                    finish_request(attempt, status="completed", usage={"total_tokens": 1})
++                    with self.assertRaisesRegex(RuntimeError, "budget exhausted"):
++                        begin_request(phase="blocked", model="offline-fake")
++                    records = [json.loads(row) for row in fake.records_path.read_text().splitlines()]
++                    self.assertEqual(len(records), 1)
++                finally:
++                    fake.close()
++        finally:
++            for name, value in original.items():
++                if value is None:
++                    os.environ.pop(name, None)
++                else:
++                    os.environ[name] = value
++
++    def test_manual_sampling_is_not_double_counted_by_inherited_callback(self):
++        previous = os.environ.get("OPENSTORYLINE_TRACE_DIR")
++        try:
++            with tempfile.TemporaryDirectory() as tmp:
++                os.environ["OPENSTORYLINE_TRACE_DIR"] = tmp
++                recorder = RequestRecorder("agent")
++                with manual_request_scope():
++                    recorder.on_chat_model_start({"kwargs": {"model": "fake"}}, [], "nested")
++                self.assertNotIn("nested", recorder.pending)
++                recorder.on_chat_model_start({"kwargs": {"model": "fake"}}, [], "agent-call")
++                self.assertIn("agent-call", recorder.pending)
++        finally:
++            if previous is None:
++                os.environ.pop("OPENSTORYLINE_TRACE_DIR", None)
++            else:
++                os.environ["OPENSTORYLINE_TRACE_DIR"] = previous
++
++    def test_history_store_session_isolation(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            first = ArtifactStore(tmp, "session-a")
++            second = ArtifactStore(tmp, "session-b")
++            self.assertIsNone(first.get_latest_meta(node_id="load_media", session_id="session-a"))
++            self.assertIsNone(second.get_latest_meta(node_id="load_media", session_id="session-b"))
++
++    def test_agent_messages_are_persisted_before_node_failure(self):
++        class Message:
++            type = "ai"
++
++            def __init__(self, content):
++                self.content = content
++
++        class FailingAgent:
++            async def astream(self, payload, **_kwargs):
++                yield {"messages": [payload["messages"][0], Message("tool failure boundary") ]}
++                raise RuntimeError("fixture node failure")
++
++        with tempfile.TemporaryDirectory() as tmp:
++            output = Path(tmp)
++            with self.assertRaisesRegex(RuntimeError, "fixture node failure"):
++                asyncio.run(driver._invoke_agent_with_durable_messages(
++                    FailingAgent(), {"messages": [Message("user request")]}, None, {}, output, ""))
++            messages = json.loads((output / "native-messages.json").read_text())
++            events = [json.loads(row) for row in
++                      (output / "native-message-events.jsonl").read_text().splitlines()]
++            self.assertEqual(len(messages), 2)
++            self.assertEqual(len(events), 2)
++
++
++if __name__ == "__main__":
++    unittest.main()
+--- /dev/null
++++ b/tests/test_request_budget.py
+@@ -0,0 +1,112 @@
++from __future__ import annotations
++
++import hashlib
++import json
++import os
++import tempfile
++import unittest
++from pathlib import Path
++from unittest.mock import patch
++
++SOURCE_ROOT = Path(__file__).resolve().parents[1]
++os.sys.path.insert(0, str(SOURCE_ROOT))
++os.sys.path.insert(0, str(SOURCE_ROOT / "src"))
++
++import openstoryline_task_entry as entry
++from open_storyline.mcp import request_ledger as ledger
++
++
++def identity_for(budget: dict) -> dict:
++    body = {"namespace": "OFFLINE-BUDGET-TEST", "budget": budget}
++    body["identity_sha256"] = hashlib.sha256(
++        json.dumps(body, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()
++    ).hexdigest()
++    return body
++
++
++class RunBudgetTests(unittest.TestCase):
++    def setUp(self) -> None:
++        self.env = patch.dict(os.environ, {}, clear=False)
++        self.env.start()
++        self.addCleanup(self.env.stop)
++        for name in ("OPENSTORYLINE_MAX_LOGICAL_REQUESTS",
++                     "OPENSTORYLINE_MAX_OBSERVED_TOKENS_SOFT_THRESHOLD",
++                     "OPENSTORYLINE_MAX_OUTPUT_TOKENS_PER_REQUEST",
++                     "OPENSTORYLINE_BUDGET_EXHAUSTED"):
++            os.environ.pop(name, None)
++
++    def test_identity_binds_three_separate_budget_fields(self):
++        budget = {"max_logical_requests": 12,
++                  "max_observed_tokens_soft_threshold": 32768,
++                  "max_output_tokens_per_request": 8192}
++        with tempfile.TemporaryDirectory() as tmp:
++            record = entry.configure_budget({"budget": budget,
++                                             "frozen_identity": identity_for(budget)}, Path(tmp))
++            self.assertEqual(record["max_logical_requests"], 12)
++            self.assertEqual(record["max_observed_tokens_soft_threshold"], 32768)
++            self.assertEqual(record["max_output_tokens_per_request"], 8192)
++            self.assertIn("soft threshold", record["observed_token_semantics"])
++
++    def test_budget_must_match_identity_and_old_field_is_rejected(self):
++        budget = {"max_logical_requests": 12,
++                  "max_observed_tokens_soft_threshold": 32768,
++                  "max_output_tokens_per_request": 8192}
++        wrong = {**budget, "max_output_tokens_per_request": 4096}
++        with tempfile.TemporaryDirectory() as tmp:
++            with self.assertRaisesRegex(ValueError, "exactly match"):
++                entry.configure_budget({"budget": budget, "frozen_identity": identity_for(wrong)}, Path(tmp))
++        with tempfile.TemporaryDirectory() as tmp:
++            with self.assertRaisesRegex(ValueError, "missing fields"):
++                entry.configure_budget({"budget": {"max_tokens": 32768}}, Path(tmp))
++
++    def test_refuses_to_reset_an_existing_run_ledger(self):
++        budget = {"max_logical_requests": 60,
++                  "max_observed_tokens_soft_threshold": 1_000_000,
++                  "max_output_tokens_per_request": 32768}
++        with tempfile.TemporaryDirectory() as tmp:
++            Path(tmp, "model-requests.jsonl").write_text("preserved\n")
++            with self.assertRaisesRegex(RuntimeError, "refusing to reset"):
++                entry.configure_budget({"budget": budget,
++                                        "frozen_identity": identity_for(budget)}, Path(tmp))
++
++    def test_soft_usage_gate_blocks_next_request_and_output_cap_is_independent(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            os.environ["OPENSTORYLINE_TRACE_DIR"] = tmp
++            os.environ["OPENSTORYLINE_MAX_LOGICAL_REQUESTS"] = "3"
++            os.environ["OPENSTORYLINE_MAX_OBSERVED_TOKENS_SOFT_THRESHOLD"] = "100"
++            os.environ["OPENSTORYLINE_MAX_OUTPUT_TOKENS_PER_REQUEST"] = "8192"
++            attempt = ledger.begin_request(phase="test", model="offline",
++                                           output_token_limit=8192)
++            ledger.finish_request(attempt, status="completed", usage={"total_tokens": 120})
++            events = ledger._events(Path(tmp, "model-requests.jsonl"))
++            self.assertEqual(events[0]["max_output_tokens_per_request"], 8192)
++            self.assertTrue(any(e.get("observed_usage_threshold_reached") is True for e in events))
++            with self.assertRaisesRegex(RuntimeError, "soft threshold 100"):
++                ledger.begin_request(phase="test", model="offline", output_token_limit=8192)
++            self.assertEqual(sum(e.get("event") == "request_started" for e in events), 1)
++
++    def test_distinct_trace_directories_are_independent_ledgers(self):
++        with tempfile.TemporaryDirectory() as first, tempfile.TemporaryDirectory() as second:
++            os.environ["OPENSTORYLINE_MAX_LOGICAL_REQUESTS"] = "2"
++            os.environ["OPENSTORYLINE_MAX_OBSERVED_TOKENS_SOFT_THRESHOLD"] = "1000"
++            os.environ["OPENSTORYLINE_MAX_OUTPUT_TOKENS_PER_REQUEST"] = "256"
++            os.environ["OPENSTORYLINE_TRACE_DIR"] = first
++            ledger.begin_request(phase="prep", model="offline", output_token_limit=32)
++            os.environ["OPENSTORYLINE_TRACE_DIR"] = second
++            ledger.begin_request(phase="formal", model="offline", output_token_limit=256)
++            self.assertEqual(len(ledger._events(Path(first, "model-requests.jsonl"))), 1)
++            self.assertEqual(len(ledger._events(Path(second, "model-requests.jsonl"))), 1)
++
++    def test_per_request_output_cap_rejects_before_request_start(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            os.environ["OPENSTORYLINE_TRACE_DIR"] = tmp
++            os.environ["OPENSTORYLINE_MAX_LOGICAL_REQUESTS"] = "2"
++            os.environ["OPENSTORYLINE_MAX_OBSERVED_TOKENS_SOFT_THRESHOLD"] = "1000"
++            os.environ["OPENSTORYLINE_MAX_OUTPUT_TOKENS_PER_REQUEST"] = "8192"
++            with self.assertRaisesRegex(ValueError, "per-request cap"):
++                ledger.begin_request(phase="test", model="offline", output_token_limit=8193)
++            self.assertFalse(Path(tmp, "model-requests.jsonl").exists())
++
++
++if __name__ == "__main__":
++    unittest.main()
+--- /dev/null
++++ b/asr_adapter/__init__.py
+@@ -0,0 +1,19 @@
++"""Project-side ASR adapter for the English paraformer checkpoint.
++
++Works around two funasr 1.3.1 wiring bugs for
++iic/speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020:
++  1. SentencepiecesTokenizer decodes with a mismatched 10000-piece bpe.model
++     while the decoder outputs ids in the 10020-entry tokens.json space;
++  2. word timestamps never reach the result (auto_model does not pass
++     pred_timestamp; the BPE branch of model.py has an UnboundLocalError).
++
++No global monkey patching: the adapter is injected explicitly into
++LocalASRNode by the task entry wiring in mcp/register_tools.py. The adapter
++class is imported lazily so the lightweight cache preflight can run first.
++"""
++
++def __getattr__(name):
++    if name == "ParaformerEnAsr":
++        from .paraformer_en import ParaformerEnAsr
++        return ParaformerEnAsr
++    raise AttributeError(name)
+--- /dev/null
++++ b/asr_adapter/cache_preflight.py
+@@ -0,0 +1,41 @@
++"""Lightweight, offline ASR cache checks run before any model is instantiated."""
++from __future__ import annotations
++
++import json
++import os
++from pathlib import Path
++
++
++def validate_asr_cache(*, model_root: str | Path | None = None,
++                       contract_path: str | Path | None = None) -> list[dict]:
++    contract_file = Path(contract_path or os.getenv(
++        "OPENSTORYLINE_ASR_CONTRACT_PATH", "/opt/openstoryline/asr-cache-contract.json"))
++    try:
++        spec = json.loads(contract_file.read_text(encoding="utf-8"))
++    except (OSError, json.JSONDecodeError) as exc:
++        raise RuntimeError(f"OpenStoryline ASR cache contract is unavailable: {contract_file}: {exc}") from exc
++
++    root = Path(model_root or os.getenv(
++        "OPENSTORYLINE_ASR_MODEL_ROOT", spec["container_model_root"])).resolve()
++    records = []
++    errors = []
++    for model, rel_dir in spec["model_dirs"].items():
++        model_dir = (root / rel_dir).resolve()
++        try:
++            model_dir.relative_to(root)
++        except ValueError:
++            errors.append(f"{model}: configured directory escapes model root: {model_dir}")
++            continue
++        for filename in spec["required_files"][model]:
++            path = model_dir / filename
++            try:
++                with path.open("rb") as stream:
++                    stat = os.fstat(stream.fileno())
++                if not path.is_file() or stat.st_size <= 0:
++                    raise OSError("not a nonempty regular file")
++                records.append({"model": model, "path": str(path), "bytes": stat.st_size, "readable": True})
++            except OSError as exc:
++                errors.append(f"{model}: required local ASR asset unreadable or missing: {path}: {exc}")
++    if errors:
++        raise RuntimeError("ASR cache preflight failed before model initialization: " + " | ".join(errors))
++    return records
+--- /dev/null
++++ b/asr_adapter/paraformer_en.py
+@@ -0,0 +1,219 @@
++"""English paraformer ASR with correct vocab wiring and word timestamps.
++
++Works around two funasr 1.3.1 wiring bugs for
++iic/speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020:
++  1. SentencepiecesTokenizer decodes with a mismatched 10000-piece bpe.model
++     while the decoder outputs ids in the 10020-entry tokens.json space;
++  2. word timestamps never reach the result (auto_model does not pass
++     pred_timestamp; the BPE branch of model.py has an UnboundLocalError).
++
++The word-timestamp computation replicates the fire-place logic of
++funasr.utils.timestamp_tools.ts_prediction_lfr6_standard (1.3.1) WITHOUT
++its optional "<sil>" insertion, so every token gets exactly one
++[start_ms, end_ms] pair; any count mismatch is a hard error.
++"""
++from __future__ import annotations
++
++import json
++import os
++from pathlib import Path
++from typing import Any, List
++
++import numpy as np
++import torch
++
++_MODEL_ROOT = Path(os.environ.get(
++    "OPENSTORYLINE_ASR_MODEL_ROOT",
++    "/root/.cache/modelscope/models"))
++_DEFAULTS = {
++    "asr": _MODEL_ROOT / "iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master",
++    "vad": _MODEL_ROOT / "iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master",
++    "punc": _MODEL_ROOT / "iic--punc_ct-transformer_cn-en-common-vocab471067-large/snapshots/master",
++}
++_SOS, _EOS, _BLANK = 1, 2, 0
++_TIME_RATE_S = 10.0 * 6 / 1000 / 1  # LFR6 frame step (60 ms)
++_FORCE_TIME_SHIFT = -1.5
++
++
++class AsrWiringError(RuntimeError):
++    """Raised when the checkpoint or alignment does not match expectations."""
++
++
++def _fire_place_word_timestamps(alphas: torch.Tensor, peaks: torch.Tensor,
++                                n_tokens: int, vad_offset_ms: float) -> List[list]:
++    """One [start_ms, end_ms] per token; no <sil>; hard error on mismatch.
++
++    Replicates ts_prediction_lfr6_standard (funasr 1.3.1) fire-place logic:
++    token i spans [fire[i], fire[i+1]] in LFR frames; the CIF re-normalize
++    fallback is preserved for peak-count mismatch.
++    """
++    from funasr.utils.timestamp_tools import cif_wo_hidden
++    if len(alphas.shape) == 2:
++        alphas, peaks = alphas[0], peaks[0]
++    fire = (torch.where(peaks >= 1.0 - 1e-4)[0].cpu().numpy()
++            + _FORCE_TIME_SHIFT)
++    if len(fire) != n_tokens + 1:
++        alphas = alphas / alphas.sum() * (n_tokens + 1)
++        peaks = cif_wo_hidden(alphas.unsqueeze(0), threshold=1.0 - 1e-4)[0]
++        fire = (torch.where(peaks >= 1.0 - 1e-4)[0].cpu().numpy()
++                + _FORCE_TIME_SHIFT)
++    if len(fire) < n_tokens + 1:
++        raise AsrWiringError(
++            f"CIF peaks ({len(fire)}) cannot cover {n_tokens} tokens; "
++            "refusing to emit partial timestamps")
++    ts = []
++    for i in range(n_tokens):
++        ts.append([fire[i] * _TIME_RATE_S * 1000 + vad_offset_ms,
++                   fire[i + 1] * _TIME_RATE_S * 1000 + vad_offset_ms])
++    return ts
++
++
++class ParaformerEnAsr:
++    """Drop-in generate() replacement for LocalASRNode's funasr AutoModel."""
++
++    def __init__(self):
++        from funasr import AutoModel
++        self.asr_dir = Path(os.environ.get("OPENSTORYLINE_ASR_DIR", _DEFAULTS["asr"]))
++        self.vad_dir = Path(os.environ.get("OPENSTORYLINE_ASR_VAD_DIR", _DEFAULTS["vad"]))
++        self.punc_dir = Path(os.environ.get("OPENSTORYLINE_ASR_PUNC_DIR", _DEFAULTS["punc"]))
++        self._identity_guard()
++        self.tokens = json.loads((self.asr_dir / "tokens.json").read_text())
++        self._asr = AutoModel(model=str(self.asr_dir), disable_update=True,
++                              disable_pbar=True, disable_log=True)
++        self._vad = AutoModel(model=str(self.vad_dir), disable_update=True,
++                              disable_pbar=True, disable_log=True)
++        self._punc = AutoModel(model=str(self.punc_dir), disable_update=True,
++                               disable_pbar=True, disable_log=True)
++        self._frontend = self._asr.kwargs["frontend"]
++        self._model = self._asr.model
++        embed = None
++        for key, value in self._model.state_dict().items():
++            if "decoder.embed" in key:
++                embed = value.shape[0]
++                break
++        if embed != len(self.tokens):
++            raise AsrWiringError(
++                f"decoder vocab ({embed}) != tokens.json ({len(self.tokens)}); "
++                "refusing to decode with a mismatched table")
++
++    def _identity_guard(self) -> None:
++        cfg = json.loads((self.asr_dir / "configuration.json").read_text())
++        expected = ("iic/speech_paraformer-large-vad-punc_asr_nat-en-16k"
++                    "-common-vocab10020")
++        got = (cfg.get("model_name_in_hub") or {}).get("ms")
++        if got != expected:
++            raise AsrWiringError(f"unexpected checkpoint identity: {got!r}")
++
++    # ------------------------------------------------------------------ #
++    def _forward_segment(self, samples: np.ndarray,
++                         vad_offset_ms: float) -> tuple[List[str], List[list]]:
++        speech = torch.from_numpy(samples.astype(np.float32))[None, :]
++        speech_lens = torch.tensor([speech.shape[1]])
++        with torch.no_grad():
++            feats, feats_lens = self._frontend(speech, speech_lens)
++            enc = self._model.encoder(feats, feats_lens)
++            encoder_out, encoder_out_lens = enc[0], enc[1]
++            po = self._model.calc_predictor(encoder_out, encoder_out_lens)
++            pre_acoustic_embeds, pre_token_length, alphas, pre_peak_index = (
++                po[0], po[1], po[2], po[3])
++            pre_token_length = pre_token_length.round().long()
++            if torch.max(pre_token_length) < 1:
++                return [], []
++            do = self._model.cal_decoder_with_predictor(
++                encoder_out, encoder_out_lens, pre_acoustic_embeds,
++                pre_token_length)
++            decoder_out = do[0]
++        i = 0
++        am_scores = decoder_out[i, : pre_token_length[i], :]
++        yseq = am_scores.argmax(dim=-1).tolist()
++        token_int = [t for t in yseq if t not in (_SOS, _EOS, _BLANK)]
++        pieces = [self.tokens[t] for t in token_int]
++        times = _fire_place_word_timestamps(
++            alphas[i], pre_peak_index[i], len(pieces), vad_offset_ms)
++        if len(times) != len(pieces):
++            raise AsrWiringError("token/timestamp count mismatch")
++        return pieces, times
++
++    def _read_wav(self, path: str) -> tuple[np.ndarray, int]:
++        import wave
++        with wave.open(path, "rb") as w:
++            if w.getframerate() != 16000:
++                raise AsrWiringError(f"expected 16 kHz wav, got {w.getframerate()}")
++            if w.getnchannels() != 1:
++                raise AsrWiringError("expected mono wav")
++            raw = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16)
++        return raw.astype(np.float32) / 32768.0, 16000
++
++    def _vad_segments(self, samples: np.ndarray,
++                      max_single_ms: int) -> List[list]:
++        res = self._vad.generate(
++            input=samples, max_single_segment_time=max_single_ms)
++        value = (res[0] or {}).get("value") if res else None
++        if not value:
++            return [[0, int(len(samples) / 16.0)]]
++        return [[int(s), int(e)] for s, e in value]
++
++    # ------------------------------------------------------------------ #
++    def generate(self, input=None, sentence_timestamp: bool = False,
++                 **kwargs) -> List[dict]:
++        max_single_ms = int((kwargs.get("vad_kwargs") or {}).get(
++            "max_single_segment_time", 30000))
++        samples, sr = self._read_wav(input)
++        duration_ms = len(samples) / (sr / 1000.0)
++        segments = self._vad_segments(samples, max_single_ms)
++
++        all_pieces: List[str] = []
++        all_times: List[list] = []
++        for seg_start_ms, seg_end_ms in segments:
++            a = int(seg_start_ms * sr / 1000.0)
++            b = int(seg_end_ms * sr / 1000.0)
++            seg = samples[a:b]
++            if len(seg) < sr // 100:  # < 10 ms
++                continue
++            pieces, times = self._forward_segment(seg, float(seg_start_ms))
++            all_pieces.extend(pieces)
++            all_times.extend(times)
++
++        keep = [(p, t) for p, t in zip(all_pieces, all_times)
++                if p.strip("▁")]
++        raw_words = [p.lstrip("▁") for p, _ in keep]
++        times = [t for _, t in keep]
++        raw_text = " ".join(raw_words)
++
++        result: dict[str, Any] = {"key": os.path.basename(str(input))}
++        if not raw_text.strip():
++            result.update({"text": "", "timestamp": [],
++                           **({"sentence_info": []} if sentence_timestamp else {})})
++            result["_duration_ms_measured"] = duration_ms
++            result["_vad_segments"] = segments
++            return [result]
++
++        punc_res = self._punc.generate(input=" ".join(raw_words))
++        punc_ids = None
++        punc_array = punc_res[0].get("punc_array")
++        if hasattr(punc_array, "tolist"):
++            candidate = [int(x) for x in punc_array.tolist()]
++            if len(candidate) == len(raw_words):
++                punc_ids = candidate
++
++        from funasr.utils.timestamp_tools import timestamp_sentence
++        if punc_ids is not None:
++            sentence_info = timestamp_sentence(punc_ids, times, raw_text)
++            punc_list = ["，", "。", "？", "、"]
++            result["text"] = " ".join(
++                w + (punc_list[pid - 2] if pid > 1 else "")
++                for w, pid in zip(raw_words, punc_ids))
++        else:
++            # punc alignment unavailable -> one whole-utterance sentence with
++            # acoustic word timestamps; never fabricate per-sentence splits
++            sentence_info = [{"text": raw_text, "start": times[0][0],
++                              "end": times[-1][1], "timestamp": times}]
++            result["text"] = raw_text
++        result["timestamp"] = times
++        if sentence_timestamp:
++            result["sentence_info"] = sentence_info
++        result["_duration_ms_measured"] = duration_ms
++        result["_vad_segments"] = segments
++        result["_raw_word_count"] = len(raw_words)
++        result["_timestamp_count"] = len(times)
++        return [result]
+--- a/src/open_storyline/agent.py
++++ b/src/open_storyline/agent.py
+@@ -2,6 +2,7 @@
+ from datetime import timedelta
+ from typing import Optional, Any
+ import logging
++import os
+ 
+ import httpx
+ 
+@@ -17,6 +18,8 @@
+ from open_storyline.mcp.hooks.chat_middleware import handle_tool_errors, on_progress, log_tool_request
+ from open_storyline.mcp.sampling_handler import make_sampling_callback
+ from open_storyline.skills.skills_io import load_skills
++from open_storyline.mcp.request_ledger import (begin_request, finish_request,
++                                               max_output_tokens_per_request)
+ 
+ logger = logging.getLogger(__name__)
+ 
+@@ -42,6 +45,8 @@
+         "max_tokens": 1,
+     }
+     
++    attempt = begin_request(phase=f"{provider.lower()}_validation", model=model,
++                            output_token_limit=1)
+     try:
+         async with httpx.AsyncClient(timeout=timeout) as client:
+             response = await client.post(
+@@ -57,6 +62,9 @@
+                     raise ValueError(f"{provider} returned non-JSON response. Check base_url/gateway.")
+                 choices = data.get("choices")
+                 if isinstance(choices, list) and len(choices) > 0:
++                    usage = data.get("usage") if isinstance(data, dict) else None
++                    finish_request(attempt, status="completed", usage=usage,
++                                   response_metadata={"http_status": response.status_code})
+                     print(f"{model} validation successful")
+                     return True
+                 raise ValueError(
+@@ -107,6 +115,7 @@
+                 )
+                 
+     except httpx.TimeoutException as e:
++        finish_request(attempt, status="error", error=f"{type(e).__name__}: request timed out")
+         logger.warning(f"{provider} API connection timeout: {e}")
+         raise ConnectionError(
+             f"{provider} API connection timeout. Please check your network or base_url.\n"
+@@ -115,6 +124,7 @@
+             f"Error: Connection timed out after 10 seconds"
+         )
+     except httpx.ConnectError as e:
++        finish_request(attempt, status="error", error=f"{type(e).__name__}: connection failed")
+         logger.warning(f"{provider} API connection failed: {e}")
+         raise ConnectionError(
+             f"{provider} API connection failed. Please check your network or base_url.\n"
+@@ -123,6 +133,7 @@
+             f"Error: Unable to connect to the API endpoint"
+         )
+     except Exception as e:
++        finish_request(attempt, status="error", error=f"{type(e).__name__}: {e}")
+         logger.error(f"{provider} API validation failed with unexpected error: {e}")
+         raise
+ 
+@@ -182,6 +193,7 @@
+         temperature=llm_temperature,
+         streaming=True,
+         max_retries=llm_max_retries,
++        max_tokens=max_output_tokens_per_request(),
+     )
+ 
+     # 2) VLM: same priority as above
+@@ -206,6 +218,7 @@
+         timeout=vlm_timeout,
+         temperature=vlm_temperature,
+         max_retries=vlm_max_retries,
++        max_tokens=max_output_tokens_per_request(),
+     )
+ 
+     sampling_callback = make_sampling_callback(llm, vlm)
+@@ -231,6 +244,12 @@
+     tools = await client.get_tools()
+     skills = await load_skills(cfg.skills.skill_dir) # Load skills
+     node_manager = NodeManager(tools)
++    # These MCP utilities do not carry NodeMeta, but they still pass through
++    # the same native interceptors and use the same session artifact store.
++    server_name = str(cfg.local_mcp_server.server_name)
++    for public_name in ("read_node_history", "write_skills"):
++        node_manager.tool_name_to_node_id[public_name] = public_name
++        node_manager.tool_name_to_node_id[f"{server_name}_{public_name}"] = public_name
+ 
+     # 4) Use LangChain's agent runtime to handle the multi-turn tool calling loop
+     agent = create_agent(
+@@ -240,4 +259,4 @@
+         store=store,
+         context_schema=ClientContext,
+     )
+-    return agent, node_manager
+\ No newline at end of file
++    return agent, node_manager
+--- /dev/null
++++ b/src/open_storyline/confirmation_flow.py
+@@ -0,0 +1,131 @@
++"""Narrow, auditable plan-confirmation classifier for the native agent entry."""
++from __future__ import annotations
++
++import re
++from typing import Any
++
++
++REQUIRED_STEPS = {
++    "load_media", "split_shots", "local_asr", "speech_rough_cut",
++    "plan_timeline_pro", "render_video",
++}
++STEP_ALIASES = {
++    "load_media": ("加载媒体",),
++    "split_shots": ("镜头切分",),
++    "local_asr": ("本地asr", "本地语音识别"),
++    "speech_rough_cut": ("语音粗剪",),
++    "plan_timeline_pro": ("规划时间线", "时间线规划"),
++    "render_video": ("渲染视频",),
++}
++ALLOWED_BACKTICK_NAMES = REQUIRED_STEPS | {
++    "mode", "gap_threshold", "is_speech_rough_cut", "include_video_audio",
++    "video_volume_scale", "output.mp4", "cuts.json",
++}
++OUT_OF_SCOPE_ACTION = re.compile(
++    r"(?:添加|加入|增加|加|使用)\s*(字幕|音乐|配乐|动画|调色|转场|外部素材)|"
++    r"(?:add|include|use)\s+(subtitles?|music|animation|color grading|transitions?|external assets?)",
++    re.IGNORECASE,
++)
++NEGATION = ("不要", "不添加", "不加入", "不增加", "不使用", "不", "禁止", "避免", "do not", "don't", "without")
++CONFIRMATION_ASK = re.compile(
++    r"(请.{0,12}确认.{0,12}(计划|方案)|确认.{0,12}(计划|方案).{0,12}(后|吗|？|\?)|"
++    r"please\s+confirm.{0,30}plan|confirm.{0,30}plan.{0,15}\?)",
++    re.IGNORECASE | re.DOTALL,
++)
++CLARIFICATION_CUE = re.compile(
++    r"(请问|你希望|您希望|需要你提供|请补充|还需要你|which\s+|what\s+|"
++    r"could you clarify|please specify|what duration|which range)",
++    re.IGNORECASE,
++)
++
++
++def _get(message: Any, key: str, default: Any = None) -> Any:
++    if isinstance(message, dict):
++        return message.get(key, default)
++    return getattr(message, key, default)
++
++
++def _kind(message: Any) -> str:
++    value = _get(message, "type") or _get(message, "role") or ""
++    return str(value).lower()
++
++
++def _content(message: Any) -> str:
++    value = _get(message, "content", "")
++    return value if isinstance(value, str) else str(value)
++
++
++def confirmation_request(messages: list[Any]) -> tuple[bool, str]:
++    """Return (awaiting, assistant plan text); never approves generic questions."""
++    assistants = [m for m in messages if _kind(m) in {"ai", "assistant"}]
++    if not assistants:
++        return False, ""
++    last = _content(assistants[-1])
++    if not CONFIRMATION_ASK.search(last):
++        return False, last
++    return True, last
++
++
++def plan_is_preapproved(messages: list[Any]) -> tuple[bool, str]:
++    """Accept only the named native workflow and explicitly preserved media contract."""
++    awaiting, plan = confirmation_request(messages)
++    if not awaiting:
++        return False, "latest assistant message is not a plan-confirmation request"
++    if CLARIFICATION_CUE.search(plan):
++        return False, "plan also contains an unrelated clarification request"
++    folded = plan.lower()
++    missing = sorted(step for step in REQUIRED_STEPS
++                     if step not in folded and not any(alias.lower() in folded
++                                                       for alias in STEP_ALIASES[step]))
++    if missing:
++        return False, f"plan omits required native step(s): {', '.join(missing)}"
++
++    # Backticked identifiers are an explicit list of tools/options in the plan.
++    names = set(re.findall(r"`([^`]+)`", plan))
++    unexpected = []
++    for name in names:
++        head = name.split("(", 1)[0].strip()
++        if head in REQUIRED_STEPS or name in ALLOWED_BACKTICK_NAMES:
++            continue
++        if re.fullmatch(r"(?:mode=skip|gap_threshold=0|is_speech_rough_cut=true|"
++                        r"include_video_audio=true|video_volume_scale=1(?:\.0)?)", name):
++            continue
++        unexpected.append(name)
++    unexpected.sort()
++    if unexpected:
++        return False, f"plan contains an unapproved tool/option: {unexpected[0]}"
++
++    lower = plan.lower()
++    for match in OUT_OF_SCOPE_ACTION.finditer(plan):
++        prefix = lower[max(0, match.start() - 12):match.start()]
++        if not any(word in prefix for word in NEGATION):
++            return False, f"plan adds out-of-scope material/effect: {match.group(1)}"
++
++    contract_terms = ("原声", "分辨率", "帧率")
++    if not all(term in plan for term in contract_terms):
++        return False, "plan does not explicitly preserve source audio, dimensions, and frame rate"
++    return True, "plan contains only the preauthorized native workflow and output contract"
++
++
++def confirmation_decision(messages: list[Any], confirmations_sent: int,
++                          confirmation_limit: int) -> tuple[str, bool, str]:
++    awaiting, _plan = confirmation_request(messages)
++    if not awaiting:
++        return "executing", False, "no plan confirmation request remains"
++    allowed, reason = plan_is_preapproved(messages)
++    if not allowed:
++        return "awaiting_confirmation", False, reason
++    if confirmations_sent >= confirmation_limit:
++        return "awaiting_confirmation", False, "preauthorized confirmation limit reached"
++    return "executing", True, reason
++
++
++def continue_with_confirmation(messages: list[Any], confirmation: Any) -> list[Any]:
++    """Retain the full transcript, appending only the explicit authorized reply."""
++    return [*messages, confirmation]
++
++
++def complete_native_chain(node_ids: set[str], successful_node_ids: set[str]) -> tuple[bool, list[str]]:
++    missing = sorted(node for node in REQUIRED_STEPS
++                     if node not in node_ids or node not in successful_node_ids)
++    return not missing, missing
+--- a/src/open_storyline/mcp/register_tools.py
++++ b/src/open_storyline/mcp/register_tools.py
+@@ -4,6 +4,7 @@
+ from pydantic import BaseModel, Field
+ import inspect
+ import traceback
++from pathlib import Path
+ 
+ from open_storyline.config import Settings
+ from open_storyline.skills.skills_io import dump_skills
+@@ -18,7 +19,44 @@
+ from mcp.server.fastmcp import Context, FastMCP
+ from mcp.server.session import ServerSession
+ 
+-def create_tool_wrapper(node: BaseNode, input_schema: type[BaseModel]):
++
++def validate_prerequisite_payload(*, node_id: str, session_id: str, kind: str,
++                                  artifact_id: str, payload):
++    """Validate an existing prior artifact without rejecting legal empties."""
++    optional_empty_kinds = {'transition_rec', 'text_rec', 'music_rec'}
++    if not isinstance(payload, (dict, list)):
++        raise RuntimeError(
++            f"empty prerequisite payload: node={node_id!r} session={session_id!r} "
++            f"kind={kind!r} artifact={artifact_id!r}"
++        )
++    if not payload and kind not in optional_empty_kinds:
++        raise RuntimeError(
++            f"empty prerequisite payload: node={node_id!r} session={session_id!r} "
++            f"kind={kind!r} artifact={artifact_id!r}"
++        )
++    if kind == 'load_media' and (not isinstance(payload, dict) or not payload.get('media')):
++        raise RuntimeError(
++            f"load_media artifact has no media: node={node_id!r} "
++            f"session={session_id!r} artifact={artifact_id!r}"
++        )
++    if kind == 'split_shots' and (not isinstance(payload, dict) or not payload.get('clips')):
++        raise RuntimeError(
++            f"split_shots artifact has no clips: node={node_id!r} "
++            f"session={session_id!r} artifact={artifact_id!r}"
++        )
++    return payload
++
++
++def infer_plan_timeline_input_mode(*, params: dict, raw_arguments: dict) -> dict:
++    """Keep the timeline mode consistent with its actual supplied artifact."""
++    if (params.get('speech_rough_cut') is not None
++            and 'is_speech_rough_cut' not in raw_arguments):
++        params['is_speech_rough_cut'] = True
++    return params
++
++
++def create_tool_wrapper(node: BaseNode, input_schema: type[BaseModel], cfg: Settings,
++                        kind_to_node_id: dict[str, str] | None = None):
+     """
+     Factory function: Convert custom Node to MCP Tool function
+     """
+@@ -30,6 +68,8 @@
+         request = mcp_ctx.request_context.request
+         headers = request.headers
+         session_id = headers.get('X-Storyline-Session-Id')
++        if not session_id:
++            raise RuntimeError(f"missing X-Storyline-Session-Id for MCP node {meta.node_id!r}")
+         
+         # 2. Session lifecycle management
+         session_manager = mcp_ctx.request_context.lifespan_context
+@@ -42,9 +82,104 @@
+         params = kwargs.copy()
+         params.update(req_json.get('params', {}).get('arguments', {}))
+ 
++        # `inputs` is an internal media payload added by the LangChain-side
++        # interceptor; it is intentionally absent from LoadMediaInput's public
++        # MCP schema. FastMCP validates arguments against that schema and drops
++        # the extra field before invoking this wrapper, so reconstruct it from
++        # the configured local media directory at the server boundary.
++        if getattr(meta, 'node_id', None) == 'load_media' and not params.get('inputs'):
++            media_dir = Path(cfg.project.media_dir)
++            media_exts = {'.mp4', '.mov', '.mkv', '.avi', '.jpg', '.jpeg',
++                          '.png', '.webp', '.bmp'}
++            inputs = []
++            if media_dir.is_dir():
++                from open_storyline.mcp.hooks.node_interceptors import should_inline_media_as_base64
++                inline_media = should_inline_media_as_base64(cfg)
++                for media_path in sorted(media_dir.iterdir()):
++                    if not media_path.is_file() or media_path.suffix.lower() not in media_exts:
++                        continue
++                    absolute_path = str(media_path.resolve())
++                    if inline_media:
++                        from open_storyline.storage.file import FileCompressor
++                        compressed = FileCompressor.compress_and_encode(absolute_path)
++                        inputs.append({'path': absolute_path,
++                                       'base64': compressed.base64,
++                                       'md5': compressed.md5,
++                                       'orig_path': absolute_path,
++                                       'orig_md5': compressed.md5})
++                    else:
++                        inputs.append({'path': absolute_path,
++                                       'orig_path': absolute_path,
++                                       'orig_md5': None})
++            params['inputs'] = inputs
++            if not inputs:
++                raise RuntimeError(
++                    f"load_media has no readable media files in session={session_id!r} "
++                    f"directory={str(media_dir)!r}"
++                )
++
++        elif session_id:
++            # The LangChain interceptor also injects prerequisite artifacts,
++            # but those internal fields are outside each public MCP schema and
++            # FastMCP drops them during argument validation. Rehydrate only
++            # artifacts from this session at the server boundary.
++            required_kinds = (node.meta.default_require_prior_kind
++                              if params.get('mode', 'auto') != 'auto'
++                              else node.meta.require_prior_kind)
++            if required_kinds:
++                _store = ArtifactStore(artifacts_dir=cfg.project.outputs_dir,
++                                       session_id=session_id)
++                for kind in required_kinds:
++                    source_node_id = (kind_to_node_id or {}).get(kind, kind)
++                    prior_meta = _store.get_latest_meta(node_id=source_node_id,
++                                                        session_id=session_id)
++                    if prior_meta is None:
++                        raise RuntimeError(
++                            f"missing prerequisite artifact: node={meta.node_id!r} "
++                            f"session={session_id!r} kind={kind!r} "
++                            f"expected_node={source_node_id!r}"
++                        )
++                    _, prior_output = _store.load_result(prior_meta.artifact_id)
++                    if prior_meta.session_id != session_id or not isinstance(prior_output, dict):
++                        raise RuntimeError(
++                            f"invalid prerequisite artifact: node={meta.node_id!r} "
++                            f"session={session_id!r} kind={kind!r} "
++                            f"artifact={prior_meta.artifact_id!r}"
++                        )
++                    payload = prior_output.get('payload') if isinstance(prior_output, dict) else None
++                    params[kind] = validate_prerequisite_payload(
++                        node_id=meta.node_id, session_id=session_id, kind=kind,
++                        artifact_id=prior_meta.artifact_id, payload=payload)
++                if meta.node_id == 'speech_rough_cut':
++                    prior_meta = _store.get_latest_meta(
++                        node_id='speech_rough_cut', session_id=session_id)
++                    if prior_meta is not None:
++                        _, prior_output = _store.load_result(prior_meta.artifact_id)
++                        prior_payload = (prior_output.get('payload')
++                                         if isinstance(prior_output, dict) else None)
++                        if (isinstance(prior_payload, dict)
++                                and (prior_payload.get('rough_cut_jsons')
++                                     or prior_payload.get('clips'))):
++                            params['speech_rough_cut'] = prior_payload
++
++        if getattr(meta, 'node_id', None) == 'plan_timeline_pro':
++            raw_arguments = (req_json.get('params', {}).get('arguments') or {})
++            infer_plan_timeline_input_mode(params=params, raw_arguments=raw_arguments)
++
++        # artifact_id is not part of any node's input schema, so agents
++        # cannot pass it; generate one per call exactly like the upstream
++        # read_node_history / write_skills wrappers do (OPENSTORYLINE-
++        # EDIT-PILOT-01 wiring fix; upstream hard-keyed params['artifact_id']
++        # which always raises KeyError through the MCP schema path).
++        artifact_id = params.get('artifact_id')
++        if not artifact_id:
++            from open_storyline.storage.agent_memory import ArtifactStore as _AS
++            _store = _AS(artifacts_dir=cfg.project.outputs_dir, session_id=session_id)
++            artifact_id = _store.generate_artifact_id(
++                (req_json.get('params', {}) or {}).get('name', 'node'))
+         node_state = NodeState(
+             session_id=session_id,
+-            artifact_id=params['artifact_id'],
++            artifact_id=artifact_id,
+             lang=params.get('lang', 'zh'),
+             node_summary=NodeSummary(),
+             llm=make_llm(mcp_ctx),
+@@ -90,17 +225,73 @@
+ 
+ 
+ def register(server: FastMCP, cfg: Settings) -> None:
+-
+-    # scan node packages
+-    for pkg in cfg.local_mcp_server.available_node_pkgs:
+-        NODE_REGISTRY.scan_package(pkg)
++    # Task overlay: import only native nodes used by the speech rough-cut path.
++    # The upstream package scan eagerly imports optional TTS, retrieval,
++    # transition-generation and vision nodes, pulling unrelated dependencies.
++    from open_storyline.nodes.core_nodes import load_media, split_shots, asr_node
++    from open_storyline.nodes.core_nodes import speech_rough_cut, plan_timeline_pro
++    from open_storyline.nodes.core_nodes import recommend_effects, render_video
++
++    # The Pro timeline is the upstream implementation that consumes the
++    # speech_rough_cut artifact. Its default prerequisites include optional
++    # generation outputs, so this task-scoped metadata only requires the two
++    # native artifacts actually used by this workflow.
++    plan_timeline_pro.PlanTimelineProNode.meta.require_prior_kind = [
++        "split_shots", "speech_rough_cut"
++    ]
++    plan_timeline_pro.PlanTimelineProNode.meta.default_require_prior_kind = [
++        "split_shots", "speech_rough_cut"
++    ]
++    # Prior rough cuts inform later passes, but the first speech rough cut
++    # has no self artifact yet. Treat that history as optional and inject it
++    # when an earlier non-empty result exists.
++    speech_rough_cut.SpeechRoughCutNode.meta.require_prior_kind = ["asr"]
++    speech_rough_cut.SpeechRoughCutNode.meta.default_require_prior_kind = ["asr"]
++
++    # split_shots(mode="skip") is a pass-through; upstream __init__ eagerly
++    # loads TransNet weights even in this mode. Defer model creation to the
++    # explicit process() path, which still uses the unmodified native loader.
++    def _skip_transnet_init(self, server_cfg):
++        from open_storyline.utils.ffmpeg_utils import resolve_ffmpeg_executable
++        from open_storyline.nodes.core_nodes.base_node import BaseNode
++        BaseNode.__init__(self, server_cfg)
++        self.transnetv2_model = None
++        self.ffmpeg_executable = resolve_ffmpeg_executable()
++
++    split_shots.SplitShotsNode.__init__ = _skip_transnet_init
++
++    # OPENSTORYLINE-ASR-ADAPTER-01 overlay: inject the English paraformer
++    # adapter into LocalASRNode. This replaces the stock funasr AutoModel
++    # whose 1.3.1 wiring garbles this checkpoint's text (bpe.model decodes a
++    # tokens.json id space) and drops word timestamps. The adapter keeps the
++    # same models/weights (paraformer-en + fsmn-vad + ct-punc), decodes with
++    # the checkpoint's own tokens.json table and computes word timestamps
++    # from the model's CIF fire places. It raises on identity/vocab mismatch
++    # instead of falling back.
++    def _load_english_asr_model(self):
++        if not hasattr(self, "asr_model"):
++            # Validate the registered read-only cache before importing or
++            # constructing any model. This keeps a missing mount from falling
++            # through to ModelScope network lookup or a long opaque failure.
++            from asr_adapter.cache_preflight import validate_asr_cache
++            validate_asr_cache()
++            from asr_adapter.paraformer_en import ParaformerEnAsr
++            self.asr_model = ParaformerEnAsr()
++        return self.asr_model
++
++    asr_node.LocalASRNode._load_asr_model = _load_english_asr_model
++
+     all_node_classes = [NODE_REGISTRY.get(name=node_name) for node_name in cfg.local_mcp_server.available_nodes]
++    kind_to_node_id = {
++        NodeClass.meta.node_kind: NodeClass.meta.node_id
++        for NodeClass in all_node_classes
++    }
+ 
+     for NodeClass in all_node_classes:
+         node_instance = NodeClass(cfg)
+         input_schema = node_instance.input_schema
+ 
+-        tool_func, meta = create_tool_wrapper(node_instance, input_schema)
++        tool_func, meta = create_tool_wrapper(node_instance, input_schema, cfg, kind_to_node_id)
+         
+         tool_name = NodeClass.meta.name
+         tool_desc = NodeClass.meta.description
+@@ -131,13 +322,24 @@
+         params['node_summary'] = node_summary
+     
+         try:
+-            store = ArtifactStore(artifacts_dir=params.get('artifacts_dir', ".storyline/.server_cache"), session_id=session_id)
++            # History is always scoped to the configured shared artifact root
++            # and the session from the MCP transport header. Agent arguments
++            # cannot redirect it to another directory or session.
++            store = ArtifactStore(artifacts_dir=cfg.project.outputs_dir, session_id=session_id)
+             meta, data = store.load_result(params['query_artifact_id'])
+-            summary = "History information retrieved successfully"
+-            isError = False
++            if meta is None or meta.session_id != session_id:
++                summary = (
++                    f"artifact not found in this session: node=read_node_history "
++                    f"session={session_id!r} artifact={params['query_artifact_id']!r}"
++                )
++                data = {"error": summary}
++                isError = True
++            else:
++                summary = "History information retrieved successfully"
++                isError = False
+         except Exception as e:
+             traceback_info = ''.join(traceback.format_exception(e))
+-            summary = f"History read execution failed: {params['query_artifact_id']}\n {traceback_info}",
++            summary = f"History read execution failed: {params.get('query_artifact_id')!r}: {e}"
+             meta, data, isError = 'None', 'None', True
+ 
+         return {
+@@ -179,7 +381,7 @@
+             skill_content=skill_content,
+         )
+         node_summary.info_for_llm("[Write Skills] Done.")
+-        store = ArtifactStore(artifacts_dir=params.get('artifacts_dir', ".storyline/.server_cache"), session_id=session_id)
++        store = ArtifactStore(artifacts_dir=cfg.project.outputs_dir, session_id=session_id)
+ 
+         return {
+             'artifact_id': params.get('artifact_id', store.generate_artifact_id(req_json_content.get('params', {}).get('name', 'mcp_write_skills'))),
+--- /dev/null
++++ b/src/open_storyline/mcp/request_ledger.py
+@@ -0,0 +1,206 @@
++"""Small per-run model request ledger and conservative request budget gate."""
++from __future__ import annotations
++
++import json
++import os
++import re
++import time
++import uuid
++from contextlib import contextmanager
++from contextvars import ContextVar
++from pathlib import Path
++from typing import Any
++
++from langchain_core.callbacks import BaseCallbackHandler
++
++_MANUAL_REQUEST_ACTIVE: ContextVar[bool] = ContextVar(
++    "openstoryline_manual_request_active", default=False)
++
++
++@contextmanager
++def manual_request_scope():
++    """Keep callback propagation from double-recording a manually gated call."""
++    token = _MANUAL_REQUEST_ACTIVE.set(True)
++    try:
++        yield
++    finally:
++        _MANUAL_REQUEST_ACTIVE.reset(token)
++
++
++def _path() -> Path | None:
++    root = os.getenv("OPENSTORYLINE_TRACE_DIR")
++    return Path(root) / "model-requests.jsonl" if root else None
++
++
++def _events(path: Path) -> list[dict[str, Any]]:
++    if not path.exists():
++        return []
++    out = []
++    for line in path.read_text(encoding="utf-8").splitlines():
++        try:
++            out.append(json.loads(line))
++        except json.JSONDecodeError:
++            continue
++    return out
++
++
++def observed_tokens() -> int:
++    path = _path()
++    total = 0
++    if path:
++        for event in _events(path):
++            if event.get("event") != "request_finished" or not isinstance(event.get("usage"), dict):
++                continue
++            usage = event["usage"]
++            total += int(usage.get("total_tokens", usage.get("input_tokens", 0) +
++                                   usage.get("output_tokens", 0)) or 0)
++    return total
++
++
++def _positive_int(name: str, default: int) -> int:
++    value = int(os.getenv(name, str(default)))
++    if value <= 0:
++        raise ValueError(f"{name} must be a positive integer")
++    return value
++
++
++def max_logical_requests() -> int:
++    return _positive_int("OPENSTORYLINE_MAX_LOGICAL_REQUESTS", 60)
++
++
++def max_observed_tokens_soft_threshold() -> int:
++    return _positive_int("OPENSTORYLINE_MAX_OBSERVED_TOKENS_SOFT_THRESHOLD", 1_000_000)
++
++
++def max_output_tokens_per_request() -> int:
++    return _positive_int("OPENSTORYLINE_MAX_OUTPUT_TOKENS_PER_REQUEST", 32768)
++
++
++def begin_request(*, phase: str, model: str, modality: str = "text",
++                  output_token_limit: int | None = None,
++                  association: dict[str, Any] | None = None) -> dict[str, Any]:
++    """Gate request count and prior observed usage before network I/O.
++
++    The observed-usage threshold blocks subsequent requests after usage is
++    returned. A response already in flight may cross it; it is not an absolute
++    cumulative token ceiling. The separate output limit is sent to the model.
++    """
++    path = _path()
++    count = sum(1 for e in _events(path) if e.get("event") == "request_started") if path else 0
++    limit = max_logical_requests()
++    token_threshold = max_observed_tokens_soft_threshold()
++    output_limit = output_token_limit or max_output_tokens_per_request()
++    if output_limit <= 0 or output_limit > max_output_tokens_per_request():
++        raise ValueError("request output-token limit must be within the configured per-request cap")
++    attempt = {"request_id": uuid.uuid4().hex, "phase": phase, "model": model,
++               "modality": modality, "started_monotonic_ns": time.monotonic_ns(),
++               "max_output_tokens_per_request": output_limit}
++    if association:
++        attempt["association"] = _safe_metadata(association)
++    if (os.getenv("OPENSTORYLINE_BUDGET_EXHAUSTED") == "1" or count >= limit
++            or observed_tokens() >= token_threshold):
++        reason = (f"logical request cap {limit} reached" if count >= limit else
++                  f"prior observed-usage soft threshold {token_threshold} reached")
++        finish_request(attempt, status="blocked_budget", error=reason)
++        raise RuntimeError(f"logical model request budget exhausted: {reason}")
++    _append({"event": "request_started", **attempt})
++    return attempt
++
++
++def finish_request(attempt: dict[str, Any], *, status: str,
++                   usage: Any = None, response_metadata: Any = None,
++                   error: str | None = None) -> None:
++    safe_error = error or ""
++    safe_error = re.sub(r"(?i)bearer\s+[^\s,;]+", "Bearer [REDACTED]", safe_error)
++    secret = os.getenv("DASHSCOPE_API_KEY", "")
++    if secret:
++        safe_error = safe_error.replace(secret, "[REDACTED]")
++    usage = _safe_metadata(usage)
++    response_metadata = _safe_metadata(response_metadata)
++    _append({"event": "request_finished", "request_id": attempt["request_id"],
++             "phase": attempt["phase"], "model": attempt["model"],
++             "modality": attempt["modality"], "status": status,
++             "finished_monotonic_ns": time.monotonic_ns(),
++             "association": attempt.get("association"),
++             "usage": usage, "response_metadata": response_metadata,
++             "error": safe_error or None})
++    path = _path()
++    if path:
++        events = _events(path)
++        total = observed_tokens()
++        request_limit = max_logical_requests()
++        token_threshold = max_observed_tokens_soft_threshold()
++        _append({"event": "budget_snapshot", "observed_total_tokens": total,
++                 "max_observed_tokens_soft_threshold": token_threshold,
++                 "observed_usage_threshold_reached": total >= token_threshold,
++                 "max_logical_requests": request_limit,
++                 "logical_requests": sum(1 for e in events if e.get("event") == "request_started"),
++                 "max_output_tokens_per_request": max_output_tokens_per_request()})
++        if total >= token_threshold:
++            os.environ["OPENSTORYLINE_BUDGET_EXHAUSTED"] = "1"
++
++
++def _safe_metadata(value: Any) -> Any:
++    if isinstance(value, dict):
++        return {str(k): _safe_metadata(v) for k, v in value.items()
++                if str(k).lower() not in {"api_key", "authorization", "headers", "credential"}}
++    if isinstance(value, (list, tuple)):
++        return [_safe_metadata(v) for v in value]
++    if isinstance(value, (str, int, float, bool)) or value is None:
++        secret = os.getenv("DASHSCOPE_API_KEY", "")
++        return value.replace(secret, "[REDACTED]") if secret and isinstance(value, str) else value
++    return str(value)
++
++
++def _append(event: dict[str, Any]) -> None:
++    path = _path()
++    if path is None:
++        return
++    path.parent.mkdir(parents=True, exist_ok=True)
++    with path.open("a", encoding="utf-8") as stream:
++        stream.write(json.dumps(event, ensure_ascii=False, default=str) + "\n")
++        stream.flush()
++        os.fsync(stream.fileno())
++
++
++class RequestRecorder(BaseCallbackHandler):
++    """LangChain callback that records each model invocation and returned usage."""
++    raise_error = True
++
++    def __init__(self, phase: str):
++        self.phase = phase
++        self.pending: dict[str, dict[str, Any]] = {}
++
++    def on_chat_model_start(self, serialized: dict[str, Any], messages: list[list[Any]],
++                            run_id: Any, **kwargs: Any) -> None:
++        if _MANUAL_REQUEST_ACTIVE.get():
++            return
++        model = str((serialized or {}).get("kwargs", {}).get("model") or
++                    (serialized or {}).get("kwargs", {}).get("model_name") or "unknown")
++        self.pending[str(run_id)] = begin_request(phase=self.phase, model=model)
++
++    def on_llm_end(self, response: Any, run_id: Any, **kwargs: Any) -> None:
++        attempt = self.pending.pop(str(run_id), None)
++        if attempt is None:
++            return
++        message = None
++        try:
++            message = response.generations[0][0].message
++        except (AttributeError, IndexError, TypeError):
++            pass
++        llm_output = getattr(response, "llm_output", None) or {}
++        usage = getattr(message, "usage_metadata", None) or llm_output.get("token_usage")
++        metadata = getattr(message, "response_metadata", None)
++        if message is not None:
++            calls = getattr(message, "tool_calls", None) or []
++            if calls:
++                attempt["association"] = {"tool_call_ids": [
++                    str(call.get("id")) for call in calls if call.get("id")
++                ]}
++        finish_request(attempt, status="completed", usage=usage, response_metadata=metadata)
++
++    def on_llm_error(self, error: BaseException, run_id: Any, **kwargs: Any) -> None:
++        attempt = self.pending.pop(str(run_id), None)
++        if attempt is not None:
++            finish_request(attempt, status="error", error=f"{type(error).__name__}: {error}")
++
+--- a/src/open_storyline/mcp/sampling_handler.py
++++ b/src/open_storyline/mcp/sampling_handler.py
+@@ -2,6 +2,10 @@
+ import os
+ import math
+ import base64
++import json
++import time
++import uuid
++import re
+ from io import BytesIO
+ from typing import Any, Dict, List, Tuple
+ from urllib.parse import urlparse
+@@ -11,6 +15,9 @@
+ from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
+ 
+ from mcp.types import CreateMessageRequestParams, CreateMessageResult, TextContent
++from open_storyline.mcp.request_ledger import (begin_request, finish_request,
++                                               max_output_tokens_per_request,
++                                               manual_request_scope)
+ 
+ 
+ # -----------------------------
+@@ -393,27 +400,70 @@
+                     lc_messages.append(HumanMessage(content=text))
+ 
+             # 7. Invoke selected model
+-            bound = model
+             model_name = getattr(model, "model", None) or getattr(model, "model_name", None) or "unknown"
++            max_tokens = min(int(max_tokens), max_output_tokens_per_request())
++            attempt = begin_request(phase="mcp_sampling", model=str(model_name),
++                                    modality="multimodal" if use_multimodal else "text",
++                                    output_token_limit=max_tokens,
++                                    association={key: metadata[key] for key in
++                                                 ("node_id", "artifact_id", "session_id")
++                                                 if key in metadata})
+             try:
+-                bound = bound.bind(temperature=temperature, max_tokens=max_tokens, top_p=top_p)
++                bound = model.bind(temperature=temperature, max_tokens=max_tokens, top_p=top_p)
+             except Exception:
+-                bound = bound.bind(temperature=temperature, max_tokens=max_tokens)
+-
++                bound = model.bind(temperature=temperature, max_tokens=max_tokens)
+             try:
+                 if hasattr(bound, "ainvoke"):
+-                    resp = await bound.ainvoke(lc_messages)
++                    with manual_request_scope():
++                        resp = await bound.ainvoke(lc_messages)
+                 else:
+-                    resp = await asyncio.to_thread(bound.invoke, lc_messages)
++                    with manual_request_scope():
++                        resp = await asyncio.to_thread(bound.invoke, lc_messages)
+             except TypeError:
+                 # Edge case: some wrappers don't accept max_tokens/top_p
++                finish_request(attempt, status="error", error="TypeError: unsupported sampling bind options")
++                attempt = begin_request(phase="mcp_sampling_fallback", model=str(model_name),
++                                        modality="multimodal" if use_multimodal else "text",
++                                        output_token_limit=max_output_tokens_per_request())
+                 bound2 = model.bind(temperature=temperature)
+-                if hasattr(bound2, "ainvoke"):
+-                    resp = await bound2.ainvoke(lc_messages)
+-                else:
+-                    resp = await asyncio.to_thread(bound2.invoke, lc_messages)
++                try:
++                    if hasattr(bound2, "ainvoke"):
++                        with manual_request_scope():
++                            resp = await bound2.ainvoke(lc_messages)
++                    else:
++                        with manual_request_scope():
++                            resp = await asyncio.to_thread(bound2.invoke, lc_messages)
++                except Exception as exc:
++                    finish_request(attempt, status="error", error=f"{type(exc).__name__}: {exc}")
++                    raise
++            except Exception as exc:
++                finish_request(attempt, status="error", error=f"{type(exc).__name__}: {exc}")
++                raise
++
++            finish_request(attempt, status="completed",
++                           usage=getattr(resp, "usage_metadata", None),
++                           response_metadata=getattr(resp, "response_metadata", None))
+ 
+             text_out = _extract_text_from_lc_response(resp)
++            trace_dir = os.getenv("OPENSTORYLINE_TRACE_DIR")
++            if trace_dir:
++                os.makedirs(trace_dir, exist_ok=True)
++                usage = getattr(resp, "usage_metadata", None)
++                response_meta = getattr(resp, "response_metadata", None)
++                event = {
++                    "event_id": uuid.uuid4().hex,
++                    "event": "mcp_model_response",
++                    "observed_at_unix_ns": time.time_ns(),
++                    "model": str(model_name),
++                    "modality": "multimodal" if use_multimodal else "text",
++                    "response_metadata": response_meta,
++                    "usage_metadata": usage,
++                    "finish_reason": (response_meta or {}).get("finish_reason") if isinstance(response_meta, dict) else None,
++                    "error": None,
++                }
++                path = os.path.join(trace_dir, "mcp-model-events.jsonl")
++                with open(path, "a", encoding="utf-8") as f:
++                    f.write(json.dumps(event, ensure_ascii=False, default=str) + "\n")
+             
+             return CreateMessageResult(
+                 content=TextContent(type="text", text=text_out),
+@@ -422,6 +472,25 @@
+                 stopReason="endTurn",
+             )
+         except Exception as e:
++            trace_dir = os.getenv("OPENSTORYLINE_TRACE_DIR")
++            if trace_dir:
++                os.makedirs(trace_dir, exist_ok=True)
++                safe_error = str(e)
++                secret = os.getenv("DASHSCOPE_API_KEY", "")
++                if secret:
++                    safe_error = safe_error.replace(secret, "[REDACTED]")
++                safe_error = re.sub(r"(?i)bearer\s+[^\s,;]+", "Bearer [REDACTED]", safe_error)
++                event = {
++                    "event_id": uuid.uuid4().hex,
++                    "event": "mcp_model_error",
++                    "observed_at_unix_ns": time.time_ns(),
++                    "model": str(locals().get("model_name", "unknown")),
++                    "modality": "multimodal" if locals().get("use_multimodal") else "text",
++                    "error_type": type(e).__name__,
++                    "error": safe_error,
++                }
++                with open(os.path.join(trace_dir, "mcp-model-events.jsonl"), "a", encoding="utf-8") as f:
++                    f.write(json.dumps(event, ensure_ascii=False, default=str) + "\n")
+             return CreateMessageResult(
+                 content=TextContent(type="text", text=f"{type(e)}: {e}"),
+                 model=str(model_name),
+--- a/src/open_storyline/mcp/hooks/node_interceptors.py
++++ b/src/open_storyline/mcp/hooks/node_interceptors.py
+@@ -3,6 +3,7 @@
+ import os
+ from pathlib import Path
+ import json
++import time
+ import traceback
+ 
+ 
+@@ -18,6 +19,33 @@
+ from open_storyline.utils.logging import get_logger
+ 
+ logger = get_logger(__name__)
++
++
++def _trace_safe(value):
++    if isinstance(value, dict):
++        return {str(key): _trace_safe(item) for key, item in value.items()
++                if str(key).lower() not in {"api_key", "pexels_api_key", "authorization",
++                                            "headers", "credential", "base64"}}
++    if isinstance(value, (list, tuple)):
++        return [_trace_safe(item) for item in value]
++    if isinstance(value, (str, int, float, bool)) or value is None:
++        return value
++    if hasattr(value, "model_dump"):
++        return _trace_safe(value.model_dump(mode="json"))
++    return str(value)
++
++
++def _trace_tool_event(event: str, **fields) -> None:
++    trace_dir = os.getenv("OPENSTORYLINE_TRACE_DIR")
++    if not trace_dir:
++        return
++    path = Path(trace_dir) / "mcp-tool-events.jsonl"
++    record = {"event": event, "observed_monotonic_ns": time.monotonic_ns(),
++              **_trace_safe(fields)}
++    path.parent.mkdir(parents=True, exist_ok=True)
++    with path.open("a", encoding="utf-8") as stream:
++        stream.write(json.dumps(record, ensure_ascii=False, default=str) + "\n")
++        stream.flush()
+ 
+ 
+ # Hosts that indicate Agent and MCP server are on the same machine (path-only, no base64). 0.0.0.0 for Docker.
+@@ -87,10 +115,15 @@
+             context = runtime.context
+             store = runtime.store
+             session_id = context.session_id
+-            node_id = request.name
++            meta_collector: NodeManager = context.node_manager
++            node_id = meta_collector.resolve_tool_id(request.name)
++            if node_id is None:
++                raise ToolException(
++                    f"MCP tool name {request.name!r} is not registered in the exact "
++                    "session tool-name map"
++                )
+             lang = context.lang
+             artifact_id = store.generate_artifact_id(node_id)
+-            meta_collector: NodeManager = context.node_manager
+             input_data = defaultdict(list)
+ 
+             client_cfg = getattr(context, "cfg", None)
+@@ -107,10 +140,6 @@
+                 input_data['inputs'] = []
+                 seen_paths: set = set()
+                 media_dir = Path(context.media_dir)
+-                try:
+-                    project_media_root = Path(client_cfg.project.media_dir).resolve()
+-                except Exception:
+-                    project_media_root = None
+                 for file_name in os.listdir(media_dir):
+                     path = media_dir / file_name
+                     if path.is_dir():
+@@ -124,18 +153,12 @@
+                             "md5": compress_data.md5,
+                         })
+                     else:
+-                        # Path-only (local):
+-                        # - Prefer a path relative to project.media_dir (server contract) when possible.
+-                        # - Otherwise, fall back to absolute path (e.g. FastAPI session subdir is outside project.media_dir).
++                        # The task-local MCP server and client share a
++                        # filesystem. LoadMediaNode opens ``path`` directly
++                        # relative to its process cwd, so path-only requests
++                        # must carry the absolute shared-container path.
+                         abs_path = path.resolve()
+-                        rel_or_abs: str
+-                        if project_media_root is not None:
+-                            try:
+-                                rel_or_abs = str(abs_path.relative_to(project_media_root))
+-                            except ValueError:
+-                                rel_or_abs = str(abs_path)
+-                        else:
+-                            rel_or_abs = str(abs_path)
++                        rel_or_abs = str(abs_path)
+ 
+                         if rel_or_abs not in seen_paths:
+                             seen_paths.add(rel_or_abs)
+@@ -318,6 +341,18 @@
+             else:
+                 input_data['artifacts_dir'] = store.artifacts_dir
+ 
++            if node_id == 'speech_rough_cut':
++                prior_meta = store.get_latest_meta(
++                    node_id='speech_rough_cut', session_id=session_id)
++                if prior_meta is not None:
++                    _, prior_output = store.load_result(prior_meta.artifact_id)
++                    prior_payload = (prior_output.get('payload')
++                                     if isinstance(prior_output, dict) else None)
++                    if (isinstance(prior_payload, dict)
++                            and (prior_payload.get('rough_cut_jsons')
++                                 or prior_payload.get('clips'))):
++                        input_data['speech_rough_cut'] = prior_payload
++
+             new_req_args = {
+                 'artifact_id': artifact_id,
+                 'lang': lang,
+@@ -327,6 +362,15 @@
+ 
+             modified_request = request.override(
+                 args=new_req_args
++            )
++            _trace_tool_event(
++                "tool_call_started",
++                tool_call_id=getattr(runtime, "tool_call_id", None),
++                tool_name=request.name,
++                node_id=node_id,
++                session_id=session_id,
++                artifact_id=artifact_id,
++                arguments=new_req_args,
+             )
+             return await handler(modified_request)
+         except Exception as e:
+@@ -346,15 +390,45 @@
+ 
+             
+             result = tool_call_result.model_dump()
+-            tool_result = json.loads(result['content'][0]['text'])
+-            node_id = request.name
++            content = result.get('content') or []
++            text_content = (content[0].get('text') if content and isinstance(content[0], dict)
++                            else getattr(content[0], 'text', None) if content else None)
++            node_manager = request.runtime.context.node_manager
++            node_id = node_manager.resolve_tool_id(request.name)
++            if node_id is None:
++                raise ToolException(
++                    f"MCP tool name {request.name!r} is not registered in the exact "
++                    "session tool-name map"
++                )
++            session_id = client_ctx.session_id
++            tool_call_id = request.runtime.tool_call_id
++            if result.get('isError'):
++                error_text = str(text_content or "MCP server returned an error without text")
++                _trace_tool_event(
++                    "tool_call_finished",
++                    tool_call_id=tool_call_id,
++                    tool_name=request.name,
++                    node_id=node_id,
++                    session_id=session_id,
++                    artifact_id=None,
++                    is_error=True,
++                    error=error_text,
++                )
++                return Command(update={
++                    "messages": [ToolMessage(
++                        content={"node_id": node_id, "session_id": session_id,
++                                 "isError": True, "error": error_text},
++                        tool_call_id=tool_call_id)],
++                    "status": "done",
++                })
++            if not text_content:
++                raise ToolException(f"MCP tool {request.name!r} returned no JSON result")
++            tool_result = json.loads(text_content)
+             
+             artifact_id = tool_result['artifact_id']
+-            session_id = client_ctx.session_id
+-
+             store = request.runtime.store
+ 
+-            if not tool_result['isError']:
++            if not tool_result.get('isError', True):
+                 if node_id == 'search_media':
+                     store.save_result(
+                         session_id,
+@@ -368,6 +442,25 @@
+                         node_id,
+                         tool_result,
+                     )
++                saved_meta, saved_data = store.load_result(artifact_id)
++                if (saved_meta is None or saved_meta.session_id != session_id
++                        or saved_meta.node_id != node_id
++                        or saved_data.get("payload") != tool_result.get("tool_excute_result")):
++                    raise ToolException(
++                        f"automatic artifact save verification failed: node={node_id!r} "
++                        f"session={session_id!r} artifact={artifact_id!r}"
++                    )
++            _trace_tool_event(
++                "tool_call_finished",
++                tool_call_id=getattr(request.runtime, "tool_call_id", None),
++                tool_name=request.name,
++                node_id=node_id,
++                session_id=session_id,
++                artifact_id=artifact_id,
++                is_error=bool(tool_result.get("isError", True)),
++                summary=tool_result.get("summary"),
++                returned_payload=tool_result.get("tool_excute_result"),
++            )
+             tool_call_id = request.runtime.tool_call_id
+             
+             if node_id == 'read_node_history':
+@@ -379,6 +472,9 @@
+                 update={
+                     "messages": [
+                         ToolMessage(content={
++                            "node_id": node_id,
++                            "artifact_id": artifact_id,
++                            "session_id": session_id,
+                             'summary': {
+                                 'node_summary': tool_result['summary'],
+                                 'tool_excute_result': tool_excute_result
+@@ -392,6 +488,19 @@
+         except Exception as e:
+             logger.error("[ToolInterceptor]"+ "".join(traceback.format_exception(e)))
+             logger.error(f"Tool Call result: {result}")
++            runtime = getattr(request, "runtime", None)
++            context = getattr(runtime, "context", None) if runtime else None
++            manager = getattr(context, "node_manager", None) if context else None
++            node_id = manager.resolve_tool_id(request.name) if manager else None
++            _trace_tool_event(
++                "tool_call_error",
++                tool_call_id=getattr(runtime, "tool_call_id", None),
++                tool_name=request.name,
++                node_id=node_id,
++                session_id=getattr(context, "session_id", None),
++                error_type=type(e).__name__,
++                error=str(e),
++            )
+             raise
+ 
+     @staticmethod
+--- a/src/open_storyline/nodes/node_manager.py
++++ b/src/open_storyline/nodes/node_manager.py
+@@ -19,6 +19,10 @@
+         # New: Prerequisite dependency related
+         self.id_to_require_prior_kind: Dict[str, List[str]] = {}  # node_id -> required prerequisite features when executing auto method
+         self.id_to_default_require_prior_kind: Dict[str, List[str]] = {}  # node_id -> prerequisite features needed for default method execution
++        # MCP exposes names with the configured server prefix (for example,
++        # ``storyline_load_media``), while dependency metadata uses node_id.
++        # Keep the exact advertised name mapping; never strip arbitrary text.
++        self.tool_name_to_node_id: Dict[str, str] = {}
+         
+         # Reverse index: which nodes depend on a specific kind
+         self.kind_to_dependent_nodes: Dict[str, Set[str]] = defaultdict(set)  # kind -> set of node_ids that depend on this feature
+@@ -34,6 +38,7 @@
+                 node_id = metadata.get('node_id')
+                 if node_id:
+                     self.add_node(tool)
++                    self.tool_name_to_node_id[str(tool.name)] = str(node_id)
+     
+     def add_node(self, tool: StructuredTool) -> bool:
+         # metadata is None, failed to add node 
+@@ -57,6 +62,8 @@
+         
+         # Update dependencies
+         self.id_to_tool[node_id] = tool
++        self.tool_name_to_node_id[str(tool.name)] = node_id
++        self.tool_name_to_node_id[node_id] = node_id
+         self.id_to_priority[node_id] = priority
+         self.id_to_next[node_id] = next_nodes
+         self.id_to_kind[node_id] = node_kind
+@@ -141,6 +148,10 @@
+     def get_tool(self, node_id: str) -> Optional[StructuredTool]:
+         """Get tool by node_id"""
+         return self.id_to_tool.get(node_id)
++
++    def resolve_tool_id(self, tool_name: str) -> Optional[str]:
++        """Resolve an exact advertised MCP tool name to its internal ID."""
++        return self.tool_name_to_node_id.get(str(tool_name))
+     
+     def check_excutable(self, session_id:str, store: ArtifactStore, all_require_kind: List[str]) -> Dict[str, Any]:
+         """
+--- a/src/open_storyline/nodes/core_nodes/speech_rough_cut.py
++++ b/src/open_storyline/nodes/core_nodes/speech_rough_cut.py
+@@ -93,6 +93,11 @@
+                         top_p=0.9,
+                         max_tokens=8092,
+                         model_preferences=None,
++                        metadata={
++                            "node_id": self.meta.node_id,
++                            "artifact_id": node_state.artifact_id,
++                            "session_id": node_state.session_id,
++                        },
+                     )
+                     parsed_json = parse_json_dict(raw)
+                     print(parsed_json)
+@@ -256,4 +261,4 @@
+ 
+     def _format_clip_id(self, clip_index: int) -> str:
+         """Generate zero-padded clip ID."""
+-        return f"clip_{clip_index:0{CLIP_ID_NUMBER_WIDTH}d}"
+\ No newline at end of file
++        return f"clip_{clip_index:0{CLIP_ID_NUMBER_WIDTH}d}"
+--- a/src/open_storyline/nodes/core_nodes/split_shots.py
++++ b/src/open_storyline/nodes/core_nodes/split_shots.py
+@@ -271,6 +271,11 @@
+         """
+         output_directory = self._prepare_output_directory(node_state, inputs)
+         media = self._extract_media(inputs)
++        if not media:
++            raise ValueError(
++                "split_shots(mode=skip) requires a non-empty load_media artifact; "
++                f"session={node_state.session_id!r} artifact={node_state.artifact_id!r}"
++            )
+ 
+         clips: List[Dict[str, Any]] = []
+         clip_index = 1
+--- a/src/open_storyline/utils/prompts.py
++++ b/src/open_storyline/utils/prompts.py
+@@ -2,7 +2,10 @@
+ from typing import Dict, Any
+ import re
+ 
+-PROMPTS_DIR = Path("prompts/tasks")
++# Resolve the shipped prompt bundle independently of the container's runtime
++# working directory (formal tasks run from /workspace, templates live beside
++# the installed OpenStoryline source under /opt/openstoryline/prompts).
++PROMPTS_DIR = Path(__file__).resolve().parents[3] / "prompts" / "tasks"
+ 
+ 
+ class PromptBuilder:
+@@ -97,4 +100,4 @@
+         get_prompt("filter_clips.system")
+         get_prompt("filter_clips.user", clip_data="...")
+     """
+-    return _builder.build(task, lang, **user_vars)
+\ No newline at end of file
++    return _builder.build(task, lang, **user_vars)

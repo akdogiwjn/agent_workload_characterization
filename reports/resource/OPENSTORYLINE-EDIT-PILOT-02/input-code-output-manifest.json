@@ -1,0 +1,272 @@
+{
+  "schema": "openstoryline-edit-pilot-02-input-code-output-manifest-v1",
+  "identity_sha256": "441caee9a76d32d35b906ffccd62d28fb98537038d5d2fc2e031ab054d0c4f0c",
+  "input_and_outputs": [
+    {
+      "role": "input",
+      "path": "data/workloads/video/editing/avb-disfluency-interview-3-v1/input/source.mp4",
+      "bytes": 2017306,
+      "sha256": "a9bce74a50b5380d7c1aa1d9980f1d159e8633fbff00986504a363a3d18525bb"
+    },
+    {
+      "role": "submission_video",
+      "path": "data/raw/generated/OPENSTORYLINE-EDIT-PILOT-02/20261022T150133Z-openstoryline-edit-02/workspace/output/output.mp4",
+      "bytes": 1887666,
+      "sha256": "4cae03d385b76831d4c7e39e75b5724fc8818cba2aa315f6b4dfa2110d83f3bf"
+    },
+    {
+      "role": "cuts",
+      "path": "data/raw/generated/OPENSTORYLINE-EDIT-PILOT-02/20261022T150133Z-openstoryline-edit-02/workspace/output/cuts.json",
+      "bytes": 961,
+      "sha256": "79df910d2161dc78994d805e1f02df2e2e635e22ff310030222eee58b33d697f"
+    },
+    {
+      "role": "final_render_artifact",
+      "path": "data/raw/generated/OPENSTORYLINE-EDIT-PILOT-02/20261022T150133Z-openstoryline-edit-02/workspace/output/.server_cache/env01-7a725fec0f2247fbae21ec08e2add618/render_video_1792682621.7633991/output_62313887_1792682621788.mp4",
+      "bytes": 1887666,
+      "sha256": "4cae03d385b76831d4c7e39e75b5724fc8818cba2aa315f6b4dfa2110d83f3bf"
+    }
+  ],
+  "frozen_code_files": [
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/runtime/openstoryline_pilot_entry.py",
+      "bytes": 44103,
+      "sha256": "7aa12722d111a7e0aba00ba788c5514b804e32e61de320c7ee0d30f2275c2ad0"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/runtime/asr_cache_runtime.py",
+      "bytes": 2453,
+      "sha256": "50f8b4d65c6564a691b60be97dcc1812f1c22e337aaed3b7c669e0c73b5c44c9"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/openstoryline_task_entry.py",
+      "bytes": 23761,
+      "sha256": "b78261a3b9c2f00dac22b74d31f071b21b33ce0e38d42e5a249ec9cfb556651b"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/config.toml",
+      "bytes": 2544,
+      "sha256": "21f83a65f3d0e02bce8ea4b0f5f1a2c58b72ce69b2310d3f98a3d9ca51800b64"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/resource/fonts/font_info.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/.storyline/skills/speech_rough_cut_skill/SKILL.md",
+      "bytes": 1748,
+      "sha256": "c4c459dbbebf521bd188254863ae7b87a63ca0089ef8e755f5256e29fac4ec28"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/confirmation_flow.py",
+      "bytes": 5535,
+      "sha256": "ec649315f683ce2e73b461577b22f24afff41e58321eb6bd31c884d43dfeda6a"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.confirm-flow-03",
+      "bytes": 544,
+      "sha256": "1c430253b798fdd260c508b88d9c3aac9317ec92c74999bb85a392a317cac2ce"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/offline_fake_model.py",
+      "bytes": 12127,
+      "sha256": "1ee32a176add9880b590e856ffb4831a59f1181c48bb77e61f42f4540b7b858e"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/openstoryline_mcp_server.py",
+      "bytes": 726,
+      "sha256": "c3a96c01218a4f73d3bbcddcbc6725f0a33001db623e0044b4cf52bc7f891f00"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/agent.py",
+      "bytes": 11267,
+      "sha256": "cd8d3b3ef507a95afb5b539be6b27fbb579c7d8abfd4449ee9956ec79be03db2"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/nodes/node_manager.py",
+      "bytes": 7745,
+      "sha256": "97978f1cf7c79ec3a6221b51ce5814b15f9975e5404a4b26649a15ea288208d7"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/nodes/core_nodes/render_video.py",
+      "bytes": 37516,
+      "sha256": "7b34509579601744c31523f9b6352446a7ced7dbf74ad2238969a303797b7e57"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/nodes/core_nodes/split_shots.py",
+      "bytes": 24513,
+      "sha256": "daacc4f75997c28d15affb86cb18eabc3f50a801dbad09ff1ddf470744b2814b"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/nodes/core_nodes/speech_rough_cut.py",
+      "bytes": 10939,
+      "sha256": "0f5972ad2b5ace8ad6f38427aea9fe4fe29c4f7eb7ba10250ef5c04f057e9762"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/request_ledger.py",
+      "bytes": 8533,
+      "sha256": "e9693e4b2cb65393bcdc8194557e53f880a022183ced20450c652728c01dfcbb"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/sampling_handler.py",
+      "bytes": 19945,
+      "sha256": "853b3aa7b66bd3a5d8ca43279c55198a4210bf06bda3c3c3519803301796007b"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/register_tools.py",
+      "bytes": 19237,
+      "sha256": "0c7dae3e14e2d18155c20be93c6159aa491abbba84791a6a20cd742e359a53b3"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/hooks/node_interceptors.py",
+      "bytes": 27151,
+      "sha256": "9f6b8675d42c0fba788f8feb64d789b16f99019ec1869fdc6c6e47da9cb68171"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/tests/test_native_entry_repair.py",
+      "bytes": 8719,
+      "sha256": "8a42911a677e78b5869b04c2e4f83a580d1ded31bf2445dea319465ae6620e26"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/tests/test_confirmation_flow.py",
+      "bytes": 4221,
+      "sha256": "914bd76fb64d0e1f13f10c398b4ef680145996f59c690f6e3adda6eee0a2a8f8"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/asr_adapter/cache_preflight.py",
+      "bytes": 1873,
+      "sha256": "431b7ef63b625fbc606c1996fc15f622996829b3d69e1c01f061b38b9d665d75"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/asr-cache-contract.json",
+      "bytes": 1025,
+      "sha256": "56f9414cbb73149d2897b5baed184233f21149206567636a2212910cf07f28ba"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source-manifest.json",
+      "bytes": 20075,
+      "sha256": "46cafe151037a8aff6c7bc5815f43fc5a5e20a5ce79e8f181074826e7ed4fbb2"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.formal-entry",
+      "bytes": 279,
+      "sha256": "2e063ab59a86f69f8544caf061fd73cd4766b5fc6cbe0839199e257cea0966b3"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.formal-entry-v13",
+      "bytes": 275,
+      "sha256": "0faccd6c8a21c0030341d41d5ea4ebe21754742ac6ab943999d0a1bcf5610f05"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.native-entry-repair-02",
+      "bytes": 416,
+      "sha256": "349344827f01ceb5c48938c75c749d0a4949ce317468076603ca10c956ba8377"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.native-entry-repair-03",
+      "bytes": 416,
+      "sha256": "349344827f01ceb5c48938c75c749d0a4949ce317468076603ca10c956ba8377"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.native-entry-repair-04",
+      "bytes": 416,
+      "sha256": "349344827f01ceb5c48938c75c749d0a4949ce317468076603ca10c956ba8377"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.native-entry-repair-05",
+      "bytes": 416,
+      "sha256": "349344827f01ceb5c48938c75c749d0a4949ce317468076603ca10c956ba8377"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.native-entry-repair-06",
+      "bytes": 416,
+      "sha256": "349344827f01ceb5c48938c75c749d0a4949ce317468076603ca10c956ba8377"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.native-entry-repair-07",
+      "bytes": 416,
+      "sha256": "349344827f01ceb5c48938c75c749d0a4949ce317468076603ca10c956ba8377"
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/container_runtime.py",
+      "bytes": 36912,
+      "sha256": "0b48cb5be7000ac99d207bc233cf141337a17d18550b1e4795bed264087aaac4"
+    },
+    {
+      "path": "scripts/video_use_edit_pilot_01.py",
+      "bytes": 43726,
+      "sha256": "2248c7abc629dcd431bee13f5a31e8dfe2b6884e0de8a54e493a557275d7ad0e"
+    },
+    {
+      "path": "references/repos/agentic-vbench/tasks/agentic_vbench_repair/exp-disfluency-interview-3-task01/steps/solve/instruction.md",
+      "bytes": 1100,
+      "sha256": "89342bbad96c3d7e897545dd76ef1db2576398058d8a5b4b2d24aef1887df3cb"
+    },
+    {
+      "path": "data/workloads/video/editing/avb-disfluency-interview-3-v1/input/source.mp4",
+      "bytes": 2017306,
+      "sha256": "a9bce74a50b5380d7c1aa1d9980f1d159e8633fbff00986504a363a3d18525bb"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/run_offline_validation.py",
+      "bytes": 14968,
+      "sha256": "0da9b5640b093aa219eb5229a51ead7175b2a36e9fee7240d0d1dc9f0a7319ba"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/continue_offline_validation.py",
+      "bytes": 20581,
+      "sha256": "bc16f73e61974df9bf748e7109639e550df1ee30af2c19a25c5176b8c0c40f2e"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/real-native-short-04/run_short_task.py",
+      "bytes": 25346,
+      "sha256": "8917185e7c87872341104385898403718a6f2ee13ba85dd89c7635454bb6f0fc"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/real-native-short-04/review_short_task.py",
+      "bytes": 12805,
+      "sha256": "ecfb140143d599952c20a0982364d0f5431b81f159a1cc70040ea379f2f80cd1"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/real-native-short-04/recover_short_task_postflight.py",
+      "bytes": 16232,
+      "sha256": "d9be5dea4becf2e2bc72417e92e1741a04c7b45f2c7240b48bea9ddb9541b6b4"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/runtime/short_task_budget.py",
+      "bytes": 1210,
+      "sha256": "102a5f62d9ebc1d5e777617b6cf0975a88f1dbfebb085c64169fca989407fce5"
+    },
+    {
+      "path": "tests/test_openstoryline_short_budget.py",
+      "bytes": 5075,
+      "sha256": "b00ecc8866e099bfacde2e9153bbeb8b7f8665e5f4a6ca827373dfc9d74d26e2"
+    },
+    {
+      "path": "tests/test_openstoryline_parent_deadline_cleanup.py",
+      "bytes": 3661,
+      "sha256": "cced130a924d5f8a48e3dea5d50715ce0b93ffbff20eb7810680a2b9ff0f0b8e"
+    },
+    {
+      "path": "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/verifier/entry.py",
+      "bytes": 10101,
+      "sha256": "1f0596978c673afa1accf2112208ae47a289a573e5f11b090538e262e7ce9c00"
+    },
+    {
+      "path": "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/verifier/judge.py",
+      "bytes": 26105,
+      "sha256": "cb5486bac019b19321f516ec15ee9253fe6c02024543449864517fbfd67ec96d"
+    },
+    {
+      "path": "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/verifier/requirements.lock",
+      "bytes": 178,
+      "sha256": "50bdf9dc3e031162a39b943431d8c94f642d4c804d8657c576d46c55b7440ebd"
+    },
+    {
+      "path": "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/verifier/verifier-environment.json",
+      "bytes": 1009,
+      "sha256": "f0b7fbb7161f9b53888ecb2c182fc754b479598b2d2687db7f755a81f6a26baf"
+    }
+  ]
+}

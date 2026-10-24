@@ -1,0 +1,125 @@
+{
+  "schema": "openstoryline-native-short-identity-v1",
+  "run_id": "openstoryline-native-short-20261022-01",
+  "image": {
+    "tag": "openstoryline-task:arm64-asr-adapted-v13-formal-entry-audio-budget",
+    "id": "sha256:bb9acb6f997176c28eccf35a74ee26bb3e83d40ff31c8fe809351f5f77f7d52f",
+    "platform": "linux/arm64"
+  },
+  "input": {
+    "path": "env/video/openstoryline/edit-pilot-02/preparation/full-chain-05/input/source.mp4",
+    "bytes": 55805,
+    "sha256": "4e78a0c66992e65b8dfafda3c508b273817dff69931ae9fbbc1de17ef46c6870"
+  },
+  "entry": {
+    "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/openstoryline_task_entry.py",
+    "bytes": 13909,
+    "sha256": "bed5adf34517c8639f8a01a330b9fc15bb7e7b30b35fb254940fd56523216151"
+  },
+  "route": {
+    "provider": "Bailian",
+    "protocol": "Chat Completions",
+    "model": "qwen3.7-plus",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "sdk_retries": 0,
+    "application_retries": 0
+  },
+  "budget": {
+    "max_logical_requests": 20,
+    "max_observed_tokens_soft_threshold": 200000,
+    "max_output_tokens_per_request": 8192
+  },
+  "wall_limit_s": 600,
+  "container": {
+    "cpus": 4,
+    "memory_bytes": 8589934592,
+    "network": "bridge",
+    "gpu": false,
+    "qemu": false
+  },
+  "cache_files": [
+    {
+      "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master/configuration.json",
+      "bytes": 737,
+      "sha256": "0e5b3d4226be9bbea106a746837965c60c625f88dff41e50371ee9f2d1badbe6"
+    },
+    {
+      "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master/config.yaml",
+      "bytes": 2727,
+      "sha256": "31632a633c2c3a415902f4601225ad8c224b4abeb080645efa8cc92d7f72b13d"
+    },
+    {
+      "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master/model.pt",
+      "bytes": 887289223,
+      "sha256": "e11203abf1f449b4c6515dee494c017ee27a4b716730378473d827ad3c7fe41c"
+    },
+    {
+      "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master/tokens.json",
+      "bytes": 170601,
+      "sha256": "9c72487c10c0dcfe6411d3c78af2a467a45b912c782448be0fc726c39d91389c"
+    },
+    {
+      "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master/bpe.model",
+      "bytes": 418104,
+      "sha256": "18c873d69fe4acbc204a0c55455b3ec8ec8a65ae563ab06ef02b14c612b82c5b"
+    },
+    {
+      "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master/am.mvn",
+      "bytes": 11203,
+      "sha256": "29b3c740a2c0cfc6b308126d31d7f265fa2be74f3bb095cd2f143ea970896ae5"
+    },
+    {
+      "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master/configuration.json",
+      "bytes": 365,
+      "sha256": "7bce8867e37d55c3dd8f672695ced18077a2be199ea529a5d432d5350fc0acba"
+    },
+    {
+      "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master/config.yaml",
+      "bytes": 1215,
+      "sha256": "486861ca26ddb79081663b6179cb204c6bfae71c52f04aafc48a9e9d8dde1e93"
+    },
+    {
+      "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master/model.pt",
+      "bytes": 1721366,
+      "sha256": "b3be75be477f0780277f3bae0fe489f48718f585f3a6e45d7dd1fbb1a4255fc5"
+    },
+    {
+      "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master/am.mvn",
+      "bytes": 8040,
+      "sha256": "6820fef9687708c4fc3fab2530179c8fcea6262daa25514380056cd8f6eb1754"
+    },
+    {
+      "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--punc_ct-transformer_cn-en-common-vocab471067-large/snapshots/master/configuration.json",
+      "bytes": 450,
+      "sha256": "7043245e6264cea789404e498a6f55a330a18585a4690d35dfe71741e6982237"
+    },
+    {
+      "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--punc_ct-transformer_cn-en-common-vocab471067-large/snapshots/master/config.yaml",
+      "bytes": 812,
+      "sha256": "c5ffb25cd063ed366cb26283908dca05a08ecfef8e90bef1d498ef9ffacd7552"
+    },
+    {
+      "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--punc_ct-transformer_cn-en-common-vocab471067-large/snapshots/master/model.pt",
+      "bytes": 1125507622,
+      "sha256": "7176cae922a872e130e6b88aef9a1153581711baf79c9124c7c95be383cd6f81"
+    },
+    {
+      "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--punc_ct-transformer_cn-en-common-vocab471067-large/snapshots/master/tokens.json",
+      "bytes": 8280697,
+      "sha256": "89951fe0669380ed33298ee048c4a2b0ebcaaf6ee8f332d85c281c41d0f38392"
+    },
+    {
+      "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--punc_ct-transformer_cn-en-common-vocab471067-large/snapshots/master/jieba.c.dict",
+      "bytes": 41536866,
+      "sha256": "eb0a68f8bfa65e6956d59e8f9652b49f5c91952273e24737bc9a8c5e23055221"
+    },
+    {
+      "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--punc_ct-transformer_cn-en-common-vocab471067-large/snapshots/master/jieba_usr_dict",
+      "bytes": 11280857,
+      "sha256": "059aa2af152734d5fd011a4d69cbab171f62347074db0db5157c17b5649010f5"
+    }
+  ],
+  "frozen_at_utc": "2026-10-22T11:00:45Z",
+  "frozen_at_monotonic_ns": 1592456081791330,
+  "identity_sha256": "a876d639a65f713edbdfeef0e6c46f3c3a494bac461d0250159f414cb59a3602"
+}

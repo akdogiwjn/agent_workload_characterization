@@ -1,0 +1,5 @@
+FROM openstoryline-task:arm64-asr-adapted-v5-request-gated
+COPY source/ /opt/openstoryline/
+RUN grep -q 'configured local media directory' /opt/openstoryline/src/open_storyline/mcp/register_tools.py \
+    && test -f /opt/openstoryline/src/open_storyline/mcp/request_ledger.py \
+    && bash -lc 'python3 -m compileall -q /opt/openstoryline'

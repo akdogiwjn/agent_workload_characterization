@@ -1,0 +1,129 @@
+{
+  "schema": "openstoryline-pilot02-closeout-review-v1",
+  "task": "OPENSTORYLINE-PILOT02-CLOSEOUT-REPAIR-01",
+  "run_id": "20261022T150133Z-openstoryline-edit-02",
+  "identity_sha256": "441caee9a76d32d35b906ffccd62d28fb98537038d5d2fc2e031ab054d0c4f0c",
+  "revised_offline_only": true,
+  "api_model_container_asr_render_verifier_started": false,
+  "raw_mutated": false,
+  "approval_or_identity_mutated": false,
+  "official_result": {
+    "evaluation_complete": true,
+    "reward": 0.0,
+    "score_changed": false
+  },
+  "agent": {
+    "raw_agent_result_status": "executing",
+    "raw_session_status": "executing",
+    "returncode": "unknown_not_persisted",
+    "full_attempt_start_monotonic_ns": "unknown_not_persisted",
+    "directory_before_bytes": "unknown_not_persisted",
+    "agent_work_s": 1270.800488456,
+    "resource_sampling_window_s": 1285.424903359,
+    "raw_status_files_preserved_byte_for_byte": true
+  },
+  "measurement": {
+    "cgroup_version": "v1",
+    "sample_count": 2101,
+    "sample_interval_median_s": 0.601412742,
+    "cpu_core_seconds": 520.2116219999994,
+    "cpu_average_cores": 0.40470012728134663,
+    "cpu_average_denominator_valid_sampling_window_s": 1285.4249033589983,
+    "sampled_max_memory_current_bytes": 6517669888,
+    "sampled_max_memory_current_gb_decimal": 6.517669888,
+    "sampled_max_memory_current_gib": 6.0700531005859375,
+    "sampled_memory_source": "cgroup v1 memory.usage_in_bytes; sampler maps to mem_current_bytes",
+    "kernel_memory_peak_bytes": 6944976896,
+    "kernel_memory_peak_gb_decimal": 6.944976896,
+    "kernel_memory_peak_gib": 6.468013763427734,
+    "kernel_peak_source": "cgroup v1 memory.max_usage_in_bytes; sampler maps to mem_peak_bytes",
+    "unit_correction": "The earlier 6.52 GiB rendering is incorrect; correct sampled value is 6.070053 GiB. Kernel peak is 6.468014 GiB.",
+    "original_svg_memory_axis": "MiB; plotted raw current bytes divided by 1048576, so the plotted values/axis are correct; no replacement graph needed",
+    "complete_attempt_wall_s": "unknown_not_persisted",
+    "directory_initial_values": "unknown_not_persisted"
+  },
+  "render_source": {
+    "selected_artifact_id": "render_video_1792682669.4529731",
+    "session_id": "env01-7a725fec0f2247fbae21ec08e2add618",
+    "selection_evidence": [
+      "agent-result.json",
+      "session-status.json",
+      "matching successful MCP render event",
+      "frozen host exporter selection rule"
+    ],
+    "selected_artifact_output_path": "/workspace/output/.server_cache/env01-7a725fec0f2247fbae21ec08e2add618/render_video_1792682669.4529731/output_361c7a6c_1792682669473.mp4",
+    "selected_artifact_media_sha256": "4cae03d385b76831d4c7e39e75b5724fc8818cba2aa315f6b4dfa2110d83f3bf",
+    "submitted_path": "workspace/output/output.mp4",
+    "submitted_sha256": "4cae03d385b76831d4c7e39e75b5724fc8818cba2aa315f6b4dfa2110d83f3bf",
+    "submitted_bytes_match_selected_artifact": true,
+    "other_successful_candidate_sha256": "4cae03d385b76831d4c7e39e75b5724fc8818cba2aa315f6b4dfa2110d83f3bf",
+    "candidate_contents_identical": true,
+    "timeline_artifact_id": "plan_timeline_pro_1792682573.151925",
+    "cuts_match_saved_timeline_complement": true,
+    "former_report_reference": "render_video_1792682621.7633991 was a recovery-script metadata-selection error; meta.json uses created_at, not create_time",
+    "selection_conclusion": "The frozen production exporter selected render_video_1792682669.4529731 by greatest artifact create_time, consistent with both container status records. Its media SHA-256 matches output.mp4. The earlier successful candidate has identical bytes, so hashes alone cannot distinguish which identical copy was used; selection identity is supported by status and frozen exporter logic."
+  },
+  "errors_and_gaps": {
+    "postprocess_permission_error": "host attempted to rewrite container-owned nobody:644 agent-result.json; write failed and aborted remaining report/archive steps",
+    "cleanup": "raw mcp-cleanup says pid_alive=false; container-removal verification recorded removed in recovered report",
+    "raw_agent_and_session_status": "still executing in original immutable bytes; do not reinterpret as completed"
+  },
+  "files": {
+    "original_report": "reports/resource/OPENSTORYLINE-EDIT-PILOT-02/run-report.json",
+    "raw_manifest": "data/raw/generated/OPENSTORYLINE-EDIT-PILOT-02/20261022T150133Z-openstoryline-edit-02/manifest.json",
+    "revision": "reports/resource/OPENSTORYLINE-EDIT-PILOT-02/revisions/closeout-review-01/"
+  },
+  "production_code_after_repair": {
+    "host_entry": {
+      "path": "env/video/openstoryline/edit-pilot-02/runtime/openstoryline_pilot_entry.py",
+      "bytes": 60465,
+      "sha256": "7d3021030172ba1cfe18d489159f18f72a08408612cc990ff77a5484ae7756c2"
+    },
+    "offline_recovery_entry": {
+      "path": "env/video/openstoryline/edit-pilot-02/recovery/recover_formal_postprocess_01.py",
+      "bytes": 31939,
+      "sha256": "b1da5cd88c7647246d9e2b23accabfa5a896cae35653989abd93e7677162891f"
+    },
+    "frozen_host_entry_before_repair": {
+      "path": "reports/resource/OPENSTORYLINE-EDIT-PILOT-02/revisions/closeout-review-01/snapshots/openstoryline_pilot_entry.py.before",
+      "bytes": 44103,
+      "sha256": "7aa12722d111a7e0aba00ba788c5514b804e32e61de320c7ee0d30f2275c2ad0"
+    },
+    "historical_identity_unchanged": true,
+    "closeout_tests": {
+      "path": "tests/test_openstoryline_closeout_repair.py",
+      "bytes": 12955,
+      "sha256": "b8ab121d11b543f0cdba2c6eefb8635e262a82d9438f343c0e4de6fcb2b26f76"
+    }
+  },
+  "targeted_tests": {
+    "file": "tests/test_openstoryline_closeout_repair.py",
+    "cases": 9,
+    "passed": 9,
+    "failed": 0,
+    "execution_scope": "temporary directories and fake runtime; no Docker/API/model/ASR/render/verifier"
+  },
+  "raw_modified": false,
+  "raw_status_file_hashes": {
+    "agent-result.json": {
+      "bytes": 174,
+      "sha256": "8034231e3f39f0a090909f1c96b195546573244e9ca9fb2f7464e10523e87ed4"
+    },
+    "session-status.json": {
+      "bytes": 275,
+      "sha256": "0e72c782581b83d50a4ee546ce7e752730313c5d0f6d99f1fe33d97d0e0ed0c8"
+    }
+  },
+  "raw_manifest_hash": {
+    "bytes": 12764,
+    "sha256": "87a3bbd64ee68f620fa790d2f10938193caa847e261ae9d58ec1f7420eaec69f"
+  },
+  "original_host_entry_hash_in_frozen_identity": "7aa12722d111a7e0aba00ba788c5514b804e32e61de320c7ee0d30f2275c2ad0",
+  "closeout_cause": {
+    "output_mount": "host output directory bind-mounted read/write at /workspace/output",
+    "observed_container_owner": "uid/gid 65534 (nobody)",
+    "observed_mode": "0644",
+    "failing_host_operation": "opening workspace/output/agent-result.json with mode w to replace container status after verified export",
+    "effect": "PermissionError escaped before original run-report and manifest finalization"
+  }
+}

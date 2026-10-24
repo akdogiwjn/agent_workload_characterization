@@ -1,0 +1,91 @@
+{
+  "task": "VIMAX-GENERATION-PILOT-02",
+  "files": [
+    {
+      "path": "closeout-summary.md",
+      "bytes": 1392,
+      "sha256": "9e3703bf31cdfcceba861d5d8548ac4b7d6e6713658e574cda4468586ee7a1c1"
+    },
+    {
+      "path": "generation_entry.py",
+      "bytes": 17413,
+      "sha256": "0d5816eb0064333ae88f61255cbb64b010b3565fe88ef4be0c9dffa829955a66"
+    },
+    {
+      "path": "host_runner.py",
+      "bytes": 27874,
+      "sha256": "5d5e0654eaa844dd7ccb2b9f18ef93d87b6b1ad34c3d1f00bd2fc0d598880211"
+    },
+    {
+      "path": "postrun_audit.py",
+      "bytes": 13117,
+      "sha256": "72acb3f2a8580ff99e146c4a354d6e13c33a3f8361336f517e99608974d49afd"
+    },
+    {
+      "path": "run-01/APPROVAL-01.json",
+      "bytes": 1517,
+      "sha256": "37a6f75a79f09cb272d08217c30fc41a1ec7d7a8df669fe88c47147b26ad835b"
+    },
+    {
+      "path": "run-01/ATTEMPT-STARTED",
+      "bytes": 26,
+      "sha256": "20453c27b0d5b17bd1277fd5b165c4c40c4bf4effaf3186cbcfbe3a53596a339"
+    },
+    {
+      "path": "run-01/directory-after.json",
+      "bytes": 122,
+      "sha256": "92aa77613f2968307fa1a99b448652326fcf47887b1a3deca9dcb4800b808e01"
+    },
+    {
+      "path": "run-01/directory-before.json",
+      "bytes": 122,
+      "sha256": "65c2d6aec02266c3d1e6911d71587ae87ea83cbe77d55d6cce19bbaef674c9c7"
+    },
+    {
+      "path": "run-01/failure-analysis.json",
+      "bytes": 2800,
+      "sha256": "71eed2b581d97386b760ac2e09cb73820bbdf22b0e91b630bb15e112db285774"
+    },
+    {
+      "path": "run-01/identity-01.json",
+      "bytes": 16193,
+      "sha256": "b52e4d4f28a2cfcd3bf6525c8f5689a4f14fae8fdce0c6f0a96a6b5c0a9d7162"
+    },
+    {
+      "path": "run-01/netns-samples.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run-01/preflight.json",
+      "bytes": 6570,
+      "sha256": "37a55c4288a5c308184efeed649c701c47cea2645073a86050e1de759b1fc757"
+    },
+    {
+      "path": "run-01/run-record.json",
+      "bytes": 2270,
+      "sha256": "069fde4c986d7a33dd74930ef87ad6f1e587a0cb1240a724488e93aabfc8643d"
+    },
+    {
+      "path": "run-01/run-report.json",
+      "bytes": 2371,
+      "sha256": "18574e84249ea947021a0ecbdcb2e1bf6f23c99e795881b984a65454381c87c7"
+    }
+  ],
+  "self_hash": "omitted",
+  "scope": "execution code, frozen records, failure analysis and closeout; manifest omits itself",
+  "source_bindings": [
+    {
+      "path": "../preflight-02/preflight-report.json",
+      "sha256": "37a55c4288a5c308184efeed649c701c47cea2645073a86050e1de759b1fc757"
+    },
+    {
+      "path": "../preflight-02/snapshots-before/host_runner-as-run.py",
+      "sha256": "f61b4917f5c6f6bf5554754d3709ae81afce9c480f92fbe799a9ab7317799c46"
+    },
+    {
+      "path": "../preflight-01/source-map.json",
+      "sha256": "262736d263201f55e8386a77805ed6201ee4f40b1aeecc0861236ee5b3a959e3"
+    }
+  ]
+}

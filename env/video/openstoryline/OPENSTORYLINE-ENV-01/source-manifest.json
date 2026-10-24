@@ -1,0 +1,555 @@
+{
+  "schema": "openstoryline-env01-derived-source-manifest-v1",
+  "upstream_repository": "references/repos/FireRed-OpenStoryline",
+  "upstream_commit": "c9e945215586f45c12a61c1951ee9a8e9c43a027",
+  "file_count": 107,
+  "files": [
+    {
+      "path": ".storyline/skills/speech_rough_cut_skill/SKILL.md",
+      "bytes": 1748,
+      "sha256": "c4c459dbbebf521bd188254863ae7b87a63ca0089ef8e755f5256e29fac4ec28",
+      "upstream_sha256": "4580df65a3bfad898c87f86d002c5a0d8c90f386a118379ec4ebc1bdcba533f2",
+      "adaptation": "task-scoped workflow, no-effects policy, explicit source specification and gap_threshold parameter"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11381,
+      "sha256": "25d0c3c01beb2aa534ce986c0ac86e91f8a34864baf497f84d025074e74b8247"
+    },
+    {
+      "path": "config.toml",
+      "bytes": 2544,
+      "sha256": "21f83a65f3d0e02bce8ea4b0f5f1a2c58b72ce69b2310d3f98a3d9ca51800b64",
+      "kind": "project_wrapper_or_task_config"
+    },
+    {
+      "path": "config.upstream.toml",
+      "bytes": 7484,
+      "sha256": "8bfadde090238decce4994e4428f60e1150384ac57e39b5e82269e6b9eb2a06b",
+      "kind": "project_wrapper_or_task_config"
+    },
+    {
+      "path": "openstoryline_mcp_server.py",
+      "bytes": 726,
+      "sha256": "c3a96c01218a4f73d3bbcddcbc6725f0a33001db623e0044b4cf52bc7f891f00",
+      "kind": "project_wrapper_or_task_config"
+    },
+    {
+      "path": "openstoryline_task_entry.py",
+      "bytes": 7800,
+      "sha256": "0489f8b75db41147108ed5cdbdaa4af8b37817370f419d8e576d3bb9c1c6baac",
+      "kind": "project_wrapper_or_task_config"
+    },
+    {
+      "path": "prompts/tasks/elementrec_text/en/system.md",
+      "bytes": 182,
+      "sha256": "b7d8d6f4b199ac528ae04a6cbb4d4af6a2f4d9465377d5cb88a70d44a4ec5037"
+    },
+    {
+      "path": "prompts/tasks/elementrec_text/en/user.md",
+      "bytes": 103,
+      "sha256": "efe75a56387f7d9fa589cb9647e9eac00fe02d21953d579cd192db1a4cc1881e"
+    },
+    {
+      "path": "prompts/tasks/elementrec_text/zh/system.md",
+      "bytes": 156,
+      "sha256": "4be2d16735ccf012764cbc878c04e1ecfb787c4659dbd7511b22e4eb3f03a03e"
+    },
+    {
+      "path": "prompts/tasks/elementrec_text/zh/user.md",
+      "bytes": 93,
+      "sha256": "d04094c95da48ce95b3420d2b8a0a9c48866328ec661ab2771569b58ed4fe369"
+    },
+    {
+      "path": "prompts/tasks/filter_clips/en/system.md",
+      "bytes": 1813,
+      "sha256": "7fa6d76741a76852a095b86292b40fbd23b55bd8327df8fda69f511dd88f4116"
+    },
+    {
+      "path": "prompts/tasks/filter_clips/en/user.md",
+      "bytes": 408,
+      "sha256": "90dcc51612dccf8e0575affdd0430b58f396403d098985274ffe6dc6f34a53d7"
+    },
+    {
+      "path": "prompts/tasks/filter_clips/zh/system.md",
+      "bytes": 1571,
+      "sha256": "012ce4d491b41a9f1acb2dd12f551f8e56043ec027e135af41a6158e3972943d"
+    },
+    {
+      "path": "prompts/tasks/filter_clips/zh/user.md",
+      "bytes": 332,
+      "sha256": "05fb2f0f285575df7967771db8914f24a0e66cbdd032790b5c4130f487741507"
+    },
+    {
+      "path": "prompts/tasks/generate_ai_transition/en/system.md",
+      "bytes": 2201,
+      "sha256": "d026fcccde88d07ecce3418e4d08112a47d28e2fc7da93ce74441117c1cc70d4"
+    },
+    {
+      "path": "prompts/tasks/generate_ai_transition/en/user.md",
+      "bytes": 184,
+      "sha256": "303e363c7154c8c2b68b058d0d00f67a38ba5a5fa9b41d6aa264bb367bac6c52"
+    },
+    {
+      "path": "prompts/tasks/generate_ai_transition/zh/system.md",
+      "bytes": 1737,
+      "sha256": "d625cb438b354d737a3211f868aaeb83b6fc9448929bc1ca7f1bec945683c6a5"
+    },
+    {
+      "path": "prompts/tasks/generate_ai_transition/zh/user.md",
+      "bytes": 140,
+      "sha256": "8a62bf2c0a923f449f422d6f1df48095393306ea3498416d14075c2deacc18b0"
+    },
+    {
+      "path": "prompts/tasks/generate_script/en/system.md",
+      "bytes": 5072,
+      "sha256": "5cbb7eb74e65811e89e05bfa0b61d62e37bcd8c22666f81cb18317dfd6a811ac"
+    },
+    {
+      "path": "prompts/tasks/generate_script/en/user.md",
+      "bytes": 179,
+      "sha256": "62438285ccf12968999ee5d8fcd57d7aca244c4268edb76245adf38fa9226a06"
+    },
+    {
+      "path": "prompts/tasks/generate_script/zh/system.md",
+      "bytes": 4840,
+      "sha256": "9f5ced72d448fc474a18e64e06ed10c1ed86f3046a1d17f421a2af6a4233b894"
+    },
+    {
+      "path": "prompts/tasks/generate_script/zh/user.md",
+      "bytes": 148,
+      "sha256": "1a20b62abc59d52c06d898db95d63d91393a7329d8e3871c3f7815f37c738435"
+    },
+    {
+      "path": "prompts/tasks/generate_title/en/system.md",
+      "bytes": 249,
+      "sha256": "cea9175433dd4c6162b3dc9ce2a062295f3a8a39c94bdf2339ca0e23f41c5cc6"
+    },
+    {
+      "path": "prompts/tasks/generate_title/en/user.md",
+      "bytes": 241,
+      "sha256": "75a1a297faed568d0d57835e71afd432925f6891aeaf4bb8ade113c4a00f36bf"
+    },
+    {
+      "path": "prompts/tasks/generate_title/zh/system.md",
+      "bytes": 3011,
+      "sha256": "98dc78b9af7e763303f3d574bec2ba0b4d4b64de93e354b454e6311eb6a476fa"
+    },
+    {
+      "path": "prompts/tasks/generate_title/zh/user.md",
+      "bytes": 256,
+      "sha256": "49286c86fcbcf709c66ff2ef6bd0bbb9f4d5724b8b2079336cdf9d2a8b0b2663"
+    },
+    {
+      "path": "prompts/tasks/generate_voiceover/en/system.md",
+      "bytes": 355,
+      "sha256": "f1a16c480abc83c17f30306f30a9a326c59d8a82b5a6526acaf849be9fb3e3fe"
+    },
+    {
+      "path": "prompts/tasks/generate_voiceover/en/user.md",
+      "bytes": 974,
+      "sha256": "c1007bc437b51af34a361128ed4d5a7181bfd4ecc2350fa5463639c810da0038"
+    },
+    {
+      "path": "prompts/tasks/generate_voiceover/zh/system.md",
+      "bytes": 791,
+      "sha256": "f9b00d5c512e724c653039edbe1f3ddc3b88ea6aebc28fced9a42b288a327efd"
+    },
+    {
+      "path": "prompts/tasks/generate_voiceover/zh/user.md",
+      "bytes": 803,
+      "sha256": "ae0031415fe6ada4243bd61ca35289e7e6458d004dbca05821e057d28eb7e87f"
+    },
+    {
+      "path": "prompts/tasks/group_clips/en/system.md",
+      "bytes": 6365,
+      "sha256": "2cea25b508bb16b9e710bff79dd262f4eccfe1f377991df28ab11b77dee612a8"
+    },
+    {
+      "path": "prompts/tasks/group_clips/en/user.md",
+      "bytes": 241,
+      "sha256": "64c47b3eb4c7d07d0fa64682e6ed3998715ad6530fc4212d597935fd5fd7ac87"
+    },
+    {
+      "path": "prompts/tasks/group_clips/zh/system.md",
+      "bytes": 5943,
+      "sha256": "804b9a1c5c033beb8d4724824bc11e89a63b0f67b38f3c74feb9c0f60a553241"
+    },
+    {
+      "path": "prompts/tasks/group_clips/zh/user.md",
+      "bytes": 115,
+      "sha256": "cecba0ae5acfd0cc5e31c3e7aec1e198585cf691c2e3aac932a5212232d97154"
+    },
+    {
+      "path": "prompts/tasks/instruction/en/system.md",
+      "bytes": 5495,
+      "sha256": "93a1aea32a87c3023453e651595c8e0b5013a2a51f9f3dff4ee4637758336235"
+    },
+    {
+      "path": "prompts/tasks/instruction/zh/system.md",
+      "bytes": 4339,
+      "sha256": "2b79bdb6ea76ba63fc2fc3c17e74ff04416a401a706dcccc460aadabc0c57066"
+    },
+    {
+      "path": "prompts/tasks/scripts/en/omni_bgm_label.md",
+      "bytes": 1428,
+      "sha256": "ce3d994425ff72d48f8b4a02f9906c9d8084c83ed1398cfb6e82bbde957251d8"
+    },
+    {
+      "path": "prompts/tasks/scripts/en/script_template_label.md",
+      "bytes": 527,
+      "sha256": "67b2c992778d32bb3365f7046d2d6b34cfff1ab0476fc37dee42ced4af7264b2"
+    },
+    {
+      "path": "prompts/tasks/scripts/zh/omni_bgm_label.md",
+      "bytes": 1307,
+      "sha256": "997a2145111a52891afdf754f1831829abd0f2f10a1e1b597fec4dd624d4ac87"
+    },
+    {
+      "path": "prompts/tasks/scripts/zh/script_template_label.md",
+      "bytes": 432,
+      "sha256": "85c8089501001124989b30d8d61114209bd9789f7b38a5bc68ffc8150b2c1554"
+    },
+    {
+      "path": "prompts/tasks/select_bgm/en/system.md",
+      "bytes": 177,
+      "sha256": "a2bfc5e03eeb2dbd6e662f41039d31af6e8c10b3545205710594a6e0c60ea060"
+    },
+    {
+      "path": "prompts/tasks/select_bgm/en/user.md",
+      "bytes": 72,
+      "sha256": "04c007f165a614113f4736c00cceda999f45e5a570dc8d3f5f40417831693cc5"
+    },
+    {
+      "path": "prompts/tasks/select_bgm/zh/system.md",
+      "bytes": 144,
+      "sha256": "db7f41a6ec0774075ab4ba2a3f54e02a846bc51e1c79782d0f15a0baf02d6f43"
+    },
+    {
+      "path": "prompts/tasks/select_bgm/zh/user.md",
+      "bytes": 70,
+      "sha256": "c9dc67da8ba5a48d452e1d8c3f689acc595952c760e2802d1eaafbeb4a3bb65f"
+    },
+    {
+      "path": "prompts/tasks/speech_rough_cut/zh/system.md",
+      "bytes": 3515,
+      "sha256": "c37a7b6b6b2eb5d36f4b63c2ee95857851fe55be1d8c8bba34d78eac4ff8de5a"
+    },
+    {
+      "path": "prompts/tasks/speech_rough_cut/zh/user.md",
+      "bytes": 204,
+      "sha256": "5fde3be577c7b0e7e4ad574ce640409f3364db1b273b9b865bac292c1801f747"
+    },
+    {
+      "path": "prompts/tasks/understand_clips/en/system_detail.md",
+      "bytes": 3242,
+      "sha256": "8fcf8e20f7a51a784a8242b63f410bee98c81388da3ce90b847c7de47444fbdd"
+    },
+    {
+      "path": "prompts/tasks/understand_clips/en/system_overall.md",
+      "bytes": 671,
+      "sha256": "d9a5199a96589a0c116dffbbc7d2ef9761fbd19ac1169c298bd4963d03b3b5dd"
+    },
+    {
+      "path": "prompts/tasks/understand_clips/en/user_detail.md",
+      "bytes": 53,
+      "sha256": "6396ca036b720783f18fae573597f54dffdee58690d973e9571b4c68618c9011"
+    },
+    {
+      "path": "prompts/tasks/understand_clips/en/user_overall.md",
+      "bytes": 233,
+      "sha256": "da346dc8f4486b2098a15bd52d1e2da54031738e31f7c0d3ef545513e755857c"
+    },
+    {
+      "path": "prompts/tasks/understand_clips/zh/system_detail.md",
+      "bytes": 2907,
+      "sha256": "841958cb2b7d2771d3e204deff767581c55b65bdacaa262b22d2ca0342b697ab"
+    },
+    {
+      "path": "prompts/tasks/understand_clips/zh/system_overall.md",
+      "bytes": 295,
+      "sha256": "6962be4fcb39490d179f3ffbc4ede914356f623f19b1301cedbaad43da4afa7a"
+    },
+    {
+      "path": "prompts/tasks/understand_clips/zh/user_detail.md",
+      "bytes": 109,
+      "sha256": "08ba93731be1221ad33d1ca5bb4e3540a4c71b084c94c04cdd32911b27aa0eb2"
+    },
+    {
+      "path": "prompts/tasks/understand_clips/zh/user_overall.md",
+      "bytes": 185,
+      "sha256": "50641b2fdac6cee2ee4a43376abd2e994c9e03bfa1fbe33b97696d9673baad50"
+    },
+    {
+      "path": "resource/fonts/font_info.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "kind": "project_wrapper_or_task_config"
+    },
+    {
+      "path": "src/open_storyline/__init__.py",
+      "bytes": 21,
+      "sha256": "3ebbb4065141012142168ecc70776886d2a452d80c3c3c1b19fc94665136fd5c"
+    },
+    {
+      "path": "src/open_storyline/agent.py",
+      "bytes": 9912,
+      "sha256": "982d0d8e6a40d92f94bec93ada0e374796492e28421a160699a1ee45193e0cd4"
+    },
+    {
+      "path": "src/open_storyline/config.py",
+      "bytes": 9688,
+      "sha256": "c2565dc3acd11ba0734302d0800fbf1425d80db22a0469d4ca9ddab09c0a4693"
+    },
+    {
+      "path": "src/open_storyline/mcp/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/open_storyline/mcp/hooks/chat_middleware.py",
+      "bytes": 8939,
+      "sha256": "9a3f4a8e99ee1b570758fb12d6ef4958acc2c6f737f86b0e7e826bb62832bb4c"
+    },
+    {
+      "path": "src/open_storyline/mcp/hooks/node_interceptors.py",
+      "bytes": 21828,
+      "sha256": "90335d0245bf56c8cdcba93bc6183ee0c89d05e9c7c6341d5867e4c17d786233"
+    },
+    {
+      "path": "src/open_storyline/mcp/register_tools.py",
+      "bytes": 9089,
+      "sha256": "12b9a9a61739c00691587043f30fabc81a4735f7354e10330a2049eb5001ae91",
+      "upstream_sha256": "d4b3275a54b5902d72ed394da8eb5473bdd7130493ae0a363bdcc361d7c0113e",
+      "adaptation": "restricts imports to native task nodes and defers TransNet initialization for split_shots skip; task prerequisite mapping for PlanTimelinePro"
+    },
+    {
+      "path": "src/open_storyline/mcp/sampling_handler.py",
+      "bytes": 18012,
+      "sha256": "75352e9c0617fabd952636d240019640c11e959ecd9b2d53c09792b489401db8",
+      "upstream_sha256": "d25b471e1f9e2b74523fa6111badc26c20009adf933f03dfcd082a96efa6214c",
+      "adaptation": "records model response metadata/usage and sanitized errors for future trace evidence"
+    },
+    {
+      "path": "src/open_storyline/mcp/sampling_requester.py",
+      "bytes": 5702,
+      "sha256": "157fb0543162f6702d24bd5a58e1ab573abcc5a7430a331caa0aa34021a61e81"
+    },
+    {
+      "path": "src/open_storyline/mcp/server.py",
+      "bytes": 1875,
+      "sha256": "09130c05337d3a883e364de1c8459ddae178100485956bf8a07c2ac75a11eea1"
+    },
+    {
+      "path": "src/open_storyline/nodes/__init__.py",
+      "bytes": 14,
+      "sha256": "885857197d52d8efe250f1cdac64a441bba15b1bb91c03383811fb2e5ac590b0"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/asr_node.py",
+      "bytes": 5703,
+      "sha256": "af89dee82b1cdc1b2edf76a3a22019479d5f171c530c70b8797f949fda5b68df"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/base_node.py",
+      "bytes": 14211,
+      "sha256": "08d3215751bbe2e62777258abdbe4862d19de8418a49ebf9206af7be2ab1334e"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/filter_clips.py",
+      "bytes": 6273,
+      "sha256": "c58a223d02020cb3e5d54a8fb009d563cf6105d65c8fac631dce883e119fb8fa"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/generate_ai_transition.py",
+      "bytes": 23581,
+      "sha256": "932cd7129bf2b55f624b97f36248e1182fc1403b4677cd85963f06d6b11a2c4e"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/generate_script.py",
+      "bytes": 12544,
+      "sha256": "5bce467936c6a18b0365bf4c5cdd998b55db78d07f30acc17205b55065b3a84c"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/generate_voiceover.py",
+      "bytes": 25309,
+      "sha256": "d46e73229da4dad08bf0a33ab9b5453780afb7a2afc04b8ef6d6fa48db1d6df8"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/group_clips.py",
+      "bytes": 8944,
+      "sha256": "422e168edbcf7306c4c57a3aff8e69c5501068a41c8404eb2c37a4bb01a21e65"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/load_media.py",
+      "bytes": 5234,
+      "sha256": "c37302c0dadb2baa1865f0914e2b8a3613b588678116b8efa60b87fc3cd8da5c"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/plan_timeline.py",
+      "bytes": 37830,
+      "sha256": "ce1b202b0f41f0accd5687025d1df53143abe85250ee339ed58bd687ddac427e"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/plan_timeline_ai_transition.py",
+      "bytes": 7222,
+      "sha256": "2ea53ed71b224930a55d2566a26240a325927fd72e9e96918fd0ebb5b467b4ba"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/plan_timeline_pro.py",
+      "bytes": 37201,
+      "sha256": "7a092ca1176008f8e7d46ab28926e7179690d0b4106b27d624a4a28cf8d2bd78"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/recommend_effects.py",
+      "bytes": 4429,
+      "sha256": "a902c23cc631a353a70515a5381ea7f1f73efd01313af71d67e551263d9cbfd1"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/render_video.py",
+      "bytes": 37516,
+      "sha256": "7b34509579601744c31523f9b6352446a7ced7dbf74ad2238969a303797b7e57"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/script_template_rec.py",
+      "bytes": 2427,
+      "sha256": "c5b162960a1bd4375f599bebcd2eaf36594dbcdfdb819272b0bf8a1dc75d19a7"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/search_media.py",
+      "bytes": 15453,
+      "sha256": "4857179d2f05b88c7d40adcf7d44a6211a823dc3c9d58e837b6f6dd6675fabc4"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/select_bgm.py",
+      "bytes": 10990,
+      "sha256": "39dc41b804256d24949b613adaa767bfdfe432fa5e9c9951fd3ff5006fcbbbcc"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/speech_rough_cut.py",
+      "bytes": 10686,
+      "sha256": "7723b455edee6d300cf6cdf59d4cc013a5102201a44d20e12c3b9cfa4e3fe6f6"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/split_shots.py",
+      "bytes": 24274,
+      "sha256": "a50a9f911ba7e0281030b353d9e56050247f46dd34d0deb883a8c0bc03b6688b"
+    },
+    {
+      "path": "src/open_storyline/nodes/core_nodes/understand_clips.py",
+      "bytes": 7988,
+      "sha256": "a0d7d0e23fa5a525b5cca6f9b95c650f02e98df051b172632d8ed6fe0285d619"
+    },
+    {
+      "path": "src/open_storyline/nodes/node_manager.py",
+      "bytes": 7067,
+      "sha256": "18dfaa3291ea3b9dabdb9fc8a97b89ef3a837a7c9afce573f81918183863dfd3"
+    },
+    {
+      "path": "src/open_storyline/nodes/node_schema.py",
+      "bytes": 21729,
+      "sha256": "fd5306bfa00d09122407e81036e9d32614e816d9d7bfe67b35e77a3e933c4f3f"
+    },
+    {
+      "path": "src/open_storyline/nodes/node_state.py",
+      "bytes": 462,
+      "sha256": "0492e80bc119d8ad0bdeff1024705cecca17a58ec03bf699ddc9f43880f2bf84"
+    },
+    {
+      "path": "src/open_storyline/nodes/node_summary.py",
+      "bytes": 8090,
+      "sha256": "50d545d04b02a1de21c523204b07585ca7bf9089619d05714094b6286a0bd1d2"
+    },
+    {
+      "path": "src/open_storyline/skills/skills_io.py",
+      "bytes": 2358,
+      "sha256": "15c61927dcbb4a3f3c69c2edb13b983c135541af7252400cf1a1330c0e137a45"
+    },
+    {
+      "path": "src/open_storyline/storage/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/open_storyline/storage/agent_memory.py",
+      "bytes": 5259,
+      "sha256": "b3e59bc010c01a97ef292f157f25ff22cf952c64bded3f8cbb77e5411486ad78"
+    },
+    {
+      "path": "src/open_storyline/storage/file.py",
+      "bytes": 4718,
+      "sha256": "8392fb8433e325611149e5f303daa941f047350c290aa08234c7938b5104693d"
+    },
+    {
+      "path": "src/open_storyline/storage/session_manager.py",
+      "bytes": 6328,
+      "sha256": "32d8ea7351201cf52133979a7151224073dabe796d7c07d792372c687d6cb774"
+    },
+    {
+      "path": "src/open_storyline/utils/__init__.py",
+      "bytes": 42,
+      "sha256": "31718da4ced43903916a5af612572eb605baefc230b57570306cd827ef52c990"
+    },
+    {
+      "path": "src/open_storyline/utils/ai_transition_cancel.py",
+      "bytes": 988,
+      "sha256": "673b3375c0ae1cda4a6ff2e9c634848e3efaa619882915e6cb91d0fcbd267d64"
+    },
+    {
+      "path": "src/open_storyline/utils/ai_transition_client.py",
+      "bytes": 13009,
+      "sha256": "fa2007cdce16c246509cef9b91ad33838c16a8cb5c5efef8609587ec99975ae9"
+    },
+    {
+      "path": "src/open_storyline/utils/element_filter.py",
+      "bytes": 3620,
+      "sha256": "c3b7f07ec20a4b110b95886ecd8630f2af61dc969d9c132a81721eb3b787f4d2"
+    },
+    {
+      "path": "src/open_storyline/utils/emoji.py",
+      "bytes": 1976,
+      "sha256": "bf0df479f9f769fe5d611479ef7651fe3f4d3f8e3912b390b584c9438fc32008"
+    },
+    {
+      "path": "src/open_storyline/utils/ffmpeg_utils.py",
+      "bytes": 8305,
+      "sha256": "f5e427e9cd42a1e5a2609fa1f9396c0e3306965abfc44a76bcde214408b8ebaf"
+    },
+    {
+      "path": "src/open_storyline/utils/logging.py",
+      "bytes": 5945,
+      "sha256": "aa3850a5526378404da497b24e1f0f9b4c9f53d5fe9c7867797820c0e28ae56a"
+    },
+    {
+      "path": "src/open_storyline/utils/media_handler.py",
+      "bytes": 839,
+      "sha256": "e46dd2beec0010ba9910b70a0106a17ace28745a9818551b596eb06dd60390c2"
+    },
+    {
+      "path": "src/open_storyline/utils/parse_json.py",
+      "bytes": 6621,
+      "sha256": "e6b53a579c238aabc48357b0dc880fbf5abb5dcd3759bd946df5b55775d74157"
+    },
+    {
+      "path": "src/open_storyline/utils/prompts.py",
+      "bytes": 3011,
+      "sha256": "0db57c66ce8f81869628281bc1e5dd4f08d26ac08c3187c49a69e563681e4a43"
+    },
+    {
+      "path": "src/open_storyline/utils/recall.py",
+      "bytes": 1942,
+      "sha256": "ed2fe33299c023d146a10a6417a2279059ac30bf8478074f02be17121eea4dd9"
+    },
+    {
+      "path": "src/open_storyline/utils/register.py",
+      "bytes": 2270,
+      "sha256": "3b7b2cbd2bf81490028f241d80db53587a1670a9add49ef8ee837584c1b7ee7b"
+    },
+    {
+      "path": "src/open_storyline/utils/util.py",
+      "bytes": 2049,
+      "sha256": "f4eb9da1281539188a604292a15f3b9964c8f9eb7f618a7f320d6d2402f4a50f"
+    }
+  ],
+  "manifest_self_hash": "omitted"
+}

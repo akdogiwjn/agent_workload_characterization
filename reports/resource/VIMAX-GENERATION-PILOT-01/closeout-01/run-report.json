@@ -1,0 +1,163 @@
+{
+  "task": "VIMAX-GENERATION-PILOT-01",
+  "status": "closed_budget_exhausted_no_media",
+  "termination": "LLM logical-call budget exhausted during repeated planning; not manually killed, not a wall timeout",
+  "agent_returncode": 0,
+  "original_runner_ok": true,
+  "original_runner_ok_meaning": "completion handshake only, NOT task/media success",
+  "task_success": false,
+  "evaluation": "not_started_no_submission",
+  "reward": null,
+  "identity_note": "Original run-record records code hashes and identity_frozen phase; this closeout does not invent a missing standalone frozen identity/approval",
+  "llm_logical_starts": 80,
+  "llm_logical_by_role": {
+    "outer_agent": 27,
+    "inner_langchain": 53
+  },
+  "llm_closed": 68,
+  "llm_unclosed": [
+    "req-7b06932a76c0",
+    "req-46a8d690753e",
+    "req-2490e495ab20",
+    "req-74cd7ea26729",
+    "req-e54d65352322",
+    "req-b954814f501d",
+    "req-e25d1e3521a2",
+    "req-2ad44ccf5750",
+    "req-ce27b5af0f5a",
+    "req-b4b35223ab65",
+    "req-7643a6b293c5",
+    "req-45b0d516404d"
+  ],
+  "project_attempt_starts": 27,
+  "usage_saved_closed_calls_only": {
+    "prompt_tokens": 761124,
+    "completion_tokens": 172774,
+    "total_tokens": 933898
+  },
+  "usage_note": "12 unclosed inner starts retain unknown outcome/usage; successful LLM responses do not imply successful parsing. Project attempt rows overlap logical requests, do not sum as additional calls",
+  "actual_http_requests": null,
+  "actual_cost": null,
+  "media_operations_recorded": {
+    "image_generation": 0,
+    "video_create": 0
+  },
+  "media_files": [],
+  "event_count": 260,
+  "tools": [
+    {
+      "name": "vimax_narrative_planning",
+      "ok": false,
+      "count": 12
+    },
+    {
+      "name": "read_file",
+      "ok": true,
+      "count": 8
+    },
+    {
+      "name": "list_files",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "glob_files",
+      "ok": true,
+      "count": 3
+    },
+    {
+      "name": "vimax_narrative_planning",
+      "ok": true,
+      "count": 3
+    },
+    {
+      "name": "write_json",
+      "ok": false,
+      "count": 12
+    },
+    {
+      "name": "run_shell",
+      "ok": false,
+      "count": 5
+    }
+  ],
+  "tool_starts": 44,
+  "tool_results": 44,
+  "association_note": "Counts agree; no claim of independent per-tool-call ID matching beyond saved native event structure",
+  "observed_failures": [
+    "Agent LLM request failed: budget cap exceeded before send: llm_calls cap=80; already_sent=80"
+  ],
+  "attempt_wall_s": 3028.907,
+  "resource_summary": {
+    "scope": "vimax_formal_01",
+    "scope_kind": "agent_container",
+    "interval_target_s": 0.5,
+    "n_samples": 6047,
+    "cpu_core_seconds": 5.804161,
+    "cpu_core_seconds_reason": null,
+    "cpu_evidence": "counter_boundary",
+    "wall_s": 3025.116560276,
+    "avg_cores": 0.001918656978781158,
+    "avg_cores_note": "avg cores = cpu/wall; NOT an efficiency metric",
+    "n_samples_out_of_boundary": 0,
+    "memory_current_end_bytes": 13250560,
+    "memory_kernel_peak_bytes": 136450048,
+    "memory_sampled_max_bytes": 136265728,
+    "memory_peak_basis": "v1_max_usage_in_bytes",
+    "memory_note": "current/kernel-peak/sampled-max are distinct; scope peaks are never summed into a run peak",
+    "io": {
+      "read_bytes": 0,
+      "write_bytes": 999424,
+      "evidence": "io.stat_boundary_delta",
+      "reason": null,
+      "cumulative_end": {
+        "read_bytes": 0,
+        "write_bytes": 999424,
+        "note": "cumulative counter value at final boundary (reference only; NOT the interval amount)"
+      }
+    },
+    "notes": [
+      "baseline_cpu_unreadable:None"
+    ]
+  },
+  "sampling": {
+    "periodic_points": 6047,
+    "median_interval_s": 0.500300067,
+    "max_interval_s": 0.501278825,
+    "nonincreasing_intervals": 0,
+    "valid_cpu_intervals_including_boundaries": 6048
+  },
+  "network": {
+    "scope": "HOST_NETNS_SHARED",
+    "sample_count": 603,
+    "selected_interface": "eno1",
+    "selection_rule": "eno1 if present, otherwise first sorted interface; NOT an identified API route",
+    "netns_inode": null,
+    "interpretation": "Raw saved interface counters only; namespace identity not recorded; no per-task attribution or cross-interface sum"
+  },
+  "disk_footprint": {
+    "before": {
+      "apparent_bytes": 10042,
+      "files": 1,
+      "unreadable": 0
+    },
+    "after": {
+      "apparent_bytes": 745603,
+      "files": 39,
+      "unreadable": 0
+    }
+  },
+  "cleanup": {
+    "container_removed": true,
+    "matching_host_processes": 0,
+    "image_retained": true
+  },
+  "measurement_limitations": [
+    "Resource window differs from attempt wall",
+    "No image/video generation or FFmpeg execution cost in this attempt",
+    "v1 throttle I/O is not complete filesystem I/O",
+    "baseline_cpu_unreadable:None note conflicts with valid v1 baseline status; preserve original note, use actual read_status",
+    "Actual HTTP, missing request outcomes and billing unknown"
+  ],
+  "no_new_attempt_or_api": true
+}

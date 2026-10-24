@@ -1,0 +1,167 @@
+{
+  "task": "VIMAX-GENERATION-PILOT-03",
+  "scope": "execution-01",
+  "files": [
+    {
+      "path": "__pycache__/generation_entry.cpython-311.pyc",
+      "bytes": 33530,
+      "sha256": "5186a413062d1a43f907ac181cc7389eb610e5b0bc2af4060c511a8e5ecfa331"
+    },
+    {
+      "path": "__pycache__/host_runner.cpython-311.pyc",
+      "bytes": 88860,
+      "sha256": "e1f54d82562880fede6cd2b67ef7aa369882b895107e04837ee6add0a6ec194a"
+    },
+    {
+      "path": "__pycache__/postrun_audit.cpython-311.pyc",
+      "bytes": 36656,
+      "sha256": "debd22e05416e3623a293e16e4f51e2f0a82b4da54af9852d1ae8078d5116127"
+    },
+    {
+      "path": "__pycache__/test_host_runner.cpython-311.pyc",
+      "bytes": 23196,
+      "sha256": "2223ef30f494b225dbc012c88bc64626338b8036978c34f2ff8d215d61d8885a"
+    },
+    {
+      "path": "generation_entry.py",
+      "bytes": 19199,
+      "sha256": "b1de631c811ad5055b0c0a42940bd7b66e0dd20d6992a33983bec932daf8e59d"
+    },
+    {
+      "path": "host-runner-regressions.log",
+      "bytes": 2364,
+      "sha256": "e6268b4315b9c7964c5a14ce52f5206faacb748044f50d581a5f97bc3a64e434"
+    },
+    {
+      "path": "host_runner.py",
+      "bytes": 40809,
+      "sha256": "01a0c70df27b623a9a60efb0ef8989e2fdb81782a1f49833aa007565bf267a3b"
+    },
+    {
+      "path": "postrun_audit.py",
+      "bytes": 13117,
+      "sha256": "ec5b45b02c7de9d03a7ea4b00143c682ba8d68fe4714e60db9f9101487db15e7"
+    },
+    {
+      "path": "run-01/APPROVAL-01.json",
+      "bytes": 1517,
+      "sha256": "8a9fe971f7b35941a3e8065b95af86abd992cab3b256c0be434b6ad45f3f6088"
+    },
+    {
+      "path": "run-01/ATTEMPT-STARTED",
+      "bytes": 26,
+      "sha256": "70b85dc1e60c0928fe55a82881647330b156d510255cd5bd5bc827f4d2693dfc"
+    },
+    {
+      "path": "run-01/closeout-summary.md",
+      "bytes": 3329,
+      "sha256": "2520fc45a3fcb695698e9b29ef4529a69a05fed41b790dcc3ff1e16c28becc62"
+    },
+    {
+      "path": "run-01/directory-after.json",
+      "bytes": 126,
+      "sha256": "63ad8be11292d7dec48cee172d45d7f3b67d4bd2c5bcbbfcfa7bef297fd4fd4c"
+    },
+    {
+      "path": "run-01/directory-before.json",
+      "bytes": 122,
+      "sha256": "5ec5824013538facad9e0bc8bfa6f3a2dc4aa7343181216ea23246b576ed3e27"
+    },
+    {
+      "path": "run-01/directory-occupancy.csv",
+      "bytes": 263,
+      "sha256": "5c8291d1826e34b96caf6e75e7ef368e6710547bacf3b4d9588a12c641b7b828"
+    },
+    {
+      "path": "run-01/failure-analysis.json",
+      "bytes": 3984,
+      "sha256": "06a0b9fa91ae3cda525cddcad826faacf0dbf46415dfd6b1b2aa1a4c3bd242b7"
+    },
+    {
+      "path": "run-01/host-finalization.json",
+      "bytes": 239,
+      "sha256": "123a5461ac5eefbc559c542c4c9e3f7aa81ed0eff698c8923bb5cfc702590567"
+    },
+    {
+      "path": "run-01/host-runner.log",
+      "bytes": 25,
+      "sha256": "fb0a9ce463518e89f13f37f5d7fa8553ff3ba74f541ec89515658d0e5c3e6f42"
+    },
+    {
+      "path": "run-01/identity-01.json",
+      "bytes": 16287,
+      "sha256": "9c01c343e666ba4fe39d99a1b6613e98018a3e35232b56db48e030122efb5acc"
+    },
+    {
+      "path": "run-01/netns-points.csv",
+      "bytes": 472,
+      "sha256": "64b1d5ead69e209ed8b0f94f265c0de0f0f44bb0052c3b413f6b0cc99f854914"
+    },
+    {
+      "path": "run-01/netns-samples.jsonl",
+      "bytes": 486,
+      "sha256": "1918b5d71b0a155d5f37a2870d70763f766a9332ca9aa5528123f339ce6e3f2c"
+    },
+    {
+      "path": "run-01/phase-timeline.csv",
+      "bytes": 428,
+      "sha256": "562c82ad9d4f582e5a620b3809aa53617617e832f3acefe1d6b3324bfbe143fd"
+    },
+    {
+      "path": "run-01/preflight.json",
+      "bytes": 6609,
+      "sha256": "0ec5f1594a07f94ce4b33026fcad4877e53183f2021d411c4421458405092d20"
+    },
+    {
+      "path": "run-01/resource-curves.svg",
+      "bytes": 2273,
+      "sha256": "e8e1e910ada1a51a13a26495113776d770ccdb3fec7e6bc6b2da6b842e773455"
+    },
+    {
+      "path": "run-01/resource-evidence.json",
+      "bytes": 4460,
+      "sha256": "098b408e359409dcc30ac43fa4141476ede2bd04a3b1e26a9f0265818c91f06f"
+    },
+    {
+      "path": "run-01/resource-points.csv",
+      "bytes": 1625,
+      "sha256": "a89a6d1dab7f54a62fa05c92d95b46bc989c340dd956c167fd3144d2db4202cc"
+    },
+    {
+      "path": "run-01/resource-samples.jsonl",
+      "bytes": 598,
+      "sha256": "3ac7f8feeee3adfce4c807b770f1a68b60c715b0d21f6cce3dff7878f24a8c37"
+    },
+    {
+      "path": "run-01/run-record.json",
+      "bytes": 4488,
+      "sha256": "209319db19472b421471523bd196c9aa091b6041839164966622d0c189e9c92b"
+    },
+    {
+      "path": "run-01/run-report.json",
+      "bytes": 3486,
+      "sha256": "cae39dde8da0cc248003b0650b587bef0799453bf21aed460797258988ff725d"
+    },
+    {
+      "path": "run-01/workspace/attempt/STARTUP-ACK.json",
+      "bytes": 96,
+      "sha256": "ef5bf54b2baffeb23c4757a82d3bf9c7ef0fbcb41d0020737d7e13bd88f72d37"
+    },
+    {
+      "path": "run-01/workspace/attempt/STARTUP-READY.json",
+      "bytes": 110,
+      "sha256": "cdd6890722d898890fb7de32fa53afd22dc12cb890f469181f71e614386ef574"
+    },
+    {
+      "path": "run-01/workspace/attempt/STARTUP-RELEASE.json",
+      "bytes": 90,
+      "sha256": "b4d09e8a184dea177298d464aefb335887515f434e4734434809cd8ce533fad8"
+    },
+    {
+      "path": "test_host_runner.py",
+      "bytes": 11129,
+      "sha256": "5abdd18aedfe6732d5eef5b827cb26a180ed27dd17e03f4db06c43de638dff05"
+    }
+  ],
+  "self_hash": "omitted"
+}

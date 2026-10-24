@@ -1,0 +1,181 @@
+{
+  "task": "BAILIAN-GENERATION-SMOKE-01",
+  "created_local": "2026-10-23",
+  "scope": "standalone Bailian API smoke for ViMax prerequisites; NOT a ViMax Agent experiment, no image build, no formal 8-shot task",
+  "route": {
+    "provider": "Aliyun Bailian (DashScope)",
+    "region": "cn-beijing (华北2)",
+    "base_url_compatible": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "base_url_native": "https://dashscope.aliyuncs.com/api/v1",
+    "credential_env": "DASHSCOPE_API_KEY",
+    "credential_file": "/home/lcq/.config/agent-workload-characterization/bailian.env",
+    "credential_note": "same registered source used by BAILIAN-VISION-SMOKE-01 and OpenStoryline pilots; standard API key (not Coding-Plan/Token-Plan exclusive); value never read into any record"
+  },
+  "models": {
+    "image_gen_edit": "qwen-image-3.0",
+    "chat_vision": "qwen3.7-plus",
+    "video": "wan2.6-i2v-flash"
+  },
+  "operations_budget": {
+    "image_generation": 1,
+    "image_edit": 1,
+    "chat_vision_tool_call": 1,
+    "video_task_create": 1,
+    "total_model_operations_max": 4,
+    "video_polls_max": 40,
+    "poll_interval_target_s": 10,
+    "overall_deadline_s": 1200,
+    "retries": "disabled at every layer (httpx retries=0, no SDK, no loop-level re-send)",
+    "note": "polls and media downloads are counted separately and never reported as 'only 4 HTTP requests'"
+  },
+  "doc_evidence_2026_10_23": [
+    "help.aliyun.com/zh/model-studio/qwen-image-generation-and-editing-api-reference (T2I/I2I via /compatible-mode/v1/images/generations; image field for I2I; qwen-image-3.0 supports 1-3 reference images; size area 512x512..2048x2048, ratio 1:8..8:1; url valid 24h; usage input/output image tier qima_*_1k/2k)",
+    "help.aliyun.com/zh/model-studio/qwen-api-via-openai-chat-completions (image_url content part; tools + tool_choice {type:function,function{name}}; thinking mode does not support forced tool choice -> enable_thinking=false; max_completion_tokens for Qwen3.5-Plus and later)",
+    "help.aliyun.com/zh/model-studio/legacy-image-to-video-api-reference (wan2.6-i2v-flash: img_url required first frame, base64 supported; resolution 720P/1080P default 1080P; duration [2,15] default 5; audio default true, audio=false required for silent; prompt_extend default true; X-DashScope-Async: enable; poll GET /api/v1/tasks/{task_id}; task_id/video_url valid 24h; usage output_video_duration/SR/audio)",
+    "help.aliyun.com/zh/model-studio/model-pricing (Beijing list prices below)"
+  ],
+  "price_estimate_beijing_list": {
+    "currency": "CNY",
+    "image_gen_A": {"formula": "0 input images + 1 output image @1k tier", "unit_price": "0.18 CNY/image", "estimate": 0.18},
+    "image_edit_B": {"formula": "1 input image + 1 output image @1k tier", "unit_price": "0.02 input + 0.18 output CNY/image", "estimate": 0.20},
+    "chat_vision_C": {"formula": "~1-2k tokens; input 2 CNY/M tokens, output 8 CNY/M tokens (0-256K tier, list before time-limited 20% discount)", "estimate": 0.01},
+    "video_D": {"formula": "5 s silent 720P @ 0.15 CNY/s", "estimate": 0.75},
+    "total_estimate_cny": 1.14,
+    "free_quota_note": "qwen-image-3.0 (10 images in+out), wan2.6-i2v-flash (50 s), qwen3.7-plus (1M tokens) have 90-day Beijing free quotas per pricing page; whether this account still has them is UNKNOWN from the client; actual cost is per billing center only",
+    "unknown": "actual discount tier, quota remainder, gateway-internal retries; all unknown"
+  },
+  "step_A_image_generation": {
+    "endpoint": "POST https://dashscope.aliyuncs.com/compatible-mode/v1/images/generations",
+    "body_non_sensitive": {
+      "model": "qwen-image-3.0",
+      "prompt": "白色背景，左侧一个红色圆形，右侧一个蓝色正方形，无文字。",
+      "size": "1024x576",
+      "n": 1,
+      "prompt_extend": false,
+      "watermark": false
+    },
+    "size_rationale": "16:9 for later video first-frame layout; area 589,824 px within 512x512..2048x2048 and within 1k billing tier (<=2,250,000 px); lowest-cost tier",
+    "expected_answer": {
+      "background": "white",
+      "left": {"color": "red", "shape": "circle", "count": 1},
+      "right": {"color": "blue", "shape": "square", "count": 1},
+      "text": "none"
+    },
+    "verdict_rules_fixed_pre_send": {
+      "PASS": "HTTP 200 with data[0].url; real image downloaded (not URL-only); file non-empty; decodable by PIL; format/actual size/bytes/SHA-256 recorded; pixel stats recorded (left-half red dominant, right-half blue dominant, white background)",
+      "FAIL": "HTTP error / error object / download or decode failure / returned payload is not a valid image",
+      "UNKNOWN": "timeout, auth error, or ambiguous transport failure (recorded distinctly)",
+      "content_match": "separate recorded field from pixel statistics; content mismatch does not silently pass as capability PASS, it is carried into B/C interpretation"
+    }
+  },
+  "step_B_image_edit": {
+    "endpoint": "POST https://dashscope.aliyuncs.com/compatible-mode/v1/images/generations",
+    "input": "A downloaded real PNG as single reference image (data URL base64)",
+    "body_non_sensitive": {
+      "model": "qwen-image-3.0",
+      "prompt": "保持白色背景和左右布局，将左侧红色圆形改成绿色，右侧蓝色正方形保持不变。",
+      "image": "<A.png base64 data URL, 1 image only>",
+      "size": "1024x576",
+      "n": 1,
+      "prompt_extend": false,
+      "watermark": false
+    },
+    "verdict_rules_fixed_pre_send": {
+      "PASS": "HTTP 200 with data[0].url; real edited image downloaded and decodable; pixel stats show edit took effect: left-half green dominant AND red strongly reduced vs A, right-half blue retained, background white; single reference image accepted (usage.input_image_count == 1)",
+      "FAIL": "HTTP error, decode failure, or edited image content contradicts the edit instruction (left not turned green / layout destroyed)",
+      "UNKNOWN": "timeout/auth/transport, recorded distinctly",
+      "note": "verifies ViMax-needed reference-image editing for ONE image only; no claim about multi-image consistency"
+    }
+  },
+  "step_C_chat_vision_tool_call": {
+    "endpoint": "POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+    "input_image": "B downloaded real PNG (base64 data URL)",
+    "body_non_sensitive": {
+      "model": "qwen3.7-plus",
+      "messages": [
+        {"role": "user", "content": [
+          {"type": "text", "text": "识别这张图片，并通过工具提交结果。图片中左侧和右侧各有一个图形，请用 report_shapes 工具报告它们的颜色和形状。"},
+          {"type": "image_url", "image_url": {"url": "<B.png base64 data URL>"}}
+        ]}
+      ],
+      "tools": [{
+        "type": "function",
+        "function": {
+          "name": "report_shapes",
+          "description": "报告图片左右两侧图形的颜色与形状",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "left_color": {"type": "string", "enum": ["red", "green", "blue", "yellow", "black", "white", "other"]},
+              "left_shape": {"type": "string", "enum": ["circle", "square", "triangle", "other"]},
+              "right_color": {"type": "string", "enum": ["red", "green", "blue", "yellow", "black", "white", "other"]},
+              "right_shape": {"type": "string", "enum": ["circle", "square", "triangle", "other"]}
+            },
+            "required": ["left_color", "left_shape", "right_color", "right_shape"]
+          }
+        }
+      }],
+      "tool_choice": {"type": "function", "function": {"name": "report_shapes"}},
+      "enable_thinking": false,
+      "max_completion_tokens": 1024
+    },
+    "enable_thinking_note": "forced tool choice is not supported in thinking mode per official docs; enable_thinking=false is the documented non-thinking mode for qwen3.7-plus",
+    "expected_answer_pre_registered": {
+      "left_color": "green", "left_shape": "circle",
+      "right_color": "blue", "right_shape": "square",
+      "basis": "B edit target; cross-checked offline against B actual pixels before judging C"
+    },
+    "verdict_rules_fixed_pre_send": {
+      "PASS": "HTTP 200; finish_reason == tool_calls; tool_calls[0].id non-empty; function.name == report_shapes; arguments is valid JSON; all four fields parse to enum values and match the pre-registered answer (color words mapped: 绿/green, 蓝/blue, 红/red; 圆/circle, 方/square; English or Chinese both accepted)",
+      "FAIL": "tool call present but a parsed field is clearly wrong, or model states it cannot process the image",
+      "UNKNOWN": "no tool call / unparseable arguments / timeout / auth / transport failure; if B's actual pixels contradict the pre-registered answer (image-generation deviation), C vision judgement is UNKNOWN rather than FAIL unless mismatch with actual image content is established",
+      "not_retested": "tool result round-trip (sending tool message back) is NOT performed this round; listed as not re-verified",
+      "field_note": "usage and image-related fields saved in full; missing image_tokens field does NOT prove the image was not passed"
+    }
+  },
+  "step_D_video_create_poll_download": {
+    "create_endpoint": "POST https://dashscope.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis",
+    "headers_non_sensitive": {"X-DashScope-Async": "enable"},
+    "body_non_sensitive": {
+      "model": "wan2.6-i2v-flash",
+      "input": {
+        "prompt": "固定机位，左侧绿色圆形缓慢上下移动，右侧蓝色正方形保持静止；背景纯白；全程单镜头，无文字。",
+        "img_url": "<B.png base64 data URL as FIRST FRAME>"
+      },
+      "parameters": {
+        "resolution": "720P",
+        "duration": 5,
+        "audio": false,
+        "prompt_extend": false,
+        "watermark": false
+      }
+    },
+    "shot_type_note": "shot_type only takes effect when prompt_extend=true per official docs; prompt_extend=false -> shot_type omitted; single-shot requirement is expressed in the prompt text",
+    "img_url_note": "img_url is the real first-frame field of the i2v API (not a generic reference image, not t2v)",
+    "poll_endpoint": "GET https://dashscope.aliyuncs.com/api/v1/tasks/{task_id}",
+    "poll_policy": "max 40 polls, target 10 s interval, always bounded by the shared 1200 s deadline; only this one task is queried; never create a second task",
+    "verdict_rules_fixed_pre_send": {
+      "CREATE_PASS": "HTTP 200 + output.task_id + task_status in (PENDING, RUNNING); task_id saved",
+      "CREATE_FAIL": "HTTP error / no task_id",
+      "VIDEO_PASS": "task SUCCEEDED within budget; video downloaded; ffprobe shows valid MP4/H.264, ~16:9 within 720P tier, duration ~5 s, no audio track (audio=false); decodes fully; extracted frames show motion (frame difference > 0) and left-green/right-blue layout not obviously deviated",
+      "VIDEO_FAIL": "task FAILED or downloaded media fails technical checks or layout/colors clearly contradicted",
+      "VIDEO_UNKNOWN_TIMEOUT": "polls/deadline exhausted while task still PENDING/RUNNING; task_id + last status preserved; note that remote task may keep running and may still incur cost; no claim that the remote task was cancelled (cancel API not verified)",
+      "no_quality_claim": "successful MP4 download does NOT assert motion correctness beyond frame-difference evidence; no strict video quality scoring is claimed"
+    }
+  },
+  "media_technical_checks": {
+    "images": "PIL decode; actual size/format/bytes/SHA-256; pixel statistics per half-region (dominant color share) as human-checkable evidence",
+    "video": "ffprobe codec/size/fps/duration/audio streams; full decode via ffmpeg null muxer; 3+ extracted frames; first-vs-last frame pixel difference; color/layout stats on extracted frames"
+  },
+  "counting_and_timing": {
+    "boundary": "counts increment at the actual HTTP send function entry (model ops, create, poll, download), persisted even on exception paths",
+    "recorded": ["model_operations", "create_task_requests", "poll_requests", "download_requests", "send_failures", "client_resends(=0 by design)"],
+    "timings": ["A wait", "B wait", "C request wall", "D create wall", "D submit->first SUCCEEDED", "video download wall", "total wall"],
+    "caveats": "client observation only; gateway/upstream internal retries unknowable; if transport-layer counting is impossible the HTTP count is marked unknown rather than replaced by logical op count"
+  },
+  "security": {
+    "no_record": ["Authorization header", "Cookie", "API key value/fragment/length/hash", "full signed URL (query string stripped in evidence)"],
+    "media_download": "official media URLs downloaded WITHOUT the model API Authorization header; separate no-auth client",
+    "limits": "per-request timeouts, download size caps (image 20 MB, video 200 MB), shared 1200 s deadline"
+  }
+}

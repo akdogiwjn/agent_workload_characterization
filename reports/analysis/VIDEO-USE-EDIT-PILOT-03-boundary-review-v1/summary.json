@@ -1,0 +1,299 @@
+{
+  "schema": "video-use-pilot03-boundary-review-v1",
+  "run_id": "20261021T1310Z-video-use-edit-03",
+  "scope": {
+    "offline_only": true,
+    "api_calls": 0,
+    "agent_or_verifier_started": false,
+    "golden_oracle_used": false,
+    "boundary_evidence_source": "Agent-side transcript, instruction/skill, EDL, cuts, rollout, saved images and render helper; score used only as aggregate pass/fail outcome"
+  },
+  "report_writer_fix": {
+    "root_cause": "PILOT-03 wrapper replaced runner.write_resource_report, then called the replaced attribute and recursed.",
+    "repair": "Capture the pre-wrapper bottom-level writer as _BASE_RESOURCE_REPORT_WRITER and call that once; generate P3 prose separately; save report-generation-status.json with independent agent/verifier/cleanup/raw-presence fields.",
+    "report_failure_does_not_rewrite_raw": "covered by regression test; raw files are read-only in the path",
+    "post_execution_code_only": true,
+    "frozen_execution_source_snapshot": "reports/analysis/VIDEO-USE-EDIT-PILOT-03-boundary-review-v1/source-snapshot/scripts/video_use_edit_pilot_03.py"
+  },
+  "timing_and_sampling": {
+    "attempt_wall_s_from_monotonic_ns": 365.166784699,
+    "reported_sampling_window_s": 340.58344264099986,
+    "sample_points": 566,
+    "cpu_io_valid_intervals": 565,
+    "target_interval_s": 0.5,
+    "observed_interval_median_s": 0.601359236,
+    "observed_interval_max_s": 0.80172769,
+    "container_resource_scope": "Agent/container and child processes; independent host verifier resource is excluded"
+  },
+  "transcript_schema": {
+    "language_code": "eng",
+    "language_probability": 0.9940141439437866,
+    "audio_duration_secs": 37.056,
+    "entries": 293,
+    "entry_types": [
+      "audio_event",
+      "spacing",
+      "word"
+    ],
+    "speaker_ids": [
+      "speaker_0",
+      "speaker_1"
+    ],
+    "fields_per_entry": [
+      "end",
+      "logprob",
+      "speaker_id",
+      "start",
+      "text",
+      "type"
+    ],
+    "explicit_hesitation_or_event_tags": false,
+    "punctuation_embedded_in_token_text": true
+  },
+  "agent_boundary": {
+    "supported": true,
+    "agent_cut_ms": {
+      "start": 25160,
+      "end": 27240
+    },
+    "agent_cut_seconds": {
+      "start": 25.16,
+      "end": 27.24
+    },
+    "edl_matches_cuts_json": true,
+    "edl_start_matches_cut_ms": true,
+    "edl_end_matches_cut_ms": true,
+    "edl_kept_duration_s": 34.92,
+    "removed_word_tokens": [
+      "Yeah,",
+      "in",
+      "the",
+      "f-",
+      "in,",
+      "in",
+      "the..."
+    ],
+    "start_boundary_word_tokens": [
+      "Yeah,"
+    ],
+    "end_boundary_word_tokens": [
+      "Right"
+    ],
+    "start_frame_aligned_at_source_fps": true,
+    "end_frame_aligned_at_source_fps": true,
+    "score_range_pass": "not read here; this function uses Agent-side evidence only"
+  },
+  "rollout_behavior": {
+    "tool_calls": 37,
+    "tool_returns": 37,
+    "protocol_errors": 0,
+    "nonzero_command_events": [
+      {
+        "call_id": "call_a5a2ffb07fa94027ad53aac8",
+        "index": 43,
+        "command_class": "timeline_view",
+        "command_summary": "invalid_named_time_flags",
+        "exit_code": 2,
+        "return_index": 46,
+        "recovered_by_later_same_class_success": true,
+        "recovery_call_id": "call_5e4d6ee8a9d7485c8f0721f6",
+        "recovery_image_viewed": true
+      }
+    ],
+    "timeline_view_commands": [
+      {
+        "call_id": "call_5d0a8afe674c4f15ac438ce9",
+        "index": 31,
+        "command_class": "timeline_view",
+        "command_summary": "positional_time_arguments",
+        "exit_code": 0,
+        "return_index": 36
+      },
+      {
+        "call_id": "call_a5a2ffb07fa94027ad53aac8",
+        "index": 43,
+        "command_class": "timeline_view",
+        "command_summary": "invalid_named_time_flags",
+        "exit_code": 2,
+        "return_index": 46
+      },
+      {
+        "call_id": "call_5e4d6ee8a9d7485c8f0721f6",
+        "index": 50,
+        "command_class": "timeline_view",
+        "command_summary": "positional_time_arguments",
+        "exit_code": 0,
+        "return_index": 53
+      },
+      {
+        "call_id": "call_35cbaa3fe0eb4690a44667ca",
+        "index": 57,
+        "command_class": "timeline_view",
+        "command_summary": "positional_time_arguments",
+        "exit_code": 0,
+        "return_index": 60
+      }
+    ],
+    "view_image_calls": 8,
+    "viewed_image_basenames": [
+      "timeline_hesitation.png",
+      "frame_015.png",
+      "frame_020.png",
+      "frame_025.png",
+      "before_cut.png",
+      "after_cut.png",
+      "output_before_cut.png",
+      "output_after_cut.png"
+    ],
+    "native_response_records": 30,
+    "unique_response_ids": 30,
+    "duplicate_response_id_records": 0,
+    "per_response_usage_totals": {
+      "input_tokens": 1012494,
+      "cached_input_tokens": 798080,
+      "output_tokens": 14555,
+      "reasoning_output_tokens": 11167,
+      "total_tokens": 1027049
+    },
+    "cached_input_is_subset_of_input": true,
+    "last_turn_cumulative_snapshot": {
+      "input_tokens": 1012494,
+      "cached_input_tokens": 798080,
+      "output_tokens": 14555,
+      "reasoning_output_tokens": 11167,
+      "total_tokens": 1027049
+    },
+    "http_attempts": "unknown; response IDs and rollout events do not prove HTTP transport count",
+    "evidence_indices": {
+      "first_candidate": {
+        "rollout_event_index": 30,
+        "text": "Agent identifies candidate around 25–27s from transcript"
+      },
+      "final_boundary_decision": {
+        "rollout_event_index": 175,
+        "text": "Agent states it will cut from the start of “Yeah,” to the start of “Right”"
+      },
+      "edl_write_event_index": 176,
+      "cuts_json_write_event_index": 201,
+      "render_call_event_index": 185,
+      "timeline_bad_call_event_index": 43,
+      "timeline_bad_return_event_index": 46,
+      "timeline_help_call_event_index": 50,
+      "timeline_success_call_event_index": 57,
+      "timeline_success_return_event_index": 60,
+      "timeline_image_view_call_event_index": 64,
+      "waveform_inspection_claim_event_index": 81,
+      "whole_source_astats_call_event_index": 82,
+      "source_frame_view_calls": [
+        100,
+        102,
+        104
+      ],
+      "output_screenshot_view_calls": [
+        227,
+        229,
+        247,
+        249
+      ],
+      "agent_final_message_event_index": 267
+    }
+  },
+  "render_boundary_comparison": {
+    "cuts_json_ms": {
+      "start": 25160,
+      "end": 27240
+    },
+    "edl_seconds": {
+      "start": 25.16,
+      "end": 27.24
+    },
+    "edl_matches_cuts_json": true,
+    "render_helper": "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/overlay/helpers/render.py",
+    "render_call_index": 185,
+    "render_preserve_source_spec": true,
+    "render_no_grade_no_fades_no_loudnorm_no_subtitles": true,
+    "tool_changed_agent_boundary": false,
+    "frame_aligned_at_25fps": {
+      "start": true,
+      "end": true
+    }
+  },
+  "official_result_aggregate": {
+    "judge_returncode": 0,
+    "evaluation_status": "complete",
+    "evaluation_complete": true,
+    "reward": 0.0,
+    "cut_range_check": "failed",
+    "other_checks": "completed and passed per previously archived aggregate report; no private detail accessed here",
+    "golden_times_or_oracle_details_read": false
+  },
+  "diagnosis": {
+    "direct_evidence": [
+      "Scribe JSON provides word/spacing entries with start/end, speaker_id and logprob; punctuation is embedded in text; it has no explicit hesitation/event tag.",
+      "Agent identified the hesitation phrase from transcript text, then explicitly selected the start of “Yeah,” through the start of “Right”; the selected cut removes the whole restart phrase plus the following 0.56s spacing reported by transcript.",
+      "Agent generated a timeline with waveform and transcript, viewed that PNG via view_image, viewed source frames, then viewed before/after output images. This establishes image inspection, not listening or audio-semantic understanding.",
+      "EDL retained ranges meet cuts.json at the same seconds after ms-to-s conversion. The render call used that EDL and the source-spec/no-enhancement switches; no evidence of a time-base conversion or helper changing the boundaries.",
+      "The sole nonzero command was timeline_view with unsupported --start/--end/--interval options (exit 2). Agent read --help, retried positional times, generated and viewed the timeline image. This is an Agent argument-selection error; no general helper defect is evidenced.",
+      "The official aggregate says the cut-range check failed; it does not identify a boundary side, offset, or the correct time."
+    ],
+    "reasonable_but_unproven": [
+      "Phrase-level deletion may have treated a potentially meaningful short acknowledgment as part of the disfluency; logs establish the whole phrase was selected, not that this semantic choice caused the score failure.",
+      "Scribe word timestamps may drift from acoustic onset/offset; no local forced alignment or acoustic boundary ground truth was collected.",
+      "The official temporal tolerance or annotation convention may be narrow; this run does not disclose or establish the tolerance."
+    ],
+    "unknown": [
+      "Which edge (or both) failed, by how much, and the official tolerance.",
+      "Exact acoustic onset/offset of the hesitation and whether the short acknowledgment should be retained.",
+      "Whether a human listening review or a validated audio-capable model would select different boundaries."
+    ],
+    "primary_classification": "Agent selection strategy / insufficient verified audio-semantic evidence; timestamp precision and official tolerance remain candidate factors. No evidence that render time conversion altered the chosen cut.",
+    "next_capability": "Improve the boundary decision protocol first. Existing Scribe transcript, timeline_view waveform/frame context, FFmpeg and render helper are reusable. If spoken meaning cannot be judged from transcript and waveform, separately validate an authorized listening/audio-understanding capability. Forced alignment can refine word timing but cannot decide which semantic material to remove.",
+    "budget": "No evidence this was wall-time constrained: the Agent completed normally within its allotted phase. Do not increase budget based on this run."
+  },
+  "limitations": [
+    "Single run (n=1).",
+    "No oracle, golden, private scorer files, target boundary, or inferred error was used for boundary diagnosis.",
+    "No new audio interpretation experiment was run."
+  ],
+  "resources": {
+    "cpu_core_seconds": 38.546396000000044,
+    "cpu_average_cores_over_valid_intervals": 0.11317753940443545,
+    "memory_current_sampled_peak_bytes": 497999872,
+    "kernel_memory_peak_bytes": 527572992,
+    "cgroup_io_read_bytes": 0.0,
+    "cgroup_io_write_bytes": 1474560.0,
+    "cgroup_io_valid_intervals": 565,
+    "network_scope": "container network namespace; per-interface counters, shared bridge",
+    "network_api_specific": false,
+    "network_interface_totals": {
+      "eth0": {
+        "rx_bytes": 3706018,
+        "tx_bytes": 65839834
+      },
+      "lo": {
+        "rx_bytes": 0,
+        "tx_bytes": 0
+      }
+    },
+    "directory_boundaries": {
+      "materials_bytes": [
+        2017306,
+        2017306
+      ],
+      "agent_workspace_bytes": [
+        0,
+        43364066
+      ],
+      "output_bytes": [
+        0,
+        2680433
+      ]
+    },
+    "stage_duration_s": {
+      "agent": 335.324,
+      "official_elevenlabs_transcribe": 4.959,
+      "verifier": 22.799
+    },
+    "verifier_resource_included": false
+  }
+}

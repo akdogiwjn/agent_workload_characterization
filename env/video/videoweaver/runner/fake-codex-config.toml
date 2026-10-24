@@ -1,0 +1,20 @@
+# VIDEO-WEAVER offline acceptance: fake Bailian CODEX_HOME config.
+# Only used in the network-gated cold-start acceptance. The provider-keyword
+# host is mapped to loopback via --add-host; real production uses the
+# dashscope base_url in the baked /opt/codex-home/config.toml.
+# shell_environment_policy pins OUTPUT_DIR to the absolute container path so
+# skills resolve output regardless of any inherited/default env.
+model = "qwen3.7-plus"
+model_provider = "bailian"
+
+[shell_environment_policy]
+inherit = "all"
+set = { OUTPUT_DIR = "/opt/videoweaver/generate_materials" }
+
+[model_providers.bailian]
+name = "Bailian (DashScope compatible-mode, FAKE)"
+base_url = "http://ws-fake.cn-beijing.maas.aliyuncs.com:8666/compatible-mode/v1"
+env_key = "DASHSCOPE_API_KEY"
+wire_api = "responses"
+request_max_retries = 0
+stream_max_retries = 0

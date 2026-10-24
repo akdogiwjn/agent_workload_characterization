@@ -1,0 +1,18 @@
+{
+  "task_id": "VIDEOWEAVER-GENERATION-PILOT-01",
+  "exp_id": "videoweaver-generation-pilot-01",
+  "work_seconds": 5400,
+  "closeout_seconds": 300,
+  "cpuset_cpus": "0-7",
+  "pids_limit": 4096,
+  "budget": {
+    "max_llm_calls": 80,
+    "max_image_creates": 16,
+    "max_video_creates": 8,
+    "max_video_polls": 960,
+    "max_video_polls_per_task": 120,
+    "max_media_downloads": 48,
+    "deadline_seconds": 5400,
+    "observed_output_tokens_soft": 500000
+  }
+}

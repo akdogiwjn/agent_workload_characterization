@@ -1,0 +1,61 @@
+{
+ "note": "manifest does not hash itself; source.mp4 = registered workload a9bce74a...; container-produced clips/renders live inside the verification runs",
+ "files": {
+  "adapter_raw_output.json": {
+   "sha256": "0c5a6648c777c4e25beeab69e726c3fd6d8d2971b9dfda37fc48ea9d7f82215f",
+   "bytes": 15516
+  },
+  "cuts.json": {
+   "sha256": "dff4811cd29552a4326c91905e220bcd2571093fe0d9240c118b64a9a13d5157",
+   "bytes": 292
+  },
+  "downstream_result.json": {
+   "sha256": "cd2ca2f3daebb0ecd4a267192f623daced1e7715f5b44e5cf446284df728c51e",
+   "bytes": 5869
+  },
+  "render_raw_result.json": {
+   "sha256": "43408ce19b8aef1d112568928731bd4c42956f5a3276f994be5a067a7b0fc537",
+   "bytes": 861
+  },
+  "roughcut_error_dump.json": {
+   "sha256": "419463759b29afa73b0b39a0755975f9c685e41ea9eb4cc4943068bb6d803432",
+   "bytes": 464
+  },
+  "spot_checks.json": {
+   "sha256": "e3cdfedc6b4e8617ebf888eb7e9b018ae7c78b00575f1ad515186821868f6378",
+   "bytes": 1018
+  },
+  "spot_end.wav": {
+   "sha256": "eac024b43043df1bebdfdfb68059321f86336a39c40015bf9502a63afb242caf",
+   "bytes": 128078
+  },
+  "spot_middle.wav": {
+   "sha256": "cd83d8cdee87f6dc3c737f221e350c966debdfbdfe4203d42df5afa04b351efb",
+   "bytes": 128078
+  },
+  "spot_start.wav": {
+   "sha256": "2fe7bc0f333d9812359c934a200d70d47f8f5db6b2fb9444c9ff936cd9293388",
+   "bytes": 112078
+  },
+  "spot_vad_boundary.wav": {
+   "sha256": "13996802239444444d289793b035cddd2109c61e76094eccd7d546eee25fdcb5",
+   "bytes": 128078
+  },
+  "test_adapter_offline.py": {
+   "sha256": "ef7e1da8538aea980d20334e3ca7b7d30b574ea1abb94115b60da31a6071873e",
+   "bytes": 5618
+  },
+  "verify_downstream.py": {
+   "sha256": "8bd3fad79cc23761526a4df69864f1347ca8ace9e48be44f89cd19d3569f8cfa",
+   "bytes": 12325
+  },
+  "verify_node.py": {
+   "sha256": "ad7a3e83dfc175cce565ccb086be903b9e8a7ff9d042fed17eb74cf26aac2c6e",
+   "bytes": 8696
+  },
+  "verify_node_result.json": {
+   "sha256": "88b4280aded80944c658cf7163ef1b07682a9e251e8e050fae28881c52322b0b",
+   "bytes": 22651
+  }
+ }
+}

@@ -1,0 +1,3 @@
+metric,raw_bytes,decimal_GB_bytes_div_1e9,binary_GiB_bytes_div_2^30,cgroup_source,display_basis
+sampled_max_memory_current,6517669888,6.517669888,6.0700531005859375,cgroup v1 memory.usage_in_bytes -> mem_current_bytes; sampled gauge maximum,Raw bytes are authoritative; GB and GiB shown separately
+kernel_memory_peak,6944976896,6.944976896,6.468013763427734,cgroup v1 memory.max_usage_in_bytes -> mem_peak_bytes; kernel high-water,Raw bytes are authoritative; GB and GiB shown separately

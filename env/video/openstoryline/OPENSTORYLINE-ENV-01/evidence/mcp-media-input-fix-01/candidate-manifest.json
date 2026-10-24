@@ -1,0 +1,80 @@
+{
+  "schema": "openstoryline-task-image-candidate-manifest-v1",
+  "upstream_commit": "c9e945215586f45c12a61c1951ee9a8e9c43a027",
+  "verified_tag": "openstoryline-task:arm64-asr-adapted-v8-artifact-store-root-fix",
+  "verified_image_id": "sha256:aa2b4aa3e26463127639d1152f9ac7def27e480b0556c69cad84a71931c1e80e",
+  "platform": "linux/arm64",
+  "derived_offline_from": "openstoryline-task:arm64-asr-adapted-v7-artifact-history-fix",
+  "dependencies_changed": false,
+  "formal_identity_frozen": false,
+  "approval_created": false,
+  "attempt_created": false,
+  "files": [
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/register_tools.py",
+      "bytes": 14182,
+      "sha256": "866721921c8ad33ce47cedb3c735cbcb51af331cbb06f9d2991779e2e851d9ae"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/request_ledger.py",
+      "bytes": 6268,
+      "sha256": "4662d1768538d72387773d7b3bdaf19845098462dfa1a63799058f651b53b472"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/sampling_handler.py",
+      "bytes": 19389,
+      "sha256": "c11ed167e16b13dbc38ca2204889435930ec6a5382fb793ea72772d53d1d0fc1"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/agent.py",
+      "bytes": 10751,
+      "sha256": "fc6330b0eb43ed4661a50a9ce4ea526d19e9eaf6311f34e2ccdbf962501ce1f8"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/openstoryline_task_entry.py",
+      "bytes": 8371,
+      "sha256": "0a46a60594e7c2b19254a72004899fb5de7c9c0687c1bf4581b91a259372e52a"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/config.toml",
+      "bytes": 2544,
+      "sha256": "21f83a65f3d0e02bce8ea4b0f5f1a2c58b72ce69b2310d3f98a3d9ca51800b64"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.request-gated",
+      "bytes": 400,
+      "sha256": "c1954f39ae4d226fc0d1856406c05fbd44efdbb0facd66a814826e0d0568fe3c"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.media-input-fix",
+      "bytes": 340,
+      "sha256": "31e35083697ae98ae2d09a0bce050ea5b602b8c713c92b68958021c96f3117a5"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.artifact-history-fix",
+      "bytes": 324,
+      "sha256": "d162170bb716c7d78b6e260d00f67ed8218506fff4f8f829668157d5c6f1107e"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.artifact-store-root-fix",
+      "bytes": 366,
+      "sha256": "042e5340457bdfb30960ab48985725b4ce092157147947aedfde689a7b2ad42f"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/evidence/mcp-media-input-fix-01/validate_mcp_media.py",
+      "bytes": 3885,
+      "sha256": "61df9bc058e92b5818bd0344e9da024a6159337b54ccacaaf6d0e70f36530369"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/evidence/mcp-media-input-fix-01/run/result.json",
+      "bytes": 9690,
+      "sha256": "59bb9468d3f1241c00f3d3ba76d55a4eb08a6da09f2c16610b8dcb6123594b4e"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/evidence/mcp-toolchain-v5/candidate-manifest.json",
+      "bytes": 2130,
+      "sha256": "ee1f7bea10a1d90e2ee42c2f1f2dadf72ce518e525080ed4cca8214966128e5a"
+    }
+  ],
+  "manifest_self_hash": "omitted"
+}

@@ -1,0 +1,74 @@
+{
+ "task": "BAILIAN-GENERATION-SMOKE-02",
+ "note": "manifest does not self-hash; .part temporaries excluded",
+ "inputs": {
+  "plan": "plan.json",
+  "probe_code": "probe.py (includes post-run poll-auth fix; see revision-01.json)",
+  "offline_tests": "test_probe_offline.py",
+  "blocked_round_snapshot": [
+   "verification-blocked-01.json",
+   "counts-blocked-01.json",
+   "manifest-blocked-01.json"
+  ],
+  "credential": {
+   "file": "/home/lcq/.config/agent-workload-characterization/bailian.env",
+   "env": "DASHSCOPE_API_KEY",
+   "workspace_env": "BAILIAN_WORKSPACE_ID",
+   "value_stored": false
+  }
+ },
+ "files": {
+  "A-generated.png": {
+   "bytes": 376820,
+   "sha256": "10acf903f3cd9f13c395a678ae9a8a89fad1fae60e12f2ae72169ef36ef3b261"
+  },
+  "B-edited.png": {
+   "bytes": 129930,
+   "sha256": "b2c2e2bdc5433c706aab287422fdb1fdcc73122e29a887d1d7d10aab5ee8cf6a"
+  },
+  "counts-blocked-01.json": {
+   "bytes": 433,
+   "sha256": "711267ac57e9ab45beea2afdfdb8e18ed6fb725b77d44a44fda4161a853330af"
+  },
+  "counts.json": {
+   "bytes": 434,
+   "sha256": "082fe7748f341058ab525350106ee702ed516f7801c1a208c961087c07b7ac0b"
+  },
+  "d-task-id.json": {
+   "bytes": 158,
+   "sha256": "6177477d502737018a76682e0d894e5e59a130064bcd49e8b6ba2d16d3fac20a"
+  },
+  "manifest-blocked-01.json": {
+   "bytes": 1179,
+   "sha256": "3c9551456b315e95aea72460f01eb8647fbd9a9ae9459edc71bae79e485c7bc1"
+  },
+  "plan.json": {
+   "bytes": 5185,
+   "sha256": "fab829dc1a6e3922744f7c5366b683500c9d25c07b61f5e34a14aa99e97059e0"
+  },
+  "probe.py": {
+   "bytes": 56479,
+   "sha256": "6a7f14e60c3f4c8e4eac531f2992310831e0998d8d41a7bd2cbf2201f78731bd"
+  },
+  "revision-01.json": {
+   "bytes": 2576,
+   "sha256": "e7692b428530180f2d8d23c6b7e68429a369c0c43564e3c3ccb35f7753d78bda"
+  },
+  "summary.md": {
+   "bytes": 5958,
+   "sha256": "6247969cfae3043428e18fd5536564da4eac5f8a6a7ec7ccfcc2b2d58d40b53e"
+  },
+  "test_probe_offline.py": {
+   "bytes": 25097,
+   "sha256": "429baecdd674a1f48b7c2dbddb6ea5656196ca07f0cf08d438ba00eb092d1e6d"
+  },
+  "verification-blocked-01.json": {
+   "bytes": 1648,
+   "sha256": "ddd140c16f2fb847a49ae5fc50f2dff9a6893b710deff54caa10ce16e97740c4"
+  },
+  "verification.json": {
+   "bytes": 21839,
+   "sha256": "e12086a2b0950287d059c60ce93814320df4325b92eca96123d600a0d8c71807"
+  }
+ }
+}

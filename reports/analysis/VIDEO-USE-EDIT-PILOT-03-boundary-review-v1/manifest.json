@@ -1,0 +1,153 @@
+{
+  "schema": "video-use-pilot03-boundary-review-manifest-v1",
+  "run_id": "20261021T1310Z-video-use-edit-03",
+  "raw_manifest_self_hash": "omitted",
+  "analysis_manifest_self_hash": "omitted",
+  "source_snapshot": {
+    "path": "scripts/video_use_edit_pilot_03.py",
+    "bytes": 19933,
+    "sha256": "ff36a3c8de721a497009d02fa71f0343953e57737abf1b78d57a824521d64a03",
+    "matches_pilot03_frozen_input": true,
+    "frozen_sha256": "ff36a3c8de721a497009d02fa71f0343953e57737abf1b78d57a824521d64a03"
+  },
+  "raw_archive_verification": {
+    "manifest_entry_count": 86,
+    "all_bytes_sha256_match": true,
+    "manifest_self_hash": "omitted"
+  },
+  "inputs": [
+    {
+      "path": "data/raw/generated/VIDEO-USE-EDIT-PILOT-03/20261021T1310Z-video-use-edit-03/manifest.json",
+      "bytes": 14693,
+      "sha256": "d84e73a1517d1a8ad776a6843a7189d6e38d82e3a33ff317daeee0dc09ab3f1f"
+    },
+    {
+      "path": "data/raw/generated/VIDEO-USE-EDIT-PILOT-03/20261021T1310Z-video-use-edit-03/run-record.json",
+      "bytes": 12618825,
+      "sha256": "77bc9d1cbbe288ebe0ddc9b35d7b73cf45be6ee713636836de602cfc500bcdfe"
+    },
+    {
+      "path": "data/raw/generated/VIDEO-USE-EDIT-PILOT-03/20261021T1310Z-video-use-edit-03/workspace/instruction.md",
+      "bytes": 2476,
+      "sha256": "2827ddbcaedf0206702d1f744d5769593b1e86ef03385cc3d4d20557c56a16c7"
+    },
+    {
+      "path": "data/raw/generated/VIDEO-USE-EDIT-PILOT-03/20261021T1310Z-video-use-edit-03/workspace/project/edit/transcripts/source.json",
+      "bytes": 50142,
+      "sha256": "8c759fea31fd5484f04815560db456d0dd19ab521be1da5b97a67c0c6b14d8b0"
+    },
+    {
+      "path": "data/raw/generated/VIDEO-USE-EDIT-PILOT-03/20261021T1310Z-video-use-edit-03/workspace/project/edit/edl.json",
+      "bytes": 1282,
+      "sha256": "3fb14c83b4ac9af8cec78ccf42fd58bb3306a80e622e2cbdba8738df5a5f79bb"
+    },
+    {
+      "path": "data/raw/generated/VIDEO-USE-EDIT-PILOT-03/20261021T1310Z-video-use-edit-03/workspace/output/cuts.json",
+      "bytes": 73,
+      "sha256": "65e96561430a2f5107f78e155556fd75ab15863b0636f955b3448478ffc7de7d"
+    },
+    {
+      "path": "data/raw/generated/VIDEO-USE-EDIT-PILOT-03/20261021T1310Z-video-use-edit-03/workspace/export/rollouts/2026/10/21/rollout-2026-10-21T14-09-20-01a15ecb-8bab-7d60-9816-717f19653fb6.jsonl",
+      "bytes": 5945715,
+      "sha256": "23532d3a84b9ae2e1dd613b760183dea8bf17241a58fdef80626c8d0ca0874a7"
+    },
+    {
+      "path": "data/raw/generated/VIDEO-USE-EDIT-PILOT-03/20261021T1310Z-video-use-edit-03/workspace/project/edit/verify/timeline_hesitation.png",
+      "bytes": 1329415,
+      "sha256": "f9abc525331e904cf13f7ad5a5306e4620d0b45bce638b336fec2fe47589f82e"
+    },
+    {
+      "path": "data/raw/generated/VIDEO-USE-EDIT-PILOT-03/20261021T1310Z-video-use-edit-03/workspace/project/edit/verify/before_cut.png",
+      "bytes": 545442,
+      "sha256": "4b1a9d44adb6382d55b074cb348516593ce45e290c0dec86549d503523e0fd53"
+    },
+    {
+      "path": "data/raw/generated/VIDEO-USE-EDIT-PILOT-03/20261021T1310Z-video-use-edit-03/workspace/project/edit/verify/after_cut.png",
+      "bytes": 549715,
+      "sha256": "fd6284bf280f5d06bcd14c9f849526fa627f26268ec844146e0b25d298b83fe6"
+    },
+    {
+      "path": "data/raw/generated/VIDEO-USE-EDIT-PILOT-03/20261021T1310Z-video-use-edit-03/workspace/project/edit/verify/output_before_cut.png",
+      "bytes": 550332,
+      "sha256": "17d8ad865fa72fac5bae55ab6db380b3057b4a9bb784006eb0c67b2a96d31b0d"
+    },
+    {
+      "path": "data/raw/generated/VIDEO-USE-EDIT-PILOT-03/20261021T1310Z-video-use-edit-03/workspace/project/edit/verify/output_after_cut.png",
+      "bytes": 513931,
+      "sha256": "86267b39e48de4973f1f3b34aa9155685adda7fa9fab158f8d056398538e981e"
+    },
+    {
+      "path": "data/raw/generated/VIDEO-USE-EDIT-PILOT-03/20261021T1310Z-video-use-edit-03/workspace/output/output.mp4",
+      "bytes": 2680360,
+      "sha256": "765c8916763c0e79e41668d8b8011e28c99ceb92fcfe358039dcdafac8e19575"
+    },
+    {
+      "path": "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/overlay/SKILL.md",
+      "bytes": 27347,
+      "sha256": "68341f7280e3f52312f54f357dfd0f6d04e139fe56b434ebd17c54af6cfeff70"
+    },
+    {
+      "path": "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/overlay/helpers/render.py",
+      "bytes": 30812,
+      "sha256": "76d547dc673deadc2676a908aa89cc3ba9dae81622c5c659c66c27bb0b942879"
+    },
+    {
+      "path": "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/overlay/helpers/timeline_view.py",
+      "bytes": 15939,
+      "sha256": "a42be9cb8fde7aa5a11396c14bc1c336cdf970e84f8a88f39f42dec0ba2dd0a1"
+    },
+    {
+      "path": "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/frozen-identity.json",
+      "bytes": 6446,
+      "sha256": "f905501068cc15864c81948b41095e28895a81c30dc7e53fbbc0b8f4edbad33f"
+    },
+    {
+      "path": "reports/analysis/VIDEO-USE-EDIT-PILOT-03-boundary-review-v1/source-snapshot/source-snapshot.json",
+      "bytes": 276,
+      "sha256": "8e15aaf2689ff52d17d0c0c584fdc597b586e05522dafb7afe904a0146b43fe8"
+    },
+    {
+      "path": "reports/analysis/VIDEO-USE-EDIT-PILOT-03-boundary-review-v1/source-snapshot/scripts/video_use_edit_pilot_03.py",
+      "bytes": 19933,
+      "sha256": "ff36a3c8de721a497009d02fa71f0343953e57737abf1b78d57a824521d64a03"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "reports/analysis/VIDEO-USE-EDIT-PILOT-03-boundary-review-v1/summary.json",
+      "bytes": 11630,
+      "sha256": "99b6ff91919124b4a67521dfdb6b94ff1822d3c98adec464e1989c048b523f23"
+    },
+    {
+      "path": "reports/analysis/VIDEO-USE-EDIT-PILOT-03-boundary-review-v1/summary.md",
+      "bytes": 5902,
+      "sha256": "2abe8f0661af8e6548f378136d106e0955bc5f5d8b6b4fed3812c9217c642197"
+    },
+    {
+      "path": "reports/resource/VIDEO-USE-EDIT-PILOT-03/boundary-review-revision-01.md",
+      "bytes": 975,
+      "sha256": "7a25039b75deaea88bddbfe6321cb990885bc8e5ebf7671d793bf5b8fb94e8ef"
+    },
+    {
+      "path": "scripts/video_use_edit_pilot_03.py",
+      "bytes": 21370,
+      "sha256": "8381a8e129e65a6bbbf11a354dbce3ab1f0e1f87cd3c98e8d668746b04d9f1f2"
+    },
+    {
+      "path": "scripts/video_use_edit_pilot_03_boundary_review.py",
+      "bytes": 11942,
+      "sha256": "ce0565339a9a54d9c3503137ab4dd91959acce180ca8b0fd494f608386a35833"
+    },
+    {
+      "path": "tests/test_video_use_edit_pilot_03_boundary_review.py",
+      "bytes": 8348,
+      "sha256": "80ef4dd0211d1781da6daa5dc92ce85300051ec985f01b42e00c501d68e81475"
+    }
+  ],
+  "excluded": [
+    "verifier_private/**",
+    "golden/**",
+    "oracle/**",
+    "official private scoring files"
+  ]
+}

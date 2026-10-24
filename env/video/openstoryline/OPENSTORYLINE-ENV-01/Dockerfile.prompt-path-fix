@@ -1,0 +1,5 @@
+FROM openstoryline-task:arm64-asr-adapted-v9-asr-cache-preflight
+COPY source/ /opt/openstoryline/
+RUN grep -q 'Path(__file__).resolve().parents\[3\]' /opt/openstoryline/src/open_storyline/utils/prompts.py \
+    && grep -q 'PlanTimelineProNode.meta.require_prior_kind' /opt/openstoryline/src/open_storyline/mcp/register_tools.py \
+    && python3 -m compileall -q /opt/openstoryline

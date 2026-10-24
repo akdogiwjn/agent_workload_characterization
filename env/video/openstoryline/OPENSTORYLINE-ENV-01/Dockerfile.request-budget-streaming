@@ -1,0 +1,4 @@
+FROM openstoryline-task:arm64-asr-adapted-v10-prompt-path-fix
+COPY source/ /opt/openstoryline/
+RUN python3 -m compileall -q /opt/openstoryline \
+    && test -f /opt/openstoryline/tests/test_request_budget.py

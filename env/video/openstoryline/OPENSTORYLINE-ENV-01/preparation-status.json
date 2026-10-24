@@ -1,0 +1,133 @@
+{
+ "schema": "openstoryline-env01-preparation-v1",
+ "repository": "references/repos/FireRed-OpenStoryline",
+ "repository_commit": "c9e945215586f45c12a61c1951ee9a8e9c43a027",
+ "reference_worktree_clean_at_check": true,
+ "base_image": {
+  "tag": "video-common-base:arm64-v1",
+  "expected_image_id": "sha256:d414b4270fec6ec2dd245982a522099d8941d8cd114ccd5ec2c6730815f3a706",
+  "platform": "linux/arm64",
+  "python": "3.12.15",
+  "ffmpeg": "7.1.5-0+deb13u1"
+ },
+ "task_image_tag": "openstoryline-task:arm64-v1",
+ "derived_source_manifest": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source-manifest.json",
+ "image_build": "complete",
+ "image_id": "sha256:0c8b63c6fff5cff7851bddf6a35c8e9c5be546f67f13af2b796d117879f585f8",
+ "build_failure_or_stop_reason": null,
+ "downloaded_bytes": "pip ~1.5GiB (CPU torch) + models 1.13GiB paraformer-en + fsmn-vad + ct-punc (ModelScope, ~39MB/s)",
+ "model_resources": "downloaded to env/video/openstoryline/OPENSTORYLINE-ENV-01/models/",
+ "asr_language_evidence": {
+  "source": "https://github.com/modelscope/FunASR/blob/main/model_zoo/readme.md",
+  "official_alias_use": {
+   "paraformer-zh": "offline Mandarin",
+   "paraformer-en": "offline English"
+  },
+  "runtime_english_check": "pass through the unchanged paraformer-en checkpoint with the local tokens.json/timestamp adapter; see evidence/asr-adapter-01/manifest.json",
+  "formal_readiness_blocker": "none for the ASR contract; retain paraformer-en and its local adapter"
+ },
+ "credential_read": true,
+ "bailian_logical_calls": 11,
+ "formal_agent_or_verifier_run": false,
+ "formal_execution_ready": false,
+ "api_route_candidate": {
+  "protocol": "OpenAI-compatible Chat Completions",
+  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "model": "qwen3.7-plus",
+  "credential_env_name": "DASHSCOPE_API_KEY",
+  "configured_retries": 0
+ },
+ "partial_local_checks": {
+  "python_compileall_source_overlay": "passed",
+  "task_config_toml_parse": "passed",
+  "task_config_route_assertions": "passed",
+  "package_imports_host": {
+   "torch": false,
+   "torchaudio": false,
+   "funasr": false,
+   "langchain": false,
+   "mcp": false,
+   "av": false
+  },
+  "container_cleanup": "offline validation containers used --rm and exited; no formal task container was created",
+  "new_image_tag": "v1 base and v5 request-gated validation candidate are present; v5 ID is recorded under latest_candidate_validation"
+ },
+ "remaining_gates": [
+  "No further model calls under the exhausted preparation request/observed-usage budget; a new explicit preparation allowance is required.",
+  "Pass one full post-fix native LangChain Agent + MCP chain including a real speech_rough_cut request, PlanTimelinePro, RenderVideo, request logging and cleanup.",
+  "Then independently verify resource sampling, hard deadlines, official verifier environment, frozen identity, approval/attempt consistency and submission contract."
+ ],
+ "image_tag": "openstoryline-task:arm64-v1",
+ "build_notes": "rebuilt with: pypi via Tsinghua mirror (Aliyun large-file 0 B/s was the previous stall); torch/torchaudio from official CPU-only index (generic PyPI Linux wheels pull multi-GB CUDA runtime packages unusable on CPU arm64); emoji==2.15.0 + tomli added (missed from the previous minimal requirements.in, required by the asr_node import chain)",
+ "prior_stock_funasr_verification": {
+  "verdict": "FAIL — English ASR not usable on both dimensions",
+  "text_quality": "FAIL — 37s real English interview transcribed as hallucinated word stream (evidence/asr-probe/asr_fulltext_probe.json: 'Wisconsin it swungver augh remarkably citibank hy, impatience prosecution, monsieur, peanut...' )",
+  "timestamp_contract": "FAIL — model outputs ONLY ['key','text']; no word-level timestamp field exists. Through the REAL LocalASRNode path (sentence_timestamp=True) funasr 1.3.1 auto_model.py:657 raises KeyError: 'timestamp' when assembling sentence_info — the speech_rough_cut prompt requires {text,start,end,timestamp[[s,e],...]} per sentence",
+  "evidence": [
+   "evidence/asr-probe/asr_fulltext_probe.json (full 37s + VAD + punc, keys=['key','text'])",
+   "driver.py run through LocalASRNode.process -> KeyError traceback",
+   "6s sample direct inference: keys ['key','text'], hallucinated text"
+  ],
+  "tested_model": "iic/speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020 (funasr 1.3.1, CPU, torch 2.11.0+cpu)",
+  "not_switched": "no Whisper/ElevenLabs/extra alignment model was silently substituted per task rules"
+ },
+ "asr_contract_verification": {
+  "verdict": "PASS with the existing English ASR adapter; stock FunASR failure below is retained as history",
+  "evidence": "evidence/asr-adapter-01/manifest.json",
+  "text_and_word_timestamps": "REAL LocalASRNode pass on the registered 37-second English clip; 156 ordered word timestamps and 25 assembled sentences",
+  "model_and_dependencies_changed": false
+ },
+ "verified_at": "2026-10-22T08:12:35+0000",
+ "formal_readiness_blocker": "The authorized preparation Agent session sent 11 logical requests and reached the existing observed-usage gate. A local MCP media/prerequisite wiring defect was fixed and passed a no-network real MCP plus LocalASR regression, but the remaining request/usage budget cannot support the required second native Agent run, speech_rough_cut model call, timeline and render. No PILOT-02 approval or attempt was created.",
+ "latest_candidate_validation": {
+  "candidate_image_tag": "openstoryline-task:arm64-asr-adapted-v8-artifact-store-root-fix",
+  "candidate_image_id": "sha256:aa2b4aa3e26463127639d1152f9ac7def27e480b0556c69cad84a71931c1e80e",
+  "candidate_manifest": "env/video/openstoryline/OPENSTORYLINE-ENV-01/evidence/mcp-media-input-fix-01/candidate-manifest.json",
+  "platform": "linux/arm64",
+  "parent_image_tag": "openstoryline-task:arm64-asr-adapted-v7-artifact-history-fix",
+  "parent_image_id": "sha256:b91f20c22b9e64b6d2c5ef53265bba0e048e675ac53597a73d72a94762b68f1d",
+  "upstream_commit": "c9e945215586f45c12a61c1951ee9a8e9c43a027",
+  "mcp_runtime_findings_fixed": [
+   "Rebuild internal load_media inputs at the MCP server wrapper because FastMCP drops fields outside the public schema.",
+   "Rehydrate declared prerequisite payloads from the configured ArtifactStore root and current session only."
+  ],
+  "offline_validation": {
+   "network": "none",
+   "credential_read": false,
+   "model_api_calls": 0,
+   "mcp_tools_passed": [
+    "load_media",
+    "split_shots(mode=skip)",
+    "local_asr(mode=auto)"
+   ],
+   "same_session_artifact_history": "passed",
+   "asr": "30 word timestamps and sentence groups",
+   "record": "env/video/openstoryline/OPENSTORYLINE-ENV-01/evidence/mcp-media-input-fix-01/run/result.json"
+  },
+  "preparation_session": {
+   "logical_requests_sent": 11,
+   "logical_request_limit": 12,
+   "request_phases": {
+    "llm_validation": 1,
+    "vlm_validation": 1,
+    "agent": 9,
+    "mcp_node_sampling": 0
+   },
+   "returned_usage_total_tokens": 37503,
+   "observed_usage_gate": 32768,
+   "wall_s": 66.801,
+   "actual_http_count": "unknown",
+   "full_native_chain_after_fix": false
+  },
+  "preparation_report": "env/video/openstoryline/edit-pilot-02/preparation/preparation-report.json",
+  "formal_execution_ready": false,
+  "new_approval_created": false,
+  "new_attempt_created": false
+ },
+ "validation_difference_from_pilot_01": {
+  "pilot_01_frozen_prep_requests": 6,
+  "pilot_02_authorized_prep_request_limit": 12,
+  "pilot_01_identity_modified": false,
+  "cumulative_observed_usage_gate_retained": 32768
+ }
+}

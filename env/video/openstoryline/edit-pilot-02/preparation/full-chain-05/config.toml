@@ -1,0 +1,111 @@
+[developer]
+developer_mode = false
+print_context = false
+
+[project]
+media_dir = "/workspace/input"
+bgm_dir = "/workspace/empty-bgm"
+outputs_dir = "/workspace/output"
+
+[llm]
+model = "qwen3.7-plus"
+base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+api_key = ""
+timeout = 60.0
+temperature = 0.1
+max_retries = 0
+
+[vlm]
+model = "qwen3.7-plus"
+base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+api_key = ""
+timeout = 60.0
+temperature = 0.1
+max_retries = 0
+
+[local_mcp_server]
+server_name = "storyline"
+server_cache_dir = "/workspace/output/.server_cache"
+server_transport = "streamable-http"
+url_scheme = "http"
+connect_host = "127.0.0.1"
+inline_media = "never"
+port = 8001
+path = "/mcp"
+json_response = true
+stateless_http = false
+timeout = 600
+available_node_pkgs = ["open_storyline.nodes.core_nodes"]
+available_nodes = [
+  "LoadMediaNode", "SplitShotsNode", "LocalASRNode", "SpeechRoughCutNode",
+  "PlanTimelineProNode", "RecommendTransitionNode", "RecommendTextNode", "RenderVideoNode"
+]
+
+[skills]
+skill_dir = "/opt/openstoryline/.storyline/skills"
+
+[search_media]
+pexels_api_key = ""
+
+[split_shots]
+transnet_weights = "/opt/openstoryline/not-used-transnet-weights.pth"
+transnet_device = "cpu"
+
+[understand_clips]
+sample_fps = 2.0
+max_frames = 64
+
+[group_clips]
+base_max_tokens = 4096
+tokens_per_clip = 48
+max_tokens_cap = 16384
+retry_token_step = 2048
+max_parse_retries = 0
+
+[script_template]
+script_template_dir = "/opt/openstoryline/not-used-script-templates"
+script_template_info_path = "/opt/openstoryline/not-used-script-templates/meta.json"
+
+[generate_voiceover]
+tts_provider_params_path = "/opt/openstoryline/not-used-tts.json"
+providers = {}
+
+[generate_ai_transition]
+providers = {}
+
+[select_bgm]
+sample_rate = 22050
+hop_length = 2048
+frame_length = 2048
+
+[recommend_text]
+font_info_path = "/opt/openstoryline/resource/fonts/font_info.json"
+
+[plan_timeline]
+beat_type_max = 1
+title_duration = 0
+bgm_loop = false
+min_clip_duration = 500
+estimate_text_min = 1500
+estimate_text_char_per_sec = 6.0
+image_default_duration = 3000
+group_margin_over_voiceover = 1000
+
+[plan_timeline_pro]
+min_single_text_duration = 200
+max_text_duration = 5000
+img_default_duration = 1500
+min_group_margin = 0
+max_group_margin = 0
+min_clip_duration = 1
+tts_margin_mode = "min"
+min_tts_margin = 0
+max_tts_margin = 0
+text_tts_offset_mode = "min"
+min_text_tts_offset = 0
+max_text_tts_offset = 0
+long_short_text_duration = 3000
+long_text_margin_rate = 0.0
+short_text_margin_rate = 0.0
+text_duration_mode = "with_clip"
+is_text_beats = false

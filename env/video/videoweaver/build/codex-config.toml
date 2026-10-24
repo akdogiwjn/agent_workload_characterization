@@ -1,0 +1,15 @@
+# VIDEO-WEAVER: container-scoped Codex config (Bailian provider only).
+# Explicit Bailian provider — NO default provider fallback.
+# Credential is read at runtime from the env var named by env_key
+# (DASHSCOPE_API_KEY); no credential value lives in this file or the image.
+# Retries/reconnects disabled (verified video-use values).
+model = "qwen3.7-plus"
+model_provider = "bailian"
+
+[model_providers.bailian]
+name = "Bailian (DashScope compatible-mode)"
+base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+env_key = "DASHSCOPE_API_KEY"
+wire_api = "responses"
+request_max_retries = 0
+stream_max_retries = 0

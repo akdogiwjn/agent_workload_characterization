@@ -1,0 +1,25 @@
+{
+  "schema": "video-use-offline-image-derivation-v1",
+  "tag": "video-use-task:arm64-codex-bailian-v2",
+  "parent_tag": "video-use-task:arm64-codex-bailian-v1",
+  "parent_id": "sha256:a46db2143d8aa69a299b419152c6ca036e09f619d3f771aeace64e08ed729402",
+  "image_id": "sha256:faf015927f9a71c820c82abc11d1a996037d7d684e6e149f2787908ad422c20f",
+  "architecture": "arm64",
+  "os": "linux",
+  "build": {
+    "pull": false,
+    "network": "none",
+    "dependency_installation": false,
+    "credentials_read_or_copied": false
+  },
+  "changes": [
+    "Retained /opt/video-use-venv/bin first in Docker ENV PATH.",
+    "Appended export PATH=\"/opt/video-use-venv/bin:$PATH\" to container /etc/profile, after its login-shell system PATH reset."
+  ],
+  "unchanged": [
+    "Codex CLI 0.163.0",
+    "explicit Bailian Responses qwen3.7-plus configuration",
+    "video-use source and dependencies",
+    "original v1 image tag and image ID"
+  ]
+}

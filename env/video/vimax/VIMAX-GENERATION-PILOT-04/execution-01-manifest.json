@@ -1,0 +1,515 @@
+{
+ "task": "VIMAX-GENERATION-PILOT-04",
+ "identity": "identity-01.json sha256:1362a4aad1b0d5ea7b8eb8fa827a9da15f54769aa096d69dc56c37dd494040c1",
+ "approval": "APPROVAL-01.json sha256:696c5bf06c88ce977efa9d0e3069827910dc9865e7fca2e5f61ad86a7d5fbeb1",
+ "files": {
+  "APPROVAL-01.json": {
+   "bytes": 953,
+   "sha256": "696c5bf06c88ce977efa9d0e3069827910dc9865e7fca2e5f61ad86a7d5fbeb1"
+  },
+  "execution-01/container-logs-final.log": {
+   "bytes": 104687,
+   "sha256": "187d61cbf8ac8830e9aff56ffb078b89899a98f5747159202d373337e4350297"
+  },
+  "execution-01/container-stdout.log": {
+   "bytes": 104687,
+   "sha256": "187d61cbf8ac8830e9aff56ffb078b89899a98f5747159202d373337e4350297"
+  },
+  "execution-01/final-frames/seg-0.png": {
+   "bytes": 911452,
+   "sha256": "1f125c80fcb8bb3c87f267b1ab0b7996bfe50f8cfb664ef99ff0b078f974bced"
+  },
+  "execution-01/final-frames/seg-1.png": {
+   "bytes": 1829529,
+   "sha256": "f6be94582ed2ec37c8a375d96e61e8a3bc639d800f3bebe8abd79d33f4eaabaf"
+  },
+  "execution-01/final-frames/seg-2.png": {
+   "bytes": 1316786,
+   "sha256": "619e7d6305415f25b6ca89a87c9e7559d161a92238f4f0cec53e7d300affb4b7"
+  },
+  "execution-01/final-frames/seg-3.png": {
+   "bytes": 1342322,
+   "sha256": "de3c0abe1933c94cfa3eec9bdeefe11dc0890357e779e2cd1904de12c5f3dec4"
+  },
+  "execution-01/final-frames/seg-4.png": {
+   "bytes": 1193369,
+   "sha256": "f54a674345848bd33a7a07cc98644df156954bc08ef3df16cbb53a792f0f6837"
+  },
+  "execution-01/final-frames/seg-5.png": {
+   "bytes": 1434426,
+   "sha256": "870e7ed2d30ca8031669a735db0ee6bcd28288d21072635a7806f016bbb7290b"
+  },
+  "execution-01/final-frames/seg-6.png": {
+   "bytes": 1462495,
+   "sha256": "ed696b42ad8346d89f9c0f5d7c2dae5f86a12c73d11ce7c67eb0d62f6d7788d9"
+  },
+  "execution-01/final-frames/seg-7.png": {
+   "bytes": 1550420,
+   "sha256": "d0f0246caf23f4f34e6541289cc29e7310492bca4dd9e24f5fda7a7a954f7a0c"
+  },
+  "execution-01/netns-samples.jsonl": {
+   "bytes": 109438,
+   "sha256": "5c13095a6fcc8e5d7256e69086f20d252822d69e6771b6a2c841e3fb9073ef3a"
+  },
+  "execution-01/resource-evidence.json": {
+   "bytes": 3495654,
+   "sha256": "d0bba521c9d567092f98a4ac42d9cb8567ebb34624d320147b1de8766a68aff2"
+  },
+  "execution-01/resource-samples.jsonl": {
+   "bytes": 1280475,
+   "sha256": "ff9567a109680dc34f62a96ec918f07da2ff1c9e50e9a40978ca1d9a5ce285b7"
+  },
+  "execution-01/run-record.json": {
+   "bytes": 3565,
+   "sha256": "105110f99ed3f2b8fe9ae7dd66a6add048a24f96f6eb05edb412ea888bbbda72"
+  },
+  "execution-01/workspace/.vimax/logs/loop_history.jsonl": {
+   "bytes": 3243,
+   "sha256": "7417df576708b3f1729b3e140670109619c33db92266fd366c7db4bb91e8b83d"
+  },
+  "execution-01/workspace/.vimax/logs/tool_calls.jsonl": {
+   "bytes": 603,
+   "sha256": "567d1b1140d6778f2e22fcc9e5ab2bc76fdf0c9574219b40efd46ec6f0b4bee1"
+  },
+  "execution-01/workspace/.vimax/memory.md": {
+   "bytes": 19,
+   "sha256": "3f03af84c1db614021d8ed85816694aa06a7adb8d77255f6d6dc34ab6e45e5fa"
+  },
+  "execution-01/workspace/.vimax/sessions.json": {
+   "bytes": 10747,
+   "sha256": "87f6e2aed598c108c6af46b2cc290cb511e64412cadebab3faecb8f78157b1b6"
+  },
+  "execution-01/workspace/.vimax/sessions.lock": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/render_events.jsonl": {
+   "bytes": 452,
+   "sha256": "3aa1122065c82e633b704eaf1084128e5744b3c9147445652ed8592ed54480b1"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/render_status.json": {
+   "bytes": 312,
+   "sha256": "beef1813a28bde8931591e2b3b740ecce1f0ef194ef2ed9e25cb3b373d21af69"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/camera_tree.json": {
+   "bytes": 4347,
+   "sha256": "4ca1b5142dab55281bad08bbde11f558e8b040006119586271314161025d559a"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/character_portraits/0_the photographer/back.png": {
+   "bytes": 2754792,
+   "sha256": "f0321e863db87ed702c8952e23a21293222faef487d45d3d585b529aad0b8cdd"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/character_portraits/0_the photographer/front.png": {
+   "bytes": 3705718,
+   "sha256": "9a1a69db8cd0808dbd0d92bb122a756bdcf997e35ca0f2cccb675bbbb6ddacc8"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/character_portraits/0_the photographer/side.png": {
+   "bytes": 2600624,
+   "sha256": "e1507335ebe0e1206ba897d92e11f6d2b7cefb3a0ae41fc3655cde0425eaf72e"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/character_portraits_registry.json": {
+   "bytes": 748,
+   "sha256": "952b54f923f9825ebd953b6654bcc6513994461a8f179f8d7a8fb5de3d01f850"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/characters.json": {
+   "bytes": 716,
+   "sha256": "83dd8b6e03367dacfb1034721633a0569d802800d26758ed364b0fc00dfb796e"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/final_video.mp4": {
+   "bytes": 11724796,
+   "sha256": "00f60f6c3580dda0dc96b720e2024b8cc81826574b562af608848fcb2db774ec"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/script.txt": {
+   "bytes": 8105,
+   "sha256": "447e4d88ccd76f9cb4a206f799993620a3c832238dd873c9ae9e905c2452b59a"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/0/first_frame.png": {
+   "bytes": 1444979,
+   "sha256": "8beaac0df0db5bf52d044c38947b3d3f4dcf3a49a875ad8079735e57ba167bd9"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/0/first_frame_candidates/candidate_0.png": {
+   "bytes": 1444979,
+   "sha256": "8beaac0df0db5bf52d044c38947b3d3f4dcf3a49a875ad8079735e57ba167bd9"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/0/first_frame_candidates/candidate_1.png": {
+   "bytes": 1309659,
+   "sha256": "3ef4ce065adf6bd82102e6811f4b973dbfd864040f8f67c6f85293119937df52"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/0/first_frame_candidates/selection.json": {
+   "bytes": 1156,
+   "sha256": "ee13265e9957f68e14838f48c040c08d84db192dcf97856ca190b9cd514725a4"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/0/first_frame_selector_output.json": {
+   "bytes": 914,
+   "sha256": "ff3d745edd2bfb70ee7330ee8e7faffa6df0b172e59280476a06ac82438568ce"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/0/shot_description.json": {
+   "bytes": 2564,
+   "sha256": "fe800dee2e03c6f7ae7fac7c42dee3d663bef5b894817937902f7dc5cc910a6f"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/0/video.mp4": {
+   "bytes": 2478068,
+   "sha256": "404cf8b77b5d5fa7e4c816331d2709de852f0fb43b707e2d940051f25632d36e"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/1/cache/transition_video_from_shot_0-Scene-001.mp4": {
+   "bytes": 570280,
+   "sha256": "064167474487c741bf92052216de0640008b4c007b502fe6e674b115be4290d1"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/1/cache/transition_video_from_shot_0-Scene-002.mp4": {
+   "bytes": 607392,
+   "sha256": "52361312994a2b2948b57114f8472433136e221976e56a1c9e0fc6e18ed89c6c"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/1/first_frame.png": {
+   "bytes": 1846124,
+   "sha256": "3076f755eaf7e9fea007918a77e592f48ff1e80dd83cc7249f1accaa4111dd8f"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/1/first_frame_candidates/candidate_0.png": {
+   "bytes": 1868972,
+   "sha256": "8607f887db222706296f7538d6cd3193ea11066764435851e995edd7b1122fd5"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/1/first_frame_candidates/candidate_1.png": {
+   "bytes": 1846124,
+   "sha256": "3076f755eaf7e9fea007918a77e592f48ff1e80dd83cc7249f1accaa4111dd8f"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/1/first_frame_candidates/selection.json": {
+   "bytes": 1164,
+   "sha256": "e091c9900a88f515d624b165af179929e5bd0d160422541171684e609e69f526"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/1/first_frame_selector_output.json": {
+   "bytes": 1698,
+   "sha256": "c1cc7a83db0cc95b07ddb7632f77aab5695d80ad32f2ab22b287a1e64f719827"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/1/new_camera_1.png": {
+   "bytes": 1043791,
+   "sha256": "e8f1e0c1bd5947d95398bc733fc035c8738ffac780d3269c4030c02d49808d20"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/1/shot_description.json": {
+   "bytes": 2349,
+   "sha256": "1b72ffa7e5106f01d686799b2a42f3a2879d70cea37820000aef54e5ca1c0042"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/1/transition_video_from_shot_0.mp4": {
+   "bytes": 2694246,
+   "sha256": "94db3e3adf6a2bf5c1ddca3d7f1ee1f765bdd2ac8e580385bcd74a876f3e9687"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/1/video.mp4": {
+   "bytes": 3857483,
+   "sha256": "f1827c103cdb5cf8f047b6e809a12069643aa9cc822c9510f36d872b2bb0cf0b"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/2/first_frame.png": {
+   "bytes": 1620213,
+   "sha256": "2b1421d457a04a427484b6f26d21a39dced21b8b002ed8fbf347b40f114b108a"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/2/first_frame_candidates/candidate_0.png": {
+   "bytes": 1794316,
+   "sha256": "a10ffa80590eaf316eda96fc23de6fd26df70df6b79e4a43bbfbc3970bde079d"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/2/first_frame_candidates/candidate_1.png": {
+   "bytes": 1620213,
+   "sha256": "2b1421d457a04a427484b6f26d21a39dced21b8b002ed8fbf347b40f114b108a"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/2/first_frame_candidates/selection.json": {
+   "bytes": 1223,
+   "sha256": "c9ba1a7109510aaedc2455e64e314dcb5546d59ab11bafa5585086d7688f9202"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/2/first_frame_selector_output.json": {
+   "bytes": 1569,
+   "sha256": "11a87b1174c0c02db508eb8e84a30ba3dbfaf8f10c7be399970ae9152bb2d0ae"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/2/new_camera_2.png": {
+   "bytes": 908882,
+   "sha256": "94a1f966a003c19a141a5c6bfff06413fa9a97b845db9f42da206b22359864e4"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/2/shot_description.json": {
+   "bytes": 2535,
+   "sha256": "d9203d4592bf69fe7f2b7263a4fddbcbc89df4cb85d932f28feda1f281b3502e"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/2/transition_video_from_shot_1.mp4": {
+   "bytes": 4637026,
+   "sha256": "d9658dec24995ac850fddde0eb47416e7b2a26885611aa4630a0aef4beb013e1"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/2/video.mp4": {
+   "bytes": 4512453,
+   "sha256": "d4bf234728a898e5a69ead083015c72f2b915e062b5deeed06189f18147411d0"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/3/cache/transition_video_from_shot_2-Scene-001.mp4": {
+   "bytes": 1073842,
+   "sha256": "64be01b8478a5d7f7a4e48be354911583c7de0528dc5b4580c4ce1ce347eebb4"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/3/cache/transition_video_from_shot_2-Scene-002.mp4": {
+   "bytes": 1017791,
+   "sha256": "3715451efe7fd2d50acb71d3d4203e9156c3e25b43b1ed509067b7bfeb6a1df7"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/3/first_frame.png": {
+   "bytes": 1683481,
+   "sha256": "1fff5e4d472e0775097c6812f0ed693c0976570e2a16e4bb09da559b8d87d0ff"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/3/first_frame_candidates/candidate_0.png": {
+   "bytes": 1671312,
+   "sha256": "ed40eb0b511a16c285814c72a7528e001b06109a4f43b21fc67a3272f496c937"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/3/first_frame_candidates/candidate_1.png": {
+   "bytes": 1683481,
+   "sha256": "1fff5e4d472e0775097c6812f0ed693c0976570e2a16e4bb09da559b8d87d0ff"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/3/first_frame_candidates/selection.json": {
+   "bytes": 1217,
+   "sha256": "03e90d7790c21d963cdb6678a701cd422359c5d095c6416d65fd55fa810fba61"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/3/first_frame_selector_output.json": {
+   "bytes": 1469,
+   "sha256": "d7b4537aed34d9f66693f4053d718d7b1d1b6bf7386cf5e13a39d20f577d1d69"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/3/new_camera_3.png": {
+   "bytes": 928972,
+   "sha256": "9cce9e6a0df18d2e823680c59e08dc81e052c97943c3bd6203bc1be242bb6786"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/3/shot_description.json": {
+   "bytes": 2783,
+   "sha256": "5c0a5b21351e928104a08f6fc0d49ec32d0510ee42341288e9e1f137d7c48277"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/3/transition_video_from_shot_2.mp4": {
+   "bytes": 4729835,
+   "sha256": "3c2fd5f0c79be112b08fd91c8bc5ece21725f81e8ad66d7d6b787c89d9ea2c32"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/3/video.mp4": {
+   "bytes": 3525063,
+   "sha256": "6fffe5aebc63f12657a93e6eeaa39d526f8c896f2e1447758a85cc4d20673feb"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/4/cache/transition_video_from_shot_3-Scene-001.mp4": {
+   "bytes": 893448,
+   "sha256": "ba6517d5745bc1e745fcd2a768874772500adeb463a5aa5e61384b420e47a392"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/4/cache/transition_video_from_shot_3-Scene-002.mp4": {
+   "bytes": 427765,
+   "sha256": "5c0e38fbb99308f3e2652e00261a764b343ee4aa0d3ce6cccb30c07b27415dad"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/4/first_frame.png": {
+   "bytes": 1624563,
+   "sha256": "64163eb7f8e695d2d3f3a75e2edba0faa5eaa7a11ccd0838e46a702e0952304e"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/4/first_frame_candidates/candidate_0.png": {
+   "bytes": 1611543,
+   "sha256": "fc8be68798704e593e773e8ccf99271195f53e248fe5edb1e2cdeec3830181e6"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/4/first_frame_candidates/candidate_1.png": {
+   "bytes": 1624563,
+   "sha256": "64163eb7f8e695d2d3f3a75e2edba0faa5eaa7a11ccd0838e46a702e0952304e"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/4/first_frame_candidates/selection.json": {
+   "bytes": 1173,
+   "sha256": "abd97ed91d45a986274dc40942f91fdd4138114115804a349c133fc290a43de8"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/4/first_frame_selector_output.json": {
+   "bytes": 1486,
+   "sha256": "d849dafa68d93dbd41c821c17fbc6e341997461274e0597d1a5cacedeffc508f"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/4/new_camera_4.png": {
+   "bytes": 677538,
+   "sha256": "58a0fffc96c8231bb5d315915f9209667c47ff3c1bd219dc25a58ecff743285a"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/4/shot_description.json": {
+   "bytes": 2571,
+   "sha256": "c7fcbed91589448ec14beea2d6f8fea2b46b1cc07c17a305aabf31de52e2ac28"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/4/transition_video_from_shot_3.mp4": {
+   "bytes": 2767056,
+   "sha256": "ee268bea0fd0871fa4de13542257c21de60a888ecf6e375c7784a6b983e966a2"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/4/video.mp4": {
+   "bytes": 1752159,
+   "sha256": "bbbcaf0f4501ed34277b5dea7d74ef660c8ade531916cfecb66acc9046be3de9"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/5/cache/transition_video_from_shot_4-Scene-001.mp4": {
+   "bytes": 541064,
+   "sha256": "b1f1bae3369463ce8972b4ebb33fd05ac8e2c035cdfe6cf718459416fab1f95c"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/5/cache/transition_video_from_shot_4-Scene-002.mp4": {
+   "bytes": 717799,
+   "sha256": "6791512ff2504c398245531155285aaeedb5ee1802654da4bd59a2b84abe50bd"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/5/first_frame.png": {
+   "bytes": 1460422,
+   "sha256": "e0af5d673852f5c0b45108ccfcdc14260fcb71a5ba78c09ce97ec22be13945e6"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/5/first_frame_candidates/candidate_0.png": {
+   "bytes": 1460422,
+   "sha256": "e0af5d673852f5c0b45108ccfcdc14260fcb71a5ba78c09ce97ec22be13945e6"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/5/first_frame_candidates/candidate_1.png": {
+   "bytes": 1404162,
+   "sha256": "12fc767593f31bb3464929ea1732a316a35b9ca2669b6231cf747730486be9d5"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/5/first_frame_candidates/selection.json": {
+   "bytes": 1184,
+   "sha256": "408d3ea7f9310e593bae665ab3f2d04018f705538293d9c49ea550ca8f1ad7f7"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/5/first_frame_selector_output.json": {
+   "bytes": 1420,
+   "sha256": "824f325be08259d1ed8917ef1adf31b7555d74afec04bc25be6eaf9bb8bd8e18"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/5/new_camera_5.png": {
+   "bytes": 823706,
+   "sha256": "5a3942dd05167ee49f358dfa0192fb215b3456b5edcff2114d80f16c91fe6367"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/5/shot_description.json": {
+   "bytes": 2281,
+   "sha256": "4edd9cb5e48c4ebdb2243ff5266dac1dd7dc1136615c7fea195271a551675b2a"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/5/transition_video_from_shot_4.mp4": {
+   "bytes": 2594618,
+   "sha256": "fe2bf3dc060ee2b8650d8b50e6249a2fc3e9f9aaafbad130dfbb7f16b7298dbc"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/5/video.mp4": {
+   "bytes": 2955402,
+   "sha256": "b02775364cff487997e9ad042f28349eb651634b91bc9cb2d9c0582e18640dee"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/6/cache/transition_video_from_shot_5-Scene-001.mp4": {
+   "bytes": 994322,
+   "sha256": "dfc3dcf787c0385950e2e8d8e6c692febb68e1a86761877b2754a36c785a9356"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/6/cache/transition_video_from_shot_5-Scene-002.mp4": {
+   "bytes": 629426,
+   "sha256": "a8b412f422a306e3e2034631facb599ee09566f45fd81ad0991a2a0e97a28fab"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/6/first_frame.png": {
+   "bytes": 1765715,
+   "sha256": "309bee86aa296aaf1799bf3242e303da242b3e9f69206ea8b00dcd8203197e2a"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/6/first_frame_candidates/candidate_0.png": {
+   "bytes": 1765715,
+   "sha256": "309bee86aa296aaf1799bf3242e303da242b3e9f69206ea8b00dcd8203197e2a"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/6/first_frame_candidates/candidate_1.png": {
+   "bytes": 1699717,
+   "sha256": "62f87feb23d2701753170b62dd486cdca4f9add352fd74c53e17570b2d7a6cf0"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/6/first_frame_candidates/selection.json": {
+   "bytes": 1274,
+   "sha256": "3e25186604855cd3d066c13b34ba9e24a0a481c1cdb814796a9c754b4b178725"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/6/first_frame_selector_output.json": {
+   "bytes": 1510,
+   "sha256": "c4ee9ffa35f0c5490c03edd183f7874e9b6f25aa3d2bdd31c18dbeb5090fc29f"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/6/new_camera_6.png": {
+   "bytes": 930202,
+   "sha256": "201dbd3567e2b4af35daf6be5a726d0178bece2b48f4ed6281a2598d03cc401d"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/6/shot_description.json": {
+   "bytes": 2524,
+   "sha256": "1e1480d339c882fcd13f5685a7d9d3af0215c03a46bdd5a487716ec935823307"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/6/transition_video_from_shot_5.mp4": {
+   "bytes": 3440294,
+   "sha256": "f567b9140331610919cfe2e5c0f1099f8445c490c3d24895f6496d27ffeeebc7"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/6/video.mp4": {
+   "bytes": 2491993,
+   "sha256": "b2f8fcaaac0748a05e48bad0a6560c24e3451e1b168742250c225633e38ed49b"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/7/cache/transition_video_from_shot_6-Scene-001.mp4": {
+   "bytes": 563880,
+   "sha256": "8c7fdac537a691ca9ba74ca7bb0ff9239deee57c71df4eb17b08a53e16c855ec"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/7/cache/transition_video_from_shot_6-Scene-002.mp4": {
+   "bytes": 1355400,
+   "sha256": "06608a0355ec09fe8a13fe69f42540bbf9dbe4e4469eb03d3e003096a170ffe0"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/7/first_frame.png": {
+   "bytes": 1825639,
+   "sha256": "17741f1babd5b7e3d4822bc8a16d2dfe40b650a0a84b33b20973215d3d413b9b"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/7/first_frame_candidates/candidate_0.png": {
+   "bytes": 1775241,
+   "sha256": "055e48f2ff8268bb11ad56295dc2cbd55820fc4b3d3473364e04829a928b7a18"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/7/first_frame_candidates/candidate_1.png": {
+   "bytes": 1825639,
+   "sha256": "17741f1babd5b7e3d4822bc8a16d2dfe40b650a0a84b33b20973215d3d413b9b"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/7/first_frame_candidates/selection.json": {
+   "bytes": 1211,
+   "sha256": "b53d510cadc92e141389bdbe52f6b2c637eb9c08d827dab452a2fad23b3d08e2"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/7/first_frame_selector_output.json": {
+   "bytes": 1400,
+   "sha256": "8e07ff07da4af709840029f37e848d0d47dcdb4dcbee11ba160a5671c8e49c73"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/7/new_camera_7.png": {
+   "bytes": 981084,
+   "sha256": "8a58d34b70cb48da0d06cce6b608d2e6fe2cd2976fcde7129515843891389186"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/7/shot_description.json": {
+   "bytes": 2648,
+   "sha256": "40d7003b9ee030239b5aff2c8189642afaf315d59d9d0dc6af8e029fa143ea9e"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/7/transition_video_from_shot_6.mp4": {
+   "bytes": 4185582,
+   "sha256": "5e8c21d2913e932ae7a63b471f66e2823262f9e27be1d8e24eba135fe9a2e88f"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/shots/7/video.mp4": {
+   "bytes": 5216853,
+   "sha256": "50439b0c56cb789d0f1fb2d6e45d609d8972ff3966811fdde9c638b3f92eb48e"
+  },
+  "execution-01/workspace/.working_dir/generation-pilot-04-media-01/script2video/storyboard.json": {
+   "bytes": 6318,
+   "sha256": "77d4c9745fe4e67b259812ee7700defa506e9d197cbebd159302002d4c1c5e3d"
+  },
+  "execution-01/workspace/attempt/COMPLETE": {
+   "bytes": 276,
+   "sha256": "59efc0c4ff6b7f4829523649c7adf3dea39129d87e1dbbbf572963131472d6cc"
+  },
+  "execution-01/workspace/attempt/ENTRY-PHASES.jsonl": {
+   "bytes": 1076,
+   "sha256": "657b1b9699441da320f870fc0772fdd794e694526c1fb660bafb00dbea7bfc06"
+  },
+  "execution-01/workspace/attempt/STARTUP-ACK.json": {
+   "bytes": 96,
+   "sha256": "376cd3384ee238c52ee26f62e6acca8cb3c9dc3ea120c9d49f26acb96678ad7c"
+  },
+  "execution-01/workspace/attempt/STARTUP-READY.json": {
+   "bytes": 109,
+   "sha256": "bf9c7ece620ac234f822dcb9d95e4163fc7134911d671c2d7372979224655935"
+  },
+  "execution-01/workspace/attempt/STARTUP-RELEASE.json": {
+   "bytes": 90,
+   "sha256": "e65afac6ddd3f82ffd4f04739a9558f8feccc5e5d92fbdb0279baac6fdef953d"
+  },
+  "execution-01/workspace/attempt/agent-events-timed.jsonl": {
+   "bytes": 17831,
+   "sha256": "2ead4e425b33f675b5768c58aa94e8f19227fd59a534726a165f49e2a51a1203"
+  },
+  "execution-01/workspace/attempt/agent-events.jsonl": {
+   "bytes": 16832,
+   "sha256": "dcc076b0833aceda9d0dd688c9fc1df673f9e6369ae0f7ce948ecbe414064be9"
+  },
+  "execution-01/workspace/attempt/ffmpeg-processes.jsonl": {
+   "bytes": 6089,
+   "sha256": "6bf466561ceeb3ed0c3a6fbb843a8436296119a209d002e4619f0acf98a428ca"
+  },
+  "execution-01/workspace/attempt/formal-acceptance.json": {
+   "bytes": 167,
+   "sha256": "7a9ea53bdcb1eeb07472d916e7a613162288b78b05dcf69dffe60803c5121211"
+  },
+  "execution-01/workspace/attempt/model-events.jsonl": {
+   "bytes": 164512,
+   "sha256": "8664d94553d8a1c99b1bc1dbb4592a4861a6a50fac9d4821de132b6448835bbb"
+  },
+  "execution-01/workspace/attempt/model-events.jsonl.state": {
+   "bytes": 517,
+   "sha256": "451173cea52a6c14dedd2de312d5a37c7a38ee48f73c6517622e136c7ba465b9"
+  },
+  "execution-01/workspace/attempt/session-source-map.json": {
+   "bytes": 2202,
+   "sha256": "f06948c986f17168661b2d5a64e342a167339464d9824822d55cead7b5ea8c36"
+  },
+  "execution-01/workspace/attempt/tool-policy.json": {
+   "bytes": 443,
+   "sha256": "10af09c7f7bf89d46bf0b6acb4908324c8b78e875e1fd005acc64671f948b599"
+  },
+  "identity-01.json": {
+   "bytes": 2149,
+   "sha256": "1362a4aad1b0d5ea7b8eb8fa827a9da15f54769aa096d69dc56c37dd494040c1"
+  }
+ }
+}

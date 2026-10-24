@@ -1,0 +1,37 @@
+{
+  "schema": "video-use-edit-pilot-01-environment-plan-v1",
+  "task": "VIDEO-USE-EDIT-PILOT-01",
+  "single_attempt": true,
+  "architecture": "linux/arm64",
+  "cpus": 2,
+  "memory_bytes": 4294967296,
+  "network": "bridge (shared; not API-specific)",
+  "sample_interval_s": 0.5,
+  "budgets_s": {
+    "total": 2700,
+    "agent_max": 1800,
+    "verifier_max": 600,
+    "cleanup_reserve": 300
+  },
+  "model_route": {
+    "provider": "bailian",
+    "model": "qwen3.7-plus",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "wire_api": "responses",
+    "api_key_env": "DASHSCOPE_API_KEY",
+    "request_max_retries": 0,
+    "stream_max_retries": 0
+  },
+  "asr": {
+    "helper": "official transcribe.py",
+    "model": "scribe_v1",
+    "max_client_posts": 1,
+    "cache": "transcripts/source.json; absent before call"
+  },
+  "image": {
+    "inspect": "sha256:a46db2143d8aa69a299b419152c6ca036e09f619d3f771aeace64e08ed729402 arm64 linux",
+    "codex_version": "codex-cli 0.163.0"
+  },
+  "skill_commit": "43cfc566833548093455c9d4a46bd69913b7e552",
+  "approval": "user instruction explicitly authorizes one attempt and one independent verifier"
+}

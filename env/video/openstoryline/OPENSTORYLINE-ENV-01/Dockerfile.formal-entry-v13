@@ -1,0 +1,5 @@
+FROM openstoryline-task:arm64-asr-adapted-v12-formal-entry
+COPY source/ /opt/openstoryline/
+RUN python3 -m compileall -q /opt/openstoryline \
+    && test -f /opt/openstoryline/tests/test_request_budget.py \
+    && test -f /opt/openstoryline/tests/test_formal_entry_wiring.py

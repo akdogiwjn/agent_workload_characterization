@@ -1,0 +1,25 @@
+这是一个仅拼接验证任务。输入 8 段已完成的主体视频片段，绝对路径如下：
+
+/opt/videoweaver/merge_inputs/shot1.mp4
+/opt/videoweaver/merge_inputs/shot2.mp4
+/opt/videoweaver/merge_inputs/shot3.mp4
+/opt/videoweaver/merge_inputs/shot4.mp4
+/opt/videoweaver/merge_inputs/shot5.mp4
+/opt/videoweaver/merge_inputs/shot6.mp4
+/opt/videoweaver/merge_inputs/shot7.mp4
+/opt/videoweaver/merge_inputs/shot8.mp4
+
+【任务要求】
+1. 使用 merge-video 技能（原生 merge_videos.py 脚本）。
+2. 严格按 shot1 至 shot8 的顺序，将 8 段视频拼接为一个视频。
+3. 最终输出文件名必须为 final.mp4（merge 脚本会把它放在第一个输入视频所在目录 /opt/videoweaver/merge_inputs）。
+4. 禁止执行 pip install / uv pip install 或任何依赖安装/升级；禁止生成、编辑或下载任何媒体；禁止查询旧远端任务。
+5. 所有 Python 调用必须使用 /opt/videoweaver-venv/bin/python（禁止裸 python/python3/pip，它们会解析到系统解释器）。
+6. 推荐命令：
+   /opt/videoweaver-venv/bin/python /opt/videoweaver/_codex_workspace/.agents/skills/merge-video/scripts/merge_videos.py \
+     --video_paths /opt/videoweaver/merge_inputs/shot1.mp4 /opt/videoweaver/merge_inputs/shot2.mp4 \
+       /opt/videoweaver/merge_inputs/shot3.mp4 /opt/videoweaver/merge_inputs/shot4.mp4 \
+       /opt/videoweaver/merge_inputs/shot5.mp4 /opt/videoweaver/merge_inputs/shot6.mp4 \
+       /opt/videoweaver/merge_inputs/shot7.mp4 /opt/videoweaver/merge_inputs/shot8.mp4 \
+     --output_filename final.mp4
+7. 完成后用 ffprobe 验证 final.mp4 的时长（约 40 秒）、分辨率（1280x720）、帧率（30fps）、编码（H.264）与音轨（必须无音轨），并在最终回复中报告实际值。

@@ -1,0 +1,36 @@
+{
+  "schema": "video-use-edit-pilot-03-image-derivation-v1",
+  "selected_tag": "video-use-task:arm64-codex-bailian-v6",
+  "selected_image_id": "sha256:1a48c7b00da789ec99722ebb2be6e1df72aec9d37cc2a64e83c82e89ecf700c5",
+  "parent_tag": "video-use-task:arm64-codex-bailian-v2",
+  "parent_image_id": "sha256:faf015927f9a71c820c82abc11d1a996037d7d684e6e149f2787908ad422c20f",
+  "platform": "linux/arm64",
+  "build": "docker build --network=none --pull=false --platform linux/arm64",
+  "diff_files": [
+    "overlay/helpers/render.py",
+    "overlay/helpers/timeline_view.py",
+    "overlay/SKILL.md",
+    "validation/synthetic_validation.py"
+  ],
+  "runtime_dependencies_added": false,
+  "codex_or_model_changed": false,
+  "credentials_or_media_in_image": false,
+  "intermediate_new_tags_retained": [
+    {
+      "tag": "video-use-task:arm64-codex-bailian-v3",
+      "id": "sha256:fb0cca062b9d7db0dc23a46e3b8b165b3eb27ca8fb22dc0ae9b027ae965a53b1",
+      "selected_for_pilot03": false
+    },
+    {
+      "tag": "video-use-task:arm64-codex-bailian-v4",
+      "id": "sha256:679c269dc77621d464972f4be6a631908f22e8aee94f84ab01ae2933a271e4d7",
+      "selected_for_pilot03": false
+    },
+    {
+      "tag": "video-use-task:arm64-codex-bailian-v5",
+      "id": "sha256:d01fc379993a94fdbf9c20e6f80beef8bf244731df72bc6ed47b342b10ad1862",
+      "selected_for_pilot03": false
+    }
+  ],
+  "parent_v2_and_prior_tags_retained": true
+}

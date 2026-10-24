@@ -1,0 +1,1295 @@
+from __future__ import annotations
+
+import asyncio
+from datetime import datetime
+from contextlib import contextmanager, redirect_stderr, redirect_stdout
+import json
+import logging
+import os
+from pathlib import Path
+import threading
+from typing import Any
+
+from langchain_core.callbacks import BaseCallbackHandler as _BaseCallbackHandler
+from langchain.chat_models import init_chat_model
+from langchain_openai import OpenAIEmbeddings
+from tenacity import RetryError
+
+from interfaces import CharacterInScene
+from agents.event_extractor import EventExtractor
+from agents.global_information_planner import GlobalInformationPlanner
+from agents.novel_compressor import NovelCompressor
+from agents.scene_extractor import SceneExtractor
+from pipelines.novel2movie_pipeline import Novel2MoviePipeline
+from pipelines.idea2video_pipeline import Idea2VideoPipeline
+from pipelines.script2video_pipeline import Script2VideoPipeline
+from tools.image_generator_nanobanana_yunwu_api import ImageGeneratorNanobananaYunwuAPI
+from tools.image_generator_bailian_api import ImageGeneratorBailianAPI
+from tools.image_generator_openrouter_api import ImageGeneratorOpenRouterAPI
+from tools.reranker_bge_silicon_api import RerankerBgeSiliconapi
+from tools.video_generator_bailian_api import VideoGeneratorBailianAPI
+from tools.video_generator_openrouter_api import VideoGeneratorOpenRouterAPI
+from tools.video_generator_veo_yunwu_api import VideoGeneratorVeoYunwuAPI
+
+from .config import api_provider_from_base_url, embedding_api_key, embedding_base_url, embedding_model, embedding_model_provider, image_api_key, image_base_url, image_model, llm_api_key, llm_base_url, llm_model, llm_model_provider, reranker_api_key, reranker_base_url, reranker_model, video_api_key, video_base_url, video_model, video_provider
+from .models import ToolResult
+from .config import image_num_candidates
+from utils.image_selection import DEFAULT_IMAGE_CANDIDATES
+from utils.video_generation_capabilities import configured_video_generation_capabilities
+from .tools import ToolArgumentSchema, ToolRuntimeContext, ToolSpec
+
+
+class _UnavailableGenerator:
+    async def generate_single_image(self, *args: Any, **kwargs: Any) -> Any:
+        raise RuntimeError("Image generator is not available in narrative planning mode")
+
+    async def generate_single_video(self, *args: Any, **kwargs: Any) -> Any:
+        raise RuntimeError("Video generator is not available in narrative planning mode")
+
+
+def build_vimax_adapter_specs(workspace_root: str | Path, session_index: Any) -> list[ToolSpec]:
+    adapter = ViMaxAdapters(Path(workspace_root), session_index)
+    return [
+        ToolSpec(
+            name="vimax_narrative_planning",
+            description=(
+                "Create or revise ViMax structured text artifacts for the active session. "
+                "Idea mode writes story, characters, script, and scene-level storyboard/shot_decomposition/camera_tree under idea2video/scene_<idx>/. "
+                "Script mode writes characters, storyboard, shot_decomposition, and camera_tree under script2video/. "
+                "Pass the active session_id from prompt context when the user is working in the selected project. The session records whether its source is a script or an idea; omitting idea/script continues in that saved mode and must not convert a script session into idea expansion. An empty active session is initialized in place; a different source on a non-empty session creates a new session instead of overwriting existing artifacts. "
+                "It does not generate keyframes, video clips, or final video. Call this before revising storyboard/shots when those artifacts do not exist."
+            ),
+            handler=adapter.vimax_narrative_planning,
+            schema={
+                "session_id": ToolArgumentSchema(str, required=False, default=""),
+                "idea": ToolArgumentSchema(str, required=False, default=""),
+                "script": ToolArgumentSchema(str, required=False, default=""),
+                "user_requirement": ToolArgumentSchema(str, required=False, default=""),
+                "style": ToolArgumentSchema(str, required=False, default=""),
+                "revision_target": ToolArgumentSchema(str, required=False, default=""),
+                "revision_instruction": ToolArgumentSchema(str, required=False, default=""),
+            },
+        ),
+        ToolSpec(
+            name="vimax_novel_planning",
+            description=(
+                "Create ViMax structured text artifacts from a novel or novel excerpt. "
+                "This writes novel2video/novel, events, relevant_chunks, scenes, and global_information text artifacts. "
+                "Use this when the user provides long prose, a novel excerpt, or asks for novel-to-video planning. Pass the active session_id when the user is working in a selected empty project. "
+                "It does not generate character portraits, scene videos, or final video."
+            ),
+            handler=adapter.vimax_novel_planning,
+            schema={
+                "session_id": ToolArgumentSchema(str, required=False, default=""),
+                "novel_text": ToolArgumentSchema(str, required=True),
+                "user_requirement": ToolArgumentSchema(str, required=False, default=""),
+                "style": ToolArgumentSchema(str, required=False, default=""),
+            },
+        ),
+        ToolSpec(
+            name="vimax_render_video",
+            description=(
+                "Render keyframes, video clips, and final video for the active ViMax session. "
+                "This checks that structured text artifacts exist before rendering and reports missing dependencies instead of pretending render started."
+            ),
+            handler=adapter.vimax_render_video,
+            schema={
+                "session_id": ToolArgumentSchema(str, required=False, default=""),
+                "mode": ToolArgumentSchema(str, required=False, default="foreground"),
+                "force": ToolArgumentSchema(bool, required=False, default=False),
+            },
+        ),
+    ]
+
+
+class ViMaxAdapters:
+    def __init__(self, workspace_root: Path, session_index: Any) -> None:
+        self.workspace_root = workspace_root.resolve()
+        self.session_index = session_index
+
+    async def vimax_narrative_planning(self, args: dict[str, Any], runtime: ToolRuntimeContext | None = None) -> ToolResult:
+        idea = str(args.get("idea", "") or "").strip()
+        script = str(args.get("script", "") or "")
+        fixed_session_id = os.environ.get("VIMAX_FIXED_SCRIPT_SESSION_ID", "").strip()
+        fixed_script_path = os.environ.get("VIMAX_FIXED_SCRIPT_PATH", "").strip()
+        requested_session_id = str(args.get("session_id", "") or "").strip()
+        if fixed_session_id and requested_session_id != fixed_session_id:
+            return ToolResult(
+                "vimax_narrative_planning", False,
+                "Planning-only task requires its bound fresh session_id.",
+                {"error_type": "fixed_session_mismatch", "fatal_stop": True,
+                 "session_id": fixed_session_id})
+        fixed_session = (self.session_index.get(fixed_session_id)
+                         if fixed_session_id else None)
+        if fixed_session_id and fixed_session is None:
+            return ToolResult(
+                "vimax_narrative_planning", False,
+                "Bound planning session is missing; refusing to create another.",
+                {"error_type": "fixed_session_missing", "fatal_stop": True,
+                 "session_id": fixed_session_id})
+        if fixed_session_id and idea:
+            return ToolResult(
+                "vimax_narrative_planning", False,
+                "Fixed script session rejects idea-mode replacement.",
+                {"error_type": "fixed_script_mode", "fatal_stop": True,
+                 "session_id": fixed_session_id})
+        if fixed_session_id and script:
+            expected = str(fixed_session.get("script") or "").encode("utf-8")
+            if (not expected or script.encode("utf-8") != expected
+                    or (fixed_script_path and
+                        Path(fixed_script_path).read_bytes() != expected)):
+                return ToolResult(
+                    "vimax_narrative_planning", False,
+                    "Fixed script session rejects a different script source.",
+                    {"error_type": "fixed_script_mismatch", "fatal_stop": True,
+                     "session_id": fixed_session_id})
+        requested_mode = "script" if script else "idea" if idea else ""
+        user_requirement = str(args.get("user_requirement", "") or "").strip()
+        requested_style = str(args.get("style", "") or "").strip()
+        if fixed_session_id and user_requirement and user_requirement != str(
+                fixed_session.get("user_requirement") or ""):
+            return ToolResult(
+                "vimax_narrative_planning", False,
+                "Fixed script session rejects replacement requirements.",
+                {"error_type": "fixed_requirement_mismatch", "fatal_stop": True,
+                 "session_id": fixed_session_id})
+        if fixed_session_id and requested_style and requested_style != str(
+                fixed_session.get("style") or ""):
+            return ToolResult(
+                "vimax_narrative_planning", False,
+                "Fixed script session rejects replacement style.",
+                {"error_type": "fixed_style_mismatch", "fatal_stop": True,
+                 "session_id": fixed_session_id})
+        style = requested_style
+        session = self._resolve_session(str(args.get("session_id", "") or ""), idea=idea, script=script, planning_mode=requested_mode, user_requirement=user_requirement, style=requested_style)
+        session_id = session["session_id"]
+        working_dir = self.session_index.working_dir(session_id)
+        idea_dir = working_dir / "idea2video"
+        script_dir = working_dir / "script2video"
+        idea_dir.mkdir(parents=True, exist_ok=True)
+        script_dir.mkdir(parents=True, exist_ok=True)
+
+        if not idea and not script:
+            revision_target = str(args.get("revision_target") or "").strip()
+            if revision_target:
+                return await self._revise_narrative_artifact(session_id, working_dir, revision_target, str(args.get("revision_instruction") or "").strip(), runtime)
+            session_mode = str(session.get("planning_mode") or "").strip()
+            if session_mode == "script" and str(session.get("script") or "").strip():
+                script = str(session["script"])
+                user_requirement = user_requirement or str(session.get("user_requirement") or "").strip()
+                style = requested_style or str(session.get("style") or "").strip() or "Cinematic, coherent, 16:9"
+            elif session_mode in {"", "idea"} and str(session.get("idea") or "").strip():
+                idea = str(session["idea"]).strip()
+                user_requirement = user_requirement or str(session.get("user_requirement") or "").strip()
+                style = requested_style or str(session.get("style") or "").strip() or "Cinematic, coherent, 16:9"
+            else:
+                return ToolResult("vimax_narrative_planning", False, "Provide `idea`, `script`, a revision target, or an active session with a saved planning source.", {"error_type": "missing_input", "session_id": session_id})
+
+        style = style or str(session.get("style") or "").strip() or "Cinematic, coherent, 16:9"
+        planning_mode = "script" if script else "idea"
+        self._update_session_metadata(session_id, idea=idea, script=script, planning_mode=planning_mode, user_requirement=user_requirement, style=style)
+
+        try:
+            self.session_index.update_stage(session_id, "narrative_planning", "Generating structured text artifacts")
+            if runtime:
+                runtime.emit_progress("Starting narrative planning", stage="starting", metadata={"session_id": session_id})
+                await asyncio.sleep(0)
+            generated_before = self.session_index.artifact_checklist(session_id)
+            if runtime:
+                runtime.emit_progress("Initializing bounded chat model", stage="initializing_llm", metadata={"session_id": session_id, "timeout_seconds": _llm_request_timeout_seconds(), "max_tokens": _narrative_max_tokens()})
+                await asyncio.sleep(0)
+            video_capabilities = configured_video_generation_capabilities()
+            chat_model = _build_chat_model()
+            if runtime:
+                runtime.emit_progress("Bounded chat model initialized", stage="chat_model_ready", metadata={"session_id": session_id})
+                await asyncio.sleep(0)
+            dummy = _UnavailableGenerator()
+            # Do not globally redirect stdout/stderr while the JSONL CLI is streaming events.
+            # The adapter exposes pipeline progress through explicit tool_progress events instead.
+            if idea:
+                idea_pipeline = Idea2VideoPipeline(chat_model=chat_model, image_generator=dummy, video_generator=dummy, working_dir=str(idea_dir))
+                if runtime:
+                    runtime.emit_progress("Idea pipeline initialized", stage="idea_pipeline_ready", metadata={"session_id": session_id})
+                    await asyncio.sleep(0)
+                story = await _run_planning_step(
+                    "Developing story from user idea",
+                    "develop_story",
+                    idea_pipeline.develop_story(idea=idea, user_requirement=user_requirement, quiet=True),
+                    runtime,
+                    {"session_id": session_id},
+                )
+                characters = await _run_planning_step(
+                    "Extracting characters from story",
+                    "extract_characters",
+                    idea_pipeline.extract_characters(story=story, quiet=True),
+                    runtime,
+                    {"session_id": session_id},
+                )
+                scene_scripts = await _run_planning_step(
+                    "Writing scene scripts from story",
+                    "write_script",
+                    idea_pipeline.write_script_based_on_story(story=story, user_requirement=user_requirement, quiet=True),
+                    runtime,
+                    {"session_id": session_id},
+                )
+                for idx, scene_script in enumerate(scene_scripts if isinstance(scene_scripts, list) else [scene_scripts]):
+                    scene_dir = idea_dir / f"scene_{idx}"
+                    scene_text = scene_script if isinstance(scene_script, str) else json.dumps(scene_script, ensure_ascii=False, indent=2)
+                    script_pipeline = Script2VideoPipeline(chat_model=chat_model, image_generator=dummy, video_generator=dummy, working_dir=str(scene_dir), video_capabilities=video_capabilities)
+                    await _run_planning_step(
+                        f"Planning scene {idx} storyboard and shots",
+                        "plan_scene",
+                        script_pipeline.plan_text_artifacts(script=scene_text, user_requirement=user_requirement, style=style, characters=characters, progress=_pipeline_progress(runtime, session_id, scene_index=idx), quiet=True),
+                        runtime,
+                        {"session_id": session_id, "scene_index": idx},
+                    )
+            else:
+                (script_dir / "script.txt").write_text(script, encoding="utf-8")
+                script_pipeline = Script2VideoPipeline(chat_model=chat_model, image_generator=dummy, video_generator=dummy, working_dir=str(script_dir), video_capabilities=video_capabilities)
+                if runtime:
+                    runtime.emit_progress("Script pipeline initialized", stage="script_pipeline_ready", metadata={"session_id": session_id})
+                    await asyncio.sleep(0)
+                await _run_planning_step(
+                    "Planning storyboard and shots from provided script",
+                    "plan_script",
+                    script_pipeline.plan_text_artifacts(script=script, user_requirement=user_requirement, style=style, progress=_pipeline_progress(runtime, session_id), quiet=True),
+                    runtime,
+                    {"session_id": session_id},
+                )
+        except Exception as exc:
+            from utils.control_exceptions import find_control_exception
+            control_error = find_control_exception(exc)
+            if control_error is not None:
+                raise
+            self.session_index.update_stage(session_id, "error", f"Narrative planning failed: {exc}")
+            checklist = self.session_index.artifact_checklist(session_id)
+            error_text = str(exc)
+            if "Planning scene " in error_text and " storyboard and shots" in error_text:
+                planning_stage = "plan_scene:" + error_text.split("Planning scene ", 1)[1].split(" ", 1)[0]
+            elif "Planning storyboard and shots from provided script" in error_text:
+                planning_stage = "plan_script"
+            else:
+                planning_stage = "planning_step"
+            if "Camera tree response length mismatch" in error_text:
+                planning_failure_kind = "camera_tree_structure"
+            elif "OutputParserException" in error_text or "Invalid json output" in error_text or "RetryError" in error_text:
+                planning_failure_kind = "structured_output"
+            else:
+                planning_failure_kind = "planning_step_error"
+            payload = {
+                "session_id": session_id,
+                "working_dir": str(working_dir.relative_to(self.workspace_root)),
+                "error_type": "recoverable_planning_step_failed",
+                "planning_failure_kind": planning_failure_kind,
+                "planning_stage": planning_stage,
+                "retryable": True,
+                "error": str(exc),
+                "present": [path for path, present in checklist.items() if present],
+                "missing": [path for path, present in checklist.items() if not present],
+            }
+            if runtime:
+                runtime.emit_progress("Narrative planning failed; partial artifacts were kept", stage="planning_failed", metadata=payload)
+            return ToolResult("vimax_narrative_planning", False, f"Narrative planning failed: {exc}", payload)
+
+        checklist = self.session_index.artifact_checklist(session_id)
+        generated = [path for path, present in checklist.items() if present and not generated_before.get(path)]
+        reused = [path for path, present in checklist.items() if present and generated_before.get(path)]
+        ready_for_render = _ready_for_render(checklist)
+        self.session_index.update_stage(session_id, "narrative_planned", "Structured text planning complete" if ready_for_render else "Structured text planning partially complete")
+        if runtime:
+            runtime.emit_progress("Narrative planning complete", stage="completed", metadata={"ready_for_render": ready_for_render})
+        payload = {
+            "session_id": session_id,
+            "working_dir": str(working_dir.relative_to(self.workspace_root)),
+            "generated": generated,
+            "reused": reused,
+            "missing": [path for path, present in checklist.items() if not present],
+            "ready_for_render": ready_for_render,
+        }
+        return ToolResult("vimax_narrative_planning", True, json.dumps(payload, ensure_ascii=False, indent=2), payload)
+
+    async def _revise_narrative_artifact(self, session_id: str, working_dir: Path, revision_target: str, revision_instruction: str, runtime: ToolRuntimeContext | None = None) -> ToolResult:
+        if not revision_instruction:
+            self.session_index.update_stage(session_id, "error", "Revision failed: missing revision_instruction")
+            return ToolResult("vimax_narrative_planning", False, "revision_instruction is required when revision_target is provided.", {"error_type": "missing_revision_instruction", "session_id": session_id, "revision_target": revision_target})
+        try:
+            target_path = _resolve_artifact_path(working_dir, revision_target)
+        except ValueError as exc:
+            self.session_index.update_stage(session_id, "error", f"Revision failed: {exc}")
+            return ToolResult("vimax_narrative_planning", False, str(exc), {"error_type": "invalid_revision_target", "session_id": session_id, "revision_target": revision_target})
+        if not target_path.exists():
+            self.session_index.update_stage(session_id, "error", f"Revision failed: target does not exist: {revision_target}")
+            return ToolResult("vimax_narrative_planning", False, f"Revision target does not exist: {revision_target}", {"error_type": "dependency_missing", "session_id": session_id, "revision_target": revision_target})
+        try:
+            self.session_index.update_stage(session_id, "narrative_planning", "Revising structured text artifact")
+            if runtime:
+                runtime.emit_progress("Revising structured text artifact", stage="revising", metadata={"session_id": session_id, "revision_target": revision_target})
+            chat_model = _build_chat_model()
+            before = target_path.read_text(encoding="utf-8")
+            revised = await _revise_artifact_with_llm(chat_model, target_path.relative_to(working_dir).as_posix(), before, revision_instruction)
+            if target_path.suffix == ".json":
+                try:
+                    revised_payload = json.loads(revised)
+                except json.JSONDecodeError as exc:
+                    self.session_index.update_stage(session_id, "error", f"Revision failed: invalid JSON output: {exc}")
+                    return ToolResult("vimax_narrative_planning", False, f"Revision output was not valid JSON: {exc}", {"error_type": "invalid_revision_json", "session_id": session_id, "revision_target": revision_target})
+                revised = json.dumps(revised_payload, ensure_ascii=False, indent=2)
+            target_path.write_text(revised, encoding="utf-8")
+        except Exception as exc:
+            self.session_index.update_stage(session_id, "error", f"Revision failed: {exc}")
+            raise
+
+        stale = _stale_keys_for_revision(target_path.relative_to(working_dir).as_posix())
+        if stale:
+            self.session_index.mark_stale(session_id, stale)
+        self.session_index.append_log("revisions", {"session_id": session_id, "target": target_path.relative_to(working_dir).as_posix(), "instruction": revision_instruction, "stale": stale, "before_preview": before[:500], "after_preview": revised[:500]})
+        checklist = self.session_index.artifact_checklist(session_id)
+        ready_for_render = _ready_for_render(checklist)
+        self.session_index.update_stage(session_id, "narrative_planned" if ready_for_render else "narrative_planning", "Revised structured text artifact")
+        payload = {
+            "session_id": session_id,
+            "working_dir": str(working_dir.relative_to(self.workspace_root)),
+            "generated": [],
+            "reused": [path for path, present in checklist.items() if present],
+            "revised": [target_path.relative_to(working_dir).as_posix()],
+            "missing": [path for path, present in checklist.items() if not present],
+            "stale": stale,
+            "ready_for_render": ready_for_render,
+            "revision_target": target_path.relative_to(working_dir).as_posix(),
+        }
+        return ToolResult("vimax_narrative_planning", True, json.dumps(payload, ensure_ascii=False, indent=2), payload)
+
+    async def vimax_novel_planning(self, args: dict[str, Any], runtime: ToolRuntimeContext | None = None) -> ToolResult:
+        novel_text = str(args.get("novel_text", "") or "").strip()
+        user_requirement = str(args.get("user_requirement", "") or "").strip()
+        style = str(args.get("style", "") or "").strip() or "Cinematic, coherent, 16:9"
+        if not novel_text:
+            return ToolResult("vimax_novel_planning", False, "novel_text is required for novel planning.", {"error_type": "missing_input"})
+
+        session_id_arg = str(args.get("session_id", "") or "").strip()
+        session = self._resolve_session(session_id_arg, idea=novel_text, script="", planning_mode="idea", user_requirement=user_requirement, style=style)
+        session_id = session["session_id"]
+        working_dir = self.session_index.working_dir(session_id)
+        novel_dir = working_dir / "novel2video"
+        novel_dir.mkdir(parents=True, exist_ok=True)
+        generated_before = self.session_index.artifact_checklist(session_id)
+
+        try:
+            self.session_index.update_stage(session_id, "novel_planning", "Generating novel structured text artifacts")
+            if runtime:
+                runtime.emit_progress("Starting novel planning", stage="starting", metadata={"session_id": session_id})
+                await asyncio.sleep(0)
+            pipeline = _build_novel_pipeline(novel_dir)
+            await _run_planning_step(
+                "Planning novel structured text artifacts",
+                "novel_plan_text_artifacts",
+                pipeline.plan_text_artifacts(
+                    novel_text=novel_text,
+                    user_requirement=user_requirement,
+                    style=style,
+                    progress=_pipeline_progress(runtime, session_id),
+                    quiet=True,
+                ),
+                runtime,
+                {"session_id": session_id},
+            )
+        except Exception as exc:
+            self.session_index.update_stage(session_id, "error", f"Novel planning failed: {exc}")
+            return ToolResult("vimax_novel_planning", False, str(exc), {"error_type": "exception", "session_id": session_id})
+
+        checklist = self.session_index.artifact_checklist(session_id)
+        generated = [path for path, present in checklist.items() if path.startswith("novel2video/") and present and not generated_before.get(path)]
+        reused = [path for path, present in checklist.items() if path.startswith("novel2video/") and present and generated_before.get(path)]
+        missing = [path for path, present in checklist.items() if path.startswith("novel2video/") and not present]
+        ready = _novel_text_ready(checklist)
+        self.session_index.update_stage(session_id, "novel_planned" if ready else "novel_planning", "Novel structured text planning complete" if ready else "Novel structured text planning partially complete")
+        if runtime:
+            runtime.emit_progress("Novel planning complete", stage="completed", metadata={"session_id": session_id, "ready_for_scene_render": False})
+        payload = {
+            "session_id": session_id,
+            "working_dir": str(working_dir.relative_to(self.workspace_root)),
+            "generated": generated,
+            "reused": reused,
+            "missing": missing,
+            "ready_for_scene_render": False,
+        }
+        return ToolResult("vimax_novel_planning", True, json.dumps(payload, ensure_ascii=False, indent=2), payload)
+
+    async def vimax_render_video(self, args: dict[str, Any], runtime: ToolRuntimeContext | None = None) -> ToolResult:
+        session_id = str(args.get("session_id", "") or "").strip()
+        session = self.session_index.get(session_id) if session_id else self.session_index.active()
+        if session is None:
+            return ToolResult("vimax_render_video", False, "No active session to render.", {"error_type": "missing_session"})
+        session_id = session["session_id"]
+        checklist = self.session_index.artifact_checklist(session_id)
+        missing = _missing_render_dependencies(checklist)
+        working_dir = self.session_index.working_dir(session_id)
+        if missing:
+            payload = {"error_type": "dependency_missing", "missing": missing, "session_id": session_id}
+            _write_render_status(working_dir, status="dependency_missing", payload=payload)
+            return ToolResult("vimax_render_video", False, f"Dependency missing: {', '.join(missing)}", payload)
+
+        self.session_index.update_stage(session_id, "rendering", "Rendering video artifacts")
+        _write_render_status(working_dir, status="rendering", payload={"session_id": session_id, "render_started": True, "render_completed": False})
+        try:
+            chat_model = _build_chat_model()
+            image_generator = _build_image_generator()
+            video_generator = _build_video_generator()
+            num_image_candidates = image_num_candidates(self.workspace_root)
+            if runtime:
+                runtime.emit_progress("Starting video render", stage="rendering", metadata={"session_id": session_id})
+            if _idea_mode_ready(checklist):
+                idea_pipeline = Idea2VideoPipeline(chat_model=chat_model, image_generator=image_generator, video_generator=video_generator, working_dir=str(working_dir / "idea2video"), num_image_candidates=num_image_candidates)
+                with _suppress_pipeline_output():
+                    final_video = await idea_pipeline(idea=str(session.get("idea", "")), user_requirement=str(session.get("user_requirement", "")), style=str(session.get("style", "")), quiet=True, progress=_pipeline_progress(runtime, session_id))
+                self.session_index.update_stage(session_id, "rendered", "Final video rendered")
+                payload = {"session_id": session_id, "render_mode": "idea2video", "render_started": True, "render_completed": True, "final_video_path": str(Path(final_video).relative_to(self.workspace_root)), "missing": []}
+                _write_render_status(working_dir, status="rendered", payload=payload)
+                return ToolResult("vimax_render_video", True, json.dumps(payload, ensure_ascii=False, indent=2), payload)
+            if _script_mode_ready(checklist):
+                script_dir = working_dir / "script2video"
+                # capability preflight BEFORE building generators: an
+                # incompatible plan (e.g. first+last-frame shots) is rejected
+                # here with ZERO image/video requests sent
+                set_narrative_stage("render_preflight")
+                video_capabilities = configured_video_generation_capabilities()
+                pre_ok, pre_reasons = preflight_render_capability(
+                    script_dir, video_capabilities=video_capabilities)
+                if not pre_ok:
+                    self.session_index.update_stage(
+                        session_id, "error",
+                        "Render capability preflight failed")
+                    payload = {
+                        "error_type": "capability_preflight_failed",
+                        "reasons": pre_reasons,
+                        "session_id": session_id,
+                        "image_or_video_requests_sent": 0,
+                    }
+                    _write_render_status(working_dir,
+                                         status="capability_preflight_failed",
+                                         payload=payload)
+                    if runtime:
+                        runtime.emit_progress(
+                            "Render rejected before any paid generation",
+                            stage="capability_preflight_failed",
+                            metadata=payload)
+                    return ToolResult(
+                        "vimax_render_video", False,
+                        "Render rejected by capability preflight: "
+                        + "; ".join(pre_reasons), payload)
+                set_narrative_stage("render")
+                script_text = _load_script_text(working_dir)
+                characters = _load_characters(script_dir / "characters.json")
+                pipeline = Script2VideoPipeline(chat_model=chat_model, image_generator=image_generator, video_generator=video_generator, working_dir=str(script_dir), num_image_candidates=num_image_candidates, video_capabilities=video_capabilities)
+                with _suppress_pipeline_output():
+                    final_video = await pipeline(script=script_text, user_requirement=str(session.get("user_requirement", "")), style=str(session.get("style", "")), characters=characters, quiet=True, progress=_pipeline_progress(runtime, session_id))
+                self.session_index.update_stage(session_id, "rendered", "Final video rendered")
+                payload = {"session_id": session_id, "render_mode": "script2video", "render_started": True, "render_completed": True, "final_video_path": str(Path(final_video).relative_to(self.workspace_root)), "missing": []}
+                _write_render_status(working_dir, status="rendered", payload=payload)
+                return ToolResult("vimax_render_video", True, json.dumps(payload, ensure_ascii=False, indent=2), payload)
+            if _novel_mode_ready(checklist):
+                novel_dir = working_dir / "novel2video"
+                pipeline = _build_novel_render_pipeline(novel_dir, chat_model, image_generator, video_generator, num_image_candidates=num_image_candidates)
+                with _suppress_pipeline_output():
+                    render_result = await pipeline.render_video_artifacts(style=str(session.get("style", "")), user_requirement=str(session.get("user_requirement", "")), quiet=True, progress=_pipeline_progress(runtime, session_id))
+                scene_videos_dir = Path(render_result["scene_videos_dir"])
+                self.session_index.update_stage(session_id, "novel_scene_rendered", "Novel scene videos rendered")
+                payload = {
+                    "session_id": session_id,
+                    "render_mode": "novel2video",
+                    "render_started": True,
+                    "render_completed": True,
+                    "scene_render_completed": True,
+                    "final_video_path": None,
+                    "scene_videos_dir": str(scene_videos_dir.relative_to(self.workspace_root)),
+                    "scene_video_dirs": [str(Path(path).relative_to(self.workspace_root)) for path in render_result.get("scene_video_dirs", [])],
+                    "scene_count": render_result.get("scene_count", 0),
+                    "missing": [],
+                }
+                _write_render_status(working_dir, status="rendered", payload=payload)
+                return ToolResult("vimax_render_video", True, json.dumps(payload, ensure_ascii=False, indent=2), payload)
+        except Exception as exc:
+            unwrapped = _unwrap_retry_error(exc)
+            error_text = _sanitize_error_text(str(unwrapped))
+            wrapped_error_text = _sanitize_error_text(str(exc))
+            self.session_index.update_stage(session_id, "error", f"Render failed: {error_text}")
+            checklist = self.session_index.artifact_checklist(session_id)
+            payload = {
+                "error_type": "render_failed",
+                "retryable": _is_retryable_render_error(unwrapped),
+                "session_id": session_id,
+                "error": error_text,
+                "wrapped_error": wrapped_error_text,
+                "present": [path for path, present in checklist.items() if present],
+                "missing": [path for path, present in checklist.items() if not present],
+            }
+            _write_render_status(working_dir, status="error", payload=payload)
+            if runtime:
+                runtime.emit_progress("Render failed; partial artifacts were kept", stage="render_failed", metadata=payload)
+            return ToolResult("vimax_render_video", False, f"Render failed: {error_text}", payload)
+        payload = {"error_type": "dependency_missing", "session_id": session_id}
+        _write_render_status(working_dir, status="dependency_missing", payload=payload)
+        return ToolResult("vimax_render_video", False, "No render mode matched current session.", payload)
+
+    def _resolve_session(self, session_id: str, *, idea: str, script: str, planning_mode: str, user_requirement: str, style: str) -> dict[str, Any]:
+        requested_source = idea or script
+        requested_mode = planning_mode or ("script" if script else "idea" if idea else "")
+        if session_id:
+            session = self.session_index.get(session_id)
+            if session is None:
+                session = self.session_index.create(idea=idea, script=script, planning_mode=requested_mode, user_requirement=user_requirement, style=style, session_id=session_id)
+            elif requested_source and _is_new_source_for_session(session, requested_source, requested_mode):
+                session = self.session_index.create(idea=idea, script=script, planning_mode=requested_mode, user_requirement=user_requirement, style=style)
+            else:
+                self.session_index.set_active(session_id)
+        else:
+            if requested_source:
+                active = self.session_index.active()
+                if active is not None and self._session_is_empty(active):
+                    session = self.session_index.set_active(active["session_id"])
+                else:
+                    session = self.session_index.create(idea=idea, script=script, planning_mode=requested_mode, user_requirement=user_requirement, style=style)
+            else:
+                session = self.session_index.active() or self.session_index.create(idea=idea, script=script, planning_mode=requested_mode, user_requirement=user_requirement, style=style)
+        self._update_session_metadata(session["session_id"], idea=idea, script=script, planning_mode=requested_mode, user_requirement=user_requirement, style=style)
+        return self.session_index.get(session["session_id"]) or session
+
+    def _session_is_empty(self, session: dict[str, Any]) -> bool:
+        if str(session.get("idea") or "").strip():
+            return False
+        session_id = str(session.get("session_id") or "").strip()
+        if not session_id:
+            return False
+        return not any(self.session_index.artifact_checklist(session_id).values())
+
+    def _update_session_metadata(self, session_id: str, *, idea: str, script: str, planning_mode: str, user_requirement: str, style: str) -> None:
+        data = self.session_index.load()
+        record = data.get("sessions", {}).get(session_id)
+        if not isinstance(record, dict):
+            return
+        if idea and not record.get("idea"):
+            record["idea"] = idea
+        if script and not record.get("script"):
+            record["script"] = script
+        if planning_mode and not record.get("planning_mode"):
+            record["planning_mode"] = planning_mode
+        if user_requirement:
+            record["user_requirement"] = user_requirement
+        if style:
+            record["style"] = style
+        self.session_index.save(data)
+
+
+class _DiscardStream:
+    def write(self, text: str) -> int:
+        return len(text)
+
+    def flush(self) -> None:
+        pass
+
+
+_PIPELINE_OUTPUT_SINK = _DiscardStream()
+
+
+@contextmanager
+def _suppress_pipeline_output():
+    previous_disable_level = logging.root.manager.disable
+    logging.disable(logging.WARNING)
+    try:
+        with redirect_stdout(_PIPELINE_OUTPUT_SINK), redirect_stderr(_PIPELINE_OUTPUT_SINK):
+            yield
+    finally:
+        logging.disable(previous_disable_level)
+
+
+def _narrative_step_timeout_seconds() -> float:
+    raw = os.environ.get("VIMAX_NARRATIVE_STEP_TIMEOUT_SECONDS", "900")
+    try:
+        return max(0.0, float(raw))
+    except ValueError:
+        return 900.0
+
+
+async def _run_planning_step(
+    message: str,
+    stage: str,
+    awaitable: Any,
+    runtime: ToolRuntimeContext | None,
+    metadata: dict[str, Any] | None = None,
+) -> Any:
+    timeout_seconds = _narrative_step_timeout_seconds()
+    event_metadata = dict(metadata or {})
+    event_metadata["timeout_seconds"] = timeout_seconds
+    if runtime:
+        runtime.emit_progress(message, stage=stage, metadata=event_metadata)
+        await asyncio.sleep(0)
+    try:
+        with _suppress_pipeline_output():
+            if timeout_seconds <= 0:
+                return await awaitable
+            return await asyncio.wait_for(awaitable, timeout=timeout_seconds)
+    except asyncio.TimeoutError as exc:
+        raise RuntimeError(f"{message} timed out after {timeout_seconds:g}s") from exc
+    except Exception as exc:
+        from utils.control_exceptions import find_control_exception
+        control_error = find_control_exception(exc)
+        if control_error is not None:
+            raise
+        raise RuntimeError(f"{message} failed: {exc}") from exc
+
+
+def _is_new_source_for_session(session: dict[str, Any], requested_source: str, planning_mode: str = "") -> bool:
+    current_mode = str(session.get("planning_mode") or "").strip()
+    if current_mode and planning_mode and current_mode != planning_mode:
+        return True
+    field = "script" if planning_mode == "script" else "idea"
+    current = str(session.get(field) or "").strip()
+    requested = requested_source.strip()
+    other_field = "idea" if field == "script" else "script"
+    if not current and str(session.get(other_field) or "").strip():
+        return True
+    if not current or not requested:
+        return False
+    return current != requested
+
+
+def _llm_request_timeout_seconds() -> float:
+    raw = os.environ.get("VIMAX_LLM_REQUEST_TIMEOUT_SECONDS", "300")
+    try:
+        return max(1.0, float(raw))
+    except ValueError:
+        return 300.0
+
+
+def _narrative_max_tokens() -> int:
+    raw = os.environ.get("VIMAX_NARRATIVE_MAX_TOKENS", "8192")
+    try:
+        value = int(raw)
+        if value != 8192:
+            raise RuntimeError(
+                "VIMAX_NARRATIVE_MAX_TOKENS must match the frozen 8192-token internal limit")
+        return value
+    except ValueError:
+        raise RuntimeError("VIMAX_NARRATIVE_MAX_TOKENS must be 8192")
+
+
+def _pipeline_progress(runtime: ToolRuntimeContext | None, session_id: str, *, scene_index: int | None = None):
+    if runtime is None:
+        return None
+
+    def emit(stage: str, message: str, metadata: dict[str, Any] | None = None) -> None:
+        payload = dict(metadata or {})
+        payload["session_id"] = session_id
+        if scene_index is not None:
+            payload["scene_index"] = scene_index
+        runtime.emit_progress(message, stage=stage, metadata=payload)
+
+    return emit
+
+
+class _LedgerChatCallbackHandler(_BaseCallbackHandler):
+    """Records every INNER LangChain chat call in the shared request ledger.
+
+    LangChain's own retry count is explicitly ZERO (init_chat_model
+    max_retries=0); tenacity retries in individual agents keep their project
+    attempts visible because each retry re-invokes the chain and therefore
+    re-enters on_chat_model_start."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        from agent_runtime.request_ledger import get_ledger
+        self.ledger = get_ledger()
+        self._request_ids: dict[str, str] = {}
+        self._request_ids_lock = threading.Lock()
+        # LangChain 0.3.86's async dispatcher runs inline handlers in the
+        # caller task and re-raises handler errors only when raise_error=True.
+        # The integration regression exercises that dispatcher, not this
+        # handler method in isolation.
+        self.run_inline = True
+        self.raise_error = True
+
+    # langchain_core.callbacks.BaseCallbackHandler protocol (duck-typed)
+    def on_chat_model_start(self, serialized, prompts, **kwargs):
+        prompt_head = (prompts[0][:60] if prompts and isinstance(prompts[0], str)
+                       else "")
+        rid = self.ledger.reserve_and_open(
+            "llm_chat", {"llm_calls": 1, "llm_attempts": 1},
+            role="inner_langchain", stage=_narrative_stage_hint(),
+            prompt_head=prompt_head,
+            run_id=str(kwargs.get("run_id") or "")[:40])
+        run_key = str(kwargs.get("run_id") or "")
+        if run_key:
+            with self._request_ids_lock:
+                self._request_ids[run_key] = rid
+            # LangChain 0.3.86 may not dispatch on_llm_error when the outer
+            # async task itself is cancelled. Keep request correlation scoped
+            # to that task and right-censor it when no terminal callback ran.
+            try:
+                task = asyncio.current_task()
+            except RuntimeError:
+                task = None
+            if task is not None:
+                task.add_done_callback(
+                    lambda finished, key=run_key: self._cleanup_cancelled_run(
+                        key, finished))
+        return rid
+
+    def _cleanup_cancelled_run(self, run_key: str, task: asyncio.Task) -> None:
+        if not task.cancelled():
+            return
+        with self._request_ids_lock:
+            rid = self._request_ids.pop(run_key, None)
+        if rid:
+            try:
+                self.ledger.error(rid, "CancelledError", right_censored=True,
+                                  cancellation_observed=True)
+            except Exception:
+                # The request's persisted open event remains the evidence if
+                # the follow-up error event also cannot be written.
+                return
+
+    def on_llm_end(self, response, **kwargs):
+        run_key = str(kwargs.get("run_id") or "")
+        with self._request_ids_lock:
+            rid = self._request_ids.pop(run_key, None) if run_key else None
+        llm_output = getattr(response, "llm_output", None) or {}
+        token_usage = (llm_output.get("token_usage")
+                       if isinstance(llm_output, dict) else None) or {}
+        output_tokens = token_usage.get("completion_tokens")
+        generations = getattr(response, "generations", None) or []
+        raw_text = None
+        finish_reason = None
+        response_model = (llm_output.get("model_name") or llm_output.get("model")
+                          if isinstance(llm_output, dict) else None)
+        for generation_row in generations:
+            for generation in generation_row or []:
+                generation_info = dict(getattr(generation, "generation_info", None) or {})
+                message = getattr(generation, "message", None)
+                message_metadata = dict(getattr(message, "response_metadata", None) or {})
+                generation_text = getattr(generation, "text", None)
+                if generation_text:
+                    raw_text = generation_text
+                elif message is not None and isinstance(getattr(message, "content", None), str):
+                    raw_text = message.content
+                finish_reason = (generation_info.get("finish_reason")
+                                 or generation_info.get("stop_reason")
+                                 or message_metadata.get("finish_reason")
+                                 or finish_reason)
+                response_model = (response_model
+                                  or generation_info.get("model_name")
+                                  or message_metadata.get("model_name")
+                                  or message_metadata.get("model"))
+                if rid:
+                    generation_info["vimax_request_id"] = rid
+                    generation.generation_info = generation_info
+                    if message is not None:
+                        message_metadata["vimax_request_id"] = rid
+                        message.response_metadata = message_metadata
+        response_text, response_text_truncated = _bounded_safe_response_text(raw_text)
+        if rid:
+            self.ledger.close(rid, "ok", usage=token_usage or None,
+                              response_model=response_model,
+                              output_tokens=output_tokens,
+                              finish_reason=finish_reason,
+                              structured_response_text=response_text,
+                              structured_response_text_missing=raw_text is None,
+                              structured_response_text_truncated=response_text_truncated)
+            if output_tokens:
+                self.ledger.observe_usage(output_tokens)
+        else:
+            self.ledger.diagnostic(
+                None, event="response_correlation_missing",
+                finish_reason=finish_reason, response_model=response_model,
+                usage=token_usage or None,
+                structured_response_text=response_text,
+                structured_response_text_missing=raw_text is None,
+                structured_response_text_truncated=response_text_truncated)
+
+    def on_llm_error(self, error, **kwargs):
+        run_key = str(kwargs.get("run_id") or "")
+        with self._request_ids_lock:
+            rid = self._request_ids.pop(run_key, None) if run_key else None
+        if rid:
+            self.ledger.error(rid, type(error).__name__,
+                              right_censored="timeout" in str(error).lower())
+        else:
+            self.ledger.diagnostic(
+                None, event="request_error_correlation_missing",
+                error_type=type(error).__name__)
+
+
+_NARRATIVE_STAGE = {"value": "planning_or_render"}
+
+
+def set_narrative_stage(stage: str) -> None:
+    _NARRATIVE_STAGE["value"] = stage
+
+
+def _narrative_stage_hint() -> str:
+    return _NARRATIVE_STAGE["value"]
+
+
+def _bounded_safe_response_text(value: Any, limit: int = 16000) -> tuple[str | None, bool]:
+    if value is None:
+        return None, False
+    import re
+    from urllib.parse import urlsplit, urlunsplit
+
+    text = str(value)
+    secret_names = r"api[_-]?key|authorization|access[_-]?token|secret|password"
+    text = re.sub(rf'(?i)(["\']?(?:{secret_names})["\']?\s*:\s*)["\'][^"\']*["\']', r"\1\"<redacted>\"", text)
+    text = re.sub(rf"(?i)(?:{secret_names})(\s*=\s*)([^,\s\]\}}]+)", r"<redacted>\1<redacted>", text)
+
+    def scrub_url(match):
+        parts = urlsplit(match.group(0))
+        if not parts.query:
+            return match.group(0)
+        safe = []
+        for item in parts.query.split("&"):
+            key, _sep, _value = item.partition("=")
+            safe.append(f"{key}=<redacted>" if key.lower() in {"signature", "sig", "token", "access_token", "x-amz-signature", "x-amz-credential", "x-amz-security-token"} else item)
+        return urlunsplit((parts.scheme, parts.netloc, parts.path, "&".join(safe), ""))
+
+    text = re.sub(r"https?://[^\s\]\"']+", scrub_url, text)
+    truncated = len(text) > limit
+    return text[:limit], truncated
+
+
+def _build_chat_model() -> Any:
+    api_key = llm_api_key()
+    if not api_key:
+        raise RuntimeError("VIMAX_LLM_API_KEY or configs/agent.local.yaml llm.api_key is required for narrative planning")
+    from agent_runtime.request_ledger import get_ledger
+    max_tokens = _narrative_max_tokens()
+    get_ledger().guard_output_tokens(max_tokens)  # pre-send single-request cap
+    return init_chat_model(
+        model=llm_model(),
+        model_provider=llm_model_provider(),
+        api_key=api_key,
+        base_url=llm_base_url(),
+        timeout=_llm_request_timeout_seconds(),
+        max_retries=0,  # explicit: no hidden SDK retries; project retries
+                        # (tenacity in agents) are ledgered per attempt
+        max_completion_tokens=max_tokens,
+        extra_body={"enable_thinking": False},
+        callbacks=[_LedgerChatCallbackHandler()],
+    )
+
+
+def _build_image_generator() -> ImageGeneratorNanobananaYunwuAPI | ImageGeneratorOpenRouterAPI | ImageGeneratorBailianAPI:
+    api_key = image_api_key()
+    if not api_key:
+        raise RuntimeError("VIMAX_IMAGE_API_KEY, VIMAX_LLM_API_KEY, or configs/agent.local.yaml image/llm api_key is required for image generation")
+    model = image_model()
+    base_url = image_base_url()
+    if api_provider_from_base_url(base_url) == "openrouter":
+        return ImageGeneratorOpenRouterAPI(api_key=api_key, model=model, base_url=base_url)
+    if api_provider_from_base_url(base_url) == "bailian":
+        # adapter-src patch: Bailian workspace-domain OpenAI-compatible images
+        # API (T2I/I2I via the `image` field; verified BAILIAN-GENERATION-SMOKE-02)
+        return ImageGeneratorBailianAPI(api_key=api_key, model=model, base_url=base_url)
+    return ImageGeneratorNanobananaYunwuAPI(api_key=api_key, model=model, base_url=base_url)
+
+
+def _build_video_generator() -> VideoGeneratorVeoYunwuAPI | VideoGeneratorOpenRouterAPI | VideoGeneratorBailianAPI:
+    api_key = video_api_key()
+    if not api_key:
+        raise RuntimeError("VIMAX_VIDEO_API_KEY, VIMAX_LLM_API_KEY, or configs/agent.local.yaml video/llm api_key is required for video generation")
+    model = video_model()
+    base_url = video_base_url()
+    provider = video_provider().strip().lower()
+    if provider == "openrouter":
+        return VideoGeneratorOpenRouterAPI(api_key=api_key, model=model, base_url=base_url)
+    if provider == "yunwu":
+        return VideoGeneratorVeoYunwuAPI(api_key=api_key, t2v_model=model, ff2v_model=model, base_url=base_url)
+    if provider == "bailian":
+        # adapter-src patch: Bailian native async video-synthesis; the image
+        # base_url carries /compatible-mode/v1 while the video generator
+        # needs the bare workspace host — strip the compatible-mode suffix.
+        video_base = base_url.split("/compatible-mode")[0]
+        return VideoGeneratorBailianAPI(api_key=api_key, model=model, base_url=video_base)
+    raise RuntimeError(f"Unsupported video base_url for automatic provider matching: {base_url}")
+
+
+
+
+# --------------------------------------------------------------------------- #
+# capability preflight BEFORE any paid media generation (audit fix)
+# --------------------------------------------------------------------------- #
+
+def _preflight_transition_cap() -> int | None:
+    raw = os.environ.get("VIMAX_BAILIAN_BUDGET_TRANSITIONS")
+    if raw is None or not raw.strip():
+        return None
+    try:
+        return max(0, int(raw))
+    except ValueError:
+        return None
+
+
+def preflight_render_capability(script_dir, *, video_capabilities=None) -> tuple[bool, list[str]]:
+    """Check the PLANNED artifacts against the generator's REAL capabilities
+    before a single paid media request is sent.
+
+    Verified: shot count/ids/order; every shot's variation_type against
+    first+last-frame support; camera tree validity (no cycles, no invalid
+    references, no self-parents); transition-driven extra video calls
+    against the configured cap; reference-image limits that can be decided
+    in advance. NO rewriting of medium/large to small, no dropping of last
+    frames, no model substitution — incompatible plans are REJECTED with the
+    concrete shot ids and reasons."""
+    import json as _json
+    reasons: list[str] = []
+    script_dir = Path(script_dir)
+
+    storyboard_path = script_dir / "storyboard.json"
+    if not storyboard_path.exists():
+        return False, [f"missing storyboard.json under {script_dir}"]
+    try:
+        storyboard = _json.loads(storyboard_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:
+        return False, [f"unreadable storyboard.json: {exc}"]
+    if not isinstance(storyboard, list) or not storyboard:
+        return False, ["storyboard.json is empty or not a list"]
+    idxs = [shot.get("idx") for shot in storyboard
+            if isinstance(shot, dict)]
+    expected = list(range(len(storyboard)))
+    if idxs != expected:
+        reasons.append(
+            f"storyboard shot ids/order invalid: got {idxs}, expected {expected}")
+    # REQUIRED SHOT COUNT (audit fix, VIMAX-GENERATION-PILOT-01): a plan
+    # with fewer shots than the task demands (e.g. an LLM collapsing the
+    # eight-shot script into one shot) must be rejected BEFORE any paid
+    # media generation — the render tool would otherwise faithfully render
+    # a wrong-length story and report success.
+    required_shots = os.environ.get("VIMAX_BAILIAN_REQUIRED_SHOTS")
+    if required_shots:
+        try:
+            required = int(required_shots)
+        except ValueError:
+            required = None
+        if required is not None and len(storyboard) != required:
+            reasons.append(
+                f"storyboard contains {len(storyboard)} shots; the task "
+                f"requires exactly {required} (planning collapsed or "
+                "dropped shots; rejected before paid generation)")
+
+    # per-shot variation check against the video generator capability
+    if video_capabilities is None:
+        video_capabilities = configured_video_generation_capabilities()
+    supported_variations = (
+        set(video_capabilities.supported_variation_types)
+        if video_capabilities is not None else
+        ({"large", "medium", "small"}
+         if os.environ.get("VIMAX_BAILIAN_VIDEO_FIRST_LAST_SUPPORTED", "false").lower()
+         in ("1", "true", "yes") else {"small"})
+    )
+    unsupported_shots = []
+    shot_dir = script_dir / "shots"
+    shot_ids_on_disk = []
+    if shot_dir.exists():
+        shot_ids_on_disk = sorted(
+            int(d.name) for d in shot_dir.iterdir()
+            if d.is_dir() and d.name.isdigit())
+    for shot_idx in shot_ids_on_disk:
+        desc_path = shot_dir / str(shot_idx) / "shot_description.json"
+        if not desc_path.exists():
+            reasons.append(f"shot {shot_idx}: missing shot_description.json")
+            continue
+        try:
+            desc = _json.loads(desc_path.read_text(encoding="utf-8"))
+        except (OSError, ValueError) as exc:
+            reasons.append(f"shot {shot_idx}: unreadable shot_description.json: {exc}")
+            continue
+        variation = str(desc.get("variation_type") or "").lower()
+        if variation not in supported_variations:
+            unsupported_shots.append(
+                f"shot {shot_idx} (variation_type={variation}): "
+                f"supported variation types are {sorted(supported_variations)}; "
+                "the renderer would request a separate last-frame image and "
+                "pass two frame references to the configured video adapter")
+    if unsupported_shots:
+        reasons.append(
+            "video capability mismatch — " + "; ".join(unsupported_shots))
+    missing_shot_dirs = [i for i in expected if i not in shot_ids_on_disk]
+    if missing_shot_dirs:
+        reasons.append(
+            f"shots missing on disk (no shot_description.json): {missing_shot_dirs}")
+
+    # camera tree validity
+    tree_path = script_dir / "camera_tree.json"
+    if not tree_path.exists():
+        reasons.append("missing camera_tree.json (planning incomplete)")
+    else:
+        try:
+            tree = _json.loads(tree_path.read_text(encoding="utf-8"))
+        except (OSError, ValueError) as exc:
+            reasons.append(f"unreadable camera_tree.json: {exc}")
+            tree = []
+        valid_shot_ids = set(shot_ids_on_disk)
+        cam_ids = set()
+        transitions = 0
+        for cam in tree if isinstance(tree, list) else []:
+            cam_idx = cam.get("idx")
+            cam_ids.add(cam_idx)
+            for shot_idx in cam.get("active_shot_idxs") or []:
+                if shot_idx not in valid_shot_ids:
+                    reasons.append(
+                        f"camera {cam_idx} references unknown shot {shot_idx}")
+            parent = cam.get("parent_cam_idx")
+            if parent is not None:
+                transitions += 1
+                if parent == cam_idx:
+                    reasons.append(f"camera {cam_idx} is its own parent")
+                if parent not in {c.get("idx") for c in tree}:
+                    reasons.append(
+                        f"camera {cam_idx} references unknown parent camera {parent}")
+        # cycle detection over parent edges
+        parent_of = {c.get("idx"): c.get("parent_cam_idx")
+                     for c in tree if isinstance(c, dict)}
+        for start in parent_of:
+            seen = set()
+            cur = start
+            while cur is not None:
+                if cur in seen:
+                    reasons.append(f"camera tree contains a cycle at camera {start}")
+                    break
+                seen.add(cur)
+                cur = parent_of.get(cur)
+        cap = _preflight_transition_cap()
+        if cap is not None and transitions > cap:
+            reasons.append(
+                f"camera transitions require {transitions} extra video "
+                f"calls; configured cap is {cap}")
+    return (not reasons), reasons
+
+
+class _IdentityRewriter:
+    async def __call__(self, prompt: str) -> str:
+        return prompt
+
+
+def _build_embedding_model() -> Any:
+    api_key = embedding_api_key()
+    base_url = embedding_base_url()
+    provider = embedding_model_provider().strip().lower()
+    if not api_key or not base_url:
+        raise RuntimeError("VIMAX_EMBEDDING_API_KEY or configs/agent.local.yaml embedding api_key/base_url is required for novel planning")
+    if provider != "openai":
+        raise RuntimeError(f"Unsupported embedding model_provider: {provider}")
+    return OpenAIEmbeddings(model=embedding_model(), api_key=api_key, base_url=base_url)
+
+
+def _build_reranker() -> RerankerBgeSiliconapi:
+    api_key = reranker_api_key()
+    base_url = reranker_base_url()
+    if not api_key or not base_url:
+        raise RuntimeError("VIMAX_RERANKER_API_KEY or configs/agent.local.yaml reranker api_key/base_url is required for novel planning")
+    return RerankerBgeSiliconapi(api_key=api_key, base_url=base_url, model=reranker_model())
+
+
+def _build_novel_pipeline(working_dir: Path) -> Novel2MoviePipeline:
+    api_key = llm_api_key()
+    if not api_key:
+        raise RuntimeError("VIMAX_LLM_API_KEY or configs/agent.local.yaml llm.api_key is required for novel planning")
+    base_url = llm_base_url()
+    model = llm_model()
+    dummy = _UnavailableGenerator()
+    return Novel2MoviePipeline(
+        novel_compressor=NovelCompressor(api_key=api_key, base_url=base_url, chat_model=model),
+        event_extractor=EventExtractor(api_key=api_key, base_url=base_url, chat_model=model),
+        embeddings=_build_embedding_model(),
+        rerank_model=_build_reranker(),
+        scene_extractor=SceneExtractor(api_key=api_key, base_url=base_url, chat_model=model),
+        global_information_planner=GlobalInformationPlanner(api_key=api_key, base_url=base_url, chat_model=model),
+        image_generator=dummy,
+        rewriter=_IdentityRewriter(),
+        script2video_pipeline=dummy,
+        working_dir=str(working_dir),
+    )
+
+
+def _build_novel_render_pipeline(working_dir: Path, chat_model: Any, image_generator: Any, video_generator: Any, num_image_candidates: int = DEFAULT_IMAGE_CANDIDATES) -> Novel2MoviePipeline:
+    api_key = llm_api_key()
+    if not api_key:
+        raise RuntimeError("VIMAX_LLM_API_KEY or configs/agent.local.yaml llm.api_key is required for novel rendering")
+    base_url = llm_base_url()
+    model = llm_model()
+    script_pipeline = Script2VideoPipeline(chat_model=chat_model, image_generator=image_generator, video_generator=video_generator, working_dir=str(working_dir / "videos"), num_image_candidates=num_image_candidates)
+    return Novel2MoviePipeline(
+        novel_compressor=NovelCompressor(api_key=api_key, base_url=base_url, chat_model=model),
+        event_extractor=EventExtractor(api_key=api_key, base_url=base_url, chat_model=model),
+        embeddings=_build_embedding_model(),
+        rerank_model=_build_reranker(),
+        scene_extractor=SceneExtractor(api_key=api_key, base_url=base_url, chat_model=model),
+        global_information_planner=GlobalInformationPlanner(api_key=api_key, base_url=base_url, chat_model=model),
+        image_generator=image_generator,
+        rewriter=_IdentityRewriter(),
+        script2video_pipeline=script_pipeline,
+        working_dir=str(working_dir),
+    )
+
+
+def _unwrap_retry_error(exc: Exception) -> Exception:
+    if isinstance(exc, RetryError):
+        try:
+            return exc.last_attempt.exception() or exc
+        except Exception:
+            return exc
+    return exc
+
+
+def _is_retryable_render_error(exc: Exception) -> bool:
+    text = str(exc).lower()
+    if isinstance(exc, AttributeError):
+        return False
+    if "http 403" in text or "key limit exceeded" in text or "quota" in text:
+        return False
+    return True
+
+
+def _sanitize_error_text(text: str) -> str:
+    sanitized = text
+    for marker in ("workspaces/default/keys/",):
+        if marker in sanitized:
+            prefix, rest = sanitized.split(marker, 1)
+            key_id = []
+            for char in rest:
+                if char.isalnum() or char in "-_":
+                    key_id.append(char)
+                    continue
+                break
+            sanitized = prefix + marker + "<redacted>" + rest[len(key_id):]
+    if "sk-" in sanitized:
+        prefix, rest = sanitized.split("sk-", 1)
+        token = []
+        for char in rest:
+            if char.isalnum() or char in "-_":
+                token.append(char)
+                continue
+            break
+        sanitized = prefix + "sk-<redacted>" + rest[len(token):]
+    return sanitized
+
+
+def _write_render_status(working_dir: Path, *, status: str, payload: dict[str, Any]) -> None:
+    working_dir.mkdir(parents=True, exist_ok=True)
+    event = {
+        "timestamp": datetime.now().isoformat(timespec="seconds"),
+        "status": status,
+        **payload,
+    }
+    (working_dir / "render_status.json").write_text(json.dumps(event, ensure_ascii=False, indent=2), encoding="utf-8")
+    with (working_dir / "render_events.jsonl").open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(event, ensure_ascii=False) + "\n")
+
+
+def _write_characters_if_missing(path: Path, characters: list[CharacterInScene]) -> None:
+    if path.exists():
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps([character.model_dump() for character in characters], ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _load_characters(path: Path) -> list[CharacterInScene]:
+    return [CharacterInScene.model_validate(item) for item in json.loads(path.read_text(encoding="utf-8"))]
+
+
+def _load_script_text(working_dir: Path) -> str:
+    script_text = working_dir / "script2video" / "script.txt"
+    if script_text.exists():
+        return script_text.read_text(encoding="utf-8")
+    idea_script = working_dir / "idea2video" / "script.json"
+    if idea_script.exists():
+        payload = json.loads(idea_script.read_text(encoding="utf-8"))
+        return json.dumps(payload, ensure_ascii=False, indent=2) if not isinstance(payload, str) else payload
+    story = working_dir / "idea2video" / "story.txt"
+    if story.exists():
+        return story.read_text(encoding="utf-8")
+    return ""
+
+
+def _resolve_artifact_path(working_dir: Path, revision_target: str) -> Path:
+    rel = Path(revision_target)
+    if rel.is_absolute():
+        raise ValueError(f"revision_target must be relative to session working_dir: {revision_target}")
+    path = (working_dir / rel).resolve()
+    if path != working_dir and working_dir not in path.parents:
+        raise ValueError(f"revision_target escapes session working_dir: {revision_target}")
+    return path
+
+
+async def _revise_artifact_with_llm(chat_model: Any, target: str, current_text: str, instruction: str) -> str:
+    prompt = (
+        "Revise this ViMax structured artifact exactly as requested. "
+        "Return only the complete replacement file content, with no Markdown fences or explanation. "
+        "If the file is JSON, preserve valid JSON and the existing schema shape.\n\n"
+        f"Target: {target}\n"
+        f"Revision instruction: {instruction}\n\n"
+        "Current file content:\n"
+        f"{current_text}"
+    )
+    if hasattr(chat_model, "ainvoke"):
+        response = await chat_model.ainvoke(prompt)
+    elif hasattr(chat_model, "invoke"):
+        response = chat_model.invoke(prompt)
+    else:
+        raise RuntimeError("chat_model does not support invoke/ainvoke for revision mode")
+    content = getattr(response, "content", response)
+    if isinstance(content, list):
+        content = "".join(str(item.get("text", item)) if isinstance(item, dict) else str(item) for item in content)
+    return _strip_markdown_fences(str(content).strip())
+
+
+def _strip_markdown_fences(text: str) -> str:
+    if not text.startswith("```"):
+        return text
+    lines = text.splitlines()
+    if lines and lines[0].startswith("```"):
+        lines = lines[1:]
+    if lines and lines[-1].strip() == "```":
+        lines = lines[:-1]
+    return "\n".join(lines).strip()
+
+
+def _stale_keys_for_revision(target: str) -> list[str]:
+    if "storyboard.json" in target:
+        return ["shot_descriptions", "camera_tree", "frames", "clips", "final_video"]
+    if "shot_description.json" in target:
+        return ["frames", "clips", "final_video"]
+    if "camera_tree.json" in target:
+        return ["frames", "clips", "final_video"]
+    if target.endswith("script.json") or target.endswith("story.txt"):
+        return ["storyboard", "shot_descriptions", "camera_tree", "frames", "clips", "final_video"]
+    if target.endswith("characters.json"):
+        return ["storyboard", "shot_descriptions", "frames", "clips", "final_video"]
+    return ["frames", "clips", "final_video"]
+
+
+def _ready_for_render(checklist: dict[str, bool]) -> bool:
+    return _idea_mode_ready(checklist) or _script_mode_ready(checklist) or _novel_mode_ready(checklist)
+
+
+def _missing_render_dependencies(checklist: dict[str, bool]) -> list[str]:
+    if _ready_for_render(checklist):
+        return []
+    idea_required = ["idea2video/story.txt", "idea2video/characters.json", "idea2video/script.json", "idea2video/scene_*/storyboard.json", "idea2video/scene_*/shots/*/shot_description.json", "idea2video/scene_*/camera_tree.json"]
+    script_required = ["script2video/script.txt", "script2video/characters.json", "script2video/storyboard.json", "script2video/shots/*/shot_description.json", "script2video/camera_tree.json"]
+    novel_required = ["novel2video/novel/novel_compressed.txt", "novel2video/events/event_*.json", "novel2video/relevant_chunks/event_*", "novel2video/scenes/event_*/scene_*.json", "novel2video/global_information/characters/event_level/*.json", "novel2video/global_information/characters/novel_level/*.json"]
+    return [f"idea mode: {path}" for path in idea_required if not checklist.get(path)] + [f"script mode: {path}" for path in script_required if not checklist.get(path)] + [f"novel mode: {path}" for path in novel_required if not checklist.get(path)]
+
+
+def _idea_mode_ready(checklist: dict[str, bool]) -> bool:
+    return bool(checklist.get("idea2video/story.txt") and checklist.get("idea2video/characters.json") and checklist.get("idea2video/script.json") and checklist.get("idea2video/scene_*/storyboard.json") and checklist.get("idea2video/scene_*/shots/*/shot_description.json") and checklist.get("idea2video/scene_*/camera_tree.json"))
+
+
+def _novel_text_ready(checklist: dict[str, bool]) -> bool:
+    return _novel_mode_ready(checklist)
+
+
+def _novel_mode_ready(checklist: dict[str, bool]) -> bool:
+    return bool(checklist.get("novel2video/novel/novel_compressed.txt") and checklist.get("novel2video/events/event_*.json") and checklist.get("novel2video/relevant_chunks/event_*") and checklist.get("novel2video/scenes/event_*/scene_*.json") and checklist.get("novel2video/global_information/characters/event_level/*.json") and checklist.get("novel2video/global_information/characters/novel_level/*.json"))
+
+
+def _script_mode_ready(checklist: dict[str, bool]) -> bool:
+    return bool(checklist.get("script2video/script.txt") and checklist.get("script2video/characters.json") and checklist.get("script2video/storyboard.json") and checklist.get("script2video/shots/*/shot_description.json") and checklist.get("script2video/camera_tree.json"))

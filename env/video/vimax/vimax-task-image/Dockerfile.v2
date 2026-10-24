@@ -1,0 +1,18 @@
+# Audit-fix layer for the ViMax Bailian task image.
+# Derived from vimax-task-bailian:arm64-v1
+#   sha256:045fe9cd4ad527bfcddc3ce703a767e0623b317b3e8ad070276e199f58b27be6
+# Only the adapted Python sources changed (request ledger, hardened
+# downloads, capability preflight, ledgered llm); NO dependency reinstall,
+# no base re-pull. Build context whitelist is the same .dockerignore.
+FROM vimax-task-bailian:arm64-v1
+
+COPY adapter-src/ /opt/vimax/src/
+RUN find /opt/vimax/src -name '__pycache__' -type d -prune -exec rm -rf {} + \
+    && cd /opt/vimax/src \
+    && python3 -c "import agent_runtime.request_ledger; import tools.image_generator_bailian_api, tools.video_generator_bailian_api; import agent_runtime.vimax_adapters" \
+    && python3 -c "import PIL, moviepy, langchain, aiohttp; print('deps ok')" \
+    && ffmpeg -version | head -1
+
+WORKDIR /workspace
+USER vimax
+CMD ["python3"]

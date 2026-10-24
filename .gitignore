@@ -99,3 +99,46 @@ data/raw/software/env01/
 
 # 历史错路由Office报告含认证拒绝细节；原件只留本机，不改写证据
 /reports/resource/LOCAL-THREE-CLASS-REPEAT-01-CONTINUATION-01/*-office/run-report.json
+
+# Video runtime payloads stay local; publish code, small summaries and manifests.
+/env/video/**/models/
+/env/video/**/workspace/
+/env/video/**/workspaces/
+/env/video/**/rollout/
+/env/video/**/rollouts/
+/env/video/**/logs/
+/env/video/**/inputs/
+/env/video/**/input/
+/env/video/**/output/
+/env/video/**/outputs/
+/env/video/**/closeout/
+/env/video/**/samples/
+/env/video/**/snapshots/
+/env/video/**/source-snapshot/
+/env/video/**/before-snapshots/
+/env/video/**/*.jsonl
+/env/video/**/*.out
+/env/video/**/*.pt
+/env/video/**/*.pth
+/env/video/**/*.onnx
+/env/video/**/*.bin
+/env/video/**/*.npz
+/env/video/**/*.npy
+/env/video/**/*.mp4
+/env/video/**/*.mov
+/env/video/**/*.mkv
+/env/video/**/*.wav
+/env/video/**/*.mp3
+/env/video/**/*.png
+/env/video/**/*.jpg
+/env/video/**/*.jpeg
+/env/video/**/*.webp
+/reports/resource/**/resource-samples.csv
+
+# Keep the small VideoWeaver build recipe; never its downloaded CLI archive.
+!/env/video/videoweaver/build/
+/env/video/videoweaver/build/*
+!/env/video/videoweaver/build/Dockerfile
+!/env/video/videoweaver/build/requirements.txt
+!/env/video/videoweaver/build/codex-config.toml
+!/env/video/videoweaver/build/image-manifest.json

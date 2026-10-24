@@ -1,0 +1,67 @@
+{
+ "namespace": "OPENSTORYLINE-EDIT-PILOT-01",
+ "frozen_at": "2026-10-22T07:07:36+0000",
+ "task": {
+  "repo": "references/repos/agentic-vbench",
+  "commit": "b2764ed4b2a4b5a1737026b63887b50bba62f793",
+  "task_path": "tasks/agentic_vbench_repair/exp-disfluency-interview-3-task01",
+  "instruction": "steps/solve/instruction.md (official, unmodified)",
+  "verifier": "steps/solve/tests/judge.py + golden/cuts.json (official, unmodified)"
+ },
+ "image": "openstoryline-task:arm64-asr-adapted-v4 = sha256:a482fe452b18cd7b1d8f4390d0296d1dfff965d018388d34b33c91ea97ab5aa3 (FROM v3 a8851a76 + register_tools artifact_id wiring fix)",
+ "verifier_image": "os-edit-verifier:arm64-v1 = sha256:bc981351779366978e40da7c06071ce43da5b4aa96be22bcbcf3a14e7a874f76",
+ "input": {
+  "path": "data/workloads/video/editing/avb-disfluency-interview-3-v1/input/source.mp4",
+  "sha256": "a9bce74a50b5380d7c1aa1d9980f1d159e8633fbff00986504a363a3d18525bb"
+ },
+ "source_tree": {
+  "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source",
+  "note": "isolated copy @ c9e94521 + ASR adapter overlay (OPENSTORYLINE-ASR-ADAPTER-01) + register_tools English-ASR injection"
+ },
+ "route": {
+  "provider": "bailian",
+  "model": "qwen3.7-plus",
+  "protocol": "OpenAI-compatible Chat Completions",
+  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "credential_env": "DASHSCOPE_API_KEY",
+  "max_retries": 0
+ },
+ "tools_registered": [
+  "load_media",
+  "split_shots",
+  "local_asr",
+  "speech_rough_cut",
+  "plan_timeline_pro",
+  "elementrec_transition",
+  "elementrec_text",
+  "render_video",
+  "read_node_history",
+  "write_skills"
+ ],
+ "budget": {
+  "prep_wall_s": 3600,
+  "prep_requests": 6,
+  "attempt_wall_s": 2700,
+  "agent_phase_s": 1800,
+  "verifier_wall_s": 600,
+  "cleanup_reserve_s": 300,
+  "max_logical_requests": 60,
+  "max_tokens": 32768,
+  "retries": 0,
+  "container": "4 CPU / 8GiB, no GPU"
+ },
+ "sampling": {
+  "cgroup_interval_s": 0.5,
+  "network_interval_s": 2.0,
+  "clock": "host monotonic"
+ },
+ "deviations_from_upstream": [
+  "English ASR adapter (tokens.json decode + fire-place word timestamps + VAD offsets + ct-punc sentences) injected via register_tools overlay",
+  "langgraph==1.1.5 pin (1.0.10 prebuilt/runtime incompatibility fix)",
+  "langchain pins per upstream requirements",
+  "native zh prompts retained; task instruction is the official English text",
+  "cuts.json exported by the orchestration from the Agent's actual rendered keep-ranges (submission format adapter, not an Agent decision)",
+  "register_tools wrapper: artifact_id generated per call when absent from the MCP schema (upstream hard-keyed params['artifact_id'] which raises KeyError through the schema-bound tool path; mirrors the upstream read_node_history fallback)"
+ ],
+ "identity_sha256": "a02bc0925f65f850fc9f02812a2b695251119439330a019766bbf54da3305acd"
+}

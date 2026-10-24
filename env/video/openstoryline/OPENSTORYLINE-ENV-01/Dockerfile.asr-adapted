@@ -1,0 +1,10 @@
+# OPENSTORYLINE-ASR-ADAPTER-01: derived from the verified base task image.
+# Only adds the isolated source tree WITH the English ASR adapter
+# (source/asr_adapter/) and the register_tools overlay injection.
+# No dependency changes, no model downloads, no credentials.
+FROM openstoryline-task:arm64-v1
+COPY source/ /opt/openstoryline/
+# runtime smoke: the adapter imports and the injection point exists
+RUN grep -q "_load_english_asr_model" /opt/openstoryline/src/open_storyline/mcp/register_tools.py \
+    && test -d /opt/openstoryline/asr_adapter \
+    && bash -lc 'python3 -c "import sys; assert sys.prefix == \"/opt/openstoryline-venv\""'

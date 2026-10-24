@@ -1,0 +1,12 @@
+# Formal-attempt layer v4: adds the REQUIRED-SHOT-COUNT preflight check
+# (VIMAX_BAILIAN_REQUIRED_SHOTS) that rejects a collapsed storyboard before
+# any paid media generation. Derived from v3
+#   sha256:a7ac8c3e252968aff0ba592a5c9a610f487d88d0698a6667b04008b9c93d1306
+FROM vimax-task-bailian:arm64-v3
+COPY adapter-src/ /opt/vimax/src/
+RUN find /opt/vimax/src -name '__pycache__' -type d -prune -exec rm -rf {} + \
+    && cd /opt/vimax/src && python3 -c "import agent_runtime.vimax_adapters" \
+    && python3 -c "import PIL, moviepy, langchain; print('deps ok')"
+WORKDIR /workspace
+USER vimax
+CMD ["python3"]

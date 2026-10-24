@@ -1,0 +1,73 @@
+{
+  "schema": "videoweaver-pilot01-recovery-manifest-v1",
+  "kind": "post-run offline recovery (original agent did not finish)",
+  "inputs": {
+    "1": {
+      "bytes": 5130162,
+      "sha256": "5e467a1e5073d0b5ce99735b32dd5446288ef4306d429223986c80622854dde7",
+      "manifest_match": true
+    },
+    "2": {
+      "bytes": 7039991,
+      "sha256": "ee4d25fe58dce745a86d34addc7c88d33fdd9fa6d46cc4b56a97e70ffb5f5100",
+      "manifest_match": true
+    },
+    "3": {
+      "bytes": 11523277,
+      "sha256": "a2eda89a95bef1aa466f97d407530ec8c4c570c57ed96d5d5278de1320ba114d",
+      "manifest_match": true
+    },
+    "4": {
+      "bytes": 6793625,
+      "sha256": "0e69b3354e3601a2fa8c0c2dee3d64b4d68f4535d86ab32a6fe2272085febc0a",
+      "manifest_match": true
+    },
+    "5": {
+      "bytes": 2596282,
+      "sha256": "c6fb3fbc561b68621e4ac4e2d8a74bf33aad70c159494488dd7e7c34ba455ea0",
+      "manifest_match": true
+    },
+    "6": {
+      "bytes": 3665455,
+      "sha256": "35cad2fefaae12cd7f4625e090a8e7f255ea16732000df364d62cea8894cc007",
+      "manifest_match": true
+    },
+    "7": {
+      "bytes": 7578882,
+      "sha256": "08055d533fda28f494252dd88ebb5449a18f0c00e4f88a2f832f6555739a6991",
+      "manifest_match": true
+    },
+    "8": {
+      "bytes": 6341240,
+      "sha256": "74eb09d9b8262a97e65ef892748c8ce7ca3a3815f642ce360f951da10f131b57",
+      "manifest_match": true
+    }
+  },
+  "interpreter": "/opt/videoweaver-venv/bin/python (moviepy 2.1.2, cv2 5.0.0, imageio-ffmpeg)",
+  "command": "/opt/videoweaver-venv/bin/python /opt/videoweaver/skills/merge-video/scripts/merge_videos.py --video_paths /in/shot1..8.mp4 --output_filename final-recovered.mp4",
+  "container": {
+    "network": "none",
+    "cpuset": "0-7",
+    "pids_limit": 4096,
+    "memory": "4g"
+  },
+  "merge_rc": 0,
+  "output": {
+    "path": "output/final-recovered.mp4",
+    "bytes": 20056579,
+    "sha256": "6aba9fe9296fc6842156d8177f9316ec8f7313b74f1ebebe3328644e11ff59d8",
+    "ffprobe": "h264/1280x720/30fps/40.000000s/no-audio, full decode OK"
+  },
+  "segment_check": "8/8 non-black non-uniform; colors follow story arc",
+  "usage_recalculated": {
+    "token_usage_records": 80,
+    "unique_response_id": 80,
+    "input_tokens": 3281314,
+    "cached_input_tokens": 2965760,
+    "output_tokens": 16676,
+    "reasoning_output_tokens": 2620,
+    "total_tokens": 3297990,
+    "note": "per-response sum == last turn/thread cumulative; cached is repeated context input, not independent text or bill"
+  },
+  "recovery_notes": "revisions/PILOT-01-recovery-01/recovery-notes.md"
+}

@@ -1,0 +1,87 @@
+{
+  "schema": "openstoryline-real-native-short-evidence-manifest-v1",
+  "status": "partial_failure_preserved",
+  "manifest_self_hash": "omitted",
+  "files": [
+    {
+      "path": "container-run.json",
+      "bytes": 2470,
+      "sha256": "28d0517107030f4f011700d856c5e1b49e5d41a91a46314769cadd3d5dc465f9"
+    },
+    {
+      "path": "input/source.mp4",
+      "bytes": 55805,
+      "sha256": "4e78a0c66992e65b8dfafda3c508b273817dff69931ae9fbbc1de17ef46c6870"
+    },
+    {
+      "path": "output/agent-context.json",
+      "bytes": 293,
+      "sha256": "e28b37fac8c3644569fbdc4390fcabec01ffed616af3e5732a263f36b61f4ecc"
+    },
+    {
+      "path": "output/agent-result.json",
+      "bytes": 50,
+      "sha256": "57ee1c088e7e7c568f776b4943874e2d9bce20df3eef97802251f5309fa361bb"
+    },
+    {
+      "path": "output/budget.json",
+      "bytes": 411,
+      "sha256": "c818fabed94e074b072cdc64df98f2c24dff6a88d964cae8cec6e543df0562c4"
+    },
+    {
+      "path": "output/env01-fa3dda7e925a43629e9172f05eba039e/meta.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "output/mcp-cleanup.json",
+      "bytes": 46,
+      "sha256": "eb8484be49735bb4a6a502221c14103ca40ccb50b2c047e4b4bbdfef993ec142"
+    },
+    {
+      "path": "output/mcp-server.log",
+      "bytes": 1826,
+      "sha256": "ec0c3af52756ffe892262a8112cc6d7f0538e7cef5c09015fa764f6c0230e78d"
+    },
+    {
+      "path": "output/model-requests.jsonl",
+      "bytes": 3979,
+      "sha256": "00ac0325efd36e0f7176b70b1063e7a01780969554da267556c27e20df566893"
+    },
+    {
+      "path": "output/native-message-events.jsonl",
+      "bytes": 11122,
+      "sha256": "9b8587acc0dd8a9bb72cf6a76427a6e0cd7925a89ad11b683bff6ea00a2550e8"
+    },
+    {
+      "path": "output/native-messages.json",
+      "bytes": 11021,
+      "sha256": "f31906ad4f4d72860179e3a25927f4bebfd03151fae78cbc7cbd353f2459773c"
+    },
+    {
+      "path": "output/phase-times.json",
+      "bytes": 265,
+      "sha256": "029bb4bfdad09c2e35b2ff4feefcb6e29ab9ddfc97ea52cdc14ab669b8f1cdb3"
+    },
+    {
+      "path": "request.json",
+      "bytes": 1074,
+      "sha256": "c2ffdc36c786d15c59728aa38884d4655b960e8c3b982e15caa6881e107e8a43"
+    },
+    {
+      "path": "run-start.json",
+      "bytes": 900,
+      "sha256": "3dac1989bd36852884d024cac9499e8bc8eb643fc657e640e0c6d726db6a60a6"
+    },
+    {
+      "path": "run_short_task.py",
+      "bytes": 12305,
+      "sha256": "26b41f44f6ef5706aed38e2c400c16102abe124e80b1b53b5237a74d1c6c5200"
+    },
+    {
+      "path": "validation-report.json",
+      "bytes": 2148,
+      "sha256": "f59884b9a30499cea0d37bbc26b82379358ed68b9b83bb4a81034457b793042e"
+    }
+  ]
+}

@@ -2,70 +2,125 @@
 
 <a id="current-task"></a>
 
-更新：2026-10-17。目标见[当前范围](current_scope.md)，进度见[项目总览](project_status.md)，事实源为[project_state.json](../project_state.json)。
+更新：2026-10-24。目标见[当前范围](current_scope.md)，成果与指标见[项目总览](project_status.md)。本页只保留当前结论和待办；详细逐轮过程、失败记录与调试经过见[历史索引](history_index.md#docs-cleanup-20261024)，不是执行批准。
 
-## 当前任务：LOCAL-THREE-CLASS-REPEAT-01（12次补齐及v3合并复核完成）
+## 当前结论（2026-10-24）
 
-风险处置已由用户确认。Complete-02 按冻结顺序完成 12/12 次（Coding 4、Office 8），批 wall 1374.008s；0 failed、0 not_executed、0 cleanup/archive/measurement 验收错误。新 identity：`8a17109cf441e3ae68e3f9820babe5685467657cbcafb56d765dd1158dc4942d`。结合原有效 Excel 1、Coding 5、Assistant 9，27 个预定 task×round 槽位均有三个观察点；旧 Office 错路由 8 次仍作为历史错误路径保留并排除。独立分析：[v3摘要](../reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/summary.md)、[逐run](../reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/per_run.jsonl)、[任务统计](../reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/task_statistics.csv)、[manifest](../reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/manifest.json)。固定镜像批后只读核验7/7匹配。每任务n=3是固定任务重复，不是类别总体；共享netns不是任务/API专属流量，HTTP尝试和费用unknown。未更新HTML、未提交Git；G2/G3-R不变，CPU-02与Replay仍暂停。
+### VideoWeaver：真实生成、独立恢复、真实Agent仅拼接分阶段完成，修复后单次连续生成→拼接未实测
 
-### 历史阶段：v2续批（后由Complete-02补齐预定槽位）
+原生成run已真实完成8图和8段主体视频，但未调用merge即耗尽80次模型转发额度，原任务保持未完成（judge FAIL，缺final）；已保存片段后来独立离线恢复成片。修复login-shell的venv路径、技能安装说明和SSE解析后，`VIDEOWEAVER-MERGE-VALIDATE-01`真实Agent读取技能并调用原生merge，生成40秒720P/30fps/H.264无音轨成片，无安装命令、媒体创建/轮询/下载全0；6次Responses的93,487 tokens与rollout对账，另1次summary用量另记（其聚合已由限定离线修复纳入统一软阈值）。**修复后完整生成到拼接的单次连续运行仍未实测**；summary用量聚合、运行中采样落盘与样本摘要接线等已完成限定离线修复，122项离线测试通过，但不等于四个仓库的新采集口径均已由真实任务验证。当前没有新增执行授权。根因、修法与开跑清单见[VideoWeaver排障备忘](videoweaver_troubleshooting.md)，任务级结果见[仅拼接验收](../env/video/videoweaver/evidence/VIDEOWEAVER-MERGE-VALIDATE-01/merge-acceptance.json)，逐轮过程见归档快照。
 
-保留原批 Excel `20261016T182559Z-09-r0-office`，另启动续批 22/26 次；Coding 5、Office 8、Assistant 9。原批加续批共23次已启动运行，27槽中4个Coding槽因历史验收误判而记为`not_executed`，原记录保留。续批 wall 1338.141s，22次清理确认及归档核验通过。分析包：[中文摘要](../reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/summary.md)、[逐run JSONL](../reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/per_run.jsonl)、[任务统计](../reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v2/task_statistics.csv)。
+### ViMax：PILOT-04 真实媒体生成闭环完成
 
-- **Office route mismatch：**续批8个 Office 单次配置均未带`model_route`；绑定的 `build_agent()` 在路由缺失时采用模块默认 `API_BASE=https://api.deepseek.com/v1`，而冻结身份记为火山网关。8个 attempt 都以 `agent_error/BadRequestError` 结束，verifier reward=0；不作为冻结火山路由下的有效任务结果，不与原批 Excel 合并。HTTP尝试/实际远端接收/费用仍unknown。错误正文含凭据拒绝细节，未复制到分析包；路由错配可能涉及凭据被发往非预期端点，需在后续处置中按安全事件核查。
-- **Coding stop（纠正）：**第五次为`no_candidate`、`evaluation_status=not_run`，事件明确verifier未启动，CPU及workspace应为`not_applicable`。原验收无条件要求verifier指标，误判后停止，4槽未执行；不改写历史partial/停止记录。v2新增独立复核结论，并按稳定scope角色修正跨run CPU/内存统计。
-- **Assistant：**9次运行，3个固定任务各3次，官方similarity原值及每run请求/工具/资源数据分别保存；不推断类别总体。
-- 原批Excel仍保留原 identity、成功结果与原批批验收失败记录；新续批identity为`ad6db92924e5adaf507a81370ebb0bc245ad6be57433d5ca6159813f6e5615af`，不改写旧批准、冻结、raw或报告。
-- 分析由23个run实际原始计数生成：逐run SVG/CSV、任务统计、工具操作与目录占用表。Office错路由数据单列；不同scope不相加；共享netns不称API专属流量。本轮离线修复：Office单次路由显式传递并在客户端创建前校验，结构化BadRequestError保守停止；原Excel火山路由标签已纠正。续批11项、分析7项、绘图8项共26项回归通过；v2登记575项输入、8份代码和65项输出。
-- 修复后未实测、未创建批准或attempt、未重冻结旧身份。错路由可能涉及凭据误发，建议轮换对应火山密钥；本轮未读取或轮换凭据。
-- 未补跑、未更新HTML、未提交Git；Gate不变，CPU-02/Replay继续暂停。额外正式运行未获授权。
+`VIMAX-GENERATION-PILOT-04` 已通过REPAIR-01固定生产入口完成19张图片、8个主体与7个过渡视频的真实生成和原生拼接；最终40秒、720P/30fps、H.264、无音轨，技术验收33/33通过，容器删除核验完成。规划来自已通过的VALIDATE-03，规划与媒体成本分阶段登记；技术验收与抽帧检查不代替全面语义评分，实际账单仍unknown。当前没有新增执行授权。正式证据见[PILOT-04收尾](../env/video/vimax/VIMAX-GENERATION-PILOT-04/closeout-summary.md)，后续优先复用[ViMax排障与快速复现备忘](vimax_troubleshooting.md)中的固定runner、配置样例及开跑清单。此前规划/启动失败记录按历史保留（见[vimax_execution_preparation.md](vimax_execution_preparation.md)与归档快照），不代表当前仍未跑通。
 
-### 原批初次停止时记录（保持原义）
+### video-use：核心剪辑闭环完成，暂无新执行授权
 
-本批原先只启动1次Excel：`20261016T182559Z-09-r0-office`，finish、reward=1、run入口RC0，容器删除及镜像保留已确认。批次入口RC7；原记录为executed=0/failed=1/not_executed=26，其中failed是批验收失败，不是任务失败。见[集中收尾](../env/local-three-class-repeat-01/closeout.json)与[初次限定分析](../reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-characterization-v1/summary.md)。
+同一采访任务已有四个独立pilot记录；配置与评估完整性不同，不合并为同质重复，不以reward=0否认实际工具执行。
 
-- Coding两个固定Astropy镜像引用及完整config ID均不存在，未找到登记的本地恢复上下文；未拉取、未替用Django，Coding9槽位未执行。
-- 首个Excel结束后，本轮新增`key_measurements()`误读`resource_intervals.host_agent`，实际键为`host_agent_process`，触发KeyError，全批停止；Office余8、Assistant9未启动。早期fixture未覆盖此门禁，离线测试通过不等于生产接线已完整验证。
-- 独立只读验收通过：raw26个输出文件集合/bytes/SHA、98项输入与冻结身份关联、请求12、自主工具11、bootstrap2全部配对、finish后无新增请求。386样本/385有效CPU区间，采样窗192.110s不等于attempt wall207.260s；共享容器CPU12.00025s，提交目录0→6632B。
-- 执行身份`460c9c28e4799d864ff2aa3a2bf7cf2e272fa095eabb917f4bec4f1b45893b22`不改。停止后先保存精确执行源码，再离线修正键名并补回归；当前源码与执行时身份存在已解释漂移，未重冻结、未混配置续跑、未补跑。Coding wrapper的ok归档状态映射已修，历史RC7原件保留。
-- 最终定向回归32项通过（15批接线/清理、3 Coding生命周期、3 Assistant函数式真实fake链、11分析/绘图），无未完成用例；开发期fixture失败及正式验收漏测均单独记录。分析1136项输入、18项输出回读通过；30个历史目录/884个文件未变。仅1张真实run四面板，其余任务n=0；不能给出n=3变异结论。
-- 网络仍为共享netns，cache unsupported、HTTP次数/费用unknown；未更新HTML、未提交Git，Gate不变，CPU-02/Replay暂停。状态不是继续执行授权。
+| 运行 | 实际到达阶段 | 结果与证据 |
+| --- | --- | --- |
+| PILOT-01 | ASR导入前失败，未上传音频、未启动Agent | venv存在但login shell选错Python；后续PATH已修。[原报告](../reports/resource/VIDEO-USE-EDIT-PILOT-01/summary.md) |
+| PILOT-02 | 转写、Agent剪辑、自检与提交完成 | judge缺少依赖，评分不完整；分辨率及范围不达标。按[验收修订](../reports/resource/VIDEO-USE-EDIT-PILOT-02/acceptance-revision-01.md)解释，不改原reward。 |
+| PILOT-03 | 核心流程与独立评分完成 | reward=0，仅剪切范围未过；规格/时长/SSIM/音频检查通过。[报告](../reports/resource/VIDEO-USE-EDIT-PILOT-03/summary.md) |
+| PILOT-04 | 核心流程与独立评分完成 | reward=0，仅剪切范围未过；通用策略改变选段但未改善该项得分。[验收](../reports/resource/VIDEO-USE-EDIT-PILOT-04/acceptance-revision-01.md) |
 
-## 前次任务：VOLCANO-THREE-CHAIN-LIMITED-OFFLINE-CHARACTERIZATION
+核心路径已有真实证据：官方Scribe转写→Agent读取转写并自主选段→timeline/渲染工具→局部截图经view_image查看→输出视频及cuts→隔离官方评分。局部截图/RMS不等于听懂音频。不同配置不作为同质重复。用户当前要求保持video-use原生转写/文本/按需图像流程，不接入新音频模型或强制对齐服务；PILOT-04已结束，不创建PILOT-05。
 
-状态：本轮限定离线分析完成，产物见[中文摘要](../reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/summary.md)。仅分析Office02 `20261016T143948Z-excel001`、Coding01 `20261016T144518Z-django16485-91776c`、Assistant01 `20261016T145056Z-tsbvolcano01`；每类n=1，不混入旧27次重复，不做跨类别效率或因果判断。
+### OpenStoryline：真实剪辑与一次官方评分完成（reward=0不等于未运行）
 
-- 已核验保存计划/冻结完整identity、批准、报告与raw关联；三份raw文件集合/SHA和外层归档、集中记录引用通过。当前执行源码漂移检查为空；没有执行生产入口或读取凭据。旧输入前后哈希及文件集合未变。
-- 生成三张独立四面板SVG、三份可追溯作图CSV及目录占用表：[Office](../reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/figures/office.svg)、[Coding](../reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/figures/coding.svg)、[Assistant](../reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/figures/assistant.svg)。不同scope共用同run保存monotonic原点；平均core、current/RSS、I/O和共享netns逐接口分列。其余网络接口保留统计，不跨接口求和，不把展示接口称API出口。
-- Office8请求、7自主工具+2bootstrap；Coding20请求、30个mini原生工具终态（29普通返回、1 Submitted控制流）；Assistant Agent/User请求6/1、5个业务工具+1用户结束工具，1个ConnectionError业务工具返回不当作infra失败。两种响应model标识分别统计，HTTP次数/费用unknown。
-- Office容器179点；Coding Agent/verifier周期点243/27、各另有起止边界，宿主597点末次process_exited形成一个gap；Assistant39点。scope采样窗与attempt wall分开，不把无缺读写成全生命周期覆盖。Coding宿主实际约0.2s，未伪填0.5s目标。
-- 资源统计从原始累计计数重算；CPU峰值只与保存阶段/调用区间作共现。Assistant初始化、play、evaluator的共享CPU分列，不能把初始化/评估统称工具成本。目录扫描本身位于观测窗内，未剔除成纯任务成本；日志扫描早于最终归档结束。
-- Coding真实RC7保留：入口要求archive_status==complete，runner成功值是ok，实际归档哈希与清理通过。本轮未修入口、未改返回码、未重跑。
-- 定向unittest发现/执行/通过8项，失败0、未完成0；覆盖完整fixture入口/SVG/CSV、单位、0与missing、gap、原生工具与响应字段、scope、网络选择、哈希篡改拒绝及历史保护。未安装渲染器；SVG XML、数据路径、离线资源及本地链接检查，不冒称浏览器实渲染。
+唯一正式attempt `20261022T150133Z-openstoryline-edit-02` 已提交并完成一次原版官方评分：reward=0.0（唯一golden cut边界未通过），其余规格/时长/SSIM/音频检查通过；Agent和渲染已完成，容器已删除，镜像/缓存保留。完整经过、ASR/MCP修复及开跑检查见[视频剪辑排障备忘](video_editing_troubleshooting.md)，正式证据见[中文摘要](../reports/resource/OPENSTORYLINE-EDIT-PILOT-02/summary.md)与[run-report](../reports/resource/OPENSTORYLINE-EDIT-PILOT-02/run-report.json)。无后续重跑授权。
 
-前次真实验证的16列集中表仍保留：[validation-summary.md](../env/docops-measurement-volcano-02/validation-summary.md)，批准、raw和identity均未改。三次运行额度已经消费，本轮仅分析；未更新HTML、未提交Git，Gate与CPU-02/Replay暂停状态不变。
+## 后续方向（未开始、待用户确定）
 
-## 已完成任务：MEASUREMENT-COVERAGE-UNIFIED-01
+| 方向 | 当前事实与前置工作 |
+| --- | --- |
+| 基础剪辑特征分析 | 已有真实调用、产物、资源曲线和完整评分样本可用；不是成功完成成本，不推广到全部视频负载。 |
+| OpenStoryline剪辑 | 短任务门禁通过，唯一正式采访 attempt 已提交并完成一次官方评分；reward=0.0（唯一golden cut边界未通过）。Agent和渲染已完成，容器已删除；没有后续重跑授权。详见上方当前结论与[排障备忘](video_editing_troubleshooting.md)。 |
+| ViMax / VideoWeaver生成 | ViMax PILOT-04已完成19图、8主体+7过渡、40秒原生成片及33项技术验收；旧规划/启动失败记录保留。后续复用[固定入口与排障备忘](vimax_troubleshooting.md)，新任务需独立批准。VideoWeaver已完成镜像＋百炼适配＋统一生产入口交付与分阶段真实验证（原生成、离线恢复、真实Agent仅拼接），修复后完整闭环未实测；详见[VideoWeaver排障备忘](videoweaver_troubleshooting.md)与[执行准备分析](videoweaver_execution_preparation.md)。 |
+| HTML汇总 | 最后统一纳入最新三类与视频成果，不因文档整理重生成历史HTML。 |
 
-## 当前任务：MEASUREMENT-COVERAGE-UNIFIED-01
+## 暂缓待办：video-use 可选能力覆盖
 
-状态：本轮补齐了采集初始化失败的停止/失败归档路径，并将历史速率区间按CPU、cgroup I/O和`/proc` I/O分别重算，生成[覆盖报告v3](../reports/analysis/LOCAL-MEASUREMENT-COVERAGE-v3/summary.md)。Office入口25项、共享采集/Office批次34项、Coding生命周期3项、覆盖分析6项定向回归通过；ToolSandbox函数式回归顺序运行前9项通过，第10项中断，不能称整套通过。没有真实运行验证、没有创建批准/attempt、没有提交Git。
+<a id="video-use-optional-coverage-backlog"></a>
 
-历史文档迁移与引用整理仍按旧记录保留。本轮盘点只读取批摘要明确选择的Coding、Office、Assistant各9个run，核验raw manifest文件集与SHA；没有回写历史数据。v3将CPU和各I/O计数器的候选/有效/gap区间分列；v1/v2原件及输出哈希保持不变。v2绑定源码的修改前快照与SHA登记见[`source-snapshot-manifest.json`](../env/local-measurement-coverage-v3/source-snapshot-manifest.json)，不声称当前源码等于历史分析代码。
+| 顺序 | 固定任务方向 | 拟覆盖内容 |
+| --- | --- | --- |
+| 先做 | 多素材口播剪辑 | 多文件转写与汇总、多素材选段、去重复、拼接、字幕；是否调用批量脚本以实际轨迹为准。 |
+| 后做 | 带动态图层的介绍视频 | 动态标题或标注、图层合成、渲染及自检；只选一种上游支持的实现核验，不把静态叠图冒充动画。 |
+| 可选 | 多素材观感统一 | 仅在任务要求时增加调色/亮度统一，不加到当前精确剪切任务。 |
 
-- Coding `/testbed`与Office `/root/submission`容器路径在Agent写入前后边界扫描，宿主run输出另列，cache仍unknown；扫描依赖容器`python3`，未真实容器验证。扫描失败留下partial/null并继续原清理。
-- 共享网络接口速率按interface/netns身份计算，不跨接口求和；不是任务/API专属字节。三条模型客户端的请求与流式响应正文bytes尚未实现，HTTP/TLS开销不可得。
-- 通用速率差分要求两端读取状态有效、身份一致、累计值合法；Office CPU、cgroup I/O与宿主`/proc` I/O分开判断。未知CLK_TCK/身份保持gap。
-- 代码接线、离线测试通过、真实运行验证是三个不同状态；当前只达到前两项，不据此宣称实测覆盖完整。
-- ToolSandbox函数式测试不能用`unittest`自动发现（发现0项）；直接调用实际测试函数的本轮扫测前9项通过，在第10项运行期间停止，10项未开始。单个完整fake链测试实测耗时约60秒，说明测试成本较高，但不能据此解释旧九次批次超时。旧报告的13/16及3个失败没有保存测试名/断言，当前证据仍不足以分类；九次Assistant fake批次的旧180秒超时原因仍unknown，不归因为线程争用。
-- 下一步先分别对三条链各授权一次小规模验证，之后再决定是否需要新口径重复批次；本建议不构成执行授权。
+以后先固定素材、要求、配置和验收，再决定是否重复；需同时有实际工具调用与产物效果证据。当前不安装依赖、不新增API或运行；这些待办不阻塞已有基础剪辑分析。
 
-## 本轮停止点
+## 成果入口
 
-当前批已停止：1次attempt已消费，26槽位未执行；不修改历史批次状态，不在同一冻结批次里修复后续跑。单样本分析与离线回归完成，仍未形成三类各3×3的新口径重复样本。缓存/API专属字节未知，不启动后续实验、不更新HTML。
+- 公开trace：[操作v3](../reports/analysis/PUBLIC-TRACE-OPERATIONS-v3/summary.md)、[软件工具集v3](../reports/analysis/PUBLIC-TRACE-SOFTWARE-TOOLKITS-v3/summary.md)。
+- 三类本地：[合并复核v3](../reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/summary.md)，9个固定任务各3点，错路由样本单列排除。
+- 视频诊断：[PILOT-03边界分析](../reports/analysis/VIDEO-USE-EDIT-PILOT-03-boundary-review-v1/summary.md)；视频逐run数据与图表从上述pilot报告进入。
+- 更早一轮整理前原文：[2026-10-21快照](../local_archive/20261021-doc-refresh-wHAJhI/docs/current_task.md)；2026-10-24整理前原文见[历史入口](#历史入口2026-10-24本轮整理)。
 
-## 保留事项与停止边界
+## 保护与授权边界
 
-原始trace、正式raw、报告、批准/attempt、manifest、冻结身份、源码快照、参考仓库、虚拟环境和Docker镜像均未删除或搬迁。原大报告保留本机路径，大型JSON被忽略不代表已失效。
+本次仅整理文档与状态，不修改代码、raw、正式报告、manifest、批准、冻结身份、源码快照、输入、环境或Docker镜像。不用git clean或整目录删除处理未跟踪成果；构建包虽可重获取，仍可能被身份/复现记录引用，未审查前保留。
 
-历史归档授权不扩展到删除、压缩后移除原件、安装、联网/API、Docker或实验。代码中文档路径/导航变化也可能影响未来计划身份；旧批准不适用于修改后代码，不重冻结旧批。Gate未通过项、CPU-02与Replay暂停状态不变。
+local_archive被Git忽略，仅存编辑前快照和历史导航，不释放磁盘空间。许可未知不改写为已授权；旧任务的逐次外传批准不代表新API或新任务的许可。G2/G3-R未通过，CPU-02/Replay保持暂停，Gate裁定未变。
+
+<a id="历史入口2026-10-24本轮整理"></a>
+
+## 历史入口（2026-10-24本轮整理）
+
+本轮整理前全文按原字节保存在 `local_archive/20261024-doc-cleanup-647394/docs/current_task.md`，逐文件SHA见该目录`manifest.json`。详细历史过程入口：
+
+- **ViMax**：PILOT-03/02/01失败、规划验证与离线诊断经过，见[vimax_execution_preparation.md](vimax_execution_preparation.md)与[vimax_troubleshooting.md](vimax_troubleshooting.md)的历史段及归档快照。
+- **VideoWeaver**：PILOT-01修订与离线恢复、十轮观测验收过程，见[videoweaver_execution_preparation.md](videoweaver_execution_preparation.md)、`env/video/videoweaver/revisions/PILOT-01-recovery-01/`及归档快照。
+- **OpenStoryline**：准备、ASR诊断、MCP修复与正式attempt经过，见[video_editing_troubleshooting.md](video_editing_troubleshooting.md)及归档快照。
+- **video-use早期探针**：见归档快照。
+
+## 旧任务链接兼容
+
+以下旧锚点保留供既有记录定位；原逐轮正文见[2026-10-21整理前原文](../local_archive/20261021-doc-refresh-wHAJhI/docs/current_task.md)与[2026-10-24整理前原文](../local_archive/20261024-doc-cleanup-647394/docs/current_task.md)，不把旧“当前任务”标题或停止条件当作现行状态。
+
+<a id="video-use-edit-pilot-02"></a>
+<a id="video-use-edit-pilot-01"></a>
+<a id="video-use-codex-bailian-integration-01"></a>
+<a id="bailian-vision-smoke-01"></a>
+<a id="video-use-volcano-vision-01"></a>
+<a id="video-use-volcano-capability-02"></a>
+<a id="video-use-volcano-capability-01"></a>
+<a id="video-use-api-review-01"></a>
+<a id="video-use-env-01"></a>
+<a id="video-four-repo-plan-01"></a>
+<a id="当前任务与下一步"></a>
+<a id="后续待办video-use-可选能力覆盖暂缓未授权执行"></a>
+<a id="video-use-edit-pilot-02一次正式执行与验收已完成"></a>
+<a id="pilot-02-验收修订历史原始评分保留"></a>
+<a id="video-use-edit-pilot-03单次-attempt-与独立验收已完成"></a>
+<a id="pilot-03-离线边界复核与报告修订"></a>
+<a id="video-use-edit-pilot-04单次正式执行与验收已完成"></a>
+<a id="当前任务video-use-edit-pilot-01一次授权-attempt-已停止未完成真实剪辑"></a>
+<a id="当前任务video-use-codex-bailian-integration-01codex百炼工具看图兼容性已验证一次真实-cli-会话"></a>
+<a id="素材获取agenticvbench-exp-disfluency-interview-3-task01已获取并核验用户手动上传"></a>
+<a id="当前任务bailian-vision-smoke-01百炼-qwen37-plus-图片探针通过发送-11"></a>
+<a id="当前任务video-use-volcano-vision-01一次图片探针完成判定-unknown发送-11"></a>
+<a id="当前任务video-use-volcano-capability-02工具结果回传补验完成图片未执行发送-12"></a>
+<a id="当前任务video-use-volcano-capability-01火山路由三次上限协议探针完成发送-23"></a>
+<a id="当前任务video-use-api-review-01只读-api账号模型能力核查完成"></a>
+<a id="外部服务清单"></a>
+<a id="关键结论"></a>
+<a id="需要用户决定提供只问服务模型与环境变量名不需要密钥"></a>
+<a id="当前任务video-use-env-01视频环境第一闭环无模型验证完成"></a>
+<a id="计划video-four-repo-plan-01可行性核查完成video-use-环境闭环已建真实执行仍未授权"></a>
+<a id="四个仓库的可行性与缺口"></a>
+<a id="统一记录什么"></a>
+<a id="简单推进顺序"></a>
+<a id="上一任务local-three-class-repeat-0112次补齐及v3合并复核完成"></a>
+<a id="历史阶段v2续批后由complete-02补齐预定槽位"></a>
+<a id="原批初次停止时记录保持原义"></a>
+<a id="前次任务volcano-three-chain-limited-offline-characterization"></a>
+<a id="已完成任务measurement-coverage-unified-01"></a>
+<a id="当前任务measurement-coverage-unified-01"></a>
+<a id="本轮停止点"></a>
+<a id="保留事项与停止边界"></a>
+<a id="video-use-edit-pilot-03"></a>
+<a id="video-use-edit-pilot-04"></a>
+<a id="保留事项与后续清理边界"></a>

@@ -21,6 +21,8 @@ Design points (methodology + docs/trace_contract.md §7):
 
 from __future__ import annotations
 
+import json
+import os
 import threading
 import time
 from dataclasses import dataclass, field
@@ -56,6 +58,24 @@ class CounterSnapshot:
                 "io_read_bytes": self.io_read_bytes,
                 "io_write_bytes": self.io_write_bytes,
                 "read_status": dict(self.read_status)}
+
+
+
+def to_stream_record(sample, schema: str = "resource-stream-v1") -> dict:
+    """Shared conversion to a normalized full stream record (dict).
+
+    Accepts a CounterSnapshot (to_dict) or an already-parsed dict. The schema
+    is provided by the caller as an explicit contract value; a dict input's
+    schema is overwritten by that contract (validation of missing/required
+    fields is done by the validator, not silently patched here)."""
+    if isinstance(sample, dict):
+        rec = dict(sample)
+    elif hasattr(sample, "to_dict"):
+        rec = sample.to_dict()
+    else:
+        raise TypeError("sample must be a dict or expose to_dict()")
+    rec["schema"] = schema
+    return rec
 
 
 class ScopeReader:
@@ -491,6 +511,108 @@ class ScopeSamples:
         }
 
 
+class _StreamSink:
+    """Optional in-run JSONL append sink for a scope's counter snapshots.
+
+    Buffered append writer; a batch is flushed every ``flush_every`` rows so
+    the common 0.5 s loop does not fsync per sample. Counter semantics:
+    - rows_received: rows handed to write()
+    - rows_buffered: rows currently in the buffer (not yet on disk)
+    - rows_written: rows actually flushed to the file
+    - lost_undelivered: rows dropped because a flush/open failed
+    Write failures are exposed via error/last_error and counted as lost; they
+    are never silently reported as written. close() flushes then performs one
+    real os.fsync (fsync_calls is real fsync, not per-batch flush)."""
+
+    def __init__(self, scope: str, path: Path, flush_every: int, version: str):
+        self.scope = scope
+        self.path = path
+        self.flush_every = max(1, int(flush_every))
+        self.version = version
+        self._fh = None
+        self._buf = []
+        self.rows_received = 0
+        self.rows_buffered = 0
+        self.rows_written = 0
+        self.lost_undelivered = 0
+        self.writes = 0
+        self.fsync_calls = 0
+        self.error: str | None = None
+        self.last_error: str | None = None
+
+    def _open(self):
+        if self._fh is None:
+            self.path.parent.mkdir(parents=True, exist_ok=True)
+            self._fh = self.path.open("a", encoding="utf-8", newline="\n")
+
+    def write(self, snap: CounterSnapshot) -> None:
+        row = to_stream_record(snap, self.version)
+        self.rows_received += 1
+        try:
+            self._open()
+        except OSError as exc:
+            self.last_error = f"open_failed:{type(exc).__name__}"
+            self.error = self.error or self.last_error
+            self.lost_undelivered += 1
+            return
+        self._buf.append(json.dumps(row, ensure_ascii=False))
+        self.rows_buffered += 1
+        if self.rows_buffered >= self.flush_every:
+            self._flush()
+
+    def _flush(self) -> None:
+        if not self._buf:
+            return
+        try:
+            self._fh.write("\n".join(self._buf) + "\n")
+            self._fh.flush()
+            self.rows_written += self.rows_buffered
+            self.writes += 1
+            self.rows_buffered = 0
+            self._buf = []
+        except OSError as exc:
+            self.last_error = f"write_failed:{type(exc).__name__}"
+            self.error = self.error or self.last_error
+            self.lost_undelivered += self.rows_buffered
+            self.rows_buffered = 0
+            self._buf = []
+
+    def flush(self) -> None:
+        self._flush()
+
+    def fsync(self) -> None:
+        if self._fh is None:
+            return
+        try:
+            self._fh.flush()
+            os.fsync(self._fh.fileno())
+            self.fsync_calls += 1
+        except OSError as exc:
+            self.last_error = f"fsync_failed:{type(exc).__name__}"
+            self.error = self.error or self.last_error
+
+    def close(self) -> None:
+        self._flush()
+        self.fsync()
+        if self._fh is not None:
+            try:
+                self._fh.close()
+            except OSError as exc:
+                self.last_error = f"close_failed:{type(exc).__name__}"
+                self.error = self.error or self.last_error
+            self._fh = None
+
+    def state(self) -> dict:
+        return {"scope": self.scope, "path": str(self.path),
+                "version": self.version, "flush_every": self.flush_every,
+                "rows_received": self.rows_received,
+                "rows_buffered": self.rows_buffered,
+                "rows_written": self.rows_written,
+                "lost_undelivered": self.lost_undelivered,
+                "writes": self.writes, "fsync_calls": self.fsync_calls,
+                "error": self.error, "last_error": self.last_error}
+
+
 class ResourceSampler:
     """Samples gauge series + boundary counters for registered scopes.
 
@@ -504,11 +626,44 @@ class ResourceSampler:
         self._readers: dict[str, ScopeReader] = {}
         self._read_gates: dict[str, threading.Lock] = {}
         self._data: dict[str, ScopeSamples] = {}
+        self._streams: dict[str, _StreamSink] = {}
         self._stop = threading.Event()
         self._thread: threading.Thread | None = None
         self._lock = threading.Lock()
         self._read_count = 0
         self._read_wall_ns = 0
+
+    def enable_stream(self, scope: str, path: str | Path, *,
+                      flush_every: int = 20,
+                      version: str = "resource-stream-v1") -> None:
+        """Start appending snapshots for ``scope`` to a JSONL file in-run.
+        Default-off; existing (non-streaming) callers are unaffected. Call
+        after register(). The scope's samples keep a memory summary too."""
+        with self._lock:
+            if scope not in self._readers:
+                raise KeyError(scope)
+            if scope in self._streams:
+                raise ValueError(f"stream already enabled for {scope!r}")
+            self._streams[scope] = _StreamSink(scope, Path(path),
+                                               flush_every, version)
+
+    def stream_state(self, scope: str) -> dict | None:
+        with self._lock:
+            sink = self._streams.get(scope)
+            if sink is None:
+                return None
+            return sink.state()
+
+    def _stream_append(self, scope: str, snap: CounterSnapshot) -> None:
+        sink = self._streams.get(scope)
+        if sink is not None:
+            sink.write(snap)
+
+    def close_streams(self) -> None:
+        with self._lock:
+            sinks = list(self._streams.values())
+        for sink in sinks:
+            sink.close()
 
     def _read(self, scope):
         started = time.monotonic_ns()
@@ -566,6 +721,9 @@ class ResourceSampler:
             snap = self._read(scope)
             with self._lock:
                 self._data[scope].boundary_end = snap
+            sink = self._streams.get(scope)
+            if sink is not None:
+                sink.flush()
 
     def start_background_sampling(self) -> None:
         if self._thread is not None:
@@ -612,6 +770,7 @@ class ResourceSampler:
                         gap = snap.t_monotonic_ns - data.samples[-1].t_monotonic_ns
                         data.sample_gaps_ns.append(gap)
                     data.samples.append(snap)
+                    self._stream_append(scope, snap)
 
     def _sample_loop(self) -> None:
         while not self._stop.is_set():

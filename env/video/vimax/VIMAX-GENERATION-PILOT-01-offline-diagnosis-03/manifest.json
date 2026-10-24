@@ -1,0 +1,341 @@
+{
+  "schema": "vimax-callback-repair-manifest-v1",
+  "date": "2026-10-23",
+  "image_id": "sha256:f079f9479f8587207e1d3167c8ad8d759f81a2b25ad79a6a23f03514ee5c0533",
+  "tests_final_image": {
+    "count": 24,
+    "passed": 24,
+    "failed": 0,
+    "exit_code": 0,
+    "log": "tests-final-image-v2.log"
+  },
+  "scope": {
+    "network_disabled": true,
+    "real_api_calls": 0,
+    "credentials_read": false,
+    "formal_attempt_created": false,
+    "reference_repository_modified": false,
+    "historical_raw_modified": false
+  },
+  "host_code_and_docs": [
+    {
+      "path": "env/video/vimax/adapter-src/agent_runtime/vimax_adapters.py",
+      "bytes": 67224,
+      "sha256": "97f2c8d3aadd2c1eb6ab32b8e5626575ee4675194767e6fbf3cf77efa0c87800"
+    },
+    {
+      "path": "env/video/vimax/adapter-src/agent_runtime/request_ledger.py",
+      "bytes": 13638,
+      "sha256": "690e95634640661406209bee9b640b2106210505474a16f4c9c66a783f991132"
+    },
+    {
+      "path": "env/video/vimax/adapter-src/utils/control_exceptions.py",
+      "bytes": 1812,
+      "sha256": "aec5ff7c4285349bf8b974ca5d50f1adbd5936428f5eb3c5961818801c0182a8"
+    },
+    {
+      "path": "env/video/vimax/adapter-src/utils/robust_json_parser.py",
+      "bytes": 7182,
+      "sha256": "503c60b02f3f45b342c9c5e47c935bafd4c851cce005b5dac71b3f7028702296"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-02/test_offline_diagnostics.py",
+      "bytes": 10321,
+      "sha256": "57c43dfca7b134e14faab381c69276d44c8100c47a437814764393739c3d5b09"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/test_callback_integration.py",
+      "bytes": 17127,
+      "sha256": "e2c19fe38ed2401df85e11fcfd6edd695f197c6820e8b35829c0d069d1070b4f"
+    },
+    {
+      "path": "env/video/vimax/vimax-task-image/Dockerfile.v5-callback-fixes-02",
+      "bytes": 453,
+      "sha256": "ade07e8ef72d774f0dff4ef1545b15b1e2a14b42fc96853383e98773b5b34d61"
+    },
+    {
+      "path": "docs/current_task.md",
+      "bytes": 34040,
+      "sha256": "b187ef20d7746caecbd6bcd8544efdc0a7d67b1ab0c7b8cc57eee04330867fd8"
+    },
+    {
+      "path": "docs/vimax_execution_preparation.md",
+      "bytes": 26578,
+      "sha256": "b951612ee4599a9a5387b5d50dd8282bbbf7a86f9eb1f43233d0f225985e18e7"
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/base-image-preserved-final.txt",
+      "bytes": 72,
+      "sha256": "cebbd7b6e69f7deb6394e74847b7fbf894b31415f95eae6d2aa338685aba5a08",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/base-image-preserved.txt",
+      "bytes": 72,
+      "sha256": "cebbd7b6e69f7deb6394e74847b7fbf894b31415f95eae6d2aa338685aba5a08",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/check_project_state.log",
+      "bytes": 65,
+      "sha256": "b244b4d0838046c0a3c351ff98b7c5ef873dded52c8dd8676a6945fda7bc7991",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/compile-final.log",
+      "bytes": 501,
+      "sha256": "87910b9080033fddee7e54ed72e6604e03867e8d026b262de50df2e8d4ed6de4",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/compile.log",
+      "bytes": 501,
+      "sha256": "87910b9080033fddee7e54ed72e6604e03867e8d026b262de50df2e8d4ed6de4",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/container-cleanup-check.txt",
+      "bytes": 24,
+      "sha256": "98b66067639e822df340baac9679c9a01f1bd812c5295f273724ab717659e9a9",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/container-cleanup-final.txt",
+      "bytes": 38,
+      "sha256": "e46710ac370a4ac03f9368289aa392afe913634627944e2d16118bb8d435cb38",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/diagnosis.md",
+      "bytes": 5528,
+      "sha256": "ec1c6968830e2f3d51ade02d94ce82f2d6a385ba488bd9d612d53e8d46ae8d84",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/git-diff-check.log",
+      "bytes": 23,
+      "sha256": "75ebccfc18cc5b1a8b32589edccfa2e9f53d9f4dcde857010b3235519655e37f",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/host-source-hashes-final.json",
+      "bytes": 14159,
+      "sha256": "bcffa7fd5b897dd686af31ec54f4e73791b4722ef69211c3c90e010de142fa05",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/host-source-hashes.json",
+      "bytes": 14159,
+      "sha256": "55e625d05641746ce4a33b598856bbc0b1add3dbd32b78915b41565ae6b731d6",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/image-build-final.log",
+      "bytes": 1168,
+      "sha256": "4292b7cdcebcbca3f992cfead2059cac912a0749a1c2f24801909b9a7a8cabdf",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/image-build.log",
+      "bytes": 1172,
+      "sha256": "89cc5ee5d86fb3f6e6260049e8031f0958ce0187d551952721bd0b555ab53f79",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/image-identity-final.txt",
+      "bytes": 101,
+      "sha256": "0908eca9907ed4eb6ada8067e0fb2f0bcca91dd3f8980e8b197ae6f92b3056e5",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/image-identity-v1.txt",
+      "bytes": 101,
+      "sha256": "2d57de2c936566962f63f1e203fdd003e4144f67249c3d910ad414a552f1160d",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/image-identity.txt",
+      "bytes": 101,
+      "sha256": "2d57de2c936566962f63f1e203fdd003e4144f67249c3d910ad414a552f1160d",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/image-source-hashes-final.json",
+      "bytes": 14161,
+      "sha256": "57da8a94637da973ec1829eb50738d8d9d3aa0e506a9a3bbf32ed571c11f7026",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/image-source-hashes.json",
+      "bytes": 14161,
+      "sha256": "c3d07dd58eda377720d5f781d58d353ab4d41b4e27292caf4061daed317ea642",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/iteration-01.log",
+      "bytes": 10327,
+      "sha256": "df7ab4b5512988a948a03de6c206ff5e453c72536615c5460ea181fe9e5dcd01",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/iteration-02.log",
+      "bytes": 1637,
+      "sha256": "13a1e40c6e766662c75fb4d4254969fc9292c953b2d3a308bc7163f3c1ee9114",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/iteration-03.log",
+      "bytes": 7507,
+      "sha256": "548cf138e9cd9dc520b7cee20cffa0b2a278909e6ef6712aba3c3e3b5e601ffa",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/iteration-04.log",
+      "bytes": 5718,
+      "sha256": "d6fd10dcf2e00b78e238b2ab04799507761b5bc25247434cd490ffdfcf2e0246",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/iteration-05.log",
+      "bytes": 6420,
+      "sha256": "97addf56295b359b49e1ae103037594b7d124f2e980bda8772563ee54453717d",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/iteration-06-cancel.log",
+      "bytes": 308,
+      "sha256": "5622261ecfbe7cc1af572fb453cde74a92c1d1afbd608d34f1bb2ec4fecf1880",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/iteration-07-no-ledger-path.log",
+      "bytes": 6092,
+      "sha256": "77a7976edcd1c777cd73333bedd250f06098c66edf49d72040f8b7d6d4308528",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/json-and-manifest-check-02.log",
+      "bytes": 1001,
+      "sha256": "417b0db1c0f0668e4e1e1718ce244b9426456b7074e927539f537edf37fe9d68",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/json-and-manifest-check.log",
+      "bytes": 833,
+      "sha256": "5b5169e80a58cd98090e7b370575455e0c6630efe0d0a6996595a0df29a378aa",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/results.json",
+      "bytes": 2377,
+      "sha256": "3eb39c0fc73aebed38dcf7838eedf381649d6e5f284b0d1a5b9167bea84127bd",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/snapshots/pre-change/previous-diagnosis.md",
+      "bytes": 4629,
+      "sha256": "8e87cf55ef5fcaaaf85bbb5c2eedd20dd5f4f79c7ff3f4879ccb39744ed59725",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/snapshots/pre-change/request_ledger.py",
+      "bytes": 11424,
+      "sha256": "bbb857036a4fee8601fa529c56a995591d2dc266e87ed65f5ca73e2b8eb95602",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/snapshots/pre-change/robust_json_parser.py",
+      "bytes": 6161,
+      "sha256": "1ee01d154ec47c8d59637c97f089de13360ebff8a3fb381a38ee50a689aa651e",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/snapshots/pre-change/test_offline_diagnostics.py",
+      "bytes": 10289,
+      "sha256": "ead849634a1de443eeb4b46889a25c8c7b293cdaad4bbdd5b82c4daae3b42ec7",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/snapshots/pre-change/vimax_adapters.py",
+      "bytes": 64957,
+      "sha256": "2421f22df8f603fc3139d05125257973f0d223c288e1c196e71a84db3a39425f",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/snapshots/pre-change-snapshot.json",
+      "bytes": 850,
+      "sha256": "435c1339aa4077ac5693950a4d294d26646dcfb1d24e4206c7d460b80b5ae5d2",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/source-hash-comparison-final.json",
+      "bytes": 98,
+      "sha256": "6f2669f461bf3c81b8e0363c3f56995fcd46106abf0c6504e5c6f52befe3d8fe",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/source-hash-comparison.json",
+      "bytes": 98,
+      "sha256": "6f2669f461bf3c81b8e0363c3f56995fcd46106abf0c6504e5c6f52befe3d8fe",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/state-update-module-final-02.log",
+      "bytes": 388,
+      "sha256": "ff56429080b528708381084f2cae68182f61cbcb4c8238b4898953ec256339a8",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/state-update-module-final.log",
+      "bytes": 937,
+      "sha256": "4522af3351ef32a95bcf33f925852e93f0d8f8723620f56dcc4f254882fb0a14",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/state-update-module.log",
+      "bytes": 941,
+      "sha256": "d945cfdb8ce77b349eada9e3af112e594c1301bb1e6833e1b8dca54b4d95109e",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/state-update-patch.json",
+      "bytes": 877,
+      "sha256": "84cc269c4129cdb57c865e1df6772b2517de74e41421bbe6391b4ece86c23438",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/state-update.log",
+      "bytes": 257,
+      "sha256": "a1ec5d07788ba9191fc05737e370fbe94c227fcaf4d12ff4107edd5499f8dfa1",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/test_callback_integration.py",
+      "bytes": 17127,
+      "sha256": "e2c19fe38ed2401df85e11fcfd6edd695f197c6820e8b35829c0d069d1070b4f",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/tests-final-image-v2.log",
+      "bytes": 6092,
+      "sha256": "17f82bd56c6b10451bbd9d6066a045ac9d8f356ded5af19c779baafae1b7d594",
+      "role": "repair evidence, test log or pre-change snapshot"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-03/tests-final-image.log",
+      "bytes": 5718,
+      "sha256": "902b47bcc29c1172948bdd07ccaa663787392580b12afd833b5116531d29eaeb",
+      "role": "repair evidence, test log or pre-change snapshot"
+    }
+  ],
+  "self_hash_excluded": true,
+  "evidence_file_count": 44,
+  "image_tag": "vimax-task-bailian:arm64-v5-callback-fixes-02",
+  "superseded_candidate": {
+    "tag": "vimax-task-bailian:arm64-v5-callback-fixes-01",
+    "id": "sha256:dfb088ab5b4b118b1b6b8800112427b672dbf7652ba5663dd1d6bf04aceb74d9",
+    "reason": "final review added fail-closed gate for missing ledger path"
+  }
+}

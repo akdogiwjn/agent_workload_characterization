@@ -1,0 +1,30 @@
+{
+  "schema": "videoweaver-merge-validate-01-identity-v1",
+  "run_id": "videoweaver-merge-validate-01-20261024T121922Z-5acc457e",
+  "task": "VIDEOWEAVER-MERGE-VALIDATE-01",
+  "kind": "real Agent merge-only validation",
+  "prior_preflight_fix": "run-ecc68bdc: dataset mount put category directly at dataset root; fixed case_dir to case/ root (llm_calls=0, no model call, no bill)",
+  "image": {
+    "tag": "videoweaver-task-bailian:arm64-v2",
+    "image_id": "sha256:933363d720001f71a74bd261c14a3480595942ec4612857797f3ca1814dbb6eb"
+  },
+  "entry_files": {
+    "host_runner.py": "e33bb06fc7eb62c1da92216fa28aa60d2bce02b2d0dcb210c8b889214103c993",
+    "gateway.py": "463ad43713c6917e4e65c3b673ab4b655943406826656c3207a9e3e1b1d16446",
+    "production-codex-config.toml": "95ff91fab73c4aad605c858e47816e56dabedbe757505e4b652990350ece976e",
+    "merge-validate-config.json": "901cb4bc2a0f5386959f855772f860330f31f19f96053227adf2e2aad8848bf5",
+    "case_task_txt": "1546be623173684d3b709b4bc8a86543e19efafad16f2a1621dcb936d2ba12fe"
+  },
+  "budget": {
+    "max_llm_calls": 20,
+    "max_image_creates": 0,
+    "max_video_creates": 0,
+    "max_video_polls": 0,
+    "max_media_downloads": 0,
+    "observed_output_tokens_soft": 500000,
+    "deadline_seconds": 600
+  },
+  "retry": 0,
+  "created_utc": "2026-10-24T12:19:22+00:00",
+  "credential_handling": "runtime-only injection into gateway process env; never echoed/persisted/hashed"
+}

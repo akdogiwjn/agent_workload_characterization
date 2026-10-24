@@ -1,0 +1,27 @@
+{
+ "schema": "video-use-volcano-capability-02-manifest-v1",
+ "task": "VIDEO-USE-VOLCANO-CAPABILITY-02",
+ "note": "manifest does not hash itself; image probe not executed so no test image/ground truth exists; expected-receipt.json was persisted BEFORE the send",
+ "files": {
+  "expected-receipt.json": {
+   "sha256": "8af818615080c0d6defe65299aadf46d5b84793b3219a583edfdafad048b7f86",
+   "bytes": 243
+  },
+  "probe.py": {
+   "sha256": "3e01a46437ca135d32ba8d5b66540acac5bf3c624e3087d7f37e23e9e08ce344",
+   "bytes": 22669
+  },
+  "summary.md": {
+   "sha256": "3e1a0e0c6b7316b360565904e650dbad8eae33f74cc99dac3487ae1879a32be6",
+   "bytes": 2810
+  },
+  "test_probe_offline.py": {
+   "sha256": "4c5f6682f16778cced7a8c167769c1a1a86c7b4ea4250c61c1e9fb5629cd54cf",
+   "bytes": 13994
+  },
+  "verification.json": {
+   "sha256": "cc1acef537bbce497cce34a2f1dc44d5bc75606ccca95c84982662d692a1c2dc",
+   "bytes": 15669
+  }
+ }
+}

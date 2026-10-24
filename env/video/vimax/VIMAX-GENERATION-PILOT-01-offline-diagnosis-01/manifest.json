@@ -1,0 +1,171 @@
+{
+  "schema": "vimax-offline-diagnosis-manifest-v1",
+  "task": "VIMAX-GENERATION-PILOT-01-offline-diagnosis-01",
+  "created_at": "2026-10-23",
+  "historical_image_id": "sha256:7c634c46a829e2d22ee901023b70a6bdb2e5bd06d7b334b0f8a8150a3daa39be",
+  "reference_repository_commit": "fd4b72e7731be6e5f88486206d25ea59849b0285",
+  "verified_raw_manifest_files": 41,
+  "files": [
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01/run-record.json",
+      "bytes": 12438984,
+      "sha256": "c3f7f75b27496a0e1441211f7d76929db07c645d90bbbcab3262f4186e06c577"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01/workspace/task-input.txt",
+      "bytes": 10042,
+      "sha256": "de69c11bf4562e545a6556e21d79c9484e7795cf7867e452d897ea621d806b6f"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01/workspace/attempt/agent-events.jsonl",
+      "bytes": 289846,
+      "sha256": "f297c6628926b1c39e729aa4f32ca5062b2f1c465e7252f9344cdd8b384fd808"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01/workspace/attempt/bailian-ledger.jsonl",
+      "bytes": 64437,
+      "sha256": "da8a6e8e211b083d1ca1c42707e93c466fc67e3a3a5a93de2da31304dbe7d482"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01/workspace/attempt/agent-cwd/.vimax/sessions.json",
+      "bytes": 13234,
+      "sha256": "9aeb26890feab466f57647f1ef2b062ddae19c76bce9e3d61aa7ad861fd75d39"
+    },
+    {
+      "path": "reports/resource/VIMAX-GENERATION-PILOT-01/closeout-01/raw-manifest.json",
+      "bytes": 11251,
+      "sha256": "80d7a5d2b463fad88aba62ed66637b24f0a151a237fcfa915289d302757ade39"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/historical-input-hashes.json",
+      "bytes": 436,
+      "sha256": "52e75a83241765fb3502f20eb32357e8ad812192ad86fc815c2c7304a8b3df42"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/historical-evidence-verification.json",
+      "bytes": 194,
+      "sha256": "b6952a2943e1941568fed89b2ca15a33e8c04624d0389788ca50ee606dafc74f"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/source-identity-comparison.json",
+      "bytes": 2872,
+      "sha256": "151e23299300d4761f29a94569a0ff32119b475e941d8f06d29bb98415dd6ccc"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/v4-source-snapshot.tar",
+      "bytes": 122880,
+      "sha256": "04100ab30f31ed794824f6ec035feedaa6bcd4f3c8882b651d33328af0ee05c4"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/v4-parser-snapshot.tar",
+      "bytes": 30720,
+      "sha256": "47b5f1a5eefb8cafe3383a061a84982cabc745f64270469589d649aa2e269481"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/v4-prompt-snapshot.tar",
+      "bytes": 10240,
+      "sha256": "e486d88292f9b33de893f8655e1abb0932aae2e93cf18c50240df08a98e0ba26"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/snapshots/v4/agent_runtime/vimax_adapters.py",
+      "bytes": 59474,
+      "sha256": "d7cca351107922096ef512e068a33769423c02f0358886af8ec80cee89049204"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/snapshots/v4/agent_runtime/session_index.py",
+      "bytes": 17390,
+      "sha256": "1fa4eabe6bc9b249115e30b1659ff132823d877e41ddbbd0e56ac96a794ba50f"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/snapshots/v4/agent_runtime/loop.py",
+      "bytes": 10737,
+      "sha256": "8d3aff7d7866ca799be63943729e521a07e078e0f80f61bcff767af044c56c2f"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/snapshots/v4/agent_runtime/tools.py",
+      "bytes": 21897,
+      "sha256": "e0bf9e1faecdb08097619f24a76616230317151528f6263c37d031c964d31c95"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/snapshots/v4/agent_runtime/prompts.py",
+      "bytes": 6294,
+      "sha256": "f62ad0acae4db276e008792565898c68b5468984faa0fcb6cbe23cb8e4d5cdbc"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/snapshots/v4/agents/storyboard_artist.py",
+      "bytes": 18817,
+      "sha256": "92c84362770d9123d80c5595cbf526c8d34288f69385a96e9e40c5450e83488e"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/snapshots/v4/utils/robust_json_parser.py",
+      "bytes": 1586,
+      "sha256": "48a30e320fd94e75fa15b0bbbd5fa91daa2a53ec2113fbc3487002888b5c7629"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/test_offline_regressions.py",
+      "bytes": 12583,
+      "sha256": "1a39a2b889ecc738d2357237e7f41a89d28c61012a87987928068cf1d294023e"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/offline-tests.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/diagnosis.md",
+      "bytes": 9689,
+      "sha256": "4c2bd7a231dc46711198cc80cbb8dc9fb350bbf10e7c569e32a59b805ced9f4b"
+    },
+    {
+      "path": "env/video/vimax/VIMAX-GENERATION-PILOT-01-offline-diagnosis-01/results.json",
+      "bytes": 5049,
+      "sha256": "dc8f4d325900cf0add8382be9e9c9be917ffc23af95efba7dd7b7e30ccb6a31d"
+    },
+    {
+      "path": "env/video/vimax/adapter-src/agent_runtime/vimax_adapters.py",
+      "bytes": 62210,
+      "sha256": "b4f9719bdc1a5599648dd679b3fb602f7aaa97b5cf7b7c54300904bfde4afcfb"
+    },
+    {
+      "path": "env/video/vimax/adapter-src/agent_runtime/session_index.py",
+      "bytes": 17850,
+      "sha256": "b892ecfb661ad5774dd9909d001cbb5cca5b6011b2e493ede391c78aa41c0e65"
+    },
+    {
+      "path": "env/video/vimax/adapter-src/agent_runtime/loop.py",
+      "bytes": 13653,
+      "sha256": "71c182daa84ce3cbb29fd78d4b91db0e60d4e6c4ac35347bd3753684ec3a4da7"
+    },
+    {
+      "path": "env/video/vimax/adapter-src/agent_runtime/tools.py",
+      "bytes": 22291,
+      "sha256": "56c225c8ad25af41bab3c9de055408c61c572a3c445409a682b8278d0a953e3f"
+    },
+    {
+      "path": "env/video/vimax/adapter-src/agent_runtime/prompts.py",
+      "bytes": 6363,
+      "sha256": "a4352d843ba8e72f0793d3d4748f5831c7dc4f504a294f1894b2ae46f6260bd3"
+    },
+    {
+      "path": "env/video/vimax/adapter-src/agents/storyboard_artist.py",
+      "bytes": 19290,
+      "sha256": "33633c42d0d79a7ac9430958d0cca9069aa826e9bfd53b598f820ac591053c1b"
+    },
+    {
+      "path": "env/video/vimax/adapter-src/utils/robust_json_parser.py",
+      "bytes": 3172,
+      "sha256": "5aa4fc39c1adf82637c1d09ff7606222748c215795b138b6abe3ac050748fb42"
+    },
+    {
+      "path": "docs/current_task.md",
+      "bytes": 32737,
+      "sha256": "fd36e7107cf5d2edc70ac33c95d7f8ea66676fb46c1f2feafc82975b962bad5a"
+    },
+    {
+      "path": "docs/vimax_execution_preparation.md",
+      "bytes": 26023,
+      "sha256": "45fe368e67353e879d898811113f98d532182fd6562de1754abbdcb9ccf53b2f"
+    }
+  ],
+  "self_hash": "omitted"
+}

@@ -1,0 +1,145 @@
+{
+ "note": "does not hash itself; attempt-run artifacts listed separately below",
+ "files": {
+  "approval.json": {
+   "sha256": "b585a3aa2ce7a316264aa44bf8b98e6e8bab4453da9399fa23bc45f771c3838c",
+   "bytes": 563
+  },
+  "frozen-identity.json": {
+   "sha256": "3027288ea6005d04c163c4a5ecb978b85a08140083d71612f74c680f76b6d7b9",
+   "bytes": 2847
+  },
+  "pilot_attempt.py": {
+   "sha256": "238a60de564773603abd68b40ca24c145c8d8a07d3608b659db7f1b0e23a936d",
+   "bytes": 11475
+  },
+  "prep_probe.py": {
+   "sha256": "8bf188765725a7d451f1efcbeb543fbc8f11d81537192c4e4a84096ad4017209",
+   "bytes": 5658
+  },
+  "summary.md": {
+   "sha256": "5ce5bca1eab28cb11973b0e7fa3e07b80f15bdb708d2c42f324e33e3c7c037a9",
+   "bytes": 2761
+  },
+  "verifier-build/Dockerfile": {
+   "sha256": "a25bf779750eb6823e1a33f974affb73540a30eb256033cd86d5bb41a217fb2a",
+   "bytes": 295
+  },
+  "verifier-build/gt-cuts.json": {
+   "sha256": "368db297a00890fd985426f499883b10c3bd16d89ee63f93974dc5483cbf25fc",
+   "bytes": 462
+  },
+  "verifier-build/judge.py": {
+   "sha256": "cb5486bac019b19321f516ec15ee9253fe6c02024543449864517fbfd67ec96d",
+   "bytes": 26105
+  },
+  "workspace/attempt-run/ATTEMPT_STARTED.json": {
+   "sha256": "2e963997a95f67fb51267313b48f1864ab640b695512aac6a383e8ab0d5996b8",
+   "bytes": 228
+  },
+  "workspace/attempt-run/agent-result.json": {
+   "sha256": "8b6de3240e0b1ce8762f8b66328895a1c0b210f779e2db839d1bf4eb1b532ec2",
+   "bytes": 51
+  },
+  "workspace/attempt-run/analysis/netns-samples.csv": {
+   "sha256": "ac3e1b8d51b17c8ad6cd9714af75010dea1c30939b024e599496ae01631a3cbe",
+   "bytes": 3188
+  },
+  "workspace/attempt-run/analysis/panel-cpu.svg": {
+   "sha256": "2e3d76b00b816becf457ba5366f6ade388a1a506cd28ec195a1456f0dd47368b",
+   "bytes": 2738
+  },
+  "workspace/attempt-run/analysis/panel-io.svg": {
+   "sha256": "246f7fde98c54b9212a7fd48ce9cf883cabb21bc05b3d5c1b323ef9681d88ae2",
+   "bytes": 5334
+  },
+  "workspace/attempt-run/analysis/panel-memory.svg": {
+   "sha256": "ed3aa3a8c71de1633fcacabc150d23e271025bff05bd8527cad7724a6e324569",
+   "bytes": 4978
+  },
+  "workspace/attempt-run/analysis/panel-network.svg": {
+   "sha256": "86a3a54c34d520920fb83e8fa24863b30dccfeecb06bb8e254e6d50f2616da39",
+   "bytes": 3294
+  },
+  "workspace/attempt-run/analysis/resource-samples.csv": {
+   "sha256": "43949579840d983700b103969d1c6999c5411e573161aebebc493487c61e7b95",
+   "bytes": 9578
+  },
+  "workspace/attempt-run/analysis/run-report.json": {
+   "sha256": "c723e01f254c2cb4e7adff2a6a43881187f8873aeeafaf8ba574a4de3a0c2b8b",
+   "bytes": 2992
+  },
+  "workspace/attempt-run/cgroup-samples.json": {
+   "sha256": "1be2e155909756a5fdac7a2c5090f7f40f139a0040ba8bab97c40d85f7e93ad1",
+   "bytes": 108095
+  },
+  "workspace/attempt-run/container-artifacts.tar": {
+   "sha256": "2474b9b4e5f965fd11012aa37d86154a360b98b175cd863cfd04858cfd175759",
+   "bytes": 71680
+  },
+  "workspace/attempt-run/cuts-export.json": {
+   "sha256": "9e324ae3eae29330969d41f8e217d7a7bb9d9deb0ceb23e0dca348e97f382bfd",
+   "bytes": 37
+  },
+  "workspace/attempt-run/entry-stderr.log": {
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0
+  },
+  "workspace/attempt-run/entry-stdout.log": {
+   "sha256": "d903fdfc108bcd08b11273e728616ada44a9244ade2a638a38b5c89e3edfec29",
+   "bytes": 8733
+  },
+  "workspace/attempt-run/env01-ae869d9a65ba45ac876976092ae6e805/meta.json": {
+   "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "bytes": 2
+  },
+  "workspace/attempt-run/events.json": {
+   "sha256": "fc10b10cc23619405f105cc192043896cfda9cda996118616c8d4403dc3ff666",
+   "bytes": 981
+  },
+  "workspace/attempt-run/footprints.json": {
+   "sha256": "e68b1783bf9247e7985ce355bdb703472a121f698e55c655fe64c2f1fae93da2",
+   "bytes": 97
+  },
+  "workspace/attempt-run/mcp-cleanup.json": {
+   "sha256": "eb8484be49735bb4a6a502221c14103ca40ccb50b2c047e4b4bbdfef993ec142",
+   "bytes": 46
+  },
+  "workspace/attempt-run/mcp-server.log": {
+   "sha256": "5f3c94d23ba1bcdd7bc14b64d7c1ebef0900286327d945a5979c37392dcc1470",
+   "bytes": 9792
+  },
+  "workspace/attempt-run/native-messages.json": {
+   "sha256": "d8c7660e1cac4b393a517271bba90476551ff8fe3dcdd72aa08c5f1d0072e641",
+   "bytes": 34308
+  },
+  "workspace/attempt-run/netns-samples.json": {
+   "sha256": "4aaddf0c787996545daf62ecd631e4e851f5f2f42702d3a72336d6b3f1f1406e",
+   "bytes": 8066
+  },
+  "workspace/attempt-run/p1status.txt": {
+   "sha256": "e766cc04152e9ed6625b1681dd6e9458b29a3c6ef41badfc637cb9a3ad0e952d",
+   "bytes": 31
+  },
+  "workspace/attempt-run/phase-times.json": {
+   "sha256": "8b47efc20aabc211d1e7b483fbf00daccc3849295af251d2b82b4d89145be3f1",
+   "bytes": 200
+  },
+  "workspace/attempt-run/request.json": {
+   "sha256": "a74c5914a9ede22efc7a90c8623235225352a0f0fb0a6bbe7d91ec831cbafa97",
+   "bytes": 1231
+  },
+  "workspace/prep-output/prep/meta.json": {
+   "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "bytes": 2
+  },
+  "workspace/prep-output/prep_mcp.log": {
+   "sha256": "780c6bb445431abcf2620e3c72ff5e6c2a889b9219da125fb68591ff90bbd216",
+   "bytes": 2396
+  },
+  "workspace/prep-output/prep_probe.json": {
+   "sha256": "4ef44fdf6fd211e5e30286bf157eb28115c9608759f1dba7acae8890c1dd105f",
+   "bytes": 792
+  }
+ }
+}

@@ -1,0 +1,142 @@
+{
+  "schema": "video-use-edit-pilot-04-frozen-identity-v1",
+  "task": "VIDEO-USE-EDIT-PILOT-04",
+  "run_id": "20261021T1450Z-video-use-edit-04",
+  "task_commit": "b2764ed4b2a4b5a1737026b63887b50bba62f793",
+  "input": {
+    "bytes": 2017306,
+    "sha256": "a9bce74a50b5380d7c1aa1d9980f1d159e8633fbff00986504a363a3d18525bb"
+  },
+  "image": {
+    "inspect": "sha256:1a48c7b00da789ec99722ebb2be6e1df72aec9d37cc2a64e83c82e89ecf700c5 arm64 linux",
+    "codex_version": "codex-cli 0.163.0"
+  },
+  "image_identity": {
+    "tag": "video-use-task:arm64-codex-bailian-v6",
+    "id": "sha256:1a48c7b00da789ec99722ebb2be6e1df72aec9d37cc2a64e83c82e89ecf700c5",
+    "platform": "linux/arm64"
+  },
+  "files": {
+    "scripts/video_use_edit_pilot_04.py": {
+      "bytes": 23261,
+      "sha256": "f2b4fe9dd0d3f1f9cc116d2ac2787a8f948a993ee11df5147a86703ff685859f"
+    },
+    "scripts/video_use_edit_pilot_03.py": {
+      "bytes": 21370,
+      "sha256": "8381a8e129e65a6bbbf11a354dbce3ab1f0e1f87cd3c98e8d668746b04d9f1f2"
+    },
+    "scripts/video_use_edit_pilot_01.py": {
+      "bytes": 43726,
+      "sha256": "2248c7abc629dcd431bee13f5a31e8dfe2b6884e0de8a54e493a557275d7ad0e"
+    },
+    "tests/test_video_use_edit_pilot_04.py": {
+      "bytes": 5511,
+      "sha256": "030c9fafed2a6064aa2358aa6f95d0118044ecc01d4c94830445293cf86990f8"
+    },
+    "scripts/video_use_edit_pilot_03_boundary_review.py": {
+      "bytes": 11942,
+      "sha256": "ce0565339a9a54d9c3503137ab4dd91959acce180ca8b0fd494f608386a35833"
+    },
+    "env/video/video-use/codex-bailian-integration-01/config.toml": {
+      "bytes": 689,
+      "sha256": "e45337f09268ccda9816544b3a0c4fc65095eae2b42a7ef525e512ebdf626128"
+    },
+    "env/video/video-use/source/helpers/transcribe.py": {
+      "bytes": 8027,
+      "sha256": "5b61a5f92db9baf6e7f7f3ee88d0afaed8485e5f7b537a38e90f87ce8c76e58a"
+    },
+    "env/video/video-use/source-manifest.json": {
+      "bytes": 5868,
+      "sha256": "03d92a87903c1c0fb827832b7d469bb9a150f8ed7d2d2ec8f174f231c5421c12"
+    },
+    "references/repos/agentic-vbench/tasks/agentic_vbench_repair/exp-disfluency-interview-3-task01/steps/solve/instruction.md": {
+      "bytes": 1100,
+      "sha256": "89342bbad96c3d7e897545dd76ef1db2576398058d8a5b4b2d24aef1887df3cb"
+    },
+    "data/workloads/video/editing/avb-disfluency-interview-3-v1/input/source.mp4": {
+      "bytes": 2017306,
+      "sha256": "a9bce74a50b5380d7c1aa1d9980f1d159e8633fbff00986504a363a3d18525bb"
+    },
+    "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/overlay/SKILL.md": {
+      "bytes": 27347,
+      "sha256": "68341f7280e3f52312f54f357dfd0f6d04e139fe56b434ebd17c54af6cfeff70"
+    },
+    "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/overlay/helpers/render.py": {
+      "bytes": 30812,
+      "sha256": "76d547dc673deadc2676a908aa89cc3ba9dae81622c5c659c66c27bb0b942879"
+    },
+    "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/overlay/helpers/timeline_view.py": {
+      "bytes": 15939,
+      "sha256": "a42be9cb8fde7aa5a11396c14bc1c336cdf970e84f8a88f39f42dec0ba2dd0a1"
+    },
+    "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/verifier/entry.py": {
+      "bytes": 10101,
+      "sha256": "1f0596978c673afa1accf2112208ae47a289a573e5f11b090538e262e7ce9c00"
+    },
+    "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/verifier/judge.py": {
+      "bytes": 26105,
+      "sha256": "cb5486bac019b19321f516ec15ee9253fe6c02024543449864517fbfd67ec96d"
+    },
+    "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/verifier/requirements.lock": {
+      "bytes": 178,
+      "sha256": "50bdf9dc3e031162a39b943431d8c94f642d4c804d8657c576d46c55b7440ebd"
+    },
+    "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/verifier/verifier-environment.json": {
+      "bytes": 1009,
+      "sha256": "f0b7fbb7161f9b53888ecb2c182fc754b479598b2d2687db7f755a81f6a26baf"
+    },
+    "env/video/video-use/VIDEO-USE-EDIT-PILOT-04/source-snapshot/manifest.json": {
+      "bytes": 6014,
+      "sha256": "769e76f7f106034b93c2aff325ec7cf48c45e57b701de601e123baefd90f40cc"
+    },
+    "env/video/video-use/VIDEO-USE-EDIT-PILOT-04/preflight-events.jsonl": {
+      "bytes": 798,
+      "sha256": "8bc365e27245dcb01e32022586125ec48f3fff7ccad0558a83ab8e68f1bc97e1"
+    }
+  },
+  "environment_plan_sha256": "5848f963d1e8258b7909e00a2f3c10da8a2f81b70532286f0d2cb747467a1a0e",
+  "model_route": {
+    "provider": "bailian",
+    "model": "qwen3.7-plus",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "wire_api": "responses",
+    "api_key_env": "DASHSCOPE_API_KEY",
+    "request_max_retries": 0,
+    "stream_max_retries": 0
+  },
+  "transcription": {
+    "helper": "official video-use transcribe.py",
+    "model": "scribe_v1",
+    "max_client_posts": 1,
+    "retries": 0,
+    "cache": "attempt-local; exactly one transcription before Agent"
+  },
+  "verifier": {
+    "judge": "unaltered official judge.py in isolated venv",
+    "python": "/home/lcq/.venvs/video-use-pilot03-verifier/bin/python",
+    "environment": "/home/lcq/agent_workload_characterization/env/video/video-use/VIDEO-USE-EDIT-PILOT-03/verifier/verifier-environment.json",
+    "private_materials_after_agent_container_removal": true
+  },
+  "prompt_policy_sha256": "26b9899a9e9473e756bbd30869a807f57c08e243815698c30d48703003518b3b",
+  "budgets_s": {
+    "total": 2700,
+    "agent_max": 1800,
+    "verifier_max": 600,
+    "cleanup_reserve": 300
+  },
+  "resources": {
+    "cpus": 2,
+    "memory_bytes": 4294967296,
+    "sample_interval_target_s": 0.5,
+    "cgroup_scope": "Agent container and child processes",
+    "network_scope": "shared container netns per interface; not API-specific",
+    "directory_boundaries_nonoverlapping": [
+      "materials",
+      "workspace",
+      "output"
+    ]
+  },
+  "prepared_at_utc": "2026-10-21T15:22:45Z",
+  "prepared_at_monotonic_ns": 1521776421050793,
+  "approval": "not yet recorded; user instruction authorizes only this frozen config"
+}

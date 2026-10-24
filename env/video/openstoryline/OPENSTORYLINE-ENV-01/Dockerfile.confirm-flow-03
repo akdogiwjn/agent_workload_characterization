@@ -1,0 +1,8 @@
+FROM openstoryline-task:arm64-native-entry-repair-07
+
+COPY source/openstoryline_task_entry.py /opt/openstoryline/openstoryline_task_entry.py
+COPY source/src/open_storyline/confirmation_flow.py /opt/openstoryline/src/open_storyline/confirmation_flow.py
+COPY source/tests/test_confirmation_flow.py /opt/openstoryline/tests/test_confirmation_flow.py
+
+LABEL org.opencontainers.image.title="OpenStoryline native confirmation flow with localized plan checks"
+LABEL org.opencontainers.image.base.name="openstoryline-task:arm64-native-entry-repair-07"

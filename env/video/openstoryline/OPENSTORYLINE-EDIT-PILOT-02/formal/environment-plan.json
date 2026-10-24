@@ -1,0 +1,32 @@
+{
+  "schema": "openstoryline-edit-pilot-02-plan-v1",
+  "identity_sha256": "441caee9a76d32d35b906ffccd62d28fb98537038d5d2fc2e031ab054d0c4f0c",
+  "single_attempt": true,
+  "model_route": {
+    "protocol": "Chat Completions",
+    "model": "qwen3.7-plus",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "credential_env": "DASHSCOPE_API_KEY",
+    "sdk_retries": 0,
+    "application_retries": 0
+  },
+  "budget": {
+    "max_logical_requests": 60,
+    "max_observed_tokens_soft_threshold": 1000000,
+    "max_output_tokens_per_request": 32768
+  },
+  "resources": {
+    "cpus": 4,
+    "memory_bytes": 8589934592,
+    "sample_interval_target_s": 0.5,
+    "scope": "whole Agent container cgroup including MCP/ASR/FFmpeg children",
+    "network": "container netns per interface; not API-specific"
+  },
+  "wall_limits_s": {
+    "total": 2700,
+    "agent": 1800,
+    "verifier": 600,
+    "cleanup_reserve": 300
+  },
+  "approval": "created only by --execute after matching identity and explicit flag"
+}

@@ -1,0 +1,344 @@
+{
+  "schema": "openstoryline-edit-pilot-02-identity-v1",
+  "namespace": "OPENSTORYLINE-EDIT-PILOT-02",
+  "run_id": "20261022T150133Z-openstoryline-edit-02",
+  "attempt": 1,
+  "upstream_commit": "c9e945215586f45c12a61c1951ee9a8e9c43a027",
+  "task_commit": "b2764ed4b2a4b5a1737026b63887b50bba62f793",
+  "input": {
+    "path": "data/workloads/video/editing/avb-disfluency-interview-3-v1/input/source.mp4",
+    "bytes": 2017306,
+    "sha256": "a9bce74a50b5380d7c1aa1d9980f1d159e8633fbff00986504a363a3d18525bb"
+  },
+  "files": {
+    "env/video/openstoryline/edit-pilot-02/runtime/openstoryline_pilot_entry.py": {
+      "bytes": 44103,
+      "sha256": "7aa12722d111a7e0aba00ba788c5514b804e32e61de320c7ee0d30f2275c2ad0"
+    },
+    "env/video/openstoryline/edit-pilot-02/runtime/asr_cache_runtime.py": {
+      "bytes": 2453,
+      "sha256": "50f8b4d65c6564a691b60be97dcc1812f1c22e337aaed3b7c669e0c73b5c44c9"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/openstoryline_task_entry.py": {
+      "bytes": 23761,
+      "sha256": "b78261a3b9c2f00dac22b74d31f071b21b33ce0e38d42e5a249ec9cfb556651b"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/config.toml": {
+      "bytes": 2544,
+      "sha256": "21f83a65f3d0e02bce8ea4b0f5f1a2c58b72ce69b2310d3f98a3d9ca51800b64"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/resource/fonts/font_info.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/.storyline/skills/speech_rough_cut_skill/SKILL.md": {
+      "bytes": 1748,
+      "sha256": "c4c459dbbebf521bd188254863ae7b87a63ca0089ef8e755f5256e29fac4ec28"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/confirmation_flow.py": {
+      "bytes": 5535,
+      "sha256": "ec649315f683ce2e73b461577b22f24afff41e58321eb6bd31c884d43dfeda6a"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.confirm-flow-03": {
+      "bytes": 544,
+      "sha256": "1c430253b798fdd260c508b88d9c3aac9317ec92c74999bb85a392a317cac2ce"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/offline_fake_model.py": {
+      "bytes": 12127,
+      "sha256": "1ee32a176add9880b590e856ffb4831a59f1181c48bb77e61f42f4540b7b858e"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/openstoryline_mcp_server.py": {
+      "bytes": 726,
+      "sha256": "c3a96c01218a4f73d3bbcddcbc6725f0a33001db623e0044b4cf52bc7f891f00"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/agent.py": {
+      "bytes": 11267,
+      "sha256": "cd8d3b3ef507a95afb5b539be6b27fbb579c7d8abfd4449ee9956ec79be03db2"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/nodes/node_manager.py": {
+      "bytes": 7745,
+      "sha256": "97978f1cf7c79ec3a6221b51ce5814b15f9975e5404a4b26649a15ea288208d7"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/nodes/core_nodes/render_video.py": {
+      "bytes": 37516,
+      "sha256": "7b34509579601744c31523f9b6352446a7ced7dbf74ad2238969a303797b7e57"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/nodes/core_nodes/split_shots.py": {
+      "bytes": 24513,
+      "sha256": "daacc4f75997c28d15affb86cb18eabc3f50a801dbad09ff1ddf470744b2814b"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/nodes/core_nodes/speech_rough_cut.py": {
+      "bytes": 10939,
+      "sha256": "0f5972ad2b5ace8ad6f38427aea9fe4fe29c4f7eb7ba10250ef5c04f057e9762"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/request_ledger.py": {
+      "bytes": 8533,
+      "sha256": "e9693e4b2cb65393bcdc8194557e53f880a022183ced20450c652728c01dfcbb"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/sampling_handler.py": {
+      "bytes": 19945,
+      "sha256": "853b3aa7b66bd3a5d8ca43279c55198a4210bf06bda3c3c3519803301796007b"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/register_tools.py": {
+      "bytes": 19237,
+      "sha256": "0c7dae3e14e2d18155c20be93c6159aa491abbba84791a6a20cd742e359a53b3"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/hooks/node_interceptors.py": {
+      "bytes": 27151,
+      "sha256": "9f6b8675d42c0fba788f8feb64d789b16f99019ec1869fdc6c6e47da9cb68171"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/tests/test_native_entry_repair.py": {
+      "bytes": 8719,
+      "sha256": "8a42911a677e78b5869b04c2e4f83a580d1ded31bf2445dea319465ae6620e26"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/tests/test_confirmation_flow.py": {
+      "bytes": 4221,
+      "sha256": "914bd76fb64d0e1f13f10c398b4ef680145996f59c690f6e3adda6eee0a2a8f8"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/asr_adapter/cache_preflight.py": {
+      "bytes": 1873,
+      "sha256": "431b7ef63b625fbc606c1996fc15f622996829b3d69e1c01f061b38b9d665d75"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/asr-cache-contract.json": {
+      "bytes": 1025,
+      "sha256": "56f9414cbb73149d2897b5baed184233f21149206567636a2212910cf07f28ba"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source-manifest.json": {
+      "bytes": 20075,
+      "sha256": "46cafe151037a8aff6c7bc5815f43fc5a5e20a5ce79e8f181074826e7ed4fbb2"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.formal-entry": {
+      "bytes": 279,
+      "sha256": "2e063ab59a86f69f8544caf061fd73cd4766b5fc6cbe0839199e257cea0966b3"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.formal-entry-v13": {
+      "bytes": 275,
+      "sha256": "0faccd6c8a21c0030341d41d5ea4ebe21754742ac6ab943999d0a1bcf5610f05"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.native-entry-repair-02": {
+      "bytes": 416,
+      "sha256": "349344827f01ceb5c48938c75c749d0a4949ce317468076603ca10c956ba8377"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.native-entry-repair-03": {
+      "bytes": 416,
+      "sha256": "349344827f01ceb5c48938c75c749d0a4949ce317468076603ca10c956ba8377"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.native-entry-repair-04": {
+      "bytes": 416,
+      "sha256": "349344827f01ceb5c48938c75c749d0a4949ce317468076603ca10c956ba8377"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.native-entry-repair-05": {
+      "bytes": 416,
+      "sha256": "349344827f01ceb5c48938c75c749d0a4949ce317468076603ca10c956ba8377"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.native-entry-repair-06": {
+      "bytes": 416,
+      "sha256": "349344827f01ceb5c48938c75c749d0a4949ce317468076603ca10c956ba8377"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.native-entry-repair-07": {
+      "bytes": 416,
+      "sha256": "349344827f01ceb5c48938c75c749d0a4949ce317468076603ca10c956ba8377"
+    },
+    "src/agent_workload_characterization/runners/container_runtime.py": {
+      "bytes": 36912,
+      "sha256": "0b48cb5be7000ac99d207bc233cf141337a17d18550b1e4795bed264087aaac4"
+    },
+    "scripts/video_use_edit_pilot_01.py": {
+      "bytes": 43726,
+      "sha256": "2248c7abc629dcd431bee13f5a31e8dfe2b6884e0de8a54e493a557275d7ad0e"
+    },
+    "references/repos/agentic-vbench/tasks/agentic_vbench_repair/exp-disfluency-interview-3-task01/steps/solve/instruction.md": {
+      "bytes": 1100,
+      "sha256": "89342bbad96c3d7e897545dd76ef1db2576398058d8a5b4b2d24aef1887df3cb"
+    },
+    "data/workloads/video/editing/avb-disfluency-interview-3-v1/input/source.mp4": {
+      "bytes": 2017306,
+      "sha256": "a9bce74a50b5380d7c1aa1d9980f1d159e8633fbff00986504a363a3d18525bb"
+    },
+    "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/run_offline_validation.py": {
+      "bytes": 14968,
+      "sha256": "0da9b5640b093aa219eb5229a51ead7175b2a36e9fee7240d0d1dc9f0a7319ba"
+    },
+    "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/continue_offline_validation.py": {
+      "bytes": 20581,
+      "sha256": "bc16f73e61974df9bf748e7109639e550df1ee30af2c19a25c5176b8c0c40f2e"
+    },
+    "env/video/openstoryline/edit-pilot-02/preparation/real-native-short-04/run_short_task.py": {
+      "bytes": 25346,
+      "sha256": "8917185e7c87872341104385898403718a6f2ee13ba85dd89c7635454bb6f0fc"
+    },
+    "env/video/openstoryline/edit-pilot-02/preparation/real-native-short-04/review_short_task.py": {
+      "bytes": 12805,
+      "sha256": "ecfb140143d599952c20a0982364d0f5431b81f159a1cc70040ea379f2f80cd1"
+    },
+    "env/video/openstoryline/edit-pilot-02/preparation/real-native-short-04/recover_short_task_postflight.py": {
+      "bytes": 16232,
+      "sha256": "d9be5dea4becf2e2bc72417e92e1741a04c7b45f2c7240b48bea9ddb9541b6b4"
+    },
+    "env/video/openstoryline/edit-pilot-02/runtime/short_task_budget.py": {
+      "bytes": 1210,
+      "sha256": "102a5f62d9ebc1d5e777617b6cf0975a88f1dbfebb085c64169fca989407fce5"
+    },
+    "tests/test_openstoryline_short_budget.py": {
+      "bytes": 5075,
+      "sha256": "b00ecc8866e099bfacde2e9153bbeb8b7f8665e5f4a6ca827373dfc9d74d26e2"
+    },
+    "tests/test_openstoryline_parent_deadline_cleanup.py": {
+      "bytes": 3661,
+      "sha256": "cced130a924d5f8a48e3dea5d50715ce0b93ffbff20eb7810680a2b9ff0f0b8e"
+    },
+    "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/verifier/entry.py": {
+      "bytes": 10101,
+      "sha256": "1f0596978c673afa1accf2112208ae47a289a573e5f11b090538e262e7ce9c00"
+    },
+    "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/verifier/judge.py": {
+      "bytes": 26105,
+      "sha256": "cb5486bac019b19321f516ec15ee9253fe6c02024543449864517fbfd67ec96d"
+    },
+    "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/verifier/requirements.lock": {
+      "bytes": 178,
+      "sha256": "50bdf9dc3e031162a39b943431d8c94f642d4c804d8657c576d46c55b7440ebd"
+    },
+    "env/video/video-use/VIDEO-USE-EDIT-PILOT-03/verifier/verifier-environment.json": {
+      "bytes": 1009,
+      "sha256": "f0b7fbb7161f9b53888ecb2c182fc754b479598b2d2687db7f755a81f6a26baf"
+    }
+  },
+  "image": {
+    "tag": "openstoryline-task:arm64-native-confirm-flow-03",
+    "id": "sha256:9a1e876c08c10d56c7959111af1a2afc382245e6657032c5da3dd195df5e8bd0",
+    "platform": "linux/arm64"
+  },
+  "model_route": {
+    "protocol": "Chat Completions",
+    "model": "qwen3.7-plus",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "credential_env": "DASHSCOPE_API_KEY",
+    "sdk_retries": 0,
+    "application_retries": 0
+  },
+  "budget": {
+    "max_logical_requests": 60,
+    "max_observed_tokens_soft_threshold": 1000000,
+    "max_output_tokens_per_request": 32768
+  },
+  "budget_semantics": {
+    "logical_requests": "hard per-run pre-send count gate",
+    "observed_tokens": "post-response soft threshold; current in-flight response may cross it",
+    "output_tokens": "hard per-request generation limit sent with every model call",
+    "ledger": "new unique output/model-requests.jsonl per run; prior prep ledger retained"
+  },
+  "wall_limits_s": {
+    "total": 2700,
+    "agent": 1800,
+    "verifier": 600,
+    "cleanup_reserve": 300
+  },
+  "resources": {
+    "cpus": 4,
+    "memory_bytes": 8589934592,
+    "sample_interval_target_s": 0.5,
+    "scope": "whole Agent container cgroup including MCP/ASR/FFmpeg children",
+    "network": "container netns per interface; not API-specific"
+  },
+  "asr_cache": {
+    "contract": "env/video/openstoryline/OPENSTORYLINE-ENV-01/asr-cache-contract.json",
+    "host_root": "env/video/openstoryline/OPENSTORYLINE-ENV-01/models",
+    "container_mount": "/root/.cache/modelscope:ro",
+    "files": [
+      {
+        "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master/configuration.json",
+        "bytes": 737,
+        "sha256": "0e5b3d4226be9bbea106a746837965c60c625f88dff41e50371ee9f2d1badbe6"
+      },
+      {
+        "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master/config.yaml",
+        "bytes": 2727,
+        "sha256": "31632a633c2c3a415902f4601225ad8c224b4abeb080645efa8cc92d7f72b13d"
+      },
+      {
+        "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master/model.pt",
+        "bytes": 887289223,
+        "sha256": "e11203abf1f449b4c6515dee494c017ee27a4b716730378473d827ad3c7fe41c"
+      },
+      {
+        "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master/tokens.json",
+        "bytes": 170601,
+        "sha256": "9c72487c10c0dcfe6411d3c78af2a467a45b912c782448be0fc726c39d91389c"
+      },
+      {
+        "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master/bpe.model",
+        "bytes": 418104,
+        "sha256": "18c873d69fe4acbc204a0c55455b3ec8ec8a65ae563ab06ef02b14c612b82c5b"
+      },
+      {
+        "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master/am.mvn",
+        "bytes": 11203,
+        "sha256": "29b3c740a2c0cfc6b308126d31d7f265fa2be74f3bb095cd2f143ea970896ae5"
+      },
+      {
+        "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master/configuration.json",
+        "bytes": 365,
+        "sha256": "7bce8867e37d55c3dd8f672695ced18077a2be199ea529a5d432d5350fc0acba"
+      },
+      {
+        "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master/config.yaml",
+        "bytes": 1215,
+        "sha256": "486861ca26ddb79081663b6179cb204c6bfae71c52f04aafc48a9e9d8dde1e93"
+      },
+      {
+        "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master/model.pt",
+        "bytes": 1721366,
+        "sha256": "b3be75be477f0780277f3bae0fe489f48718f585f3a6e45d7dd1fbb1a4255fc5"
+      },
+      {
+        "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master/am.mvn",
+        "bytes": 8040,
+        "sha256": "6820fef9687708c4fc3fab2530179c8fcea6262daa25514380056cd8f6eb1754"
+      },
+      {
+        "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--punc_ct-transformer_cn-en-common-vocab471067-large/snapshots/master/configuration.json",
+        "bytes": 450,
+        "sha256": "7043245e6264cea789404e498a6f55a330a18585a4690d35dfe71741e6982237"
+      },
+      {
+        "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--punc_ct-transformer_cn-en-common-vocab471067-large/snapshots/master/config.yaml",
+        "bytes": 812,
+        "sha256": "c5ffb25cd063ed366cb26283908dca05a08ecfef8e90bef1d498ef9ffacd7552"
+      },
+      {
+        "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--punc_ct-transformer_cn-en-common-vocab471067-large/snapshots/master/model.pt",
+        "bytes": 1125507622,
+        "sha256": "7176cae922a872e130e6b88aef9a1153581711baf79c9124c7c95be383cd6f81"
+      },
+      {
+        "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--punc_ct-transformer_cn-en-common-vocab471067-large/snapshots/master/tokens.json",
+        "bytes": 8280697,
+        "sha256": "89951fe0669380ed33298ee048c4a2b0ebcaaf6ee8f332d85c281c41d0f38392"
+      },
+      {
+        "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--punc_ct-transformer_cn-en-common-vocab471067-large/snapshots/master/jieba.c.dict",
+        "bytes": 41536866,
+        "sha256": "eb0a68f8bfa65e6956d59e8f9652b49f5c91952273e24737bc9a8c5e23055221"
+      },
+      {
+        "path": "/home/lcq/agent_workload_characterization/env/video/openstoryline/OPENSTORYLINE-ENV-01/models/models/iic--punc_ct-transformer_cn-en-common-vocab471067-large/snapshots/master/jieba_usr_dict",
+        "bytes": 11280857,
+        "sha256": "059aa2af152734d5fd011a4d69cbab171f62347074db0db5157c17b5649010f5"
+      }
+    ]
+  },
+  "verifier": {
+    "python": "/home/lcq/.venvs/video-use-pilot03-verifier/bin/python",
+    "environment": "/home/lcq/agent_workload_characterization/env/video/video-use/VIDEO-USE-EDIT-PILOT-03/verifier/verifier-environment.json",
+    "judge_sha256": "cb5486bac019b19321f516ec15ee9253fe6c02024543449864517fbfd67ec96d"
+  },
+  "preparation_gate": {
+    "path": "env/video/openstoryline/edit-pilot-02/preparation/native-agent-gate.json",
+    "sha256": "ed44a101511584796679bfb5c51de4efd04a36a2859a229d3ea838c21a5f7a15"
+  },
+  "frozen_at_utc": "2026-10-22T15:01:33Z",
+  "frozen_at_monotonic_ns": 1606904363614982,
+  "formal_gate_status": "PASS",
+  "identity_sha256": "441caee9a76d32d35b906ffccd62d28fb98537038d5d2fc2e031ab054d0c4f0c"
+}

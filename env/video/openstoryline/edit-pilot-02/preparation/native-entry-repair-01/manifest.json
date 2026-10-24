@@ -1,0 +1,1095 @@
+{
+  "schema": "openstoryline-native-entry-repair-manifest-v1",
+  "manifest_self_hashed": false,
+  "upstream": {
+    "path": "references/repos/FireRed-OpenStoryline",
+    "commit": "c9e945215586f45c12a61c1951ee9a8e9c43a027",
+    "modified": false
+  },
+  "final_image": {
+    "tag": "openstoryline-task:arm64-native-entry-repair-07",
+    "id": "sha256:12f06a54bb3d79b375ea271d96e3ea93975feb41d3f0ff1881721d3826fb52de",
+    "platform": "linux/arm64",
+    "base_tag": "openstoryline-task:arm64-asr-adapted-v13-formal-entry-audio-budget",
+    "base_id": "sha256:bb9acb6f997176c28eccf35a74ee26bb3e83d40ff31c8fe809351f5f77f7d52f",
+    "build_network": "none",
+    "pull": false
+  },
+  "files": [
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.native-entry-repair-07",
+      "bytes": 416,
+      "sha256": "349344827f01ceb5c48938c75c749d0a4949ce317468076603ca10c956ba8377"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/offline_fake_model.py",
+      "bytes": 12127,
+      "sha256": "1ee32a176add9880b590e856ffb4831a59f1181c48bb77e61f42f4540b7b858e"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/openstoryline_task_entry.py",
+      "bytes": 17173,
+      "sha256": "40138824c4eb4b7750d3e84bbed7243655795415efdc7cff765e2c2d1dea809d"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/agent.py",
+      "bytes": 11267,
+      "sha256": "cd8d3b3ef507a95afb5b539be6b27fbb579c7d8abfd4449ee9956ec79be03db2"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/hooks/node_interceptors.py",
+      "bytes": 27151,
+      "sha256": "9f6b8675d42c0fba788f8feb64d789b16f99019ec1869fdc6c6e47da9cb68171"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/register_tools.py",
+      "bytes": 19237,
+      "sha256": "0c7dae3e14e2d18155c20be93c6159aa491abbba84791a6a20cd742e359a53b3"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/request_ledger.py",
+      "bytes": 8533,
+      "sha256": "e9693e4b2cb65393bcdc8194557e53f880a022183ced20450c652728c01dfcbb"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/sampling_handler.py",
+      "bytes": 19945,
+      "sha256": "853b3aa7b66bd3a5d8ca43279c55198a4210bf06bda3c3c3519803301796007b"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/nodes/node_manager.py",
+      "bytes": 7745,
+      "sha256": "97978f1cf7c79ec3a6221b51ce5814b15f9975e5404a4b26649a15ea288208d7"
+    },
+    {
+      "path": "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/tests/test_native_entry_repair.py",
+      "bytes": 8719,
+      "sha256": "8a42911a677e78b5869b04c2e4f83a580d1ded31bf2445dea319465ae6620e26"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/before/runtime/openstoryline_pilot_entry.py",
+      "bytes": 33463,
+      "sha256": "da8e3ce0413a92fceedd08df85b359e7d967f27354635cc1882488d8d4559034"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/before/source/config.toml",
+      "bytes": 2544,
+      "sha256": "21f83a65f3d0e02bce8ea4b0f5f1a2c58b72ce69b2310d3f98a3d9ca51800b64"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/before/source/openstoryline_task_entry.py",
+      "bytes": 13909,
+      "sha256": "bed5adf34517c8639f8a01a330b9fc15bb7e7b30b35fb254940fd56523216151"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/before/source/src/open_storyline/mcp/hooks/node_interceptors.py",
+      "bytes": 21828,
+      "sha256": "90335d0245bf56c8cdcba93bc6183ee0c89d05e9c7c6341d5867e4c17d786233"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/before/source/src/open_storyline/mcp/register_tools.py",
+      "bytes": 14647,
+      "sha256": "47fcca42677171684e315f6ea69442d6a10039d65a66fa6882d75ec65ce82cd3"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/before/source/src/open_storyline/nodes/core_nodes/split_shots.py",
+      "bytes": 24274,
+      "sha256": "a50a9f911ba7e0281030b353d9e56050247f46dd34d0deb883a8c0bc03b6688b"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/cli-contract-comparison.md",
+      "bytes": 2461,
+      "sha256": "7a095090055bde043495ebf70830ed7ccf3ff534723ce04187454f8beff89c23"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/continue_offline_validation.py",
+      "bytes": 20581,
+      "sha256": "bc16f73e61974df9bf748e7109639e550df1ee30af2c19a25c5176b8c0c40f2e"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/image-identity-02.json",
+      "bytes": 391,
+      "sha256": "8303230b38663b077891b0b21449236f2c32e2b503d27a508865b9add6c11bca"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/image-identity-03.json",
+      "bytes": 391,
+      "sha256": "480e0f032127932b08adfc46afdbba0adc3de4a09078e9b46411334f2bfbdc53"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/image-identity-04.json",
+      "bytes": 391,
+      "sha256": "bda73734bde28328f33baa6b722b5321c22fa70518a5bb72522751cda1cb17b4"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/image-identity-05.json",
+      "bytes": 391,
+      "sha256": "c386c2516ee95b2dd254d8e7b5ee9c2987e3cc64a6d301fe8d07daadf6f7968d"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/image-identity-06.json",
+      "bytes": 391,
+      "sha256": "d7632c28ee88285e11469cb3c7820e1a152786378cc4d8739e0509de4d5b992b"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/image-identity-07.json",
+      "bytes": 391,
+      "sha256": "da948800c1bd914a43d5a9df70104e24d31487c203fd40dc04c5b5af91eafdbd"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/image-identity.json",
+      "bytes": 391,
+      "sha256": "68e0f72afa735b2b1e2efa9ffca4e73d817d89717ccf20759ac72aee7cd1d845"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/run_offline_validation.py",
+      "bytes": 14968,
+      "sha256": "0da9b5640b093aa219eb5229a51ead7175b2a36e9fee7240d0d1dc9f0a7319ba"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/container-run.json",
+      "bytes": 14025,
+      "sha256": "7de5a10e4d0541699b16a70f2cf5a8caf818aa165bb7e889801fe88120048fde"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/input/source.mp4",
+      "bytes": 55805,
+      "sha256": "4e78a0c66992e65b8dfafda3c508b273817dff69931ae9fbbc1de17ef46c6870"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/.server_cache/env01-c8b000354b5d4256bfa0d60d3cf73529/elementrec_text_1792668729.json",
+      "bytes": 140,
+      "sha256": "bc4e25b9b2bca59d61eed87098769c043aa49ba8e8d5c58bd8e61cb4d5d94653"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/.server_cache/env01-c8b000354b5d4256bfa0d60d3cf73529/elementrec_transition_1792668729.json",
+      "bytes": 120,
+      "sha256": "2628b1998176fcc53f3b417c173d088c8dfb9fbee29ae67018f6e7186a79431a"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/.server_cache/env01-c8b000354b5d4256bfa0d60d3cf73529/load_media_1792668673.json",
+      "bytes": 235,
+      "sha256": "1d76f59a16245d796284cd53df38b9621af87df8b4f893d23c56844bf0b7ccd7"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/.server_cache/env01-c8b000354b5d4256bfa0d60d3cf73529/local_asr_1792668673.json",
+      "bytes": 522,
+      "sha256": "bd5e69aefc684c0a30972f1c50cb56275a3a209bb4434c11ca6ee9ebc24e2dd9"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/.server_cache/env01-c8b000354b5d4256bfa0d60d3cf73529/plan_timeline_pro_1792668729.json",
+      "bytes": 2049,
+      "sha256": "78e9f70bf4a5ab58b9b8aafd248778a7ea0d77aba201daa89678143902f25adf"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/.server_cache/env01-c8b000354b5d4256bfa0d60d3cf73529/speech_rough_cut_1792668729.039916/speech_rough_cut_0000.mp4",
+      "bytes": 53525,
+      "sha256": "0e2e0ebbabc693fb5cb1b8483d06d48e29439d04ccb3c2bb91ed38fd54a74cc1"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/.server_cache/env01-c8b000354b5d4256bfa0d60d3cf73529/speech_rough_cut_1792668729.json",
+      "bytes": 6461,
+      "sha256": "dd2d395545cb86c4a622142c04a405a3195dc279900411b34e3008f39e6268ed"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/.server_cache/env01-c8b000354b5d4256bfa0d60d3cf73529/split_shots_1792668673.json",
+      "bytes": 580,
+      "sha256": "e1c4201dfb97a4cbfba450e8606f24b901d8ec94312b72032dbe5e2a016e11fa"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/agent-context.json",
+      "bytes": 268,
+      "sha256": "d50563402b48ef81e346686553a0a9630ca9af941a38f4e8d6af876a37bda8e4"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/agent-result.json",
+      "bytes": 141,
+      "sha256": "ba3bb997c57941432f357d7c07239d5eda79dea5ca4db46249cbcb0114bee049"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/budget.json",
+      "bytes": 411,
+      "sha256": "82bbee0907d76b01f102ad63cb1342bc74d1c00aa5e7de43a384dc18e7790ed8"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/env01-c8b000354b5d4256bfa0d60d3cf73529/elementrec_text/elementrec_text_1792668729.4200454.json",
+      "bytes": 331,
+      "sha256": "a15dca03b9df1cca975a15b8cce23ac61023ba01c602c36cc3af65ce47d2eb57"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/env01-c8b000354b5d4256bfa0d60d3cf73529/elementrec_transition/elementrec_transition_1792668729.3939018.json",
+      "bytes": 212,
+      "sha256": "25fca059ebe8657eadc86c083c1dde7c9c90efff95efda6ce2127f300ed35214"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/env01-c8b000354b5d4256bfa0d60d3cf73529/load_media/load_media_1792668673.2621794.json",
+      "bytes": 525,
+      "sha256": "07b52d5720033444f46ba9b7d535274ca9d466a3dfb65f1bb7dee77111490e88"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/env01-c8b000354b5d4256bfa0d60d3cf73529/local_asr/local_asr_1792668673.410614.json",
+      "bytes": 6395,
+      "sha256": "cad07b5ff136d75f4d34a23f70e69c82b0b8c96ac9410da0e0387762af96f724"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/env01-c8b000354b5d4256bfa0d60d3cf73529/meta.json",
+      "bytes": 4778,
+      "sha256": "d9b5967b771671b2f052d7afb18b8d54057fa77a867590d8c3abebf6c789fceb"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/env01-c8b000354b5d4256bfa0d60d3cf73529/plan_timeline_pro/plan_timeline_pro_1792668729.3519251.json",
+      "bytes": 311,
+      "sha256": "87778ebf711f59f87af1c99343e404ffc191fbde8eaf1a40d3982c9fcaa08696"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/env01-c8b000354b5d4256bfa0d60d3cf73529/speech_rough_cut/speech_rough_cut_1792668729.039916.json",
+      "bytes": 1400,
+      "sha256": "0db4f7f0c3f8635be49fd57463ea7d5d36c2456297e8c28ec9f9606632a434d9"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/env01-c8b000354b5d4256bfa0d60d3cf73529/speech_rough_cut/speech_rough_cut_1792668729.0410001.json",
+      "bytes": 203,
+      "sha256": "17d24d798c8960b6bfcb289e9d4fde8f47dd488c8616a5e6e81d8fa6cac52353"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/env01-c8b000354b5d4256bfa0d60d3cf73529/split_shots/split_shots_1792668673.3723948.json",
+      "bytes": 530,
+      "sha256": "93db9ecdc93efb0475cf9aec565ef97fcafb9ce54392d2454febaf5641365ce9"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/fake-model-requests.jsonl",
+      "bytes": 72023,
+      "sha256": "153e15cfc97bcec4cd90d55b18aa9643ab6be3c8a8d25b1c039bc647fcc1464a"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/mcp-cleanup.json",
+      "bytes": 46,
+      "sha256": "eb8484be49735bb4a6a502221c14103ca40ccb50b2c047e4b4bbdfef993ec142"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/mcp-model-events.jsonl",
+      "bytes": 2772,
+      "sha256": "f12180a02972b75b6a866ef52be136ec548c24d2dc2915cf5d7260a1410631a5"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/mcp-server.log",
+      "bytes": 12442,
+      "sha256": "20e46835b0ffb03a02849e49a5ef329bf7d5c8ac945cced06f06ac3b4b979213"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/mcp-tool-events.jsonl",
+      "bytes": 18342,
+      "sha256": "6001eceba8d433414575860326537914f46afa297483271b57653cc94ef4c09c"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/model-requests.jsonl",
+      "bytes": 21477,
+      "sha256": "da18a9aafba53db623e285c5c8fd0b69e210ff0435888345b3389bc5216a2bc1"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/native-message-events.jsonl",
+      "bytes": 14387,
+      "sha256": "8c2d266ab45d15217dc156402a881e1b2a9b0893c91e02ec097479fd6179c149"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/native-messages.json",
+      "bytes": 14315,
+      "sha256": "1802b2bea4aadb3b817463876e91140ad5fc9e5485d0eca4ee63b102cc9274e6"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/output/phase-times.json",
+      "bytes": 379,
+      "sha256": "97f0aacf4b74da57b58e681a3b62f642f55ae09314fab3b3236be49966ba8514"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/request.json",
+      "bytes": 765,
+      "sha256": "3454845e2e782c8c15366ff22227ec40c0a2f2db5d8ace13553c302059c4d160"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-02/validation-start.json",
+      "bytes": 442,
+      "sha256": "c7070f871b168936f4d23408b184368d42c2e198a43751c043f40e2a916b1dee"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/container-run.json",
+      "bytes": 11365,
+      "sha256": "710006d6e42e02ad73426d986587ac4ef92b4d49a1382a6c83e8c9786b857b97"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/continuation-request-02.json",
+      "bytes": 897,
+      "sha256": "59c11cd033b033868acdf2af29b7d477951214ebf02b31e3c7ecfcc5476dbb66"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/continuation-request-03.json",
+      "bytes": 898,
+      "sha256": "0284958a1431c95d2b7261414cb8c5f6e20c613f43b4d810f7239f339b2c0b0a"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/continuation-request-04.json",
+      "bytes": 893,
+      "sha256": "163edb18d1f352d71b3e3b9918df4770697f72cc3db419595894954ec1aeb057"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/continuation-request-05.json",
+      "bytes": 893,
+      "sha256": "b131511bb52e6dd321d20b8a40e4785bf3917d890513b5cfb6bb6c4fac59dcb8"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/continuation-request-06.json",
+      "bytes": 897,
+      "sha256": "2a51cbfdf351aff44a21d90a01ca274456aefde18478b72279a018486eafc686"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/continuation-request.json",
+      "bytes": 897,
+      "sha256": "9670180cfa4605442679aa98455142488e6d5433ca6c80da011477a4a1491c60"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/continuation-run-02.json",
+      "bytes": 4548,
+      "sha256": "674f8d7efecd92dadf3c6a0d35cf4c12c1c0c0b435dc020ef157c50c0ebda5e4"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/continuation-run-03.json",
+      "bytes": 3852,
+      "sha256": "215c02ccb84c4ef94a27dc4f53a75f21e631d8e3676917f7729572a8ac9e88e7"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/continuation-run-04.json",
+      "bytes": 2741,
+      "sha256": "cab11f5a0a9fbdcc065f37e3d12d2b6a654977e2b08265e8d07863f768d8e62a"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/continuation-run-05.json",
+      "bytes": 2741,
+      "sha256": "a235ad5fb75a08a82d55431d39b825217b1f3d1ef09ff7321fee57e675fc895b"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/continuation-run-06.json",
+      "bytes": 5018,
+      "sha256": "26b936d93da02589167298628f4094e07da2795837d137b0149c8eca39134054"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/continuation-run.json",
+      "bytes": 1021,
+      "sha256": "63e7fe91ab116a04bed634e4d60e30ca2aef3a0da9613dafc147b07acfdca293"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/input/source.mp4",
+      "bytes": 55805,
+      "sha256": "4e78a0c66992e65b8dfafda3c508b273817dff69931ae9fbbc1de17ef46c6870"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/elementrec_text_1792669091.json",
+      "bytes": 140,
+      "sha256": "dc7f445569c5ee9e54abca834bd51fcf520e3d3ce8c68835e2927258b438025c"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/elementrec_transition_1792669091.json",
+      "bytes": 120,
+      "sha256": "df8e72ccd4bdf71a0610333811c9f06da7ee1f15af5f80eef9c728d6060714eb"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/load_media_1792669032.json",
+      "bytes": 235,
+      "sha256": "708fb190fc63ccc410f9728c705b9d7feaa5aeb37f2e1c374049116e168a3906"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/local_asr_1792669032.json",
+      "bytes": 522,
+      "sha256": "a0c5712d42022314e651026364ff66ae90e343b591b901cb68d9a67eb7c290d2"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/plan_timeline_pro_1792669428.json",
+      "bytes": 2051,
+      "sha256": "7ec9fe57a394c717fff2b5eca4ccf285b2d7aee25c88a1905519997444d1098d"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/plan_timeline_pro_1792669839.json",
+      "bytes": 2050,
+      "sha256": "0f087419cffdc274269f0fb619e6e78b83a2071b519e963766951f7b1f4f49fa"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/plan_timeline_pro_1792670247.json",
+      "bytes": 2049,
+      "sha256": "ede4f97339b40d96c0c3a9400d2a8c44e5da97b83084107501105ceaa6352ef9"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/render_video_1792669428.json",
+      "bytes": 1261,
+      "sha256": "2a9c6fc56ae5b933673a981568d33ea95a04465d46b746f27ee26849e88e6293"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/render_video_1792669839.5487127/output_2a60d5dc_1792669839566.mp4",
+      "bytes": 105916,
+      "sha256": "3adf6e4108ef7acc4d7a4a2cbb47dd8c65ba1c8bb664ccc2be4aec41e997c5ba"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/render_video_1792669839.json",
+      "bytes": 3399,
+      "sha256": "38c3d427e0aa5c647a7b464d6ef9be5dde2d4250a05e31cd5f5adda7a668194f"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/render_video_1792669996.7661746/output_85f26a5c_1792669996784.mp4",
+      "bytes": 102701,
+      "sha256": "dc856fb1db6900e6b75401ea3a5675663b0eb8d4d46f09b4394f5c119c240aa8"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/render_video_1792669996.json",
+      "bytes": 3398,
+      "sha256": "d8584efd233cc2db98296a43c305556982b01782a76a75dce69d4b1be56510be"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/render_video_1792670075.1272247/output_2fa1e907_1792670075145.mp4",
+      "bytes": 102701,
+      "sha256": "dc856fb1db6900e6b75401ea3a5675663b0eb8d4d46f09b4394f5c119c240aa8"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/render_video_1792670075.json",
+      "bytes": 3398,
+      "sha256": "5a7d7aba5c71544b3937c926a03b1424d4835a451905e864c8da6b4a300d99d3"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/render_video_1792670247.797499/output_01ab54db_1792670247815.mp4",
+      "bytes": 102701,
+      "sha256": "dc856fb1db6900e6b75401ea3a5675663b0eb8d4d46f09b4394f5c119c240aa8"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/render_video_1792670247.json",
+      "bytes": 3397,
+      "sha256": "22cce85805a8ee0e9334e853001eb11453125ec9cf5ddf3c78b4ac09cafe5fe6"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/speech_rough_cut_1792669091.json",
+      "bytes": 6439,
+      "sha256": "f1a07228de12a9ee5373901aa31a0d7c1a3ec5809932dd4075559cf7a5782520"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/speech_rough_cut_1792669428.2531397/speech_rough_cut_0000.mp4",
+      "bytes": 53525,
+      "sha256": "0e2e0ebbabc693fb5cb1b8483d06d48e29439d04ccb3c2bb91ed38fd54a74cc1"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/speech_rough_cut_1792669428.json",
+      "bytes": 6436,
+      "sha256": "4a95323486070e2874df66fde2a6634739eefffe74a46d2668874af77d3cafaa"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/speech_rough_cut_1792670247.4160042/speech_rough_cut_0000.mp4",
+      "bytes": 53525,
+      "sha256": "0e2e0ebbabc693fb5cb1b8483d06d48e29439d04ccb3c2bb91ed38fd54a74cc1"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/speech_rough_cut_1792670247.json",
+      "bytes": 7845,
+      "sha256": "cb6438e65941d7a6a78665f33d3f519d5475ec33b67f4f6c5ebb8c6d2b187f4f"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/.server_cache/env01-03c20c2ff550481bb6568e67677a2f1d/split_shots_1792669032.json",
+      "bytes": 580,
+      "sha256": "4b2135f4b888d9bcac3774e7bbe4bd4bd390361fe4bda3631d1f849fab97424b"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/agent-context.json",
+      "bytes": 268,
+      "sha256": "0378e63e4559764f7d7f4a81329e4594e088dcf76a940a329453972bd9f3d98e"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/agent-result.json",
+      "bytes": 51,
+      "sha256": "b28a61325ddf424e84270eb52705287e4448ae6889a6de8ff38f936fc9e9e4ab"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/budget.json",
+      "bytes": 411,
+      "sha256": "c3897d5c3e91926b13e91907c58b75957259d4ba9e8751f08702f5e426b0df2f"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-02/agent-context.json",
+      "bytes": 268,
+      "sha256": "6c556ff72dcc3cfd6de2a944caf45054fd81700f6cb1868407d4eee246cb5530"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-02/agent-result.json",
+      "bytes": 51,
+      "sha256": "86f202ad3387d5472a73c8633ff52a3bf37261bd7f1f4d63a77d377658b9bc47"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-02/budget.json",
+      "bytes": 427,
+      "sha256": "c161e7c1555d68fe9e1e94cf031a839d6971369d722fe8c95e8d04284a45b974"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-02/fake-model-requests.jsonl",
+      "bytes": 90325,
+      "sha256": "e2635c4e2ac3f4555b4e7b82da11c2db6fb0ad5c8aa4b2c181c24c5040bccef8"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-02/mcp-cleanup.json",
+      "bytes": 46,
+      "sha256": "eb8484be49735bb4a6a502221c14103ca40ccb50b2c047e4b4bbdfef993ec142"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-02/mcp-model-events.jsonl",
+      "bytes": 2772,
+      "sha256": "ce5c47c8f8ec3f32621b78ccbb9fd99f9adb3dfc0d7bfca2c8aeeb8418701b15"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-02/mcp-server.log",
+      "bytes": 7467,
+      "sha256": "869f509b66facebd5cbe3b2124a5eed060acc6415742a7f306476dc43bb039b0"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-02/mcp-tool-events.jsonl",
+      "bytes": 12720,
+      "sha256": "8db08df727b726e15d527d6ff0e026f6cadf856045496e43368ab93d4d494845"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-02/model-requests.jsonl",
+      "bytes": 21880,
+      "sha256": "9112ffebe3d1c66c850a0b50a15195fd52ffe706f569ff4dfba79131ec1be8d2"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-02/native-message-events.jsonl",
+      "bytes": 17062,
+      "sha256": "3eee79e0e41152832c7bdc5e004426b8e47fe718a220be429e81507bdff0fbad"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-02/native-messages.json",
+      "bytes": 16981,
+      "sha256": "d619fae9a52721e87688770e38b1119179fd6d5e0ffa92ef19f87887cfc95c0f"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-02/phase-times.json",
+      "bytes": 265,
+      "sha256": "6e61a99872ca418bdbd1ea3df96b2e04d7724a7bdc0538f50754322ec46b9a50"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-03/agent-context.json",
+      "bytes": 268,
+      "sha256": "3eb6afd189f30f4dab3699dcc75e31719dd454284433690ffb3ae47fc2289ab7"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-03/agent-result.json",
+      "bytes": 51,
+      "sha256": "73cf56328c4ac262ba04d8cf94b178e44820c19ce1c94cd5d594347818efbd91"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-03/budget.json",
+      "bytes": 427,
+      "sha256": "475e2ffb5f3739832da3f0e634fa30599fe92d847d05a8f56f3b43dcbe68c0e7"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-03/fake-model-requests.jsonl",
+      "bytes": 43997,
+      "sha256": "4e6b99492958ee3354855ca4773da18a5029fb23467e524ce7a20a401a298b69"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-03/mcp-cleanup.json",
+      "bytes": 46,
+      "sha256": "eb8484be49735bb4a6a502221c14103ca40ccb50b2c047e4b4bbdfef993ec142"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-03/mcp-server.log",
+      "bytes": 10240,
+      "sha256": "874fb7e943aa1e32815f175857ff1c67a7f43c74b6ae896df4cb89d09d1c5044"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-03/mcp-tool-events.jsonl",
+      "bytes": 12239,
+      "sha256": "d2379043c09834edd2e218f0053f1c5c34d52d4a2743078575c0c7611cc41259"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-03/model-requests.jsonl",
+      "bytes": 6617,
+      "sha256": "a51130f40249cef02ad7ed37ed223307593ea30c0d6e116dbf2481d808162c88"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-03/native-message-events.jsonl",
+      "bytes": 15932,
+      "sha256": "723497b0d4cd3340a456af7f6407e2905f386176251cc3c88b355a079c200aed"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-03/native-messages.json",
+      "bytes": 15827,
+      "sha256": "d8f6d741a9d02b56b36eb6f6867e90ac602f26cab5aab4034fa9bd0fece18c5c"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-03/phase-times.json",
+      "bytes": 265,
+      "sha256": "6e9a6f1b967506540b35c27c5a115466c8bc0b9e4d76cde863b74d17d43de2b3"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-04/agent-context.json",
+      "bytes": 268,
+      "sha256": "cb974206d141870f063c31b435be135bd47610ba85b7e45730e26de2104f62b8"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-04/agent-result.json",
+      "bytes": 50,
+      "sha256": "67daa152585227e5a26081a12397da41b8a638bc5f07f5d76c6a896e7bb17fdd"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-04/budget.json",
+      "bytes": 427,
+      "sha256": "0fcbc7e0fa454c540502a4b4b40c40b94592751097350f9a8484a94212459d36"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-04/fake-model-requests.jsonl",
+      "bytes": 22031,
+      "sha256": "a9012b94c3ef8d37a9dec6f46a90d83d2fd0b6d5e59cde0b378081c3a0824130"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-04/mcp-cleanup.json",
+      "bytes": 46,
+      "sha256": "eb8484be49735bb4a6a502221c14103ca40ccb50b2c047e4b4bbdfef993ec142"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-04/mcp-server.log",
+      "bytes": 5007,
+      "sha256": "abbcba90bd58a2a85b8de5c900a80c42ddd4450df476c6dc0087118f304e5ecf"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-04/mcp-tool-events.jsonl",
+      "bytes": 5831,
+      "sha256": "3ee4a76a7ffb4c8e177ecfca2a51ce1a26c51a6a21cc891166f5da10fd83159f"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-04/model-requests.jsonl",
+      "bytes": 4621,
+      "sha256": "f20e88cc46932dd14d2610468c6435421465b93199d5fd3859badfeae65653c7"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-04/native-message-events.jsonl",
+      "bytes": 10957,
+      "sha256": "c434ec4c67ae43b87dceaabe3bf7f0d1d2663210501c3175ac17194cfde1cded"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-04/native-messages.json",
+      "bytes": 10836,
+      "sha256": "0f32d5e1f5ca319be5fb226ce25a7cd43de39af9629edfae65c99abdf51a6f83"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-04/phase-times.json",
+      "bytes": 265,
+      "sha256": "e3e216ca1e298d52c0a3d007ee4d3d35f881d03b2671c96f209577f8309a6fec"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-05/agent-context.json",
+      "bytes": 268,
+      "sha256": "4d9f0be63bd29c010c5fc09b0704c80a105ede44282e304b6ba255e564421a2b"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-05/agent-result.json",
+      "bytes": 50,
+      "sha256": "67daa152585227e5a26081a12397da41b8a638bc5f07f5d76c6a896e7bb17fdd"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-05/budget.json",
+      "bytes": 427,
+      "sha256": "33ed315a94bc6ad31a95f9353509fd2b925f4e1e6c079dd3b8da089a0e513208"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-05/fake-model-requests.jsonl",
+      "bytes": 22031,
+      "sha256": "0429fd25015430eab3d37b55230e966b08888f8d12a8d1fbdd16fc0b4915a813"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-05/mcp-cleanup.json",
+      "bytes": 46,
+      "sha256": "eb8484be49735bb4a6a502221c14103ca40ccb50b2c047e4b4bbdfef993ec142"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-05/mcp-server.log",
+      "bytes": 5007,
+      "sha256": "76deedacc25f4cacec435af8c6e05eb85a7566f87f384221d64e6cde9c61d2a4"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-05/mcp-tool-events.jsonl",
+      "bytes": 5831,
+      "sha256": "3f8fbd1bebe6b53bf2358ee340f14f50733783a3c86326a51b7f61fddd6fde9e"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-05/model-requests.jsonl",
+      "bytes": 4621,
+      "sha256": "a715386c7518808e69a54c604e137d4b107c64bf60e16c8f0e3bd6d99860e1fb"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-05/native-message-events.jsonl",
+      "bytes": 10957,
+      "sha256": "817f30322319bf6dbb500b4d4ee04e200a2fdf91a82745235130a57313b4a067"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-05/native-messages.json",
+      "bytes": 10836,
+      "sha256": "cb94fe6b2c887fa0ab3f4c0a54fb85924213ed151dd2bb65ca516b53128542aa"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-05/phase-times.json",
+      "bytes": 265,
+      "sha256": "0d727111400440247382d52f61847d70862e1d603a31e177a8fb4c99a5b75ad0"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-06/agent-context.json",
+      "bytes": 268,
+      "sha256": "c9cad800998acf50b87ec92d7ff99c5ea8b92593c35e159349f7732950229883"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-06/agent-result.json",
+      "bytes": 51,
+      "sha256": "86f202ad3387d5472a73c8633ff52a3bf37261bd7f1f4d63a77d377658b9bc47"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-06/budget.json",
+      "bytes": 427,
+      "sha256": "a684006c31c247ffd9a8b76036c36dab7e8021884dda061fa2c01633afaef6e4"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-06/fake-model-requests.jsonl",
+      "bytes": 99217,
+      "sha256": "e8a6580a7b1c7aca4c697661be03f737ee815127af3e1a5a5bbb7833ac156934"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-06/mcp-cleanup.json",
+      "bytes": 46,
+      "sha256": "eb8484be49735bb4a6a502221c14103ca40ccb50b2c047e4b4bbdfef993ec142"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-06/mcp-model-events.jsonl",
+      "bytes": 2772,
+      "sha256": "5dcd772eef43e55f168904015493bbd32d58cb2cf9bed27f08b7487fb63530ff"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-06/mcp-server.log",
+      "bytes": 9395,
+      "sha256": "321db4606876d020913918e07916b0159967d439e72b346013a4d2cf33253836"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-06/mcp-tool-events.jsonl",
+      "bytes": 19592,
+      "sha256": "badd35b458c6b809f5f22464a86c5e9a123439a698d5f94b6569860ca14f8159"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-06/model-requests.jsonl",
+      "bytes": 16174,
+      "sha256": "7350c3d2085584740a01a713249c97f54ecf3aa2b9610ca458b43a36dee6c17f"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-06/native-message-events.jsonl",
+      "bytes": 20372,
+      "sha256": "e32a2e7485f53c97bf1b48ab7887bf269feabf97b8436fb9dd17bdcd8cddf0ea"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-06/native-messages.json",
+      "bytes": 20301,
+      "sha256": "5be8de1c28154b77d701b31ec444ce784e291417dcec4b0e2cf88cc7fcb6ea76"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/continuation-06/phase-times.json",
+      "bytes": 265,
+      "sha256": "86c6823dad0b2cf9ffbd9e72bbb38c402d6bbf72dec073aa42581c33991d49e5"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/cuts.json",
+      "bytes": 248,
+      "sha256": "7d3feff95232c886d92a7484cdb2eaea4e26d64645ffe8c0606bd27e44e85734"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/elementrec_text/elementrec_text_1792669091.4922025.json",
+      "bytes": 331,
+      "sha256": "f66564923e2f435011826e02bb28edbf585d4cbe6c7a23cb6a2bb29dc358c07f"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/elementrec_transition/elementrec_transition_1792669091.5254912.json",
+      "bytes": 213,
+      "sha256": "047901a143d8d1020ea2cbcc510d88fe9ec730e2f8b184cee14f7b1e6cccaced"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/load_media/load_media_1792669032.5996628.json",
+      "bytes": 527,
+      "sha256": "a56bd5ee50c748d6dcba87ae6865962eb422c9972024cc499ef8db28ed9c04bd"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/local_asr/local_asr_1792669032.855769.json",
+      "bytes": 6395,
+      "sha256": "aa790cd96c372e4c8e722b9eeae34d62fcaa62381e1324e68cdf54ee6b095cbe"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/meta.json",
+      "bytes": 16078,
+      "sha256": "1105c7a02c5bd1478d133c01619c5279d6f24c6abd1f8cb0c5eb805c9d850a9c"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/plan_timeline_pro/plan_timeline_pro_1792669428.5160396.json",
+      "bytes": 310,
+      "sha256": "eed009a5eaaff9d469ab858521baf1d432bfb99e227d1e52bfe7f2f4c324b0c7"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/plan_timeline_pro/plan_timeline_pro_1792669839.4657388.json",
+      "bytes": 2449,
+      "sha256": "564b60eb4539c00d04b7f01a111149eebff77d6ae8f0590483e7f56a6e90b8d9"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/plan_timeline_pro/plan_timeline_pro_1792670247.715861.json",
+      "bytes": 2447,
+      "sha256": "ee25adfdf072967211ace1aedbd80f8e91484494619023a574b849d9c52cfe5a"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/read_node_history/read_node_history_1792669032.734093.json",
+      "bytes": 1634,
+      "sha256": "8d812ad33c23873175d5613320bfbe5b04ad62b0528094223c3172e417e4d0d9"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/read_node_history/read_node_history_1792669032.8149228.json",
+      "bytes": 1650,
+      "sha256": "dcfa5fca4ea58069a65d1ffa9e7a43783f7592d5fb62cec36d5b3fa86234c37b"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/read_node_history/read_node_history_1792669091.3286095.json",
+      "bytes": 9059,
+      "sha256": "0094947f9299c1d4cea8404426c4246796752f437e235836aa169b9a86b57348"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/read_node_history/read_node_history_1792669428.4751475.json",
+      "bytes": 2802,
+      "sha256": "406b9874b44f4b40eda6bb3448b735274a72135f65d73a067319a7d14ef65345"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/read_node_history/read_node_history_1792669428.5569935.json",
+      "bytes": 1233,
+      "sha256": "f9056462366722635af8d55905d54a97aa6316c514ca60df00e9e85014e16d68"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/read_node_history/read_node_history_1792669839.5082934.json",
+      "bytes": 4062,
+      "sha256": "67729c70a74a0a039f8df3ed006e0ac70b30fef3f3f3fc3c494f9abd52262b2c"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/read_node_history/read_node_history_1792669845.9678257.json",
+      "bytes": 2025,
+      "sha256": "2f5cc7a81c136473a9f714d33a019cbcd8495af8ec03b59dacc09d48353b1429"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/read_node_history/read_node_history_1792669997.5593195.json",
+      "bytes": 2026,
+      "sha256": "1407602a0f5ada7f8725ae3d0b8b2440d73985278b70c50684775d201df34a7b"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/read_node_history/read_node_history_1792670075.8895452.json",
+      "bytes": 2026,
+      "sha256": "865a0f6accd46871ddb3557b4971444eff340be575289b05bfd04f3b4564ff8f"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/read_node_history/read_node_history_1792670247.672998.json",
+      "bytes": 2799,
+      "sha256": "43513b96c478dbb57687d81242838bd7d4f8e44ae6b1daa7e1d70e390972bc78"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/read_node_history/read_node_history_1792670247.7572021.json",
+      "bytes": 4056,
+      "sha256": "28d0689330d76357fb5bb063a029188491b018f462f726a5f9d00deb4a33ac17"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/read_node_history/read_node_history_1792670248.5560057.json",
+      "bytes": 2018,
+      "sha256": "cc189257fb4bfc5250f508abcd0e7a63f4c24c9ce413f137dd8b8f5a379bc838"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/render_video/render_video_1792669839.5487127.json",
+      "bytes": 509,
+      "sha256": "110d0c58b4548a72b8246c6d044dcca6817436197d59c24fd59e8b4861f457c3"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/render_video/render_video_1792669996.7661746.json",
+      "bytes": 508,
+      "sha256": "939d86d76164e915f93c813a1341be48c71f032ce26893b01a5e53eb729ee658"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/render_video/render_video_1792670075.1272247.json",
+      "bytes": 508,
+      "sha256": "94f18b1198c87736158ddefcba7631918ea6aa07895ad7eee5c9af7b86a3a993"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/render_video/render_video_1792670247.797499.json",
+      "bytes": 506,
+      "sha256": "6f5b7aa4335bd4182b228fde8163210fe68bf346901dfcedffaf82a20f59ae66"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/speech_rough_cut/speech_rough_cut_1792669091.3790228.json",
+      "bytes": 202,
+      "sha256": "42a045b970cb9c286764123424fe4ab0013c7a4b37396694b17d6315489d410c"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/speech_rough_cut/speech_rough_cut_1792669428.2531397.json",
+      "bytes": 1403,
+      "sha256": "2681fafd4feaca5a24cd2e1b2e049325aec0f2e9c696b8f57fbab0f47aff5ea0"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/speech_rough_cut/speech_rough_cut_1792670247.4160042.json",
+      "bytes": 1402,
+      "sha256": "6d09386d6c5e97e2baf43eed1a1371e6f4d8b7d98fbed2b5b11abcf176897392"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/env01-03c20c2ff550481bb6568e67677a2f1d/split_shots/split_shots_1792669032.7739327.json",
+      "bytes": 532,
+      "sha256": "38c24dba84f12b918eba91c42ac253d88ea6a7567a4339eff09deefa253a4373"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/fake-model-requests.jsonl",
+      "bytes": 106144,
+      "sha256": "2b884934698c75c2eb0873bb9cb4d20be7c8c46bd170be646d21013333d97a67"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/mcp-cleanup.json",
+      "bytes": 46,
+      "sha256": "eb8484be49735bb4a6a502221c14103ca40ccb50b2c047e4b4bbdfef993ec142"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/mcp-server.log",
+      "bytes": 13343,
+      "sha256": "b9937fa1d7addfd7d6a924b7346cc8414d538cbdaedec6c7a8d377c57d2a562f"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/mcp-tool-events.jsonl",
+      "bytes": 25326,
+      "sha256": "39a4433876745115175d2fed417e4971b38372b050dfce02bbfdd54fc25111b0"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/model-requests.jsonl",
+      "bytes": 11614,
+      "sha256": "9afb3bdefc29e2ac407ddbaeb9096f65c32a346dc43069b2cceba72a2eeba967"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/native-message-events.jsonl",
+      "bytes": 23093,
+      "sha256": "ce27bd40d70822842e5a3bd021b50a8959dd441e40ac1f2a8c228b1544385b6b"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/native-messages.json",
+      "bytes": 23038,
+      "sha256": "70f0898607d232ad2c57f2145a0325bf1a247f0b7271c1e2552ec7b93e86c167"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/offline-session-mismatch-probe/meta.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/output.mp4",
+      "bytes": 102701,
+      "sha256": "dc856fb1db6900e6b75401ea3a5675663b0eb8d4d46f09b4394f5c119c240aa8"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/output/phase-times.json",
+      "bytes": 265,
+      "sha256": "cf8c329e3fef311e1aaaa7b08021bd20e4121f6610f60e1f77456294e70aafcd"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/request.json",
+      "bytes": 765,
+      "sha256": "b6676460e34700c03ceed101cbd9b099441220387b67cd2afda6836a8a84e2c4"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/validation-report.json",
+      "bytes": 2562,
+      "sha256": "3862059c18c38d922ff2c52b98a82ead6b2392e7a3e55ef6e539ade0fd22001e"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation-03/validation-start.json",
+      "bytes": 442,
+      "sha256": "5784d2fca0e5b5296b7d846cc46d840f38700e46af899feb23a9d99e8cee904c"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation/container-run.json",
+      "bytes": 8868,
+      "sha256": "967c6c38029ce6dcd3a6beda63d99177379538311ff7a70d20086b70b82366db"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation/input/source.mp4",
+      "bytes": 55805,
+      "sha256": "4e78a0c66992e65b8dfafda3c508b273817dff69931ae9fbbc1de17ef46c6870"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation/output/agent-context.json",
+      "bytes": 268,
+      "sha256": "2838e259e216ea4ba823bc623014909ac77c6a63efc917c31bd6acfb1853e8ed"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation/output/agent-result.json",
+      "bytes": 51,
+      "sha256": "86f202ad3387d5472a73c8633ff52a3bf37261bd7f1f4d63a77d377658b9bc47"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation/output/budget.json",
+      "bytes": 411,
+      "sha256": "69c65481975610a36f8d7be097746a0413859ddd434fb47bd67c3b7af06c5155"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation/output/env01-06808a71e8d048d18068064bd78c5fe1/meta.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation/output/fake-model-requests.jsonl",
+      "bytes": 54572,
+      "sha256": "03302a0afb76f132750e2968af4764b4bd5f8ffa7e615fe26d69c0ef7ca7d531"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation/output/mcp-cleanup.json",
+      "bytes": 46,
+      "sha256": "eb8484be49735bb4a6a502221c14103ca40ccb50b2c047e4b4bbdfef993ec142"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation/output/mcp-server.log",
+      "bytes": 1826,
+      "sha256": "3bfc2c67148d0704994364118645712a7bca3a33c29026021c616011ec3ce460"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation/output/model-requests.jsonl",
+      "bytes": 8614,
+      "sha256": "f01b0dd7bde2780c304b58a8c5560e00fdf9c9a5ad3b46057d1d3f1badbe92ad"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation/output/native-message-events.jsonl",
+      "bytes": 16252,
+      "sha256": "2593afdf319a50ac4f85ca82f8ab8f092e7f1074743d6726c1f1409531f66efa"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation/output/native-messages.json",
+      "bytes": 16351,
+      "sha256": "1543792cc31397baac3dc079f43863a5ee629959c7d0fcd837b7854ecd03474c"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation/output/phase-times.json",
+      "bytes": 200,
+      "sha256": "ea1c7136065e92c4a5d2c3fe9ba1026c62bbe3e5eeb0b7f4c504a48bf2ff0e7b"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation/request.json",
+      "bytes": 765,
+      "sha256": "5e8b28d8269dfd8120db6b66fbe526a988eaf858f0d94232ec6b400c0dc5ff5d"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/validation/validation-start.json",
+      "bytes": 439,
+      "sha256": "960494133cbc8df7085eeb957a6525aa422bbf55f9dd615d4e965059e27d1092"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/write_manifest.py",
+      "bytes": 3329,
+      "sha256": "cb4963336a6d12b2d8a707ce8661d01c1556d714df4535da1d1a1102a7bf443f"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/preparation/native-entry-repair-01/write_offline_validation_report.py",
+      "bytes": 8612,
+      "sha256": "607029369a3ba195b853809f70942ef2ae1ceeae03f2d6cb1f988279a151ee5b"
+    },
+    {
+      "path": "env/video/openstoryline/edit-pilot-02/runtime/openstoryline_pilot_entry.py",
+      "bytes": 40517,
+      "sha256": "dfd54232a603df2e7770e31f88fbd6ddc6d3120dcb3b4d848516ff71d697a15e"
+    }
+  ]
+}

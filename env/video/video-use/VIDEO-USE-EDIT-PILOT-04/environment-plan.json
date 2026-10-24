@@ -1,0 +1,68 @@
+{
+  "schema": "video-use-edit-pilot-04-environment-plan-v1",
+  "task": {
+    "name": "VIDEO-USE-EDIT-PILOT-04",
+    "upstream_commit": "b2764ed4b2a4b5a1737026b63887b50bba62f793",
+    "instruction": "original AgenticVBench instruction; hash frozen",
+    "input": "data/workloads/video/editing/avb-disfluency-interview-3-v1/input/source.mp4"
+  },
+  "run_id": "20261021T1450Z-video-use-edit-04",
+  "single_attempt": true,
+  "architecture": "linux/arm64",
+  "image": {
+    "tag": "video-use-task:arm64-codex-bailian-v6",
+    "id": "sha256:1a48c7b00da789ec99722ebb2be6e1df72aec9d37cc2a64e83c82e89ecf700c5",
+    "platform": "linux/arm64",
+    "inspect": "sha256:1a48c7b00da789ec99722ebb2be6e1df72aec9d37cc2a64e83c82e89ecf700c5 arm64 linux",
+    "codex_version": "codex-cli 0.163.0"
+  },
+  "model_route": {
+    "provider": "bailian",
+    "model": "qwen3.7-plus",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "wire_api": "responses",
+    "api_key_env": "DASHSCOPE_API_KEY",
+    "request_max_retries": 0,
+    "stream_max_retries": 0
+  },
+  "asr": {
+    "helper": "official video-use transcribe.py",
+    "model": "scribe_v1",
+    "max_client_posts": 1,
+    "retries": 0,
+    "cache": "attempt-local; exactly one transcription before Agent"
+  },
+  "verifier": {
+    "judge": "unaltered official judge.py in isolated venv",
+    "python": "/home/lcq/.venvs/video-use-pilot03-verifier/bin/python",
+    "environment": "/home/lcq/agent_workload_characterization/env/video/video-use/VIDEO-USE-EDIT-PILOT-03/verifier/verifier-environment.json",
+    "private_materials_after_agent_container_removal": true
+  },
+  "budgets_s": {
+    "total": 2700,
+    "agent_max": 1800,
+    "verifier_max": 600,
+    "cleanup_reserve": 300
+  },
+  "resources": {
+    "cpus": 2,
+    "memory_bytes": 4294967296,
+    "sample_interval_target_s": 0.5,
+    "cgroup_scope": "Agent container and child processes",
+    "network_scope": "shared container netns per interface; not API-specific",
+    "directory_boundaries_nonoverlapping": [
+      "materials",
+      "workspace",
+      "output"
+    ]
+  },
+  "prompt": {
+    "strategy": "generic minimal semantic-preservation boundary policy",
+    "prompt_sha256": "26b9899a9e9473e756bbd30869a807f57c08e243815698c30d48703003518b3b",
+    "instruction_sha256": "89342bbad96c3d7e897545dd76ef1db2576398058d8a5b4b2d24aef1887df3cb",
+    "boundary_notes_path": "/workspace/project/edit/boundary-notes.md",
+    "old_runs_scores_or_diagnostics_in_agent_context": false,
+    "golden_oracle_in_agent_context": false
+  },
+  "approval": "created only by the authorized execute invocation after identity checks"
+}

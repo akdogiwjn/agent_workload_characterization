@@ -1,6 +1,6 @@
 # 当前项目目标与交付要求
 
-更新：2026-10-16。本页是当前目标的唯一入口；旧方法、原RQ和历史任务不自动扩大本页范围。进度见[项目总览](project_status.md)，待办见[当前任务](current_task.md)，事实源为[project_state.json](../project_state.json)。
+更新：2026-10-24。本页是当前目标的唯一入口；旧方法、原RQ和历史任务不自动扩大本页范围。进度见[项目总览](project_status.md)，待办见[当前任务](current_task.md)，事实源为[project_state.json](../project_state.json)。
 
 ## 1. 项目在做什么
 
@@ -41,8 +41,10 @@
 
 ## 5. 当前事实与下一缺口
 
-已有Coding、Office、Assistant三个主设计，各3任务×3重复，共27run/9任务设计；不是跨类别统一受控实验或类别代表性样本。公开操作与软件汇总v3已完成限定验收；Video本地资源和GUI/VM子域仍未测，未因此自动启动。
+已有Coding、Office、Assistant三个主设计，9个固定任务各3点，共27个task×round观察；不是类别总体或统一跨类受控实验。公开操作与软件汇总v3已完成限定验收，部分公开语义与软件运行身份仍未知。
 
-CPU/内存已有连续采样及部分HTML曲线；有限I/O已有原始计数。当前待补网络收发、统一任务目录占用、I/O速率面板、最新Assistant曲线及完整四面板。旧run未采字段不能倒填，HTML按用户安排最后统一更新。
+Video已在video-use上完成真实转写、剪辑、局部视觉自检及容器资源采样；PILOT-03/04评分完整但剪切范围未通过（reward=0），原件保留。OpenStoryline已完成一次真实剪辑与官方评分（reward=0，不等于未运行）；ViMax已完成PILOT-04真实媒体生成闭环（19图、8主体+7过渡、40秒成片及33项技术验收）；VideoWeaver已完成原生成、独立离线恢复与真实Agent仅拼接的分阶段真实验证，但修复后完整生成到拼接的单次连续run仍未实测。GUI/VM子域仍未覆盖。不同配置的pilot不作为同质重复。
+
+CPU/内存、有限磁盘I/O与速率、共享netns流量和明确任务目录边界已有新口径实测。仍缺任务/API专属网络字节、共享cache归属及统一最终HTML展示；旧run未采字段不回填。视频可选的多素材/字幕/动画覆盖暂缓，保持原生流程，不默认接入音频模型。新增实验仍需独立批准。
 
 详细字段契约见[trace_contract §11](trace_contract.md#11-当前目标的连续采样与图表要求2026-10-16)，实现/AgentCgroup复用与报告入口见[项目总览](project_status.md)。旧[methodology](history_index.md#methodology-md)只按需查方法或历史设计，不默认全文读取；本页与旧范围冲突时以本页为准。历史证据和Gate裁定不改，本页不宣布Gate通过。

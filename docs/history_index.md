@@ -1,6 +1,36 @@
 # 历史资料索引与迁移说明
 
-更新：2026-10-16。本页用于查历史，不是当前规范或执行授权。当前目标见[current_scope.md](current_scope.md)，进度见[project_status.md](project_status.md)。
+更新：2026-10-24。本页用于查历史，不是当前规范或执行授权。当前目标见[current_scope.md](current_scope.md)，进度见[project_status.md](project_status.md)。
+
+<a id="docs-refresh-20261021"></a>
+
+## 2026-10-21 当前文档整理
+
+当前页中的逐轮任务和过时进度已从日常阅读入口收拢；七份编辑前文件原字节保存在Git忽略的 `local_archive/20261021-doc-refresh-wHAJhI/`，核验清单为[本机manifest](../local_archive/20261021-doc-refresh-wHAJhI/manifest.json)。这是快照归档，不是改写历史实验或释放磁盘空间。
+
+| 需要查什么 | 本机原文 | 当前替代入口 |
+| --- | --- | --- |
+| 完整逐轮任务、旧停止条件及探针经过 | [整理前current_task](../local_archive/20261021-doc-refresh-wHAJhI/docs/current_task.md) | [当前任务与待办](current_task.md) |
+| 整理前总览、范围、索引和状态 | [project_status](../local_archive/20261021-doc-refresh-wHAJhI/docs/project_status.md)、[scope](../local_archive/20261021-doc-refresh-wHAJhI/docs/current_scope.md)、[文档索引](../local_archive/20261021-doc-refresh-wHAJhI/docs/README.md)、[状态](../local_archive/20261021-doc-refresh-wHAJhI/project_state.json)、[README](../local_archive/20261021-doc-refresh-wHAJhI/README.md) | [项目总览](project_status.md)、[当前范围](current_scope.md) |
+| 本页的旧迁移说明 | [整理前history_index](../local_archive/20261021-doc-refresh-wHAJhI/docs/history_index.md) | 下方保留的原迁移登记 |
+
+旧正文内部相对路径仍以编辑前目录为基准，不假定复制后全部可点；正式报告/代码/raw的位置没有改变。旧current_task链接的兼容锚点保留在当前页并指向历史阅读入口。下方2026-10-16的77份原文迁移目录与哈希登记不修改；本轮不是把新版内容替换进旧identity。
+
+<a id="docs-cleanup-20261024"></a>
+
+## 2026-10-24 当前文档整理（本机快照）
+
+当前页中的多段“最新状态”（ViMax规划/启动失败、VideoWeaver十轮观测验收、OpenStoryline准备诊断、video-use早期探针）已收拢为当前结论＋历史入口。十三份编辑前文件原字节保存在Git忽略的 `local_archive/20261024-doc-cleanup-647394/`，核验清单为[本机manifest](../local_archive/20261024-doc-cleanup-647394/manifest.json)。这是快照归档，不是改写历史实验或释放磁盘空间；本轮未搬迁env生产代码、测试fixture、正式报告、raw或批准。
+
+| 需要查什么 | 本机原文 | 当前替代入口 |
+| --- | --- | --- |
+| 整理前逐轮任务全文（ViMax/VideoWeaver/OpenStoryline/video-use） | [整理前current_task](../local_archive/20261024-doc-cleanup-647394/docs/current_task.md) | [当前任务与待办](current_task.md) |
+| 整理前ViMax准备/失败/规划过程 | [vimax_execution_preparation](../local_archive/20261024-doc-cleanup-647394/docs/vimax_execution_preparation.md) | [ViMax排障备忘](vimax_troubleshooting.md) |
+| 整理前VideoWeaver十轮观测验收细节 | [videoweaver_execution_preparation](../local_archive/20261024-doc-cleanup-647394/docs/videoweaver_execution_preparation.md) | [VideoWeaver排障备忘](videoweaver_troubleshooting.md)、`env/video/videoweaver/revisions/PILOT-01-recovery-01/observation-prep-acceptance.md` |
+| 整理前总览、范围、状态与索引 | [README](../local_archive/20261024-doc-cleanup-647394/README.md)、[scope](../local_archive/20261024-doc-cleanup-647394/docs/current_scope.md)、[project_status](../local_archive/20261024-doc-cleanup-647394/docs/project_status.md)、[docs索引](../local_archive/20261024-doc-cleanup-647394/docs/README.md)、[history_index](../local_archive/20261024-doc-cleanup-647394/docs/history_index.md)、[archive_index](../local_archive/20261024-doc-cleanup-647394/docs/archive_index.json)、[project_state](../local_archive/20261024-doc-cleanup-647394/project_state.json) | [当前任务](current_task.md)、[项目总览](project_status.md) |
+| 整理前排障备忘 | [video_editing_troubleshooting](../local_archive/20261024-doc-cleanup-647394/docs/video_editing_troubleshooting.md)、[vimax_troubleshooting](../local_archive/20261024-doc-cleanup-647394/docs/vimax_troubleshooting.md)、[videoweaver_troubleshooting](../local_archive/20261024-doc-cleanup-647394/docs/videoweaver_troubleshooting.md) | 对应现行动态页 |
+
+本轮只收拢导航，未改写任何正式运行记录、报告、raw、批准、manifest、identity或as-run代码；各run的收尾报告与证据仍在原路径。文档状态检查：`python3 -B scripts/check_project_state.py`。
 
 ## 迁移范围
 

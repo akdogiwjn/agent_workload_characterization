@@ -1,0 +1,19 @@
+# Formal-attempt layer for the ViMax Bailian task image.
+# Derived from vimax-task-bailian:arm64-v2
+#   sha256:0f59cedefcc0cd96ec80c9458a7016ab84679c32c0c76c7f1c89ff782c68a902
+# Code-only changes for the formal run (registered, no dependency changes):
+#   - agent_runtime/llm.py: outer-agent requests carry an explicit
+#     max_tokens output cap (VIMAX_AGENT_MAX_TOKENS, default 8192)
+#   - agent_runtime/request_ledger.py: observed-usage SOFT threshold event
+#     (VIMAX_BAILIAN_BUDGET_OBSERVED_OUTPUT_TOKENS_TOTAL)
+FROM vimax-task-bailian:arm64-v2
+
+COPY adapter-src/ /opt/vimax/src/
+RUN find /opt/vimax/src -name '__pycache__' -type d -prune -exec rm -rf {} + \
+    && cd /opt/vimax/src \
+    && python3 -c "import agent_runtime.request_ledger, agent_runtime.llm; import tools.image_generator_bailian_api, tools.video_generator_bailian_api; import agent_runtime.vimax_adapters" \
+    && python3 -c "import PIL, moviepy, langchain, aiohttp; print('deps ok')"
+
+WORKDIR /workspace
+USER vimax
+CMD ["python3"]

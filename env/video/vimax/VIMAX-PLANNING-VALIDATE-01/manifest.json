@@ -1,0 +1,236 @@
+{
+  "task": "VIMAX-PLANNING-VALIDATE-01",
+  "files": [
+    {
+      "path": "APPROVAL-01.json",
+      "bytes": 2151,
+      "sha256": "f339aa23a120034b080ee7f0579c53eff82ed8cb4bc9890034398091977810e2"
+    },
+    {
+      "path": "attempt-01/PREFLIGHT-SUPERSEDED.json",
+      "bytes": 262,
+      "sha256": "bbf55048d3069f206f95b2be0f8b0e1cc2375bbdf2eaaa897d6119b510766258"
+    },
+    {
+      "path": "attempt-01/preflight.json",
+      "bytes": 1546,
+      "sha256": "10587f385d543085911b046e08971e45a9db3f03a71513e28e12bc04ea81d00b"
+    },
+    {
+      "path": "attempt-01/workspace/task-input.txt",
+      "bytes": 9419,
+      "sha256": "7d17499c0a86b7a48636576e506184067be6b1bdd7ec1ecf6378da4e1e451792"
+    },
+    {
+      "path": "execution-01/ATTEMPT-STARTED",
+      "bytes": 26,
+      "sha256": "9316549bb8bf3d4c6e277de6c578f90edd45acd35392b0359a15e584233ecfa6"
+    },
+    {
+      "path": "execution-01/directory-after.json",
+      "bytes": 481,
+      "sha256": "bbdd78e2121a3c3c2fd311e7065aadf01cbd89a9748784de3f8bb0900ef91937"
+    },
+    {
+      "path": "execution-01/directory-before.json",
+      "bytes": 475,
+      "sha256": "2079adb7ec1283238f4ae3e69d2885d5e0b758afcea78f9db2a11173add030c9"
+    },
+    {
+      "path": "execution-01/netns-intervals.jsonl",
+      "bytes": 55701,
+      "sha256": "be00e981a011561cdb161f1bc877f105d1cb87991446943a43abbb5cb81995db"
+    },
+    {
+      "path": "execution-01/netns-samples.jsonl",
+      "bytes": 39065,
+      "sha256": "69bbaf879216481b394178ea2c456fe75a9cdd0b408e00bc32dc3cac20516918"
+    },
+    {
+      "path": "execution-01/preflight.json",
+      "bytes": 1999,
+      "sha256": "3aa0d0e3608e40dc5fcefc2021b071acd92a3761cbb98c88e3d9ebc181d3cd27"
+    },
+    {
+      "path": "execution-01/resource-evidence.json",
+      "bytes": 1279027,
+      "sha256": "c401a38d5b2cf4acf313c6fdf01f7a962d9ce6c601cc287a64fc61d788ea6039"
+    },
+    {
+      "path": "execution-01/resource-samples.jsonl",
+      "bytes": 468715,
+      "sha256": "5a2ada50f2013c39cbce1d9ba5a51e05d5ea2201bd27441698078035843b4743"
+    },
+    {
+      "path": "execution-01/run-record.json",
+      "bytes": 4262,
+      "sha256": "ec05038c4c8c967574f4c763b1734c018b1ca90fb7590755e0490bcffa36becd"
+    },
+    {
+      "path": "execution-01/run-report.json",
+      "bytes": 6327,
+      "sha256": "c8ad2d87fe495ef3e3f6eb110f60c063e22b17ecca5824bffd20e2273f18adbc"
+    },
+    {
+      "path": "execution-01/workspace/.vimax/logs/loop_history.jsonl",
+      "bytes": 61122,
+      "sha256": "3629ea17224d0e2c38a79c93746de15c5325985c555019d1d90b469f7d6755c1"
+    },
+    {
+      "path": "execution-01/workspace/.vimax/logs/tool_calls.jsonl",
+      "bytes": 3641,
+      "sha256": "677eeefb73e334fc0d9462373939390b44de730c23cf3e4d246f3a4984628e29"
+    },
+    {
+      "path": "execution-01/workspace/.vimax/memory.md",
+      "bytes": 19,
+      "sha256": "3f03af84c1db614021d8ed85816694aa06a7adb8d77255f6d6dc34ab6e45e5fa"
+    },
+    {
+      "path": "execution-01/workspace/.vimax/sessions.json",
+      "bytes": 10589,
+      "sha256": "38bfb24d12e64930f9324a0d82c59c6434125a3409ac0b1f2726a72f21c11346"
+    },
+    {
+      "path": "execution-01/workspace/.vimax/sessions.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "execution-01/workspace/.working_dir/20261023-170240-planning-validation-01/script2video/characters.json",
+      "bytes": 758,
+      "sha256": "0c9a3269a566a282c42c48110773d745809d03508a2e8d47f1b97201dc9e4ed2"
+    },
+    {
+      "path": "execution-01/workspace/.working_dir/20261023-170240-planning-validation-01/script2video/script.txt",
+      "bytes": 8100,
+      "sha256": "a9e3c3d8db4ca4d24407ee7f598a62668d6af3f5134d1ad4a975ddb44f55209f"
+    },
+    {
+      "path": "execution-01/workspace/attempt/COMPLETE",
+      "bytes": 80,
+      "sha256": "40c49e47b34872fb5d118fa7b220b9870ebbd427a1cfd9a4de8ae957d715870e"
+    },
+    {
+      "path": "execution-01/workspace/attempt/agent-events.jsonl",
+      "bytes": 63680,
+      "sha256": "4b1a76dcc6c12cf91d8056fcd42331bbd59f7e06d040b5d154fe9d819944a4eb"
+    },
+    {
+      "path": "execution-01/workspace/attempt/ledger-state.json",
+      "bytes": 668,
+      "sha256": "6aad0e887bb3c2524980927fdfa3f4c6ccb073ccf48e1ec7844190f62e9dc540"
+    },
+    {
+      "path": "execution-01/workspace/attempt/model-events.jsonl",
+      "bytes": 12475,
+      "sha256": "85fbf4bb1b83acfbb576da1e0fdfbd280731a7453a8fddcd4ece696d33cd0b08"
+    },
+    {
+      "path": "execution-01/workspace/attempt/model-events.jsonl.state",
+      "bytes": 629,
+      "sha256": "8879aa633d74fcc927e6fdfbdb0d6d59e1cca05f4ea55b730646026886d62891"
+    },
+    {
+      "path": "execution-01/workspace/attempt/plan-check.json",
+      "bytes": 118,
+      "sha256": "9d54abdc200a9f92f63cae9ca98818a261ed727a336ea280bfea202b5d823905"
+    },
+    {
+      "path": "execution-01/workspace/attempt/tool-policy.json",
+      "bytes": 465,
+      "sha256": "12abca24b61c7ec80dfd6526a219cb05980c0d2cb7e50fc5c4750079cd4a334f"
+    },
+    {
+      "path": "execution-01/workspace/registered-script.txt",
+      "bytes": 8105,
+      "sha256": "447e4d88ccd76f9cb4a206f799993620a3c832238dd873c9ae9e905c2452b59a"
+    },
+    {
+      "path": "execution-01/workspace/task-input.txt",
+      "bytes": 9419,
+      "sha256": "7d17499c0a86b7a48636576e506184067be6b1bdd7ec1ecf6378da4e1e451792"
+    },
+    {
+      "path": "host_runner.py",
+      "bytes": 38012,
+      "sha256": "397b075e9044e3e551c9f4d8f72a4d84def55e44ed9e80c474cf638ecd644b3a"
+    },
+    {
+      "path": "identity-01.json",
+      "bytes": 3399,
+      "sha256": "81b1fbc443eb1834f09820020be5dbffeedbb7571e6c6f559fa2d284fca9badc"
+    },
+    {
+      "path": "offline-assessment.json",
+      "bytes": 6109,
+      "sha256": "8c145885afcc4f938c2fb91abeace56b875e6349063f464bac13e0a69c859e97"
+    },
+    {
+      "path": "plan_verifier.py",
+      "bytes": 8968,
+      "sha256": "e8b7300bb456f89dbdc62b1c6614465e11de6b6653059b9c03b2a2a75c53bb4b"
+    },
+    {
+      "path": "planning_entry.py",
+      "bytes": 10445,
+      "sha256": "28544edeb5700665fffe868357e809961a25a38cf8d945f360e1e92478298f52"
+    },
+    {
+      "path": "preflight-03/PREFLIGHT-SUPERSEDED.json",
+      "bytes": 195,
+      "sha256": "b3273fb78083fba5495af2a54aa40ad89553bdf3a587d073282aa7118d36d353"
+    },
+    {
+      "path": "preflight-03/preflight.json",
+      "bytes": 1999,
+      "sha256": "3aa0d0e3608e40dc5fcefc2021b071acd92a3761cbb98c88e3d9ebc181d3cd27"
+    },
+    {
+      "path": "preflight-03/workspace/registered-script.txt",
+      "bytes": 8105,
+      "sha256": "447e4d88ccd76f9cb4a206f799993620a3c832238dd873c9ae9e905c2452b59a"
+    },
+    {
+      "path": "preflight-03/workspace/task-input.txt",
+      "bytes": 9419,
+      "sha256": "7d17499c0a86b7a48636576e506184067be6b1bdd7ec1ecf6378da4e1e451792"
+    },
+    {
+      "path": "preflight-04/preflight.json",
+      "bytes": 1999,
+      "sha256": "3aa0d0e3608e40dc5fcefc2021b071acd92a3761cbb98c88e3d9ebc181d3cd27"
+    },
+    {
+      "path": "preflight-04/workspace/registered-script.txt",
+      "bytes": 8105,
+      "sha256": "447e4d88ccd76f9cb4a206f799993620a3c832238dd873c9ae9e905c2452b59a"
+    },
+    {
+      "path": "preflight-04/workspace/task-input.txt",
+      "bytes": 9419,
+      "sha256": "7d17499c0a86b7a48636576e506184067be6b1bdd7ec1ecf6378da4e1e451792"
+    },
+    {
+      "path": "preflight-failure-01.json",
+      "bytes": 571,
+      "sha256": "2da001f546775e443c3d8c67453088fc11b473ac916e402c8a0543940b977f5f"
+    },
+    {
+      "path": "preflight-failure-02.json",
+      "bytes": 515,
+      "sha256": "1a4cbef9f4b14e8d8420282aaec885ddad89e29476461318711ff4f552891457"
+    },
+    {
+      "path": "project-state-patch.json",
+      "bytes": 2320,
+      "sha256": "c162c1e09ab88265e1a1468218a8b85289cb1cf747d661a45398ba8d97dbc446"
+    },
+    {
+      "path": "summary.md",
+      "bytes": 3267,
+      "sha256": "7a5a6de2f23c9a5e3211a36dc39b28364c841a58db6c6bf255c2aa6455bca95c"
+    }
+  ],
+  "self_hash": "omitted"
+}

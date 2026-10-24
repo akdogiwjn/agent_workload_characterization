@@ -1,0 +1,6 @@
+FROM openstoryline-task:arm64-asr-adapted-v8-artifact-store-root-fix
+COPY source/ /opt/openstoryline/
+COPY asr-cache-contract.json /opt/openstoryline/asr-cache-contract.json
+RUN grep -q "validate_asr_cache()" /opt/openstoryline/src/open_storyline/mcp/register_tools.py \
+    && test -f /opt/openstoryline/asr_adapter/cache_preflight.py \
+    && python3 -m compileall -q /opt/openstoryline

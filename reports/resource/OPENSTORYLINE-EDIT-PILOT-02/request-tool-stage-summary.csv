@@ -1,0 +1,23 @@
+category,name,started,finished,errors_or_unfinished,observed_tokens,wall_s
+logical_request,agent,15,15,0,240456,
+logical_request,llm_validation,1,1,0,234,
+logical_request,mcp_sampling,24,24,0,74477,
+logical_request,vlm_validation,1,1,0,203,
+mcp_tool,elementrec_text,1,1,0,,
+mcp_tool,elementrec_transition,1,1,0,,
+mcp_tool,load_media,1,1,0,,
+mcp_tool,local_asr,1,1,0,,
+mcp_tool,plan_timeline_pro,2,2,0,,
+mcp_tool,read_node_history,4,4,0,,
+mcp_tool,render_video,3,3,1,,
+mcp_tool,speech_rough_cut,1,1,0,,
+mcp_tool,split_shots,1,1,0,,
+phase,mcp_start_to_ready,1607069841203444,1607072245616054,,,2.40441261
+phase,agent_initialization_after_mcp_ready,1607072245616054,1607081611016429,,,9.365400375
+phase,agent_work,1607081611016429,1608352411504885,,,1270.800488456
+phase,verifier,,,,,15.738196972990409
+stage_boundary,local_asr call_463802be2a7a4127994a3590,1607107406512457,1607234897621286,success,,127.491108829
+stage_boundary,render_video_attempt call_02d97dfa849643fcae435594,1608176378988022,1608176407098240,error,,0.028110218
+stage_boundary,render_video_attempt call_ce403f979b72408983ec4305,1608232202486874,1608245086698992,success,,12.884212118
+stage_boundary,render_video_attempt call_ec7955367fa740c9b969e48a,1608279892126950,1608292823259476,success,,12.931132526
+stage_boundary,cleanup_verification,,,container removed and MCP pid_alive=false,,

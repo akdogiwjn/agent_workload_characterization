@@ -1,0 +1,42 @@
+{
+ "schema": "codex-bailian-integration-01-image-manifest-v1",
+ "task": "VIDEO-USE-CODEX-BAILIAN-INTEGRATION-01",
+ "built_at_local": "2026-10-21",
+ "image": {
+  "tag": "video-use-task:arm64-codex-bailian-v1",
+  "image_id": "sha256:a46db2143d8aa69a299b419152c6ca036e09f619d3f771aeace64e08ed729402",
+  "architecture": "arm64", "os": "linux",
+  "dockerfile": "env/video/video-use/codex-bailian-integration-01/Dockerfile",
+  "base": {"tag": "video-use-task:arm64-v1",
+           "image_id": "sha256:d14e6415db40eaecccb6540defc0c686df5dfde47801a1c692f4df5d5b187887"}
+ },
+ "codex_cli": {
+  "version": "0.163.0",
+  "release_tag": "rust-v0.163.0",
+  "artifact": "codex-aarch64-unknown-linux-musl.tar.gz",
+  "artifact_bytes": 104950609,
+  "artifact_sha256": "a7261e65f4a96d8f4ca65a069c6cf2dc2c33defc341e48078acefda9461fffe4",
+  "source": "github.com/openai/codex releases (official); static musl binary, no Node required",
+  "container_path": "/usr/local/bin/codex",
+  "build_time_version_check": "codex --version passed in-image"
+ },
+ "config": {
+  "CODEX_HOME": "/opt/codex-home",
+  "config_file": "env/video/video-use/codex-bailian-integration-01/config.toml",
+  "provider": "bailian (explicit; no default fallback)",
+  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "model": "qwen3.7-plus",
+  "wire_api": "responses",
+  "env_key": "DASHSCOPE_API_KEY",
+  "request_max_retries": 0, "stream_max_retries": 0,
+  "sessions": "kept (no --ephemeral); rollouts under $CODEX_HOME/sessions",
+  "skill_symlink": "/opt/codex-home/skills/video-use -> /opt/video-use"
+ },
+ "not_included": {"credentials": true, "host_codex_config": true,
+                  "ephemeral_mode": "not enabled"},
+ "no_model_checks_passed": ["codex --version (build + runtime, network none)",
+                            "codex exec --help flags confirmed",
+                            "config.toml validated (tomllib, no fallback keys)",
+                            "skill discovery path", "/task writable",
+                            "no credential value in image layers"]
+}

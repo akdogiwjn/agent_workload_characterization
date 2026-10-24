@@ -1,0 +1,22 @@
+{
+ "python": "3.12.15 (main, Oct  6 2026, 02:08:11) [GCC 14.2.0]",
+ "funasr": "1.3.1",
+ "torch": "2.11.0+cpu",
+ "torchaudio": "2.11.0+cpu",
+ "torch_threads": 256,
+ "device": "cpu",
+ "load_log_tail": "download models from model hub: ms\ntrust_remote_code: False\nLoading pretrained params from /root/.cache/modelscope/models/iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master/model.pt\nckpt: /root/.cache/modelscope/models/iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master/model.pt\nscope_map: ['module.', 'None']\nexcludes: None\nLoading ckpt: /root/.cache/modelscope/models/iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master/model.pt, status: <All keys matched successfully>\n",
+ "model_path": "/root/.cache/modelscope/models/iic--speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/snapshots/master",
+ "key_conf": {
+  "model": null,
+  "predictor": null,
+  "predictor_conf": null,
+  "tokenizer": null,
+  "tokenizer_conf": null,
+  "frontend": null,
+  "frontend_conf": null
+ },
+ "tokenizer_type": null,
+ "vocab_size": null,
+ "bpemodel": "None"
+}

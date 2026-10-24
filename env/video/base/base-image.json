@@ -1,0 +1,31 @@
+{
+ "schema": "video-env01-base-image-v1",
+ "task": "VIDEO-USE-ENV-01",
+ "built_at_local": "2026-10-21",
+ "tag": "video-common-base:arm64-v1",
+ "image_id": "sha256:d414b4270fec6ec2dd245982a522099d8941d8cd114ccd5ec2c6730815f3a706",
+ "architecture": "arm64",
+ "os": "linux",
+ "created": "2026-10-21T02:05:06.839928146Z",
+ "dockerfile": "env/video/base/Dockerfile",
+ "build_platform": "linux/arm64 (native aarch64 host, no QEMU)",
+ "parent": {
+  "reference": "python:3.12-slim@sha256:05cda9777409a9c3ffddd94a4c476b79f0769a0b4857f0c7ed9226b6800b0d6f",
+  "image_id": "sha256:ce9a404c2c0138e747a43e6ea022d2f7e670ed868df35d627a663ba7fb940ea9",
+  "note": "local arm64 image already present; digest-pinned in FROM; not re-pulled"
+ },
+ "os_inside": "Debian GNU/Linux 13 (trixie)",
+ "installed_system_tools": {
+  "ffmpeg": "7.1.5-0+deb13u1",
+  "ffprobe": "7.1.5-0+deb13u1",
+  "procps": "installed (ps/pgrep for in-container process checks)",
+  "ca-certificates": "installed"
+ },
+ "build_time_encoder_verification": {
+  "checked": ["libx264", "aac"],
+  "method": "ffmpeg -encoders listing grep, part of Dockerfile RUN; fails build when missing"
+ },
+ "python_inside": "3.12.15 (from parent image; no repo Python deps installed in this layer)",
+ "shared_layer_policy": "FFmpeg/ffprobe + procps only; the four video repos derive task images from this base and each installs its own isolated venv; no repo dependencies, credentials, host configs or media are baked in",
+ "future_task_images": ["video-use (built, see env/video/video-use/env-manifest.json)", "OpenStoryline (not built)", "ViMax (not built)", "VideoWeaver (not built)"]
+}

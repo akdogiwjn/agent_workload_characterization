@@ -1,0 +1,45 @@
+{
+  "schema": "openstoryline-offline-validation-candidate-v1",
+  "upstream_commit": "c9e945215586f45c12a61c1951ee9a8e9c43a027",
+  "base_image_id": "sha256:a482fe452b18cd7b1d8f4390d0296d1dfff965d018388d34b33c91ea97ab5aa3",
+  "candidate_image_id": "sha256:2a9c470de5fd9289cbf63dc3cc52fb34ff78c42a7eb9e9a6f0f40546ab73fc4a",
+  "files": {
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/register_tools.py": {
+      "bytes": 10750,
+      "sha256": "00d31e273ceb03855ebe845de2e5519142f865b01cdf518bbc4a91b540546bad"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/request_ledger.py": {
+      "bytes": 6268,
+      "sha256": "4662d1768538d72387773d7b3bdaf19845098462dfa1a63799058f651b53b472"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/mcp/sampling_handler.py": {
+      "bytes": 19389,
+      "sha256": "c11ed167e16b13dbc38ca2204889435930ec6a5382fb793ea72772d53d1d0fc1"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/src/open_storyline/agent.py": {
+      "bytes": 10751,
+      "sha256": "fc6330b0eb43ed4661a50a9ce4ea526d19e9eaf6311f34e2ccdbf962501ce1f8"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/source/openstoryline_task_entry.py": {
+      "bytes": 8371,
+      "sha256": "0a46a60594e7c2b19254a72004899fb5de7c9c0687c1bf4581b91a259372e52a"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/Dockerfile.request-gated": {
+      "bytes": 400,
+      "sha256": "c1954f39ae4d226fc0d1856406c05fbd44efdbb0facd66a814826e0d0568fe3c"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/evidence/mcp-toolchain-v5/validate_mcp_offline.py": {
+      "bytes": 6799,
+      "sha256": "66cc4101940593d6f6b0e25db32ac39430c9309784d91005b47d1292b0a059cb"
+    },
+    "env/video/openstoryline/OPENSTORYLINE-ENV-01/evidence/mcp-toolchain-v5/validation.json": {
+      "bytes": 775,
+      "sha256": "fa1db57ae792fe259b60e562ff016ab2018518ba51a624800e8c2a17d016e621"
+    }
+  },
+  "formal_identity": false,
+  "approval_created": false,
+  "attempt_created": false,
+  "credential_read": false,
+  "model_api_calls": 0
+}

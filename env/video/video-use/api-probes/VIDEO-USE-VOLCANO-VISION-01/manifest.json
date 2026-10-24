@@ -1,0 +1,31 @@
+{
+ "schema": "video-use-volcano-vision-01-manifest-v1",
+ "task": "VIDEO-USE-VOLCANO-VISION-01",
+ "note": "manifest does not hash itself; image and expected answer persisted before the single send",
+ "files": {
+  "expected-answer.json": {
+   "sha256": "8a87ca4559317ccd23cede512288793ac4ec04c2e41ceb04de44364fb241bf16",
+   "bytes": 1286
+  },
+  "neutral-test.png": {
+   "sha256": "fbf76de8ca42b2ffc4335d3f3ac1a98f884de6ca5d3fac33510560eede76b642",
+   "bytes": 1344
+  },
+  "probe.py": {
+   "sha256": "07c4dd3a568d6eefaeecf2e345aa9dcf07ef6e0fdbe2fb8ee2b780b8a2d6b87a",
+   "bytes": 16474
+  },
+  "summary.md": {
+   "sha256": "3c4b840f3267759b0839857efd8c2bc48041e96f9655ef90fa4aef7b3aac37af",
+   "bytes": 2918
+  },
+  "test_probe_offline.py": {
+   "sha256": "5ecaf0597129353ff47dfffcad56e4358dcaf9bec2bbaaa1d3138f358c4ef8b1",
+   "bytes": 13441
+  },
+  "verification.json": {
+   "sha256": "9f94fa5b3ce5fe97c62475cb8d786f6d859ec79284389ebc67cc99bbd3b037a5",
+   "bytes": 324355
+  }
+ }
+}

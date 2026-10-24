@@ -1,0 +1,41 @@
+{
+ "task": "BAILIAN-GENERATION-SMOKE-02",
+ "note": "manifest does not self-hash; .part temporaries excluded",
+ "inputs": {
+  "plan": "plan.json",
+  "probe_code": "probe.py",
+  "offline_tests": "test_probe_offline.py",
+  "credential": {
+   "file": "/home/lcq/.config/agent-workload-characterization/bailian.env",
+   "env": "DASHSCOPE_API_KEY",
+   "workspace_env": "BAILIAN_WORKSPACE_ID",
+   "value_stored": false
+  }
+ },
+ "files": {
+  "counts.json": {
+   "bytes": 433,
+   "sha256": "711267ac57e9ab45beea2afdfdb8e18ed6fb725b77d44a44fda4161a853330af"
+  },
+  "plan.json": {
+   "bytes": 5185,
+   "sha256": "fab829dc1a6e3922744f7c5366b683500c9d25c07b61f5e34a14aa99e97059e0"
+  },
+  "probe.py": {
+   "bytes": 55784,
+   "sha256": "2b9b1d44143918e04863e1cf4013b65d9a0a8ee18f4c2453dfe5b5f4048ae632"
+  },
+  "summary.md": {
+   "bytes": 4618,
+   "sha256": "8a87eeda2f28817ad3ee5dc7c3ebc9b9b99bea40ebd750bc2ce4aff1f8676387"
+  },
+  "test_probe_offline.py": {
+   "bytes": 23303,
+   "sha256": "31970f0cb4e0411c45edab7d52ab5345da3c2ec6a9b8e14490afbd834083760f"
+  },
+  "verification.json": {
+   "bytes": 1648,
+   "sha256": "ddd140c16f2fb847a49ae5fc50f2dff9a6893b710deff54caa10ce16e97740c4"
+  }
+ }
+}

@@ -1,0 +1,446 @@
+{
+  "file_count": 88,
+  "langchain_core": "0.3.86",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 408,
+      "sha256": "bb646febb44d5f2fa0ff30f36709ba3d35eac0294fdc03cfad98488d343443f7"
+    },
+    {
+      "path": "ADAPTATION-DIFF.md",
+      "bytes": 5799,
+      "sha256": "ec2a94ba147f14ab3602cddc78be9e3eb5e5c7dd555bb2fc6b4c5cc3f638f9be"
+    },
+    {
+      "path": "Communication.md",
+      "bytes": 234,
+      "sha256": "062474ca19a86ad595bbd8a398fd3599fde7e9e04720c4fc64a1188636a4da91"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1056,
+      "sha256": "06dcddbb6908a0c6dd4a9e8ec822eea41d5a460a53089fecccc8a68049e99241"
+    },
+    {
+      "path": "README_ZH.md",
+      "bytes": 12777,
+      "sha256": "82782be25b32ab1b8366576abdf4a0513fe1ad2d8d8a4fe95ec83ffb8615d7a9"
+    },
+    {
+      "path": "agent_runtime/__init__.py",
+      "bytes": 599,
+      "sha256": "24a1e6bc9d1050f1e5b66b926e6b433ada7d8bcdcc5a428becd7e637df56cdb4"
+    },
+    {
+      "path": "agent_runtime/config.py",
+      "bytes": 5734,
+      "sha256": "806bfa76510b0caf031ad7c54ba35ab539e0bf45386f601dc67d5f1397c1f58e"
+    },
+    {
+      "path": "agent_runtime/context_compactor.py",
+      "bytes": 12206,
+      "sha256": "c914f2dfd364483764161799ebceeaa632a456774d76dd086ce0e08efb4d6947"
+    },
+    {
+      "path": "agent_runtime/image_tools.py",
+      "bytes": 6443,
+      "sha256": "7dcf785e0ac48171a7a47f91882eef5db2ef9e2c18afc4bc403e261b3afdaccd"
+    },
+    {
+      "path": "agent_runtime/llm.py",
+      "bytes": 8583,
+      "sha256": "b2b33917ccd5c438d8fa292dd17ca147e48db119b968d9afac2f9308e2b399ca"
+    },
+    {
+      "path": "agent_runtime/loop.py",
+      "bytes": 13731,
+      "sha256": "8e413d60d4745b947557214709e7706a415be25888b3c637eb58b3b660a1acc7"
+    },
+    {
+      "path": "agent_runtime/models.py",
+      "bytes": 1866,
+      "sha256": "0a6bd18c2d40750ed4254cfa03606e2821137d57bc87d4debf29e6185e244792"
+    },
+    {
+      "path": "agent_runtime/prompts.py",
+      "bytes": 6363,
+      "sha256": "a4352d843ba8e72f0793d3d4748f5831c7dc4f504a294f1894b2ae46f6260bd3"
+    },
+    {
+      "path": "agent_runtime/request_ledger.py",
+      "bytes": 13316,
+      "sha256": "87bf09b93e3a53231273b2bb9f4a126eae419f052a55e6cad9afa5316afd69b8"
+    },
+    {
+      "path": "agent_runtime/session_index.py",
+      "bytes": 17850,
+      "sha256": "b892ecfb661ad5774dd9909d001cbb5cca5b6011b2e493ede391c78aa41c0e65"
+    },
+    {
+      "path": "agent_runtime/tool_executor.py",
+      "bytes": 2418,
+      "sha256": "382fd4c642e92a653126150e1b204dbcc10410a36eac68a298b286dae5e9d614"
+    },
+    {
+      "path": "agent_runtime/tools.py",
+      "bytes": 22464,
+      "sha256": "e23d9bd2745e93967e9784eaeb391cce0b1d493f9fd6866407cc5a71b6a1cfb9"
+    },
+    {
+      "path": "agent_runtime/vimax_adapters.py",
+      "bytes": 67224,
+      "sha256": "97f2c8d3aadd2c1eb6ab32b8e5626575ee4675194767e6fbf3cf77efa0c87800"
+    },
+    {
+      "path": "agents/__init__.py",
+      "bytes": 505,
+      "sha256": "a24f1563e81f6dbc375c1d77cea285125566b12b52b3c7e3463ad1eeab998c72"
+    },
+    {
+      "path": "agents/best_image_selector.py",
+      "bytes": 9209,
+      "sha256": "ef6fbba32b3c6326f820084917442db7d9a5c58d96aac76c5b1b05f6042b9899"
+    },
+    {
+      "path": "agents/camera_image_generator.py",
+      "bytes": 14115,
+      "sha256": "e1ae72482019c7e2c6c98755e801d4a835d4ebe8e203193e45d446246ad0f22b"
+    },
+    {
+      "path": "agents/character_extractor.py",
+      "bytes": 4331,
+      "sha256": "c76cb7260dbc58ec6586509aae3a0995beade6ae801e7c0398c49b9bfb790630"
+    },
+    {
+      "path": "agents/character_portraits_generator.py",
+      "bytes": 3432,
+      "sha256": "3b933c455710041d2d28e43e14bc081682d739516c5ba3235140341401f6a752"
+    },
+    {
+      "path": "agents/event_extractor.py",
+      "bytes": 6701,
+      "sha256": "2671fd7770a45347c3b5c40cbf12320506c4576f9fab65ada1a6eef699c1cb67"
+    },
+    {
+      "path": "agents/global_information_planner.py",
+      "bytes": 18190,
+      "sha256": "91889033142a8b0cb02413d28244af4971b9577b97874f80e105ab039a50a194"
+    },
+    {
+      "path": "agents/novel_compressor.py",
+      "bytes": 7732,
+      "sha256": "ba56b4f60facbbba4db726df32dbe0891b61bc9cae12fd36c767d32c63e973c8"
+    },
+    {
+      "path": "agents/reference_image_selector.py",
+      "bytes": 15762,
+      "sha256": "7618ce74da21781926859422677c7870fb7a6a4e65d8df53fb02bc00e6046813"
+    },
+    {
+      "path": "agents/scene_extractor.py",
+      "bytes": 5400,
+      "sha256": "2fcd56a820be7d5e3219f17c035ad9e2f70023941dc12a1e41c3725c3bf0cc45"
+    },
+    {
+      "path": "agents/screenwriter.py",
+      "bytes": 10328,
+      "sha256": "49df4cbd964756027327dfa4da38931d64032eff8e8d28b0fdc7cea0f2484c57"
+    },
+    {
+      "path": "agents/script_enhancer.py",
+      "bytes": 5688,
+      "sha256": "ecfb1de74f8b3c979c1a386a6f8504379b1df7ba21f1cbfcdea28a08e8eb675c"
+    },
+    {
+      "path": "agents/script_planner.py",
+      "bytes": 26177,
+      "sha256": "e2713a73794c5547bf35f45304e7e0d2de7dcdc8dd69d882f7928bfff4116ebe"
+    },
+    {
+      "path": "agents/storyboard_artist.py",
+      "bytes": 19270,
+      "sha256": "a51fc6524015702d41586c7fee512779bd46027315185a1ed7a0a69cf5c59231"
+    },
+    {
+      "path": "configs/agent.example.yaml",
+      "bytes": 951,
+      "sha256": "9987818d7c0c77054c45fb3634b1c43dc2fda575f131d210834b67d93ee610df"
+    },
+    {
+      "path": "configs/idea2video.yaml",
+      "bytes": 979,
+      "sha256": "59da52dad5d7950f8f5e385417a24e8c6cb9d481b2b2246ae7a51ce3a8ca4c1c"
+    },
+    {
+      "path": "configs/idea2video_minimax.yaml",
+      "bytes": 971,
+      "sha256": "0509b857abf556fe5e1127cdcc26ed0bef5cc6732727dce0aba470b9dfc324d5"
+    },
+    {
+      "path": "configs/script2video.yaml",
+      "bytes": 981,
+      "sha256": "b7cc831b809be9543bd6441b873324618f923c1c19770dadde529046f0f6e933"
+    },
+    {
+      "path": "configs/script2video_minimax.yaml",
+      "bytes": 972,
+      "sha256": "fd4a3b6423f7365386bc714808de539521f868e3230dc3adbc76e447e48c46a1"
+    },
+    {
+      "path": "interfaces/__init__.py",
+      "bytes": 550,
+      "sha256": "4ea05caf8e77a1cbf3042d2a39f6c9adad502e17b3bb700d5f66efb5aa73140d"
+    },
+    {
+      "path": "interfaces/camera.py",
+      "bytes": 1524,
+      "sha256": "f0437866738372d035fd828c8d5a7975af77b926a4bc1f1d12e1f6d9626734f9"
+    },
+    {
+      "path": "interfaces/character.py",
+      "bytes": 4157,
+      "sha256": "cd2138c2d96df3087c2e556b3f4c97d2acac7ca87dd8b62acf8c21d86cff8865"
+    },
+    {
+      "path": "interfaces/environment.py",
+      "bytes": 1142,
+      "sha256": "13a08c5ca1d7940e23dfa78852c8ce4014a76db55dbe8544758a8083a22780c9"
+    },
+    {
+      "path": "interfaces/event.py",
+      "bytes": 1967,
+      "sha256": "adacf6cff81a72297db0abd058e1bc3dcd9d01b98d3cea93b9d8dcb3b7b04641"
+    },
+    {
+      "path": "interfaces/frame.py",
+      "bytes": 727,
+      "sha256": "e9c0cd5c1ea29c6cf9c6eae10390c7e6be398b3c039c9d2864f0a0f7fdd3a4f3"
+    },
+    {
+      "path": "interfaces/image_output.py",
+      "bytes": 1564,
+      "sha256": "9ed4591847921f6a837b5d35c76d5d3ecd4f5986d04a0e3e970a10ebde9bcf25"
+    },
+    {
+      "path": "interfaces/scene.py",
+      "bytes": 2412,
+      "sha256": "f6a4b7fe635e3afb5fbaf574b1dadb218086c7a0287d5e79349dfdfa5614247e"
+    },
+    {
+      "path": "interfaces/shot_description.py",
+      "bytes": 11841,
+      "sha256": "75da1f27b871d59de092e77db5d89079bcb9842af38ba643979d60446090a0d0"
+    },
+    {
+      "path": "interfaces/video_output.py",
+      "bytes": 1045,
+      "sha256": "a3a415112f4d79755a85df3ab8f3ec14f74732dce5c3cc81200bd3671fddea6e"
+    },
+    {
+      "path": "main_agent.py",
+      "bytes": 6639,
+      "sha256": "65ce2dd4d6c5f400c500f749abc9d6d2bd3d9bb70f09b7ebb14266179df6c1f0"
+    },
+    {
+      "path": "main_idea2video.py",
+      "bytes": 951,
+      "sha256": "cd50074c666b1a7badbe4f1b18ba28ff3e7bcfb1bc4d8ec2297915a1186e2f1c"
+    },
+    {
+      "path": "main_script2video.py",
+      "bytes": 1630,
+      "sha256": "e37c6cd8cd2b31418094ebe9f21825410254a6f93149eeeb27a9e133213c87a4"
+    },
+    {
+      "path": "pipelines/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "pipelines/idea2video_pipeline.py",
+      "bytes": 12107,
+      "sha256": "33f0c329e9b30584a68cf2d5a3603666e130e20422f05964e64ca896b540e174"
+    },
+    {
+      "path": "pipelines/novel2movie_pipeline.py",
+      "bytes": 55151,
+      "sha256": "284a22f759cbe09cd9fc95d84d27769cc62ee766de5a7f49d07de53d78731955"
+    },
+    {
+      "path": "pipelines/script2video_pipeline.py",
+      "bytes": 55379,
+      "sha256": "c5c836778e06ac10501b016aa5b1d4e25c974df13d2edc9f61fee7fa737f4220"
+    },
+    {
+      "path": "prompts/agent.md",
+      "bytes": 296,
+      "sha256": "e2481dfb9c4b71feac848e8e68ed08a9aaf5de4d0670868d8983853581110dd2"
+    },
+    {
+      "path": "prompts/workflow.md",
+      "bytes": 5410,
+      "sha256": "9bf3cf83db78420d80fec5e9a52779db5c0399ab1b3fa962c60830a7232f4142"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 994,
+      "sha256": "2f887c78d7c48f206dd8220e8116e831ca6309252df561a2eadfd9833509cbc6"
+    },
+    {
+      "path": "readme.md",
+      "bytes": 15908,
+      "sha256": "72c7e43a10bdb3e08799dfdf79ee3afb530bfdb5957e4d72b7a1f580c7f317d0"
+    },
+    {
+      "path": "tools/__init__.py",
+      "bytes": 1461,
+      "sha256": "000fabdd56ade0937587a95ca880cc3ad19f5466e3a7754ed75172048886f4cd"
+    },
+    {
+      "path": "tools/image_generator_bailian_api.py",
+      "bytes": 16774,
+      "sha256": "5f642205864dc32495aba0a92c02a0f273d0bb1c58e93ed4c5c86a7f2c65e715"
+    },
+    {
+      "path": "tools/image_generator_doubao_seedream_yunwu_api.py",
+      "bytes": 2342,
+      "sha256": "ff31534e0ddb70a9e547a43851f221adf60b4f260a78f11b973cf464329f1ff4"
+    },
+    {
+      "path": "tools/image_generator_nanobanana_google_api.py",
+      "bytes": 3397,
+      "sha256": "1edf6ec585dbdd3b0b83bf53452ca9ce4889d5787b91e56534086cbe7f5f109f"
+    },
+    {
+      "path": "tools/image_generator_nanobanana_yunwu_api.py",
+      "bytes": 2690,
+      "sha256": "275f174f3b2d1d9ac08010fc18b1b3848c374d4e93bb592e91a5195c7a22722e"
+    },
+    {
+      "path": "tools/image_generator_openrouter_api.py",
+      "bytes": 7254,
+      "sha256": "3939c2125c2cd5f438942f5cd60f768be90b7f1b104982084a4319698d1ef1e8"
+    },
+    {
+      "path": "tools/image_orientation.py",
+      "bytes": 1657,
+      "sha256": "3e787ab324883bb0a2b98bd9cfbbe2e88c61db4144499123690ede5169042852"
+    },
+    {
+      "path": "tools/image_response.py",
+      "bytes": 1104,
+      "sha256": "c2a926ef5cff544562444e10bc5f85f536dba520ce2f7ae5be3b876ad5d63a3f"
+    },
+    {
+      "path": "tools/protocols.py",
+      "bytes": 1002,
+      "sha256": "c5b34ca89c1a4662114b1c458cc68043822225544100ae2d04cecefeccae9811"
+    },
+    {
+      "path": "tools/render_backend.py",
+      "bytes": 2129,
+      "sha256": "6fe07d2b0076c84f3c1687b7bb260a28c638272e249d30622c45bdd99655cf06"
+    },
+    {
+      "path": "tools/reranker_bge_silicon_api.py",
+      "bytes": 2261,
+      "sha256": "86d4c98420f15042c5aa8552d349ec2bd905121900da42c98fbfb94c8b7b1f48"
+    },
+    {
+      "path": "tools/video_generator_bailian_api.py",
+      "bytes": 20994,
+      "sha256": "2451ceaa6e2f1669092f6a1207712677f83fef1e803b05f31f011cf7699d817d"
+    },
+    {
+      "path": "tools/video_generator_doubao_seedance_yunwu_api.py",
+      "bytes": 8186,
+      "sha256": "e8f0c97e9fba952dd2ca7dc2e1d9a280c29b992810a04009e84dc3c7c47ab0ae"
+    },
+    {
+      "path": "tools/video_generator_omni_yunwu_api.py",
+      "bytes": 8705,
+      "sha256": "6e4a5b80aa9d9bfe28046e2f10db36dad7e714de9435c8203750285d4508c9f6"
+    },
+    {
+      "path": "tools/video_generator_openrouter_api.py",
+      "bytes": 8813,
+      "sha256": "49f741bfd3dd3cf24624f9320dadbb77849d7969f0d1c84a01e9341cbd20ce93"
+    },
+    {
+      "path": "tools/video_generator_veo_google_api.py",
+      "bytes": 4962,
+      "sha256": "cb5257aae306c8ba7e147d356316573699112760c4f97d7e6b685862a5172ee7"
+    },
+    {
+      "path": "tools/video_generator_veo_yunwu_api.py",
+      "bytes": 8248,
+      "sha256": "afcf71726758da72d148ffaa3ad12328a72c1835305a054dd27f6ae9a913b324"
+    },
+    {
+      "path": "utils/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "utils/control_exceptions.py",
+      "bytes": 1812,
+      "sha256": "aec5ff7c4285349bf8b974ca5d50f1adbd5936428f5eb3c5961818801c0182a8"
+    },
+    {
+      "path": "utils/image.py",
+      "bytes": 1640,
+      "sha256": "43cdd055051225374f3c4330b6e84aaabfa251d84cee1b9fcf3d488cf5a95c20"
+    },
+    {
+      "path": "utils/image_selection.py",
+      "bytes": 863,
+      "sha256": "044fca574736573637a1ada02dafa06b6c0595f662277bebeb7307d43d899665"
+    },
+    {
+      "path": "utils/provider_presets.py",
+      "bytes": 3395,
+      "sha256": "d7397093ed92856a1d130caedfcd7a2f86ba85d0852f1a62c3011148d6ea14de"
+    },
+    {
+      "path": "utils/rate_limiter.py",
+      "bytes": 4191,
+      "sha256": "8b006bf214a859f8f1829a7f670f0c06de07163d405edd7302d9be90ab0eb6ae"
+    },
+    {
+      "path": "utils/retry.py",
+      "bytes": 1479,
+      "sha256": "8a14d4e4bf6a3569792bc2e4bdaf5464039b8b8679e6ed39802d214a49307b55"
+    },
+    {
+      "path": "utils/robust_json_parser.py",
+      "bytes": 7182,
+      "sha256": "503c60b02f3f45b342c9c5e47c935bafd4c851cce005b5dac71b3f7028702296"
+    },
+    {
+      "path": "utils/text.py",
+      "bytes": 583,
+      "sha256": "756e82401a8c0b0850dbd47ff9a51dc3c30b1591fad3d1e8bade7aa02767bb43"
+    },
+    {
+      "path": "utils/timer.py",
+      "bytes": 1832,
+      "sha256": "c7089e1bf30c95d7cba3fa01cdf116d38aaab69f028c6fb58caed079473f2214"
+    },
+    {
+      "path": "utils/video.py",
+      "bytes": 1424,
+      "sha256": "88b807d45caf1dae0602379942473f0bf484a2e1d8cb02afd4f9b2a120979c10"
+    },
+    {
+      "path": "uv.lock",
+      "bytes": 299077,
+      "sha256": "bbd4cd23dbb0aff7b9a7a05cba9f833dc35833faf4a2def715327e2c7f97a4c1"
+    },
+    {
+      "path": "vimax",
+      "bytes": 2849,
+      "sha256": "cc27cb4b0dae3d192e0a20c3bf92bdeb7069371c8dfda0bcca06409624d9b314"
+    }
+  ]
+}

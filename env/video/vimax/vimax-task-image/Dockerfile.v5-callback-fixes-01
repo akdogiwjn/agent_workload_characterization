@@ -1,0 +1,11 @@
+FROM vimax-task-bailian:arm64-v5-offline-fixes-03
+
+# Code-only offline derivative. No package installation or model/API assets.
+COPY adapter-src/ /opt/vimax/src/
+RUN find /opt/vimax/src -name '__pycache__' -type d -prune -exec rm -rf {} + \
+    && cd /opt/vimax/src \
+    && python3 -c "import agent_runtime.vimax_adapters, agent_runtime.request_ledger, utils.control_exceptions, utils.robust_json_parser"
+
+WORKDIR /workspace
+USER vimax
+CMD ["python3"]

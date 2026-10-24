@@ -1,0 +1,53 @@
+{
+ "task": "BAILIAN-GENERATION-SMOKE-02",
+ "note": "manifest does not self-hash; .part temporaries excluded",
+ "inputs": {
+  "source_verification": "../verification.json",
+  "reused_code": "../probe.py (fixed poll auth + 401/403 stop)",
+  "recovery_code": "recovery.py (post-run persist-merge fix applied)",
+  "credential": {
+   "file": "/home/lcq/.config/agent-workload-characterization/bailian.env",
+   "env": "DASHSCOPE_API_KEY",
+   "workspace_env": "BAILIAN_WORKSPACE_ID",
+   "value_stored": false
+  }
+ },
+ "files": {
+  "D-video.mp4": {
+   "bytes": 730447,
+   "sha256": "a01d56f858537dccd9046cd1f1cd0c339355bce6951b5d433f38a0b3975a359f"
+  },
+  "frames/f01.png": {
+   "bytes": 94189,
+   "sha256": "11bf1c758f79400312548ae4962a263274bd2e18e1048c03135fbfcf6888e033"
+  },
+  "frames/f02.png": {
+   "bytes": 99058,
+   "sha256": "ce5ebddeee97a9f974581a3582a4d8820a0d737c48ebbd7ab8fccc600e3efc9e"
+  },
+  "frames/f03.png": {
+   "bytes": 109228,
+   "sha256": "a752ad4d0dd52e7a21e4da9c9cbd7e46176080e00f1c8ab86b161fc43563b169"
+  },
+  "frames/f04.png": {
+   "bytes": 105162,
+   "sha256": "88d46a53bc5e88adc537923b5830e4c9f97cb2ea2b002fd03c70a832d8ea5962"
+  },
+  "frames/f05.png": {
+   "bytes": 99542,
+   "sha256": "6880ffe76628f680541f4f49c3a24745f2cca1258fbaa64cfec4f30c54002f9f"
+  },
+  "recovery.py": {
+   "bytes": 9688,
+   "sha256": "99f2e57a29d4f9c977c926f013db3438c508ac201c5818398fe46124f944d313"
+  },
+  "summary.md": {
+   "bytes": 3928,
+   "sha256": "7e501454f9a7af9677cec5ff961014b30f7f63dff92c94dd950f7e6ab474d24a"
+  },
+  "verification.json": {
+   "bytes": 4837,
+   "sha256": "efc8850e0dfefb0ee0062f512e778238ee471079f759b30b21db9ad1eea79b8d"
+  }
+ }
+}
