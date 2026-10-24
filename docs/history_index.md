@@ -177,3 +177,8 @@ python3 -B scripts/audit_document_archive.py --resolve docs/g1_consolidated_revi
 REPEAT-02历史输入中的`docs/trace_contract.md`及`semantic_recorder.py`与当前工作区存在既有版本漂移。阅读器现区分“封存实验/身份/分析产物”和“当前规范/采集源码上下文”：前者不匹配仍拒绝，后者逐项记录原SHA、当前SHA及`match=false`，页面与verification均显式标为`PARTIAL`，不宣称历史源码一致或当前代码可复现旧身份。分析代码本身仍严格核验。
 
 HTML完整生成回归已在临时目录通过，未覆盖v1～v5正式阅读包；没有恢复不存在的旧源码、修改原登记哈希或执行新实验。
+
+## 新近完成的专项报告
+
+- AgentX Full全量分析与DeepSeek客户端重复测量：[五类各三次报告](../reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/summary.md)，Full为393会话/98,827请求；所选5会话各3次，共117个唯一源请求/351次正式执行。仅客户端测量，未执行原始业务工具，原始长输出负载未完整复现。
+- 其原始输入、请求、SSE、资源样本与冻结配置：[同机独立备份索引](agentx_evidence_backup_20261023.md)。归档本体在仓库外，不是异地备份。

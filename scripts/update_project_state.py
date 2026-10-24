@@ -103,7 +103,7 @@ def replace_bytes(path, data):
         temporary.unlink(missing_ok=True)
 
 
-def apply(root, patch, expected_sha256, append_summary=(), refresh_evidence=()):
+def apply(root, patch, expected_sha256, append_summary=(), refresh_evidence=(), allow_missing_evidence=False, replace_summary=()):
     root = Path(root)
     if any(k in patch for k in ['execution_authorization','evidence','public_summary']):
         raise ValueError('patch may not replace authorization, evidence, or public_summary; use named options')
@@ -115,6 +115,11 @@ def apply(root, patch, expected_sha256, append_summary=(), refresh_evidence=()):
         if current.get('execution_authorization') != 'none_this_state_is_not_an_approval':
             raise ValueError('state must not authorize execution')
         candidate = merge_dict(current,patch)
+        for old,new in replace_summary:
+            matches=candidate['public_summary'].count(old)
+            if matches!=1:
+                raise ValueError('summary replacement must match exactly one current line')
+            candidate['public_summary']=[new if line==old else line for line in candidate['public_summary']]
         for text in append_summary:
             if not isinstance(text,str) or '\n' in text or not text.strip():
                 raise ValueError('summary addition must be one nonempty line')
@@ -136,9 +141,16 @@ def apply(root, patch, expected_sha256, append_summary=(), refresh_evidence=()):
             row=dict(rows.get(name,{'path':name,'role':'explicit current-state evidence update'}))
             row.update(bytes=len(data),sha256=digest(data));rows[name]=row
         candidate['evidence']=list(rows.values())
+        missing_evidence=[]
         for row in candidate['evidence']:
             p=safe_path(root,row['path']);data=outputs.get(str(p))
-            if data is None:data=(root/p).read_bytes()
+            if data is None:
+                evidence_path=root/p
+                if not evidence_path.is_file() and allow_missing_evidence:
+                    # Preserve the historical row and its original digest verbatim.
+                    missing_evidence.append(str(p))
+                    continue
+                data=evidence_path.read_bytes()
             if digest(data)!=row['sha256']:
                 raise ValueError('evidence mismatch; do not blindly refresh historical hashes: '+str(p))
         outputs['project_state.json']=exact_json(candidate)
@@ -151,7 +163,9 @@ def apply(root, patch, expected_sha256, append_summary=(), refresh_evidence=()):
             if (root/name).read_bytes()!=before[name]:
                 raise ValueError('concurrent writer detected during write; recovery snapshot: '+str(saved))
             replace_bytes(root/name,outputs[name])
-        return {'status':'UPDATED','snapshot':str(saved),
+        return {'status':'UPDATED_WITH_MISSING_EVIDENCE' if missing_evidence else 'UPDATED',
+                'missing_evidence_preserved':missing_evidence,
+                'snapshot':str(saved),
                 'previous_sha256':expected_sha256,'state_sha256':digest(outputs['project_state.json']),
                 'evidence_checked':len(candidate['evidence']),'execution_authorized':False}
 
@@ -166,12 +180,16 @@ def main():
     update.add_argument('--expected-sha256',required=True)
     update.add_argument('--append-summary',action='append',default=[])
     update.add_argument('--refresh-evidence',action='append',default=[])
+    update.add_argument('--allow-missing-evidence',action='store_true',
+        help='preserve missing historical evidence rows and hashes, and report them without refreshing')
+    update.add_argument('--replace-summary',action='append',nargs=2,metavar=('OLD','NEW'),default=[],
+        help='replace exactly one public summary line while holding the state lock')
     args=parser.parse_args()
     if args.command=='snapshot':result=snapshot(args.root)
     else:
         patch=json.loads(args.patch.read_text())
         if not isinstance(patch,dict):raise ValueError('patch must be an object')
-        result=apply(args.root,patch,args.expected_sha256,args.append_summary,args.refresh_evidence)
+        result=apply(args.root,patch,args.expected_sha256,args.append_summary,args.refresh_evidence,args.allow_missing_evidence,args.replace_summary)
     print(json.dumps(result,ensure_ascii=False))
 
 

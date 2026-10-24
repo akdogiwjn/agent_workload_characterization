@@ -14,11 +14,10 @@
 GPU、热点/PMU、微架构和优化不是当前必交。旧方法文档与任务库已移入本机归档，见[历史索引](docs/history_index.md)，不默认全文读取，不从旧命令恢复授权。2026-10-24文档整理前的当前页快照见[归档登记](docs/history_index.md#docs-cleanup-20261024)。
 
 <!-- PROJECT_STATE:START -->
-当前状态由 [2026-10-24 状态真源](project_state.json)统一登记；这是进度记录，不是执行授权。
+当前状态由 [2026-10-25 状态真源](project_state.json)统一登记；这是进度记录，不是执行授权。
 
 - 当前目标：分析Agent单任务的CPU、内存、磁盘I/O与占用、网络、时长及工具/软件使用，保留过程曲线、环境与采样质量；不要求GPU或函数热点。
 - 公开trace已完成限定操作/软件汇总v3：SWE-rebench 9,435轨迹、SWE-bench现登记20,023对象/41组（原v3为19,876，后补147）、OSWorld 755模型×任务记录/108任务（命令解析扩展至v4，原生/源码分层）、H-EPM 414轨迹；AgentX Full/256k及Applied提供宏观证据：AgentX两版同393会话，98,827/68,266请求，仍无业务工具明细或本地资源。未穷尽语义解析，不混合来源分母或把软件声明当实际启动。
-- AgentX深入分析第1步完成：Full/256k同393会话、98,827/68,266请求；上下文演化、已完成历史前缀潜力、容量简化模型、请求重叠、筛选影响及时间局部性已分析，生成10张4K PNG/SVG、作图CSV和10页PPT。20项测试与216次真实请求穷举核对通过；模拟潜力不当作缓存命中/硬件并发，本地回放尚未开始。
 - SWE-bench逐任务评价补全：轨迹登记仍20,023对象/41组，另下载20,098份评价/配套文件，40/41组有公开评价产物。原8,730个未列项补出8,476未解决、140已解决、9未生成、1超时，余74空报告/30缺报告；MAYA补出222项，Mindlink同名公开来源仍缺366项评价。5个结果冲突单列；KGCompass更正300个任务身份，跨组去重实际2,294任务。仍无资源证据。
 - H-EPM/ToolSandbox复核v3完成：414轨迹、2,021次调用/返回，按保存请求静态核实全部原生工具身份，原24次未知及2次仅有活动分类的调用均补出确切名称。406条有用户侧结束请求，402条有返回，4条仅保存请求、8条无请求；Agent终止原因及资源等未记录。两组不同源码且均有local changes，只作描述比较。
 - SWE-rebench复核v3完成：85分片、9,435轨迹/111任务/17 participant完整核验；598,148请求/616,980结果的差额按589,061唯一ID配对、27,059未调用报告、860提取错误及其1,875候选、7,201提交分支请求与11复杂提交末尾请求核清。Junie 555轨迹的31,449步骤摘要另列，不当作零工具行为；任务失败不等于分析未完成，仍无本地资源证据。
@@ -56,9 +55,20 @@ GPU、热点/PMU、微架构和优化不是当前必交。旧方法文档与任�
 - ViMax已完成PILOT-04真实媒体生成闭环：19图、8主体+7过渡、40秒成片及33项技术验收；此前规划/启动失败按历史保留，后续复用REPAIR-01固定入口。排障与复现入口见docs/vimax_troubleshooting.md与vimax_execution_preparation.md；当前无新执行授权。
 - VideoWeaver观测/采集修复（summary用量统一聚合、运行中采样落盘、样本摘要接线、资源流契约与judge验收）已完成限定离线修复，122项离线测试通过；这不等于video-use/OpenStoryline/ViMax/VideoWeaver四个仓库的新采集口径均已由真实任务验证，video-use/OpenStoryline既有目录边界测量按已有证据登记（已更正早期"未见前/后测"误判）。
 - 2026-10-24本轮仅整理文档与状态：当前任务页多段历史过程已收拢为当前结论＋历史入口（本机快照见local_archive/20261024-doc-cleanup-647394/）；未改代码、raw、报告、manifest、批准、身份或Docker。Gate、CPU-02、Replay不变，未创建新执行授权。
+- 当前范围：本地单任务CPU、内存、磁盘I/O与占用、网络、时长、工具/软件统计和过程图；模型用量、阶段/错误、环境和采样质量一并记录。GPU、热点/PMU/微架构/优化不必交，Replay/并发仅可选。
+- 本地三个既有批次的27个显式run已完成字段与manifest盘点；历史区间覆盖v3按CPU、cgroup I/O及可用/proc I/O分列候选/有效/gap，网络字节和任务目录边界占用没有观测，未回填。
+- 新口径三链各一次已完成：Office目录扫描cwd修正后0→6629B；Coding Agent/verifier目录分别增长4874269/4614250B；Assistant场景内存状态N/A。主项采集和归档通过，cache仍unsupported导致supplement aggregate partial；共享netns不是任务/API专属字节。
+- 火山三链各n=1限定离线分析完成：3张独立四面板资源SVG、作图CSV和目录占用表已生成。请求Office8、Coding20、Assistant Agent/User6/1；原生工具、Submitted控制流与业务错误分别统计。Coding宿主末次process_exited保留gap；共享netns不代表API字节，不合并旧27次。报告：reports/analysis/VOLCANO-THREE-CHAIN-characterization-v1/summary.md。
+- LOCAL-THREE-CLASS-COMPLETE-02已顺序执行12/12次，identity 8a17109cf441e3ae68e3f9820babe5685467657cbcafb56d765dd1158dc4942d；合并原有效样本后27个固定task×round槽位各n=3，累计35次启动含8个永久排除的旧Office错路由attempt。v3独立复核及资源图已生成；7/7固定镜像批后身份匹配，raw归档哈希回读通过。n=3不代表类别总体，HTTP次数/费用unknown。报告：reports/analysis/LOCAL-THREE-CLASS-REPEAT-01-combined-review-v3/summary.md。
+- G1仅登记小闭环通过；G2/G3-R未通过，CPU-02/Replay继续暂停。状态、建议、旧批准和旧execute命令都不是新授权。
+- AgentX深入分析第1步完成：Full/256k同393会话、98,827/68,266请求；上下文演化、已完成历史前缀潜力、容量简化模型、请求重叠、筛选影响及时间局部性已分析，生成10张4K PNG/SVG、作图CSV和10页PPT。20项测试与216次真实请求穷举核对通过；模拟潜力不当作缓存命中/硬件并发。后续本地mock回放与DeepSeek客户端重复测量见AgentX五类重复实测报告。
+- AgentX后续客户端测量收尾：Full全量分析为393会话/98,827请求；所选5会话各执行3次，为117个唯一源请求、351次正式客户端执行。仅测客户端，未执行原始业务工具，原始长输出负载未完整复现；这三项为证据边界，不是待补跑任务。
+- 2026-10-25视频代码与文档远程检查点：合并远程AgentX收尾与状态工具更新，保存四仓库运行/观测代码、122项限定离线回归及小型配置报告；上游适配差异另存文本补丁。模型、媒体、raw轨迹/采样、安装包及local_archive留本机；本次无新执行授权。
 <!-- PROJECT_STATE:END -->
 
 ## 主要成果
+
+- AgentX DeepSeek客户端测量已收尾：[五类各三次报告](reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/summary.md)：Full全量分析393会话/98,827请求；另选5会话各执行3次，共117个唯一源请求、351次正式客户端执行。未执行原始业务工具，原始长输出负载未完整复现；[原始证据同机独立备份索引](docs/agentx_evidence_backup_20261023.md)。
 
 - AgentX深入分析：[第一步发现与10页PPT](reports/analysis/AGENTX-DEEP-ANALYSIS-v1/findings.md)，全393会话的上下文、前缀复用、子代理时序和256k影响；提供10张4K PNG/SVG及作图CSV。
 

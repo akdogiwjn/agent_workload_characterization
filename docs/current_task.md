@@ -124,3 +124,7 @@ local_archive被Git忽略，仅存编辑前快照和历史导航，不释放磁�
 <a id="video-use-edit-pilot-03"></a>
 <a id="video-use-edit-pilot-04"></a>
 <a id="保留事项与后续清理边界"></a>
+
+## 已完成专项：AgentX DeepSeek客户端重复测量
+
+[最终报告](../reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/summary.md)：Full全量分析为393会话、98,827请求；所选5个会话各执行3次，共117个唯一源请求、351次正式客户端执行。只测客户端，未执行原始业务工具，原始长输出负载未完整复现。相关证据已做[同机独立备份](agentx_evidence_backup_20261023.md)。上述边界如实保留，不作为待补跑项。
