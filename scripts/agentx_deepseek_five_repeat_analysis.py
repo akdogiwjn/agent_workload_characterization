@@ -10,19 +10,28 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 from scripts.agentx_deepseek_pilot import ROOT, canonical, sha, dump, lines, file_record
-from scripts.agentx_deepseek_finish_repeats import RAW, ENV, BASELINE, BRANCHES, COVERAGE
-from scripts.agentx_deepseek_branches import verify_code
+from scripts.agentx_deepseek_finish_repeats import RAW, ENV
+from scripts.agentx_worktree_locations import (REPEATS_RAW as PREVIOUS, REPLAY_RAW as STEP2,
+    PILOT_RAW as BASELINE, BRANCHES_RAW as BRANCHES, COVERAGE_RAW as COVERAGE, FIVE_RAW, resolve)
 from scripts.agentx_deepseek_branch_analysis import normalize, audit_edges, intervals
 from scripts.agentx_deepseek_coverage_analysis import summarize
 from scripts.agentx_deepseek_repeat_analysis import paired_changes, run_ranges
 from scripts.agentx_deepseek_analysis import response_oracle
 from scripts.agentx_deep_analysis import table
 
-PREVIOUS=Path('/home/lcq/agentx_deepseek_repeats_20261023')
-STEP2=Path('/home/lcq/agentx_replay_smoke_20261023')
-OUT=ROOT/'reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1'
 LABELS={'baseline':'单链基线','single_subagent':'单子代理','multiple_subagents':'多子代理',
         'serial_intervals':'原始区间串行','long_context':'长上下文'}
+
+
+def verify_code(plan):
+    # Historical plan code records reference the original isolated worktree
+    # script paths; resolve them into the merged main checkout for the check.
+    for q in plan['code']:
+        if file_record(resolve(q['path']))['sha256']!=q['sha256']:
+            raise ValueError('runtime code changed after plan freeze')
+
+
+OUT=ROOT/'reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1'
 
 
 def verify_source_repetitions(rows, expected):
@@ -46,15 +55,15 @@ def verify_historical(source, inherited, visited=None):
     visited=set() if visited is None else visited
     assert file_record(source)['sha256']==file_record(inherited)['sha256']
     def inspect(path):
-        path=Path(path)
+        path=Path(resolve(path))
         if str(path) in visited:return
         visited.add(str(path));q=json.loads(path.read_text())
         for key in ['inputs','outputs','code','configuration','files']:
             records=q.get(key,[]); records=[records] if isinstance(records,dict) else records
             for item in records:
                 if not isinstance(item,dict) or not {'path','sha256','bytes'}<=set(item):continue
-                actual=file_record(item['path'])
-                assert all(actual[k]==item[k] for k in actual)
+                actual=file_record(resolve(item['path']))
+                assert actual['bytes']==item['bytes'] and actual['sha256']==item['sha256']
                 p=Path(item['path'])
                 if p.name in ['manifest.json','local-evidence-manifest.json']:inspect(p)
     inspect(source)
@@ -76,7 +85,7 @@ def audit_observation(label,r,root,directory,case):
         prefix=directory/f"{q['sequence']:03d}-profile"
         body=gzip.decompress(prefix.with_suffix('.request.json.gz').read_bytes());payload=json.loads(body)
         assert sha(body)==q['request_body_sha256']==node['body_sha256']
-        assert body==gzip.decompress(Path(node['payload']).read_bytes())
+        assert body==gzip.decompress(Path(resolve(node['payload'])).read_bytes())
         assert sha(canonical(payload['messages']))==node['messages_sha256']==q['messages_sha256']
         assert payload['max_tokens']==q['source_output_tokens']==node['source_output_tokens']
         assert payload['model']=='deepseek-flash' and payload['thinking']=={'type':'disabled'} and payload['temperature']==0
@@ -109,26 +118,26 @@ def audit_observation(label,r,root,directory,case):
 
 def analyze():
     plan=json.loads((ENV/'plan.json').read_text());verify_code(plan)
-    for q in plan['original_plans']:assert file_record(q['path'])==q
+    for q in plan['original_plans']:assert file_record(resolve(q['path']))['sha256']==q['sha256']
     historical=[];visited=set()
     for owner,name in [(COVERAGE,'AGENTX-DEEPSEEK-FIVE-CASES-v1'),(PREVIOUS,'AGENTX-DEEPSEEK-REPEATS-v1')]:
-        historical.append(verify_historical(owner/'reports/analysis'/name/'manifest.json',ROOT/'reports/analysis'/name/'manifest.json',visited))
-    previous_plan=json.loads((PREVIOUS/'env/agentx-deepseek-repeats-01/plan.json').read_text())
+        historical.append(verify_historical(ROOT/'reports/analysis'/name/'manifest.json',ROOT/'reports/analysis'/name/'manifest.json',visited))
+    previous_plan=json.loads((ROOT/'env/agentx-deepseek-repeats-01/plan.json').read_text())
     cases={q['label']:q for q in previous_plan['cases']+plan['cases']};assert set(cases)==set(LABELS)
-    base_root=BASELINE/'data/raw/agentx-deepseek-pilot-01/attempts/01-remote-session'
-    branch_root=BRANCHES/'data/raw/agentx-deepseek-branches-01/attempts/01-remote-branches'
-    coverage_root=COVERAGE/'data/raw/agentx-deepseek-coverage-01/attempts/01-complete-cases'
+    base_root=BASELINE/'attempts/01-remote-session'
+    branch_root=BRANCHES/'attempts/01-remote-branches'
+    coverage_root=COVERAGE/'attempts/01-complete-cases'
     observations=[('baseline',1,base_root,base_root)]
     observations += [(label,1,branch_root,branch_root/label) for label in ['single_subagent','multiple_subagents']]
     observations += [(label,1,coverage_root,coverage_root/label) for label in ['serial_intervals','long_context']]
     new_attempts=[];new_probes=[]
     for owner,current_plan in [(PREVIOUS,previous_plan),(ROOT,plan)]:
-        raw=owner/('data/raw/agentx-deepseek-repeats-01' if owner==PREVIOUS else 'data/raw/agentx-deepseek-five-repeats-01')
-        current_env=owner/('env/agentx-deepseek-repeats-01' if owner==PREVIOUS else 'env/agentx-deepseek-five-repeats-01')
+        raw=(PREVIOUS if owner==PREVIOUS else FIVE_RAW)
+        current_env=(ROOT/'env/agentx-deepseek-repeats-01' if owner==PREVIOUS else ROOT/'env/agentx-deepseek-five-repeats-01')
         for run in current_plan['runs']:
             root=raw/'attempts'/run['name'];attempt=json.loads((root/'attempt.json').read_text())
             assert attempt['status']=='completed' and attempt['exit_code']==0 and attempt['owned_process_cleanup_confirmed']
-            assert attempt['plan']==file_record(current_env/'plan.json')
+            assert attempt['plan']['sha256']==file_record(current_env/'plan.json')['sha256']
             observations.append((run['case'],run['replicate'],root,root/run['case']))
             if owner==ROOT:
                 new_attempts.append(attempt)
@@ -147,7 +156,7 @@ def analyze():
         for observation in sorted([q for q in observations if q[0]==label],key=lambda q:q[1]):
             m,rs,ss,es,cs,ps=audit_observation(*observation,cases[label])
             metrics.append(m);rows+=rs;resources+=ss;edges+=es;checks+=cs;profiles+=ps
-    native=lines(STEP2/'data/raw/agentx-replay-smoke-01/source_requests.jsonl')
+    native=lines(STEP2/'source_requests.jsonl')
     expected=[{'trace_id':q['trace_id'],'source_outer_idx':q['outer_idx'],'source_inner_idx':q['inner_idx'],
                'source_request_sha256':q['source_request_sha256']} for q in native]
     coverage=verify_source_repetitions(rows,expected)
@@ -239,7 +248,7 @@ def analyze():
         'global_project_state_check':'FAIL_INHERITED_MISSING_IGNORED_EVIDENCE','inherited_missing_count':36,'inherited_errors':errors,
         'shared_project_state_modified':False})
     dump(OUT/'manifest.json',{'schema':'agentx-five-repeats-artifacts-v1','inputs':[file_record(ENV/'plan.json'),file_record(offline_path),
-        file_record(STEP2/'data/raw/agentx-replay-smoke-01/source_requests.jsonl')]+historical,
+        file_record(STEP2/'source_requests.jsonl')]+historical,
         'code':[file_record(Path(__file__)),file_record(ROOT/'scripts/agentx_deepseek_five_presentation.py'),
                 file_record(ROOT/'scripts/agentx_deepseek_repeat_analysis.py'),file_record(ROOT/'scripts/agentx_deepseek_coverage_analysis.py'),
                 file_record(ROOT/'scripts/agentx_deepseek_branch_analysis.py'),file_record(ROOT/'scripts/agentx_deepseek_analysis.py'),

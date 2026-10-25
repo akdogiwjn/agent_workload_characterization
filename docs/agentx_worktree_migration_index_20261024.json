@@ -1,0 +1,308 @@
+{
+  "schema": "agentx-worktree-migration-index-v1",
+  "date": "2026-10-24",
+  "rule": "historical logical paths are preserved in manifests/plans/reports; this index maps them to current physical locations and records original hashes; no historical hash refreshed",
+  "old_worktree_roots": {
+    "pilot": "/home/lcq/agentx_deepseek_pilot_20261023",
+    "branches": "/home/lcq/agentx_deepseek_branches_20261023",
+    "coverage": "/home/lcq/agentx_deepseek_coverage_20261023",
+    "repeats": "/home/lcq/agentx_deepseek_repeats_20261023",
+    "five_repeats": "/home/lcq/agentx_deepseek_five_repeats_20261023",
+    "replay_smoke": "/home/lcq/agentx_replay_smoke_20261023",
+    "main_integration": "/home/lcq/agentx_main_integration_20261023",
+    "state_option_tests": "/home/lcq/agentx_state_option_tests_20261023"
+  },
+  "migrated_raw_batches": [
+    {
+      "logical": "pilot",
+      "source": "/home/lcq/agentx_deepseek_pilot_20261023/data/raw/agentx-deepseek-pilot-01",
+      "destination": "data/raw/agentx-deepseek-pilot-01",
+      "files": 131,
+      "bytes": 6724919,
+      "tree_sha256": "e4863264da226b82c1eb80b6ba9a0fdb74e6dedc3ad148c308ee2e3ea63c9858"
+    },
+    {
+      "logical": "branches",
+      "source": "/home/lcq/agentx_deepseek_branches_20261023/data/raw/agentx-deepseek-branches-01",
+      "destination": "data/raw/agentx-deepseek-branches-01",
+      "files": 326,
+      "bytes": 12334244,
+      "tree_sha256": "62de5151fc44465239cbb51160d2422e50f01c651d4f76f50a54a60cbd92ab73"
+    },
+    {
+      "logical": "branches-preparation-failed",
+      "source": "/home/lcq/agentx_deepseek_branches_20261023/data/raw/agentx-deepseek-branches-01-preparation-failed-01",
+      "destination": "data/raw/agentx-deepseek-branches-01-preparation-failed-01",
+      "files": 4,
+      "bytes": 97455,
+      "tree_sha256": "532533a562f9832a74605e2a73bc1e599d1d37e41abe4b7f19c638ccd6d2154d"
+    },
+    {
+      "logical": "coverage",
+      "source": "/home/lcq/agentx_deepseek_coverage_20261023/data/raw/agentx-deepseek-coverage-01",
+      "destination": "data/raw/agentx-deepseek-coverage-01",
+      "files": 308,
+      "bytes": 36924411,
+      "tree_sha256": "08dc809414bff47402ba1e85300a79d8c356252773741940f180e6208d90c4e2"
+    },
+    {
+      "logical": "repeats",
+      "source": "/home/lcq/agentx_deepseek_repeats_20261023/data/raw/agentx-deepseek-repeats-01",
+      "destination": "data/raw/agentx-deepseek-repeats-01",
+      "files": 602,
+      "bytes": 55532788,
+      "tree_sha256": "f40ec9911e5f2bb9c9062f9f6942ad2e4c09ba2448f7a85f7de070ddb73aa985"
+    },
+    {
+      "logical": "five_repeats",
+      "source": "/home/lcq/agentx_deepseek_five_repeats_20261023/data/raw/agentx-deepseek-five-repeats-01",
+      "destination": "data/raw/agentx-deepseek-five-repeats-01",
+      "files": 815,
+      "bytes": 70805663,
+      "tree_sha256": "47032c3eece6eb887d680298bfafec182a18221c8fc2f015e8ab4d999ef761c2"
+    },
+    {
+      "logical": "replay_smoke",
+      "source": "/home/lcq/agentx_replay_smoke_20261023/data/raw/agentx-replay-smoke-01",
+      "destination": "data/raw/agentx-replay-smoke-01",
+      "files": 279,
+      "bytes": 159137341,
+      "tree_sha256": "c4520373b31fb3dde47405b118a3b9833e4bc1c812dbdc41d8fa703e6a8fc7cc"
+    }
+  ],
+  "unique_unbacked_files": {
+    "branches_preparation_failed_4": [
+      {
+        "logical_path": "/home/lcq/agentx_deepseek_branches_20261023/data/raw/agentx-deepseek-branches-01-preparation-failed-01/frozen-requests/single_subagent/000.json.gz",
+        "migrated_path": "data/raw/agentx-deepseek-branches-01-preparation-failed-01/frozen-requests/single_subagent/000.json.gz",
+        "bytes": 853,
+        "sha256": "e22415e4baec0dd67b0e28a6a26291db4b266d57310a296cc8bd37d7c4be0a32"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_deepseek_branches_20261023/data/raw/agentx-deepseek-branches-01-preparation-failed-01/frozen-requests/single_subagent/001.json.gz",
+        "migrated_path": "data/raw/agentx-deepseek-branches-01-preparation-failed-01/frozen-requests/single_subagent/001.json.gz",
+        "bytes": 52170,
+        "sha256": "5bd5906b293ca1cde38a177719a79e45350d082197890752ab912ae1dd3d47d7"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_deepseek_branches_20261023/data/raw/agentx-deepseek-branches-01-preparation-failed-01/official-metadata.json",
+        "migrated_path": "data/raw/agentx-deepseek-branches-01-preparation-failed-01/official-metadata.json",
+        "bytes": 35048,
+        "sha256": "30a716e89c71e96a90702bca7ee7810837eed427281e03ccd3a655bae428e25b"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_deepseek_branches_20261023/data/raw/agentx-deepseek-branches-01-preparation-failed-01/prepare-failed-code.py",
+        "migrated_path": "data/raw/agentx-deepseek-branches-01-preparation-failed-01/prepare-failed-code.py",
+        "bytes": 9384,
+        "sha256": "51052dd1be80c47faaf59da4460f3c6b94d9965fd5a3cd11583d96d5330cad4d"
+      }
+    ],
+    "main_integration_state_snapshots_31": [
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/.update.lock",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/.update.lock",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075605.455275Z-f53537e0d6f6-4033d1/README.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075605.455275Z-f53537e0d6f6-4033d1/README.md",
+        "bytes": 9536,
+        "sha256": "6615af46556d8a8b8546f5307c4e03696f94ecc73f6c5aa642deac769b88d2a2"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075605.455275Z-f53537e0d6f6-4033d1/docs/README.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075605.455275Z-f53537e0d6f6-4033d1/docs/README.md",
+        "bytes": 9275,
+        "sha256": "88985c98e7c72563b35be4cbdca3ea19e547347c351b1ae2604b2ee0946c58c1"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075605.455275Z-f53537e0d6f6-4033d1/docs/project_status.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075605.455275Z-f53537e0d6f6-4033d1/docs/project_status.md",
+        "bytes": 19864,
+        "sha256": "764415fab866c2202250f225d17ec524128de228ee14d20a8ec959d04ab635f2"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075605.455275Z-f53537e0d6f6-4033d1/manifest.json",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075605.455275Z-f53537e0d6f6-4033d1/manifest.json",
+        "bytes": 769,
+        "sha256": "4da596ad4aaa9467b9957dfff93e5f253b751d7a329e41dc5cb2963a77f3dba5"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075605.455275Z-f53537e0d6f6-4033d1/project_state.json",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075605.455275Z-f53537e0d6f6-4033d1/project_state.json",
+        "bytes": 196651,
+        "sha256": "f53537e0d6f62ba7b53c4166d18963f7a5c7577b5adf6d960c27c792e4c7bef8"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075759.410176Z-cc1173a77eee-033cf6/README.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075759.410176Z-cc1173a77eee-033cf6/README.md",
+        "bytes": 9843,
+        "sha256": "78d0dc79ba58cffa7f6018ff0e75405bf5e4f2c7cba79c46d1111f4d04e8ff59"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075759.410176Z-cc1173a77eee-033cf6/docs/README.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075759.410176Z-cc1173a77eee-033cf6/docs/README.md",
+        "bytes": 9603,
+        "sha256": "784629a4e4587d32288e66ca2d7a6c5fc6909da98d53ab4d413cc513853b5b97"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075759.410176Z-cc1173a77eee-033cf6/docs/project_status.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075759.410176Z-cc1173a77eee-033cf6/docs/project_status.md",
+        "bytes": 20171,
+        "sha256": "ed693502bb2e86318c442fc8819e1decd25bf60246065aa24145670c7bb86511"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075759.410176Z-cc1173a77eee-033cf6/manifest.json",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075759.410176Z-cc1173a77eee-033cf6/manifest.json",
+        "bytes": 769,
+        "sha256": "7ecc5ffb87caf16f402c5687d14f9f58639d8e140a74ba03d8a4bc83f70ba93e"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075759.410176Z-cc1173a77eee-033cf6/project_state.json",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075759.410176Z-cc1173a77eee-033cf6/project_state.json",
+        "bytes": 198151,
+        "sha256": "cc1173a77eee423270c3f716c98dd2e49f4321a16659a0adeda069ab35e529f9"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075824.335554Z-63e558437739-7847fd/README.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075824.335554Z-63e558437739-7847fd/README.md",
+        "bytes": 9906,
+        "sha256": "d9ba9484c352cdf18a876d59aa585b546d2293a6a1f5707b239b47c591f004fc"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075824.335554Z-63e558437739-7847fd/docs/README.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075824.335554Z-63e558437739-7847fd/docs/README.md",
+        "bytes": 9666,
+        "sha256": "2b0ef543c0a89f2bf038e32a83bf7a7a7d468ea61120439eba29406f09560589"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075824.335554Z-63e558437739-7847fd/docs/project_status.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075824.335554Z-63e558437739-7847fd/docs/project_status.md",
+        "bytes": 20234,
+        "sha256": "fb78b1cf2957d7fdeaed6ec4ce60397544bf425162486bee96c751d5dc4f19fa"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075824.335554Z-63e558437739-7847fd/manifest.json",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075824.335554Z-63e558437739-7847fd/manifest.json",
+        "bytes": 769,
+        "sha256": "692dcb7d89bdc69d88be17bdaa84b60a4cf447f0da3c3daae22c11bfa6fbaaba"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075824.335554Z-63e558437739-7847fd/project_state.json",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075824.335554Z-63e558437739-7847fd/project_state.json",
+        "bytes": 198214,
+        "sha256": "63e558437739d5867e2db1bfdff0e1c29dabcff6b13617e51bb9ce613a908eaa"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075854.888277Z-ea720cce0a3c-b9161a/README.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075854.888277Z-ea720cce0a3c-b9161a/README.md",
+        "bytes": 9906,
+        "sha256": "d9ba9484c352cdf18a876d59aa585b546d2293a6a1f5707b239b47c591f004fc"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075854.888277Z-ea720cce0a3c-b9161a/docs/README.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075854.888277Z-ea720cce0a3c-b9161a/docs/README.md",
+        "bytes": 9666,
+        "sha256": "2b0ef543c0a89f2bf038e32a83bf7a7a7d468ea61120439eba29406f09560589"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075854.888277Z-ea720cce0a3c-b9161a/docs/project_status.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075854.888277Z-ea720cce0a3c-b9161a/docs/project_status.md",
+        "bytes": 20234,
+        "sha256": "fb78b1cf2957d7fdeaed6ec4ce60397544bf425162486bee96c751d5dc4f19fa"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075854.888277Z-ea720cce0a3c-b9161a/manifest.json",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075854.888277Z-ea720cce0a3c-b9161a/manifest.json",
+        "bytes": 769,
+        "sha256": "03d03bda0f9917d3d3cdd0d51243a3b245dc56fae0efe7cdffde75131ec67f5f"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075854.888277Z-ea720cce0a3c-b9161a/project_state.json",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075854.888277Z-ea720cce0a3c-b9161a/project_state.json",
+        "bytes": 198758,
+        "sha256": "ea720cce0a3c8ae6b00a98f4f7a792f8eeb0f5edf99fcc037e3fdb00dcba5ffe"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075917.934941Z-faaf4bad896d-6b6a20/README.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075917.934941Z-faaf4bad896d-6b6a20/README.md",
+        "bytes": 9906,
+        "sha256": "d9ba9484c352cdf18a876d59aa585b546d2293a6a1f5707b239b47c591f004fc"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075917.934941Z-faaf4bad896d-6b6a20/docs/README.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075917.934941Z-faaf4bad896d-6b6a20/docs/README.md",
+        "bytes": 9666,
+        "sha256": "2b0ef543c0a89f2bf038e32a83bf7a7a7d468ea61120439eba29406f09560589"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075917.934941Z-faaf4bad896d-6b6a20/docs/project_status.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075917.934941Z-faaf4bad896d-6b6a20/docs/project_status.md",
+        "bytes": 20234,
+        "sha256": "fb78b1cf2957d7fdeaed6ec4ce60397544bf425162486bee96c751d5dc4f19fa"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075917.934941Z-faaf4bad896d-6b6a20/manifest.json",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075917.934941Z-faaf4bad896d-6b6a20/manifest.json",
+        "bytes": 769,
+        "sha256": "f94506ca72597a432bb0ded133bdba1e473462fbde1e0434e6db1942c6da2848"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T075917.934941Z-faaf4bad896d-6b6a20/project_state.json",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T075917.934941Z-faaf4bad896d-6b6a20/project_state.json",
+        "bytes": 198758,
+        "sha256": "faaf4bad896decabc8da8e906dab49733812658cb3343649d854caaf7d1f4f35"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T083847.728910Z-2f2593a25f94-067cbc/README.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T083847.728910Z-2f2593a25f94-067cbc/README.md",
+        "bytes": 9906,
+        "sha256": "d9ba9484c352cdf18a876d59aa585b546d2293a6a1f5707b239b47c591f004fc"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T083847.728910Z-2f2593a25f94-067cbc/docs/README.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T083847.728910Z-2f2593a25f94-067cbc/docs/README.md",
+        "bytes": 9666,
+        "sha256": "2b0ef543c0a89f2bf038e32a83bf7a7a7d468ea61120439eba29406f09560589"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T083847.728910Z-2f2593a25f94-067cbc/docs/project_status.md",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T083847.728910Z-2f2593a25f94-067cbc/docs/project_status.md",
+        "bytes": 20234,
+        "sha256": "fb78b1cf2957d7fdeaed6ec4ce60397544bf425162486bee96c751d5dc4f19fa"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T083847.728910Z-2f2593a25f94-067cbc/manifest.json",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T083847.728910Z-2f2593a25f94-067cbc/manifest.json",
+        "bytes": 769,
+        "sha256": "300a72d75670f44ed667817496569eefd80290bf5af09cc8e4ef9c53dfa778c6"
+      },
+      {
+        "logical_path": "/home/lcq/agentx_main_integration_20261023/local_archive/project-state-snapshots/20261023T083847.728910Z-2f2593a25f94-067cbc/project_state.json",
+        "migrated_path": "local_archive/20261023-agentx-main-integration-snapshots/20261023T083847.728910Z-2f2593a25f94-067cbc/project_state.json",
+        "bytes": 198758,
+        "sha256": "2f2593a25f94f15b618739db796a569a9925fe23837cf7b29680dfbdbfd85d1c"
+      }
+    ]
+  },
+  "mock_environment": {
+    "venv": "/home/lcq/agent_workload_characterization/.venvs/agentx-replay",
+    "python": "3.11.6",
+    "source_venv": "/home/lcq/agentx_replay_smoke_20261023/.venv",
+    "harness": "agentx-harness==1.0.7",
+    "transformers": "5.20.2",
+    "numpy": "2.4.6",
+    "tokenizers": "0.23.3",
+    "safetensors": "0.8.0",
+    "aiperf_commit": "0f885254c30522e58b601848ca70d5bed1662694",
+    "freeze_dists": 131,
+    "git_ignored": true
+  },
+  "evidence_backup": {
+    "path": "/home/lcq/agentx_evidence_backup_20261023/agentx-evidence-20261023-final.tar.gz",
+    "sha256": "7e0104190ececcab755ba9fee682a8aaa68b5c45bcb7ff94889f4447f384322b",
+    "index_in_repo": "docs/agentx_evidence_backup_index_20261023.json",
+    "retained": true
+  }
+}

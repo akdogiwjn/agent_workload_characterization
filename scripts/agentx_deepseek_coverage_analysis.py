@@ -17,15 +17,20 @@ from scripts.agentx_deep_presentation import style,figure,save,write_pptx,BLUE,O
 from scripts.agentx_deepseek_pilot import ROOT,canonical,sha,dump,lines,file_record,adapt_payload
 from scripts.agentx_deepseek_analysis import response_oracle
 from scripts.agentx_deepseek_branch_analysis import normalize,intervals,audit_edges
-from scripts.agentx_deepseek_branches import verify_code
 from scripts.agentx_deepseek_complete import RAW,ENV
+from scripts.agentx_worktree_locations import REPLAY_RAW as STEP2, PILOT_RAW as BASELINE, BRANCHES_RAW as BRANCHES, resolve
 
 OUT=ROOT/'reports/analysis/AGENTX-DEEPSEEK-FIVE-CASES-v1'
-STEP2=Path('/home/lcq/agentx_replay_smoke_20261023')
-BASELINE=Path('/home/lcq/agentx_deepseek_pilot_20261023')
-BRANCHES=Path('/home/lcq/agentx_deepseek_branches_20261023')
 LABELS={'baseline':'主流重叠样本','single_subagent':'单子代理','multiple_subagents':'多子代理',
         'serial_intervals':'原始区间串行','long_context':'长上下文'}
+
+
+def verify_code(plan):
+    # Historical plan code records reference the original isolated worktree
+    # script paths; resolve them into the merged main checkout for the check.
+    for q in plan['code']:
+        if file_record(resolve(q['path']))['sha256']!=q['sha256']:
+            raise ValueError('runtime code changed after plan freeze')
 
 
 def probe_conclusion(result,requested):
@@ -76,30 +81,30 @@ def analyze(name):
     attempt_dir=RAW/'attempts'/name;attempt=json.loads((attempt_dir/'attempt.json').read_text());plan=json.loads((ENV/'plan.json').read_text())
     assert attempt['status']=='completed' and attempt['exit_code']==0 and attempt['owned_process_cleanup_confirmed']
     assert file_record(ENV/'plan.json')['sha256']==attempt['plan']['sha256'];verify_code(plan)
-    assert file_record(plan['official_metadata']['path'])['sha256']==plan['official_metadata']['sha256']
-    assert file_record(plan['source_export']['path'])['sha256']==plan['source_export']['sha256']
-    source_captures={(q['metadata']['conversation_id'],q['metadata']['turn_index']):q for q in lines(plan['source_export']['path'])}
-    native=lines(STEP2/'data/raw/agentx-replay-smoke-01/source_requests.jsonl')
+    assert file_record(resolve(plan['official_metadata']['path']))['sha256']==plan['official_metadata']['sha256']
+    assert file_record(resolve(plan['source_export']['path']))['sha256']==plan['source_export']['sha256']
+    source_captures={(q['metadata']['conversation_id'],q['metadata']['turn_index']):q for q in lines(resolve(plan['source_export']['path']))}
+    native=lines(STEP2/'source_requests.jsonl')
     native_expected=[{'trace_id':q['trace_id'],'source_outer_idx':q['outer_idx'],'source_inner_idx':q['inner_idx'],
                       'source_request_sha256':q['source_request_sha256']} for q in native]
     raw_files=[file_record(p) for p in attempt_dir.rglob('*') if p.is_file()]
     rows=[];resources=[];case_metrics=[];profiles={};edge_rows=[];coverage_rows=[]
     sources=[]
     # Reuse already measured cases; do not issue additional API requests.
-    baseline_manifest=BASELINE/'reports/analysis/AGENTX-DEEPSEEK-CLIENT-v1/manifest.json'
-    branch_manifest=BRANCHES/'reports/analysis/AGENTX-DEEPSEEK-BRANCHES-v1/manifest.json'
+    baseline_manifest=ROOT/'reports/analysis/AGENTX-DEEPSEEK-CLIENT-v1/manifest.json'
+    branch_manifest=ROOT/'reports/analysis/AGENTX-DEEPSEEK-BRANCHES-v1/manifest.json'
     for path in [baseline_manifest,branch_manifest]:
         old_manifest=json.loads(path.read_text())
         for item in old_manifest['inputs']:
-            assert file_record(item['path'])['sha256']==item['sha256']
+            assert file_record(resolve(item['path']))['sha256']==item['sha256']
         evidence_path=path.parent/'local-evidence-manifest.json'
         assert file_record(evidence_path)['sha256']==next(q['sha256'] for q in old_manifest['outputs'] if q['path']==str(evidence_path))
         for item in json.loads(evidence_path.read_text())['files']:
-            assert file_record(item['path'])['sha256']==item['sha256']
-    base_attempt=BASELINE/'data/raw/agentx-deepseek-pilot-01/attempts/01-remote-session'
+            assert file_record(resolve(item['path']))['sha256']==item['sha256']
+    base_attempt=BASELINE/'attempts/01-remote-session'
     sources.append(('baseline',base_attempt,None,0,1))
-    old_branch_attempt=BRANCHES/'data/raw/agentx-deepseek-branches-01/attempts/01-remote-branches'
-    old_plan=json.loads((BRANCHES/'env/agentx-deepseek-branches-01/plan.json').read_text())
+    old_branch_attempt=BRANCHES/'attempts/01-remote-branches'
+    old_plan=json.loads((ROOT/'env/agentx-deepseek-branches-01/plan.json').read_text())
     for case in old_plan['cases']:sources.append((case['label'],old_branch_attempt,case,case['native_subagent_groups'],case['execution_chains']))
     for case in plan['cases']:sources.append((case['label'],attempt_dir,case,case['native_subagent_groups'],case['execution_chains']))
     for label,root,case,native_groups,chains in sources:
@@ -173,7 +178,7 @@ def analyze(name):
     table(OUT/'length_probes.csv',probe_rows);render(summary,rows,resources,profiles)
     secret=os.environ.get('DEEPSEEK_API_KEY')
     if not secret:raise ValueError('credential needed for exact-value leak check')
-    raw_files.extend(file_record(Path(q['payload'])) for c in plan['cases'] for q in c['nodes'])
+    raw_files.extend(file_record(resolve(Path(q['payload']))) for c in plan['cases'] for q in c['nodes'])
     raw_files.append(file_record(RAW/'official-metadata.json'))
     for p in [Path(q['path']) for q in raw_files]+list(OUT.rglob('*'))+list(ENV.rglob('*')):
         if p.is_file():
@@ -197,7 +202,7 @@ def analyze(name):
         'global_state_check':{'status':'FAIL' if state_errors else 'PASS','errors':state_errors,'disposition':'isolated worktree lacks inherited ignored evidence; shared state untouched'}})
     dump(OUT/'local-evidence-manifest.json',{'files':raw_files,'raw_files_in_git':False})
     dump(OUT/'manifest.json',{'inputs':[file_record(ENV/'plan.json'),file_record(baseline_manifest),file_record(branch_manifest),
-                file_record(STEP2/'data/raw/agentx-replay-smoke-01/source_requests.jsonl')],
+                file_record(STEP2/'source_requests.jsonl')],
         'outputs':[file_record(p) for p in sorted(OUT.rglob('*')) if p.is_file() and p.name!='manifest.json'],
         'code':[file_record(p) for p in [ROOT/'scripts/agentx_deepseek_complete.py',Path(__file__),ROOT/'tests/test_agentx_deepseek_complete.py']],
         'configuration':[file_record(p) for p in sorted(ENV.glob('*')) if p.is_file()]})

@@ -54,6 +54,7 @@
 - AgentX后续客户端测量收尾：Full全量分析为393会话/98,827请求；所选5会话各执行3次，为117个唯一源请求、351次正式客户端执行。仅测客户端，未执行原始业务工具，原始长输出负载未完整复现；这三项为证据边界，不是待补跑任务。
 - 2026-10-25视频代码与文档远程检查点：合并远程AgentX收尾与状态工具更新，保存四仓库运行/观测代码、122项限定离线回归及小型配置报告；上游适配差异另存文本补丁。模型、媒体、raw轨迹/采样、安装包及local_archive留本机；本次无新执行授权。
 - 2026-10-25按用户偏好统一原目录main工作流：本地main已安全对齐远程合并检查点；后续默认在原目录提交和非强制推送，不自动创建分支/worktree，多对话协调文件并串行Git操作。模型、媒体、原始运行证据和本机归档继续留本地；历史分支不自动删除。
+- 2026-10-24 AgentX运行依赖归位：八个旧AgentX工作树已合并收拢入main（输入迁入data/raw/agentx-*并保持Git忽略，mock环境接入.venvs/agentx-replay，脚本经scripts/agentx_worktree_locations.py解析历史路径）；最终原始证据保留在/home/lcq/agentx_evidence_backup_20261023/（SHA已核验）；main离线路径可用（AgentX 91项单测＋合成fixture mock链通过），未调用真实API、未重跑正式实验，无新执行授权。
 <!-- PROJECT_STATE:END -->
 
 ## 当前入口
@@ -93,6 +94,7 @@
 | AgentX深入分析第1步 | [发现与10页PPT](../reports/analysis/AGENTX-DEEP-ANALYSIS-v1/findings.md)、[逐页讲解](../reports/analysis/AGENTX-DEEP-ANALYSIS-v1/presentation_notes.md)；10张4K PNG/SVG、CSV，尚未运行本地回放 |
 | AgentX DeepSeek客户端测量收尾 | [五类会话各三次](../reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/summary.md)：Full 393会话/98,827请求；所选5会话各3次、117个唯一源请求、351次正式执行。仅测客户端；未执行原始业务工具，原始长输出未完整复现。|
 | AgentX原始证据备份 | [同机独立备份索引与恢复说明](agentx_evidence_backup_20261023.md)；归档本体留在仓库及工作树之外 |
+| AgentX main 运行入口 | [运行/输入/环境/历史路径说明](agentx_main_runtime_notes_20261024.md)、[工作树迁移索引](agentx_worktree_migration_index_20261024.json)；旧工作树已收拢入 main |
 | 视频剪辑与资源 | [video-use PILOT-04验收](../reports/resource/VIDEO-USE-EDIT-PILOT-04/acceptance-revision-01.md)、[PILOT-03](../reports/resource/VIDEO-USE-EDIT-PILOT-03/summary.md)、[边界诊断](../reports/analysis/VIDEO-USE-EDIT-PILOT-03-boundary-review-v1/summary.md)；OpenStoryline[正式attempt与评分](../reports/resource/OPENSTORYLINE-EDIT-PILOT-02/summary.md)；ViMax[PILOT-04收尾](../env/video/vimax/VIMAX-GENERATION-PILOT-04/closeout-summary.md)；VideoWeaver[仅拼接验收](../env/video/videoweaver/evidence/VIDEOWEAVER-MERGE-VALIDATE-01/merge-acceptance.json) |
 | 后续可选工具覆盖 | [暂缓待办](current_task.md#video-use-optional-coverage-backlog)，不构成新运行批准 |
 | 离线HTML | [v5](../reports/html/PROJECT-RESULTS-v5/index.html)，最新成果最后统一更新 |

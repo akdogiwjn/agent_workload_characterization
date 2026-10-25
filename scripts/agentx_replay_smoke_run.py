@@ -84,7 +84,7 @@ def run(name, input_dir=None, sessions=5, timeout=600):
         opener=urllib.request.build_opener(urllib.request.ProxyHandler({}))
         with opener.open(url+'/health',timeout=5) as response:
             if json.load(response).get('no_model') is not True:raise ValueError('unexpected server')
-        command=[str(ROOT/'.venv/bin/aiperf'),'profile','--model','agentx-mock',
+        command=[str(ROOT/'.venvs/agentx-replay/bin/aiperf'),'profile','--model','agentx-mock',
                  '--tokenizer','Qwen/Qwen3-0.6B','--tokenizer-revision',TOKENIZER_REVISION,
                  '--no-gpu-telemetry','--endpoint-type','chat','--url',url,
                  '--custom-dataset-type','weka_trace','--input-file',str(input_dir),

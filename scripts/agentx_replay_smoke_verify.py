@@ -62,7 +62,7 @@ def verify():
     for name in ['attempt.json','environment.json','harness/profile_export_raw.jsonl','harness/profile_export.jsonl',
                  'harness/profile_export_aiperf.json','mock/server_requests.jsonl','client.stdout','client.stderr','server.stdout','server.stderr']:
         checked.append(record(attempt/name))
-    package=ROOT/'.venv/lib/python3.11/site-packages/aiperf'
+    package=ROOT/'.venvs/agentx-replay/lib/python3.11/site-packages/aiperf'
     for name in ['dataset/loader/weka_trace.py','common/tokenizer.py','dataset/generator/prompt.py','timing/branch_orchestrator.py']:
         checked.append(record(package/name))
     deck=OUT/'AgentX本地回放验证_汇报版_4页.pptx'

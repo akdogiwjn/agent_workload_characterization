@@ -2098,7 +2098,8 @@
     "AgentX深入分析第1步完成：Full/256k同393会话、98,827/68,266请求；上下文演化、已完成历史前缀潜力、容量简化模型、请求重叠、筛选影响及时间局部性已分析，生成10张4K PNG/SVG、作图CSV和10页PPT。20项测试与216次真实请求穷举核对通过；模拟潜力不当作缓存命中/硬件并发。后续本地mock回放与DeepSeek客户端重复测量见AgentX五类重复实测报告。",
     "AgentX后续客户端测量收尾：Full全量分析为393会话/98,827请求；所选5会话各执行3次，为117个唯一源请求、351次正式客户端执行。仅测客户端，未执行原始业务工具，原始长输出负载未完整复现；这三项为证据边界，不是待补跑任务。",
     "2026-10-25视频代码与文档远程检查点：合并远程AgentX收尾与状态工具更新，保存四仓库运行/观测代码、122项限定离线回归及小型配置报告；上游适配差异另存文本补丁。模型、媒体、raw轨迹/采样、安装包及local_archive留本机；本次无新执行授权。",
-    "2026-10-25按用户偏好统一原目录main工作流：本地main已安全对齐远程合并检查点；后续默认在原目录提交和非强制推送，不自动创建分支/worktree，多对话协调文件并串行Git操作。模型、媒体、原始运行证据和本机归档继续留本地；历史分支不自动删除。"
+    "2026-10-25按用户偏好统一原目录main工作流：本地main已安全对齐远程合并检查点；后续默认在原目录提交和非强制推送，不自动创建分支/worktree，多对话协调文件并串行Git操作。模型、媒体、原始运行证据和本机归档继续留本地；历史分支不自动删除。",
+    "2026-10-24 AgentX运行依赖归位：八个旧AgentX工作树已合并收拢入main（输入迁入data/raw/agentx-*并保持Git忽略，mock环境接入.venvs/agentx-replay，脚本经scripts/agentx_worktree_locations.py解析历史路径）；最终原始证据保留在/home/lcq/agentx_evidence_backup_20261023/（SHA已核验）；main离线路径可用（AgentX 91项单测＋合成fixture mock链通过），未调用真实API、未重跑正式实验，无新执行授权。"
   ],
   "html_reading_pack": {
     "status": "generated_revised_offline_static_reading_pack",
@@ -3586,20 +3587,20 @@
     },
     {
       "path": "README.md",
-      "bytes": 22148,
-      "sha256": "ae46b13e59127a32f0a041840a12510c4cd1cd7d0abc02b8e42c7dfab81c354f",
+      "bytes": 22631,
+      "sha256": "a33ee3707b580b0891babc8dd7e9701b81109bb5e0782e460539c654b7e5d95e",
       "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
     },
     {
       "path": "docs/README.md",
-      "bytes": 23239,
-      "sha256": "e55c3447a8e2eec71033bc4730acedf52cd89d4a65ad85de05ed79eaf39b826e",
+      "bytes": 23939,
+      "sha256": "b3f71b38a95bb2625f47583979131b9fca206dd88146bed7cbf7b03d6dbe9825",
       "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
     },
     {
       "path": "docs/project_status.md",
-      "bytes": 25675,
-      "sha256": "eafe719871bc9d745f1f3d0690fc37e1669d565ca7125381d23866fda7361d29",
+      "bytes": 26158,
+      "sha256": "e965dfe4e0b42cfc336b117102345b65773c3a60dcf130bd1d6afb55ed0cb104",
       "role": "Recovered current navigation or intact AgentX deep-analysis evidence; not execution authorization"
     },
     {
@@ -5030,6 +5031,18 @@
       "role": "explicit current-state evidence update",
       "bytes": 11181,
       "sha256": "bd0642433367f93547c2a1848f93ede81e15efcf3b515333811f55d7dc71010c"
+    },
+    {
+      "path": "docs/agentx_main_runtime_notes_20261024.md",
+      "role": "explicit current-state evidence update",
+      "bytes": 5025,
+      "sha256": "da6b221dd6e8b2c4bcd2fbe6d2210a73e77a0d839222893be0fe5f0eb6899f54"
+    },
+    {
+      "path": "docs/agentx_worktree_migration_index_20261024.json",
+      "role": "explicit current-state evidence update",
+      "bytes": 19277,
+      "sha256": "b9dc7ff898ddc71c832828ce8dd0a63918941c7accdaba8791352507ce096c6e"
     }
   ],
   "planned_api_route": {

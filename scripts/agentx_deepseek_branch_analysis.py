@@ -19,11 +19,18 @@ from scripts.agentx_deepseek_pilot import ROOT,canonical,sha,dump,lines,file_rec
 from scripts.agentx_deepseek_pilot import adapt_payload
 from scripts.agentx_deepseek_branch_prepare import RAW,ENV
 from scripts.agentx_deepseek_analysis import response_oracle,cache_counts
-from scripts.agentx_deepseek_branches import verify_code
+from scripts.agentx_worktree_locations import PILOT_RAW as BASELINE, resolve
 
 OUT=ROOT/'reports/analysis/AGENTX-DEEPSEEK-BRANCHES-v1'
-BASELINE=Path('/home/lcq/agentx_deepseek_pilot_20261023')
 LABELS={'baseline':'单链基线','single_subagent':'单子代理','multiple_subagents':'多子代理'}
+
+
+def verify_code(plan):
+    # Historical plan code records reference the original isolated worktree
+    # script paths; resolve them into the merged main checkout for the check.
+    for q in plan['code']:
+        if file_record(resolve(q['path']))['sha256']!=q['sha256']:
+            raise ValueError('runtime code changed after plan freeze')
 
 
 def intervals(rows):
@@ -99,8 +106,8 @@ def analyze(name):
     attempt_dir=RAW/'attempts'/name;attempt=json.loads((attempt_dir/'attempt.json').read_text());plan=json.loads((ENV/'plan.json').read_text())
     assert attempt['status']=='completed' and attempt['exit_code']==0 and attempt['owned_process_cleanup_confirmed']
     assert file_record(ENV/'plan.json')['sha256']==attempt['plan']['sha256'];verify_code(plan)
-    assert file_record(plan['official_metadata']['path'])['sha256']==plan['official_metadata']['sha256']
-    source_path=Path(plan['source_export']['path']);assert file_record(source_path)['sha256']==plan['source_export']['sha256']
+    assert file_record(resolve(plan['official_metadata']['path']))['sha256']==plan['official_metadata']['sha256']
+    source_path=Path(resolve(plan['source_export']['path']));assert file_record(source_path)['sha256']==plan['source_export']['sha256']
     source={(q['metadata']['conversation_id'],q['metadata']['turn_index']):q for q in lines(source_path)}
     raw_samples=lines(attempt_dir/'client_resources.jsonl')
     assert all(q['pids']==[attempt['worker_pid']] for q in raw_samples)
@@ -129,7 +136,7 @@ def analyze(name):
             assert raw['done'] and raw['usage']==q['usage'] and raw['finish']==q['finish_reason']
             assert raw['reasoning_chars']==q['reasoning_chars']==0 and len(raw['text'])==q['content_chars']
             assert 0<q['usage']['completion_tokens']<=q['source_output_tokens']
-            rows.append(normalize(q,label,origin));raw_files.append(file_record(node['payload']))
+            rows.append(normalize(q,label,origin));raw_files.append(file_record(resolve(node['payload'])))
         samples=[{**q,'relative_s':(q['monotonic_ns']-origin)/1e9,'case':label} for q in raw_samples]
         summary,points,selected=summarize(label,rows,samples,case['native_subagent_groups'],case['execution_chains'])
         all_rows.extend(rows);resources.extend(selected);summaries.append(summary);profiles[label]=points
@@ -140,11 +147,11 @@ def analyze(name):
     probe=lines(attempt_dir/'probe/requests.jsonl');assert len(probe)==1 and probe[0]['status']=='completed'
     probe_raw=response_oracle(attempt_dir/'probe/000-probe.response.sse')
     assert probe_raw['done'] and probe_raw['text'].strip()=='OK' and probe_raw['usage']==probe[0]['usage']
-    baseline_out=BASELINE/'reports/analysis/AGENTX-DEEPSEEK-CLIENT-v1'
+    baseline_out=ROOT/'reports/analysis/AGENTX-DEEPSEEK-CLIENT-v1'
     baseline_manifest=json.loads((baseline_out/'manifest.json').read_text())
     for q in baseline_manifest['inputs']:
-        assert file_record(q['path'])['sha256']==q['sha256']
-    baseline_raw=BASELINE/'data/raw/agentx-deepseek-pilot-01/attempts/01-remote-session'
+        assert file_record(resolve(q['path']))['sha256']==q['sha256']
+    baseline_raw=BASELINE/'attempts/01-remote-session'
     before=[q for q in lines(baseline_raw/'requests.jsonl') if q['phase']=='profile']
     assert len(before)==20;origin=min(q['started_monotonic_ns'] for q in before)
     baseline_rows=[normalize(q,'baseline',origin) for q in before]
