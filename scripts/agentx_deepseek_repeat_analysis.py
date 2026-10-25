@@ -13,8 +13,8 @@ import zipfile
 import numpy as np
 
 from scripts.agentx_deepseek_pilot import ROOT, canonical, sha, dump, lines, file_record
-from scripts.agentx_deepseek_repeats import RAW, ENV, BASELINE, BRANCHES
-from scripts.agentx_deepseek_branches import verify_code
+from scripts.agentx_deepseek_repeats import RAW, ENV
+from scripts.agentx_worktree_locations import PILOT_RAW as BASELINE, BRANCHES_RAW as BRANCHES, resolve
 from scripts.agentx_deepseek_branch_analysis import normalize, summarize, audit_edges
 from scripts.agentx_deepseek_analysis import response_oracle
 from scripts.agentx_deep_analysis import table
@@ -22,6 +22,16 @@ from scripts.agentx_deep_presentation import style, figure, save, write_pptx, BL
 
 OUT=ROOT/'reports/analysis/AGENTX-DEEPSEEK-REPEATS-v1'
 LABELS={'baseline':'单链基线','multiple_subagents':'多子代理'}
+
+
+def verify_code(plan):
+    # Historical plan code records reference the original isolated worktree
+    # script paths; resolve them into the merged main checkout for the check.
+    for q in plan['code']:
+        if file_record(resolve(q['path']))['sha256']!=q['sha256']:
+            raise ValueError('runtime code changed after plan freeze')
+
+
 METRICS=['wall_s','first_content_p50_s','first_content_p95_s','client_sampled_peak_rss_mib',
          'mean_cpu_percent_one_core_from_sample_delta','actual_output_tokens','output_to_target_pct',
          'input_weighted_cache_hit_pct_reported']
@@ -140,22 +150,22 @@ def render(metrics,rows,ranges):
 def analyze():
     plan=json.loads((ENV/'plan.json').read_text()); verify_code(plan)
     for item in plan['original_plans']:
-        assert file_record(item['path'])['sha256']==item['sha256']
+        assert file_record(resolve(item['path']))['sha256']==item['sha256']
     # Verify historical evidence against the manifests already used by the five-case report.
     prior=json.loads((ROOT/'reports/analysis/AGENTX-DEEPSEEK-FIVE-CASES-v1/summary.json').read_text())
     historical=[]
     for key in ['baseline_manifest','branch_manifest']:
-        item=prior[key]; assert file_record(item['path'])['sha256']==item['sha256']
-        path=Path(item['path']); manifest=json.loads(path.read_text())
-        for q in manifest['inputs']:assert file_record(q['path'])['sha256']==q['sha256']
-        evidence=path.parent/'local-evidence-manifest.json'
-        assert file_record(evidence)['sha256']==next(q['sha256'] for q in manifest['outputs'] if q['path']==str(evidence))
-        for q in json.loads(evidence.read_text())['files']:
-            assert file_record(q['path'])['sha256']==q['sha256']
+        item=prior[key]; assert file_record(resolve(item['path']))['sha256']==item['sha256']
+        original_path=Path(item['path']); path=Path(resolve(original_path)); manifest=json.loads(path.read_text())
+        for q in manifest['inputs']:assert file_record(resolve(q['path']))['sha256']==q['sha256']
+        evidence=original_path.parent/'local-evidence-manifest.json'
+        assert file_record(resolve(evidence))['sha256']==next(q['sha256'] for q in manifest['outputs'] if q['path']==str(evidence))
+        for q in json.loads(Path(resolve(evidence)).read_text())['files']:
+            assert file_record(resolve(q['path']))['sha256']==q['sha256']
         historical.append(file_record(path))
     cases={q['label']:q for q in plan['cases']}
-    base_root=BASELINE/'data/raw/agentx-deepseek-pilot-01/attempts/01-remote-session'
-    multi_root=BRANCHES/'data/raw/agentx-deepseek-branches-01/attempts/01-remote-branches'
+    base_root=BASELINE/'attempts/01-remote-session'
+    multi_root=BRANCHES/'attempts/01-remote-branches'
     observations=[('baseline',1,base_root,base_root),('multiple_subagents',1,multi_root,multi_root/'multiple_subagents')]
     attempts=[]
     for run in plan['runs']:
@@ -178,7 +188,7 @@ def analyze():
             prefix=directory/f"{q['sequence']:03d}-profile"
             body=gzip.decompress(prefix.with_suffix('.request.json.gz').read_bytes()); payload=json.loads(body)
             assert sha(body)==q['request_body_sha256']==node['body_sha256']
-            assert body==gzip.decompress(Path(node['payload']).read_bytes())
+            assert body==gzip.decompress(Path(resolve(node['payload'])).read_bytes())
             assert sha(canonical(payload['messages']))==node['messages_sha256']==q['messages_sha256']
             assert payload['max_tokens']==q['source_output_tokens']==node['source_output_tokens']
             assert payload['model']=='deepseek-flash' and payload['thinking']=={'type':'disabled'} and payload['temperature']==0
