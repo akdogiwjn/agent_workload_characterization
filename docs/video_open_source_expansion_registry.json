@@ -1,0 +1,172 @@
+{
+  "schema": "video-open-source-expansion-preparation-v1",
+  "scope": "open-source representative expansion preparation (not execution authorization)",
+  "candidates": [
+    {
+      "id": "video-use-repurpose-sports-bolt",
+      "repo": "video-use",
+      "source_repo": "agentic-vbench",
+      "source_commit": "b2764ed4b2a4b5a1737026b63887b50bba62f793",
+      "task_id": "sports_bolt_beijing_2008_100m",
+      "task_path": "tasks/agentic_vbench_repurpose/sports-bolt-beijing-2008-100m",
+      "kind": "official_task",
+      "files": [
+        {
+          "path": "task.toml",
+          "sha256": "9e3ba977f2a797a9a60cc5b04c573a52f6bd6d39110c32e59312b196ce3bcf52"
+        },
+        {
+          "path": "steps/solve/instruction.md",
+          "sha256": "d029e0dd6df860753c46675897d1a0d8d9b80be4ce563c0f65e00e4be1c57fc7"
+        },
+        {
+          "path": "steps/solve/tests/rubric.json",
+          "sha256": "5f12b31d1c71e6f8309552141170c9ae554f8e93de7cba3112e26a2835523f4c"
+        }
+      ],
+      "material": {
+        "source": "https://huggingface.co/datasets/ameddserM/agentic_vbench_video_repurpose/resolve/main/materials/sports_bolt_beijing_2008_100m.mp4",
+        "status": "materials_ready",
+        "bytes": 79463802,
+        "sha256": "1fe9e2e393c5221af2509a5467db0e43e245cd228d5e1dbb2668f2f9172e4b47",
+        "ffprobe_summary": "1280x720 h264 25fps aac stereo 48kHz 451.134s"
+      },
+      "hard_requirements": [
+        "1080x1920 9:16 vertical",
+        "~166s (158-175s) H.264 + stereo AAC",
+        "burned English captions (every commentary line, Whisper base)",
+        "corner scoreboard widget across whole cut (WR 9.72 -> 9.69)",
+        "keep broadcast English commentary/gun/crowd; no added music/narrator",
+        "single-race 100m Final; chest-thump ≥2 angles; pre/post-race structure"
+      ],
+      "note": "Codex exec_command + ffmpeg can express vertical reframe/captions/scoreboard, but official verifier needs opus-vision VLM + gemini-audio judges and Whisper base not in the current image",
+      "status": {
+        "source_verified": true,
+        "material_blocked": false,
+        "existing_tools_expressible": true,
+        "wiring_pending": true,
+        "requires_scope_decision": true,
+        "real_validation_pending": true,
+        "materials_ready": true
+      },
+      "blocker": "effects (captions/scoreboard/vertical) conflict with validated keep-source-no-effects contract; official verifier needs opus-vision VLM + gemini-audio judges and Whisper base (not in current image)"
+    },
+    {
+      "id": "openstoryline-assembly-task1",
+      "repo": "openstoryline",
+      "source_repo": "agentic-vbench",
+      "source_commit": "b2764ed4b2a4b5a1737026b63887b50bba62f793",
+      "task_id": "agentic-vbench-assembly-task1",
+      "task_path": "tasks/agentic_vbench_assembly/agentic-vbench-assembly-task1",
+      "kind": "official_task",
+      "files": [
+        {
+          "path": "task.toml",
+          "sha256": "6202ea523a43bbc4028445b4e85a0f68e0b39ab3fc42641982a4981e408e1f97"
+        },
+        {
+          "path": "steps/solve/instruction.md",
+          "sha256": "f355d25db0a87069ecac430fc5ae419d334dd14cfe6014908898457a9947e799"
+        }
+      ],
+      "material": {
+        "source": "https://huggingface.co/datasets/ameddserM/agentic_vbench_video_assembly/resolve/main/materials/1.zip",
+        "status": "materials_ready",
+        "bytes": 14452898,
+        "sha256": "fa5613c8e303501a5aa44d943367b9e025fc2b9f9008f12e532541596de1781f",
+        "clips": 12
+      },
+      "hard_requirements": [
+        "12 candidate clips -> pick 4 by storyboard 5 fields (description/shot_size/camera_angle/lens_size/camera_movement)",
+        "each picked clip used once, in full, concatenated in slot order",
+        "submit solution.mp4 + solution.json (4 half-open segments, contiguous, source/source_range)"
+      ],
+      "native_tools": [
+        "load_media",
+        "split_shots",
+        "understand_clips",
+        "filter_clips",
+        "group_clips",
+        "plan_timeline_pro",
+        "render_video"
+      ],
+      "status": {
+        "source_verified": true,
+        "material_blocked": false,
+        "existing_tools_expressible": true,
+        "wiring_pending": false,
+        "assembly_wiring_verified": true,
+        "offline_acceptance": true,
+        "nodes_registered_offline": true,
+        "visual_route_offline": true,
+        "native_render_offline": true,
+        "semantic_selection_needs_validation": true,
+        "real_validation_pending": true,
+        "materials_ready": true
+      },
+      "note": "multi-file input gate + solution.mp4/solution.json export (from the actual render timeline) + structural technical acceptance + task-scoped registration of understand_clips/filter_clips/group_clips + visual frame-sampling route + native RenderVideoPipeline 4-clip concat all offline_verified (OPENSTORYLINE-ASSEMBLY-PRODUCTION-WIRING-01). Corrects the earlier claim: the three multi-clip nodes ARE registerable (task-scoped via OPENSTORYLINE_TASK_KIND=assembly overlay) and the frame-sampling -> image_url -> vlm route IS implemented. Real supplier vision compatibility and the 12->4 semantic selection remain needs_real_validation; official evaluation not_integrated."
+    },
+    {
+      "id": "vimax-musicians-band-rehearsal",
+      "repo": "vimax",
+      "source_repo": "ViMax",
+      "source_commit": "fd4b72e7731be6e5f88486206d25ea59849b0285",
+      "task_id": "musicians_band_rehearsal_typeC",
+      "task_path": "vimax_benchmark/musicians_band_rehearsal_typeC.json",
+      "kind": "official_task",
+      "files": [
+        {
+          "path": "vimax_benchmark/musicians_band_rehearsal_typeC.json",
+          "sha256": "4d52835e00ef3eef3130ff49ab23125a5870db4af249b77d584a9c14db92243b"
+        }
+      ],
+      "material": {
+        "status": "materials_ready",
+        "note": "N/A - remote image/video generation; story JSON local"
+      },
+      "hard_requirements": [
+        "3 scenes, 13 shots, multi-person rehearsal story (Type C consistency)",
+        "per-shot first_frame + video_prompt (person/action/sound) defined in source",
+        "new planning (never inherit G01/G02/G03); media budget from future real camera tree"
+      ],
+      "status": {
+        "source_verified": true,
+        "materials_ready": true,
+        "existing_tools_expressible": true,
+        "planning_required": true,
+        "wiring_pending": false,
+        "planning_wiring_verified": true,
+        "offline_acceptance": true,
+        "audio_scope_pending": true,
+        "real_validation_pending": true
+      },
+      "note": "13 shots != 13 full video requests; transition count unbounded until real planning. Planning production chain verified offline on the v7 entry (env/video/vimax/planning/): parameterized expected_shots=13, byte-exact registered script, real plan_verifier ok=true on a synthetic 13-shot workspace + counterexamples, plus full run_attempt control chain (identity binding / sampling-ready release gate / container-exit outcome / netns RX-TX independent) — 50 tests; real planning run still pending authorization."
+    },
+    {
+      "id": "videoweaver-musicians-band-adaptation",
+      "repo": "videoweaver",
+      "source_repo": "ViMax (adaptation)",
+      "source_commit": "fd4b72e7731be6e5f88486206d25ea59849b0285",
+      "task_id": "musicians_band_rehearsal_typeC (adapted)",
+      "kind": "cross_repo_adaptation_case",
+      "material": {
+        "status": "materials_ready",
+        "note": "N/A - remote generation; adapted from local ViMax story JSON"
+      },
+      "hard_requirements": [
+        "same 13-shot story adapted to VideoWeaver input (target_task/case_id/skill_query/task.txt/registered-script)"
+      ],
+      "status": {
+        "source_verified": true,
+        "materials_ready": true,
+        "existing_tools_expressible": true,
+        "wiring_pending": false,
+        "real_validation_pending": true,
+        "wiring_verified": true,
+        "offline_acceptance": true,
+        "audio_scope_pending": true
+      },
+      "note": "production wiring verified offline: validate_task_config + build_entry_script + judge consume 13 shot/65s/26 downloads; real pipeline run pending; visual_only_adaptation pending user confirmation"
+    }
+  ]
+}

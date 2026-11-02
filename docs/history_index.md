@@ -1,6 +1,6 @@
 # 历史资料索引与迁移说明
 
-更新：2026-10-24。本页用于查历史，不是当前规范或执行授权。当前目标见[current_scope.md](current_scope.md)，进度见[project_status.md](project_status.md)。
+更新：2026-10-29。本页用于查历史，不是当前规范或执行授权。当前目标见[current_scope.md](current_scope.md)，进度见[project_status.md](project_status.md)。视频中间资料按本页末尾清理说明处理，不再承诺全部旧视频链接可用。
 
 <a id="docs-refresh-20261021"></a>
 
@@ -26,7 +26,7 @@
 | --- | --- | --- |
 | 整理前逐轮任务全文（ViMax/VideoWeaver/OpenStoryline/video-use） | [整理前current_task](../local_archive/20261024-doc-cleanup-647394/docs/current_task.md) | [当前任务与待办](current_task.md) |
 | 整理前ViMax准备/失败/规划过程 | [vimax_execution_preparation](../local_archive/20261024-doc-cleanup-647394/docs/vimax_execution_preparation.md) | [ViMax排障备忘](vimax_troubleshooting.md) |
-| 整理前VideoWeaver十轮观测验收细节 | [videoweaver_execution_preparation](../local_archive/20261024-doc-cleanup-647394/docs/videoweaver_execution_preparation.md) | [VideoWeaver排障备忘](videoweaver_troubleshooting.md)、`env/video/videoweaver/revisions/PILOT-01-recovery-01/observation-prep-acceptance.md` |
+| 整理前VideoWeaver十轮观测验收细节 | [videoweaver_execution_preparation](../local_archive/20261024-doc-cleanup-647394/docs/videoweaver_execution_preparation.md) | [VideoWeaver排障备忘](videoweaver_troubleshooting.md)、[当前成果与清理说明](video_results.md)；重复验收中间文件已清理 |
 | 整理前总览、范围、状态与索引 | [README](../local_archive/20261024-doc-cleanup-647394/README.md)、[scope](../local_archive/20261024-doc-cleanup-647394/docs/current_scope.md)、[project_status](../local_archive/20261024-doc-cleanup-647394/docs/project_status.md)、[docs索引](../local_archive/20261024-doc-cleanup-647394/docs/README.md)、[history_index](../local_archive/20261024-doc-cleanup-647394/docs/history_index.md)、[archive_index](../local_archive/20261024-doc-cleanup-647394/docs/archive_index.json)、[project_state](../local_archive/20261024-doc-cleanup-647394/project_state.json) | [当前任务](current_task.md)、[项目总览](project_status.md) |
 | 整理前排障备忘 | [video_editing_troubleshooting](../local_archive/20261024-doc-cleanup-647394/docs/video_editing_troubleshooting.md)、[vimax_troubleshooting](../local_archive/20261024-doc-cleanup-647394/docs/vimax_troubleshooting.md)、[videoweaver_troubleshooting](../local_archive/20261024-doc-cleanup-647394/docs/videoweaver_troubleshooting.md) | 对应现行动态页 |
 
@@ -182,3 +182,7 @@ HTML完整生成回归已在临时目录通过，未覆盖v1～v5正式阅读包
 
 - AgentX Full全量分析与DeepSeek客户端重复测量：[五类各三次报告](../reports/analysis/AGENTX-DEEPSEEK-FIVE-REPEATS-v1/summary.md)，Full为393会话/98,827请求；所选5会话各3次，共117个唯一源请求/351次正式执行。仅客户端测量，未执行原始业务工具，原始长输出负载未完整复现。
 - 其原始输入、请求、SSE、资源样本与冻结配置：[同机独立备份索引](agentx_evidence_backup_20261023.md)。归档本体在仓库外，不是异地备份。
+
+## 视频中间资料清理（2026-10-29）
+
+按用户明确要求，失败启动、错素材运行、重复诊断及选定视频快照直接删除，不另存内容归档。旧时间线中相关链接不再保证存在；[删除凭单](video_cleanup_20261029_receipt.json)仅记录路径、理由、原bytes/SHA。可用结果与必要生产/测试依赖见[当前成果索引](video_results.md)。非视频历史资料和既有备份未处理。

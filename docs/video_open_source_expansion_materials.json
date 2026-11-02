@@ -1,0 +1,167 @@
+{
+  "schema": "open-source-expansion-material-acquisition-v1",
+  "recorded_at_utc": "2026-10-30T03:33:00Z",
+  "transport": {
+    "proxy": "127.0.0.1:22111 (HTTP CONNECT)",
+    "kind": "public file download, no model API"
+  },
+  "download_budget": {
+    "cap_bytes": 2147483648,
+    "cap_wall_s": 1800
+  },
+  "items": [
+    {
+      "id": "video-use-repurpose-sports-bolt",
+      "material": "source.mp4",
+      "url": "https://huggingface.co/datasets/ameddserM/agentic_vbench_video_repurpose/resolve/main/materials/sports_bolt_beijing_2008_100m.mp4",
+      "bytes": 79463802,
+      "sha256": "1fe9e2e393c5221af2509a5467db0e43e245cd228d5e1dbb2668f2f9172e4b47",
+      "status": "materials_ready",
+      "ffprobe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "avg_frame_rate": "25/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "avg_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "451.134000"
+        }
+      }
+    },
+    {
+      "id": "openstoryline-assembly-task1",
+      "material": "materials.zip -> 1.mp4..12.mp4",
+      "url": "https://huggingface.co/datasets/ameddserM/agentic_vbench_video_assembly/resolve/main/materials/1.zip",
+      "bytes": 14452898,
+      "sha256": "fa5613c8e303501a5aa44d943367b9e025fc2b9f9008f12e532541596de1781f",
+      "status": "materials_ready",
+      "zip_check": {
+        "entries": 12,
+        "path_traversal": "none",
+        "symlink": "none"
+      },
+      "clips": [
+        {
+          "file": "1.mp4",
+          "bytes": 1401809,
+          "sha256": "0b1d3ec25d30d5cacadfaa1d5145d61076ff9cd8545d147efd121daf48c42dd5",
+          "duration_s": "5.291667",
+          "avg_frame_rate": "24/1",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "file": "2.mp4",
+          "bytes": 1043855,
+          "sha256": "7e796bcc5b49c8c0c6817434209e2bd7c2e9e73d002aaba12a6b487087cec021",
+          "duration_s": "5.061995",
+          "avg_frame_rate": "24/1",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "file": "3.mp4",
+          "bytes": 1547611,
+          "sha256": "f79739d9e0ec371542f1604234bde46962816755602449c22e36d00c4f24cb8a",
+          "duration_s": "6.025000",
+          "avg_frame_rate": "24/1",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "file": "4.mp4",
+          "bytes": 843161,
+          "sha256": "0c7e8eec806c97f1486b90368fd44ccffe16b1bf8ebc4853ba2d416f6c30f5e6",
+          "duration_s": "5.166341",
+          "avg_frame_rate": "30/1",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "file": "5.mp4",
+          "bytes": 1492499,
+          "sha256": "a3a17ab489f549381b5b6fcbaf2f24d86702a8ea5eae360bd467ab2ab426da1f",
+          "duration_s": "5.291667",
+          "avg_frame_rate": "24/1",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "file": "6.mp4",
+          "bytes": 804539,
+          "sha256": "e171909bf62feb8a5a33cf14486ee9a09949056158a7d6816412a5f70c440b1f",
+          "duration_s": "5.299675",
+          "avg_frame_rate": "30/1",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "file": "7.mp4",
+          "bytes": 985952,
+          "sha256": "22da851eff2a5f5ec9e0b65df75257aa25f314f3f72fa243cac00e8f9905dd48",
+          "duration_s": "4.541667",
+          "avg_frame_rate": "24/1",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "file": "8.mp4",
+          "bytes": 1146753,
+          "sha256": "c758a7da5dce1bd1c06d488dc13ed87b357214ba6c638e3b60b2c45a61d771f4",
+          "duration_s": "6.766341",
+          "avg_frame_rate": "30/1",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "file": "9.mp4",
+          "bytes": 1013530,
+          "sha256": "6119ec4e6ccdc6808fd31076a0039a749592f5fe7ce0ac753319da0073f4251d",
+          "duration_s": "5.166667",
+          "avg_frame_rate": "24/1",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "file": "10.mp4",
+          "bytes": 766909,
+          "sha256": "ae4b9d07e83efab7686a6f45519d09fea59981b32074d10663a97ba1d0849efc",
+          "duration_s": "4.566341",
+          "avg_frame_rate": "30/1",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "file": "11.mp4",
+          "bytes": 2655414,
+          "sha256": "1741f76f39c2a29e9c3250bc9195b48914c7d802003e0f2e7dd1c78b7b9c4b73",
+          "duration_s": "6.750000",
+          "avg_frame_rate": "24/1",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "file": "12.mp4",
+          "bytes": 749806,
+          "sha256": "6073fc4937ef2c5fa788c7402a06763b02398224e951e7c6b4b5c6e1b9a6f58f",
+          "duration_s": "4.020000",
+          "avg_frame_rate": "24/1",
+          "width": 1280,
+          "height": 720
+        }
+      ]
+    }
+  ]
+}

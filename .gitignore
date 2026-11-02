@@ -172,3 +172,45 @@ data/raw/software/env01/
 /env/video/**/*-state-update.json
 # This historical report embeds a large raw recovery record; summary/SVG remain published.
 /reports/resource/OPENSTORYLINE-EDIT-PILOT-02/run-report.json
+
+# Video documentation checkpoints publish metadata, not local replay payloads.
+# Ignore rules do not remove existing files or untrack historical Git entries.
+/reports/**/raw-persistent-copy/
+/reports/**/control/
+/reports/**/workspace/
+/reports/**/workspaces/
+/reports/**/rollout/
+/reports/**/rollouts/
+/reports/**/verifier_private/
+/reports/**/remote-closeout/
+/reports/**/resource-samples.jsonl
+/reports/**/resource-stream.jsonl
+/reports/**/netns-samples.jsonl
+/reports/**/netns-stream.jsonl
+/reports/**/model-events.jsonl*
+/reports/**/mcp-tool-events.jsonl
+/reports/**/agent-events*.jsonl
+/*.launch.json
+/reports/analysis/REPOSITORY-CLEANUP-INVENTORY-*/directory-inventory.csv
+/reports/analysis/REPOSITORY-CLEANUP-INVENTORY-*/file-inventory.csv.gz
+
+# Media, model weights and compressed runtime packages remain local.
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.avi
+*.wav
+*.mp3
+*.aac
+*.flac
+*.onnx
+*.safetensors
+*.pt
+*.pth
+*.zip
+*.7z
+*.gz
+*.xz
+*.bz2
+*.zst

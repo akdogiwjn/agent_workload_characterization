@@ -1,0 +1,1023 @@
+{
+  "schema": "repository-cleanup-inventory-v1",
+  "created_utc": "2026-11-02T12:27:11.985092+00:00",
+  "root": "/home/lcq/agent_workload_characterization",
+  "authorization": "inventory_only_no_deletions",
+  "excluded_inventory_output": "reports/analysis/REPOSITORY-CLEANUP-INVENTORY-20261102-01",
+  "directory_count": 68468,
+  "totals": {
+    "files": 202529,
+    "apparent_bytes": 24701992133,
+    "allocated_bytes": 25198198784
+  },
+  "unique_inode_allocated_bytes": 25198198784,
+  "size_caveat": "directory sums count names/hardlinks; unique inode total excludes directory inode blocks; not guaranteed reclaimable bytes",
+  "symlinks_not_followed": 42,
+  "additional_hardlink_names": 0,
+  "cross_device_skipped": [],
+  "scan_errors": [],
+  "categories": {
+    "keep_source_configuration_or_unclassified": {
+      "files": 29701,
+      "apparent_bytes": 995018585,
+      "allocated_bytes": 1092792320
+    },
+    "keep_public_inputs_and_traces": {
+      "files": 50193,
+      "apparent_bytes": 6823269542,
+      "allocated_bytes": 6930100224
+    },
+    "keep_generated_observations_and_replay_inputs": {
+      "files": 4561,
+      "apparent_bytes": 4498337496,
+      "allocated_bytes": 4509880320
+    },
+    "review_test_fixture_not_proven_disposable": {
+      "files": 59,
+      "apparent_bytes": 461452,
+      "allocated_bytes": 651264
+    },
+    "review_rebuildable_cache": {
+      "files": 43,
+      "apparent_bytes": 1758285,
+      "allocated_bytes": 1851392
+    },
+    "keep_git_internal": {
+      "files": 2959,
+      "apparent_bytes": 78746420,
+      "allocated_bytes": 86851584
+    },
+    "keep_recovery_snapshots": {
+      "files": 1431,
+      "apparent_bytes": 142307464,
+      "allocated_bytes": 145477632
+    },
+    "keep_upstream_sources_and_assets": {
+      "files": 28620,
+      "apparent_bytes": 3375260732,
+      "allocated_bytes": 3443765248
+    },
+    "keep_reports_and_archived_evidence": {
+      "files": 3949,
+      "apparent_bytes": 4069963131,
+      "allocated_bytes": 4079022080
+    },
+    "keep_runtime_dependencies": {
+      "files": 80952,
+      "apparent_bytes": 2428126442,
+      "allocated_bytes": 2618974208
+    },
+    "review_offline_build_inputs_not_disposable_cache": {
+      "files": 5,
+      "apparent_bytes": 209904163,
+      "allocated_bytes": 209920000
+    },
+    "keep_model_assets": {
+      "files": 56,
+      "apparent_bytes": 2078838421,
+      "allocated_bytes": 2078912512
+    }
+  },
+  "rebuildable_cache_review": [
+    {
+      "path": "scripts/__pycache__/video_use_managed_launch.cpython-311.pyc",
+      "bytes": 27054,
+      "allocated_bytes": 28672,
+      "sha256": "a4b944e114de014b12c3f4b2762728bf7da6dd7eb28398f1ab10974df62fbffb",
+      "mtime_ns": 1793618658870055073,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "scripts/__pycache__/video_use_edit_pilot_03.cpython-311.pyc",
+      "bytes": 38451,
+      "allocated_bytes": 40960,
+      "sha256": "a3eb74992a1bac1493aa9f2fd9547086d6eeac5857ae1774896ba85063ab2e87",
+      "mtime_ns": 1793618657054030976,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "scripts/__pycache__/check_project_state.cpython-311.pyc",
+      "bytes": 3988,
+      "allocated_bytes": 4096,
+      "sha256": "95ef5d4c20a692c4a7e4eafef8e87de368ec8fc76a48a600ccf8f6b84082f883",
+      "mtime_ns": 1793514140315132508,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "scripts/__pycache__/vimax_managed_launch.cpython-311.pyc",
+      "bytes": 32831,
+      "allocated_bytes": 36864,
+      "sha256": "4c93b2d4817cb9067b401c5963bb201fb1057f57295d7d29f8186e9b0192e726",
+      "mtime_ns": 1793583534127493324,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "scripts/__pycache__/video_analysis_chain.cpython-311.pyc",
+      "bytes": 96494,
+      "allocated_bytes": 98304,
+      "sha256": "583aadeb272f60f7f59910c4c5d781bdaba21129182323e6d97d0ddec0ec2f2f",
+      "mtime_ns": 1793241666860922588,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "scripts/__pycache__/video_use_edit_pilot_04.cpython-311.pyc",
+      "bytes": 43754,
+      "allocated_bytes": 45056,
+      "sha256": "ee006035904ed2726fb0493acd5ee0a85683fc5e3064f7db2e5c16b22b1793ef",
+      "mtime_ns": 1793618657058031029,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "scripts/__pycache__/video_use_edit_pilot_03_boundary_review.cpython-311.pyc",
+      "bytes": 20510,
+      "allocated_bytes": 24576,
+      "sha256": "092fc79fcaf64f7dda8e5b48ac57418a83d2f0f1f3bac80997ac753d44a803f3",
+      "mtime_ns": 1793618693430513652,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "scripts/__pycache__/video_use_edit_pilot_02.cpython-311.pyc",
+      "bytes": 2831,
+      "allocated_bytes": 4096,
+      "sha256": "d33a32bbaa7c5859084444047f2c8364faefb575b949f4cd867fb96b7b273bb4",
+      "mtime_ns": 1793618693422513546,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "scripts/__pycache__/update_project_state.cpython-311.pyc",
+      "bytes": 19717,
+      "allocated_bytes": 20480,
+      "sha256": "29c08ab99bfbdeefeb999aa77923b98b11d117e35bd1df24bd97349962a4acff",
+      "mtime_ns": 1793514140303132346,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "scripts/__pycache__/video_use_env01_validation.cpython-311.pyc",
+      "bytes": 51276,
+      "allocated_bytes": 53248,
+      "sha256": "d67c893aa5c9a312c9c210027208570b95e557841d2dba2a6112e20dfb0e6118",
+      "mtime_ns": 1793065165809173848,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "scripts/__pycache__/video_eight_final_aggregate.cpython-311.pyc",
+      "bytes": 82006,
+      "allocated_bytes": 86016,
+      "sha256": "e1f99c2cbdab01afb87124d8fd77dc17311299e5e2154984652364fd5f098d69",
+      "mtime_ns": 1793249218131552233,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "scripts/__pycache__/video_eight_aggregate.cpython-311.pyc",
+      "bytes": 45229,
+      "allocated_bytes": 49152,
+      "sha256": "65503d4d1c092fc74143ad122ea8e68016f9b327c8f90d9f2a9b4be26a768783",
+      "mtime_ns": 1793242119955048914,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "scripts/__pycache__/video_use_edit_pilot_01.cpython-311.pyc",
+      "bytes": 129738,
+      "allocated_bytes": 131072,
+      "sha256": "a94226f24866e579b49875ef35151d1317ded6c7a88df4234a195aaebe0b455f",
+      "mtime_ns": 1793617374208833979,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "scripts/__pycache__/video_use_task_entry.cpython-311.pyc",
+      "bytes": 68179,
+      "allocated_bytes": 69632,
+      "sha256": "1a158c6220d76278d038a66a790261e5691ce2551df50bf747942b077735e020",
+      "mtime_ns": 1793618657070031188,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": ".pytest_cache/README.md",
+      "bytes": 302,
+      "allocated_bytes": 4096,
+      "sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+      "mtime_ns": 1792896738416352541,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": ".pytest_cache/CACHEDIR.TAG",
+      "bytes": 191,
+      "allocated_bytes": 4096,
+      "sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+      "mtime_ns": 1792896738416352541,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": ".pytest_cache/.gitignore",
+      "bytes": 37,
+      "allocated_bytes": 4096,
+      "sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+      "mtime_ns": 1792896738416352541,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": ".pytest_cache/v/cache/nodeids",
+      "bytes": 263344,
+      "allocated_bytes": 266240,
+      "sha256": "c0aeb304a7e63507ca4e64f832e67f129adc10370e60c8cfbd5925b82313a4ff",
+      "mtime_ns": 1793618699394592789,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": ".pytest_cache/v/cache/lastfailed",
+      "bytes": 3701,
+      "allocated_bytes": 4096,
+      "sha256": "c5dd5ec19a83739412f863e6b1febcd4812bba17f146588a4eb3312d2ff0c4f5",
+      "mtime_ns": 1793618698666583129,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "tests/__pycache__/test_openstoryline_input_binding_repair.cpython-311-pytest-9.1.1.pyc",
+      "bytes": 25935,
+      "allocated_bytes": 28672,
+      "sha256": "270c133da73c95d5f908f37c51028356135491488654064086aac9424b715e9b",
+      "mtime_ns": 1793618664394128371,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "tests/__pycache__/test_openstoryline_input_binding_repair.cpython-311.pyc",
+      "bytes": 23490,
+      "allocated_bytes": 24576,
+      "sha256": "f9be95ae5a83d40d8a7c428db264aec81a2afc5e6e1f22e3d76fb208cd2cc9d6",
+      "mtime_ns": 1793208388953709416,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "tests/__pycache__/test_video_use_r09_four_gap_closeout.cpython-311-pytest-9.1.1.pyc",
+      "bytes": 94362,
+      "allocated_bytes": 98304,
+      "sha256": "5d1cd2274181befd234de0ee2d1aea72cf00b9bf22b51adfdaf129fd78927dd7",
+      "mtime_ns": 1793618656966029808,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "tests/__pycache__/test_video_e03_readiness.cpython-311-pytest-9.1.1.pyc",
+      "bytes": 39513,
+      "allocated_bytes": 40960,
+      "sha256": "41f6042a0740d9ef97c164eebb01a4ed9e3fcda0d152ca08e4f4b74fb7ec4e32",
+      "mtime_ns": 1793618657006030339,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "tests/__pycache__/test_video_use_edit_pilot_01.cpython-311-pytest-9.1.1.pyc",
+      "bytes": 16586,
+      "allocated_bytes": 20480,
+      "sha256": "8a354a12e9e8c6b0e6d73c5f8c85fa2ddf61caf05bf93ab3de033e1b73177889",
+      "mtime_ns": 1793618693394513174,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "tests/__pycache__/test_video_use_edit_pilot_03_boundary_review.cpython-311-pytest-9.1.1.pyc",
+      "bytes": 15061,
+      "allocated_bytes": 16384,
+      "sha256": "4727518ad3b34cb6b19059b2473f9870182a85f76ebf4773d376ad548f46c9ec",
+      "mtime_ns": 1793618693426513599,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "tests/__pycache__/test_video_use_task_entry_gates.cpython-311-pytest-9.1.1.pyc",
+      "bytes": 57759,
+      "allocated_bytes": 61440,
+      "sha256": "eead4cb154d0ac4cebdce74847e038384b6c5a0c5bc6e33febec7acca8108788",
+      "mtime_ns": 1793618656986030074,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "tests/__pycache__/test_video_use_managed_launch.cpython-311-pytest-9.1.1.pyc",
+      "bytes": 19660,
+      "allocated_bytes": 20480,
+      "sha256": "094aea30b2f2c9959c29cb83d8347606db07a5917b3c5d61fa4d8e95fdc582d0",
+      "mtime_ns": 1793618656930029331,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "tests/__pycache__/test_video_use_edit_pilot_03.cpython-311-pytest-9.1.1.pyc",
+      "bytes": 15275,
+      "allocated_bytes": 16384,
+      "sha256": "f6974b41bd4e6b2770e10cb215ebd504c88b6b417056e44ac11257a5da97cc7c",
+      "mtime_ns": 1793618693414513440,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "tests/__pycache__/test_video_use_edit_pilot_04.cpython-311-pytest-9.1.1.pyc",
+      "bytes": 11534,
+      "allocated_bytes": 12288,
+      "sha256": "e03c17e7f9ef4e0e18eba74e25d9c5afc150c4a9df7edbcd52e683df8d675c84",
+      "mtime_ns": 1793618693418513493,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "tests/__pycache__/test_video_use_edit_pilot_02.cpython-311-pytest-9.1.1.pyc",
+      "bytes": 11866,
+      "allocated_bytes": 12288,
+      "sha256": "a6ebd10e6e72b95589debf99440c05078159b15dcd9b192d16394f3eb26e03d0",
+      "mtime_ns": 1793618693422513546,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "tests/__pycache__/test_video_use_r09_four_gap_closeout.cpython-311.pyc",
+      "bytes": 76273,
+      "allocated_bytes": 77824,
+      "sha256": "65c352710252ac5699932ce74e5df4d84a0374685e470e4c38e65a47cf28ef03",
+      "mtime_ns": 1793617374216834087,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "tests/__pycache__/test_openstoryline_input_gate_execute_once.cpython-311.pyc",
+      "bytes": 43911,
+      "allocated_bytes": 45056,
+      "sha256": "b0c65f5762d6c6003ceb5abdf60ec1fc820b243f425ae6a3bf8b9b466e678844",
+      "mtime_ns": 1793208388957709471,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "tests/__pycache__/test_video_editing_production_dispatch.cpython-311-pytest-9.1.1.pyc",
+      "bytes": 42324,
+      "allocated_bytes": 45056,
+      "sha256": "91002af176442b60f95cd2aca0c37d3e6e2dcb5c5183ddf69b00536ed00a5ffb",
+      "mtime_ns": 1793618672874240893,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "tests/__pycache__/test_video_editing_task_entry_final.cpython-311-pytest-9.1.1.pyc",
+      "bytes": 24364,
+      "allocated_bytes": 24576,
+      "sha256": "667ded20a85ea9077bb387f66673249a0e6fe052be97568e9fa9563f58f833df",
+      "mtime_ns": 1793618672894241158,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "tests/__pycache__/test_video_use_r09_closeout.cpython-311-pytest-9.1.1.pyc",
+      "bytes": 67514,
+      "allocated_bytes": 69632,
+      "sha256": "9cf4558672a722a345698b863ab6a6693f468272c6a97452509f2456d0ef4e7e",
+      "mtime_ns": 1793618656918029171,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "src/agent_workload_characterization/__pycache__/__init__.cpython-311.pyc",
+      "bytes": 304,
+      "allocated_bytes": 4096,
+      "sha256": "99073080587772487267a83c26fcbf2a854b155f062511292ebd8f4f2855dfc9",
+      "mtime_ns": 1793065165809173848,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/__pycache__/__init__.cpython-311.pyc",
+      "bytes": 206,
+      "allocated_bytes": 4096,
+      "sha256": "0dd21210b6876211160098df4463bfe516c046485c692bd2e5ac7e48200808d7",
+      "mtime_ns": 1793065165809173848,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/__pycache__/container_runtime.cpython-311.pyc",
+      "bytes": 50871,
+      "allocated_bytes": 53248,
+      "sha256": "4653ceba56791fb52916bebf488e286d00ec85fc9be8d2915b07d6c750b77b64",
+      "mtime_ns": 1793208388949709361,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "src/agent_workload_characterization/runners/__pycache__/preparation.cpython-311.pyc",
+      "bytes": 28128,
+      "allocated_bytes": 28672,
+      "sha256": "f69e9838540997912df44f61adebdce08764577bd7183123e434035d552b5b9b",
+      "mtime_ns": 1793065165833174179,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/__pycache__/execution_measurement.cpython-311.pyc",
+      "bytes": 98111,
+      "allocated_bytes": 98304,
+      "sha256": "dd904e8fdf8ea7a686f2dc018b44f0c0d9f6989c23a409d6d15aa153af3ef135",
+      "mtime_ns": 1793065582790908189,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/__pycache__/__init__.cpython-311.pyc",
+      "bytes": 209,
+      "allocated_bytes": 4096,
+      "sha256": "4fa25ffcad6c3a76a144caa50dee0fe4b4a5ba23440100c7a6a04996d8e099e2",
+      "mtime_ns": 1793065165825174068,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/__pycache__/semantic_recorder.cpython-311.pyc",
+      "bytes": 17872,
+      "allocated_bytes": 20480,
+      "sha256": "a5efcc167267ab7b3fd7a1b7970fafa3bf0db4883585d45801ceea0ccaa45c48",
+      "mtime_ns": 1793065165833174179,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    },
+    {
+      "path": "src/agent_workload_characterization/collectors/__pycache__/resource_sampler.cpython-311.pyc",
+      "bytes": 47524,
+      "allocated_bytes": 49152,
+      "sha256": "2f954ae05f28af3bdd523c2e1dd3d2ef6ca9b32a41900fba83cc3f55b688fa92",
+      "mtime_ns": 1793065165829174123,
+      "git_tracked": false,
+      "state_evidence": false,
+      "direct_reference_files": []
+    }
+  ],
+  "testlike_roots_review": [
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-11baa6a5",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-22767bdb",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-22e30f93",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-24cf5e13",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-25f0a7c6",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-2d4fa9e9",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-2d8ccb75",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-3bc799d9",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-3df88f97",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-4eb1dec8",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-4fdeaf0c",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-560ae443",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-71c84c49",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-7751bc76",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-83394dc7",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-8cbedf96",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-92fb1503",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-9913efd8",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-9a34542b",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-9d9d4baf",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-9e2e43e5",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-a07d1a54",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-acd983b2",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-aede5ec3",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-cbf12e11",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-d531a78e",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-d5c01c0d",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-eb3d4a88",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-ef3bef2b",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-IDENTITY-FREEZE-REPAIR-CLI-fc7ff115",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OSL-ASSEMBLY-E2E-TEST",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OSL-ASSEMBLY-IDENTITY-FREEZE-REPAIR-TEST",
+      "files": 2,
+      "apparent_bytes": 11,
+      "allocated_bytes": 8192
+    },
+    {
+      "path": "data/raw/generated/OSL-ASSEMBLY-RELIABILITY-TEST",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OSL-INPUT-GATE-FINAL-WIRING-TEST",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OSL-RESPONSIBILITY-REPAIR-TEST",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "data/raw/generated/OSL-TIMEOUT-NO-EXPORT-TEST",
+      "files": 0,
+      "apparent_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "env/video/openstoryline/A-160729215a",
+      "files": 3,
+      "apparent_bytes": 23129,
+      "allocated_bytes": 32768
+    },
+    {
+      "path": "env/video/openstoryline/A-643273d839",
+      "files": 3,
+      "apparent_bytes": 23129,
+      "allocated_bytes": 32768
+    },
+    {
+      "path": "env/video/openstoryline/A-9e03db634a",
+      "files": 3,
+      "apparent_bytes": 23129,
+      "allocated_bytes": 32768
+    },
+    {
+      "path": "env/video/openstoryline/A-a20f7b4b7c",
+      "files": 3,
+      "apparent_bytes": 23129,
+      "allocated_bytes": 32768
+    },
+    {
+      "path": "env/video/openstoryline/B-10b6cc6b56",
+      "files": 3,
+      "apparent_bytes": 23127,
+      "allocated_bytes": 32768
+    },
+    {
+      "path": "env/video/openstoryline/B-2c01607a4b",
+      "files": 3,
+      "apparent_bytes": 23127,
+      "allocated_bytes": 32768
+    },
+    {
+      "path": "env/video/openstoryline/B-b7a5a5dc2d",
+      "files": 3,
+      "apparent_bytes": 23127,
+      "allocated_bytes": 32768
+    },
+    {
+      "path": "env/video/openstoryline/B-cbfb5ad4fc",
+      "files": 3,
+      "apparent_bytes": 23127,
+      "allocated_bytes": 32768
+    },
+    {
+      "path": "env/video/openstoryline/C-25e7ab5925",
+      "files": 3,
+      "apparent_bytes": 23129,
+      "allocated_bytes": 32768
+    },
+    {
+      "path": "env/video/openstoryline/C-33a9177571",
+      "files": 3,
+      "apparent_bytes": 23129,
+      "allocated_bytes": 32768
+    },
+    {
+      "path": "env/video/openstoryline/C-adba70be54",
+      "files": 3,
+      "apparent_bytes": 23129,
+      "allocated_bytes": 32768
+    },
+    {
+      "path": "env/video/openstoryline/D-0305c90e68",
+      "files": 2,
+      "apparent_bytes": 22742,
+      "allocated_bytes": 28672
+    },
+    {
+      "path": "env/video/openstoryline/D-2bc83ca513",
+      "files": 2,
+      "apparent_bytes": 22742,
+      "allocated_bytes": 28672
+    },
+    {
+      "path": "env/video/openstoryline/D-d7d793311d",
+      "files": 2,
+      "apparent_bytes": 22742,
+      "allocated_bytes": 28672
+    },
+    {
+      "path": "env/video/openstoryline/I1-4947bb4375",
+      "files": 3,
+      "apparent_bytes": 23135,
+      "allocated_bytes": 32768
+    },
+    {
+      "path": "env/video/openstoryline/I1-862f1ed193",
+      "files": 3,
+      "apparent_bytes": 23135,
+      "allocated_bytes": 32768
+    },
+    {
+      "path": "env/video/openstoryline/I1-e8ca557b57",
+      "files": 3,
+      "apparent_bytes": 23135,
+      "allocated_bytes": 32768
+    },
+    {
+      "path": "env/video/openstoryline/I2-3919bb4e70",
+      "files": 3,
+      "apparent_bytes": 23133,
+      "allocated_bytes": 32768
+    },
+    {
+      "path": "env/video/openstoryline/I2-5e4892f727",
+      "files": 3,
+      "apparent_bytes": 23133,
+      "allocated_bytes": 32768
+    },
+    {
+      "path": "env/video/openstoryline/I2-64858a99d5",
+      "files": 3,
+      "apparent_bytes": 23133,
+      "allocated_bytes": 32768
+    }
+  ],
+  "retained_raw_copy_roots": [
+    {
+      "path": "reports/analysis/OPENSTORYLINE-ASSEMBLY-FULL-FLOW-R04-01/raw-persistent-copy",
+      "files": 56,
+      "apparent_bytes": 11078014,
+      "allocated_bytes": 11227136,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/OPENSTORYLINE-E01-FULL-FLOW-R01-01/raw-persistent-copy",
+      "files": 55,
+      "apparent_bytes": 15167552,
+      "allocated_bytes": 15319040,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/OPENSTORYLINE-E01-FULL-FLOW-R01-02/raw-persistent-copy",
+      "files": 59,
+      "apparent_bytes": 13106800,
+      "allocated_bytes": 13271040,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/OPENSTORYLINE-E02-FULL-FLOW-R02-01/raw-persistent-copy",
+      "files": 59,
+      "apparent_bytes": 5816263,
+      "allocated_bytes": 5984256,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/OPENSTORYLINE-E03-FULL-FLOW-R03-01/raw-persistent-copy",
+      "files": 43,
+      "apparent_bytes": 28785767,
+      "allocated_bytes": 28905472,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/OPENSTORYLINE-E03-FULL-FLOW-R03-02/raw-persistent-copy",
+      "files": 58,
+      "apparent_bytes": 38814665,
+      "allocated_bytes": 38977536,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/VIDEO-USE-E03-FULL-FLOW-R09-01/raw-persistent-copy",
+      "files": 24,
+      "apparent_bytes": 61337573,
+      "allocated_bytes": 61394944,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/VIMAX-G01-FULL-FLOW-R05-MEDIA-01/raw-persistent-copy",
+      "files": 130,
+      "apparent_bytes": 181730067,
+      "allocated_bytes": 182026240,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/VIMAX-G01-FULL-FLOW-R05-MEDIA-02/raw-persistent-copy",
+      "files": 134,
+      "apparent_bytes": 217255440,
+      "allocated_bytes": 217550848,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/VIMAX-G01-FULL-FLOW-R05-PLANNING-01/raw-persistent-copy",
+      "files": 44,
+      "apparent_bytes": 574834,
+      "allocated_bytes": 679936,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/VIMAX-G02-FULL-FLOW-R06-MEDIA-01/raw-persistent-copy",
+      "files": 115,
+      "apparent_bytes": 120404330,
+      "allocated_bytes": 120635392,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/VIMAX-G02-FULL-FLOW-R06-MEDIA-02/raw-persistent-copy",
+      "files": 135,
+      "apparent_bytes": 176925381,
+      "allocated_bytes": 177225728,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/VIMAX-G02-FULL-FLOW-R06-PLANNING-01/raw-persistent-copy",
+      "files": 48,
+      "apparent_bytes": 688795,
+      "allocated_bytes": 811008,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/VIMAX-G03-FULL-FLOW-R07-MEDIA-01/raw-persistent-copy",
+      "files": 119,
+      "apparent_bytes": 177050768,
+      "allocated_bytes": 177299456,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/VIMAX-G03-FULL-FLOW-R07-PLANNING-01/raw-persistent-copy",
+      "files": 47,
+      "apparent_bytes": 628600,
+      "allocated_bytes": 749568,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/VIMAX-MUSICIANS-AUDIO-FULL-FLOW-R08-MEDIA-01/raw-persistent-copy",
+      "files": 154,
+      "apparent_bytes": 244907380,
+      "allocated_bytes": 245252096,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/VIMAX-MUSICIANS-AUDIO-FULL-FLOW-R08-MEDIA-02/raw-persistent-copy",
+      "files": 152,
+      "apparent_bytes": 261232788,
+      "allocated_bytes": 261558272,
+      "disposition": "keep; retained backup and manifest references"
+    },
+    {
+      "path": "reports/analysis/VIMAX-MUSICIANS-AUDIO-FULL-FLOW-R08-PLANNING-01/raw-persistent-copy",
+      "files": 51,
+      "apparent_bytes": 755748,
+      "allocated_bytes": 884736,
+      "disposition": "keep; retained backup and manifest references"
+    }
+  ],
+  "retained_known_failure_roots": [
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-E01-FULL-FLOW-R01-01",
+      "files": 55,
+      "apparent_bytes": 15167981,
+      "allocated_bytes": 15339520,
+      "disposition": "keep; failed observation is not trash"
+    },
+    {
+      "path": "data/raw/generated/OPENSTORYLINE-E03-FULL-FLOW-R03-01",
+      "files": 44,
+      "apparent_bytes": 28786872,
+      "allocated_bytes": 28930048,
+      "disposition": "keep; failed observation is not trash"
+    },
+    {
+      "path": "data/raw/generated/VIMAX-G01-FULL-FLOW-R05-MEDIA-01",
+      "files": 129,
+      "apparent_bytes": 181703492,
+      "allocated_bytes": 182013952,
+      "disposition": "keep; failed observation is not trash"
+    },
+    {
+      "path": "data/raw/generated/VIMAX-G02-FULL-FLOW-R06-MEDIA-01",
+      "files": 115,
+      "apparent_bytes": 120404330,
+      "allocated_bytes": 120651776,
+      "disposition": "keep; failed observation is not trash"
+    },
+    {
+      "path": "data/raw/generated/VIMAX-MUSICIANS-AUDIO-FULL-FLOW-R08-MEDIA-01",
+      "files": 154,
+      "apparent_bytes": 244907380,
+      "allocated_bytes": 245276672,
+      "disposition": "keep; failed observation is not trash"
+    }
+  ],
+  "reference_scan": {
+    "documents": 6448,
+    "max_document_bytes": 16000000,
+    "method": "literal repository-relative candidate path; absence is NOT dependency proof"
+  },
+  "deletion_count": 0,
+  "moved_count": 0
+}

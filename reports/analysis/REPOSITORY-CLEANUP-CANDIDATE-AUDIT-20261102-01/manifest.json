@@ -1,0 +1,44 @@
+{
+ "schema": "repository-cleanup-candidate-audit-manifest-v1",
+ "root": "reports/analysis/REPOSITORY-CLEANUP-CANDIDATE-AUDIT-20261102-01",
+ "path_basis": "manifest-directory-relative",
+ "self_hash": "omitted",
+ "created_utc": "2026-11-02",
+ "authorization": "audit_only_no_deletions_no_moves_no_links",
+ "deleted": 0,
+ "moved": 0,
+ "linked": 0,
+ "produced_by": "REPOSITORY-CLEANUP-CANDIDATE-AUDIT-20261102-01",
+ "based_on": {
+  "inventory_dir": "reports/analysis/REPOSITORY-CLEANUP-INVENTORY-20261102-01",
+  "inventory_files": [
+   "summary.md",
+   "inventory.json",
+   "directory-inventory.csv",
+   "file-inventory.csv.gz",
+   "manifest.json"
+  ]
+ },
+ "files": [
+  {
+   "path": "candidates.json",
+   "bytes": 26468,
+   "sha256": "42a462bc0e509099bb08866d53885b3c29c27f485d5d1b216e4c47a651d197ee"
+  },
+  {
+   "path": "duplicate-groups.json",
+   "bytes": 9278,
+   "sha256": "bcf6727be16e6988b85b23a73149ea5a3108670ecadc2351c629e5571d13e47b"
+  },
+  {
+   "path": "retained-and-unknown.md",
+   "bytes": 5201,
+   "sha256": "a5adeca730adbe31eb057318d4778d64dddbe164c0dd88fc5bd2e231c0dd9249"
+  },
+  {
+   "path": "summary.md",
+   "bytes": 7908,
+   "sha256": "dcb36804bc8660aba2b208abdfdca2506b341050da80f68a6b2c341f3d2e798e"
+  }
+ ]
+}

@@ -1,0 +1,153 @@
+{
+  "schema": "video-task-expansion-registry-v1",
+  "date": "2026-10-25",
+  "phase": "eight_usable_combinations_retained_pending_next_authorization",
+  "source_commits": {
+    "agentic_vbench": "b2764ed4b2a4b5a1737026b63887b50bba62f793",
+    "vimax": "fd4b72e7731be6e5f88486206d25ea59849b0285",
+    "videoweaver": "c809392fe6c2c8b22472049684aaefc650e31bde",
+    "video_use": "43cfc566833548093455c9d4a46bd69913b7e552",
+    "openstoryline": "c9e945215586f45c12a61c1951ee9a8e9c43a027"
+  },
+  "editing_tasks": [
+    {
+      "task_id": "exp-disfluency-interview-3-task01",
+      "id": "E01",
+      "instruction_path": "references/repos/agentic-vbench/tasks/agentic_vbench_repair/exp-disfluency-interview-3-task01/steps/solve/instruction.md",
+      "instruction_sha256": "89342bbad96c3d7e897545dd76ef1db2576398058d8a5b4b2d24aef1887df3cb",
+      "material": "data/workloads/video/editing/avb-disfluency-interview-3-v1/input/source.mp4",
+      "material_sha256": "a9bce74a50b5380d7c1aa1d9980f1d159e8633fbff00986504a363a3d18525bb",
+      "media": "h264 854x480 25fps aac16k mono 37s",
+      "requirement": "remove one disfluency filler",
+      "products": [
+        "output.mp4",
+        "cuts.json"
+      ],
+      "verifier": "avb judge.py (range+honesty+audio)",
+      "ready": "video_use_complete_scoring_openstoryline_independent_recovery_complete_scoring"
+    },
+    {
+      "task_id": "exp-disfluency-interview-4-task01",
+      "id": "E02",
+      "instruction_path": "references/repos/agentic-vbench/tasks/agentic_vbench_repair/exp-disfluency-interview-4-task01/steps/solve/instruction.md",
+      "instruction_sha256": "aff3a85c72d63770f21900cae5b391d4ae7aa8e0708ca8cb0a2cc5f824ea39ea",
+      "material": "data/raw/public/agentic_vbench/b2764ed4b2a4b5a1737026b63887b50bba62f793/exp-disfluency-interview-4-task01/input/source.mp4",
+      "material_sha256": "13d716c63a13fede09874c19fa0508eb68a6ed075b1e427eb27e1e372d5a51b8",
+      "media": "h264 854x480 ~59.94fps aac16k mono 30.03s",
+      "requirement": "remove two emmm fillers",
+      "products": [
+        "output.mp4",
+        "cuts.json"
+      ],
+      "verifier": "avb judge.py",
+      "ready": "video_use_complete_scoring_openstoryline_independent_recovery_complete_scoring",
+      "acquired_20261025": true
+    },
+    {
+      "task_id": "exp-content-cut-mkbhd-task01",
+      "id": "E03",
+      "instruction_path": "references/repos/agentic-vbench/tasks/agentic_vbench_repair/exp-content-cut-mkbhd-task01/steps/solve/instruction.md",
+      "instruction_sha256": "bc36a5683da245f295533ec1658f16a91bcfb5811643c14eff47bb85d921c423",
+      "material": "data/raw/public/agentic_vbench/b2764ed4b2a4b5a1737026b63887b50bba62f793/exp-content-cut-mkbhd-task01/input/source.mp4",
+      "material_sha256": "c66f380a2e2d232df9d82e3399e0702a8bdfba93e6e40f032f15331bf6ac7545",
+      "media": "h264 854x480 ~23.98fps aac16k mono 90.01s",
+      "requirement": "remove phone-case stand claim segment",
+      "products": [
+        "output.mp4",
+        "cuts.json"
+      ],
+      "verifier": "avb judge.py",
+      "ready": "video_use_e03_continuous_complete_scoring_reward0; openstoryline_e03_render_then_independent_closeout_complete_scoring_reward0; research_records_valid_not_official_task_success",
+      "acquired_20261025": true,
+      "offline_readiness": {
+        "report": "reports/analysis/VIDEO-E03-TWO-REPO-READINESS-01/summary.md",
+        "video_use": "existing_tools_expressible+wiring_ready; can request one real validation",
+        "openstoryline": "existing_tools_expressible+wiring_ready; can request one real validation",
+        "real_validation_required": true
+      },
+      "execution": {
+        "video_use": {
+          "run_id": "20261029T110903Z-video-use-e03-c01",
+          "outcome": "complete scoring reward=0 (range passed, honesty ssim 0.7485<0.8)"
+        },
+        "openstoryline": {
+          "run_id": "20261030T011456Z-openstoryline-e03-runtime-confirm-03",
+          "outcome": "render complete; original host export failed NameError(PurePosixPath); independent same-render closeout completed export and one official scoring, reward=0; valid research record, official range gate failed",
+          "research_record_valid": true,
+          "official_task_passed": false,
+          "current_report": "reports/analysis/OPENSTORYLINE-E03-RUNTIME-CONFIRM-03/revision-DOCUMENTATION-CLOSEOUT-01/summary.md",
+          "prior_attempts": [
+            {"run_id": "20261029T111519Z-openstoryline-e03-expansion-01", "outcome": "GraphRecursionError after three empty-timeline render failures; no submission"},
+            {"run_id": "20261029T152902Z-openstoryline-e03-runtime-confirm-02", "outcome": "render completed; export rejected frame rate; original resource samples missing; no scored submission"}
+          ]
+        }
+      }
+    }
+  ],
+  "generation_tasks": [
+    {
+      "task_id": "photographer_urban_timelapses_typeA",
+      "id": "G01",
+      "source": "references/repos/ViMax/vimax_benchmark/photographer_urban_timelapses_typeA.json",
+      "json_sha256": "aaf6545c1ef8a4a3ffef4e690b5f304fc67062dae42bbaf433a47d09da49719e",
+      "shots": 8,
+      "subject_duration_s": 5,
+      "target_duration_s": 40,
+      "script": "env/video/vimax/task-inputs/registered-scripts/photographer_urban_timelapses_typeA.script.txt",
+      "script_sha256": "447e4d88ccd76f9cb4a206f799993620a3c832238dd873c9ae9e905c2452b59a",
+      "constraints": "720p/30fps/no-audio/single-first-frame-i2v/variation-small",
+      "ready": "vimax_and_videoweaver_real_generation_and_final_video_complete"
+    },
+    {
+      "task_id": "pottery_workshop_studio_space_typeB",
+      "id": "G02",
+      "source": "references/repos/ViMax/vimax_benchmark/pottery_workshop_studio_space_typeB.json",
+      "json_sha256": "77096d931678750cc9ffa846f5e71dede752f220fd1622253ecbeff3c8197855",
+      "shots": 10,
+      "subject_duration_s": 5,
+      "target_duration_s": 50,
+      "script": "env/video/vimax/task-inputs/registered-scripts/pottery_workshop_studio_space_typeB.script.txt",
+      "script_sha256": "481d1b97cf6ddc3ccb788c574e2db49adaaeae4b343721382fc85747e0828f3d",
+      "constraints": "720p/30fps/no-audio/single-first-frame-i2v/variation-small",
+      "ready": "vimax_and_videoweaver_real_generation_and_final_video_complete"
+    },
+    {
+      "task_id": "athletes_gym_training_duo_typeC",
+      "id": "G03",
+      "source": "references/repos/ViMax/vimax_benchmark/athletes_gym_training_duo_typeC.json",
+      "json_sha256": "b93891f85bbe03ba5f4d1efc9a9b4b5d5eb976104631df037a5b69e03712f240",
+      "shots": 9,
+      "subject_duration_s": 5,
+      "target_duration_s": 45,
+      "script": "env/video/vimax/task-inputs/registered-scripts/athletes_gym_training_duo_typeC.script.txt",
+      "script_sha256": "c8cced9cbef5faf7b25c04dd49339a917b4f80f7b671910a4f98d0315e277d71",
+      "constraints": "720p/30fps/no-audio/single-first-frame-i2v/variation-small",
+      "ready": "videoweaver_g03_complete; vimax_g03_plan_reverified_offline_and_media_complete_17videos_45s",
+      "videoweaver_g03_run": {
+        "run_id": "20261029T065904Z-videoweaver-g03-c01",
+        "outcome": "technical_judgement_passed_final_45s_1280x720_30fps_noaudio"
+      },
+      "vimax_g03_planning_run": {
+        "run_id": "vimax-g03-expansion-planning-20261029T072745Z-b1a631cb",
+        "outcome": "plan_produced_9shot_but_registered_10shot_verifier_rejected; single_attempt_no_rerun; media_not_authorized"
+      },
+      "vimax_g03_plan_recovery_media_run": {
+        "run_id": "20261029T081529Z-vimax-g03-expansion-media-01",
+        "outcome": "17 accepted videos (9 subjects + 8 transitions) all SUCCEEDED; final 45s/1280x720/30fps/H264/no-audio; plan re-verified offline ok under 9-shot contract; no new planning call"
+      }
+    }
+  ],
+  "per_repo_status": {
+    "video_use": "E01/E02/E03 continuous pipeline and complete official scoring, reward=0; valid research records, not official task passes",
+    "openstoryline": "E01/E02/E03 native render plus independent export/scoring recovery, reward=0; original failed export preserved; no current E03 capability block",
+    "vimax": "G01/G02/G03 planning and media completion; G03 reused offline-reverified plan; source provenance/media usage limitations retained",
+    "videoweaver": "G01/G02/G03 continuous generation-to-merge; G02 original judge FAIL and separate revised acceptance PASS remain distinct"
+  },
+  "updated_at": "2026-10-30",
+  "results_index": "docs/video_results_index.json",
+  "remaining_for_next_stage": [
+    "Organize CPU-side tool replay materials for twelve selected repository-task combinations from six inputs; no new API calls",
+    "Keep original attempts, independent recovery/scoring and planning/media phases separate; existing eight-result aggregation remains a historical subset",
+    "Actual Replay, new tasks and homogeneous repeats require separate authorization; reward=0 is not an automatic rerun trigger"
+  ]
+}

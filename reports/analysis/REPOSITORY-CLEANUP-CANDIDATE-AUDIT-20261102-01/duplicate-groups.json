@@ -1,0 +1,247 @@
+[
+ {
+  "group": "G01-codex-tar",
+  "sha256": "a7261e65f4a96d8f4ca65a069c6cf2dc2c33defc341e48078acefda9461fffe4",
+  "verified": true,
+  "shared_inode": false,
+  "members": [
+   {
+    "path": "env/video/videoweaver/build/codex-aarch64-unknown-linux-musl.tar.gz",
+    "bytes": 104950609,
+    "inode_nlink": 1,
+    "role": "videoweaver build input (Dockerfile COPY)",
+    "referenced": true,
+    "keep": "yes (build input)"
+   },
+   {
+    "path": "env/video/video-use/codex-bailian-integration-01/build/codex-aarch64-unknown-linux-musl.tar.gz",
+    "bytes": 104950609,
+    "inode_nlink": 1,
+    "role": "video-use build input (Dockerfile COPY)",
+    "referenced": true,
+    "keep": "yes (build input)"
+   }
+  ],
+  "note": "byte-identical duplicate; deleting one breaks that repo's image rebuild unless build config changes"
+ },
+ {
+  "group": "G02-closeout-VIMAX-MUSICIANS-AUDIO-FULL-FLOW-R08-MEDIA-02",
+  "verified": true,
+  "shared_inode": false,
+  "members": [
+   {
+    "path": "data/raw/generated/VIMAX-MUSICIANS-AUDIO-FULL-FLOW-R08-MEDIA-02/musicians-audio-full-flow-r08-media-02/workspace/attempt/remote-closeout",
+    "bytes": 84216088,
+    "role": "remote-closeout re-download (duplicate)",
+    "referenced": true,
+    "keep": "duplicate of working_dir media"
+   },
+   {
+    "path": "data/raw/generated/VIMAX-MUSICIANS-AUDIO-FULL-FLOW-R08-MEDIA-02/musicians-audio-full-flow-r08-media-02/workspace/.working_dir",
+    "bytes": 0,
+    "role": "primary working_dir subject/transition videos",
+    "referenced": true,
+    "keep": "yes (primary)"
+   }
+  ],
+  "note": "remote-closeout 25 mp4 are byte-identical to working_dir media (84.2MB verified); run-record ledger records SUCCEEDED re-download"
+ },
+ {
+  "group": "G02-closeout-VIMAX-MUSICIANS-AUDIO-MEDIA-EXECUTION-02",
+  "verified": true,
+  "shared_inode": false,
+  "members": [
+   {
+    "path": "data/raw/generated/VIMAX-MUSICIANS-AUDIO-MEDIA-EXECUTION-02/musicians-band-rehearsal-audio-media-02-20261031T103514Z-1ac583f2/workspace/attempt/remote-closeout",
+    "bytes": 76901394,
+    "role": "remote-closeout re-download (duplicate)",
+    "referenced": true,
+    "keep": "duplicate of working_dir media"
+   },
+   {
+    "path": "data/raw/generated/VIMAX-MUSICIANS-AUDIO-MEDIA-EXECUTION-02/musicians-band-rehearsal-audio-media-02-20261031T103514Z-1ac583f2/workspace/.working_dir",
+    "bytes": 0,
+    "role": "primary working_dir subject/transition videos",
+    "referenced": true,
+    "keep": "yes (primary)"
+   }
+  ],
+  "note": "remote-closeout 25 mp4 are byte-identical to working_dir media (76.9MB verified); run-record ledger records SUCCEEDED re-download"
+ },
+ {
+  "group": "G02-closeout-VIMAX-MUSICIANS-AUDIO-FULL-FLOW-R08-MEDIA-01",
+  "verified": true,
+  "shared_inode": false,
+  "members": [
+   {
+    "path": "data/raw/generated/VIMAX-MUSICIANS-AUDIO-FULL-FLOW-R08-MEDIA-01/musicians-audio-full-flow-r08-media-01/workspace/attempt/remote-closeout",
+    "bytes": 75087976,
+    "role": "remote-closeout re-download (duplicate)",
+    "referenced": true,
+    "keep": "duplicate of working_dir media"
+   },
+   {
+    "path": "data/raw/generated/VIMAX-MUSICIANS-AUDIO-FULL-FLOW-R08-MEDIA-01/musicians-audio-full-flow-r08-media-01/workspace/.working_dir",
+    "bytes": 0,
+    "role": "primary working_dir subject/transition videos",
+    "referenced": true,
+    "keep": "yes (primary)"
+   }
+  ],
+  "note": "remote-closeout 25 mp4 are byte-identical to working_dir media (75.1MB verified); run-record ledger records SUCCEEDED re-download"
+ },
+ {
+  "group": "G02-closeout-VIMAX-G01-FULL-FLOW-R05-MEDIA-02",
+  "verified": true,
+  "shared_inode": false,
+  "members": [
+   {
+    "path": "data/raw/generated/VIMAX-G01-FULL-FLOW-R05-MEDIA-02/g01-full-flow-r05-media-02/workspace/attempt/remote-closeout",
+    "bytes": 63170098,
+    "role": "remote-closeout re-download (duplicate)",
+    "referenced": true,
+    "keep": "duplicate of working_dir media"
+   },
+   {
+    "path": "data/raw/generated/VIMAX-G01-FULL-FLOW-R05-MEDIA-02/g01-full-flow-r05-media-02/workspace/.working_dir",
+    "bytes": 0,
+    "role": "primary working_dir subject/transition videos",
+    "referenced": true,
+    "keep": "yes (primary)"
+   }
+  ],
+  "note": "remote-closeout 15 mp4 are byte-identical to working_dir media (63.2MB verified); run-record ledger records SUCCEEDED re-download"
+ },
+ {
+  "group": "G02-closeout-VIMAX-G01-MEDIA-RUNTIME-CONFIRM-02",
+  "verified": true,
+  "shared_inode": false,
+  "members": [
+   {
+    "path": "data/raw/generated/VIMAX-G01-MEDIA-RUNTIME-CONFIRM-02/vimax-g01-runtime-confirm-media-20261028T072612Z-01/workspace/attempt/remote-closeout",
+    "bytes": 58868481,
+    "role": "remote-closeout re-download (duplicate)",
+    "referenced": true,
+    "keep": "duplicate of working_dir media"
+   },
+   {
+    "path": "data/raw/generated/VIMAX-G01-MEDIA-RUNTIME-CONFIRM-02/vimax-g01-runtime-confirm-media-20261028T072612Z-01/workspace/.working_dir",
+    "bytes": 0,
+    "role": "primary working_dir subject/transition videos",
+    "referenced": true,
+    "keep": "yes (primary)"
+   }
+  ],
+  "note": "remote-closeout 15 mp4 are byte-identical to working_dir media (58.9MB verified); run-record ledger records SUCCEEDED re-download"
+ },
+ {
+  "group": "G02-closeout-VIMAX-G02-EXPANSION-01",
+  "verified": true,
+  "shared_inode": false,
+  "members": [
+   {
+    "path": "data/raw/generated/VIMAX-G02-EXPANSION-01/vimax-g02-expansion-media-20261028T143000Z-01/workspace/attempt/remote-closeout",
+    "bytes": 58006399,
+    "role": "remote-closeout re-download (duplicate)",
+    "referenced": true,
+    "keep": "duplicate of working_dir media"
+   },
+   {
+    "path": "data/raw/generated/VIMAX-G02-EXPANSION-01/vimax-g02-expansion-media-20261028T143000Z-01/workspace/.working_dir",
+    "bytes": 0,
+    "role": "primary working_dir subject/transition videos",
+    "referenced": true,
+    "keep": "yes (primary)"
+   }
+  ],
+  "note": "remote-closeout 19 mp4 are byte-identical to working_dir media (58.0MB verified); run-record ledger records SUCCEEDED re-download"
+ },
+ {
+  "group": "G02-closeout-VIMAX-G03-FULL-FLOW-R07-MEDIA-01",
+  "verified": true,
+  "shared_inode": false,
+  "members": [
+   {
+    "path": "data/raw/generated/VIMAX-G03-FULL-FLOW-R07-MEDIA-01/g03-full-flow-r07-media-01/workspace/attempt/remote-closeout",
+    "bytes": 55565642,
+    "role": "remote-closeout re-download (duplicate)",
+    "referenced": true,
+    "keep": "duplicate of working_dir media"
+   },
+   {
+    "path": "data/raw/generated/VIMAX-G03-FULL-FLOW-R07-MEDIA-01/g03-full-flow-r07-media-01/workspace/.working_dir",
+    "bytes": 0,
+    "role": "primary working_dir subject/transition videos",
+    "referenced": true,
+    "keep": "yes (primary)"
+   }
+  ],
+  "note": "remote-closeout 17 mp4 are byte-identical to working_dir media (55.6MB verified); run-record ledger records SUCCEEDED re-download"
+ },
+ {
+  "group": "G02-closeout-VIMAX-G01-FULL-FLOW-R05-MEDIA-01",
+  "verified": true,
+  "shared_inode": false,
+  "members": [
+   {
+    "path": "data/raw/generated/VIMAX-G01-FULL-FLOW-R05-MEDIA-01/g01-full-flow-r05-media-01/workspace/attempt/remote-closeout",
+    "bytes": 52630560,
+    "role": "remote-closeout re-download (duplicate)",
+    "referenced": true,
+    "keep": "duplicate of working_dir media"
+   },
+   {
+    "path": "data/raw/generated/VIMAX-G01-FULL-FLOW-R05-MEDIA-01/g01-full-flow-r05-media-01/workspace/.working_dir",
+    "bytes": 0,
+    "role": "primary working_dir subject/transition videos",
+    "referenced": true,
+    "keep": "yes (primary)"
+   }
+  ],
+  "note": "remote-closeout 15 mp4 are byte-identical to working_dir media (52.6MB verified); run-record ledger records SUCCEEDED re-download"
+ },
+ {
+  "group": "G02-closeout-VIMAX-G03-EXPANSION-01",
+  "verified": true,
+  "shared_inode": false,
+  "members": [
+   {
+    "path": "data/raw/generated/VIMAX-G03-EXPANSION-01/20261029T081529Z-vimax-g03-expansion-media-01/workspace/attempt/remote-closeout",
+    "bytes": 49801709,
+    "role": "remote-closeout re-download (duplicate)",
+    "referenced": true,
+    "keep": "duplicate of working_dir media"
+   },
+   {
+    "path": "data/raw/generated/VIMAX-G03-EXPANSION-01/20261029T081529Z-vimax-g03-expansion-media-01/workspace/.working_dir",
+    "bytes": 0,
+    "role": "primary working_dir subject/transition videos",
+    "referenced": true,
+    "keep": "yes (primary)"
+   }
+  ],
+  "note": "remote-closeout 17 mp4 are byte-identical to working_dir media (49.8MB verified); run-record ledger records SUCCEEDED re-download"
+ },
+ {
+  "group": "G02-closeout-VIMAX-G02-FULL-FLOW-R06-MEDIA-02",
+  "verified": true,
+  "shared_inode": false,
+  "members": [
+   {
+    "path": "data/raw/generated/VIMAX-G02-FULL-FLOW-R06-MEDIA-02/g02-full-flow-r06-media-02/workspace/attempt/remote-closeout",
+    "bytes": 48065445,
+    "role": "remote-closeout re-download (duplicate)",
+    "referenced": true,
+    "keep": "duplicate of working_dir media"
+   },
+   {
+    "path": "data/raw/generated/VIMAX-G02-FULL-FLOW-R06-MEDIA-02/g02-full-flow-r06-media-02/workspace/.working_dir",
+    "bytes": 0,
+    "role": "primary working_dir subject/transition videos",
+    "referenced": true,
+    "keep": "yes (primary)"
+   }
+  ],
+  "note": "remote-closeout 19 mp4 are byte-identical to working_dir media (48.1MB verified); run-record ledger records SUCCEEDED re-download"
+ }
+]

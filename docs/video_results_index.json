@@ -1,0 +1,699 @@
+{
+ "schema": "video-retained-results-v1",
+ "updated": "2026-11-02",
+ "purpose": "Canonical usable video observations; complete scoring with reward 0 is retained. Recovery is not retroactive as-run success.",
+ "coverage": {
+  "repository_task_combinations": 16,
+  "distinct_registered_inputs": 9,
+  "per_repo_tasks": {
+   "video-use": [
+    "E01",
+    "E02",
+    "E03",
+    "REPURPOSE"
+   ],
+   "openstoryline": [
+    "E01",
+    "E02",
+    "E03",
+    "ASSEMBLY-TASK1"
+   ],
+   "vimax": [
+    "G01",
+    "G02",
+    "G03",
+    "MUSICIANS-AUDIO"
+   ],
+   "videoweaver": [
+    "G01",
+    "G02",
+    "G03",
+    "MUSICIANS-AUDIO"
+   ]
+  },
+  "selection_rule": "Use rows where selected_for_coverage is not false; exactly one selected observation per repo/task. Other rows are preserved failure history, not extra task combinations.",
+  "valid_record_does_not_require_positive_reward": true,
+  "does_not_imply_twelve_continuous_successes_or_homogeneous_repeats": true,
+  "cpu_replay_material_organization_is_next_not_execution_authorization": true,
+  "count_basis": "historically_retained_repo_task_combinations_including_staged_and_recovered_results; not continuous success count or verified raw-trace availability",
+  "does_not_imply_sixteen_continuous_successes_or_homogeneous_repeats": true,
+  "trace_scope_review": {
+   "date": "2026-10-31",
+   "continuous_main_flow_raw_located": 7,
+   "planning_and_media_staged": 3,
+   "original_plus_independent_recovery": 5,
+   "indexed_raw_unavailable_pending_location": 1,
+   "individual_command_fields_not_yet_uniformly_audited": true
+  }
+ },
+ "rows": [
+  {
+   "repo": "videoweaver",
+   "task": "MUSICIANS-AUDIO",
+   "kind": "full_audio_run_merge_success",
+   "selected_for_coverage": true,
+   "reward": null,
+   "raw": "data/raw/generated/VIDEOWEAVER-MUSICIANS-AUDIO-EXECUTION-01/20261031T074737Z-videoweaver-musicians-audio-01",
+   "note": "one real 13-shot audio run: 13 first-frame images + 13 wan2.6-i2v-flash audio=true videos + native merge -> 65.13s final (AAC non-silent, decode ok), judge 44/44; semantics not_evaluated; official not_run; probe not counted",
+   "current_trace_scope": "continuous_main_flow_raw_located"
+  },
+  {
+   "repo": "video-use",
+   "task": "E01",
+   "kind": "continuous_scored",
+   "reward": 0,
+   "raw": "data/raw/generated/VIDEO-USE-E01-BASELINE-01/20261027T1030Z-video-use-e01-baseline-01",
+   "identity": "env/video/video-use/VIDEO-USE-E01-BASELINE-01/frozen-identity.json",
+   "analysis": "reports/analysis/VIDEO-FOUR-REPO-BASELINE-CONFIRM-01/revision-FINAL-CLOSEOUT-01/video-use-e01",
+   "report": "reports/resource/VIDEO-USE-E01-BASELINE-01/summary.md",
+   "current_trace_scope": "continuous_main_flow_raw_located"
+  },
+  {
+   "repo": "video-use",
+   "task": "E02",
+   "kind": "continuous_scored",
+   "reward": 0,
+   "raw": "data/raw/generated/VIDEO-USE-E02-C01/20261028T113000Z-video-use-e02-c01",
+   "identity": "env/video/video-use/VIDEO-USE-E02-C01/frozen-identity.json",
+   "analysis": "reports/analysis/VIDEO-TASK-EXPANSION-C01/video-use-e02",
+   "report": "reports/analysis/VIDEO-TASK-EXPANSION-C01/revision-CLOSEOUT-01/summary.md",
+   "current_trace_scope": "continuous_main_flow_raw_located"
+  },
+  {
+   "repo": "openstoryline",
+   "task": "E01",
+   "kind": "render_then_independent_recovery_scored",
+   "reward": 0,
+   "raw": "data/raw/generated/OPENSTORYLINE-E01-RUNTIME-CONFIRM-02/20261028T072612Z-openstoryline-e01-runtime-confirm-02",
+   "identity": "env/video/openstoryline/OPENSTORYLINE-E01-RUNTIME-CONFIRM-02/frozen-identity.json",
+   "recovery": "env/video/openstoryline/OPENSTORYLINE-E01-RUNTIME-CONFIRM-02/recovery-01",
+   "analysis": "reports/analysis/VIDEO-THREE-REPO-RUNTIME-CONFIRM-02/openstoryline-e01",
+   "report": "env/video/openstoryline/OPENSTORYLINE-E01-RUNTIME-CONFIRM-02/recovery-01/recovery-report.json",
+   "full_flow_rerun": {
+    "id": "R01",
+    "status": "attempt_2_completed_normal_flow_20261031",
+    "attempts": [
+     {
+      "attempt": "R01-01",
+      "status": "attempt_1_executed_failed_observation_20261031",
+      "run_id": "20261031T142400Z-openstoryline-e01-full-flow-r01-01",
+      "analysis": "reports/analysis/OPENSTORYLINE-E01-FULL-FLOW-R01-01",
+      "note": "new formal attempt on current production chain: input/overlay gates passed; native interview chain reached render (31.64s/854x480/25fps/AAC video) but 1800s agent deadline expired before completion gate (no agent-result.json); no submission, verifier not_run_no_submission, reward=null; no retry, not retrofitted as success"
+     },
+     {
+      "attempt": "R01-02",
+      "status": "complete_normal_flow_20261031",
+      "run_id": "20261031T183007Z-openstoryline-e01-full-flow-r01-02",
+      "analysis": "reports/analysis/OPENSTORYLINE-E01-FULL-FLOW-R01-02",
+      "note": "complete normal flow on current production chain: native Agent rc=0 (no timeout, 1076.69s<1800s); completion gate wrote render_artifact_id; host exported output.mp4/cuts.json from the timeline the final render consumed; technical check passed (frame-rate exact 25/1); official verifier complete once reward=0.0 (legal); container removed. R01-01 failure observation preserved unchanged."
+     }
+    ]
+   },
+   "current_trace_scope": "original_plus_independent_recovery"
+  },
+  {
+   "repo": "openstoryline",
+   "task": "E02",
+   "kind": "render_then_independent_recovery_scored",
+   "reward": 0,
+   "raw": "data/raw/generated/OPENSTORYLINE-E02-EXPANSION-02/20261028T173322Z-openstoryline-e02-expansion-02",
+   "identity": "env/video/openstoryline/OPENSTORYLINE-E02-EXPANSION-02/frozen-identity.json",
+   "recovery": "env/video/openstoryline/OPENSTORYLINE-E02-EXPANSION-02/recovery-FPS-01",
+   "analysis": "reports/analysis/OPENSTORYLINE-E02-EXPANSION-02/analysis-v1",
+   "report": "reports/analysis/OPENSTORYLINE-E02-EXPANSION-02/recovery-FPS-01/summary.md",
+   "full_flow_rerun": {
+    "id": "R02",
+    "status": "complete_normal_flow_20261101",
+    "attempts": [
+     {
+      "attempt": "R02-01",
+      "status": "complete_normal_flow_20261101",
+      "run_id": "20261101T025952Z-openstoryline-e02-full-flow-r02-01",
+      "analysis": "reports/analysis/OPENSTORYLINE-E02-FULL-FLOW-R02-01",
+      "note": "complete normal flow on current production chain: native Agent rc=0 (no timeout, agent wall 479.66s<1800s); input/overlay gates passed with actual E02 input (container bytes/SHA 689288/13d716c6...); completion gate wrote render_artifact_id; host exported output.mp4/cuts.json from the timeline the final render consumed; technical check passed (frame-rate exact 60000/1001, exact_equal true, 0 ppm; no 2997/50 rounding); official verifier complete once reward=0.0 (legal); container removed. E02-EXPANSION-01/02 historical observations preserved unchanged."
+     }
+    ]
+   },
+   "current_trace_scope": "original_plus_independent_recovery"
+  },
+  {
+   "repo": "vimax",
+   "task": "G01",
+   "kind": "planning_and_separate_media",
+   "reward": null,
+   "raw": "data/raw/generated/VIMAX-G01-MEDIA-RUNTIME-CONFIRM-02/vimax-g01-runtime-confirm-media-20261028T072612Z-01",
+   "planning": "env/video/vimax/VIMAX-G01-BASELINE-01/planning",
+   "identity": "env/video/vimax/VIMAX-G01-MEDIA-RUNTIME-CONFIRM-02/media/identity-01.json",
+   "analysis": "reports/analysis/VIDEO-THREE-REPO-RUNTIME-CONFIRM-02/vimax-g01-media",
+   "report": "reports/analysis/VIDEO-THREE-REPO-RUNTIME-CONFIRM-02/summary.md",
+   "limits": "Media reused the registered G01 plan. No real 429 in this run; do not claim this run exercised retries.",
+   "full_flow_rerun": {
+    "id": "R05",
+    "status": "planning_phase_completed_20261101_media_pending_approval",
+    "planning_phase": {
+     "run_id": "g01-full-flow-r05-planning-01-20261101T070459Z-3f4e2dab",
+     "analysis": "reports/analysis/VIMAX-G01-FULL-FLOW-R05-PLANNING-01",
+     "result": "new planning passed (8 shots/1 character/8 cameras/7 transitions), plan_verifier 14/14, 0 media, 13 logical requests 37873 tokens",
+     "media_budget_draft": "reports/analysis/VIMAX-G01-FULL-FLOW-R05-PLANNING-01/media-budget-draft.json (superseded)",
+     "media_status": "pending_approval_not_started",
+     "media_budget_corrected": "reports/analysis/VIMAX-G01-R05-MEDIA-BUDGET-AND-RESOURCE-CLOSEOUT-01/media-budget-draft-corrected.json",
+     "media_budget_corrected_counts": {
+      "image_creates": 19,
+      "video_creates": 15,
+      "media_downloads": 34,
+      "video_poll_upper_bound": 1380,
+      "closeout_redownloads": 15,
+      "video_poll_per_task_upper_bound": 92
+     },
+     "resource_revision": "reports/analysis/VIMAX-G01-R05-MEDIA-BUDGET-AND-RESOURCE-CLOSEOUT-01/resource-derived-evidence.json",
+     "sampling_fix": "reports/analysis/VIMAX-G01-R05-MEDIA-BUDGET-AND-RESOURCE-CLOSEOUT-01/summary.md (work C: sampler.stop before docker wait)",
+     "four_gap_closeout": "reports/analysis/VIMAX-R05-FOUR-GAP-OFFLINE-FINAL-CLOSEOUT-01/summary.md",
+     "four_gap_summary": "handshake (boundary ack) + real control-chain tests + poll 92/1380 timing + helper production semantics; media still pending approval",
+     "production_boundary_final": "reports/analysis/VIMAX-R05-PRODUCTION-BOUNDARY-AND-VALIDATION-FINAL-01/summary.md",
+     "production_boundary_summary": "shared read_boundary_and_send_ack production function called by run_attempt and tests (no mirror); ACK schema v2 full validation (schema/type/run/session/attempt/container/token, stale/duplicate/partial/timeout/write-fail) flowing into run-report; helper derived-zero conflict + strict-int attempts",
+     "observation_quality_ack_semantics": "reports/analysis/VIMAX-R05-OBSERVATION-QUALITY-AND-ACK-SEMANTICS-CLOSEOUT-01/summary.md",
+     "observation_quality_summary": "derive_observation_quality production function wired into run_attempt and run-report (per-metric + overall complete/partial/unknown, ack host_write/entry_accept separated, rows_lost!=complete); ACK idempotent-message contract (option one, unreachable seen_accept removed)",
+     "observation_quality_correctness_final": "reports/analysis/VIMAX-R05-OBSERVATION-QUALITY-CORRECTNESS-FINAL-01/summary.md",
+     "observation_quality_correctness_summary": "unified metric schema (_metrics_from_snapshot cpu/memory_current/memory_kernel_peak/io_read/io_write shared by producer/induction/tests); start boundary checked per-metric (interval needs start+end, end>=start); overall aggregates ack/stream-loss/write-error/netns/scope; entry observation ownership+complete_token validated (five counterexamples fixed)"
+    },
+    "media_phase": {
+     "status": "complete_normal_flow_media_02",
+     "media_01": {
+      "run_id": "g01-full-flow-r05-media-01-20261101T121447Z-18973ef8",
+      "verdict": "failure_observation (media generation+concat ok, host COMPLETE v3 final-path ownership failed final_artifact_missing rc=1; preserved)"
+     },
+     "media_02": {
+      "run_id": "g01-full-flow-r05-media-02-20261101T141641Z-6e4a9447",
+      "config": "env/video/vimax/task-configs/G01-full-flow-r05-media-02-formal.json",
+      "identity": "env/video/vimax/VIMAX-G01-FULL-FLOW-R05-MEDIA-02/media/identity-01.json",
+      "analysis": "reports/analysis/VIMAX-G01-FULL-FLOW-R05-MEDIA-02",
+      "result": "complete normal flow: 19 images / 15 videos / 34 downloads; final 40.000s H.264 1280x720 30fps no-audio SHA 639e778b68eb101d...; 15/15 remote SUCCEEDED audio=false; COMPLETE v3 all True incl final_path_resolution (native workspace-relative path mapped to this workspace); host native_agent_done rc=0; cleanup verified; measurement quality complete",
+      "final_path_repair": "reports/analysis/VIMAX-MEDIA-FINAL-PATH-REPAIR-01/summary.md",
+      "verdict_rc": 0
+     }
+    }
+   },
+   "current_trace_scope": "planning_and_media_staged"
+  },
+  {
+   "repo": "vimax",
+   "task": "G02",
+   "kind": "fresh_planning_and_media_with_revised_acceptance",
+   "reward": null,
+   "raw": "data/raw/generated/VIMAX-G02-EXPANSION-01/vimax-g02-expansion-media-20261028T143000Z-01",
+   "planning": "env/video/vimax/VIMAX-G02-EXPANSION-01/planning",
+   "identity": "env/video/vimax/VIMAX-G02-EXPANSION-01/media/identity-01.json",
+   "analysis": "reports/analysis/VIMAX-G02-EXPANSION-01/media",
+   "report": "reports/analysis/VIMAX-G02-EXPANSION-01/revision-ACCEPTANCE-01/summary.md",
+   "limits": "Core media and budget pass; image provenance partial; media total-token ledger incomplete; concat order supported, not independently frame-proven.",
+   "full_flow_rerun": {
+    "id": "R06",
+    "status": "complete_normal_flow"
+   },
+   "current_trace_scope": "planning_and_media_staged",
+   "r06_planning": {
+    "run_id": "g02-full-flow-r06-planning-01-20261101T152744Z-cd860dee",
+    "analysis": "reports/analysis/VIMAX-G02-FULL-FLOW-R06-PLANNING-01",
+    "note": "new G02 planning passed (10 shots/2 chars/10 cameras/9 transitions, plan_verifier ok, 0 media)"
+   },
+   "r06_media": {
+    "run_id": "g02-full-flow-r06-media-01-20261101T155226Z-5ebe4b38",
+    "analysis": "reports/analysis/VIMAX-G02-FULL-FLOW-R06-MEDIA-01",
+    "note": "in-container media pipeline succeeded (12 images/19 videos/31 downloads/final 50s no-audio) but production host_runner killed by outer tool 120s timeout ~2min after start -> host termination=native_agent_done NOT recorded, resource measurement partial, manual bounded closeout. R06 NOT complete; no retry"
+   },
+   "r06_media_02": {
+    "run_id": "g02-full-flow-r06-media-02-20261101T172522Z-20b731fa",
+    "analysis": "reports/analysis/VIMAX-G02-FULL-FLOW-R06-MEDIA-02",
+    "note": "complete normal flow via managed launcher: 12 images/19 videos/31 downloads/native concat/final 50s H.264 720p30fps no-audio SHA a85c603d..., host native_agent_done rc=0, measurement complete. R06 marked complete."
+   },
+   "r06_media_01": {
+    "run_id": "g02-full-flow-r06-media-01-20261101T155226Z-5ebe4b38",
+    "analysis": "reports/analysis/VIMAX-G02-FULL-FLOW-R06-MEDIA-01",
+    "note": "interrupted-attempt failure observation preserved (media pipeline succeeded, host lifecycle interrupted)"
+   }
+  },
+  {
+   "repo": "videoweaver",
+   "task": "G01",
+   "kind": "continuous_generation_merge",
+   "reward": null,
+   "raw": "data/raw/generated/VIDEOWEAVER-GENERATION-G01-RUNTIME-CONFIRM-03/20261028T105012Z-videoweaver-g01-runtime-confirm-03",
+   "identity": "env/video/videoweaver/evidence/VIDEOWEAVER-GENERATION-G01-RUNTIME-CONFIRM-03/frozen-identity.json",
+   "analysis": "reports/analysis/VIDEO-THREE-REPO-RUNTIME-CONFIRM-03/videoweaver-g01",
+   "report": "reports/analysis/VIDEO-THREE-REPO-RUNTIME-CONFIRM-03/summary.md",
+   "current_trace_scope": "continuous_main_flow_raw_located"
+  },
+  {
+   "repo": "videoweaver",
+   "task": "G02",
+   "kind": "continuous_generation_merge_with_revised_acceptance",
+   "reward": null,
+   "raw": "data/raw/generated/VIDEOWEAVER-GENERATION-G02-C01/20261028T114500Z-videoweaver-g02-c01",
+   "identity": "env/video/videoweaver/evidence/VIDEOWEAVER-GENERATION-G02-C01/frozen-identity.json",
+   "analysis": "reports/analysis/VIDEO-TASK-EXPANSION-C01/videoweaver-g02",
+   "report": "reports/analysis/VIDEO-TASK-EXPANSION-C01/revision-CLOSEOUT-01/summary.md",
+   "limits": "As-run judge failed download minimum 30; separate revision passed minimum 20 with cap 30. Original failure unchanged.",
+   "current_trace_scope": "continuous_main_flow_raw_located"
+  },
+  {
+   "repo": "videoweaver",
+   "task": "G03",
+   "kind": "continuous_generation_merge",
+   "reward": null,
+   "raw": "data/raw/generated/VIDEOWEAVER-GENERATION-G03-C01/20261029T065904Z-videoweaver-g03-c01",
+   "identity": "env/video/videoweaver/evidence/VIDEOWEAVER-GENERATION-G03-C01/frozen-identity.json",
+   "analysis": "reports/analysis/VIDEO-G03-TWO-REPO-EXPANSION-01/videoweaver-g03",
+   "report": "reports/analysis/VIDEO-G03-TWO-REPO-EXPANSION-01/summary.md",
+   "limits": "technical judgement passed; no official semantic score; CPU-side tool trajectory recorded",
+   "current_trace_scope": "continuous_main_flow_raw_located"
+  },
+  {
+   "repo": "vimax",
+   "task": "G03",
+   "kind": "planning_reverified_and_media_complete",
+   "reward": null,
+   "raw": "data/raw/generated/VIMAX-G03-EXPANSION-01/20261029T081529Z-vimax-g03-expansion-media-01",
+   "planning": "env/video/vimax/VIMAX-G03-EXPANSION-01/planning",
+   "identity": "env/video/vimax/VIMAX-G03-EXPANSION-01/media/identity-01.json",
+   "analysis": "reports/analysis/VIDEO-G03-TWO-REPO-EXPANSION-01/vimax-g03-media",
+   "report": "reports/analysis/VIDEO-G03-TWO-REPO-EXPANSION-01/summary.md",
+   "limits": "17 remote video tasks all SUCCEEDED; final 45s; media total-token usage partial; no official semantic score; plan re-verified offline (no new planning call)",
+   "full_flow_rerun": {
+    "id": "R07",
+    "status": "complete_normal_flow"
+   },
+   "current_trace_scope": "planning_and_media_staged",
+   "r07_planning": {
+    "run_id": "g03-full-flow-r07-planning-01-20261102T014721Z-1db09049",
+    "analysis": "reports/analysis/VIMAX-G03-FULL-FLOW-R07-PLANNING-01",
+    "note": "R07 planning passed via the planning-stage managed launcher (9 shots/2 chars/9 cameras/8 transitions, plan_verifier ok, 0 media, 14 logical requests 40666 tokens, attempt 87.42s, measurement complete)"
+   },
+   "r07_media": {
+    "run_id": "g03-full-flow-r07-media-01-20261102T021018Z-bc2d3e00",
+    "analysis": "reports/analysis/VIMAX-G03-FULL-FLOW-R07-MEDIA-01",
+    "note": "R07 media COMPLETE NORMAL FLOW via scripts/vimax_managed_launch.py (stage=media): 8 images (6 portraits + 2 candidates)/17 videos (9 subject + 8 transition)/25 normal downloads/native concat (subject shots 0..8 only)/final 45.000s H.264 1280x720 30fps no-audio SHA d4150200...; COMPLETE v3 all valid, native_agent_done rc=0, container exit 0, cleanup verified, measurement complete; supervisor runner_exited rc=0; remote closeout 17/17 SUCCEEDED audio=false"
+   }
+  },
+  {
+   "repo": "video-use",
+   "task": "E03",
+   "kind": "continuous_scored",
+   "reward": 0,
+   "raw": "data/raw/generated/VIDEO-USE-E03-C01/20261029T110903Z-video-use-e03-c01",
+   "identity": "env/video/video-use/VIDEO-USE-E03-C01/frozen-identity.json",
+   "analysis": "reports/analysis/VIDEO-E03-TWO-REPO-EXECUTION-01/video-use-e03",
+   "report": "reports/analysis/VIDEO-E03-TWO-REPO-EXECUTION-01/summary.md",
+   "limits": "range gate passed; honesty ssim 0.7485<0.8 -> reward 0; complete scoring",
+   "current_trace_scope": "indexed_raw_unavailable_pending_location",
+   "current_raw_trace_status": {
+    "checked": "2026-10-31",
+    "indexed_run_exists": false,
+    "parent_directory_empty": true,
+    "analysis_reports_remain": true,
+    "reason": "unknown; no conclusion of permanent loss",
+    "currently_confirmed_replayable": false,
+    "included_in_rerun_plan": true,
+    "rerun_id": "R09"
+   },
+   "full_flow_rerun": {
+    "id": "R09",
+    "status": "complete_normal_flow_20261102",
+    "reason": "raw_trace_recollected_in_new_complete_workflow; historical indexed raw remains unavailable",
+    "run_id": "20261102T112320Z-video-use-e03-full-flow-r09-01",
+    "analysis": "reports/analysis/VIDEO-USE-E03-FULL-FLOW-R09-01",
+    "raw": "data/raw/generated/VIDEO-USE-E03-FULL-FLOW-R09-01/20261102T112320Z-video-use-e03-full-flow-r09-01",
+    "archive_revision": "reports/analysis/VIDEO-USE-E03-FULL-FLOW-R09-01/revision-ARCHIVE-CLOSEOUT-01"
+   }
+  },
+  {
+   "repo": "openstoryline",
+   "task": "E03",
+   "kind": "attempt_reached_render_recursion_limit_no_submission",
+   "selected_for_coverage": false,
+   "reward": null,
+   "raw": "data/raw/generated/OPENSTORYLINE-E03-EXPANSION-01/20261029T111519Z-openstoryline-e03-expansion-01",
+   "identity": "env/video/openstoryline/OPENSTORYLINE-E03-EXPANSION-01/frozen-identity.json",
+   "analysis": "reports/analysis/VIDEO-E03-TWO-REPO-EXECUTION-01/openstoryline-e03",
+   "report": "reports/analysis/VIDEO-E03-TWO-REPO-EXECUTION-01/summary.md",
+   "limits": "input gate passed; reached render_video; GraphRecursionError (recursion limit 32); no submission; verifier not_run_no_submission"
+  },
+  {
+   "repo": "openstoryline",
+   "task": "E03",
+   "kind": "attempt_render_completed_export_rejected_frame_rate_no_submission",
+   "selected_for_coverage": false,
+   "reward": null,
+   "raw": "data/raw/generated/OPENSTORYLINE-E03-RUNTIME-CONFIRM-02/20261029T152902Z-openstoryline-e03-runtime-confirm-02",
+   "identity": "env/video/openstoryline/OPENSTORYLINE-E03-RUNTIME-CONFIRM-02/frozen-identity.json",
+   "analysis": "reports/analysis/OPENSTORYLINE-E03-RUNTIME-CONFIRM-02",
+   "report": "reports/analysis/OPENSTORYLINE-E03-RUNTIME-CONFIRM-02/execution-summary.md",
+   "limits": "input+overlay gates passed; agent completed render (6-clip timeline, 0 subtitles, content-deletion injected, user_request 29190-38760ms); export rejected frame rate 165.83ppm (>2ppm, 1199/50 vs 24000/1001); verifier not_run_no_submission reward=null; no resource samples (host process interrupted)"
+  },
+  {
+   "repo": "openstoryline",
+   "task": "E03",
+   "kind": "render_then_independent_recovery_scored",
+   "selected_for_coverage": true,
+   "research_record_valid": true,
+   "official_task_passed": false,
+   "as_run_export_status": "failed_NameError_PurePosixPath",
+   "recovery_status": "independent_closeout_export_and_one_complete_verifier_on_same_render_timeline",
+   "reward": 0,
+   "raw": "data/raw/generated/OPENSTORYLINE-E03-RUNTIME-CONFIRM-03/20261030T011456Z-openstoryline-e03-runtime-confirm-03",
+   "identity": "env/video/openstoryline/OPENSTORYLINE-E03-RUNTIME-CONFIRM-03/frozen-identity.json",
+   "analysis": "reports/analysis/OPENSTORYLINE-E03-RUNTIME-CONFIRM-03",
+   "report": "reports/analysis/OPENSTORYLINE-E03-RUNTIME-CONFIRM-03/revision-DOCUMENTATION-CLOSEOUT-01/summary.md",
+   "original_report": "reports/analysis/OPENSTORYLINE-E03-RUNTIME-CONFIRM-03/execution-summary.md",
+   "closeout": "data/raw/generated/OPENSTORYLINE-E03-RUNTIME-CONFIRM-03/20261030T011456Z-openstoryline-e03-runtime-confirm-03/20261030T011456Z-openstoryline-e03-runtime-confirm-03/closeout.json",
+   "sampling": {
+    "rows": 1602,
+    "periodic_rows": 1600,
+    "boundary_rows": 2,
+    "target_interval_s": 0.5,
+    "actual_periodic_median_interval_s": 0.601382106,
+    "actual_periodic_mean_interval_s": 0.6145534432313946,
+    "boundary_window_s": 983.826244511
+   },
+   "timing": {
+    "native_agent_phase_s": 966.096997489,
+    "host_execute_s": 983.036557455,
+    "original_attempt_wall_s": 984.956023964,
+    "independent_closeout_excluded_from_original_attempt_and_resources": true
+   },
+   "limits": "Valid CPU-tool research observation, not official task success. Actual deletion matches agent choice, not a verified semantic boundary. Original host export failed; same-render independent closeout completed export and one official scoring with reward 0. Resources complete only for declared original container window; closeout/verifier resources not included. Original reports and failure history preserved.",
+   "full_flow_rerun": {
+    "id": "R03",
+    "status": "complete_normal_flow_20261101_attempt2",
+    "attempts": [
+     {
+      "attempt": "R03-01",
+      "status": "failure_observation_logical_request_budget_exhausted_20261101",
+      "run_id": "20261101T032400Z-openstoryline-e03-full-flow-r03-01",
+      "analysis": "reports/analysis/OPENSTORYLINE-E03-FULL-FLOW-R03-01",
+      "diagnosis_revision": "reports/analysis/OPENSTORYLINE-E03-BUDGET-PROPAGATION-REPAIR-01",
+      "note": "R03-01 remains a fully collected failure observation, not a completed flow. First rough-cut admitted 41 per-sentence requests but deletion was incomplete. Second call began at 50/60; 10 normal responses exhausted the cap. Then 31 local pre-send budget rejections were converted to text and misclassified as JSON parse failures; one later agent request was also locally blocked. Admitted 60/60 closed, 229950 tokens; rejected 32 separately, no provider sends. Seven tool protocol pairs closed, not all internal decisions succeeded. Three intermediate rough-cut MP4s exist; no final render/submission/scoring. Raw/reports/frozen identity unchanged; offline repair does not mark the run successful.",
+      "budget_readiness": {
+       "status": "fence_restored_and_frozen_to_container_chain_accepted_offline",
+       "readiness": "reports/analysis/OPENSTORYLINE-E03-REQUEST-BUDGET-READINESS-01",
+       "final_closeout": "reports/analysis/OPENSTORYLINE-E03-BUDGET-READINESS-FINAL-CLOSEOUT-01",
+       "draft_config": "env/video/openstoryline/task-configs/E03-full-flow-r03-02-budget-draft.json",
+       "recommended_max_logical_requests": 100,
+       "formula": "82 (2x41 rough-cut) + 2 validation + 16 agent margin = 100; 91 = observed-overhead estimate basis, not structural min",
+       "fixed_ceilings": "soft 1M and output 32768 fixed (not task-variable); only logical follows frozen identity",
+       "note": "real freeze->approval->execute_once request->container configure_budget->ledger chain verified offline; draft unreviewed zero-send; real run awaits user approval"
+      }
+     },
+     {
+      "attempt": "R03-02",
+      "status": "complete_normal_flow_20261101",
+      "run_id": "20261101T054433Z-openstoryline-e03-full-flow-r03-02",
+      "analysis": "reports/analysis/OPENSTORYLINE-E03-FULL-FLOW-R03-02",
+      "note": "complete normal flow on current production chain with approved logical budget 100: native Agent rc=0 (agent wall 950.95s<1800s); one speech_rough_cut with 41/41 calls/parses successful, then progression without a second round; NOT semantic correctness: Agent requested [29190,38760]ms but actual deletion was only [29190,30810]ms; input/overlay gates passed (actual E03 input, 27 overlays); budget 100/1M/32768 consistent across config/freeze/request/container/ledger; 52 requests used (also below old cap 60), so increased budget is headroom, not proven necessary for this completion; host exported output.mp4/cuts.json from the timeline the final render consumed; technical check passed (frame-rate exact 24000/1001, 0 ppm); official verifier complete once reward=0.0 (legal; end_offset 3.518s vs golden); container removed. R03-01 failure observation preserved unchanged."
+     }
+    ]
+   },
+   "current_trace_scope": "original_plus_independent_recovery"
+  },
+  {
+   "repo": "video-use",
+   "task": "REPURPOSE",
+   "kind": "single_race_vertical_repurpose_technical_acceptance",
+   "selected_for_coverage": true,
+   "reward": null,
+   "official_evaluation": "not_integrated/not_run",
+   "technical_acceptance": {
+    "passed": false,
+    "checks": {
+     "ffprobe": true,
+     "h264": true,
+     "resolution_1080x1920": true,
+     "aac_stereo": true,
+     "duration_166s": false,
+     "full_decode": true
+    },
+    "video_stream_s": 165.88,
+    "container_s": 166,
+    "audio_stream_s": 166
+   },
+   "raw": "data/raw/generated/VIDEO-USE-REPURPOSE-BOLT-EXECUTION-01/20261030T115530Z-video-use-repurpose-bolt-execution-01",
+   "identity": "env/video/video-use/VIDEO-USE-REPURPOSE-BOLT-EXECUTION-01/frozen-identity.json",
+   "analysis": "reports/analysis/VIDEO-USE-REPURPOSE-BOLT-EXECUTION-01",
+   "report": "reports/analysis/VIDEO-USE-REPURPOSE-BOLT-EXECUTION-01/summary.md",
+   "limits": "single formal attempt; agent rc=0 complete; repurpose.mp4 1080x1920 h264 aac-stereo exported; video stream 165.88s vs 166s target (tol 0.1s) failed duration gate by 0.02s -> technical acceptance passed=False; captions/scoreboard/multi-angle not_evaluated; official not_run; resource samples complete",
+   "current_trace_scope": "continuous_main_flow_raw_located"
+  },
+  {
+   "repo": "openstoryline",
+   "task": "ASSEMBLY-TASK1",
+   "kind": "attempt_reached_render_recursion_limit_no_submission",
+   "selected_for_coverage": false,
+   "reward": null,
+   "raw": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-02/20261030T152347Z-openstoryline-assembly-task1-execution-02/20261030T152347Z-openstoryline-assembly-task1-execution-02",
+   "identity": "env/video/openstoryline/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-02/frozen-identity.json",
+   "analysis": "reports/analysis/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-02",
+   "report": "reports/analysis/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-02/summary.md",
+   "limits": "first REAL assembly run; real readiness/freeze/approval/execute chain; input+overlay gates passed; agent built final 4-clip timeline (10,2,5,8 full each, 0-21.686s) then GraphRecursionError(limit 32) rc=1; no solution.mp4/solution.json submitted; assembly_export error; verifier not_run_no_submission reward=null; 35 logical requests (17 mcp_sampling multimodal/text), 322,721 tokens; 1463 samples CPU 279.01 core-s; not a completed observation"
+  },
+  {
+   "repo": "openstoryline",
+   "task": "ASSEMBLY-TASK1",
+   "kind": "attempt_filter_truncation_recursion_limit_no_submission",
+   "selected_for_coverage": false,
+   "reward": null,
+   "raw": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-03/20261031T020236Z-openstoryline-assembly-task1-execution-03/20261031T020236Z-openstoryline-assembly-task1-execution-03",
+   "identity": "env/video/openstoryline/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-03/frozen-identity.json",
+   "analysis": "reports/analysis/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-03",
+   "report": "reports/analysis/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-03/summary.md",
+   "limits": "Complete failure observation; filter effective output limit remained 2048 and repeated truncations preceded GraphRecursionError(32); no plan/render/submission. The separate filter budget probe is not a formal assembly attempt or an extra coverage sample."
+  },
+  {
+   "repo": "openstoryline",
+   "task": "ASSEMBLY-TASK1",
+   "kind": "render_then_independent_recovery_technical_acceptance",
+   "selected_for_coverage": true,
+   "research_record_valid": true,
+   "official_task_passed": null,
+   "official_evaluation": "not_integrated/not_run",
+   "semantic_evaluation": "not_evaluated",
+   "reward": null,
+   "as_run_export_status": "failed_completion_gate_used_interview_required_nodes_no_render_artifact_id",
+   "recovery_status": "independent_same_render_copy_and_timeline_derived_manifest_technical_pass_under_revised_policy",
+   "raw": "data/raw/generated/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-04/20261031T033256Z-openstoryline-assembly-task1-execution-04/20261031T033256Z-openstoryline-assembly-task1-execution-04",
+   "identity": "env/video/openstoryline/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-04/frozen-identity.json",
+   "recovery": "env/video/openstoryline/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-04/recovery-COMPLETION-01",
+   "analysis": "reports/analysis/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-04",
+   "recovery_analysis": "reports/analysis/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-04/recovery-COMPLETION-01",
+   "report": "reports/analysis/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-04/recovery-COMPLETION-01/recover-report.json",
+   "original_report": "reports/analysis/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-04/summary.md",
+   "repair_evidence": "env/video/openstoryline/OPENSTORYLINE-ASSEMBLY-COMPLETION-AND-RECOVERY-01/manifest.json",
+   "technical_acceptance": {
+    "legacy_passed": false,
+    "legacy_tolerance_s": 0.01,
+    "recovery_passed": true,
+    "strategy_id": "openstoryline-assembly-final-media-frame-quantization-v1",
+    "final_tolerance_s": 0.035333333333333335,
+    "timeline_duration_s": 21.686,
+    "media_duration_s": 21.666667,
+    "full_decode_ok": true,
+    "byte_identical_to_render": true,
+    "solution_mp4_sha256": "33b4343db2dd2502ddde5b7ee86b8ff0dd121b72ca7f22b3a3d0735dc4d0ee86"
+   },
+   "sampling": {
+    "rows": 1598,
+    "data_quality": "complete",
+    "cpu_core_seconds": 96.41029399999977,
+    "cpu_valid_interval_s": 972.5215764000009,
+    "independent_recovery_excluded_from_original_resources": true
+   },
+   "execution_version": {
+    "as_run_overlay_count": 21,
+    "as_run_profile": "storyboard_selection_contract_and_assembly_reliability_repairs",
+    "current_completion_repair_overlay_count": 23,
+    "automatic_closeout_after_completion_repair_real_run_verified": false
+   },
+   "limits": "One retained repo/task combination with original Agent render plus independent recovery, not continuous as-run success, not a new Agent attempt or extra input. Source/timeline provenance preserved; original failed status and legacy technical FAIL unchanged. Official/semantic correctness unknown. Future automatic closeout can be validated on a separately authorized future task; no dedicated task1 rerun is required.",
+   "full_flow_rerun": {
+    "id": "R04",
+    "status": "complete_normal_flow_20261101",
+    "attempts": [
+     {
+      "attempt": "R04-01",
+      "status": "complete_normal_flow_20261101",
+      "run_id": "20261101T062526Z-openstoryline-assembly-full-flow-r04-01",
+      "analysis": "reports/analysis/OPENSTORYLINE-ASSEMBLY-FULL-FLOW-R04-01",
+      "note": "complete normal flow: native assembly chain load_media->split_shots(skip)->understand_clips(12)->filter_clips(K=4 distinct: clip_0001/0002/0003/0005)->group_clips(slot order: 10->4->5->3)->plan_timeline_pro->render_video; Agent rc=0 (475.00s<1800s); task-kind-aware completion gate wrote render_artifact_id; host exported solution.mp4/solution.json from the timeline the final render consumed; technical acceptance structural 10/10 PASS (byte-identical solution.mp4 SHA 4e1bc351...); official not_integrated reward=null semantic not_evaluated; container removed. R04 history (EXECUTION-02/03/04) preserved unchanged."
+     }
+    ]
+   },
+   "current_trace_scope": "original_plus_independent_recovery"
+  },
+  {
+   "repo": "vimax",
+   "task": "MUSICIANS-AUDIO",
+   "kind": "fresh_planning_and_media_then_independent_local_concat_recovery",
+   "selected_for_coverage": true,
+   "research_record_valid": true,
+   "official_task_passed": null,
+   "official_evaluation": "not_integrated/not_run",
+   "semantic_evaluation": "not_evaluated",
+   "reward": null,
+   "run_id": "musicians-band-rehearsal-audio-media-02-20261031T103514Z-1ac583f2",
+   "raw": "data/raw/generated/VIMAX-MUSICIANS-AUDIO-MEDIA-EXECUTION-02/musicians-band-rehearsal-audio-media-02-20261031T103514Z-1ac583f2",
+   "planning": "env/video/vimax/VIMAX-MUSICIANS-PLANNING-EXECUTION-01",
+   "identity": "env/video/vimax/VIMAX-MUSICIANS-AUDIO-MEDIA-EXECUTION-02/media/identity-01.json",
+   "analysis": "reports/analysis/VIMAX-MUSICIANS-AUDIO-MEDIA-EXECUTION-02/analysis-chain",
+   "original_report": "reports/analysis/VIMAX-MUSICIANS-AUDIO-MEDIA-EXECUTION-02/summary.md",
+   "report": "reports/analysis/VIMAX-MUSICIANS-AUDIO-CONCAT-RECOVERY-01/summary.md",
+   "recovery": "env/video/vimax/VIMAX-MUSICIANS-AUDIO-MEDIA-EXECUTION-02/recovery-CONCAT-01",
+   "recovery_analysis": "reports/analysis/VIMAX-MUSICIANS-AUDIO-CONCAT-RECOVERY-01",
+   "recovery_result": "reports/analysis/VIMAX-MUSICIANS-AUDIO-CONCAT-RECOVERY-01/recovery-result.json",
+   "as_run_status": "media_generation_and_download_success_concat_failed_no_final",
+   "recovery_status": "independent_local_concat_of_same_13_subject_clips_technical_pass",
+   "media": {
+    "image_logical_generations": 11,
+    "image_http_sends": 11,
+    "video_accepted_succeeded": 25,
+    "subject_clips": 13,
+    "auxiliary_transitions": 12,
+    "main_flow_downloads": 36,
+    "closeout_redownloads": 25
+   },
+   "recovery_media": {
+    "bytes": 16787304,
+    "sha256": "53d786a4ba40260138b8fd4f1aaed8b9e22b136033955b07217010fda7ada085",
+    "container_duration_s": 65.13,
+    "video_duration_s": 65.1,
+    "audio_codec": "aac",
+    "full_decode_ok": true,
+    "technical_acceptance_passed": true
+   },
+   "sampling": {
+    "original_rows": 3015,
+    "original_cpu_core_seconds": 94.13,
+    "recovery_rows": 49,
+    "recovery_cpu_core_seconds": 164.39,
+    "independent_recovery_excluded_from_original_resources": true
+   },
+   "limits": "Original concat failure preserved. Recovery changes reader thread limits, AAC writer and clip cleanup; separate code version and resource window, not a continuous original run, new input or controlled repeat. Original generation and separate recovery traces are retained. Recovery boundary-only summary unavailable; measured periodic samples are used with their declared window.",
+   "full_flow_rerun": {
+    "id": "R08",
+    "status": "complete_normal_flow"
+   },
+   "current_trace_scope": "original_plus_independent_recovery",
+   "r08_planning": {
+    "run_id": "musicians-audio-full-flow-r08-planning-01-20261102T025402Z-91e194be",
+    "analysis": "reports/analysis/VIMAX-MUSICIANS-AUDIO-FULL-FLOW-R08-PLANNING-01",
+    "note": "R08 planning passed via the planning-stage managed launcher (13 shots/3 chars/13 cameras/12 transitions, plan_verifier ok, 0 media/audio, 18 logical requests 54941 tokens, attempt 102.36s, measurement complete)"
+   },
+   "r08_media": {
+    "run_id": "musicians-audio-full-flow-r08-media-01-20261102T031747Z-7124a95b",
+    "analysis": "reports/analysis/VIMAX-MUSICIANS-AUDIO-FULL-FLOW-R08-MEDIA-01",
+    "note": "R08 media attempt executed via scripts/vimax_managed_launch.py (stage=media): 13 images (9 portraits+4 candidates)/25 videos (13 subject+12 transition, audio=true)/38 normal downloads/native concat subject 0..12/final 65.15s H.264 1280x720 30fps SHA 8efad313...; COMPLETE v3 all valid, native_agent_done rc=0, container exit 0, cleanup verified, sampling past 120s; remote closeout 25/25 SUCCEEDED usage.audio=true. TECHNICAL GAP: final native-concat audio is MP3 (libmp3lame) NOT AAC; expected.audio=aac not met at final-file level; R08 NOT marked complete normal flow"
+   },
+   "r08_media_02": {
+    "run_id": "musicians-audio-full-flow-r08-media-02-20261102T070109Z-e37817d9",
+    "analysis": "reports/analysis/VIMAX-MUSICIANS-AUDIO-FULL-FLOW-R08-MEDIA-02",
+    "note": "R08 media (repaired chain) COMPLETE NORMAL AUDIO FLOW via scripts/vimax_managed_launch.py (stage=media): 13 images (9 portraits+4 candidates)/25 videos (13 subject+12 transition, audio=true/AAC)/38 normal downloads/native AAC concat (subject 0..12, -acodec aac)/final 65.10s video_stream (65+/-0.5 PASS) H.264 1280x720 30fps AAC SHA ce54ee58...; formal technical acceptance applied+ok (12 checks true, contract digest b15d5f66...); COMPLETE v3 all valid, native_agent_done rc=0, container exit 0, cleanup verified; supervisor runner_exited rc=0; remote closeout 25/25 SUCCEEDED usage.audio=true; attempt 1560.71s/total 1576.92s incl tech acceptance. R08 complete normal flow; R08-MEDIA-01 MP3 failure preserved"
+   }
+  }
+ ],
+ "additional_valid_history": [
+  "data/raw/generated/VIDEO-USE-EDIT-PILOT-03",
+  "data/raw/generated/VIDEO-USE-EDIT-PILOT-04",
+  "data/raw/generated/OPENSTORYLINE-EDIT-PILOT-02",
+  "env/video/vimax/VIMAX-GENERATION-PILOT-04"
+ ],
+ "not_homogeneous_repeats": true,
+ "execution_authorized": false,
+ "full_flow_rerun_plan": {
+  "date": "2026-10-31",
+  "document": "docs/video_full_flow_rerun_plan.md",
+  "status": "r01_r02_r03_r04_r05_r06_r07_r08_r09_completed",
+  "target_count": 9,
+  "goal": "new complete traceable execution chain including normal export/concat and declared stage resource coverage; no post-hoc recovery as a substitute",
+  "execution_authorized": false,
+  "vimax_rule": "fresh planning then verification/budget/approval gate and media; preserve native staged architecture and separate sampling scopes, linked by a new run family",
+  "targets": [
+   {
+    "id": "R01",
+    "repo": "openstoryline",
+    "task": "E01",
+    "status": "attempt_1_executed_failed_observation_20261031"
+   },
+   {
+    "id": "R02",
+    "repo": "openstoryline",
+    "task": "E02",
+    "status": "complete_normal_flow_20261101"
+   },
+   {
+    "id": "R03",
+    "repo": "openstoryline",
+    "task": "E03",
+    "status": "complete_normal_flow_20261101"
+   },
+   {
+    "id": "R04",
+    "repo": "openstoryline",
+    "task": "ASSEMBLY-TASK1",
+    "status": "complete_normal_flow_20261101"
+   },
+   {
+    "id": "R05",
+    "repo": "vimax",
+    "task": "G01",
+    "status": "complete_normal_flow_20261101",
+    "media_phase": {
+     "media_01": "failure observation preserved (media generation+concat ok, host COMPLETE v3 final-path ownership failed final_artifact_missing rc=1)",
+     "media_02": {
+      "run_id": "g01-full-flow-r05-media-02-20261101T141641Z-6e4a9447",
+      "verdict": "complete normal flow (native_agent_done rc=0; final_path_resolution accepted native relative path)",
+      "analysis": "reports/analysis/VIMAX-G01-FULL-FLOW-R05-MEDIA-02"
+     }
+    }
+   },
+   {
+    "id": "R06",
+    "repo": "vimax",
+    "task": "G02",
+    "status": "complete_normal_flow_20261102"
+   },
+   {
+    "id": "R07",
+    "repo": "vimax",
+    "task": "G03",
+    "status": "complete_normal_flow_20261102"
+   },
+   {
+    "id": "R08",
+    "repo": "vimax",
+    "task": "MUSICIANS-AUDIO",
+    "status": "complete_normal_flow_20261102"
+   },
+   {
+    "id": "R09",
+    "repo": "video-use",
+    "task": "E03",
+    "reason": "complete_workflow_rerun_and_raw_trace_recollection",
+    "status": "complete_normal_flow_20261102",
+    "run_id": "20261102T112320Z-video-use-e03-full-flow-r09-01",
+    "verdict": "complete normal flow (agent rc=0, host technical checks passed, one official scoring complete reward=0 legal, native rollout complete, resource/cleanup verified)",
+    "analysis": "reports/analysis/VIDEO-USE-E03-FULL-FLOW-R09-01",
+    "raw": "data/raw/generated/VIDEO-USE-E03-FULL-FLOW-R09-01/20261102T112320Z-video-use-e03-full-flow-r09-01",
+    "identity_sha256": "b1dd3f433339c8c441193644492754c9640cddcbbdfe195b5dd9b5162ed1bb31",
+    "history_note": "historical E03 raw absence, prior failures/reports and PILOT-01 UNKNOWN protection state preserved unchanged",
+    "archive_revision": "reports/analysis/VIDEO-USE-E03-FULL-FLOW-R09-01/revision-ARCHIVE-CLOSEOUT-01"
+   }
+  ],
+  "user_scope_confirmation": "Retain all eight targets including staged ViMax G01/G02/G03 and add video-use E03; nine planned reruns, not execution approval.",
+  "trace_retention_issue": {
+   "repo": "video-use",
+   "task": "E03",
+   "status": "indexed_raw_run_missing_parent_empty",
+   "next": "Historical indexed raw remains missing; new R09 run 20261102T112320Z-video-use-e03-full-flow-r09-01 completed with retained trace/resources and independent archive closeout. No additional run is authorized by this index.",
+   "do_not_infer_permanent_loss_or_delete_history": true,
+   "included_in_current_rerun_plan": true,
+   "rerun_id": "R09"
+  }
+ }
+}

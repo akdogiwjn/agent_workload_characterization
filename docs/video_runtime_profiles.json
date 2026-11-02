@@ -1,0 +1,226 @@
+{
+  "schema": "video-runtime-profiles-v2",
+  "updated": "2026-11-01 (OpenStoryline scoped offline budget-error propagation repair; no formal rerun)",
+  "scope_note": "Declared profiles; 16 historically retained repo-task combinations / 9 inputs, not 16 continuous successes. R01-02 and R02-01 completed normal flow; R01-01 remains a failed observation. R03-01 remains a fully collected failure observation, now with corrected budget-before-parse causality. R04-R09 require separate authorization; see docs/video_full_flow_rerun_plan.md. video-use E03 historical raw availability remains limited. Offline repairs/probes/recovery are not extra inputs or formal Agent attempts; current code is not attributed retrospectively to frozen runs.",
+  "cross_cutting": {
+    "budget_error_propagation_revision": {
+      "id": "OPENSTORYLINE-E03-BUDGET-PROPAGATION-REPAIR-01",
+      "evidence": "reports/analysis/OPENSTORYLINE-E03-BUDGET-PROPAGATION-REPAIR-01/summary.md",
+      "scope": "OpenStoryline local request-budget refusal only: typed MCP error in all task kinds, rough-cut immediate stop and separate accounting; other provider/truncation fallback semantics preserved",
+      "current_overlay_count": 27,
+      "request_budget_changed": false,
+      "semantic_selection_strategy_changed": false,
+      "formal_rerun": false,
+      "historical_r03_01_correction": "60 admitted requests closed plus 32 local pre-send rejections; not 31 supplier bad-JSON responses. Three intermediate cut MP4s exist, no final render/submission."
+    },
+    "native_tools_vs_upstream": "A run recorded on the native LangChain agent/tools is collected on the open-source project under DECLARED environment and execution config; it is NOT an unmodified upstream default system.",
+    "version_rule": "Current checkout commits must not be presented as the versions used by historical runs; historical runs reference their then-frozen identity, otherwise unknown.",
+    "comparison_rule": "Different-version runs are not automatically interpreted as controlled performance comparisons.",
+    "independent_recovery_rule": "Recovery costs are reported separately and never merged into the original attempt's sampling window.",
+    "recursion_limit_32": "recursion_limit is now an explicit task-config execution parameter (default 32, validated int 1..200) bound into frozen identity/request/report; this round did NOT raise the formal value",
+    "configuration_consumption_claim": "Config consumption and rejection boundaries are offline-verified for declared profiles; real Agent completion, semantic effect and provider behaviour are judged per-run evidence.",
+    "current_complete_flow_goal": {
+      "plan": "docs/video_full_flow_rerun_plan.md",
+      "target_count": 9,
+      "status": "R01_R02_complete_R03_failed_offline_budget_repair_no_rerun",
+      "native_vimax_stage_gates_preserved": true,
+      "post_hoc_recovery_does_not_satisfy_new_continuous_flow_goal": true,
+      "positive_reward_not_required": true,
+      "user_scope_confirmation": "All eight original targets retained including staged ViMax tasks; video-use E03 added for full trace recollection.",
+      "r01_attempt": {
+        "run_id": "20261031T142400Z-openstoryline-e01-full-flow-r01-01",
+        "outcome": "failed_observation",
+        "analysis": "reports/analysis/OPENSTORYLINE-E01-FULL-FLOW-R01-01"
+      }
+    }
+  },
+  "profiles": [
+    {
+      "repo": "video-use",
+      "task_type_profile": "repurpose (vertical single-race cut)",
+      "execution_source": {
+        "program_repo": "references/repos/video-use",
+        "program_commit": "43cfc566833548093455c9d4a46bd69913b7e552",
+        "verified_by": "env/video/video-use/source-manifest.json upstream_commit (local checkout HEAD is the CURRENT checkout, not the historical run version)",
+        "local_production_entry": [
+          "scripts/video_use_task_entry.py",
+          "scripts/video_use_edit_pilot_01.py",
+          "scripts/video_use_edit_pilot_03.py",
+          "scripts/video_use_edit_pilot_04.py"
+        ]
+      },
+      "task_source": {
+        "repo": "references/repos/agentic-vbench",
+        "commit": "b2764ed4b2a4b5a1737026b63887b50bba62f793"
+      },
+      "frozen_identity_ref": "env/video/video-use/VIDEO-USE-REPURPOSE-BOLT-EXECUTION-01/frozen-identity.json (binds code+config+input for that run)",
+      "model_adapter": {
+        "provider": "Bailian",
+        "model": "qwen3.7-plus",
+        "wire": "Responses",
+        "retries": 0,
+        "asr": "ElevenLabs Scribe (one call)"
+      },
+      "tool_workflow_limits": "codex exec_command/view_image + ffmpeg/ffprobe; interview no-effects policy does NOT apply to repurpose",
+      "generation_audio_scope": "edit only (no image/video gen, no TTS); preserve source audio",
+      "existing_behavioral_adaptations": [
+        "task-scoped repurpose prompt mapping",
+        "source helper overlay/skill registration",
+        "ElevenLabs Scribe route",
+        "technical acceptance contract (Bolt 166s/1080x1920/h264/aac-stereo/video_stream±0.1s)"
+      ],
+      "this_round_adaptation": "none added",
+      "contract_consumption": "output_contract.technical_acceptance is the single source; missing/invalid/NaN/Infinity rejected before send",
+      "unknown": [
+        "per-request HTTP counts",
+        "provider billing/cost"
+      ]
+    },
+    {
+      "repo": "openstoryline",
+      "task_type_profile": "assembly (N candidates -> S segments by contract)",
+      "execution_source": {
+        "program_repo": "references/repos/FireRed-OpenStoryline",
+        "program_commit": "c9e945215586f45c12a61c1951ee9a8e9c43a027",
+        "verified_by": "local fixed-upstream HEAD (current checkout)",
+        "local_production_entry": [
+          "env/video/openstoryline/edit-pilot-02/runtime/openstoryline_pilot_entry.py",
+          "env/video/openstoryline/edit-pilot-02/runtime/openstoryline_assembly.py"
+        ]
+      },
+      "task_source": {
+        "repo": "references/repos/agentic-vbench",
+        "commit": "b2764ed4b2a4b5a1737026b63887b50bba62f793"
+      },
+      "frozen_identity_ref": "env/video/openstoryline/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-04/frozen-identity.json binds the as-run 21-overlay version; the later completion repair uses 23 overlays and is not retroactively attributed to that run. Any future formal run requires a new identity/approval.",
+      "model_adapter": {
+        "provider": "Bailian",
+        "model": "qwen3.7-plus",
+        "protocol": "Chat Completions",
+        "visual": "sampled_frames -> image_url -> VLM (qwen3.7-plus); sampled_frames, NOT full native video understanding",
+        "retries": 0
+      },
+      "tool_workflow_limits": "multi-clip chain load_media->split_shots(mode=skip)->understand_clips->filter_clips->group_clips->plan_timeline_pro->render_video; no ASR/TTS/bgm/subtitles/transitions; recursion_limit=32 (local entry value, not asserted upstream)",
+      "generation_audio_scope": "no media generation, no audio generation (visual-only understanding)",
+      "existing_behavioral_adaptations": [
+        "task-scoped assembly workflow guidance",
+        "task_kind-scoped node registration via register_tools.py overlay (understand_clips/filter_clips/group_clips only under OPENSTORYLINE_TASK_KIND=assembly)",
+        "source overlays for plan_timeline_pro/speech_rough_cut/render_video/task_policy/register_tools",
+        "recursion_limit=32 in the local entry request",
+        "assembly selection contract repair (OPENSTORYLINE-ASSEMBLY-SELECTION-CONTRACT-REPAIR-01): storyboard Top-K selection templates (filter_clips_storyboard/group_clips_storyboard) replace the generic >80% filter rule and generic narrative group rule for task_kind=assembly; N/K/storyboard consumed from task config + frozen instruction via OPENSTORYLINE_TASK_POLICY; filter selected count must equal K, group expanded sequence must equal selected set; generic filter/group templates and interview behaviour unchanged; [filter_clips] base_max_tokens=8192 cap=8192",
+        "OPENSTORYLINE-ASSEMBLY-COMPLETION-AND-RECOVERY-01: task-kind-aware completion/confirmation gate and versioned final-media frame-quantization technical policy; source-range/contiguity tolerance remains separate. This later version is offline-verified, not the code version used by EXECUTION-04."
+      ],
+      "this_round_adaptation": "Current documentation references selection/reliability as-run evidence and the later completion/time-policy repair separately; this documentation closeout makes no code or task execution changes. | OPENSTORYLINE-E03-REQUEST-BUDGET-READINESS-01 (2026-11-01): offline request-budget readiness only - derived two-round E03 logical request need (~91 structural + margin -> recommended 100, alternate 96), prepared unreviewed draft E03-full-flow-r03-02-budget-draft.json (status=draft, request_budget.max_logical_requests=100, NOT authorized), added minimal generic task-scoped request_budget passthrough (host apply_task_config/freeze_identity -> request -> container configure_budget/request_ledger env; default 60 preserved for E01/E02/no-field tasks); zero real services/Agent/identity/approval/attempt; no run, R03-01 failure observation preserved | OPENSTORYLINE-E03-BUDGET-READINESS-FINAL-CLOSEOUT-01 (2026-11-01): restored fixed ceilings - only max_logical_requests may follow the frozen identity (100 proposal); max_observed_tokens_soft_threshold fixed 1,000,000 and max_output_tokens_per_request fixed 32,768; strict integer validation; real freeze->approval->execute_once request->container configure_budget->request_ledger chain verified offline; default 60 preserved; R03-01 failure preserved; 100 still awaits approval | OPENSTORYLINE-E03-FULL-FLOW-R03-02 (2026-11-01): complete normal flow with approved single-task logical budget 100 - Agent rc=0, one speech_rough_cut 41/41 OK, host export output.mp4/cuts.json ([29190,30810] deletion), frame-rate exact 24000/1001, official verifier complete reward=0.0; budget 100/1M/32768 across config/freeze/request/container/ledger; R03-01 failure preserved | OPENSTORYLINE-ASSEMBLY-FULL-FLOW-R04-01 (2026-11-01): complete normal assembly flow - understand(12)->filter(K=4 distinct)->group(slot order 10->4->5->3)->plan->render, Agent rc=0, task-kind-aware completion gate, host export solution.mp4/solution.json (byte-identical, structural 10/10 PASS), official not_integrated reward=null; assembly budget 60 preserved (not E03's 100); preflight gate asset SHA refresh",
+      "contract_consumption": "candidate count from declared input manifest; target segments from output_contract.segments; numeric '<N>.mp4' adapter boundary validated before send",
+      "retained_observation": {
+        "task": "ASSEMBLY-TASK1",
+        "run_id": "20261031T033256Z-openstoryline-assembly-task1-execution-04",
+        "identity": "env/video/openstoryline/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-04/frozen-identity.json",
+        "as_run_status": "render_complete_but_entry_completion_failed_no_automatic_submission",
+        "as_run_overlay_count": 21,
+        "recovery": "env/video/openstoryline/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-04/recovery-COMPLETION-01",
+        "recovery_report": "reports/analysis/OPENSTORYLINE-ASSEMBLY-TASK1-EXECUTION-04/recovery-COMPLETION-01/recover-report.json",
+        "recovery_status": "same_render_byte_identical_export_technical_pass_under_revised_policy_legacy_fail_preserved",
+        "official_evaluation": "not_integrated/not_run",
+        "semantic_evaluation": "not_evaluated",
+        "reward": null,
+        "recovery_costs_excluded_from_original_samples": true,
+        "current_completion_repair_overlay_count": 23,
+        "current_automatic_closeout_real_run_verified": false,
+        "next": "No dedicated task1 rerun required; verify future automatic closeout on a separately authorized future assembly task."
+      },
+      "unknown": [
+        "provider billing/cost",
+        "semantic selection quality (needs_real_validation)",
+        "two-round E03 wall-clock/token are extrapolations, not guarantees; recommended request budget 100 still awaits user approval",
+        "two-round E03 wall-clock/token are extrapolations; second-round full 41-sample and 43.646s tail are estimates, not guarantees"
+      ]
+    },
+    {
+      "repo": "vimax",
+      "task_type_profile": "planning_then_media (story-derived shot count; visual-only)",
+      "execution_source": {
+        "program_repo": "references/repos/ViMax",
+        "program_commit": "fd4b72e7731be6e5f88486206d25ea59849b0285",
+        "verified_by": "local fixed-upstream HEAD (current checkout)",
+        "local_production_entry": [
+          "env/video/vimax/planning/task_context.py",
+          "env/video/vimax/planning/host_runner.py",
+          "env/video/vimax/planning/planning_entry.py",
+          "env/video/vimax/planning/plan_verifier.py",
+          "env/video/vimax/VIMAX-MEDIA-ENTRY-REPAIR-01/host_runner.py"
+        ]
+      },
+      "task_source": {
+        "repo": "references/repos/ViMax (benchmark stories)",
+        "commit": "fd4b72e7731be6e5f88486206d25ea59849b0285",
+        "note": "story JSONs under vimax_benchmark/ (e.g. musicians_band_rehearsal_typeC.json)"
+      },
+      "frozen_identity_ref": "Per-run planning and media identities; musicians: env/video/vimax/VIMAX-MUSICIANS-PLANNING-EXECUTION-01/identity-01.json and env/video/vimax/VIMAX-MUSICIANS-AUDIO-MEDIA-EXECUTION-02/media/identity-01.json; independent concat recovery code/version is separate, never retroactive.",
+      "model_adapter": {
+        "provider": "Bailian",
+        "model": "qwen3.7-plus",
+        "enable_thinking": false,
+        "retries": 0
+      },
+      "tool_workflow_limits": "planning/media staged; tool allowlist fixed; first-frame i2v (small variation_type) only; fixed style",
+      "generation_audio_scope": "Historical G01/G02/G03 are silent; musicians media EXECUTION-02 produced native audio=true AAC clips and separate local concat recovery produced a valid AAC final. Not continuous as-run completion; new full-flow rerun R08 is planned, not authorized.",
+      "existing_behavioral_adaptations": [
+        "planning/media staged execution",
+        "fixed tool allowlist and blocked tools",
+        "first-frame-only i2v capability (small)",
+        "fixed style/build_style",
+        "Historical silent scope; explicit native audio profile for musicians",
+        "story-derived shot count + seconds_per_shot consumption",
+        "image send load control (image_create_policy) at the real HTTP send boundary; 429 bounded retry; failure-stop of queued sibling image tasks; pending-task cancel at entry closeout with right-censored closure; dedicated image_create_sends send cap distinct from logical image_generations",
+        "image per-create absolute deadline at every blocking point; strict finite numeric policy validation; Retry-After honouring with HTTP-date support; manifest without self-hash",
+        "bounded MoviePy reader ffmpeg threads (-threads 1) for audio concat under pids-limit; explicit AAC final audio_codec; clip reader/audio-reader close in finally"
+      ],
+      "this_round_adaptation": "VIMAX-MUSICIANS-AUDIO-CONCAT-RECOVERY-01 (2026-10-31): diagnosed + fixed the native MoviePy concat failure of EXECUTION-02. Root cause: 13 audio clips each open 2 ffmpeg reader processes (~41 pids/clip) -> peak exceeded --pids-limit 512 -> 13th reader ffmpeg could not create threads (rc=1) -> MoviePy 'failed to read the first frame' (files were valid). Fix: generation_entry.install_ffmpeg_audit bounds reader ffmpeg threads (-threads 1) and matches imageio aarch64 binaries; script2video_pipeline concat writes AAC explicitly and closes every clip in a finally. Recovered final from the 13 real subject clips (65.13s / 1280x720 / H.264 / 30fps / AAC stereo / non-silent / full decode). No model/media/download call; resource profile unchanged. | VIMAX-G01-FULL-FLOW-R05-PLANNING-01 (2026-11-01): new G01 planning passed (8 shots/1 character/8 cameras/7 transitions, plan_verifier 14/14, 0 media, 13 logical requests 37873 tokens); media budget draft (image_creates 5, video_creates 15, downloads 20) prepared not authorized; media phase pending approval | VIMAX-G01-R05-MEDIA-BUDGET-AND-RESOURCE-CLOSEOUT-01 (2026-11-01): media budget corrected to 19 images/15 videos/34 downloads from the real production branch (8 cameras all candidate + 3 portraits); resource periodic-window derivation (77.068s, 4.575 core-s, 98KiB write); sampling final-boundary fix (sampler.stop before docker wait); media entry checked no same defect | VIMAX-R05-FOUR-GAP-OFFLINE-FINAL-CLOSEOUT-01 (2026-11-01): planning completion handshake (boundary ack) closes exit race; real control-chain + container protocol tests replace stubs; poll upper bound per task 92 (floor(window/interval)+2) and 15-task 1380 (ledger cap 1800 separate); media budget helper aligned to production missing_info is not None + strict param validation; media still pending approval | VIMAX-R05-PRODUCTION-BOUNDARY-AND-VALIDATION-FINAL-01 (2026-11-01): shared read_boundary_and_send_ack production function called by run_attempt and tests (no mirror); ACK schema v2 full validation (run/session/attempt/container/COMPLETE token, stale/duplicate/partial/timeout/write-fail) flowing into run-report with per-resource metrics; helper derived-zero conflict and strict-int attempts; media still pending approval | VIMAX-R05-OBSERVATION-QUALITY-AND-ACK-SEMANTICS-CLOSEOUT-01 (2026-11-01): derive_observation_quality production function wired into run_attempt and run-report (per-metric + overall complete/partial/unknown, ack host_write/entry_accept separated, rows_lost!=complete, start+end for interval metrics); ACK idempotent-message contract (option one, unreachable seen_accept removed); media still pending approval | VIMAX-R05-OBSERVATION-QUALITY-CORRECTNESS-FINAL-01 (2026-11-01): unified metric schema (_metrics_from_snapshot shared by producer/induction/tests); start boundary per-metric (interval start+end, end>=start); overall aggregates ack/stream-loss/write-error/netns/scope; entry observation ownership+complete_token validated (five counterexamples fixed); media still pending approval",
+      "contract_consumption": "story-derived expected_shots; seconds_per_shot consumed consistently by total duration AND requirement text; unsupported values rejected",
+      "unknown": [
+        "provider billing/cost",
+        "remote media generation resource usage",
+        "media-phase cost/billing unknown; closeout_seconds 600 formal vs 300 entry-default divergence to confirm"
+      ]
+    },
+    {
+      "repo": "videoweaver",
+      "task_type_profile": "generation_merge (explicit judge_media contract; restricted final media profile)",
+      "execution_source": {
+        "program_repo": "references/repos/VideoWeaver",
+        "program_commit": "c809392fe6c2c8b22472049684aaefc650e31bde",
+        "verified_by": "local fixed-upstream HEAD (current checkout); env/video/videoweaver/source mirrors the skill repo",
+        "local_production_entry": [
+          "env/video/videoweaver/runner/host_runner.py",
+          "scripts/videoweaver_managed_launch.py"
+        ]
+      },
+      "task_source": {
+        "repo": "references/repos/ViMax (cross-repo story adaptation) for the musicians case",
+        "commit": "fd4b72e7731be6e5f88486206d25ea59849b0285",
+        "note": "agentic-vbench does NOT host videoweaver generation tasks; local cases under env/video/videoweaver/case"
+      },
+      "frozen_identity_ref": "env/video/videoweaver/evidence/*/frozen-identity.json (binds runner + config + case files)",
+      "model_adapter": {
+        "provider": "Bailian (dashscope compatible-mode)",
+        "media": "workspace-domain remote generation + polling/download",
+        "retries": 0
+      },
+      "tool_workflow_limits": "case/target-driven; skill_query + registered-script verified; video poll/download pipeline",
+      "generation_audio_scope": "Restricted H.264 1280x720 nominal 30fps final profiles: historical silent tasks and explicit AAC audio profile. MUSICIANS-AUDIO full audio=true generation/merge was observed. No arbitrary resolution or audio-semantic guarantee.",
+      "existing_behavioral_adaptations": [
+        "cross-repo story adaptation (ViMax story -> VideoWeaver case)",
+        "registered-script embedding requirement",
+        "case/target task routing",
+        "restricted explicit silent/AAC 720p30 profiles"
+      ],
+      "this_round_adaptation": "VIDEOWEAVER-MUSICIANS-AUDIO-EXECUTION-01 (2026-10-31): one real 13-shot audio run SUCCEEDED (13 img + 13 video audio=true + native merge -> 65.13s AAC non-silent final, judge 44/44); semantics not_evaluated; official not_run; profile audio=aac wired",
+      "contract_consumption": "judge_media is the explicit completion contract (live tasks must provide image_creates/video_creates/media_downloads/shot_clips/final_duration_s); media_profile validated incl. frame_rate; budget caps independent from min completion",
+      "unknown": [
+        "provider billing/cost",
+        "remote generation resource usage"
+      ]
+    }
+  ]
+}
